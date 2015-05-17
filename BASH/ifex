@@ -1,5 +1,5 @@
 #!/bin/bash
-if grep -q $1 /etc/passwd
+if grep -q "^$1:" /etc/passwd
 then
 	echo "L'utilisateur possède un compte"
 else
