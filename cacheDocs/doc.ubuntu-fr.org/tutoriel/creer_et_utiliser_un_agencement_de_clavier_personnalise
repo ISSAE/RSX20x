@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:creer_et_utiliser_un_agencement_de_clavier_personnalise - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-02-21T15:23:23+0100"/>
+<meta name="keywords" content="natty,tutoriel,clavier,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/creer_et_utiliser_un_agencement_de_clavier_personnalise?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/creer_et_utiliser_un_agencement_de_clavier_personnalise?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/creer_et_utiliser_un_agencement_de_clavier_personnalise"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/creer_et_utiliser_un_agencement_de_clavier_personnalise"/>
+<link rel="canonical" href="creer_et_utiliser_un_agencement_de_clavier_personnalise"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:creer_et_utiliser_un_agencement_de_clavier_personnalise","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#main" tabindex="1">Contenu</a> | <a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#qsearch__in" tabindex="2">Rechercher</a> | <a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="creer_et_utiliser_un_agencement_de_clavier_personnalise" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise" >tutoriel:creer_et_utiliser_un_agencement_de_clavier_personnalise</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#a_qui_s_adresse_cette_page">A qui s&#039;adresse cette page ?</a></div></li>
+<li class="level1"><div class="li"><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#existe-t-il_des_methodes_alternatives">Existe-t-il des méthodes alternatives ?</a></div></li>
+<li class="level1"><div class="li"><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#creer_un_agencement_ordinaire_sur_quatre_niveaux">Créer un agencement ordinaire sur quatre niveaux</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#decrire_l_agencement_du_clavier">Décrire l&#039;agencement du clavier</a></div></li>
+<li class="level2"><div class="li"><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#prise_en_compte_par_le_systeme_du_nouvel_agencement">Prise en compte par le système du nouvel agencement</a></div></li>
+<li class="level2"><div class="li"><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#utilisez_votre_nouvel_agencement">Utilisez votre nouvel agencement</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#creer_un_agencement_enrichi_jusqu_a_huit_niveaux">Créer un agencement enrichi jusqu&#039;à huit niveaux</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#introduire_des_touches_a_plus_de_quatre_niveaux">Introduire des touches à plus de quatre niveaux</a></div></li>
+<li class="level2"><div class="li"><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#utiliser_les_options_graphiques_pour_acceder_aux_niveaux_superieurs">Utiliser les options graphiques pour accéder aux niveaux supérieurs</a></div></li>
+<li class="level2"><div class="li"><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#creer_un_acces_personnalise_aux_niveaux_hauts">Créer un accès personnalisé aux niveaux hauts</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../natty" class="wikilink1" title="natty" rel="tag">Natty</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../clavier" class="wikilink1" title="clavier" rel="tag">clavier</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="creer_et_utiliser_un_agencement_de_clavier_personnalise">Créer et utiliser un agencement de clavier personnalisé</h1>
+<div class="level1">
+
+<p>
+Cette page décrit la méthode à appliquer pour ajouter un agencement de clavier personnalisé à ceux déjà fournis par défaut, et le faire prendre en compte par le système pour qu&#039;il puisse être utilisé de la même manière que les autres, y compris par les outils graphiques. 
+</p>
+
+<p>
+Elle ne présente néanmoins que les grandes lignes de la méthode et la page « <a href="exemple_de_creation_d_un_agencement_clavier_personnalise" class="wikilink1" title="tutoriel:exemple_de_creation_d_un_agencement_clavier_personnalise">Exemple de création d&#039;un agencement de clavier personnalisé</a> » illustre plus profondément et concrètement les détails de la démarche à suivre.
+</p>
+
+<p>
+<p><div class="notehelp">La lecture de cette page ainsi que celle de l&#039;exemple nécessite la compréhension d&#039;un certain nombre de concepts qui sont présentés sur la page « <strong><a href="comprendre_la_configuration_du_clavier" class="wikilink1" title="tutoriel:comprendre_la_configuration_du_clavier">Comprendre la configuration du clavier</a></strong> ».
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="creer_et_utiliser_un_agencement_de_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424528603" /><input type="hidden" name="summary" value="[Créer et utiliser un agencement de clavier personnalisé] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="50-980" /><input type="submit" value="Modifier" class="button" title="Créer et utiliser un agencement de clavier personnalisé" /></div></form></div>
+<h2 class="sectionedit2" id="a_qui_s_adresse_cette_page">A qui s&#039;adresse cette page ?</h2>
+<div class="level2">
+
+<p>
+Cette page s&#039;adresse prioritairement aux personnes qui doivent <strong>revoir en profondeur</strong> l&#039;affectation des touches de leur clavier. Ce peut être le cas des linguistes, qui doivent rédiger des textes multilingues ou des textes dans des langues anciennes ou exotiques, mais aussi le cas de scientifiques qui doivent faire appel à des symboles spécialisés qui reviennent souvent.<br/>
+
+Cette façon de procéder est de nature à leur éviter le recours à des combinaisons de touches compliquées et qu&#039;il leur faut mémoriser.
+</p>
+
+<p>
+Néanmoins, ceci peut aussi intéresser des utilisateurs ayant des besoins plus limités comme la simple affectation ou réaffectation de quelques touches (claviers multimédia spéciaux par exemple). Dans ce dernier cas, avant d&#039;aller plus loin, ces utilisateurs devraient s&#039;assurer qu&#039;un moyen plus simple n&#039;existe pas, comme les options de l&#039;interface graphique par exemple. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="creer_et_utiliser_un_agencement_de_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424528603" /><input type="hidden" name="summary" value="[A qui s'adresse cette page ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="981-1927" /><input type="submit" value="Modifier" class="button" title="A qui s'adresse cette page ?" /></div></form></div>
+<h2 class="sectionedit3" id="existe-t-il_des_methodes_alternatives">Existe-t-il des méthodes alternatives ?</h2>
+<div class="level2">
+
+<p>
+Oui, il existe une autre méthode qui ressort plus de la programmation et qui consiste à ajouter des scripts de démarrage qui compilent une table de configuration que l&#039;on a pris soin de mettre à un emplacement ad hoc.<br/>
+
+Une information très détaillée sur la façon de mettre en oeuvre cette méthode est fournie sur cette<a href="http://wiki.mandriva.com/fr/Personnaliser_le_clavier#R.C3.A9affecter_les_touches_avec_xmodmap" class="urlextern" title="http://wiki.mandriva.com/fr/Personnaliser_le_clavier#R.C3.A9affecter_les_touches_avec_xmodmap"  rel="nofollow">page de la communauté Mandriva</a>. Cette méthode requiert néanmoins d&#039;être adaptée à la distribution Ubuntu et présente l&#039;inconvénient d&#039;introduire un certain décalage entre la configuration qui est perçu par les outils graphiques et la réalité.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="creer_et_utiliser_un_agencement_de_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424528603" /><input type="hidden" name="summary" value="[Existe-t-il des méthodes alternatives ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1928-2662" /><input type="submit" value="Modifier" class="button" title="Existe-t-il des méthodes alternatives ?" /></div></form></div>
+<h2 class="sectionedit4" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="comprendre_la_configuration_du_clavier" class="wikilink1" title="tutoriel:comprendre_la_configuration_du_clavier">Comprendre la configuration du clavier</a>.</div>
+</li>
+<li class="level1"><div class="li"> Disposer des <a href="../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="creer_et_utiliser_un_agencement_de_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424528603" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2663-2834" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit5" id="creer_un_agencement_ordinaire_sur_quatre_niveaux">Créer un agencement ordinaire sur quatre niveaux</h2>
+<div class="level2">
+
+<p>
+La méthode pour personnaliser un agencement de clavier se décompose en deux étapes:
+</p>
+<ol>
+<li class="level1"><div class="li"> Écrire un fichier de description de l&#039;agencement du clavier,</div>
+</li>
+<li class="level1"><div class="li"> Faire prendre en compte votre nouvel agencement par le système afin qu&#039;il soit sélectionnable dans la boite de dialogue visible par le  menu <em>Système → Préférences → Clavier</em>.</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="creer_et_utiliser_un_agencement_de_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424528603" /><input type="hidden" name="summary" value="[Créer un agencement ordinaire sur quatre niveaux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2835-3239" /><input type="submit" value="Modifier" class="button" title="Créer un agencement ordinaire sur quatre niveaux" /></div></form></div>
+<h3 class="sectionedit6" id="decrire_l_agencement_du_clavier">Décrire l&#039;agencement du clavier</h3>
+<div class="level3">
+
+<p>
+L&#039;agencement de clavier que vous souhaitez mettre en place sera à placer avec les <a href="../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> dans le dossier <strong>/usr/share/X11/xkb/symbols</strong>.
+</p>
+
+<p>
+<p><div class="noteimportant">Si vous décidez d&#039;intervenir directement sur les fichiers standards qui sont fournis avec la distribution,<strong> avant </strong> toute manipulation, <a href="comment_sauver_et_restaurer_un_fichier" class="wikilink1" title="tutoriel:comment_sauver_et_restaurer_un_fichier">sauvegardez</a> les fichiers que vous serez amené à modifier.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="creer_et_utiliser_un_agencement_de_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424528603" /><input type="hidden" name="summary" value="[Décrire l'agencement du clavier] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3240-3726" /><input type="submit" value="Modifier" class="button" title="Décrire l'agencement du clavier" /></div></form></div>
+<h3 class="sectionedit7" id="prise_en_compte_par_le_systeme_du_nouvel_agencement">Prise en compte par le système du nouvel agencement</h3>
+<div class="level3">
+
+<p>
+<a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Ouvrez avec les droits d&#039;administration</a> le fichier <strong> /usr/share/X11/xkb/rules/evdev.xml</strong> et juste avant la ligne &lt;/layoutList&gt; ajoutez le bloc suivant:
+</p>
+<pre class="file">&lt;layout&gt;
+ &lt;configItem&gt;
+           &lt;name&gt;NAME&lt;/name&gt;
+          &lt;shortDescription&gt;DC&lt;/shortDescription&gt;  
+	    &lt;description&gt;DESCRIPTION&lt;/description&gt;
+           &lt;languageList&gt;&lt;iso639Id&gt;LANG&lt;/iso639Id&gt;&lt;/languageList&gt;
+&lt;/configItem&gt;
+&lt;variantList/&gt;
+&lt;/layout&gt;</pre>
+
+<p>
+dans lequel,
+</p>
+<ul>
+<li class="level1"><div class="li">  <strong>NAME</strong> est à remplacer par le nom du fichier par exemple <strong>my_kb</strong></div>
+</li>
+<li class="level1"><div class="li"> <strong>DC</strong> est à remplacer par une courte description textuelle par exemple <strong>Bil</strong> (pour bilingue). C&#039;est cette courte description qui apparaît à droite de l&#039;indicateur de clavier dans l&#039;applet de notification.</div>
+</li>
+<li class="level1"><div class="li"> <strong>DESCRIPTION</strong> est à remplacer par une description plus explicite comme <strong>Bilingue français suédois</strong>. Ce texte apparaît dans les listes de variantes dans le dialogue de sélection des agencements et lorsque l&#039;on clique sur l&#039;indicateur de clavier de l&#039;applet de notification.</div>
+</li>
+<li class="level1"><div class="li"> <strong>LANG</strong> est à remplacer par le code de la lange dans le format de la <a href="http://www.loc.gov/standards/iso639-2/php/English_list.php" class="urlextern" title="http://www.loc.gov/standards/iso639-2/php/English_list.php"  rel="nofollow">norme ISO639.2</a>.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteimportant">Si vous vous êtes contenté de modifier un fichier de base fourni par la distribution, vous n&#039;avez bien-sûr pas à  faire ce qui précède.
+</div></p>
+Pour finir, <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">sauvegardez le fichier</a> avant de quitter votre session et de vous y reconnecter pour que les changements soient pris en compte.
+<p><div class="notewarning">A partir de la version 13.10 d&#039;Ubuntu il est nécessaire d&#039;effacer l&#039;ensemble des fichiers *.xkm du répertoire <em>/var/lib/xkb</em> puis de redémarrer le système pour que les modifications de clavier soient prises en compte
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="creer_et_utiliser_un_agencement_de_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424528603" /><input type="hidden" name="summary" value="[Prise en compte par le système du nouvel agencement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3727-5592" /><input type="submit" value="Modifier" class="button" title="Prise en compte par le système du nouvel agencement" /></div></form></div>
+<h3 class="sectionedit8" id="utilisez_votre_nouvel_agencement">Utilisez votre nouvel agencement</h3>
+<div class="level3">
+
+<p>
+Pour utiliser votre nouvel agencement de clavier, rendez-vous dans le dialogue des préférences de clavier depuis le menu <em>Système → Préférences → Clavier </em> → onglet <strong>Agencements</strong>.<br/>
+
+Choisissez <strong>Ajouter</strong>, puis l&#039;onglet de sélection par <strong>langue</strong>. Rechercher la langue sous laquelle vous avez déclaré le fichier et éventuellement la variante si la langue comprend plusieurs fichiers.<br/>
+
+Vous devriez maintenant apercevoir votre agencement dans la liste accessible par l&#039;indicateur de clavier dans l&#039;applet de notification général du tableau de bord.
+</p>
+
+<p>
+<p><div class="notetip">Si votre fichier est multilingue, vous pouvez le placer sous l&#039;une des langues ou choisir pour le paramètre <strong>LANG</strong> un code neutre tel que <strong>und</strong> pour Indéterminé
+</div></p>
+</p>
+
+<p>
+Vous devriez maintenant apercevoir votre agencement dans la liste accessible par l&#039;indicateur de clavier dans l&#039;applet de notification général du tableau de bord.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="creer_et_utiliser_un_agencement_de_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424528603" /><input type="hidden" name="summary" value="[Utilisez votre nouvel agencement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5593-6556" /><input type="submit" value="Modifier" class="button" title="Utilisez votre nouvel agencement" /></div></form></div>
+<h2 class="sectionedit9" id="creer_un_agencement_enrichi_jusqu_a_huit_niveaux">Créer un agencement enrichi jusqu&#039;à huit niveaux</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="creer_et_utiliser_un_agencement_de_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424528603" /><input type="hidden" name="summary" value="[Créer un agencement enrichi jusqu'à huit niveaux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6557-6619" /><input type="submit" value="Modifier" class="button" title="Créer un agencement enrichi jusqu'à huit niveaux" /></div></form></div>
+<h3 class="sectionedit10" id="introduire_des_touches_a_plus_de_quatre_niveaux">Introduire des touches à plus de quatre niveaux</h3>
+<div class="level3">
+
+<p>
+Il existe dans le répertoire <strong>/usr/share/X11/xkb/types</strong>, un fichier <em>level5</em> qui prédéfinit des types de touches à huit niveaux. Vous pourriez, bien-sûr redéfinir vos propres types de touche, mais ceux qui sont présentés là devraient suffire dans la majorité des cas.
+</p>
+
+<p>
+Si par exemple, vous vouliez créer une touche E avec les niveaux suivants :
+</p>
+<div class="table sectionedit11"><table class="inline">
+	<tr class="row0">
+		<td class="col0">e</td><td class="col1">E</td><td class="col2">ê</td><td class="col3">Ê</td><td class="col4">€</td><td class="col5">€</td><td class="col6">ë</td><td class="col7">Ë</td>
+	</tr>
+</table></div>
+
+<p>
+Il suffira d&#039;écrire dans votre agencement personnalisé :
+</p>
+<pre class="file">key &lt;AD03&gt; {
+        type=&quot;EIGHT_LEVEL_ALPHABETIC&quot;,
+        symbols[Group1]= [e, E, ê, Ê, €, €, ë, Ë ]
+    };</pre>
+
+<p>
+Dans le cas d&#039;une série de touches du même type, la syntaxe est la suivante :
+</p>
+<pre class="file">key.type[Group1]=&quot;EIGHT_LEVEL_ALPHABETIC&quot; ;
+     key &lt;AD03&gt; { [e, E, ê, Ê, €, €, ë, Ë ] }; 
+     key &lt;AD04&gt; {[r, R, paragraph, registered, , ₹, ₹ ]}; 
+     key …
+     </pre>
+
+<p>
+ <p><div class="noteclassic"> Le dernier symbole utilisé avec la touche R représente la roupie indienne :₹. Son emploi dans cet exemple, vise à présenter un moyen mnémotechnique qui consiste à utiliser la lettre initiale de la monnaie pour se souvenir de son emplacement. Un spécialiste de finances pourrait de la même manière se créer un accès facile aux différentes monnaies qu&#039;il utilise souvent.
+</div></p>
+<p><div class="noteclassic">On notera également qu&#039;il n&#039;est pas nécessaire de renseigner les huit niveaux. Il est néanmoins recommandé de le faire, quitte à avoir des redondances ou à utiliser le symbole <em>nosymbol</em>, pour éviter toute surprise quant à l&#039;interprétation qui en sera faite par le système
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="creer_et_utiliser_un_agencement_de_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424528603" /><input type="hidden" name="summary" value="[Introduire des touches à plus de quatre niveaux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6620-8229" /><input type="submit" value="Modifier" class="button" title="Introduire des touches à plus de quatre niveaux" /></div></form></div>
+<h3 class="sectionedit12" id="utiliser_les_options_graphiques_pour_acceder_aux_niveaux_superieurs">Utiliser les options graphiques pour accéder aux niveaux supérieurs</h3>
+<div class="level3">
+
+<p>
+Le  menu <em>Système → Préférences → Clavier</em> vous permet , en cliquant sur le bouton <strong><em>Options</em></strong>, d&#039;accéder à l&#039;option <strong><em>Touche(s) pour choisir le cinquième niveau</em></strong> <sup><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#fn__1" id="fnt__1" class="fn_top">1)</a></sup>. Vous pouvez par exemple choisir la touche logo de gauche et l&#039;utiliser alors de la même manière que la touche <em>Alt gr</em> mais cette fois pour accéder au niveau 5 et non plus 3.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="creer_et_utiliser_un_agencement_de_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424528603" /><input type="hidden" name="summary" value="[Utiliser les options graphiques pour accéder aux niveaux supérieurs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8230-8766" /><input type="submit" value="Modifier" class="button" title="Utiliser les options graphiques pour accéder aux niveaux supérieurs" /></div></form></div>
+<h3 class="sectionedit13" id="creer_un_acces_personnalise_aux_niveaux_hauts">Créer un accès personnalisé aux niveaux hauts</h3>
+<div class="level3">
+
+<p>
+Pour des raisons liées à vos critères personnels d&#039;ergonomie ou à des singularités de votre clavier, vous pouvez vouloir utiliser une touche autre que celles proposées dans les options. Il peut vous sembler logique d&#039;utiliser la touche <em>Alt</em> de gauche, car cette dernière est en position symétrique de son équivalent de droite. Cependant celle-ci ne peut être réaffectée facilement à cause du rôle qu&#039;elle joue dans le système. Une solution serait d&#039;utiliser l&#039;option graphique qui consiste à la permuter avec la touche <em>logo</em> de gauche, puis d&#039;affecter le changement de niveau à la touche <em>logo</em> (nouvelle). Malheureusement, les combinaisons d&#039;options ne donnent pas toujours le résultat escompté, aussi serez vous amené à créer vous même cette «substitution-affectation».
+</p>
+
+<p>
+L&#039;exemple qui suit permet d&#039; illustrer cette méthode de la «substitution-affectation» évoquée ci-dessus. Pour des explications plus détaillées, en particulier sur la démarche à suivre pour le cas général, vous devez vous reporter à cette <a href="comprendre_la_configuration_du_clavier" class="wikilink1" title="tutoriel:comprendre_la_configuration_du_clavier">page explicative</a>. 
+</p>
+
+</div>
+
+<h4 id="creer_l_option_de_reaffectation_des_touches">Créer l&#039;option de réaffectation des touches</h4>
+<div class="level4">
+
+<p>
+<a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Ouvrez avec les droits d&#039;administration</a> le fichier <strong>/usr/share/X11/xkb/symbols/altwin</strong> et ajoutez à la fin le bloc suivant:
+</p>
+<pre class="file">partial modifier_keys 
+xkb_symbols &quot;my_swap_lalt_lwin&quot; {
+    key &lt;LALT&gt; { type[Group1] = &quot;ONE_LEVEL&quot;,
+    
+                 symbols[Group1] = [ ISO_Level5_Shift ] };
+    key &lt;LWIN&gt; {	[	Alt_L,	Meta_L		]	};
+    modifier_map Mod3 {ISO_Level5_Shift  };
+};
+ </pre>
+
+</div>
+
+<h4 id="utiliser_l_option">Utiliser l&#039;option</h4>
+<div class="level4">
+
+<p>
+Maintenant, en fin de votre agencement personnalisé, derrière la ligne :
+ 
+</p>
+<pre class="file">include &quot;level3(ralt_switch)&quot;
+ </pre>
+
+<p>
+placez la ligne suivante
+ 
+</p>
+<pre class="file">include &quot;altwin(my_swap_lalt_lwin)&quot;
+ </pre>
+
+<p>
+puis déconnectez vous pour vous re-connecter aussitôt.
+<p><div class="notewarning">Pour Ubuntu 13.10 (et suivants ?) ne pas oublier d&#039;effacer les fichiers *.xkm
+</div></p>
+Vous devriez maintenant avoir accès aux niveaux des touches selon le tableau suivant :
+</p>
+<div class="table sectionedit14"><table class="inline">
+	<tr class="row0">
+		<td class="col0">Niveau 1</td><td class="col1"> pas de touche modificatrice</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">Niveau 2</td><td class="col1"> ⇧ </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">Niveau 3</td><td class="col1"> Alt gr</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">Niveau 4</td><td class="col1"> Alt gr + ⇧</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">Niveau 5</td><td class="col1"> Alt</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">Niveau 6</td><td class="col1"> Alt + ⇧</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">Niveau 7</td><td class="col1"> Alt gr + Alt</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">Niveau 8</td><td class="col1"> Alt gr + Alt + ⇧</td>
+	</tr>
+</table></div>
+
+<p>
+<p><div class="noteclassic">L&#039;option créée précédemment peut bien-sûr être placée dans un fichier séparé plutôt que dans le fichier  <strong>/usr/share/X11/xkb/symbols/altwin</strong>. Dans les deux cas, pensez à les  <a href="comment_sauver_et_restaurer_un_fichier" class="wikilink1" title="tutoriel:comment_sauver_et_restaurer_un_fichier">sauvegarder</a> car, en cas de réinstallation, ils seraient irrémédiablement écrasés.
+</div></p>
+</p>
+
+</div>
+
+<h4 id="exemple_de_modification_d_une_configuration_de_clavier">Exemple de modification d&#039;une configuration de clavier</h4>
+<div class="level4">
+
+<p>
+(Janvier 2014) Voir « Comment obtenir un clavier &quot;à la windows&quot;, de manière à ce que la touche &quot;CAPS-LOCK&quot; permette d&#039;accéder directement aux chiffres » : <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=15694341#p15694341" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=15694341#p15694341"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?pid=15694341#p15694341</a>
+</p>
+
+</div>
+<div class="level4">
+<hr />
+
+<p>
+<em>Contributeurs: <a href="http://doc.ubuntu-fr.org/utilisateurs/jaaf64" class="wikilink1" title="utilisateurs:jaaf64">jaaf64</a>, <a href="../utilisateurs/fabux.1" class="wikilink1" title="utilisateurs:fabux">fabux</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="creer_et_utiliser_un_agencement_de_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424528603" /><input type="hidden" name="summary" value="[Créer un accès personnalisé aux niveaux hauts] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8767-" /><input type="submit" value="Modifier" class="button" title="Créer un accès personnalisé aux niveaux hauts" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="creer_et_utiliser_un_agencement_de_clavier_personnalise#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+En anglais : &quot;key to chose the 5th level&quot; si votre interface n&#039;assure pas la traduction.</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/6/642150d1ef24260be5d2023c0208509e.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_et_utiliser_un_agencement_de_clavier_personnalise?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_et_utiliser_un_agencement_de_clavier_personnalise?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_et_utiliser_un_agencement_de_clavier_personnalise?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_et_utiliser_un_agencement_de_clavier_personnalise?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_et_utiliser_un_agencement_de_clavier_personnalise?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

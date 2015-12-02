@@ -1,0 +1,962 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:raid1_logiciel_sur_installation_existante - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-08-12T21:33:45+0200"/>
+<meta name="keywords" content="lucid,raid,tutoriel,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/raid1_logiciel_sur_installation_existante?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/raid1_logiciel_sur_installation_existante?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/raid1_logiciel_sur_installation_existante"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/raid1_logiciel_sur_installation_existante"/>
+<link rel="canonical" href="raid1_logiciel_sur_installation_existante"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:raid1_logiciel_sur_installation_existante","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="raid1_logiciel_sur_installation_existante#main" tabindex="1">Contenu</a> | <a href="raid1_logiciel_sur_installation_existante#qsearch__in" tabindex="2">Rechercher</a> | <a href="raid1_logiciel_sur_installation_existante#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="raid1_logiciel_sur_installation_existante" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="raid1_logiciel_sur_installation_existante" >tutoriel:raid1_logiciel_sur_installation_existante</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, les informations qu'elle contient  n'ont pas été vérifiées depuis <a href="../lucid">Ubuntu 10.04 LTS.</a><br />
+Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="raid1_logiciel_sur_installation_existante#preambule">Préambule</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#objectif">Objectif</a></div></li>
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#limite_de_responsabilite">Limite de responsabilité</a></div></li>
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#sources">Sources</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="raid1_logiciel_sur_installation_existante#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="raid1_logiciel_sur_installation_existante#notes_preliminaires">Notes préliminaires</a></div></li>
+<li class="level1"><div class="li"><a href="raid1_logiciel_sur_installation_existante#installer_mdadm">Installer mdadm</a></div></li>
+<li class="level1"><div class="li"><a href="raid1_logiciel_sur_installation_existante#preparer_le_second_disque_dur">Préparer le second disque dur</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#cloner_la_table_des_partitions">Cloner la table des partitions</a></div></li>
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#changer_le_type_des_partitions_sdb">Changer le type des partitions (sdb)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="raid1_logiciel_sur_installation_existante#configurer_le_raid_1">Configurer le RAID 1</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#creer_les_grappes">Créer les grappes</a></div></li>
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#creer_les_systemes_de_fichiers_sdb">Créer les systèmes de fichiers (sdb)</a></div></li>
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#mettre_a_jour_le_fichier_mdadmconf">Mettre à jour le fichier mdadm.conf</a></div></li>
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#monter_les_grappes">Monter les grappes</a></div></li>
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#mettre_a_jour_les_fichiers_fstab_et_mtab">Mettre à jour les fichiers fstab et mtab</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="raid1_logiciel_sur_installation_existante#dupliquer_les_donnees">Dupliquer les données</a></div></li>
+<li class="level1"><div class="li"><a href="raid1_logiciel_sur_installation_existante#premier_redemarrage">Premier redémarrage</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#configuration_de_grub_premiere_partie">Configuration de GRUB (première partie)</a></div></li>
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#apres_le_premier_redemarrage">Après le premier redémarrage</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="raid1_logiciel_sur_installation_existante#ajouter_le_premier_disque_dur">Ajouter le premier disque dur</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#modifier_le_type_des_partitions_sda">Modifier le type des partitions (sda)</a></div></li>
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#integrer_le_premier_disque_dur_a_la_grappe">Intégrer le premier disque dur à la grappe</a></div></li>
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#mettre_a_jour_le_fichier_mdadmconf1">Mettre à jour le fichier mdadm.conf</a></div></li>
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#configuration_de_grub_deuxieme_partie">Configuration de GRUB (deuxième partie)</a></div></li>
+<li class="level2"><div class="li"><a href="raid1_logiciel_sur_installation_existante#apres_le_deuxieme_redemarrage">Après le deuxième redémarrage</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="raid1_logiciel_sur_installation_existante#testsimuler_la_panne_d_un_disque_dur">Test : simuler la panne d&#039;un disque dur</a></div></li>
+<li class="level1"><div class="li"><a href="raid1_logiciel_sur_installation_existante#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="../raid" class="wikilink1" title="raid" rel="tag">RAID</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="configurer_un_raid_1_logiciel_sur_une_installation_existante">Configurer un RAID 1 logiciel sur une installation existante</h1>
+<div class="level1">
+
+<p>
+<p><div class="notewarning">
+<strong>ATTENTION !</strong> Cette page est en cours de rédaction ; elle n&#039;est donc pas terminée et la procédure qu&#039;elle détaille n&#039;est pas complète.<br/>
+
+À moins de bien savoir ce que vous faites, ne suivez pas ces instructions.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Configurer un RAID 1 logiciel sur une installation existante] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="46-365" /><input type="submit" value="Modifier" class="button" title="Configurer un RAID 1 logiciel sur une installation existante" /></div></form></div>
+<h2 class="sectionedit2" id="preambule">Préambule</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Préambule] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="366-389" /><input type="submit" value="Modifier" class="button" title="Préambule" /></div></form></div>
+<h3 class="sectionedit3" id="objectif">Objectif</h3>
+<div class="level3">
+
+<p>
+J&#039;explique dans ce tutoriel la marche à suivre pour ajouter un disque dur en RAID 1 logiciel sur une installation existante de Ubuntu Server Lucid Lynx (10.04), version 32 bits.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Objectif] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="390-589" /><input type="submit" value="Modifier" class="button" title="Objectif" /></div></form></div>
+<h3 class="sectionedit4" id="limite_de_responsabilite">Limite de responsabilité</h3>
+<div class="level3">
+
+<p>
+Plutôt qu&#039;un véritable guide, il s&#039;agit d&#039;une synthèse des étapes par lesquelles je suis moi-même passé pour y parvenir. N&#039;étant pas du tout un spécialiste de la question, je ne fournis aucune garantie sur le résultat que vous pourriez obtenir en suivant ces instructions ; vous êtes prévenus que certaines d&#039;entre elles peuvent rendre votre système inutilisable et vous contraindre à le réinstaller. Je vous invite vivement à faire une sauvegarde complète de vos données avant de commencer.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Limite de responsabilité] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="590-1137" /><input type="submit" value="Modifier" class="button" title="Limite de responsabilité" /></div></form></div>
+<h3 class="sectionedit5" id="sources">Sources</h3>
+<div class="level3">
+
+<p>
+Ce tutoriel est très largement basé sur celui de Falko Timme que vous trouverez à cette adresse : <a href="http://www.howtoforge.com/software-raid1-grub-boot-debian-etch" class="urlextern" title="http://www.howtoforge.com/software-raid1-grub-boot-debian-etch"  rel="nofollow">http://www.howtoforge.com/software-raid1-grub-boot-debian-etch</a>.
+Je l&#039;ai traduit, légèrement adapté pour Ubuntu 10.04, et actualisé pour ce qui concerne la configuration de <a href="../grub-pc" class="wikilink1" title="grub-pc">GRUB2</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Sources] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1138-1455" /><input type="submit" value="Modifier" class="button" title="Sources" /></div></form></div>
+<h2 class="sectionedit6" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+Avant de commencer, je disposais :
+</p>
+<ul>
+<li class="level1"><div class="li"> d&#039;une installation fonctionnelle de Ubuntu Server Lucid Lynx (10.04) sur un disque de 500 Go (<code>/dev/sda</code>) ;</div>
+</li>
+<li class="level1"><div class="li"> des droits d&#039;administration ;</div>
+</li>
+<li class="level1"><div class="li"> d&#039;un disque de 500 Go, identique au premier, complètement vierge (ni formaté, ni partitionné), branché et reconnu par le système (<code>/dev/sdb</code>) ;</div>
+</li>
+<li class="level1"><div class="li"> d&#039;un Live CD d&#039;Ubuntu Server Lucid Lynx (10.04) ;</div>
+</li>
+<li class="level1"><div class="li"> du tutoriel (soit imprimé, soit affiché sur un autre ordinateur).</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteimportant">
+J&#039;avais au préalable copié l&#039;intégralité du disque <code>sda</code> sur un autre ordinateur (je sais, je l&#039;ai déjà dit, mais il faut vraiment sauvegarder vos données).
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1456-2143" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit7" id="notes_preliminaires">Notes préliminaires</h2>
+<div class="level2">
+
+<p>
+Le disque <code>/dev/sda</code> est divisé en trois partitions :
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>/dev/sda1</code> pour la racine, qui contient tout le système (<code>/</code>);</div>
+</li>
+<li class="level1"><div class="li"> <code>/dev/sda2</code> pour du stockage, monté dans un dossier (<code>/multimedia</code>) ;</div>
+</li>
+<li class="level1"><div class="li"> <code>/dev/sda3</code> pour la partition d&#039;échange (<code>swap</code>).</div>
+</li>
+</ul>
+
+<p>
+Je souhaite aboutir à la situation suivante :
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>/dev/md0</code> composé des partitions <code>/dev/sda1</code> et <code>/dev/sdb1</code> ;</div>
+</li>
+<li class="level1"><div class="li"> <code>/dev/md1</code> composé des partitions <code>/dev/sda2</code> et <code>/dev/sdb2</code> ;</div>
+</li>
+<li class="level1"><div class="li"> <code>/dev/md2</code> composé des partitions <code>/dev/sda3</code> et <code>/dev/sdb3</code>.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="notetip">
+<strong>Autres variantes d&#039;Ubuntu</strong><br/>
+
+Je n&#039;ai pas installé d&#039;environnement de bureau sur mon serveur, raison pour laquelle toutes les instructions qui suivent sont en ligne de commande. Dans le doute, comme je ne sais pas si elles s&#039;exécuteraient correctement en mode graphique, je vous suggère de fermer votre session graphique et d&#039;appuyer sur <code>CTRL+ALT+F1</code> pour vous connecter dans une console.
+
+</div></p>
+</p>
+
+<p>
+Voici donc la situation actuelle :
+</p>
+<pre class="code">blueduck@serveur:~$ df -h
+
+Sys. de fich.        Tail.   Occ. Disp. %Occ. Monté sur
+/dev/sda1              39G  7,2G   30G    20% /
+none                  244M  200K  244M     1% /dev
+none                  249M  4,0K  249M     1% /dev/shm
+none                  249M  352K  249M     1% /var/run
+none                  249M     0  249M     0% /var/lock
+none                  249M     0  249M     0% /lib/init/rw
+none                   39G  7,2G   30G    20% /var/lib/ureadahead/debugfs
+/dev/sda2             420G  367G   32G    93% /multimedia
+
+blueduck@serveur:~$ sudo fdisk -l
+
+Disque /dev/sda: 500.1 Go, 500107862016 octets
+255 têtes, 63 secteurs/piste, 60801 cylindres
+Unités = cylindres de 16065 * 512 = 8225280 octets
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Identifiant de disque : 0x000860a2
+  
+Périphérique Amorce  Début        Fin      Blocs     Id  Système
+/dev/sda1   *           1        5099    40957686   83  Linux
+/dev/sda2            5100       60670   446374057+  83  Linux
+/dev/sda3           60671       60801     1052257+  82  Linux swap / Solaris
+  
+Disque /dev/sdb: 500.1 Go, 500107862016 octets
+255 têtes, 63 secteurs/piste, 60801 cylindres
+Unités = cylindres de 16065 * 512 = 8225280 octets
+  
+Le disque /dev/sdb ne contient pas une table de partition valide</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Notes préliminaires] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2144-4542" /><input type="submit" value="Modifier" class="button" title="Notes préliminaires" /></div></form></div>
+<h2 class="sectionedit8" id="installer_mdadm">Installer mdadm</h2>
+<div class="level2">
+
+<p>
+Il faut <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://mdadm" class="urlextern" title="apt://mdadm"  rel="nofollow">mdadm</a></strong> pour configurer le RAID.
+</p>
+
+<p>
+Puis, après avoir redémarré votre machine, exécutez :
+</p>
+<pre class="code">sudo cat /proc/mdstat</pre>
+
+<p>
+ce qui devrait vous afficher quelque chose comme :
+</p>
+<pre class="file">Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]
+unused devices: &lt;none&gt;</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Installer mdadm] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4543-4954" /><input type="submit" value="Modifier" class="button" title="Installer mdadm" /></div></form></div>
+<h2 class="sectionedit9" id="preparer_le_second_disque_dur">Préparer le second disque dur</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Préparer le second disque dur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4955-4998" /><input type="submit" value="Modifier" class="button" title="Préparer le second disque dur" /></div></form></div>
+<h3 class="sectionedit10" id="cloner_la_table_des_partitions">Cloner la table des partitions</h3>
+<div class="level3">
+
+<p>
+Afin d&#039;être sûr que le second disque dur (<code>/dev/sdb</code>) sera divisé en partitions absolument identiques à celles du premier disque dur (<code>/dev/sda</code>), on clône la table des partitions du premier pour l&#039;appliquer au second :
+</p>
+<pre class="code">sudo sfdisk -d /dev/sda | sudo sfdisk /dev/sdb</pre>
+
+<p>
+Ce qui doit provoquer l&#039;affichage suivant :
+</p>
+<pre class="file">Vérification qu&#039;aucun autre n&#039;utilise le disque en ce moment ...
+OK
+
+Disque /dev/sdb : 60801 cylindres, 255 têtes, 63 secteurs/piste
+Vieille situation:
+Unités= cylindres de 8225280 octets, blocs de 1024 octets, décompte à partir de 0
+
+   Périph Amor Début     Fin   #cyls    #blocs    Id  Système
+/dev/sdb1          0       -       0          0    0  Vide
+/dev/sdb2          0       -       0          0    0  Vide
+/dev/sdb3          0       -       0          0    0  Vide
+/dev/sdb4          0       -       0          0    0  Vide
+
+Nouvelle situation:
+Unités= secteurs de 512 octets, décompte à partir de 0
+
+   Périph Amorce  Début       Fin   #secteurs Id  Système
+/dev/sdb1   *        63  81915434   81915372  83  Linux
+/dev/sdb2      81915435 974663549  892748115  83  Linux
+/dev/sdb3     974663550 976768064    2104515  82  Linux swap / Solaris
+/dev/sdb4             0         -          0   0  Vide
+Succès d&#039;écriture de la nouvelle table de partitions
+
+Relecture de la table de partitions ...
+
+Si vous créez ou modifiez une partition DOS, /dev/foo7, par exemple, alors
+utiliser dd(1) pour mettre à zéro les premiers 512 octets:
+dd if=/dev/zero of=/dev/foo7 bs=512 count=1
+(Consulter fdisk(8).)</pre>
+
+<p>
+La commande :
+</p>
+<pre class="code">sudo fdisk -l</pre>
+
+<p>
+doit montrer que les deux disques durs ont maintenant exactement la même structure :
+</p>
+<pre class="file">Disque /dev/sda: 500.1 Go, 500107862016 octets
+255 têtes, 63 secteurs/piste, 60801 cylindres
+Unités = cylindres de 16065 * 512 = 8225280 octets
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Identifiant de disque : 0x000860a2
+
+Périphérique Amorce  Début        Fin      Blocs     Id  Système
+/dev/sda1   *           1        5099    40957686   83  Linux
+/dev/sda2            5100       60670   446374057+  83  Linux
+/dev/sda3           60671       60801     1052257+  82  Linux swap / Solaris
+
+Disque /dev/sdb: 500.1 Go, 500107862016 octets
+255 têtes, 63 secteurs/piste, 60801 cylindres
+Unités = cylindres de 16065 * 512 = 8225280 octets
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Identifiant de disque : 0x4caa4880
+
+Périphérique Amorce  Début        Fin      Blocs     Id  Système
+/dev/sdb1   *           1        5099    40957686   83  Linux
+/dev/sdb2            5100       60670   446374057+  83  Linux
+/dev/sdb3           60671       60801     1052257+  82  Linux swap / Solaris</pre>
+
+<p>
+Plus simple et rapide que de partitionner à la main, non <img src="../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /> ?
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Cloner la table des partitions] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4999-7916" /><input type="submit" value="Modifier" class="button" title="Cloner la table des partitions" /></div></form></div>
+<h3 class="sectionedit11" id="changer_le_type_des_partitions_sdb">Changer le type des partitions (sdb)</h3>
+<div class="level3">
+
+<p>
+Ensuite, il faut régler le type des partitions sur <em>Linux raid autodetect</em>. On continue d&#039;utiliser <code><a href="../fdisk" class="wikilink1" title="fdisk">fdisk</a></code>.<br/>
+
+Rapidement, je rappelle que <code>fdisk</code> est une ligne de commande : chaque commande est une lettre, que l&#039;on valide avec <code>ENTRÉE</code>. Les modifications ne sont pas appliquées tant qu&#039;on ne les a pas écrites avec la commande <code>w</code>. La commande <code>m</code> affiche les commandes disponibles :
+</p>
+<pre class="code">  blueduck@serveur:~$ sudo fdisk /dev/sdb
+
+  Commande (m pour l&#039;aide): m
+  Commande d&#039;action
+     a   bascule le fanion d&#039;amorce
+     b   éditer l&#039;étiquette BSD du disque
+     c   basculer le fanion de compatibilité DOS
+     d   supprimer la partition
+     l   lister les types de partitions connues
+     m   afficher ce menu
+     n   ajouter une nouvelle partition
+     o   créer une nouvelle table vide de partitions DOS
+     p   afficher la table de partitions
+     q   quitter sans enregistrer les changements
+     s   créer une nouvelle étiquette vide pour disque de type Sun
+     t   modifier l&#039;id de système de fichiers d&#039;une partition
+     u   modifier les unités d&#039;affichage/saisie
+     v   vérifier la table de partitions
+     w   écrire la table sur le disque et quitter
+     x   fonctions avancées (pour experts seulement)
+  
+  Commande (m pour l&#039;aide):</pre>
+
+<p>
+Pour changer le type d&#039;une partition, on utilise la commande <code>t</code> :
+</p>
+<pre class="code">  Commande (m pour l&#039;aide): t</pre>
+
+<p>
+Il faut ensuite indiquer le numéro de la partition à modifier (ici la <code>1</code>) :
+</p>
+<pre class="code">  Numéro de partition (1-4): 1</pre>
+
+<p>
+Puis le code du type de partition voulu (<code>L</code> affiche la liste des codes possibles) :
+</p>
+<pre class="file">  Code Hexa (taper L pour lister les codes): L
+  
+   0  Vide            24  NEC DOS         81  Minix / Linux a bf  Solaris
+   1  FAT12           39  Plan 9          82  Linux swap / So c1  DRDOS/sec (FAT-
+   2  XENIX root      3c  PartitionMagic  83  Linux           c4  DRDOS/sec (FAT-
+   3  XENIX usr       40  Venix 80286     84  OS/2 cachée di  c6  DRDOS/sec (FAT-
+   4  FAT16 &lt;32M      41  PPC PReP Boot   85  Linux étendue   c7  Syrinx
+   5  Etendue         42  SFS             86  NTFS volume set da  Non-FS data
+   6  FAT16           4d  QNX4.x          87  NTFS volume set db  CP/M / CTOS / .
+   7  HPFS/NTFS       4e  QNX4.x 2nd part 88  Linux plaintext de  Dell Utility
+   8  AIX             4f  QNX4.x 3rd part 8e  Linux LVM       df  BootIt
+   9  AIX amorçable   50  OnTrack DM      93  Amoeba          e1  DOS access
+   a  OS/2 Boot Manag 51  OnTrack DM6 Aux 94  Amoeba BBT      e3  DOS R/O
+   b  W95 FAT32       52  CP/M            9f  BSD/OS          e4  SpeedStor
+   c  W95 FAT32 (LBA) 53  OnTrack DM6 Aux a0  IBM Thinkpad hi eb  BeOS fs
+   e  W95 FAT16 (LBA) 54  OnTrackDM6      a5  FreeBSD         ee  GPT
+   f  W95 Etendue (LB 55  EZ-Drive        a6  OpenBSD         ef  EFI (FAT-12/16/
+  10  OPUS            56  Golden Bow      a7  NeXTSTEP        f0  Linux/PA-RISC b
+  11  Cachée FAT12    5c  Priam Edisk     a8  UFS Darwin      f1  SpeedStor
+  12  Compaq diagnost 61  SpeedStor       a9  NetBSD          f4  SpeedStor
+  14  Cachée FAT16 &lt;  63  GNU HURD or Sys ab  Amorce Darwin   f2  DOS secondaire
+  16  Cachée FAT16    64  Novell Netware  af  HFS / HFS+      fb  VMware VMFS
+  17  Cachée HPFS/NT  65  Novell Netware  b7  BSDI fs         fc  VMware VMKCORE
+  18  AST SmartSleep  70  DiskSecure Mult b8  BSDI swap       fd  Linux raid auto
+  1b  Cachée W95 FAT  75  PC/IX           bb  Boot Wizard hid fe  LANstep
+  1c  Cachée W95 FAT  80  Minix ancienne  be  Amorce Solaris  ff  BBT
+  1e  Cachée W95 FAT</pre>
+
+<p>
+Le type <em>Linux raid autodetect</em> correspond au code <code>fd</code> :
+</p>
+<pre class="file">  Code Hexa (taper L pour lister les codes): fd
+
+  Type système de partition modifié de 1 à fd (Linux raid autodetect)
+  
+  Commande (m pour l&#039;aide):</pre>
+
+<p>
+On répète l&#039;opération pour les deux autres partitions (la <code>2</code> et la <code>3</code>) :
+</p>
+<pre class="code">Commande (m pour l&#039;aide): t
+Numéro de partition (1-4): 2
+Code Hexa (taper L pour lister les codes): fd
+Type système de partition modifié de 2 à fd (Linux raid autodetect)
+
+Commande (m pour l&#039;aide): t
+Numéro de partition (1-4): 3
+Code Hexa (taper L pour lister les codes): fd
+Type système de partition modifié de 3 à fd (Linux raid autodetect)
+
+Commande (m pour l&#039;aide):</pre>
+
+<p>
+Et on termine en appliquant les changements :
+</p>
+<pre class="code">Commande (m pour l&#039;aide): w</pre>
+<pre class="code">La table de partitions a été altérée!
+
+Appel de ioctl() pour relire la table de partitions.
+Synchronisation des disques.</pre>
+
+</div>
+
+<h5 id="verifier_les_partitions">Vérifier les partitions</h5>
+<div class="level5">
+
+<p>
+Pour s&#039;assurer qu&#039;il n&#039;y a pas de restes d&#039;une précédente installation RAID, on exécute les commandes suivantes :
+</p>
+<pre class="code">blueduck@serveur:~$ sudo mdadm --zero-superblock /dev/sdb1
+blueduck@serveur:~$ sudo mdadm --zero-superblock /dev/sdb2
+blueduck@serveur:~$ sudo mdadm --zero-superblock /dev/sdb3</pre>
+
+<p>
+S&#039;il ne reste rien d&#039;une précédente installation, chacune de ces commandes renverra une erreur de ce type :
+</p>
+<pre class="code">mdadm: Unrecognised md component device - /dev/sdb1</pre>
+
+<p>
+Dans le cas contraire, rien ne s&#039;affichera.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Changer le type des partitions (sdb)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7917-13025" /><input type="submit" value="Modifier" class="button" title="Changer le type des partitions (sdb)" /></div></form></div>
+<h2 class="sectionedit12" id="configurer_le_raid_1">Configurer le RAID 1</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Configurer le RAID 1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13026-13059" /><input type="submit" value="Modifier" class="button" title="Configurer le RAID 1" /></div></form></div>
+<h3 class="sectionedit13" id="creer_les_grappes">Créer les grappes</h3>
+<div class="level3">
+
+<p>
+On crée <code>/dev/md0</code> avec <code>/dev/sdb1</code> ; <code>/dev/md1</code> et <code>/sdv/sdb2</code> : <code>/dev/md2</code> à partir de <code>/dev/sdb3</code>. Les partitions correspondantes du premier disque ne peuvent pas être ajoutées pour le moment, car le système fonctionne dessus. C&#039;est pourquoi on les remplace par le mot <code>missing</code> dans les commandes suivantes :
+</p>
+<pre class="code">sudo mdadm --create /dev/md0 --level=1 --raid-disks=2 missing /dev/sdb1
+sudo mdadm --create /dev/md1 --level=1 --raid-disks=2 missing /dev/sdb2
+sudo mdadm --create /dev/md2 --level=1 --raid-disks=2 missing /dev/sdb3</pre>
+
+<p>
+La commande : 
+</p>
+<pre class="code">sudo cat /proc/mdstat</pre>
+
+<p>
+devrait maintenant montrer que vous avez trois grappes RAID dégradées :
+</p>
+<pre class="file">  Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]
+  md2 : active raid1 sdb3[1]
+        1052160 blocks [2/1] [_U]
+  
+  md1 : active raid1 sdb2[1]
+        446373952 blocks [2/1] [_U]
+  
+  md0 : active raid1 sdb1[1]
+        40957568 blocks [2/1] [_U]
+  
+  unused devices: &lt;none&gt;</pre>
+
+<p>
+<p><div class="noteclassic">
+Les indicateurs [_U] ou [U_] signifient qu&#039;une grappe est dégradée, alors que [UU] signifie que la grappe est normale.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Créer les grappes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13060-14228" /><input type="submit" value="Modifier" class="button" title="Créer les grappes" /></div></form></div>
+<h3 class="sectionedit14" id="creer_les_systemes_de_fichiers_sdb">Créer les systèmes de fichiers (sdb)</h3>
+<div class="level3">
+
+<p>
+On peut désormais choisir le système de fichiers de chaque grappe, <em>ext4</em> pour <code>/dev/md0</code> et <code>/dev/md1</code>, <em>swap</em> pour <code>/dev/md2</code> :
+</p>
+<pre class="code">blueduck@serveur:~$ sudo mkfs.ext4 /dev/md0</pre>
+
+<p>
+  mke2fs 1.41.11 (14-Mar-2010)
+</p>
+<pre class="code">Étiquette de système de fichiers=
+Type de système d&#039;exploitation : Linux
+Taille de bloc=4096 (log=2)
+Taille de fragment=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+2564096 i-noeuds, 10239392 blocs
+511969 blocs (5.00%) réservés pour le super utilisateur
+Premier bloc de données=0
+Nombre maximum de blocs du système de fichiers=0
+313 groupes de blocs
+32768 blocs par groupe, 32768 fragments par groupe
+8192 i-noeuds par groupe
+Superblocs de secours stockés sur les blocs :
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+        4096000, 7962624
+
+Écriture des tables d&#039;i-noeuds : complété
+Création du journal (32768 blocs) : complété
+Écriture des superblocs et de l&#039;information de comptabilité du système de
+fichiers : complété
+
+Le système de fichiers sera automatiquement vérifié tous les 24 montages ou
+après 180 jours, selon la première éventualité. Utiliser tune2fs -c ou -i
+pour écraser la valeur.</pre>
+
+<p>
+Continuer avec :
+</p>
+<pre class="code">sudo mkfs.ext4 /dev/md1</pre>
+
+<p>
+et
+</p>
+<pre class="code">sudo mkswap /dev/md2</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Créer les systèmes de fichiers (sdb)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14229-15595" /><input type="submit" value="Modifier" class="button" title="Créer les systèmes de fichiers (sdb)" /></div></form></div>
+<h3 class="sectionedit15" id="mettre_a_jour_le_fichier_mdadmconf">Mettre à jour le fichier mdadm.conf</h3>
+<div class="level3">
+
+<p>
+À présent, adaptez le fichier <code>/etc/mdadm/mdadm.conf</code>, qui ne contient encore aucune information concernant les grappes, à la nouvelle situation. Faites d&#039;abord une copie du fichier existant (on ne sait jamais) :
+</p>
+<pre class="code">sudo cp /etc/mdadm/mdadm.conf /etc/mdadm/mdadm.conf-dist</pre>
+
+<p>
+puis faites un scan de la configuration RAID qui sera ajoutée au nouveau fichier :
+</p>
+<pre class="code">sudo mdadm --examine --scan | sudo tee -a /etc/mdadm/mdadm.conf</pre>
+
+<p>
+Vérifiez que votre fichier <code>/etc/mdadm/mdadm.conf</code> ressemble à ça :
+</p>
+<pre class="code">blueduck@serveur:~$ sudo cat /etc/mdadm/mdadm.conf</pre>
+<pre class="file">  # mdadm.conf
+  #
+  # Please refer to mdadm.conf(5) for information about this file.
+  #
+  
+  # by default, scan all partitions (/proc/partitions) for MD superblocks.
+  # alternatively, specify devices to scan, using wildcards if desired.
+  DEVICE partitions
+  
+  # auto-create devices with Debian standard permissions
+  CREATE owner=root group=disk mode=0660 auto=yes
+  
+  # automatically tag new arrays as belonging to the local system
+  HOMEHOST &lt;system&gt;
+  
+  # instruct the monitoring daemon where to send mail alerts
+  MAILADDR root
+  
+  ARRAY /dev/md0 level=raid1 num-devices=2 UUID=e5e23f0a:be11ad51:2b872d8f:382c1990
+  ARRAY /dev/md1 level=raid1 num-devices=2 UUID=057ec4b9:88398a79:2b872d8f:382c1990
+  ARRAY /dev/md2 level=raid1 num-devices=2 UUID=18366108:daee6e7a:2b872d8f:382c1990</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Mettre à jour le fichier mdadm.conf] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15596-17012" /><input type="submit" value="Modifier" class="button" title="Mettre à jour le fichier mdadm.conf" /></div></form></div>
+<h3 class="sectionedit16" id="monter_les_grappes">Monter les grappes</h3>
+<div class="level3">
+
+<p>
+Les grappes sont prêtes à être montées, afin de pouvoir y accéder. Créez deux points de montage, par exemple <code>/mnt/md0</code> et <code>/mnt/md1</code> :
+</p>
+<pre class="code">sudo mkdir /mnt/md0
+sudo mkdir /mnt/md1</pre>
+
+<p>
+puis montez les deux grappes formatées en <em>ext4</em> :
+</p>
+<pre class="code">sudo mount /dev/md0 /mnt/md0
+sudo mount /dev/md1 /mnt/md1</pre>
+
+<p>
+La grappe d&#039;échange (<code>/dev/md2</code>) n&#039;a pas besoin d&#039;être montée pour le moment.
+Vous devriez voir les deux grappes en tapant la commande :
+</p>
+<pre class="code">blueduck@serveur:~$ sudo mount</pre>
+<pre class="code">/dev/sda1 on / type ext4 (rw,errors=remount-ro)
+proc on /proc type proc (rw)
+none on /sys type sysfs (rw,noexec,nosuid,nodev)
+none on /sys/fs/fuse/connections type fusectl (rw)
+none on /sys/kernel/debug type debugfs (rw)
+none on /sys/kernel/security type securityfs (rw)
+none on /dev type devtmpfs (rw,mode=0755)
+none on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+none on /dev/shm type tmpfs (rw,nosuid,nodev)
+none on /var/run type tmpfs (rw,nosuid,mode=0755)
+none on /var/lock type tmpfs (rw,noexec,nosuid,nodev)
+none on /lib/init/rw type tmpfs (rw,nosuid,mode=0755)
+none on /var/lib/ureadahead/debugfs type debugfs (rw,relatime)
+/dev/sda2 on /multimedia type ext4 (rw,acl)
+rpc_pipefs on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw)
+nfsd on /proc/fs/nfsd type nfsd (rw)
+/home/blueduck/.Private on /home/blueduck type ecryptfs (ecryptfs_sig=5cc2cd19b7f74f7e,ecryptfs_fnek_sig=37dc806e941db751,ecryptfs_cipher=aes,ecryptfs_key_bytes=16)
+/dev/md0 on /mnt/md0 type ext4 (rw)
+/dev/md1 on /mnt/md1 type ext4 (rw)</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Monter les grappes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17013-18588" /><input type="submit" value="Modifier" class="button" title="Monter les grappes" /></div></form></div>
+<h3 class="sectionedit17" id="mettre_a_jour_les_fichiers_fstab_et_mtab">Mettre à jour les fichiers fstab et mtab</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteimportant">
+Je ne vais pas entrer ici dans le détail : les pages sur <a href="../mount_fstab#le_fichier_fstab" class="wikilink1" title="mount_fstab">fstab</a> et les <a href="../uuid_et_label" class="wikilink1" title="uuid_et_label">UUID</a> ne manquent pas. Soyez simplement extrêmement prudents avec ce fichier, dans lequel une erreur peut facilement empêcher votre système de démarrer.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Mettre à jour les fichiers fstab et mtab] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18589-18947" /><input type="submit" value="Modifier" class="button" title="Mettre à jour les fichiers fstab et mtab" /></div></form></div>
+<h2 class="sectionedit18" id="dupliquer_les_donnees">Dupliquer les données</h2>
+<div class="level2">
+
+<p>
+Maintenant que les grappes sont montées, on peut copier dessus le contenu du premier disque dur :
+</p>
+<pre class="code">sudo cp -dpRx / /mnt/md0
+sudo cp -dpRx /multimedia/ /mnt/md1</pre>
+
+<p>
+<p><div class="noteclassic">Le slash (/) à la fin de /multimedia<strong>/</strong> a son importance :
+</p>
+<ul>
+<li class="level1"><div class="li"> s&#039;il est présent, <strong>le contenu</strong> du dossier /multimedia sera copié dans /mnt/md1 ;</div>
+</li>
+<li class="level1"><div class="li"> s&#039;il est absent, c&#039;est <strong>le dossier</strong> /multimedia qui sera copié dans /mnt/md1, c&#039;est-à-dire qu&#039;on obtiendra dans /mnt/md1 un dossier <code>multimedia</code>.</div>
+</li>
+</ul>
+
+<p>
+Comme ici /multimedia sera un point de montage vers /dev/md1, il faut que ce slash soit présent.
+</p>
+
+<p>
+<em class="u">Rappel sur les options utilisées de la commande cp :</em>
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>-d</strong> préserve les liens symboliques ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>-p</strong> préserve les propriétés des fichiers et dossiers (droits d&#039;accès, propriétaires, heure de la dernière modification) ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>-R</strong> demande une copie récursive ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>-x</strong> demande de ne pas sortir du système de fichier contenant le dossier à copier, ainsi même si <strong>/</strong> contient <strong>/proc</strong>, le contenu de <strong>/proc</strong> ne sera pas copié car <strong>/proc</strong> est dans un système de fichier virtuel (nommé <em>proc</em>, cf. <code>/etc/fstab</code>) différent du système de fichier <em>ext4</em> contenant <strong>/</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> l&#039;option <strong>-u</strong> pourrait être rajoutée en cas de copie interrompue (ne copie les fichiers que s&#039;ils sont plus récents, ou n&#039;ont pas encore été copiés).</div>
+</li>
+</ul>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">
+Pour ma part, j&#039;ai préféré utiliser <code><a href="../rsync" class="wikilink1" title="rsync">rsync</a></code> :
+</p>
+<pre class="code">sudo rsync -av --progress --stats --filter &quot;- /mnt&quot; / /mnt/md0
+sudo rsync -av --progress --stats /multimedia /mnt/md1</pre>
+
+<p>
+Compte-tenu des quantités de données à déplacer (plus de 400 Go depuis <code>/dev/sda2</code>), cela me permettait en cas de besoin d&#039;interrompre la synchronisation, et de la reprendre plus tard.
+</p>
+
+<p>
+<p><div class="noteimportant"><img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+Il serait bien que quelqu&#039;un précise si l&#039;on peut sans risque substituer comme je l&#039;ai fait <code>rsync</code> à <code>cp</code>. D&#039;autre part, il doit être possible d&#039;éviter la synchronisation de certains dossiers en ajoutant des filtres (je pense notamment à <code>/proc</code>, <code>/tmp</code>, …) : à confirmer.
+
+</div></p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Dupliquer les données] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18948-21062" /><input type="submit" value="Modifier" class="button" title="Dupliquer les données" /></div></form></div>
+<h2 class="sectionedit19" id="premier_redemarrage">Premier redémarrage</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Premier redémarrage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21063-21096" /><input type="submit" value="Modifier" class="button" title="Premier redémarrage" /></div></form></div>
+<h3 class="sectionedit20" id="configuration_de_grub_premiere_partie">Configuration de GRUB (première partie)</h3>
+<div class="level3">
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Configuration de GRUB (première partie)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21097-21156" /><input type="submit" value="Modifier" class="button" title="Configuration de GRUB (première partie)" /></div></form></div>
+<h3 class="sectionedit21" id="apres_le_premier_redemarrage">Après le premier redémarrage</h3>
+<div class="level3">
+
+<p>
+Si tout s&#039;est bien passé, vous devriez obtenir le résultat suivant avec la commande <code>df</code> :
+</p>
+<pre class="code">blueduck@serveur:~$ df -h</pre>
+<pre class="code">Sys. de fich.        Tail.   Occ. Disp. %Occ. Monté sur</pre>
+
+<p>
+Et toujours :
+</p>
+<pre class="code">blueduck@serveur:~$ sudo cat /proc/mdstat</pre>
+<pre class="code">Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Après le premier redémarrage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21157-21532" /><input type="submit" value="Modifier" class="button" title="Après le premier redémarrage" /></div></form></div>
+<h2 class="sectionedit22" id="ajouter_le_premier_disque_dur">Ajouter le premier disque dur</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Ajouter le premier disque dur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21533-21575" /><input type="submit" value="Modifier" class="button" title="Ajouter le premier disque dur" /></div></form></div>
+<h3 class="sectionedit23" id="modifier_le_type_des_partitions_sda">Modifier le type des partitions (sda)</h3>
+<div class="level3">
+
+<p>
+De même que pour <code>/dev/sdb</code> précédemment, nous utilisons <code>fdisk</code> pour changer le type des partitions de <code>/dev/sda</code> en <em>Linux raid autodetect</em>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Modifier le type des partitions (sda)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21576-21779" /><input type="submit" value="Modifier" class="button" title="Modifier le type des partitions (sda)" /></div></form></div>
+<h3 class="sectionedit24" id="integrer_le_premier_disque_dur_a_la_grappe">Intégrer le premier disque dur à la grappe</h3>
+<div class="level3">
+
+<p>
+Le temps est venu d&#039;intégrer les partitions de <code>/dev/sda</code> dans les grappes <code>/dev/md0</code>, <code>/dev/md1</code> et <code>/dev/md2</code>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Intégrer le premier disque dur à la grappe] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21780-21958" /><input type="submit" value="Modifier" class="button" title="Intégrer le premier disque dur à la grappe" /></div></form></div>
+<h3 class="sectionedit25" id="mettre_a_jour_le_fichier_mdadmconf1">Mettre à jour le fichier mdadm.conf</h3>
+<div class="level3">
+
+<p>
+Une nouvelle fois, il faut scanner la configuration RAID pour mettre à jour le fichier <code>/etc/mdadm/mdadm.conf</code>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Mettre à jour le fichier mdadm.conf] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21959-22122" /><input type="submit" value="Modifier" class="button" title="Mettre à jour le fichier mdadm.conf" /></div></form></div>
+<h3 class="sectionedit26" id="configuration_de_grub_deuxieme_partie">Configuration de GRUB (deuxième partie)</h3>
+<div class="level3">
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Configuration de GRUB (deuxième partie)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="22123-22181" /><input type="submit" value="Modifier" class="button" title="Configuration de GRUB (deuxième partie)" /></div></form></div>
+<h3 class="sectionedit27" id="apres_le_deuxieme_redemarrage">Après le deuxième redémarrage</h3>
+<div class="level3">
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Après le deuxième redémarrage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="22182-22232" /><input type="submit" value="Modifier" class="button" title="Après le deuxième redémarrage" /></div></form></div>
+<h2 class="sectionedit28" id="testsimuler_la_panne_d_un_disque_dur">Test : simuler la panne d&#039;un disque dur</h2>
+<div class="level2">
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Test : simuler la panne d'un disque dur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="22233-22292" /><input type="submit" value="Modifier" class="button" title="Test : simuler la panne d'un disque dur" /></div></form></div>
+<h2 class="sectionedit29" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://forum.debian-fr.org/viewtopic.php?f=8&amp;t=27585" class="urlextern" title="http://forum.debian-fr.org/viewtopic.php?f=8&amp;t=27585"  rel="nofollow">http://forum.debian-fr.org/viewtopic.php?f=8&amp;t=27585</a> : un tutoriel approchant celui-là, sauf que le RAID mis en place n&#039;inclut pas le système. Des exemples de maintenance à la fin.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeur principal : <a href="http://doc.ubuntu-fr.org/utilisateurs/blueduck" class="wikilink1" title="utilisateurs:blueduck">blueduck</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="raid1_logiciel_sur_installation_existante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407872025" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="22293-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/4/463a149888f1e177590cf1aa9f9b8fe4.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/raid1_logiciel_sur_installation_existante?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/raid1_logiciel_sur_installation_existante?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/raid1_logiciel_sur_installation_existante?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/raid1_logiciel_sur_installation_existante?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/raid1_logiciel_sur_installation_existante?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

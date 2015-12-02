@@ -1,0 +1,10 @@
+#! /bin/bash
+
+echo $#
+i=0
+for x in $*
+do
+   echo "$i $x"
+   i=$[i+1]
+   $x
+done

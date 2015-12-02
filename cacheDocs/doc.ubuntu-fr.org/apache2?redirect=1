@@ -1,0 +1,1981 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>apache2 - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-24T22:39:40+0100"/>
+<meta name="keywords" content="reseau,serveur"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/apache2?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/apache2?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/apache2"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/apache2"/>
+<link rel="canonical" href="apache2"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"apache2","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="apache2?redirect=1#main" tabindex="1">Contenu</a> | <a href="apache2?redirect=1#qsearch__in" tabindex="2">Rechercher</a> | <a href="apache2?redirect=1#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="apache2?redirect=1" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="apache2" >apache2</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="apache2?redirect=1#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="apache2?redirect=1#introductionhttp">Introduction : HTTP</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="apache2?redirect=1#qu_est-ce_que_le_web">Qu&#039;est-ce que le Web ?</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#http_et_navigation">HTTP et navigation</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#mode_de_fonctionnement_sommaire">Mode de fonctionnement sommaire</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="apache2?redirect=1#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="apache2?redirect=1#installation_de_base">Installation de base</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#la_bibliotheque_le_serveur_et_ses_outils">La bibliothèque, le serveur et ses outils</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#le_mpm">Le MPM</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="apache2?redirect=1#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="apache2?redirect=1#etcapache2">/etc/apache2</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#configuration_des_interfaces">Configuration des interfaces</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#fichier_de_configuration">Fichier de configuration</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#sites-available">sites-available</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#securiser_apache">Sécuriser Apache</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="apache2?redirect=1#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="apache2?redirect=1#erreur_au_demarrage">Erreur au démarrage</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#redemarrer_apache2">Redémarrer Apache2</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#activer_les_fichiers_htaccess">Activer les fichiers .htaccess</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="apache2?redirect=1#modules">Modules</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="apache2?redirect=1#activer_l_url_rewriting">Activer l&#039;url rewriting</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#mod_bw_-_limiter_la_bande_passante">Mod_bw - Limiter la bande passante</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#mod_deflate_-_compression_gzip">Mod_deflate - Compression gzip</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#mod_userdir_gerer_les_dossiers_utilisateur">mod_userdir gérer les dossiers utilisateur</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#mod_proxy_ou_comment_rediriger_certains_domaines_vers_certaines_machines">mod_proxy ou comment rediriger certains domaines vers certaines machines</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="apache2?redirect=1#optimiser_votre_serveur_apache2">Optimiser votre serveur apache2</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="apache2?redirect=1#accelerateurs_php">Accélérateurs PHP</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="apache2?redirect=1#empecher_le_demarrage_automatique_d_apache">Empêcher le démarrage automatique d&#039;apache</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="apache2?redirect=1#modifier_le_service_apache_avec_upstart">Modifier le service apache avec upstart</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#supprimer_le_service_apache_de_demarrage_avec_update-rcd">Supprimer le service apache de démarrage avec  update-rc.d</a></div></li>
+<li class="level2"><div class="li"><a href="apache2?redirect=1#restaurer_le_demarrage_automatique_d_apache_avec_update-rcd">Restaurer le démarrage automatique d&#039;apache avec update-rc.d</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="apache2?redirect=1#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="apache2?redirect=1#liens_utiles">Liens utiles</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="serveur_http_apache_2">Serveur HTTP Apache 2</h1>
+<div class="level1">
+
+<p>
+<strong>Apache</strong> est le plus populaire des serveurs HTTP. Il est produit par la « Apache Software Foundation ». C&#039;est un logiciel libre fourni sous la <a href="http://fr.wikipedia.org/wiki/Licence_Apache" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Licence_Apache">licence spécifique Apache</a>, <a href="http://www.apache.org/licenses/" class="urlextern" title="http://www.apache.org/licenses/"  rel="nofollow">licence (en)</a>.
+</p>
+
+<p>
+Cette page présente un cas concret de configuration d&#039;un serveur HTTP Apache. À vous de l&#039;adapter à vos besoins.<br/>
+
+Elle est une fusion :
+</p>
+<ul>
+<li class="level1"><div class="li"> du <a href="http://doc.ubuntu-fr.org/projets/ecole/apache" class="wikilink1" title="projets:ecole:apache">cours sur apache</a> du canal <abbr title="Internet Relay Chat">IRC</abbr> <a href="http://doc.ubuntu-fr.org/projets/ecole" class="wikilink1" title="projets:ecole">#ubuntu-fr-classroom</a> ;</div>
+</li>
+<li class="level2"><div class="li"> de <a href="http://doc.ubuntu-fr.org/tutoriel/securiser_apache2" class="wikilink1" title="tutoriel:securiser_apache2">sécuriser Apache</a> ;</div>
+</li>
+<li class="level2"><div class="li"> de diverses autres recherches sur le site de la <a href="http://httpd.apache.org/docs/" class="urlextern" title="http://httpd.apache.org/docs/"  rel="nofollow">documentation d&#039;Apache</a> <br/>
+</div>
+</li>
+</ul>
+
+<p>
+Des liens vers <a href="tutoriel/securiser_apache2_avec_ssl" class="wikilink1" title="tutoriel:securiser_apache2_avec_ssl">sécuriser Apache avec SSL</a>, <a href="tutoriel/virtualhosts_avec_apache2" class="wikilink1" title="tutoriel:virtualhosts_avec_apache2">virtualhosts avec Apache</a> et d&#039;autres documentations seront donnés au moment opportun.<br/>
+
+</p>
+
+<p>
+<p><div class="noteimportant">Utilisateurs de Ubuntu 13.10 et suivante : 
+</p>
+
+<p>
+La version de Apache installée sur cette distribution est la version 2.4.6-2.
+Ce changement de version implique des changements de certaines directives présentes dans vos VHOSTS.
+</p>
+
+<p>
+Référez-vous à la page : <a href="http://httpd.apache.org/docs/2.4/upgrading.html" class="urlextern" title="http://httpd.apache.org/docs/2.4/upgrading.html"  rel="nofollow">http://httpd.apache.org/docs/2.4/upgrading.html</a> ; cette page décrit, en détails, les changements entre la version 2.2 et la version 2.4.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Serveur HTTP Apache 2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="33-1375" /><input type="submit" value="Modifier" class="button" title="Serveur HTTP Apache 2" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Quelques connaissances de base des protocoles HTTP, <abbr title="Domain Name System">DNS</abbr> et <abbr title="Transmission Control Protocol">TCP</abbr>/IP (adressage, sous-réseaux, etc.) ;</div>
+</li>
+<li class="level1"><div class="li"> Un réseau local en état de marche (IP attribuées, connexion à internet) ;</div>
+</li>
+<li class="level1"><div class="li"> Un serveur     <a href="bind9" class="wikilink1" title="bind9">DNS</a> configuré (pour le domaine).</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1376-1652" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="introductionhttp">Introduction : HTTP</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Introduction : HTTP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1653-1685" /><input type="submit" value="Modifier" class="button" title="Introduction : HTTP" /></div></form></div>
+<h3 class="sectionedit4" id="qu_est-ce_que_le_web">Qu&#039;est-ce que le Web ?</h3>
+<div class="level3">
+
+<p>
+Le Web est un des nombreux services disponibles sur Internet. Il s&#039;agit de l&#039;ensemble des documents accessibles par le protocole HTTP (par un navigateur Web). Une caractéristique essentielle du Web est la capacité de passer d&#039;un document à un autre par des liens hypertexte. Un site Web est quant à lui un ensemble de pages Web, liées entre elles.
+</p>
+
+<p>
+Un site Web a une adresse, comme celle du site Ubuntu-fr : <a href="http://ubuntu-fr.org" class="urlextern" title="http://ubuntu-fr.org"  rel="nofollow">http://ubuntu-fr.org</a>.<br/>
+
+La page Web principale de ce site propose des liens hypertexte vers d&#039;autres pages et d&#039;autres sites, par exemple : <a href="http://ubuntu-fr.org/telechargement" class="urlextern" title="http://ubuntu-fr.org/telechargement"  rel="nofollow">http://ubuntu-fr.org/telechargement</a>.
+</p>
+
+<p>
+Attention à ne pas faire d&#039;amalgame entre Web (service HTTP) et Internet (le réseau mondial). Le salon <abbr title="Internet Relay Chat">IRC</abbr> sur lequel s&#039;est déroulée la <a href="http://doc.ubuntu-fr.org/projets/ecole" class="wikilink1" title="projets:ecole">séance de cours</a> utilise Internet, pas le Web.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Qu'est-ce que le Web ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1686-2517" /><input type="submit" value="Modifier" class="button" title="Qu'est-ce que le Web ?" /></div></form></div>
+<h3 class="sectionedit5" id="http_et_navigation">HTTP et navigation</h3>
+<div class="level3">
+
+<p>
+Pour <strong>accéder à un site Web</strong>, il vous faut <strong>utiliser un client Web</strong>, communément appelé  <strong>navigateur</strong>, par exemple : firefox, lynx, opera, rekonq, konqueror, w3m… ppo<br/>
+
+Généralement vous passez par un moteur de recherche pour trouver l&#039;adresse d&#039;un site  mais vous pouvez aussi l&#039;entrer directement dans la barre d&#039;adresse.<br/>
+
+</p>
+
+<p>
+Vous devez <strong>spécifier</strong> en plus du <strong>nom</strong> ou de l&#039;<strong>adresse IP</strong>, le <strong>protocole</strong> utilisé.<br/>
+
+L&#039;adresse de la page se découpe ainsi : 
+<strong>protocole</strong>://<strong>sd</strong>.<strong>SLD</strong>.<strong>TLD</strong>/<br/>
+
+</p>
+<ol>
+<li class="level1"><div class="li"> protocole <strong><a href="http://fr.wikipedia.org/wiki/Protocole_réseau" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Protocole_réseau">Protocole_réseau</a></strong> : http, ftp… <br/>
+</div>
+</li>
+<li class="level1"><div class="li"> sd <strong><a href="http://fr.wikipedia.org/wiki/Nom_de_domaine" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Nom_de_domaine">sous-domaine</a></strong> : www, ftp, doc, httpd…<br/>
+</div>
+</li>
+<li class="level1"><div class="li"> SLD(Second Level Domain)  <strong><a href="http://fr.wikipedia.org/wiki/Domaine_de_deuxième_niveau" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Domaine_de_deuxième_niveau">Domaine_de_deuxième_niveau</a></strong> : ubuntu-fr, apache…<br/>
+</div>
+</li>
+<li class="level1"><div class="li"> TLD(Top Level Domain)  <strong><a href="http://fr.wikipedia.org/wiki/Domaine_de_premier_niveau" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Domaine_de_premier_niveau">Domaine_de_premier_niveau</a></strong> : org, com, fr…<br/>
+</div>
+</li>
+</ol>
+
+<p>
+Les TLD sont délivrés par L&#039;<strong><a href="http://fr.wikipedia.org/wiki/" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/">ICANN</a></strong> <a href="http://www.icann.org/tr/french.html" class="urlextern" title="http://www.icann.org/tr/french.html"  rel="nofollow">ICANN fr</a> <br/>
+
+Les SLD par les <strong><a href="http://fr.wikipedia.org/wiki/Bureau_d'enregistrement" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Bureau_d'enregistrement">registraires</a></strong> qui sont autorisés à les déléguer<br/>
+
+Les sous-domaines par le propriétaire du domaine puisque le registraire lui a assigné la gestion de ce domaine.<br/>
+
+</p>
+
+<p>
+Le protocole qui nous intéresse ici est HTTP<sup><a href="apache2?redirect=1#fn__1" id="fnt__1" class="fn_top">1)</a></sup> qui est l&#039;acronyme anglais de <strong>Protocole de Transfert HyperTexte</strong>.<br/>
+
+</p>
+
+<p>
+Un document <strong><a href="http://fr.wikipedia.org/wiki/Hypertexte" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Hypertexte">hypertexte</a></strong> est un document contenant des <strong><a href="http://fr.wikipedia.org/wiki/Hyperlien" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Hyperlien">hyperliens</a></strong>.<br/>
+
+Ceux-ci permettent de lier les pages les unes avec les autres. Ainsi, vous pouvez naviguer grâce à des liens sur les pages.<br/>
+
+Cet ordinateur, auquel vous vous connectez pour lire cette documentation, héberge à cette adresse un logiciel qui fournit les pages demandées. Apache est <a href="http://news.netcraft.com/archives/web_server_survey.html" class="urlextern" title="http://news.netcraft.com/archives/web_server_survey.html"  rel="nofollow">le plus utilisé</a>.
+</p>
+
+<p>
+Il existe une version sécurisée du HTTP : le <abbr title="Hypertext Transfert Protocol Secured">HTTPS</abbr><sup><a href="apache2?redirect=1#fn__2" id="fnt__2" class="fn_top">2)</a></sup>.<br/>
+
+Afin de <strong>différencier quel protocole</strong> on utilise, on leur <strong>réserve un port</strong><sup><a href="apache2?redirect=1#fn__3" id="fnt__3" class="fn_top">3)</a></sup>, par défaut le <strong>80 pour le mode non sécurisé</strong> et le <strong>443 pour le mode sécurisé</strong>.<br/>
+
+Il faut toutefois noter que les conventions ci-dessus peuvent ne pas être respectées si le client et le serveur sont cohérents entre eux et que le nouveau numéro choisi n&#039;est pas, par ailleurs, déjà utilisé.<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[HTTP et navigation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2518-5193" /><input type="submit" value="Modifier" class="button" title="HTTP et navigation" /></div></form></div>
+<h3 class="sectionedit6" id="mode_de_fonctionnement_sommaire">Mode de fonctionnement sommaire</h3>
+<div class="level3">
+
+<p>
+Au moment de son démarrage, Apache charge les  <span class="curid"><a href="apache2#configuration" class="wikilink1" title="apache2">fichiers de configuration</a></span> de la machine locale et se met en attente de requêtes sur les interfaces réseaux.
+</p>
+
+<p>
+Lorsque vous utilisez votre navigateur Web (un client HTTP), que vous cliquiez sur un lien ou que vous rentriez directement l&#039;adresse dans la barre d&#039;adresse,
+vous effectuez une requête :
+</p>
+<ul>
+<li class="level1"><div class="li"> Le client détermine et se connecte au serveur (<a href="bind9#introduction" class="wikilink1" title="bind9">voir documentation DNS</a>) ;</div>
+</li>
+<li class="level1"><div class="li"> Le client effectue une requête HTTP sur le serveur, par la méthode GET du protocole HTTP : il lui demande une page ;</div>
+</li>
+<li class="level1"><div class="li"> Après l&#039;analyse de la requête, le serveur renvoie la page concernée sous forme de code dont on peut spécifier le format de données (pour ceux qui connaissent les balises &lt;meta&gt; de l&#039;en-tête des documents servis, le fameux &quot;content-type&quot; des pages html) ;</div>
+</li>
+<li class="level1"><div class="li"> Une fois toutes les données envoyées, le serveur ferme la connexion ;</div>
+</li>
+<li class="level1"><div class="li"> Parallèlement, le client analyse et construit l&#039;affichage à partir du code reçu.</div>
+</li>
+</ul>
+
+<p>
+Voilà, comment fonctionnent le protocole HTTP et APACHE2 (sans entrer dans les détails <img src="lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />).
+</p>
+
+<p>
+<p><div class="notetip">Voir la <a href="http://doc.ubuntu-fr.org/projets/ecole/apache" class="wikilink1" title="projets:ecole:apache">page de cours sur Apache de #u-classroom</a>
+</p>
+
+<p>
+<a href="http://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Plus d&#039;informations concernant le protocole HTTP…</a>
+</p>
+
+<p>
+<a href="http://fr.wikipedia.org/wiki/Apache_HTTP_Server" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Apache_HTTP_Server">Plus d&#039;informations concernant Apache HTTP Server…</a>
+
+</div></p>
+Pour installer un serveur HTTP, nous allons utiliser une application bien connue des administrateurs réseaux : Apache2.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Mode de fonctionnement sommaire] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5194-6748" /><input type="submit" value="Modifier" class="button" title="Mode de fonctionnement sommaire" /></div></form></div>
+<h2 class="sectionedit7" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Apache est composé de plusieurs paquets..
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6749-6817" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit8" id="installation_de_base">Installation de base</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="versions_jusqu_a_ubuntu_606">Versions Jusqu&#039;à Ubuntu 6.06</h4>
+<div class="level4">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong><a href="apt://apache2,apache2-utils,apache2-mpm-prefork,libapache2-mod-chroot,libapache2-mod-auth-pam,libapache2-mod-auth-sys-group" class="interwiki iw_apt" title="apt://apache2,apache2-utils,apache2-mpm-prefork,libapache2-mod-chroot,libapache2-mod-auth-pam,libapache2-mod-auth-sys-group">apache2 apache2-utils apache2-mpm-prefork libapache2-mod-chroot libapache2-mod-auth-pam libapache2-mod-auth-sys-group</a></strong><br/>
+
+</p>
+
+</div>
+
+<h4 id="versions_anterieures_a_ubuntu_1004">Versions antérieures à Ubuntu 10.04</h4>
+<div class="level4">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong><a href="apt://libapr1,apache2,apache2.2-common,apache2-utils" class="interwiki iw_apt" title="apt://libapr1,apache2,apache2.2-common,apache2-utils">libapr1 apache2 apache2.2-common apache2-utils</a></strong>.
+</p>
+
+</div>
+
+<h4 id="depuis_ubuntu_1004">Depuis Ubuntu 10.04</h4>
+<div class="level4">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://apache2" class="interwiki iw_apt" title="apt://apache2">apache2</a></strong>.
+</p>
+
+<p>
+À la suite de cette installation votre serveur doit fonctionner et être accessible à l&#039;adresse suivante <a href="http://localhost" class="urlextern" title="http://localhost"  rel="nofollow">http://localhost</a> (à partir de la même machine).
+</p>
+
+<p>
+Un beau message va s&#039;afficher dans votre navigateur  <strong>It Works</strong>, c&#039;est le contenu du fichier <strong>/var/www/index.html</strong> ou <strong>/var/www/html/index.html</strong> (configuration par défaut)
+</p>
+
+</div>
+
+<h4 id="depuis_ubuntu_1404">Depuis Ubuntu 14.04</h4>
+<div class="level4">
+
+<p>
+Depuis cette version, le répertoire par défaut n&#039;est plus &quot;/var/www&quot; mais &quot;/var/www/html&quot;. Si vous n&#039;avez pas touché aux fichiers de config par défaut de apache et que vos sites en localhost ne sont plus accessible, vous pouvez les déplacer dans ce dossier &quot;/var/www/html&quot; ou changer le chemin du &quot;DocumentRoot&quot; dans le fichier &quot;/etc/apache2/sites-available/000-default.conf&quot;
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Installation de base] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6818-8287" /><input type="submit" value="Modifier" class="button" title="Installation de base" /></div></form></div>
+<h3 class="sectionedit9" id="la_bibliotheque_le_serveur_et_ses_outils">La bibliothèque, le serveur et ses outils</h3>
+<div class="level3">
+<div class="table sectionedit10"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Nom </th><th class="col1"> Rôle </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> <a href="apt://libapr1" class="interwiki iw_apt" title="apt://libapr1">libapr1</a> </td><td class="col1"> Apache&#039;s Portable Runtime Library, bibliothèque de fonctions standards portables. </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> <a href="apt://apache2" class="interwiki iw_apt" title="apt://apache2">apache2</a> </td><td class="col1"> Ce paquet contient le serveur. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> <a href="apt://apache2.2-common" class="interwiki iw_apt" title="apt://apache2.2-common">apache2.2-common</a> </td><td class="col1">Ce paquet contient les modules standards apache2, qui incluent le support SSL. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> <a href="apt://apache2-utils" class="interwiki iw_apt" title="apt://apache2-utils">apache2-utils</a> </td><td class="col1"> Outils pour serveurs web. </td>
+	</tr>
+</table></div>
+
+<p>
+<p><div class="notetip">Pour Dapper, remplacez par <code><a href="apt://libapr0" class="interwiki iw_apt" title="apt://libapr0">libapr0</a></code> et <code><a href="apt://apache2-common" class="interwiki iw_apt" title="apt://apache2-common">apache2-common</a></code>
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[La bibliothèque, le serveur et ses outils] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8288-8842" /><input type="submit" value="Modifier" class="button" title="La bibliothèque, le serveur et ses outils" /></div></form></div>
+<h3 class="sectionedit11" id="le_mpm">Le MPM</h3>
+<div class="level3">
+
+<p>
+Le MPM<sup><a href="apache2?redirect=1#fn__4" id="fnt__4" class="fn_top">4)</a></sup>, indispensable, est le moteur du serveur, la manière dont il intercepte les requêtes. Il en existe plusieurs à vous de choisir en fonction de vos besoins mais le <code>mod-php5</code> ne supporte que le <em>prefork</em> : <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> et  itk ?
+</p>
+<div class="table sectionedit12"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Nom </th><th class="col1"> Commentaire </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> <strong><a href="apt://apache2-mpm-prefork" class="interwiki iw_apt" title="apt://apache2-mpm-prefork">apache2-mpm-prefork</a></strong> </td><td class="col1"> Modèle traditionnel pour Apache2 version sans thread,                        intercepte les requêtes à la manière Apache 1.3, utile pour éviter la mise en thread pour la compatibilité avec les bibliothèques non-thread-safe. C&#039;est le meilleur mpm pour isoler les requêtes. </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> <strong><a href="apt://apache2-mpm-worker" class="interwiki iw_apt" title="apt://apache2-mpm-worker">apache2-mpm-worker</a></strong> </td><td class="col1"> Modèle à processus haute vitesse pour Apache2 version avec thread, il est considérablement plus rapide que la version traditionnelle et <strong>c&#039;est le MPM recommandé</strong>. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> <strong><a href="apt://apache2-mpm-itk" class="interwiki iw_apt" title="apt://apache2-mpm-itk">apache2-mpm-itk</a></strong> </td><td class="col1"> Permet d&#039;exécuter les scripts php avec les droits d&#039;un utilisateur donné dans un virtualhost. </td>
+	</tr>
+</table></div>
+
+<p>
+<p><div class="noteimportant">A partir de Trusty 14.04, ces paquets pour le choix du MPM sont devenus obsolètes. Cependant, ils continuent d&#039;exister pendant une phase de transition. Leur unique fonction est d&#039;installer le paquet <em>apache2</em> par le mécanisme des dépendances.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Le MPM] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8843-10157" /><input type="submit" value="Modifier" class="button" title="Le MPM" /></div></form></div>
+<h2 class="sectionedit13" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteclassic">Remise en question de la part d&#039;un adminsys : cette section donne un ensemble de fichiers de configuration, en indiquant qu&#039;il faudrait remplacer les fichiers par défaut. Pourquoi ? Les fichiers par défaut sont tout à fait corrects et je ne vois pas l&#039;intérêt de les remplacer.  –tiramiseb
+</div></p>
+</p>
+
+<p>
+ Tous les <strong>fichiers de configuration</strong> de Apache2 sont dans le dossier <strong>/etc/apache2</strong>.<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10158-10592" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h3 class="sectionedit14" id="etcapache2">/etc/apache2</h3>
+<div class="level3">
+
+<p>
+Rendez-vous dans le répertoire /etc/apache2/, et regardez les fichiers le composant :
+</p>
+<pre class="code">apache2.conf  conf.d  envvars  httpd.conf  mods-available  mods-enabled  ports.conf  sites-available  sites-enabled</pre>
+
+<p>
+La plupart de ces fichiers sont plus ou moins spécifiques à Debian/Ubuntu et nous permettent de séparer la configuration en plusieurs parties.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><code>httpd.conf</code></strong> est le fichier utilisé par apache1, il est conservé vide dans Apache2 pour assurer la rétrocompatibilité. Il ne nous servira pas ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>envvars</code></strong> est utilisé pour définir des variables d&#039;environnement propres à Apache ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>ports.conf</code></strong> contient la directive <em>listen</em> qui spécifie les adresses et les ports d&#039;écoutes ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>apache2.conf</code></strong> est le fichier principal de configuration c&#039;est à partir de lui que tous les autres fichiers sont chargés ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>conf.d</code></strong> est un répertoire qui contient plusieurs petits fichiers qui seront analysés par apache. Le seul fichier pour le moment est <code>charset</code>, qui spécifie l&#039;encodage à utiliser par défaut ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>mods-available</code></strong> contient la liste des modules d&#039;apache installés ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>mods-enabled</code></strong> celle des modules activées ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>sites-available</code></strong> contient la liste des vhosts installés ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>sites-enabled</code></strong> celle des vhosts activées. </div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[/etc/apache2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10593-11935" /><input type="submit" value="Modifier" class="button" title="/etc/apache2" /></div></form></div>
+<h3 class="sectionedit15" id="configuration_des_interfaces">Configuration des interfaces</h3>
+<div class="level3">
+
+<p>
+La spécification des <strong>interfaces</strong> sur lesquelles <strong>Apache2 écoutera</strong> les requêtes se fait dans <strong>ports.conf</strong> avec la directive <strong>Listen</strong>.<br/>
+
+Vous devez spécifier au moins le port. Apache écoutera alors sur toutes les interfaces.<br/>
+
+</p>
+
+<p>
+<strong>Pour restreindre</strong> l&#039;utilisation à une ou plusieurs interfaces il suffit de les spécifier, suivies du port. Il faut une directive Listen par interface.<br/>
+
+ - Si le serveur est <strong>connecté avec une IP Internet</strong> et que l&#039;on souhaite écouter sur cette interface on ajoute la directive <strong>Listen IP.Internet</strong> .<br/>
+
+ - Si le serveur est <strong>connecté avec une IP locale</strong> et que l&#039;on souhaite écouter sur cette interface on ajoute la directive <strong>Listen IP.Locale</strong> .<br/>
+
+ - Si l&#039;on souhaite <strong>écouter sur un certain port</strong> on rajoute <strong>:Le_Port</strong> . Il est aussi possible de ne spécifier que le port <strong>Listen Le_Port</strong>.<br/>
+
+</p>
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/apache2/ports.conf</strong>.(remplacer les X.X.X.X par l&#039;ip de l &#039;interface d&#039;écoute )<br/>
+
+</p>
+<pre class="file"> #interface (local ou internet) connectée sur port standard
+ Listen X.X.X.X:80
+
+ # toutes les interfaces connectées sur port ssl
+ Listen 443</pre>
+
+<p>
+<p><div class="noteclassic">Voir <a href="tutoriel/securiser_apache2_avec_ssl" class="wikilink1" title="tutoriel:securiser_apache2_avec_ssl">securiser_apache2_avec_ssl</a>
+</div></p>
+<p><div class="noteimportant">
+Il faut que les interfaces aient été démarrées avant Apache
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Configuration des interfaces] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11936-13323" /><input type="submit" value="Modifier" class="button" title="Configuration des interfaces" /></div></form></div>
+<h3 class="sectionedit16" id="fichier_de_configuration">Fichier de configuration</h3>
+<div class="level3">
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/apache2/apache2.conf</strong> afin qu&#039;il ressemble a ceci.<br/>
+
+</p>
+
+<p>
+Les explications des différentes lignes sont données dans le fichier de configuration.<br/>
+
+</p>
+
+<p>
+Les directives <strong>&lt;IfModule !nom.c&gt;</strong> testent la présence du module afin de s&#039;adapter aux configurations.<br/>
+
+Les autres lignes commençant par <strong>#</strong> sont des commentaires<br/>
+
+</p>
+<pre class="code apache"><span class="co1"># Répertoire Racine du serveur</span>
+<span class="kw1">ServerRoot</span> <span class="st0">&quot;/etc/apache2&quot;</span>
+&nbsp;
+<span class="co1"># Fichier de vérrouillage (lock) du serveur </span>
+<span class="co1"># IL DOIT SE TROUVER SUR LE DISQUE LOCAL</span>
+<span class="co1">#&lt;IfModule !mpm_winnt.c&gt;</span>
+<span class="co1">#&lt;IfModule !mpm_netware.c&gt;</span>
+<span class="kw1">LockFile</span> /var/lock/apache2/accept.lock
+<span class="co1">#&lt;/IfModule&gt;</span>
+<span class="co1">#&lt;/IfModule&gt;</span>
+&nbsp;
+<span class="co1"># Fichier du PID: endroit où, à son démarrage, apache doit stocker</span>
+<span class="co1"># son numéro d'identification de processus</span>
+<span class="kw1">PidFile</span> /var/run/apache2.pid
+&nbsp;
+<span class="co1"># Delai d'attente dépassé : nombre de secondes avant de recevoir et d'envoyer</span>
+<span class="co1"># un message de &quot;Délai d'attente dépassé&quot; (timeout)</span>
+<span class="kw1">Timeout</span> <span class="nu0">300</span>
+&nbsp;
+<span class="co1"># Connexion persistante: Alloue ou non les requêtes persistantes</span>
+<span class="co1"># (plus d'une requête par connexion ).</span>
+<span class="co1"># Mettre à &quot;Off&quot; pour désactiver.</span>
+<span class="kw1">KeepAlive</span> <span class="kw2">On</span>
+&nbsp;
+<span class="co1"># Nombre Maximum de requêtes allouées durant une connexion persistante.</span>
+<span class="co1"># 0 = non limité</span>
+<span class="co1"># Il est recommandé de garder ce nombre assez haut pour des performances maximales</span>
+<span class="kw1">MaxKeepAliveRequests</span> <span class="nu0">100</span>
+&nbsp;
+<span class="co1"># Nombre de secondes d'attente pour la prochaine requête</span>
+<span class="co1"># d'un même client sur une même connexion avant un timeout</span>
+<span class="kw1">KeepAliveTimeout</span> <span class="nu0">15</span>
+&nbsp;
+<span class="co1"># Configuration du mpm chargé</span>
+&lt;<span class="kw3">IfModule</span> mpm_prefork_module&gt;
+<span class="co1"># Nombre de processus serveurs fils à créer au démarrage.</span>
+   <span class="kw1">StartServers</span>          <span class="nu0">5</span>
+<span class="co1"># Nombre minimum de processus en attente d'intercepter des requêtes</span>
+   <span class="kw1">MinSpareServers</span>       <span class="nu0">5</span>
+<span class="co1"># Nombre maximum de processus en attente</span>
+   <span class="kw1">MaxSpareServers</span>      <span class="nu0">15</span>
+<span class="co1"># Nombre maximum processus fils créés</span>
+<span class="co1"># pour intercepter les requêtes simultanément</span>
+   <span class="kw1">MaxClients</span>          <span class="nu0">150</span>
+<span class="co1"># Limite le nombre de requête qu'un processus fils intercepte </span>
+<span class="co1"># durant son temps de vie. Si 0 alors le processus n'expirera jamais.</span>
+    <span class="kw1">MaxRequestsPerChild</span>   <span class="nu0">0</span>
+&lt;/<span class="kw3">IfModule</span>&gt;
+&nbsp;
+&lt;<span class="kw3">IfModule</span> mpm_worker_module&gt;
+    <span class="kw1">StartServers</span>          <span class="nu0">2</span>
+    <span class="kw1">MaxClients</span>          <span class="nu0">150</span>
+<span class="co1"># Nombre minimum de processus en attente d'intercepter les piques de requêtes</span>
+    <span class="kw1">MinSpareThreads</span>      <span class="nu0">25</span>
+<span class="co1"># Nombre maximum de processus en attente</span>
+    <span class="kw1">MaxSpareThreads</span>      <span class="nu0">75</span> 
+    <span class="kw1">ThreadsPerChild</span>      <span class="nu0">25</span>
+    <span class="kw1">MaxRequestsPerChild</span>   <span class="nu0">0</span>
+&lt;/<span class="kw3">IfModule</span>&gt;
+&nbsp;
+<span class="co1"># Utilisateur et Group sous lesquels les processus du serveur seront lancés</span>
+<span class="kw1">User</span> www-data
+<span class="kw1">Group</span> www-data
+&nbsp;
+<span class="co1"># Fichier de restriction des accès </span>
+<span class="co1"># non conseillé, préferer les directives internes au fichier de configuration</span>
+<span class="co1"># voir [[http://httpd.apache.org/docs/2.2/howto/htaccess.html]]</span>
+<span class="kw1">AccessFileName</span> .htaccess
+&nbsp;
+<span class="co1"># Les lignes suivantes empêchent les fichiers .htaccess et .htpasswd d'être vus </span>
+<span class="co1"># par les clients Web (i.e. les navigateurs) .</span>
+&lt;<span class="kw3">Files</span> ~ <span class="st0">&quot;^<span class="es0">\.</span>ht&quot;</span>&gt;
+    <span class="kw1">Order</span> <span class="kw1">allow</span>,<span class="kw1">deny</span>
+    <span class="kw1">Deny</span> from <span class="kw2">all</span>
+    <span class="kw1">Satisfy</span> <span class="kw2">All</span>
+&lt;/<span class="kw3">Files</span>&gt;
+&nbsp;
+<span class="co1"># Restriction de la racine du serveur</span>
+&lt;<span class="kw3">Directory</span> /&gt;
+  <span class="kw1">Order</span> <span class="kw1">Deny</span>,<span class="kw1">Allow</span>
+  <span class="kw1">Deny</span> from <span class="kw2">all</span>
+  <span class="kw1">Options</span> <span class="kw2">None</span>
+  <span class="kw1">AllowOverride</span> <span class="kw2">None</span>
+&lt;/<span class="kw3">Directory</span>&gt;
+&nbsp;
+<span class="co1"># Fichier contenant la liste des conversions des extensions de fichiers vers le type de contenu.</span>
+<span class="co1"># par défaut ce fichier est relié au contenu enregistré à l'IANA. http://www.iana.org/assignments/media-types/index.html.</span>
+<span class="kw1">TypesConfig</span> /etc/mime.types
+&nbsp;
+<span class="co1"># définit le type par défaut des fichiers dont le type ne peut être déterminé</span>
+<span class="co1"># par le serveur.</span>
+<span class="co1"># Il convient de le mettre à &quot;none&quot; afin de ne pas fournir d'informations erronées.</span>
+<span class="kw1">DefaultType</span> <span class="kw2">none</span>
+&nbsp;
+<span class="co1"># Active la résolution DNS pour les noms d'hôtes</span>
+<span class="kw1">HostnameLookups</span> <span class="kw2">Off</span>
+&nbsp;
+<span class="co1"># chemin du fichier de log des erreurs du serveur.</span>
+<span class="kw1">ErrorLog</span> /var/log/apache2/error.log
+&nbsp;
+<span class="co1"># niveau de log du serveur </span>
+<span class="co1"># emerg  	Messages Urgents - Le système est inutilisable.</span>
+<span class="co1"># alert 	Messages d'actions qui doivent être effectuées immédiatement.</span>
+<span class="co1"># crit 	        Messages critiques.</span>
+<span class="co1"># error 	Messages d'erreurs.</span>
+<span class="co1"># warn 	        Messages d'avertissement.</span>
+<span class="co1"># notice 	Messages normales mais significatives.</span>
+<span class="co1"># info 	        Messages d'informations.</span>
+<span class="co1"># debug 	Messages de débogage</span>
+<span class="kw1">LogLevel</span> warn
+&nbsp;
+<span class="co1"># format des lignes contenues dans les logs</span>
+<span class="co1"># %a 	        Adresse ip distante.</span>
+<span class="co1"># %A 	        Adresse ip local.</span>
+<span class="co1"># %B 	        Taille de la réponse en octets, excluant l'entête HTTP.</span>
+<span class="co1"># %b 	        Taille de la réponse en octets, excluant l'entête HTTP au format CLF.</span>
+<span class="co1"># %{Foobar}C 	Contenu du cookie &quot;Foobar&quot; de la requête envoyée au serveur.</span>
+<span class="co1"># %D 	        Le temps mis à servir la requête .</span>
+<span class="co1"># %{FOOBAR}e 	Contenue de la variable d'environnement &quot;FOOBAR&quot;.</span>
+<span class="co1"># %f 	        Nom du fichier.</span>
+<span class="co1"># %h 	        Hôte distant.</span>
+<span class="co1"># %H 	        Le protocole demandé.</span>
+<span class="co1"># %{Foobar}i 	Le contenu de &quot;Foobar&quot;: Ligne(s) d'en-tête de la requête envoyée au serveur.</span>
+<span class="co1"># %l 	        nom du fichier de log distant (de identd, si il est fournit).</span>
+<span class="co1"># cela retournera un tiret tant que //mod_ident// n'est pas présent </span>
+<span class="co1"># et //IdentityCheck// n'est pas mis à ON.</span>
+<span class="co1"># %m 	        Méthode de la requête.</span>
+<span class="co1"># %{Foobar}n 	Contenu de la note &quot;Foobar&quot; provenant d'un autre module.</span>
+<span class="co1"># %{Foobar}o 	Le contenu de &quot;Foobar&quot;: Ligne(s) d'entête dans la réponse.</span>
+<span class="co1"># %p 	        Port canonique du serveur qui sert la réponse.</span>
+<span class="co1"># %P 	        Id du processus fils qui a servi la requête.</span>
+<span class="co1"># %{format}P 	Id du processus ou du thread fils qui a servi la requête.</span>
+<span class="co1"># Les formats valides sont pid, tid, et hextid.</span>
+<span class="co1"># hextid nécessite APR 1.2.0 ou supérieur.</span>
+<span class="co1"># %q 	        Chaînes de la requête (Commençant avec un ? si une chaine de requête existe, sinon une chaîne vide)</span>
+<span class="co1"># %r 	        Première ligne de la requête.</span>
+<span class="co1"># %s 	        Statut. Pour les requête redirigées en interne, ceci est la requête originale --- %&gt;s pour la dernière.</span>
+<span class="co1"># %t 	        Heure à laquelle la requête a été reçue (format standard anglais mois jour année )</span>
+<span class="co1"># %{format}t 	L'heure, au format précisé, qui doit être dans les formats de strftime(3). (potentiellement localisé).</span>
+<span class="co1"># %T 	        Le temps mis pour répondre à la requête.</span>
+<span class="co1"># %u 	        Utilisateur distant (de l'authentification; peut être faux si le  code de retour de statut (%s) est 401)</span>
+<span class="co1"># %U 	        Url demandée, n'inclue aucune chaîne de requête.</span>
+<span class="co1"># %v 	        Nom canonique de ServerName du serveur qui répond à la requête.</span>
+<span class="co1"># %V 	        Nom du serveur en fonction du paramètre UseCanonicalName.</span>
+<span class="co1"># %X 	        Statut de la connexion une fois la réponse envoyée.</span>
+<span class="co1">#               X = connexion annulée avant la réponse complète.</span>
+<span class="co1">#               + = la connexion peut être maintenue après l'envoi de la réponse.</span>
+<span class="co1">#               - = la connexion sera fermée après l'envoi de la réponse.</span>
+<span class="co1"># %I 	        Octets reçus, incluant l'entête et la requête, ne peut être nul. Vous devez activer //mod_logio// pour l'utiliser.</span>
+<span class="co1"># %O 	        Octets envoyés, incluant l'entête, ne peut être nul. Vous devez activer //mod_logio// pour l'utiliser.</span>
+&nbsp;
+<span class="kw1">LogFormat</span> <span class="st0">&quot;%h %l %u %t <span class="es0">\&quot;</span>%r<span class="es0">\&quot;</span> %&gt;s %b <span class="es0">\&quot;</span>%{Referer}i<span class="es0">\&quot;</span> <span class="es0">\&quot;</span>%{User-Agent}i<span class="es0">\&quot;</span>&quot;</span> combined
+<span class="kw1">LogFormat</span> <span class="st0">&quot;%h %l %u %t <span class="es0">\&quot;</span>%r<span class="es0">\&quot;</span> %&gt;s %b&quot;</span> common
+<span class="kw1">LogFormat</span> <span class="st0">&quot;%{Referer}i -&gt; %U&quot;</span> referer
+<span class="kw1">LogFormat</span> <span class="st0">&quot;%{User-agent}i&quot;</span> agent
+&nbsp;
+<span class="co1"># entête envoyée au client à propos du serveur</span>
+<span class="co1"># Prod                    Server: Apache</span>
+<span class="co1"># Major                   Server: Apache/2</span>
+<span class="co1"># Minor                   Server: Apache/2.0</span>
+<span class="co1"># Min                     Server: Apache/2.0.41</span>
+<span class="co1"># OS                      Server: Apache/2.0.41 (Unix)</span>
+<span class="co1"># Full (ou non spécifié)  Server: Apache/2.0.41 (Unix) PHP/4.2.2 MyMod/1.2 </span>
+<span class="kw1">ServerTokens</span> Prod
+&nbsp;
+<span class="co1"># Pied de page renvoyé par le serveur </span>
+<span class="co1"># utile afin de déterminer quelle est le serveur </span>
+<span class="co1"># qui dans une chaîne (proxy) qui génère une erreur</span>
+<span class="kw1">ServerSignature</span> <span class="kw2">Off</span>
+&nbsp;
+<span class="co1"># Inclusion des fichiers, contenus dans le dossier des mods, qui sont activés</span>
+<span class="kw1">Include</span> /etc/apache2/mods-enabled/*.load
+<span class="kw1">Include</span> /etc/apache2/mods-enabled/*.conf
+&nbsp;
+<span class="co1"># Inclusion de l'ancien fichier de configuration de apache</span>
+<span class="co1"># à des fins de compatibilités ascendantes.</span>
+<span class="kw1">Include</span> /etc/apache2/httpd.conf
+&nbsp;
+<span class="co1"># Inclusion du fichier de configuration des adresses et ports</span>
+<span class="co1"># sur lesquels le serveur sera à l'écoute</span>
+<span class="kw1">Include</span> /etc/apache2/ports.conf
+&nbsp;
+<span class="co1"># Inclusion d'autres fichiers de configuration</span>
+<span class="kw1">Include</span> /etc/apache2/conf.d/
+&nbsp;
+<span class="co1"># inclusion des configurations des sites actifs</span>
+<span class="kw1">Include</span> /etc/apache2/sites-enabled/
+&nbsp;
+<span class="co1"># Directive des alias</span>
+&lt;<span class="kw3">IfModule</span> alias_module&gt;
+<span class="co1"># alias des icones d'apache</span>
+<span class="co1"># nom de l'alias , répertoire vers lequel pointe l'alias</span>
+    <span class="kw1">Alias</span> /icons <span class="st0">&quot;/usr/share/apache2/icons/&quot;</span>
+    &lt;<span class="kw3">Directory</span> <span class="st0">&quot;/usr/share/apache2/icons&quot;</span>&gt;
+        <span class="kw1">Options</span> <span class="kw2">None</span>
+        <span class="kw1">AllowOverride</span> <span class="kw2">None</span>
+        <span class="kw1">Order</span> <span class="kw1">allow</span>,<span class="kw1">deny</span>
+        <span class="kw1">Allow</span> from <span class="kw2">all</span>
+    &lt;/<span class="kw3">Directory</span>&gt;
+&nbsp;
+<span class="co1"># alias pour awstats </span>
+    <span class="kw1">Alias</span> /awstats-icon <span class="st0">&quot;/usr/share/awstats/icon&quot;</span>
+    <span class="kw1">ScriptAlias</span> /awstats <span class="st0">&quot;/usr/lib/cgi-bin/&quot;</span>
+	&lt;<span class="kw3">Directory</span> <span class="st0">&quot;/usr/share/awstats/icon&quot;</span>&gt;
+   	     <span class="kw1">Options</span> <span class="kw2">None</span>
+<span class="co1">#Indexes MultiViews</span>
+		<span class="kw1">AllowOverride</span> <span class="kw2">None</span>
+		<span class="kw1">Order</span> <span class="kw1">allow</span>,<span class="kw1">deny</span>
+		<span class="kw1">Allow</span> from <span class="kw2">all</span>
+	&lt;/<span class="kw3">Directory</span>&gt;
+&lt;/<span class="kw3">IfModule</span>&gt;
+&nbsp;
+<span class="co1"># Types images d'icône</span>
+&lt;<span class="kw3">IfModule</span> mod_autoindex.c&gt;
+&nbsp;
+    <span class="kw1">IndexOptions</span> <span class="kw1">FancyIndexing</span> VersionSort HTMLTable NameWidth=*
+&nbsp;
+    <span class="kw1">AddIconByEncoding</span> (CMP,/icons/compressed.gif) <span class="kw2">x-compress</span> <span class="kw2">x-gzip</span>
+&nbsp;
+    <span class="kw1">AddIconByType</span> (TXT,/icons/text.gif) text/*
+    <span class="kw1">AddIconByType</span> (IMG,/icons/image2.gif) image/*
+    <span class="kw1">AddIconByType</span> (SND,/icons/sound2.gif) audio/*
+    <span class="kw1">AddIconByType</span> (VID,/icons/movie.gif) video/*
+&nbsp;
+    <span class="kw1">AddIcon</span> /icons/binary.gif .bin .exe
+    <span class="kw1">AddIcon</span> /icons/binhex.gif .hqx
+    <span class="kw1">AddIcon</span> /icons/tar.gif .tar
+    <span class="kw1">AddIcon</span> /icons/world2.gif .wrl .wrl.gz .vrml .vrm .iv
+    <span class="kw1">AddIcon</span> /icons/compressed.gif .Z .z .tgz .gz .zip
+    <span class="kw1">AddIcon</span> /icons/a.gif .ps .ai .eps
+    <span class="kw1">AddIcon</span> /icons/layout.gif .html .shtml .htm .pdf
+    <span class="kw1">AddIcon</span> /icons/text.gif .txt
+    <span class="kw1">AddIcon</span> /icons/c.gif .c
+    <span class="kw1">AddIcon</span> /icons/p.gif .pl .py
+    <span class="kw1">AddIcon</span> /icons/f.gif .for
+    <span class="kw1">AddIcon</span> /icons/dvi.gif .dvi
+    <span class="kw1">AddIcon</span> /icons/uuencoded.gif .uu
+    <span class="kw1">AddIcon</span> /icons/<span class="kw1">script</span>.gif .conf .sh .shar .csh .ksh .tcl
+    <span class="kw1">AddIcon</span> /icons/tex.gif .tex
+    <span class="kw1">AddIcon</span> /icons/bomb.gif core
+&nbsp;
+    <span class="kw1">AddIcon</span> /icons/back.gif ..
+    <span class="kw1">AddIcon</span> /icons/hand.right.gif README
+    <span class="kw1">AddIcon</span> /icons/folder.gif ^^DIRECTORY^^
+    <span class="kw1">AddIcon</span> /icons/blank.gif ^^BLANKICON^^
+&nbsp;
+&nbsp;
+    <span class="kw1">DefaultIcon</span> /icons/unknown.gif
+&nbsp;
+    <span class="kw1">ReadmeName</span> README.html
+    <span class="kw1">HeaderName</span> <span class="kw1">HEADER</span>.html
+&nbsp;
+    <span class="kw1">IndexIgnore</span> .??* *~ *<span class="co1"># RCS CVS *,v *,t </span>
+&lt;/<span class="kw3">IfModule</span>&gt;
+&nbsp;
+<span class="co1"># Type langages</span>
+&lt;<span class="kw3">IfModule</span> mod_mime.c&gt;
+    <span class="kw1">AddType</span> application/<span class="kw2">x-compress</span> .Z
+    <span class="kw1">AddType</span> application/<span class="kw2">x-gzip</span> .gz .tgz
+&nbsp;
+    <span class="kw1">AddLanguage</span> ca .ca
+    <span class="kw1">AddLanguage</span> cs .cz .cs
+    <span class="kw1">AddLanguage</span> da .dk
+    <span class="kw1">AddLanguage</span> de .de
+    <span class="kw1">AddLanguage</span> el .el
+    <span class="kw1">AddLanguage</span> en .en
+    <span class="kw1">AddLanguage</span> eo .eo
+    <span class="kw1">AddLanguage</span> es .es
+    <span class="kw1">AddLanguage</span> et .et
+    <span class="kw1">AddLanguage</span> fr .fr
+    <span class="kw1">AddLanguage</span> he .he
+    <span class="kw1">AddLanguage</span> hr .hr
+    <span class="kw1">AddLanguage</span> it .it
+    <span class="kw1">AddLanguage</span> ja .ja
+    <span class="kw1">AddLanguage</span> ko .ko
+    <span class="kw1">AddLanguage</span> ltz .ltz
+    <span class="kw1">AddLanguage</span> nl .nl
+    <span class="kw1">AddLanguage</span> nn .nn
+    <span class="kw1">AddLanguage</span> no .no
+    <span class="kw1">AddLanguage</span> pl .po
+    <span class="kw1">AddLanguage</span> pt .pt
+    <span class="kw1">AddLanguage</span> pt-BR .pt-br
+    <span class="kw1">AddLanguage</span> ru .ru
+    <span class="kw1">AddLanguage</span> sv .sv
+    <span class="kw1">AddLanguage</span> zh-CN .zh-cn
+    <span class="kw1">AddLanguage</span> zh-TW .zh-tw
+&lt;/<span class="kw3">IfModule</span>&gt;
+&nbsp;
+<span class="co1"># Langue prioritaire pour les pages de réponses (choisir l'ordre des langues des pages)</span>
+&lt;<span class="kw3">IfModule</span> mod_negotiation.c&gt;
+&nbsp;
+    <span class="kw1">LanguagePriority</span> fr ca cs da de el eo es et en he hr it ja ko ltz nl nn no pl pt pt-BR ru sv zh-CN zh-TW
+&nbsp;
+    <span class="kw1">ForceLanguagePriority</span> Prefer Fallback
+&nbsp;
+&lt;/<span class="kw3">IfModule</span>&gt;
+&nbsp;
+<span class="co1"># Type d'encodage de caractères </span>
+&lt;<span class="kw3">IfModule</span> mod_mime.c&gt;
+    <span class="kw1">AddCharset</span> us-ascii    .ascii .us-ascii
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">1</span>  .iso8859-<span class="nu0">1</span>  .latin1
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">2</span>  .iso8859-<span class="nu0">2</span>  .latin2 .cen
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">3</span>  .iso8859-<span class="nu0">3</span>  .latin3
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">4</span>  .iso8859-<span class="nu0">4</span>  .latin4
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">5</span>  .iso8859-<span class="nu0">5</span>  .cyr .iso-ru
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">6</span>  .iso8859-<span class="nu0">6</span>  .arb .arabic
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">7</span>  .iso8859-<span class="nu0">7</span>  .grk .greek
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">8</span>  .iso8859-<span class="nu0">8</span>  .heb .hebrew
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">9</span>  .iso8859-<span class="nu0">9</span>  .latin5 .trk
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">10</span>  .iso8859-<span class="nu0">10</span>  .latin6
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">13</span>  .iso8859-<span class="nu0">13</span>
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">14</span>  .iso8859-<span class="nu0">14</span>  .latin8
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">15</span>  .iso8859-<span class="nu0">15</span>  .latin9
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">8859</span>-<span class="nu0">16</span>  .iso8859-<span class="nu0">16</span>  .latin10
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">2022</span>-JP .iso2022-jp .jis
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">2022</span>-KR .iso2022-kr .kis
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">2022</span>-CN .iso2022-cn .cis
+    <span class="kw1">AddCharset</span> Big5        .Big5       .big5 .b5
+    <span class="kw1">AddCharset</span> cn-Big5     .cn-big5
+    <span class="co1"># For russian, more than one charset is used (depends on client, mostly):</span>
+    <span class="kw1">AddCharset</span> WINDOWS-<span class="nu0">1251</span> .cp-<span class="nu0">1251</span>   .win-<span class="nu0">1251</span>
+    <span class="kw1">AddCharset</span> CP866       .cp866
+    <span class="kw1">AddCharset</span> KOI8      .koi8
+    <span class="kw1">AddCharset</span> KOI8-E      .koi8-e
+    <span class="kw1">AddCharset</span> KOI8-r      .koi8-r .koi8-ru
+    <span class="kw1">AddCharset</span> KOI8-U      .koi8-u
+    <span class="kw1">AddCharset</span> KOI8-ru     .koi8-uk .ua
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">10646</span>-UCS-<span class="nu0">2</span> .ucs2
+    <span class="kw1">AddCharset</span> ISO-<span class="nu0">10646</span>-UCS-<span class="nu0">4</span> .ucs4
+    <span class="kw1">AddCharset</span> UTF-<span class="nu0">7</span>       .utf7
+    <span class="kw1">AddCharset</span> UTF-<span class="nu0">8</span>       .utf8
+    <span class="kw1">AddCharset</span> UTF-<span class="nu0">16</span>      .utf16
+    <span class="kw1">AddCharset</span> UTF-16BE    .utf16be
+    <span class="kw1">AddCharset</span> UTF-16LE    .utf16le
+    <span class="kw1">AddCharset</span> UTF-<span class="nu0">32</span>      .utf32
+    <span class="kw1">AddCharset</span> UTF-32BE    .utf32be
+    <span class="kw1">AddCharset</span> UTF-32LE    .utf32le
+    <span class="kw1">AddCharset</span> euc-cn      .euc-cn
+    <span class="kw1">AddCharset</span> euc-gb      .euc-gb
+    <span class="kw1">AddCharset</span> euc-jp      .euc-jp
+    <span class="kw1">AddCharset</span> euc-kr      .euc-kr
+    <span class="co1">#Not sure how euc-tw got in - IANA doesn't list it???</span>
+    <span class="kw1">AddCharset</span> EUC-TW      .euc-tw
+    <span class="kw1">AddCharset</span> gb2312      .gb2312 .gb
+    <span class="kw1">AddCharset</span> iso-<span class="nu0">10646</span>-ucs-<span class="nu0">2</span> .ucs-<span class="nu0">2</span> .iso-<span class="nu0">10646</span>-ucs-<span class="nu0">2</span>
+    <span class="kw1">AddCharset</span> iso-<span class="nu0">10646</span>-ucs-<span class="nu0">4</span> .ucs-<span class="nu0">4</span> .iso-<span class="nu0">10646</span>-ucs-<span class="nu0">4</span>
+    <span class="kw1">AddCharset</span> shift_jis   .shift_jis .sjis
+&nbsp;
+    <span class="kw1">AddHandler</span> type-map var
+&nbsp;
+    <span class="kw1">AddType</span> text/html .shtml
+    <span class="kw1">AddOutputFilter</span> <span class="kw2">INCLUDES</span> .shtml
+&lt;/<span class="kw3">IfModule</span>&gt;
+&nbsp;
+&lt;<span class="kw3">IfModule</span> mod_setenvif.c&gt;   
+    <span class="kw1">BrowserMatch</span> <span class="st0">&quot;Mozilla/2&quot;</span> <span class="kw2">nokeepalive</span>
+    <span class="kw1">BrowserMatch</span> <span class="st0">&quot;MSIE 4<span class="es0">\.</span>0b2;&quot;</span> <span class="kw2">nokeepalive</span> <span class="kw2">downgrade-1.0</span> <span class="kw2">force-response-1.0</span>
+    <span class="kw1">BrowserMatch</span> <span class="st0">&quot;RealPlayer 4<span class="es0">\.</span>0&quot;</span> <span class="kw2">force-response-1.0</span>
+    <span class="kw1">BrowserMatch</span> <span class="st0">&quot;Java/1<span class="es0">\.</span>0&quot;</span> <span class="kw2">force-response-1.0</span>
+    <span class="kw1">BrowserMatch</span> <span class="st0">&quot;JDK/1<span class="es0">\.</span>0&quot;</span> <span class="kw2">force-response-1.0</span>
+&nbsp;
+    <span class="kw1">BrowserMatch</span> <span class="st0">&quot;Microsoft Data Access Internet Publishing Provider&quot;</span> redirect-carefully
+    <span class="kw1">BrowserMatch</span> <span class="st0">&quot;MS FrontPage&quot;</span> redirect-carefully
+    <span class="kw1">BrowserMatch</span> <span class="st0">&quot;^WebDrive&quot;</span> redirect-carefully
+    <span class="kw1">BrowserMatch</span> <span class="st0">&quot;^WebDAVFS/1.[012]&quot;</span> redirect-carefully
+    <span class="kw1">BrowserMatch</span> <span class="st0">&quot;^gnome-vfs/1.0&quot;</span> redirect-carefully
+    <span class="kw1">BrowserMatch</span> <span class="st0">&quot;^XML Spy&quot;</span> redirect-carefully
+    <span class="kw1">BrowserMatch</span> <span class="st0">&quot;^Dreamweaver-WebDAV-SCM1&quot;</span> redirect-carefully
+&lt;/<span class="kw3">IfModule</span>&gt;
+&nbsp;
+<span class="co1"># module d'information sur le statut du serveur</span>
+&lt;<span class="kw3">IfModule</span> mod_status.c&gt;
+    &lt;<span class="kw3">Location</span> /server-status&gt;
+        <span class="kw1">SetHandler</span> server-status
+        <span class="kw1">Order</span> <span class="kw1">deny</span>,<span class="kw1">allow</span>
+        <span class="kw1">Deny</span> from <span class="kw2">all</span>
+        <span class="kw1">Allow</span> from 127.0.0.1
+    &lt;/<span class="kw3">Location</span>&gt;
+&lt;/<span class="kw3">IfModule</span>&gt;
+&nbsp;
+<span class="co1"># module des informations du serveur</span>
+&lt;<span class="kw3">IfModule</span> mod_info.c&gt;
+    &lt;<span class="kw3">Location</span> /server-info&gt;
+        <span class="kw1">SetHandler</span> server-info
+        <span class="kw1">Order</span> <span class="kw1">deny</span>,<span class="kw1">allow</span>
+        <span class="kw1">Deny</span> from <span class="kw2">all</span>
+        <span class="kw1">Allow</span> from 127.0.0.1
+    &lt;/<span class="kw3">Location</span>&gt;
+&lt;/<span class="kw3">IfModule</span>&gt;</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Fichier de configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13324-27961" /><input type="submit" value="Modifier" class="button" title="Fichier de configuration" /></div></form></div>
+<h3 class="sectionedit17" id="sites-available">sites-available</h3>
+<div class="level3">
+
+<p>
+Ce fichier contient les différents <strong>vhosts</strong><sup><a href="apache2?redirect=1#fn__5" id="fnt__5" class="fn_top">5)</a></sup> que vous utiliserez. Ils vous permettent de <strong>définir plusieurs sites</strong> sur une même machine,<br/>
+
+le plus souvent des sous-domaines (<strong>www</strong>.domain.tld, <strong>machin</strong>.domain.tld…), mais aussi d&#039;autres domaines (<strong>domain</strong>.tld, <strong>autredomain</strong>.tld…).<br/>
+
+<p><div class="noteclassic">Si vous voulez utiliser plusieurs hôtes virtuel voir <a href="tutoriel/virtualhosts_avec_apache2" class="wikilink1" title="tutoriel:virtualhosts_avec_apache2">virtualhosts_avec_apache2</a>
+</div></p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/apache2/sites-available/default</strong> (le seul vhost existant pour le moment).
+</p>
+<pre class="code apache"><span class="co1"># NameVirtualHost définit les IPs à utiliser par apache,</span>
+<span class="co1"># * signifie qu'on utilise n'importe quel IP pour accéder au serveur</span>
+<span class="co1"># 127.0.0.1 (boucle locale), 192.168.x.x (ip reseau local), ou une IP externe.</span>
+<span class="co1"># Cette directive est en dehors du Vhost, on pourrait donc la déplacer dans apache2.conf.</span>
+<span class="co1"># Dans tous les cas si elle est définie à * , elle ne doit pas être reprise dans les autres vhosts.</span>
+<span class="kw1">NameVirtualHost</span> *:<span class="nu0">80</span>
+&nbsp;
+<span class="co1"># Le vhost proprement dit : il est compris dans un bloc &lt;VirtualHost&gt;,</span>
+<span class="co1"># Ces blocs définissent la &quot;portée&quot; de la validité des directives qui y sont définies.</span>
+<span class="co1"># Le * derrière VirtualHost définit ici que le vhost est valable pour toutes les IPs sur lesquelles apache écoute.</span>
+&lt;<span class="kw3">VirtualHost</span> domain.tld:<span class="nu0">80</span>&gt;
+<span class="co1"># ServerName définit le nom utilisé pour le vhost. Mettez le nom de l'hôte du domaine</span>
+<span class="kw1">ServerName</span> www.domain.tld
+<span class="co1"># ServerAlias définit les autres sous domaines pour lesquels le serveur répondra.</span>
+<span class="kw1">ServerAlias</span> domain.tld *.domain.tld
+<span class="co1"># ServerAdmin vous permet de spécifier un email à utiliser en cas de problème, sur une page d'erreur 404 par exemple.</span>
+<span class="kw1">ServerAdmin</span> administrateur.web@domain.tld
+<span class="co1"># DocumentRoot définit le dossier racine dans lequel seront stockés les fichiers du site.</span>
+<span class="kw1">DocumentRoot</span> /var/www/htdocs
+        <span class="co1"># Directory définit les options par défaut du répertoire</span>
+	&lt;<span class="kw3">Directory</span> /var/www/htdocs&gt;
+                <span class="co1"># Active les options:</span>
+                <span class="co1"># FollowSymLinks permet de suivre les liens symboliques.</span>
+                <span class="co1"># Indexes autorise le listage de fichiers d'un répertoire qui ne contient pas d'index.</span>
+		<span class="kw1">Options</span> <span class="kw2">Indexes</span> <span class="kw2">FollowSymLinks</span> MultiViews
+                <span class="co1"># AllowOverride permet de surcharger certaines options en utilisant des fichiers .htaccess dans le répertoire du site.</span>
+		<span class="kw1">AllowOverride</span> <span class="kw2">None</span>
+                <span class="co1"># Droits par defaut</span>
+		<span class="kw1">Order</span> <span class="kw1">allow</span>,<span class="kw1">deny</span>
+		<span class="kw1">allow</span> from <span class="kw2">all</span>
+		<span class="co1"># permet de rediriger les requêtes vers un fichier d'index precis </span>
+		<span class="kw1">RedirectMatch</span> ^/$ /index.php
+	&lt;/<span class="kw3">Directory</span>&gt;
+&nbsp;
+	<span class="kw1">ErrorLog</span> /var/log/apache2/error.domain.tld.log
+	<span class="kw1">CustomLog</span> /var/log/apache2/access.domain.tld.log combined
+&lt;/<span class="kw3">VirtualHost</span>&gt;</pre>
+
+<p>
+Enregistrez les changements sous un autre nom (ex: nomduvhost).
+</p>
+
+<p>
+Supprimer l&#039;ancien lien symbolique de la configuration d&#039;origine
+</p>
+<pre class="code">sudo a2dissite default</pre>
+
+<p>
+Il faut maintenant <strong>activer le vhost</strong>. Pour cela il faut créer un <strong>lien symbolique</strong> du fichier <strong>de sites-available/ vers sites-enabled/</strong>.<br/>
+
+En utilisant:
+</p>
+<pre class="code">sudo a2ensite nomduvhost</pre>
+
+<p>
+<p><div class="noteclassic">
+<strong>a2dissite</strong> : Apache2 Disable Site<br/>
+
+<strong>a2ensite</strong> : Apache2 Enable Site
+
+</div></p>
+Cette méthode du lien symbolique permet de réaliser rapidement des changements dans la configuration d&#039;apache.
+</p>
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/hosts</strong> et modifier la ligne avec nomduvhost le ServerName que vous avez choisi:
+</p>
+<pre class="file">127.0.0.1 localhost nomduvhost</pre>
+
+<p>
+Cela permettra à votre système de faire la correspondance entre le nom de l&#039;hôte et votre machine locale.
+</p>
+
+<p>
+Notez que sous debian/ubuntu 2 les pages a utiliser comme index sont spécifiées dans le module dir (mods-available/dir.conf).
+</p>
+
+</div>
+
+<h5 id="activer_les_scripts_cgi">Activer les scripts CGI</h5>
+<div class="level5">
+
+<p>
+Pour ce faire, rien de plus simple, ajoutez les lignes suivantes à votre &quot;apache2.conf&quot; :
+</p>
+<pre class="code">ScriptAlias /cgi-bin/ /var/www/votre_site/cgi-bin/
+	&lt;Directory /var/www/votre_site/cgi-bin/&gt;
+	Options ExecCGI
+	AddHandler cgi-script cgi pl py
+	&lt;/Directory&gt;</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[sites-available] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="27962-32031" /><input type="submit" value="Modifier" class="button" title="sites-available" /></div></form></div>
+<h3 class="sectionedit18" id="securiser_apache">Sécuriser Apache</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">  <a href="http://doc.ubuntu-fr.org/tutoriel/securiser_apache2" class="wikilink1" title="tutoriel:securiser_apache2">Sécuriser Apache2</a></div>
+</li>
+<li class="level1"><div class="li">  <a href="tutoriel/securiser_apache2_avec_ssl" class="wikilink1" title="tutoriel:securiser_apache2_avec_ssl">Sécuriser Apache2 avec SSL</a></div>
+</li>
+<li class="level1"><div class="li">  Voir la documentation <a href="http://www.cgsecurity.org/Articles/apache.html" class="urlextern" title="http://www.cgsecurity.org/Articles/apache.html"  rel="nofollow">http://www.cgsecurity.org/Articles/apache.html</a></div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="securite_des_pages">Sécurité des pages</h4>
+<div class="level4">
+
+<p>
+ Afin de modifier les pages nous allons créer un utilisateur <strong>webadmin</strong> le seul à pouvoir en créer, en supprimer et en modifier.<br/>
+
+ En faisant de webadmin le propriétaire et de www-data le groupe, tous les autres utilisateurs du système ne pourront accéder aux fichiers grâce aux droits appliqués ensuite.<br/>
+
+Nous interdirons à apache2 de modifier les pages en autorisant seulement la lecture au groupe www-data (l&#039;utilisateur sous lequel tourne apache et qui est aussi son groupe), et en donnant tous les droits au propriétaire.<br/>
+
+</p>
+
+<p>
+<em class="u">Création de l&#039;utilisateur webadmin:</em>
+</p>
+<pre class="code">sudo adduser webadmin</pre>
+
+<p>
+<em class="u">Modification des propriétaires de tous les fichiers et dossiers du répertoire :</em>
+</p>
+<pre class="code">sudo chown -Rf webadmin:www-data /var/www</pre>
+
+<p>
+<em class="u">RÉPERTOIRES lecture et exécution pour le group www-data et écriture pour le propriétaire 750 :</em>
+</p>
+<pre class="code">sudo find /var/www -type d -exec chmod 750 {} \;</pre>
+
+<p>
+<em class="u">FICHIERS lecture pour www-data et creation pour le propriétaire 640 :</em>
+</p>
+<pre class="code">sudo find  /var/www -type f -exec chmod 640 {} \;</pre>
+
+<p>
+alternativement, pour modifier les droits (mais pas les propriétaires), il est possible d&#039;utiliser les deux commandes suivantes:
+</p>
+<pre class="code">sudo chmod -R 644 /var/www</pre>
+
+<p>
+l&#039;interet est de ne pas lancer une multitude de commandes pour changer les droits (find lance la commande à chaque fois qu&#039;il trouve un fichier correspondant)
+qui a pour effet de mettre le propriétaire comme étant le seul avec droit de lecture et
+</p>
+<pre class="code"> sudo chmod a+X /var/www</pre>
+
+<p>
+qui ajoute le droit x aux dossiers uniquement (droit de traverser)
+</p>
+
+</div>
+
+<h4 id="pare-feu">Pare-Feu</h4>
+<div class="level4">
+
+<p>
+<em class="u">Sachant que  :</em><br/>
+
+</p>
+<ol>
+<li class="level1"><div class="li"> HTTP est un protocole utilisant <abbr title="Transmission Control Protocol">TCP</abbr>,</div>
+</li>
+<li class="level1"><div class="li"> Le <strong>serveur reçoit</strong> sur le port <strong>80</strong> ou <strong>443</strong>  ( si SSL est utilisé <a href="tutoriel/securiser_apache2_avec_ssl" class="wikilink1" title="tutoriel:securiser_apache2_avec_ssl">Sécuriser Apache2 avec SSL</a> ) les requêtes, venant d&#039;un port <strong>supérieur à 1024 inclus</strong>, d&#039;<strong>un client</strong>,</div>
+</li>
+<li class="level1"><div class="li"> Qu&#039;il <strong>répond</strong> à ces requêtes sur ces <strong>même ports vers les même ports</strong>.<br/>
+</div>
+</li>
+</ol>
+
+<p>
+Nous allons pouvoir construire les règle de base qui autorise les entrées et la sortie du serveur vers ces ports.
+</p>
+
+<p>
+<em class="u">Le serveur est :</em><br/>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> connecté directement à internet :</div>
+</li>
+</ul>
+<pre class="code">ext_if=&quot;eth0&quot;
+srv_www_ip=&quot;SRV_WWW.INTERNET.IP.NUMBER&quot;
+# iptables -[A:ajoute] -[i:interface d&#039;entree|o:interface de sortie] if_interface -[s:source] ip
+--[sport:port source] port -[d|destination] ip --[dport:destination port] port -J [ACCEPT:accepter|REJECT:rejeter]
+iptables -A INPUT  -p tcp -i $ext_if --sport 1024: -d $srv_www_ip --dport 80, 443 -J ACCEPT
+iptables -A OUTPUT -p tcp -o $ext_if -s $srv_www_ip --sport 80,443 -d --dport 1024: -J ACCEPT
+done</pre>
+<ul>
+<li class="level1"><div class="li"> sur le réseau local :</div>
+</li>
+</ul>
+
+<p>
+Le mode <strong>forwarding</strong> et les règles <strong><abbr title="Network Address Translation">NAT</abbr></strong> doivent être activées. 
+</p>
+<pre class="code">ext_if=&quot;eth0&quot;
+srv_www_ip_local=&quot;SRV.local.IP.address&quot;
+
+iptables –I PREROUTING –t nat –p tcp –i $ext_if –s -–dport 80 –j DNAT –to $srv_www_ip_local:80
+iptables –I PREROUTING –t nat –p tcp –i $ext_if -–dport 443 –j DNAT –to $srv_www_ip_local:443
+iptables –I FORWARD –p tcp –i $ext_if –d $srv_www_ip_local –-dport 80 –j ACCEPT
+iptables –I FORWARD –p tcp –i $ext_if –d $srv_www_ip_local –-dport 443 –j ACCEPT
+</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Sécuriser Apache] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="32032-35519" /><input type="submit" value="Modifier" class="button" title="Sécuriser Apache" /></div></form></div>
+<h2 class="sectionedit19" id="utilisation">Utilisation</h2>
+<div class="level2">
+<pre class="code">sudo service apache2 start | stop | restart | status </pre>
+
+<p>
+Il existe des interfaces graphiques pour utiliser Apache. De la plus simple à la plus complète : <a href="https://launchpad.net/localhost-indicator" class="urlextern" title="https://launchpad.net/localhost-indicator"  rel="nofollow">localhost-indicator</a>, <a href="https://launchpad.net/rapache" class="urlextern" title="https://launchpad.net/rapache"  rel="nofollow">rapache</a> et <a href="http://doc.ubuntu-fr.org/webmin" class="urlextern" title="http://doc.ubuntu-fr.org/webmin"  rel="nofollow">webmin</a>. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="35520-35868" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h3 class="sectionedit20" id="erreur_au_demarrage">Erreur au démarrage</h3>
+<div class="level3">
+
+<p>
+Au démarrage d&#039;Apache, il est possible que celui-ci ne soit pas capable de déterminer un nom de domaine. Ce message sera affiché dans le terminal :
+</p>
+<blockquote><div class="no">
+Could not reliably determine the server&#039;s fully qualified domain name, using 127.0.1.1 for ServerName</div></blockquote>
+
+<p>
+Pour corriger l&#039;erreur :
+</p>
+
+</div>
+
+<h4 id="premiere_solution">Première solution</h4>
+<div class="level4">
+
+<p>
+On doit <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditer le fichier</a> <strong>/etc/apache2/apache2.conf</strong>
+</p>
+
+<p>
+Par défaut ce fichier est vide, il faut donc ajouter la ligne suivante:
+</p>
+<pre class="code">ServerName localhost</pre>
+
+<p>
+<p><div class="notetip">On peut l&#039;écrire aussi directement à la fin du fichier <strong>/etc/apache2/apache2.conf</strong> si ça ne marche vraiment pas (ce qui a été mon cas).
+</div></p>
+</p>
+
+<p>
+On enregistre, on quitte et on redémarre Apache :
+</p>
+
+</div>
+
+<h4 id="deuxieme_solution">Deuxième solution</h4>
+<div class="level4">
+
+<p>
+On doit <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditer le fichier</a> <strong>/etc/hosts</strong>
+</p>
+
+<p>
+Sur la première ligne, on trouve habituellement ça :
+</p>
+<pre class="code">127.0.0.1         localhost</pre>
+
+<p>
+Comme Apache2 ne sait pas extrapoler, il faut la modifier ainsi :
+</p>
+<pre class="code">127.0.0.1         localhost.localdomain localhost</pre>
+
+<p>
+Vous pouvez toujours mettre le nom réel de votre serveur, mais toujours sous un format <a href="http://fr.wikipedia.org/wiki/Fully_qualified_domain_name" class="urlextern" title="http://fr.wikipedia.org/wiki/Fully_qualified_domain_name"  rel="nofollow">FQDN</a>
+</p>
+<pre class="code">127.0.0.1        Mon_Super_Serveur.maison localhost</pre>
+
+<p>
+<em>Le nom doit correspondre avec celui contenu dans /etc/hostname</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Erreur au démarrage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="35869-37256" /><input type="submit" value="Modifier" class="button" title="Erreur au démarrage" /></div></form></div>
+<h3 class="sectionedit21" id="redemarrer_apache2">Redémarrer Apache2</h3>
+<div class="level3">
+<pre class="code">sudo /etc/init.d/apache2 restart</pre>
+
+<p>
+ou
+</p>
+<pre class="code">sudo service apache2 restart</pre>
+
+<p>
+Il est aussi possible de redémarrer apache2 sans &quot;tuer&quot; les requêtes en cours :
+</p>
+<pre class="code">apache2ctl graceful</pre>
+
+<p>
+Cette solution est plus élégante sur un serveur en production.<br/>
+
+</p>
+
+<p>
+Nous pouvons maintenant passer à la phase de vérification.<br/>
+
+</p>
+
+<p>
+Si il y a des messages d&#039;erreurs regarder les fichiers suivant:<br/>
+
+</p>
+<pre class="code">tail -f /var/log/syslog
+tail -f /var/log/apache2/access.log
+tail -f /var/log/apache2/error.log</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Redémarrer Apache2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="37257-37807" /><input type="submit" value="Modifier" class="button" title="Redémarrer Apache2" /></div></form></div>
+<h3 class="sectionedit22" id="activer_les_fichiers_htaccess">Activer les fichiers .htaccess</h3>
+<div class="level3">
+
+<p>
+Les .htaccess permettent de créer des zones administrateur protégées très facilement ou aussi d&#039;activer des configurations de façon localisées pour des serveurs auxquels vous n&#039;avez pas accès au fichier de configuration principale.
+</p>
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditez le fichier</a> /etc/apache2/sites-enabled/000-default
+</p>
+
+<p>
+<p><div class="notetip">Vous pouvez aussi éditer /etc/apache2/apache2.conf plutôt que d&#039;utiliser des fichiers .htaccess (ne pas les activer par conséquent), ce qui est d&#039;ailleurs préférable <br/>
+
+<em class="u">Selon la doc Apache :</em>
+<em>En général, vous ne devriez jamais utiliser les fichiers .htaccess à moins que vous n&#039;ayez pas accès au fichier principal de configuration du serveur. Il y a, par exemple, une conception erronée qui prévaut selon laquelle les droits des utilisateurs doivent toujours être gérés dans le fichier .htaccess. Cela n&#039;est simplement pas le cas. Vous pouvez placer les configurations des droits dans la configuration principale du serveur, et cela est, <strong>en fait</strong>, la manière favorisée de le faire.</em>
+</p>
+
+<p>
+<em>&quot;In general, you should never use .htaccess files unless you don&#039;t have access to the main server configuration file. There is, for example, a prevailing misconception that user authentication should always be done in .htaccess files. This is simply not the case. You can put user authentication configurations in the main server configuration, and this is, in fact, the preferred way to do things.<br/>
+
+.htaccess files should be used in a case where the content providers need to make configuration changes to the server on a per-directory basis, but do not have root access on the server system.&quot;</em> cf: <a href="http://httpd.apache.org/docs/2.2/howto/htaccess.html#when" class="urlextern" title="http://httpd.apache.org/docs/2.2/howto/htaccess.html#when"  rel="nofollow">http://httpd.apache.org/docs/2.2/howto/htaccess.html#when</a>
+ 
+</div></p>
+</p>
+
+<p>
+Ajoutez ces lignes à la fin du fichier :
+</p>
+<pre class="code">&lt;Directory /var/www/le_rep_ou_vous_voulez_activer_le_.htaccess&gt;
+    AllowOverride all
+&lt;/Directory&gt;</pre>
+
+<p>
+<span class="curid"><a href="apache2#redemarrer_apache2" class="wikilink1" title="apache2"> Redémarrer ensuite apache</a></span> et les .htaccess sont activés
+</p>
+
+<p>
+Si vous souhaitez autoriser les fichiers .htaccess partout (et pas uniquement dans un unique répertoire) il vous faudra remplacer &quot;AllowOverride none&quot; par &quot;AllowOverride All&quot; entre les balises &lt;Directory /&gt;…&lt;/Directory&gt; et &lt;Directory /var/www/&gt;…&lt;/Directory&gt; du fichier /etc/apache2/sites-enabled/000-default.
+</p>
+
+<p>
+<p><div class="noteclassic"><strong>Dossier invisible</strong> : pour activer PHP 5 sur les hébergements Free.fr, un fichier .htaccess contenant &quot;php 1&quot; est nécessaire; la présence de celui-ci a pour conséquence de rendre le dossier conteneur invisible sous Apache.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Activer les fichiers .htaccess] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="37808-40391" /><input type="submit" value="Modifier" class="button" title="Activer les fichiers .htaccess" /></div></form></div>
+<h2 class="sectionedit23" id="modules">Modules</h2>
+<div class="level2">
+
+<p>
+Il est possible d&#039;ajouter des modules à apache, ajoutant des fonctionnalités à votre serveur web.
+Tous les modules sont répertoriés ici : /etc/apache2/mods-available
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Modules] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="40392-40583" /><input type="submit" value="Modifier" class="button" title="Modules" /></div></form></div>
+<h3 class="sectionedit24" id="activer_l_url_rewriting">Activer l&#039;url rewriting</h3>
+<div class="level3">
+
+<p>
+Chargez le module rewrite :
+</p>
+<pre class="code">a2enmod rewrite</pre>
+
+<p>
+Ensuite, deux possibilités s&#039;offrent à vous suivant vos capacités de gestion de votre serveur :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>pour un serveur mutualisé par exemple</strong> : placer  un fichier .htaccess avec des règles de rewriting à la racine de votre site. Pour cela les fichiers .htaccess doivent être autorisé : <span class="curid"><a href="apache2#activer_les_fichiers_htaccess" class="wikilink1" title="apache2"> Activer les fichiers .htaccess</a></span></div>
+</li>
+<li class="level1"><div class="li"> <strong>pour un serveur dédié ou un serveur personnel</strong> (sur votre propre distribution) il est conseillé d&#039;ajouter les règles de rewriting directement dans le fichier de configuration d&#039;Apache2 : /etc/apache2/apache2.conf en recopiant les lignes suivantes à la fin dudit fichier.</div>
+</li>
+</ul>
+
+<p>
+Un petit exemple :
+</p>
+<pre class="code">Options +FollowSymlinks
+RewriteEngine on
+
+# Lorsque l&#039;on tape dans la barre d&#039;adresse www.votre_domaine.net/page-1 c&#039;est la page www.votre_domaine.net/page.php?id=1 qui s&#039;affiche
+# [L]=[last] signifie que si cette régle s&#039;applique on n&#039;en cherche pas d&#039;autre
+RewriteRule ^page-1$ /page.php?id=1 [L]
+</pre>
+
+<p>
+Encore mieux avec les expressions régulières : 
+</p>
+<pre class="code">Options +FollowSymlinks
+RewriteEngine on
+
+# Lorsque l&#039;on tape dans la barre d&#039;adresse www.votre_domaine.net/page-* c&#039;est la page www.votre_domaine.net/page.php?id=* qui s&#039;affiche
+# ^ et $ signifie respectivement le début et la fin d&#039;une expression régulière
+RewriteRule ^page-([0-9]+)$ /page.php?id=$1 [L]
+</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Activer l'url rewriting] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="40584-42046" /><input type="submit" value="Modifier" class="button" title="Activer l'url rewriting" /></div></form></div>
+<h3 class="sectionedit25" id="mod_bw_-_limiter_la_bande_passante">Mod_bw - Limiter la bande passante</h3>
+<div class="level3">
+
+<p>
+Il existe un module compatible avec apache2 permettant de limiter la bande passante.
+</p>
+
+<p>
+<strong>Installation du module :</strong>
+<a href="apt://libapache2-mod-bw" class="interwiki iw_apt" title="apt://libapache2-mod-bw">libapache2-mod-bw</a>
+</p>
+
+<p>
+<strong>Charger le module bandwidth :</strong>
+   sudo a2enmod bw
+</p>
+
+<p>
+<strong>Configuration du module :</strong>
+</p>
+
+<p>
+Pour cela il faut ajouter quelques lignes dans les Vhost de vos domaines :
+</p>
+<pre class="code"> cd /etc/apache2/sites-enabled</pre>
+<pre class="code"> sudo vim votredomaine.tls.conf</pre>
+
+<p>
+Juste avant <em>&lt;/VirtualHost&gt;</em>, ajouter :
+</p>
+<ul>
+<li class="level1"><div class="li"> Limiter tous les utilisateurs à 10Kb/s :</div>
+</li>
+</ul>
+<pre class="code"> BandwidthModule On
+ ForceBandWidthModule On
+ Bandwidth all 10240</pre>
+<ul>
+<li class="level1"><div class="li"> Limiter tous les utilisateurs à 50Kb/s pour les fichiers supérieurs à 8000Kb :</div>
+</li>
+</ul>
+<pre class="code"> BandwidthModule On
+ ForceBandWidthModule On
+ LargeFileLimit * 8000 50000</pre>
+<ul>
+<li class="level1"><div class="li"> Limiter les fichiers .avi et .mpg à 20Kb/s :</div>
+</li>
+</ul>
+<pre class="code"> BandwidthModule On
+ ForceBandWidthModule On
+ LargeFileLimit .avi 1 20000
+ LargeFileLimit .mpg 1 20000</pre>
+
+<p>
+<strong>Redémarrer Apache2</strong>
+</p>
+<pre class="code"> sudo /etc/init.d/apache2 restart</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Mod_bw - Limiter la bande passante] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="42047-43020" /><input type="submit" value="Modifier" class="button" title="Mod_bw - Limiter la bande passante" /></div></form></div>
+<h3 class="sectionedit26" id="mod_deflate_-_compression_gzip">Mod_deflate - Compression gzip</h3>
+<div class="level3">
+
+<p>
+Le mod_deflate sur apache2 permet de gagner en rapidité et en bande passante grâce à la compression des données qui transitent entre le serveur et les clients. La compression utilisée est gzip. L&#039;installation ci-dessous permet de compresser les fichiers texte (html, css,…).
+</p>
+
+<p>
+<strong>Activation des modules deflate et headers: </strong>
+</p>
+<pre class="code"> sudo a2enmod headers
+ sudo a2enmod deflate</pre>
+
+<p>
+<strong>Configuration de deflate: </strong>
+</p>
+
+<p>
+Créez ou modifiez le fichier /etc/apache2/conf.d/mod_deflate.conf et ajoutez-y:
+</p>
+<pre class="code"> &lt;Location /&gt;
+ # Insérer le filtre
+ SetOutputFilter DEFLATE
+ # Netscape 4.x rencontre quelques problèmes...
+ BrowserMatch ^Mozilla/4 gzip-only-text/html
+ # Netscape 4.06-4.08 rencontre encore plus de problèmes
+ BrowserMatch ^Mozilla/4\.0[678] no-gzip
+ # MSIE se fait passer pour Netscape, mais tout va bien
+ BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+ # Ne pas compresser les images
+ SetEnvIfNoCase Request_URI \
+ \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+ # S&#039;assurer que les serveurs mandataires délivrent le bon contenu
+ Header append Vary User-Agent env=!dont-vary
+ &lt;/Location&gt; </pre>
+
+<p>
+<strong>Redémarrage de apache2:</strong>
+</p>
+<pre class="code"> sudo /etc/init.d/apache2 restart</pre>
+
+<p>
+Les pages seront compressées quand le client le supporte.
+</p>
+
+<p>
+<p><div class="notetip">Si un message d&#039;erreur de ce type apparait :
+</p>
+
+<p>
+apache2: Could not reliably determine the server&#039;s fully qualified domain name, using 127.0.1.1 for ServerName.
+</p>
+
+<p>
+Voir <span class="curid"><a href="http://doc.ubuntu-fr.org/apache2?&amp;#erreur_au_demarrage" class="wikilink1" title="apache2">ici</a></span> 
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Mod_deflate - Compression gzip] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="43021-44524" /><input type="submit" value="Modifier" class="button" title="Mod_deflate - Compression gzip" /></div></form></div>
+<h3 class="sectionedit27" id="mod_userdir_gerer_les_dossiers_utilisateur">mod_userdir gérer les dossiers utilisateur</h3>
+<div class="level3">
+
+<p>
+Cette partie est déjà documentée pour xampp ici <a href="http://doc.ubuntu-fr.org/xampp#modifier_le_dossier_racine_du_serveur_apache" class="urlextern" title="http://doc.ubuntu-fr.org/xampp#modifier_le_dossier_racine_du_serveur_apache"  rel="nofollow">http://doc.ubuntu-fr.org/xampp#modifier_le_dossier_racine_du_serveur_apache</a> mais je préfère le mettre dans apache.
+</p>
+
+<p>
+Certaines personnes aimeraient faire en sorte à ce que chaque utilisateur du serveur puisse avoir son site web perso.<br/>
+
+Ce site peut être accessible par : <a href="http://mondomaine.com/~nom_du_user" class="urlextern" title="http://mondomaine.com/~nom_du_user"  rel="nofollow">http://mondomaine.com/~nom_du_user</a>
+<p><div class="noteclassic"> dans la plupart des cas c&#039;est <a href="http://localhost/~nom_du_user" class="urlextern" title="http://localhost/~nom_du_user"  rel="nofollow">http://localhost/~nom_du_user</a>
+</div></p>
+</p>
+
+</div>
+
+<h4 id="permettre_a_chaque_utilisateur_d_avoir_son_propre_site_dans_public_html">Permettre à chaque utilisateur d&#039;avoir son propre site dans public_html</h4>
+<div class="level4">
+
+<p>
+Créer un répertoire public_html et lui donner les droits de lecture et d&#039;exécution
+</p>
+<pre class="code">mkdir ~/public_html
+echo &#039;&lt;?php echo &quot;PHP est actif dans votre public_html&quot;; ?&gt;&#039; &gt; public_html/index.php
+chmod -R 755 ~/public_html</pre>
+
+</div>
+
+<h4 id="activer_l_execution_en_php_pour_le_module_userdir_a_partir_de_ubuntu_1004_lucid">Activer l&#039;exécution en php pour le module userdir (à partir de Ubuntu 10.04 (Lucid))</h4>
+<div class="level4">
+
+<p>
+Editer /etc/apache2/mods-enabled/php5.conf et commenter les lignes correspondantes (avec ##) dans le fichier php5.conf qui se trouve dans /etc/apache2/mods-enabled.
+</p>
+<pre class="file">&lt;FilesMatch &quot;.+\.ph(p[345]?|t|tml)$&quot;&gt;
+    SetHandler application/x-httpd-php
+&lt;/FilesMatch&gt;
+&lt;FilesMatch &quot;.+\.phps$&quot;&gt;
+    SetHandler application/x-httpd-php-source
+    # Deny access to raw php sources by default
+    # To re-enable it&#039;s recommended to enable access to the files
+    # only in specific virtual host or directory
+    Order Deny,Allow
+    Deny from all
+&lt;/FilesMatch&gt;
+# Deny access to files without filename (e.g. &#039;.php&#039;)
+&lt;FilesMatch &quot;^\.ph(p[345]?|t|tml|ps)$&quot;&gt;
+    Order Deny,Allow
+    Deny from all
+&lt;/FilesMatch&gt;
+
+# Running PHP scripts in user directories is disabled by default
+# 
+# To re-enable PHP in user directories comment the following lines
+# (from &lt;IfModule ...&gt; to &lt;/IfModule&gt;.) Do NOT set it to On as it
+# prevents .htaccess files from disabling it.
+##&lt;IfModule mod_userdir.c&gt;
+##    &lt;Directory /home/*/public_html&gt;
+##        php_admin_flag engine Off
+##    &lt;/Directory&gt;
+##&lt;/IfModule&gt;</pre>
+
+</div>
+
+<h5 id="pour_memoire_ancienne_version_de_php5conf">(Pour mémoire)  Ancienne version de php5.conf</h5>
+<div class="level5">
+<pre class="file">&lt;IfModule mod_php5.c&gt;
+    &lt;FilesMatch &quot;\.ph(p3?|tml)$&quot;&gt;
+	SetHandler application/x-httpd-php
+    &lt;/FilesMatch&gt;
+    &lt;FilesMatch &quot;\.phps$&quot;&gt;
+	SetHandler application/x-httpd-php-source
+    &lt;/FilesMatch&gt;
+    # To re-enable php in user directories comment the following lines
+    # (from &lt;IfModule ...&gt; to &lt;/IfModule&gt;.) Do NOT set it to On as it
+    # prevents .htaccess files from disabling it.
+    ##&lt;IfModule mod_userdir.c&gt;
+    ##      &lt;Directory /home/*/public_html&gt;
+    ##        php_admin_value engine Off
+    ##     &lt;/Directory&gt;
+    ##&lt;/IfModule&gt;
+&lt;/IfModule&gt;</pre>
+
+</div>
+
+<h4 id="optionnelpersonnaliser_votre_repertoire_de_site">Optionnel : Personnaliser votre répertoire de site</h4>
+<div class="level4">
+
+<p>
+Il est possible de changer le dossier par défaut (public_html) de votre site par un autre répertoire.
+</p>
+
+</div>
+
+<h5 id="editer_le_fichier_de_configuration_de_userdir">Éditer le fichier de configuration de userdir</h5>
+<div class="level5">
+
+<p>
+Modifier la variable «UserDir public_html» dans le fichier /etc/apache2/mods-available/userdir.conf :
+</p>
+<pre class="file">&lt;IfModule mod_userdir.c&gt;
+	UserDir public_html
+	UserDir disabled root
+
+	&lt;Directory /home/*/public_html&gt;
+		AllowOverride FileInfo AuthConfig Limit Indexes
+		Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+		&lt;Limit GET POST OPTIONS&gt;
+			Require all granted
+		&lt;/Limit&gt;
+		&lt;LimitExcept GET POST OPTIONS&gt;
+			Require all denied
+		&lt;/LimitExcept&gt;
+	&lt;/Directory&gt;
+&lt;/IfModule&gt;
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet</pre>
+
+</div>
+
+<h4 id="activer_le_module_userdir">Activer le module userdir</h4>
+<div class="level4">
+<pre class="code">sudo a2enmod userdir
+sudo /etc/init.d/apache2 reload</pre>
+
+<p>
+Dans le navigateur web rendez-vous à l&#039;adresse <a href="http://127.0.0.1/~nom_du_user" class="urlextern" title="http://127.0.0.1/~nom_du_user"  rel="nofollow">http://127.0.0.1/~nom_du_user</a> et vérifier que le message «<em>PHP est actif dans votre public_htm</em>» s&#039;affiche.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[mod_userdir gérer les dossiers utilisateur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="44525-48167" /><input type="submit" value="Modifier" class="button" title="mod_userdir gérer les dossiers utilisateur" /></div></form></div>
+<h3 class="sectionedit28" id="mod_proxy_ou_comment_rediriger_certains_domaines_vers_certaines_machines">mod_proxy ou comment rediriger certains domaines vers certaines machines</h3>
+<div class="level3">
+
+<p>
+Mon problème était le suivant :
+</p>
+
+<p>
+<strong>routeur :</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> renvoi du port 80 sur la machine 192.168.0.10</div>
+</li>
+</ul>
+
+<p>
+<strong>machine 192.168.0.10 :</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> virtualhosts renvoyant vers plusieurs dossiers</div>
+</li>
+<li class="level1"><div class="li"> toto.mondomaine.com va vers /home/toto/www</div>
+</li>
+<li class="level1"><div class="li"> titi.mondomaine.com va vers /home/titi/www</div>
+</li>
+<li class="level1"><div class="li"> etc…</div>
+</li>
+<li class="level1"><div class="li"> et 000-default va vers /var/www</div>
+</li>
+</ul>
+
+<p>
+<strong>machine 192.168.0.11 :</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> virtualhosts renvoyant vers plusieurs dossiers</div>
+</li>
+<li class="level1"><div class="li"> tata.mondomaine.com va vers /home/tata/www</div>
+</li>
+<li class="level1"><div class="li"> tutu.mondomaine.com va vers /home/tutu/www</div>
+</li>
+<li class="level1"><div class="li"> etc…</div>
+</li>
+<li class="level1"><div class="li"> et 000-default va vers /var/www</div>
+</li>
+</ul>
+
+<p>
+Sauf que si on met <a href="http://tata.mondomaine.com" class="urlextern" title="http://tata.mondomaine.com"  rel="nofollow">http://tata.mondomaine.com</a> dans son navigateur on se retrouve avec le site par defaut de 192.168.0.10….
+</p>
+
+<p>
+Donc, il faut appeller mod_proxy à la rescousse.
+</p>
+
+<p>
+sur 192.168.0.10 :
+activer le module proxy avec :
+</p>
+<pre class="code">a2enmod proxy</pre>
+
+<p>
+créer un virtualhost /etc/apache2/sites-available/tata.mondomaine.com qui contient :
+</p>
+<pre class="code">&lt;VirtualHost 192.168.0.10:80&gt;
+        ProxyRequests Off
+        ProxyPreservehost on
+        ServerName tata.mondomaine.com
+        ProxyPass  / http://192.168.0.11/
+        ProxyPassReverse / http://192.168.0.11/
+        &lt;Proxy&gt;
+            Order Allow,Deny
+            Allow from all
+        &lt;/Proxy&gt;
+&lt;/VirtualHost&gt;</pre>
+
+<p>
+Activer ce fichier :
+</p>
+<pre class="code">sudo a2ensite tata.mondomaine.com</pre>
+
+<p>
+Redémarrer apache
+</p>
+
+<p>
+Et c&#039;est tout :)
+</p>
+
+<p>
+Si ca veut pas, activer aussi les modules proxy_http et proxy_connect
+</p>
+
+<p>
+bien sûr on peut rajouter dans /etc/hosts:
+</p>
+<pre class="code">192.168.0.11 tata.mondomaine.com</pre>
+
+<p>
+comme ça, dans ProxyPass et ProxyPassReverse on peut utiliser les noms de domaine à la place des adresses
+</p>
+
+<p>
+et comme c&#039;est un proxy, beaucoup d&#039;autres options sont envisageables mais je n&#039;irai pas plus loin pour aujourd&#039;hui.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[mod_proxy ou comment rediriger certains domaines vers certaines machines] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="48168-49936" /><input type="submit" value="Modifier" class="button" title="mod_proxy ou comment rediriger certains domaines vers certaines machines" /></div></form></div>
+<h2 class="sectionedit29" id="optimiser_votre_serveur_apache2">Optimiser votre serveur apache2</h2>
+<div class="level2">
+
+<p>
+Il est possible d&#039;optimiser votre serveur apache.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Optimiser votre serveur apache2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="49937-50032" /><input type="submit" value="Modifier" class="button" title="Optimiser votre serveur apache2" /></div></form></div>
+<h3 class="sectionedit30" id="accelerateurs_php">Accélérateurs PHP</h3>
+<div class="level3">
+
+<p>
+Permet de mettre en cache le code PHP déjà compilé. Ceci évitera de recompiler les fichiers PHP à chaque fois, ce qui augmente de façon considérable les performances de votre serveur et donc de vos sites.
+</p>
+
+<p>
+<em class="u"><strong>Voici un comparatif de ce qui existe actuellement :</strong></em>
+</p>
+
+<p>
+<a href="http://dotclear.placeoweb.com/post/PHP-accelerator-cache" class="urlextern" title="http://dotclear.placeoweb.com/post/PHP-accelerator-cache"  rel="nofollow">http://dotclear.placeoweb.com/post/PHP-accelerator-cache</a>
+</p>
+
+</div>
+
+<h4 id="xcache">XCache</h4>
+<div class="level4">
+
+<p>
+Plus moderne et a été réécrit de zéro récemment. Il assure un meilleur support des versions récentes de PHP, au contraire des anciens eaccelerator and co.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/xcache" class="wikilink1" title="xcache">xcache</a>
+</p>
+
+</div>
+
+<h4 id="eaccelerator">eAccelerator</h4>
+<div class="level4">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/eaccelerator" class="wikilink1" title="eaccelerator">eaccelerator</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_30'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Accélérateurs PHP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="50033-50631" /><input type="submit" value="Modifier" class="button" title="Accélérateurs PHP" /></div></form></div>
+<h2 class="sectionedit31" id="empecher_le_demarrage_automatique_d_apache">Empêcher le démarrage automatique d&#039;apache</h2>
+<div class="level2">
+
+<p>
+<p><div class="notewarning"> Méthode déconseillée pour un serveur en production ! 
+</div></p>
+</p>
+
+<p>
+<p><div class="noteclassic">Dans le cas d&#039;un ordinateur de bureau, <strong>apache</strong> est souvent utilisé de façon occasionnelle pour développer et tester en local.
+</p>
+
+<p>
+Pour les amoureux de l&#039;écologie c&#039;est de l&#039;énergie gaspillée sans raison valable. 
+</p>
+
+<p>
+Pour les machines à faibles ressources, apache diminue la vitesse de démarrage  
+</p>
+
+<p>
+Autant de raisons valables pour démarrer manuelle apache quand nous en avons besoin et enlever le «<a href="https://fr.wikipedia.org/wiki/Daemon_%28informatique%29" class="urlextern" title="https://fr.wikipedia.org/wiki/Daemon_%28informatique%29"  rel="nofollow">daemon</a>»/service de démarrage automatique ! 
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_31'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Empêcher le démarrage automatique d'apache] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="50632-51293" /><input type="submit" value="Modifier" class="button" title="Empêcher le démarrage automatique d'apache" /></div></form></div>
+<h3 class="sectionedit32" id="modifier_le_service_apache_avec_upstart">Modifier le service apache avec upstart</h3>
+<div class="level3">
+
+<p>
+Se reporter à l&#039;exemple : <a href="http://doc.ubuntu-fr.org/upstart#utilisation" class="wikilink1" title="upstart">Upstart</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_32'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Modifier le service apache avec upstart] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="51294-51403" /><input type="submit" value="Modifier" class="button" title="Modifier le service apache avec upstart" /></div></form></div>
+<h3 class="sectionedit33" id="supprimer_le_service_apache_de_demarrage_avec_update-rcd">Supprimer le service apache de démarrage avec  update-rc.d</h3>
+<div class="level3">
+<pre class="code"> user@PCMachine:~$ sudo update-rc.d -f apache2 remove </pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_33'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Supprimer le service apache de démarrage avec  update-rc.d] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="51404-51542" /><input type="submit" value="Modifier" class="button" title="Supprimer le service apache de démarrage avec  update-rc.d" /></div></form></div>
+<h3 class="sectionedit34" id="restaurer_le_demarrage_automatique_d_apache_avec_update-rcd">Restaurer le démarrage automatique d&#039;apache avec update-rc.d</h3>
+<div class="level3">
+<pre class="code"> user@PCMachine:~$ sudo update-rc.d apache2 default </pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_34'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Restaurer le démarrage automatique d'apache avec update-rc.d] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="51543-51684" /><input type="submit" value="Modifier" class="button" title="Restaurer le démarrage automatique d'apache avec update-rc.d" /></div></form></div>
+<h2 class="sectionedit35" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de :<br/>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer les paquets</a>. Vous devez supprimer tous les paquets que vous avez installés. La configuration de l&#039;application sera conservée ou supprimée selon la méthode de désinstallation que vous choisirez (&#039;sudo apt-get purge [paquet]&#039; pour virer les configs et les fichiers, &#039;sudo apt-get remove [paquet]&#039; pour garder la config.)<br/>
+</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_35'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Désinstallation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="51685-52148" /><input type="submit" value="Modifier" class="button" title="Désinstallation" /></div></form></div>
+<h2 class="sectionedit36" id="liens_utiles">Liens utiles</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> (en) <a href="http://apache.org/" class="urlextern" title="http://apache.org/"  rel="nofollow">Site officiel Projets Apache</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://httpd.apache.org/docs/" class="urlextern" title="http://httpd.apache.org/docs/"  rel="nofollow">Documentation Apache</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/tutoriel/securiser_apache2" class="wikilink1" title="tutoriel:securiser_apache2">securiser_apache2</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="tutoriel/securiser_apache2_avec_ssl" class="wikilink1" title="tutoriel:securiser_apache2_avec_ssl">securiser_apache2_avec_ssl</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="lamp_plus" class="wikilink1" title="lamp_plus">serveur LAMP aller plus loin</a></div>
+</li>
+<li class="level1"><div class="li"> (fr) <a href="http://www.it-connect.fr/tutoriels/serveur-web/apache/" class="urlextern" title="http://www.it-connect.fr/tutoriels/serveur-web/apache/"  rel="nofollow">Plusieurs tutoriels sur la configuration d&#039;Apache sur IT-Connect</a></div>
+</li>
+<li class="level1"><div class="li"> (fr) <a href="http://documentation.online.net/fr/serveur-dedie/tutoriel/installation-solution-lamp_apache-php-mysql" class="urlextern" title="http://documentation.online.net/fr/serveur-dedie/tutoriel/installation-solution-lamp_apache-php-mysql"  rel="nofollow">http://documentation.online.net/fr/serveur-dedie/tutoriel/installation-solution-lamp_apache-php-mysql</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em> Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/benje" class="wikilink1" title="utilisateurs:benje">benje</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/pepou06" class="wikilink2" title="utilisateurs:pepou06" rel="nofollow">Pepou06</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/oxossi" class="wikilink1" title="utilisateurs:oxossi">Oxossi</a>, <a href="utilisateurs/karting06" class="wikilink1" title="utilisateurs:karting06">Karting06</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/albanmartel" class="wikilink1" title="utilisateurs:albanmartel">albanmartel</a>. </em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_36'><form class="button btn_secedit" method="post" action="apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233180" /><input type="hidden" name="summary" value="[Liens utiles] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="52149-" /><input type="submit" value="Modifier" class="button" title="Liens utiles" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="apache2?redirect=1#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+L&#039;acronyme <strong><a href="http://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a></strong> signifie <em>HyperText Transfert Protocol</em> ; <em>Protocole de Transfert HyperTexte</em>.</div>
+<div class="fn"><sup><a href="apache2?redirect=1#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+L&#039;acronyme <strong><a href="http://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTPS" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTPS">HTTPS</a></strong> signifie <em>HyperText Transfert Protocol Secured</em> ; <em>Protocole de Transfert Hypertexte Sécurisé</em>.</div>
+<div class="fn"><sup><a href="apache2?redirect=1#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<strong><a href="http://fr.wikipedia.org/wiki/Port_%28logiciel%29" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Port_%28logiciel%29">Port</a></strong> Découpe logique de l&#039;interface physique il en existe 65536</div>
+<div class="fn"><sup><a href="apache2?redirect=1#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+<em>Multi-Processing Module</em>, module multi traitements</div>
+<div class="fn"><sup><a href="apache2?redirect=1#fnt__5" id="fn__5" class="fn_bot">5)</a></sup> 
+Un vhost signifie <em>Virtual Host</em> ; <em>Hôte Virtuel</em>.</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/6/6825e9f585ce4a46a1300632c5de2bae.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/apache2?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/apache2?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/apache2?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/apache2?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/apache2?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

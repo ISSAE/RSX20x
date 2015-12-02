@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>virt-manager</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-30T13:00:10+0200"/>
+<meta name="keywords" content="precise,virtualisation,systeme,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../virt-manager?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="virt-manager"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/virt-manager"/>
+<link rel="canonical" href="../../virt-manager"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"virt-manager","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="virt-manager#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="virt-manager#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="virt-manager#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="virt-manager#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../precise" class="wikilink1" title="precise" rel="tag">precise</a>,
+	<a href="http://doc.ubuntu-fr.org/virtualisation" class="wikilink1" title="virtualisation" rel="tag">virtualisation</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="gestionnaire_de_machine_virtuelle">Gestionnaire de machine virtuelle</h1>
+<div class="level1">
+
+<p>
+Le gestionnaire de machine virtuelle est un outil graphique permettant de gérer les machines virtuelles gérées par les hyperviseurs <a href="http://doc.ubuntu-fr.org/xen" class="wikilink1" title="xen">Xen</a> et/ou <a href="../../kvm" class="wikilink1" title="kvm">kvm</a>.
+</p>
+
+<p>
+<a href="../../lib/exe/fetch.php?tok=9c0f4a&amp;media=http%253A%252F%252Fvirt-manager.org%252Fwp-content%252Fuploads%252F2013%252F04%252Fvirt-manager-vm-list.png" class="media" title="http://virt-manager.org/wp-content/uploads/2013/04/virt-manager-vm-list.png"><img src="../../lib/exe/fetch.php?w=500&amp;tok=2be3f0&amp;media=http%253A%252F%252Fvirt-manager.org%252Fwp-content%252Fuploads%252F2013%252F04%252Fvirt-manager-vm-list.png" class="media" alt="" width="500" /></a>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Gestionnaire de machine virtuelle" [59-350] -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://virt-manager" class="interwiki iw_apt" title="apt://virt-manager">virt-manager</a></strong>, s&#039;ajouter dans le groupe libvirtd :
+</p>
+<pre class="code">sudo adduser $USER libvirtd</pre>
+
+<p>
+puis se déconnecter et se reconnecter.
+</p>
+
+<p>
+<p><div class="notetip">La dernière version est disponible dans ce <a href="https://launchpad.net/~dnjl/+archive/virtualization" class="urlextern" title="https://launchpad.net/~dnjl/+archive/virtualization"  rel="nofollow">PPA</a>
+</div></p>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Installation" [351-706] -->
+<h2 class="sectionedit3" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Lancez l&#039;application depuis le menu <em>Applications → Système → Gestionnaire de machine virtuelle</em>.
+</p>
+
+<p>
+Ajoutez une connexion à votre hyperviseur :
+</p>
+<ul>
+<li class="level1"><div class="li"> QEMU/<a href="../../kvm" class="wikilink1" title="kvm">kvm</a> (à préférer si vous ne savez pas lequel choisir).</div>
+</li>
+<li class="level1"><div class="li"> XEN</div>
+</li>
+</ul>
+
+<p>
+Sélectionnez l&#039;hyperviseur puis cliquez sur l&#039;icône pour créer une nouvelle machine virtuelle et suivez l&#039;assistant.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Utilisation" [707-1079] -->
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+La configuration se fait pour chaque machine virtuelle (il faut l&#039;ouvrir) dans le menu <em>Afficher → Détails</em> :
+</p>
+<ul>
+<li class="level1"><div class="li"> les options générales (ACPI etc)</div>
+</li>
+<li class="level1"><div class="li"> le nombre de processeurs (cores)</div>
+</li>
+<li class="level1"><div class="li"> la mémoire allouée</div>
+</li>
+<li class="level1"><div class="li"> les options de démarrage</div>
+</li>
+<li class="level1"><div class="li"> les périphériques tels que les disques durs ou les lecteurs de cdrom vu par la machine virtuelle.</div>
+</li>
+<li class="level1"><div class="li"> les connexions réseaux (type, adresse <abbr title="Medium Access Control">MAC</abbr>, etc),</div>
+</li>
+<li class="level1"><div class="li"> la souris, le son, la console et l&#039;émulation vidéo</div>
+</li>
+</ul>
+
+<p>
+La configuration générale est gérée par <a href="../../libvirt" class="wikilink1" title="libvirt">libvirt</a>.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Configuration" [1080-1625] -->
+<h2 class="sectionedit5" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://virt-manager.et.redhat.com/" class="urlextern" title="http://virt-manager.et.redhat.com/"  rel="nofollow">Site officiel de Virtual Machine Manager</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <a href="http://doc.fedora-fr.org/wiki/Xen_:_installation_d%27un_domaine_compl%C3%A8tement_virtualis%C3%A9_avec_virt-manager" class="urlextern" title="http://doc.fedora-fr.org/wiki/Xen_:_installation_d%27un_domaine_compl%C3%A8tement_virtualis%C3%A9_avec_virt-manager"  rel="nofollow">tutoriel en image</a> pour une utilisation avec l&#039;hyperviseur <strong>XEN</strong> sur le wiki de Fedora</div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://libvirt.org/" class="urlextern" title="http://libvirt.org/"  rel="nofollow">libvirt</a> et les <a href="http://libvirt.org/apps.html" class="urlextern" title="http://libvirt.org/apps.html"  rel="nofollow">applications</a> associées</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a>.</em>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Liens" [1626-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/d217b2c69ab60b3eb19862e6a4988ad6.xhtml used -->
+</div>
+</body>
+</html>

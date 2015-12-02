@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>oomkiller</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2010-11-16T15:30:58+0100"/>
+<meta name="keywords" content="administration,kernel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../oomkiller?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="oomkiller"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/oomkiller"/>
+<link rel="canonical" href="../../oomkiller"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"oomkiller","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<div class="tags"><span>
+	<a href="../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../../kernel" class="wikilink1" title="kernel" rel="tag">kernel</a>
+</span></div>
+
+<h1 class="sectionedit1" id="oom_killer">OOM Killer</h1>
+<div class="level1">
+
+<p>
+<p><div class="notetip">Depuis le noyau 2.6.36 (Octobre 2010) un développeur de google (David Rientjes) a entièrement réécris le code du OOM-Killer afin d&#039;améliorer le choix du processus coupable
+</div></p>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "OOM Killer" [32-251] -->
+<h2 class="sectionedit2" id="description">Description</h2>
+<div class="level2">
+
+<p>
+Le mécanisme OOM killer (Out-Of-Memory Killer) est un mécanisme de la dernière chance qui est incorporé au noyau Linux en cas de dépassement de la capacité mémoire. Si le système n&#039;a plus assez de mémoire à allouer aux processus et que le swap a été lui aussi entièrement rempli alors le noyau n&#039;a pas d&#039;autre choix que de faire appel à son tueur à gages préféré : OOM killer.
+</p>
+
+<p>
+Ce dernier va, selon des heuristiques complexes, se choisir une victime parmi les processus s&#039;exécutant sur la machine et il va mettre fin à ses jours. La détermination du choix du coupable se fait selon un score de <em>badness</em> pouvant allez de <strong>-1000</strong> (ne jamais tuer) à <strong>1000</strong> (à tuer absolument). L&#039;idée étant d&#039;éviter un crash de la machine en essayant d&#039;éliminer le processus glouton.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Description" [252-1075] -->
+<h2 class="sectionedit3" id="sources">Sources</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <a href="http://linuxfr.org/2010/10/21/27463.html" class="urlextern" title="http://linuxfr.org/2010/10/21/27463.html"  rel="nofollow">Linux France</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://en.wikipedia.org/wiki/OOM_Killer" class="urlextern" title="http://en.wikipedia.org/wiki/OOM_Killer"  rel="nofollow">Fiche Wikipédia</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <strong>Gnu/Linux Magazine numéro</strong> <a href="http://ed-diamond.com/feuille_lmag132/index.html" class="urlextern" title="http://ed-diamond.com/feuille_lmag132/index.html"  rel="nofollow">132</a> (Novembre 2010)</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeur principal : <a href="../../utilisateurs/herrleiche" class="wikilink1" title="utilisateurs:herrleiche">Herrleiche</a>.</em>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Sources" [1076-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/f5ec44b507972b6e0697e766352b11b3.xhtml used -->
+</div>
+</body>
+</html>

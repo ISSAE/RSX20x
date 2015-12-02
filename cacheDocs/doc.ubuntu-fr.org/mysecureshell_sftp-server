@@ -1,0 +1,595 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>mysecureshell_sftp-server - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-05-16T11:47:24+0200"/>
+<meta name="keywords" content="serveur,ftp,securite"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/mysecureshell_sftp-server?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/mysecureshell_sftp-server?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/mysecureshell_sftp-server"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/mysecureshell_sftp-server"/>
+<link rel="canonical" href="mysecureshell_sftp-server"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"mysecureshell_sftp-server","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="mysecureshell_sftp-server#main" tabindex="1">Contenu</a> | <a href="mysecureshell_sftp-server#qsearch__in" tabindex="2">Rechercher</a> | <a href="mysecureshell_sftp-server#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="mysecureshell_sftp-server" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="mysecureshell_sftp-server" >mysecureshell_sftp-server</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="mysecureshell_sftp-server#a_propos_de_mss">À propos de MSS</a></div></li>
+<li class="level1"><div class="li"><a href="mysecureshell_sftp-server#installation_de_mss">Installation de MSS</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mysecureshell_sftp-server#avec_le_paquet_deb">Avec le paquet deb</a></div></li>
+<li class="level2"><div class="li"><a href="mysecureshell_sftp-server#installation">Installation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mysecureshell_sftp-server#gestion_des_utilisateurs">Gestion des utilisateurs</a></div></li>
+<li class="level1"><div class="li"><a href="mysecureshell_sftp-server#connexion_au_serveur_sftp">Connexion au serveur sftp</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mysecureshell_sftp-server#tester_en_local">Tester en local</a></div></li>
+<li class="level2"><div class="li"><a href="mysecureshell_sftp-server#tester_en_reseau">Tester en réseau</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mysecureshell_sftp-server#parametrage_avec_l_outil_graphique_java">Paramétrage avec l&#039;outil graphique java</a></div></li>
+<li class="level1"><div class="li"><a href="mysecureshell_sftp-server#lanceur">Lanceur</a></div></li>
+<li class="level1"><div class="li"><a href="mysecureshell_sftp-server#parametrage_manuel">Paramétrage manuel</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mysecureshell_sftp-server#sftp_config">sftp_config</a></div></li>
+<li class="level2"><div class="li"><a href="mysecureshell_sftp-server#sshd_config">sshd_config</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mysecureshell_sftp-server#securite">Sécurité</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mysecureshell_sftp-server#utilisation_des_clefs_ssh">Utilisation des clefs SSH</a></div></li>
+<li class="level2"><div class="li"><a href="mysecureshell_sftp-server#se_proteger_contre_le_ssh_brute_force">Se protéger contre le SSH Brute Force</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="ftp" class="wikilink1" title="ftp" rel="tag">ftp</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>
+</span></div>
+
+<h1 class="sectionedit1" id="serveur_sftpmysecureshell">Serveur SFTP : MySecureShell</h1>
+<div class="level1">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/mss_02.png?id=mysecureshell_sftp-server" class="media" title="applications:mss_02.png"><img src="http://doc.ubuntu-fr.org/_media/applications/mss_02.png" class="media" alt="" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Serveur SFTP : MySecureShell] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="33-105" /><input type="submit" value="Modifier" class="button" title="Serveur SFTP : MySecureShell" /></div></form></div>
+<h2 class="sectionedit2" id="a_propos_de_mss">À propos de MSS</h2>
+<div class="level2">
+
+<p>
+<strong>MySecureShell</strong> (MSS) est un logiciel s&#039;appuyant sur le chiffrement de SSH et sur son <abbr title="File Transfer Protocol">FTP</abbr> sécurisé &quot;sftp-server&quot;. MySecureShell est un shell qui permet d&#039;ajouter plusieurs fonctionnalités à sftp-server et qui se rapproche des grands serveurs <abbr title="File Transfer Protocol">FTP</abbr> tel que ProFtpd.
+Les avantages de MySecureShell sont qu&#039;il s&#039;appuie sur le protocole sécurisé SSH et qu&#039;il permet un chiffrement complet des données et des requêtes émises. Il est très simple à installer, à utiliser et hautement configurable.
+</p>
+
+<p>
+Site officiel : <a href="http://mysecureshell.sourceforge.net/" class="urlextern" title="http://mysecureshell.sourceforge.net/"  rel="nofollow">http://mysecureshell.sourceforge.net/</a><br/>
+
+<del>Pour plus d&#039;aide un <a href="http://mysecureshell.free.fr/forum" class="urlextern" title="http://mysecureshell.free.fr/forum"  rel="nofollow">forum</a> est disponible.</del>
+</p>
+
+<p>
+Le forum n&#039;est plus utilisé. Rendez-vous sur <a href="https://github.com/mysecureshell/mysecureshell" class="urlextern" title="https://github.com/mysecureshell/mysecureshell"  rel="nofollow">github</a> directement
+</p>
+
+<p>
+<strong>Pourquoi installer MySecureShell (sftp - Secure File Transfert Protocol) au lieu d&#039;un serveur FTPS (File Transfert Protocol over SSL) ?</strong>
+</p>
+
+<p>
+Voici les différentes motivations d&#039;un tel choix :
+</p>
+<ul>
+<li class="level1"><div class="li"> Simplicité d&#039;installation.</div>
+</li>
+<li class="level1"><div class="li"> Puissance de chiffrement d&#039;OpenSSH qui est développé pour la protection des données (shell distant).</div>
+</li>
+<li class="level1"><div class="li"> Pas de problèmes de certificat non-certifié (car payant pour qu&#039;il soit certifié authentique) ou de génération de certificat.</div>
+</li>
+<li class="level1"><div class="li"> Support des clefs privées et publiques pour une authentification sans mot de passe.</div>
+</li>
+<li class="level1"><div class="li"> Un unique port à ouvrir pour le SSH et SFTP (port 22 par défaut).</div>
+</li>
+<li class="level1"><div class="li"> Clients disponibles également sous Windows (Filezilla par exemple)</div>
+</li>
+<li class="level1"><div class="li"> C&#039;est une question de choix qui ne coûte rien si l&#039;on veut essayer.</div>
+</li>
+</ul>
+
+<p>
+<strong>Mais alors pourquoi ne pas utiliser un client SCP ?</strong>
+</p>
+
+<p>
+Le problème vient du compte créé pour l&#039;utilisateur qui doit utiliser un shell valide pour se connecter au serveur à l&#039;aide d&#039;un logiciel SCP.
+Ce choix implique l&#039;existence d&#039;une grande confiance en l&#039;utilisateur.
+Avec MySecureShell, le client n&#039;est pas obligé de posséder un shell valide qui pourrait nuire a la sécurité du serveur.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[À propos de MSS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="106-2084" /><input type="submit" value="Modifier" class="button" title="À propos de MSS" /></div></form></div>
+<h2 class="sectionedit3" id="installation_de_mss">Installation de MSS</h2>
+<div class="level2">
+
+<p>
+Prérequis :
+Le paquet <strong>openssh-server</strong> doit être installé.
+<p><div class="notehelp">Pour en savoir plus sur SSH vous pouvez lire cette <a href="ssh" class="wikilink1" title="ssh">documentation</a>.
+</div></p>
+</p>
+
+<p>
+J&#039;ai choisi de vous montrer deux méthodes d&#039;installation, le paquet deb et le script.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Installation de MSS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2085-2362" /><input type="submit" value="Modifier" class="button" title="Installation de MSS" /></div></form></div>
+<h3 class="sectionedit4" id="avec_le_paquet_deb">Avec le paquet deb</h3>
+<div class="level3">
+
+<p>
+Rajoutez ceci dans votre fichier /etc/apt/sources.list :
+</p>
+<pre class="code">deb http://mysecureshell.free.fr/repository/index.php/ubuntu/12.04 testing main
+deb-src http://mysecureshell.free.fr/repository/index.php/ubuntu/12.04 testing main</pre>
+
+<p>
+Pour importer la signature GPG du repository, il faut exécuter les commandes suivantes:
+</p>
+<pre class="code">gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys E328F22B; gpg --export E328F22B | sudo apt-key add -</pre>
+
+<p>
+Il est possible d&#039;avoir des problèmes de permissions pour créer des fichiers temporaires dans .gnupg. Dans ce cas, essayer avec un sudo en plus (après le &quot;;&quot;):
+</p>
+<pre class="code">gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys E328F22B; sudo gpg --export E328F22B | sudo apt-key add -</pre>
+
+<p>
+Mettez ensuite à jour votre liste de packages :
+</p>
+<pre class="code">sudo apt-get update</pre>
+
+<p>
+Et installer :
+</p>
+<pre class="code">sudo apt-get install mysecureshell</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Avec le paquet deb] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2363-3282" /><input type="submit" value="Modifier" class="button" title="Avec le paquet deb" /></div></form></div>
+<h3 class="sectionedit5" id="installation">Installation</h3>
+<div class="level3">
+
+<p>
+Pour l&#039;installer, c&#039;est maintenant très simple :
+<a href="apt://mysecureshell" class="media" title="apt://mysecureshell"  rel="nofollow"><img src="_media/apt.png" class="media" alt="" /></a>
+</p>
+<pre class="code">dpkg -i mysecureshell_xxx.deb</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3283-3435" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit6" id="gestion_des_utilisateurs">Gestion des utilisateurs</h2>
+<div class="level2">
+
+<p>
+Créer maintenant les utilisateurs autorisés à faire du sftp et autorisés à ne faire que du sftp. Pour fixer les idées, je vais créer l&#039;utilisateur toto et lui attribuer comme dossier personnel /home/toto :
+</p>
+<pre class="code">sudo adduser --home /home/toto --shell /bin/MySecureShell toto</pre>
+
+<p>
+Mais il y a plus simple, l&#039;outil graphique vous permet désormais de gérer les clients ! <img src="lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />
+</p>
+
+<p>
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> La boîte de dialogue de gestion des utilisateurs est vide dans MSS 1.6…Il faut se résigner à éditer à la main /etc/ssh/sftp_config.
+</p>
+
+<p>
+ou :
+</p>
+
+<p>
+Créer les groupes et utilisateurs que vous souhaitez pour une utilisation du serveur sftp. Une fois créé vous allez devoir <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditer le fichier</a> &quot;/etc/passwd&quot; en tant que root. Ensuite placez vous sur les &quot;shells&quot; des utilisateurs que vous voulez intégrer au serveur sftp et remplacez le &quot;shell&quot; existant (ex: /bin/sh) par &quot;/bin/MySecureShell&quot;.
+Ceci:
+</p>
+<pre class="code">msstest:x:1006:500:MMS Testing:/home/sftpusers/msstest:/bin/sh</pre>
+
+<p>
+est à remplacer par:
+</p>
+<pre class="code">msstest:x:1006:500:MMS Testing:/home/sftpusers/msstest:/bin/MySecureShell</pre>
+
+<p>
+Enregistrez et quittez.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Gestion des utilisateurs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3436-4621" /><input type="submit" value="Modifier" class="button" title="Gestion des utilisateurs" /></div></form></div>
+<h2 class="sectionedit7" id="connexion_au_serveur_sftp">Connexion au serveur sftp</h2>
+<div class="level2">
+
+<p>
+Les tests qui suivent sont fait avec le programme <a href="lftp" class="wikilink1" title="lftp">lftp</a>. Il est normalement présent par défaut dans les distributions Ubuntu.
+Dans le cas contraire, il suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <a href="apt://lftp" class="urlextern" title="apt://lftp"  rel="nofollow">lftp</a>.
+</p>
+
+<p>
+D&#039;autres clients comme <a href="filezilla" class="wikilink1" title="filezilla">FileZilla</a>, <a href="http://www.mkssoftware.com/docs/man1/sftp.1.asp" class="urlextern" title="http://www.mkssoftware.com/docs/man1/sftp.1.asp"  rel="nofollow">sftp</a> et <a href="http://doc.ubuntu-fr.org/gftp" class="wikilink1" title="gftp">Gftp</a> gèrent aussi le sftp.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Connexion au serveur sftp] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4622-5063" /><input type="submit" value="Modifier" class="button" title="Connexion au serveur sftp" /></div></form></div>
+<h3 class="sectionedit8" id="tester_en_local">Tester en local</h3>
+<div class="level3">
+<pre class="code">$ lftp sftp://toto@localhost</pre>
+
+<p>
+Après avoir entré le mot de passe, vous devriez obtenir ceci :
+</p>
+<pre class="code">$ lftp toto@localhost:~&gt;</pre>
+
+<p>
+En cas de problème vérifier que le fichier sftp-server_MSS se trouve bien dans le répertoire /usr/lib/openssh/ . Si ce n&#039;est pas le cas vous pouvez le copier à partir de /usr/lib/
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Tester en local] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5064-5402" /><input type="submit" value="Modifier" class="button" title="Tester en local" /></div></form></div>
+<h3 class="sectionedit9" id="tester_en_reseau">Tester en réseau</h3>
+<div class="level3">
+<blockquote><div class="no">
+ Le port 22/<abbr title="Transmission Control Protocol">TCP</abbr> doit être ouvert.</div></blockquote>
+<pre class="code">$ lftp sftp://toto@IP_du_Serveur</pre>
+
+<p>
+Si vous obtenez l&#039;invite ci-dessous c&#039;est que ça marche.
+</p>
+
+<p>
+ Code:
+</p>
+<pre class="code">$ lftp toto@IP_du_Serveur:~&gt;</pre>
+
+<p>
+Pour plus de renseignements sur lftp
+</p>
+<pre class="code">$ man lftp</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Tester en réseau] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5403-5658" /><input type="submit" value="Modifier" class="button" title="Tester en réseau" /></div></form></div>
+<h2 class="sectionedit10" id="parametrage_avec_l_outil_graphique_java">Paramétrage avec l&#039;outil graphique java</h2>
+<div class="level2">
+
+<p>
+L&#039;environnement <a href="java" class="wikilink1" title="java">Java</a> doit être installé dans votre système.
+</p>
+
+<p>
+Télécharger l&#039;outil graphique sur <a href="http://sourceforge.net/projects/mysecureshell/files/MySecureShell%20Graphical%20Tools/" class="urlextern" title="http://sourceforge.net/projects/mysecureshell/files/MySecureShell%20Graphical%20Tools/"  rel="nofollow">le site officiel</a> et taper dans un terminal ce qui suit:
+</p>
+
+<p>
+Vous devez d&#039;abord éditer le fichier /etc/ssh/sftp_config et y ajouter
+</p>
+<pre class="code">&lt;User toto&gt;
+    IsAdmin    true
+&lt;/User&gt;</pre>
+
+<p>
+en remplacant toto par votre nom d&#039;utilisateur
+</p>
+<pre class="code">unzip -d MSS_Frontend MSS_Frontend_v*.zip
+cd MSS_Frontend
+sudo java -jar sftp-mss.jar</pre>
+
+<p>
+et vous obtiendrez,
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/gajim/interface_graphique_v1.4_pour_mysecureshell_v0.8.png?id=mysecureshell_sftp-server" class="media" title="applications:gajim:interface_graphique_v1.4_pour_mysecureshell_v0.8.png"><img src="http://doc.ubuntu-fr.org/_media/applications/gajim/interface_graphique_v1.4_pour_mysecureshell_v0.8.png" class="media" alt="" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Sftp-Who</strong> : permet de savoir qui est connecté et de pouvoir déconnecter n&#039;importe quel utilisateur.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Sftp-State</strong> : permet d&#039;activer ou de désactiver le serveur SFTP et de vérifier son état.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Config</strong> : permet de faire la configuration du serveur.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Log</strong> : vous pouvez voir tout ce qui se passe et s&#039;est passé sur votre serveur.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Connexion distante</strong> : c&#039;est avec cet onglet que vous allez pouvoir administrer à distance votre serveur MySecureShell.</div>
+</li>
+<li class="level1"><div class="li"> <strong> Paramètres</strong> : Cet onglet permet la localisation de certains fichiers et le choix du langage de l&#039;interface graphique.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Paramétrage avec l'outil graphique java] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5659-6954" /><input type="submit" value="Modifier" class="button" title="Paramétrage avec l'outil graphique java" /></div></form></div>
+<h2 class="sectionedit11" id="lanceur">Lanceur</h2>
+<div class="level2">
+
+<p>
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+<p>
+smeg est introuvable dans les dépôts depuis Feisty; indiquer la source
+</p>
+
+<p>
+Pour plus de convivialité vous pouvez créer un lanceur grâce à Smeg.
+</p>
+<pre class="code">smeg</pre>
+
+<p>
+Et créer une entrée comme suit,
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/entry_editor.png?id=mysecureshell_sftp-server" class="media" title="applications:entry_editor.png"><img src="http://doc.ubuntu-fr.org/_media/applications/entry_editor.png" class="media" alt="" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Lanceur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6955-7220" /><input type="submit" value="Modifier" class="button" title="Lanceur" /></div></form></div>
+<h2 class="sectionedit12" id="parametrage_manuel">Paramétrage manuel</h2>
+<div class="level2">
+
+<p>
+Vous souhaitez configurer et administrer votre serveur manuellement, c&#039;est bien sûr possible.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Paramétrage manuel] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7221-7350" /><input type="submit" value="Modifier" class="button" title="Paramétrage manuel" /></div></form></div>
+<h3 class="sectionedit13" id="sftp_config">sftp_config</h3>
+<div class="level3">
+
+<p>
+MSS possède son propre fichier de paramétrage, sftp_config.
+</p>
+<pre class="code">$ sudo nano /etc/ssh/sftp_config  </pre>
+
+<p>
+Les modifications sont immédiates. Voici toutes les <a href="http://mysecureshell.sourceforge.net/fr/tags.html" class="urlextern" title="http://mysecureshell.sourceforge.net/fr/tags.html"  rel="nofollow">directives</a> que vous pourrez utiliser <img src="lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />.
+</p>
+
+<p>
+Cette <a href="http://mysecureshell.sourceforge.net/fr/confman.html" class="urlextern" title="http://mysecureshell.sourceforge.net/fr/confman.html"  rel="nofollow">documentation</a> devrait grandement vous aider.
+</p>
+
+<p>
+<em>(en particulier, modifiez l&#039;encodage ISO-8859-15 par UTF8)</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[sftp_config] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7351-7797" /><input type="submit" value="Modifier" class="button" title="sftp_config" /></div></form></div>
+<h3 class="sectionedit14" id="sshd_config">sshd_config</h3>
+<div class="level3">
+
+<p>
+La configuration d&#039;<a href="ssh#le_fichier_de_configuration_du_serveur_ssh" class="wikilink1" title="ssh">Openssh-server</a> se trouve dans le fichier sshd_config. 
+</p>
+<pre class="code">$ sudo nano /etc/ssh/sshd_config</pre>
+
+<p>
+Toute modification ne sera prise en compte qu&#039;après un redémarrage du serveur.
+</p>
+<pre class="code">$ sudo /etc/init.d/ssh restart</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[sshd_config] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7798-8101" /><input type="submit" value="Modifier" class="button" title="sshd_config" /></div></form></div>
+<h2 class="sectionedit15" id="securite">Sécurité</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Sécurité] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8102-8125" /><input type="submit" value="Modifier" class="button" title="Sécurité" /></div></form></div>
+<h3 class="sectionedit16" id="utilisation_des_clefs_ssh">Utilisation des clefs SSH</h3>
+<div class="level3">
+
+<p>
+Dans le cas ou vous devez administrer de multiples serveurs, retaper à chaque fois son mot de passe est pénible surtout quand on est déjà logué sur une machine sûre.
+</p>
+
+<p>
+Le sujet a déjà été développé sur les pages suivantes que je vous invite à lire:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://mysecureshell.sourceforge.net/fr/securessh.html#question6" class="urlextern" title="http://mysecureshell.sourceforge.net/fr/securessh.html#question6"  rel="nofollow">Comment utiliser l&#039;authentification par clefs à la place des mots de passe ?</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="ssh#authentification_par_mot_de_passe" class="wikilink1" title="ssh">wiki SSH</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Utilisation des clefs SSH] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8126-8632" /><input type="submit" value="Modifier" class="button" title="Utilisation des clefs SSH" /></div></form></div>
+<h3 class="sectionedit17" id="se_proteger_contre_le_ssh_brute_force">Se protéger contre le SSH Brute Force</h3>
+<div class="level3">
+
+<p>
+Généralement les mots de passe de la plupart des logiciels sont stockés chiffrés dans un fichier. Pour obtenir un mot de passe, il suffit de récupérer ce fichier et de lancer un logiciel de brute force cracking. Ce procédé consiste à tester de façon exhaustive toutes les combinaisons possibles de caractères (alphanumériques + symboles), de manière à trouver au moins un mot de passe valide.
+Cette attaque se base sur le fait que n&#039;importe quel mot de passe est crackable. Ce n&#039;est qu&#039;une histoire de temps. Mais la puissance des machines double tous les deux ans. De plus, les crackers n&#039;hésitent pas à fabriquer des cartes électroniques de cracking, ce qui améliore en conséquence la rapidité de la machine, et donc les chances de trouver un mot de passe valide.
+En général, cette méthode est empruntée lorsque la <a href="http://www.securiteinfo.com/attaques/cracking/dictionarycracking.shtml" class="urlextern" title="http://www.securiteinfo.com/attaques/cracking/dictionarycracking.shtml"  rel="nofollow">méthode du dictionary cracking</a> a échoué. 
+</p>
+
+<p>
+Pour se faire lire :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://mysecureshell.sourceforge.net/fr/securessh.html#question1" class="urlextern" title="http://mysecureshell.sourceforge.net/fr/securessh.html#question1"  rel="nofollow">Peut-on bloquer des intrusions après un certain nombre de tentatives ? </a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://blog.andrew.net.au/2005/02/16#psychologically_scarred" class="urlextern" title="http://blog.andrew.net.au/2005/02/16#psychologically_scarred"  rel="nofollow">blog.andrew</a></div>
+</li>
+</ul>
+
+<p>
+ — <em><span class="curid"><a href="mysecureshell_sftp-server" class="wikilink1" title="mysecureshell_sftp-server">mysecureshell_sftp-server</a></span> 2006/03/04 16:55</em>
+</p>
+
+<p>
+P.S.: Ne gère pas les utilisateurs virtuels, ce qui est logique en SSH. Un utilisateur virtuel, c&#039;est un utilisateur qui ne possède pas de dossier personnel dans le répertoire &quot;/home&quot;. Un utilisateur virtuel peut être lié à un autre compte déjà existant et télécharger vers lui des données, mais ne pourra pas en envoyer sur le serveur sftp, peu importe les droits qu&#039;on lui attribuera au moyen de la configuration de MySecureShell. Pour des droits d&#039;accès complet, il faut absolument que l&#039;utilisateur possède son répertoire dans &quot;/home&quot;.
+</p>
+
+<p>
+<strong><a href="fail2ban" class="wikilink1" title="fail2ban">fail2ban</a></strong> permet de se protéger contre le brute-force du serveur SSH en bloquant les demandes en provenance d&#039;une adresse IP qui a déjà émis trop de demandes. Les seuils (durée, nombre de requêtes) sont personnalisables.
+</p>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/arvin" class="wikilink2" title="utilisateurs:arvin" rel="nofollow">arvin</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="mysecureshell_sftp-server"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431769644" /><input type="hidden" name="summary" value="[Se protéger contre le SSH Brute Force] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8633-" /><input type="submit" value="Modifier" class="button" title="Se protéger contre le SSH Brute Force" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/5/54e269565f941d1aea93ec7c44ff25f5.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/mysecureshell_sftp-server?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mysecureshell_sftp-server?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mysecureshell_sftp-server?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mysecureshell_sftp-server?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mysecureshell_sftp-server?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

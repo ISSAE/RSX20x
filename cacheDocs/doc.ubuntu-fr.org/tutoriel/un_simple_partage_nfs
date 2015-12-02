@@ -1,0 +1,801 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:un_simple_partage_nfs - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-11-27T16:23:22+0100"/>
+<meta name="keywords" content="reseau,nfs,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/un_simple_partage_nfs?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/un_simple_partage_nfs?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/un_simple_partage_nfs"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/un_simple_partage_nfs"/>
+<link rel="canonical" href="un_simple_partage_nfs"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:un_simple_partage_nfs","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="un_simple_partage_nfs#main" tabindex="1">Contenu</a> | <a href="un_simple_partage_nfs#qsearch__in" tabindex="2">Rechercher</a> | <a href="un_simple_partage_nfs#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="un_simple_partage_nfs" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="un_simple_partage_nfs" >tutoriel:un_simple_partage_nfs</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="un_simple_partage_nfs#pre-requis">Pré-requis</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="un_simple_partage_nfs#deux_ordinateurs_fonctionnant_avec_gnulinux">Deux ordinateurs fonctionnant avec GNU/Linux</a></div></li>
+<li class="level2"><div class="li"><a href="un_simple_partage_nfs#avoir_les_droits_d_administration_sur_les_deux_machines">Avoir les droits d&#039;administration sur les deux machines</a></div></li>
+<li class="level2"><div class="li"><a href="un_simple_partage_nfs#ne_pas_avoir_peur_de_la_ligne_de_commande">Ne pas avoir peur de la ligne de commande</a></div></li>
+<li class="level2"><div class="li"><a href="un_simple_partage_nfs#connaitre_les_adresses_ip_locales_de_serveur_et_de_client">Connaître les adresses IP locales de Serveur et de Client</a></div></li>
+<li class="level2"><div class="li"><a href="un_simple_partage_nfs#se_faire_un_aide-memoire">Se faire un aide-mémoire</a></div></li>
+<li class="level2"><div class="li"><a href="un_simple_partage_nfs#installer_nfs">Installer NFS</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="un_simple_partage_nfs#etape_1_-_serveur_donne_a_client_le_droit_de_lire_et_ecrire_sur_ses_fichiers">Étape 1 - Serveur donne à Client le droit de lire et écrire sur ses fichiers</a></div></li>
+<li class="level1"><div class="li"><a href="un_simple_partage_nfs#etape_2_-_client_se_prepare_a_recevoir_les_fichiers_de_serveurs">Étape 2 - Client se prépare à recevoir les fichiers de Serveurs</a></div></li>
+<li class="level1"><div class="li"><a href="un_simple_partage_nfs#etape_3_-_serveur_regle_la_securite_du_partage">Étape 3 - Serveur règle la sécurité du partage</a></div></li>
+<li class="level1"><div class="li"><a href="un_simple_partage_nfs#etape_4_-_client_automatise_l_acces_aux_fichiers_de_serveurs">Étape 4 - Client automatise l&#039;accès aux fichiers de Serveurs</a></div></li>
+<li class="level1"><div class="li"><a href="un_simple_partage_nfs#resolution_de_problemes">Résolution de problèmes</a></div></li>
+<li class="level1"><div class="li"><a href="un_simple_partage_nfs#et_pour_aller_plus_loin">Et pour aller plus loin</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../nfs" class="wikilink1" title="nfs" rel="tag">nfs</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="un_simple_partage_nfs">Un simple partage NFS</h1>
+<div class="level1">
+
+<p>
+Ce tutoriel propose une méthode qui se veut la plus simple possible pour accéder à distance aux documents enregistrés sur un ordinateur à partir d&#039;un autre en utilisant <a href="../nfs" class="wikilink1" title="nfs">le protocole NFS</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Un simple partage NFS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="37-277" /><input type="submit" value="Modifier" class="button" title="Un simple partage NFS" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="278-303" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h3 class="sectionedit3" id="deux_ordinateurs_fonctionnant_avec_gnulinux">Deux ordinateurs fonctionnant avec GNU/Linux</h3>
+<div class="level3">
+
+<p>
+<strong>Serveur</strong> sur lequel se trouvent les fichiers à partager, et <strong>Client</strong> qui doit pouvoir accéder aux fichiers de Serveur.
+<p><div class="noteclassic">
+N&#039;importe quel ordinateur peut être <a href="../serveur" class="wikilink1" title="serveur">serveur ou client</a>, ou les deux.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Deux ordinateurs fonctionnant avec GNU/Linux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="304-583" /><input type="submit" value="Modifier" class="button" title="Deux ordinateurs fonctionnant avec GNU/Linux" /></div></form></div>
+<h3 class="sectionedit4" id="avoir_les_droits_d_administration_sur_les_deux_machines">Avoir les droits d&#039;administration sur les deux machines</h3>
+<div class="level3">
+
+<p>
+<a href="../sudo" class="wikilink1" title="sudo">Voir ici de quoi il est question et en particulier la commande « sudo »</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Avoir les droits d'administration sur les deux machines] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="584-736" /><input type="submit" value="Modifier" class="button" title="Avoir les droits d'administration sur les deux machines" /></div></form></div>
+<h3 class="sectionedit5" id="ne_pas_avoir_peur_de_la_ligne_de_commande">Ne pas avoir peur de la ligne de commande</h3>
+<div class="level3">
+
+<p>
+<a href="../terminal" class="wikilink1" title="terminal">Voir ici les bases du terminal</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Ne pas avoir peur de la ligne de commande] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="737-836" /><input type="submit" value="Modifier" class="button" title="Ne pas avoir peur de la ligne de commande" /></div></form></div>
+<h3 class="sectionedit6" id="connaitre_les_adresses_ip_locales_de_serveur_et_de_client">Connaître les adresses IP locales de Serveur et de Client</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteclassic">
+Dans le terminal lancer « ifconfig », l&#039;adresse est à la ligne « <code>inet adr:</code> », paragraphe « <code>eth</code> » si vous êtes connecté en ethernet, « <code>wlan</code> » pour une connexion Wi-Fi.
+
+</div></p>
+</p>
+
+<p>
+Pour la suite de cet exemple, on considérera que Serveur et Client ont une adresse locale fixe :
+</p>
+<ul>
+<li class="level1"><div class="li"> Serveur : <strong>192.168.1.1</strong></div>
+</li>
+<li class="level1"><div class="li"> Client : <strong>192.168.1.2</strong></div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic">
+On peut fixer l&#039;IP locale
+</p>
+<ul>
+<li class="level1"><div class="li"> Soit à partir de l&#039;interface du routeur / de la *box. Ouvrez Firefox, et tapez dans la barre d&#039;adresse celle donnée dans le mode d&#039;emploi du routeur / de la *box (le login et le mot de passe y sont aussi). <a href="../modem_adsl_routeur_et_box" class="wikilink1" title="modem_adsl_routeur_et_box">Plus d&#039;infos</a>. </div>
+</li>
+<li class="level1"><div class="li"> Soit directement d&#039;<a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=1152502#p1152502" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=1152502#p1152502"  rel="nofollow">Ubuntu</a> .</div>
+</li>
+</ul>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Connaître les adresses IP locales de Serveur et de Client] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="837-1668" /><input type="submit" value="Modifier" class="button" title="Connaître les adresses IP locales de Serveur et de Client" /></div></form></div>
+<h3 class="sectionedit7" id="se_faire_un_aide-memoire">Se faire un aide-mémoire</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteimportant">
+Pour la suite du tutoriel, les commandes seront données avec des informations fictives (en gras dans le tableau ci-dessous), vous les remplacerez par les données réelles de vos machines.
+
+</div></p>
+</p>
+<div class="table sectionedit8"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Les machines        </th><th class="col1 leftalign"> IP locales              </th><th class="col2 leftalign"> Points de montage des fichiers                                </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> <strong>Serveur</strong>         </td><td class="col1 leftalign"> <strong>192.168.1.1</strong>         </td><td class="col2 leftalign"> <strong>/Fichiers_à_partager_sur_Serveur</strong>                          </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> <em>Votre serveur</em>   </td><td class="col1"> <em>IP de votre serveur</em> </td><td class="col2"> Exemple : <em>/home/Votre_Nom_d&#039;Utilisateur_sur_Votre_Serveur</em> </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> <strong>Client</strong>          </td><td class="col1 leftalign"><strong> 192.168.1.2</strong>         </td><td class="col2 leftalign"> <strong>/Point_de_montage_sur_Client</strong>                              </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> <em>Votre client</em>    </td><td class="col1 leftalign"> <em>IP de votre client</em>  </td><td class="col2 leftalign"> Exemple : <em>/home/Nom_d&#039;Utilisateur_sur_le_Client/Partage</em>   </td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Se faire un aide-mémoire] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1669-2496" /><input type="submit" value="Modifier" class="button" title="Se faire un aide-mémoire" /></div></form></div>
+<h3 class="sectionedit9" id="installer_nfs">Installer NFS</h3>
+<div class="level3">
+
+<p>
+<a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installer les paquets</a> :
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour Serveur, <strong><a href="apt://nfs-kernel-server" class="interwiki iw_apt" title="apt://nfs-kernel-server">nfs-kernel-server</a></strong> et <strong><a href="apt://nfs-common" class="interwiki iw_apt" title="apt://nfs-common">nfs-common</a></strong>.</div>
+</li>
+<li class="level1"><div class="li"> Pour Client, seulement <strong><a href="apt://nfs-common" class="interwiki iw_apt" title="apt://nfs-common">nfs-common</a></strong>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Installer NFS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2497-2714" /><input type="submit" value="Modifier" class="button" title="Installer NFS" /></div></form></div>
+<h2 class="sectionedit10" id="etape_1_-_serveur_donne_a_client_le_droit_de_lire_et_ecrire_sur_ses_fichiers">Étape 1 - Serveur donne à Client le droit de lire et écrire sur ses fichiers</h2>
+<div class="level2">
+
+<p>
+Sur Serveur donc, il faut <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">ouvrir ou créer</a> le fichier <strong>/etc/exports</strong> et y saisir cette ligne :
+</p>
+<pre class="file"># Dossier partagé :
+/Fichiers_à_partager_sur_Serveur/ 192.168.1.2(rw,all_squash,anonuid=1000,anongid=1000,sync)</pre>
+
+<p>
+<a href="../nfs?rev=1258038788#cote_serveur1" class="urlextern" title="http://doc.ubuntu-fr.org/nfs?rev=1258038788#cote_serveur1"  rel="nofollow">Explications sur les options de cette commande.</a>
+</p>
+
+<p>
+<p><div class="noteimportant">
+Ceci donne l&#039;accès complet aux fichiers de Serveur, ce qui veut dire que Client (ou l&#039;humain qui l&#039;utilise) peut supprimer définitivement ce qu&#039;il veut.
+</p>
+
+<p>
+Pour ne donner l&#039;accès qu&#039;en lecture seule, il suffit de supprimer l&#039;option <strong><em>rw</em></strong> de <strong><em>/etc/exports</em></strong>.
+
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">Vous pouvez donner le droit d’accès à votre dossier à tous les postes d&#039;un même réseau en utilisant cette configuration:
+</p>
+<pre class="code">/Fichiers_à_partager_sur_Serveur/ 192.168.0.0/255.255.0.0(rw,all_squash,anonuid=1000,anongid=1000,sync)</pre>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+<p><div class="noteclassic">
+Il est également possible de sélectionner les dossiers à partager :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="partage_nfs#creation_des_repertoires_partages" class="wikilink1" title="tutoriel:partage_nfs">En créant un répertoire /home/agora et en y enregistrant les fichiers à partager.</a></div>
+</li>
+<li class="level1"><div class="li"> Ou en créant autant de lignes dans le fichier <em>/etc/exports</em> de Serveur que de dossiers à partager et en adaptant en conséquence la configuration de Client.</div>
+</li>
+</ul>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+Il faut ensuite démarrer le serveur <abbr title="Network File System">NFS</abbr> (toujours sur Serveur) :
+</p>
+<pre class="code">sudo /etc/init.d/nfs-kernel-server start</pre>
+
+<p>
+<p><div class="noteclassic">
+Si vous modifiez le fichier « /etc/exports » n&#039;oubliez pas de relancer le serveur <abbr title="Network File System">NFS</abbr> par la commande suivante :
+</p>
+<pre class="code">sudo /etc/init.d/nfs-kernel-server restart</pre>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Étape 1 - Serveur donne à Client le droit de lire et écrire sur ses fichiers] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2715-4430" /><input type="submit" value="Modifier" class="button" title="Étape 1 - Serveur donne à Client le droit de lire et écrire sur ses fichiers" /></div></form></div>
+<h2 class="sectionedit11" id="etape_2_-_client_se_prepare_a_recevoir_les_fichiers_de_serveurs">Étape 2 - Client se prépare à recevoir les fichiers de Serveurs</h2>
+<div class="level2">
+
+</div>
+
+<h5 id="d_abord_creer_un_repertoire_sur_client_ou_vont_s_installer_les_fichiers_de_serveur">1. D&#039;abord créer un répertoire sur Client où vont s&#039;installer les fichiers de Serveur :</h5>
+<div class="level5">
+<pre class="code">sudo mkdir /Point_de_montage_sur_Client</pre>
+
+<p>
+<a href="console_commandes_de_base#mkdir" class="wikilink1" title="tutoriel:console_commandes_de_base">Plus d&#039;infos sur la commande mkdir.</a>
+</p>
+
+<p>
+Par exemple :
+</p>
+<pre class="code">sudo mkdir /home/Nom_d&#039;Utilisateur_sur_le_Client/Partage</pre>
+
+</div>
+
+<h5 id="ensuite_determiner_ce_repertoire_comme_point_de_montage_sur_client">2. Ensuite déterminer ce répertoire comme point de montage sur Client :</h5>
+<div class="level5">
+
+<p>
+<a href="../mount_fstab" class="wikilink1" title="mount_fstab">Présentation de la notion de point de montage et du fichier fstab et ses options.</a>
+</p>
+
+<p>
+<a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Ajoutez</a> cette ligne au fichier <strong>/etc/fstab</strong> de Client :
+</p>
+
+<p>
+<p><div class="notewarning"> <strong>Attention</strong> :
+</p>
+
+<p>
+Le fichier <em>fstab</em> est un fichier très important pour le bon fonctionnement de votre ordinateur.
+</p>
+
+<p>
+Prenez bien soin d&#039;ajouter simplement la ligne suivante (en l&#039;adaptant) en bas du fichier <strong>sans modifier ce qu&#039;il contient déjà</strong>.
+
+</div></p>
+</p>
+<pre class="file">192.168.1.1:/Fichiers_à_partager_sur_Serveur   /Point_de_montage_sur_Client   nfs    user,noauto    0   0</pre>
+
+<p>
+L&#039;option <strong><em>noauto</em></strong> interdit le montage automatique.
+L&#039;option <strong><em>user</em></strong> autorise tous les utilisateurs à procéder au montage.
+</p>
+
+<p>
+Les options sont à choisir en fonction du mode d&#039;accès souhaité pour le partage : <a href="console_commandes_de_base#mount" class="wikilink1" title="tutoriel:console_commandes_de_base">liste et usage des options de montage</a>.
+</p>
+
+<p>
+<p><div class="noteimportant">
+</p>
+
+<p>
+Dans le cadre de ce tutoriel, les options <strong><em>noauto</em></strong> et <strong><em>user</em></strong> sont obligatoires pour l&#039;automatisation du montage à l&#039;ouverture de la session, telle que détaillée dans un prochain chapitre.
+</p>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+<p><div class="noteimportant">
+Pour les versions 12.04 et supérieure, pensez à bien écrire les chemins du point de montage exactement comme c&#039;est indiqué (sans les / à la fin). Pour les versions antérieures, les deux syntaxes sont possibles: 
+</p>
+
+<p>
+192.168.1.1:/Fichiers_à_partager_sur_Serveur     /Point_de_montage_sur_Client
+</p>
+
+<p>
+ou
+</p>
+
+<p>
+192.168.1.1:/Fichiers_à_partager_sur_Serveur/    /Point_de_montage_sur_Client/
+</p>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Étape 2 - Client se prépare à recevoir les fichiers de Serveurs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4431-6441" /><input type="submit" value="Modifier" class="button" title="Étape 2 - Client se prépare à recevoir les fichiers de Serveurs" /></div></form></div>
+<h2 class="sectionedit12" id="etape_3_-_serveur_regle_la_securite_du_partage">Étape 3 - Serveur règle la sécurité du partage</h2>
+<div class="level2">
+
+</div>
+
+<h5 id="d_abord_interdire_tout">1. D&#039;abord interdire tout :</h5>
+<div class="level5">
+
+<p>
+Sur Serveur donc, <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">ouvrez ou créez</a> le fichier <strong>/etc/hosts.deny</strong>, et copiez-y ces lignes :
+</p>
+<pre class="file"># Tout interdire sur  portmap, nfsd et mountd
+portmap:ALL
+nfsd:ALL
+mountd:ALL</pre>
+
+</div>
+
+<h5 id="ensuite_autoriser_les_echanges_voulus">2. Ensuite autoriser les échanges voulus :</h5>
+<div class="level5">
+
+<p>
+Toujours sur Serveur, <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">ouvrez ou créez</a> le fichier <strong>/etc/hosts.allow</strong>, et enregistrez-y ces lignes (en adaptant bien sûr les IP) :
+</p>
+<pre class="file">#Autoriser ce client à se connecter aux services (essentiellement : portmap, nfsd et mountd) :
+portmap: 192.168.1.2
+lockd: 192.168.1.2
+nfsd: 192.168.1.2
+mountd: 192.168.1.2
+rquotad: 192.168.1.2
+statd: 192.168.1.2 </pre>
+
+<p>
+<p><div class="noteclassic">
+Il est possible d&#039;autoriser plusieurs clients,
+</p>
+<ul>
+<li class="level1"><div class="li"> En définissant une plage, par exemple : <code>192.168.0.0/192.168.0.20</code></div>
+</li>
+<li class="level1"><div class="li"> En listant les IP locales autorisées (séparées par des espaces), comme par exemple : <code>192.168.0.1 192.168.0.3 192.168.0.8</code></div>
+</li>
+<li class="level1"><div class="li"> Ou encore en utilisant la syntaxe <code>192.168.</code> qui autorise toutes les machines dont l&#039;IP locale commence par 192.168. à se connecter.</div>
+</li>
+</ul>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+Remarque : certaines installations (debian squeeze par exemple) limitent les accès portmap en local. Pour modifier cette configuration : dpkg-reconfigure portmap
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Étape 3 - Serveur règle la sécurité du partage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6442-7794" /><input type="submit" value="Modifier" class="button" title="Étape 3 - Serveur règle la sécurité du partage" /></div></form></div>
+<h2 class="sectionedit13" id="etape_4_-_client_automatise_l_acces_aux_fichiers_de_serveurs">Étape 4 - Client automatise l&#039;accès aux fichiers de Serveurs</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteimportant">
+Pour que le montage de <em>/Point_de_montage_sur_Client</em> fonctionne, il faut bien sûr que Serveur soit allumé et que Client et Serveur soient connectés.
+
+</div></p>
+</p>
+
+<p>
+Sur Client donc, <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">créez</a> le fichier <strong>/usr/bin/Monter_le_partage_<abbr title="Network File System">NFS</abbr></strong> (où <em>Monter_le_partage_<abbr title="Network File System">NFS</abbr></em> peut être remplacé par ce que vous voulez), et enregistrez-y ces lignes :
+</p>
+<pre class="file">#!/bin/bash
+sleep 15
+mount /Point_de_montage_sur_Client</pre>
+
+<p>
+N&#039;oubliez pas de rendre ce fichier exécutable, via l&#039;interface graphique ou en ligne de commande dans un terminal:
+</p>
+<pre class="file">$ sudo chmod 755 /usr/bin/Monter_le_partage_NFS</pre>
+
+<p>
+<p><div class="noteclassic">
+La commande <strong><em>sleep</em></strong> sert à retarder l&#039;action, de manière à ce que la connexion de Client ait le temps de s&#039;activer, ce qui peut être pertinent, en particulier dans le cas d&#039;une connexion sans fil.
+</p>
+
+<p>
+<a href="http://fr.wikipedia.org/wiki/Sleep_(Unix)" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Sleep_(Unix)">Vous pouvez adapter la valeur.</a>
+
+</div></p>
+</p>
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Pour que le montage soit vraiment automatique il suffit d&#039;ajouter la commande <code>/usr/bin/Monter_le_partage_<abbr title="Network File System">NFS</abbr></code> aux programmes qui sont lancés automatiquement à l&#039;ouverture de session. Ce qui se fait en mode graphique de manières différentes selon les versions d&#039;Ubuntu. À chercher donc dans les préférences du système ou de la session de Client.
+</p>
+
+<p>
+<strong>Pour Lubuntu</strong>
+</p>
+<pre class="file">sudo leafpad /etc/xdg/lxsession/Lubuntu/autostart</pre>
+
+<p>
+Puis ajouter la ligne :
+</p>
+<pre class="file">@/usr/bin/Monter_le_partage_NFS</pre>
+
+<p>
+<strong> Pour Xubuntu</strong>
+</p>
+
+<p>
+Allez dans le Gestionnaires de paramètres → Sytème / Session et démarrage → onglet Démarrage automatique → Ajouter
+</p>
+
+<p>
+Remplissez les champs ainsi :
+</p>
+
+<p>
+. Nom = Ce_que_vous_voulez
+</p>
+
+<p>
+. Description = <em>optionnel</em>
+</p>
+
+<p>
+. Commande = usr/bin/Monter_le_partage_<abbr title="Network File System">NFS</abbr>
+</p>
+
+<p>
+Validez et au prochain démarrage, le partage doit se monter automatiquement.
+</p>
+
+<p>
+<strong>Pour tous</strong>
+</p>
+
+<p>
+Il existe aussi la possibilité d&#039;utiliser <a href="../autofs" class="wikilink1" title="autofs">autofs.</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Étape 4 - Client automatise l'accès aux fichiers de Serveurs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7795-9762" /><input type="submit" value="Modifier" class="button" title="Étape 4 - Client automatise l'accès aux fichiers de Serveurs" /></div></form></div>
+<h2 class="sectionedit14" id="resolution_de_problemes">Résolution de problèmes</h2>
+<div class="level2">
+
+</div>
+
+<h5 id="la_premiere_chose_a_faire_est_de_verifier_si_vous_avez_bien_suivi_ce_tuto_sans_faire_d_erreur">1. La première chose à faire est de vérifier si vous avez bien suivi ce tuto sans faire d&#039;erreur.</h5>
+<div class="level5">
+
+<p>
+En particulier dans les fichiers de configuration qui sont <a href="http://fr.wikipedia.org/wiki/Sensible_à_la_casse" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Sensible_à_la_casse">sensibles à la casse</a>.
+</p>
+
+<p>
+<p><div class="notetip">
+C&#039;est le moment de ressortir le pense-bête pour pointer toutes les actions, en reprenant pas à pas le tuto.
+
+</div></p>
+</p>
+
+<p>
+Quelques questions à se poser pour guider sa recherche d&#039;erreur :
+</p>
+<ul>
+<li class="level1"><div class="li"> N&#039;ai-je pas oublié une majuscule ?</div>
+</li>
+<li class="level1"><div class="li"> N&#039;y a-t-il pas eu échange de rôle entre Client et Serveur (<em>cause fréquente d&#039;erreurs</em>) ?</div>
+</li>
+<li class="level1"><div class="li"> Ai-je bien mis tous les points des adresses IP ?</div>
+</li>
+<li class="level1"><div class="li"> N&#039;ai-je pas échangé un 0 pour un 1 dans cette IP-là ?</div>
+</li>
+<li class="level1"><div class="li"> Ne manque-t-il pas une espace ici ?</div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="relancer_le_serveur_nfs_de_serveur">2. Relancer le serveur NFS de Serveur.</h5>
+<div class="level5">
+
+<p>
+<em><strong>À faire sur Serveur</strong></em>
+</p>
+<pre class="code">sudo service nfs-kernel-server restart</pre>
+
+<p>
+Si vous obtenez une erreur faites une recherche avec le message sur <a href="http://forum.ubuntu-fr.org/search.php" class="urlextern" title="http://forum.ubuntu-fr.org/search.php"  rel="nofollow">le forum Ubuntu.</a>
+</p>
+
+<p>
+Vous pouvez ignorer un message de type :
+</p>
+<pre class="file"> exportfs: /etc/exports [1]: Neither &#039;subtree_check&#039; or &#039;no_subtree_check&#039; specified for export &quot;192.168.1.2:/Fichiers_à_partager_sur_Serveur/ </pre>
+
+<p>
+il n&#039;indique rien qui empêcherait le bon fonctionnement.
+</p>
+
+</div>
+
+<h5 id="verifier_si_client_a_bien_acces_aux_fichiers_de_serveur">3. Vérifier si Client a bien accès aux fichiers de Serveur.</h5>
+<div class="level5">
+
+<p>
+<em><strong>À faire sur Client</strong></em>
+</p>
+<pre class="code">showmount -e 192.168.1.1</pre>
+
+<p>
+Cette commande doit retourner quelque chose comme :
+</p>
+<pre class="file">Export list for 192.168.1.1:
+/home/Fichiers_à_partager_sur_Serveur 192.168.1.2</pre>
+
+<p>
+Sinon vérifier tout particulièrement les fichiers « /etc/exports » et « /etc/hosts.allow » de Serveur.
+</p>
+
+</div>
+
+<h5 id="tester_manuellement_le_montage_sur_client">4. Tester manuellement le montage sur Client.</h5>
+<div class="level5">
+
+<p>
+<em><strong>À faire sur Client</strong></em>
+</p>
+
+<p>
+Lancez cette commande :
+</p>
+<pre class="code">sudo mount -t nfs -o rw 192.168.1.1:/Fichiers_à_partager_sur_Serveur /Point_de_montage_sur_Client</pre>
+
+<p>
+Si vous n&#039;obtenez pas de message d&#039;erreur, c&#039;est que le montage se fait bien manuellement.
+Vérifier tout particulièrement les fichiers « /etc/fstab » et « /usr/bin/Monter_le_partage_<abbr title="Network File System">NFS</abbr> » de Client.
+Si vous obtenez une erreur, faites une recherche avec le message sur <a href="http://forum.ubuntu-fr.org/search.php" class="urlextern" title="http://forum.ubuntu-fr.org/search.php"  rel="nofollow">le forum Ubuntu.</a>
+</p>
+
+</div>
+
+<h5 id="configurer_le_pare-feu">5. Configurer le pare-feu.</h5>
+<div class="level5">
+
+<p>
+Il arrive que sur certaines configurations, le pare-feu bloque les échanges nécessaires au bon fonctionnement de <abbr title="Network File System">NFS</abbr>. Cela ne devrait pas être le cas sur Ubuntu, sauf si vous avez personnalisé les règles du pare-feu. Cela peut également provenir du routeur (*box).
+</p>
+
+<p>
+Dans ces deux cas, <a href="http://smhteam.info/wiki/index.linux.php5?wiki=NFS#4-0-0" class="urlextern" title="http://smhteam.info/wiki/index.linux.php5?wiki=NFS#4-0-0"  rel="nofollow">voici ce qu&#039;il vous faut paramétrer.</a>
+</p>
+
+<p>
+<a href="../modem_adsl_routeur_et_box" class="wikilink1" title="modem_adsl_routeur_et_box">Et ici de l&#039;aide pour configurer sa *box.</a>
+</p>
+
+</div>
+
+<h5 id="demander_de_l_aide">6. Demander de l&#039;aide.</h5>
+<div class="level5">
+
+<p>
+Si, malgré tout, votre partage <abbr title="Network File System">NFS</abbr> ne fonctionne toujours pas, vous pouvez <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=2662" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=2662"  rel="nofollow">demander de l&#039;aide sur le forum</a>, en suivant ces <a href="http://forum.ubuntu-fr.org/misc.php?action=rules" class="urlextern" title="http://forum.ubuntu-fr.org/misc.php?action=rules"  rel="nofollow">règles</a> pour avoir de meilleures chances d&#039;être secouru.
+</p>
+
+<p>
+<p><div class="noteclassic">
+Dans le cas précis d&#039;un problème avec <abbr title="Network File System">NFS</abbr>, donnez :
+</p>
+<ul>
+<li class="level1"><div class="li"> Les IP du client et du serveur (précisez si elles sont fixes), le dossier à partager du serveur et le point de montage du client.</div>
+</li>
+<li class="level1"><div class="li"> Donnez en priorité le résultat des commandes qui aboutissent à des erreurs.</div>
+</li>
+<li class="level1"><div class="li"> Donnez également le contenu des fichiers <em>/etc/exports</em>, <em>/etc/hosts.deny</em> et <em>/etc/hosts.allow</em> de votre serveur, et le fichier <em>/etc/fstab</em> de votre client.</div>
+</li>
+</ul>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Résolution de problèmes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9763-13217" /><input type="submit" value="Modifier" class="button" title="Résolution de problèmes" /></div></form></div>
+<h2 class="sectionedit15" id="et_pour_aller_plus_loin">Et pour aller plus loin</h2>
+<div class="level2">
+
+<p>
+Vous pouvez avoir envie de créer un partage <abbr title="Network File System">NFS</abbr> plus complexe :
+</p>
+<ul>
+<li class="level1"><div class="li"> Par exemple décider que Serveur puisse aussi accéder aux fichiers de Client. Dans ce cas, il suffit de suivre ce même tuto en échangeant simplement les rôles <img src="../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />.</div>
+</li>
+<li class="level1"><div class="li"> Ou bien <a href="partage_nfs" class="wikilink1" title="tutoriel:partage_nfs"> faire un partage symétrique entre trois machines linux</a>.</div>
+</li>
+</ul>
+
+<p>
+Une mention particulière pour <a href="http://www.cepcasa.info/parted/nfs.html" class="urlextern" title="http://www.cepcasa.info/parted/nfs.html"  rel="nofollow">le tuto de Cep</a> qui m&#039;a servi de base pour mon premier partage <abbr title="Network File System">NFS</abbr> et donc aussi pour rédiger cette page.
+</p>
+
+<p>
+Pour finir, deux pages bien documentées qui permettent de tout comprendre sur le partage avec <abbr title="Network File System">NFS</abbr> :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://smhteam.info/wiki/index.linux.php5?wiki=NFS" class="urlextern" title="http://smhteam.info/wiki/index.linux.php5?wiki=NFS"  rel="nofollow">Un excellent tuto sur Wiki Linux, simple mais détaillé.</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../nfs?rev=1258038788" class="urlextern" title="http://doc.ubuntu-fr.org/nfs?rev=1258038788"  rel="nofollow">Une ancienne page de documentation Ubuntu avec beaucoup d&#039;informations.</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="http://doc.ubuntu-fr.org/utilisateurs/ploom" class="wikilink2" title="utilisateurs:ploom" rel="nofollow">Pl°°m</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/missoire" class="wikilink1" title="utilisateurs:missoire">Missoire</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="un_simple_partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417101802" /><input type="hidden" name="summary" value="[Et pour aller plus loin] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13218-" /><input type="submit" value="Modifier" class="button" title="Et pour aller plus loin" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/a/a3ee1b1ee877a1463f99fe4aea14dd81.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/un_simple_partage_nfs?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/un_simple_partage_nfs?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/un_simple_partage_nfs?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/un_simple_partage_nfs?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/un_simple_partage_nfs?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

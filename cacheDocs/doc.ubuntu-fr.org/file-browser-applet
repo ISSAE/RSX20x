@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>file-browser-applet - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-04T13:27:37+0100"/>
+<meta name="keywords" content="personnalisation,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/file-browser-applet?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/file-browser-applet?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/file-browser-applet"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/file-browser-applet"/>
+<link rel="canonical" href="file-browser-applet"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"file-browser-applet","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="file-browser-applet#main" tabindex="1">Contenu</a> | <a href="file-browser-applet#qsearch__in" tabindex="2">Rechercher</a> | <a href="file-browser-applet#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="file-browser-applet" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="file-browser-applet" >file-browser-applet</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="file-browser-applet#presentation">Présentation</a></div></li>
+<li class="level1"><div class="li"><a href="file-browser-applet#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="file-browser-applet#par_les_depots">Par les dépôts</a></div></li>
+<li class="level2"><div class="li"><a href="file-browser-applet#par_paquet">Par paquet</a></div></li>
+<li class="level2"><div class="li"><a href="file-browser-applet#par_compilation">Par compilation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="file-browser-applet#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="file-browser-applet#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="file-browser-applet#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="personnalisation" class="wikilink1" title="personnalisation" rel="tag">personnalisation</a>,
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+
+<p>
+<p><div class="noteimportant">file-browser-applet n&#039;est disponible que pour gnome-panel, donc n&#039;est plus utilisable a priori sous <a href="unity" class="wikilink1" title="unity">Unity</a>.
+De plus, il n&#039;est plus dans les distributions Ubuntu postérieures à 10.04. Il serait donc intéressant d&#039;indiquer dans cette documentation une éventuelle solution alternative.
+
+</div></p>
+</p>
+<hr />
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/menu-file-browser-applet0.png?id=file-browser-applet" class="media" title="menu-file-browser-applet0.png"><img src="http://doc.ubuntu-fr.org/_media/menu-file-browser-applet0.png?w=70&amp;h=70&amp;tok=3ad4b1" class="mediaright" title="File-browser-applet" alt="File-browser-applet" width="70" height="70" /></a>
+</p>
+
+<h1 class="sectionedit1" id="file_browser_applet">File Browser Applet</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="file-browser-applet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425472057" /><input type="hidden" name="summary" value="[File Browser Applet] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="425-459" /><input type="submit" value="Modifier" class="button" title="File Browser Applet" /></div></form></div>
+<h2 class="sectionedit2" id="presentation">Présentation</h2>
+<div class="level2">
+
+<p>
+<strong>File-browser-applet</strong> est un applet pour le tableau de bord de Gnome.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Fonction menus</strong> : Comme les dossiers qu&#039;il affiche peuvent contenir des raccourcis à cliquer, il permet un supplément personnalisé aux menus de Gnome. Il suffit de copier les raccourcis des menus Applications… dans des dossiers de File-browser-applet qui, notons-le, peuvent être partagés entre plusieurs utilisateurs.  C&#039;est une manière de se souvenir de ce qu&#039;on a installé <img src="lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />  Même les commandes Terminal peuvent faire l&#039;objet d&#039;un raccourci affichant leur man.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Fonction exploration</strong> : Il permet de parcourir le contenu de votre ordinateur et d&#039;ouvrir des fichiers sans  avoir à utiliser de navigateur de fichiers. Son but n&#039;est pas de remplacer un véritable gestionnaire de fichiers tel que <a href="nautilus" class="wikilink1" title="nautilus">Nautilus</a> ; parfois vous voulez juste ouvrir un document sans avoir à ouvrir un dossier, le parcourir, ouvrir le document et refermer le dossier. Cet applet vous épargne simplement quelques clics.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/menu-file-browser-applet_1.png?id=file-browser-applet" class="media" title="menu-file-browser-applet_1.png"><img src="http://doc.ubuntu-fr.org/_media/menu-file-browser-applet_1.png?w=420&amp;h=200&amp;tok=52fdc4" class="mediacenter" title="File-browser-applet" alt="File-browser-applet" width="420" height="200" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="file-browser-applet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425472057" /><input type="hidden" name="summary" value="[Présentation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="460-1551" /><input type="submit" value="Modifier" class="button" title="Présentation" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="file-browser-applet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425472057" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1552-1577" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit4" id="par_les_depots">Par les dépôts</h3>
+<div class="level3">
+
+<p>
+À partir de la version 8.10 d&#039;Ubuntu (<a href="intrepid" class="wikilink1" title="intrepid">Intrepid Ibex</a>), File-browser-applet est disponible dans les <a href="depots#universe_et_multiverse" class="wikilink1" title="depots">dépôts universe</a>. Vous pouvez <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">l&#039;installer</a> avec votre <a href="gestionnaire_de_paquets" class="wikilink1" title="gestionnaire_de_paquets">gestionnaire de paquets</a> ou en cliquant ici <a href="apt://file-browser-applet" class="media" title="apt://file-browser-applet"  rel="nofollow"><img src="_media/apt.png" class="mediacenter" title="Installer file-browser-applet" alt="Installer file-browser-applet" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="file-browser-applet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425472057" /><input type="hidden" name="summary" value="[Par les dépôts] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1578-1996" /><input type="submit" value="Modifier" class="button" title="Par les dépôts" /></div></form></div>
+<h3 class="sectionedit5" id="par_paquet">Par paquet</h3>
+<div class="level3">
+
+<p>
+Le créateur met à notre disposition un paquet « .deb » sur <a href="http://code.google.com/p/gnome-menu-file-browser-applet/" class="urlextern" title="http://code.google.com/p/gnome-menu-file-browser-applet/"  rel="nofollow">le site de développement</a>. Il suffit alors de le télécharger <a href="http://code.google.com/p/gnome-menu-file-browser-applet/downloads/list" class="urlextern" title="http://code.google.com/p/gnome-menu-file-browser-applet/downloads/list"  rel="nofollow">à cette adresse</a> et de <a href="tutoriel/comment_installer_un_paquet#paquet_deb_telecharge" class="wikilink1" title="tutoriel:comment_installer_un_paquet">l&#039;installer</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="file-browser-applet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425472057" /><input type="hidden" name="summary" value="[Par paquet] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1997-2384" /><input type="submit" value="Modifier" class="button" title="Par paquet" /></div></form></div>
+<h3 class="sectionedit6" id="par_compilation">Par compilation</h3>
+<div class="level3">
+
+<p>
+Pour disposer de la dernière version, il est possible de la compiler soi-même. 
+</p>
+
+</div>
+
+<h4 id="pre-requis">Pré-requis</h4>
+<div class="level4">
+
+<p>
+Tout d&#039;abord, <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez</a> de quoi compiler : <strong>build-essential fakeroot checkinstall cmake pkg-config g++ subversion</strong>. Vérifiez également que vous avez les paquets suivants installés, sinon la compilation échouera : <strong>libgtk2.0-0 libgtk2.0-dev libgnomevfs2-0 libgnomevfs2-dev libpanel-applet2-0 libpanel-applet2-dev libglade2-0 libglade2-dev libgnome-desktop-2 libgnome-desktop-dev</strong>.
+</p>
+
+</div>
+
+<h4 id="compilation">Compilation</h4>
+<div class="level4">
+
+<p>
+Ensuite on récupère les sources et on installe :
+</p>
+<pre class="code">svn checkout http://gnome-menu-file-browser-applet.googlecode.com/svn/trunk/ gnome-menu-file-browser-applet
+cd ./gnome-menu-file-browser-applet
+cmake .
+make
+sudo checkinstall</pre>
+
+<p>
+Après avoir lancé la commande checkinstall, on vous demande d&#039;entrer un résumé ; voici une traduction du résumé du « .deb » téléchargeable sur le site :
+</p>
+<pre class="code">Parcourir et ouvrir les dossiers et documents de votre ordinateur depuis le tableau de bord de Gnome.
+File-browser-applet est un applet pour le tableau de bord de Gnome. Il permet de parcourir le contenu de votre ordinateur et d&#039;ouvrir des fichiers sans  avoir à utiliser de navigateur de fichiers. Son but n&#039;est pas de remplacer un véritable gestionnaire de fichiers tel que nautilus ; parfois vous voulez juste ouvrir un document sans avoir à ouvrir un dossier, le parcourir, ouvrir le document et refermer le dossier. Cet applet vous épargne simplement quelques clics.</pre>
+
+<p>
+Vous pouvez ensuite modifier différents paramètres :
+</p>
+<pre class="code">This package will be built according to these values:
+
+0 -  Maintainer: [ root@ubuntu ]
+1 -  Summary: [ Browse and open files in your computer from the GNOME panel. ]
+2 -  Name:    [ gnome-menu-file-browser ]
+3 -  Version: [ applet ]
+4 -  Release: [ 1 ]
+5 -  License: [ GPL ]
+6 -  Group:  [ checkinstall ]
+7 -  Architecture: [ i386 ]
+8 -  Source location: [ gnome-menu-file-browser-applet ]
+9 -  Alternate source location: [  ]
+10 - Requires: [  ]
+
+Enter a number to change any of them or press ENTER to continue:</pre>
+<ul>
+<li class="level1"><div class="li"> Tapez 2 pour modifier le nom et mettez <em>file-browser-applet</em>.</div>
+</li>
+<li class="level1"><div class="li"> Tapez 3 pour modifier le numéro de version (mettez  le même que celui du dernier paquet créé par l&#039;auteur).</div>
+</li>
+<li class="level1"><div class="li"> Vous pouvez aussi modifier le numéro de release afin de préciser de quelle révision il s&#039;agit (il suffit d&#039;aller <a href="http://gnome-menu-file-browser-applet.googlecode.com/svn/" class="urlextern" title="http://gnome-menu-file-browser-applet.googlecode.com/svn/"  rel="nofollow">sur cette page</a> pour le connaître).</div>
+</li>
+</ul>
+
+<p>
+Vous obtenez alors quelque chose qui ressemble à ceci :
+</p>
+<pre class="code">This package will be built according to these values:
+
+0 -  Maintainer: [ root@ubuntu ]
+1 -  Summary: [ Browse and open files in your computer from the GNOME panel. ]
+2 -  Name:    [ file-browser-applet ]
+3 -  Version: [ 0.5.4 ]
+4 -  Release: [ svn-r55 ]
+5 -  License: [ GPL ]
+6 -  Group:  [ checkinstall ]
+7 -  Architecture: [ i386 ]
+8 -  Source location: [ gnome-menu-file-browser-applet ]
+9 -  Alternate source location: [  ]
+10 - Requires: [  ]
+
+Enter a number to change any of them or press ENTER to continue:</pre>
+
+<p>
+Appuyez sur Entrée pour créer et installer automatiquement un paquet deb.
+</p>
+
+</div>
+
+<h4 id="nettoyage">Nettoyage</h4>
+<div class="level4">
+
+<p>
+Pour nettoyer votre « /home », toujours dans le même terminal tapez :
+</p>
+<pre class="code">cd .. &amp;&amp; sudo rm -r ./gnome-menu-file-browser-applet</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="file-browser-applet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425472057" /><input type="hidden" name="summary" value="[Par compilation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2385-5781" /><input type="submit" value="Modifier" class="button" title="Par compilation" /></div></form></div>
+<h2 class="sectionedit7" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Faites un clic droit sur votre tableau de bord puis <em>Ajouter au tableau de bord…</em> et sélectionnez <strong>File Browser Applet</strong> dans la catégorie <em>Utilitaires</em>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="file-browser-applet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425472057" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5782-5971" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h2 class="sectionedit8" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Il suffit de <a href="tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer le paquet</a> <strong>file-browser-applet</strong> si vous avez fait l&#039;installation par paquet.
+</p>
+
+<p>
+Sinon, <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="file-browser-applet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425472057" /><input type="hidden" name="summary" value="[Désinstallation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5972-6161" /><input type="submit" value="Modifier" class="button" title="Désinstallation" /></div></form></div>
+<h2 class="sectionedit9" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://code.google.com/p/gnome-menu-file-browser-applet" class="urlextern" title="http://code.google.com/p/gnome-menu-file-browser-applet"  rel="nofollow">Le site du projet</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/salle" class="wikilink1" title="utilisateurs:salle">Sallé</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="file-browser-applet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425472057" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6162-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/4/43dd9d1449559385ce66873a2947a65e.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/file-browser-applet?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/file-browser-applet?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/file-browser-applet?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/file-browser-applet?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/file-browser-applet?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

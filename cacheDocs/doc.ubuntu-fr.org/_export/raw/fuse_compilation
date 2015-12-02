@@ -1,0 +1,92 @@
+{{tag>Dapper Edgy Feisty fichier système fuse}}
+
+----
+
+
+====== Compilation et installation d'un module fuse pour le noyau  ======
+
+
+
+
+
+===== De quoi s'agit-il ? =====
+
+Apprendre à installer un module Fuse  en le compilant.
+
+Pré-requis : Ubuntu (Debian et dérivés).
+
+Vous disposez à ce titre d'un noyau Linux précompilé et les « kernel-headers » sont disponibles sous la forme d'un paquet « .deb » sous le nom de « linux-headers ».
+
+Cette page est une annexe de la page [[:fuse|Fuse]].
+ 
+
+
+
+
+
+
+
+
+
+
+===== Pourquoi compiler ?=====
+
+Le programme Fuse est un bijou (parce que petit et précieux) qui sert de base à de très nombreux programmes (cf. sur ce wiki la page sur [[:EncFS]]).
+L'un des plus connus est [[:tutoriel:ntfs|ntfs-3g]] qui permet d'écrire sur des partitions NTFS.
+
+Le support du module fuse est inclu en standard depuis le noyau Linux 2.6.14.
+Feisty est livré avec fuse-utils (version 2.6.3.). Cette version devrait a priori être conservée pour la durée de vie de Feisty.
+
+La version stable actuelle du module fuse est la 2.6.5 et la 2.7 est en cours de test.  
+Voici comment le compiler pour installer la dernière version au cas où l'un des nombreux programmes utilisant fuse la réclamerait. L'opération dure presque cinq minutes. :-D 
+
+L'exemple choisi est donc la 2.6.5. Vous adapterez éventuellement pour le numéro de version ultérieur souhaité.
+Remarque : veillez à ne pas confondre le noyau Linux et le module Fuse. Les numéros de version sont aujourd'hui dangereusement proches. :-D 
+
+
+
+
+
+
+
+
+
+
+
+
+===== Installation et compilation =====
+
+  * Téléchargez la dernière version de Fuse (aujourd'hui la 2.6.5) sur le site   ou l'un de ses nombreux miroirs : 
+http://sourceforge.net/project/showfiles.php?group_id=121684&package_id=132802 
+  * Créez, par exemple, le dossier « /home/VotreNom/.fuse » et placez-y le dossier décompressé fuse-2.6.5.
+  * Vérifiez la version de votre noyau Linux.<code>
+    xxx@xxx-laptop:~$ uname -r
+    2.6.20-16-generic</code>
+  * Vérifiez avec Synaptic que les « linux-headers » correspondants **exactement** à votre noyau sont bien installés. À défaut, installez-les. Ici donc : ''linux-headers 2.6.20-16-generic''
+
+Nota: vous avez un module fuse en fonctionnement. Ne vous souciez pas de le désactiver ou désinstaller et appliquez la procédure suivante: 
+
+  * Installez le module Fuse :<code>
+  cd /home/VotreNom/.fuse/fuse-2.6.5
+  ./configure && make && sudo make install</code>Cela devrait suffire pour installer directement car le script d'installation va détecter lui-même le répertoire où sont stockés les //headers//. 
+
+puis 
+   modprobe fuse
+
+   * Vérifiez :
+<code>
+  xxxxx@xxxxx-laptop:~$ fusermount -V
+  fusermount version: 2.6.5
+</code>
+
+Terminé :-D 
+
+Remarque : si votre système ne trouve pas les headers, il faudra alors recourir aux sources.
+<code>
+  ./configure --with-kernel /usr/src/linux-headers-X.Y.Z && make && sudo make install
+</code>
+
+
+----
+
+//Contributeurs : //[[utilisateurs:roger64]]

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>policykit</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2010-02-17T18:45:23+0100"/>
+<meta name="keywords" content="karmic,systeme,securite"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../policykit?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="policykit"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/policykit"/>
+<link rel="canonical" href="../../policykit"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"policykit","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">karmic</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="policykitgestion_des_droits_des_utilisateurs">PolicyKit : Gestion des droits des utilisateurs</h1>
+<div class="level1">
+
+<p>
+PolicyKit est une couche de gestion d&#039;authentification et de permissions pour gérer finement les différentes opérations permises à un utilisateur ou un groupe d&#039;utilisateurs, avec ou sans mot de passe.
+</p>
+
+<p>
+On peut voir l&#039;intégration de PolicyKit dans le bouton &quot;déverrouiller&quot; de nombreuses applications de configuration sous ubuntu, ou dans l&#039;étape &quot;installation&quot; de la logithèque ubuntu.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "PolicyKit : Gestion des droits des utilisateurs" [41-500] -->
+<h2 class="sectionedit2" id="creer_ou_modifier_des_policy">Créer ou modifier des &quot;policy&quot;</h2>
+<div class="level2">
+
+<p>
+<p><div class="notewarning">Attention, l&#039;outil &quot;policykit-gnome&quot; n&#039;est pas compatible avec l&#039;implémentation de PolicyKit présente dans karmic (polkit).
+</div></p>
+</p>
+
+<p>
+Pour gérer les règles il faut donc <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditer les fichiers</a> de configuration à la main.
+</p>
+
+<p>
+Ceux-ci sont présent dans :
+</p>
+<pre class="code">/var/lib/polkit-1/</pre>
+
+<p>
+La documentation vous aidant à écrire les jolies règles personnalisées pour donner &quot;juste ce qu&#039;il faut&quot; de droits à vos utilisateurs, tapez dans un <a href="../../terminal" class="wikilink1" title="terminal">terminal</a> :
+</p>
+<pre class="code">man pklocalauthority</pre>
+
+<p>
+Ou consultez la <a href="http://hal.freedesktop.org/docs/polkit/manpages.html" class="urlextern" title="http://hal.freedesktop.org/docs/polkit/manpages.html"  rel="nofollow">documentation en ligne</a>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Créer ou modifier des policy" [501-1165] -->
+<h2 class="sectionedit3" id="exemple">Exemple</h2>
+<div class="level2">
+
+<p>
+Exemple de fichier de configuration pour autoriser un utilisateur non admin à utiliser la logithèque :
+</p>
+<pre class="code">/var/lib/polkit-1/localauthority/50-local.d/permission-software-center.pkla</pre>
+<pre class="code">[Grant for software-center]
+Identity=unix-user:nom_de_l_utilisateur
+Action=org.debian.apt.install-packages
+ResultAny=no
+ResultInactive=no
+ResultActive=auth_self_keep</pre>
+
+<p>
+(merci didrocks :)).
+</p>
+<hr />
+
+<p>
+contributions: <a href="http://doc.ubuntu-fr.org/utilisateurs/tshirtman" class="wikilink1" title="utilisateurs:tshirtman">Tshirtman</a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Exemple" [1166-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/b/bdc7cc4d27137c7443dd895e81284241.xhtml used -->
+</div>
+</body>
+</html>

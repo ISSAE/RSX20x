@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>exfat</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-09-07T12:14:10+0200"/>
+<meta name="keywords" content="systeme,partitions"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../exfat?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="exfat"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/exfat"/>
+<link rel="canonical" href="../../exfat"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"exfat","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<div class="tags"><span>
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../partitions" class="wikilink1" title="partitions" rel="tag">partitions</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="exfat">exFAT</h1>
+<div class="level1">
+
+<p>
+L&#039;exFAT (ou FAT64) est le dernier système de fichier de microsoft (donc propriétaire) pour les mémoires flash, il a surtout permis de dépasser la limite de 4Go/fichier du FAT32. 
+Les paquets sont disponibles dans les dépôts d&#039;Ubuntu 13.10.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "exFAT" [34-299] -->
+<h2 class="sectionedit2" id="avoir_acces_a_l_exfat_en_ecriture">Avoir accès à l&#039;exFAT en écriture</h2>
+<div class="level2">
+
+<p>
+testez cette commande 
+</p>
+<pre class="code">sudo apt-get install exfat-fuse exfat-utils</pre>
+
+<p>
+sinon :
+<p><div class="noteclassic">
+En l&#039;absence de <em>add-apt-repository</em> et  de <em>apt-add-repository</em> dans votre système, 
+commencez par <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://python-software-properties" class="interwiki iw_apt" title="apt://python-software-properties">python-software-properties</a></strong>.
+
+</div></p>
+Il vous faut ajouter le ppa:relan/exfat <sup><a href="exfat#fn__1" id="fnt__1" class="fn_top">1)</a></sup> et installer les paquets de gestion de exFAT.<br/>
+
+Exécutez ces commandes depuis un terminal:
+</p>
+<pre class="code">sudo add-apt-repository -y ppa:relan/exfat
+sudo apt-get update
+sudo apt-get install exfat-utils</pre>
+
+<p>
+Maintenant, vos clefs <abbr title="Universal Serial Bus">USB</abbr>, SDXC et autres périphériques utilisant ce formatage seront montées automatiquement dès leur branchement.
+<p><div class="noteclassic">Sous Ubuntu 12.04 (à vérifier pour les versions plus récentes…) pour le montage automatique il est impératif d&#039;installer également le paquet fuse-exfat. La troisième commande devient donc : 
+</p>
+<pre class="code">sudo apt-get install exfat-utils fuse-exfat</pre>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Avoir accès à l'exFAT en écriture" [300-1357] -->
+<h2 class="sectionedit3" id="articles_traitant_d_exfat">Articles traitant d&#039;exFAT</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://la-vache-libre.org/exfat-1-0-un-nouveau-driver-disponible-pour-linux" class="urlextern" title="http://la-vache-libre.org/exfat-1-0-un-nouveau-driver-disponible-pour-linux"  rel="nofollow"> La vache libre</a></div>
+</li>
+</ul>
+<hr />
+
+</div>
+<!-- EDIT3 SECTION "Articles traitant d'exFAT" [1358-] --><div class="footnotes">
+<div class="fn"><sup><a href="exfat#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<a href="https://launchpad.net/~relan/+archive/exfat" class="urlextern" title="https://launchpad.net/~relan/+archive/exfat"  rel="nofollow">https://launchpad.net/~relan/+archive/exfat</a></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/e/e9bcb66cd97c14e062d622c317f4cbdb.xhtml used -->
+</div>
+</body>
+</html>

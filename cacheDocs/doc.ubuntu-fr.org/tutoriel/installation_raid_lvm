@@ -1,0 +1,793 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:installation_raid_lvm - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2011-12-15T15:17:39+0100"/>
+<meta name="keywords" content="raid"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="installation_raid_lvm?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="../_export/xhtml/tutoriel/installation_raid_lvm"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../_export/raw/tutoriel/installation_raid_lvm"/>
+<link rel="canonical" href="installation_raid_lvm"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:installation_raid_lvm","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="installation_raid_lvm#main" tabindex="1">Contenu</a> | <a href="installation_raid_lvm#qsearch__in" tabindex="2">Rechercher</a> | <a href="installation_raid_lvm#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="installation_raid_lvm" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="installation_raid_lvm" >tutoriel:installation_raid_lvm</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="installation_raid_lvm#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="installation_raid_lvm#partitionnement_des_disques">Partitionnement des disques</a></div></li>
+<li class="level2"><div class="li"><a href="installation_raid_lvm#creation_des_peripheriques_raid">Création des périphériques RAID</a></div></li>
+<li class="level2"><div class="li"><a href="installation_raid_lvm#configuration_du_lvm">Configuration du LVM</a></div></li>
+<li class="level2"><div class="li"><a href="installation_raid_lvm#finalisation">Finalisation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="installation_raid_lvm#modifications_complementaires">Modifications complémentaires</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="installation_raid_lvm#modification_du_fichier_de_configuration_de_mdadm">Modification du fichier de configuration de mdadm</a></div></li>
+<li class="level2"><div class="li"><a href="installation_raid_lvm#installation_de_grub_sur_les_autres_disques">Installation de Grub sur les autres disques</a></div></li>
+<li class="level2"><div class="li"><a href="installation_raid_lvm#modification_du_fichier_de_configuration_de_grub">Modification du fichier de configuration de GRUB</a></div></li>
+<li class="level2"><div class="li"><a href="installation_raid_lvm#desinstaller_dmraid_si_necessaire">Désinstaller dmraid si nécessaire</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="installation_raid_lvm#simulation_de_pannes">Simulation de pannes</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="installation_raid_lvm#er_test">1er test</a></div></li>
+<li class="level2"><div class="li"><a href="installation_raid_lvm#eme_test">2ème test</a></div></li>
+<li class="level2"><div class="li"><a href="installation_raid_lvm#eme_test1">3ème test</a></div></li>
+<li class="level2"><div class="li"><a href="installation_raid_lvm#conclusion">Conclusion</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="installation_raid_lvm#alerte_de_panne">Alerte de panne</a></div></li>
+<li class="level1"><div class="li"><a href="installation_raid_lvm#listes_de_commandes_utiles">Listes de commandes utiles</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="installation_raid_lvm#commandes_raid">Commandes RAID</a></div></li>
+<li class="level2"><div class="li"><a href="installation_raid_lvm#commande_lvm">Commande LVM</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="installation_raid_lvm#conclusion1">Conclusion</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../raid" class="wikilink1" title="raid" rel="tag">raid</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="installation_robusteutilisation_de_mdadm_lvm2_ubuntu-alternate-cd">Installation robuste : utilisation de mdadm + LVM2+UBUNTU-alternate-CD</h1>
+<div class="level1">
+
+<p>
+Le but de ce tutoriel est d&#039;expliquer comment installer un système permettant le remplacement d&#039;un disque dur en panne sans perte de données. Nous utiliserons deux types de raid:
+</p>
+<ul>
+<li class="level1"><div class="li"> le <strong>raid1</strong> pour le point de montage <strong>/boot</strong></div>
+</li>
+</ul>
+
+<p>
+    <p><div class="noteimportant">en effet Grub ne sait pas booter sur du LVM.
+En revanche, <strong>Grub2</strong> le permet désormais (au moins depuis la version présente dans Debian/lenny). Cette limitation devient donc caduque même avec une partition de boot LVM+RAID (software).
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> le <strong>raid5+LVM</strong> pour la <strong>racine</strong> et <strong>/home</strong> (j&#039;ai choisi de faire des partions LVM sur le raid5 car celle-ci peuvent être facilement dimensionnées  a posteriori.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="avertissement">AVERTISSEMENT :</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Ce tutoriel n&#039;est en aucun cas un manuel de référence, il est juste le fruit de mon expérience qu&#039;il me semblait intéressant de partager. </div>
+</li>
+<li class="level1"><div class="li"> Ce tutoriel n&#039;explique pas non plus ce qu&#039;est le RAID ou le LVM, je vous laisse lire les nombreux wiki qui existent sur la question.</div>
+</li>
+<li class="level1"><div class="li"> Je vous conseille  de faire quelques tests de pannes tant que vous n&#039;avez pas de données sensibles.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="configuration">CONFIGURATION :</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> UBUNTU Gutsy 7.10</div>
+</li>
+<li class="level1"><div class="li"> 3 disques durs de 40 Go </div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="avant_de_commencer">AVANT DE COMMENCER :</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Télécharger et graver le alternate-CD de Ubuntu</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="architecture_de_l_installation">ARCHITECTURE DE L&#039;INSTALLATION :</h4>
+<div class="level4">
+
+<p>
+<a href="../_detail/tutoriel/config.png?id=tutoriel%253Ainstallation_raid_lvm" class="media" title="tutoriel:config.png"><img src="../_media/tutoriel/config.png" class="media" alt="" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Installation robuste : utilisation de mdadm + LVM2+UBUNTU-alternate-CD] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="20-1420" /><input type="submit" value="Modifier" class="button" title="Installation robuste : utilisation de mdadm + LVM2+UBUNTU-alternate-CD" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Booter sur le CD, taper F2 pour choisir la langue française puis sélectionner le menu <strong>« Installer sur le disque dur »</strong>. 
+</p>
+
+<p>
+(en mode texte, pour éviter certains bugs, avec les disques ide)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1421-1646" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit3" id="partitionnement_des_disques">Partitionnement des disques</h3>
+<div class="level3">
+
+<p>
+Nous allons utiliser l&#039;outil de partitionnement du CD et le faire manuellement. Choisir donc <strong>« partitionnement manuel »</strong>
+Les 3 disques doivent normalement apparaitre comme ci-dessous:
+</p>
+
+<p>
+<a href="../_detail/tutoriel/disques-avant-partions.jpg?id=tutoriel%253Ainstallation_raid_lvm" class="media" title="tutoriel:disques-avant-partions.jpg"><img src="../_media/tutoriel/disques-avant-partions.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+Sélectionner un espace libre et créer les 3 partitions :
+</p>
+<ul>
+<li class="level1"><div class="li"> une  de 500Mo utilisée comme <strong>« swap »</strong> </div>
+</li>
+<li class="level1"><div class="li"> une de 500Mo utilisée comme <strong>« raid »</strong> et rajouter l&#039;indicateur d&#039;amorçage sur &quot;présent&quot;</div>
+</li>
+<li class="level1"><div class="li"> une dernière de 39 Go utilisé comme  <strong>« raid »</strong></div>
+</li>
+</ul>
+
+<p>
+Répéter l&#039;opération sur les 3 disques. Cela doit donner quelque chose dans ce gout là:
+</p>
+
+<p>
+<a href="../_detail/tutoriel/disques-partitionnes.jpg?id=tutoriel%253Ainstallation_raid_lvm" class="media" title="tutoriel:disques-partitionnes.jpg"><img src="../_media/tutoriel/disques-partitionnes.jpg" class="media" alt="" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Partitionnement des disques] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1647-2316" /><input type="submit" value="Modifier" class="button" title="Partitionnement des disques" /></div></form></div>
+<h3 class="sectionedit4" id="creation_des_peripheriques_raid">Création des périphériques RAID</h3>
+<div class="level3">
+
+<p>
+A l&#039;aide de la barre de défilement verticale remonter et sélectionner le menu « Configurer le  RAID logiciel »
+</p>
+
+<p>
+<a href="../_detail/tutoriel/menu-config-raid.jpg?id=tutoriel%253Ainstallation_raid_lvm" class="media" title="tutoriel:menu-config-raid.jpg"><img src="../_media/tutoriel/menu-config-raid.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+Là un écran apparait pour savoir si il faut appliquer les changements, répondre <strong>« oui »</strong>, après quelques minutes d&#039;attente un nouveau menu apparait, celui-ci vous permettra de <strong>«  créer un périphérique multidisque »</strong> autrement dit les deux périphériques RAID.
+A ce stade on va vous demander le type de RAID à créer  ici du RAID 1 (ATTENTION la photo est trompeuse)
+</p>
+
+<p>
+<a href="../_detail/tutoriel/type-de-raid.jpg?id=tutoriel%253Ainstallation_raid_lvm" class="media" title="tutoriel:type-de-raid.jpg"><img src="../_media/tutoriel/type-de-raid.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+Pour le premier périphérique en RAID 1 choisir les partitions <strong>sda2,sdb2,sdc2</strong> en utilisant la touche « espace » pour sélectionner et la touche « TAB » pour changer d&#039;endroit dans la zone graphique.
+</p>
+
+<p>
+<a href="../_detail/tutoriel/creation-raid1.jpg?id=tutoriel%253Ainstallation_raid_lvm" class="media" title="tutoriel:creation-raid1.jpg"><img src="../_media/tutoriel/creation-raid1.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+Répondre aux quelques questions qui vous sont posées concernant les caractéristiques du RAID : j&#039;ai personnellement choisi 3 disques, et 0 en secours.
+Réaliser la même opération pour créer le RAID 5 à l&#039;aide des partitions sda3,sdb3 et sdc3
+</p>
+
+<p>
+Continuer jusqu&#039;à obtenir un écran comme le suivant, confirmant bien la création des périphériques RAID.
+</p>
+
+<p>
+<a href="../_detail/tutoriel/config-lvm.jpg?id=tutoriel%253Ainstallation_raid_lvm" class="media" title="tutoriel:config-lvm.jpg"><img src="../_media/tutoriel/config-lvm.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+C&#039;est à ce moment que le RAID 5 se construit. Avant de faire toutes autres choses, laissez lui le temps de se construire entièrement. Pour vérifier celà, allez en mode console (CTRL ALT F2) et tapez la commande suivante :
+cat /proc/mdstat
+</p>
+
+<p>
+Vous voyez l&#039;avancement de la construction de votre RAID 5 (pourcentage et minutes restantes) puis CTRL ALT F1 pour revenir sous l&#039;install d&#039; Ubuntu.
+</p>
+
+<p>
+Une fois fini,
+Pour le périphérique RAID 5: <em class="u">changer le type de système de fichier de partitions, mettre utilisé comme <strong>« LVM »</strong></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Création des périphériques RAID] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2317-4105" /><input type="submit" value="Modifier" class="button" title="Création des périphériques RAID" /></div></form></div>
+<h3 class="sectionedit5" id="configuration_du_lvm">Configuration du LVM</h3>
+<div class="level3">
+
+<p>
+A ce stade doit apparaître un menu <strong>« Configurer le gestionnaire de volumes logiques (LVM) » </strong> qui va nous permettre de créer nos différents:
+</p>
+<ul>
+<li class="level1"><div class="li"> volumes physiques,</div>
+</li>
+<li class="level1"><div class="li"> groupes de volumes</div>
+</li>
+<li class="level1"><div class="li"> et volumes logiques </div>
+</li>
+</ul>
+
+<p>
+sur le RAID 5.
+</p>
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Ajout de la possibilité de chiffrer entièrement la LVM à ce stade.
+</p>
+
+<p>
+A l&#039;aide des différents écrans, créer :
+</p>
+<ul>
+<li class="level1"><div class="li"> Un volume physique sur le périphérique RAID5 ici /dev/md1 </div>
+</li>
+</ul>
+
+<p>
+<em class="u">Remarque:</em> les périphériques RAID sont nommés md0 et md1 
+</p>
+<ul>
+<li class="level1"><div class="li"> Un groupe de volume appelé <em>« mvg »</em>, contenant le volume physique précédent </div>
+</li>
+<li class="level1"><div class="li"> Et deux volumes logiques, le 1er  appelé <em>« racine »</em> de 10Go et le 2nd appelé <em>« home »</em> de 68Go,</div>
+</li>
+</ul>
+
+<p>
+A la fin de la configuration vous devez obtenir quelque chose comme ceci:
+</p>
+
+<p>
+<a href="../_detail/tutoriel/fin-lvm.jpg?id=tutoriel%253Ainstallation_raid_lvm" class="media" title="tutoriel:fin-lvm.jpg"><img src="../_media/tutoriel/fin-lvm.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+puis vous obtenez une nouvelle table de partition
+</p>
+
+<p>
+<a href="../_detail/tutoriel/fin-partionnement.jpg?id=tutoriel%253Ainstallation_raid_lvm" class="media" title="tutoriel:fin-partionnement.jpg"><img src="../_media/tutoriel/fin-partionnement.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+<em class="u">Remarque :</em> On peut voir les partitions LVM apparaître.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Configuration du LVM] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4106-5078" /><input type="submit" value="Modifier" class="button" title="Configuration du LVM" /></div></form></div>
+<h3 class="sectionedit6" id="finalisation">Finalisation</h3>
+<div class="level3">
+
+<p>
+Il ne nous reste plus qu&#039;à paramétrer le type de système de fichier &quot;ext3&quot; que l&#039;on souhaite sur les partitions et les différents points de montages. A la fin cela doit donner quelque chose dans ce goût là:
+</p>
+
+<p>
+<a href="../_detail/tutoriel/fin-montage.jpg?id=tutoriel%253Ainstallation_raid_lvm" class="media" title="tutoriel:fin-montage.jpg"><img src="../_media/tutoriel/fin-montage.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+Il ne vous reste plus qu&#039;à continuer l&#039;installation normale de UBUNTU
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Finalisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5079-5422" /><input type="submit" value="Modifier" class="button" title="Finalisation" /></div></form></div>
+<h2 class="sectionedit7" id="modifications_complementaires">Modifications complémentaires</h2>
+<div class="level2">
+
+<p>
+Votre système est maintenant installé, démarrez-le. Si vous voulez qu&#039;il arrive à démarrer avec des lecteurs en panne il va falloir faire quelques modifications.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Modifications complémentaires] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5423-5637" /><input type="submit" value="Modifier" class="button" title="Modifications complémentaires" /></div></form></div>
+<h3 class="sectionedit8" id="modification_du_fichier_de_configuration_de_mdadm">Modification du fichier de configuration de mdadm</h3>
+<div class="level3">
+
+<p>
+Il ne faut pas oublier de renseigner le fichier de configuration <strong>/etc/mdadm/mdadm.conf</strong> sur les différents RAID existant, voici le mien
+</p>
+<pre class="code"># definitions of existing MD arrays 
+DEVICE /dev/sda2 /dev/sdb2 /dev/sdc2 /dev/sda3 /dev/sdb3 /dev/sdc3 
+ARRAY /dev/md0 devices=/dev/sda2,/dev/sdb2,/dev/sdc2 level=raid1 			num-devices=3 UUID=80ebfd5f:2385410e:988bcc54:d4011508 
+ARRAY /dev/md1 devices=/dev/sda3,/dev/sdb3,/dev/sdc3 level=raid5 			num-devices=3 UUID=74c43784:06f6be21:90a22a85:a8e3aa21 </pre>
+
+<p>
+On peut commencer à remplir automatiquement le fichier en utilisant la commande suivante:
+</p>
+<pre class="code">#mdadm  --examine --scan &gt;&gt; /etc/mdadm/mdadm.conf</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Modification du fichier de configuration de mdadm] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5638-6340" /><input type="submit" value="Modifier" class="button" title="Modification du fichier de configuration de mdadm" /></div></form></div>
+<h3 class="sectionedit9" id="installation_de_grub_sur_les_autres_disques">Installation de Grub sur les autres disques</h3>
+<div class="level3">
+
+<p>
+il suffit de taper les commandes:
+</p>
+<pre class="code">#grub-install hd1
+#grub-install hd2</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Installation de Grub sur les autres disques] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6341-6467" /><input type="submit" value="Modifier" class="button" title="Installation de Grub sur les autres disques" /></div></form></div>
+<h3 class="sectionedit10" id="modification_du_fichier_de_configuration_de_grub">Modification du fichier de configuration de GRUB</h3>
+<div class="level3">
+
+<p>
+Par défaut GRUB se sert du premier disque pour démarrer, dans certaines conditions il peut être utile de démarrer à partir des autres disques. Nous allons donc modifier le fichier de configuration  <strong>/boot/grub/menu.lst</strong>. et y ajouter deux autres menus.
+</p>
+
+<p>
+NOUVEAU CODE:
+</p>
+<pre class="code">fallback 1 2</pre>
+<pre class="code">title           Ubuntu 7.10, kernel 2.6.22-14-generic (disque 0) 
+root            (hd0,1) 
+kernel          /vmlinuz-2.6.22-14-generic root=/dev/mapper/mvg-racine ro quiet splash 
+initrd          /initrd.img-2.6.22-14-generic 
+quiet </pre>
+<pre class="code">title           Ubuntu 7.10, kernel 2.6.22-14-generic (disque 1) 
+root            (hd1,1) 
+kernel          /vmlinuz-2.6.22-14-generic root=/dev/mapper/mvg-racine ro quiet splash 
+initrd          /initrd.img-2.6.22-14-generic 
+quiet </pre>
+<pre class="code">title           Ubuntu 7.10, kernel 2.6.22-14-generic (disque 2) 
+root            (hd2,1) 
+kernel          /vmlinuz-2.6.22-14-generic root=/dev/mapper/mvg-racine ro quiet splash 
+initrd          /initrd.img-2.6.22-14-generic 
+quiet </pre>
+<pre class="code">title           Ubuntu 7.10, kernel 2.6.22-14-generic (recovery mode) 
+root            (hd0,1) 
+kernel          /vmlinuz-2.6.22-14-generic root=/dev/mapper/mvg-racine ro single 
+initrd          /initrd.img-2.6.22-14-generic </pre>
+<pre class="code">title           Ubuntu 7.10, memtest86+ 
+root            (hd0,1) 
+kernel          /memtest86+.bin 
+quiet </pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Modification du fichier de configuration de GRUB] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6468-7874" /><input type="submit" value="Modifier" class="button" title="Modification du fichier de configuration de GRUB" /></div></form></div>
+<h3 class="sectionedit11" id="desinstaller_dmraid_si_necessaire">Désinstaller dmraid si nécessaire</h3>
+<div class="level3">
+
+<p>
+Des problèmes peuvent surgir quand dmraid est installé en même temps que mdadm, voir <a href="http://ubuntuforums.org/showthread.php?t=1149669&amp;highlight=%2Fdev%2Fblock%2F252%3A1" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=1149669&amp;highlight=%2Fdev%2Fblock%2F252%3A1"  rel="nofollow"> ce poste</a>.
+</p>
+
+<p>
+Bien que les disques sont toujours présent dans /dev (/dev/sda, /dev/sdb,..) les partitions des disques (/dev/sda1, /dev/sda2, /dev/sdb1, ..) ont disparu.
+On ne sait dès lors plus manipuler le raid avec mdadm comme il se doit (–add, –fail, –remove) car la partition n&#039;existe plus dans /dev/.
+</p>
+
+<p>
+Il suffit de désinstaller dmraid pour régler le problème.
+</p>
+<pre class="code">sudo apt-get remove dmraid</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Désinstaller dmraid si nécessaire] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7875-8512" /><input type="submit" value="Modifier" class="button" title="Désinstaller dmraid si nécessaire" /></div></form></div>
+<h2 class="sectionedit12" id="simulation_de_pannes">Simulation de pannes</h2>
+<div class="level2">
+
+</div>
+
+<h4 id="attention">ATTENTION :</h4>
+<div class="level4">
+
+<p>
+la reconstruction du RAID 5 peut être longue.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Simulation de pannes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8513-8612" /><input type="submit" value="Modifier" class="button" title="Simulation de pannes" /></div></form></div>
+<h3 class="sectionedit13" id="er_test">1er test</h3>
+<div class="level3">
+
+<p>
+Mettre en panne le sda2
+</p>
+<pre class="code">#mdadm --fail /dev/md0 /dev/sda2</pre>
+
+<p>
+en avoir la confirmation 
+</p>
+<pre class="code">#cat /proc/mdstat</pre>
+
+<p>
+le supprimer du tableau RAID
+</p>
+<pre class="code">#mdadm --remove /dev/md0 /dev/sda2</pre>
+
+<p>
+vous pouvez redémarrer le PC et l&#039;ajouter à nouveau
+</p>
+<pre class="code">#mdadm --add /dev/md0 /dev/sda2</pre>
+
+<p>
+Voir l&#039;avancement de la reconstruction <strong>(Ctrl C pour sortir)</strong>
+</p>
+<pre class="code">#watch cat /proc/mdstat</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[1er test] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8613-8978" /><input type="submit" value="Modifier" class="button" title="1er test" /></div></form></div>
+<h3 class="sectionedit14" id="eme_test">2ème test</h3>
+<div class="level3">
+
+<p>
+débrancher le <em>sdb</em> et redémarrer, là le PC bloque, au bout de <em>10 minutes</em> vous tombez sur une invite de commande <strong>( Initramfs )</strong>. Le système n&#039;est pas arrivé à assembler les périphériques RAID, il vous suffit alors de taper :
+</p>
+<pre class="code">#/sbin/mdadm  --assemble --scan</pre>
+
+<p>
+Puis
+</p>
+<pre class="code">#exit</pre>
+
+<p>
+le système devrait arriver à démarrer. Puis en faisant
+</p>
+<pre class="code">#cat /proc/mdstat</pre>
+
+<p>
+vous vous apercevez que <em>sdb2 et sdb3</em>  sont défectueux, votre système marche bien sur 2 disques. Arrêter le système rebrancher le disque et démarrer le système. <em>( il vous faudra peu être assembler à nouveau les disques)</em>
+</p>
+
+<p>
+Vous pouvez constater que <em>sdb2 et sdb3</em>  sont encore défectueux il faut donc les ajouter à nouveau aux deux tableaux RAID. (quelquefois il faut faire un <em>–remove</em> avant le <em>–add</em>) 
+</p>
+<pre class="code">#mdadm --add /dev/md0 /dev/sdb2
+#mdadm --add /dev/md1 /dev/sdb3</pre>
+
+<p>
+suivre la reconstruction
+</p>
+<pre class="code">#watch cat /proc/mdstat</pre>
+
+<p>
+<em class="u">Remarque :</em> si <strong>/sbin/mdadm –assemble –scan</strong> ne marche pas vous pouvez mieux spécifier:
+</p>
+<pre class="code">#/sbin/mdadm  --assemble /dev/md0 /dev/sdb2
+#/sbin/mdadm  --assemble /dev/md1 /dev/sdb3</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[2ème test] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8979-10096" /><input type="submit" value="Modifier" class="button" title="2ème test" /></div></form></div>
+<h3 class="sectionedit15" id="eme_test1">3ème test</h3>
+<div class="level3">
+
+<p>
+débrancher le sda et redémarrer, là normalement vous tombez sur le shell GRUB, pour lancer le menu de GRUB taper:
+</p>
+<pre class="code">configfile (hd0,1)/grub/menu.lst</pre>
+
+<p>
+vous devez tomber sur le même invite de commande que pour le <strong>2ème test</strong>, faite donc la même chose mais cette fois ci avec sda
+</p>
+
+<p>
+<em class="u">Remarque :</em> Le clavier de GRUB est configuré en qwerty a vous de retrouver les bonnes touches.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[3ème test] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10097-10501" /><input type="submit" value="Modifier" class="button" title="3ème test" /></div></form></div>
+<h3 class="sectionedit16" id="conclusion">Conclusion</h3>
+<div class="level3">
+
+<p>
+On est donc arrivé à démarrer le système sur seulement 2 disques ce qui permet de changer le 3ème. une fois le nouveau disque inséré il faut le partitionner à l&#039;aide de <em>cfdisk</em> par exemple et ajouter chaque partitions dans le bon tableau RAID.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Conclusion] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10502-10779" /><input type="submit" value="Modifier" class="button" title="Conclusion" /></div></form></div>
+<h2 class="sectionedit17" id="alerte_de_panne">Alerte de panne</h2>
+<div class="level2">
+
+<p>
+Si un disque dur tombe en panne il faut le savoir, le système fonctionnera encore même avec 2 disques (c&#039;est d&#039;ailleurs pour cela que l&#039;on s&#039;est donné tout ce mal), il sera sûrement un peu plus lent.
+</p>
+
+<p>
+<em>mdadm</em> permet de vous envoyer un mail automatiquement quand un disque est défaillant. Il faut dans un premier temps installer Postfix pour gérer l&#039;envois des mails, cf. « <a href="../postfix_systeme_satellite" class="wikilink1" title="postfix_systeme_satellite">postfix_systeme_satellite</a> ».
+</p>
+
+<p>
+Il faut en suite renseigner la variable <strong>MAILADDR</strong> en la faisant suivre de votre adresse EMAIL dans le fichier <strong>/etc/mdadm/mdadm.conf</strong>, on peu même spécifier l&#039;expéditeur avec <strong>MAILFROM</strong>.
+Exemple :
+</p>
+<pre class="code">MAILADDR monadresse@domaine.fr 
+MAILFROM root@localhost</pre>
+
+<p>
+il faut que <em>mdadm</em> soit mis en démon en mode <em>–monitor</em>, par exemple dans un script de démarrage.
+</p>
+<pre class="code"># mdadm --monitor --scan --daemonise</pre>
+
+<p>
+et le tour est joué.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Alerte de panne] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10780-11667" /><input type="submit" value="Modifier" class="button" title="Alerte de panne" /></div></form></div>
+<h2 class="sectionedit18" id="listes_de_commandes_utiles">Listes de commandes utiles</h2>
+<div class="level2">
+
+<p>
+Après avoir beaucoup perdu de temps en cherchant des informations à droite et à gauche qui me permettent de récupérer mon système sachant que j&#039;avais installé du RAID ou du LVM ou les deux j&#039;ai donc fait une petite compilation des commandes les plus utiles. Il faut aussi savoir que <strong>mdadm</strong> et <strong>LVM</strong> sont dans <strong>/sbin</strong>. et vous y avez accès même si vous tombez sur une invite de commande du style <strong>( Initramfs )</strong>.
+une fois vos périphérique RAID et vos partitions LVM retrouvées à la main faites un <strong>« exit »</strong> pour continuer le démarrage.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Listes de commandes utiles] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11668-12271" /><input type="submit" value="Modifier" class="button" title="Listes de commandes utiles" /></div></form></div>
+<h3 class="sectionedit19" id="commandes_raid">Commandes RAID</h3>
+<div class="level3">
+
+<p>
+Renseignement sur les périphériques RAID
+</p>
+<pre class="code">#mdadm --detail /dev/md0</pre>
+
+<p>
+Renseignement sur une partition particulière
+</p>
+<pre class="code">#mdadm --examine /dev/sda2</pre>
+
+<p>
+Assembler un tableau RAID déjà existant sans préciser
+</p>
+<pre class="code">#mdadm --assemble --scan</pre>
+
+<p>
+Assembler un tableau RAID déjà existant en précisant (redémarrer le RAID)
+</p>
+<pre class="code">#mdadm --assemble /dev/md0 /dev/sd[abc]2</pre>
+
+<p>
+Déclarer un disque dur en panne
+</p>
+<pre class="code">#mdadm --fail /dev/md0 /dev/sdb2</pre>
+
+<p>
+Supprimer un disque dur d&#039;un tableau RAID
+</p>
+<pre class="code">#mdadm --remove /dev/md0 /dev/sdb2</pre>
+
+<p>
+Pour ajouter un nouveau disque dans le tableau RAID
+</p>
+<pre class="code">#mdadm --add /dev/md0 dev/sdb2 </pre>
+
+<p>
+Recréer les périphériques multidisque si ils ne sont pas présent dans répertoire /dev
+ 	#mknod /dev/md0 b 9 0
+</p>
+<pre class="code">#mknod /dev/md1 b 9 1</pre>
+
+<p>
+Créer un nouveau tableau RAID
+</p>
+<pre class="code">#mdadm --create --verbose /dev/md0 --level=1 --raid-devices=3 /dev/sda2 /dev/sdb2 /dev/sdc2</pre>
+
+<p>
+Pour voir l&#039;état des différents disques RAID consulter le fichier <strong>/proc/mdstat </strong> en tapant la commande:
+</p>
+<pre class="code">#watch cat /proc/mdstat 	</pre>
+
+<p>
+pour sortir  un bon vieux <em>« Crtl C »</em>
+</p>
+
+<p>
+<em class="u">Remarque :</em> le fichier de configuration de mdadm est <strong>/etc/mdadm/mdadm.conf</strong>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Commandes RAID] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12272-13401" /><input type="submit" value="Modifier" class="button" title="Commandes RAID" /></div></form></div>
+<h3 class="sectionedit20" id="commande_lvm">Commande LVM</h3>
+<div class="level3">
+
+<p>
+Recréer les périphériques node dans /dev/mapper
+</p>
+<pre class="code">#vgmknodes </pre>
+
+<p>
+Activer des Groupes Volumes qui existent déjà.
+</p>
+<pre class="code">#vgchange -a y</pre>
+
+<p>
+Voir aussi <strong>pvs</strong>, <strong>vgs</strong> et <strong>lvs</strong> pour voir ce qui existe comme groupes physiques, groupes de volumes et  volumes logiques.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Commande LVM] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13402-13688" /><input type="submit" value="Modifier" class="button" title="Commande LVM" /></div></form></div>
+<h2 class="sectionedit21" id="conclusion1">Conclusion</h2>
+<div class="level2">
+
+<p>
+Dans ce document j&#039;ai donc essayé d&#039;avoir une approche très pratique du problème en compilant différentes informations sur mdadm, LVM2, GRUB et l&#039;ALTERNATE-CD de UBUNTU.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Conclusion] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13689-" /><input type="submit" value="Modifier" class="button" title="Conclusion" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/9/974c5cb684423adfa4269da967a12593.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="installation_raid_lvm?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="installation_raid_lvm?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="installation_raid_lvm?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="installation_raid_lvm?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

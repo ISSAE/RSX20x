@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:comment_installer_un_depot_local - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-12-09T05:20:49+0100"/>
+<meta name="keywords" content="precise,trusty,depots,apt,paquet"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/comment_installer_un_depot_local?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="comment_installer_un_depot_local?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/comment_installer_un_depot_local"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../_export/raw/tutoriel/comment_installer_un_depot_local"/>
+<link rel="canonical" href="comment_installer_un_depot_local"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_installer_un_depot_local","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="comment_installer_un_depot_local#main" tabindex="1">Contenu</a> | <a href="comment_installer_un_depot_local#qsearch__in" tabindex="2">Rechercher</a> | <a href="comment_installer_un_depot_local#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="comment_installer_un_depot_local" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="comment_installer_un_depot_local" >tutoriel:comment_installer_un_depot_local</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_installer_un_depot_local#interet_d_un_depot_local_de_paquets_deb">Intérêt d&#039;un dépôt local de paquets deb</a></div></li>
+<li class="level1"><div class="li"><a href="comment_installer_un_depot_local#prerequis">Prérequis</a></div></li>
+<li class="level1"><div class="li"><a href="comment_installer_un_depot_local#installation_en_reseau_local_a_partir_d_une_machine_serveur_locale">Installation en réseau local à partir d&#039;une machine serveur locale</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_installer_un_depot_local#etape_1installer_completement_une_machine_locale_via_internet_qui_deviendra_un_serveur_de_depot">Étape 1 : Installer complètement une machine locale via Internet qui deviendra un serveur de dépôt</a></div></li>
+<li class="level2"><div class="li"><a href="comment_installer_un_depot_local#etape_2preparer_la_machine_locale_a_devenir_serveur_de_depot">Étape 2 : Préparer la machine locale à devenir serveur de dépôt</a></div></li>
+<li class="level2"><div class="li"><a href="comment_installer_un_depot_local#etape_3preparer_la_machine_cliente_pour_se_connecter_au_serveur_de_depot_local">Étape 3 : Préparer la machine cliente pour se connecter au serveur de dépôt local</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_installer_un_depot_local#installation_locale_a_partir_de_fichiers_deb_sur_cd-rom_dvd-rom_cle_usb_ou_disque_dur_amovible_externe">Installation locale à partir de fichiers .deb sur CD-ROM, DVD-ROM, clé USB ou disque dur amovible externe</a></div></li>
+<li class="level1"><div class="li"><a href="comment_installer_un_depot_local#autre_solutioncomment_installer_un_deb_via_synaptic">Autre solution : comment installer un .deb via Synaptic</a></div></li>
+<li class="level1"><div class="li"><a href="comment_installer_un_depot_local#utiliser_un_fichier_iso_comme_source">Utiliser un fichier .iso comme source</a></div></li>
+<li class="level1"><div class="li"><a href="comment_installer_un_depot_local#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="http://doc.ubuntu-fr.org/trusty" class="wikilink1" title="trusty" rel="tag">Trusty</a>,
+	<a href="../depots" class="wikilink1" title="depots" rel="tag">dépôts</a>,
+	<a href="../apt" class="wikilink1" title="apt" rel="tag">apt</a>,
+	<a href="../paquet" class="wikilink1" title="paquet" rel="tag">paquet</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_mettre_en_place_un_depot_local">Comment mettre en place un dépôt local ?</h1>
+<div class="level1">
+
+<p>
+Ou comment créer un dépôt à partir de paquets déjà téléchargés dans un répertoire.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="comment_installer_un_depot_local"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1418098849" /><input type="hidden" name="summary" value="[Comment mettre en place un dépôt local ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="52-203" /><input type="submit" value="Modifier" class="button" title="Comment mettre en place un dépôt local ?" /></div></form></div>
+<h2 class="sectionedit2" id="interet_d_un_depot_local_de_paquets_deb">Intérêt d&#039;un dépôt local de paquets deb</h2>
+<div class="level2">
+
+<p>
+Il existe plusieurs situations dans lesquelles il est particulièrement intéressant de créer un dépôt local de logiciels sous forme binaire en <strong>.deb</strong> comme :
+</p>
+<ul>
+<li class="level1"><div class="li"> une installation sur une machine dépourvue de connexion internet ;</div>
+</li>
+<li class="level1"><div class="li"> une installation sur une machine avec une connexion internet lente 56K par simple modem RTC ;</div>
+</li>
+<li class="level1"><div class="li"> une install-party où il y a beaucoup de machines à installer en même temps avec une connexion internet haut-débit pas suffisamment rapide.</div>
+</li>
+</ul>
+
+<p>
+Dans tous les cas, cette technique permet d&#039;éviter de télécharger sur internet des paquets qui sont déjà présent localement dans au moins une machine correctement installée de façon traditionnelle via le net.
+</p>
+
+<p>
+<p><div class="noteclassic">Cette manière de procéder ne vous permettra de partager que des paquets déjà téléchargés. Dans le cas où vous souhaitez créer un dépôt complet en local (un miroir) vous trouverez comment faire sur la page « <a href="http://doc.ubuntu-fr.org/tutoriel/creer_un_miroir_de_depot" class="wikilink1" title="tutoriel:creer_un_miroir_de_depot">Créer un miroir de dépôt local</a> ».
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">Il existe une solution alternative à celle proposée sur cette page avec l&#039;utilisation du proxy <a href="http://doc.ubuntu-fr.org/apt-cacher" class="wikilink1" title="apt-cacher">apt-cacher</a>, solution qui ne nécessite pas de configuration particulière du serveur <a href="../apache2" class="wikilink1" title="apache2">Apache2</a> et reste &quot;transparente&quot; pour le PC client dans le cas d&#039;une configuration par la « <a href="http://doc.ubuntu-fr.org/apt-cacher#methode_proxy" class="wikilink1" title="apt-cacher">Méthode Proxy</a> ».
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="comment_installer_un_depot_local"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1418098849" /><input type="hidden" name="summary" value="[Intérêt d'un dépôt local de paquets deb] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="204-1621" /><input type="submit" value="Modifier" class="button" title="Intérêt d'un dépôt local de paquets deb" /></div></form></div>
+<h2 class="sectionedit3" id="prerequis">Prérequis</h2>
+<div class="level2">
+
+<p>
+L&#039;utilitaire <em>dpkg-scanpackages</em> dont vous aurez besoin sur la machine serveur est disponible dans le paquet <strong><a href="apt://dpkg-dev" class="interwiki iw_apt" title="apt://dpkg-dev">dpkg-dev</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="comment_installer_un_depot_local"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1418098849" /><input type="hidden" name="summary" value="[Prérequis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1622-1779" /><input type="submit" value="Modifier" class="button" title="Prérequis" /></div></form></div>
+<h2 class="sectionedit4" id="installation_en_reseau_local_a_partir_d_une_machine_serveur_locale">Installation en réseau local à partir d&#039;une machine serveur locale</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="comment_installer_un_depot_local"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1418098849" /><input type="hidden" name="summary" value="[Installation en réseau local à partir d'une machine serveur locale] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1780-1861" /><input type="submit" value="Modifier" class="button" title="Installation en réseau local à partir d'une machine serveur locale" /></div></form></div>
+<h3 class="sectionedit5" id="etape_1installer_completement_une_machine_locale_via_internet_qui_deviendra_un_serveur_de_depot">Étape 1 : Installer complètement une machine locale via Internet qui deviendra un serveur de dépôt</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Installez votre machine de façon traditionnelle via Internet haut-débit en utilisant un fichier <strong>sources.list</strong> classique et pensez à mettre tous les logiciels nécessaires.</div>
+</li>
+</ul>
+
+<p>
+Une fois terminé, jetez un œil dans ce dossier pour vérifier que tous les paquets sont bien là sous forme de fichier <strong>.deb</strong> :
+</p>
+<pre class="code">/var/cache/apt/archives/</pre>
+
+<p>
+<p><div class="noteimportant">Il faudra installer le serveur web <strong><a href="apt://apache2" class="interwiki iw_apt" title="apt://apache2">apache2</a></strong> pour permettre une connexion locale en réseau intranet.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="comment_installer_un_depot_local"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1418098849" /><input type="hidden" name="summary" value="[Étape 1 : Installer complètement une machine locale via Internet qui deviendra un serveur de dépôt] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1862-2466" /><input type="submit" value="Modifier" class="button" title="Étape 1 : Installer complètement une machine locale via Internet qui deviendra un serveur de dépôt" /></div></form></div>
+<h3 class="sectionedit6" id="etape_2preparer_la_machine_locale_a_devenir_serveur_de_depot">Étape 2 : Préparer la machine locale à devenir serveur de dépôt</h3>
+<div class="level3">
+
+<p>
+Dans mon exemple, je crée un dossier local qui contiendra les paquets <strong>.deb</strong> dans Apache2 et appelé ubuntu_local.
+</p>
+<ul>
+<li class="level1"><div class="li"> Ouvrez un <a href="../terminal" class="wikilink1" title="terminal">terminal</a> en lui donnant les <a href="../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> avec la commande : <pre class="code">sudo -i</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Créez le dossier <em>ubuntu_local</em> : <pre class="code">mkdir /var/www/html/ubuntu_local</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Copiez tout le dossier archives et les paquets <strong>.deb</strong> qu&#039;il contient dans le dossier que vous venez de créer à la racine de votre serveur web Apache2 avec la commande : <pre class="code">cp -rf /var/cache/apt/archives /var/www/html/ubuntu_local</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Ensuite, allez dans ce dossier avec : <pre class="code">cd /var/www/html/ubuntu_local/</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Faites la liste de tous les paquets qu&#039;il contient avec la commande : <pre class="code">dpkg-scanpackages ./ /dev/null | gzip -9c &gt; Packages.gz</pre>
+</div>
+</li>
+</ul>
+
+<p>
+(La commande <em>dpkg-scanpackages</em> n&#039;est disponible qu&#039;après installation paquet <a href="apt://dpkg-dev" class="interwiki iw_apt" title="apt://dpkg-dev">dpkg-dev</a>.)
+</p>
+
+<p>
+À ce stade, votre serveur est presque prêt, il faut juste configurer votre machine pour dire que n&#039;importe qui pourra aller chercher ces paquets via le serveur Apache2. <br/>
+
+Pour cela, exécutez les 2 commandes suivantes :
+</p>
+<pre class="code">chmod 755 -R /var/www/html/ubuntu_local/
+chown -R www-data:www-data /var/www/html/ubuntu_local/</pre>
+
+<p>
+Votre serveur local est prêt, pour le tester, lancez-votre navigateur web et saisissez cette adresse :
+</p>
+<pre class="code">http://ip_serveur/ubuntu_local/</pre>
+
+<p>
+(ip_serveur sera remplacée par l&#039;adresse IP de votre machine dans le réseau local)
+</p>
+
+<p>
+Si une grande liste s&#039;affiche avec tous les logiciels et le fichier <code><em>Packages.gz</em></code>, c&#039;est tout bon, sinon reprenez au dessus, vous avez probablement oublié quelque chose…
+</p>
+
+<p>
+<p><div class="notetip">
+Il est tout à fait possible (et sans doute plus intéressant) de créer un lien symbolique pointant vers le répertoire cache, plutôt que de recopier le contenu de ce dernier. Soit, avec l&#039;exemple précédent :
+</p>
+<pre class="code">sudo ln -s /var/cache/apt/archives /var/www/html/ubuntu_local/</pre>
+
+<p>
+De plus, votre dépôt local sera toujours &quot;à jour&quot;.
+</p>
+
+<p>
+Un dpkg-scanpackages reste cependant nécessaire car apt cherche un listing des paquets disponibles dans le dépôt, listing contenu dans  le fichier <code><em>Packages.gz</em></code>. En l&#039;absence de ce fichier, apt retourne une erreur.
+</p>
+
+<p>
+La page <strong><a href="http://ip_serveur/ubuntu_local/" class="urlextern" title="http://ip_serveur/ubuntu_local/"  rel="nofollow">http://ip_serveur/ubuntu_local/</a></strong> ouverte dans votre navigateur doit afficher le fichier <code><em>Packages.gz</em></code> en plus des paquets .deb du dossier <code><em>archives/ </em></code>.
+
+</div></p>
+</p>
+
+<p>
+Pour télécharger les paquets par avance dans <code>/var/cache/apt/archives</code> du serveur local sans les installer, l&#039;option <strong>-d</strong> suffit.
+</p>
+<pre class="code"># apt-get -d install mon_paquet</pre>
+
+<p>
+Seule la phrase &quot;<em>Téléchargement achevé dans le mode téléchargement uniquement</em>&quot; à la fin de l&#039;opération vous indiquera que rien n&#039;est installé.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="comment_installer_un_depot_local"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1418098849" /><input type="hidden" name="summary" value="[Étape 2 : Préparer la machine locale à devenir serveur de dépôt] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2467-5303" /><input type="submit" value="Modifier" class="button" title="Étape 2 : Préparer la machine locale à devenir serveur de dépôt" /></div></form></div>
+<h3 class="sectionedit7" id="etape_3preparer_la_machine_cliente_pour_se_connecter_au_serveur_de_depot_local">Étape 3 : Préparer la machine cliente pour se connecter au serveur de dépôt local</h3>
+<div class="level3">
+
+<p>
+Sur la machine cliente, vous venez de faire une installation classique d&#039;Ubuntu, le réseau fonctionne, il vous suffit maintenant de mettre au point un fichier <strong>sources.list</strong> qui se connecte sur votre serveur local. Pour cela :
+</p>
+<ul>
+<li class="level1"><div class="li"> Ouvrez un <a href="../terminal" class="wikilink1" title="terminal">terminal</a> en donnant lui les <a href="../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> avec la commande : <pre class="code">sudo -i</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Copiez le fichier <em>sources.list</em> pour en faire une copie de sécurité avec : <pre class="code">cp /etc/apt/sources.list /etc/apt/sources.list.old</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Ouvrez le fichier</a> <strong>/etc/apt/sources.list</strong>, effacez toutes les lignes qu&#039;il contient et remplacez-les par celle-ci : <pre class="code">## Depot local intranet
+deb http://192.168.0.4/ubuntu_local ./</pre>
+</div>
+</li>
+</ul>
+
+<p>
+avec dans cet exemple l&#039;IP du serveur local en 192.168.0.4 (que vous adapterez à votre adresse IP) et enregistrez votre fichier.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../gestionnaire_de_mises_a_jour#verifier_manuellement_grace_a_update-manager" class="wikilink1" title="gestionnaire_de_mises_a_jour">Mettez à jour votre système</a>.</div>
+</li>
+<li class="level1"><div class="li"> <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> de votre choix.</div>
+</li>
+</ul>
+
+<p>
+À noter que certains paquets peuvent avoir dans leurs noms de fichier les caractères « <strong>%3a</strong> », ce qui renvoie une erreur avec <code><em>apt-get upgrade</em></code> ou autres, dans ce cas il suffit de renommer les paquets en remplaçant « %3a » par « <strong>:</strong> ».
+</p>
+
+<p>
+Exemple : 
+</p>
+<pre class="code">rename &#039;s/%3a/:/&#039; *.deb</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="comment_installer_un_depot_local"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1418098849" /><input type="hidden" name="summary" value="[Étape 3 : Préparer la machine cliente pour se connecter au serveur de dépôt local] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5304-6773" /><input type="submit" value="Modifier" class="button" title="Étape 3 : Préparer la machine cliente pour se connecter au serveur de dépôt local" /></div></form></div>
+<h2 class="sectionedit8" id="installation_locale_a_partir_de_fichiers_deb_sur_cd-rom_dvd-rom_cle_usb_ou_disque_dur_amovible_externe">Installation locale à partir de fichiers .deb sur CD-ROM, DVD-ROM, clé USB ou disque dur amovible externe</h2>
+<div class="level2">
+
+<p>
+il suffit en fait de rajouter cela dans son sources.list :
+</p>
+<pre class="code">deb file:/media/$USER/doc/ubuntu_local  ./ </pre>
+
+<p>
+Ici le dépôt se trouve sur un disque dur externe… Mais il suffit d&#039;adapter pour un CD-Rom ou autre support…
+</p>
+
+<p>
+<p><div class="noteimportant">Le chemin vers le média donné plus haut concerne <a href="http://doc.ubuntu-fr.org/trusty" class="wikilink1" title="trusty">trusty</a>, si vous êtes sous <a href="../precise" class="wikilink1" title="precise">precise</a> enlevez le $USER.
+</div></p>
+</p>
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> <em>TODO : faire un CD/DVD &quot;autorun&quot; qui est reconnu directement par Synaptic ou adept.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="comment_installer_un_depot_local"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1418098849" /><input type="hidden" name="summary" value="[Installation locale à partir de fichiers .deb sur CD-ROM, DVD-ROM, clé USB ou disque dur amovible externe] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6774-7360" /><input type="submit" value="Modifier" class="button" title="Installation locale à partir de fichiers .deb sur CD-ROM, DVD-ROM, clé USB ou disque dur amovible externe" /></div></form></div>
+<h2 class="sectionedit9" id="autre_solutioncomment_installer_un_deb_via_synaptic">Autre solution : comment installer un .deb via Synaptic</h2>
+<div class="level2">
+
+<p>
+<em>(Ne pas oublier que le paquet</em> <a href="apt://dpkg-dev" class="interwiki iw_apt" title="apt://dpkg-dev">dpkg-dev</a> <em>est pré-requis.)</em>
+</p>
+
+<p>
+Dans l&#039;exemple qui suit, nous supposons que vous voulez avoir les <strong>.deb</strong> dans le répertoire  <code><em>~/monDepot/ </em></code>
+</p>
+<ul>
+<li class="level1"><div class="li"> Créez le répertoire <code><em>~/monDepot/ </em></code>: <pre class="code">cd ~
+mkdir -p monDepot/</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Copiez votre <strong>.deb</strong> dans <code><em>~/monDepot/ </em></code>.</div>
+</li>
+</ul>
+
+<p>
+Il vaut mieux sauvegarder le .deb souhaité tout de suite dans ce répertoire, lors du téléchargement. Vous pouvez également les mettre dans des sous-répertoires de ~/monDepot/. Par contre n&#039;utilisez pas de paquets créé avec <a href="../faq_paquets#creationinstallation_d_un_paquet" class="wikilink1" title="faq_paquets">checkinstall</a>.
+</p>
+
+<p>
+Dans le répertoire <code><em>~/monDepot/ </em></code>, vous aurez besoin d&#039;un fichier <code><em>Packages.gz</em></code>. <br/>
+
+Ce fichier sera créé automatiquement par un script que vous allez créer. <code><em>Packages.gz</em></code> doit en effet contenir les données sur les .deb que vous venez de mettre dans le répertoire. Pour faciliter la mise en jour de <code><em>Packages.gz</em></code>, créez un script (à l&#039;aide de gedit), par exemple <code><em>miseAjour.sh</em></code> : 
+</p>
+<pre class="code">cd monDepot
+gedit miseAjour.sh</pre>
+
+<p>
+Écrivez-y ces lignes :
+</p>
+<pre class="file">  #!/bin/bash
+  cd ~/monDepot/
+  dpkg-scanpackages . /dev/null |gzip -9c &gt; Packages.gz</pre>
+
+<p>
+Quittez gedit (en sauvegardant). Il faut que le script soit exécutable, c&#039;est-à-dire qu&#039;il ait l&#039;attribut <strong>x</strong> :
+</p>
+<pre class="code">chmod +x miseAjour.sh</pre>
+
+<p>
+Chaque fois que vous allez lancerez ce script, le fichier <code><em>Packages.gz</em></code> sera mis à jour.
+</p>
+
+<p>
+Finalement, nous devons informer <a href="../synaptic" class="wikilink1" title="synaptic">Synaptic</a> de la présence de notre nouveau dépôt. <br/>
+
+Dans le menu de Synaptic, aller dans <em>Configuration</em>/ &gt; <em>Dépôts</em>, puis <em>Autres logiciels</em> et <em>Ajouter</em> (Ligne APT) :
+</p>
+<pre class="code">deb file:/home/monNom/monDepot ./</pre>
+
+<p>
+Dès que vous cliquez sur la relecture des dépôts (après le changement que vous venez de faire, Synaptic le fait automatiquement) vous avez votre nouveau .deb disponible dans Synaptic. Pour chaque nouveau deb que vous téléchargez dans monDepot, exécutez le script miseAjour.sh et faites relire ses dépôts à Synaptic (en cliquant sur le bouton avec les deux flèches) ou par 
+<code>apt-get update</code>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="comment_installer_un_depot_local"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1418098849" /><input type="hidden" name="summary" value="[Autre solution : comment installer un .deb via Synaptic] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7361-9565" /><input type="submit" value="Modifier" class="button" title="Autre solution : comment installer un .deb via Synaptic" /></div></form></div>
+<h2 class="sectionedit10" id="utiliser_un_fichier_iso_comme_source">Utiliser un fichier .iso comme source</h2>
+<div class="level2">
+
+<p>
+Ceci peut être utile pour installer des programmes sur un PC sans connexion internet. Vous avez votre .iso sur une clé <abbr title="Universal Serial Bus">USB</abbr> par exemple : <code><em> /media/$USER/cle_usb/ubuntu-14.04.1-desktop-i386.iso</em></code>.
+</p>
+<ul>
+<li class="level1"><div class="li"> Créez un répertoire de montage <code><em> /media/iso </em></code> avec cette commande : <pre class="code">sudo mkdir -p /media/iso</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Monter le fichier avec cette commande : <pre class="code">sudo mount /media/$USER/cle_usb/ubuntu-14.04.1-desktop-i386.iso -t iso9660 -o loop /media/iso/ </pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Vérifiez le montage : <pre class="code">ls /media/iso/ #doit montrer en autres les répertoires dists et pool </pre>
+
+<p>
+ puis : 
+</p>
+<pre class="code">ls /media/iso/dists #doit montrer en autres le répertoire trusty (car l&#039;iso est un 14.04)</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Notez les répertoires présents dans pool : <pre class="code">ls /media/iso/pool #donne main restricted</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Rajoutez alors ceci dans le fichier <code><em> /etc/apt/sources.list</em></code> : <pre class="code">deb file:/media/iso/ hardy main restricted </pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Ne pas oublier de mettre à jour les paquets disponibles avec <a href="../synaptic" class="wikilink1" title="synaptic">Synaptic</a> ou <pre class="code">sudo apt-get update</pre>
+</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="comment_installer_un_depot_local"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1418098849" /><input type="hidden" name="summary" value="[Utiliser un fichier .iso comme source] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9566-10662" /><input type="submit" value="Modifier" class="button" title="Utiliser un fichier .iso comme source" /></div></form></div>
+<h2 class="sectionedit11" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> La page « <a href="http://doc.ubuntu-fr.org/apt-cacher" class="wikilink1" title="apt-cacher">Serveur apt-cacher</a> », qui présente une solution <a href="../proxy" class="wikilink1" title="proxy">proxy</a> de mise en cache des paquets Debian performante et efficace.</div>
+</li>
+<li class="level1"><div class="li"> <a href="../accueil?do=showtag&amp;tag=depots" class="wikilink1" title="accueil">La liste des pages taguées &quot;dépôts&quot;</a></div>
+</li>
+</ul>
+
+<p>
+<br/>
+
+</p>
+<hr />
+
+<p>
+<em>Contributeurs :  niber, yomega, Laurent Bellegarde, bruno sanchiz, <a href="../utilisateurs/l_africain" class="wikilink1" title="utilisateurs:l_africain">L&#039;Africain</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="comment_installer_un_depot_local"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1418098849" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10663-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/3/318e83bb77785c27340e434e8a2833b3.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_installer_un_depot_local?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="comment_installer_un_depot_local?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="comment_installer_un_depot_local?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="comment_installer_un_depot_local?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="comment_installer_un_depot_local?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

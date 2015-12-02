@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>zeroconf - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-01-26T18:45:01+0100"/>
+<meta name="keywords" content="reseau"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/zeroconf?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/zeroconf?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/zeroconf"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/zeroconf"/>
+<link rel="canonical" href="zeroconf"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"zeroconf","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="zeroconf#main" tabindex="1">Contenu</a> | <a href="zeroconf#qsearch__in" tabindex="2">Rechercher</a> | <a href="zeroconf#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="zeroconf" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="zeroconf" >zeroconf</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="zeroconf#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="zeroconf#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="zeroconf#installation_complete">Installation complète</a></div></li>
+<li class="level2"><div class="li"><a href="zeroconf#ubuntu_version_704_et_suivantes">Ubuntu version 7.04 et suivantes</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="zeroconf#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="zeroconf#mdns">MDNS</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="zeroconf#decouvrir_les_services">Découvrir les services</a></div></li>
+<li class="level1"><div class="li"><a href="zeroconf#problemes_connus">Problèmes connus</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="zeroconf#hostname-2local">hostname-2.local</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="zeroconf#voir_aussi">Voir aussi</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="zeroconf#ressources_externes">Ressources externes</a></div></li>
+<li class="level2"><div class="li"><a href="zeroconf#pages_en_rapport">Pages en rapport</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="zeroconf">ZeroConf</h1>
+<div class="level1">
+
+<p>
+<em>« Le partage de ressources de manière transparente sur un réseau local. »</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[ZeroConf] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="26-136" /><input type="submit" value="Modifier" class="button" title="ZeroConf" /></div></form></div>
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+<strong>ZeroConf</strong> est une collection d&#039;outils et de protocoles servant à l&#039;autoconfiguration des réseaux. Cette technologie est appelée <em>Bonjour</em> (ou encore <em>RendezVous</em>) par Apple et est utilisée intensivement par Mac <abbr title="Operating System">OS</abbr> X.
+</p>
+
+<p>
+ZeroConf est composé de :
+</p>
+<ul>
+<li class="level1"><div class="li"> Résolution de noms, MDNS ;</div>
+</li>
+<li class="level1"><div class="li"> Publication de service sur le réseau ;</div>
+</li>
+<li class="level1"><div class="li"> Allocation d&#039;adresses.</div>
+</li>
+</ul>
+
+<p>
+Traditionnellement, la plupart de ce travail est réalisé par <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> et <abbr title="Domain Name System">DNS</abbr>. Cependant, la conception décentralisée de ZeroConf est plus appropriée dans certaines situations, comme pour les réseaux <em>ad hoc</em>. De plus, cela se fait sans aucune configuration (mise à part celle de l&#039;installation de ZeroConf).
+</p>
+
+<p>
+ZeroConf s&#039;intègre très bien avec les outils traditionnels. Par exemple, vous pouvez obtenir une adresse IP par <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> et utiliser le service <abbr title="Domain Name System">DNS</abbr> pour résoudre les adresses sur internet, tout en utilisant le hostname.local de MDNS <em>(Multicast <abbr title="Domain Name System">DNS</abbr>)</em> pour résoudre les adresses des autres ordinateurs sur le <abbr title="Réseau Local">LAN</abbr>.
+</p>
+
+<p>
+Remarque : Si vous souhaitez utiliser ZeroConf dans un réseau qui ne vous appartient pas, il est préférable de contacter en premier l&#039;administrateur réseau. Bien que ZeroConf soit un protocole performant, l&#039;administrateur peut ne pas vouloir de ce trafic réseau additionnel. Soyez aussi vigilant, car il est aisé d&#039;usurper un nom mdns <em>« .local »</em>.
+</p>
+
+<p>
+Cette technologie peut actuellement être utilisée pour :
+</p>
+<ul>
+<li class="level1"><div class="li"> Partager de la musique — <a href="rhythmbox" class="wikilink1" title="rhythmbox">Rhythmbox</a>, <a href="http://doc.ubuntu-fr.org/banshee" class="wikilink1" title="banshee">Banshee</a>, <a href="amarok" class="wikilink1" title="amarok">Amarok</a>, iTunes, <a href="http://doc.ubuntu-fr.org/mt-daapd" class="wikilink1" title="mt-daapd">mt-daapd</a>;</div>
+</li>
+<li class="level1"><div class="li"> Echanger des fichiers — <a href="http://linux.softpedia.com/get/Desktop-Environment/Tools/gnome-user-share-11597.shtml" class="urlextern" title="http://linux.softpedia.com/get/Desktop-Environment/Tools/gnome-user-share-11597.shtml"  rel="nofollow">gnome-user-share</a> (en);</div>
+</li>
+<li class="level1"><div class="li"> Découvrir automatiquement les autres clients VoIP — <a href="ekiga#avahi" class="wikilink1" title="ekiga">Ekiga</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Discuter par messagerie instantanée sur le réseau local — <a href="http://doc.ubuntu-fr.org/gajim" class="wikilink1" title="gajim">gajim</a>, <a href="pidgin" class="wikilink1" title="pidgin">pidgin</a>, <a href="empathy" class="wikilink1" title="empathy">empathy</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Partager les paquets — <a href="http://doc.ubuntu-fr.org/apt-zeroconf" class="wikilink1" title="apt-zeroconf">apt-zeroconf</a> ;</div>
+</li>
+<li class="level1"><div class="li"> <a href="tutoriel/installer_imprimante_partage" class="wikilink1" title="tutoriel:installer_imprimante_partage">Partager des imprimantes</a> (sous Ubuntu 7.10, dans <em>Système → Administration → Impression</em>, à l&#039;onglet <em>Paramètres du Serveur</em>, cocher la case « Partager les imprimantes connectées à ce système »).</div>
+</li>
+<li class="level1"><div class="li"> Publier les sites web disponibles avec <a href="apache2" class="wikilink1" title="apache2">apache2</a> : installer le paquet <strong><a href="apt://libapache2-mod-dnssd" class="urlextern" title="apt://libapache2-mod-dnssd"  rel="nofollow">libapache2-mod-dnssd</a></strong> puis activer le module apache avec la commande <code>$sudo a2enmod mod-dnssd</code></div>
+</li>
+<li class="level1"><div class="li"> Publier un serveur ssh (voir discussion sur le <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=206906" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=206906"  rel="nofollow">forum</a> ; rapport de bug <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=375685#15" class="urlextern" title="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=375685#15"  rel="nofollow">debian</a> (en anglais))</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[Introduction] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="137-2722" /><input type="submit" value="Modifier" class="button" title="Introduction" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2723-2747" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit4" id="installation_complete">Installation complète</h3>
+<div class="level3">
+
+<p>
+Pour compléter l&#039;installation d&#039;avahi déjà présent dans Ubuntu, vous pouvez <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installer les paquets</a> <strong><a href="apt://avahi-daemon, avahi-discover, avahi-utils, avahi-ui-utils, avahi-dnsconfd, libnss-mdns service-discovery-applet, mdns-scan" class="interwiki iw_apt" title="apt://avahi-daemon, avahi-discover, avahi-utils, avahi-ui-utils, avahi-dnsconfd, libnss-mdns service-discovery-applet, mdns-scan">avahi-daemon avahi-discover avahi-utils avahi-ui-utils avahi-dnsconfd libnss-mdns service-discovery-applet mdns-scan</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[Installation complète] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2748-3178" /><input type="submit" value="Modifier" class="button" title="Installation complète" /></div></form></div>
+<h3 class="sectionedit5" id="ubuntu_version_704_et_suivantes">Ubuntu version 7.04 et suivantes</h3>
+<div class="level3">
+
+<p>
+ZeroConf est installé et activé par défaut dans Ubuntu. Vous n&#039;avez donc rien à faire pour l&#039;installer.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[Ubuntu version 7.04 et suivantes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3179-3331" /><input type="submit" value="Modifier" class="button" title="Ubuntu version 7.04 et suivantes" /></div></form></div>
+<h2 class="sectionedit6" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3332-3356" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h3 class="sectionedit7" id="mdns">MDNS</h3>
+<div class="level3">
+
+<p>
+Maintenant, chaque ordinateur qui a avahi-daemon (ou mdnsresponder) installé s&#039;identifiera lui-même sur le réseau comme « hostname.local » par exemple, mon ordinateur « flute », s&#039;identifie lui-même comme « flute.local ».
+</p>
+
+<p>
+<p><div class="noteimportant">Si ceci ne fonctionne pas, <a href="tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">désinstallez le paquet</a> <strong>libdns22</strong> (<a href="https://bugs.launchpad.net/ubuntu/+source/bind9/+bug/147731" class="urlextern" title="https://bugs.launchpad.net/ubuntu/+source/bind9/+bug/147731"  rel="nofollow">bug #147731</a>).
+</div></p>
+</p>
+
+<p>
+Dès lors, n&#039;importe quel ordinateur peut utiliser « <em>hostname</em>.local » à la place d&#039;une adresse IP. Par exemple vous pouvez faire
+</p>
+<pre class="code">ping flute.local</pre>
+
+<p>
+ou
+</p>
+<pre class="code">ssh flute.local</pre>
+
+</div>
+
+<h4 id="configuration_du_pare-feu">Configuration du pare-feu</h4>
+<div class="level4">
+
+<p>
+Si vous utilisez un <a href="pare-feu" class="wikilink1" title="pare-feu">pare-feu</a> et que vous avez des problèmes comme celui-ci
+</p>
+<pre class="code">sam@titania:~$ ping flute.local
+ping: unknown host flute.local</pre>
+
+<p>
+alors il est probable que votre pare-feu bloque les communications de ZeroConf.<br/>
+
+Si lorsque vous arrêtez votre pare-feu ZeroConf fonctionne, alors cela vient sûrement du pare-feu.
+</p>
+
+<p>
+Si vous utilisez le pare-feu guarddog<sup><a href="zeroconf#fn__1" id="fnt__1" class="fn_top">1)</a></sup>, vous aurez besoin de créer une nouvelle zone pour le trafic multicast et d&#039;ajouter une entrée au fichier networkprotocoldb.xml.
+</p>
+
+<p>
+Appeler cette nouvelle zone « multicast » et positionner les adresses de la zone ainsi 224.0.0.0/255.0.0.0. Ajouter le code XML ci-dessous dans « /usr/share/apps/guarddog/networkprotocoldb.xml », juste au-dessus de l&#039;endroit où il est écrit « <code>&lt;protocol name=&quot;domain&quot;&gt;</code> ». Relancer Guarddog et cocher les cases qui permettent le trafic mDns entre vos zones.
+</p>
+<pre class="code file XML"><span class="sc3"><span class="re1">&lt;protocol</span> <span class="re0">name</span>=<span class="st0">&quot;mDns&quot;</span><span class="re2">&gt;</span></span>
+  <span class="sc-1">&lt;!-- Protocol information guessed by Greg N &lt;emailgregn@googlemail.com&gt; --&gt;</span>
+  <span class="sc3"><span class="re1">&lt;longname<span class="re2">&gt;</span></span></span>mDns,Bonjour,Avahi,ZeroConf<span class="sc3"><span class="re1">&lt;/longname<span class="re2">&gt;</span></span></span>
+  <span class="sc3"><span class="re1">&lt;longname</span> <span class="re0">lang</span>=<span class="st0">&quot;nl&quot;</span><span class="re2">&gt;</span></span>mDns<span class="sc3"><span class="re1">&lt;/longname<span class="re2">&gt;</span></span></span>
+  <span class="sc3"><span class="re1">&lt;longname</span> <span class="re0">lang</span>=<span class="st0">&quot;fr&quot;</span><span class="re2">&gt;</span></span>mDns<span class="sc3"><span class="re1">&lt;/longname<span class="re2">&gt;</span></span></span>
+  <span class="sc3"><span class="re1">&lt;longname</span> <span class="re0">lang</span>=<span class="st0">&quot;it&quot;</span><span class="re2">&gt;</span></span>mDns<span class="sc3"><span class="re1">&lt;/longname<span class="re2">&gt;</span></span></span>
+  <span class="sc3"><span class="re1">&lt;longname</span> <span class="re0">lang</span>=<span class="st0">&quot;es&quot;</span><span class="re2">&gt;</span></span>mDns<span class="sc3"><span class="re1">&lt;/longname<span class="re2">&gt;</span></span></span>
+  <span class="sc3"><span class="re1">&lt;description<span class="re2">&gt;</span></span></span>Protocols to allow networks to configure themselves. It is called Bonjour (formerly Rendezvous) by Apple, and used extensively on Mac OS X. <span class="sc3"><span class="re1">&lt;/description<span class="re2">&gt;</span></span></span>
+&nbsp;
+  <span class="sc3"><span class="re1">&lt;classification</span> <span class="re0">class</span>=<span class="st0">&quot;net&quot;</span><span class="re2">/&gt;</span></span>
+  <span class="sc3"><span class="re1">&lt;network<span class="re2">&gt;</span></span></span>
+    <span class="sc3"><span class="re1">&lt;udp</span> <span class="re0">source</span>=<span class="st0">&quot;server&quot;</span> <span class="re0">dest</span>=<span class="st0">&quot;client&quot;</span><span class="re2">&gt;</span></span>
+      <span class="sc3"><span class="re1">&lt;source<span class="re2">&gt;</span></span><span class="re1">&lt;port</span> <span class="re0">portnum</span>=<span class="st0">&quot;nonprivileged&quot;</span><span class="re2">/&gt;</span><span class="re1">&lt;/source<span class="re2">&gt;</span></span></span>
+      <span class="sc3"><span class="re1">&lt;dest<span class="re2">&gt;</span></span><span class="re1">&lt;port</span> <span class="re0">portnum</span>=<span class="st0">&quot;5353&quot;</span><span class="re2">/&gt;</span><span class="re1">&lt;/dest<span class="re2">&gt;</span></span></span>
+    <span class="sc3"><span class="re1">&lt;/udp<span class="re2">&gt;</span></span></span>
+    <span class="sc3"><span class="re1">&lt;udp</span> <span class="re0">source</span>=<span class="st0">&quot;client&quot;</span> <span class="re0">dest</span>=<span class="st0">&quot;server&quot;</span><span class="re2">&gt;</span></span>
+      <span class="sc3"><span class="re1">&lt;source<span class="re2">&gt;</span></span><span class="re1">&lt;port</span> <span class="re0">portnum</span>=<span class="st0">&quot;5353&quot;</span><span class="re2">/&gt;</span><span class="re1">&lt;/source<span class="re2">&gt;</span></span></span>
+      <span class="sc3"><span class="re1">&lt;dest<span class="re2">&gt;</span></span><span class="re1">&lt;port</span> <span class="re0">portnum</span>=<span class="st0">&quot;nonprivileged&quot;</span><span class="re2">/&gt;</span><span class="re1">&lt;/dest<span class="re2">&gt;</span></span></span>
+    <span class="sc3"><span class="re1">&lt;/udp<span class="re2">&gt;</span></span></span>
+  <span class="sc3"><span class="re1">&lt;/network<span class="re2">&gt;</span></span></span>
+  <span class="sc3"><span class="re1">&lt;security</span> <span class="re0">threat</span>=<span class="st0">&quot;medium&quot;</span> <span class="re0">falsepos</span>=<span class="st0">&quot;low&quot;</span><span class="re2">/&gt;</span></span>
+<span class="sc3"><span class="re1">&lt;/protocol<span class="re2">&gt;</span></span></span></pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[MDNS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3357-5888" /><input type="submit" value="Modifier" class="button" title="MDNS" /></div></form></div>
+<h2 class="sectionedit8" id="decouvrir_les_services">Découvrir les services</h2>
+<div class="level2">
+
+<p>
+Utilisez l&#039;application <em>avahi-discover</em>, ou l&#039;applet <em><a href="apt://service-discovery-applet" class="interwiki iw_apt" title="apt://service-discovery-applet">service-discovery-applet</a></em> pour l&#039;environnement gnome.
+service intelligent et restructuration des données implémentées page 3 via pointeurs sur structure de BITMAP html <abbr title="Domain Name System">DNS</abbr> et prototype <abbr title="Transmission Control Protocol">TCP</abbr>.
+Have fun!
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[Découvrir les services] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5889-6194" /><input type="submit" value="Modifier" class="button" title="Découvrir les services" /></div></form></div>
+<h2 class="sectionedit9" id="problemes_connus">Problèmes connus</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[Problèmes connus] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6195-6224" /><input type="submit" value="Modifier" class="button" title="Problèmes connus" /></div></form></div>
+<h3 class="sectionedit10" id="hostname-2local">hostname-2.local</h3>
+<div class="level3">
+
+<p>
+Parfois Avahi n&#039;identifie pas correctement certaines machines et leurs ajoute un &quot;-2&quot;, cela nous donne donc &quot;hostname-2.local&quot;.<br/>
+
+Pour retrouver un hostname correct sous la forme &quot;hostname.local&quot;, nous devons effectuer ces quelques manipulations :<br/>
+
+</p>
+
+<p>
+Pour commencer, on va renommer correctement le hostname du PC :<br/>
+
+</p>
+<pre class="code">sudo hostname HOSTNAME_CORRECT_DU_PC</pre>
+
+<p>
+Puis on redémarre le daemon :<br/>
+
+</p>
+<pre class="code">sudo service avahi-daemon restart</pre>
+
+<p>
+Et pour finir on s&#039;assure que tout fonctionne correctement :<br/>
+
+</p>
+<pre class="code">ps -ef | grep -i avahi</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[hostname-2.local] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6225-6798" /><input type="submit" value="Modifier" class="button" title="hostname-2.local" /></div></form></div>
+<h2 class="sectionedit11" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6799-6823" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<h3 class="sectionedit12" id="ressources_externes">Ressources externes</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.zeroconf.org/" class="urlextern" title="http://www.zeroconf.org/"  rel="nofollow">Site officiel</a> [en]</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://developer.apple.com/networking/bonjour/index.html" class="urlextern" title="http://developer.apple.com/networking/bonjour/index.html"  rel="nofollow">Bonjour</a> [en]</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://0pointer.de/lennart/projects/nss-mdns/" class="urlextern" title="http://0pointer.de/lennart/projects/nss-mdns/"  rel="nofollow">libnss-mdns</a> [en]</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://avahi.org/" class="urlextern" title="http://avahi.org/"  rel="nofollow">Avahi mdns responder</a> [en]</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.porchdogsoft.com/products/howl/" class="urlextern" title="http://www.porchdogsoft.com/products/howl/"  rel="nofollow">Howl mdns responder</a> [en]</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[Ressources externes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6824-7184" /><input type="submit" value="Modifier" class="button" title="Ressources externes" /></div></form></div>
+<h3 class="sectionedit13" id="pages_en_rapport">Pages en rapport</h3>
+<div class="level3">
+<hr />
+
+<p>
+<em>Traduit du <a href="https://help.ubuntu.com/community/HowToZeroconf" class="urlextern" title="https://help.ubuntu.com/community/HowToZeroconf"  rel="nofollow">wiki anglophone</a>.<br/>
+
+Contributeurs : <a href="contributeurs" class="wikilink1" title="contributeurs">les contributeurs du wiki</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/sbrunner" class="wikilink1" title="utilisateurs:sbrunner">sbrunner</a>, Xorios, kanor, <a href="utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a>, <a href="utilisateurs/ner0lph" class="wikilink1" title="utilisateurs:ner0lph">Ner0lph</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="zeroconf"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422294301" /><input type="hidden" name="summary" value="[Pages en rapport] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7185-" /><input type="submit" value="Modifier" class="button" title="Pages en rapport" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="zeroconf#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<a href="http://www.simonzone.com/software/guarddog/" class="urlextern" title="http://www.simonzone.com/software/guarddog/"  rel="nofollow">http://www.simonzone.com/software/guarddog/</a></div>
+</div>
+
+<!-- no cachefile used, but created /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/3/33c5b230ccc248dfea3e537069bf36a8.xhtml -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/zeroconf?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/zeroconf?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/zeroconf?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/zeroconf?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/zeroconf?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

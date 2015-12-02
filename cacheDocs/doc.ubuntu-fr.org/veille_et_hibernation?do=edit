@@ -1,0 +1,882 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>veille_et_hibernation - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="veille_et_hibernation?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/veille_et_hibernation"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/veille_et_hibernation"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"veille_et_hibernation","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="veille_et_hibernation?do=edit#main" tabindex="1">Contenu</a> | <a href="veille_et_hibernation?do=edit#qsearch__in" tabindex="2">Rechercher</a> | <a href="veille_et_hibernation?do=edit#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="veille_et_hibernation?do=edit" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="veille_et_hibernation" >veille_et_hibernation</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<p>
+<strong>Quelques recommandations avant de créer ou de modifier cette page :</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Lisez le <a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">guide du contributeur</a> et la <a href="wiki/ligne_editoriale" class="wikilink1" title="wiki:ligne_editoriale">ligne éditoriale</a>.</div>
+</li>
+<li class="level1"><div class="li"> Découvrez la <a href="http://doc.ubuntu-fr.org/wiki/syntaxe" class="wikilink1" title="wiki:syntaxe">syntaxe</a> et entraînez-vous dans le <a href="playground/playground" class="wikilink1" title="playground:playground">bac à sable</a>.</div>
+</li>
+<li class="level1"><div class="li"> Utilisez les modèles (<a href="wiki/modeles/application" class="wikilink1" title="wiki:modeles:application">application</a>, <a href="wiki/modeles/materiel" class="wikilink1" title="wiki:modeles:materiel">matériel</a>, <a href="wiki/modeles/portable" class="wikilink1" title="wiki:modeles:portable">ordinateur portable</a>, <a href="wiki/modeles/tutoriel" class="wikilink1" title="wiki:modeles:tutoriel">tutoriel</a>, <a href="wiki/modeles/utilisateur" class="wikilink1" title="wiki:modeles:utilisateur">utilisateur</a>, <a href="wiki/modeles/portail" class="wikilink1" title="wiki:modeles:portail">portail</a>) et les <a href="wiki/mini-tutoriels" class="wikilink1" title="wiki:mini-tutoriels">mini-tutoriels</a>.</div>
+</li>
+<li class="level1"><div class="li"> Rapportez toutes créations ou modifications importantes sur <a href="wiki/liste_discussion#coordination_de_la_documentation" class="wikilink1" title="wiki:liste_discussion">la liste de discussion</a>.</div>
+</li>
+</ol>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fcdb5fe1d67011f56447459483d05597.xhtml used -->
+<script type="text/javascript">/*<![CDATA[*/
+textChanged = false/*!]]>*/</script>
+    <div class="editBox" role="application">
+
+    <div class="toolbar group">
+        <div id="draft__status"></div>
+        <div id="tool__bar"><a href="http://doc.ubuntu-fr.org/lib/exe/mediamanager.php?ns="
+            target="_blank">Sélection de fichiers</a></div>
+    </div>
+    <form id="dw__editform" method="post" action="veille_et_hibernation?do=edit" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><input type="hidden" name="id" value="veille_et_hibernation" /><input type="hidden" name="rev" value="0" /><input type="hidden" name="date" value="1427113054" /><input type="hidden" name="prefix" value="." /><input type="hidden" name="suffix" value="" /><input type="hidden" name="changecheck" value="a0e8be38bd102eb69f5ec5f7ab94cc55" /><input type="hidden" name="target" value="section" /><textarea name="wikitext" id="wiki__text" dir="auto" class="edit" cols="80" rows="10" tabindex="1">
+{{tag&gt;matériel système énergie}}
+
+----
+
+====== Mise en veille / Hibernation ======
+
+
+
+
+===== Introduction =====
+
+La mise en veille et l'hibernation sont deux alternatives à l'arrêt de l'ordinateur.
+
+  * La mise en veille permet d'économiser de l'énergie tout en gardant les applications ouvertes. Le réveil est très rapide. Il s'agit de ce que l'on appelle « suspend to ram » : toutes les informations de travail restent dans la mémoire vive et votre système d'exploitation se met en mode d'économie d'énergie((Mode dans lequel les composants électroniques se mettent dans un état de consommation minimum pour préserver les données, sans être en attente d'écriture/lecture)). Par conséquent, une partie infime de la charge batterie est utilisée.
+  * L'hibernation permet de sauvegarder l'état des applications sur le disque dur et ne consomme ensuite plus d'énergie. Le terme associé est « suspend to disk » et correspond à écrire toutes les données présentes dans la mémoire vive sur le disque dur avant d'arrêter complètement l'ordinateur. Au redémarrage, l'opération inverse est effectuée : on lit depuis le disque dur pour repeupler cette dernière. Cependant, cette opération est bien plus longue du fait de la lecture/écriture depuis le disque dur. Son avantage est qu'il n'y a absolument aucune consommation d'énergie en mode hibernation, une fois l'opération effectuée. Ce processus est connu sous Windows sous le nom de « veille prolongée »
+
+
+===== Supprimer le mot de passe lors de la sortie du mode veille/hibernation =====
+
+  * Ouvrir un terminal et taper
+
+&lt;code&gt;
+gconf-editor
+&lt;/code&gt;
+
+  * Se rendre dans la branche apps &gt; gnome-power-manager &gt; lock
+
+  * Décocher la case hibernate pour désactiver le mot de passe lors de la sortie du mode hibernation.
+
+  * Décocher la case suspend pour désactiver le mot de passe lors de la sortie du mode veille.
+
+  * Décocher la case gnome_keyring_hibernate pour ne pas bloquer le mot de passe du trousseau lors de la sortie du mode veille (par exemple quand on est connecté au wifi).
+
+
+Contexte lié au précédent et pourtant avec un réglage indépendant : **supprimer le mot de passe à la sortie de l'économiseur d'écran**.
+  * Se rendre dans le menu  Système &gt; Préférences &gt; Économiseur d'écran
+
+  * Décocher &quot;Verrouiller l'écran quand l'économiseur d'écran est actif&quot;
+
+**Cas de ubuntu 11.10**
+La branche apps &gt; gnome-power-manager &gt; lock n'existe pas, il faut alors ouvrir un terminal et taper
+
+&lt;code&gt;
+gsettings set org.gnome.desktop.lockdown disable-lock-screen 'true'
+&lt;/code&gt;
+Ou en mode graphique, ouvrir les &quot;Paramètres Système&quot;, cliquer sur l'icône &quot;Ecran&quot; et cocher/décocher la partie intitulée &quot;Verrouiller&quot;.
+
+**Ubuntu 12.04 et suivants : ** En mode graphique, ouvrir les &quot;Paramètres Système&quot; puis cliquer sur l'icône &quot;Luminosité et verrouillage&quot;. Mettre &quot;Verrouiller&quot; sur &quot;0&quot; et décocher la partie intitulée &quot;Demander mon mot de passe lors de la sortie de veille&quot;.
+
+===== Hiberner au bout de x secondes après une mise en veille =====
+
+ - La solution la plus simple est d'utiliser la commande pm-suspend-hybrid du [[paquet]] pm-utils. Cependant, les outils de gestions de batterie tel gnome-power-manager ne gèrent pas cette commande nativement et le fonctionnement est aléatoire suivant le portable. L'avantage de cette solution est que les données sont sauvegardées si vous êtes à cours de batterie pendant la phase de veille,  contrairement au script ci-dessous.
+
+- Une autre façon est d'utiliser votre outil de [[energie|gestion d’énergie]] pour mettre en veille et d'utiliser le [[tutoriel:script_shell]] ci dessous en parallèle. Ce script utilise la fonction rtcwake ( qui permet de réveiller l'ordinateur au bout de x secondes ) et les outils fournis dans le [[paquet]] pm-utils.  
+
+Ajouter le fichier  /etc/pm/sleepd/0000rtchibernate, ce fichier va être lu par la commande pm-suspend appelé par les outils de gestion de batterie pour la mise en veille et le réveil. 
+&lt;code&gt;
+gksudo gedit /etc/pm/sleep.d/0000rtchibernate
+&lt;/code&gt; 
+
+Puis copier le script ci-dessous ( modifier la variable autohibernate suivant vos besoin ):
+
+&lt;code bash&gt;
+#!/bin/bash
+curtime=$(date +%s)
+
+# Éditer la variable autohibernate ci-dessous pour indiquer le nombre de seconde avant hibernation
+autohibernate=900  # ici 900 secondes avant hibernation 
+
+echo &quot;$curtime $1&quot; &gt;&gt;/tmp/autohibernate.log
+
+# Mise en veille
+if [ &quot;$1&quot; = &quot;suspend&quot; ] 
+then
+    #enregistrement de l'heure actuelle et ajout d'un compte à rebours avant hibernation
+    echo &quot;$curtime&quot; &gt;/var/run/pm-utils/locks/rtchibernate.lock
+    rtcwake -m no -s $autohibernate
+fi
+# Sortie de veille
+if [ &quot;$1&quot; = &quot;resume&quot; ]
+then
+    sustime=$(cat /var/run/pm-utils/locks/rtchibernate.lock)
+    rm /var/run/pm-utils/locks/rtchibernate.lock
+    
+    # Sortie de veille grace au compte à rebours?
+    if [ $(($curtime - $sustime)) -ge $autohibernate ]
+    then
+        # Alors hiberner
+        rm /var/run/pm-utils/locks/pm-suspend.lock
+        /usr/sbin/pm-hibernate
+    else
+        # Sinon effacer le compte à rebours
+        rtcwake -m no -s 1
+    fi
+fi
+&lt;/code&gt;
+
+puis le rendre [[permissions|exécutable]]
+
+&lt;code&gt;
+sudo chmod +x /etc/pm/sleep.d/0000rtchibernate
+&lt;/code&gt;
+
+À chaque fois qu'une mise en veille est effectuée ( manuellement ou à l'aide de logiciel ), l’ordinateur va se réveiller automatiquement au bout de 15 minutes ( en fonction de la variable autohibernate ) et, s'il n'y a eu aucune activité utilisateur, hiberner.
+
+&lt;note warning&gt;
+Si le niveau de la  batterie devient critique pendant la veille, vous allez perdre les données non sauvegardées.
+&lt;/note&gt;
+
+[[http://askubuntu.com/questions/12383/how-to-go-automatically-from-suspend-into-hibernate|Source du script]]
+
+
+
+===== Problèmes connus =====
+
+&lt;note important&gt;Afin de compléter cette section avec des informations utiles et précises, merci de renseigner votre matériel et votre pseudo (forum et/ou wiki) afin qu'on puisse vous contacter en cas de problème similaire, ou d'ambiguïté dans les informations.&lt;/note&gt;
+&lt;note important&gt;Avant toute chose, au moins pour l'hibernation, si vous rencontrez un problème réessayez après avoir débranché tous les périphériques extérieurs de votre ordinateur (souris USB, jack, clé USB, imprimante, modem ([[modem_sagem_fast_800|Sagem Fast 800]] non compatible)...).
+Ça ne règle pas les problèmes mais permet de savoir si ça en crée !&lt;/note&gt;
+&lt;note important&gt;Sous [[precise|Ubuntu 12.04 LTS (« The Precise Pangolin »)]] et versions ultérieures, l'option d'hibernation est désactivée par défaut pour des raisons de compatibilité avec la diversité de matériel. Launchpad explique ici [[https://help.ubuntu.com/12.04/ubuntu-help/power-hibernate.html]] la procédure pour tester l'hibernation sur votre matériel et comment réactiver le bouton/option d'hibernation dans le menu d'extinction, si votre matériel semble le supporter.&lt;/note&gt;
+
+==== Clavier PS2 ne fonctionne plus normalement au réveil. ====
+
+Ce problème à été constaté sur toutes les versions d'Ubuntu entre 10.04 et 14.04, avec carte mère K8N-E Deluxe Asus, ainsi que plusieurs autres cartes mère Asus, mais peut-être sur d'autres marques aussi.
+Quand le PC se réveille d'une mise en veille, le clavier fonctionne très partiellement, le pavé numérique, les touches de fonction, les touches spéciales, les flèches ne fonctionnent plus ou ont d'autres effets.
+
+Pour résoudre ce problème il faut forcer GRUB le chargeur de démarrage à réinitialiser le clavier à la sortie de veille comme ceci :
+
+  * Ouvrir un terminal et taper : &lt;code&gt;gksu gedit /etc/default/grub&lt;/code&gt; Remplacer gedit par votre éditeur de texte favoris.
+  * Trouver cette ligne dans le fichier &lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot; &lt;/code&gt;
+  * Modifier la comme ceci : &lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash atkbd.reset&quot; &lt;/code&gt;
+  * Sauver les changements et redémarrer le PC comme normal, et la prochaine mise en veille devrait se passer normalement.
+
+Problème rencontré par Yoritomo
+
+
+
+
+==== Mise en veille ====
+
+
+=== Mise en veille qui ne met pas en veille ===
+
+Il a été reporté un bogue de mise en veille qui ne met pas en veille: lors du lancement de la mise en veille, le son et le wifi s'éteignent, l'écran devient noir, mais les ventilateurs ne s'arrêtent pas, et le pc, au final, ne se met pas effectivement en veille. La seule solution est un redémarrage après arrêt complet ([[http://forum.ubuntu-fr.org/viewtopic.php?pid=3527684]]|[[http://forum.ubuntu-fr.org/viewtopic.php?id=403764]]. 
+
+La solution pour remédier à ce problème est la désactivation du kernel mode setting (KMS): pour cela, il faut mettre l'option ''nomodeset'' au démarrage. 
+
+Pour les ordinateurs équipés de Grub 1 : éditer 
+''/boot/grub/menu.lst''
+et ajouter nomodeset à la ligne commençant avec # kopt=, puis
+'' sudo update-grub''
+
+Pour les ordinateurs équipés de Grub 2: éditer
+''/etc/default/grub''
+et ajouter nomodeset à la ligne GRUB_CMDLINE_LINUX, puis
+'' sudo update-grub''
+
+Note: pour savoir si Grub 1 ou Grub 2 est installé: 
+Grub1 si la commande ''dpkg-query -s grub'' répond; 
+Grub2 si la commande ''dpkg-query -s grub-pc'' répond
+
+Note 2 : Si après modification ça ne redémarre plus et plus d’invite de session (gnome) alors  au (multiboot) Grub, placez-vous sur la ligne de l'Ubuntu qui plante et tapez la touche &quot;e&quot; (mode édition du grub). 
+Retirez le nomodeset puis ctrl+x (pour sauver).
+Démarrez, si ça démarre ouvrez une console et éditez le fichier grub pour remettre la ligne comme avant:&quot; GRUB_CMDLINE_LINUX=&quot;&quot;   &quot; et faites un &quot;sudo update-grub&quot; pour enregistrer la modification.
+
+=== Mise en veille qui ne met pas en veille (2) ===
+La solution précédente ne fonctionne pas systématiquement... Ça peut venir des ports USB qui bloquent la mise en veille ou l’interrompent immédiatement. Il faut dans ce cas désactiver les ports fautifs. Voici [[http://thecodecentral.com/2011/01/18/fix-ubuntu-10-10-suspendhibernate-not-working-bug/comment-page-10#header-0|un article]] (en anglais) qui propose une solution qui semble marcher pour beaucoup de configuration (c'est très simple, un script à copier dans un nouveau fichier dont le chemin est indiqué, une ligne de commande, un redémarrage et c'est tout).
+
+=== Mise en veille qui ne met pas en veille (3) ===
+Virtualbox 4.1 peut aussi poser des problèmes de mise en veille. Détails ici : http://forum.ubuntu-fr.org/viewtopic.php?pid=6022561
+
+=== Mise en veille qui ne met pas en veille (4) ===
+Dans le carte graphique de cartes graphiques nvidia optimus, pensez à installer [[:bumblebee]]
+
+=== Impossible de sortir d'une mise en veille sur RAM ===
+
+Voici différentes causes possibles du non retour :
+  * ([[utilisateurs:Id2ndR]]) Votre BIOS n'est pas réglé sur le bon mode : il faut utiliser le mode [[http://fr.wikipedia.org/wiki/ACPI#Global_states.C2.A0.2F.C2.A0Sleep_states_.28.C3.A9tats_du_syst.C3.A8me_et_sommeil.29|ACPI]] S3 pour la mise en veille. Certains BIOS utilisent S1 comme réglage par défaut. Plus de détails [[http://blogs.msdn.com/omars/archive/2004/05/11/129553.aspx|ici]] (en anglais).
+  * 
+
+=== L'écran reste noir (carte graphique AGP nvidia) ===
+
+Dans la Section &quot;Device&quot; du fichier /etc/X11/xorg.conf __il est impératif de rajouter ces lignes__ en mode administrateur:
+&lt;file&gt;
+Option      &quot;NvAGP&quot; &quot;1&quot;
+Option	    &quot;NoLogo&quot; &quot;true&quot;
+&lt;/file&gt;
+
+=== L'ordinateur s'allume mais l'écran reste éteint ===
+
+En attendant une éventuelle correction, utilisez ''pm-suspend'' du paquet [[apt://pm-utils]]. Selon votre matériel, il est parfois nécessaire d'utiliser une des options listées dans les manpages pour que tout fonctionne correctement.
+
+=== L'ordinateur s'allume mais l'écran affiche des lignes et couleurs aléatoires, comme si la résolution n'était pas supportée ===
+
+Sans connaître d'explication logique, ceci peut être résolu en allant dans &quot;Système&gt;Préférences&gt;Apparence&gt;Effets visuels&quot; et en choisissant Aucun.
+
+=== L'ordinateur s'allume et semble travailler mais l'écran affiche une suite de couleurs unies et il est impossible de reprendre la main  ===
+
+Dans ce cas-là, seul une réinitialisation complète permet de reprendre la main. 
+Il semble que ce problème apparaisse sur les premières générations de processeurs Intel Pentium disposant de l'HyperThreading. Essayez de désactiver cette fonction dans le bios. 
+
+=== L'ordinateur s'allume mais freeze (carte graphique Nvidia) ===
+
+Chez moi le problème est résolu en utilisant le pilote propriétaire Nvidia plutôt que le pilote libre Nouveau (dommage...).
+
+=== L'ordinateur s'allume mais freeze (carte graphique AMD) ===
+
+Il existe une incompatibilité entre le pilote de carte graphique propriétaires fglrx et compiz.
+
+Si vous utilisez le pilote fglrx, la solution proposé [[https://github.com/dabrahams/fglrx-support|ici]] peux vous aidez:
+Il s'agit de fglrx-support proposé par Dave Abrahams.
+
+Soit, télécharger l'[[https://codeload.github.com/dabrahams/fglrx-support/zip/master|archive]] et l'extraire (avec les privilèges administrateur) à la racine de votre partition système.
+
+Ou, créer manuellement les fichiers suivants (avec les privilèges administrateur):
+
+Créer le fichier /etc/pm/config.d/50compiz-fglrx-noclear:
+&lt;code&gt;
+# This file is /etc/pm/config.d/50compiz-fglrx-noclear
+
+# Disable the builtin 00clear because we need to kill off all compiz
+# instances before it does a chvt
+HOOK_BLACKLIST=00clear
+&lt;/code&gt;
+
+Créer le fichier /etc/pm/sleep.d/00compiz-fglrx:
+&lt;code python&gt;
+#!/usr/bin/python
+
+# This file is /etc/pm/sleep.d/00compiz-fglrx
+
+import os
+import sys
+import time
+import cPickle as pickle
+import tempfile
+import re
+from math import ceil
+from subprocess import Popen, PIPE, check_call, CalledProcessError
+
+# get the stdout from executing the command made up of elements of cmd_args
+def backquote(cmd_args):
+    if type(cmd_args) is str:
+        cmd_args = cmd_args.split()
+    process = Popen(cmd_args, stdout=PIPE)
+    out = process.communicate()[0].rstrip()
+    if process.returncode != 0:
+        raise CalledProcessError(process.returncode, cmd_args)
+    return out
+
+def psinfo(pid, field):
+    return backquote(('ps --no-headers -ww -o %s %s' % (field, pid)).split())
+
+def proc(pid, part):
+    return open('/proc/%s/%s' % (pid,part)).read().rstrip('\0').split('\0')
+
+def psenviron(pid):
+    return dict(
+        x.split('=',1)
+        for x in proc(pid,'environ')
+        if '=' in x)
+
+# Change the following to something like
+#
+#   LOG_FILE_NAME='/home/dave/suspend.log'
+#
+# in order to see some debug output
+LOG_FILE_NAME=None
+
+logfile=None
+def log(*args):
+    if not LOG_FILE_NAME: 
+        return
+    global logfile
+    if not logfile:
+        logfile = open(LOG_FILE_NAME,'a')
+    logfile.write(' '.join([str(a) for a in args]) + '\n')
+    logfile.flush()
+
+class TimeOutError(Exception): pass
+
+def try_kill(pid, signal, timeout = 1.0, step = .01):
+    os.kill(pid, signal)
+    for x in range(int(ceil(timeout/step))):
+        if not os.path.exists('/proc/%d' % pid):
+            return
+        time.sleep(step)
+    raise TimeOutError, 'failed to kill process: %d in %d second(s)' % (pid,timeout)
+
+number = re.compile(r'\d*$')
+stat_fields = re.compile(
+    r'\s+'.join([
+            r'(?P&lt;pid&gt;\d+)', 
+            r'\((?P&lt;comm&gt;.+)\)',
+            r'(?P&lt;state&gt;[RSDZTW])',
+            r'(?P&lt;ppid&gt;\d+)'
+            ]))
+
+class NotCompiz(Exception): pass
+
+def compiz_real_info(pid):
+    stat = stat_fields.match(open('/proc/%d/stat' % pid).read())
+    if stat.group('comm') != 'compiz.real':
+        raise NotCompiz, 'continue' # we'll just move on to the next process
+    ppid = int(stat.group('ppid'))
+    return ppid, (psenviron(ppid), proc(ppid, 'cmdline'), psinfo(ppid,'user'))
+
+# Given recorded information about the parent processes of killed
+# compiz.real processes, &quot;un-kill&quot; them
+def restart_compiz(compiz_info):
+    if compiz_info:
+        log('restarting compiz')
+    for pid, (env,cmd,user) in compiz_info.items():
+
+        log('user:', user, 'command:', cmd)
+
+        # Ensure we have the necessary environment to re-launch the parent process
+        if 'DISPLAY' in env and 'XAUTHORITY' in env and os.path.isfile(env['XAUTHORITY']):
+
+            # If the parent didn't die when compiz.real was killed, kill the parent now
+            try: try_kill(pid,15)
+            except: pass 
+            
+            try:
+                check_call(['sudo', '-E', '-b', '-u', user] + cmd, env=env)
+
+            except Exception, e:
+                log('failed to relaunch')
+                log(traceback.format_exc())
+                print &gt;&gt;sys.stderr, traceback.format_exc()
+        else:
+            log('required environment missing', env)
+
+def suspend():
+    # locate all parent processes of compiz.real commands
+    all_pids = [int(f) for f in os.listdir('/proc') if number.match(f)]
+    compiz_info = {}
+
+    try:
+        # Gather up all the info about the processes that launch compiz.real
+        for pid in all_pids:        
+            try: ppid, info = compiz_real_info(pid)
+            except: continue            # Skip if not compiz.real or if already dead
+            try_kill(pid, 15)           # Kill off the compiz.real process
+            compiz_info[ppid] = info    # Remember how to restart its parent
+
+        # write out everything we need to restart the compiz
+        # processes and restore the current virtual terminal
+        fd, pickle_file_name = tempfile.mkstemp('.pck', 'compiz-fglrx', '/var/run')
+        pickle.dump((backquote('fgconsole'), compiz_info), open(pickle_file_name, 'w'),2)
+        log('pickle saved in', pickle_file_name)
+
+        # Keep a record of the name of the pickle file using
+        # facilities from pm-utils.  Using repr below ensures that
+        # the filename is quoted in a way that should be
+        # appropriate for the shell
+        check_call([
+            'sh', '-c', 
+            '. ${PM_FUNCTIONS} &amp;&amp; savestate compiz-fglrx ' 
+            + repr(pickle_file_name)])
+    except:
+        log('failure to suspend!')
+        restart_compiz(compiz_info)
+        raise
+    
+    # Now switch the virtual terminal as would have been done by the
+    # 00clear hook.  If done with compiz running, this kills resume
+    log('switching to vt 63')
+    check_call(['chvt', '63'])
+
+def resume():
+    # Get all the information we need to re-start
+    pickle_file_name = backquote([
+            'sh', '-c', 
+            '. ${PM_FUNCTIONS} &amp;&amp; restorestate compiz-fglrx'])
+
+    saved_console,compiz_info = pickle.load(open(pickle_file_name))
+    restart_compiz(compiz_info)
+
+    # This is the functionality from the 00clear hook
+    log('switching back to vt', saved_console)
+    check_call(['chvt', str(saved_console)])
+    check_call(['deallocvt', '63'])
+
+    # Try to make sure the screen wakes up and actually shows us the
+    # password dialog.  Without this we might need to move the mouse
+    # to see it.  Doesn't work, though; probably I need more
+    # environment setup in order to be able to do this.
+    # check_call(['xset','dpms','force','on'])
+
+    # if we can't get rid of this file for any reason, it's not a
+    # serious problem, so do it last.
+    os.unlink(pickle_file_name)
+
+
+# The check for an argument in the next line is a convenience for
+# development, so we can import this file and not have it try to do
+# anything.
+if __name__ == '__main__' and len(sys.argv) &gt; 1: 
+
+    log('=====================', backquote('date'), '==================')
+    log('in ', ' '.join(sys.argv))
+
+    try:
+        if sys.argv[1] in ('suspend','hibernate'):
+            suspend()
+            
+        elif sys.argv[1] in ('resume','thaw'):
+            resume()
+
+        elif sys.argv[1] == 'help':
+            # Nothing to say
+            pass
+
+        else:
+            raise AssertionError, 'unknown argument %s' % sys.argv[1]
+
+    except Exception, e:
+        import traceback
+        log(sys.argv[0]+':', traceback.format_exc())
+
+        # if anything failed, try to inhibit suspension.
+        if sys.argv[1] in ('suspend','hibernate'):
+            inhibit_file = os.environ.get('INHIBIT')
+            if inhibit_file:
+                log('inhibiting with', inhibit_file)
+                open(inhibit_file,'a')
+        raise
+&lt;/code&gt;
+Rendez-le exécutable:
+&lt;code&gt;sudo chmod +x /etc/pm/sleep.d/00compiz-fglrx&lt;/code&gt;
+
+Enfin, redémarrer votre système et testez de nouveau la mise en veille.
+==== Hibernation ====
+
+=== Impossible de commencer l'hibernation ===
+
+([[utilisateurs:Id2ndR]]) **L'hibernation n'a pas commencé** : Vérifiez que les processus ont bien voulu s'arrêter. Vous ne devez pas avoir de tâches qui refusent de geler (//tasks refusing to freeze// en angais) après la commande suivante :
+&lt;code&gt;
+dmesg | grep &quot;Stopping user space processes timed out after 20 seconds&quot;
+&lt;/code&gt;
+
+=== Écran noir au démarrage après une hibernation ===
+
+Lors d'un écran noir au démarrage après une hibernation vous pouvez avoir envie d'arrêter l'hibernation.
+Il est possible d'arrêter simplement l'hibernation en formatant la partition SWAP (qui est peut être endommagée).
+Il suffit de démarrer en **Live CD** et de **formater la partition SWAP** de linux avec GParted et de **redémarrer**.
+
+
+=== Il n'y a plus de son au réveil : ===
+
+En [[:sudo|mode administrateur]], éditez le fichier **/etc/default/acpi-support** et remplacez
+&lt;file&gt;HIBERNATE_MODE=shutdown&lt;/file&gt; par &lt;file&gt;HIBERNATE_MODE=platform&lt;/file&gt;
+
+=== OpenVPN ne redémarre pas : ===
+FIXME 'L'UTILITÉ DE CE QUI SUIT EST À CONFIRMER'
+
+En [[:sudo|mode administrateur]], éditez le fichier **/etc/default/acpi-support** et ajoutant à la liste STOP_SERVICES le service openvpn.
+&lt;file&gt;STOP_SERVICES=&quot;openvpn &quot;&lt;/file&gt;
+
+=== L'écran reste noir (carte graphique AGP nvidia) ===
+
+Dans la Section &quot;Device&quot; du fichier /etc/X11/xorg.conf __il est impératif de rajouter ces lignes__ :
+&lt;file&gt;
+Option      &quot;NvAGP&quot; &quot;1&quot;
+Option	    &quot;NoLogo&quot; &quot;true&quot;
+&lt;/file&gt;
+
+FIXME 'L'UTILITÉ DE CE QUI SUIT EST À CONFIRMER'
+
+Commencez par **vérifier que les pilotes de la carte vidéo sont bien installés** (tentez le pilote propriétaire non libre). Si ça ne marche toujours pas :
+
+Il faut supprimer le chargement du pilote via agp (dans ce cas):
+
+   lsmod | grep agp
+
+retourne un truc du style  :
+
+via_agp               9628  1
+
+agpgart                34888  2 nvidia,via_agp
+
+[[:tutoriel:comment_editer_un_fichier|Éditez le fichier]] **/etc/modprobe.d/blacklist** et rajouter a la fin :
+&lt;file&gt;
+blacklist via_agp
+&lt;/file&gt;
+
+
+=== Ubuntu démarre sans restaurer l'environnement, ou l'ordinateur reste allumé alors qu'il devrait hiberner (extinction brutale de l'ordi obligatoire) ===
+
+**Vérifiez que votre partition de swap est correctement détectée :** allez voir [[uuid_et_label#uuid_swap_et_hibernation]] pour régler ce problème.
+
+**Vérifiez que la taille de votre partition swap est suffisante : ** la même taille que la RAM est a priori suffisante pour l'hibernation, même si certains préconisent par prudence 2 fois plus de swap que de RAM (ex : pour 1Go de RAM, partition swap d'au moins 2 Go ; pour 4Go de RAM, 8Go de swap est inutile et 4 Go suffisent)
+
+=== Utiliser une méthode alternative ===
+
+Si l'hibernation ne fonctionne toujours pas, vous pouvez essayer [[uswsusp]] ou [[tuxonice]].
+
+=== Mettre à jour le BIOS de la carte mère ===
+
+Parfois, cela peut résoudre le problème.
+Cf [[flasher le bios|doc ici]]
+
+=== En dernier recours, compiler le dernier noyau (pour un utilisateur averti) ===
+
+[[compiler_le_noyau]]
+
+=== La connexion réseau ne se réactive pas en sortie de veille ou d'hibernation ===
+
+Sous environnement Gnome : passer dans gconf-editor la clef /apps/gnome-power-manager/general/network-sleep à true (merci Fabux) et redémarrer l'ordinateur.
+(clef absente sous Precise 12.04)
+&lt;note tip&gt;**Autre possibilité** &lt;note help&gt;**Merci de vérifier le bon fonctionnement de l'astuce suivante
+et de signaler vos réussites et échecs à [[http://forum.ubuntu-fr.org/profile.php?id=198416|f.x0]]**&lt;/note&gt;
+
+Une autre solution est de lister en terminal le module utilisé par le wifi :
+ &lt;code&gt;lshw -class network&lt;/code&gt;
+**1)** - noter le nom du **driver** wifi utilisé spécifié par la commande lshw -class network.
+
+**2)** - vérifier que la commande
+ &lt;code&gt;lsmod&lt;/code&gt;
+affiche le même nom du driver.
+
+par exemple :
+&lt;code&gt;lshw -class network
+ATTENTION: ce programme devrait être lancé en tant que super-utilisateur
+*-network
+       description: Interface réseau sans fil
+       driver=r8712u&lt;/code&gt;
+
+&lt;code&gt;lsmod
+r8712u                142855  0&lt;/code&gt;
+
+En tout état de cause c'est bien le nom du module listé par la commande lsmod
+qu'il faudra insérer dans le fichier /etc/pm/config.d/load
+
+**3)** - Taper cette commande pour créer (ou modifier) le fichier /etc/pm/config.d/load
+ &lt;code&gt;echo &quot;SUSPEND_MODULES=r8712u&quot; | sudo tee -a /etc/pm/config.d/load&lt;/code&gt;
+
+**4)** - Rendre le fichier exécutable:
+ &lt;code&gt;sudo chmod +x /etc/pm/config.d/load&lt;/code&gt;
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Cela fonctionne également sur Ubuntu 14.04 sans rendre le fichier exécutable (sans l'étape 4) )**
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+&lt;/note&gt;
+
+=== Hibernation après xxx secondes d'inactivité sous Lucid 10.04 ===
+
+Tout d'abord installer **sleepd** et **hibernate**.
+&lt;code&gt;sudo apt-get install sleepd&lt;/code&gt;
+
+&lt;code&gt;sudo apt-get install hibernate&lt;/code&gt;
+
+Ensuite il faut [[:tutoriel:comment_modifier_un_fichier|modifier le fichier de configuration]] **/etc/default/sleepd** :
+
+&lt;note tip&gt;Le temps d'inactivité est de 600 secondes dans l'exemple ci-dessous.&lt;/note&gt;
+&lt;file&gt;
+# This is a configuration file for /etc/init.d/sleepd.
+PARAMS=&quot; -u 600 --sleep-command /etc/acpi/hibernate2.sh &quot;
+&lt;/file&gt;
+Puis il faut [[:tutoriel:comment_modifier_un_fichier|créer un script]] **hibernate2.sh:**
+&lt;file&gt;#!/bin/bash
+sudo hibernate
+&lt;/file&gt;
+
+&lt;note warning&gt;J'utilisais également cette méthode sous karmic avec le script suivant:&lt;/note&gt;
+&lt;file&gt;
+#!/bin/bash
+sudo pm hibernate
+&lt;/file&gt;
+
+
+Changeons les droits d'accès à ce script:
+
+&lt;code&gt;sudo chmod 755 hibernate2.sh&lt;/code&gt;
+
+
+Enfin il faut recharger le deamon sleepd:
+
+&lt;code&gt;sudo /etc/init.d/sleepd restart&lt;/code&gt;
+
+
+===== Empêcher l'hibernation =====
+Sur certains ordinateurs, l'hibernation peut poser problème : plantage à la mise en hibernation, au redémarrage … C'est notamment le cas sur les machines qui n'ont que très peu ou pas de [[swap]] .
+
+Pour remédier à cela, il est possible d'empêcher l'hibernation.
+
+Pour ce faire, ouvrir un [[terminal]] et saisir la commandes suivantes :
+&lt;code&gt;sudo nano /etc/pm/sleep.d/000_no-hibernation&lt;/code&gt;
+Dans le nouveau fichier ainsi créer, saisir le code suivant :
+&lt;code&gt;#!/bin/sh
+# Empêcher l'hibernation
+. &quot;$PM_FUNCTIONS&quot;
+[ &quot;$1&quot; = &quot;hibernate&quot; ] &amp;&amp; inhibit || true&lt;/code&gt;
+Enregistrer par Ctrl X puis O.
+
+Pour empêcher la mise en veille //et// l'hibernation, utiliser [[https://launchpadlibrarian.net/58100042/00_avoid_suspend|ce code]] dans le fichier.((Source de toute cette partie : http://askubuntu.com/questions/28328/how-can-i-disable-hibernate-completely-in-kubuntu))
+
+===== Matériel testé =====
+
+
+
+
+
+
+
+
+
+
+
+
+==== Carte mère / Portable ====
+
+&lt;note help&gt;À classer par jeux de puces en essayant de regrouper les modèles utilisant le même jeux de puce.&lt;/note&gt;
+(CM= carte mère, P=Portable)
+| Marque | Modèle ^ CM ou P ^ Jeux de puces ^ Veille ^ Hibernation ^ Utilisateur(s) ^
+^ Acer ^ Veriton 2800 | CM | Intel 945G + ICH7| Oui (Attention: le bios doit être flashé en version R01-E0: [[http://global-download.acer.com/GDFiles/BIOS/BIOS/BIOS_Acer_R01.E0_A_A.zip?acerid=634024128214301666&amp;Step1=Desktop&amp;Step2=Veriton&amp;Step3=Veriton%202800&amp;OS=X01&amp;LC=en&amp;BC=Acer&amp;SC=EMEA_27|lien]]) | Non testé | [[utilisateurs:Ttipi]] |
+^ Acer ^ TravelMate 5742Z | P | Intel Pentium P6200 | Oui  | Oui | [[utilisateurs:koko2]] |
+^ Gigabyte ^ GA-MA790XT-UD4P | CM | AMD 790X | Oui | Oui (des avertissements, mais le réveil semble Ok) | [[utilisateurs:okonkole]] |
+^ Lenovo ^ Edge 525 | P | AMD A8-3500M APU with Radeon(tm) HD Graphics | Non | Non Testé | [[utilisateurs:Cyrilco]] |
+^ MSI ^ MS-7357 | CM | Intel G31 | Oui (Choisir S3 dans le BIOS) | Oui | [[utilisateurs:Id2ndR]] |
+^ MSI ^ K8N Neo4-f | CM | nForce4 | Oui  | Oui | [[utilisateurs:jewome_62]] |
+^ Toshiba ^ Satellite (U200) | P | Intel G945 | Oui (mais [[https://bugs.launchpad.net/bugs/137477|bogue]]) | Oui | [[utilisateurs:Id2ndR]] |
+^ Lenovo^ 3000 Y310 | P | Intel GMA X3100 | Oui (mais TouchPad HS au retour)| Oui | |
+^ HP ^ Pavilion dv5053ea | P | ATI Radeon Xpress 200M | Oui | Oui (voir la conf [[http://ubuntuforums.org/showthread.php?p=2016799|là, pas de scripts]]) | [[utilisateurs:juju_theseaman]] |
+^ Dell ^ XPS M1710 | P | Intel core2 T7400  | Oui | Oui (mais ne s’éteint pas seul) | [[utilisateurs:jef]] |
+^ Sony ^ VAIO PCG-7G1M (ou VGN-FS415M) | P | Intel i915PM/GM + ICH6-M | Oui | Oui (Unity 13.10) en réactivant le script d'hibernation| [[utilisateurs:89paladins]] |
+^ Sony ^ VAIO FZ11E | P | Intel 965 PM  | Oui (Nécessite l'option NvAGP et de taper son mot de passe sur un écran blanc...) | Pas encore testé | [[utilisateurs:bistory]] |
+^ Sony ^ VAIO VPC EA1S1E | P |  Intel Core i3 (M 330) +  M92 (Mobility Radeon HD 4500 Series)  | Oui  | Pas testé (ubuntu 10.04 lucid) | [[utilisateurs:fnx]] |
+^ Lenovo ^ Yoga 2 Pro | P | Intel Core i7-4510U  | Oui  | Oui (avec [[tuxonice]] installé) | [[utilisateurs:john-paul]] |
+^ Lenovo ^ 3000C200 8922AZG | P | Intel 945GM  | Non | Non (ou avec gros pb au réveil) | [[utilisateurs:chourave]] |
+^ Lenovo ^ R61 (8933-AL2) | P | Intel 965  | Oui (Pb NetworkManager aléatoire : plus de réseau, redémarrage obligatoire dans ce cas) | Oui (Avec paramétrage uuid swap, swap=ram)  | [[utilisateurs:Endymion]] |
+^ Lenovo ^ 3000 N100(0768-FKG) | P | Intel 945GM  | Oui | Oui  | [[utilisateurs:justin-brandon]] |
+^ MSI ^ Wind U100-015 | ? | Intel GMA 945 | Oui | Oui | anonymux |
+^ MSI ^ MS-6178 | CM | Intel i810 | Oui | Oui | Johan |
+^ MSI ^ MS-6120 | CM | Intel i440BX | Non | Oui (nécessite la dernière version du bios disponible - la 2.0 - et de passer au noyau l'option acpi=force ; idem pour activer l'extinction du PC) | Johan |
+^ Asus ^ X5DIJ | CM | Mobile Intel® 45 Express Chipset  | Oui | Oui | [[utilisateurs:aurel88]] |
+^ Asus ^ P2L97-DS | CM | Intel i440LX | Non | Oui (nécessite la dernière version du bios disponible - la beta 1010.004 fonctionne bien - et de passer au noyau l'option acpi=force ; idem pour activer l'extinction du PC) | Johan |
+^ Asus ^ P5N-E SLI | CM | NVIDIA nForce 650i SLI| Non | Non | [[utilisateurs:t0m-s]] |
+^ Asus ^ T-Série | CM | Nvidia GeForce 8200| Oui, mais pas deux fois de suite ! | Oui | [[utilisateurs:Jeanmarc05]] |
+^ Asus ^ U53J Série (ASUS U53JC-XX181X ) | P | NVIDIA GeForce 310M (Mobile Intel HM55 Express) (Intel Core i5-480M) | Oui * | Oui (*) voir http://thecodecentral.com/2011/01/18/fix-ubuntu-10-10-suspendhibernate-not-working-bug | mobuxon |
+^ Asus ^ X53U Series | P | AMD E-350 APU with Radeon(tm) HD Graphics (dual-core) | Oui | Oui | [[utilisateurs:MinecraftBreizh]] |
+^ Abit ^ KT7A | CM | VIA KT133A | Oui | Oui | Johan |
+^ Hp ^ a247 | CM | Nforce4 | Oui | Oui | [[utilisateurs:aj94tj]] |
+^ Foxconn ^ /865G7MF-SH | CM | Intel pentium 4 LGA775  | Oui *| Oui voir http://forum.ubuntu-fr.org/viewtopic.php?pid=3561362#p3561362 | [[utilisateurs:mferrato]] |
+^ Dell ^ Vostro 1320 | P | Mobile Intel® 45 Express Chipset | Non | Non | [[utilisateurs:ateni]] |
+^ Fujitsu/Siemens ^ Amilo M7405 | P | Pentium M - video i855GM | Oui (avant Karmic ou à partir du noyau 3.3 | Oui mais ne marche plus depuis Precise | [[utilisateurs:Bybeu]] |
+
+
+==== Carte graphique ====
+
+&lt;note help&gt;À classer par marque et jeux de puces en essayant de regrouper les modèles utilisant le même jeux de puces.&lt;/note&gt;
+
+| Marque | Jeux de puces (Modèle) ^ Mobile ^ module ^ Veille ^ Hibernation ^ Utilisateur(s) ^
+^ ATI ^ R420 (Radeon X800 VE) | non | [[:catalyst|fglrx]] | Oui | Oui | [[utilisateurs:Id2ndR]] |
+^ ATI ^ RC410 [Radeon Xpress 200] | non | [[:catalyst|fglrx]] | - | [[http://forum.ubuntu-fr.org/viewtopic.php?id=158884|non]] (gutsy)| [[utilisateurs:marc31]] |
+^ ATI ^ M92 (Mobility Radeon HD 4500 Series) | oui | [[:catalyst|fglrx]] | Oui | non installation par défaut (lucid)| [[utilisateurs:fnx]] |
+^ Intel ^ G31 (X3100) | non | intel | Oui | Oui | [[utilisateurs:Id2ndR]] |
+^ Intel ^ G945 | oui | intel | Oui | Oui | [[utilisateurs:Id2ndR]] |
+^ Intel ^ GMA500 | oui | [[poulsbo|psb]] | [[http://doc2.ubuntu-fr.org/acer_aspire_one_751#probleme_de_veillehibernation|non]] (jaunty) | [[http://doc2.ubuntu-fr.org/acer_aspire_one_751#probleme_de_veillehibernation|non]] (jaunty) | [[utilisateurs:Escé]] |
+^ Nvidia ^ NV43 (GeForce 6400) | oui | [[nvidia-304]] | Oui | Oui (Unity 13.10) | [[utilisateurs:Id2ndR]] |
+^ Nvidia ^ NV43 (GeForce 6600 GT) | non | [[nvidia|nvidia-glx]] | Oui | Oui | [[utilisateurs:Id2ndR]] |
+^ Nvidia ^ G72 (GeForce 7300 SE) | non | [[nvidia|nvidia-glx]] | - | Oui | [[utilisateurs:marc31]] |
+^ Intel ^ GMA945 | oui | Intel | oui | oui | anonymux |
+^ Intel ^ GMA X4500MHD | oui | Intel | non | non | [[utilisateurs:ateni]] |
+
+
+==== Carte réseau ====
+
+&lt;note help&gt;À classer par module.&lt;/note&gt;
+
+| Marque | Jeux de puces (Modèle) ^ module ^ Veille ^ Hibernation ^ Utilisateur(s) ^
+^ Intel ^ ipw2200 | ipw2200 | Oui | Oui (Unity 13.10) en désactivant le module wifi suivant la méthode &quot;La connexion réseau ne se réactive pas en sortie de veille ou d'hibernation--&gt; Autre possibilité&quot; | [[utilisateurs:89paladins]] |
+^ Intel ^ ipw3945 abg | ipw3945 | Oui | Oui | [[utilisateurs:Id2ndR]] |
+^ Marvell ^ 88E8056 PCI-E Gigabit | sky2 | Oui | Oui | [[utilisateurs:Id2ndR]] |
+
+----
+
+//Contributeurs : [[utilisateurs:Id2ndR]]// [[utilisateurs:didrocks]]// [[utilisateurs:sfley]]</textarea>
+<div id="wiki__editbar" class="editBar">
+<div id="size__ctl">
+</div>
+<div class="editButtons">
+<div id="plugin__captcha_wrapper"><input type="hidden" name="0d93dfc0c416c970fa7d5c1720bd0495" value="s5qQy0mOYrmX6u1pU25wIp4GhmxLdam2CCuDmENFZ3c=" /><label for="plugin__captcha">Merci de recopier le code ci-contre pour prouver que vous êtes humain :</label> <span id="plugin__captcha_code">Z K
+H S D</span> <input type="text" size="5" name="f62beaad0e133f25aa87ed716dc2bbd1" class="edit" /> <label class="no">Merci de laisser ce champ vide : <input type="text" name="22c2b24b0bdd79c716c188e9686042c8" /></label></div><input name="do[save]" type="submit" value="Enregistrer" class="button" id="edbtn__save" accesskey="s" tabindex="4" title="Enregistrer [S]" />
+<input name="do[preview]" type="submit" value="Aperçu" class="button" id="edbtn__preview" accesskey="p" tabindex="5" title="Aperçu [P]" />
+<input name="do[draftdel]" type="submit" value="Annuler" class="button" tabindex="6" />
+</div>
+<div class="summary">
+<label class="nowrap" for="edit__summary"><span>Résumé</span> <input type="text" id="edit__summary" name="summary" class="edit" size="50" tabindex="2" /></label>
+</div>
+</div>
+<div class="license">
+Note : En modifiant cette page, vous acceptez que le contenu soit placé sous les termes de la licence suivante : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" class="urlextern">CC Paternité-Partage des Conditions Initiales à l'Identique 3.0 Unported</a></div>
+</div></form>
+</div>
+<script type="text/javascript">
+   var saveBtn = document.getElementById('edbtn__save');
+   saveBtn.disabled = true;
+   saveBtn.style.color = 'gray';
+   saveBtn.style.backgroundColor = '#EEEEEE';
+   saveBtn.value = 'Enregistrer (Click \'Aperçu\' first)';
+</script>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="veille_et_hibernation?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/veille_et_hibernation?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="veille_et_hibernation?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="veille_et_hibernation?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="veille_et_hibernation?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

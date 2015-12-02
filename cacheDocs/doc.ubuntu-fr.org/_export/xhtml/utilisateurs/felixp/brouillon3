@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>utilisateurs:felixp:brouillon3</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-10-23T20:08:27+0200"/>
+<meta name="keywords" content="administration,systeme"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../../index.html"/>
+<link rel="contents" href="../../../../utilisateurs/felixp/brouillon3?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../../feed.php?mode=list&amp;ns=utilisateurs:felixp"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="brouillon3"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../../raw/utilisateurs/felixp/brouillon3"/>
+<link rel="canonical" href="../../../../utilisateurs/felixp/brouillon3"/>
+<link rel="stylesheet" type="text/css" href="../../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='utilisateurs:felixp';var JSINFO = {"id":"utilisateurs:felixp:brouillon3","namespace":"utilisateurs:felixp"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="brouillon3#qu_est-ce_qu_un_espace_d_echange">Qu&#039;est-ce qu&#039;un espace d&#039;échange ?</a></div></li>
+<li class="level1"><div class="li"><a href="brouillon3#taille_d_un_espace_d_echange">Taille d&#039;un espace d&#039;échange</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="brouillon3#pourquoi_ai-je_besoin_d_un_espace_d_echange">Pourquoi ai-je besoin d&#039;un espace d&#039;échange ?</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="brouillon3#partager_une_partition_swap_entre_plusieurs_systemes">Partager une partition SWAP entre plusieurs systèmes</a></div></li>
+<li class="level1"><div class="li"><a href="brouillon3#verifier_les_espaces_d_echange_actives_et_leur_niveau_utilisation">Vérifier les espaces d&#039;échange activés et leur niveau utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="brouillon3#activerdesactiver_l_utilisation_du_swap">Activer/Désactiver l&#039;utilisation du swap</a></div></li>
+<li class="level1"><div class="li"><a href="brouillon3#regler_le_declenchement_du_swap">Régler le déclenchement du swap</a></div></li>
+<li class="level1"><div class="li"><a href="brouillon3#creer_un_fichier_d_echange">Créer un fichier d&#039;échange</a></div></li>
+<li class="level1"><div class="li"><a href="brouillon3#modifier_la_ou_les_partitions_d_echange">Modifier la ou les partitions d&#039;échange</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="brouillon3#outils_en_ligne_de_commande">Outils en ligne de commande</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="brouillon3#definir_une_partition_comme_partition_d_echange">Définir une partition comme partition d&#039;échange</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="brouillon3#utiliser_cette_partition_pour_l_hibernation">Utiliser cette partition pour l&#039;hibernation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="brouillon3#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../../../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="espace_d_echange_swap">Espace d&#039;échange (swap)</h1>
+<div class="level1">
+
+<p>
+L&#039;<strong>espace d&#039;échange</strong>, plus généralement appelée ou simplement <strong>swap</strong>, est une zone d&#039;un disque dur faisant partie de la <em>mémoire virtuelle</em><sup><a href="brouillon3#fn__1" id="fnt__1" class="fn_top">1)</a></sup> de votre ordinateur. Il est utilisé pour décharger la mémoire vive physique (RAM) si elle se remplit trop. <br/>
+
+</p>
+
+<p>
+L&#039;espace d&#039;échange, dans Ubuntu, se trouve généralement sous une forme de partition de disque dur – on parle alors de <em>partition d&#039;échange</em>. <br/>
+
+Il peut aussi se présenter sous forme de fichier – on parle alors de <em>fichier d&#039;échange</em>.
+</p>
+
+<p>
+Par défaut, Ubuntu calcule et s&#039;attribue automatiquement un espace d&#039;échange suffisant ou recommandé lors de son installation. Il n&#039;est pas nécessaire d&#039;effectuer des tâches supplémentaires pour assigner un espace d&#039;échange minimum à Ubuntu. Cependant, évaluer ses besoins en espace d&#039;échange peut mieux rationaliser vos ressources.
+</p>
+
+<p>
+Le présent document se veut être une présentation succincte de ce qu&#039;est l&#039;espace d&#039;échange dans Ubuntu et des méthodes pour créer, modifier et supprimer de l&#039;espace d&#039;échange.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Espace d'échange (swap)" [40-1223] -->
+<h2 class="sectionedit2" id="qu_est-ce_qu_un_espace_d_echange">Qu&#039;est-ce qu&#039;un espace d&#039;échange ?</h2>
+<div class="level2">
+
+<p>
+La mémoire vive physique (RAM) de l&#039;ordinateur est utilisée pour stocker des données en cours de traitement. <br/>
+
+Si celle-ci se remplit presque entièrement mais que votre ordinateur a tout de même besoin de ressources pour procéder à des traitements, Linux décidera de déplacer des fichiers de la RAM dans la Swap. <br/>
+
+L&#039;espace d&#039;échange agit ainsi en tant qu&#039;extension de votre RAM, et contiendra les données peu utilisées.<br/>
+
+</p>
+
+<p>
+Notez cependant deux inconvénients de la Swap :
+</p>
+<ul>
+<li class="level1"><div class="li"> L&#039;accès à la Swap est plus lent que pour la RAM. De plus, l&#039;utilisation de l&#039;espace d&#039;échange ralentit significativement le système </div>
+</li>
+<li class="level1"><div class="li"> L&#039;utilisation du disque dur pour la Swap entraîne une activité permanente du disque dur (bruits de &quot;grattements&quot;), et une usure prématurée du matériel, notamment pour les disques SSD.</div>
+</li>
+</ul>
+
+<p>
+De ce fait, l&#039;espace d&#039;échange ne doit pas être considéré comme un remplacement de votre mémoire vive physique, mais plutôt comme un mécanisme d&#039;appoint.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Qu'est-ce qu'un espace d'échange ?" [1224-2257] -->
+<h2 class="sectionedit3" id="taille_d_un_espace_d_echange">Taille d&#039;un espace d&#039;échange</h2>
+<div class="level2">
+
+<p>
+Il n&#039;y a pas à proprement parler qu&#039;une seule règle définissant la quantité d&#039;espace à allouer à la zone d&#039;échange, qu&#039;elle soit sous forme de partitions ou de fichiers. Beaucoup de conditions entrent dans les facteurs influençant ce choix. Cependant, compte tenu des capacités des ordinateurs modernes, on peut relever <a href="../../../../tutoriel/partitionner_manuellement_avec_installateur_ubuntu#partitions_indispensables" class="wikilink1" title="tutoriel:partitionner_manuellement_avec_installateur_ubuntu">des recommandations généralement acceptées</a> :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Votre ordinateur dispose de 1 Gio de RAM ou plus ?</strong> Allouez un espace d&#039;échange de 1× à 1,5× la taille de votre RAM ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Votre ordinateur dispose de moins de 1 Gio de RAM ?</strong> Allouez un espace d&#039;échange de 1,5× à 2× la taille de votre RAM.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Taille d'un espace d'échange" [2258-3027] -->
+<h3 class="sectionedit4" id="pourquoi_ai-je_besoin_d_un_espace_d_echange">Pourquoi ai-je besoin d&#039;un espace d&#039;échange ?</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> L&#039;utilisation de programmes gourmands en ressources (<a href="../../../../utilisateurs/felixp/libreoffice" class="wikilink2" title="utilisateurs:felixp:libreoffice" rel="nofollow">LibreOffice</a>, des jeux tels <a href="../../../../utilisateurs/felixp/alienarena" class="wikilink2" title="utilisateurs:felixp:alienarena" rel="nofollow">AlienArena</a>, ou des logiciels de montage vidéo tels <a href="../../../../utilisateurs/felixp/cinelerra" class="wikilink2" title="utilisateurs:felixp:cinelerra" rel="nofollow">Cinelerra</a>). La Swap libérera la Ram des ressources non réellement exploitées.</div>
+</li>
+<li class="level1"><div class="li"> L&#039;Hibernation (mise en veille prolongée) : elle permet de copier l&#039;intégralité de la Ram sur le disque, pour sauvegarder l&#039;état actuel de votre ordinateur et l&#039;éteindre complètement. <br/>
+Une partition d&#039;échange au moins aussi grande que la quantité de votre mémoire vive est requise pour profiter de cette fonctionnalité. <sup><a href="brouillon3#fn__2" id="fnt__2" class="fn_top">2)</a></sup></div>
+</li>
+<li class="level1"><div class="li"> <strong>Circonstances imprévues :</strong> Des évènements imprévisibles peuvent survenir lors de l&#039;utilisation de votre système (un programme ayant une fuite de mémoire, une action qui a besoin davantage de mémoire pour un court laps de temps ou une combinaison de ces événements). Disposer d&#039;un espace d&#039;échange vous offre un sursis pour localiser le problème ou, à tout le moins, terminer votre travail en cours.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic"><strong>Cette section s&#039;adresse aux utilisateurs avertis.</strong> <br/>
+Les manipulations avancées ci-dessous permettent de mieux analyser et gérer les ressources système concernant l&#039;espace d&#039;échange. Une mauvaise utilisation des outils et des commandes ci-dessous peut corrompre votre système ou en diminuer les performances.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Pourquoi ai-je besoin d'un espace d'échange ?" [3028-4460] -->
+<h2 class="sectionedit5" id="partager_une_partition_swap_entre_plusieurs_systemes">Partager une partition SWAP entre plusieurs systèmes</h2>
+<div class="level2">
+
+<p>
+Il est possible d&#039;utiliser la même partition SWAP pour plusieurs distributions Linux installées en multi-boot sur le même PC.
+Cependant dans ce cas, il ne sera pas possible d&#039;hiberner (L&#039;utilisation de la Swap supprimera les informations d&#039;hibernation).
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Partager une partition SWAP entre plusieurs systèmes" [4461-4785] -->
+<h2 class="sectionedit6" id="verifier_les_espaces_d_echange_actives_et_leur_niveau_utilisation">Vérifier les espaces d&#039;échange activés et leur niveau utilisation</h2>
+<div class="level2">
+
+<p>
+Plus d&#039;un espace d&#039;échange peuvent être affectés à votre système Ubuntu. De plus, chacun de ces espaces peut être utilisé de manière inégale. Pour connaître les espaces d&#039;échange actuellement activés dans votre système Ubuntu et leur niveau d&#039;utilisation, utilisez la commande <code>swapon</code> de la façon suivante :
+</p>
+<pre class="code">swapon -s</pre>
+
+<p>
+Elle vous ressortira quelque chose comme :
+</p>
+<pre class="code">Filename				Type		Size	Used	Priority
+/dev/sda3                               partition	5241852	0	-1
+/file.swap                              file		524284	0	-2</pre>
+
+<p>
+Ce tableau retourne les informations suivantes :
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>Filename</em> : le nom du fichier ou de la partition utilisée en tant qu&#039;espace d&#039;échange ;</div>
+</li>
+<li class="level1"><div class="li"> <em>Type</em> : le type d&#039;espace d&#039;échange (un fichier [<em>file</em>] ou une partition de disque dur [<em>partition</em>]) ;</div>
+</li>
+<li class="level1"><div class="li"> <em>Size</em> : la taille réservée à cet espace d&#039;échange, en octets ;</div>
+</li>
+<li class="level1"><div class="li"> <em>Used</em> : la quantité d&#039;espace utilisée dans cet espace d&#039;échange, en octets ;</div>
+</li>
+<li class="level1"><div class="li"> <em>Priority</em> : la priorité d&#039;utilisation de cet espace d&#039;échange. Un espace ayant une plus haute priorité sera utilisé en premier.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT6 SECTION "Vérifier les espaces d'échange activés et leur niveau utilisation" [4786-5994] -->
+<h2 class="sectionedit7" id="activerdesactiver_l_utilisation_du_swap">Activer/Désactiver l&#039;utilisation du swap</h2>
+<div class="level2">
+
+<p>
+Les commandes <strong>swapon/swapoff</strong> permettent respectivement d&#039;activer ou désactiver le swap sans redémarrage du système.
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour désactiver toutes les Swaps :<pre class="code bash"><span class="kw2">sudo</span> swapoff <span class="re5">-a</span></pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Pour toutes les activer :<pre class="code bash"><span class="kw2">sudo</span> swapon <span class="re5">-a</span></pre>
+</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Pour activer uniquement la partition de Swap présente sur /dev/sda6 :<pre class="code bash"><span class="kw2">sudo</span> swapon <span class="sy0">/</span>dev<span class="sy0">/</span>sda6</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Pour la désactiver :<pre class="code bash"><span class="kw2">sudo</span> swapoff <span class="sy0">/</span>dev<span class="sy0">/</span>sda6</pre>
+</div>
+</li>
+</ul>
+
+<p>
+Vous pouvez alors vider la Swap en lançant successivement :
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> swapoff <span class="re5">-a</span>
+<span class="kw2">sudo</span> swapon <span class="re5">-a</span></pre>
+
+</div>
+<!-- EDIT7 SECTION "Activer/Désactiver l'utilisation du swap" [5995-6602] -->
+<h2 class="sectionedit8" id="regler_le_declenchement_du_swap">Régler le déclenchement du swap</h2>
+<div class="level2">
+
+<p>
+Le déclenchement de la Swap est réglée sur la quantité de Ram libre. (En pourcentages)
+</p>
+
+<p>
+<p><div class="notetip">Personnellement, pour ma vieille tour (1,4Ghz pour 512 Mio de RAM), j&#039;ai réglé le déclenchement de la swap à 5% de RAM libre. Le vidage de la RAM consomme des ressources. Plus le vidage se déclenchera tard moins les ressources seront utilisées.
+</div></p>
+</p>
+
+<p>
+Par défaut, Ubuntu est réglé de cette façon : 
+</p>
+
+<p>
+À partir de 40% d&#039;utilisation de la RAM (<strong>donc 60% de libre</strong>), le noyau peut se délester sur la swap.
+</p>
+
+<p>
+On peut le vérifier grâce à la commande :
+</p>
+<pre class="code bash"><span class="kw2">cat</span> <span class="sy0">/</span>proc<span class="sy0">/</span>sys<span class="sy0">/</span>vm<span class="sy0">/</span>swappiness</pre>
+
+<p>
+qui vous ressortira la valeur <code>60</code>.
+</p>
+
+<p>
+Pour régler l&#039;utilisation de la Swap à 20% de RAM libre, il suffit de lancer :
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> sysctl vm.swappiness=<span class="nu0">20</span></pre>
+
+<p>
+Il faut désactiver puis réactiver la Swap pour appliquer les changements :
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> swapoff <span class="re5">-av</span></pre>
+
+<p>
+(Le <code>a</code> sélectionne toutes les Swaps, le <code>v</code> affiche plus de détails) ce qui donne par exemple :
+</p>
+<pre class="code bash">swapoff sur <span class="sy0">/</span>dev<span class="sy0">/</span>ramzswap0
+swapoff sur <span class="sy0">/</span>dev<span class="sy0">/</span>sda6</pre>
+
+<p>
+Puis
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> swapon <span class="re5">-av</span></pre>
+
+<p>
+Pour que ces changements deviennent permanents (à chaque démarrage), vous devez <a href="../../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditer le fichier</a> <code>/etc/sysctl.conf</code> et y ajouter la ligne suivante :
+</p>
+<pre class="code bash">vm.swappiness=<span class="nu0">20</span></pre>
+
+<p>
+<p><div class="notetip">
+</p>
+<ul>
+<li class="level1"><div class="li"> 2 à 3 Gio de RAM = 5 à 10</div>
+</li>
+<li class="level1"><div class="li"> PC avec SSD rapides = 15 à 20</div>
+</li>
+<li class="level1"><div class="li"> Anciennes machines, disques et SSD lents = 0 à 5</div>
+</li>
+</ul>
+
+<p>
+Les SSD sont sensibles aux fréquentes lectures/écritures sur de la Swap, il est donc conseillé de ne pas y mettre de Swap, ou de régler la swappiness à 0 (la Swap n&#039;est alors jamais utilisée, et vous pouvez la conserver pour l&#039;hibernation.)
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Régler le déclenchement du swap" [6603-8373] -->
+<h2 class="sectionedit9" id="creer_un_fichier_d_echange">Créer un fichier d&#039;échange</h2>
+<div class="level2">
+
+<p>
+Afin d&#039;ajouter davantage d&#039;espace d&#039;échange utilisable par votre système Ubuntu, nous vous recommandons la création de fichiers d&#039;échange.
+</p>
+
+<p>
+Les fichiers d&#039;échange ont quelques avantages par rapport aux partitions d&#039;échange. D&#039;abord, leur ajout ou suppression n&#039;a pas d&#039;impact sur la table des partitions du disque dur, ce qui limite les possibles pertes de données liées au repartitionnement d&#039;un disque dur. De cette facilité, il est aisé d&#039;attribuer à la volée plus ou moins d&#039;espace d&#039;échange selon les besoins, qu&#039;ils soient temporaires ou non. Enfin, même s&#039;ils sont stockés dans un système de fichiers, les fichiers d&#039;échange sont exploités directement par le noyau Linux; l&#039;utilisation d&#039;un espace d&#039;échange, sous forme de partition ou de fichier, devrait être identique quant aux performances.
+</p>
+
+<p>
+Cependant, un fichier d&#039;échange <em class="u">ne</em> peut <em class="u">pas</em> être utilisé dans le cadre d&#039;une mise en veille prolongée (hibernation). Pour cette utilisation, il vous faudra attribuer l&#039;espace d&#039;échange sous forme de partitions.
+</p>
+
+<p>
+<strong>Pour créer un fichier d&#039;échange :</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Depuis un compte d&#039;administrateur, ouvrez un <a href="../../../../utilisateurs/felixp/terminal" class="wikilink2" title="utilisateurs:felixp:terminal" rel="nofollow">terminal</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Utilisez <code>fallocate</code> pour réserver un bloc d&#039;espace disque à attribuer à votre espace d&#039;échange : <pre class="code">sudo fallocate -l &lt;taille du fichier en octets&gt; &lt;nom du fichier&gt;</pre>
+</div>
+<ul>
+<li class="level2"><div class="li"> Le paramètre <strong>-l</strong> indique la taille (<em>length</em>) en octets qui doit être réservée pour l&#039;espace d&#039;échange. <code>fallocate</code> reconnaît aussi quelques suffixes, tels <code>m</code> et <code>g</code>, pour préciser des tailles en mibi-octets ou gibioctets. Par exemple, pour réserver 512 Mio, indiquez <code>512m</code> ; pour réservez 1 Gio, indiquer <code>1g</code> ;</div>
+</li>
+<li class="level2"><div class="li"> Le nom du fichier doit contenir le chemin absolu vers l&#039;emplacement de celui-ci. Sinon, il sera créé dans le répertoire courant ;</div>
+</li>
+<li class="level2"><div class="li"> <em>Exemple :</em> pour créer un fichier de 512 Mio nommé <code>file.swap</code> et situé à la racine d&#039;Ubuntu, on utilisera la commande suivante : <pre class="code">sudo fallocate -l 512m /file.swap</pre>
+
+<p>
+Consultez le manuel de <code>fallocate</code> (<code><a href="http://manpages.ubuntu.com/manpages/precise/fr/man1/fallocate.1.html" class="urlextern" title="http://manpages.ubuntu.com/manpages/precise/fr/man1/fallocate.1.html"  rel="nofollow">man fallocate</a></code>) pour plus d&#039;informations. 
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Modifiez les permissions sur cet espace afin qu&#039;il ne soit directement lisible que par le système. Utilisez la commande <code>chmod</code> : <pre class="code">sudo chmod 600 &lt;nom du fichier&gt;</pre>
+</div>
+<ul>
+<li class="level2"><div class="li"> Encore une fois, <code>&lt;nom du fichier&gt;</code> représente le nom du fichier qui vient d&#039;être créé, avec son chemin absolu si nécessaire ;</div>
+</li>
+<li class="level2"><div class="li"> Par exemple, pour changer les permissions sur le fichier <code>file.swap</code> situé à la racine d&#039;Ubuntu, on utilisera la commande suivante : <pre class="code">sudo chmod 600 /file.swap</pre>
+</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Définissez ce fichier en tant qu&#039;espace d&#039;échange. Pour ce faire, utilisez la commande <code>mkswap</code> : <pre class="code">sudo mkswap &lt;nom du fichier&gt;</pre>
+</div>
+<ul>
+<li class="level2"><div class="li"> Par exemple, pour définir un espace d&#039;échange sur le fichier <code>file.swap</code> situé à la racine d&#039;Ubuntu, on utilisera la commande suivante : <pre class="code">sudo mkswap /file.swap</pre>
+</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Activez la prise en charge de ce nouvel espace d&#039;échange. Utilisez la commande <code>swapon</code> : <pre class="code">sudo swapon &lt;nom du fichier&gt;</pre>
+</div>
+<ul>
+<li class="level2"><div class="li"> Par exemple, pour activer la prise en charge de l&#039;espace d&#039;échange sur le fichier <code>file.swap</code> situé à la racine d&#039;Ubuntu, on utilisera la commande suivante : <pre class="code">sudo swapon /file.swap</pre>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Créer un fichier d'échange" [8374-11770] -->
+<h2 class="sectionedit10" id="modifier_la_ou_les_partitions_d_echange">Modifier la ou les partitions d&#039;échange</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteimportant">Modifier les partitions après l&#039;installation est toujours une opération risquée. Assurez-vous d&#039;avoir sauvegardé toutes vos données sur un autre support au préalable.
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">Si vous avez besoin d&#039;augmenter la taille de votre swap après avoir installé le système, vous prendrez beaucoup moins de risque en créant un fichier de swap plutôt qu&#039;en modifiant le partitionnement de vos disques. LVM est aussi une alternative très souple.
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">Vous pouvez aussi installer <strong><a href="http://doc.ubuntu-fr.org/utilisateurs/felixp/zram" class="wikilink2" title="utilisateurs:felixp:zram" rel="nofollow">zRam</a></strong> pour augmenter virtuellement la taille de votre swap en compressant la ram non utilisée. (Ne marche pas si vous voulez augmenter la taille du Swap pour permettre l&#039;hibernation)
+</div></p>
+</p>
+
+</div>
+
+<h4 id="outils_avec_interface_graphique">Outils avec interface graphique</h4>
+<div class="level4">
+
+<p>
+Vous pouvez utiliser les outils de partitionnement en mode graphique fournis avec Ubuntu : <strong>Gparted</strong> (<strong>Qtparted</strong> pour Kubuntu) pour créer/modifier/redimensionner vos partitions, à condition que celles-ci ne soient pas en cours d&#039;utilisation par le système.
+</p>
+
+<p>
+Si vous avez besoin de modifier une partition utilisée par le système en permanence, utilisez un <a href="http://doc.ubuntu-fr.org/utilisateurs/felixp/live_cd" class="wikilink2" title="utilisateurs:felixp:live_cd" rel="nofollow">live-cd</a>.
+</p>
+
+<p>
+Le  <a href="http://doc.ubuntu-fr.org/utilisateurs/felixp/live_cd" class="wikilink2" title="utilisateurs:felixp:live_cd" rel="nofollow">live-cd</a> utilise la partition swap du système (si elle existe). Pour pouvoir la modifier (ou modifier la partition étendue parente), il vous faudra désactiver le swap (dans gparted : Menu Partition &gt; désactiver le swap).
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Modifier la ou les partitions d'échange" [11771-13211] -->
+<h3 class="sectionedit11" id="outils_en_ligne_de_commande">Outils en ligne de commande</h3>
+<div class="level3">
+
+<p>
+Il existe plusieurs outils en ligne de commande pour gérer vos partitions, les plus connus étant <strong>fdisk</strong> et <strong>cfdisk</strong>. Ces outils s&#039;utilisent avec les mêmes précautions et restrictions que celles indiquées ci-dessus pour gparted.
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Outils en ligne de commande" [13212-13490] -->
+<h2 class="sectionedit12" id="definir_une_partition_comme_partition_d_echange">Définir une partition comme partition d&#039;échange</h2>
+<div class="level2">
+
+<p>
+La commande <code>mkswap</code> permet de définir une partition ou un fichier comme espace d&#039;échange. Exemple pour définir la partition /dev/sda6 comme partition d&#039;échange :
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> mkswap <span class="sy0">/</span>dev<span class="sy0">/</span>sda6</pre>
+
+<p>
+Conservez pour la suite l&#039;UUID retourné par cette commande.
+</p>
+
+<p>
+Vous pouvez ensuite activer la partition d&#039;échange avec : 
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> swapon <span class="sy0">/</span>dev<span class="sy0">/</span>sda6</pre>
+
+<p>
+Pour utiliser de façon permanente cette partition, vous devez modifier votre fichier <code><a href="../../../../mount_fstab" class="wikilink1" title="mount_fstab">/etc/fstab</a></code> pour y modifier ou ajouter une ligne du type :
+</p>
+<pre class="code bash"><span class="co0"># Partition de Swap sur /dev/sda6</span>
+<span class="re2">UUID</span>=db245df9-851d-695b-a3f7-d40f039a6cc6        none            swap    sw      <span class="nu0">0</span>      <span class="nu0">0</span></pre>
+
+<p>
+En précisant votre UUID précédemment obtenu.
+</p>
+
+</div>
+<!-- EDIT12 SECTION "Définir une partition comme partition d'échange" [13491-14284] -->
+<h3 class="sectionedit13" id="utiliser_cette_partition_pour_l_hibernation">Utiliser cette partition pour l&#039;hibernation</h3>
+<div class="level3">
+
+<p>
+Il reste quelques manipulations à faire pour pouvoir utiliser votre partition de Swap pour l&#039;hibernation :
+</p>
+<ul>
+<li class="level1"><div class="li"> Modifier le fichier <code>/etc/initramfs-tools/conf.d/resume</code> pour y renseigner le bon UUID : <pre class="code bash"><span class="re2">RESUME</span>=<span class="re2">UUID</span>=db245df9-851d-695b-a3f7-d40f039a6cc6</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Faire prendre en compte le changement par le système :<pre class="code bash"><span class="kw2">sudo</span> update-initramfs <span class="re5">-u</span> <span class="re5">-k</span> $<span class="br0">&#40;</span><span class="kw2">uname</span> -r<span class="br0">&#41;</span></pre>
+</div>
+</li>
+</ul>
+
+<p>
+<img src="../../../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+<ul>
+<li class="level1"><div class="li"> Modifier le fichier de configuration de GRUB, le chargeur de démarrage :</div>
+<ul>
+<li class="level2"><div class="li"> Dans le fichier <code>/etc/default/grub</code>, rajoutez la ligne : <pre class="code bash"><span class="re2">GRUB_CMDLINE_LINUX</span>=<span class="st0">&quot;resume=UUID=&lt;votre_uuid&gt;&quot;</span></pre>
+</div>
+</li>
+<li class="level2"><div class="li"> Mettre à jour Grub par : <pre class="code bash"><span class="kw2">sudo</span> update-grub</pre>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+Il vaut mieux, après cela, redémarrer la machine avant d&#039;essayer d&#039;hiberner.
+</p>
+
+<p>
+<p><div class="noteclassic">L&#039;UUID de la partition a dû être affiché par la commande <strong>mkswap</strong>, sinon vous pouvez l&#039;obtenir avec la commande 
+</p>
+<pre class="code">sudo blkid /dev/sda6</pre>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+<a href="https://help.ubuntu.com/community/SwapFaq#How_do_I_add_more_swap.3F" class="urlextern" title="https://help.ubuntu.com/community/SwapFaq#How_do_I_add_more_swap.3F"  rel="nofollow">https://help.ubuntu.com/community/SwapFaq#How_do_I_add_more_swap.3F</a>
+</p>
+
+</div>
+<!-- EDIT13 SECTION "Utiliser cette partition pour l'hibernation" [14285-15329] -->
+<h2 class="sectionedit14" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://help.ubuntu.com/community/SwapFaq" class="urlextern" title="https://help.ubuntu.com/community/SwapFaq"  rel="nofollow">Ubuntu Forum SwapFaq</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/" class="urlextern" title="http://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/"  rel="nofollow">Linux add a swap file howto</a> (en)</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : foustala, laurentb, krop, huit_six, claudiux, SeTtHe, <a href="../../../../utilisateurs/fnx" class="wikilink1" title="utilisateurs:fnx">fnx</a>, <a href="https://help.ubuntu.com/community/SwapFaq" class="urlextern" title="https://help.ubuntu.com/community/SwapFaq"  rel="nofollow">les contributeurs de la documentation d&#039;Ubuntu</a>
+</em>
+</p>
+<hr />
+
+</div>
+<!-- EDIT14 SECTION "Voir aussi" [15330-] --><div class="footnotes">
+<div class="fn"><sup><a href="brouillon3#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+La mémoire virtuelle est composée de la mémoire vive physique (RAM) et de l&#039;espace d&#039;échange.</div>
+<div class="fn"><sup><a href="brouillon3#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+Les fichiers d&#039;échange ne permettent pas l&#039;hibernation</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/27eab63f132ab961cd117f960b0fd736.xhtml used -->
+</div>
+</body>
+</html>

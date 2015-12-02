@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>usb-creator</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-02-01T14:13:18+0100"/>
+<meta name="keywords" content="saucy,trusty,installation,usb,live usb"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../usb-creator?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="usb-creator"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/usb-creator"/>
+<link rel="canonical" href="../../usb-creator"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"usb-creator","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="usb-creator#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="usb-creator#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="usb-creator#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="usb-creator#problemes_connus">Problèmes connus</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="usb-creator#iso_dans_le_dossier_telechargement">ISO dans le dossier &#039;Téléchargement&#039;</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="usb-creator#desinstallation">Désinstallation</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../saucy" class="wikilink1" title="saucy" rel="tag">saucy</a>,
+	<a href="http://doc.ubuntu-fr.org/trusty" class="wikilink1" title="trusty" rel="tag">trusty</a>,
+	<a href="../../installation.1" class="wikilink1" title="installation" rel="tag">installation</a>,
+	<a href="../../usb" class="wikilink1" title="usb" rel="tag">usb</a>,
+	<a href="../../live_usb" class="wikilink1" title="live_usb" rel="tag">live usb</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="usb_creator">USB Creator</h1>
+<div class="level1">
+
+<p>
+C&#039;est un outil qui permet, à partir d&#039;une <a href="http://fr.wikipedia.org/wiki/Image_disque" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Image_disque">image ISO</a>, de créer une version <a href="../../live_usb" class="wikilink1" title="live_usb">Live Usb</a> des systèmes d&#039;exploitation Ubuntu ou Debian. C&#039;est la méthode pour <strong>essayer</strong> un système d&#039;exploitation avant de l&#039;installer sur le disque dur. Cela nécessite un <abbr title="Basic Input-Output System">BIOS</abbr> permettant le démarrage depuis un périphérique <abbr title="Universal Serial Bus">USB</abbr>.
+</p>
+
+<p>
+<a href="http://fr.wikipedia.org/wiki/Ubuntu_Live_USB_creator" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Ubuntu_Live_USB_creator">Description de usb-creator sur Wikipedia</a>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "USB Creator" [55-497] -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<strong><abbr title="Universal Serial Bus">USB</abbr> Creator</strong> est normalement installé par défaut. Si ce n&#039;est pas le cas, <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez les paquets</a> <strong><a href="apt://usb-creator-common,usb-creator-gtk" class="interwiki iw_apt" title="apt://usb-creator-common,usb-creator-gtk">usb-creator-common et usb-creator-gtk</a></strong>.
+</p>
+<pre class="code">sudo apt-get install usb-creator-common usb-creator-gtk</pre>
+
+</div>
+<!-- EDIT2 SECTION "Installation" [498-824] -->
+<h2 class="sectionedit3" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;un support <abbr title="Universal Serial Bus">USB</abbr> <strong>d&#039;au moins 1,5 Gio</strong> (l&#039;image .iso faisant 970 Mio à partir de 14.04) <strong>formaté en FAT32</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une <a href="http://www.ubuntu-fr.org/telechargement" class="urlextern" title="http://www.ubuntu-fr.org/telechargement"  rel="nofollow">image CD d&#039;Ubuntu</a>, ou simplement d&#039;un CD <em>live</em>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Pré-requis" [825-1145] -->
+<h2 class="sectionedit4" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+<p><div class="notehelp">dans l’environnement graphique il peut s&#039;appeler : <strong>Créateur de disque de démarrage</strong>
+</div></p>
+</p>
+
+<p>
+La création de votre Live-<abbr title="Universal Serial Bus">USB</abbr> est effective si <strong><abbr title="Universal Serial Bus">USB</abbr> Creator</strong> vous demande votre mot de passe lors de la création du chargeur d&#039;amorçage. Si ce n&#039;est pas le cas, consultez la rubrique traitant des beugues.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Utilisation" [1146-1490] -->
+<h2 class="sectionedit5" id="problemes_connus">Problèmes connus</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT5 SECTION "Problèmes connus" [1491-1518] -->
+<h3 class="sectionedit6" id="iso_dans_le_dossier_telechargement">ISO dans le dossier &#039;Téléchargement&#039;</h3>
+<div class="level3">
+
+<p>
+Il faut éviter de positionner l&#039;image à installer dans le dossier &quot;<em>Téléchargement</em>&quot; car cela produit une impossibilité d&#039;installation. Usb Creator ne semble pas gérer le codage utf-8 et n&#039;apprécie donc pas les accents.
+Placez votre image à la racine de votre dossier personnel pour que cela fonctionne.
+</p>
+
+<p>
+Rapport de bug fait ici : <a href="https://bugs.launchpad.net/ubuntu/+source/usb-creator/+bug/458334" class="urlextern" title="https://bugs.launchpad.net/ubuntu/+source/usb-creator/+bug/458334"  rel="nofollow">https://bugs.launchpad.net/ubuntu/+source/usb-creator/+bug/458334</a>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "ISO dans le dossier 'Téléchargement'" [1519-1976] -->
+<h2 class="sectionedit7" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="../../tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer son paquet</a>. La configuration de l&#039;application sera conservée ou supprimée selon la méthode de désinstallation que vous choisirez.
+</p>
+
+<p>
+Pour supprimer la partition live-<abbr title="Universal Serial Bus">USB</abbr>, il suffit de la formater, par exemple avec <a href="../../gparted" class="wikilink1" title="gparted">gparted</a>.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Désinstallation" [1977-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/8/8be0e9c296d2605eec9fee238e3cc44a.xhtml used -->
+</div>
+</body>
+</html>

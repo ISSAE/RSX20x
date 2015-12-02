@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>logrotate - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-05-04T07:30:57+0200"/>
+<meta name="keywords" content="energie"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/logrotate?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/logrotate?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/logrotate"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/logrotate"/>
+<link rel="canonical" href="logrotate"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"logrotate","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="logrotate#main" tabindex="1">Contenu</a> | <a href="logrotate#qsearch__in" tabindex="2">Rechercher</a> | <a href="logrotate#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="logrotate" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="logrotate" >logrotate</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="logrotate#installer_logrotate">Installer Logrotate</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="logrotate#etape_1mettre_le_systeme_et_les_paquets_a_jour">Etape 1 : Mettre le Système et les paquets à jour</a></div></li>
+<li class="level2"><div class="li"><a href="logrotate#etape_2installer_logrotate">Étape 2 : Installer Logrotate</a></div></li>
+<li class="level2"><div class="li"><a href="logrotate#etape_3confirmation">Étape 3 : Confirmation</a></div></li>
+<li class="level2"><div class="li"><a href="logrotate#etape_4configurer_logrotate">Étape 4 : Configurer Logrotate</a></div></li>
+<li class="level2"><div class="li"><a href="logrotate#etape_5exemple">Étape 5 : Exemple</a></div></li>
+<li class="level2"><div class="li"><a href="logrotate#etape_6tache_cron">Étape 6 : Tâche Cron</a></div></li>
+<li class="level2"><div class="li"><a href="logrotate#etape_7statut_et_verification">Étape 7 : Statut et Vérification</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="logrotate#la_rotation">La rotation</a></div></li>
+<li class="level1"><div class="li"><a href="logrotate#la_compression">La compression</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="logrotate">Logrotate</h1>
+<div class="level1">
+<div class="tags"><span>
+	<a href="energie" class="wikilink1" title="energie" rel="tag">énergie</a>
+</span></div>
+
+<p>
+Logrotate permet de limiter la taille des fichiers journaux présents dans /var/log.
+</p>
+
+<p>
+Pour chaque fichier journal, logrotate réalise 2 opérations simultanées :
+</p>
+<ul>
+<li class="level1"><div class="li"> la <strong>rotation</strong> : il archive le fichier journal sous un autre nom et supprime la plus ancienne archive</div>
+</li>
+<li class="level1"><div class="li"> la <strong>compression</strong> : il compresse éventuellement le fichier journal avant de l&#039;archiver</div>
+</li>
+</ul>
+
+<p>
+La compression diminue :
+</p>
+<ul>
+<li class="level1"><div class="li"> l&#039;espace disque utilisé</div>
+</li>
+</ul>
+
+<p>
+mais <strong>augmente</strong> :
+</p>
+<ul>
+<li class="level1"><div class="li"> la <strong>quantité de données lues et écrites sur le disque</strong> : <strong>usure du disque</strong></div>
+</li>
+<li class="level1"><div class="li"> la <strong>consommation d&#039;énergie</strong></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="logrotate"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430717457" /><input type="hidden" name="summary" value="[Logrotate] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1-603" /><input type="submit" value="Modifier" class="button" title="Logrotate" /></div></form></div>
+<h2 class="sectionedit2" id="installer_logrotate">Installer Logrotate</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="logrotate"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430717457" /><input type="hidden" name="summary" value="[Installer Logrotate] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="604-635" /><input type="submit" value="Modifier" class="button" title="Installer Logrotate" /></div></form></div>
+<h3 class="sectionedit3" id="etape_1mettre_le_systeme_et_les_paquets_a_jour">Etape 1 : Mettre le Système et les paquets à jour</h3>
+<div class="level3">
+
+<p>
+Executer la commande suivante pour mettre à jour la liste des paquets d&#039;apt-get et obtenir les informations sur d&#039;éventuelles nouvelles versions des paquets et de leurs dépendances.
+</p>
+<pre class="code">sudo apt-get update</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="logrotate"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430717457" /><input type="hidden" name="summary" value="[Etape 1 : Mettre le Système et les paquets à jour] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="636-917" /><input type="submit" value="Modifier" class="button" title="Etape 1 : Mettre le Système et les paquets à jour" /></div></form></div>
+<h3 class="sectionedit4" id="etape_2installer_logrotate">Étape 2 : Installer Logrotate</h3>
+<div class="level3">
+
+<p>
+Si logrotate n&#039;est pas déjà présent sur votre système (machine perso ou serveur), l&#039;installer maintenant avec apt-get.
+</p>
+<pre class="code">sudo apt-get install logrotate</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="logrotate"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430717457" /><input type="hidden" name="summary" value="[Étape 2 : Installer Logrotate] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="918-1127" /><input type="submit" value="Modifier" class="button" title="Étape 2 : Installer Logrotate" /></div></form></div>
+<h3 class="sectionedit5" id="etape_3confirmation">Étape 3 : Confirmation</h3>
+<div class="level3">
+
+<p>
+Pour vérifier que Logrotate a été installé correctement, on execute cette commande dans un terminal
+</p>
+<pre class="code">logrotate</pre>
+
+<p>
+Vu que l&#039;utilitaire Logrotate est basé sur des fichiers de configuration, la commande ci-dessus ne provoquera aucune rotation de fichier et se contentera de vous montrer un bref aperçu des usages et des options disponibles.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="logrotate"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430717457" /><input type="hidden" name="summary" value="[Étape 3 : Confirmation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1128-1516" /><input type="submit" value="Modifier" class="button" title="Étape 3 : Confirmation" /></div></form></div>
+<h3 class="sectionedit6" id="etape_4configurer_logrotate">Étape 4 : Configurer Logrotate</h3>
+<div class="level3">
+
+<p>
+Les configurations et les options par défaut de l&#039;utilitaire Logrotate sont disponibles dans le fichier:
+</p>
+<pre class="code">/etc/logrotate.conf</pre>
+
+<p>
+Quelques-uns des réglages importants à configurer sont : rotation-interval, log-file-size, rotation-count and compression.
+</p>
+
+<p>
+Les informations spécifiques à la journalisation de certaines applications (surchargeant les paramètres par défaut) sont conservées dans le répertoire:
+</p>
+<pre class="code">/etc/logrotate.d/</pre>
+
+<p>
+Ne pas hésiter à consulter certains exemples afin de comprendre un peu mieux ce concept
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="logrotate"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430717457" /><input type="hidden" name="summary" value="[Étape 4 : Configurer Logrotate] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1517-2109" /><input type="submit" value="Modifier" class="button" title="Étape 4 : Configurer Logrotate" /></div></form></div>
+<h3 class="sectionedit7" id="etape_5exemple">Étape 5 : Exemple</h3>
+<div class="level3">
+
+<p>
+Voici un exemple de configuration spécifique pour l&#039;application DPKG (Le gestionnaire de paquets de Debian), stocké dans le fichier /etc/logrotate.d/dpkg. Une des entrées de ce fichier pourrait se présenter comme suit:
+</p>
+<pre class="code">/var/log/dpkg.log {
+	monthly
+	rotate 12
+	compress
+	delaycompress
+	missingok
+	notifempty
+	create 644 root root
+}</pre>
+
+<p>
+Que l&#039;on peut traduire comme suit :
+</p>
+<ul>
+<li class="level1"><div class="li"> pour dpkg, Logrotate surveille le fichier /var/log/dpkg.log et génère une rotation une fois par mois - c&#039;est l&#039; &quot;intervalle de rotation&quot;.<br/>
+</div>
+</li>
+<li class="level1"><div class="li"> &#039;rotate 12&#039; signifie qu&#039;à chaque intervalle, on conserve 12 semaines de journalisation.<br/>
+</div>
+</li>
+<li class="level1"><div class="li"> Les fichiers de logs peuvent être compressés au format gzip en spécifiant &#039;compress&#039; et, &#039;delaycompress&#039; retarde le processus de compression jusqu&#039;à la prochaine rotation. &#039;delaycompress&#039; ne fonctionnera que si l&#039;option &#039;compress&#039; est clairement spécifiée.<br/>
+</div>
+</li>
+<li class="level1"><div class="li"> &#039;missingok&#039; permet au processus de ne pas s&#039;arrêter à chaque erreur et de poursuivre avec le fichier de log suivant.<br/>
+</div>
+</li>
+<li class="level1"><div class="li"> &#039;notifempty&#039; empêche la rotation de s&#039;effectuer si le fichier de log est vide.<br/>
+</div>
+</li>
+<li class="level1"><div class="li"> &#039;create &lt;mode&gt; &lt;owner&gt; &lt;group&gt;&#039; créé un fichier vide avec les propriétés spécifiées, après la rotation des logs.</div>
+</li>
+</ul>
+
+<p>
+Bien qu&#039;absent de l&#039;exemple ci-dessus, &#039;size&#039; est également un paramètre important si vous souhaitez contrôler la taille des logs accumulés par le système. (note personnelle : sur un serveur web de faible capacité par exemple, type VPS entrée de gamme, c&#039;est *juste incontournable* !)
+</p>
+
+<p>
+Par exemple, pour limiter ce poids à 100MB, on ajouterait:
+</p>
+<pre class="code">size 100M</pre>
+
+<p>
+Notez que, si &#039;size&#039; et &#039;rotation&#039; sont spécifiés ensemble, &#039;size&#039; prend la priorité. Donc si votre fichier de configuration contient les paramètres suivants:
+</p>
+<pre class="code">monthly
+size 100M</pre>
+
+<p>
+alors, la rotation se fera dès lors que votre fichier de logs atteint les 100M et ce, sans attendre la prochaine rotation mensuelle.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="logrotate"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430717457" /><input type="hidden" name="summary" value="[Étape 5 : Exemple] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2110-4081" /><input type="submit" value="Modifier" class="button" title="Étape 5 : Exemple" /></div></form></div>
+<h3 class="sectionedit8" id="etape_6tache_cron">Étape 6 : Tâche Cron</h3>
+<div class="level3">
+
+<p>
+Vous pouvez aussi gérer la rotation des logs avec une tâche cron, pour éviter la configuration à la main et traiter ça de manière automatique. En créant une entrée dans /etc/cron.daily/logrotate , la rotation des logs sera alors effectuée tous les jours.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="logrotate"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430717457" /><input type="hidden" name="summary" value="[Étape 6 : Tâche Cron] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4082-4380" /><input type="submit" value="Modifier" class="button" title="Étape 6 : Tâche Cron" /></div></form></div>
+<h3 class="sectionedit9" id="etape_7statut_et_verification">Étape 7 : Statut et Vérification</h3>
+<div class="level3">
+
+<p>
+Pour s&#039;assurer qu&#039;un fichier de logs effectue correctement ses rotations ou, pour vérifier la date et l&#039;heure de sa dernière rotation, consulter le fichier /var/lib/logrotate/status .
+C&#039;est un fichier aisément lisible, qui contient le nom du fichier de logs et la date à laquelle il a subi sa dernière rotation.
+</p>
+<pre class="code">cat /var/lib/logrotate/status</pre>
+
+<p>
+Quelques entrées de ce fichier, pour exemple:
+</p>
+
+<p>
+&quot;/var/log/lpr.log&quot; 2013-4-11<br/>
+
+&quot;/var/log/dpkg.log&quot; 2013-4-11<br/>
+
+&quot;/var/log/pm-suspend.log&quot; 2013-4-11<br/>
+
+&quot;/var/log/syslog&quot; 2013-4-11<br/>
+
+&quot;/var/log/mail.info&quot; 2013-4-11<br/>
+
+&quot;/var/log/daemon.log&quot; 2013-4-11<br/>
+
+&quot;/var/log/apport.log&quot; 2013-4-11
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="logrotate"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430717457" /><input type="hidden" name="summary" value="[Étape 7 : Statut et Vérification] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4381-5070" /><input type="submit" value="Modifier" class="button" title="Étape 7 : Statut et Vérification" /></div></form></div>
+<h2 class="sectionedit10" id="la_rotation">La rotation</h2>
+<div class="level2">
+
+<p>
+Si l&#039;on regarde le fichier syslog, on voit qu&#039;il a d&#039;autres fichiers similaires avec une extension ajoutée :
+</p>
+<pre class="code">~$ ls -l /var/log/syslog*
+-rw-r----- 1 syslog adm 45432 2011-09-24 10:12 /var/log/syslog
+-rw-r----- 1 syslog adm 44442 2011-09-21 19:45 /var/log/syslog.1
+-rw-r----- 1 syslog adm 31536 2011-09-19 21:04 /var/log/syslog.2.gz
+-rw-r----- 1 syslog adm 72503 2011-09-18 15:45 /var/log/syslog.3.gz
+-rw-r----- 1 syslog adm 21218 2011-09-17 09:45 /var/log/syslog.4.gz
+-rw-r----- 1 syslog adm 10859 2011-09-16 18:28 /var/log/syslog.5.gz
+-rw-r----- 1 syslog adm 74381 2011-09-07 23:15 /var/log/syslog.6.gz
+~$</pre>
+
+<p>
+Le fichier sans extension est le fichier en cours d&#039;utilisation. Les archives sont numérotés de la plus récente à la plus ancienne (extensions &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, …).
+</p>
+
+<p>
+Lors d&#039;une nouvelle rotation, le fichier le plus ancien est supprimé puis chaque archive a un numéro d&#039;extension qui est incrémenté. Le fichier courant qui vient d&#039;être archivé reçoit alors l&#039;extension &quot;1&quot;. Un nouveau fichier journal est créé pour permettre à l&#039;application correspondante de continuer à enregistrer ses informations.
+</p>
+
+<p>
+En définissant le nombre maximum d&#039;archives ainsi que la fréquence de rotation (journalière, hebdomadaire, mensuelle, …), on limite la taille occupée par un journal.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="logrotate"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430717457" /><input type="hidden" name="summary" value="[La rotation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5071-6402" /><input type="submit" value="Modifier" class="button" title="La rotation" /></div></form></div>
+<h2 class="sectionedit11" id="la_compression">La compression</h2>
+<div class="level2">
+
+<p>
+La compression permet de réduire la taille des archives qui subissent une rotation.
+</p>
+
+<p>
+Cependant la compression n&#039;est pas forcément un avantage compte tenu de la baisse du coût de stockage.
+</p>
+
+<p>
+En effet, la compression des archives réalise plus d&#039;échange avec le support de stockage et utilise plus de processeur et de mémoire. Cela entraine <strong>une augmentation de l&#039;usure du disque et de la consommation d&#039;énergie</strong> globale.
+</p>
+
+<p>
+Pour réduire l&#039;espace utilisé par le stockage des journaux, vous pouvez réduire le nombre d&#039;archives (numéro maximum) et augmenter la fréquence de rotation.
+</p>
+
+<p>
+La compression peut être paramétrée globalement dans le fichier /etc/logrotate.conf.
+</p>
+
+<p>
+Un paramétrage pour chaque application peut être redéfinit dans les fichiers présents dans le répertoire /etc/logrotate.d.
+</p>
+
+<p>
+Avec l&#039;option &quot;<strong>nocompress</strong>&quot;, logrotate renomme simplement le fichier en &#039;nom_de_fichier_journal.log.1&#039;, avec très peu d&#039;échange disque puisque seul le nom du fichier est changé dans le système de fichier, le contenu reste inchangé.
+</p>
+
+<p>
+Avec les options &quot;<strong>compress</strong>&quot;, logrotate lit le contenu du fichier à compresser (lecture du disque), le compresse (utilisation du processeur), puis écrit tout le contenu compressé (écriture sur le disque) dans un nouveau fichier du type &#039;nom_de_fichier_journal.log.1.gz&#039;.
+</p>
+
+<p>
+Les options &quot;<strong>delaycompress</strong>&quot; et &quot;<strong>nodelaycompress</strong>&quot; sont similaires respectivement aux options &quot;<strong>compress</strong>&quot; et &quot;<strong>nocompress</strong>&quot; à la différence que la compression ne s&#039;opère qu&#039;à partir de la deuxième rotation d&#039;un fichier journal (lors du passage du numéro &quot;1&quot; à &quot;2&quot;).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="logrotate"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430717457" /><input type="hidden" name="summary" value="[La compression] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6403-" /><input type="submit" value="Modifier" class="button" title="La compression" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/25b5ec0def464a70d3d57ca015ef5a54.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/logrotate?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/logrotate?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/logrotate?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/logrotate?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/logrotate?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

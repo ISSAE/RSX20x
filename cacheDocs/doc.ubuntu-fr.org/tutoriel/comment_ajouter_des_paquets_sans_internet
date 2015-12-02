@@ -1,0 +1,657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:comment_ajouter_des_paquets_sans_internet - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-01-24T19:07:53+0100"/>
+<meta name="keywords" content="hardy,karmic,paquet,tutoriel,installation logiciel,depots,apt"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/comment_ajouter_des_paquets_sans_internet?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/comment_ajouter_des_paquets_sans_internet?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/comment_ajouter_des_paquets_sans_internet"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/comment_ajouter_des_paquets_sans_internet"/>
+<link rel="canonical" href="comment_ajouter_des_paquets_sans_internet"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_ajouter_des_paquets_sans_internet","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="comment_ajouter_des_paquets_sans_internet#main" tabindex="1">Contenu</a> | <a href="comment_ajouter_des_paquets_sans_internet#qsearch__in" tabindex="2">Rechercher</a> | <a href="comment_ajouter_des_paquets_sans_internet#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="comment_ajouter_des_paquets_sans_internet" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="comment_ajouter_des_paquets_sans_internet" >tutoriel:comment_ajouter_des_paquets_sans_internet</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#par_interface_graphique">Par interface graphique</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#avec_keryx">Avec Keryx</a></div></li>
+<li class="level2"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#avec_aptoncd">Avec APTonCD</a></div></li>
+<li class="level2"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#avec_synaptic">Avec Synaptic</a></div></li>
+<li class="level2"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#avec_wubdepends_sous_windows">Avec Wubdepends sous Windows</a></div></li>
+<li class="level2"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#telechargement_manuel_des_paquets_et_de_leurs_dependances">Téléchargement manuel des paquets et de leurs dépendances</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#en_ligne_de_commande">En ligne de commande</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#utilisation_de_l_outil_apt-offline">Utilisation de l&#039;outil apt-offline</a></div></li>
+<li class="level2"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#apt-get_update_offline_avec_un_miroir_de_paquets_local">Apt-get update offline avec un miroir de paquets local</a></div></li>
+<li class="level2"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#mise_a_jour_manuelle_de_vos_listes_de_paquets">Mise à jour manuelle de vos listes de paquets</a></div></li>
+<li class="level2"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#par_le_terminal_avec_apt_methode_deconseillee">Par le terminal avec apt (méthode déconseillée)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_ajouter_des_paquets_sans_internet#pages_en_rapport_avec_les_depots_apt">Pages en rapport avec les dépôts APT</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">Karmic</a>,
+	<a href="../paquet" class="wikilink1" title="paquet" rel="tag">paquet</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="http://doc.ubuntu-fr.org/installation_logiciel" class="wikilink1" title="installation_logiciel" rel="tag">installation logiciel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_ajouter_des_paquets_ou_mettre_a_jour_ubuntu_sans_internet">Comment ajouter des paquets ou mettre à jour Ubuntu sans Internet ?</h1>
+<div class="level1">
+
+<p>
+Ce tutoriel est destiné à tous ceux qui ont installé Ubuntu sur un ordinateur qui n&#039;a pas de connexion à Internet, mais qui aimeraient bien néanmoins maintenir leur système à jour et installer les applications qui leur manquent.
+</p>
+
+<p>
+Rappelons rapidement que l&#039;installation de nouvelles applications se fait par l&#039;intermédiaire de <a href="http://doc.ubuntu-fr.org/installation_logiciel" class="wikilink1" title="installation_logiciel">l&#039;installation de paquets</a>. Ceux-ci sont téléchargeables à partir de <a href="../depots" class="wikilink1" title="depots">dépôts</a> dont les adresses sont listées dans votre fichier <a href="http://doc.ubuntu-fr.org/sources.list" class="wikilink1" title="sources.list">sources.list</a>.
+</p>
+
+<p>
+Si vous avez le choix lorsque vous installez Ubuntu, faites-le à partir du <a href="http://www.ubuntu.com/download/ubuntu/alternative-download#dvd" class="urlextern" title="http://www.ubuntu.com/download/ubuntu/alternative-download#dvd"  rel="nofollow">DVD</a> qui est plus complet que le LiveCD.
+</p>
+
+<p>
+Il existe d&#039;autres méthodes : voir <a href="https://help.ubuntu.com/community/InstallingSoftware#Installing%20packages%20without%20an%20Internet%20connection" class="urlextern" title="https://help.ubuntu.com/community/InstallingSoftware#Installing%20packages%20without%20an%20Internet%20connection"  rel="nofollow">wiki anglophone</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Comment ajouter des paquets ou mettre à jour Ubuntu sans Internet ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="68-1046" /><input type="submit" value="Modifier" class="button" title="Comment ajouter des paquets ou mettre à jour Ubuntu sans Internet ?" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+<li class="level1"><div class="li"> Avoir accès à un ordinateur sous Ubuntu ou Windows (d&#039;un ami, ou café Internet) disposant d&#039;une connexion Internet.</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une clé <abbr title="Universal Serial Bus">USB</abbr> (d&#039;au moins 1 Go de préférence) ou tout autre support amovible.</div>
+</li>
+<li class="level1"><div class="li"> Avoir un fichier sources.list fonctionnel. Si ce n&#039;est pas le cas, des générateurs sont disponibles sur la page <a href="http://doc.ubuntu-fr.org/sources.list" class="wikilink1" title="sources.list">sources.list</a>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1047-1491" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="par_interface_graphique">Par interface graphique</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Par interface graphique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1492-1528" /><input type="submit" value="Modifier" class="button" title="Par interface graphique" /></div></form></div>
+<h3 class="sectionedit4" id="avec_keryx">Avec Keryx</h3>
+<div class="level3">
+
+<p>
+<strong>Keryx</strong> est un logiciel à interface graphique multiplateforme (Linux et Windows) qui permet de télécharger des mises à jour et des paquets logiciels sur un ordinateur ayant accès à Internet, puis de les installer sur un PC sans connexion. Consultez la page dédiée à <a href="../keryx" class="wikilink1" title="keryx">Keryx</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Avec Keryx] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1529-1840" /><input type="submit" value="Modifier" class="button" title="Avec Keryx" /></div></form></div>
+<h3 class="sectionedit5" id="avec_aptoncd">Avec APTonCD</h3>
+<div class="level3">
+
+<p>
+Cette méthode suppose que vous avez un ami qui dispose d&#039;un ordinateur avec Ubuntu relié à internet. Persuadez le d&#039;installer tous les paquets dont vous avez besoin, et d&#039;installer le paquet aptoncd. Il pourra alors l&#039;utiliser pour créer un cd de paquets avec tous ceux dont vous avez besoin. Voir les pages dédiées à <a href="../aptoncd" class="wikilink1" title="aptoncd">APTonCD</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Avec APTonCD] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1841-2213" /><input type="submit" value="Modifier" class="button" title="Avec APTonCD" /></div></form></div>
+<h3 class="sectionedit6" id="avec_synaptic">Avec Synaptic</h3>
+<div class="level3">
+
+<p>
+Ouvrez le <a href="../synaptic" class="wikilink1" title="synaptic">gestionnaire de paquets Synaptic</a>. Puis utilisez les outils de recherche pour trouver et sélectionner les paquets qui vous intéressent. Allez ensuite dans <em>Fichier → Générer un script de téléchargement de paquets</em>. Enregistrez le script sur votre clé <abbr title="Universal Serial Bus">USB</abbr>, emportez-le sur un ordinateur sous Ubuntu disposant d&#039;internet, et exécutez-le. Revenez sur votre ordinateur avec vos paquets téléchargés, relancez Synaptic et utilisez <em>Fichier → Ajouter les paquets téléchargés</em>, et le tour sera joué.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Avec Synaptic] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2214-2777" /><input type="submit" value="Modifier" class="button" title="Avec Synaptic" /></div></form></div>
+<h3 class="sectionedit7" id="avec_wubdepends_sous_windows">Avec Wubdepends sous Windows</h3>
+<div class="level3">
+
+<p>
+Cette solution peut être pratique dans le cas l&#039;ordinateur connecté à Internet fonctionne sous Windows. <strong><a href="http://wubdepends.sourceforge.net/" class="urlextern" title="http://wubdepends.sourceforge.net/"  rel="nofollow">Wubdepends</a></strong> est une petite application (codée en Python, Glade et GTK) qui permet de télécharger le paquet souhaité et ses dépendances, en spécifiant la distribution et l&#039;architecture. 
+<a href="http://doc.ubuntu-fr.org/_detail/tutoriel/wubdepends.png?id=tutoriel%3Acomment_ajouter_des_paquets_sans_internet" class="media" title="tutoriel:wubdepends.png"><img src="http://doc.ubuntu-fr.org/_media/tutoriel/wubdepends.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Les paquets pourront ensuite être reversés à un <a href="comment_installer_un_depot_local" class="wikilink1" title="tutoriel:comment_installer_un_depot_local">dépôt local</a> sur l&#039;ordinateur sous Ubuntu, afin de simplifier <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">l&#039;installation</a> et de préserver la gestion des dépendances.
+</p>
+
+<p>
+On notera que :
+</p>
+<ul>
+<li class="level1"><div class="li"> cet outil ne peut pas être utilisé à travers un proxy ;</div>
+</li>
+<li class="level1"><div class="li"> cet outil travaille à partir d&#039;une liste de dépôts pré-établie (dépôts officiels uniquement?).</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Avec Wubdepends sous Windows] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2778-3641" /><input type="submit" value="Modifier" class="button" title="Avec Wubdepends sous Windows" /></div></form></div>
+<h3 class="sectionedit8" id="telechargement_manuel_des_paquets_et_de_leurs_dependances">Téléchargement manuel des paquets et de leurs dépendances</h3>
+<div class="level3">
+
+<p>
+Voilà bien la méthode la plus malcommode : télécharger les paquets à la main directement depuis les <a href="http://packages.ubuntu.com/" class="urlextern" title="http://packages.ubuntu.com/"  rel="nofollow">dépôts</a>. Seul avantage : si le seul ordinateur relié à internet auquel vous pouvez avoir accès ne fonctionne pas sur Linux et que vous ne pouvez le démarrer avec un <a href="../live_cd" class="wikilink1" title="live_cd">Live CD</a> pour cause de <a href="http://fr.wikipedia.org/wiki/BIOS" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/BIOS">BIOS</a> protégé, vous pouvez tout de même utiliser cette méthode. Elle est particulièrement compliquée parce que tous les paquets Ubuntu sont dépendants entre eux, ainsi si vous téléchargez à la main un paquet A, il y a des chances qu&#039;il dépende d&#039;autres paquets nommés B, C, et D, eux même dépendants de F, G, H, I et entre eux, avec G et I qui dépendent de A et C, et F qui ne dépend de rien, tandis que H dépend encore de 4 autre paquets, bref vous avez besoin d&#039;un seul paquet, et vous devez en télécharger 30, tous à la main.  Il ne vous restera plus qu&#039;à les copier sur votre ordinateur et à les installer selon la <a href="comment_installer_un_paquet#paquet_deb_telecharge" class="wikilink1" title="tutoriel:comment_installer_un_paquet">méthode du paquet téléchargé</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Téléchargement manuel des paquets et de leurs dépendances] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3642-4795" /><input type="submit" value="Modifier" class="button" title="Téléchargement manuel des paquets et de leurs dépendances" /></div></form></div>
+<h2 class="sectionedit9" id="en_ligne_de_commande">En ligne de commande</h2>
+<div class="level2">
+
+<p>
+<strong>L&#039;ensemble des méthodes listées ci-dessous suppose que vous pouvez avoir accès à un ordinateur disposant d&#039;une connexion internet haut débit sur lequel vous n&#039;avez pas nécessairement les droits d&#039;<a href="../sudo" class="wikilink1" title="sudo">administration</a>, et que vous possédez une clé <abbr title="Universal Serial Bus">USB</abbr></strong> (1GO serait confortable). Ce tuto s&#039;adressant plutôt aux <a href="../debutant" class="wikilink1" title="debutant">débutants sous Ubuntu</a>, nous serons assez explicites, cependant si vous ne comprenez pas certaines <a href="console_ligne_de_commande" class="wikilink1" title="tutoriel:console_ligne_de_commande">lignes de commandes</a> à taper dans le <a href="../terminal" class="wikilink1" title="terminal">terminal</a>, reportez-vous aux pages correspondantes. Vous pouvez aussi consulter <a href="learn_unix_in_10_minutes" class="wikilink1" title="tutoriel:learn_unix_in_10_minutes">le guide pour apprendre Linux en 10 minutes</a>. Précisons enfin que pour chaque <a href="script_shell" class="wikilink1" title="tutoriel:script_shell">script</a> que vous trouverez dans ce tuto, vous devrez après l&#039;avoir enregistré taper 
+</p>
+<pre class="code">chmod +x nom_du_script</pre>
+
+<p>
+dans un <a href="../terminal" class="wikilink1" title="terminal">terminal</a> pour pouvoir l&#039;exécuter ensuite. Notez les phrases commençant par &#039;je&#039;, synonymes de &quot;ça n&#039;engage que moi&quot; ;<img src="../lib/images/smileys/icon_smile2.gif" class="icon" alt="=)" />
+</p>
+
+<p>
+<p><div class="notehelp">Vous êtes perdu? Vous pouvez également consulter le tutoriel <a href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj" class="wikilink1" title="tutoriel:comment_modifier_sources_maj">Comment modifier les sources de mise à jour</a> pour davantage de détails sur le système de mise à jour.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[En ligne de commande] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4796-6060" /><input type="submit" value="Modifier" class="button" title="En ligne de commande" /></div></form></div>
+<h3 class="sectionedit10" id="utilisation_de_l_outil_apt-offline">Utilisation de l&#039;outil apt-offline</h3>
+<div class="level3">
+
+<p>
+<a href="http://manpages.ubuntu.com/manpages/lucid/en/man8/apt-offline.8.html" class="urlextern" title="http://manpages.ubuntu.com/manpages/lucid/en/man8/apt-offline.8.html"  rel="nofollow">Apt-offline</a> permet de faire aisément une mise à jour ou une installation de nouveaux paquets sur votre ordinateur hors ligne, à partir d&#039;un autre ordinateur relié au net. Cet outil est dispobnible pour <a href="../lucid" class="wikilink1" title="lucid">Ubuntu 10.04 LTS (« The Lucid Lynx »)</a> et les distributions ultérieures.
+</p>
+
+<p>
+Il est nécessaire de l&#039;installer au préalable sur les deux ordinateurs soit en trouvant le moyen de connecter momentanément l&#039;ordinateur cible à internet, soit en utilisant l&#039;une des méthodes précédemment évoquées.
+</p>
+
+<p>
+Apt-offline est téléchargeable (pour les os non basé sur debian/apt et qui donc n&#039;auraient pas ce paquet dans leurs dépôt, Windows inclu) sous forme de binaire <a href="https://alioth.debian.org/frs/?group_id=100399" class="urlextern" title="https://alioth.debian.org/frs/?group_id=100399"  rel="nofollow"> ===&gt; ici &lt;=== </a>
+</p>
+
+</div>
+
+<h4 id="mise_a_jour_du_systeme">Mise à jour du système</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="generer_un_fichier_de_signatures_sur_l_ordinateur_hors_ligne">1) générer un fichier de signatures sur l&#039;ordinateur hors ligne</h5>
+<div class="level5">
+<pre class="code">apt-offline set /tmp/apt-offline.sig</pre>
+
+<p>
+La commande ci-dessus va générer toutes les informations requises par apt pour mettre à jour sa base de données.
+</p>
+
+<p>
+Par défaut, sans arguments supplémentaires, apt-offline va extraire les informations de mise à jour de la base de données APT (option –update implicite), ainsi que la liste des paquets à mettre à niveau (option –upgrade implicite).
+</p>
+
+<p>
+ Ces options peuvent également être utilisée individuellement si vous le souhaitez. 
+</p>
+
+</div>
+
+<h5 id="telecharger_les_donnees_correspondant_au_fichier_de_signature_genere_precedemment">2) Télécharger les données correspondant au fichier de signature généré précédemment.</h5>
+<div class="level5">
+<pre class="code">apt-offline get C:\apt-offline.sig --threads 5</pre>
+
+<p>
+L&#039;option threads permet d&#039;accélérer l&#039;opération en téléchargeant jusqu&#039;à cinq fichiers en parallèle.
+</p>
+
+</div>
+
+<h5 id="extraction_des_donnees_telechargees_sur_l_ordinateur_cible">3) extraction des données téléchargées sur l&#039;ordinateur cible</h5>
+<div class="level5">
+<pre class="code">apt-offline install /media/USB/apt-offline.zip</pre>
+
+<p>
+Ceci mettra à jour votre base de données APT de manière transparente
+</p>
+
+</div>
+
+<h4 id="installation_d_un_paquet_et_de_ses_dependances">Installation d&#039;un paquet et de ses dépendances</h4>
+<div class="level4">
+
+<p>
+apt-offline est très puissant, puisqu&#039;il vous permet de télécharger également les sources si vous le désirez.
+</p>
+
+</div>
+
+<h5 id="sur_l_ordinateur_hors_ligne">1) Sur l&#039;ordinateur hors ligne</h5>
+<div class="level5">
+<pre class="code">sudo apt-offline set NOM_PAQUET-offline.sig --install-packages NOM_PAQUET --src-build-dep --install-src-packages NOM_PAQUET </pre>
+
+</div>
+
+<h5 id="sur_l_ordinateur_relie_au_net">2) sur l&#039;ordinateur relié au net</h5>
+<div class="level5">
+
+<p>
+Placez-y le fichier NOM_PAQUET-offline.sig que vous avez généré précédemment, puis:
+</p>
+<pre class="code">sudo apt-offline get NOM_PAQUET-offline.sig --no-checksum --bundle NOM_PAQUET-offline.zip </pre>
+
+</div>
+
+<h5 id="extraction_des_paquets_telechargees_sur_l_ordinateur_cible">3) extraction des paquets téléchargées sur l&#039;ordinateur cible</h5>
+<div class="level5">
+
+<p>
+Extrayez l&#039;archive obtenue dans un répertoire temporaire:
+</p>
+<pre class="code">unzip -l NOM_PAQUET-offline.zip </pre>
+
+<p>
+Puis installez les paquets de manière classique:
+</p>
+<pre class="code">sudo apt-get -o dir::cache::archives=CHEMIN/VERS/LE/DOSSIER install NOM_PAQUET</pre>
+
+<p>
+<p><div class="notehelp">Pour installer les paquets, il est également possible d&#039;utiliser la commande suivante, moins recommandée en pratique. 
+</p>
+<pre class="code">sudo dpkg -i *.deb </pre>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Utilisation de l'outil apt-offline] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6061-9083" /><input type="submit" value="Modifier" class="button" title="Utilisation de l'outil apt-offline" /></div></form></div>
+<h3 class="sectionedit11" id="apt-get_update_offline_avec_un_miroir_de_paquets_local">Apt-get update offline avec un miroir de paquets local</h3>
+<div class="level3">
+
+<p>
+Reportez vous au tutoriel <a href="http://doc.ubuntu-fr.org/tutoriel/creer_un_miroir_de_depot" class="wikilink1" title="tutoriel:creer_un_miroir_de_depot">Administration Système : Comment créer un miroir de dépôt local ?</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Apt-get update offline avec un miroir de paquets local] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9084-9284" /><input type="submit" value="Modifier" class="button" title="Apt-get update offline avec un miroir de paquets local" /></div></form></div>
+<h3 class="sectionedit12" id="mise_a_jour_manuelle_de_vos_listes_de_paquets">Mise à jour manuelle de vos listes de paquets</h3>
+<div class="level3">
+
+<p>
+La procédure décrite ci-dessous permet la mise à jour de votre liste de paquets. A noter pour les utilisateurs avertis qu&#039;il existe <a href="scripts_de_mise_a_jour_sans_internet" class="wikilink1" title="tutoriel:scripts_de_mise_a_jour_sans_internet">des alternatives sous forme de scripts</a>.
+</p>
+
+<p>
+A tester si rien d&#039;autre ne marche. Cependant il est bon de l&#039;exposer car ça permet de voir ce qui se passe vraiment.
+ouvrez un terminal et tapez :
+</p>
+<pre class="code">sudo apt-get update -qq --print-uris &gt;&gt; toto.txt &amp;&amp; gedit toto.txt</pre>
+
+<p>
+dans le fichier qui s&#039;ouvre, vous trouverez notamment une url par ligne. Enrgistrez le fichier sur votre clé, allez sur l&#039;ordinateur (linux) où vous avez internet, et pour chaque url, tapez 
+</p>
+<pre class="code">wget &lt;url&gt;</pre>
+
+<p>
+puis ramenez les fichiers téléchargés sur votre ordinateur. Placez vous dans le dossier où vous avez téléchargé (on suppose dans les prochaines commandes que ce sont les seuls fichiers .gz du répertoire). Comme précédemment afin d&#039;alléger la présentation de la page, voici les commandes successives en un seul bloc.
+</p>
+<pre class="code">#on copie les paquets dans le bon répertoire
+sudo cp *.gz /var/lib/apt/lists/
+#on se place dans ce répertoire
+cd /var/lib/apt/lists/
+#on dézippe les listes de paquets 
+sudo gunzip *.gz</pre>
+
+<p>
+A ce stade cela pourrait marcher, mais vous allez avoir des problèmes en lançant l&#039;utilitaire de mise à jour qui va vous dire qu&#039;il n&#039;a pas réussi à dévérouiller les fichiers. C&#039;est pourquoi il faut ajouter :
+</p>
+<pre class="code">sudo chmod 755 *_Packages</pre>
+
+<p>
+Vos listes sont désormais à jour.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Mise à jour manuelle de vos listes de paquets] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9285-10841" /><input type="submit" value="Modifier" class="button" title="Mise à jour manuelle de vos listes de paquets" /></div></form></div>
+<h3 class="sectionedit13" id="par_le_terminal_avec_apt_methode_deconseillee">Par le terminal avec apt (méthode déconseillée)</h3>
+<div class="level3">
+
+<p>
+<p><div class="notewarning">Méthode à n&#039;utiliser que si l&#039;ordinateur relié à internet et l&#039;ordinateur cible possèdent des architectures hardware et logicielles proches
+</div></p>
+</p>
+
+<p>
+Cette méthode s&#039;utilise avec le <a href="../terminal" class="wikilink1" title="terminal">terminal</a> mais elle est assez simple et efficace! Les listes de paquets utilisées étant celles de l&#039;ordinateur relié à Internet, il n&#039;est pas nécessaire de passer par les étapes précédentes (c-à-d la mise à jour de la liste source, et la mise à jour des listes des paquets) à condition que les listes de l&#039;ordinateur relié à internet soient suffisamment à jour (mais si vous pouvez le faire c&#039;est quand même mieux).
+</p>
+<ol>
+<li class="level1"><div class="li"> Sur l&#039;ordinateur connecté, créez un nouveau dossier (Ex : tempo).</div>
+</li>
+<li class="level1"><div class="li"> Créez dans ce dossier (tempo) un autre dossier nommé partial (Ce dossier sera vide a la fin du téléchargement ! mais il est indispensable).</div>
+</li>
+<li class="level1"><div class="li"> Ouvrez un terminal et placez vous dans votre dossier en tapant la commande <pre class="code">cd /chemin/ver/votre/dossier/tempo</pre>
+
+<p>
+Par exemple :
+</p>
+<pre class="code">cd /home/raouf/Bureau/tempo</pre>
+
+<p>
+ suivi de la touche ENTRÉE du clavier.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Ensuite, pour télécharger le paquet et ses dépendances, tapez la commande ci dessous en remplaçant &quot;monpaquet&quot; par le nom du paquet en question :<pre class="code">apt-get --install-recommends -o &quot;Dir::Cache::archives=`pwd`&quot; -o &quot;Debug::NoLocking=true&quot; -o &quot;Dir::State::status=/dev/null&quot; -d install monpaquet </pre>
+
+<p>
+Reste alors à patienter selon le débit de votre connexion <img src="../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />. Vous pouvez répéter cette commande une autre fois pour vous assurer que toutes les dépendances ont bien été téléchargées.(<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />: bizarre)
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Copiez le dossier sur une clé usb et rapportez le sur l&#039;ordinateur sans internet.</div>
+</li>
+<li class="level1"><div class="li"> Ouvrez un terminal et placez vous dans le dossier que vous avez copié (de la même manière que la précédente <code>cd /chemin…/tempo</code> + ENTRÉE).</div>
+</li>
+<li class="level1"><div class="li"> Et enfin installez le paquet et ses dépendances en tapant la commande <pre class="code">sudo dpkg -i *.deb</pre>
+</div>
+</li>
+</ol>
+
+<p>
+<p><div class="noteimportant">Comme vous utilisez les listes de paquets de <strong>l&#039;ordinateur relié à internet</strong> pour procéder à la mise à jour de <strong>l&#039;ordinateur non connecté</strong>, ce dernier <strong>doit</strong> tourner sous la <strong>même version d&#039;Ubuntu</strong> ou d&#039;une autre de ses variantes, que l&#039;ordinateur relié à internet ! (par exemple si sur le non connecté c&#039;est &quot;Intrepid Ibex&quot; vous devez télécharger les paquet sur un ordinateur qui tourne sous &quot;Intrepid Ibex&quot; et non pas &quot;Hardy Heron&quot;).
+Notez encore que cette méthode n&#039;est pas fiable à 100%. Elle nécessite que les deux ordinateurs aient des configurations proches, autrement des problèmes de dépendances mal téléchargées ou d&#039;incompatibilités peuvent se produire (<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />: à détailler).
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Par le terminal avec apt (méthode déconseillée)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10842-13591" /><input type="submit" value="Modifier" class="button" title="Par le terminal avec apt (méthode déconseillée)" /></div></form></div>
+<h2 class="sectionedit14" id="pages_en_rapport_avec_les_depots_apt">Pages en rapport avec les dépôts APT</h2>
+<div class="level2">
+<div class="table">
+<table class="inline">
+	<tr>
+		<th class="page">Page</th>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/tutoriel/creer_un_miroir_de_depot_local" class="wikilink1" title="tutoriel:creer_un_miroir_de_depot_local">Administration Système : Comment créer un miroir de dépôt local via un serveur web</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/tutoriel/creer_un_miroir_de_depot" class="wikilink1" title="tutoriel:creer_un_miroir_de_depot">Administration Système : Comment créer un miroir de dépôt sur un support USB ou via un serveur web</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/backtrack" class="wikilink1" title="backtrack">BackTrack Linux</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="comment_ajouter_des_paquets_sans_internet" class="wikilink1" title="tutoriel:comment_ajouter_des_paquets_sans_internet">Comment ajouter des paquets ou mettre à jour Ubuntu sans Internet ?</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="comment_creer_depot" class="wikilink1" title="tutoriel:comment_creer_depot">Comment créer un dépôt de paquets</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/creer_un_depot_ubuntu" class="wikilink1" title="creer_un_depot_ubuntu">Comment créer votre propre dépôt Ubuntu ?</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Comment installer un paquet ?</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="comment_installer_un_depot_local" class="wikilink1" title="tutoriel:comment_installer_un_depot_local">Comment mettre en place un dépôt local ?</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj" class="wikilink1" title="tutoriel:comment_modifier_sources_maj">Comment modifier les sources de logiciels ?</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/depots_lucid" class="wikilink1" title="depots_lucid">Dépôts pour Ubuntu 10.04 LTS (The Lucid Lynx)</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/depots_precise" class="wikilink1" title="depots_precise">Dépôts pour Ubuntu 12.04 (The Precise Pangolin)</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/depots_trusty" class="wikilink1" title="depots_trusty">Dépôts pour Ubuntu 14.04 (The Trusty Tahr)</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/depots_utopic" class="wikilink1" title="depots_utopic">Dépôts pour Ubuntu 14.10 (The Utopic Unicorn)</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../gestionnaire_de_paquets" class="wikilink1" title="gestionnaire_de_paquets">Gestionnaire de paquets</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../getdeb" class="wikilink1" title="getdeb">GetDeb et Playdeb</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/depots_enlightenment" class="wikilink1" title="depots_enlightenment">Installation de e17 par les dépôts</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/ubuntu_games" class="wikilink1" title="ubuntu_games">Installation de jeux du Dépôt Ubuntu Games</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/medibuntu" class="wikilink1" title="medibuntu">Le dépôt Medibuntu</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/sources.list" class="wikilink1" title="sources.list">Le fichier « sources.list »</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../gestionnaire_d_applications_gnome" class="wikilink1" title="gestionnaire_d_applications_gnome">Le gestionnaire d&#039;applications Gnome ( gnome-app-install ) : ajouter ou supprimer des applications</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../gestionnaire_de_mises_a_jour" class="wikilink1" title="gestionnaire_de_mises_a_jour">Le gestionnaire de mises à jour</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../synaptic" class="wikilink1" title="synaptic">Le gestionnaire de paquets Synaptic</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../software-properties" class="wikilink1" title="software-properties">Logiciels &amp; Mises à jour</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../software-center" class="wikilink1" title="software-center">Logithèque Ubuntu</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/apt-p2p" class="wikilink1" title="apt-p2p">Mise à jour et téléchargement des paquets en peer-to-peer : apt-p2p</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/ntlmaps" class="wikilink1" title="ntlmaps">NTLM Authorization Proxy Server</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../ppa" class="wikilink1" title="ppa">Personal Package Archives (PPA)</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../probleme_apt" class="wikilink1" title="probleme_apt">Problèmes avec les gestionnaires de paquets</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/cntlm" class="wikilink1" title="cntlm">Proxy Authentifiant Cntlm</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../reprepro" class="wikilink1" title="reprepro">reprepro</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/apt-key" class="wikilink1" title="apt-key">Régler l&#039;erreur GPG &quot;NO_PUBKEY&quot;</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/utilisateurs/fabux/brouillons/cle_apt" class="wikilink1" title="utilisateurs:fabux:brouillons:cle_apt">Régler l&#039;erreur GPG &quot;NO_PUBKEY&quot;</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="comment_sauver_et_restaurer_la_liste_des_paquets" class="wikilink1" title="tutoriel:comment_sauver_et_restaurer_la_liste_des_paquets">Sauvegarde et restauration de la liste des paquets installés pour restauration, duplication ou migration</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="scripts_de_mise_a_jour_sans_internet" class="wikilink1" title="tutoriel:scripts_de_mise_a_jour_sans_internet">Scripts de mise à jour sans internet</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/apt-cacher" class="wikilink1" title="apt-cacher">Serveur apt-cacher</a></td>
+	</tr>
+</table>
+</div>
+<div class="tags"><span>
+	<a href="../depots" class="wikilink1" title="depots" rel="tag">dépôts</a>,
+	<a href="../apt" class="wikilink1" title="apt" rel="tag">apt</a>
+</span></div>
+<hr />
+
+<p>
+<em>Contributeurs: <a href="../utilisateurs/aldian" class="wikilink1" title="utilisateurs:aldian">Aldian</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/mavosaure" class="wikilink1" title="utilisateurs:mavosaure">mavosaure</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/febcrash" class="wikilink1" title="utilisateurs:febcrash">febcrash</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="comment_ajouter_des_paquets_sans_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1422122873" /><input type="hidden" name="summary" value="[Pages en rapport avec les dépôts APT] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13592-" /><input type="submit" value="Modifier" class="button" title="Pages en rapport avec les dépôts APT" /></div></form></div>
+<!-- no cachefile used, caching forbidden -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_ajouter_des_paquets_sans_internet?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_ajouter_des_paquets_sans_internet?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_ajouter_des_paquets_sans_internet?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_ajouter_des_paquets_sans_internet?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_ajouter_des_paquets_sans_internet?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

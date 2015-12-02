@@ -1,0 +1,135 @@
+{{tag>Hardy Karmic Lucid Maverick administration}}
+----
+
+
+
+====== Le Moniteur système ======
+
+Le **Moniteur système** est un gestionnaire de processus (ou tâche).
+
+{{:applications:moniteur_systeme.png?300|}}
+
+===== Installation =====
+ 
+
+Sous [[Gnome]] le Moniteur système est installé par défaut.
+Sinon, il suffit d'[[:tutoriel:comment_installer_un_paquet|installer le paquet]] **[[apt://gnome-system-monitor|gnome-system-monitor]]**.
+
+
+
+===== Configuration =====
+
+====Consommer moins de CPU avec le moniteur système====
+La configuration par défaut du moniteur système prend un peu trop de ressources CPU ([[https://bugs.launchpad.net/ubuntu/+source/gnome-system-monitor/+bug/93847|bug Launchpad]]).
+
+Nous allons donc le configurer :
+
+Lancez un **moniteur système** ( Aller dans Système → Administration → Moniteur Système )
+  * Dans Édition (menu) -> Préférences ->
+  * Dans Processus (onglet)-> Augmenter la fréquence de mise à jour ( ex : 3 secondes)
+  * Dans Ressources (onglet)-> Augmenter la fréquence de mise à jour ( ex : 5 secondes)
+  * Dans Système de fichier (onglet)-> Augmenter la fréquence de mise à jour ( ex : 5 secondes)
+
+====Affecter un raccourci-clavier pour afficher le moniteur Système ====
+
+Dans //Système → Préférences → Raccourcis clavier//, puis ( étant donné qu'il n'est pas présent dans la liste ) :
+  * Cliquer sur «Ajouter». 
+  * Donner le nom de votre choix (par exemple Moniteur système) 
+  * et la commande :<code>gnome-system-monitor</code>
+  * Enfin attribuer les touches de raccourci de votre choix.
+
+
+Ou dans un [[terminal]] :
+<code>
+gconftool-2 -t str --set /apps/metacity/keybinding_commands/command_1 "gnome-system-monitor"
+gconftool-2 -t str --set /apps/metacity/global_keybindings/run_command_1 "<Control><Alt>Insert"
+</code>
+
+
+==== Ajouter le Moniteur système sur votre tableau de bord ====
+    * Clic droit sur votre tableau de bord → Ajouter au tableau de bord → Trouver ( en recherchant) et déplacer le Moniteur Système à l'endroit désiré.
+
+N'oubliez pas de le configurer pour qu'il consomme moins de ressources.
+
+    * Clic droit sur le Moniteur Système sur le tableau de bord → Préférences → Augmenter la fréquence de mise à jour du système ( exemple 1000, ou 2000, millisecondes).
+
+**Vous pourrez lancer un moniteur système en cliquant sur ce graphique.**
+
+==== Ajouter le Moniteur système sur l'Interface Unity ====
+
+<note help>Avec l'interface [[:Unity]] introduit avec Ubuntu 11.04, les tableaux de bords n'existent plus. [[:Unity]] introduit les indicators qui remplacent les applets du tableau de bord.</note>
+
+Vous pouvez installer l'équivalent en :
+  * ajoutant [[https://launchpad.net/~indicator-multiload/+archive/stable-daily|ce]] dépôt PPA **ppa:indicator-multiload/stable-daily**
+  * Installant le paquet **[[apt://indicator-multiload|indicator-multiload ]]**
+
+En 11.10, le paquet a intégré le dépôt universe.
+
+Source [[http://www.omgubuntu.co.uk/2011/05/indicator-multiload-is-a-gnome-applet-style-system-monitor-for-your-desktop-panel/|OMG! Ubuntu!]] (en anglais)
+
+=====Utilisation=====
+
+==== Tuer un processus avec le moniteur système ====
+
+
+Cette manipulation est possible quand le système gèle : un processus utilise "100%" du processeur ( bogue ou procédure non désirée).
+
+Vous pouvez tuer facilement les processus avec le moniteur système.
+
+ {{ :applications:moniteur_systeme2.png?300|}}
+
+Aller dans Système → Administration → Moniteur Système → Cliquer sur le processus :
+
+    * **Méthode amicale** : Essayez de terminer le processus. Si cela ne fonctionne pas :
+    * **Faites un clic droit sur le processus et cliquer sur tuer le processus**.
+
+<note help>Attention "Tuer le processus" arrêtera le processus, même s'il était en train de faire quelque chose de vital ( il faut le comprendre ). 
+
+Il existe également l'applet "Forcer à quitter" que vous pouvez mettre sur votre tableau de bord.
+
+Utilisation : vous cliquez sur l'applet "Forcer à quitter", puis sur la fenêtre du logiciel qui a planté.
+</note>
+==== Changer la priorité d'un 'logiciel' ====
+
+Pour baisser la priorité d'un processus facilement lancer un Moniteur système : 
+  * Clic droit sur le processus → modifier la priorité → déplacer pour obtenir faible ou très faible.
+
+
+Voir [[:tutoriel:changer_priorite_processus|changer la priorité d'un processus]]
+ 
+==== Canal d'attente ====
+
+[[http://askubuntu.com/questions/19442/what-is-the-waiting-channel-of-a-process|source]]
+
+Le canal d'attente est le nom d'une fonction du noyau dans laquelle le processus est actuellement bloqué.
+
+Cette fonction a généralement à voir avec un appel système documenté (cf. pages 'man' ou sources du noyau)
+
+Ex. :
+  * **do_wait** correspond à l'appel système //wait()// 
+  * **futex_wait_queue**_me est relatif au Futex (cf. [[http://fr.wikipedia.org/wiki/Futex|Fast Userspace muTual EXclusion]]). Ici l'état //wait// indique que le processus attend de recevoir un verrou.
+  * **poll_schedule_timeout** est relatif à la synchronisation d'accès aux périphériques d'entrée/sortie.
+  * **wait_for_packet** : le processus attend un packet IP sur un socket.
+  * ...
+
+Si vous tapez "cat /proc/[pid]/stack" dans un terminal, vous obtiendrez quelque chose comme ça :
+
+<file>[<c0227f4e>] poll_schedule_timeout+0x3e/0x60
+[<c022879f>] do_select+0x55f/0x670
+[<c0228f40>] core_sys_select+0x140/0x240
+[<c0229241>] sys_select+0x31/0xc0
+[<c05c9cc4>] syscall_call+0x7/0xb
+[<ffffffff>] 0xffffffff
+</file>
+
+
+La première ligne correspond à ce qui est affiché par le moniteur système.
+
+=====Voir aussi=====
+
+  * Portail [[Système]], [[Administration]], [[centre_de_controle]]
+  * Commande : [[tutoriel:console_commandes_de_base#top|top]]
+
+----
+
+//Contributeurs : [[:utilisateurs:psychederic|Psychederic]].//

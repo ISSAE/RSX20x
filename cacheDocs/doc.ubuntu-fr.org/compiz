@@ -1,0 +1,805 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>compiz_fusion - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-02-25T08:56:00+0100"/>
+<meta name="keywords" content="lucid,gestionnaire de fenetres,personnalisation"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="compiz_fusion?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="compiz_fusion?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/compiz_fusion"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/compiz_fusion"/>
+<link rel="canonical" href="compiz_fusion"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"compiz_fusion","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="compiz#main" tabindex="1">Contenu</a> | <a href="compiz#qsearch__in" tabindex="2">Rechercher</a> | <a href="compiz#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="compiz" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="compiz_fusion" >compiz_fusion</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, les informations qu'elle contient  n'ont pas été vérifiées depuis <a href="lucid">Ubuntu 10.04 LTS.</a><br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="compiz#avant_toute_chose">Avant toute chose</a></div></li>
+<li class="level1"><div class="li"><a href="compiz#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="compiz#utilisation_basique_lancementarret">Utilisation basique (lancement/arrêt)</a></div></li>
+<li class="level1"><div class="li"><a href="compiz#mon_premier_effet_compiz">Mon premier effet compiz</a></div></li>
+<li class="level1"><div class="li"><a href="compiz#utilisation_avancee_utilisateurs_experimentes">Utilisation avancée (utilisateurs expérimentés)</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="compiz#obtenir_des_effets_supplementaires_greffons">Obtenir des effets supplémentaires (greffons)</a></div></li>
+<li class="level2"><div class="li"><a href="compiz#plugin_compiz_live_wallpapers">Plugin Compiz live wallpapers</a></div></li>
+<li class="level2"><div class="li"><a href="compiz#plugin_experimental">Plugin expérimental</a></div></li>
+<li class="level2"><div class="li"><a href="compiz#lancement_de_compiz_au_demarrage_sous_ubuntu">Lancement de Compiz au démarrage sous Ubuntu</a></div></li>
+<li class="level2"><div class="li"><a href="compiz#lancement_de_compiz_au_demarrage_sous_kubuntu">Lancement de Compiz au démarrage sous Kubuntu</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="compiz#problemes_connus">Problèmes connus</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="compiz#incompatibilite_du_cube_avec_la_distribution_ubuntu_1104">Incompatibilité du cube avec la distribution Ubuntu 11.04</a></div></li>
+<li class="level2"><div class="li"><a href="compiz#les_coins_actifs_disparaissent_apres_la_fermeture_de_la_session_avec_la_distribution_ubuntu_1204">Les coins actifs disparaissent après la fermeture de la session avec la distribution Ubuntu 12.04</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="compiz#utilitaires_complementaires">Utilitaires complémentaires</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="compiz#fusion-icon">Fusion-Icon</a></div></li>
+<li class="level2"><div class="li"><a href="compiz#compiz-switch">Compiz-Switch</a></div></li>
+<li class="level2"><div class="li"><a href="compiz#gconf-editor">Gconf-editor</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="compiz#desactivation">Désactivation</a></div></li>
+<li class="level1"><div class="li"><a href="compiz#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="compiz#voir_aussi">Voir aussi</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="compiz#tutoriels_videos">Tutoriels vidéos</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="gestionnaire_de_fenetres" class="wikilink1" title="gestionnaire_de_fenetres" rel="tag">gestionnaire de fenêtres</a>,
+	<a href="personnalisation" class="wikilink1" title="personnalisation" rel="tag">personnalisation</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="compiz-fusion_gestionnaire_de_bureau_en_3d">Compiz-Fusion, gestionnaire de bureau en 3D</h1>
+<div class="level1">
+
+<p>
+<a href="_detail/image/logo/compiz_logo.png?id=compiz_fusion" class="media" title="image:logo:compiz_logo.png"><img src="_media/image/logo/compiz_logo.png?w=100&amp;tok=9858c2" class="medialeft" alt="" width="100" /></a><a href="http://fr.wikipedia.org/wiki/Compiz" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Compiz">Compiz Fusion</a> est un <a href="gestionnaire_de_fenetres" class="wikilink1" title="gestionnaire_de_fenetres">gestionnaire de bureau</a> en 3D, fusion de Beryl et de Compiz. Il vous permettra d&#039;ajouter divers effets graphiques à votre bureau Ubuntu. Par exemple : animations lors du déplacement de fenêtres, transitions lors de changement de bureau, transparence des fenêtres, pluie/neige sur votre bureau, etc.
+</p>
+
+<p>
+<a href="_detail/compizfusion4bureaux_intrepid_01.png?id=compiz_fusion" class="media" title="compizfusion4bureaux_intrepid_01.png"><img src="_media/compizfusion4bureaux_intrepid_01.png?w=300&amp;tok=732d75" class="media" alt="" width="300" /></a> <a href="_detail/compizfusioncube_intrepid_03.png?id=compiz_fusion" class="media" title="compizfusioncube_intrepid_03.png"><img src="_media/compizfusioncube_intrepid_03.png?w=300&amp;tok=261e9b" class="media" alt="" width="300" /></a>
+<a href="_detail/compizfusionatlantis_intrepid_01.png?id=compiz_fusion" class="media" title="compizfusionatlantis_intrepid_01.png"><img src="_media/compizfusionatlantis_intrepid_01.png?w=300&amp;tok=44cb21" class="media" alt="" width="300" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Compiz-Fusion, gestionnaire de bureau en 3D] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="64-665" /><input type="submit" value="Modifier" class="button" title="Compiz-Fusion, gestionnaire de bureau en 3D" /></div></form></div>
+<h2 class="sectionedit2" id="avant_toute_chose">Avant toute chose</h2>
+<div class="level2">
+
+<p>
+Dans un terminal:
+</p>
+<pre class="code">glxinfo | grep &quot;direct rendering&quot;</pre>
+
+<p>
+Si la sortie est différente de:
+</p>
+<pre class="code">direct rendering: Yes</pre>
+
+<p>
+Votre machine ne peut pas supporter compiz.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Avant toute chose] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="666-876" /><input type="submit" value="Modifier" class="button" title="Avant toute chose" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Le paquet Compiz est normalement installé avec les versions récentes d&#039;Ubuntu, mais vous pouvez vérifier la présence du paquet <strong><a href="apt://compiz" class="interwiki iw_apt" title="apt://compiz">compiz</a></strong> , plus d&#039;information sur <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">l&#039;installation de paquets</a>.
+</p>
+
+<p>
+Pour configurer les effets de Compiz Fusion :
+</p>
+<ul>
+<li class="level1"><div class="li"> Installez <a href="compizconfig-settings-manager" class="wikilink1" title="compizconfig-settings-manager">CompizConfig-Settings-Manager</a>.</div>
+</li>
+<li class="level1"><div class="li"> Avec l&#039;environnement KDE d&#039;Ubuntu &quot;Kubuntu&quot; vous n&#039;avez pas besoin d&#039;installer  <a href="compizconfig-settings-manager" class="wikilink1" title="compizconfig-settings-manager">CCSM</a> : paramétrez directement les effets depuis le menu <em>Configuration du système → Effets de bureau → Tous les effets</em></div>
+</li>
+</ul>
+
+<p>
+La configuration des effets du bureau de KDE sur Kubuntu 11.10
+</p>
+
+<p>
+<a href="_detail/kde/kubuntu_effet_conpiz.png?id=compiz_fusion" class="media" title="kde:kubuntu_effet_conpiz.png"><img src="_media/kde/kubuntu_effet_conpiz.png?w=600&amp;tok=318a94" class="media" title="La fenêtre de configuration sur Kubuntu 11.10" alt="La fenêtre de configuration sur Kubuntu 11.10" width="600" /></a>
+</p>
+
+<p>
+Le <a href="compizconfig-settings-manager" class="wikilink1" title="compizconfig-settings-manager">gestionnaire de configuration Compiz</a> :
+</p>
+
+<p>
+<a href="_detail/compizconfiggestionnairedeconfiguration_intrepid_01.png?id=compiz_fusion" class="media" title="compizconfiggestionnairedeconfiguration_intrepid_01.png"><img src="_media/compizconfiggestionnairedeconfiguration_intrepid_01.png?w=600&amp;tok=4bd32a" class="media" alt="" width="600" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="877-1845" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit4" id="utilisation_basique_lancementarret">Utilisation basique (lancement/arrêt)</h2>
+<div class="level2">
+
+</div>
+
+<h4 id="kubuntu">Kubuntu</h4>
+<div class="level4">
+
+<p>
+Démarré automatiquement, il ne vous reste plus qu&#039;à configurer les effets de bureau.
+</p>
+
+</div>
+
+<h4 id="ubuntu">Ubuntu</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Ubuntu/Unity : Tableau de bord, Recherche compiz</div>
+</li>
+<li class="level1"><div class="li"> Ubuntu/Gnome : Ouvrez : <em> Système → Préférences → Apparence</em>, puis allez dans l&#039;onglet <em>Effets Visuels</em>.</div>
+</li>
+</ul>
+
+<p>
+Choisissez ce que vous préférez entre <em>Aucun</em>, <em>Normal</em> ou <em>Extra</em>  (cette configuration sera  mémorisée pour chaque démarrage )
+</p>
+
+<p>
+<p><div class="noteclassic">Après la mise à niveau avec 11.10 et Gnome remis à la place de Unity tel qu&#039;expliqué dans <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=670871" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=670871"  rel="nofollow">ce sujet du forum</a>, relancez Compiz-fusion en suivant le premier point pour Kubuntu.
+</div></p>
+</p>
+
+</div>
+
+<h4 id="xubuntu">Xubuntu</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Dans la catégorie &quot;Effets&quot;, cocher &quot;Décoration des fenêtres&quot;, puis remplir le champ &quot;Commande&quot; de cette option avec « &#039;&#039;emerald --replace&#039;&#039; ».</div>
+</li>
+<li class="level1"><div class="li"> Puis pour lancer compiz fusion utiliser la commande suivante : <pre class="code">killall xfwm4 &amp;&amp; compiz --replace</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Pour l&#039;arrêter proprement et revenir à xfwm4 : <pre class="code">killall compiz.real &amp;&amp; xfwm4 --replace</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Méthode alternative 1 : utiliser le petit programme <a href="compiz#compiz-switch" title="compiz_fusion ↵" class="wikilink1">Compiz-Switch</a> (voir fin de cette page).</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="autre_methode_de_lancement">Autre méthode de lancement</h4>
+<div class="level4">
+
+<p>
+<p><div class="noteclassic">Cette méthode a été utilisée après la mise à niveau de Ubuntu <a href="natty" class="wikilink1" title="natty">11.04</a> vers Ubuntu <a href="oneiric" class="wikilink1" title="oneiric">11.10</a> et après avoirs remis Gnome tel qu&#039;expliqué dans <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=670871" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=670871"  rel="nofollow">ce sujet du forum</a>
+</div></p>
+Si à chaque démarrage, compiz-fusion ne démarre pas, il suffit de l&#039; <a href="http://doc.ubuntu-fr.org/tutoriel/application_demarrage" class="wikilink1" title="tutoriel:application_demarrage">ajouter dans les applications au démarrage</a> en indiquant pour le champ <em>Commande</em>
+</p>
+<pre class="code">compiz --replace</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Utilisation basique (lancement/arrêt)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1846-3586" /><input type="submit" value="Modifier" class="button" title="Utilisation basique (lancement/arrêt)" /></div></form></div>
+<h2 class="sectionedit5" id="mon_premier_effet_compiz">Mon premier effet compiz</h2>
+<div class="level2">
+
+<p>
+Apparence, effet fenêtres en gélatine. ( Appliquer les changements, fermer )
+</p>
+
+<p>
+Bouger une fenêtres, pour observer un effet élastique.
+</p>
+
+<p>
+<p><div class="noteimportant">
+Sachant que <a href="compizconfig-settings-manager" class="wikilink1" title="compizconfig-settings-manager">compizconfig-settings-manager</a> contient plusieurs centaines de paramètres, il est facile de tout casser.<br/>
+
+Pensez donc à  faire une sauvegarde de votre profil Compiz depuis son menu <em>Préférences → Profil → Exporter dans un fichier</em>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Mon premier effet compiz] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3587-4045" /><input type="submit" value="Modifier" class="button" title="Mon premier effet compiz" /></div></form></div>
+<h2 class="sectionedit6" id="utilisation_avancee_utilisateurs_experimentes">Utilisation avancée (utilisateurs expérimentés)</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Utilisation avancée (utilisateurs expérimentés)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4046-4108" /><input type="submit" value="Modifier" class="button" title="Utilisation avancée (utilisateurs expérimentés)" /></div></form></div>
+<h3 class="sectionedit7" id="obtenir_des_effets_supplementaires_greffons">Obtenir des effets supplémentaires (greffons)</h3>
+<div class="level3">
+
+<p>
+Pour avoir un plus grand choix d&#039;effets (neige, poissons dans le cube, etc.), <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> suivant :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><a href="apt://compiz-plugins" class="interwiki iw_apt" title="apt://compiz-plugins">compiz-plugins</a></strong> <sup><a href="compiz#fn__1" id="fnt__1" class="fn_top">1)</a></sup> </div>
+</li>
+</ul>
+
+<p>
+Pour plus d&#039;informations, voir la page dédiée aux <strong><a href="compiz_fusion_greffons" class="wikilink1" title="compiz_fusion_greffons">greffons de Compiz Fusion</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Obtenir des effets supplémentaires (greffons)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4109-4654" /><input type="submit" value="Modifier" class="button" title="Obtenir des effets supplémentaires (greffons)" /></div></form></div>
+<h3 class="sectionedit8" id="plugin_compiz_live_wallpapers">Plugin Compiz live wallpapers</h3>
+<div class="level3">
+
+<p>
+Une page consacrée à ce plugin a été créée : <a href="compiz-plugins-livewallpapers" class="wikilink1" title="compiz-plugins-livewallpapers">Compiz-Plugins-LiveWallpapers</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Plugin Compiz live wallpapers] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4655-4808" /><input type="submit" value="Modifier" class="button" title="Plugin Compiz live wallpapers" /></div></form></div>
+<h3 class="sectionedit9" id="plugin_experimental">Plugin expérimental</h3>
+<div class="level3">
+
+<p>
+Le plugin ci-dessous est instable, son installation est déconseillée :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="headtracking" class="wikilink1" title="headtracking">headtracking</a> :  le suivi du mouvement de la tête avec votre webcam</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Plugin expérimental] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4809-4993" /><input type="submit" value="Modifier" class="button" title="Plugin expérimental" /></div></form></div>
+<h3 class="sectionedit10" id="lancement_de_compiz_au_demarrage_sous_ubuntu">Lancement de Compiz au démarrage sous Ubuntu</h3>
+<div class="level3">
+<pre class="code">gconftool-2 --set --type=string &quot;/desktop/gnome/session/required_components/windowmanager&quot; &quot;compiz&quot;
+gconftool-2 --set --type=bool &quot;/apps/gdm/simple-greeter/wm_use_compiz&quot; &quot;true&quot;</pre>
+
+<p>
+<p><div class="noteimportant">
+Ceci a été testé sous Ubuntu 10.04 LTS, cependant en cas de problème il est préférable d&#039;avoir sauvegardé l&#039;ancienne configuration
+</p>
+
+<p>
+Pour <em class="u">sauvegarder</em> :
+</p>
+<pre class="code">gconftool-2 --dump &quot;/desktop/gnome/session/required_components&quot; &quot;/apps/gdm/simple-greeter&quot; &gt;&quot;$HOME/gconf.dump&quot;</pre>
+
+<p>
+Pour <em class="u">recharger</em> :
+</p>
+<pre class="code">gconftool-2 --load &quot;$HOME/gconf.dump&quot;</pre>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Lancement de Compiz au démarrage sous Ubuntu] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4994-5627" /><input type="submit" value="Modifier" class="button" title="Lancement de Compiz au démarrage sous Ubuntu" /></div></form></div>
+<h3 class="sectionedit11" id="lancement_de_compiz_au_demarrage_sous_kubuntu">Lancement de Compiz au démarrage sous Kubuntu</h3>
+<div class="level3">
+
+<p>
+S&#039;il n&#039;existe pas déjà, <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">créez</a> dans votre <em>Dossier Personnel</em> le fichier <strong>.kde4/Autostart/compiz</strong><sup><a href="compiz#fn__2" id="fnt__2" class="fn_top">2)</a></sup> pour y insérer les lignes suivantes:
+</p>
+<pre class="file">#!/bin/sh
+compiz --replace &amp;
+emerald --replace &amp;</pre>
+
+<p>
+N&#039;oubliez pas de donner les <a href="http://doc.ubuntu-fr.org/droits" class="wikilink1" title="droits">droits</a> nécessaires à son exécution :
+</p>
+<pre class="code">chmod +x ~/.kde4/Autostart/compiz</pre>
+
+</div>
+
+<h4 id="autre_solution">Autre solution :</h4>
+<div class="level4">
+
+<p>
+La <a href="compiz#lancement_de_compiz_au_demarrage_sous_kubuntu" title="compiz_fusion ↵" class="wikilink1">solution ci-dessus</a> lance d&#039;abord <a href="kwin" class="wikilink1" title="kwin">kwin</a> pour le remplacer ensuite par compiz, ce qui est une perte de temps et fait &quot;clignoter&quot; l&#039;écran.<br/>
+
+Il y a une solution plus efficace :
+Allez dans <em>Gestionnaire de configuration → Application par défaut → Window Manager</em>, choisir <em>compiz</em> dans la liste puis <em>Appliquer</em>.
+</p>
+
+<p>
+<p><div class="noteimportant">
+En cas de problème au démarrage sous X, suite à l’installation d&#039;un driver propriétaire par exemple, il faudra <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">modifier le fichier</a> <strong>~/.kde/share/config/ksmserverrc</strong> <sup><a href="compiz#fn__3" id="fnt__3" class="fn_top">3)</a></sup> pour remplacer
+</p>
+<pre class="file">windowManager=compiz</pre>
+
+<p>
+par: 
+</p>
+<pre class="file">windowManager=kwin</pre>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Lancement de Compiz au démarrage sous Kubuntu] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5628-6929" /><input type="submit" value="Modifier" class="button" title="Lancement de Compiz au démarrage sous Kubuntu" /></div></form></div>
+<h2 class="sectionedit12" id="problemes_connus">Problèmes connus</h2>
+<div class="level2">
+
+<p>
+Voir la page dédiée aux <a href="http://doc.ubuntu-fr.org/compiz_fusion_problemes_connus" class="wikilink1" title="compiz_fusion_problemes_connus">problèmes connus de Compiz Fusion</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Problèmes connus] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6930-7059" /><input type="submit" value="Modifier" class="button" title="Problèmes connus" /></div></form></div>
+<h3 class="sectionedit13" id="incompatibilite_du_cube_avec_la_distribution_ubuntu_1104">Incompatibilité du cube avec la distribution Ubuntu 11.04</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="exporter_un_profil_backup">Exporter un profil (backup)</h4>
+<div class="level4">
+
+<p>
+<a href="_media/compiz_exporter_importer.png" class="media" title="compiz_exporter_importer.png"><img src="_media/compiz_exporter_importer.png" class="mediacenter" alt="" /></a>
+Pour exporter un profil :
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour parer à ce problème il faut cliquer sur : <em class="u">Système &gt; Préférences &gt; Gestionnaire de Configuration CompizConfig</em>. </div>
+</li>
+<li class="level1"><div class="li"> Ensuite à gauche de la fenêtre cliquez sur :  <em class="u">Préférences &gt; Exporter</em>.  </div>
+</li>
+</ul>
+
+<p>
+Donner un nom à la configuration la défaut de Compiz et enregistrez-le en faisant attention de vous rappeler là où il se trouve.
+</p>
+
+</div>
+
+<h4 id="importer_et_modifier_son_profil">Importer et modifier son profil</h4>
+<div class="level4">
+
+<p>
+Avant toute manipulation de compiz, faites un raccourci vers <a href="compizconfig-settings-manager" class="wikilink1" title="compizconfig-settings-manager">ccsm</a> sur votre bureau :
+</p>
+<pre class="code">sudo ln -s /usr/bin/ccsm ~/Bureau</pre>
+
+<p>
+Ouvrez votre <a href="http://doc.ubuntu-fr.org/gestionnaire_de_fichiers" class="wikilink1" title="gestionnaire_de_fichiers">gestionnaire de fichiers</a> et allez dans le répertoire où vous avez <a href="compiz#exporter_un_profil_backup" title="compiz_fusion ↵" class="wikilink1">exporté votre fichier de configuration de Compiz</a>. Faites-en une copie. (compizrc) 
+</p>
+
+<p>
+<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Éditez</a> cette copie, puis recherchez <sup><a href="compiz#fn__4" id="fnt__4" class="fn_top">4)</a></sup>:
+</p>
+<pre class="file">s0_active_plugins= </pre>
+
+<p>
+Cette ligne contient la liste des plugins activés. Dans cette liste remplacez l’occurrence
+</p>
+<pre class="file">;wall;</pre>
+
+<p>
+par 
+</p>
+<pre class="file">;cube;rotate;</pre>
+
+<p>
+Dans cette ligne les fonctions liées au Cube sont :
+</p>
+<div class="table sectionedit14"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign">  Fonction utilisé  </th><th class="col1 centeralign">  Explication  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">  cube  </td><td class="col1 centeralign">  pour le Cube lui-même  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  rotate  </td><td class="col1 centeralign">  pour la rotation du Cube  </td>
+	</tr>
+</table></div>
+
+<p>
+Refaites une recherche <sup><a href="compiz#fn__5" id="fnt__5" class="fn_top">5)</a></sup> sur les occurrences <strong>s0_hsize</strong> et <strong>s0_vsize</strong> que vous modifierez comme ceci (si vous ne les trouvez pas, ajoutez-les à la section <strong>[core]</strong>):
+</p>
+<pre class="file">s0_hsize = 4
+s0_vsize = 1</pre>
+
+<p>
+Et ensuite renommer le fichier <strong>xxx.profile</strong> <sup><a href="compiz#fn__6" id="fnt__6" class="fn_top">6)</a></sup> en <strong>compizrc</strong> <sup><a href="compiz#fn__7" id="fnt__7" class="fn_top">7)</a></sup> et le mettre dans le dossier <strong>.kde/share/config</strong> <sup><a href="compiz#fn__8" id="fnt__8" class="fn_top">8)</a></sup> en lieu et place de l&#039;existant.
+</p>
+
+<p>
+<p><div class="noteimportant">
+Ceci n&#039;activera que certains effets liés aux cubes. Ça prend quelques instants pendant lesquelles l&#039;ordinateur risque de freezer.
+
+</div></p>
+</p>
+
+<p>
+<p><div class="notewarning"> Les effets liés aux cubes ne peuvent être ajouter/enlevés qu&#039;en supprimant les codes correspondants dans le fichier de configuration puis en le rechargeant, sinon ça plante le gestionnaire de fenêtres. Les autres effets (Trailfocus, déformer des fenêtres…) peuvent être activés/désactivés de façon classique.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Incompatibilité du cube avec la distribution Ubuntu 11.04] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7060-9692" /><input type="submit" value="Modifier" class="button" title="Incompatibilité du cube avec la distribution Ubuntu 11.04" /></div></form></div>
+<h3 class="sectionedit15" id="les_coins_actifs_disparaissent_apres_la_fermeture_de_la_session_avec_la_distribution_ubuntu_1204">Les coins actifs disparaissent après la fermeture de la session avec la distribution Ubuntu 12.04</h3>
+<div class="level3">
+
+<p>
+Vous avez défini des coins actifs avec Ubuntu tweak ou l&#039;outil de configuration de compiz ( CCSM ), seulement après la fermeture de la session, les coins actifs ne sont pas maintenus. Voila comment résoudre le problème.
+</p>
+
+<p>
+Dans un terminal, installez  gconf-editor:
+</p>
+
+<p>
+sudo apt-get install gconf-editor
+</p>
+
+<p>
+Mettre à jour:
+</p>
+
+<p>
+sudo apt-get update
+</p>
+
+<p>
+Lancez gconf-editor:
+</p>
+
+<p>
+gconf-editor
+</p>
+
+<p>
+Dans la fenêtre qui apparaît, déroulez &quot;apps&quot; dans la partie gauche,
+</p>
+
+<p>
+puis déroulez &quot;compiz-1&quot;,
+</p>
+
+<p>
+puis déroulez &quot;general&quot;,
+</p>
+
+<p>
+puis déroulez &quot;screen0&quot;,
+</p>
+
+<p>
+enfin, cliquez  sur &quot;options&quot;.
+</p>
+
+<p>
+Dans la partie droite de la fenêtre, double-cliquez sur &quot;active_plugins&quot;.
+</p>
+
+<p>
+Dans la nouvelle fenêtre qui apparaît, cherchez et sélectionnez &quot;expo&quot;, et faite-le descendre (bouton &quot;Descendre&quot; à droite) jusqu&#039;en bas de la liste, sous &quot;unityshell&quot;.
+</p>
+
+<p>
+Sélectionnez ensuite &quot;scale&quot; et faite-le descendre juste au-dessus de &quot;expo&quot; (entre &quot;unityshell&quot; et &quot;expo&quot;, donc).
+</p>
+
+<p>
+Validez et fermez gconf-editor.
+</p>
+
+<p>
+Reconfigurez éventuellement les zones de hotspot (coins actifs) avec ubuntu-tweak, et ta configuration devrait dès lors être conservée.
+</p>
+
+<p>
+Source :<a href="http://forum.ubuntu-fr.org/viewtopic.php?id=949581" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=949581"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=949581</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Les coins actifs disparaissent après la fermeture de la session avec la distribution Ubuntu 12.04] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9693-10972" /><input type="submit" value="Modifier" class="button" title="Les coins actifs disparaissent après la fermeture de la session avec la distribution Ubuntu 12.04" /></div></form></div>
+<h2 class="sectionedit16" id="utilitaires_complementaires">Utilitaires complémentaires</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Utilitaires complémentaires] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10973-11014" /><input type="submit" value="Modifier" class="button" title="Utilitaires complémentaires" /></div></form></div>
+<h3 class="sectionedit17" id="fusion-icon">Fusion-Icon</h3>
+<div class="level3">
+
+<p>
+<a href="_detail/compiz_fusion_icon.png?id=compiz_fusion" class="media" title="compiz_fusion_icon.png"><img src="_media/compiz_fusion_icon.png" class="media" title="Compiz Fusion Icon" alt="Compiz Fusion Icon" /></a>
+</p>
+
+<p>
+Fusion-Icon est un petit programme qui se loge dans la boîte à miniatures et vous permettra de modifier certains paramètres de compiz Fusion, de le désactiver, d&#039;avoir un accès direct au ccsm et au panneau de configuration d&#039;Emerald. Pour les utilisateurs de carte nvidia rencontrant des problèmes, il permet d&#039;activer ou de désactiver les options &quot;loose binding&quot; et &quot;indirect rendering&quot; en un clic.
+</p>
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://fusion-icon" class="interwiki iw_apt" title="apt://fusion-icon">fusion-icon</a></strong>.
+</p>
+
+<p>
+Pour avoir l&#039;icône de Compiz-Fusion dans la barre d&#039;outils, <a href="http://doc.ubuntu-fr.org/tutoriel/application_demarrage" class="wikilink1" title="tutoriel:application_demarrage">ajoutez dans les applications au démarrage</a> la commande <strong>fusion-icon</strong> (utilisez l&#039;option « &#039;&#039;--no-start&#039;&#039; » pour ne pas avoir à redémarrer Compiz sous Hardy).
+</p>
+
+<p>
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> ne semble plus fonctionner sous 11.10 OO
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Fusion-Icon] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11015-11907" /><input type="submit" value="Modifier" class="button" title="Fusion-Icon" /></div></form></div>
+<h3 class="sectionedit18" id="compiz-switch">Compiz-Switch</h3>
+<div class="level3">
+
+<p>
+<a href="_detail/application/applications/compiz-switch-panel.png?id=compiz_fusion" class="media" title="application:applications:compiz-switch-panel.png"><img src="_media/application/applications/compiz-switch-panel.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Il existe une alternative à Fusion-icon avec un paquet deb pour Ubuntu disponible sur <a href="http://forlong.blogage.de/article/pages/Compiz-Switch" class="urlextern" title="http://forlong.blogage.de/article/pages/Compiz-Switch"  rel="nofollow">le site de l&#039;auteur du projet</a> si vous recherchez uniquement une activation/désactivation de Compiz-fusion à l&#039;aide d&#039;un simple clic.
+</p>
+<ul>
+<li class="level1"><div class="li"> Si Compiz fonctionne, il active le décorateur de bureau par défaut.</div>
+</li>
+<li class="level1"><div class="li"> Si Compiz ne fonctionne pas, il le lance immédiatement.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic"> Compiz-Switch ne fonctionne pas sur Ubuntu <a href="lucid" class="wikilink1" title="lucid">10.04</a> peut-on lire <a href="http://forlong.blogage.de/entries/pages/Compiz-Switch" class="urlextern" title="http://forlong.blogage.de/entries/pages/Compiz-Switch"  rel="nofollow">ici</a> (« Compiz fonctionne différemment sur Ubuntu 10.04 Lucid Lynx »).<br/>
+Dans l&#039;attente d&#039;un nouveau paquet corrigeant ce bogue, il suffit de taper la commande suivante dans un <a href="terminal" class="wikilink1" title="terminal">Terminal</a> (après l&#039;installation du paquet) : 
+</p>
+<pre class="code">sudo sed &#039;s/\.real//g&#039; -i /usr/bin/compiz-switch</pre>
+
+<p>
+ 
+</div></p>
+<p><div class="noteclassic">
+Compiz-Switch semble poser certains problèmes lors du passage de Ubuntu 10.04 à Ubuntu 11.04. (erreur &quot;/usr/bin/dpkg&quot; qui fait échouer la mise à niveau).
+Modifiez les fichiers <strong>/var/lib/dpkg/status</strong> et <strong>/var/lib/dpkg/available</strong> (faire une recherche sur compiz-switch) et changez le champ <em>priority</em> de <code>low</code> à <code>optional</code> pour le pkg compiz-switch. Relancez ensuite la mise à niveau vers 11.04.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Compiz-Switch] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11908-13264" /><input type="submit" value="Modifier" class="button" title="Compiz-Switch" /></div></form></div>
+<h3 class="sectionedit19" id="gconf-editor">Gconf-editor</h3>
+<div class="level3">
+
+<p>
+Personnalisation par le menu <em>apps → compiz</em>. Voir aussi <a href="gconf" class="wikilink1" title="gconf">gconf</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Gconf-editor] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13265-13360" /><input type="submit" value="Modifier" class="button" title="Gconf-editor" /></div></form></div>
+<h2 class="sectionedit20" id="desactivation">Désactivation</h2>
+<div class="level2">
+
+<p>
+Pour désactiver Compiz, aller dans le menu <em>Système → Préférence → Apparence → onglet &quot;Effets visuels&quot;</em> et mettre sur <em>Aucun</em> (sera mémorisé même aux prochains redémarrages!).<br/>
+
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Sur les dernières versions ? dans Lightdm?
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Désactivation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13361-13634" /><input type="submit" value="Modifier" class="button" title="Désactivation" /></div></form></div>
+<h2 class="sectionedit21" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer</a> son paquet. La configuration de l&#039;application sera conservée ou supprimée selon la méthode de désinstallation que vous choisirez.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Désinstallation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13635-13898" /><input type="submit" value="Modifier" class="button" title="Désinstallation" /></div></form></div>
+<h2 class="sectionedit22" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"><a href="compizconfig-settings-manager" class="wikilink1" title="compizconfig-settings-manager">ccsm, le gestionnaire de configuration de Compiz-Fusion</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.webupd8.org/2010/11/install-compiz-experimental-plugins-in.html" class="urlextern" title="http://www.webupd8.org/2010/11/install-compiz-experimental-plugins-in.html"  rel="nofollow">Install Compiz 0.8.x Experimental Plugins In Ubuntu</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=371242" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=371242"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=371242</a> <strong>tutorial - fonds d&#039;écrans individuels par bureau (fr)</strong></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.linuxpedia.fr/doku.php/compiz-fusion-effets#effets_visuels_plug_ins_de_compiz-fusion" class="urlextern" title="http://www.linuxpedia.fr/doku.php/compiz-fusion-effets#effets_visuels_plug_ins_de_compiz-fusion"  rel="nofollow">http://www.linuxpedia.fr/doku.php/compiz-fusion-effets#effets_visuels_plug_ins_de_compiz-fusion</a> <strong>détails sur quelques effets de ccsm (fr)</strong></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.omgubuntu.co.uk/2011/04/compiz-cube-natty/" class="urlextern" title="http://www.omgubuntu.co.uk/2011/04/compiz-cube-natty/"  rel="nofollow">Tutoriel sur comment activer le cube dans unity 11.04</a> <strong>(en)</strong></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://lehollandaisvolant.net/linux/ccsm.php/" class="urlextern" title="http://lehollandaisvolant.net/linux/ccsm.php/"  rel="nofollow">Le gestionnaire Compiz Fusion par &quot;lehollandaisvolant.net&quot;</a> <strong>(fr)</strong></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13899-14666" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<h3 class="sectionedit23" id="tutoriels_videos">Tutoriels vidéos</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.tutoriels-video.fr/des-effets-graphiques-de-folie-pour-votre-bureau-ubuntu-avec-compiz-fusion/" class="urlextern" title="http://www.tutoriels-video.fr/des-effets-graphiques-de-folie-pour-votre-bureau-ubuntu-avec-compiz-fusion/"  rel="nofollow">Tutoriel vidéo : des effets de folie pour votre bureau ubuntu</a> (fr)</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> à mettre à jour.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="compiz_fusion"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424850960" /><input type="hidden" name="summary" value="[Tutoriels vidéos] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14667-" /><input type="submit" value="Modifier" class="button" title="Tutoriels vidéos" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="compiz#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+depuis le dépôts Main pour <a href="hardy" class="wikilink1" title="hardy">Ubuntu 8.04</a> (activé par défaut), et depuis le <a href="depots#depots_officiels" class="wikilink1" title="depots">dépôt Universe</a> pour Ubuntu 10.04 <a href="lucid" class="wikilink1" title="lucid">Lucid</a> et suivants</div>
+<div class="fn"><sup><a href="compiz#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+selon votre version de KDE, il peut s&#039;agir du fichier <strong>.kde/Autostart/compiz</strong></div>
+<div class="fn"><sup><a href="compiz#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> ou  <strong>~/.kde4/share/config/ksmserverrc</strong></div>
+<div class="fn"><sup><a href="compiz#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+, <sup><a href="compiz#fnt__5" id="fn__5" class="fn_bot">5)</a></sup> 
+généralement il s&#039;agira du menu <em>Édition → Rechercher</em> ou de la combinaison de touche <em>CTRL</em>+<em>f</em></div>
+<div class="fn"><sup><a href="compiz#fnt__6" id="fn__6" class="fn_bot">6)</a></sup> 
+xxx étant le nom que vous aviez donné à votre profil exporté précédemment</div>
+<div class="fn"><sup><a href="compiz#fnt__7" id="fn__7" class="fn_bot">7)</a></sup> 
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> sans extension</div>
+<div class="fn"><sup><a href="compiz#fnt__8" id="fn__8" class="fn_bot">8)</a></sup> 
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> ou <strong>.kde4/share/config</strong></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/5/53c6a8aaa414c6aa10a7e03718af492d.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="compiz_fusion?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="compiz_fusion?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="compiz_fusion?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="compiz_fusion?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="compiz_fusion?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

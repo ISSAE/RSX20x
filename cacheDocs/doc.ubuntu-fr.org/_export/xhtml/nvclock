@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>nvclock</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-11-30T19:35:37+0100"/>
+<meta name="keywords" content="systeme,carte graphique,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../nvclock?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="nvclock"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/nvclock"/>
+<link rel="canonical" href="../../nvclock"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"nvclock","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="nvclock#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="nvclock#prerequis">Prérequis</a></div></li>
+<li class="level1"><div class="li"><a href="nvclock#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="nvclock#utilisationconfiguration">Utilisation/Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="nvclock#note_s">Note(s)</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../carte_graphique" class="wikilink1" title="carte_graphique" rel="tag">carte graphique</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">Brouillon</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="nvclock_permet_une_gestion_avancee_des_cartes_nvidia">Nvclock permet une gestion avancée des cartes nvidia</h1>
+<div class="level1">
+
+<p>
+<p><div class="notewarning"><strong>Attention</strong><br/>
+L&#039;utilisation de ce programme d&#039;optimisation permet de dépasser les paramètres de réglage usine de nVidia ce qui peut endommager votre matériel ou provoquer son vieillissement prématuré
+</div></p>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Nvclock permet une gestion avancée des cartes nvidia" [50-348] -->
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+Je suppose que vous venez de terminer une installation d’Ubuntu.
+</p>
+
+<p>
+Vous trouverez dans le présent document, la méthode en passant par les interfaces graphiques, suivie de leur équivalent en lignes de commande.
+</p>
+
+<p>
+L&#039;application Nvclock permet d&#039;effectuer les réglages suivants : 
+</p>
+<ul>
+<li class="level1"><div class="li"> Overclocking</div>
+</li>
+<li class="level1"><div class="li"> Gestion des ventilateurs</div>
+</li>
+<li class="level1"><div class="li"> Gestion de la luminosité (support des Geforce 6200 uniquement pour l&#039;instant !)</div>
+</li>
+<li class="level1"><div class="li"> Activation des pipelines masqués</div>
+</li>
+<li class="level1"><div class="li"> …</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Introduction" [349-837] -->
+<h2 class="sectionedit3" id="prerequis">Prérequis</h2>
+<div class="level2">
+<pre class="code"> sudo apt-get install build-essential libX11-dev libgtk2.0-dev</pre>
+
+</div>
+<!-- EDIT3 SECTION "Prérequis" [838-930] -->
+<h2 class="sectionedit4" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+
+<h5 id="methode_graphique">Méthode graphique</h5>
+<div class="level5">
+
+<p>
+Sous Ubuntu, dans Synaptic; installez le paquet <code>nvclock-gtk</code> (ou <code>nvclock-qt</code> si vous êtes sous Kubuntu)
+</p>
+
+<p>
+Voilà, le tour est joué !!
+</p>
+
+<p>
+Le problème peut venir de la version disponible qui est actuellement la 0.8b2 alors que la version 0.8b3 est disponible et permet un support de plus de carte graphique. Seulement il faut compiler les sources….
+</p>
+
+<p>
+Sous Hardy Heron (8.04), la version 0.8b3 est directement disponible par les dépôts. Il suffit donc d&#039;utiliser la méthode graphique décrite au-dessus.
+</p>
+
+</div>
+
+<h5 id="methode_manuelle">Méthode manuelle</h5>
+<div class="level5">
+
+<p>
+Il faut télécharger et décompresser le fichier suivant : <code>nvclock0.8b4.tar.gz</code> sur le site : <a href="http://www.linuxhardware.org/nvclock/#download" class="urlextern" title="http://www.linuxhardware.org/nvclock/#download"  rel="nofollow">nvclock download</a>
+</p>
+
+<p>
+ensuite dans le bon répertoire :
+</p>
+<pre class="code">   ./configure --disable-qt --x-includes=/usr/include/X11 --x-libraries=/usr/lib
+   make</pre>
+
+<p>
+ensuite pour le lancer :
+</p>
+<pre class="code">   src/gtk/nvclock_gtk</pre>
+
+<p>
+Notes :
+</p>
+<ol>
+<li class="level1"><div class="li"> on peut aussi faire un <code>make install</code> pour installer et pour le lancer on fera simplement : <code>nvclock</code> ou <code>nvclock-gtk</code></div>
+</li>
+<li class="level1"><div class="li"> pour les utilisateurs de kubuntu il faut remplacer <code>gtk</code> par <code>qt</code></div>
+</li>
+</ol>
+
+</div>
+
+<h5 id="nvclock-gtk">NVClock-gtk</h5>
+<div class="level5">
+
+<p>
+Il existe aussi une version graphique de nvclock nommée nvclock-gtk
+</p>
+
+<p>
+Installation :
+</p>
+<pre class="code">   sudo apt-get install nvclock nvclock-gtk</pre>
+
+<p>
+Lancement :
+</p>
+<pre class="code">   nvclock_gtk</pre>
+
+</div>
+<!-- EDIT4 SECTION "Installation" [931-2261] -->
+<h2 class="sectionedit5" id="utilisationconfiguration">Utilisation/Configuration</h2>
+<div class="level2">
+
+<p>
+<code>nvclock –help</code> pour avoir les options disponibles sur la ligne de commande…
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Utilisation/Configuration" [2262-2384] -->
+<h2 class="sectionedit6" id="note_s">Note(s)</h2>
+<div class="level2">
+
+<p>
+N&#039;hésitez pas à contacter le site de l&#039;auteur pour permettre le support de votre carte si besoin : <a href="http://www.linuxhardware.org/nvclock/" class="urlextern" title="http://www.linuxhardware.org/nvclock/"  rel="nofollow">nvclock</a>
+</p>
+
+<p>
+Le plus rapide étant l&#039;irc : #nvclock at freenode.net (mais attention anglais obligatoire <img src="../../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />)
+</p>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../../utilisateurs/dylhoxic" class="wikilink2" title="utilisateurs:dylhoxic" rel="nofollow">Dylhoxic</a></em>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Note(s)" [2385-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/1/120bf02c728d9ae901463753175f95dc.xhtml used -->
+</div>
+</body>
+</html>

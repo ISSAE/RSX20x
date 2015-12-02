@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>tutoriel:serveur_de_synchronisation_avec_rsync</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-08-07T18:28:15+0200"/>
+<meta name="keywords" content="tutoriel,sauvegarde,serveur,synchronisation,systeme,securite"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="../../../tutoriel/serveur_de_synchronisation_avec_rsync?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="serveur_de_synchronisation_avec_rsync"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../raw/tutoriel/serveur_de_synchronisation_avec_rsync"/>
+<link rel="canonical" href="../../../tutoriel/serveur_de_synchronisation_avec_rsync"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:serveur_de_synchronisation_avec_rsync","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="serveur_de_synchronisation_avec_rsync#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="serveur_de_synchronisation_avec_rsync#les_particularites_de_rsync">Les particularités de rsync</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="serveur_de_synchronisation_avec_rsync#etude_de_cas">Étude de cas</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="serveur_de_synchronisation_avec_rsync#configuration_du_serveur_de_synchronisation">Configuration du serveur de synchronisation</a></div></li>
+<li class="level1"><div class="li"><a href="serveur_de_synchronisation_avec_rsync#configuration_du_client">Configuration du client</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../../../sauvegarde" class="wikilink1" title="sauvegarde" rel="tag">sauvegarde</a>,
+	<a href="../../../serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="../../../synchronisation" class="wikilink1" title="synchronisation" rel="tag">synchronisation</a>,
+	<a href="../../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="serveur_de_synchronisation_avec_rsync">Serveur de synchronisation avec rsync</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Serveur de synchronisation avec rsync" [80-131] -->
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+Sur <a href="../../../rsync" class="wikilink1" title="rsync">rsync</a> voir la page principale à ce sujet : <a href="../../../rsync" class="wikilink1" title="rsync">rsync</a>.
+</p>
+
+<p>
+<strong>Pourquoi synchroniser ?</strong>
+</p>
+
+<p>
+D&#039;un point de vue de l&#039;entreprise, un serveur de synchronisation est utile pour centraliser les sauvegardes sur une même machine équipée accessoirement d&#039;un enregistreur de bande.
+</p>
+
+<p>
+Pour le particulier, il est intéressant (si vous avez plusieurs machines), d&#039;avoir une sauvegarde simple et rapide de son répertoire home.
+</p>
+
+<p>
+<strong>rsync</strong> est prévu à cet effet. Il peut même faire plus. Il peut être utilisé <a href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_home_avec_rsync" class="wikilink1" title="tutoriel:sauvegarder_home_avec_rsync">pour la sauvegarde de &quot;/home&quot;</a>, et dispose d&#039;une interface graphique, <a href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_home_avec_grsync" class="wikilink1" title="tutoriel:sauvegarder_home_avec_grsync">Grsync</a>. Mais nous allons envisager dans ce tutoriel comment faire une synchronisation entre deux serveurs ; un serveur de production et un serveur de centralisation des backups.
+</p>
+
+<p>
+<p><div class="noteimportant">Attention : si vous utilisez rsync avec les options <strong>--del</strong> ou <strong>--delete</strong>, et si vous effacez vos données par erreur, rsync transmettra cet effacement sur le serveur de sauvegarde ; vous allez donc perdre vos données. L&#039;emploi de rsync avec ces options d&#039;effacement --del ou --delete n&#039;est pas adapté à ce genre d&#039;utilisation. Ou alors, s&#039;il s&#039;agit de données sensibles, et si vous voulez disposer sur la destination d&#039;un contenu identique à celui de la source (ce que permet l&#039;utilisation d&#039;une option d&#039;effacement comme <strong>--delete</strong>), prévoyez de faire une double sauvegarde sur deux répertoires de destination différents. L&#039;une avec utilisation de --delete ; l&#039;autre sans cette option d&#039;effacement. En cas d&#039;effacement malencontreux de données sur la source, et donc sur le premier répertoire de sauvegarde, vous retrouverez ces données sur le second répertoire de sauvegarde. La prudence recommande de placer ces deux répertoires de sauvegardes sur deux disques durs distincts.
+</div></p>
+</p>
+
+<p>
+Pour une synchronisation de plusieurs dossiers, vous pouvez aller voir aussi du coté de <a href="../../../unison" class="wikilink1" title="unison">unison</a>.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Introduction" [132-2155] -->
+<h2 class="sectionedit3" id="les_particularites_de_rsync">Les particularités de rsync</h2>
+<div class="level2">
+
+<p>
+<strong>rsync</strong> est un outil simple disponible sans installation particulière sous Ubuntu et existant pour divers systèmes d&#039;exploitation. La grande particularité de rsync est d&#039;optimiser la bande passante disponible en compressant les données à synchroniser et en ne transférant que les octets modifiés.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Les particularités de rsync" [2156-2504] -->
+<h3 class="sectionedit4" id="etude_de_cas">Étude de cas</h3>
+<div class="level3">
+
+<p>
+Pour vous donner une idée de l&#039;amélioration que rsync peut apporter, voici quelques tests que nous avons effectués en entreprise sur un serveur de production.
+</p>
+<ul>
+<li class="level1"><div class="li"> Masse de données : environ 30 Go</div>
+</li>
+<li class="level1"><div class="li"> Taux de modification des données : 1% par heure (environ 250 fichiers)</div>
+</li>
+<li class="level1"><div class="li"> Liaison dédiée 100Mbits entre les deux serveurs.</div>
+</li>
+<li class="level1"><div class="li"> Temps de synchronisation avec parcours de fichiers : 4h30 (du coup, on ne faisait que 3 synchros par jour).</div>
+</li>
+<li class="level1"><div class="li"> Temps de synchronisation avec rsync : 22min (quand on le fait 3x par jour, maintenant, on fait 1 synchro par heure avec un temps de synchro de 10min).</div>
+</li>
+</ul>
+
+<p>
+C&#039;était pour la petite histoire, passons maintenant à la configuration du serveur rsync.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Étude de cas" [2505-3224] -->
+<h2 class="sectionedit5" id="configuration_du_serveur_de_synchronisation">Configuration du serveur de synchronisation</h2>
+<div class="level2">
+
+<p>
+Sous Breezy<sup><a href="serveur_de_synchronisation_avec_rsync#fn__1" id="fnt__1" class="fn_top">1)</a></sup>, aucune installation particulière n&#039;est à effectuer. Pour Hoary<sup><a href="serveur_de_synchronisation_avec_rsync#fn__2" id="fnt__2" class="fn_top">2)</a></sup>, reportez vous à la section <em>Sous Hoary</em> en fin de page.
+</p>
+
+<p>
+Pour autoriser <strong>rsync</strong> à se lancer, il faut éditer le fichier <code>/etc/default/rsync</code> via la commande :
+</p>
+<pre class="code">sudo vi /etc/default/rsync</pre>
+
+<p>
+et modifier la ligne RSYNC à true
+</p>
+<pre class="code">RSYNC_ENABLE=true</pre>
+
+<p>
+Pour configurer <strong>rsync</strong>, on crée le fichier de configuration de rsync en éditant le fichier <code>/etc/rsyncd.conf</code> via la commande :
+</p>
+<pre class="code">sudo vi /etc/rsyncd.conf</pre>
+
+<p>
+En entête de ce fichier, il faut copier les lignes suivantes :
+</p>
+<pre class="code">uid = rsync
+gid = rsync</pre>
+
+<p>
+Le démon rsyncd sera lancé en tant qu&#039;utilisateur rsync, et pourra donc écrire dans les répertoires qui lui seront attribués.
+</p>
+
+<p>
+Dans ce fichier, on introduit les informations concernant les modules. Un module est une sorte de <em>partage</em> rsync. Dans notre cas, on va créer un module nommé <code>share_rsync</code>.
+</p>
+<pre class="code">[share_rsync]
+   path = /srv/intern
+   comment = Synchro fichiers internes
+   read only = false</pre>
+
+<p>
+Vous pouvez bien entendu créer plusieurs modules de synchronisation. Il existe également d&#039;autres mots clés à utiliser dans le fichier <code>/etc/rsyncd.conf</code> qui permettent l&#039;authentification et d&#039;autres choses. Vous trouverez de plus amples détails en tapant :
+</p>
+<pre class="code">man rsyncd.conf</pre>
+
+<p>
+<em>Remarque : </em>sous Hoary, vous devez rechercher la configuration de l&#039;<em>Internet Super Daemon</em> ; vous trouverez plus d&#039;informations en fin d&#039;article.
+</p>
+
+<p>
+Ajouter un utilisateur et un groupe <strong>rsync
+</strong>
+</p>
+<pre class="code">sudo useradd rsync
+sudo passwd rsync
+sudo groupadd rsync
+sudo gpasswd -a rsync rsync</pre>
+
+<p>
+Attribuer le répertoire de sauvegarde à <strong>rsync</strong>
+</p>
+<pre class="code">sudo chown -R rsync:rsync /srv/intern</pre>
+
+<p>
+Attribuer les droits adéquats au répertoire de sauvegarde
+</p>
+<pre class="code">sudo chmod -R 775 /srv/intern</pre>
+
+<p>
+Pour terminer, lancer rsync sans redémarrage avec la commande :
+</p>
+<pre class="code">sudo /etc/init.d/rsync start</pre>
+
+<p>
+Le serveur est maintenant prêt pour recevoir les requêtes de synchronisation.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Configuration du serveur de synchronisation" [3225-5381] -->
+<h2 class="sectionedit6" id="configuration_du_client">Configuration du client</h2>
+<div class="level2">
+
+<p>
+Les synchronisations du (ou des) client(s) peuvent se faire par le biais de la commande <code>rsync</code>. La syntaxe de cette dernière est relativement simple. Voici la commande que j&#039;utilise :
+</p>
+<pre class="code">rsync -az --stats --delete --force --ignore-errors --exclude-from=/etc/rsync.exclude /srv/intern 192.168.252.201::share_rsync/</pre>
+
+<p>
+Avec cette commande, j&#039;indique que je souhaite supprimer les fichiers (option <code>–delete</code>) qui ne sont plus sur la source (la source dans ce cas-ci est <code>/srv/intern</code>), que je souhaite obtenir des statistiques quant à la vitesse de transfert (option <code>–stats</code>) et que je souhaite exclure les fichiers listés dans <strong>/etc/rsync.exclude</strong> (<code>–exclude-from</code>).
+</p>
+
+<p>
+Dans le fichier <strong>rsync.exclude</strong>, mettre un chemin par ligne (vers un répertoire ou un fichier).
+Attention, ne pas oublier les <strong>/</strong> en fin de ligne pour les répertoires ainsi que &quot;- &quot; (moins espace) avant chaque ligne.
+</p>
+
+<p>
+Les options clés se trouvant juste après la commande sont explicitées ci-dessous :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><code>a</code></strong> : indique que <code>rsync</code> doit travailler en mode <em>archive</em>, c&#039;est-à-dire qu&#039;une copie fidèle de l&#039;arborescence (et donc des sous répertoires)  est réalisée (les permissions,  les propriétaires et les dates de modification des fichiers sont conservés).</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>z</code></strong> : indique à <code>rsync</code> qu&#039;il doit utiliser la compression pour le transfert des données.</div>
+</li>
+</ul>
+
+<p>
+La destination de synchronisation (notre serveur) s&#039;indique comme suit :
+</p>
+<pre class="code">adresse_ip::module/</pre>
+
+<p>
+Notez que si vous ne placez pas le <code>/</code> après le module, vous allez obtenir un sous-répertoire <code>intern</code> (dans ce cas-ci) dans le répertoire défini dans le module. Ce qui peut être intéressant dans certains cas mais ce n&#039;est pas le but ici.
+</p>
+
+<p>
+Donc, en exécutant cette commande, le répertoire <code>/srv/intern</code> est synchronisé avec le module <code>share_rsync</code> sur le serveur <code>192.168.252.201</code>.
+</p>
+
+<p>
+Sur une station de travail, on peut utiliser cette commande à chaque fois où l&#039;on veut faire un petit backup (c&#039;est ce que je fais à la maison) mais en entreprise, on souhaite que ces synchronisations (ou backup, comme vous voulez) soient faites à des intervalles fixes.
+</p>
+
+<p>
+Pour ce faire, nous allons configurer <a href="../../../cron" class="wikilink1" title="cron">Cron</a> pour lancer les synchronisations automatiquement. Ceci est fait en ajoutant une ligne au fichier <code>/etc/crontab</code>. Par exemple, pour une synchronisation par heure de 7h à 22h :
+</p>
+<pre class="code">05 7-22 * * *   root   rsync -raz --stats --delete /srv/intern 192.168.252.201::share_rsync/</pre>
+
+<p>
+N&#039;oubliez pas de forcer le rechargement du <code>crontab</code> via la commande :
+</p>
+<pre class="code">sudo /etc/init.d/cron reload</pre>
+
+<p>
+Pour plus d&#039;informations concernant les configurations de cron, veuillez vous reporter à <a href="../../../cron" class="wikilink1" title="cron">cette page</a>.
+</p>
+
+<p>
+Si l&#039;adresse des fichiers à copier contient des espaces, il faut les remplacer par ? ou \ , par exemple, dans le cas de Windows avec cwrsync : 
+</p>
+<pre class="code">C:\Mes documents\</pre>
+
+<p>
+devient : 
+</p>
+<pre class="code">/cygdrive/c/Mes?documents/</pre>
+<hr />
+
+<p>
+<em> Contributeur : <a href="../../../utilisateurs/ostaquet" class="wikilink2" title="utilisateurs:ostaquet" rel="nofollow">ostaquet</a> </em>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Configuration du client" [5382-] --><div class="footnotes">
+<div class="fn"><sup><a href="serveur_de_synchronisation_avec_rsync#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Ubuntu 5.10</div>
+<div class="fn"><sup><a href="serveur_de_synchronisation_avec_rsync#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+Ubuntu 5.04</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/8/827c6ccf07aec58d90d200057fd9feea.xhtml used -->
+</div>
+</body>
+</html>

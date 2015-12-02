@@ -1,0 +1,732 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>clamav - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-05-01T18:51:10+0200"/>
+<meta name="keywords" content="antivirus,securite"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/clamav?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/clamav?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/clamav"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/clamav"/>
+<link rel="canonical" href="clamav"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"clamav","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="clamav#main" tabindex="1">Contenu</a> | <a href="clamav#qsearch__in" tabindex="2">Rechercher</a> | <a href="clamav#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="clamav" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="clamav" >clamav</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="clamav#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="clamav#installer_la_derniere_version">Installer la dernière version</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="clamav#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="clamav#mise_a_jour_automatique_des_definitions">Mise à jour automatique des définitions</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="clamav#parametres">Paramètres</a></div></li>
+<li class="level1"><div class="li"><a href="clamav#un_balayage_temps_reel">un balayage temps réel</a></div></li>
+<li class="level1"><div class="li"><a href="clamav#utilisation_d_une_interface_graphique">Utilisation d&#039;une interface graphique</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="clamav#integration_dans_nautilus">Intégration dans Nautilus</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="clamav#integration_dans_les_logiciels_de_messagerie">Intégration dans les logiciels de messagerie</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="clamav#thunderbird">Thunderbird</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="clamav#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="antivirus" class="wikilink1" title="antivirus" rel="tag">antivirus</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>
+</span></div>
+<hr />
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/clam.png?id=clamav" class="media" title="applications:clam.png"><img src="http://doc.ubuntu-fr.org/_media/applications/clam.png?w=96&amp;tok=c229a4" class="mediaright" alt="" width="96" /></a>
+</p>
+
+<h1 class="sectionedit1" id="clam_antivirus">Clam AntiVirus</h1>
+<div class="level1">
+
+<p>
+<strong>Clam AntiVirus</strong> (ClamAv) est un antivirus <abbr title="GNU General Public License">GPL</abbr> pour UNIX. La principale qualité de cet antivirus est qu&#039;il permet de balayer les courriels reçus et envoyés avec un logiciel de messagerie classique. Le paquet que nous allons installer inclut un démon multi-tâches flexible et configurable, un antivirus en ligne de commande et un utilitaire pour une mise à jour automatique des définitions de virus via Internet. Le programme est basé sur une bibliothèque distribuée avec le paquet Clam AntiVirus, que vous pouvez utiliser pour créer votre propre logiciel. Le plus important est que la base de données des virus soit mise à jour.
+</p>
+
+<p>
+Cette page explique comment installer le paquet « clamav » et comment utiliser l&#039;antivirus. Le numéro de version de Clamav dépend de votre version d&#039;Ubuntu.
+</p>
+
+<p>
+<p><div class="notetip">Clamav <a href="http://investor.sourcefire.com/phoenix.zhtml?c=204582&amp;p=irol-newsArticle&amp;ID=1041607" class="urlextern" title="http://investor.sourcefire.com/phoenix.zhtml?c=204582&amp;p=irol-newsArticle&amp;ID=1041607"  rel="nofollow">a été acquis récemment par la société SourceFire</a>. Le projet devrait rester opensource, cf. Tomasz Kojm, le fondateur du projet Clamav : <em>« Nous sommes très heureux de rejoindre Sourcefire et nous pensons que cette union va apporter une valeur ajoutée qui sera aussi bénéfique pour la communauté opensource que pour les clients commerciaux de SourceFire. »</em> (traduction de <a href="http://doc.ubuntu-fr.org/utilisateurs/zetotof" class="wikilink2" title="utilisateurs:zetotof" rel="nofollow">Christophe-Marie Duquesne</a>).
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="clamav"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430499070" /><input type="hidden" name="summary" value="[Clam AntiVirus] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="66-1455" /><input type="submit" value="Modifier" class="button" title="Clam AntiVirus" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Avec un <a href="terminal" class="wikilink1" title="terminal">terminal</a> en ligne de commande utiliser : <strong>apt-get</strong>
+</p>
+<pre class="code">sudo apt-get install clamav</pre>
+
+<p>
+Assurez-vous d&#039;avoir <a href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj#recharger_la_liste_des_paquets" class="wikilink1" title="tutoriel:comment_modifier_sources_maj">rechargé la liste des paquets</a> avant d&#039;effectuer cette commande.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="clamav"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430499070" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1456-1749" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit3" id="installer_la_derniere_version">Installer la dernière version</h3>
+<div class="level3">
+
+<p>
+Exécutez la commande suivante pour ajouter la source &quot;PPA&quot; de ClamAV :
+</p>
+<pre class="code">sudo add-apt-repository ppa:ubuntu-clamav/ppa</pre>
+
+<p>
+Rechargez ensuite la liste des paquets avant d&#039;installer la dernière version de <strong>clamav</strong> :
+</p>
+<pre class="code">sudo apt-get update &amp;&amp; sudo apt-get install clamav</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="clamav"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430499070" /><input type="hidden" name="summary" value="[Installer la dernière version] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1750-2062" /><input type="submit" value="Modifier" class="button" title="Installer la dernière version" /></div></form></div>
+<h2 class="sectionedit4" id="utilisation">Utilisation</h2>
+<div class="level2">
+<div class="table sectionedit5"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Action </th><th class="col1"> Commande </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> Mise à jour des définitions antivirus </td><td class="col1"> <pre class="code">sudo freshclam</pre>
+</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> Balayer les fichiers du dossier personnel </td><td class="col1"> <pre class="code">sudo clamscan</pre>
+</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> Balayer tous les fichiers du dossier personnel </td><td class="col1"> <pre class="code">sudo clamscan -r /home/utilisateur</pre>
+</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> Balayer le disque dur entier </td><td class="col1"> <pre class="code">sudo clamscan -r /</pre>
+</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> Balayer une partition Windows (Fat 32), montée en &quot;/mnt/D&quot;. Signal sonore et affichage si virus trouvé et écriture dans virus.log </td><td class="col1"><pre class="code">sudo clamscan --bell -r -i --log=/var/log/clamav/virus.log /mnt/D/</pre>
+</td>
+	</tr>
+</table></div>
+
+<p>
+<p><div class="notetip">Par défaut, cet antivirus ne balaye pas les sous-dossiers. Pour régler cela, il faut avoir une interface graphique récente puis aller dans &quot;Préférences&quot; <img src="http://doc.ubuntu-fr.org/lib/images/smileys/delete.gif" class="icon" alt="DELETEME" />…<br/>
+
+ … si l&#039;on tape clamscan -h, on trouve bien :
+</p>
+<pre class="code">--recursive[=yes/no(*)]  -r          Scan subdirectories recursively</pre>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="clamav"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430499070" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2063-2965" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h3 class="sectionedit6" id="mise_a_jour_automatique_des_definitions">Mise à jour automatique des définitions</h3>
+<div class="level3">
+
+<p>
+Pour que ça se mette à jour automatiquement, on crée une nouvelle tâche quotidienne :
+</p>
+<pre class="code">sudo gedit /etc/cron.daily/clamav</pre>
+
+<p>
+Une fois l&#039;éditeur de texte lancé, on y met les lignes suivantes avant de sauvegarder le fichier :
+</p>
+<pre class="code">#!/bin/sh
+/usr/bin/freshclam &gt;&gt; /var/log/resul_freshclam.txt</pre>
+
+<p>
+Ensuite, à nouveau dans le terminal, on y met les droits d&#039;exécution :
+</p>
+<pre class="code">sudo chmod 755 /etc/cron.daily/clamav</pre>
+
+<p>
+Enfin, on vérifie :
+</p>
+<pre class="code">sudo /etc/cron.daily/clamav
+cd /var/log
+cat resul_freshclam.txt
+ClamAV update process started at Mon Dec 24 15:00:32 2012
+main.cvd is up to date (version: 54, sigs: 1044387, f-level: 60, builder: sven)
+daily.cld is up to date (version: 16059, sigs: 407726, f-level: 63, builder: neo)
+bytecode.cld is up to date (version: 209, sigs: 40, f-level: 63, builder: neo)</pre>
+
+<p>
+Voir le forum : <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=11975411#p11975411" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=11975411#p11975411"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?pid=11975411#p11975411</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="clamav"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430499070" /><input type="hidden" name="summary" value="[Mise à jour automatique des définitions] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2966-3934" /><input type="submit" value="Modifier" class="button" title="Mise à jour automatique des définitions" /></div></form></div>
+<h2 class="sectionedit7" id="parametres">Paramètres</h2>
+<div class="level2">
+<div class="table sectionedit8"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Paramètre </th><th class="col1"> Signification </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> --help (-h) </td><td class="col1"> Affiche les différents paramètres (anglais) </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> --version (-V)</td><td class="col1"> Affiche le numéro de version </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> --verbose (-v) </td><td class="col1"> Rend le programme plutôt bavard </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> --debug </td><td class="col1"> Affiche les informations de débugage (libclamav) </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> --quiet </td><td class="col1"> Affiche seulement les messages d&#039;erreur </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> --stdout </td><td class="col1"> Sortie vers stdout au lieu de stderr </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> --no-summary </td><td class="col1"> Désactive l&#039;affichage du rapport à la fin du balayage </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> --infected (-i) </td><td class="col1"> Affiche uniquement les fichiers infectés </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> --bell </td><td class="col1"> Émet un son lors de la détection d&#039;un virus </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0 leftalign">  </td><td class="col1 leftalign">  </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"> --tempdir=REPERTOIRE </td><td class="col1"> Crée les fichiers temporaires dans REPERTOIRE </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"> --leave-temps </td><td class="col1"> Ne supprime pas les fichiers temporaires </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"> --database=FICHER/REPERTOIRE (-d FICHIER/REPERTOIRE) </td><td class="col1"> Charge la base de données des virus à partir de FICHIER ou charge tous les fichiers *.cvd et *.db[2] à partir de REPERTOIRE </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"> --log=FICHIER (-l FICHIER) </td><td class="col1"> Enregistre le fichier log (rapport) dans FICHIER </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"> --recursive (-r) </td><td class="col1"> Balaye les sous-dossiers récursivement </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"> --remove </td><td class="col1"> Supprime les fichiers infectés : <strong>ATTENTION !</strong> </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"> --move=RÉPERTOIRE </td><td class="col1"> Déplace les fichiers infectés dans RÉPERTOIRE </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"> --exclude=REGEX </td><td class="col1"> Ne balaye pas les fichiers correspondant à l&#039;expression régulière REGEX </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"> --exclude-dir=REGEX </td><td class="col1"> Ne balaye pas les répertoires correspondant à l&#039;expression régulière REGEX </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"> --include=REGEX </td><td class="col1"> Balaye uniquement les fichiers correspondant à l&#039;expression régulière REGEX </td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"> --include-dir=REGEX </td><td class="col1"> Balaye uniquement les dossiers correspondant à l&#039;expression régulière REGEX </td>
+	</tr>
+	<tr class="row22">
+		<td class="col0 leftalign">  </td><td class="col1 leftalign">  </td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"> --no-mail </td><td class="col1"> Désactive l&#039;analyse courriel </td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"> --no-pe </td><td class="col1"> Désactive l&#039;analyse PE </td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"> --no-ole2 </td><td class="col1"> Désactive l&#039;analyse OLE2 </td>
+	</tr>
+	<tr class="row26">
+		<td class="col0"> --no-html </td><td class="col1"> Désactive l&#039;analyse <abbr title="HyperText Markup Language">HTML</abbr> </td>
+	</tr>
+	<tr class="row27">
+		<td class="col0"> --no-archive </td><td class="col1"> Désactive l&#039;analyse des archives </td>
+	</tr>
+	<tr class="row28">
+		<td class="col0"> --detect-broken </td><td class="col1"> Essaie de détecter les exécutables corrompus </td>
+	</tr>
+	<tr class="row29">
+		<td class="col0"> --block-encrypted </td><td class="col1"> Bloque les archives cryptées </td>
+	</tr>
+	<tr class="row30">
+		<td class="col0"> --block-max </td><td class="col1"> Bloque les archives excédant la taille limite </td>
+	</tr>
+	<tr class="row31">
+		<td class="col0"> --mail-follow-urls </td><td class="col1"> Télécharge et analyse les URLs (adresses internet) </td>
+	</tr>
+	<tr class="row32">
+		<td class="col0"> --max-space=#n </td><td class="col1"> Extraire uniquement les #n premiers kilo-octets des fichiers archivés </td>
+	</tr>
+	<tr class="row33">
+		<td class="col0"> --max-files=#n </td><td class="col1"> Extraire uniquement les #n premiers fichiers des archives </td>
+	</tr>
+	<tr class="row34">
+		<td class="col0"> --max-ratio=#n </td><td class="col1"> Taux de compression maximum pour les archives </td>
+	</tr>
+	<tr class="row35">
+		<td class="col0"> --unzip[=LOGICIEL_DE_DECOMPRESSION] </td><td class="col1"> Active le support pour les archives *.zip </td>
+	</tr>
+	<tr class="row36">
+		<td class="col0"> --unrar[=LOGICIEL_DE_DECOMPRESSION] </td><td class="col1"> Active le support pour les archives *.rar </td>
+	</tr>
+	<tr class="row37">
+		<td class="col0"> --arj[=LOGICIEL_DE_DECOMPRESSION] </td><td class="col1"> Active le support pour les archives *.arj </td>
+	</tr>
+	<tr class="row38">
+		<td class="col0"> --unzoo[=LOGICIEL_DE_DECOMPRESSION] </td><td class="col1"> Active le support pour les archives *.zoo </td>
+	</tr>
+	<tr class="row39">
+		<td class="col0"> --lha[=LOGICIEL_DE_DECOMPRESSION] </td><td class="col1"> Active le support pour les archives *.lha </td>
+	</tr>
+	<tr class="row40">
+		<td class="col0"> --jar[=LOGICIEL_DE_DECOMPRESSION] </td><td class="col1"> Active le support pour les archives *.jar </td>
+	</tr>
+	<tr class="row41">
+		<td class="col0"> --tar[=LOGICIEL_DE_DECOMPRESSION] </td><td class="col1"> Active le support pour les archives *.tar </td>
+	</tr>
+	<tr class="row42">
+		<td class="col0"> --deb[=LOGICIEL_DE_DECOMPRESSION] </td><td class="col1"> Active le support pour les archives *.deb </td>
+	</tr>
+	<tr class="row43">
+		<td class="col0"> --tgz[=LOGICIEL_DE_DECOMPRESSION] </td><td class="col1"> Active le support pour les archives *.tar.gz et *.tgz </td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="clamav"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430499070" /><input type="hidden" name="summary" value="[Paramètres] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3935-7203" /><input type="submit" value="Modifier" class="button" title="Paramètres" /></div></form></div>
+<h2 class="sectionedit9" id="un_balayage_temps_reel">un balayage temps réel</h2>
+<div class="level2">
+
+<p>
+<strong>Pré-requis:</strong> clamav-daemon et inotify-tools (<strong><a href="apt://clamav-daemon,inotify-tools" class="interwiki iw_apt" title="apt://clamav-daemon,inotify-tools">clamav-daemon,inotify-tools</a></strong>).
+</p>
+
+<p>
+<strong>Recommandé pour un PC de bureau:</strong> libnotify-bin (<strong><a href="apt://libnotify-bin" class="interwiki iw_apt" title="apt://libnotify-bin">libnotify-bin</a></strong>).
+</p>
+
+<p>
+Voici mon script &quot;clamav-tr.sh&quot; pour ajouter une fonction temps réel à clamav. Il permet de balayer en temps réel le répertoire &quot;/home&quot; (par défaut), si un virus est trouvé il sera déplacé en quarantaine (dans /tmp par défaut). Un <a href="fichier_cache" class="wikilink1" title="fichier_cache">fichier caché</a> (.clamav-tr.log) sera disponible dans le dossier de l&#039;utilisateur du script. J&#039;utilise clamdscan (clamav-daemon) car il est beaucoup plus rapide que clamscan. 
+</p>
+
+<p>
+Ce script ne nécessite pas <a href="sudo" class="wikilink1" title="sudo">les droits administrateur</a>.
+</p>
+<pre class="code">#!/bin/bash
+# Script &quot;ClamAV Temps Réel&quot;, par HacKurx
+# http://hackurx.wordpress.com
+# Licence: GPL v3
+# Dépendance: clamav-daemon inotify-tools
+# Recommandé pour PC de bureau: libnotify-bin
+
+DOSSIER=/home
+QUARANTAINE=/tmp
+LOG=$HOME/.clamav-tr.log
+
+inotifywait -q -m -r -e create,modify,access &quot;$DOSSIER&quot; --format &#039;%w%f|%e&#039; | sed --unbuffered &#039;s/|.*//g&#039; |
+
+while read FICHIER; do 
+        clamdscan --quiet --no-summary -i -m &quot;$FICHIER&quot; --move=$QUARANTAINE
+        if [ &quot;$?&quot; == &quot;1&quot; ]; then
+		echo &quot;`date` - Malware trouvé dans le fichier &#039;$FICHIER&#039;. Le fichier a été déplacé dans $QUARANTAINE.&quot; &gt;&gt; $LOG 
+		echo -e &quot;\033[31mMalware trouvé!!!\033[00m&quot; &quot;Le fichier &#039;$FICHIER&#039; a été déplacé en quarantaine.&quot;
+		if [ -f /usr/bin/notify-send ]; then
+			notify-send -u critical &quot;ClamAV Temps Réel&quot; &quot;Malware trouvé!!! Le fichier &#039;$FICHIER&#039; a été déplacé en quarantaine.&quot;
+		fi
+        fi
+done</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="clamav"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430499070" /><input type="hidden" name="summary" value="[un balayage temps réel] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7204-8829" /><input type="submit" value="Modifier" class="button" title="un balayage temps réel" /></div></form></div>
+<h2 class="sectionedit10" id="utilisation_d_une_interface_graphique">Utilisation d&#039;une interface graphique</h2>
+<div class="level2">
+
+<p>
+Lancer l&#039;installation de clamtk
+</p>
+<pre class="code"> sudo apt-get install clamtk </pre>
+
+<p>
+( <em>Le raccourcis &quot; Scanner de Virus ou ClamTK &quot; se trouve alors dans Applications | Accessoires ou Utilitaires</em> ) 
+</p>
+
+<p>
+Si vous voulez disposer de la <strong>dernière version 5.17</strong>, vous pouvez télécharger et installer le paquet <strong>deb</strong>ian pour ubuntu 13 et 14 :  <a href="https://bitbucket.org/dave_theunsub/clamtk/downloads/clamtk_5.17-1_all.deb" class="urlextern" title="https://bitbucket.org/dave_theunsub/clamtk/downloads/clamtk_5.17-1_all.deb"  rel="nofollow">https://bitbucket.org/dave_theunsub/clamtk/downloads/clamtk_5.17-1_all.deb</a>.
+</p>
+
+<p>
+Vous pouvez ainsi disposer d&#039;une interface comme celle-ci ( ici, la version 4.33) :
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/clamtk.png?id=clamav" class="media" title="clamtk.png"><img src="http://doc.ubuntu-fr.org/_media/clamtk.png?w=400&amp;tok=8c5770" class="media" alt="" width="400" /></a>
+</p>
+
+<p>
+Ou comme celle-ci (version 5.17)
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=10bb15&amp;media=http%3A%2F%2Fimg15.hostingpics.net%2Fpics%2F627621ClamTk03.png" class="media" title="http://img15.hostingpics.net/pics/627621ClamTk03.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=10bb15&amp;media=http%3A%2F%2Fimg15.hostingpics.net%2Fpics%2F627621ClamTk03.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Seule la commande &quot;Recursive Scan&quot; examine tous les fichiers d&#039;un dossier, sous-dossiers inclus. 
+Dans Avancé, Préférences, cochez &quot;Scanner tous les fichiers et dossiers dans ce répertoire&quot;.
+</p>
+
+<p>
+Pour que les signatures de virus soient prises en compte, redémarrez l&#039;ordinateur. 
+</p>
+
+<p>
+Il existe aussi des interfaces graphiques pour <strong>Kde</strong> <a href="https://bitbucket.org/dave_theunsub/clamtk-kde/downloads/clamtk-kde_0.16-1_all.deb" class="urlextern" title="https://bitbucket.org/dave_theunsub/clamtk-kde/downloads/clamtk-kde_0.16-1_all.deb"  rel="nofollow">https://bitbucket.org/dave_theunsub/clamtk-kde/downloads/clamtk-kde_0.16-1_all.deb</a>  <strong>Xfce</strong> et <strong>Cinammon</strong> à cette même adresse <a href="https://code.google.com/p/clamtk/" class="urlextern" title="https://code.google.com/p/clamtk/"  rel="nofollow">https://code.google.com/p/clamtk/</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="clamav"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430499070" /><input type="hidden" name="summary" value="[Utilisation d'une interface graphique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8830-10009" /><input type="submit" value="Modifier" class="button" title="Utilisation d'une interface graphique" /></div></form></div>
+<h3 class="sectionedit11" id="integration_dans_nautilus">Intégration dans Nautilus</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="extension_nautilus-clamscan_methode_1">Extension Nautilus-clamscan (méthode 1)</h4>
+<div class="level4">
+
+<p>
+Sous Jaunty 9.04 : à partir des dépôts on peut installer le paquet <strong><a href="apt://nautilus-clamscan" class="interwiki iw_apt" title="apt://nautilus-clamscan">nautilus-clamscan</a></strong> pour pouvoir &quot;scanner ce fichier&quot; par un simple clic droit dans Nautilus.
+</p>
+
+<p>
+<p><div class="notewarning">Sous Karmic, cette extension ne semble pas bien fonctionner
+</div></p>
+</p>
+
+</div>
+
+<h4 id="script_nautilus_methode_2">Script Nautilus (méthode 2)</h4>
+<div class="level4">
+
+<p>
+L&#039;intérêt de cette méthode est qu&#039;elle permet d&#039;analyser un ou plusieurs fichiers, ou le contenu d&#039;un dossier, à partir d&#039;un clic droit dessus.
+</p>
+
+<p>
+Ouvrez le dossier des scripts : clic-droit, puis <strong>Scripts &gt; Ouvrir le dossier de scripts</strong>.
+</p>
+
+<p>
+<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Créez un nouveau fichier</a> appelé par exemple &quot;Analyser avec Virus Scanner&quot; et collez ces lignes :
+</p>
+<pre class="code bash"><span class="co0">#!/bin/bash</span>
+<span class="re2">titre</span>=<span class="st0">&quot;Antivirus ClamAV&quot;</span>
+clamscan <span class="re5">-rv</span> <span class="re5">--bell</span> <span class="re5">--log</span>=.tempscan.tmp <span class="re5">--max-filesize</span>=4095M <span class="re5">--max-scansize</span>=4095M <span class="st0">&quot;$@&quot;</span> <span class="sy0">|</span> zenity <span class="re5">--progress</span> \
+  <span class="re5">--pulsate</span> <span class="re5">--auto-close</span> <span class="re5">--width</span>=<span class="nu0">200</span>\
+  <span class="re5">--title</span>=<span class="st0">&quot;<span class="es2">$titre</span>&quot;</span> <span class="re5">--text</span>=<span class="st0">&quot;Analyse des fichiers...&quot;</span>
+zenity <span class="re5">--text-info</span> <span class="re5">--width</span>=<span class="nu0">600</span> <span class="re5">--height</span>=<span class="nu0">400</span> <span class="re5">--title</span>=<span class="st0">&quot;<span class="es2">$titre</span>&quot;</span> <span class="re5">--filename</span>=.tempscan.tmp
+<span class="kw2">rm</span> .tempscan.tmp</pre>
+
+<p>
+N&#039;oubliez pas de le rendre exécutable. Vous le voyez maintenant apparaître dans la liste des scripts.
+</p>
+
+</div>
+
+<h4 id="script_nautilus_methode_3">Script Nautilus (méthode 3)</h4>
+<div class="level4">
+
+<p>
+Un autre script permet de balayer directement à partir de l&#039;option &quot;Scripts&quot;. Ce script à l&#039;avantage de pouvoir balayer plusieurs fichiers et dossiers en même temps.
+Voici le script:
+</p>
+<pre class="code">#!/bin/sh
+/usr/bin/clamscan --stdout -r $@ | zenity --text-info --title=&quot;Réultats du scan de $@ avec ClamAV&quot;</pre>
+
+<p>
+Le fichier du script est disponible par ce lien: <a href="http://sdrv.ms/YKzybg" class="urlextern" title="http://sdrv.ms/YKzybg"  rel="nofollow">http://sdrv.ms/YKzybg</a>
+Vous devez copier ce fichier dans votre dossier script.
+<strong>Attention: Il est déjà exécutable!</strong>
+</p>
+
+</div>
+
+<h4 id="pour_chaque_type_de_fichier_methode_4">Pour chaque type de fichier (méthode 4)</h4>
+<div class="level4">
+
+<p>
+L&#039;inconvénient de cette méthode est qu&#039;il faut réaliser l&#039;opération suivante pour chaque type de fichier.
+Son avantage est qu&#039;elle permet d&#039;analyser des fichiers dans d&#039;autres contextes que Nautilus, par exemple des pièces jointes de courriels avec Evolution.
+</p>
+
+<p>
+Clic-droit sur le fichier, puis <strong>Ouvrir avec une autre application</strong> et sélectionnez <strong>Virus Scanner</strong>.
+Il est maintenant possible &quot;d&#039;ouvrir&quot; tous les fichiers de ce type avec clamtk.
+</p>
+
+<p>
+<p><div class="noteimportant">L&#039;analyse d&#039;un fichier avec cette 3ème méthode ne fonctionne pas dès qu&#039;il y a des caractères spéciaux dans le nom du fichier ou dans son chemin d&#039;accès (y compris les lettres accentuées).
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="clamav"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430499070" /><input type="hidden" name="summary" value="[Intégration dans Nautilus] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10010-12477" /><input type="submit" value="Modifier" class="button" title="Intégration dans Nautilus" /></div></form></div>
+<h2 class="sectionedit12" id="integration_dans_les_logiciels_de_messagerie">Intégration dans les logiciels de messagerie</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="clamav"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430499070" /><input type="hidden" name="summary" value="[Intégration dans les logiciels de messagerie] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12478-12536" /><input type="submit" value="Modifier" class="button" title="Intégration dans les logiciels de messagerie" /></div></form></div>
+<h3 class="sectionedit13" id="thunderbird">Thunderbird</h3>
+<div class="level3">
+
+<p>
+<del>Il existe une extension pour balayer les courriels dans <a href="thunderbird" class="wikilink1" title="thunderbird">Thunderbird</a> : <a href="https://addons.mozilla.org/en-US/thunderbird/addon/6663" class="urlextern" title="https://addons.mozilla.org/en-US/thunderbird/addon/6663"  rel="nofollow">clamdrib</a>.</del>
+</p>
+
+<p>
+<p><div class="noteimportant">Le greffon clamdrib est actuellement désactivé au téléchargement. À ce jour (version 0.2), cette extension est expérimentale, et à utiliser à vos risques et périls.
+&quot;
+</div></p>
+</p>
+
+<p>
+Après installation de Thunderbird et de l&#039;add-on clamdrib, installez à partir du gestionnaire de paquet Synaptic : clamassassin, clamav, clamav-freshclam et clamav-daemon.
+</p>
+<ul>
+<li class="level1"><div class="li"> Ouvrez un terminal: </div>
+</li>
+</ul>
+<pre class="code">sudo dpkg-reconfigure clamav-base</pre>
+
+<p>
+acceptez toutes les options par défaut et surtout &quot;type de socket &gt; <abbr title="Transmission Control Protocol">TCP</abbr>&quot;,
+</p>
+<ul>
+<li class="level1"><div class="li"> Relancez le démon</div>
+</li>
+</ul>
+<pre class="code"> service clamav-daemon restart</pre>
+
+<p>
+et normalement ça roule…
+</p>
+<ul>
+<li class="level1"><div class="li"> Vérifiez que tout fonctionne dans Thunderbird, allez dans outils → modules complémentaires → extensions → clamdrib et dans les préférences effectuer un test et vous devriez avoir le message &quot;<strong>Success: ClamAV</strong>&quot;.</div>
+</li>
+</ul>
+
+<p>
+Pour le faire fonctionner correctement, il semblerait qu&#039;il faille décommenter ou ajouter les lignes suivantes au fichier <strong>/etc/clamav/clamd.conf</strong> :
+</p>
+<pre class="code">TCPSocket 3310
+TCPAddr localhost
+ReadTimeout 300
+IdleTimeout 60
+MaxConnectionQueueLength 30</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="clamav"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430499070" /><input type="hidden" name="summary" value="[Thunderbird] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12537-13817" /><input type="submit" value="Modifier" class="button" title="Thunderbird" /></div></form></div>
+<h2 class="sectionedit14" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://www.clamav.net/" class="urlextern" title="http://www.clamav.net/"  rel="nofollow">Site officiel</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://gnomefiles.org/content/show.php/AVScan?content=130585" class="urlextern" title="http://gnomefiles.org/content/show.php/AVScan?content=130585"  rel="nofollow">AVScan</a> (<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> les liens de téléchargements sont morts)</div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://klamav.sourceforge.net/klamavwiki/index.php/Main_Page" class="urlextern" title="http://klamav.sourceforge.net/klamavwiki/index.php/Main_Page"  rel="nofollow">Documentation de KlamAV</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://clamtk.sourceforge.net/" class="urlextern" title="http://clamtk.sourceforge.net/"  rel="nofollow">Site de ClamTk</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="https://code.google.com/p/clamtk/" class="urlextern" title="https://code.google.com/p/clamtk/"  rel="nofollow">ClamTk - Graphical interface for Clam Antivirus</a></div>
+</li>
+<li class="level1"><div class="li"> Participer à l&#039;amélioration de ClamAV en <a href="http://cgi.clamav.net/sendvirus.cgi" class="urlextern" title="http://cgi.clamav.net/sendvirus.cgi"  rel="nofollow">soumettant un virus.</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <a href="http://actual-it.info/2013/clamav-antivirus-linux/" class="urlextern" title="http://actual-it.info/2013/clamav-antivirus-linux/"  rel="nofollow">Installation &amp; utilisation de ClamAV</a></div>
+</li>
+</ul>
+
+<p>
+—-
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/hackurx" class="wikilink1" title="utilisateurs:hackurx">HacKurx</a>, <a href="utilisateurs/kmeleon" class="wikilink2" title="utilisateurs:kmeleon" rel="nofollow">Kmeleon</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/wullfk" class="wikilink2" title="utilisateurs:wullfk" rel="nofollow">Wullfk</a>.</em>
+</p>
+
+<p>
+<em>Basé sur <a href="https://help.ubuntu.com/community/ClamAV" class="urlextern" title="https://help.ubuntu.com/community/ClamAV"  rel="nofollow">https://help.ubuntu.com/community/ClamAV</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="clamav"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430499070" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13818-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/a/a0d84ae51c1243a0896390764d2a9aeb.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/clamav?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/clamav?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/clamav?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/clamav?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/clamav?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

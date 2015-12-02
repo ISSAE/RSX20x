@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>nufw - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-06-12T13:27:45+0200"/>
+<meta name="keywords" content="reseau,securite,administration,pare-feu,serveur,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/nufw?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/nufw?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/nufw"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/nufw"/>
+<link rel="canonical" href="nufw"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"nufw","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="nufw#main" tabindex="1">Contenu</a> | <a href="nufw#qsearch__in" tabindex="2">Rechercher</a> | <a href="nufw#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="nufw" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="nufw" >nufw</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="nufw#interet">Intéret</a></div></li>
+<li class="level1"><div class="li"><a href="nufw#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="nufw#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="nufw#fonctionnalites_de_nufw">Fonctionnalités de NuFW :</a></div></li>
+<li class="level1"><div class="li"><a href="nufw#caracteristiques_technique">Caractéristiques Technique</a></div></li>
+<li class="level1"><div class="li"><a href="nufw#recompenses">Récompenses</a></div></li>
+<li class="level1"><div class="li"><a href="nufw#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>,
+	<a href="administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="pare-feu" class="wikilink1" title="pare-feu" rel="tag">pare-feu</a>,
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">brouillon</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="nufw_-_pare-feu_identifiant">NuFW - Pare-feu identifiant</h1>
+<div class="level1">
+
+<p>
+NuFW ajoute la notion d’utilisateurs aux règles de filtrage. Le projet s’appuie sur Netfilter, la couche pare-feu du noyau Linux, et constitue un système de gestion d’identité au niveau des couches réseaux.
+</p>
+
+<p>
+NuFW est une extension libre de Netfilter, la couche pare-feu du noyau Linux. C&#039;est un pare-feu de nouvelle génération, qui intègre la notion d&#039;identité des utilisateurs pour filtrer les flux IP.
+</p>
+
+<p>
+Site officiel :<del><a href="http://www.nufw.org/-Francais-.html" class="urlextern" title="http://www.nufw.org/-Francais-.html"  rel="nofollow">http://www.nufw.org/-Francais-.html</a></del> <a href="http://ufwi.org/projects/nufw" class="urlextern" title="http://ufwi.org/projects/nufw"  rel="nofollow">http://ufwi.org/projects/nufw</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="nufw"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1371036465" /><input type="hidden" name="summary" value="[NuFW - Pare-feu identifiant] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="77-635" /><input type="submit" value="Modifier" class="button" title="NuFW - Pare-feu identifiant" /></div></form></div>
+<h2 class="sectionedit2" id="interet">Intéret</h2>
+<div class="level2">
+
+<p>
+Le serveur fonctionne sous Linux et des clients pour les postes utilisateurs existent pour Windows, Linux, FreeBSD et Mac <abbr title="Operating System">OS</abbr> X.
+</p>
+
+<p>
+Les politiques de sécurité peuvent s’interfacer avec les annuaires d’utilisateurs (ou d&#039;autres solutions de gestion d&#039;identité) et la notion d’utilisateur est amenée au niveau de la couche IP.
+</p>
+
+<p>
+NuFW permet ainsi de passer d&#039;une règle générique telle machine (IP) est autorisée à accéder à tel service à des règles d&#039;accès de type : &quot;M. Martin est autorisé à se connecter sur tel serveur de 9h00 à 18h00 avec telle application, avec Windows XP SP2&quot;, par exemple.
+</p>
+
+<p>
+NuFW ne réalise jamais d&#039;association IP=utilisateur (contrairement aux portails captifs, à 802.1x, ou à la plupart des pare-feu du marché), ce qui permet ainsi de sécuriser les réseaux Wifi ou encore des machines multi-utilisateurs de type Citrix ou TSE.
+</p>
+
+<p>
+La société EdenWall Technologies, fondée par les initiateurs de NuFW, propose un boîtier, appelé EdenWall, dont la technologie est basée sur NuFW.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="nufw"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1371036465" /><input type="hidden" name="summary" value="[Intéret] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="636-1688" /><input type="submit" value="Modifier" class="button" title="Intéret" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://nufw" class="urlextern" title="apt://nufw"  rel="nofollow">nufw</a></strong>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="nufw"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1371036465" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1689-1800" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="nufw"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1371036465" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1801-1828" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h2 class="sectionedit5" id="fonctionnalites_de_nufw">Fonctionnalités de NuFW :</h2>
+<div class="level2">
+
+<p>
+NuFW peut :<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=768cd8&amp;media=http%3A%2F%2Fwww.nufw.org%2FIMG%2Fcomparatif.png" class="media" title="http://www.nufw.org/IMG/comparatif.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=768cd8&amp;media=http%3A%2F%2Fwww.nufw.org%2FIMG%2Fcomparatif.png" class="mediaright" alt="" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Authentifier toutes les connexions qui passent à travers votre passerelle ou simplement un sous-ensemble déterminé (utilisation d’iptables pour sélectionner les connexions à authentifier).</div>
+</li>
+<li class="level1"><div class="li"> Réaliser du routage, de la qualité de service, des statistiques basés sur les utilisateurs et non plus simplement sur les IPs.</div>
+</li>
+<li class="level1"><div class="li"> Filtrer les paquets avec des critères tels que l’application ou l’OS utilisés par les utilisateurs.</div>
+</li>
+<li class="level1"><div class="li"> Être à la base d’une solution simple et sécurisée d’authentification unique.</div>
+</li>
+</ul>
+
+<p>
+Pour une présentation plus détaillée de l’authentification des flux proposée par NuFW vous <del><a href="http://www.nufw.org/Introduction.html" class="urlextern" title="http://www.nufw.org/Introduction.html"  rel="nofollow">pouvez lire l’article Motivations de NuFW</a></del>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="nufw"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1371036465" /><input type="hidden" name="summary" value="[Fonctionnalités de NuFW :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1829-2654" /><input type="submit" value="Modifier" class="button" title="Fonctionnalités de NuFW :" /></div></form></div>
+<h2 class="sectionedit6" id="caracteristiques_technique">Caractéristiques Technique</h2>
+<div class="level2">
+
+<p>
+NuFW est :
+</p>
+<ul>
+<li class="level1"><div class="li"> Robuste : NuFW est composé de deux démons qui peuvent être mis en place sur des systèmes différents et le démon principal est massivement multithreadé ;</div>
+</li>
+<li class="level2"><div class="li"> Modulaire : L’authentification et le stockage des listes de contrôle d’accès sont réalisées grâce à des greffons (des modules system, ldap, dbm, plaintext sont fournis). La journalisation de l’activité des utilisateurs peut être faite par syslog, mysql, postgresql ou encore prelude ;</div>
+</li>
+<li class="level2"><div class="li"> Ouvert : le pare-feu NuFW est distribué sous licence <abbr title="GNU General Public License">GPL</abbr> v2. Il est basé sur des composants eux-mêmes ouverts et libres, à commencer par Netfilter et iptables, mais également MySQL, PostgreSQL, OpenLDAP, Prelude… ;</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="nufw"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1371036465" /><input type="hidden" name="summary" value="[Caractéristiques Technique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2655-3406" /><input type="submit" value="Modifier" class="button" title="Caractéristiques Technique" /></div></form></div>
+<h2 class="sectionedit7" id="recompenses">Récompenses</h2>
+<div class="level2">
+
+<p>
+NuFW a remporté différentes récompenses :
+</p>
+<ul>
+<li class="level1"><div class="li"> 2007 : Lutèce d&#039;Or dans la catégorie Meilleure Innovation ;</div>
+</li>
+<li class="level2"><div class="li"> 2005 : Trophées du libre dans la catégorie Sécurité ;</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="nufw"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1371036465" /><input type="hidden" name="summary" value="[Récompenses] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3407-3610" /><input type="submit" value="Modifier" class="button" title="Récompenses" /></div></form></div>
+<h2 class="sectionedit8" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://ufwi.org/" class="urlextern" title="http://ufwi.org/"  rel="nofollow">Le nouveau site officiel du projet suite à liquidation de la société EdenWall Technologies</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.unixgarden.com/index.php/gnu-linux-magazine/presentation-de-nufw" class="urlextern" title="http://www.unixgarden.com/index.php/gnu-linux-magazine/presentation-de-nufw"  rel="nofollow">Présentation</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://cyril005.free.fr/index.php?post/2009/03/12/Compte-Rendu...2" class="urlextern" title="http://cyril005.free.fr/index.php?post/2009/03/12/Compte-Rendu...2"  rel="nofollow">Tutoriel d&#039;installation sur debian</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs :  <a href="utilisateurs/psychederic.1" class="wikilink1" title="utilisateurs:psychederic">Psychederic</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="nufw"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1371036465" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3611-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/5/5c617aaf335882b0cb7fe77d3ede70e4.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/nufw?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="nufw?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="nufw?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="nufw?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="nufw?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

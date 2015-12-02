@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>fdisk</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-01-15T12:20:00+0100"/>
+<meta name="keywords" content="systeme,partitions,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../fdisk?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="fdisk"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/fdisk"/>
+<link rel="canonical" href="../../fdisk"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"fdisk","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="fdisk#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="fdisk#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="fdisk#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="fdisk#modifier_le_type_d_une_partition">Modifier le type d&#039;une partition</a></div></li>
+<li class="level1"><div class="li"><a href="fdisk#reparer_l_ordre_des_numeros_de_partitions">Réparer l&#039;ordre des numéros de partitions</a></div></li>
+<li class="level1"><div class="li"><a href="fdisk#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../partitions" class="wikilink1" title="partitions" rel="tag">partitions</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+
+<h1 class="sectionedit1" id="fdisk">FDISK</h1>
+<div class="level1">
+
+<p>
+<a href="http://fr.wikipedia.org/wiki/fdisk" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/fdisk">fdisk</a> est un outil de base pour réaliser des opérations sur les tables de partitions des disques durs.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "FDISK" [40-175] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+fdisk est un outil de bas niveau qui nécessite l&#039;utilisation de la <a href="../../commande_shell" class="wikilink1" title="commande_shell">ligne de commande</a> et les <a href="../../sudo" class="wikilink1" title="sudo">droits administrateur</a>. 
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [176-347] -->
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+fdisk est présent par défaut dans les distributions <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux
+[root@localhost /]# umount /dev/hda5 [root@localhost /]# tune2fs -O ^has_journal /dev/hda5 [root@localhost /]# fsck /dev/hda5 [root@localhost /]# mount -t ext2 /dev/hda5 /usr/local
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Installation" [348-617] -->
+<h2 class="sectionedit4" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+fdisk permet de manipuler les tables de partitions. Il permet de créer, de supprimer, de lister les partitions sur un disque dur.
+Voyons la syntaxe des différentes opérations :
+</p>
+<ul>
+<li class="level1"><div class="li"> Lister les partitions :</div>
+</li>
+</ul>
+<pre class="code">sudo fdisk -l</pre>
+
+<p>
+<p><div class="noteclassic">
+<a href="http://manpages.ubuntu.com/manpages/lucid/en/man8/blkid.8.html" class="urlextern" title="http://manpages.ubuntu.com/manpages/lucid/en/man8/blkid.8.html"  rel="nofollow">blkid</a> est un outil en ligne de commande permettant d&#039;<a href="../../uuid_et_label#en_ligne_de_commande" class="wikilink1" title="uuid_et_label">obtenir des informations</a> dont les attributs de vos <a href="../../partitions" class="wikilink1" title="partitions">partitions</a>.
+
+</div></p>
+nous donnera un résultat de ce type :
+</p>
+<pre class="code">Disk /dev/sda: 159 GB, 159998146560 bytes
+255 heads, 63 sectors/track, 19452 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+
+   Device Boot      Start         End      Blocks   Id  System 
+/dev/sda1               1           6       48163   de  Dell Utility
+/dev/sda3             269       10382    81232672   83  Linux
+/dev/sda4           10383       19452    72846742    5  Extended
+/dev/sda6           10383       11034     5229157   82  Linux swap
+/dev/sda7           11035       19439    67505130   83  Linux
+/dev/sda5           19440       19452       96390   83  Linux</pre>
+
+</div>
+<!-- EDIT4 SECTION "Utilisation" [618-1773] -->
+<h2 class="sectionedit5" id="modifier_le_type_d_une_partition">Modifier le type d&#039;une partition</h2>
+<div class="level2">
+
+<p>
+Le type d&#039;une partition facilite l&#039;identification correcte de celle-ci par le système.
+<p><div class="notetip">les options suivantes sont accessible après un : 
+</p>
+<pre class="code">sudo fdisk /dev/sda</pre>
+
+<p>
+ (pour toutes opération sur le disque sda) 
+</div></p>
+L&#039;option <strong>L</strong> de fdisk permet de voir l&#039;ensemble des types de partitions connus par l&#039;outil. Actuellement:
+</p>
+<pre class="code"> 0  Vide            24  NEC DOS         81  Minix / Linux a bf  Solaris        
+ 1  FAT12           39  Plan 9          82  Linux swap / So c1  DRDOS/sec (FAT-
+ 2  XENIX root      3c  PartitionMagic  83  Linux           c4  DRDOS/sec (FAT-
+ 3  XENIX usr       40  Venix 80286     84  OS/2 cachée di  c6  DRDOS/sec (FAT-
+ 4  FAT16 &lt;32M      41  PPC PReP Boot   85  Linux étendue   c7  Syrinx         
+ 5  Etendue         42  SFS             86  NTFS volume set da  Non-FS data    
+ 6  FAT16           4d  QNX4.x          87  NTFS volume set db  CP/M / CTOS / .
+ 7  HPFS/NTFS       4e  QNX4.x 2nd part 88  Linux plaintext de  Dell Utility   
+ 8  AIX             4f  QNX4.x 3rd part 8e  Linux LVM       df  BootIt         
+ 9  AIX amorçable   50  OnTrack DM      93  Amoeba          e1  DOS access     
+ a  OS/2 Boot Manag 51  OnTrack DM6 Aux 94  Amoeba BBT      e3  DOS R/O        
+ b  W95 FAT32       52  CP/M            9f  BSD/OS          e4  SpeedStor      
+ c  W95 FAT32 (LBA) 53  OnTrack DM6 Aux a0  IBM Thinkpad hi eb  BeOS fs        
+ e  W95 FAT16 (LBA) 54  OnTrackDM6      a5  FreeBSD         ee  GPT            
+ f  W95 Etendue (LB 55  EZ-Drive        a6  OpenBSD         ef  EFI (FAT-12/16/
+10  OPUS            56  Golden Bow      a7  NeXTSTEP        f0  Linux/PA-RISC b
+11  Cachée FAT12    5c  Priam Edisk     a8  UFS Darwin      f1  SpeedStor      
+12  Compaq diagnost 61  SpeedStor       a9  NetBSD          f4  SpeedStor      
+14  Cachée FAT16 &lt;  63  GNU HURD or Sys ab  Amorce Darwin   f2  DOS secondaire 
+16  Cachée FAT16    64  Novell Netware  af  HFS / HFS+      fb  VMware VMFS    
+17  Cachée HPFS/NT  65  Novell Netware  b7  BSDI fs         fc  VMware VMKCORE 
+18  AST SmartSleep  70  DiskSecure Mult b8  BSDI swap       fd  Linux raid auto
+1b  Cachée W95 FAT  75  PC/IX           bb  Boot Wizard hid fe  LANstep        
+1c  Cachée W95 FAT  80  Minix ancienne  be  Amorce Solaris  ff  BBT            
+1e  Cachée W95 FAT</pre>
+
+<p>
+L&#039;option <strong>t</strong> permet de changer le type d&#039;une partition. L&#039;utilitaire demande de choisir la partition, s&#039;il y en a plusieurs, et ensuite de donner le code repris dans la liste ci-dessus.
+</p>
+
+<p>
+Exemple, on change le type d&#039;une partition Linux (83) en Linux LVM (8e)
+</p>
+<pre class="code">Commande (m pour l&#039;aide): p
+...
+Périphérique Amorce  Début        Fin      Blocs     Id  Système
+/dev/sdb1               1        1022     7762059    83  Linux
+
+Commande (m pour l&#039;aide): t
+Partition sélectionnée 1
+Code Hexa (taper L pour lister les codes): 8e
+Type système de partition modifié de 1 à 8e (Linux LVM)
+
+Commande (m pour l&#039;aide): p
+...
+Périphérique Amorce  Début        Fin      Blocs     Id  Système
+/dev/sdb1               1        1022     7762059    8e  Linux LVM
+
+Commande (m pour l&#039;aide): w
+La table de partitions a été altérée!</pre>
+
+</div>
+<!-- EDIT5 SECTION "Modifier le type d'une partition" [1774-4959] -->
+<h2 class="sectionedit6" id="reparer_l_ordre_des_numeros_de_partitions">Réparer l&#039;ordre des numéros de partitions</h2>
+<div class="level2">
+
+<p>
+Il se peut qu&#039;en faisant certaines manipulations sur les partitions, que l&#039;ordre des numéros s&#039;en retrouve perturbé, dans ce cas, il faut utiliser &quot;fdisk&quot; en mode expert en tapant &quot;x&quot; dans le prompt &quot;fdisk&quot;, puis &quot;f&quot; pour &quot;fixer&quot; l&#039;ordre des numéros de partitions :
+</p>
+<pre class="code">$ sudo fdisk /dev/sdb
+[sudo] password for seb:
+GNU Fdisk 1.0
+Copyright (C) 1998 - 2006 Free Software Foundation, Inc.
+This program is free software, covered by the GNU General Public License.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+Using /dev/sdb
+Command (m for help): x                                                   
+Expert command (m for help): m                                           
+   v   move a partition
+   c   rescue a lost partition
+   z   resize a partition and its file system
+   h   check the consistency of a partition
+   o   copy the partition over another partition
+   k   creates a filesystem on a partition
+    f   fix partition order
+   g   create an IRIX (SGI) partition table
+   p   print the partition table
+   q   quit without saving changes
+   r   return to the main menu
+   w   write table to disk and exit
+Expert command (m for help): f</pre>
+
+<p>
+Ensuite tapez &quot;w&quot; pour appliquer les changements, puis, pour informer le noyau du changement sur la table de partitions, faire un :
+</p>
+<pre class="code">$ sudo partprobe</pre>
+
+</div>
+<!-- EDIT6 SECTION "Réparer l'ordre des numéros de partitions" [4960-6529] -->
+<h2 class="sectionedit7" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+
+<p>
+<a href="http://wiki.debian-facile.org/commande:fdisk" class="urlextern" title="http://wiki.debian-facile.org/commande:fdisk"  rel="nofollow">Documentation complémentaire fdisk</a> sur wiki.debian-facile.org.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Voir aussi" [6530-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/d9d4b17e8479ebd82d7af8897c0a7a62.xhtml used -->
+</div>
+</body>
+</html>

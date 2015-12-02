@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>rsync - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-10-13T20:53:03+0200"/>
+<meta name="keywords" content="sauvegarde,synchronisation"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/rsync?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="rsync?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/rsync"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/rsync"/>
+<link rel="canonical" href="rsync"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"rsync","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="rsync#main" tabindex="1">Contenu</a> | <a href="rsync#qsearch__in" tabindex="2">Rechercher</a> | <a href="rsync#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="rsync" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="rsync" >rsync</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="rsync#presentation">Présentation</a></div></li>
+<li class="level1"><div class="li"><a href="rsync#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="rsync#creer_un_dossier_miroir">Créer un dossier miroir</a></div></li>
+<li class="level2"><div class="li"><a href="rsync#exclure_des_fichiers">Exclure des fichiers</a></div></li>
+<li class="level2"><div class="li"><a href="rsync#interface_graphiquegrsync_gnome">Interface graphique : Grsync (Gnome)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="rsync#tutoriel">Tutoriel</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="rsync#sauvegarde_distante_du_serveur_web">Sauvegarde distante du serveur web</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="rsync#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="sauvegarde" class="wikilink1" title="sauvegarde" rel="tag">sauvegarde</a>,
+	<a href="synchronisation" class="wikilink1" title="synchronisation" rel="tag">synchronisation</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="rsync">rsync</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="rsync"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413226383" /><input type="hidden" name="summary" value="[rsync] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="43-63" /><input type="submit" value="Modifier" class="button" title="rsync" /></div></form></div>
+<h2 class="sectionedit2" id="presentation">Présentation</h2>
+<div class="level2">
+
+<p>
+<strong>rsync</strong> (pour <strong>r</strong>emote <strong>sync</strong>hronization ou synchronisation à distance), est un logiciel <sup><a href="rsync#fn__1" id="fnt__1" class="fn_top">1)</a></sup> de synchronisation de fichiers. Il est fréquemment utilisé pour mettre en place des systèmes de <a href="sauvegarde" class="wikilink1" title="sauvegarde">sauvegarde</a> distante.<br/>
+
+rsync travaille de manière unidirectionnelle c&#039;est-à-dire qu&#039;il synchronise, copie ou actualise les données d&#039;une source (locale ou distante) vers une destination (locale ou distante) en ne transférant que les octets des fichiers qui ont été modifiés. 
+<p><div class="notehelp">La notion d&#039;unidirectionalité semble souvent mal comprise : elle signifie qu&#039;en une commande, la synchronisation ne peut se faire que dans un sens. Rien n&#039;empêche ensuite de relancer la commande une seconde fois dans l&#039;autre sens !
+</div></p>
+</p>
+
+<p>
+D&#039;un point de vue de l&#039;entreprise, un <a href="tutoriel/serveur_de_synchronisation_avec_rsync" class="wikilink1" title="tutoriel:serveur_de_synchronisation_avec_rsync">serveur de synchronisation</a> est utile pour centraliser les sauvegardes sur une même machine équipée accessoirement d&#039;un enregistreur de bande.
+</p>
+
+<p>
+Pour le particulier, il est intéressant (si vous avez plusieurs machines), d&#039;avoir une sauvegarde simple et rapide de son <em>Dossier Personnel</em>. <br/>
+
+</p>
+
+<p>
+Ici nous verrons son utilisation basique. Pour plus de détails, allez voir ce <a href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_home_avec_rsync" class="wikilink1" title="tutoriel:sauvegarder_home_avec_rsync">tutoriel : &quot;Sauvegarder &quot;/home&quot; avec rsync&quot;</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="rsync"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413226383" /><input type="hidden" name="summary" value="[Présentation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="64-1447" /><input type="submit" value="Modifier" class="button" title="Présentation" /></div></form></div>
+<h2 class="sectionedit3" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Comme l&#039;indique le manuel :
+</p>
+
+<p>
+&quot;rsync est un programme très similaire à rcp, mais possède bien plus d&#039;options et utilise le protocole de mise à jour à distance rsync afin d&#039;accélérer significativement le transfert de fichiers lorsque le fichier de destination existe déjà.&quot;
+</p>
+
+<p>
+L&#039;appel de base :
+</p>
+<pre class="code">rsync source/ destination/</pre>
+
+<p>
+L&#039;intérêt est une utilisation à travers le réseau. <strong>rsync</strong> utilise <a href="ssh" class="wikilink1" title="ssh">SSH</a> par défaut. Un exemple :
+</p>
+<pre class="code">rsync -az source/ login@serveur.org:/destination/</pre>
+
+<p>
+où:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>-a</em> ou <em>--archive</em> : est un moyen rapide de dire que vous voulez la récursivité et préserver pratiquement tout. La seule exception est que si <em>--files-from</em> a été spécifiée alors <em>-r</em> n&#039;est pas utilisée. Ceci est équivalent à <em>-rlptgoD</em>.</div>
+</li>
+<li class="level1"><div class="li"> <em>-z</em> ou <em>--compress</em> : compresse les données lors du transfert.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteimportant">
+Attention, il convient d&#039;être vigilant dans l&#039;utilisation ou non du slash (« / ») dans le chemin de la source. Ainsi, les deux commandes suivantes <strong>ne sont pas</strong> équivalentes :
+</p>
+<pre class="code">rsync source destination/
+rsync source/ destination/</pre>
+
+<p>
+En effet, la première commande copie le dossier source et ajoute donc un niveau dans l&#039;arborescence. La deuxième commande ne copie que le contenu du dossier source. Autrement dit, les deux commandes suivantes sont, elles, équivalentes* :
+</p>
+<pre class="code">rsync source destination/
+rsync source/ destination/source/</pre>
+
+<p>
+Enfin, il faut noter que l&#039;utilisation ou non d&#039;un slash final dans le chemin de la destination n&#039;a aucune incidence. Les deux commandes suivantes sont donc équivalentes :
+</p>
+<pre class="code">rsync source destination/
+rsync source destination</pre>
+
+<p>
+* Sauf dans le cas ou source est un lien symbolique vers un répertoire, la première commande ne copie alors que le lien tandis que la seconde travaille bien à l&#039;intérieur du répertoire
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="rsync"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413226383" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1448-3363" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h3 class="sectionedit4" id="creer_un_dossier_miroir">Créer un dossier miroir</h3>
+<div class="level3">
+
+<p>
+Voici un exemple d&#039;une commande, utilisant le protocole <a href="ssh" class="wikilink1" title="ssh">SSH</a>, qui copie à l&#039;identique le dossier &lt;source&gt; vers le dossier &lt;destination&gt;.
+</p>
+
+<p>
+Copie du dossier source vers le serveur:
+</p>
+<pre class="code">rsync -e ssh -avz --delete-after /home/source user@ip_du_serveur:/dossier/destination/</pre>
+
+<p>
+où :
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>--delete-after</em> : à la fin du transfert, supprime les fichiers dans le dossier de destination ne se trouvant pas dans le dossier source.</div>
+</li>
+<li class="level1"><div class="li"> <em>-z</em> : compresse les fichiers</div>
+</li>
+<li class="level1"><div class="li"> <em>-v</em> : verbeux</div>
+</li>
+<li class="level1"><div class="li"> <em>-e ssh</em> : utilise le protocole <a href="ssh" class="wikilink1" title="ssh">SSH</a></div>
+</li>
+</ul>
+
+<p>
+Avec l&#039;option <em>-n</em> la commande liste ce qu&#039;elle va faire sans l&#039;exécuter:
+</p>
+<pre class="code">rsync -e ssh -avzn --delete-after /home/mondossier_source user@ip_du_serveur:/dossier/destination/</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="rsync"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413226383" /><input type="hidden" name="summary" value="[Créer un dossier miroir] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3364-4145" /><input type="submit" value="Modifier" class="button" title="Créer un dossier miroir" /></div></form></div>
+<h3 class="sectionedit5" id="exclure_des_fichiers">Exclure des fichiers</h3>
+<div class="level3">
+
+<p>
+On peut exclure des fichiers/dossiers selon beaucoup de schémas. C&#039;est utile pour ne pas sauvegarder le cache, les fichiers temporaires, la corbeille, etc…
+</p>
+<ul>
+<li class="level1"><div class="li"> Liste dans la commande : <pre class="code bash">rsync <span class="re5">--exclude</span>=<span class="st0">&quot;nom_de_dossier&quot;</span> <span class="re5">--exclude</span>=<span class="st0">&quot;- autre_nom_de_dossier&quot;</span> source<span class="sy0">/</span> destination<span class="sy0">/</span></pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Un fichier de règles d&#039;exclusion <pre class="code bash">rsync <span class="re5">--exclude-from</span>=ExclusionRSync source<span class="sy0">/</span> destination<span class="sy0">/</span> </pre>
+
+<p>
+<br/>
+Et le fichier ExclusionRSync dans le dossier courant sera de cette forme : 
+</p>
+<pre class="code bash">tmp
+.Trash
+.cache
+.PlayOnLinux</pre>
+
+<p>
+Vous pouvez consulter cette <a href="http://programmersnotebook.wordpress.com/2010/03/20/rsync-and-exclude-from" class="urlextern" title="http://programmersnotebook.wordpress.com/2010/03/20/rsync-and-exclude-from"  rel="nofollow">page très intéressante sur le sujet</a> de l&#039;exclusion par fichier de règles.
+</p>
+</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="rsync"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413226383" /><input type="hidden" name="summary" value="[Exclure des fichiers] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4146-4896" /><input type="submit" value="Modifier" class="button" title="Exclure des fichiers" /></div></form></div>
+<h3 class="sectionedit6" id="interface_graphiquegrsync_gnome">Interface graphique : Grsync (Gnome)</h3>
+<div class="level3">
+
+<p>
+Dans les <a href="depots" class="wikilink1" title="depots">dépôts</a> vous trouverez notamment le logiciel <a href="grsync" class="wikilink1" title="grsync">Grsync</a> qui offre une interface graphique pour rsync: <a href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_home_avec_grsync" class="wikilink1" title="tutoriel:sauvegarder_home_avec_grsync">voir ce tutoriel sur Grsync</a>.<br/>
+
+Voir aussi la page <a href="sauvegarde" class="wikilink1" title="sauvegarde">sauvegarde</a> pour trouver d&#039;autres interfaces graphiques.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="rsync"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413226383" /><input type="hidden" name="summary" value="[Interface graphique : Grsync (Gnome)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4897-5215" /><input type="submit" value="Modifier" class="button" title="Interface graphique : Grsync (Gnome)" /></div></form></div>
+<h2 class="sectionedit7" id="tutoriel">Tutoriel</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_home_avec_rsync" class="wikilink1" title="tutoriel:sauvegarder_home_avec_rsync">Sauvegarde de &quot;/home&quot; avec rsync</a> ou avec l&#039;interface graphique <a href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_home_avec_grsync" class="wikilink1" title="tutoriel:sauvegarder_home_avec_grsync">Grsync</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="tutoriel/serveur_de_synchronisation_avec_rsync" class="wikilink1" title="tutoriel:serveur_de_synchronisation_avec_rsync">Serveur de synchronisation avec rsync</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="rsync"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413226383" /><input type="hidden" name="summary" value="[Tutoriel] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5216-5490" /><input type="submit" value="Modifier" class="button" title="Tutoriel" /></div></form></div>
+<h3 class="sectionedit8" id="sauvegarde_distante_du_serveur_web">Sauvegarde distante du serveur web</h3>
+<div class="level3">
+
+<p>
+Cas présenté :
+</p>
+<ul>
+<li class="level1"><div class="li"> un serveur distant s&#039;exécutant sous le compte système www-data.</div>
+<ul>
+<li class="level2"><div class="li"> ce serveur est accessible via ssh</div>
+</li>
+<li class="level2"><div class="li"> on a un compte utilisateur pour se connecter sur ce serveur</div>
+</li>
+<li class="level2"><div class="li"> ce compte (ou un autre) a les droits d&#039;administration de la machine</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> une machine sur laquelle sauvegarder les données</div>
+<ul>
+<li class="level2"><div class="li"> on a un compte utilisateur avec le droit sudo</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+Pour l&#039;exemple qui suit :
+</p>
+<ol>
+<li class="level1"><div class="li"> sur la machine locale, on devient <em>www-data</em> pour travailler avec les droits de ce dernier</div>
+</li>
+<li class="level1"><div class="li"> www-data exécute la commande rsync qui va établir une connexion via ssh au serveur distant avec le compte <em>utilisateur</em> (on peut avoir besoin de saisir le mot de passe de l&#039;utilisateur distant si on n&#039;a pas déposé de clef publique)</div>
+</li>
+<li class="level1"><div class="li"> sur le serveur distant, via ssh, <em>utilisateur</em> va lancer sudo pour devenir <em>www-data</em></div>
+</li>
+<li class="level1"><div class="li"> <em>www-data</em> exécute la commande rsync qui échange les informations avec la machine locale</div>
+</li>
+</ol>
+
+<p>
+Sur le serveur distant :
+</p>
+<ul>
+<li class="level1"><div class="li"> Autoriser l&#039;utilisateur à lancer la commande rsync sous le compte système www-data grace à <a href="sudo" class="wikilink1" title="sudo">sudo</a>, <em class="u">sans mot de passe</em>: <pre class="code">sudo visudo</pre>
+<pre class="file">utilisateurssh ALL=(www-data) NOPASSWD: /usr/bin/rsync</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Optionnel : déposer une clef publique ssh au besoin pour l&#039;utilisateur</div>
+</li>
+</ul>
+
+<p>
+Sur la machine local :
+</p>
+<ul>
+<li class="level1"><div class="li"> Lancer une synchronisation en tant qu&#039;utilisateur www-data grace à <a href="sudo" class="wikilink1" title="sudo">sudo</a><pre class="code">sudo -u www-data rsync -a --progress -e ssh --rsync-path &quot;sudo -u www-data rsync&quot; utilisateur@serveur_distant:/var/www/ /var/www/</pre>
+</div>
+</li>
+</ul>
+
+<p>
+<a href="https://crashingdaily.wordpress.com/2007/06/29/rsync-and-sudo-over-ssh/" class="urlextern" title="https://crashingdaily.wordpress.com/2007/06/29/rsync-and-sudo-over-ssh/"  rel="nofollow">Source de ce tutoriel</a>, adaptée pour le cas présenté
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="rsync"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413226383" /><input type="hidden" name="summary" value="[Sauvegarde distante du serveur web] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5491-7170" /><input type="submit" value="Modifier" class="button" title="Sauvegarde distante du serveur web" /></div></form></div>
+<h2 class="sectionedit9" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://rsync.samba.org/" class="urlextern" title="http://rsync.samba.org/"  rel="nofollow">Site officiel</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <a href="http://man.developpez.com/man1/rsync/" class="urlextern" title="http://man.developpez.com/man1/rsync/"  rel="nofollow">Le man de rsync en français</a>, « traduction de Denis Mertz, 2002. Mise à jour par Éric Piel &lt;eric POINT piel AT tremplin-utc POINT net&gt;, 2005. Relecture par Frédéric Delanoy et Julien Soula. » (extrait de développez.com, 2005) (Lien mort? <a href="http://www.delafond.org/traducmanfr/man/man1/rsync.1.html" class="urlextern" title="http://www.delafond.org/traducmanfr/man/man1/rsync.1.html"  rel="nofollow">autre solution</a>, même contenu).</div>
+</li>
+<li class="level1"><div class="li">  <strong>(fr)</strong> <a href="http://www.it-connect.fr/synchronisation-rsync-entre-windows-et-linux/" class="urlextern" title="http://www.it-connect.fr/synchronisation-rsync-entre-windows-et-linux/"  rel="nofollow">Synchronisation Rsync entre Windows et Linux</a> sur IT-Connect.fr</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em> Contributeur : <a href="utilisateurs/ostaquet" class="wikilink2" title="utilisateurs:ostaquet" rel="nofollow">ostaquet</a>, <a href="utilisateurs/jahwork" class="wikilink1" title="utilisateurs:jahwork">jahwork</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="rsync"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413226383" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7171-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="rsync#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+sous licence <strong><a href="http://fr.wikipedia.org/wiki/Licence_publique_générale_GNU" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Licence_publique_générale_GNU">GNU GPL</a></strong></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/7/704b9f41b8ec3ae5fadf416f8065ed1a.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/rsync?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rsync?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rsync?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rsync?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rsync?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

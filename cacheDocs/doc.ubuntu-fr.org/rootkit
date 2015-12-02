@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>rootkit - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-04-01T10:58:08+0200"/>
+<meta name="keywords" content="securite,serveur,virus"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/rootkit?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/rootkit?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/rootkit"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/rootkit"/>
+<link rel="canonical" href="rootkit"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"rootkit","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="rootkit#main" tabindex="1">Contenu</a> | <a href="rootkit#qsearch__in" tabindex="2">Rechercher</a> | <a href="rootkit#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="rootkit" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="rootkit" >rootkit</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="rootkit#anti-rootkitlogiciel_installation_et_utilisation">Anti-Rootkit: Logiciel, installation et utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="rootkit#rkhunter">rkhunter</a></div></li>
+<li class="level2"><div class="li"><a href="rootkit#chkrootkit">chkrootkit</a></div></li>
+<li class="level2"><div class="li"><a href="rootkit#lynis">lynis</a></div></li>
+<li class="level2"><div class="li"><a href="rootkit#tiger">Tiger</a></div></li>
+<li class="level2"><div class="li"><a href="rootkit#ossecrootcheck">OSSEC : + Rootcheck</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="rootkit#anti-webkit">Anti-Webkit</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="rootkit#php_shell_detector">PHP Shell Detector</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="rootkit#liens">Liens</a></div></li>
+<li class="level1"><div class="li"><a href="rootkit#contributeur">Contributeur</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>,
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="http://doc.ubuntu-fr.org/virus?do=showtag&amp;tag=virus" class="wikilink1" title="virus" rel="tag">virus</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="presentation_rootkit">Présentation Rootkit</h1>
+<div class="level1">
+
+<p>
+<a href="_detail/rootkits.png?id=rootkit" class="media" title="rootkits.png"><img src="_media/rootkits.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Un rootkit est un programme qui maintient un accès frauduleux à un système informatique et cela le plus discrètement possible, leur détection est difficile, parfois même impossible tant que le système d&#039;exploitation fonctionne. Certains rootkits résistent même au formatage car il peuvent s&#039;introduire directement dans le <abbr title="Basic Input-Output System">BIOS</abbr>. Ils existent sous Linux depuis longtemps (car le noyau est ouvert et modulaire). 
+</p>
+
+<p>
+Un Webkit quant à lui permet de prendre l&#039;accès d&#039;une machine via une faille puis par port http et de prendre l&#039;accès sur le système.
+</p>
+
+<p>
+Il existe néanmoins des programmes pour les détecter, nous allons les voir ci-dessous.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="rootkit"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364806688" /><input type="hidden" name="summary" value="[Présentation Rootkit] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="40-745" /><input type="submit" value="Modifier" class="button" title="Présentation Rootkit" /></div></form></div>
+<h2 class="sectionedit2" id="anti-rootkitlogiciel_installation_et_utilisation">Anti-Rootkit: Logiciel, installation et utilisation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="rootkit"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364806688" /><input type="hidden" name="summary" value="[Anti-Rootkit: Logiciel, installation et utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="746-810" /><input type="submit" value="Modifier" class="button" title="Anti-Rootkit: Logiciel, installation et utilisation" /></div></form></div>
+<h3 class="sectionedit3" id="rkhunter">rkhunter</h3>
+<div class="level3">
+
+<p>
+Site officiel : <a href="http://rkhunter.sourceforge.net/" class="urlextern" title="http://rkhunter.sourceforge.net/"  rel="nofollow">http://rkhunter.sourceforge.net/</a>
+</p>
+
+<p>
+Contrôle notamment que les fichiers n&#039;ont pas été modifiés en comparent les hash avec une base de données en ligne.
+</p>
+
+<p>
+<a href="apt://rkhunter" class="urlextern" title="apt://rkhunter"  rel="nofollow">Cliquer ici pour installer rkhunter</a>, ou en ligne de commande :
+</p>
+<pre class="code"> sudo apt-get install rkhunter </pre>
+
+<p>
+Mise à jour du programme :
+</p>
+<pre class="code"> sudo rkhunter --update</pre>
+
+<p>
+Ensuite lancez RootKit Hunter (la commande ci-dessous n&#039;affiche que les avertissements): 
+</p>
+<pre class="code"> sudo rkhunter --checkall --report-warnings-only</pre>
+
+<p>
+Analysez sérieusement vos résultats.
+</p>
+
+<p>
+<p><div class="noteimportant">Des fichiers peuvent être considérés comme suspects si la base de données n&#039;est pas à jour.<br/>
+
+Notamment :<br/>
+
+<strong><em>/usr/sbin/unhide</em></strong><br/>
+
+<strong><em>/usr/sbin/unhide-linux26</em></strong><br/>
+
+qui peuvent déclencher un <strong>[ Warning ]</strong><br/>
+
+</p>
+
+<p>
+Dans ce cas lancez :<br/>
+
+</p>
+<pre class="code">sudo rkhunter --propupd</pre>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+Voir l&#039;article sur <a href="rkhunter" class="wikilink1" title="rkhunter">rkhunter</a> pour plus d&#039;informations.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="rootkit"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364806688" /><input type="hidden" name="summary" value="[rkhunter] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="811-1715" /><input type="submit" value="Modifier" class="button" title="rkhunter" /></div></form></div>
+<h3 class="sectionedit4" id="chkrootkit">chkrootkit</h3>
+<div class="level3">
+
+<p>
+Site officiel : <a href="http://www.chkrootkit.org/" class="urlextern" title="http://www.chkrootkit.org/"  rel="nofollow">http://www.chkrootkit.org/</a>
+</p>
+
+<p>
+Vérifie que les fichiers exécutables du système n&#039;ont pas été modifiés, que la carte réseau n&#039;est pas en mode &quot;promiscuous&quot; et que des vers <a href="http://fr.wikipedia.org/wiki/Loadable_Kernel_Module" class="urlextern" title="http://fr.wikipedia.org/wiki/Loadable_Kernel_Module"  rel="nofollow">LKM</a> (Loadable Kernel Module) ne sont présents.
+</p>
+
+<p>
+<a href="apt://chkrootkit" class="urlextern" title="apt://chkrootkit"  rel="nofollow">Cliquer ici pour installer chkrootkit</a>, ou en ligne de commande : 
+</p>
+<pre class="code"> sudo apt-get install chkrootkit</pre>
+
+<p>
+Ensuite lancez chkrootkit :
+</p>
+<pre class="code"> sudo chkrootkit -q</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="rootkit"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364806688" /><input type="hidden" name="summary" value="[chkrootkit] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1716-2208" /><input type="submit" value="Modifier" class="button" title="chkrootkit" /></div></form></div>
+<h3 class="sectionedit5" id="lynis">lynis</h3>
+<div class="level3">
+
+<p>
+Site officiel : <a href="http://www.rootkit.nl/projects/lynis.html" class="urlextern" title="http://www.rootkit.nl/projects/lynis.html"  rel="nofollow">http://www.rootkit.nl/projects/lynis.html</a>
+</p>
+
+<p>
+Contrôle notamment le pare-feu, que les certificats SSL ne sont pas périmés, l&#039;intégrité des fichiers.
+</p>
+
+<p>
+<a href="apt://lynis" class="urlextern" title="apt://lynis"  rel="nofollow">Cliquer ici pour installer lynis</a>, ou en ligne de commande : 
+</p>
+<pre class="code"> sudo apt-get install lynis</pre>
+
+<p>
+Mise à jour de la base de donnée:
+</p>
+<pre class="code"> sudo lynis --check-update</pre>
+
+<p>
+Lancer un scan (vérification total sans action utilisateur) :
+</p>
+<pre class="code"> sudo lynis --check-all -Q
+ </pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="rootkit"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364806688" /><input type="hidden" name="summary" value="[lynis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2209-2665" /><input type="submit" value="Modifier" class="button" title="lynis" /></div></form></div>
+<h3 class="sectionedit6" id="tiger">Tiger</h3>
+<div class="level3">
+
+<p>
+Site officiel : <a href="http://nongnu.org/tiger/" class="urlextern" title="http://nongnu.org/tiger/"  rel="nofollow">http://nongnu.org/tiger/</a>
+</p>
+
+<p>
+<a href="apt://tiger" class="urlextern" title="apt://tiger"  rel="nofollow">Cliquer ici pour installer tiger</a>, ou en ligne de commande : 
+</p>
+<pre class="code">sudo apt-get install tiger</pre>
+
+<p>
+Lancez avec des droits root : 
+</p>
+<pre class="code">sudo tiger </pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="rootkit"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364806688" /><input type="hidden" name="summary" value="[Tiger] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2666-2906" /><input type="submit" value="Modifier" class="button" title="Tiger" /></div></form></div>
+<h3 class="sectionedit7" id="ossecrootcheck">OSSEC : + Rootcheck</h3>
+<div class="level3">
+
+<p>
+Site officiel :  <a href="http://www.ossec.net/main/rootcheck" class="urlextern" title="http://www.ossec.net/main/rootcheck"  rel="nofollow">http://www.ossec.net/main/rootcheck</a>
+</p>
+
+<p>
+Voir <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=3725713#p3725713" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=3725713#p3725713"  rel="nofollow">sur le forum ubuntu pour rootcheck seul</a>
+</p>
+
+<p>
+Ou sinon <a href="http://doc.ubuntu-fr.org/ossec" class="wikilink1" title="ossec">installer ossec</a> qui contient rootcheck
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="rootkit"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364806688" /><input type="hidden" name="summary" value="[OSSEC : + Rootcheck] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2907-3160" /><input type="submit" value="Modifier" class="button" title="OSSEC : + Rootcheck" /></div></form></div>
+<h2 class="sectionedit8" id="anti-webkit">Anti-Webkit</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="rootkit"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364806688" /><input type="hidden" name="summary" value="[Anti-Webkit] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3161-3183" /><input type="submit" value="Modifier" class="button" title="Anti-Webkit" /></div></form></div>
+<h3 class="sectionedit9" id="php_shell_detector">PHP Shell Detector</h3>
+<div class="level3">
+
+<p>
+<a href="http://www.emposha.com/security/php-shell-detector-web-shell-detection-tool.html" class="urlextern" title="http://www.emposha.com/security/php-shell-detector-web-shell-detection-tool.html"  rel="nofollow">PHP Shell Detector – web shell detection tool|Voir sur le site officiel pour les sources</a> (<a href="https://github.com/emposha/PHP-Shell-Detector" class="urlextern" title="https://github.com/emposha/PHP-Shell-Detector"  rel="nofollow">github</a>) et demo ( en <a href="php" class="wikilink1" title="php">php</a> )
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="rootkit"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364806688" /><input type="hidden" name="summary" value="[PHP Shell Detector] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3184-3470" /><input type="submit" value="Modifier" class="button" title="PHP Shell Detector" /></div></form></div>
+<h2 class="sectionedit10" id="liens">Liens</h2>
+<div class="level2">
+
+<p>
+<a href="http://plfnicolarius.free.fr/tutoriel_logiciel_freebsd_linux_detection_de_rootkits_sous_linux_et_freebsd.php" class="urlextern" title="http://plfnicolarius.free.fr/tutoriel_logiciel_freebsd_linux_detection_de_rootkits_sous_linux_et_freebsd.php"  rel="nofollow">Détection de rootkits sous Linux</a>
+</p>
+
+<p>
+<a href="http://www.zdnet.fr/actualites/des-chercheurs-creent-un-rootkit-qui-resiste-au-formatage-39388963.htm" class="urlextern" title="http://www.zdnet.fr/actualites/des-chercheurs-creent-un-rootkit-qui-resiste-au-formatage-39388963.htm"  rel="nofollow">rootkit qui résiste au formatage</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="rootkit"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364806688" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3471-3777" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<h2 class="sectionedit11" id="contributeur">Contributeur</h2>
+<div class="level2">
+
+<p>
+Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/hackurx" class="wikilink1" title="utilisateurs:hackurx">HacKurx</a>,<a href="utilisateurs/psychederic.1" class="wikilink1" title="utilisateurs:psychederic">Psychederic</a>,
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="rootkit"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364806688" /><input type="hidden" name="summary" value="[Contributeur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3778-" /><input type="submit" value="Modifier" class="button" title="Contributeur" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/6/65257bd50c6019af5750d3684b987a0d.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/rootkit?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rootkit?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rootkit?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="rootkit?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rootkit?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

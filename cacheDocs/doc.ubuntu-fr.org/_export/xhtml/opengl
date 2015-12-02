@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>opengl</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-11-13T08:08:48+0100"/>
+<meta name="keywords" content="systeme,brouillon,vetuste"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../opengl?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="opengl"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/opengl"/>
+<link rel="canonical" href="../../opengl"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"opengl","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="opengl#definitions">Définitions</a></div></li>
+<li class="level1"><div class="li"><a href="opengl#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="opengl#pour_le_noyau">Pour le noyau</a></div></li>
+<li class="level2"><div class="li"><a href="opengl#pour_l_utilisateur">Pour l&#039;utilisateur</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>,
+	<a href="../../vetuste" class="wikilink1" title="vetuste" rel="tag">vétuste</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="opengl_et_glx">OpenGL et GLX</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "OpenGL et GLX" [43-71] -->
+<h2 class="sectionedit2" id="definitions">Définitions</h2>
+<div class="level2">
+
+<p>
+Voici quelques explications sur le monde d&#039;OpenGL et ce qui l&#039;entoure.
+</p>
+
+<p>
+Ici, l&#039;article vise le noyau Linux 2.6.x.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><a href="http://fr.wikipedia.org/wiki/OpenGL" class="urlextern" title="http://fr.wikipedia.org/wiki/OpenGL"  rel="nofollow">OpenGL</a></strong> :  (Open Graphic Library) est une spécification de graphique en 3D (trois dimensions) de SGI (Silicon Graphics, Inc.), descendant du produit anciennement nommé IRIS GL, compétiteur de Direct3D et QuickDraw3D (dépassé).  Fréquemment abrégé &quot;GL&quot;, particulièrement sous Linux, depuis que &quot;OpenGL&quot; est une marque déposée, et que l&#039;utilisation de cette marque requiert d&#039;être dans une zone (non-libre).</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://fr.wikipedia.org/wiki/GLX" class="urlextern" title="http://fr.wikipedia.org/wiki/GLX"  rel="nofollow">GLX</a></strong> :  GL est un langage pour le graphique, non un système de fenêtre.  &quot;GLX&quot; réfère à une extension qui permet la communication de GL avec le système de gestion de fenêtre dans le but de permettre le rendu 3D dans X.  GLX est une extension au protocole X.  Il y a des extensions similaires pour d&#039;autres systèmes de fenêtres comme - WGL sous Windows, AGL sous MacOS.  Dans X, la librairie du côté client pour GLX se nomme libGL, et du côté serveur libglx.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Direct rendering (rendu direct)</strong> :  Un logiciel utilisant le langage GL peut être rendu à l&#039;écran de deux manières différentes.  Soit le client exécute lui-même le-dit rendu, soit la requête est passée au serveur et celui-ci s&#039;occupe du rendu. Le rendu côté serveur se nomme &quot;indirect rendering&quot; (rendu indirect), et côté client &quot;direct rendering&quot;.  Le rendu direct est habituellement plus rapide.  Cela est particulièrement vrai avec Xorg, où le rendu côté serveur est entièrement fait logiciellement.</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://fr.wikipedia.org/wiki/Direct_Rendering_Infrastructure" class="urlextern" title="http://fr.wikipedia.org/wiki/Direct_Rendering_Infrastructure"  rel="nofollow">DRI</a></strong> :  Le Direct Rendering Infrastructure est un procédé de XFree86 4.x / X.Org permettant aux applications Mesa 3D (implémentation libre d&#039;OpenGL) de gagner du temps en accédant directement au processeur graphique sans passer par le serveur X. La plupart des pilotes libres de cartes graphiques implémentent ce procédé aujourd&#039;hui.</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://fr.wikipedia.org/wiki/Mesa_3D" class="urlextern" title="http://fr.wikipedia.org/wiki/Mesa_3D"  rel="nofollow">Mesa</a></strong> :  Mesa 3D est une bibliothèque graphique libre, initialement développée par Brian Paul en août 1993, qui fournit une implémentation générique d&#039;OpenGL pour réaliser des rendus graphiques tridimensionnels en temps réel, et ce sur de multiples plates-formes. Une mise à jour importante a vu le jour en juillet 2009 car elle incorpore le travail réalisé sur Gallium3D : voir l&#039;<a href="http://www.x.org/wiki/GalliumStatus" class="urlextern" title="http://www.x.org/wiki/GalliumStatus"  rel="nofollow">état d&#039;avancement de gallium3D</a>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Pilote DRI</strong> : Le pilote DRI est responsable de la programmation du matériel 3D.  Habituellement les pilotes DRI utilisent la bibliothèque graphique de Mesa.  Dans le DRI, la librairie GLX du côté client charge un pilote, nommé &#039;quelque_chose_dri.so&#039;.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Pilote <abbr title="Gestion des droits numériques">DRM</abbr></strong> : Le Direct Rendering Manager est un module du noyau permettant de charger l&#039;accélération vidéo. Le <abbr title="Gestion des droits numériques">DRM</abbr> est responsable de la sécurité et la gestion des ressources. Il n&#039;est pas particulièrement intéressant mais essentiel.  Il y est nommé &#039;quelque_chose.ko&#039; dans Linux 2.6.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Pilote DDX</strong> :  Ceci est la partie serveur X responsable des autres types de rendu  comme Render et Xv.  Le DDX doit être capable de fonctionner avec DRI, sinon il y a peu de relation avec GL.</div>
+</li>
+<li class="level1"><div class="li"> <strong><abbr title="Accelerated Graphic Port">AGP</abbr></strong> :  <abbr title="Accelerated Graphic Port">AGP</abbr> est une version rapide du bus PCI , avec des fonctionnalités supplémentaires pour le matériel graphique. La base de <abbr title="Accelerated Graphic Port">AGP</abbr> est dans le module du noyau nommé &#039;agpgart.ko&#039;.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Chipset <abbr title="Accelerated Graphic Port">AGP</abbr></strong> :  Différentes cartes mères ont différents chipsets et ceux-ci nécessitent des implémentations de fonctionnalités <abbr title="Accelerated Graphic Port">AGP</abbr> différentes. Vous devez avoir celui correspondant à votre matériel et ce n&#039;est pas toujours la même chose que pour votre chipset de carte graphique. Exemple : Le chipset Via a besoin de &#039;via-agp.ko&#039;, etc.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="installer_opengl_pour_faire_fonctionner_des_applications_comme_google_earth_ou_divers_jeux">Installer OpenGL pour faire fonctionner des applications comme Google Earth ou divers jeux</h4>
+<div class="level4">
+
+<p>
+Il arrive que OpenGL ne soit pas déjà installé de base. Soyez-en certain en <a href="http://doc.ubuntu-fr.org/dpkg#verifier_la_presence_d_un_paquet" class="wikilink1" title="dpkg"> vérifiant si un des paquets</a> de OpenGL est en place ou non. Essayez d&#039;installer  <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">mesa-utils</a> : si le moyen utilisé pour installer mesa-utils vous dit que vous l&#039;avez déjà installé, alors OpenGL est bien installé sur votre PC. Sinon, suivez les étapes qui suivent.
+</p>
+
+<p>
+Il y aurait besoin de quelqu&#039;un pour traduire ce tutoriel : <a href="http://www.larsen-b.com/Article/231.html" class="urlextern" title="http://www.larsen-b.com/Article/231.html"  rel="nofollow">http://www.larsen-b.com/Article/231.html</a> .
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+<p>
+Pour installer OpenGL, via un terminal :
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> <span class="kw2">apt-get install</span> freeglut3</pre>
+
+<p>
+Et pour installer la version de développement :
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> <span class="kw2">apt-get install</span> freeglut3-dev</pre>
+
+<p>
+<p><div class="noteimportant">Les versions de développement d&#039;OpenGL sont instables, vous les installez à vos risques et périls!
+</div></p>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Définitions" [72-4917] -->
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Je n&#039;arrive pas à installer openGL, comment dois-je faire ?
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Configuration" [4918-5006] -->
+<h3 class="sectionedit4" id="pour_le_noyau">Pour le noyau</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Un pilote <abbr title="Gestion des droits numériques">DRM</abbr> correspondant à votre carte vidéo</div>
+</li>
+<li class="level1"><div class="li"> Du support <abbr title="Accelerated Graphic Port">AGP</abbr></div>
+</li>
+<li class="level1"><div class="li"> Du chipset <abbr title="Accelerated Graphic Port">AGP</abbr> correspondant à votre carte-mère</div>
+</li>
+</ul>
+
+<p>
+Pour la plupart des cartes les plus utilisées, les pilotes <abbr title="Gestion des droits numériques">DRM</abbr> sont disponibles et déjà installés à l&#039;exception de 2.6.9-ish sur mach64 et savage.  Pour ceux-ci vous devez les construire à partir du CVS : <a href="http://dri.freedesktop.org/wiki/Building" class="urlextern" title="http://dri.freedesktop.org/wiki/Building"  rel="nofollow">http://dri.freedesktop.org/wiki/Building</a> .
+</p>
+
+<p>
+Tous les noyaux possèdent le support <abbr title="Accelerated Graphic Port">AGP</abbr>.
+</p>
+
+<p>
+Assurez- vous que /dev/dri/card0 existe et qu&#039;il est possible d&#039;y écrire.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Pour le noyau" [5007-5534] -->
+<h3 class="sectionedit5" id="pour_l_utilisateur">Pour l&#039;utilisateur</h3>
+<div class="level3">
+
+<p>
+Le pilote DRI
+Un DDX
+La librairie libGL
+</p>
+
+<p>
+Mises à part les exceptions précédentes vous avez la partie utilisateur fonctionnelle.  
+</p>
+
+<p>
+Vous devez avoir les lignes suivantes dans Xorg.conf : 
+</p>
+<pre class="code">Load &quot;dri&quot; 
+Load &quot;glx&quot;</pre>
+
+<p>
+Assurez-vous que vous utilisez le pilote DDX compatible avec DRI et non pas vesa ou fbdev. 
+</p>
+
+<p>
+Pour savoir si ça fonctionne tapez la commande :
+</p>
+<pre class="code">grep Direct /var/log/Xorg.0.log </pre>
+
+<p>
+&quot;Direct rendering enabled&quot; devrait être affiché ainsi que &quot;direct rendering: Yes&quot; dans la commande :
+</p>
+<pre class="code">glxinfo | grep direct</pre>
+<hr />
+
+<p>
+<em>Contributeur principal : <a href="../../utilisateurs/phetu" class="wikilink1" title="utilisateurs:phetu">phetu</a>.</em>
+</p>
+
+<p>
+<em>Traduction de: <a href="http://people.freedesktop.org/~ajax/dri-explanation.txt" class="urlextern" title="http://people.freedesktop.org/~ajax/dri-explanation.txt"  rel="nofollow">http://people.freedesktop.org/~ajax/dri-explanation.txt</a> </em>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Pour l'utilisateur" [5535-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/4/415a5a20b4299cb10836e83043838fcf.xhtml used -->
+</div>
+</body>
+</html>

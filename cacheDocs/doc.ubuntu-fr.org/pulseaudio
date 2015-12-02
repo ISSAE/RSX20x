@@ -1,0 +1,1435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>pulseaudio - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-05-11T11:39:30+0200"/>
+<meta name="keywords" content="audio,multimedia"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/pulseaudio?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/pulseaudio?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/pulseaudio"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/pulseaudio"/>
+<link rel="canonical" href="pulseaudio"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"pulseaudio","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="pulseaudio#main" tabindex="1">Contenu</a> | <a href="pulseaudio#qsearch__in" tabindex="2">Rechercher</a> | <a href="pulseaudio#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="pulseaudio" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="pulseaudio" >pulseaudio</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="pulseaudio#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="pulseaudio#utilisation_et_configuration">Utilisation et configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="pulseaudio#regler_le_volume">Régler le volume</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#regler_le_volume_de_chaque_application">Régler le volume de chaque application</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#egaliseur_graphique">Égaliseur graphique</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#configuration_du_son_multi-canaux_51_71_etc_en_analogique_pour_un_fichier_son_stereo_ou_upmixing">Configuration du son multi-canaux (5.1,7.1 etc) en analogique pour un fichier son stéréo ou &quot;upmixing&quot;</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#recuperer_le_son_des_applications_utilisant_oss">Récupérer le son des applications utilisant OSS</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#configuration_du_son_pour_une_sortie_numerique">Configuration du son pour une sortie numérique</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#pulseaudio_sur_le_reseau_local">PulseAudio sur le réseau local</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#appliquer_des_effets_sur_le_son">Appliquer des effets sur le son</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#ameliorationresampler_en_16bit_-_48_khz_selon_votre_carte">Amélioration/Resampler en 16bit - 48 kHz (selon votre carte)</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#rediriger_le_son_vers_une_entree_virtuelle">Rediriger le son vers une &quot;entrée&quot; virtuelle</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#rediriger_le_son_vers_plusieurs_peripheriques">Rediriger le son vers plusieurs périphériques</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#rediriger_l_entree_de_la_carte_son_vers_la_sortie">Rediriger l&#039;entrée de la carte son vers la sortie</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#compresser_le_flux_sonore_et_le_diffuser_en_http">Compresser le flux sonore et le diffuser en http</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="pulseaudio#problemes_connus">Problèmes connus</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="pulseaudio#flash">Flash</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#skype">Skype</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#lecteur_audio_mpd">Lecteur audio MPD</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#le_son_craque">Le son &quot;craque&quot;</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#sdl">SDL</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#autres_problemes">Autres problèmes</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#plusieurs_cartes_son_enceintes_ou_casque_usb_par_exemple">Plusieurs cartes son (enceintes ou casque USB par exemple)</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#correction_du_probleme_sur_xubuntu_1310">Correction du problème sur Xubuntu 13.10</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#plus_d_icone_de_reglage_du_son">Plus d&#039;icône de réglage du son</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#la_sourdine_est_toujours_activee_au_demarrage">La sourdine est toujours activée au démarrage</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#pulseaudio_mute_les_canaux_du_son_au_demarrage">Pulseaudio mute les canaux du son au démarrage</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#probleme_de_son_avec_kde">Problème de son avec KDE</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#pulseaudio_en_tant_que_demon_systeme">Pulseaudio en tant que démon système</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#volume_pcm_a_100">Volume PCM a 100%</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#le_son_est_beaucoup_trop_fort_limiter_le_volume_maximum">Le son est beaucoup trop fort &amp; limiter le volume maximum</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="pulseaudio#suppressiondesinstallation">Suppression / Désinstallation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="pulseaudio#a_essayer_en_premier">A essayer en premier</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#toujours_des_problemes">Toujours des problèmes</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#autre_methode">Autre méthode</a></div></li>
+<li class="level2"><div class="li"><a href="pulseaudio#avec_xcfe_et_xubuntu">Avec XCFE et xubuntu</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="pulseaudio#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/audio" class="wikilink1" title="audio" rel="tag">audio</a>,
+	<a href="multimedia" class="wikilink1" title="multimedia" rel="tag">multimédia</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="pulseaudio">PulseAudio</h1>
+<div class="level1">
+
+<p>
+<strong><a href="http://fr.wikipedia.org/wiki/PulseAudio" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/PulseAudio">PulseAudio</a></strong> est un serveur de son pour les systèmes POSIX et Win32. Un serveur de son est une sorte d&#039;intermédiaire obligé pour vos applications sonores. Il vous permet de procéder à des opérations avancées sur le son en s&#039;intercalant entre la couche logicielle (L&#039;application audio) et la couche matérielle (le pilote ALSA pour les versions actuelles d&#039;Ubuntu). Ainsi, transférer le son sur une autre machine, changer le format d&#039;échantillonnage ou le nombre de canaux audio et mélanger plusieurs sons en un seul, sont des opérations facilement réalisables avec un serveur de son.<br/>
+
+Il permet en outre de gérer indépendamment le son de chaque application lancée. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[PulseAudio] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="34-752" /><input type="submit" value="Modifier" class="button" title="PulseAudio" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<strong>PulseAudio</strong> est le serveur de son installé par défaut sur les <a href="versions" class="wikilink1" title="versions">versions</a> et <a href="variantes" class="wikilink1" title="variantes">variantes</a> d&#039;Ubuntu actuellement soutenues.
+</p>
+
+<p>
+Vous pouvez si vous le souhaitez, compléter l&#039;installation en <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">rajoutant les paquets</a> suivants :
+</p>
+<ul>
+<li class="level1"><div class="li"> Le contrôleur de volume de Pulseaudio: <strong><a href="http://doc.ubuntu-fr.org/pavucontrol" class="wikilink1" title="pavucontrol">pavucontrol</a></strong></div>
+</li>
+<li class="level1"><div class="li"> La version graphique pour Gnome du mélangeur ALSA <strong><a href="http://doc.ubuntu-fr.org/gnome-alsamixer" class="wikilink1" title="gnome-alsamixer">gnome-alsamixer</a></strong></div>
+</li>
+<li class="level1"><div class="li"> Pour les jeux qui utilisent SDL pour le son: <strong><a href="apt://libsdl1.2debian" class="interwiki iw_apt" title="apt://libsdl1.2debian">libsdl1.2debian</a></strong></div>
+</li>
+<li class="level1"><div class="li"> Pulseaudio Manager <strong><a href="apt://paman" class="interwiki iw_apt" title="apt://paman">paman</a></strong></div>
+</li>
+<li class="level1"><div class="li"> Les <a href="http://fr.wikipedia.org/wiki/vu-metre" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/vu-metre">vumètres</a> <strong><a href="apt://pavumeter" class="interwiki iw_apt" title="apt://pavumeter">pavumeter</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="apt://padevchooser" class="interwiki iw_apt" title="apt://padevchooser">padevchooser</a></strong> (Non disponible pour <a href="precise" class="wikilink1" title="precise">Ubuntu Precise 12.04</a>)</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="753-1457" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit3" id="utilisation_et_configuration">Utilisation et configuration</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Utilisation et configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1458-1498" /><input type="submit" value="Modifier" class="button" title="Utilisation et configuration" /></div></form></div>
+<h3 class="sectionedit4" id="regler_le_volume">Régler le volume</h3>
+<div class="level3">
+
+<p>
+Vous pouvez gérer simplement le volume de sortie par le <strong>contrôleur de volume</strong> <a href="http://doc.ubuntu-fr.org/_detail/son/son_2_14_04.png?id=pulseaudio" class="media" title="son:son_2_14_04.png"><img src="http://doc.ubuntu-fr.org/_media/son/son_2_14_04.png?w=60&amp;tok=f8449d" class="media" title="applet Haut-parleur" alt="applet Haut-parleur" width="60" /></a> intégré dans la barre de notification (petit haut-parleur).<br/>
+
+Vous pouvez accéder au fonctions avancées de contrôle des volumes depuis les paramètres sonores… du menu du petit haut-parleur ou encore depuis l&#039;entrée &quot;son&quot; des <a href="gnome-control-center" class="wikilink1" title="gnome-control-center">paramètres système</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Régler le volume] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1499-1942" /><input type="submit" value="Modifier" class="button" title="Régler le volume" /></div></form></div>
+<h3 class="sectionedit5" id="regler_le_volume_de_chaque_application">Régler le volume de chaque application</h3>
+<div class="level3">
+
+<p>
+Si plusieurs applications de lecture audio sont en service, vous pouvez régler celle-ci séparément:
+</p>
+<ul>
+<li class="level1"><div class="li"> Depuis le contrôleur de volume d&#039;Unity, onglet &quot;Application&quot;</div>
+</li>
+<li class="level2"><div class="li"> Depuis le contrôleur de volume <a href="http://doc.ubuntu-fr.org/pavucontrol" class="wikilink1" title="pavucontrol">Pavucontrol</a>, onglet &quot;lecture&quot; et choisir &quot;applications&quot; dans le menu déroulant en bas à droite.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Régler le volume de chaque application] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1943-2308" /><input type="submit" value="Modifier" class="button" title="Régler le volume de chaque application" /></div></form></div>
+<h3 class="sectionedit6" id="egaliseur_graphique">Égaliseur graphique</h3>
+<div class="level3">
+
+<p>
+Vous pouvez régler aussi le son de votre système avec plus de nuances à l&#039;aide d&#039;un égaliseur graphique. Voir <a href="http://doc.ubuntu-fr.org/pulseaudio-equalizer" class="wikilink1" title="pulseaudio-equalizer">pulseaudio-equalizer</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Égaliseur graphique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2309-2502" /><input type="submit" value="Modifier" class="button" title="Égaliseur graphique" /></div></form></div>
+<h3 class="sectionedit7" id="configuration_du_son_multi-canaux_51_71_etc_en_analogique_pour_un_fichier_son_stereo_ou_upmixing">Configuration du son multi-canaux (5.1,7.1 etc) en analogique pour un fichier son stéréo ou &quot;upmixing&quot;</h3>
+<div class="level3">
+
+<p>
+Pour obtenir le 5.1 une petite manipulation est nécessaire, mais l&#039;avantage de celle-ci étant de vous faire obtenir le 5.1 en émulation même lors de la lecture d&#039;un Divx ou d&#039;un MP3 classique, bref une pure merveille à un point d&#039;en devenir totalement dépendant.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/configuration-spatiale-5-1.png?id=pulseaudio" class="media" title="configuration-spatiale-5-1.png"><img src="http://doc.ubuntu-fr.org/_media/configuration-spatiale-5-1.png" class="media" title="configuration spatiale" alt="configuration spatiale" /></a>
+</p>
+
+</div>
+
+<h4 id="configuration">Configuration</h4>
+<div class="level4">
+
+<p>
+Il faut indiquer à PulseAudio le nombre de canaux à utiliser (exemple 6 pour du 5.1) :
+</p>
+<ol>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/pulse/daemon.conf</strong> (nécessite les <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>) ou<strong> ~/.pulse/daemon.conf</strong> <br/>
+<em>(Le &quot;<strong>;</strong>&quot; devant les lignes sert de commentaire)</em></div>
+</li>
+<li class="level1"><div class="li"> ajoutez ou remplacez : <pre class="file">default-sample-channels = 6</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> puis redémarrez PulseAudio en le tuant et en le relançant en saisissant dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> les 2 <a href="commande_shell" class="wikilink1" title="commande_shell">commandes</a> suivantes:<pre class="code">pulseaudio -k
+pulseaudio -D</pre>
+</div>
+</li>
+</ol>
+
+<p>
+Avec la configuration ci-dessus on obtient bien la lecture de source 5.1 (DVD, etc.) en 5.1, mais la lecture de son (vos musiques en ogg, mp3) avec <a href="http://doc.ubuntu-fr.org/audacious" class="wikilink1" title="audacious">Audacious</a>, <a href="http://doc.ubuntu-fr.org/vlc" class="wikilink1" title="vlc">VLC</a>, <a href="rhythmbox" class="wikilink1" title="rhythmbox">Rhythmbox</a>, etc. passe en 2.0. En effet, PulseAudio ne mixe plus la stéréo sur la sortie basses fréquences par défaut. Si vous avez un kit d&#039;enceinte 5.1 avec une sortie basses fréquences dédiée, vous pourriez vouloir transformer la stéréo en son 2.1. Il faut alors éditer le fichier <strong>/etc/pulse/daemon.conf</strong> (nécessite les <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>) ou <strong>~/.pulse/daemon.conf</strong> et de vous assurer de trouver une ligne contenant &quot;disable-lfe-remixing&quot;.
+</p>
+<ul>
+<li class="level1"><div class="li"> Si cette ligne commence par un &quot;<strong>;</strong>&quot;, supprimez ce caractère pour activer la ligne</div>
+</li>
+<li class="level1"><div class="li"> Donnez la valeur &quot;no&quot; à cette clé</div>
+</li>
+</ul>
+
+<p>
+Au final, ça donne 
+</p>
+<pre class="file">disable-lfe-remixing = no</pre>
+
+</div>
+
+<h4 id="test">Test</h4>
+<div class="level4">
+
+<p>
+Pour tester cette configuration, lancez la <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> en indiquant le nombre de haut parleurs (ici 4) après le paramètre c (channel) : 
+</p>
+<pre class="code"> speaker-test -c4 -l1 -twav</pre>
+
+<p>
+<p><div class="notehelp">
+</p>
+<ul>
+<li class="level1"><div class="li"> Si le résultat n&#039;est pas concluant, vérifiez dans le <strong>contrôleur de volume</strong> l&#039;activation de <em>surround</em>, ainsi que peut-être d&#039;éventuelles autres options qui se rapporteraient à votre problème (<em>center, front, etc.</em>)</div>
+</li>
+<li class="level1"><div class="li"> Pour une carte son 7.1 avec un kit HP 5.1 en analogique, les HP arrières (fiche noire) doivent être connecté à la prise HP latérale (fiche grise).</div>
+</li>
+</ul>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Configuration du son multi-canaux (5.1,7.1 etc) en analogique pour un fichier son stéréo ou upmixing] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2503-5035" /><input type="submit" value="Modifier" class="button" title="Configuration du son multi-canaux (5.1,7.1 etc) en analogique pour un fichier son stéréo ou upmixing" /></div></form></div>
+<h3 class="sectionedit8" id="recuperer_le_son_des_applications_utilisant_oss">Récupérer le son des applications utilisant OSS</h3>
+<div class="level3">
+
+<p>
+Padsp est un « wrapper » qui va convertir les flux oss en flux pulseaudio. Il a l&#039;avantage d&#039;être plus stable et d&#039;offrir plus de fonctionnalités. Il est installé d&#039;office avec PulseAudio.
+</p>
+
+<p>
+Exemple : 
+</p>
+<pre class="code">padsp &lt;mon_programme&gt;</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Récupérer le son des applications utilisant OSS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5036-5336" /><input type="submit" value="Modifier" class="button" title="Récupérer le son des applications utilisant OSS" /></div></form></div>
+<h3 class="sectionedit9" id="configuration_du_son_pour_une_sortie_numerique">Configuration du son pour une sortie numérique</h3>
+<div class="level3">
+
+<p>
+<a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=3456875#p3456875" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=3456875#p3456875"  rel="nofollow">Voir ce post sur le forum</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Configuration du son pour une sortie numérique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5337-5489" /><input type="submit" value="Modifier" class="button" title="Configuration du son pour une sortie numérique" /></div></form></div>
+<h3 class="sectionedit10" id="pulseaudio_sur_le_reseau_local">PulseAudio sur le réseau local</h3>
+<div class="level3">
+
+<p>
+Maintenant, si vous avez <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installé</a> <strong><a href="apt://paman" class="interwiki iw_apt" title="apt://paman">paman</a></strong> (les outils Pulse), lancer l&#039;application<em> &quot;Préférences de Pulseaudio&quot;</em>.
+<p><div class="noteimportant">
+N&#039;utilisez les trois fonctionnalités ci-dessous que si vous désirez que votre serveur Audio soit accessible à partir d&#039;autres stations sur votre réseau. Si ce n&#039;est pas le cas, n&#039;implémentez pas ces options !
+
+</div></p>
+</p>
+<ol>
+<li class="level1"><div class="li"> Dans l&#039;onglet <strong>Network Access</strong></div>
+<ul>
+<li class="level2"><div class="li"> Cochez l&#039;option &quot;Make discoverable PuleAudio network sound devices available locally&quot;. Ceci va permettre aux autres ordinateurs possédant PulseAudio sur votre réseau d&#039;accéder à vos périphériques sonores.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Dans l&#039;onglet <strong>Mulitcast/RTP</strong></div>
+<ul>
+<li class="level2"><div class="li"> Cochez <strong>Enable Multicast/RTP Receiver</strong>. Ceci va permettre de recevoir des flux multicast d&#039;autres systèmes sur votre <abbr title="Réseau Local">LAN</abbr>.</div>
+</li>
+<li class="level2"><div class="li"> Cochez <strong>Enable Multicast/RTP Sender</strong>. Ceci va permettre d&#039;envoyer des flux multicast (Une source envoie des paquets, les autres les recevront simultanément)<br/>
+Laissez les autres options décochées pour maintenant, sauf si vous voulez boucler les flux sortant à travers les haut-parleurs locaux.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Ensuite allez dans le menu <em>Système → Préférences → Son</em> et vérifiez dans l&#039;onglet <strong>Sons</strong> que la case « Activer le mixage son logiciel (ESD) » est cochée. <br/>
+Par ailleurs, dans l&#039;onglet <strong>Périphériques</strong>, j&#039;ai mis les périphériques en « Détection Automatique ».</div>
+</li>
+<li class="level1"><div class="li"> Enfin allez dans <em>Applications → Son et vidéo → PulseAudio Device Chooser</em>. Une icône apparaît dans la zone de notification : </div>
+<ul>
+<li class="level2"><div class="li"> faîtes un clique gauche et sélectionnez <strong>Preferences…</strong>. </div>
+</li>
+<li class="level2"><div class="li"> Cochez l&#039;option <strong>Start applet on session login</strong>. Cette option démarrera l&#039;applet pulseaudio lors de l&#039;ouverture de votre session utilisateur</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Redémarrez votre machine afin d&#039;appliquer les changements de serveur de sons.</div>
+</li>
+</ol>
+
+<p>
+<a href="http://dev.gentooexperimental.org/~flameeyes/mezcalero-pulse-demo.ogm" class="urlextern" title="http://dev.gentooexperimental.org/~flameeyes/mezcalero-pulse-demo.ogm"  rel="nofollow">Un tour d&#039;horizon de l&#039;applet PulseAudio</a>
+</p>
+
+<p>
+Sur le client, après avoir <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installé le paquet</a> <strong><a href="apt://padevchooser" class="interwiki iw_apt" title="apt://padevchooser">padevchooser</a></strong>, lancer (Menu Son et Vidéo, peut se lancer au démarrage, voir les options) dans la zone de notification cliquer sur l&#039;icône et choisir son serveur : soit on précise manuellement (Other → nom de la machine) soit il est découvert auto-magiquement par Avahi.
+</p>
+
+<p>
+<p><div class="noteclassic">
+<strong>Padevchooser</strong> n&#039;est pas disponible pour <a href="precise" class="wikilink1" title="precise">Ubuntu Precise 12.04</a>. Une implémentation naissante nommée <a href="https://projects.stux6.net/projects/indicator-paselector/wiki" class="urlextern" title="https://projects.stux6.net/projects/indicator-paselector/wiki"  rel="nofollow">indicator-paselector</a> existe pour tenter de le remplacer.
+
+</div></p>
+</p>
+
+</div>
+
+<h4 id="utilisation_dans_un_script">Utilisation dans un script</h4>
+<div class="level4">
+
+<p>
+Voici un petit bout de script permettant de modifier directement le volume d&#039;une application. C&#039;est aussi par ce biais qu&#039;on peut utiliser un volume supérieur à 100% (attention à la saturation).<br/>
+
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> : dans un terminal? dans un fichier? Que faire de ces lignes ?
+</p>
+<pre class="code">application=&quot;Mumble&quot;
+volume_level=85000 #65536 = 100%
+
+pa_sink_index=`pacmd list-sink-inputs | egrep &quot;index|application\.name&quot; | grep -B1 $application | grep index | sed &#039;s/.*index: //&#039;`
+pacmd &quot;set-sink-input-volume $pa_sink_index $volume_level&quot;</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[PulseAudio sur le réseau local] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5490-8715" /><input type="submit" value="Modifier" class="button" title="PulseAudio sur le réseau local" /></div></form></div>
+<h3 class="sectionedit11" id="appliquer_des_effets_sur_le_son">Appliquer des effets sur le son</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="module_audio_ladspa">Module audio ladspa</h4>
+<div class="level4">
+
+<p>
+Il est possible d&#039;appliquer divers effets sur le son grâce au module <strong>module-ladspa-sink</strong>. Ce module permet d&#039;utiliser les plugins ladspa disponibles dans le paquet swh-plugins pour obtenir des effets utiles (ou pas) sur le son. <br/>
+
+Il est possible grâce à ce système d&#039;avoir un compresseur dynamique ou encore un équaliseur.
+</p>
+
+<p>
+Commencez d&#039;abord par installer les effets, pour cela :<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet swh-plugins</a> <strong><a href="apt://swh-plugins" class="interwiki iw_apt" title="apt://swh-plugins">swh-plugins</a></strong>, ensuite il vous faudra <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditez le fichier</a> /etc/pulse/default.pa pour charger le module.
+</p>
+
+<p>
+<p><div class="noteimportant">Si vous utilisez PulseAudio en tant que daemon système (ce n&#039;est pas le comportement par défaut dans Ubuntu), vous devez <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditer le fichier</a> /etc/pulse/system.pa. Mais normalement, vous devriez le savoir si c&#039;est le cas.
+</div></p>
+</p>
+
+<p>
+Voici un exemple avec le compresseur dynamique (ceci est à ajouter à la fin du fichier) :
+</p>
+<pre class="file">load-module module-ladspa-sink sink_name=compresseur plugin=dyson_compress_1403 label=dysonCompress control=-4,0.5,,4</pre>
+
+<p>
+Le système de configuration est assez simple.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>sink_name</strong> donne un nom au sink, mettez ce que vous voulez.</div>
+</li>
+<li class="level2"><div class="li"> <strong>plugin</strong> est le nom du fichier .so qui correspond au plugin, la liste est disponible directement dans Synaptic ou bien <a href="http://packages.ubuntu.com/intrepid/i386/swh-plugins/filelist" class="urlextern" title="http://packages.ubuntu.com/intrepid/i386/swh-plugins/filelist"  rel="nofollow">à cette adresse</a>. </div>
+</li>
+<li class="level2"><div class="li"> <strong>label</strong> est le libellé du plugin. La liste des plugins est disponible <a href="http://plugin.org.uk/ladspa-swh/docs/ladspa-swh.html" class="urlextern" title="http://plugin.org.uk/ladspa-swh/docs/ladspa-swh.html"  rel="nofollow">à cette adresse</a>.</div>
+</li>
+<li class="level2"><div class="li"> <strong>control</strong> sont les paramètres du plugin. Pour l&#039;ordre il faut se reporter au site ci-dessus et entrer les paramètres dans l&#039;ordre de leur apparition.</div>
+</li>
+</ul>
+
+<p>
+Après avoir relancé PulseAudio, un sink supplémentaire sera disponible dans l&#039;applet PulseAudio, il vous suffira de le sélectionner pour profiter de l&#039;effet sur le son.
+</p>
+
+<p>
+<p><div class="noteimportant">Tout les plugins ne fonctionnent pas encore avec PulseAudio malheureusement. Si après avoir édité le fichier Pulseaudio refuse de démarrer, c&#039;est probablement que le plugin n&#039;est pas supporté. Supprimez alors l&#039;entrée dans le fichier ou commentez-la, et vous pourrez relancer PulseAudio.
+</div></p>
+</p>
+
+<p>
+Exemple : 
+<strong>Equalizer</strong> avec mbeq_1197
+</p>
+
+<p>
+Dans default.pa:
+</p>
+<pre class="file">#tsched=0 ici car problème de craquement du son avec ma carte
+load-module module-alsa-sink device=hw:0,0 sink_name=alsa_out tsched=0
+#redirection de alsa_out sur l&#039;equaliser [changer les paramètres de control selon vos gouts]: réduction des graves
+load-module module-ladspa-sink sink_name=ladspa_out master=alsa_out plugin=mbeq_1197 label=mbeq control=-15,-15,-10,-1,-5,-1,-1,0,0,0,0,0,0,0,0 </pre>
+
+<p>
+Dans client.conf :
+</p>
+<pre class="file">; Assigner ladspa_out comme sortie par défaut :
+default-sink = ladspa_out</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Appliquer des effets sur le son] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8716-11631" /><input type="submit" value="Modifier" class="button" title="Appliquer des effets sur le son" /></div></form></div>
+<h3 class="sectionedit12" id="ameliorationresampler_en_16bit_-_48_khz_selon_votre_carte">Amélioration/Resampler en 16bit - 48 kHz (selon votre carte)</h3>
+<div class="level3">
+
+<p>
+La majorité des cartes acceptent au maximum du 16 bit - 48 kHz, alors ne vous privez pas d&#039;utiliser votre carte son au maximum.
+</p>
+
+<p>
+Pour les professionnels les cartes son sont généralement en 24 bit - 96 khz.
+</p>
+
+<p>
+<p><div class="noteclassic">
+resampler une source audio, par exemple un CD en 16 bits / 44 khz , à une résolution/échantillonnage supérieur, n&#039;améliorera pas la qualité audio du son, et peut même ajouter
+de la distorsion plus ou moins audible (cela dépend la qualité de l&#039;algorithme de rééchantillonnage utilisé)
+
+</div></p>
+</p>
+
+<p>
+La manipulation se fait également dans <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">le fichier</a> /etc/pulse/daemon.conf.
+</p>
+
+<p>
+Pour plus de renseignement sur les options :
+</p>
+<pre class="code">man pulse-daemon.conf</pre>
+
+<p>
+Soyez sûr de retirer le point virgule (;) à chaque fois.
+Les valeurs par défaut sont celles de <a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic">Karmic 09.10</a>.
+</p>
+
+<p>
+Changer :
+</p>
+<pre class="code">; default-sample-rate = 44100</pre>
+
+<p>
+Par :
+</p>
+<pre class="code">default-sample-rate = 48000</pre>
+
+<p>
+Changer :
+</p>
+<pre class="code">; default-sample-format = s16le</pre>
+
+<p>
+Par :
+</p>
+<pre class="code">default-sample-format = float32le
+
+(pour ceux qui disposent d&#039;une carte son ou DAC 24 bit/ 96khz, remplacez les valeurs mentionnées ci-dessus par :  default-sample-rate = 96000 / default-sample-format = float32le ; s24le )</pre>
+
+<p>
+Les autres formats disponibles sont ( mais doivent être supportés par votre carte ): u8, s16le, s16be, s24le, s24be, s24-32le, s24-32be, s32le, s32be float32le, float32be, ulaw, alaw.
+Vous pouvez aussi changer le resample-method mais il faut savoir que la consommation du processeur augmente avec la qualité de la méthode choisie.
+Vous pouvez avoir la liste des méthodes supportées par :
+</p>
+<pre class="code">pulseaudio --dump-resample-methods</pre>
+
+<p>
+Changer :
+</p>
+<pre class="code">; resample-method = speex-float-0</pre>
+
+<p>
+Par :
+</p>
+<pre class="code">resample-method = src-sinc-best-quality</pre>
+
+<p>
+Par défaut dans karmic
+</p>
+<pre class="code">; high-priority = yes</pre>
+
+<p>
+sinon changer en
+</p>
+<pre class="code">high-priority = yes</pre>
+
+<p>
+Relancer pulseaudio :
+</p>
+<pre class="code">pulseaudio -k
+pulseaudio -D</pre>
+<ul>
+<li class="level1"><div class="li"> Lien : <del><a href="http://www.vdmeulen.net/cgi-bin/man/man2html?pulse-daemon.conf+5" class="urlextern" title="http://www.vdmeulen.net/cgi-bin/man/man2html?pulse-daemon.conf+5"  rel="nofollow">Aide à la configuration de pulse-daemon.conf - PulseAudio daemon configuration file</a></del> Lien mort.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Amélioration/Resampler en 16bit - 48 kHz (selon votre carte)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11632-13757" /><input type="submit" value="Modifier" class="button" title="Amélioration/Resampler en 16bit - 48 kHz (selon votre carte)" /></div></form></div>
+<h3 class="sectionedit13" id="rediriger_le_son_vers_une_entree_virtuelle">Rediriger le son vers une &quot;entrée&quot; virtuelle</h3>
+<div class="level3">
+
+<p>
+Il est possible avec PulseAudio de récupérer le son que vous écoutez et le rediriger vers un périphérique d&#039;entrée virtuel. Ce qui peut permettre d&#039;enregistrer le son en écoute, à l&#039;aide d&#039;une <a href="http://doc.ubuntu-fr.org/audio#les_applications_d_enregistrement" class="wikilink1" title="audio">application permettant l&#039;enregistrement de son</a>.
+</p>
+
+<p>
+Pour ce faire, il faut utiliser le contrôleur du volume de PulseAudio <a href="http://doc.ubuntu-fr.org/pavucontrol" class="wikilink1" title="pavucontrol">pavucontrol</a>. Voir ce <a href="http://doc.ubuntu-fr.org/pavucontrol#enregistrement_de_la_sortie_audio" class="wikilink1" title="pavucontrol">chapitre de la page de Pavucontrol</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Rediriger le son vers une entrée virtuelle] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13758-14294" /><input type="submit" value="Modifier" class="button" title="Rediriger le son vers une entrée virtuelle" /></div></form></div>
+<h3 class="sectionedit14" id="rediriger_le_son_vers_plusieurs_peripheriques">Rediriger le son vers plusieurs périphériques</h3>
+<div class="level3">
+
+<p>
+Si vous souhaitez rediriger le flux à la fois vers la carte son interne (pour utiliser des enceintes branchées directement sur celle-ci) et aussi vers le casque, installez <strong><a href="apt://paprefs" class="interwiki iw_apt" title="apt://paprefs">paprefs</a></strong> puis ouvrez-le (Système → Préférences → Préférences de PulseAudio) puis dans l&#039;onglet &quot;Sorties simultanées&quot; et cochez la case &quot;Ajouter un périphérique de sortie virtuel pour une sortie simultanée sur toutes les cartes sons locales&quot;. 
+Il ne vous reste plus qu&#039;à redémarrer PulseAudio (ou simplement le système) puis ouvrez les préférences du son (Système → Préférences → Son) puis dans l&#039;onglet &quot;Sortie&quot; sélectionnez la nouvelle sortie appelée &quot;Simultaneous output to &lt;vos différentes cartes son&gt;&quot;.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Rediriger le son vers plusieurs périphériques] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14295-15068" /><input type="submit" value="Modifier" class="button" title="Rediriger le son vers plusieurs périphériques" /></div></form></div>
+<h3 class="sectionedit15" id="rediriger_l_entree_de_la_carte_son_vers_la_sortie">Rediriger l&#039;entrée de la carte son vers la sortie</h3>
+<div class="level3">
+
+<p>
+Dans cette section il est conseillé de baisser fortement le son de ses hauts parleurs avant de lancer ces commandes, car si l&#039;entrée n&#039;est pas la bonne ou si le microphone est trop près de l&#039;ordinateur, il y a un risque pour que le micro s&#039;enregistre lui même, ce qui peut produire rapidement un bruit fort, désagréable et potentiellement dangereux pour les hauts parleurs (<a href="http://fr.wikipedia.org/wiki/effet Larsen" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/effet Larsen">effet Larsen</a>).
+</p>
+
+</div>
+
+<h4 id="methode_1leger_decalage">Methode 1 : léger décalage</h4>
+<div class="level4">
+
+<p>
+Il suffit de lancer dans un terminal cette commande pour que l&#039;entrée soit redirigée vers les hauts parleurs :
+</p>
+<pre class="code">parec | pacat</pre>
+
+<p>
+et pour annuler, faites Ctrl+c.
+Le problème de cette technique est qu&#039;il y a un décalage d&#039;environ une seconde entre l&#039;entrée et la sortie. Elle est donc à utiliser si la réactivité n&#039;est pas importante, et le plus souvent pour de courts tests.
+</p>
+
+<p>
+Le choix de l&#039;entrée peut-être fait via le contrôleur de volume <a href="http://doc.ubuntu-fr.org/pavucontrol" class="wikilink1" title="pavucontrol">pavucontrol</a> dans l&#039;onglet &quot;Enregistrement&quot;.
+</p>
+
+</div>
+
+<h4 id="methode_2sans_decalage">Méthode 2 : sans décalage</h4>
+<div class="level4">
+
+<p>
+Si vous souhaitez par exemple faire sortir le son de votre micro sur vos enceintes, lancez la commande suivante :
+</p>
+<pre class="code">pactl load-module module-loopback</pre>
+
+<p>
+Si vous souhaitez que ce soit fait automatiquement à chaque démarrage, vous pouvez le faire en ajoutant la ligne :
+</p>
+<pre class="code">load-module module-loopback</pre>
+
+<p>
+dans le fichier /etc/pulse/default.pa
+</p>
+
+<p>
+Pour éditer ce fichier lancer la commande :
+</p>
+<pre class="code">gksudo gedit /etc/pulse/default.pa</pre>
+
+</div>
+
+<h5 id="choisir_entree_en_mode_graphique">Choisir entrée en mode graphique</h5>
+<div class="level5">
+
+<p>
+Le choix de l&#039;entrée peut être fait via l&#039;outil graphique <a href="http://doc.ubuntu-fr.org/pavucontrol" class="wikilink1" title="pavucontrol">pavucontrol</a> dans l&#039;onglet &quot;Enregistrement&quot; en pensant à choisir dans le menu en bas à gauche &quot;Afficher : all Stream&quot;
+</p>
+
+</div>
+
+<h5 id="choisir_l_entree_en_mode_console">Choisir l&#039;entrée en mode console</h5>
+<div class="level5">
+
+<p>
+Si vous avez plusieurs entrées ou sorties, vous pouvez choisir l&#039;entrée et la sortie en les spécifiant à pactl :
+</p>
+<pre class="code">pactl load-module module-loopback source=&lt;input device&gt; sink=&lt;output device&gt;</pre>
+
+<p>
+Pour connaître le numéro de l&#039;entrée, regardez les entrées qui sont listées ici :
+</p>
+<pre class="code">pactl list sources | grep -E &quot;Source|Description&quot;</pre>
+
+<p>
+Si cette commande ne renvoie rien ou si vous désirez une description plus précise des sources, faites <strong>pactl list sources</strong>
+</p>
+
+<p>
+De même, pour connaître le numéro de la sortie :
+</p>
+<pre class="code">pactl list sinks | grep -E &quot;Sink|Description&quot;</pre>
+
+<p>
+Et pour une description plus complète faites <strong>pactl list sinks</strong>
+</p>
+
+</div>
+
+<h5 id="annuler_la_redirection_audio">Annuler la redirection audio</h5>
+<div class="level5">
+
+<p>
+Pour annuler la redirection, au moment où l&#039;on lance la commande &quot;pactl load-module&quot;, un numéro nous est donné : c&#039;est l&#039;ID du module. Pour désactiver ce module, faites :
+</p>
+<pre class="code">pactl unload-module &lt;ID&gt;</pre>
+
+<p>
+Pour connaitre l&#039;ID du module si vous l&#039;avez oublié, regardez la sortie de :
+</p>
+<pre class="code">pactl list modules</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Rediriger l'entrée de la carte son vers la sortie] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15069-17867" /><input type="submit" value="Modifier" class="button" title="Rediriger l'entrée de la carte son vers la sortie" /></div></form></div>
+<h3 class="sectionedit16" id="compresser_le_flux_sonore_et_le_diffuser_en_http">Compresser le flux sonore et le diffuser en http</h3>
+<div class="level3">
+
+<p>
+Grâce à la possibilité d&#039;utiliser le protocole RTP avec PulseAudio, il est possible de se servir de <a href="http://doc.ubuntu-fr.org/vlc" class="wikilink1" title="vlc">VLC</a> pour compresser le son avant de l&#039;envoyer vers le réseau local ou sur Internet pour être lu avec n&#039;importe quel lecteur multimédia sur toute les plate-formes.
+</p>
+
+<p>
+Selon que vous utilisez PulseAudio en tant que daemon système ou en mode utilisateur, éditez les fichiers /etc/pulse/system.pa ou /etc/pulse/default.pa et ajoutez les deux lignes suivantes :
+</p>
+<pre class="file">##rtp stream
+load-module module-null-sink sink_name=&quot;rtp&quot;
+load-module module-rtp-send source=&quot;rtp.monitor&quot; destination=&quot;192.168.1.42&quot; port=&quot;10002&quot;</pre>
+
+<p>
+Le premier module permettra d&#039;avoir un sink défini pour la sortie RTP, mais il est possible de configurer la source du module-rtp-send sur le principal si vous le souhaitez, pensez dans ce cas à lui donner un nom dans le fichier de configuration.
+</p>
+
+<p>
+La destination doit être l&#039;adresse IP de votre machine (pour une raison obscure, ça ne semble pas fonctionner en utilisant l&#039;adresse locale 127.0.0.1). Vous pouvez changer le port si celui-ci est déjà utilisé par une autre application.
+</p>
+
+<p>
+Ensuite, il sera nécessaire de récupérer le flux RTP et de le ré-encoder avec <a href="http://doc.ubuntu-fr.org/vlc" class="wikilink1" title="vlc">VLC</a> pour le diffuser sur le réseau en http. La commande suivante vous fera ça très bien :
+</p>
+<pre class="code">cvlc rtp://192.168.1.42:10002 --sout &#039;#transcode{acodec=mp3,ab=320}:std{access=http,mux=ts,dst=192.168.1.42:10001}&#039;</pre>
+
+<p>
+Pensez encore une fois à bien configurer les bonnes adresses IP.
+</p>
+
+<p>
+Pour que <a href="http://doc.ubuntu-fr.org/vlc" class="wikilink1" title="vlc">VLC</a> puisse continuer à fonctionner en permanence, utilisez une instance <a href="http://doc.ubuntu-fr.org/screen" class="wikilink1" title="screen">screen</a> (le paquet screen doit être installé).
+</p>
+
+<p>
+Cette méthode est tout à fait adaptée pour réaliser une webradio.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Compresser le flux sonore et le diffuser en http] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17868-19645" /><input type="submit" value="Modifier" class="button" title="Compresser le flux sonore et le diffuser en http" /></div></form></div>
+<h2 class="sectionedit17" id="problemes_connus">Problèmes connus</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Problèmes connus] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="19646-19676" /><input type="submit" value="Modifier" class="button" title="Problèmes connus" /></div></form></div>
+<h3 class="sectionedit18" id="flash">Flash</h3>
+<div class="level3">
+
+<p>
+Pour faire fonctionner certaines applications récalcitrantes comme <a href="flash" class="wikilink1" title="flash">Flash</a> de façon propre, il suffit de désactiver PulseAudio pour n&#039;utiliser que la couche Alsa.<br/>
+
+La procédure consiste à désactiver les paquets de PulseAudio, puis à installer quelques outils pour faciliter les réglages éventuels d&#039;Alsa.
+</p>
+
+<p>
+Documentation initiale expliquant les détails de la méthode :
+</p>
+<ul>
+<li class="level1"><div class="li"> pour <a href="http://doc.ubuntu-fr-secours.org/astuces/pulseaudio-intrepid-desactiver.html" class="urlextern" title="http://doc.ubuntu-fr-secours.org/astuces/pulseaudio-intrepid-desactiver.html"  rel="nofollow">Intrepid Ibex</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=319468" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=319468"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=319468</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=301462" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=301462"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=301462</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=317641" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=317641"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=317641</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Flash] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="19677-20349" /><input type="submit" value="Modifier" class="button" title="Flash" /></div></form></div>
+<h3 class="sectionedit19" id="skype">Skype</h3>
+<div class="level3">
+
+<p>
+<a href="skype" class="wikilink1" title="skype"> Skype</a> ne fonctionne pas toujours avec les entrées / sorties de PulseAudio. Ce problème est décrit sur le <a href="http://www.pulseaudio.org/wiki/PerfectSetup#Skype" class="urlextern" title="http://www.pulseaudio.org/wiki/PerfectSetup#Skype"  rel="nofollow"> wiki de PulseAudio (en)</a>.
+</p>
+
+<p>
+Note : Ce problème a été réglé dans la version 2.1. Le texte suivant reste valide pour les versions antérieures de Skype.
+</p>
+
+<p>
+Une solution efficace (<a href="http://ubuntuforums.org/showthread.php?p=4526841#post4526841" class="urlextern" title="http://ubuntuforums.org/showthread.php?p=4526841#post4526841"  rel="nofollow">source (en)</a>) consiste à déclarer des entrées / sorties audio spécifiques. Cela permet à Skype de contourner PulseAudio. 
+</p>
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Editer le fichier</a> ~/.asoundrc :
+</p>
+
+<p>
+Rajouter les options suivantes à la fin du fichier :
+</p>
+<pre class="file">pcm.skypeout
+{
+	type plug
+	slave.pcm &quot;dmix&quot;
+}
+ctl.skypeout
+{
+	type hw
+	card 0
+}
+pcm.skypein
+{
+	type plug
+	slave.pcm &quot;input&quot;
+}
+ctl.skypein
+{
+	type hw
+	card 0
+}</pre>
+
+<p>
+Redémarrer. Ouvrir Skype et configurer les réglages audio sous Skype (&quot;Options&quot; → &quot;Son&quot;) avec &quot;skypeout&quot; pour &quot;son sortant&quot; et &quot;sonnerie&quot;.
+(NB : à priori, il est possible d&#039;utiliser &quot;skypein&quot; pour le &quot;son entrant&quot; mais je n&#039;ai pas fait la manipulation et j&#039;ai laissé le device hardware par défaut).
+</p>
+
+<p>
+<p><div class="noteimportant">
+Cette configuration permet de faire fonctionner Skype correctement sur les ressources audio locales mais il n&#039;est en revanche plus possible d&#039;utiliser les ressources audio d&#039;un autre serveur PulseAudio distant pour Skype ! 
+
+</div></p>
+</p>
+
+<p>
+Une solution complémentaire, préconisée par Skype (<a href="https://support.skype.com/fr/faq/FA10964/Comment-regler-mes-parametres-audio-afin-que-Skype-pour-Linux-fonctionne" class="urlextern" title="https://support.skype.com/fr/faq/FA10964/Comment-regler-mes-parametres-audio-afin-que-Skype-pour-Linux-fonctionne"  rel="nofollow">Support Skype</a>), consiste à ajouter ou éditer le fichier ~/.pulse/client.conf en y ajoutant la ligne suivante : 
+</p>
+<pre class="file">autospawn=no</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Skype] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="20350-22085" /><input type="submit" value="Modifier" class="button" title="Skype" /></div></form></div>
+<h3 class="sectionedit20" id="lecteur_audio_mpd">Lecteur audio MPD</h3>
+<div class="level3">
+
+<p>
+Si vous rencontrez des problèmes entre le lecteur audio MPD et Pulseaudio, voir la page de <a href="http://doc.ubuntu-fr.org/mpd?&amp;#pas_de_son_avec_pulse" class="wikilink1" title="mpd">MPD</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Lecteur audio MPD] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="22086-22245" /><input type="submit" value="Modifier" class="button" title="Lecteur audio MPD" /></div></form></div>
+<h3 class="sectionedit21" id="le_son_craque">Le son &quot;craque&quot;</h3>
+<div class="level3">
+
+<p>
+Il se peut que le son &quot;craque&quot; depuis la dernière version (0.9.14).
+</p>
+
+<p>
+Le problème semble être dû à la fonction &quot;tsched&quot; activée par défaut.
+Pour corriger ceci, trouver dans le fichier default.pa (dans ~/.pulse généralement) la ligne load-module module-hal-detect et ajouter tsched=0 :
+</p>
+<pre class="code">load-module module-hal-detect  tsched=0</pre>
+
+<p>
+Si vous utilisez module-alsa-sink, ajouter lui aussi  &quot;tsched=0&quot;
+</p>
+<pre class="code">load-module module-alsa-sink device=hw:0,0 sink_name=alsa_out tsched=0</pre>
+
+<p>
+Si vous ne trouvez pas la ligne &quot;load-module module-hal-detect&quot; editer le fichier
+&quot; /etc/pulse/default.pa &quot;
+et remplacer la ligne; 
+</p>
+<pre class="code">load-module module-udev-detect</pre>
+
+<p>
+par ; 
+</p>
+<pre class="code">load-module module-udev-detect tsched=0</pre>
+
+<p>
+Cependant si vous changer &quot;/etc/pulse/default.pa&quot; il faut également modifier &quot;/etc/pulse/daemon.conf&quot;
+et retiré le ; devant
+</p>
+<pre class="code">default-script-file = /etc/pulse/default.pa</pre>
+
+<p>
+Il se peut que PulseAudio soit moins stable (plante au changement de musique par exemple). En augmentant <strong>default-fragment-size-msec</strong> dans daemon.conf, le problème est moins présent :
+</p>
+<pre class="code">default-sample-channels = 2
+high-priority = yes
+default-fragments = 8
+default-fragment-size-msec = 25</pre>
+
+<p>
+Ne pas oublier de tuer
+</p>
+<pre class="code">$ pulseaudio -k</pre>
+
+<p>
+puis de relancer le démon 
+</p>
+<pre class="code">$ pulseaudio -D</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Le son craque] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="22246-23605" /><input type="submit" value="Modifier" class="button" title="Le son craque" /></div></form></div>
+<h3 class="sectionedit22" id="sdl">SDL</h3>
+<div class="level3">
+
+<p>
+Les applications SDL (une majorité de jeux comme les fps ou xmoto) utilisent Alsa, mais ces applications renvoient une erreur de greffon. pour y remédier, deux solutions :
+</p>
+
+<p>
+Sortie SDL pulseaudio native :
+</p>
+<pre class="code">sudo apt-get install libsdl1.2debian-pulseaudio
+export SDL_AUDIODRIVER=&quot;pulse&quot;</pre>
+
+<p>
+Mais pas encore assez mure, le son n&#039;est pas terrible.
+</p>
+
+<p>
+L&#039;autre solution est de passer par esd :
+</p>
+<pre class="code">sudo apt-get install libsdl1.2debian-esd
+export SDL_AUDIODRIVER=&quot;esd&quot;</pre>
+
+<p>
+Maintenant les flux de sortie de ces applications sont disponibles dans pulseaudio et réglables avec pavucontrol.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[SDL] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="23606-24218" /><input type="submit" value="Modifier" class="button" title="SDL" /></div></form></div>
+<h3 class="sectionedit23" id="autres_problemes">Autres problèmes</h3>
+<div class="level3">
+
+<p>
+D&#039;autres problèmes non traités ici ont leur solution sur cette page :
+<a href="http://www.pulseaudio.org/wiki/PerfectSetup" class="urlextern" title="http://www.pulseaudio.org/wiki/PerfectSetup"  rel="nofollow">PulseAudio Perfect Setup (en)</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Autres problèmes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="24219-24398" /><input type="submit" value="Modifier" class="button" title="Autres problèmes" /></div></form></div>
+<h3 class="sectionedit24" id="plusieurs_cartes_son_enceintes_ou_casque_usb_par_exemple">Plusieurs cartes son (enceintes ou casque USB par exemple)</h3>
+<div class="level3">
+
+<p>
+Il se peut que les hauts parleurs usb ne fonctionnent pas. Il faut alors installer <strong><a href="apt://pavucontrol" class="interwiki iw_apt" title="apt://pavucontrol">pavucontrol</a></strong> pour rediriger le flux vers les enceintes <abbr title="Universal Serial Bus">USB</abbr>, c&#039;est-à-dire mettre ces enceintes &quot;par défaut&quot;. L&#039;effet n&#039;est pas immédiat, il faut relancer.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Plusieurs cartes son (enceintes ou casque USB par exemple)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="24399-24721" /><input type="submit" value="Modifier" class="button" title="Plusieurs cartes son (enceintes ou casque USB par exemple)" /></div></form></div>
+<h3 class="sectionedit25" id="correction_du_probleme_sur_xubuntu_1310">Correction du problème sur Xubuntu 13.10</h3>
+<div class="level3">
+
+<p>
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Encore d&#039;actualité sur Trusty 14.04 ?
+<p><div class="notehelp">Veuillez spécifier le problème que ça résout.
+</div></p>
+</p>
+
+<p>
+Pour corriger le problème de PulseAudio sur Xubuntu 13.10, <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">modifiez le fichier</a> <strong>/usr/share/dbus-1/services/indicator-sound.service</strong> : 
+</p>
+<pre class="code">sudo nano /usr/share/dbus-1/services/indicator-sound.service</pre>
+
+<p>
+Le fichier doit ressembler à ça : 
+</p>
+<pre class="file">[D-BUS Service] Name=com.canonical.indicator.sound
+Exec=/usr/lib/x86_64-linux-gnu/indicator-sound/indicator-sound-service&lt;/code&gt;
+
+Commentez la dernière ligne et ajoutez celle-ci : 
+
+&lt;code&gt;Exec=/usr/lib/indicator-sound-gtk2/indicator-sound-service</pre>
+
+<p>
+Redémarrez
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Correction du problème sur Xubuntu 13.10] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="24722-25456" /><input type="submit" value="Modifier" class="button" title="Correction du problème sur Xubuntu 13.10" /></div></form></div>
+<h3 class="sectionedit26" id="plus_d_icone_de_reglage_du_son">Plus d&#039;icône de réglage du son</h3>
+<div class="level3">
+
+<p>
+<strong><a href="precise" class="wikilink1" title="precise">Pour Ubuntu Precise 12.04 uniquement</a></strong><br/>
+
+Installer <strong>ALSA Tray</strong> pour retrouver l&#039;icône de réglage du son et le support des touches multimédia. Voir la page <a href="http://doc.ubuntu-fr.org/alsa-tray" class="wikilink1" title="alsa-tray">alsa-tray</a> pour plus d&#039;informations.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Plus d'icône de réglage du son] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="25457-25714" /><input type="submit" value="Modifier" class="button" title="Plus d'icône de réglage du son" /></div></form></div>
+<h3 class="sectionedit27" id="la_sourdine_est_toujours_activee_au_demarrage">La sourdine est toujours activée au démarrage</h3>
+<div class="level3">
+
+<p>
+Copier le fichier /etc/pulse/default.pa dans le dossier $HOME/.pulse/ et ajouter à la fin de ce fichier :
+</p>
+<pre class="file">set-sink-mute 0 no</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[La sourdine est toujours activée au démarrage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="25715-25914" /><input type="submit" value="Modifier" class="button" title="La sourdine est toujours activée au démarrage" /></div></form></div>
+<h3 class="sectionedit28" id="pulseaudio_mute_les_canaux_du_son_au_demarrage">Pulseaudio mute les canaux du son au démarrage</h3>
+<div class="level3">
+
+<p>
+On peut vérifier le problème en allant voir si le son est mis en sourdine dans alsamixer ou <strong><a href="apt://gnome-alsamixer" class="interwiki iw_apt" title="apt://gnome-alsamixer">gnome-alsamixer</a></strong> à chaque redémarrage alors que l&#039;indicateur du son n&#039;est pas sur muet au niveau du tableau de bord.
+Rapport de bug sur <a href="https://bugs.launchpad.net/pulseaudio/+bug/352732" class="urlextern" title="https://bugs.launchpad.net/pulseaudio/+bug/352732"  rel="nofollow">Launchpad</a> et <a href="http://pulseaudio.org/ticket/572" class="urlextern" title="http://pulseaudio.org/ticket/572"  rel="nofollow">ticket de Pulseaudio</a>.
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <em>/etc/pulse/default.pa</em>, rechercher la ligne :
+</p>
+<pre class="code">load-module module-device-restore</pre>
+
+<p>
+et la commenter (c&#039;est çà dire rajouter le signe # devant) :
+</p>
+<pre class="code">#load-module module-device-restore</pre>
+
+<p>
+Sauvegarder.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Pulseaudio mute les canaux du son au démarrage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="25915-26600" /><input type="submit" value="Modifier" class="button" title="Pulseaudio mute les canaux du son au démarrage" /></div></form></div>
+<h3 class="sectionedit29" id="probleme_de_son_avec_kde">Problème de son avec KDE</h3>
+<div class="level3">
+
+<p>
+<em>(Rencontré avec : <a href="kubuntu" class="wikilink1" title="kubuntu">Kubuntu</a> <a href="http://doc.ubuntu-fr.org/trusty" class="wikilink1" title="trusty">Trusty 14.04</a>)</em>
+</p>
+
+<p>
+Les symptômes : Ralentissement à l&#039;ouverture de session, pas de son.
+</p>
+
+<p>
+La solution :
+</p>
+<ul>
+<li class="level1"><div class="li"> Ouvrez un <a href="terminal" class="wikilink1" title="terminal">terminal</a></div>
+</li>
+<li class="level1"><div class="li"> Allez dans le dossier <code>/etc/xdg/autostart/</code></div>
+</li>
+<li class="level1"><div class="li"> Si vous trouvez deux fichiers <code>pulseaudio.desktop</code> et <code>pulseaudio-kde.desktop</code></div>
+</li>
+<li class="level1"><div class="li"> Supprimez le fichier <code>pulseaudio.desktop</code>.</div>
+</li>
+<li class="level1"><div class="li"> Redémarrez, le problème devrait être réglé.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://linuxadvantage.blogspot.fr/2013/01/ouverture-de-session-tres-longue-avec.html" class="urlextern" title="http://linuxadvantage.blogspot.fr/2013/01/ouverture-de-session-tres-longue-avec.html"  rel="nofollow">linuxadvantage.blogspot.fr|Source</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Problème de son avec KDE] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="26601-27184" /><input type="submit" value="Modifier" class="button" title="Problème de son avec KDE" /></div></form></div>
+<h3 class="sectionedit30" id="pulseaudio_en_tant_que_demon_systeme">Pulseaudio en tant que démon système</h3>
+<div class="level3">
+
+<p>
+Depuis Jaunty, il arrive que le son saccade avec PulseAudio. Chez moi, le son saccade toujours, malgré le temps réel.
+Mais lancé en tant que <a href="sudo" class="wikilink1" title="sudo">root</a>, plus de problèmes.
+</p>
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditez le fichier</a> /etc/pulse/daemon.conf comme ceci : 
+</p>
+<pre class="file"># This file is part of PulseAudio.
+#
+# PulseAudio is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# PulseAudio is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with PulseAudio; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
+# USA.
+
+## Configuration file for the PulseAudio daemon. See pulse-daemon.conf(5) for
+## more information. Default values a commented out.  Use either ; or # for
+## commenting.
+
+daemonize = no
+fail = yes
+disallow-module-loading = no
+disallow-exit = no
+use-pid-file = yes
+system-instance = yes
+disable-shm = no
+shm-size-bytes = 0 # setting this 0 will use the system-default, usually 64 MiB
+
+high-priority = yes
+nice-level = -11
+
+realtime-scheduling = yes
+; realtime-priority = 5
+
+; exit-idle-time = 20
+; module-idle-time = 20
+; scache-idle-time = 20
+
+; dl-search-path = (depends on architecture)
+
+; load-default-script-file = yes
+; default-script-file = 
+
+; log-target = auto
+; log-level = notice
+
+resample-method = src-linear
+; disable-remixing = no
+; disable-lfe-remixing = yes
+
+no-cpu-limit = yes
+
+; rlimit-fsize = -1
+; rlimit-data = -1
+; rlimit-stack = -1
+; rlimit-core = -1
+; rlimit-as = -1
+; rlimit-rss = -1
+; rlimit-nproc = -1
+; rlimit-nofile = 256
+; rlimit-memlock = -1
+; rlimit-locks = -1
+; rlimit-sigpending = -1
+; rlimit-msgqueue = -1
+; rlimit-nice = 31
+; rlimit-rtprio = 9
+; rlimit-rtttime = 1000000
+
+; default-sample-format = s16le
+; default-sample-rate = 44100
+ default-sample-channels = 2
+
+default-fragments = 8
+default-fragment-size-msec = 5</pre>
+
+<p>
+Par défaut, les flux ne pourront pas êtres modifiés par pavucontrol. Pour cela, décommentez la ligne de /etc/pulse/default.pa :
+</p>
+<pre class="file">load-module module-esound-protocol-tcp</pre>
+
+<p>
+Enfin, il faut indiquer au lanceur d&#039;Ubuntu qu&#039;on souhaite utiliser PulseAudio en tant que démon système. Pour celà, rendez-vous dans le fichier /etc/default/pulseaudio et réglez la valeur de PULSEAUDIO_SYSTEM_START à 1 :
+</p>
+<pre class="file">PULSEAUDIO_SYSTEM_START=1</pre>
+
+<p>
+Ajouter son utilisateur aux groupes pulse et pulse-access :
+</p>
+<pre class="code">adduser monuser pulse
+adduser monuser pulse-access</pre>
+
+<p>
+Vous pouvez maintenant redémarrer PulseAudio
+</p>
+<pre class="file">    pulseaudio -k
+    sudo /etc/init.d/pulseaudio start</pre>
+
+<p>
+Lien du thread sur le forum : <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=2675978#p2675978" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=2675978#p2675978"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?pid=2675978#p2675978</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_30'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Pulseaudio en tant que démon système] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="27185-30384" /><input type="submit" value="Modifier" class="button" title="Pulseaudio en tant que démon système" /></div></form></div>
+<h3 class="sectionedit31" id="volume_pcm_a_100">Volume PCM a 100%</h3>
+<div class="level3">
+
+<p>
+Voir <a href="https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/420578" class="urlextern" title="https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/420578"  rel="nofollow">sur launchpad</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_31'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Volume PCM a 100%] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="30385-30502" /><input type="submit" value="Modifier" class="button" title="Volume PCM a 100%" /></div></form></div>
+<h3 class="sectionedit32" id="le_son_est_beaucoup_trop_fort_limiter_le_volume_maximum">Le son est beaucoup trop fort &amp; limiter le volume maximum</h3>
+<div class="level3">
+
+<p>
+Certains ont pu constater que le volume général pouvait être trop fort et qu&#039;un dérapage sur la molette de volume pouvait avoir des conséquences désastreuses sur le voisinage et les baies vitrées environnantes.
+</p>
+
+<p>
+C&#039;est peut-être votre cas si vous possédez des enceintes ne possédant pas de réglage de volume autre que celui de la carte son…
+Dans mon cas je possède un ensemble 5.1 d&#039;un peu plus de 200W (altec lansing ada995 pour être précis). Ce dernier est déjà pré-amplifié et possède un bon rendement acoustique, le seul réglage disponible sur mon kit est le niveau du double-subwoofer. Je vais donc vous présenter la méthode que j&#039;utilise afin de limiter le volume maximum ainsi qu&#039;obtenir une plage de réglage plus élevée.
+</p>
+
+<p>
+La méthode est simple: il suffit de régler (via alsamixer par exemple) une première fois le volume du <abbr title="Pulse-Code Modulation">PCM</abbr> avec le volume master à fond puis ensuite faire en sorte d&#039;ajuster seulement le volume master. Ainsi vous pourrez ajuster le curseur master entre 0 et 100 % (au lieu de 0-10%) sans que le son soit trop fort, vous aurez donc gagné en précision tout en limitant le volume maximum disponible via les touches multimédia de votre clavier ou l&#039;applet en haut à droite
+</p>
+
+<p>
+Toutefois, depuis l&#039;apparition de pulseaudio vous ne pouvez plus régler le <abbr title="Pulse-Code Modulation">PCM</abbr> de manière indépendante sans quelques petites modifications. En effet, pulseaudio gère la totalité des niveaux de volume et ne laisse pas (à première vue) la main à l&#039;utilisateur: lorsque vous tentez de baisser le <abbr title="Pulse-Code Modulation">PCM</abbr>, il remonte automatiquement à 100% et baisse le volume master à la place…
+</p>
+<ul>
+<li class="level1"><div class="li"> Il va donc falloir dans un premier temps dire à pulseaudio d&#039;ignorer le volume <abbr title="Pulse-Code Modulation">PCM</abbr>:<br/>
+ouvrez avec votre éditeur préféré le fichier présent dans /usr/share/pulseaudio/alsa-mixer/paths qui correspond à votre configuration<br/>
+<pre class="code">sudo nano /usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Repérez le bloc [Element <abbr title="Pulse-Code Modulation">PCM</abbr>]:<br/>
+remplacez «volume = merge» par <br/>
+<pre class="code">volume = ignore</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Enregistrez le fichier</div>
+</li>
+<li class="level1"><div class="li"> Redémarrez Pulseaudio pour que les changements prennent effet: <br/>
+<pre class="code">killall pulseaudio</pre>
+
+<p>
+ Pulseaudio redémarrera automatiquement. Il vous suffit de relancer les applications qui communicaient avec pulseaudio et voilà…
+</p>
+</div>
+</li>
+</ul>
+
+<p>
+Vous pouvez maintenant suivre la démarche du troisième paragraphe.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_32'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Le son est beaucoup trop fort &amp; limiter le volume maximum] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="30503-32943" /><input type="submit" value="Modifier" class="button" title="Le son est beaucoup trop fort &amp; limiter le volume maximum" /></div></form></div>
+<h2 class="sectionedit33" id="suppressiondesinstallation">Suppression / Désinstallation</h2>
+<div class="level2">
+
+<p>
+Sur Ubuntu, Pulseaudio est très implanté, et le supprimer est une méthode radicale. Peut-être trop pour certains. Cela peut-être utile pour des émulateurs console ou tout autre programme qui ne supporte pas pulse-audio.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_33'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Suppression / Désinstallation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="32944-33213" /><input type="submit" value="Modifier" class="button" title="Suppression / Désinstallation" /></div></form></div>
+<h3 class="sectionedit34" id="a_essayer_en_premier">A essayer en premier</h3>
+<div class="level3">
+
+<p>
+Décocher le démarrage automatique de pulse audio dans Préférences&gt;Applications au démarrage
+</p>
+
+<p>
+Copier le fichier /etc/pulse/client.conf dans son répertoire $HOME/.pulse/ et remplacer la ligne
+</p>
+<pre class="code">; autospawn = yes</pre>
+
+<p>
+par
+</p>
+<pre class="code">autospawn = no</pre>
+
+<p>
+puis tuer pulseaudio par
+</p>
+<pre class="code">$ pulseaudio -k</pre>
+
+<p>
+L&#039;affaire est classée. Et pour que pulseaudio ne redémarre pas à la session suivante, il suffit créer un fichier .pulse_a11y_nostart à la racine de son répertoire $HOME
+</p>
+<pre class="code">$ touch ~/.pulse_a11y_nostart</pre>
+
+<p>
+Si on change d&#039;avis, il suffit de relancer pulseaudio
+</p>
+<pre class="code">$ pulseaudio --start</pre>
+
+<p>
+et de remettre autospawn en commentaire (&quot;;&quot;) ou à yes. Pour un redémarrage normal à la session suivante, il suffira juste de virer le fichier &quot;~/.pulse_a11y_nostart&quot;…
+</p>
+
+<p>
+Cette méthode marche sur Lucid 64 bits, sans enlever le méta paquet ubuntu-desktop ou autre. Pour retrouver un réglage de son vous pouvez installer le mixeur alsa.
+</p>
+
+<p>
+ Source forum ubuntu : <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=3441970#p3441970" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=3441970#p3441970"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?pid=3441970#p3441970</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_34'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[A essayer en premier] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="33214-34306" /><input type="submit" value="Modifier" class="button" title="A essayer en premier" /></div></form></div>
+<h3 class="sectionedit35" id="toujours_des_problemes">Toujours des problèmes</h3>
+<div class="level3">
+
+<p>
+Il suffit de défaire toute les modifications citées au dessus, puis :
+</p>
+
+<p>
+Ouvrez Synaptic et cherchez esound, un autre serveur de son, que vous cochez pour installer. Puis recherchez tout ce qui se rapproche a pulseaudio et cliquez pour faire une désinstallation complète. Si Synaptic vous signale que ca enlève des paquets gnome, vous décochez bien entendu.
+Cette méthode désinstalle ubuntu-desktop qui n&#039;est utile que pour migrer d&#039;une version à une autre.
+</p>
+
+<p>
+Appliquez vos opérations, redémarrez votre PC.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_35'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Toujours des problèmes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="34307-34856" /><input type="submit" value="Modifier" class="button" title="Toujours des problèmes" /></div></form></div>
+<h3 class="sectionedit36" id="autre_methode">Autre méthode</h3>
+<div class="level3">
+
+<p>
+Si vous avez un problème avec Pulseaudio, vous pouvez le désinstaller ! (Car le logiciel libre c&#039;est aussi le droit de ne pas l&#039;utiliser quand on en veut pas. <img src="lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /> )
+Pour désinstaller Pulseaudio, rien de plus simple. Il suffit de désinstaller les paquets: <strong>pulseaudio</strong> et <strong>gstreamer0.10-pulseaudio</strong>
+</p>
+
+<p>
+Une fois ceci fait, au prochain démarrage vos applications utiliseront automatiquement Alsa sans passer par PulseAudio !
+</p>
+
+<p>
+Malgré tout il reste un problème si vous utilisez Ubuntu (<a href="gnome" class="wikilink1" title="gnome">Gnome</a>) … Et de taille ! Car vous ne pouvez plus régler le son !
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_36'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Autre méthode] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="34857-35441" /><input type="submit" value="Modifier" class="button" title="Autre méthode" /></div></form></div>
+<h3 class="sectionedit37" id="avec_xcfe_et_xubuntu">Avec XCFE et xubuntu</h3>
+<div class="level3">
+
+<p>
+tapez dans le terminal :
+</p>
+
+<p>
+sudo apt-get remove –purge pulseaudio
+</p>
+
+<p>
+et redémarrez simplement
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_37'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Avec XCFE et xubuntu] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="35442-35565" /><input type="submit" value="Modifier" class="button" title="Avec XCFE et xubuntu" /></div></form></div>
+<h2 class="sectionedit38" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+
+<p>
+Si vous voulez plus de renseignements sur ce qu&#039;est ou n&#039;est pas PulseAudio, visionnez la <a href="http://mirror.linux.org.au/pub/linux.conf.au/2007/video/talks/211.ogg" class="urlextern" title="http://mirror.linux.org.au/pub/linux.conf.au/2007/video/talks/211.ogg"  rel="nofollow">vidéo de Lennart Poettering</a>.
+</p>
+
+<p>
+Quelques liens parlant de PulseAudio :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://pulseaudio.org" class="urlextern" title="http://pulseaudio.org"  rel="nofollow">Site web du projet PulseAudio</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/ladspa" class="wikilink1" title="ladspa">Ladspa</a> → <a href="http://ubuntuforums.org/showthread.php?t=789578" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=789578"  rel="nofollow">HOWTO: PulseAudio Fixes &amp; System-Wide Equalizer Support</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Faire fonctionner certaines applications rebutantes du type <a href="skype" class="wikilink1" title="skype">Skype</a> ou <a href="flash" class="wikilink1" title="flash">Flash</a> de façon propre : <a href="http://blog.damien.clauzel.nom.fr/post/2009/01/15/Resoudre-les-problemes-de-son-sur-Ubuntu-version-Intrepid-Ibex" class="urlextern" title="http://blog.damien.clauzel.nom.fr/post/2009/01/15/Resoudre-les-problemes-de-son-sur-Ubuntu-version-Intrepid-Ibex"  rel="nofollow">Intrepid Ibex</a>, <a href="http://blog.damien.clauzel.nom.fr/post/2009/05/15/Resoudre-les-problemes-de-son-sur-Ubuntu-version-Jaunty-Jackalope" class="urlextern" title="http://blog.damien.clauzel.nom.fr/post/2009/05/15/Resoudre-les-problemes-de-son-sur-Ubuntu-version-Jaunty-Jackalope"  rel="nofollow">Jaunty Jackalope</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://ubuntuforums.org/showthread.php?t=164193" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=164193"  rel="nofollow">Informations sur Avahi et Firestarter</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.generation-linux.fr/index.php?post/2008/10/18/Utiliser-la-sortie-son-d-un-autre-PC" class="urlextern" title="http://www.generation-linux.fr/index.php?post/2008/10/18/Utiliser-la-sortie-son-d-un-autre-PC"  rel="nofollow">Utiliser la sortie son d&#039;un autre PC</a> sur le réseau local.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.linuxmao.org/tikiwiki/tiki-index.php?page=PulseAudio&amp;highlight=pulseaudio" class="urlextern" title="http://www.linuxmao.org/tikiwiki/tiki-index.php?page=PulseAudio&amp;highlight=pulseaudio"  rel="nofollow">Voir la page de LinuxMAO sur le sujet</a></div>
+</li>
+</ul>
+
+<p>
+—-
+</p>
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/kamilion" class="wikilink2" title="utilisateurs:kamilion" rel="nofollow">Kamilion</a> (traduction), <a href="http://doc.ubuntu-fr.org/utilisateurs/ghost" class="wikilink2" title="utilisateurs:ghost" rel="nofollow">Ghost</a> (création), <a href="http://doc.ubuntu-fr.org/utilisateurs/prometee" class="wikilink1" title="utilisateurs:prometee">Prometee</a> (traduction et améliorations), <a href="utilisateurs/ste" class="wikilink1" title="utilisateurs:ste">ste</a> (normalisation de la page), <a href="http://doc.ubuntu-fr.org/utilisateurs/manu_95" class="wikilink1" title="utilisateurs:manu_95">Manu_95</a> (optimisation Skype), <a href="http://doc.ubuntu-fr.org/utilisateurs/loulouch" class="wikilink2" title="utilisateurs:loulouch" rel="nofollow">loulouch</a> (démon système), <a href="http://doc.ubuntu-fr.org/utilisateurs/hackurx" class="wikilink1" title="utilisateurs:hackurx">HacKurx</a> (son en 5.1), <a href="http://doc.ubuntu-fr.org/utilisateurs/theozzfancometh" class="wikilink2" title="utilisateurs:theozzfancometh" rel="nofollow">Theozzfancometh</a> (mise à jour et clarification de la page), <a href="utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a> (nettoyage), <a href="http://doc.ubuntu-fr.org/utilisateurs/syrion" class="wikilink1" title="utilisateurs:syrion">Syrion</a> (Précision config), <a href="utilisateurs/psychederic.1" class="wikilink1" title="utilisateurs:psychederic">Psychederic</a> (resample et précision de format), <a href="http://doc.ubuntu-fr.org/utilisateurs/ignace72" class="wikilink1" title="utilisateurs:ignace72">ignace72</a> (sourdine), <a href="utilisateurs/cafecho" class="wikilink1" title="utilisateurs:cafecho">Cafecho</a> (Mise à jour/nettoyage).</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_38'><form class="button btn_secedit" method="post" action="pulseaudio"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431337170" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="35566-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- no cachefile used, but created /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/6/629be4c416693fd4ae26e7cad35b7a98.xhtml -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/pulseaudio?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pulseaudio?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pulseaudio?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pulseaudio?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pulseaudio?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

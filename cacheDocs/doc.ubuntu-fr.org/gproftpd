@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>gproftpd - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-12-30T22:58:01+0100"/>
+<meta name="keywords" content="maverick,serveur,reseau,internet,ftp"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/gproftpd?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/gproftpd?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/gproftpd"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/gproftpd"/>
+<link rel="canonical" href="gproftpd"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"gproftpd","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="gproftpd#main" tabindex="1">Contenu</a> | <a href="gproftpd#qsearch__in" tabindex="2">Rechercher</a> | <a href="gproftpd#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="gproftpd" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="gproftpd" >gproftpd</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="versions">versions supportées d'Ubuntu</a>.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="gproftpd#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="gproftpd#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="gproftpd#premier_lancement">Premier lancement</a></div></li>
+<li class="level2"><div class="li"><a href="gproftpd#l_interface">L&#039;interface</a></div></li>
+<li class="level2"><div class="li"><a href="gproftpd#les_boutons_principaux">Les boutons principaux</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="gproftpd#bugs_frequents">Bugs fréquents</a></div></li>
+<li class="level1"><div class="li"><a href="gproftpd#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="maverick" class="wikilink1" title="maverick" rel="tag">Maverick</a>,
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="internet" class="wikilink1" title="internet" rel="tag">internet</a>,
+	<a href="ftp" class="wikilink1" title="ftp" rel="tag">ftp</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="serveur_ftp_gadmin_proftpd">Serveur FTP Gadmin ProFTPD</h1>
+<div class="level1">
+
+<p>
+Gproftpd est l&#039;interface graphique de <a href="proftpd" class="wikilink1" title="proftpd">proftpd</a>, un serveur ftp très puissant mais demandant des connaissances avancées pour le maîtriser.
+</p>
+
+<p>
+Vous pouvez essayer de faire une configuration basique et fonctionnelle de <strong><a href="proftpd" class="wikilink1" title="proftpd">proftpd</a></strong>, dans le but de comprendre un minimum et de vérifier si vous avez vraiment besoin de Gproftpd.
+</p>
+
+<p>
+<a href="_detail/gproftpd.jpg?id=gproftpd" class="media" title="gproftpd.jpg"><img src="_media/gproftpd.jpg" class="media" title="Interface de Gproftpd" alt="Interface de Gproftpd" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="gproftpd"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388440681" /><input type="hidden" name="summary" value="[Serveur FTP Gadmin ProFTPD] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="56-473" /><input type="submit" value="Modifier" class="button" title="Serveur FTP Gadmin ProFTPD" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <a href="apt://gadmin-proftpd" class="urlextern" title="apt://gadmin-proftpd"  rel="nofollow">gadmin-proftpd</a>.
+</p>
+
+<p>
+Pendant l&#039;installation une fenêtre s&#039;ouvrira et vous demandera si vous voulez que proftpd soit indépendant ou lancé par inetd<sup><a href="gproftpd#fn__1" id="fnt__1" class="fn_top">1)</a></sup>. Il est recommandé de choisir <strong>indépendant</strong> si vous n&#039;avez pas crucialement besoin d&#039;inetd.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="gproftpd"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388440681" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="474-927" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit3" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Gadmin ProFTPD se trouve dans <em>Applications → Outils Système → <strong>GADMIN-PROFTPD</strong></em>
+</p>
+
+<p>
+Si l&#039;exécution par le menu échoue (dû à une commande incorrecte), modifiez la commande dans le menu ou utiliser la commande :
+</p>
+<pre class="code">gksudo gadmin-proftpd</pre>
+
+<p>
+Si la fenêtre se referme aussitôt lancée et si vous avez le message &quot;erreur de segmentation&quot; en le lançant via le terminal, téléchargez la <a href="http://debian.cs.binghamton.edu/debian/pool/main/g/gadmin-proftpd/" class="urlextern" title="http://debian.cs.binghamton.edu/debian/pool/main/g/gadmin-proftpd/"  rel="nofollow">dernière version</a> (paquet conçu pour <a href="debian_ubuntu_comparaison" class="wikilink1" title="debian_ubuntu_comparaison">Debian</a>).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="gproftpd"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388440681" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="928-1503" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h3 class="sectionedit4" id="premier_lancement">Premier lancement</h3>
+<div class="level3">
+
+<p>
+A la première ouverture, Gadmin ProFTPD vous demandera si vous voulez créer un fichier de configuration ProFTPD qui lui est propre. Si vous n&#039;avez jamais utilisé ProFTPD en ligne de commande faites Yes (ou Oui), sinon sauvegardez votre ancienne configuration quelque part avant de le faire.
+</p>
+
+<p>
+Vous devez aussi après le premier lancement créer le certificat <abbr title="Transport Layer Security">TLS</abbr> permettant les connexions sécurisés avec ProFTPd. (C&#039;est une sécurité empêchant l&#039;interception et le vol d&#039;une connexion au serveur à des fins malveillantes). <strong>Cette étape est obligatoire même si vous n&#039;utilisez pas cette fonction à cause d&#039;un léger bug</strong>.
+</p>
+
+<p>
+Pour ce faire, allez dans l&#039;onglet <strong>Serveurs</strong>, choisissez un serveur dans la liste, puis cherchez la case <strong>Mot de passe</strong> et tapez un mot de passe (n&#039;importe lequel). Vous pouvez aussi remplir les autres cases de la catégories concernant le certificat mais ce n&#039;est pas obligatoire.<br/>
+
+Ensuite cliquez sur <strong>Appliquer</strong> situé un peu en dessous à la ligne <strong>Generate new certificates</strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="gproftpd"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388440681" /><input type="hidden" name="summary" value="[Premier lancement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1504-2558" /><input type="submit" value="Modifier" class="button" title="Premier lancement" /></div></form></div>
+<h3 class="sectionedit5" id="l_interface">L&#039;interface</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="onglet_servers">Onglet Servers</h4>
+<div class="level4">
+
+<p>
+Cet onglet sert à créer plusieurs serveurs virtuels. Par défaut, il y en a un qui est pré-créé. 
+</p>
+
+<p>
+Pour éditer sa configuration, il suffit de modifier les paramètres en dessous et faire appliquer la nouvelle configuration.
+</p>
+
+<p>
+Les paramètres intéressants :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Download et upload speed</strong> qui permet de fixer la vitesse maximale de téléchargement et d&#039;envoi dans le ftp ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>port</strong> qui permet de choisir l&#039;adresse du port pour accéder au serveur ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>passive port range</strong> qui permet de choisir les ports qui serviront à l&#039;envoi et la réception des données ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Default Home</strong> et <strong>Upload directory</strong> permettent de choisir les dossiers par défaut du serveur ftp.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="onglet_users">Onglet Users</h4>
+<div class="level4">
+
+<p>
+Cet onglet permet de paramétrer les utilisateurs, leurs dossiers, leurs mots de passe et leurs permissions 
+</p>
+
+</div>
+
+<h5 id="creer_un_utilisateur">Créer un utilisateur</h5>
+<div class="level5">
+
+<p>
+Pour créer un utilisateur, il suffit de remplir le tableau en dessous et de faire ajouter 
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Username</strong> : désigne le nom d&#039;utilisateur. Ce doit être un utilisateur du système mais on peut en créer un nouveau. Dans ce cas il faudra cliquer 2 fois sur ajouter ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Password</strong> : définition du mot de passe </div>
+</li>
+</ul>
+
+<p>
+ <p><div class="noteimportant"> Si le mot de passe est différent du mot de passe système, Gadmin ProFTPD modifiera le mot de passe sytème en conséquence… ce qui pourra vous réserver quelques surprises !
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Group</strong> : groupe auquel l&#039;utilisateur appartient. Ce doit être un groupe du système (par exemple : ftp)</div>
+</li>
+<li class="level1"><div class="li"> <strong>Home directory</strong> : dossier d&#039;accès par défaut ; n&#039;oubliez pas de cocher la case upload pour pouvoir uploader, vous devez le faire pour <strong>chaque nouveau dossier</strong> !</div>
+</li>
+<li class="level1"><div class="li"> <strong>require password</strong> : cochez cette option si un mot de passe est obligatoire ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Allow logins from</strong> : permet de mettre une adresse IP par laquelle cet utilisateur peut se connecter et empêche la connexion à partir des autres. Pour autoriser tout taper <strong>all</strong></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="gproftpd"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388440681" /><input type="hidden" name="summary" value="[L'interface] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2559-4531" /><input type="submit" value="Modifier" class="button" title="L'interface" /></div></form></div>
+<h3 class="sectionedit6" id="les_boutons_principaux">Les boutons principaux</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <strong>Activate</strong> : démarre le serveur ftp ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Deactivate</strong> : arrête le serveur ftp ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Apply</strong> : appliquer les modifications faites entre le démarrage du serveur ftp et maintenant ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Shutdown</strong> extinction du serveur avec 3 options:</div>
+<ul>
+<li class="level2"><div class="li"> Time to real shutdown : Temps à attendre pour l&#039;arrêt réel du serveur</div>
+</li>
+<li class="level2"><div class="li"> New acces disabled : Nouveaux accès désactivés</div>
+</li>
+<li class="level2"><div class="li"> Existing users disconnected : Déconnexion des utilisateurs actuels</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="gproftpd"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388440681" /><input type="hidden" name="summary" value="[Les boutons principaux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4532-5024" /><input type="submit" value="Modifier" class="button" title="Les boutons principaux" /></div></form></div>
+<h2 class="sectionedit7" id="bugs_frequents">Bugs fréquents</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Il arrive que l&#039;on ne puisse pas activer Gadmin ProFTPD, diverses erreurs s&#039;affichent donc dans le terminal. Pour corriger ce problème il suffit de créer le dossier var de Gadmin ProFTPD via cette commande:</div>
+</li>
+</ul>
+<pre class="code">sudo mkdir /var/run/proftpd/</pre>
+<ul>
+<li class="level1"><div class="li"> Lorsque je lance Gadmin ProFTPD et que le message suivant apparaît : &quot;Do you want to overwrite your current proftpd configuration with a suitable standard configuration for gadmin-proftpd ?&quot;. Si en cliquant sur Oui, l&#039;application se ferme automatiquement, alors il s&#039;agit d&#039;un bug. Il existe une solution de contournement. Veuillez suivre les étapes suivantes :</div>
+</li>
+</ul>
+<ol>
+<li class="level1"><div class="li"> lorsque le message apparaît, il faut cliquer sur Non</div>
+</li>
+<li class="level1"><div class="li"> Il faut se positionner sur l&#039;onglet &quot;configuration&quot;</div>
+</li>
+<li class="level1"><div class="li"> Ensuite vider tout le contenu du fichier de configuration.</div>
+</li>
+<li class="level1"><div class="li"> Cliquer sur &quot;enregistrer&quot;, puis sur &quot;standard&quot;</div>
+</li>
+<li class="level1"><div class="li"> Le message apparaît à nouveau, mais cette fois-ci il faut cliquer sur &quot;oui&quot;</div>
+</li>
+<li class="level1"><div class="li"> La nouvelle configuration apparaît</div>
+</li>
+<li class="level1"><div class="li"> Il faut cliquer sur &quot;Enregistrer&quot; et voilà c&#039;est corrigé</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="gproftpd"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388440681" /><input type="hidden" name="summary" value="[Bugs fréquents] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5025-6092" /><input type="submit" value="Modifier" class="button" title="Bugs fréquents" /></div></form></div>
+<h2 class="sectionedit8" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.gadmintools.org/" class="urlextern" title="http://www.gadmintools.org/"  rel="nofollow">Site officiel</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs: Créé par <a href="utilisateurs/fabien26" class="wikilink1" title="utilisateurs:fabien26">Fabien26</a>, corrigé et complété par : polarman, darkside-x,<a href="utilisateurs/percherie" class="wikilink1" title="utilisateurs:percherie">Percherie</a>, <a href="utilisateurs/karting06" class="wikilink1" title="utilisateurs:karting06">Karting06</a>,Blabla.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="gproftpd"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388440681" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6093-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="gproftpd#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+exécuté automatiquement par inetd qui est un lanceur automatique en cas de requète externe</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c71dad4e7367a4586cc25f749e2d1778.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/gproftpd?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="gproftpd?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="gproftpd?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gproftpd?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gproftpd?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

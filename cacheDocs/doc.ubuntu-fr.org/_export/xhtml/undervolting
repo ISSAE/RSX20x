@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>undervolting</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2010-11-28T04:37:41+0100"/>
+<meta name="keywords" content="hardy,materiel,systeme,energie"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../undervolting?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="undervolting"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/undervolting"/>
+<link rel="canonical" href="../../undervolting"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"undervolting","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="undervolting#principe">Principe</a></div></li>
+<li class="level1"><div class="li"><a href="undervolting#processeur_intel">Processeur Intel</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="undervolting#installation">Installation</a></div></li>
+<li class="level2"><div class="li"><a href="undervolting#verification">Vérification</a></div></li>
+<li class="level2"><div class="li"><a href="undervolting#utilisation">Utilisation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="undervolting#processeur_amd">Processeur AMD</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../hardy" class="wikilink1" title="hardy" rel="tag">hardy</a>,
+	<a href="../../materiel" class="wikilink1" title="materiel" rel="tag">matériel</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../energie" class="wikilink1" title="energie" rel="tag">énergie</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="undervolting">Undervolting</h1>
+<div class="level1">
+
+<p>
+ou baisse de la tension en français
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Undervolting" [49-114] -->
+<h2 class="sectionedit2" id="principe">Principe</h2>
+<div class="level2">
+
+<p>
+Le processeur de l&#039;ordinateur (CPU) travaille à une tension donnée (généralement entre 1V et 1,5V) qui est spécifiée par le fondeur.
+Lorsque l&#039;on veut faire travailler son processeur plus vite que sa fréquence nominale (overclocking) afin de gagner en performances, il est parfois utile d&#039;augmenter la tension du processeur pour que les commutations de ses transistors soit facilitée malgré la vitesse élevée.
+</p>
+
+<p>
+Dans notre cas nous allons essayer de faire l&#039;inverse. Pour permettre de faire chauffer moins son processeur, gagner en discretion et en autonomie.
+Pour cela, nous allons baisser la tension du processeur. On retrouve alors les même types de problèmes que pour l&#039;overclocking : la tension d&#039;alimention peut ne pas être suffisante pour assurer la commutation des transistors et le processeur peut s&#039;arrêter d&#039;un coup.
+</p>
+
+<p>
+Il faut donc savoir avant de commencer que cette opération, bien que facile, peut présenter quelques risques : lorsque l&#039;on baisse la tension du processeur, il est possible que celui ci &quot;freeze&quot; ou bloque. Dans ce cas, pas d&#039;inquiétude, en rebootant tout rentre dans l&#039;ordre.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Principe" [115-1259] -->
+<h2 class="sectionedit3" id="processeur_intel">Processeur Intel</h2>
+<div class="level2">
+
+<p>
+Pour les processeurs Intel (Pentium  M, Core, Core 2 …) nous utiliserons Linux-phc.
+</p>
+
+<p>
+Pour pouvoir agir directement au niveau du processeur, il est impératif de modifier le noyau Linux. En effet les fonctions bas niveau de contrôle du processeur ne sont pas accessible depuis la couche applicative de Linux.
+</p>
+
+<p>
+Linux PHC se présente sous la forme d&#039;un patch pour le noyau Linux et propose de modifier le module &quot;acpi-cpufreq&quot;. Il permet en définitive d&#039;assigner une tension différente à chaque niveau (step) de fréquence de fonctionnement du processeur.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Processeur Intel" [1260-1850] -->
+<h3 class="sectionedit4" id="installation">Installation</h3>
+<div class="level3">
+
+<p>
+Deux méthodes s&#039;offrent à nous :
+</p>
+<ul>
+<li class="level1"><div class="li"> Manuellement, en compilant soit même le module.</div>
+</li>
+<li class="level1"><div class="li"> En récupérant le module pré-compilé, si c&#039;est le cas sautez la prochaine étape.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="compilation">Compilation</h4>
+<div class="level4">
+
+<p>
+Tout d&#039;abord, il nous faut récupérer les sources linux :
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong>build-essential linux-source linux-headers-generic </strong> (<a href="apt://build-essential,linux-source,linux-headers-generic" class="urlextern" title="apt://build-essential,linux-source,linux-headers-generic"  rel="nofollow">Installation en 1-clic</a>)
+</p>
+
+<p>
+Après avoir récupéré les sources, décompressez le fichier linux-source-2.6.*.tar.bz2 (doit correspondre à votre kernel) qui se trouve dans le dossier : <strong> /usr/src </strong>
+</p>
+<pre class="file">tar -xjf /usr/src/linux-source-2.6.*.bz2 -C ~/source/</pre>
+
+<p>
+Après avoir décompressé le fichier (dans votre home par exemple) :
+</p>
+<pre class="file">cd linux-source-2.6.*</pre>
+
+<p>
+Récupérez la dernière version de linux-phc : <a href="http://phc.athousandnights.de/viewtopic.php?f=13&amp;t=2" class="urlextern" title="http://phc.athousandnights.de/viewtopic.php?f=13&amp;t=2"  rel="nofollow">Linux PHC</a>
+</p>
+
+<p>
+Décompressez le fichier dans le dossier. Le fichier doit ressembler à ceci : linux-phc*.patch
+Maintenant patchez le kernel :
+</p>
+<pre class="file">patch -p1 &lt; linux-phc*.patch</pre>
+
+<p>
+et compilez le module :
+</p>
+<pre class="file">cd arch/x86/kernel/cpu/cpufreq/
+make -C /lib/modules/$(uname -r)/build SUBDIRS=$(pwd) modules</pre>
+
+</div>
+
+<h4 id="mise_en_place">Mise en place</h4>
+<div class="level4">
+
+<p>
+Maintenant que vous avez compilé le fichier <strong>acpi-cpufreq.ko</strong> (ou que vous avez récupéré le module patché pour votre kernel et votre architecture), copiez-le dans le dossier : <strong>/lib/modules/$(uname -r)/kernel/arch/x86/kernel/cpu/cpufreq/</strong>
+</p>
+<pre class="file">sudo cp acpi-cpufreq.ko /lib/modules/$(uname -r)/kernel/arch/x86/kernel/cpu/cpufreq</pre>
+
+</div>
+<!-- EDIT4 SECTION "Installation" [1851-3473] -->
+<h3 class="sectionedit5" id="verification">Vérification</h3>
+<div class="level3">
+
+<p>
+Après avoir redémarré, vous devriez avoir un fichier <strong>phc_controls</strong> qui synthétise les couples fréquences/tensions actuellement utilisés par le processeur.
+</p>
+<pre class="file">cat /sys/devices/system/cpu/cpu0/cpufreq/phc_controls
+&gt; 13:38 10:30 8:24 6:18</pre>
+
+<p>
+Si ça marche bien, c&#039;est <strong>GAGNE</strong>.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Vérification" [3474-3793] -->
+<h3 class="sectionedit6" id="utilisation">Utilisation</h3>
+<div class="level3">
+
+<p>
+<a href="../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditez le fichier</a> /sys/devices/system/cpu/cpu0/cpufreq/phc_controls
+</p>
+<pre class="file">gksu gedit /sys/devices/system/cpu/cpu0/cpufreq/phc_controls</pre>
+
+<p>
+Pour plus d&#039;informations :
+<a href="http://wiki.ubuntuusers.de/Prozessorspannung_absenken" class="urlextern" title="http://wiki.ubuntuusers.de/Prozessorspannung_absenken"  rel="nofollow">Site wiki</a> (en allemand)
+<a href="http://ubuntuforums.org/showthread.php?t=786402" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=786402"  rel="nofollow">Forum</a> (en anglais)
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Utilisation" [3794-4181] -->
+<h2 class="sectionedit7" id="processeur_amd">Processeur AMD</h2>
+<div class="level2">
+
+<p>
+Nous allons utiliser <a href="http://sourceforge.net/projects/cpupowerd" class="urlextern" title="http://sourceforge.net/projects/cpupowerd"  rel="nofollow">cpupowerd</a>
+</p>
+
+<p>
+Pas plus d&#039;informations pour le moment
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Processeur AMD" [4182-] -->
+<!-- no cachefile used, but created /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/1/1a6751a5752ac70aac64a034d7aa0859.xhtml -->
+</div>
+</body>
+</html>

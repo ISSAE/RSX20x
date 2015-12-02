@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>messagerie_intranet</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2011-12-15T15:17:28+0100"/>
+<meta name="keywords" content="messagerie instantanee,reseau,serveur,vetuste"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../messagerie_intranet?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="messagerie_intranet"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/messagerie_intranet"/>
+<link rel="canonical" href="../../messagerie_intranet"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"messagerie_intranet","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="messagerie_intranet#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="messagerie_intranet#installation_client_mode_console">Installation client mode console</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="messagerie_intranet#karmic_et_versions_superieures_d_ubuntu">Karmic et versions supérieures d&#039;Ubuntu</a></div></li>
+<li class="level2"><div class="li"><a href="messagerie_intranet#hardy">Hardy</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="messagerie_intranet#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="messagerie_intranet#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="messagerie_intranet#parametrage_evolution">Paramétrage Evolution</a></div></li>
+<li class="level2"><div class="li"><a href="messagerie_intranet#parametrage_serveur_local">Paramétrage serveur local</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../messagerie_instantanee" class="wikilink1" title="messagerie_instantanee" rel="tag">messagerie instantanée</a>,
+	<a href="../../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../../serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="../../vetuste" class="wikilink1" title="vetuste" rel="tag">vétuste</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="messagerie_en_intranet">Messagerie en Intranet</h1>
+<div class="level1">
+
+<p>
+Le système Edubuntu, comme tous les systèmes gérant les clients légers, est destiné à accueillir de nombreux utilisateurs. Il serait alors intéressant de pouvoir échanger des messages en intranet.
+</p>
+
+<p>
+<p><div class="noteimportant">Ce document date de 2007, a mettre a jour SVP
+</div></p>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Messagerie en Intranet" [65-379] -->
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+Tout système Linux inclut une messagerie au format &quot;mbox&quot;. Dans Ubuntu, on trouve cette boîte à lettre dans le répertoire :
+</p>
+<pre class="code">  /var/mail/identifiant-utilisateur</pre>
+
+<p>
+On trouve le même fichier dans le répertoire :
+</p>
+<pre class="code">  /var/spool/mail/identifiant-utilisateur</pre>
+
+<p>
+C&#039;est dans cette boîte que l&#039;utilisateur principal reçoit les messages système (cron ou autre).
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Introduction" [380-768] -->
+<h2 class="sectionedit3" id="installation_client_mode_console">Installation client mode console</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT3 SECTION "Installation client mode console" [769-812] -->
+<h3 class="sectionedit4" id="karmic_et_versions_superieures_d_ubuntu">Karmic et versions supérieures d&#039;Ubuntu</h3>
+<div class="level3">
+
+<p>
+On peut manipuler simplement cette messagerie en installant &quot;mailx&quot; par l&#039;interface <a href="../../synaptic" class="wikilink1" title="synaptic">Synaptic</a> ou bien en ligne de commande :
+</p>
+<pre class="code">  sudo apt-get install bsd-mailx</pre>
+
+</div>
+<!-- EDIT4 SECTION "Karmic et versions supérieures d'Ubuntu" [813-1027] -->
+<h3 class="sectionedit5" id="hardy">Hardy</h3>
+<div class="level3">
+
+<p>
+On peut manipuler simplement cette messagerie en installant &quot;mailx&quot; par l&#039;interface <a href="../../synaptic" class="wikilink1" title="synaptic">Synaptic</a> ou bien en ligne de commande :
+</p>
+<pre class="code">  sudo apt-get install mailx</pre>
+
+</div>
+<!-- EDIT5 SECTION "Hardy" [1028-1203] -->
+<h2 class="sectionedit6" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+L&#039;utilisation de cette messagerie est très simple :
+</p>
+<pre class="code">  mailx riri   # pour envoyer un message à l&#039;utilisateur &quot;riri&quot;
+  mailx        # pour lire sa boîte à lettre</pre>
+
+<p>
+Par défaut, mail fonctionne de manière interactive, mais on peut l&#039;utiliser dans un script :
+</p>
+<pre class="code">  mailx -s sujet riri &lt; chemin-vers-un-fichier-texte-contenant-le-message</pre>
+
+</div>
+<!-- EDIT6 SECTION "Utilisation" [1204-1568] -->
+<h2 class="sectionedit7" id="configuration">Configuration</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT7 SECTION "Configuration" [1569-1595] -->
+<h3 class="sectionedit8" id="parametrage_evolution">Paramétrage Evolution</h3>
+<div class="level3">
+
+<p>
+Le logiciel <a href="../../evolution" class="wikilink1" title="evolution">Evolution</a> peut inclure cette boîte en effectuant &quot;Edition→Préférences→Ajouter un compte&quot;.
+</p>
+
+<p>
+<a href="../../_detail/applications/edu/evolution-mbox1.png?id=messagerie_intranet" class="media" title="applications:edu:evolution-mbox1.png"><img src="../../_media/applications/edu/evolution-mbox1.png" class="media" alt="" /></a>
+</p>
+
+<p>
+<strong><em class="u">Attention</em></strong> : le fichier &quot;/var/mail/identifiant-utilisateur&quot; n&#039;est créé que lors de la réception d&#039;un premier message (à l&#039;aide d&#039;un script utilisant &quot;mail&quot;, par exemple).
+</p>
+
+<p>
+L&#039;envoi vers la messagerie interne est géré par &quot;Sendmail&quot; :
+</p>
+
+<p>
+<a href="../../_detail/installation/edu/evolution-mbox2.png?id=messagerie_intranet" class="media" title="installation:edu:evolution-mbox2.png"><img src="../../_media/installation/edu/evolution-mbox2.png" class="media" alt="" /></a>
+</p>
+
+<p>
+On obtient une boîte à lettre dite &quot;de spool&quot; pleinement fonctionnelle :
+</p>
+
+<p>
+<a href="../../_detail/installation/edu/evolution-mbox3.png?id=messagerie_intranet" class="media" title="installation:edu:evolution-mbox3.png"><img src="../../_media/installation/edu/evolution-mbox3.png" class="media" alt="" /></a>
+</p>
+
+<p>
+En tapant simplement &quot;riri&quot; dans le champ &quot;Destinataire&quot; d&#039;un nouveau courrier, on envoie un message à l&#039;utilisateur &quot;riri&quot;.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Paramétrage Evolution" [1596-2317] -->
+<h3 class="sectionedit9" id="parametrage_serveur_local">Paramétrage serveur local</h3>
+<div class="level3">
+
+<p>
+Pour pouvoir envoyer des messages de type &quot;riri@quelque-chose&quot; et donc envoyer un message d&#039;un poste client autre qu&#039;un client léger, il faut donner un nom au serveur.
+</p>
+
+<p>
+Editer le fichier &quot;resolv.conf&quot; :
+</p>
+<pre class="code">  sudo gedit /etc/resolv.conf</pre>
+
+<p>
+et ajouter la ligne :
+</p>
+<pre class="code">  search nom-du-serveur</pre>
+
+<p>
+Les messages envoyés sont traités par le MTA (mail transport agent) Postfix. Il faut regarder dans &quot;main.cf&quot; quelles destinations sont traitées comme internes.
+</p>
+<pre class="code">  sudo gedit /etc/postfix/main.cf</pre>
+
+<p>
+On ajoute alors le nom choisi pour le serveur à la rubrique &quot;MyDestination&quot; :
+</p>
+<pre class="code">  mydestination = edubuntu, localhost.localdomain, localhost.localdomain, localhost</pre>
+
+<p>
+Nota : pour accéder à sa boîte depuis un poste client Windows, il faudrait mettre en place un serveur de type &quot;webmail&quot; (à réfléchir).
+</p>
+<hr />
+
+<p>
+<em>Contributeurs: Equipe Edubuntu-fr, <a href="../../utilisateurs/francoisb" class="wikilink2" title="utilisateurs:francoisb" rel="nofollow">françoisb</a>, <a href="../../contributeurs" class="wikilink1" title="contributeurs">les contributeurs d&#039;Ubuntu-fr</a></em>
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Paramétrage serveur local" [2318-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c9aa12f7a2e451b5212cd2b8bcea96ae.xhtml used -->
+</div>
+</body>
+</html>

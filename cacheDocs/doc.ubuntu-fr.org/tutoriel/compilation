@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:compilation - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-04-11T23:42:51+0200"/>
+<meta name="keywords" content="compilation,paquet,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/compilation?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/compilation?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/compilation"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/compilation"/>
+<link rel="canonical" href="compilation"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:compilation","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="compilation#main" tabindex="1">Contenu</a> | <a href="compilation#qsearch__in" tabindex="2">Rechercher</a> | <a href="compilation#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="compilation" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="compilation" >tutoriel:compilation</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="compilation#pourquoi_compiler">Pourquoi compiler ?</a></div></li>
+<li class="level1"><div class="li"><a href="compilation#prealables">Préalables</a></div></li>
+<li class="level1"><div class="li"><a href="compilation#recuperer_le_code_source">Récupérer le code source</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="compilation#dependances">Dépendances</a></div></li>
+<li class="level2"><div class="li"><a href="compilation#bibliotheques_de_developpement">Bibliothèques de développement</a></div></li>
+<li class="level2"><div class="li"><a href="compilation#archive_contenant_le_code_source">Archive contenant le code source</a></div></li>
+<li class="level2"><div class="li"><a href="compilation#depuis_un_depot_cvs_ou_svn">Depuis un dépôt CVS ou SVN</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="compilation#compiler">Compiler</a></div></li>
+<li class="level1"><div class="li"><a href="compilation#problemes">Problèmes</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="compilation#retrouver_les_bibliotheques_manquantes">Retrouver les bibliothèques manquantes</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="compilation#informations">Informations</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="compilation#les_bibliotheques">Les bibliothèques</a></div></li>
+<li class="level2"><div class="li"><a href="compilation#les_autotools">Les « autotools »</a></div></li>
+<li class="level2"><div class="li"><a href="compilation#quelques_commandes">Quelques commandes</a></div></li>
+<li class="level2"><div class="li"><a href="compilation#les_options_de_configuration">Les options de configuration</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="compilation#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../compilation" class="wikilink1" title="compilation" rel="tag">compilation</a>,
+	<a href="../paquet" class="wikilink1" title="paquet" rel="tag">paquet</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="installer_un_logiciel_ou_une_bibliotheque_par_compilation">Installer un logiciel ou une bibliothèque par compilation</h1>
+<div class="level1">
+
+<p>
+En informatique, la <strong>compilation</strong> (d&#039;un logiciel ou d&#039;une bibliothèque) est une procédure par laquelle un code source (format compréhensible par un humain, type <a href="compilation#ascii" title="tutoriel:compilation ↵" class="wikilink1">ASCII</a>) est transformé en code <a href="compilation#binaire" title="tutoriel:compilation ↵" class="wikilink1">binaire</a>, un langage compréhensible par votre ordinateur, dans le but d&#039;être exécuté.  Un logiciel est compilé afin de pouvoir être lancé par l&#039;utilisateur.
+</p>
+
+<p>
+Compiler soi-même un logiciel ou une bibliothèque peut apporter quelques avantages, mais est souvent à éviter pour le néophyte du monde linuxien. Cette documentation présente une méthode <em>généraliste</em> et <em>vulgarisée</em> pour compiler des programmes et des bibliothèques.  Elle devrait être utilisée, le plus fréquemment, <strong>lorsque les autres méthodes d&#039;installation de programmes ont échoué</strong>:
+</p>
+<ol>
+<li class="level1"><div class="li"> Le <a href="../apt" class="wikilink1" title="apt">système de gestion de paquets APT</a> permet d&#039;installer simplement énormément de logiciels répondant aux besoins quotidiens de l&#039;utilisateur moyen.  Lorsque c&#039;est possible, <em><strong>privilégiez cette méthode</strong></em>!</div>
+</li>
+<li class="level1"><div class="li"> Si un logiciel n&#039;est pas disponible dans les dépôts APT par défaut d&#039;Ubuntu, il est peut-être disponible en <a href="../apt#le_paquet" class="wikilink1" title="apt">paquet Ubuntu (.deb)</a> sur un autre dépôt ou directement sur le site du distributeur du logiciel.  Vérifiez si un paquet est disponible sur le site du distributeur.</div>
+</li>
+<li class="level1"><div class="li"> Si un logiciel n&#039;existe pas en paquet .deb mais est disponible en d&#039;autres types de paquets (.rpm, .slp, .tgz), le logiciel <a href="../alien" class="wikilink1" title="alien">alien</a> est d&#039;une bonne utilité.</div>
+</li>
+<li class="level1"><div class="li"> Plus rarement, certains distributeurs vont distribuer leurs logiciels sous forme de paquet pour <a href="http://doc.ubuntu-fr.org/autopackage" class="wikilink1" title="autopackage">Autopackage</a>.  Cette méthode d&#039;installation reste simple, mais n&#039;est pas toujours très propre.</div>
+</li>
+<li class="level1"><div class="li"> Enfin, d&#039;autres distributeurs, comme <a href="http://www.mozilla.com" class="urlextern" title="http://www.mozilla.com"  rel="nofollow">Mozilla</a>, publient leurs logiciels sous forme de <a href="http://doc.ubuntu-fr.org/wiki/glossaire#binaire" class="wikilink1" title="wiki:glossaire">code binaire</a>, donc déjà compilé.</div>
+</li>
+</ol>
+
+<p>
+Lorsque aucune de ces possibilités n&#039;est valable pour le programme que vous cherchez à installer, vous devrez alors passer par la compilation.  Le mot est gros et semble effrayant, mais l&#039;est moins qu&#039;il n&#039;y paraît; essayons de démystifier ensemble ce procédé.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Installer un logiciel ou une bibliothèque par compilation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="44-2245" /><input type="submit" value="Modifier" class="button" title="Installer un logiciel ou une bibliothèque par compilation" /></div></form></div>
+<h2 class="sectionedit2" id="pourquoi_compiler">Pourquoi compiler ?</h2>
+<div class="level2">
+
+<p>
+Sous <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux, <em>comme pour tout autre système d’exploitation</em>, les logiciels doivent être compilés avant de pouvoir être utilisés. « Compilation » est le nom d&#039;une procédure permettant de transformer du code source, un ensemble d&#039;instructions compréhensibles par les programmeurs, en code binaire, compréhensible uniquement par votre ordinateur. L&#039;ordinateur est incapable de comprendre directement du code source: il doit donc être « traduit » de façon à ce que la machine puisse l&#039;interpréter.
+</p>
+
+<p>
+Ce procédé est souvent long, lourd et rebutant pour le nouvel arrivant sous Linux, car il n&#039;a probablement jamais eu à en faire sous son ancien système d&#039;exploitation. Sous Microsoft® Windows®, par exemple, il n’est pratiquement jamais requis de votre part que vous compiliez vos logiciels, les éditeurs de programmes proposant des installateurs (le fameux « install.exe » ou « setup.exe ») qui contiennent le programme compilé et une procédure qui copie les fichiers du programme au bon endroit sur votre disque dur. Or, sous Linux, il n’existe pas d&#039;« install.exe ». Un procédé plus simple et convivial a été créé pour éviter à l&#039;utilisateur moyen de devoir compiler : c&#039;est le cas, entre autres, du <a href="../apt" class="wikilink1" title="apt">système de gestion de paquets APT</a>.
+</p>
+
+<p>
+Seulement, tout n&#039;est pas toujours disponible à l&#039;aide d&#039;un de ces systèmes simplifiés. C&#039;est le cas, par exemple, de certains pilotes pour vos périphériques ou encore de logiciels en cours de développement. Ubuntu étant une distribution orientée poste de travail et visant à être accessible à tous, nous espérons que vous aurez essayé les autres méthodes disponibles auparavant, la compilation représente la dernière solution à vos problèmes.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Pourquoi compiler ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2246-4037" /><input type="submit" value="Modifier" class="button" title="Pourquoi compiler ?" /></div></form></div>
+<h2 class="sectionedit3" id="prealables">Préalables</h2>
+<div class="level2">
+
+<p>
+Par défaut, Ubuntu n&#039;inclut pas tous les outils nécessaires pour procéder à la compilation de logiciels et bibliothèques.  Ces outils peuvent toutefois être installés à l&#039;aide de <a href="../synaptic" class="wikilink1" title="synaptic">Synaptic</a> ou de <a href="../apt-get" class="wikilink1" title="apt-get">Apt-get</a>, car ils se trouvent sur le CD-ROM d&#039;installation de Ubuntu, de même que dans les <a href="../depots#principaux" class="wikilink1" title="depots">dépôts APT</a> officiels. Le méta-paquet à installer se nomme  <strong>build-essential</strong>.
+</p>
+
+<p>
+Nous vous suggérons aussi d&#039;installer les paquets « fakeroot » et « checkinstall » et nous supposerons que vous les aurez installés. L&#039;outil « checkinstall » surveille la procédure d&#039;installation et crée un paquet « .deb » qui sera présent dans votre liste de paquets installés.  Ceci aura pour avantage de vous permettre une désinstallation simplifiée et propre, si vous souhaitez désinstaller ultérieurement vos logiciels et bibliothèques.
+</p>
+
+<p>
+En résumé, vous devriez <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer les paquets</a> <strong><a href="apt://build-essential" class="interwiki iw_apt" title="apt://build-essential">build-essential</a></strong> <strong><a href="apt://fakeroot" class="interwiki iw_apt" title="apt://fakeroot">fakeroot</a></strong> <strong><a href="apt://checkinstall" class="interwiki iw_apt" title="apt://checkinstall">checkinstall</a></strong>  .
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Préalables] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4038-5142" /><input type="submit" value="Modifier" class="button" title="Préalables" /></div></form></div>
+<h2 class="sectionedit4" id="recuperer_le_code_source">Récupérer le code source</h2>
+<div class="level2">
+
+<p>
+Le code source d&#039;un logiciel en version stable est habituellement disponible sous forme d&#039;archive compressée au format « tar.gz » ou « .tar.bz2 » voire « .zip ». Certaines personnes (particulièrement des développeurs) vont préférer récupérer la toute dernière version de développement du logiciel (avec toutes les complications qu&#039;il peut contenir) ; celle-ci peut être récupérée depuis un dépôt <a href="http://doc.ubuntu-fr.org/cvs" class="wikilink1" title="cvs">CVS</a>, <a href="http://doc.ubuntu-fr.org/subversion" class="wikilink1" title="subversion">SVN</a> ou <a href="http://doc.ubuntu-fr.org/git" class="wikilink1" title="git">Git</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Récupérer le code source] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5143-5643" /><input type="submit" value="Modifier" class="button" title="Récupérer le code source" /></div></form></div>
+<h3 class="sectionedit5" id="dependances">Dépendances</h3>
+<div class="level3">
+
+<p>
+Si le système APT récupère toutes les dépendances d&#039;un logiciel, ce n&#039;est pas le cas lorsque vous effectuez vous-même une compilation. Parcourez bien le site du projet et les pages de documentation afin de savoir quelles dépendances nécessite le logiciel (fréquemment, vous en trouverez aussi une liste dans le fichier « README » se trouvant dans l&#039;archive contenant le code source). Beaucoup de paquets sont disponibles dans les dépôts APT pour les satisfaire.
+</p>
+
+<p>
+<p><div class="noteclassic">
+Essayez de satisfaire les dépendances AVANT de compiler vos logiciels, sans quoi la compilation n&#039;aboutira forcément qu&#039;à une suite d&#039;erreurs.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Dépendances] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5644-6305" /><input type="submit" value="Modifier" class="button" title="Dépendances" /></div></form></div>
+<h3 class="sectionedit6" id="bibliotheques_de_developpement">Bibliothèques de développement</h3>
+<div class="level3">
+
+<p>
+Le plus important pour une bonne compilation, ce sont les bibliothèques de développement. Elles sont contenues dans des paquets qui finissent par &quot;<strong>-dev</strong>&quot;. Pour connaître celles qui sont nécessaires, lisez bien les fichiers README ou INSTALL livrés habituellement avec le programme.
+</p>
+
+<p>
+Par exemple, si le logiciel dispose d&#039;une interface graphique en GTK+, il vous faut les bibliothèques de développement GTK+. En général, le nom du paquet à récupérer a la forme « <em>nom-de-la-dépendance</em>-dev » et se trouve dans Synaptic ; ici, le paquet à installer se nommerait « libgtk2.0-dev ».
+</p>
+
+</div>
+
+<h4 id="pour_les_programmes_deja_dans_les_depots_mais_que_vous_voulez_compiler_pour_avoir_la_derniere_mise-a-jour">Pour les programmes déjà dans les dépôts, mais que vous voulez compiler pour avoir la dernière mise-à-jour</h4>
+<div class="level4">
+
+<p>
+Une méthode très intéressante pour trouver les paquets utile à la compilation est la commande <strong>apt-cache showsrc</strong> (Les dépots source &quot;deb-src&quot; doivent être activés !!). Cette commande n&#039;est valide que pour les logiciels déjà présents dans les dépôts (et que vous compilez pour profiter d&#039;une mise-à-jour).
+</p>
+<pre class="code">apt-cache showsrc amsn | grep Build-Depends
+Build-Depends: debhelper (&gt;&gt; 4.0.0), imlib11-dev (&gt;&gt; 1.8.2), tcl8.4-dev, tk8.4-dev, dpatch (&gt;= 1.11)</pre>
+
+<p>
+Attention tout de même, les paquets nécessaires peuvent différer. Certains nouveaux paquets sont parfois nécessaires pour compiler un logiciel.
+</p>
+
+<p>
+Vous pouvez aussi utiliser directement build-dep :
+</p>
+<pre class="code">sudo apt-get build-dep amsn</pre>
+
+<p>
+S&#039;il vous manque des dépendances, le logiciel ne sera pas compilé correctement.  Le processus (<code>./configure</code>) se terminera par un échec dès qu&#039;une dépendance est manquante.  De façon générale, le message d&#039;erreur retourné (dans les quelques dernières lignes) indique clairement quelle dépendance est manquante. Notez alors ce message d&#039;erreur et recherchez cette dépendance à satisfaire dans votre gestionnaire de paquets. Recommencez ensuite le processus de compilation. S&#039;il s&#039;arrête de nouveau, vérifiez si une autre dépendance n&#039;est pas satisfaite <sup><a href="compilation#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Bibliothèques de développement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6306-8502" /><input type="submit" value="Modifier" class="button" title="Bibliothèques de développement" /></div></form></div>
+<h3 class="sectionedit7" id="archive_contenant_le_code_source">Archive contenant le code source</h3>
+<div class="level3">
+
+<p>
+Une fois téléchargée, décompressez l&#039;archive dans votre dossier personnel ou ailleurs (par exemple, dans « /opt », qui est une place toute indiquée à cet effet) soit à l&#039;aide d&#039;un outil graphique tel <a href="../file-roller" class="wikilink1" title="file-roller">File-Roller</a>, soit à l&#039;aide de la commande suivante, dans un terminal :
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour les archives « .tar.gz » : <pre class="code">tar xzfv nom_archive.tar.gz</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Pour les archives « .tar.bz2 » : <pre class="code">tar xjfv nom_archive.tar.bz2</pre>
+</div>
+</li>
+</ul>
+
+<p>
+<p><div class="notetip">N&#039;hésitez pas à utiliser la touche « Tab » de votre clavier pour compléter automatiquement le nom de commandes et de fichiers dans votre terminal. <img src="../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Archive contenant le code source] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8503-9169" /><input type="submit" value="Modifier" class="button" title="Archive contenant le code source" /></div></form></div>
+<h3 class="sectionedit8" id="depuis_un_depot_cvs_ou_svn">Depuis un dépôt CVS ou SVN</h3>
+<div class="level3">
+
+<p>
+La procédure pour récupérer un code source depuis un dépôt CVS ou SVN varie d&#039;une place à une autre.  Les instructions pour récupérer le code source sont indiquées, dans la plupart des cas, sur la page des téléchargements du site du logiciel concerné ou dans les pages pour développeurs.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Depuis un dépôt CVS ou SVN] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9170-9514" /><input type="submit" value="Modifier" class="button" title="Depuis un dépôt CVS ou SVN" /></div></form></div>
+<h2 class="sectionedit9" id="compiler">Compiler</h2>
+<div class="level2">
+
+<p>
+Pour compiler un programme sans utiliser sudo rajouter l&#039;utilisateur au groupe src.
+</p>
+<pre class="code">sudo usermod -aG src user</pre>
+
+<p>
+D&#039;ordre général, la compilation d&#039;un logiciel s&#039;effectuera de la façon suivante :
+</p>
+<pre class="code bash"><span class="kw3">cd</span> <span class="sy0">/</span>chemin_vers_le_répertoire_des_sources
+<span class="kw3">test</span> <span class="re5">-f</span> configure <span class="sy0">||</span> <span class="kw2">sh</span> autogen.sh 
+.<span class="sy0">/</span>configure  
+<span class="kw2">make</span>
+<span class="kw2">sudo</span> checkinstall</pre>
+
+<p>
+Voyons, en étapes, cette procédure :
+</p>
+<ol>
+<li class="level1"><div class="li"> On se rend dans le répertoire dans lequel se trouve le code source du logiciel ou de la bibliothèque à compiler en utilisant la commande <a href="console_commandes_de_base#cd" class="wikilink1" title="tutoriel:console_commandes_de_base">cd</a>.</div>
+</li>
+<li class="level1"><div class="li"> On appelle l&#039;utilitaire « configure » se trouvant dans ce répertoire. Celui-ci vérifie que toutes les dépendances du logiciel ou de la bibliothèque à compiler sont bien satisfaites. Si certaines ne sont pas satisfaites, il s&#039;arrête en indiquant ce qui est manquant pour continuer la procédure. Voir juste après comment corriger cela.</div>
+</li>
+<li class="level1"><div class="li"> On effectue la compilation en exécutant la commande « make », qui se charge d&#039;appeler le compilateur.  C&#039;est certainement l&#039;étape la plus longue.</div>
+</li>
+<li class="level1"><div class="li"> Finalement, le code binaire étant généré, il ne reste qu&#039;à installer le logiciel ou la bibliothèque. On appelle le programme « checkinstall » (qui nécessite <a href="../sudo" class="wikilink1" title="sudo">les droits du super-utilisateur</a>), qui surveille son installation et génère, à la fin, un paquet « .deb ».</div>
+</li>
+</ol>
+
+<p>
+<p><div class="noteimportant">Le paquet obtenu lors de l&#039;utilisation de <code>checkinstall</code> n&#039;est absolument pas destiné à être diffusé. Son rôle est simplement de vous permettre de désinstaller plus proprement le logiciel ultérieurement et par l&#039;intermédiaire du gestionnaire de paquets.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Compiler] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9515-11197" /><input type="submit" value="Modifier" class="button" title="Compiler" /></div></form></div>
+<h2 class="sectionedit10" id="problemes">Problèmes</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Problèmes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11198-11221" /><input type="submit" value="Modifier" class="button" title="Problèmes" /></div></form></div>
+<h3 class="sectionedit11" id="retrouver_les_bibliotheques_manquantes">Retrouver les bibliothèques manquantes</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="les_dependances_du_paquet">Les dépendances du paquet</h4>
+<div class="level4">
+
+<p>
+Tout paquet Debian/Ubuntu qui se respecte liste toutes les dépendances qui lui sont nécessaires tant à l&#039;exécution comme à la compilation. La manière la plus simple de télécharger les dépendances est d&#039;utiliser apt-get avec l&#039;option build-dep, ainsi la commande :
+</p>
+<pre class="code"> sudo apt-get build-dep epdfview</pre>
+
+<p>
+Va s&#039;occuper de télécharger toutes les dépendances nécessaires à la compilation du projet. Bien sûr cette technique ne fonctionne que si le paquet existe déjà .
+</p>
+
+</div>
+
+<h4 id="les_erreurs_de_configure">Les erreurs de « configure »</h4>
+<div class="level4">
+
+<p>
+Si les dépendances ne sont pas installées, l&#039;étape de configuration (« ./configure ») n&#039;ira pas jusqu&#039;au bout et vous donnera un message d&#039;erreur indiquant ce qui manque.
+Prenons l&#039;exemple de la dépendance manquante « gtk+-2.0 ».
+On nous indique alors :
+</p>
+<pre class="code"> No package &#039;gtk+-2.0&#039; found</pre>
+
+<p>
+On sait que l&#039;on cherche un paquet « -dev ». Donc on va utiliser la commande :
+</p>
+<pre class="code"> apt-cache search --names-only gtk dev</pre>
+
+<p>
+L&#039;option « –names-only » permet de faire abstraction des descriptions des paquets pour la recherche.
+</p>
+
+<p>
+Il y a beaucoup de résultat pour pouvoir choisir le bon paquet.
+Mais on sait que l&#039;on recherche une dépendance bibliothèque, donc on va réduire le nombre de résultats avec :
+</p>
+<pre class="code"> apt-cache search --names-only libgtk dev</pre>
+
+<p>
+Enfin, dernier indice, c&#039;est que c&#039;est GTK 2 que l&#039;on recherche. Donc, on lance la recherche avec :
+</p>
+<pre class="code"> apt-cache search --names-only libgtk2 dev</pre>
+
+<p>
+Ce qui nous donne le résultat :
+</p>
+<pre class="code">libgtk2.0-dev - Development files for the GTK+ library</pre>
+
+<p>
+Le paquet manquant était : <strong>libgtk2.0-dev</strong>.
+<a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">On installe donc ce paquet</a> (avec <a href="http://doc.ubuntu-fr.org/aptitude" class="wikilink1" title="aptitude">Aptitude</a> de préférence, pour pouvoir le supprimer intégralement ensuite, apt-get ne supprimant pas toutes les dépendances installées).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Retrouver les bibliothèques manquantes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11222-13087" /><input type="submit" value="Modifier" class="button" title="Retrouver les bibliothèques manquantes" /></div></form></div>
+<h2 class="sectionedit12" id="informations">Informations</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Informations] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13088-13114" /><input type="submit" value="Modifier" class="button" title="Informations" /></div></form></div>
+<h3 class="sectionedit13" id="les_bibliotheques">Les bibliothèques</h3>
+<div class="level3">
+
+<p>
+Les fichiers appelés par les programmes en C sont des parties de bibliothèques (traduction de « library »). Les bibliothèques sont des ensembles de fonctions (des mini-programmes qui effectuent une tâche précise, par exemple réunir deux mots en un seul, afficher une image, réagir lorsqu&#039;on clique…) qui n&#039;ont pas besoin d&#039;être réécrites à chaque fois que quelqu&#039;un veut développer un logiciel. Par exemple, les bibliothèques GTK et Qt dépendent toutes deux de « libpng », qui sert à manipuler des images « .png » (pour un résultat totalement différent).
+</p>
+
+<p>
+Chez Ubuntu (comme sur toutes les distributions basées sur Debian), les bibliothèques sont distribuées dans plusieurs paquets (deux au minimum). Prenons l&#039;exemple de « libfltk ». Elle est installée dans « libfltk1.1 » et dans « libfltk1.1-dev » (« libfltk1.1 » et « libfltk1.1-dev » étant les noms des paquets, installables <em>via</em> <a href="../apt" class="wikilink1" title="apt">APT</a>).
+La bibliothèque « libfltk1.1 » contient les fichiers nécessaires à <strong>l&#039;exécution</strong> d&#039;un programme se servant de cette bibliothèque (<a href="http://packages.ubuntu.com/cgi-bin/search_contents.pl?searchmode=filelist&amp;word=libfltk1.1&amp;version=dapper&amp;arch=i386" class="urlextern" title="http://packages.ubuntu.com/cgi-bin/search_contents.pl?searchmode=filelist&amp;word=libfltk1.1&amp;version=dapper&amp;arch=i386"  rel="nofollow">voir ce paquet</a>), c&#039;est-à-dire des fichiers « .so.x.y » installés dans « /usr/lib ». 
+La bibliothèque « libfltk1.1-dev » contient les fichiers nécessaires à la <strong>compilation</strong> (les fameux fichiers « .h » que l&#039;on a évoqué tout à l&#039;heure (<a href="http://packages.ubuntu.com/cgi-bin/search_contents.pl?searchmode=filelist&amp;word=libfltk1.1-dev&amp;version=dapper&amp;arch=i38" class="urlextern" title="http://packages.ubuntu.com/cgi-bin/search_contents.pl?searchmode=filelist&amp;word=libfltk1.1-dev&amp;version=dapper&amp;arch=i38"  rel="nofollow">voir ce paquet</a>).
+</p>
+
+<p>
+Pour chaque bibliothèque existante dans Ubuntu, il existe un paquet dont le nom finit par « -dev », qu&#039;il est nécessaire d&#039;installer pour compiler les logiciels qui dépendent de cette bibliothèque.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Les bibliothèques] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13115-14941" /><input type="submit" value="Modifier" class="button" title="Les bibliothèques" /></div></form></div>
+<h3 class="sectionedit14" id="les_autotools">Les « autotools »</h3>
+<div class="level3">
+
+<p>
+En fait, des <em>autotools</em> créent le fichier « configure » des sources. Le fichier « configure » est un script exécutable, qui est dans votre dossier source il nécessite d&#039;être exécuté avec « ./ ».
+</p>
+
+<p>
+<code>make</code> est une commande, installée dans « /usr/bin ». Il suffit donc de taper son nom pour l&#039;exécuter.
+<code>make</code> utilise le Makefile (qui lui est dans votre dossier source).
+« configure » crée le Makefile à partir d&#039;un Makefile.in (que vous avez dans les sources). Tout ça est créé à partir d&#039;un fichier assez simple qu&#039;écrit le développeur.
+Les <em>autotools</em>  - ou &quot;outils de gestion automatisée&quot; - forment un ensemble de scripts qui permettent la gestion des procédures de configuration, compilation et installation très complexes à partir de quelques fichiers - relativement - simples.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Les « autotools »] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14942-15794" /><input type="submit" value="Modifier" class="button" title="Les « autotools »" /></div></form></div>
+<h3 class="sectionedit15" id="quelques_commandes">Quelques commandes</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="make">make</h4>
+<div class="level4">
+
+<p>
+« make » peut être suivi d&#039;un mot clé comme « install », « uninstall », « clean », « distclean ». Ça permet d&#039;appeler une fonction particulière du Makefile :
+</p>
+<ul>
+<li class="level1"><div class="li"> « make install » permet d&#039;installer le programme ;</div>
+</li>
+<li class="level1"><div class="li"> « make uninstall » permet de tout désinstaller ;</div>
+</li>
+<li class="level1"><div class="li"> « make clean » supprime tout ce qui a été créé pendant la compilation ;</div>
+</li>
+<li class="level1"><div class="li"> « make distclean » supprime aussi ce que « configure » a généré.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="apt-file">apt-file</h4>
+<div class="level4">
+
+<p>
+<a href="../apt#apt-file" class="wikilink1" title="apt">Apt-file</a> est une application qui recherche des fichiers présents à l&#039;intérieur de paquets, même si ceux-ci ne sont pas installés. C&#039;est donc très pratique pour trouver des dépendances.
+Pour l&#039;installer, lancez la commande :
+</p>
+<pre class="code">sudo apt-get install apt-file</pre>
+
+<p>
+On l&#039;initialise ensuite comme pour apt-get en tapant :
+</p>
+<pre class="code">sudo apt-file update</pre>
+
+<p>
+Dans notre exemple de tout à l&#039;heure, on voulait trouver dans quel paquet se trouve la bibliothèque « libgthread », on tape alors :
+</p>
+<pre class="code">apt-file search libgthread</pre>
+
+<p>
+Le paquet recherché est donc soit « libglib2.0-dev » soit « libglib1.2-dev ».
+</p>
+
+<p>
+On peut préciser la recherche avec :
+</p>
+<pre class="code">apt-file search libgthread-2.0</pre>
+
+<p>
+Il se base sur le « sources.list ». 
+</p>
+<pre class="code"> The contents packages are fetched from the location(s) specified in /etc/apt/sources.list.</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Quelques commandes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15795-17112" /><input type="submit" value="Modifier" class="button" title="Quelques commandes" /></div></form></div>
+<h3 class="sectionedit16" id="les_options_de_configuration">Les options de configuration</h3>
+<div class="level3">
+
+<p>
+Si vous lancez :
+</p>
+<pre class="code">./configure --help</pre>
+
+<p>
+Vous verrez tout ce que vous pouvez modifier comme options. Certains programmes ont de nombreuses options de compilation.
+</p>
+
+<p>
+Par exemple  « <code>./configure –prefix=/usr</code> » installera les fichiers dans « /usr/ » au lieu de « /usr/local » (utilisé par défaut). 
+Lancer « <code>./configure –help</code> » avant la compilation est toujours une bonne idée.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Les options de configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17113-17548" /><input type="submit" value="Modifier" class="button" title="Les options de configuration" /></div></form></div>
+<h2 class="sectionedit17" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Une <a href="creer_un_paquet#foire_aux_questions" class="wikilink1" title="tutoriel:creer_un_paquet">foire aux questions</a> est disponible.</div>
+</li>
+<li class="level1"><div class="li"> Discussion <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=987" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=987"  rel="nofollow">Désinstaller un programme compilé</a> sur le forum ubuntu-fr</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a>, <a href="../utilisateurs/ner0lph" class="wikilink1" title="utilisateurs:ner0lph">Ner0lph</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/johndescs" class="wikilink1" title="utilisateurs:johndescs">Johndescs</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="compilation"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428788571" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17549-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="compilation#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+C&#039;est certainement pour cette raison (des dépendances insatisfaites) que la compilation est considérée comme longue et fastidieuse.</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/b/bab935e28930975b440df82f21d1f474.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/compilation?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/compilation?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/compilation?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/compilation?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/compilation?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

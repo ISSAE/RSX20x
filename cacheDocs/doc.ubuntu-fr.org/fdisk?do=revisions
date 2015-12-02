@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>fdisk - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="fdisk?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/fdisk"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/fdisk"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"fdisk","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="fdisk?do=revisions#main" tabindex="1">Contenu</a> | <a href="fdisk?do=revisions#qsearch__in" tabindex="2">Rechercher</a> | <a href="fdisk?do=revisions#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="fdisk?do=revisions" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="fdisk" >fdisk</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<h1 class="sectionedit1" id="anciennes_revisions">Anciennes révisions</h1>
+<div class="level1">
+
+<p>
+Voici les anciennes révisions de la page en cours. Pour revenir à une ancienne révision, sélectionnez-la ci-dessous, cliquez sur le bouton « Modifier cette page » et enregistrez-la.
+</p>
+
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c094095a2fd85a3488cba30c5d00321e.xhtml used -->
+<form id="page__revisions" class="changes" method="post" action="fdisk?do=revisions" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><ul >
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="current"/>
+<span class="date">
+Le 15/01/2014, 12:20</span>
+<img src="http://doc.ubuntu-fr.org/lib/images/blank.gif" width="15" height="11" alt="" /><a class="wikilink1" href="fdisk">
+fdisk</a>
+<span class="sum">
+ – [Modifier le type d'une partition] </span>
+<span class="user">
+marcusbaslerus</span>
+(Version actuelle)</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1384644452"/>
+<span class="date">
+Le 17/11/2013, 00:27</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1384644452&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1384644452" class="wikilink1">
+fdisk</a>
+<span class="sum">
+ – <bdi>[Installation] </bdi></span>
+<span class="user">
+<bdo dir="ltr">62.235.185.202</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1352821524"/>
+<span class="date">
+Le 13/11/2012, 16:45</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1352821524&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1352821524" class="wikilink1">
+fdisk</a>
+<span class="sum">
+ – <bdi>lien externe</bdi></span>
+<span class="user">
+<bdi>mydjey</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1331971603"/>
+<span class="date">
+Le 17/03/2012, 09:06</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1331971603&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1331971603" class="wikilink1">
+fdisk</a>
+<span class="user">
+<bdi>0ol</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1326657874"/>
+<span class="date">
+Le 15/01/2012, 21:04</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1326657874&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1326657874" class="wikilink1">
+fdisk</a>
+<span class="sum">
+ – <bdi>[Utilisation] </bdi></span>
+<span class="user">
+<bdo dir="ltr">81.51.43.155</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1325949118"/>
+<span class="date">
+Le 07/01/2012, 16:11</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1325949118&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1325949118" class="wikilink1">
+fdisk</a>
+<span class="sum">
+ – <bdi>les partitions montée &gt; les partitions montées</bdi></span>
+<span class="user">
+<bdi>Canigou 66</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1323958635"/>
+<span class="date">
+Le 15/12/2011, 15:17</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1323958635&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1323958635" class="wikilink1">
+fdisk</a>
+<span class="sum">
+ – <bdi>modification externe</bdi></span>
+<span class="user">
+<bdo dir="ltr">127.0.0.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1321436456"/>
+<span class="date">
+Le 16/11/2011, 10:40</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1321436456&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1321436456" class="wikilink1">
+fdisk</a>
+<span class="sum">
+ – <bdi>Après vérification, cette information n'existe pas dans la documentation</bdi></span>
+<span class="user">
+<bdi>percherie</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1311617776"/>
+<span class="date">
+Le 25/07/2011, 20:16</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1311617776&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1311617776" class="wikilink1">
+fdisk</a>
+<span class="sum">
+ – <bdi>[Utilisation] </bdi></span>
+<span class="user">
+<bdo dir="ltr">82.216.196.87</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1307348687"/>
+<span class="date">
+Le 06/06/2011, 10:24</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1307348687&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1307348687" class="wikilink1">
+fdisk</a>
+<span class="user">
+<bdi>Qedinux</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1280580013"/>
+<span class="date">
+Le 31/07/2010, 14:40</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1280580013&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1280580013" class="wikilink1">
+fdisk</a>
+<span class="sum">
+ – <bdi>Reparer &gt; Réparer, partitions: &gt; partitions :, partitions,faire &gt; partitions, faire</bdi></span>
+<span class="user">
+<bdi>Canigou 66</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1268130576"/>
+<span class="date">
+Le 09/03/2010, 11:29</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1268130576&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1268130576" class="wikilink1">
+fdisk</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1268130480"/>
+<span class="date">
+Le 09/03/2010, 11:28</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1268130480&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1268130480" class="wikilink1">
+fdisk</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1268130339"/>
+<span class="date">
+Le 09/03/2010, 11:25</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1268130339&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1268130339" class="wikilink1">
+fdisk</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1255872268"/>
+<span class="date">
+Le 18/10/2009, 15:24</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1255872268&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1255872268" class="wikilink1">
+fdisk</a>
+<span class="sum">
+ – <bdi>des opération &gt; des opérations</bdi></span>
+<span class="user">
+<bdi>Canigou 66</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1251927556"/>
+<span class="date">
+Le 02/09/2009, 23:39</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1251927556&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1251927556" class="wikilink1">
+fdisk</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1239135949"/>
+<span class="date">
+Le 07/04/2009, 22:25</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1239135949&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1239135949" class="wikilink1">
+fdisk</a>
+<span class="sum">
+ – <bdi>commande blkid</bdi></span>
+<span class="user">
+<bdi>Id2ndR</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1232048647"/>
+<span class="date">
+Le 15/01/2009, 20:44</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1232048647&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1232048647" class="wikilink1">
+fdisk</a>
+<span class="sum">
+ – <bdi>outils alternatifs tel que &gt; outils alternatifs tels que, les partition &gt; les partitions</bdi></span>
+<span class="user">
+<bdi>Canigou 66</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1223892754"/>
+<span class="date">
+Le 13/10/2008, 12:12</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1223892754&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1223892754" class="wikilink1">
+fdisk</a>
+<span class="user">
+<bdo dir="ltr">193.252.37.139, 127.0.0.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1223892568"/>
+<span class="date">
+Le 13/10/2008, 12:09</span>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1223892568&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/fdisk?rev=1223892568" class="wikilink1">
+fdisk</a>
+<span class="sum">
+ – <bdi>créée</bdi></span>
+<span class="user">
+<bdo dir="ltr">193.252.37.139, 127.0.0.1</bdo></span>
+</div>
+</li>
+</ul>
+<input name="do[diff]" type="submit" value="Différences entre les versions sélectionnées" class="button" />
+</div></form>
+<div class="pagenav"></div>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="fdisk?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/fdisk?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="fdisk?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="fdisk?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="fdisk?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

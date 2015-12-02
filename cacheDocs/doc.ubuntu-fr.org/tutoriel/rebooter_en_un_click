@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:rebooter_en_un_click - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2008-04-07T10:38:04+0200"/>
+<meta name="keywords" content="edgy,feisty,installation,boot,partitions,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/rebooter_en_un_click?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/rebooter_en_un_click?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/rebooter_en_un_click"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/rebooter_en_un_click"/>
+<link rel="canonical" href="rebooter_en_un_click"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:rebooter_en_un_click","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="rebooter_en_un_click#main" tabindex="1">Contenu</a> | <a href="rebooter_en_un_click#qsearch__in" tabindex="2">Rechercher</a> | <a href="rebooter_en_un_click#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="rebooter_en_un_click" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="rebooter_en_un_click" >tutoriel:rebooter_en_un_click</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="rebooter_en_un_click#objectif_de_ce_tutoriel">Objectif de ce tutoriel</a></div></li>
+<li class="level1"><div class="li"><a href="rebooter_en_un_click#avertissement">Avertissement</a></div></li>
+<li class="level1"><div class="li"><a href="rebooter_en_un_click#prerequis">Prérequis</a></div></li>
+<li class="level1"><div class="li"><a href="rebooter_en_un_click#principe_de_fonctionnement">Principe de fonctionnement</a></div></li>
+<li class="level1"><div class="li"><a href="rebooter_en_un_click#comment_faire">Comment faire ?</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="rebooter_en_un_click#partition_amorce">Partition amorce</a></div></li>
+<li class="level2"><div class="li"><a href="rebooter_en_un_click#reboot_par_clic">Reboot par clic</a></div></li>
+<li class="level2"><div class="li"><a href="rebooter_en_un_click#les_raccourcis">Les raccourcis</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="rebooter_en_un_click#voir_aussi">Voir aussi</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="rebooter_en_un_click#articles_connexes">Articles connexes</a></div></li>
+<li class="level2"><div class="li"><a href="rebooter_en_un_click#liens_et_documents_externes">Liens et documents externes</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/edgy" class="wikilink1" title="edgy" rel="tag">Edgy</a>,
+	<a href="../feisty" class="wikilink1" title="feisty" rel="tag">Feisty</a>,
+	<a href="../installation.1" class="wikilink1" title="installation" rel="tag">installation</a>,
+	<a href="../boot?do=showtag&amp;tag=boot" class="wikilink1" title="boot" rel="tag">boot</a>,
+	<a href="../partitions" class="wikilink1" title="partitions" rel="tag">partitions</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_rebooter_entre_vos_differents_systemes_d_un_simple_clic">Comment rebooter entre vos différents systèmes d&#039;un simple clic ?</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="rebooter_en_un_click"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1207557484" /><input type="hidden" name="summary" value="[Comment rebooter entre vos différents systèmes d'un simple clic ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="67-150" /><input type="submit" value="Modifier" class="button" title="Comment rebooter entre vos différents systèmes d'un simple clic ?" /></div></form></div>
+<h2 class="sectionedit2" id="objectif_de_ce_tutoriel">Objectif de ce tutoriel</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Montrer une autre façon de gérer le multiboot qu&#039;avec GRUB. </div>
+</li>
+<li class="level1"><div class="li"> Permettre aux possesseurs de PC ayant des configurations un peu exigeantes (certains barebone avec des carte mères étranges, par exemples) et à tous ceux dont le matériel ne permet pas une installation autre qu&#039;avec l&#039;alternate CD (<a href="../installation_alternate" class="urlextern" title="http://doc.ubuntu-fr.org/installation_alternate"  rel="nofollow">http://doc.ubuntu-fr.org/installation_alternate</a>) avec <a href="../lilo" class="wikilink1" title="lilo">Lilo</a> comme gestionnaire de boot, d&#039;avoir un moyen de rebooter pratique et performant.</div>
+</li>
+<li class="level1"><div class="li"> Apprendre comment se débarrasser des menus de démarrage (sauf cas de force majeure)</div>
+</li>
+<li class="level1"><div class="li"> Permettre d&#039;épater son voisin <img src="../lib/images/smileys/icon_razz.gif" class="icon" alt=":-P" /></div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="rebooter_en_un_click"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1207557484" /><input type="hidden" name="summary" value="[Objectif de ce tutoriel] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="151-774" /><input type="submit" value="Modifier" class="button" title="Objectif de ce tutoriel" /></div></form></div>
+<h2 class="sectionedit3" id="avertissement">Avertissement</h2>
+<div class="level2">
+
+<p>
+Ce tutoriel est supposé s&#039;adresser à des personnes ayant déjà expérimenté le multi-boot et qui ont des bases de programmation de script. Même si le principe de fonctionnement est simple, ne vous lancez pas si cela vous semble d&#039;entrée trop compliqué (ou trop fumeux).
+</p>
+
+<p>
+Quoi qu&#039;il en soit de votre niveau en informatique, ce tutoriel n&#039;a pas pour but d&#039;expliquer le fonctionnement du multiboot. Pour plus d&#039;informations, voici une liste d&#039;<abbr title="Uniform Resource Locator">URL</abbr> où vous trouverez votre bonheur si vous avez besoin d&#039;en savoir plus :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="comment_amorcer_ubuntu_avec_ntldr" class="wikilink1" title="tutoriel:comment_amorcer_ubuntu_avec_ntldr">Comment amorcer Ubuntu à l&#039;aide de NT Loader ?</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://en.wikipedia.org/wiki/LILO_(boot_loader)" class="interwiki iw_wp" title="http://en.wikipedia.org/wiki/LILO_(boot_loader)">LILO dans Wikipedia</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.linux-france.org/article/sys/chargeurs/ix86/lilo/boot-lilo.html" class="urlextern" title="http://www.linux-france.org/article/sys/chargeurs/ix86/lilo/boot-lilo.html"  rel="nofollow">Une bonne documentation complète en français sur LILO</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://jc.bellamy.free.fr/fr/outilsmultiboot.html" class="urlextern" title="http://jc.bellamy.free.fr/fr/outilsmultiboot.html"  rel="nofollow">Tout sur l&#039;amorçage Winxx en général : le site de Jean-Claude Bellamy</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.pmg.lcs.mit.edu/~chandra/install/install_dualboot.html" class="urlextern" title="http://www.pmg.lcs.mit.edu/~chandra/install/install_dualboot.html"  rel="nofollow">le HOW TO d&#039;origine du multiboot NT/LILO</a>, <a href="http://www.ibiblio.org/pub/Linux/docs/HOWTO/translations/fr/text/Linux+NT-Loader.txt" class="urlextern" title="http://www.ibiblio.org/pub/Linux/docs/HOWTO/translations/fr/text/Linux+NT-Loader.txt"  rel="nofollow">le texte traduit en français</a> et un <a href="http://www.laboratoire-microsoft.org/articles/win/boot/" class="urlextern" title="http://www.laboratoire-microsoft.org/articles/win/boot/"  rel="nofollow">tuto très clair sur le sujet qui fonctionne sur NT, 2000 et XP</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="rebooter_en_un_click"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1207557484" /><input type="hidden" name="summary" value="[Avertissement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="775-2113" /><input type="submit" value="Modifier" class="button" title="Avertissement" /></div></form></div>
+<h2 class="sectionedit4" id="prerequis">Prérequis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Avoir une machine avec deux systèmes au moins situés sur des partitions distinctes ou idéalement, des disques durs distincts.</div>
+</li>
+<li class="level1"><div class="li">Dans tous les cas, prévoir d&#039;avoir un <a href="http://doc.ubuntu-fr.org/installation/rescue" class="wikilink1" title="installation:rescue">SystemRescueCD</a> sous la main ou un système bootable sur un autre périphérique en cas de pépin grave.</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une version de Windows 2000 (SP1 à SP4) ou XP (SP1 ou SP2).</div>
+</li>
+<li class="level1"><div class="li"> Avoir installé Ubuntu (ou une autre version de Linux) sur une des partitions avec comme boot manager Lilo (<a href="http://www.linux-france.org/article/sys/chargeurs/ix86/lilo/boot-lilo.html" class="urlextern" title="http://www.linux-france.org/article/sys/chargeurs/ix86/lilo/boot-lilo.html"  rel="nofollow">http://www.linux-france.org/article/sys/chargeurs/ix86/lilo/boot-lilo.html</a>). Le principe peut certainement s&#039;appliquer à une installation avec GRUB, mais je ne préfère pas donner un exemple que je n&#039;ai pas pu tester.</div>
+</li>
+<li class="level1"><div class="li"> Avoir <em class="u"><strong>sauvegardé vos données</strong></em> sur un autre support tel que disque externe, dvd ou cd. Une erreur de manipulation peut entraîner la perte totale de vos données. Avez-vous sauvegardé vos données ? Pensez également à sauvegarder les MBR de tous les disques et partitions pour ne prendre aucun risque comme indiqué dans les documents listés dans l&#039;avertissement ci-dessus.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="rebooter_en_un_click"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1207557484" /><input type="hidden" name="summary" value="[Prérequis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2114-3241" /><input type="submit" value="Modifier" class="button" title="Prérequis" /></div></form></div>
+<h2 class="sectionedit5" id="principe_de_fonctionnement">Principe de fonctionnement</h2>
+<div class="level2">
+
+<p>
+Un script appelé par un clic sur une icône de barre des tâches, de bureau ou de tableau de bord, copie un fichier boot&quot;N&quot;.ini déjà préconfiguré dans le fichier boot.ini de la partition de démarrage, puis lance une commande de redémarrage. C&#039;est tout ! 
+</p>
+
+<p>
+Suivant les besoins les fichiers boot&quot;N&quot;.ini feront référence aux partitions de démarrage des systèmes Windows ou aux fichiers de MBR des partitions Linux.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="rebooter_en_un_click"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1207557484" /><input type="hidden" name="summary" value="[Principe de fonctionnement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3242-3706" /><input type="submit" value="Modifier" class="button" title="Principe de fonctionnement" /></div></form></div>
+<h2 class="sectionedit6" id="comment_faire">Comment faire ?</h2>
+<div class="level2">
+
+<p>
+Trois étapes :
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="rebooter_en_un_click"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1207557484" /><input type="hidden" name="summary" value="[Comment faire ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3707-3755" /><input type="submit" value="Modifier" class="button" title="Comment faire ?" /></div></form></div>
+<h3 class="sectionedit7" id="partition_amorce">Partition amorce</h3>
+<div class="level3">
+
+<p>
+Constituer la partition de boot « maître » et en faire la partition de boot :
+</p>
+<ul>
+<li class="level1"><div class="li"> Créer une petite partition en FAT32 (environ 100 Mio pour être tranquille en cas d&#039;utilisation pour un install, mais en réalité, 500 Kio suffisent !!!) sur un disque dur ou sur un périphérique bootable : une clé <abbr title="Universal Serial Bus">USB</abbr> fera l&#039;affaire si votre <abbr title="Basic Input-Output System">BIOS</abbr> vous permet de booter depuis un <abbr title="Universal Serial Bus">USB</abbr>. La solution de la clé <abbr title="Universal Serial Bus">USB</abbr> est idéale, car elle vous permettra de tester votre montage sans risque. Pour créer la partition, vous pouvez utiliser l&#039;outil <a href="../gparted" class="wikilink1" title="gparted">Gparted</a> disponible dans les dépôts sous Ubuntu ou  les outils standards de gestion de partition de Windows. Cette partition doit être active pour que votre Bios boote dessus. ATTENTION : Quelle que soit l&#039;option que vous choisirez, pensez à toujours conserver un de vos disques avec son système et ses partitions intacts pour pouvoir redémarrer en cas de pépin ou prévoyez l&#039;utilisation du <a href="http://www.sysresccd.org/Page_Principale" class="urlextern" title="http://www.sysresccd.org/Page_Principale"  rel="nofollow">SystemRescueCD</a>.</div>
+</li>
+<li class="level1"><div class="li"> Si vous avez un Windows 2000 ou XP sur une autre partition, copiez les fichiers suivants sur la petite partition :</div>
+<ul>
+<li class="level2"><div class="li"> boot.ini</div>
+</li>
+<li class="level2"><div class="li"> ntdetect.com</div>
+</li>
+<li class="level2"><div class="li"> ntldr</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Faites en sorte que votre bios pointe sur le disque ou la clé pour le démarrage de la bécane.<br/>
+Attention à faire en sorte que le fichier boot.ini soit accessible en écriture, ce qui n&#039;est pas le cas par défaut sous Windows.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="rebooter_en_un_click"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1207557484" /><input type="hidden" name="summary" value="[Partition amorce] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3756-5190" /><input type="submit" value="Modifier" class="button" title="Partition amorce" /></div></form></div>
+<h3 class="sectionedit8" id="reboot_par_clic">Reboot par clic</h3>
+<div class="level3">
+
+<p>
+Créer les éléments nécessaires au mécanisme de reboot par clic sur cette partition à savoir :
+</p>
+<ul>
+<li class="level1"><div class="li"> le script de reboot via windows (.bat)</div>
+</li>
+<li class="level1"><div class="li"> ChangeBoot.bat : ATTENTION, la commande del contenue dans ce script ne doit pas être utilisée avec ces options en dehors du scripts sans que vous sachiez exactement ce que vous faites. Les options données forcent la suppression des fichiers systèmes en lecture seule. A éviter donc en dehors d&#039;un contexte connu et maîtrisé.<pre class="code batch">set numsys=%1
+&nbsp;
+N:
+cd\
+&nbsp;
+del /F /AS &quot;boot.ini&quot;
+Copy /Y &quot;boot%numsys%.ini&quot; &quot;boot.ini&quot;
+&nbsp;
+%windir%\System32\shutdown.exe -r -t 00</pre>
+
+<p>
+ Où &quot;N:&quot; est la partition où se trouvent les fichiers de boot&quot;n&quot;.ini sous Windows. (à adapter donc en fonction de votre config) 
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> le script de reboot via Linux (.sh)</div>
+</li>
+<li class="level1"><div class="li"> ChangeBoot.sh <pre class="code bash"><span class="co0">#!/bin/bash</span>
+&nbsp;
+<span class="kw2">cp</span> <span class="sy0">/</span>media<span class="sy0">/</span>sdb3<span class="sy0">/</span>boot<span class="re4">$1</span>.ini <span class="sy0">/</span>media<span class="sy0">/</span>sdb3<span class="sy0">/</span>boot.ini <span class="re5">-f</span>
+<span class="kw2">cat</span> ~<span class="sy0">/</span>stdin <span class="sy0">|</span> <span class="kw2">sudo</span> <span class="re5">-S</span> <span class="sy0">/</span>sbin<span class="sy0">/</span>shutdown <span class="re5">-r</span> now</pre>
+
+<p>
+ où media/sdb3 est le point de montage de la partition où se trouvent les fichiers de boot&quot;n&quot;.ini (à adapter donc en fonction de votre config)
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> des fichiers boot&quot;n&quot;.ini correspondant à chaque option de reboot et qui  seront copiés par les scripts dans le fichier boot.ini.<br/>
+Par exemple, le premier fichier  boot1.ini contient <pre class="code ini"><span class="re0"><span class="br0">&#91;</span>boot loader<span class="br0">&#93;</span></span>
+<span class="re1">timeout</span><span class="sy0">=</span><span class="re2">30</span>
+<span class="re1">default</span><span class="sy0">=</span><span class="re2">multi<span class="br0">&#40;</span>0<span class="br0">&#41;</span>disk<span class="br0">&#40;</span>0<span class="br0">&#41;</span>rdisk<span class="br0">&#40;</span>0<span class="br0">&#41;</span>partition<span class="br0">&#40;</span>1<span class="br0">&#41;</span>\WINDOWS</span>
+<span class="re0"><span class="br0">&#91;</span>operating systems<span class="br0">&#93;</span></span>
+multi<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>disk<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>rdisk<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>partition<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>\WINDOWS<span class="sy0">=</span><span class="st0">&quot;Windows NT Workstation&quot;</span>
+C:\BOOTSECT.LNX<span class="sy0">=</span><span class="st0">&quot;GNU/Linux&quot;</span></pre>
+
+<p>
+ Et le second, boot2.ini contient 
+</p>
+<pre class="code ini"><span class="re0"><span class="br0">&#91;</span>boot loader<span class="br0">&#93;</span></span>
+<span class="re1">timeout</span><span class="sy0">=</span><span class="re2">30</span>
+<span class="re1">default</span><span class="sy0">=</span><span class="re2">C:\BOOTSECT.LNX</span>
+<span class="re0"><span class="br0">&#91;</span>operating systems<span class="br0">&#93;</span></span>
+multi<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>disk<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>rdisk<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>partition<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>\WINDOWS<span class="sy0">=</span><span class="st0">&quot;Windows NT Workstation&quot;</span>
+C:\BOOTSECT.LNX<span class="sy0">=</span><span class="st0">&quot;GNU/Linux&quot;</span> </pre>
+
+<p>
+ Il s&#039;agit d&#039;un exemple : vous devez connaître et remplacer les numéros de partitions, le nom du fichier de MBR linux (BOOTSECT.LNX dans l&#039;exemple), et les répertoires WINDOWS aux valeurs utilisées sur votre configuration.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> le ou les fichiers copie du MBR du disque où se trouve Linux/Ubuntu (voir  <a href="http://www.laboratoire-microsoft.org/articles/win/boot/" class="urlextern" title="http://www.laboratoire-microsoft.org/articles/win/boot/"  rel="nofollow">cette page</a>)</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="rebooter_en_un_click"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1207557484" /><input type="hidden" name="summary" value="[Reboot par clic] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5191-7302" /><input type="submit" value="Modifier" class="button" title="Reboot par clic" /></div></form></div>
+<h3 class="sectionedit9" id="les_raccourcis">Les raccourcis</h3>
+<div class="level3">
+
+<p>
+Créer des raccourcis de lancement des scripts sous Windows et Linux et les placer dans la barre des tâches et le tableau de bord. Vous pourrez aussi y associer des icônes pour faire bon effet :
+</p>
+<ul>
+<li class="level1"><div class="li">  Sous Windows, les raccourcis feront référence à c:/ChangeBoot.bat &quot;n&quot; où &quot;n&quot; est le numero du boot&quot;n&quot;.ini à copier à la place du fichier boot.ini.  </div>
+</li>
+<li class="level2"><div class="li"> Sous Linux, les raccourcis devront faire référence à /media/&quot;la partition de boot&quot;/ChangeBoot.sh &quot;n&quot;.<br/>
+Il suffit donc de créer un raccourci par système sur lequel vous voulez redémarrer. Au moment du clic, le script remplace le boot.ini de la partition de boot par le boot&quot;n&quot;.ini indiqué par le &quot;n&quot; passé en paramètre et lance le redémarrage de la machine.</div>
+</li>
+</ul>
+
+<p>
+A vous de décorer vos raccourcis et/ou de les incorporer où vous voulez (tableau de bord, barre de tâche, bureau etc…)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="rebooter_en_un_click"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1207557484" /><input type="hidden" name="summary" value="[Les raccourcis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7303-8187" /><input type="submit" value="Modifier" class="button" title="Les raccourcis" /></div></form></div>
+<h2 class="sectionedit10" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="rebooter_en_un_click"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1207557484" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8188-8211" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<h3 class="sectionedit11" id="articles_connexes">Articles connexes</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="rebooter_en_un_click"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1207557484" /><input type="hidden" name="summary" value="[Articles connexes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8212-8254" /><input type="submit" value="Modifier" class="button" title="Articles connexes" /></div></form></div>
+<h3 class="sectionedit12" id="liens_et_documents_externes">Liens et documents externes</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/plmegalo" class="wikilink1" title="utilisateurs:plmegalo">plmegalo</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="rebooter_en_un_click"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1207557484" /><input type="hidden" name="summary" value="[Liens et documents externes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8255-" /><input type="submit" value="Modifier" class="button" title="Liens et documents externes" /></div></form></div>
+<!-- no cachefile used, but created /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/a/a2399c6420fac14970a619b12389a1ba.xhtml -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/rebooter_en_un_click?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/rebooter_en_un_click?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/rebooter_en_un_click?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/rebooter_en_un_click?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/rebooter_en_un_click?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

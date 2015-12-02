@@ -1,0 +1,89 @@
+<note important>
+Cette page est encore en chantier et ne produit pas (encore) de résultat fonctionnel.
+Il **ne** faut **pas** l'utiliser si vous n'êtes pas sûr de ce que vous faites.
+
+Toutes les contributions sont les bienvenues pour l'améliorer.
+</note>
+
+{{tag>Hardy serveur réseau système supervision BROUILLON}}
+
+----
+
+====== MRTG : supervision réseau via le protocole SNMP ======
+
+MRTG est un programme qui permet de créer des graphiques de l'activité de votre ordinateur. Ces graphiques sont sauvegardés sous forme de fichiers HTML.
+Le but est bien entendu de les rendre accessible depuis l'extérieur en utilisant un serveur web, comme Apache, ce qui permet de surveiller l'activité de l'ordinateur à distance, depuis un simple navigateur web.
+
+===== Pré-requis =====
+
+  * Disposer des [[:sudo|droits d'administration]] ;
+  * Disposer d'une connexion à Internet configurée et activée ;
+  * Avoir activé l'accès aux [[:depots#universe_et_multiverse|dépôts Universe et Multiverse]] ;
+  * Avoir un serveur web (Apache) fonctionnel et accessible depuis l'extérieur.
+
+===== Installation =====
+
+Il vous suffit, pour cela, d'[[:tutoriel:comment_installer_un_paquet|installer les paquets]] **[[apt://mrtg|mrtg]]**.
+
+
+
+===== Configuration =====
+
+FIXME **Partie à compléter**
+
+<note help>Je suppose ici que le répertoire de votre serveur web est **/var/www/**. Si ce répertoire est différent, adaptez les commandes en conséquence.</note>
+
+Tout d'abord, rendez-vous dans le répertoire de votre serveur web, créez-y un sous-dossier mrtg et rendez-vous dans ce sous-dossier.
+<code>cd /var/www && sudo mkdir mrtg && cd mrtg</code>
+
+Maintenant, nous allons récupérer mrtg-sys, qui est un ensemble de scripts Perl destiné à récupérer l'activité de l'ordinateur et créer les graphes d'utilisation de ce dernier.
+Pour cela, utilisez la commande 
+<code>sudo wget http://www.bozorokus.net/mrtg-sys.tgz</code>
+On décompresse l'archive :
+<code>sudo tar xvfz mrtg-sys.tgz</code>
+Enfin, l'on crée les fichiers de configuration :
+<code>sudo ./install.pl</code>
+Ce dernier script nous donne une ligne à ajouter dans le fichier **/etc/crontab** . Cette ligne nécessite quelques adaptations que nous verrons cela tout à l'heure. Gardez-là sous la main pour le moment ;-) .
+
+Maintenant, nous allons faire en sorte que notre index soit généré automatiquement. Déjà, nous allons revenir dans le répertoire principal de mrtg :
+<code>cd /var/www/mrtg</code>
+Ensuite, l'on exécute cette commande (**Remplacez XXXX par le nom de votre machine**) :
+<code>sudo indexmaker --output=index.html /var/www/mrtg/mrtg-sys/mrtg_XXXX.cfg</code>
+
+Maintenant, vous pouvez ressortir la ligne donnée par le script d'installation de MRTG-sys. Toutefois, cette ligne ne marche pas sur Ubuntu (elle suppose que vous avez compilé mrtg, alors que nous l'avons installé avec apt-get).
+La ligne donnée est du style (où XXXX est le nom de votre ordinateur):
+<code>*/5 * * * * root /usr/local/mrtg-2/bin/mrtg /var/www/mrtg/mrtg-sys/mrtg_XXXX.cfg  >/dev/null 2>/dev/null</code>
+Pour que cette ligne soit fonctionnelle, remplacez le chemin **/usr/local/mrtg-2/bin/mrtg** par **/usr/bin/mrtg**. De plus, pour évitez les avertissements, il faut ajouter **env LANG=C** devant le chemin de l'exécutable.
+
+La ligne finale à [[:tutoriel:comment_editer_un_fichier|ajouter]] dans **/etc/crontab** est donc (**pensez à remplacer XXXX par votre nom de machine !**) :
+<code>*/5 * * * * root  env LANG=C /usr/bin/mrtg /var/www/mrtg/mrtg-sys/mrtg_XXXX.cfg  >/dev/null 2>/dev/null</code>
+
+Attendez 5 min que le cron s'exécute, et le premier graphe devrait être généré.
+
+<note tip>Attention, les scripts proposés sont destinés à des serveurs OVH - Voir Topic sur le forum pour plus d'infos : http://forum.ubuntu-fr.org/viewtopic.php?pid=3360310#p3360310 </note>
+
+===== Utilisation=====
+
+Pour utiliser mrtg, il suffit de regarder le répertoire dans lequel vous avez installé mrtg avec un navigateur web.
+
+Soit, dans notre exemple :
+  * [[http://localhost/mrtg]] depuis votre ordinateur
+  * [[http://votre_ip/mrtg]] depuis l'extérieur
+Si vous avez un nom de domaine, vous pouvez bien entendu l'utiliser ;) .
+
+
+===== Désinstallation =====
+
+Pour supprimer cette application, il suffit de [[:tutoriel:comment_supprimer_un_paquet|supprimer son paquet]] et de supprimer la ligne de /etc/crontab.
+
+Vous pouvez également supprimer 
+
+
+
+===== Voir aussi =====
+  * [[http://oss.oetiker.ch/mrtg/]], le site du projet.
+
+----
+//Contributeurs : [[utilisateurs:kankan_01|kankan_01]], [[utilisateurs:Neurones67|Neurones67]]//
+
+// Basé sur [[http://guides.ovh.com/InstallMRTGSys|Installation de MRTG-sys]] sur le site d'OVH (adapté à la gestion des paquets Debian).//

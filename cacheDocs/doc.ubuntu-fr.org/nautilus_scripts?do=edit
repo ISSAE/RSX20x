@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>nautilus_scripts - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/nautilus_scripts?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/nautilus_scripts"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/nautilus_scripts"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"nautilus_scripts","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="nautilus_scripts?do=edit#main" tabindex="1">Contenu</a> | <a href="nautilus_scripts?do=edit#qsearch__in" tabindex="2">Rechercher</a> | <a href="nautilus_scripts?do=edit#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="nautilus_scripts?do=edit" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="nautilus_scripts" >nautilus_scripts</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<p>
+<strong>Quelques recommandations avant de créer ou de modifier cette page :</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Lisez le <a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">guide du contributeur</a> et la <a href="wiki/ligne_editoriale" class="wikilink1" title="wiki:ligne_editoriale">ligne éditoriale</a>.</div>
+</li>
+<li class="level1"><div class="li"> Découvrez la <a href="http://doc.ubuntu-fr.org/wiki/syntaxe" class="wikilink1" title="wiki:syntaxe">syntaxe</a> et entraînez-vous dans le <a href="playground/playground" class="wikilink1" title="playground:playground">bac à sable</a>.</div>
+</li>
+<li class="level1"><div class="li"> Utilisez les modèles (<a href="wiki/modeles/application" class="wikilink1" title="wiki:modeles:application">application</a>, <a href="wiki/modeles/materiel" class="wikilink1" title="wiki:modeles:materiel">matériel</a>, <a href="wiki/modeles/portable" class="wikilink1" title="wiki:modeles:portable">ordinateur portable</a>, <a href="wiki/modeles/tutoriel" class="wikilink1" title="wiki:modeles:tutoriel">tutoriel</a>, <a href="wiki/modeles/utilisateur" class="wikilink1" title="wiki:modeles:utilisateur">utilisateur</a>, <a href="wiki/modeles/portail" class="wikilink1" title="wiki:modeles:portail">portail</a>) et les <a href="wiki/mini-tutoriels" class="wikilink1" title="wiki:mini-tutoriels">mini-tutoriels</a>.</div>
+</li>
+<li class="level1"><div class="li"> Rapportez toutes créations ou modifications importantes sur <a href="wiki/liste_discussion#coordination_de_la_documentation" class="wikilink1" title="wiki:liste_discussion">la liste de discussion</a>.</div>
+</li>
+</ol>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fcdb5fe1d67011f56447459483d05597.xhtml used -->
+<script type="text/javascript">/*<![CDATA[*/
+textChanged = false/*!]]>*/</script>
+    <div class="editBox" role="application">
+
+    <div class="toolbar group">
+        <div id="draft__status"></div>
+        <div id="tool__bar"><a href="http://doc.ubuntu-fr.org/lib/exe/mediamanager.php?ns="
+            target="_blank">Sélection de fichiers</a></div>
+    </div>
+    <form id="dw__editform" method="post" action="nautilus_scripts?do=edit" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><input type="hidden" name="id" value="nautilus_scripts" /><input type="hidden" name="rev" value="0" /><input type="hidden" name="date" value="1425033778" /><input type="hidden" name="prefix" value="." /><input type="hidden" name="suffix" value="" /><input type="hidden" name="changecheck" value="9d9c711aa87334b0a39c20f7d4579c4e" /><input type="hidden" name="target" value="section" /><textarea name="wikitext" id="wiki__text" dir="auto" class="edit" cols="80" rows="10" tabindex="1">
+{{tag&gt;Precise Trusty nautilus}}
+
+----
+
+====== Les scripts pour Nautilus ======
+
+Le gestionnaire de fichiers Nautilus permet d'exécuter des [[tutoriel:script_shell|scripts]], sous la forme de fichiers textes.
+Les scripts sont de &quot;petits&quot; programmes permettant une multitude de fonctionnalités.
+
+Les scripts suivants et d'autres trouvés sur le Web peuvent être copiés dans le répertoire de scripts de Nautilus. Certains s'exécutent avec les [[:sudo|privilèges utilisateur]] ce qui signifie que vous pouvez endommager gravement votre système. Agissez donc avec beaucoup de prudence quand le script vous demande le mot de passe pour modifier le système.
+Beaucoup de scripts sont déjà présents dans les [[:depots|dépôts]] et peuvent être facilement installés par votre [[:gestionnaire_de_paquets|gestionnaire de paquets]]. Reportez-vous à la page de l'[[:nautilus_utilisation_avancee|utilisation avancée de nautilus]] pour voir la liste complète de ces scripts.
+
+===== Installation =====
+Pour commencer, il vous faudra [[:tutoriel:comment_installer_un_paquet|installer le paquet]] **[[apt&gt;nautilus-scripts-manager]]**. Ce pauqet gère le dossier de scripts de Nautilus qui se trouve dans **~/.gnome2/nautilus-scripts** pour [[:Precise]] et également pour l'environnement de bureau [[:MATE]]. Et pour les autres versions il se trouve dans **~/.local/share/nautilus/scripts/**. Vous pouvez également mettre des scripts valables pour tous les utilisateurs dans **/usr/share/nautilus-script**. \\
+(Le répertoire **.local** est caché dans votre dossier personnel. Pour y accéder il faut préalablement afficher les fichiers cachés. Dans la barre des menus -&gt; Affichage -&gt; Afficher les fichiers cachés ou faites Ctrl + h).
+Quand des scripts sont présents dans le dossier de scripts, il s'ouvre par clic-droit → Scripts → Ouvrir le dossier de scripts.
+Tant qu'il n'y a pas de scripts dedans le raccourci n'est pas disponible.
+
+Placez-y vos scripts et [[:permissions|rendez-les exécutables]] en faisant un clic droit sur le script en question -&gt; Propriétés -&gt; onglet Permissions -&gt; et cocher la case &quot;Autoriser l’exécution du fichier comme un programme&quot;. Vous devriez nommer ces fichiers de façon à ce qu'ils évoquent quelque chose pour vous car c'est sous leurs noms qu'ils apparaîtront dans vos menus Nautilus. De plus vous n'avez pas besoin de rajouter l'extension **.sh** de scripts shell. Il est également possible de créer des dossiers pour mieux organiser les scripts.
+ Vos scripts seront alors disponibles dans toutes les fenêtres Nautilus dans //Fichier // -&gt; Scripts, ainsi que dans le menu contextuel (clic droit). Vous ne verrez pas le menu //Fichier // tant que vous n'aurez pas ajouté votre premier script dans **~/.gnome2/nautilus-scripts** ou dans **~/.local/share/nautilus/scripts/**.
+
+Voir aussi:
+  * [[#Les pièges à éviter]],
+  * [[#Exemples]].
+
+===== Sélection de scripts =====
+
+Vous avez déjà des scripts Nautilus présents dans [[:ubuntu_tweak#Les_scripts_nautilus|Ubuntu Tweak]], ainsi que les sur la page [[:scripts utiles]].
+
+Le script [[http://www.gtk-apps.org/content/show.php/Script+Installer?content=67612|Script Installer]] permet d'installer automatiquement les scripts Nautilus.
+
+==== Les scripts dans les dépôts Canonical ====
+
+  * [[apt&gt;nautilus-script-collection-svn|Collection de scripts pour Subversion]]
+  * [[apt&gt;nautilus-script-audio-convert|Conversion audio]]
+  
+==== Plusieurs scripts sélectionnés par un tiers ====
+
+  * **[[http://www.gtk-apps.org/content/show.php/Nautilus+Scripts+Pack+Mini?content=85788|Nautilus Scripts Pack Mini]]**
+  * [[http://www.gtk-apps.org/content/show.php/Nautilus+Scripts+Pack?content=90330|Nautilus Scripts Pack]]
+  * [[http://www.gtk-apps.org/content/show.php/NScripts?content=67655|NScripts]]
+  * [[http://www.gtk-apps.org/content/show.php/NScripts+Ultimate?content=68599|NScripts Ultimate]]
+  * [[http://www.gtk-apps.org/content/show.php/Ultimate+Edition+Nautilus+Scripts+Pack?content=104451|Ultimate Edition Nautilus Scripts Pack]]
+
+==== Web ====
+
+  * [[http://translate.google.com/translate?js=n&amp;prev=_t&amp;hl=fr&amp;ie=UTF-8&amp;layout=2&amp;eotf=1&amp;sl=en&amp;tl=fr&amp;u=http%3A%2F%2Fwww.omgubuntu.co.uk%2F2010%2F12%2Fshare-any-folder-on-the-web-in-10-seconds-using-ubuntu-and-one-script%2F|Script pour créer un serveur web a partir d'un répertoire]].
+
+==== Conversion de fichier ====
+
+  * [[http://www.gtk-apps.org/content/show.php/Audio%2BVideo%2BImage%2BText%2BISO+Convert?content=92533|Audio/Video/Image/Text/ISO Convert]] (nécessite au [[apt&gt;xterm,zenity,ffmpeg,imagemagick,amrwb,faac,faad2,ffmpeg-libs,gpac,gstreamer-ffmpeg,gstreamer-plugins-*,xmms2-avcodec,xmms2-,wma|moins ça]], ou [[apt&gt;xterm,zenity,ffmpeg,imagemagick,amrwb,faac,faad2,ffmpeg-libs,gpac,gstreamer-ffmpeg,gstreamer-plugins-*,xmms2-avcodec,xmms2-,wma,curl,links,kdegraphics,espeak,faac,faad2,antiword,unrtf,odt2txt,txt2tags,libavcodec-unstripped-52,AcetoneISO,nrg2iso,daa2iso,cdd2iso,uif|tout ça]]).
+  * [[http://www.gtk-apps.org/content/show.php/avi+%26+mp4+converter?content=64899|avi &amp; mp4 convertisseur.]]
+  * [[http://www.gtk-apps.org/content/show.php/PDF+to+PNG?content=83110|PDF to PNG]]
+  * [[:pdftohtml|pdf to html]]
+  
+
+==== Image ====
+
+  * [[http://www.gtk-apps.org/content/show.php/Resize+Image?content=110541|Changer la taille des images.]] Resize Image
+  * Ajouter &quot;Redimensionner les images...&quot; dans le menu contextuel des images. [[:tutoriel:comment_installer_un_paquet|Installez le paquet]] **[[apt&gt;nautilus-image-converter]]** puis redémarrer la session.
+
+==== Audio ====
+
+  * [[http://www.gtk-apps.org/content/show.php/Enqueue+in+Audacious?content=80429|Enqueue in Audacious]]
+  * [[http://www.gtk-apps.org/content/show.php/Extract+Audio?content=83072|Extraire l'audio de tout fichier multimedia]].
+
+==== Gestion des fichiers ====
+
+  * [[http://www.gtk-apps.org/content/show.php/Send+to...?content=67627|Envoyer vers - Send to...]]
+  * [[http://www.gtk-apps.org/content/show.php/Encrypt%2BDecrypt+Files?content=74653|Encrypter/Decrypter les fichiers]] (nécessite gpg)
+  * [[http://www.gtk-apps.org/content/show.php/Remove+Spaces?content=76200|Retirer les espaces des fichiers et dossiers (et les remplacer par underscore).Remove Spaces.]]
+  * [[http://g-scripts.sourceforge.net/nautilus-scripts/File%20System%20Management/envoiftp|Envoie de fichier par ftp]].
+  * [[http://g-scripts.sourceforge.net/nautilus-scripts/File%20Processing/Misc/send_file_%20as_email_attachment_-_Thunderbird|Envoyer les fichiers en pièce-jointe de thunderbird]]
+  * [[http://soft.freem2.fr/2010/05/21/envoyer-des-fichiers-avec-thunderbird/|Envoyer les fichiers en pièce-jointe de thunderbird(amélioré)]] -lien mort-
+  * [[:dossiers_et_fichiers_caches#script_automatique|Masquer/afficher des fichiers]]
+
+==== Administration ====
+
+  * [[http://www.gtk-apps.org/content/show.php/Open+As+Root%28Working%29?content=76932|Ouvrir en tant que Root]]
+  * [[http://www.gtk-apps.org/content/show.php/Make+MD5+sums?content=69749|Vérifier le MD5]].
+  * [[http://www.gtk-apps.org/content/show.php/Make%2BCheck+SFV?content=68362|Vérifier avec le SFV]].
+  * [[http://www.gtk-apps.org/content/show.php/Renamer?content=87601|Renommer les fichiers.]] Renamer.
+  * [[http://www.gtk-apps.org/content/show.php/Terminal+Here?content=73250|Ouvrir un Terminal ici (répertoire actuel).Terminal Here.]]
+  * [[http://www.gtk-apps.org/content/show.php/Open+Nautilus+as+Root?content=73610|Ouvrir Nautilus en root.]]
+  * [[http://www.gtk-apps.org/content/show.php/Remove+~.~%2C.bak.old.OLD.BAK_curr_directo?content=73733|Nettoyer les ~.~,.bak.old.OLD.BAK_curr_directo]]
+
+==== Développement ====
+
+  * [[http://www.gtk-apps.org/content/show.php/Make+DEB+Package?content=79785|Faire un fichier deb]] ( plus facilement ).
+  * [[http://www.gtk-apps.org/content/show.php/dot-tree?content=105395|Visualisation des dossiers en arbre.]] dot-tree
+  * [[http://www.schnuckelig.eu/story/resurection-nautilus-cvs-scripts|Le CVS depuis Nautilus - Nautilus CVS scripts]] 
+
+==== Internet ====
+
+  * [[http://www.gtk-apps.org/content/show.php/sendToImageshack?content=100952|Envoyer sur imageshack]].
+  * [[http://forum.ubuntu-fr.org/viewtopic.php?pid=1424293#33|Envoyer sur dl.free.fr]] 
+  * [[http://www.xorax.info/blog/news/200-script-dl-free-fr-automatique.html|script automatique pour télécharger sur dl.free.fr]]
+  * [[http://blog.anandkapre.com/2009/ubuntu/08-19-ubuntu-linux-rapidshare-right-click-uploader/|Rapidshare Multiple Uploader.]] ( [[http://www.ubuntu-inside.me/2009/08/one-click-multi-rapidshare-uploader.html|mirroir 1]], [[http://ubuntuforums.org/archive/index.php/t-974303.html|miroir 2]])
+  * [[&lt;del&gt;http://forum.ubuntu-fr.org/viewtopic.php?id=384599|Upload sur Megaupload (site fermé)]]
+
+==== Divers ====
+
+  * [[http://www.gtk-apps.org/content/show.php/Simple+alarm?content=111811|Lancer une Alarme à une heure donnée]] aussi [[http://forum.ubuntu-fr.org/viewtopic.php?pid=6755501#p6755501|ici]],
+  * [[http://gnome-look.org/content/show.php/Nautilus+Extension+Kill+Thumbs?content=92143|Supprimer automatiquement les fichiers Thumbs.db de vos répertoires]],
+  * [[http://www.gtk-apps.org/content/show.php/Automated+Font+Installer?content=67610|Installation de police]],
+  * [[http://www.gtk-apps.org/content/show.php/TTF+Font+Manager?content=82473|TTF Font Manager]],
+  * [[http://www.gtk-apps.org/content/show.php/download_opensubtitle?content=68085|Télécharger les sous-titres sur download_opensubtitle]].
+
+
+===== Les pièges à éviter =====
+
+La première chose qu'un **script Nautilus** doit récupérer, c'est la liste des fichiers sur lesquels il doit opérer (les fichiers qui étaient sélectionnés par l'utilisateur lorsqu'il a lancé le script). Malheureusement, c'est loin d'être quelque chose de trivial.
+En effet, à cause soit de bugs, soit d'interprétation du shell, plusieurs choses sont à ne pas utiliser.
+
+==== Ne pas utiliser les arguments passés aux scripts ====
+
+**Nautilus** passe en argument les noms des fichiers sélectionnés. Par exemple, si vous êtes dans **/home/user**, et que vous appliquez le script sur **toto** et **titi**, $PWD et $NAUTILUS_SCRIPT_CURRENT_URI vaudront '/home/user', $1 vaudra 'toto' et $2 vaudra 'titi'.
+
+Premier problème, **Nautilus** offre une vue liste (qui pourrait d'ailleurs se nommer &quot;arborescente&quot;), on peut donc sélectionner des fichiers qui sont dans des sous-répertoires du répertoire courant. Dans ce cas &quot;$PWD/$1&quot; ne sera pas le bon chemin : [[http://bugzilla.gnome.org/show_bug.cgi?id=549816|bug 549816]].
+
+Second problème, sur le Bureau par exemple, **Nautilus** ne passe aucun argument au script : [[http://bugzilla.gnome.org/show_bug.cgi?id=549910|bug 549910]].
+
+Il **ne faut donc pas** utiliser des scripts du genre :
+
+&lt;code bash&gt;
+for arg
+do
+  do_something &quot;$arg&quot;
+done
+&lt;/code&gt;
+
+ou
+
+&lt;code bash&gt;
+for arg in &quot;$@&quot;
+do
+  do_something &quot;$arg&quot;
+done
+&lt;/code&gt;
+
+Ces scripts ne marcheraient pas dans tous les cas. Normalement, ce problème est corrigé dans Gnome 2.23 (Ubuntu ≥ 8.10).
+
+Mais, même une fois corrigé, la méthode suivante devrait poser moins de problèmes (car on obtient directement la liste des chemins complets des fichiers).
+
+Heureusement, **Nautilus** fournit une variable $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS, qui contient la liste des chemins complets des fichiers sélectionnés, séparés par '\n' (retour à la ligne).
+C'est donc cette variable qu'il faut utiliser.
+
+&lt;note help&gt;
+Dans certains cas, les chemins peuvent être séparés par une espace et pas par un retour à la ligne.
+Si un lecteur a des précisions, merci de contacter la [[:wiki:liste_discussion|liste de discussion de la documentation]].
+&lt;/note&gt;
+
+==== Itérer sur les fichiers ====
+
+Le problème, c'est que des fichiers peuvent contenir des espaces, et aussi des \n (un '\' suivi d'un 'n'), et que certaines solutions ne sont pas correctes à cause de ces cas particuliers.
+
+Par exemple :
+
+&lt;code bash&gt;
+for arg in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
+do
+  do_something &quot;$arg&quot;
+done
+&lt;/code&gt;
+
+**n'est pas correct**, car si les chemins sont '/tmp/a b/c' et '/tmp/d e', la boucle fera 4 itérations : '/tmp/a', 'b/c', '/tmp/d' et 'e'.
+
+Une première solution est de faire :
+
+&lt;code bash&gt;
+printf %s &quot;$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS&quot; |
+while read -r arg
+do
+  do_something &quot;$arg&quot;
+done
+&lt;/code&gt;
+
+Il ne faut pas utiliser **echo** (en **sh**, il ne fonctionnerait pas sur un fichier contenant un '\' suivi d'un 'n'), et il faut bien passer l'argument **-r** à **read** (même raison).
+
+Une seconde solution est de changer l'[[http://www.livefirelabs.com/unix_tip_trick_shell_script/oct_2003/10132003.htm|IFS]] :
+
+&lt;code bash&gt;
+IFS='
+'
+for arg in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
+do
+  do_something &quot;$arg&quot;
+done
+&lt;/code&gt;
+
+Ainsi, chaque argument sera une ligne de $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS.
+
+On peut aussi vouloir passer tous les arguments à un autre script (sans itérer) :
+
+&lt;code bash&gt;
+IFS='
+'
+do_something $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
+&lt;/code&gt;
+
+Si vous respectez ceci, votre script fonctionnera aussi bien en **/bin/bash** qu'en **/bin/sh** (du moins pour cette partie) et pour tous les fichiers, mêmes les cas particuliers.
+
+Après divers test voici une solution qui fonctionne même si le nom de fichier ou dossier contient des espaces, virgules ou autres caractères spéciaux :
+utiliser la commande **find** !
+par exemple pour une opération sur des fichiers mp3 :
+
+&lt;code bash&gt;
+#!/bin/bash
+IFS='
+'
+printf %s &quot;$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS&quot; |
+while read -r arg
+do
+	find &quot;$arg&quot; -depth -iname &quot;*.mp3&quot; -exec votre_commande {} \;
+done
+&lt;/code&gt;
+
+Le *.mp3 va prendre en compte les fichier mp3 contenus dans votre sélection et le {} remplace le nom de fichier dans votre commande à appliquer sur les mp3.
+
+===== Exemples =====
+
+==== Supprimer les fichiers de sauvegarde de Gedit ====
+Gedit copie chaque fichier avant la sauvegarde sous le nom « $fichier~ ». Il suffira d'appliquer le script d'un //clic droit -&gt; Scripts -&gt; rm-backups.sh// :
+
+&lt;code bash&gt;
+#! /bin/bash
+
+rm ./*~
+zenity --info --text=&quot;Fichiers de backup *~ supprimés :)&quot;
+&lt;/code&gt;
+
+
+
+==== Ouvrir en tant qu'administrateur ====
+
+=== Éditer un fichier avec Gedit avec les privilèges ROOT ===
+
+&lt;code bash&gt;
+#!/bin/bash
+gksudo -u root -k -D &quot;Éditer les fichiers sous root&quot; gedit &quot;$@&quot;
+&lt;/code&gt;
+
+=== Ouvrir Nautilus dans le répertoire choisi avec les privilèges « root » ===
+
+&lt;code bash&gt;
+#!/bin/bash
+    # root-nautilus-here
+    # Ouvrir Nautilus dans le répertoire choisi avec les privilèges ROOT
+    # nécessite des privilèges sudo et gksudo, ce qui peut entrainer des risques de sécurités        
+    #Installez le dans votre répertoire ~/Nautilus/scripts.
+    #
+    # Placé dans le domaine public par Shane T. Mueller 2001
+    # correctifs fournis par Doug Nordwall
+    #
+    # 2004.04.18 -- keith@penguingurus.com - Ajout de l'utilisation de gksudo
+    #               afin de lancer une fenetre de mot de passe si sudo a expire.
+    #               Les echos sont renvoyés
+    #               vers la sortie standard de root. Mais gksudo 
+    #               met à jour votre acces sudo
+    #               donc le lancement de Nautilus avec sudo fonctionnera sans
+    #               demander de mot de passe        
+    
+    
+    foo=`gksudo -u root -k -m\
+ &quot;entrez votre mot de passe afin de lancer Nautilus en tant que root&quot;\
+ /bin/echo &quot;got r00t?&quot;`
+    sudo nautilus --no-desktop $NAUTILUS_SCRIPT_CURRENT_URI
+
+&lt;/code&gt;
+
+
+=== Exécuter les fichiers en tant que ROOT ===
+
+&lt;code bash&gt;
+#!/bin/bash
+for i
+do
+	gksudo -u root -k &quot;$i&quot;
+done
+&lt;/code&gt;
+
+
+==== Ouvrir un terminal ici ====
+
+**Nautilus Open Terminal** permet d'ouvrir un terminal directement dans le répertoire courant de Nautilus //via// un clic droit → //Ouvrir dans un terminal//.
+
+Pour l'utiliser, il suffit d'[[:tutoriel:comment_installer_un_paquet|installer le paquet]] **[[apt&gt;nautilus-open-terminal]]** et ensuite de redémarrer la session.
+
+==== Lire les fichiers du répertoire avec Rhythmbox ====
+
+Permet d'envoyer tous les fichiers du répertoire dans la liste de lecture de [[:Rhythmbox]] :
+
+&lt;code bash&gt;
+#!/bin/sh
+base=&quot;`echo $NAUTILUS_SCRIPT_CURRENT_URI | cut -d'/' -f3- | sed 's/%20/ /g'`&quot;
+
+if [ -z &quot;$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS&quot; ]; then
+   dir=&quot;$base&quot;
+else
+   while [ ! -z &quot;$1&quot; -a ! -d &quot;$base/$1&quot; ]; do shift; done
+   dir=&quot;$base/$1&quot;
+fi
+
+if [ &quot;$NAUTILUS_SCRIPT_CURRENT_URI&quot; == &quot;x-nautilus-desktop:///&quot; ]; then
+dir=&quot;Desktop&quot;
+fi
+
+if [ &quot;$NAUTILUS_SCRIPT_CURRENT_URI&quot; == &quot;trash:&quot; ]; then
+dir=&quot;$HOME/.Trash&quot;
+fi
+
+if [ &quot;$NAUTILUS_SCRIPT_CURRENT_URI&quot; == &quot;file:///&quot; ]; then
+dir=&quot;/&quot;
+fi
+
+FIRST_URI=&quot;`echo -n $NAUTILUS_SCRIPT_SELECTED_URIS`&quot;
+if [ &quot;$FIRST_URI&quot; == &quot;x-nautilus-desktop:///home&quot; ]; then
+dir=&quot;$HOME&quot;
+fi
+
+if [ &quot;$FIRST_URI&quot; == &quot;x-nautilus-desktop:///computer&quot; ]; then
+dir=&quot;/&quot;
+fi
+rhythmbox &quot;$dir&quot;
+&lt;/code&gt;
+
+
+=====Voir aussi=====
+  * [[http://askubuntu.com/questions/281062/how-to-get-nautilus-scripts-working-on-ubuntu-13-04|Question concernant les scripts Nautilus]],
+  * [[https://wiki.ubuntu.com/NautilusScriptsHowto|traduction]]
+  * **[[http://www.gtk-apps.org/index.php?xcontentmode=188&amp;PHPSESSID=9e0f49b3a15f120a1ed0ad1919a29f99|Scripts pour Nautilus sur gtk-apps.org]]**
+  * [[http://g-scripts.sourceforge.net/|Site officiel de nautilus script, avec quelques scripts]] 
+----
+
+//Contributeurs : [[utilisateurs:FredB]], [[utilisateurs:l_africain|L'Africain]]  [[utilisateurs:Fabien26]] (1&lt;sup&gt;re&lt;/sup&gt; actualisation), [[:utilisateurs:ner0lph|Floriang]] (2&lt;sup&gt;e&lt;/sup&gt; actualisation).//</textarea>
+<div id="wiki__editbar" class="editBar">
+<div id="size__ctl">
+</div>
+<div class="editButtons">
+<div id="plugin__captcha_wrapper"><input type="hidden" name="a9cf039aa0e6c173d06dde72268982c6" value="9kl2rcY2SR0bEDLyNOYlnwWz3q/vykDfyMgEbJWfAjs=" /><label for="plugin__captcha">Merci de recopier le code ci-contre pour prouver que vous êtes humain :</label> <span id="plugin__captcha_code">I P G﻿
+D T</span> <input type="text" size="5" name="573a232b44c73314d0d3ad80c2a77f94" class="edit" /> <label class="no">Merci de laisser ce champ vide : <input type="text" name="27e75d50a2659324296c3625050873cd" /></label></div><input name="do[save]" type="submit" value="Enregistrer" class="button" id="edbtn__save" accesskey="s" tabindex="4" title="Enregistrer [S]" />
+<input name="do[preview]" type="submit" value="Aperçu" class="button" id="edbtn__preview" accesskey="p" tabindex="5" title="Aperçu [P]" />
+<input name="do[draftdel]" type="submit" value="Annuler" class="button" tabindex="6" />
+</div>
+<div class="summary">
+<label class="nowrap" for="edit__summary"><span>Résumé</span> <input type="text" id="edit__summary" name="summary" class="edit" size="50" tabindex="2" /></label>
+</div>
+</div>
+<div class="license">
+Note : En modifiant cette page, vous acceptez que le contenu soit placé sous les termes de la licence suivante : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" class="urlextern">CC Paternité-Partage des Conditions Initiales à l'Identique 3.0 Unported</a></div>
+</div></form>
+</div>
+<script type="text/javascript">
+   var saveBtn = document.getElementById('edbtn__save');
+   saveBtn.disabled = true;
+   saveBtn.style.color = 'gray';
+   saveBtn.style.backgroundColor = '#EEEEEE';
+   saveBtn.value = 'Enregistrer (Click \'Aperçu\' first)';
+</script>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/nautilus_scripts?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/nautilus_scripts?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="nautilus_scripts?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="nautilus_scripts?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="nautilus_scripts?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

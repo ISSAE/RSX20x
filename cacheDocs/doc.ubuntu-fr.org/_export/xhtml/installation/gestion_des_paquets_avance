@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>installation:gestion_des_paquets_avance</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-02-10T17:28:36+0100"/>
+<meta name="keywords" content="administration,paquet"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/installation/gestion_des_paquets_avance?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../feed.php?mode=list&amp;ns=installation"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="gestion_des_paquets_avance"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/installation/gestion_des_paquets_avance"/>
+<link rel="canonical" href="../../../installation/gestion_des_paquets_avance"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='installation';var JSINFO = {"id":"installation:gestion_des_paquets_avance","namespace":"installation"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="gestion_des_paquets_avance#prerequis">Prérequis</a></div></li>
+<li class="level1"><div class="li"><a href="gestion_des_paquets_avance#miroir">Miroir</a></div></li>
+<li class="level1"><div class="li"><a href="gestion_des_paquets_avance#creation_de_fichier_deb">Création de fichier « .deb »</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="gestion_des_paquets_avance#compilation_depuis_deb-src">Compilation depuis « deb-src »</a></div></li>
+<li class="level2"><div class="li"><a href="gestion_des_paquets_avance#creation_officielle">Création officielle</a></div></li>
+<li class="level2"><div class="li"><a href="gestion_des_paquets_avance#mise_a_jours_d_un_paquet_existant">Mise à jours d&#039;un paquet existant</a></div></li>
+<li class="level2"><div class="li"><a href="gestion_des_paquets_avance#depuis_les_sources_amont">Depuis les sources amont</a></div></li>
+<li class="level2"><div class="li"><a href="gestion_des_paquets_avance#conversion_d_un_rpm">Conversion d&#039;un « .rpm »</a></div></li>
+<li class="level2"><div class="li"><a href="gestion_des_paquets_avance#creation_d_un_paquet_depuis_un_binaire">Création d&#039;un paquet depuis un binaire</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="gestion_des_paquets_avance#creation_de_depot">Création de dépôt</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="gestion_des_paquets_avance#pour_une_creation_toute_simple">Pour une création toute simple</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="gestion_des_paquets_avance#pour_aller_plus_loin">Pour aller plus loin</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../../../paquet" class="wikilink1" title="paquet" rel="tag">paquet</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="gestion_des_paquets_avance">Gestion des paquets (avancé)</h1>
+<div class="level1">
+
+<p>
+Le but de cet article de d&#039;aller plus loin dans les possibilités fournies par Debian pour une bonne gestion des paquets.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Gestion des paquets (avancé)" [38-207] -->
+<h2 class="sectionedit2" id="prerequis">Prérequis</h2>
+<div class="level2">
+
+<p>
+Avant de commencer il faut déja être familier avec :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../synaptic" class="wikilink1" title="synaptic">Introduction au gestionnaire de paquets Synaptic</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../depots" class="wikilink1" title="depots">Introduction au système de dépôts</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.debian.org/doc/manuals/apt-howto/index.fr.html" class="urlextern" title="http://www.debian.org/doc/manuals/apt-howto/index.fr.html"  rel="nofollow">APT HOWTO</a></div>
+<ul>
+<li class="level2"><div class="li"> <a href="http://www.debian.org/doc/manuals/apt-howto/ch-erros.fr.html" class="urlextern" title="http://www.debian.org/doc/manuals/apt-howto/ch-erros.fr.html"  rel="nofollow">Comment traiter les erreurs ?</a></div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Prérequis" [208-585] -->
+<h2 class="sectionedit3" id="miroir">Miroir</h2>
+<div class="level2">
+
+<p>
+Si on a plusieurs ordinateurs sur le même réseau il est conseillé, pour économiser du temps et de la bande passante, de mettre en place un miroir ou un cache.
+</p>
+
+<p>
+Un miroir est une copie intégrale d&#039;un dépôt.
+</p>
+
+<p>
+Un cache (apt-cacher) garde une copie de chaque paquet téléchargé pour ne pas le télécharger plusieurs fois.
+</p>
+
+<p>
+Je vous conseille de voir l&#039;article d&#039;Andesi : <a href="http://www.andesi.org/index.php?node=27#A14" class="urlextern" title="http://www.andesi.org/index.php?node=27#A14"  rel="nofollow">Mise en place d&#039;un miroir de paquets</a>.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Miroir" [586-1068] -->
+<h2 class="sectionedit4" id="creation_de_fichier_deb">Création de fichier « .deb »</h2>
+<div class="level2">
+
+<p>
+La gestion des paquets de Debian est géniale, mais il se peut que l&#039;on ait besoin d&#039;un programme qui n&#039;existe pas encore en « .deb » (ou pas adapté à Ubuntu). Si on l&#039;installe <em>via</em> un « tar.gz » et que l&#039;on perd les sources on aura des difficultés à le désinstaller, c&#039;est pourquoi je vais décrire plusieurs méthodes pour construire un paquet.
+</p>
+
+<p>
+<p><div class="noteclassic">Remarque : bien que je ne ne l&#039;aie pas fait des dizaines de fois, ce sont des méthodes que j&#039;ai au moins testées une fois.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Création de fichier « .deb »" [1069-1614] -->
+<h3 class="sectionedit5" id="compilation_depuis_deb-src">Compilation depuis « deb-src »</h3>
+<div class="level3">
+
+<p>
+Il se peut que le paquet existe uniquement en format source comme c&#039;est le cas pour Debian Mentor par exemple (<a href="http://mentors.debian.net/" class="urlextern" title="http://mentors.debian.net/"  rel="nofollow">http://mentors.debian.net/</a>).
+</p>
+
+<p>
+Pour cela il faut simplement ajouter le dépôt « deb-src ».
+</p>
+
+<p>
+Installer les paquets nécessaires pour la compilation :
+</p>
+<pre class="code">sudo apt-get build-dep &#039;paquet&#039;</pre>
+
+<p>
+Télécharger les sources et les compiler (attention les sources sont téléchargées et le fichier « .deb » est créé dans le répertoire courant) :
+</p>
+<pre class="code">apt-get -b source &#039;package&#039;</pre>
+
+<p>
+Il ne reste plus qu&#039;à l&#039;installer :
+</p>
+<pre class="code">dpkg -i &#039;paquet&#039;.deb</pre>
+
+</div>
+<!-- EDIT5 SECTION "Compilation depuis « deb-src »" [1615-2203] -->
+<h3 class="sectionedit6" id="creation_officielle">Création officielle</h3>
+<div class="level3">
+
+<p>
+Je vous laisse regarder la documentation de Debian : <a href="http://www.debian.org/doc/manuals/maint-guide/index.fr.html" class="urlextern" title="http://www.debian.org/doc/manuals/maint-guide/index.fr.html"  rel="nofollow">Guide du nouveau responsable Debian</a>.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Création officielle" [2204-2390] -->
+<h3 class="sectionedit7" id="mise_a_jours_d_un_paquet_existant">Mise à jours d&#039;un paquet existant</h3>
+<div class="level3">
+
+<p>
+Installer le paquet nécessaire pour la compilation :
+</p>
+<pre class="code">sudo apt-get build-dep &#039;paquet&#039;</pre>
+
+<p>
+Télécharger les sources sans les compiler (attention les sources sont téléchargées dans le répertoire courant) :
+</p>
+<pre class="code">apt-get source &#039;package&#039;</pre>
+
+<p>
+Décompresser les nouvelles sources dans le répertoire créé lors de l&#039;opération précédente (dans le répertoire principal généralement présent).
+</p>
+
+<p>
+Modifier le fichier « debian/changelog » en ajoutant un bloc, attention la syntaxe est importante (création de la date : 822-date).
+</p>
+
+<p>
+Compiler en exécutant depuis ce même répertoire en exécutant :
+</p>
+<pre class="code">dpkg-buildpackage -r fakeroot</pre>
+
+<p>
+Installer le nouveau paquet
+</p>
+<pre class="code">dpkg -i ../&#039;paquet&#039;.deb</pre>
+
+</div>
+<!-- EDIT7 SECTION "Mise à jours d'un paquet existant" [2391-3123] -->
+<h3 class="sectionedit8" id="depuis_les_sources_amont">Depuis les sources amont</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="preparation_du_systeme">Préparation du système</h4>
+<div class="level4">
+
+<p>
+<a href="../../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> nécessaires :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><a href="apt://auto-apt" class="interwiki iw_apt" title="apt://auto-apt">auto-apt</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="apt://checkinstall" class="interwiki iw_apt" title="apt://checkinstall">checkinstall</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="apt://build-essential" class="interwiki iw_apt" title="apt://build-essential">build-essential</a></strong></div>
+</li>
+</ul>
+
+<p>
+Mise à jour des données :
+</p>
+<pre class="code">sudo auto-apt update
+sudo auto-apt updatedb
+sudo auto-apt update-local</pre>
+
+</div>
+
+<h4 id="creation_du_paquet">Création du paquet</h4>
+<div class="level4">
+
+<p>
+Installation des paquets nécessaires à la compilation :
+</p>
+<pre class="code">auto-apt -xy run ./configure</pre>
+
+<p>
+Compilation :
+</p>
+<pre class="code">./configure
+make</pre>
+
+<p>
+Installation et création du fichier « .deb » :
+</p>
+<pre class="code">sudo checkinstall -y</pre>
+
+<p>
+Changement des droits <img src="../../../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /> :
+</p>
+<pre class="code">sudo chown &#039;user&#039;:&#039;groupe&#039; &#039;paquet&#039;.deb</pre>
+
+</div>
+<!-- EDIT8 SECTION "Depuis les sources amont" [3124-3770] -->
+<h3 class="sectionedit9" id="conversion_d_un_rpm">Conversion d&#039;un « .rpm »</h3>
+<div class="level3">
+
+<p>
+Installer <a href="../../../alien" class="wikilink1" title="alien">Alien</a> :
+</p>
+<pre class="code">sudo apt-get install alien</pre>
+
+<p>
+Conversion du paquet :
+</p>
+<pre class="code">alien --to-deb &#039;paquet&#039;.rpm</pre>
+
+</div>
+<!-- EDIT9 SECTION "Conversion d'un « .rpm »" [3771-3917] -->
+<h3 class="sectionedit10" id="creation_d_un_paquet_depuis_un_binaire">Création d&#039;un paquet depuis un binaire</h3>
+<div class="level3">
+
+<p>
+Je n&#039;ai pas réussi à le faire mais ça serait bien utile !
+</p>
+
+<p>
+Pour Java, se référer à la page installation <a href="../../../java" class="wikilink1" title="java">Java</a> méthode Debian.
+</p>
+
+<p>
+Configure la machine virtuelle par défaut :
+</p>
+<pre class="code">sudo update-alternatives --config java</pre>
+
+</div>
+<!-- EDIT10 SECTION "Création d'un paquet depuis un binaire" [3918-4194] -->
+<h2 class="sectionedit11" id="creation_de_depot">Création de dépôt</h2>
+<div class="level2">
+
+<p>
+Pour une création traditionnelle d&#039;un dépôt, je vous conseille l&#039;article de Debian Addict : <a href="http://www.debianaddict.org/article31.html" class="urlextern" title="http://www.debianaddict.org/article31.html"  rel="nofollow">Créer un dépôt Debian</a>.
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Création de dépôt" [4195-4397] -->
+<h3 class="sectionedit12" id="pour_une_creation_toute_simple">Pour une création toute simple</h3>
+<div class="level3">
+
+<p>
+Copier les fichier « .deb » dans un répertoire, pour l&#039;exemple « ./binary ».
+</p>
+
+<p>
+Créer le dépôt avec la commande :
+</p>
+<pre class="code">dpkg-scanpackages binary /dev/null | gzip -9c &gt; binary/Packages.gz</pre>
+
+<p>
+Ajouter le dépôt dans votre « sources.list » :
+</p>
+<pre class="file">deb http://server/sous-repertoire/binary ./</pre>
+
+</div>
+<!-- EDIT12 SECTION "Pour une création toute simple" [4398-4743] -->
+<h2 class="sectionedit13" id="pour_aller_plus_loin">Pour aller plus loin</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="../../../tutoriel/comment_installer_un_depot_local" class="wikilink1" title="tutoriel:comment_installer_un_depot_local">comment_installer_un_depot_local</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/installation/migrer_sans_connexion_internet" class="wikilink1" title="installation:migrer_sans_connexion_internet">migrer_sans_connexion_internet</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <img src="../../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />.</em>
+</p>
+
+</div>
+<!-- EDIT13 SECTION "Pour aller plus loin" [4744-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/a/a9bab465db15df83144c8c85fc59bfdf.xhtml used -->
+</div>
+</body>
+</html>

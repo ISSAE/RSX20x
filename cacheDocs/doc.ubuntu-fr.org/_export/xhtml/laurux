@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>laurux</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-11-22T22:40:20+0100"/>
+<meta name="keywords" content="entreprise,erp,bureautique,comptabilite"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/laurux?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="laurux"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/laurux"/>
+<link rel="canonical" href="../../laurux"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"laurux","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="laurux#pre-requis">Pré-requis</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="laurux#installer_gambas_3">Installer Gambas 3</a></div></li>
+<li class="level2"><div class="li"><a href="laurux#installer_mysql">Installer MySQL</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="laurux#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="laurux#telecharger_laurux">Télécharger Laurux</a></div></li>
+<li class="level2"><div class="li"><a href="laurux#installer_laurux">Installer Laurux</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="laurux#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="laurux#creer_un_compte_mysql">Créer un compte MySQL</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="laurux#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="laurux#premier_lancement">Premier lancement</a></div></li>
+<li class="level2"><div class="li"><a href="laurux#laurux_en_reseau">Laurux en réseau</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="laurux#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="laurux#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../entreprise" class="wikilink1" title="entreprise" rel="tag">entreprise</a>,
+	<a href="../../erp" class="wikilink1" title="erp" rel="tag">erp</a>,
+	<a href="../../bureautique" class="wikilink1" title="bureautique" rel="tag">bureautique</a>,
+	<a href="../../comptabilite" class="wikilink1" title="comptabilite" rel="tag">comptabilité</a>
+</span></div>
+<hr />
+
+<p>
+<a href="../../_detail/laurux/logo.png?id=laurux" class="media" title="laurux:logo.png"><img src="../../_media/laurux/logo.png" class="mediaright" alt="" /></a>
+</p>
+
+<h1 class="sectionedit1" id="laurux">Laurux</h1>
+<div class="level1">
+
+<p>
+<strong>Laurux</strong> est un logiciel de gestion d&#039;entreprise permettant d&#039;effectuer l&#039;essentiel des tâches afin de gérer d&#039;une façon optimale la comptabilité, la facturation et le stock. Il propose :
+</p>
+<ul>
+<li class="level1"><div class="li"> Une comptabilité ;</div>
+</li>
+<li class="level1"><div class="li"> La gestion des clients (facturation avec passage automatique des écritures en comptabilité, historiques) ;</div>
+</li>
+<li class="level1"><div class="li"> La gestion des fournisseurs (commandes, réception de marchandises, historiques) ;</div>
+</li>
+<li class="level1"><div class="li"> Une tenue de stock ;</div>
+</li>
+<li class="level1"><div class="li"> La gestion des codes barres ;</div>
+</li>
+<li class="level1"><div class="li"> Des statistiques complètes.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Gestion des remises clients évoluées.</div>
+</li>
+<li class="level1"><div class="li"> Gestion des promotions</div>
+</li>
+<li class="level1"><div class="li"> Etc…</div>
+</li>
+</ul>
+
+<p>
+Destiné aux PME/PMI, c&#039;est un logiciel intégrant une comptabilité et une gestion d&#039;entreprise. Ce logiciel est très simple d&#039;utilisation et possède une bonne ergonomie.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=9f643f&amp;media=http%3A%2F%2Fwww.laurux.fr%2Fclient.png" class="media" title="http://www.laurux.fr/client.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?w=250&amp;tok=6e6e30&amp;media=http%3A%2F%2Fwww.laurux.fr%2Fclient.png" class="mediaright" alt="" width="250" /></a>
+</p>
+
+<p>
+Voici quelques fonctions gérées par Laurux :
+</p>
+<ul>
+<li class="level1"><div class="li"> gestion des code-barres  (multi-code-barres);</div>
+</li>
+<li class="level1"><div class="li"> gestion des décimales pour les quantités et les prix ;</div>
+</li>
+<li class="level1"><div class="li"> gestion de l&#039;éco-taxe et de la taxe sur la copie privée ;</div>
+</li>
+<li class="level1"><div class="li"> gestion de la main d&#039;œuvre ;</div>
+</li>
+<li class="level1"><div class="li"> gestion des arrondis du PV sur les produits et la MO ;</div>
+</li>
+<li class="level1"><div class="li"> un seul document pour saisir les devis, <em>proforma</em>, commande, bon de livraison et facture ;</div>
+</li>
+<li class="level1"><div class="li"> les factures restent accessibles via une table d&#039;historiques et puisqu&#039;elles ne sont jamais effacées peuvent être réimprimées à loisir.</div>
+</li>
+</ul>
+
+<p>
+ <p><div class="notetip">Pour <strong>une installation pas à pas</strong> sous Kubuntu, vous pouvez consulter le tutoriel « <a href="../../tutoriel/comment_installer_laurux" class="wikilink1" title="tutoriel:comment_installer_laurux">Comment installer Laurux pas à pas ?</a> ».
+</div></p>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Laurux" [79-1688] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Avoir une version de Gambas3 opérationnelle.</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;un serveur <a href="../../mysql" class="wikilink1" title="mysql">MySQL</a> (en local ou non) et d&#039;un compte utilisateur MySQL ayant les droits pour créer et manipuler des tables dans une base de données.</div>
+</li>
+<li class="level1"><div class="li"> Disposer des bibliothèques wget et Evince ou autre visualiseur pdf.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [1689-2004] -->
+<h3 class="sectionedit3" id="installer_gambas_3">Installer Gambas 3</h3>
+<div class="level3">
+
+<p>
+Laurux a besoin de la toute dernière version stable de Gambas pour fonctionner. En ligne de commande dans une console, utilisez le PPA ci-dessous pour installer Gambas3.<br/>
+
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> add-apt-repository ppa:gambas-team<span class="sy0">/</span>gambas3</pre>
+
+<p>
+.<br/>
+ Puis, il faudra faire :<br/>
+ 
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> <span class="kw2">apt-get update</span></pre>
+
+<p>
+<br/>
+ 
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> <span class="kw2">apt-get install</span> gambas3</pre>
+
+</div>
+<!-- EDIT3 SECTION "Installer Gambas 3" [2005-2395] -->
+<h3 class="sectionedit4" id="installer_mysql">Installer MySQL</h3>
+<div class="level3">
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong>mysql-server-5.X</strong> et <strong>mysql-client-5.X</strong>. Le paquet <strong>mysql-common</strong> est sélectionné et installé d&#039;office.
+</p>
+
+<p>
+Coller dans un terminal :
+</p>
+<pre class="code"> sudo apt-get install mysql-server-5.5 mysql-client-5.5 </pre>
+
+</div>
+<!-- EDIT4 SECTION "Installer MySQL" [2396-2697] -->
+<h2 class="sectionedit5" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT5 SECTION "Installation" [2698-2723] -->
+<h3 class="sectionedit6" id="telecharger_laurux">Télécharger Laurux</h3>
+<div class="level3">
+
+<p>
+Rendez-vous sur le <a href="http://www.laurux.fr" class="urlextern" title="http://www.laurux.fr"  rel="nofollow">site de Laurux</a> et téléchargez-y le fichier « Laurux.tar.gz » depuis l&#039;onglet « Téléchargement ». Vous le placerez dans votre dossier personnel.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Télécharger Laurux" [2724-2961] -->
+<h3 class="sectionedit7" id="installer_laurux">Installer Laurux</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="copie_des_fichiers">Copie des fichiers</h4>
+<div class="level4">
+
+<p>
+Extrayez l&#039;archive dans votre répertoire personnel. Vous avez normalement un nouveau répertoire nommé « Laurux3 » dans votre répertoire personnel.
+</p>
+
+</div>
+
+<h4 id="lanceur">Lanceur</h4>
+<div class="level4">
+
+<p>
+<a href="../../raccourci-lanceur" class="wikilink1" title="raccourci-lanceur">Créez un raccourci</a> sur le bureau pour lancer l&#039;application (le « ~ » représente votre répertoire personnel) :
+</p>
+<ul>
+<li class="level1"><div class="li"> pour l&#039;icône, utiliser le fichier « ~/Laurux3/Logo.png » ;</div>
+</li>
+<li class="level1"><div class="li"> pour l&#039;exécutable, utiliser le chemin « ~/Laurux/Laurux3.gambas ».</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="police_de_caracteres">Police de caractères</h4>
+<div class="level4">
+
+<p>
+Il faut à présent installer la police de caractère livrée avec le logiciel. Elle est nommée « flubber.ttf » et est située dans le répertoire « ~/Laurux/Install/ ».
+</p>
+
+</div>
+
+<h5 id="pour_kde">Pour KDE</h5>
+<div class="level5">
+
+<p>
+<a href="../../_detail/laurux/step_oo69.png?id=laurux" class="media" title="laurux:step_oo69.png"><img src="../../_media/laurux/step_oo69.png?w=250&amp;tok=913570" class="mediaright" alt="" width="250" /></a>
+</p>
+
+<p>
+Cliquez sur ce fichier avec le bouton droit de la souris puis choisissez <em>Action → Installer</em>.
+</p>
+
+<p>
+Une boîte d&#039;alerte vous propose une installation pour le compte Administrateur (System) ou Utilisateur (Personnel). Cliquez sur « Personnel ».
+</p>
+
+</div>
+
+<h5 id="pour_gnome">Pour Gnome</h5>
+<div class="level5">
+
+<p>
+Double clic sur le fichier.
+</p>
+
+<p>
+Une fenêtre s&#039;ouvre, montrant la police, cliquer sur &quot;install&quot; en bas à droite.
+</p>
+
+<p>
+Une boîte d&#039;alerte vous propose une installation pour le compte Administrateur (System) ou Utilisateur (Personnel). Choisissez vos préférences.
+</p>
+
+</div>
+
+<h4 id="ajustements_graphiques_pour_kde">Ajustements graphiques (pour KDE)</h4>
+<div class="level4">
+
+<p>
+<a href="../../_detail/laurux/step_oo44_1.png?id=laurux" class="media" title="laurux:step_oo44_1.png"><img src="../../_media/laurux/step_oo44_1.png?w=250&amp;tok=1fdb07" class="mediaright" alt="" width="250" /></a>
+</p>
+
+<p>
+Pour terminer les préparatifs au lancement de Laurux, il faut changer la taille des caractères du bureau, qui est de 9 par défaut, à 10.
+</p>
+
+<p>
+Pour ce faire :
+</p>
+<ul>
+<li class="level1"><div class="li"> Ouvrez le menu système de KDE et cliquez sur l&#039;élément « Paramètres du système ».</div>
+</li>
+<li class="level1"><div class="li"> Dans l&#039;écran suivant, cliquez sur « Apparence ».</div>
+</li>
+<li class="level1"><div class="li"> Changez ensuite la taille des caractères comme illustré ci-après en cliquant sur les boutons intitulés « Choisir… » puis cliquez sur « Appliquer ».</div>
+</li>
+<li class="level1"><div class="li"> Vous pouvez ensuite fermer la fenêtre.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT7 SECTION "Installer Laurux" [2962-4860] -->
+<h2 class="sectionedit8" id="configuration">Configuration</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT8 SECTION "Configuration" [4861-4887] -->
+<h3 class="sectionedit9" id="creer_un_compte_mysql">Créer un compte MySQL</h3>
+<div class="level3">
+
+<p>
+Avant de pouvoir exécuter Laurux, il reste une dernière étape : la création d&#039;un compte MySQL. Ouvrez un <a href="../../terminal" class="wikilink1" title="terminal">terminal</a>.
+</p>
+
+<p>
+Entrez la commande suivante pour ouvrir le module d&#039;administration de MySQL :
+</p>
+<pre class="code">mysql --user=root mysql</pre>
+
+<p>
+<p><div class="noteimportant">si message d&#039;erreur 
+Entrez : dpkg-reconfigure mysql-server-5.0  créer le mot de passe à utiliser avec laurux. pour lancer mysql Entrée : <strong>mysql -u root -p</strong>
+</div></p>
+</p>
+
+<p>
+Tapez ensuite la ligne suivante en prenant soin de remplacer d&#039;une part « <code>USER_NAME</code> » par le nom d&#039;utilisateur de votre choix et d&#039;autre part, « <code>PASSWORD</code> » par votre mot de passe qui sera utilisé par Laurux pour accéder à MySQL.
+</p>
+<pre class="code SQL"><span class="kw1">GRANT</span> <span class="kw1">ALL</span> PRIVILEGES <span class="kw1">ON</span> <span class="sy0">*.*</span> <span class="kw1">TO</span> USER_NAME@localhost <span class="kw1">IDENTIFIED</span> <span class="kw1">BY</span> <span class="st0">&quot;PASSWORD&quot;</span>;</pre>
+
+<p>
+Attention: N&#039;oubliez pas les guillemets qui entourent votre mot de passe ni le point virgule qui termine la commande SQL.
+Parfois il faut mettre des apostrophes à la place des guillemets (cf site de Laurux)
+Après avoir validé la ligne avec la touche « Entrée » du clavier, vous devriez avoir le message suivant :
+</p>
+<blockquote><div class="no">
+ Query OK, 0 rows affected</div></blockquote>
+
+<p>
+Lorsque cette phase est terminée, tapez « exit » pour quitter la ligne de commande MySQL.
+</p>
+
+<p>
+Vous pouvez fermer le terminal, Laurux est prêt ! <img src="../../lib/images/smileys/icon_cool.gif" class="icon" alt="8-)" />
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Créer un compte MySQL" [4888-6176] -->
+<h2 class="sectionedit10" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT10 SECTION "Utilisation" [6177-6201] -->
+<h3 class="sectionedit11" id="premier_lancement">Premier lancement</h3>
+<div class="level3">
+
+<p>
+Cliquez sur l&#039;icône Laurux qui se trouve sur votre bureau. Le premier écran de Laurux s&#039;affiche. C&#039;est ici que vous devez entrer le nom d&#039;utilisateur défini précédemment dans MySQL avec le mot de passe associé.
+</p>
+
+<p>
+Nota: Si rien ne se passe, installer les composants manquant de Gambas avec le gestionnaire de paquets.
+</p>
+
+<p>
+<a href="../../_detail/laurux/step_oo47.png?id=laurux" class="media" title="laurux:step_oo47.png"><img src="../../_media/laurux/step_oo47.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Validez votre saisie en cliquant sur le bouton « Valider ». Laurux vous propose alors de créer la base de données sur le serveur MySQL. Acceptez.
+</p>
+
+<p>
+Laurux vous informe que la base de travail vierge a bien été créée et invite ensuite à redémarrer le programme.
+</p>
+
+<p>
+Relancez le logiciel. Une fenêtre vous présentant les astuces du jour s&#039;affiche. Cliquez sur « Fermer » pour accéder à l&#039;interface du programme.
+</p>
+
+<p>
+Vous voici devant l&#039;écran principal de Laurux.
+</p>
+
+<p>
+<a href="../../_detail/laurux/step_oo51_1.png?id=laurux" class="media" title="laurux:step_oo51_1.png"><img src="../../_media/laurux/step_oo51_1.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Avant de pouvoir commencer à travailler, il vous faut restaurer la base de démonstration livrée avec Laurux. Pour ce faire, ouvrez le menu « Base » et cliquez sur « Restauration ».
+</p>
+
+<p>
+La fenêtre suivante vous permet de sélectionner l&#039;emplacement de la base à restaurer. Cliquez sur le bouton « Choisir ».
+</p>
+
+<p>
+À l&#039;aide du sélecteur de fichiers, sélectionner le répertoire Laurux3 et cliquez sur « OK ».
+</p>
+
+<p>
+Cliquez ensuite sur le bouton « Restaurer ».
+</p>
+
+<p>
+Si tout se passe bien, Laurux vous informe que la restauration a réussi.
+</p>
+
+<p>
+À présent, Laurux est pleinement opérationnel. Vous pouvez commencer votre exploration.
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Premier lancement" [6202-7709] -->
+<h3 class="sectionedit12" id="laurux_en_reseau">Laurux en réseau</h3>
+<div class="level3">
+
+<p>
+Laurux permet une utilisation en réseau et offre la possibilité à plusieurs postes de travailler sur la même base de données. Ainsi, pendant qu&#039;un utilisateur se charge de la facturation, un autre peut rentrer les commandes et une troisième personne peut se charger de les réceptionner. La base de données unique et commune à tous les postes est stockée sur un poste serveur. les autres ordinateurs sont les postes clients.
+</p>
+
+<p>
+<p><div class="noteimportant">le forum sur <strong>laurux.fr</strong> est une mines d&#039;informations, les questions sont traitées très rapidement, 
+laurux évolue en fonction des besoins de ses utilisateurs un conseil, participez !   
+</div></p>
+</p>
+
+<p>
+Pour utiliser Laurux sur plusieurs postes, il convient d&#039;utiliser un adressage en IP fixe. Les heureux possesseurs d&#039;une box pourront conserver un adressage dynamique en utilisant les baux <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> qui leur permettront d&#039;attribuer une adresse fixe sur les postes exécutant Laurux grâce à l&#039;adresse <abbr title="Medium Access Control">MAC</abbr> de chacune des cartes réseau qui équipe les machines.
+</p>
+
+<p>
+<a href="../../_detail/laurux/step_oo62.png?id=laurux" class="media" title="laurux:step_oo62.png"><img src="../../_media/laurux/step_oo62.png?w=250&amp;tok=b7d20e" class="mediaright" alt="" width="250" /></a>
+</p>
+
+<p>
+Sur le poste serveur ou est stockée la base de Laurux, il faut éditer le fichier de configuration de MySQL qui, par défaut, n&#039;autorise que les connexions locales. Pour ce faire, <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">éditez le fichier</a> <strong>/etc/mysql/my.cnf</strong> avec les droits administrateurs.
+Repérez la ligne commençant par « bind-address » et changez la valeur 127.0.0.1 par la valeur 0.0.0.0 puis enregistrez la modification et quittez le programme d&#039;édition.
+</p>
+
+<p>
+Une fois le fichier édité, il est nécessaire de redémarrer le serveur MySQL avec la commande suivante :
+</p>
+<pre class="code">sudo /etc/init.d/mysql restart</pre>
+
+<p>
+Il faut à présent créer un compte utilisateur pour chaque poste client. Pour cela, il est impératif de connaitre l&#039;adresse de chaque poste en exécutant la commande « <code>ifconfig</code> » dans une console par exemple.
+</p>
+
+<p>
+La syntaxe est identique à la création d&#039;un compte utilisateur MySQL classique comme nous l&#039;avons abordé plus haut à la différence qu&#039;il faut remplacer « localhost » par l&#039;adresse IP de la machine.
+</p>
+
+<p>
+Dans un premier temps, on lance MySQL dans un terminal.
+</p>
+<pre class="code">mysql --user=root mysql</pre>
+
+<p>
+Ensuite on entre la commande qui permet de créer un compte utilisateur avec le nom de l&#039;utilisateur à la place de « USER_NAME », l&#039;adresse IP du poste client à la place de « localhost » (généralement 192.168.0.X avec une valeur de X différente pour chaque poste) et le mot de passe à la place de « PASSWORD ».
+</p>
+<pre class="code sql"><span class="kw1">GRANT</span> <span class="kw1">ALL</span> PRIVILEGES <span class="kw1">ON</span> <span class="sy0">*.*</span> <span class="kw1">TO</span> <span class="st0">'USER_NAME'</span>@<span class="st0">'192.168.0.x'</span> <span class="kw1">IDENTIFIED</span> <span class="kw1">BY</span> <span class="st0">'PASSWORD'</span> <span class="kw1">WITH</span> <span class="kw1">GRANT</span> <span class="kw1">OPTION</span>;</pre>
+
+<p>
+Pour les postes clients, il faut procéder l&#039;installation de Laurux comme nous l&#039;avons abordée plus haut à la seule différence qu&#039;au premier lancement de Laurux, dans le formulaire de création de la base, il faut remplacer « localhost » par l&#039;adresse IP du serveur.
+&#039;
+</p>
+
+<p>
+<p><div class="notetip">grant all privileges on Base.Table to &#039;User&#039;@&#039;machine&#039; identified by &#039;password&#039; ;
+</p>
+
+<p>
+La base est obligatoire.
+Table : indique la table ou * pout toutes
+</p>
+
+<p>
+User : nom d&#039;utlisateur
+</p>
+
+<p>
+@ : comme pour les mails, indique que ce qui suit est la machine d&#039;accès
+</p>
+
+<p>
+% : cas particulier pour la machine qui veut dire toute machine externe
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT12 SECTION "Laurux en réseau" [7710-10967] -->
+<h2 class="sectionedit13" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour désinstaller Laurux il suffit de supprimer le répertoire Laurux.
+</p>
+
+</div>
+<!-- EDIT13 SECTION "Désinstallation" [10968-11070] -->
+<h2 class="sectionedit14" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.laurux.fr" class="urlextern" title="http://www.laurux.fr"  rel="nofollow">Site officiel</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../../utilisateurs/magellan" class="wikilink1" title="utilisateurs:magellan">Magellan</a>, <a href="../../utilisateurs/ner0lph" class="wikilink1" title="utilisateurs:ner0lph">Floriang</a>, <a href="../../utilisateurs/laurux" class="wikilink2" title="utilisateurs:laurux" rel="nofollow">Laurux</a>.</em>
+</p>
+
+</div>
+<!-- EDIT14 SECTION "Voir aussi" [11071-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/5/50bff7e820cb80922ec5e1d5ad63c2b4.xhtml used -->
+</div>
+</body>
+</html>

@@ -1,0 +1,1340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>grub-pc - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-05-05T10:19:56+0200"/>
+<meta name="keywords" content="precise,trusty,boot,amorcage"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/grub-pc?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/grub-pc?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/grub-pc"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/grub-pc"/>
+<link rel="canonical" href="grub-pc"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"grub-pc","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="grub#main" tabindex="1">Contenu</a> | <a href="grub#qsearch__in" tabindex="2">Rechercher</a> | <a href="grub#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="grub" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="grub-pc" >grub-pc</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="grub#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="grub#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="grub#apres_installation_complete_d_ubuntu">Après installation complète d’Ubuntu</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="grub#afficher_le_menu_grub">Afficher le menu GRUB</a></div></li>
+<li class="level2"><div class="li"><a href="grub#reinstallerrestaurer_grub_2">Réinstaller/Restaurer GRUB 2</a></div></li>
+<li class="level2"><div class="li"><a href="grub#placer_windows_en_premier_dans_le_grub">Placer Windows en premier dans le grub</a></div></li>
+<li class="level2"><div class="li"><a href="grub#amorcage_multipleprivilegier_un_grub">Amorçage multiple : privilégier un grub</a></div></li>
+<li class="level2"><div class="li"><a href="grub#amorcage_multiplemise_a_jour_de_grub">Amorçage multiple : mise à jour de grub</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="grub#configuration_simple_pour_debutants">Configuration simple (pour débutants)</a></div></li>
+<li class="level1"><div class="li"><a href="grub#configuration_avancee">Configuration avancée</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="grub#liste_des_fichiers_utilises_pour_la_configuration">Liste des fichiers utilisés pour la configuration</a></div></li>
+<li class="level2"><div class="li"><a href="grub#configurationreconfiguration_automatisee_du_menu_grub">Configuration/reconfiguration automatisée du menu GRUB</a></div></li>
+<li class="level2"><div class="li"><a href="grub#configuration_manuelle">Configuration manuelle</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="grub#exemples_et_cas_particuliers">Exemples et cas particuliers</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="grub#configurationreconfiguration_automatisee_a_partir_du_live_cd">Configuration/reconfiguration automatisée à partir du live CD</a></div></li>
+<li class="level2"><div class="li"><a href="grub#cacher_le_menu">Cacher le menu</a></div></li>
+<li class="level2"><div class="li"><a href="grub#chainer_un_autre_menu_d_amorcage">Chaîner un autre menu d’amorçage</a></div></li>
+<li class="level2"><div class="li"><a href="grub#exempletitres_du_menu">Exemple : Titres du menu</a></div></li>
+<li class="level2"><div class="li"><a href="grub#exempleos_selectionne_par_defaut">Exemple : OS sélectionné par défaut</a></div></li>
+<li class="level2"><div class="li"><a href="grub#exempleresolution_d_affichage">Exemple : Résolution d&#039;affichage</a></div></li>
+<li class="level2"><div class="li"><a href="grub#exempleancien_parametre_vga_xxx">Exemple : ancien paramètre vga=xxx</a></div></li>
+<li class="level2"><div class="li"><a href="grub#exemplefond_d_ecran">Exemple : Fond d&#039;écran</a></div></li>
+<li class="level2"><div class="li"><a href="grub#tutoriel_pour_demarrer_une_image_iso">Tutoriel pour démarrer une image iso</a></div></li>
+<li class="level2"><div class="li"><a href="grub#lancement_depuis_grub-legacy">Lancement depuis Grub-Legacy</a></div></li>
+<li class="level2"><div class="li"><a href="grub#rechercher_d_autres_os_presents_sur_la_machine_et_les_rajouter_a_grub_automatiquement">Rechercher d’autres OS présents sur la machine et les rajouter à GRUB automatiquement</a></div></li>
+<li class="level2"><div class="li"><a href="grub#ajouter_du_rootdelay_au_demarrage">Ajouter du rootdelay au démarrage</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="grub#problemes_connus">Problèmes connus</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="grub#grub_n_apparait_pas_au_demarrage">Grub n&#039;apparaît pas au démarrage</a></div></li>
+<li class="level2"><div class="li"><a href="grub#grubsh_shell_grub_2_a_l_amorcage">grub:sh (Shell GRUB 2 à l&#039;amorçage)</a></div></li>
+<li class="level2"><div class="li"><a href="grub#error_15passage_difficile_a_grub2">Error 15 : passage difficile à Grub2</a></div></li>
+<li class="level2"><div class="li"><a href="grub#long_temps_de_chargement">Long temps de chargement</a></div></li>
+<li class="level2"><div class="li"><a href="grub#utilisation_du_clavier_freeze_grub-pc">Utilisation du clavier freeze Grub-PC</a></div></li>
+<li class="level2"><div class="li"><a href="grub#grub_attend_pour_rien_apres_un_petit_crash_serveur">Grub attend pour rien après un petit crash serveur</a></div></li>
+<li class="level2"><div class="li"><a href="grub#apparition_d_images_au_boot">Apparition d’images au boot</a></div></li>
+<li class="level2"><div class="li"><a href="grub#via_un_cd-live_ou_usb-live">Via un CD-Live ou USB-Live</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="grub#liens_externes">Liens externes</a></div></li>
+<li class="level1"><div class="li"><a href="grub#autres_pages_en_rapport">Autres pages en rapport</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="http://doc.ubuntu-fr.org/trusty" class="wikilink1" title="trusty" rel="tag">Trusty</a>,
+	<a href="boot?do=showtag&amp;tag=boot" class="wikilink1" title="boot" rel="tag">boot</a>,
+	<a href="amorcage" class="wikilink1" title="amorcage" rel="tag">amorçage</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="grub_2_version_compatibles_pc">GRUB 2 (version Compatibles PC)</h1>
+<div class="level1">
+
+<p>
+<em><strong>GR</strong>and <strong>U</strong>nified <strong>B</strong>ootloader, version 2</em> (ou <strong>GRUB 2</strong>) est la seconde version de GNU GRUB. C&#039;est un logiciel permettant de <a href="amorcage" class="wikilink1" title="amorcage">charger un système d&#039;exploitation</a>. Il pourra amorcer lui-même des systèmes compatibles avec la norme POSIX (GNU/Linux, *BSD, Mac OS, etc.) ou enchaîner vers un autre chargeur d’amorçage pour les autres systèmes.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=616545&amp;media=http%3A%2F%2Fpix.toile-libre.org%2Fupload%2Foriginal%2F1353953772.png" class="media" title="http://pix.toile-libre.org/upload/original/1353953772.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=616545&amp;media=http%3A%2F%2Fpix.toile-libre.org%2Fupload%2Foriginal%2F1353953772.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Plus qu’une continuité du projet <a href="http://doc.ubuntu-fr.org/grub_legacy" class="wikilink1" title="grub_legacy">GRUB Legacy</a> précédent, <strong>GRUB 2 en est une réécriture complète.</strong> Il a pour but d’être un chargeur d’amorçage plus modulaire et portable que son prédécesseur avec notamment  une interface graphique et une portabilité vers diverses architectures matérielles (<abbr title="Basic Input-Output System">BIOS</abbr>, EFI, Coreboot…).
+</p>
+
+<p>
+GRUB 2 est le chargeur d&#039;amorçage installé par défaut, ce document concerne la version de GRUB 2 pour les ordinateurs Compatibles PC (la plupart des ordinateurs 32 bits et 64 bits disponibles sur le marché actuellement) ; des paquets <em><a href="http://doc.ubuntu-fr.org/grub-efi" class="wikilink2" title="grub-efi" rel="nofollow">grub-efi</a></em> et <em><a href="http://doc.ubuntu-fr.org/grub-coreboot" class="wikilink2" title="grub-coreboot" rel="nofollow">grub-coreboot</a></em> existent pour les architectures basées sur EFI (tels les MacIntel) et sur Coreboot/LinuxBIOS.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[GRUB 2 (version Compatibles PC)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="46-1272" /><input type="submit" value="Modifier" class="button" title="GRUB 2 (version Compatibles PC)" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1273-1415" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Lors d’une nouvelle installation (<a href="http://doc.ubuntu-fr.org/telechargement" class="wikilink1" title="telechargement">depuis un support d&#039;installation</a>), si vous n’avez pas paramétré les options avancées, vous n’avez rien de plus à faire : GRUB 2 est installé et est votre chargeur d’amorçage principal pour Ubuntu.
+</p>
+
+<p>
+Une vérification peut être faite depuis un <a href="terminal" class="wikilink1" title="terminal">terminal</a> avec la <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a> : 
+</p>
+<pre class="code">grub-install -V</pre>
+
+<p>
+Si vous voyez <em>GNU GRUB 1.98</em> ou +, vous avez GRUB 2, si c’est 0.97, vous avez <a href="http://doc.ubuntu-fr.org/grub_legacy" class="wikilink1" title="grub_legacy">Grub Legacy</a>.
+</p>
+
+<p>
+<strong>Si vous avez modifié les options avancées</strong> lors de l&#039;installation d’Ubuntu et souhaitez installer Grub 2 sur le <a href="http://doc.ubuntu-fr.org/mbr" class="wikilink1" title="mbr">MBR</a>, il suffit de suivre <a href="tutoriel/comment_restaurer_grub" class="wikilink1" title="tutoriel:comment_restaurer_grub">ce tutoriel</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1416-2151" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit4" id="apres_installation_complete_d_ubuntu">Après installation complète d’Ubuntu</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Après installation complète d’Ubuntu] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2152-2205" /><input type="submit" value="Modifier" class="button" title="Après installation complète d’Ubuntu" /></div></form></div>
+<h3 class="sectionedit5" id="afficher_le_menu_grub">Afficher le menu GRUB</h3>
+<div class="level3">
+
+<p>
+Le menu de GRUB ne s’affiche pas au démarrage d’un PC mono-système. Il suffit de laisser la touche Majuscule (shift) enfoncée <strong>avant</strong> le chargement de GRUB pour l&#039;afficher.
+</p>
+
+<p>
+Pour que le menu s’affiche systématiquement, il faut <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditer</a> avec les <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administrateur</a> le fichier <strong>/etc/default/grub</strong> puis d’y ajouter un <a href="http://fr.wikipedia.org/wiki/Croisillon_(signe)" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Croisillon_(signe)">croisillon</a> « # » au début de la ligne 
+</p>
+<pre class="code file grub">GRUB_HIDDEN_TIMEOUT=0</pre>
+
+<p>
+ (voir <a href="grub#configuration_manuelle" title="grub-pc ↵" class="wikilink1">/etc/default/grub : options par défaut</a>).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Afficher le menu GRUB] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2206-2816" /><input type="submit" value="Modifier" class="button" title="Afficher le menu GRUB" /></div></form></div>
+<h3 class="sectionedit6" id="reinstallerrestaurer_grub_2">Réinstaller/Restaurer GRUB 2</h3>
+<div class="level3">
+
+<p>
+Réinstallation/Restauration du GRUB, par exemple lorsqu’il a été effacé ou désactivé suite à l’installation d’un autre système d’exploitation (par exemple, Microsoft® Windows®, Suse (OpenSuse)). Voir <a href="tutoriel/comment_restaurer_grub" class="wikilink1" title="tutoriel:comment_restaurer_grub">ce tutoriel</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Réinstaller/Restaurer GRUB 2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2817-3126" /><input type="submit" value="Modifier" class="button" title="Réinstaller/Restaurer GRUB 2" /></div></form></div>
+<h3 class="sectionedit7" id="placer_windows_en_premier_dans_le_grub">Placer Windows en premier dans le grub</h3>
+<div class="level3">
+
+<p>
+Reportez-vous à ce <a href="grub#exempleos_selectionne_par_defaut" title="grub-pc ↵" class="wikilink1">paragraphe</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Placer Windows en premier dans le grub] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3127-3246" /><input type="submit" value="Modifier" class="button" title="Placer Windows en premier dans le grub" /></div></form></div>
+<h3 class="sectionedit8" id="amorcage_multipleprivilegier_un_grub">Amorçage multiple : privilégier un grub</h3>
+<div class="level3">
+
+<p>
+En cas d&#039;installation en parallèle de plusieurs <a href="versions" class="wikilink1" title="versions">versions d&#039;Ubuntu</a> sur le même disque dur, <strong>la dernière installation impose son grub</strong>. Mais si vous souhaitez imposer au démarrage le grub d&#039;une autre installation (celle que vous utilisez par défaut, par exemple) :
+</p>
+<ol>
+<li class="level1"><div class="li"> allez dans cette autre installation, </div>
+</li>
+<li class="level1"><div class="li"> ouvrez le <a href="terminal" class="wikilink1" title="terminal">terminal</a>, et tapez :</div>
+</li>
+</ol>
+<pre class="code">sudo os-prober
+sudo update-grub
+sudo grub-install /dev/sda</pre>
+
+<p>
+avec /dev/sda si on veut pointer sur le disque sda<br/>
+avec /dev/sdb si on veut pointer sur le disque sdb<br/>
+avec /dev/sdc si on veut pointer sur le disque sdc<br/>
+etc…
+</p>
+
+<p>
+<img src="lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" /> Lorsque l&#039;on souhaite faire cohabiter Ubuntu avec un autre système, tel que Windows®, il peut être opportun d&#039;installer Grub sur un disque différent de celui où est installé le chargeur d&#039;origine. Il suffira de changer dans le <abbr title="Basic Input-Output System">BIOS</abbr> l&#039;ordre d&#039;examen des disques (lors du démarrage de l&#039;ordinateur) pour privilégier Grub ou un autre système. Ainsi, le disque d&#039;origine n&#039;est pas modifié et le retour en arrière est plus simple.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Amorçage multiple : privilégier un grub] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3247-4352" /><input type="submit" value="Modifier" class="button" title="Amorçage multiple : privilégier un grub" /></div></form></div>
+<h3 class="sectionedit9" id="amorcage_multiplemise_a_jour_de_grub">Amorçage multiple : mise à jour de grub</h3>
+<div class="level3">
+
+<p>
+Lorsque la configuration comporte plusieurs systèmes GNU/Linux, la procédure <em>update-grub</em> ne modifie le fichier utilisé par grub pour amorcer le PC que si elle est exécutée dans le système approprié, celui qui contient ledit fichier. Appelons ce système Système_A, et l’autre système Système_B.
+</p>
+
+<p>
+Dans le cas de la mise à jour du <a href="kernel" class="wikilink1" title="kernel">noyau</a> de Système_B, l’exécution de <em>update-grub</em> automatiquement déclenchée après cette mise à jour ne vise pas le bon fichier. Il faut alors, après avoir redémarré le PC dans Système_A, y exécuter depuis un <a href="terminal" class="wikilink1" title="terminal">terminal</a> la <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a> : 
+</p>
+<pre class="code">sudo update-grub</pre>
+
+<p>
+C’est incontestablement la solution la plus simple, qu’il est fortement recommandé d’utiliser.<br/>
+
+REMARQUE: Dans ce cas là, vous pouvez même supprimer le Grub des autres systèmes pour ne garder que celui que vous désirez! Ça simplifie la situation et vous gagnez aussi du temps lors de mises à jour des <a href="kernel" class="wikilink1" title="kernel">noyaux</a>.
+</p>
+
+<p>
+Mais on peut également, si l&#039;on veut éviter de réamorcer le PC, ou si, pour une raison ou pour une autre, on ne peut pas réamorcer le PC sur Système_A, et lorsque Système_A et Système_B sont à la même version de grub, effectuer dans Système_B la procédure <em>grub-mkconfig</em>.
+</p>
+<pre class="code">sudo grub-mkconfig -o &lt;fichier grub.cfg effectivement utilisé pour l&#039;amorce&gt;</pre>
+
+<p>
+après avoir pris soin de monter la partition contenant le fichier en question, celle qui contient le /boot/grub de Système_A. Mais, attention, dans ce cas là, les fichiers utilisés pour la création de grub.cfg (/etc/default/grub et /etc/grub.d/*) sont ceux de Système_B. Le contenu de ces fichiers peut éventuellement être différent de celui des fichiers équivalents de Système_A. De même, le choix des systèmes n&#039;est plus présenté de la même manière. Le système utilisé par défaut a également toutes chances de ne plus être le même.
+</p>
+
+<p>
+Enfin, on peut aussi par un <em>chroot</em> se « replacer » dans Système_A pour y exécuter la procédure <em>update-grub</em>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Amorçage multiple : mise à jour de grub] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4353-6469" /><input type="submit" value="Modifier" class="button" title="Amorçage multiple : mise à jour de grub" /></div></form></div>
+<h2 class="sectionedit10" id="configuration_simple_pour_debutants">Configuration simple (pour débutants)</h2>
+<div class="level2">
+
+<p>
+ <a href="grub-customizer" class="wikilink1" title="grub-customizer">Grub Customizer</a> et  <a href="superbootmanager" class="wikilink1" title="superbootmanager">Super Boot Manager</a> <sup><a href="grub#fn__1" id="fnt__1" class="fn_top">1)</a></sup> sont deux applications graphiques avancées permettant de modifier la plupart des paramètres, entre autres :<br/>
+
+<em>(Sous <a href="kde" class="wikilink1" title="kde">KDE</a> il vous suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://kde-config-grub2" class="interwiki iw_apt" title="apt://kde-config-grub2">kde-config-grub2</a></strong>)</em>
+</p>
+<ul>
+<li class="level1"><div class="li"> choisir une entrée de menu d’amorçage à sélectionner par défaut ;</div>
+</li>
+<li class="level2"><div class="li"> masquer, changer l’ordre, ajouter ou supprimer des entrées du menu d’amorçage ;</div>
+</li>
+<li class="level2"><div class="li"> ajouter des paramètres au noyau ;</div>
+</li>
+<li class="level2"><div class="li"> modifier la résolution d’affichage ;</div>
+</li>
+<li class="level2"><div class="li"> modifier les couleurs du menu GRUB ;</div>
+</li>
+<li class="level2"><div class="li"> ajouter une image d’arrière-plan:</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Configuration simple (pour débutants)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6470-7253" /><input type="submit" value="Modifier" class="button" title="Configuration simple (pour débutants)" /></div></form></div>
+<h2 class="sectionedit11" id="configuration_avancee">Configuration avancée</h2>
+<div class="level2">
+
+<p>
+<p><div class="notewarning">À partir de ce chapitre, vous allez intervenir directement sur les fichiers de GRUB. Soyez prudent, les fichiers de GRUB ne doivent pas être modifiés à la légère, sous peine d&#039;avoir un système qui ne démarre plus. Si vous ne maîtrisez pas bien, n&#039;hésitez pas à demander de l&#039;aide sur le <a href="http://forum.ubuntu-fr.org/" class="urlextern" title="http://forum.ubuntu-fr.org/"  rel="nofollow">forum</a>. 
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Configuration avancée] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7254-7647" /><input type="submit" value="Modifier" class="button" title="Configuration avancée" /></div></form></div>
+<h3 class="sectionedit12" id="liste_des_fichiers_utilises_pour_la_configuration">Liste des fichiers utilisés pour la configuration</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteimportant"> À connaître avant de configurer manuellement. 
+</div></p>
+</p>
+
+</div>
+
+<h4 id="fichier_utilise_par_le_systeme">Fichier utilisé par le système</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> /boot/grub/<strong>grub.cfg</strong> : il est généré automatiquement par <em>update-grub</em> (il est inutile d’éditer ce fichier) et <strong>ne doit</strong> donc <strong>pas être modifié manuellement</strong>.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="fichiers_utilises_pour_l_auto-configuration">Fichiers utilisés pour l’auto-configuration</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> /etc/default/<strong>grub</strong> : gère les valeurs par défaut de grub (délai de lancement, résolution d’affichage, splash/quiet, options par défaut des nouveaux noyaux…) ;</div>
+</li>
+<li class="level1"><div class="li"> les fichiers du dossier <strong>/etc/grub.d/</strong> :</div>
+<ul>
+<li class="level2"><div class="li"> <strong>00_header</strong> : contient le script gérant les options définies dans /etc/default/grub ;</div>
+</li>
+<li class="level2"><div class="li"> <strong>05_debian_theme</strong> : gère les couleurs du menu et le fond d’écran éventuel ;</div>
+</li>
+<li class="level2"><div class="li"> <strong>10_linux</strong> : contient le script de lancement du système sur lequel on est ;</div>
+</li>
+<li class="level2"><div class="li"> <strong>20_memtest86+</strong> : script permettant de générer les entrées memtest ;</div>
+</li>
+<li class="level2"><div class="li"> <strong>20_linux_xen</strong> <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /></div>
+</li>
+<li class="level2"><div class="li"> <strong>30_os-prober</strong> : contient le script de recherche des autres systèmes installés ;</div>
+</li>
+<li class="level2"><div class="li"> <strong>30_uefi-firmware</strong> <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /></div>
+</li>
+<li class="level2"><div class="li"> <strong>40_custom</strong> : configuration personnelle ; c&#039;est là qu’on pourra paramétrer manuellement le lancement des systèmes d’exploitation;</div>
+</li>
+<li class="level2"><div class="li"> <strong>41_custom</strong> <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /></div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+Ces fichiers sont traités dans l’ordre numérique (00_, puis 05_, puis 10_, etc.).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Liste des fichiers utilisés pour la configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7648-9077" /><input type="submit" value="Modifier" class="button" title="Liste des fichiers utilisés pour la configuration" /></div></form></div>
+<h3 class="sectionedit13" id="configurationreconfiguration_automatisee_du_menu_grub">Configuration/reconfiguration automatisée du menu GRUB</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteclassic">Si vous avez démarré sur la partition qui contient le grub.cfg à mettre à jour, faites directement la commande ci-dessous.<br/>
+
+Sinon, référez-vous au paragraphe <a href="grub#configurationreconfiguration_automatisee_a_partir_du_live_cd" title="grub-pc ↵" class="wikilink1">Configuration/reconfiguration automatisée à partir du live CD</a> dans les cas particuliers.
+</div></p>
+</p>
+<pre class="code">sudo update-grub</pre>
+
+<p>
+Cette <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a> saisie dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> lit le contenu de ces fichiers un à un :
+</p>
+<ol>
+<li class="level1"><div class="li"> /etc/default/grub ;</div>
+</li>
+<li class="level1"><div class="li"> l’ensemble des fichiers contenus à la racine du dossier /etc/grub.d/.</div>
+</li>
+</ol>
+
+<p>
+La lecture de ces fichiers permet de générer automatiquement un nouveau fichier grub.cfg.
+</p>
+
+<p>
+<p><div class="noteclassic"><strong>sudo grub-mkconfig -o /boot/grub/grub.cfg</strong> et <strong>update-grub</strong> font exactement la même chose. Toutes les commandes de mise à jour de la config de grub-pc seront données avec update-grub car plus simple à mémoriser.<br/>
+
+<strong>sudo grub-mkconfig</strong> (seul) vous permettra de visualiser dans votre terminal ce que <strong>pourrait être</strong> le contenu du fichier grub.cfg (utile pour les tests car les changements ne sont pas encore enregistrés).
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Configuration/reconfiguration automatisée du menu GRUB] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9078-10202" /><input type="submit" value="Modifier" class="button" title="Configuration/reconfiguration automatisée du menu GRUB" /></div></form></div>
+<h3 class="sectionedit14" id="configuration_manuelle">Configuration manuelle</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteimportant">Avant de commencer, il est souhaitable :
+</p>
+<ul>
+<li class="level1"><div class="li"> d’avoir un fichier <strong>/boot/grub/grub.cfg</strong> à jour en lançant dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> la <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a> <em>update-grub</em> (voir plus haut) ;</div>
+</li>
+<li class="level1"><div class="li"> d’en garder une <a href="tutoriel/comment_sauver_et_restaurer_un_fichier" class="wikilink1" title="tutoriel:comment_sauver_et_restaurer_un_fichier">sauvegarde</a> (ex. : <em>sudo cp /boot/grub/grub.cfg /boot/grub/grub.cfg.autogénéré</em>) ;</div>
+</li>
+<li class="level1"><div class="li"> de ne pas chercher à le modifier directement (sera écrasé à un moment ou à un autre).</div>
+</li>
+<li class="level1"><div class="li"> de prévoir de modifier le grub à partir du premier <abbr title="Operating System">OS</abbr> installé autrement les modifications ne seront pas prises en compte.</div>
+</li>
+</ul>
+
+<p>
+De même, aucun script de configuration présent dans <strong>/etc/grub.d/</strong> ne doit être effacé.<br/>
+Il est préférable de les déplacer dans un dossier dormant créé pour cela (ex. : <em>sudo mkdir /etc/grub.d/zz</em>).
+
+</div></p>
+</p>
+
+</div>
+
+<h4 id="etcdefaultgruboptions_par_defaut">/etc/default/grub : options par défaut</h4>
+<div class="level4">
+
+<p>
+<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Modifiez</a> avec les <a href="sudo" class="wikilink1" title="sudo">droits d’administration</a> le fichier des valeurs par défaut de GRUB, <strong>/etc/default/grub</strong>.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>GRUB_DEFAULT=0</strong> correspond au menu qui sera sélectionné par défaut (→ <strong><a href="grub#exempleos_selectionne_par_defaut" title="grub-pc ↵" class="wikilink1">exemple</a></strong>).</div>
+</li>
+<li class="level1"><div class="li"> <strong>#GRUB_HIDDEN_TIMEOUT=0</strong> : avec le <a href="http://fr.wikipedia.org/wiki/wiki" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/wiki">croisillon</a> « # », le menu de grub sera visible.<br/>
+Sans le « # », le menu de grub sera invisible ; c&#039;est utile si on n’a qu’un seul système sur le disque ou si grub est lancé via <a href="grub#chainer_un_autre_menu_d_amorcage" title="grub-pc ↵" class="wikilink1">un autre gestionnaire d’amorçage</a>.<br/>
+Le nombre fixe, en secondes, la durée permettant d’appuyer sur les touches <strong>Échap</strong> ou majuscule (<strong>Shift</strong>) pour faire apparaître le menu invisible (→ <strong><a href="grub#cacher_le_menu" title="grub-pc ↵" class="wikilink1">exemple</a></strong>).</div>
+</li>
+<li class="level1"><div class="li"> <strong>GRUB_HIDDEN_TIMEOUT_QUIET=false</strong> De pair avec ‘GRUB_HIDDEN_TIMEOUT’, positionner à ‘true’ afin de supprimer l&#039;affichage du <em class="u">décompte</em> en attendant qu&#039;une touche soit pressée pendant l&#039;affichage du menu.</div>
+</li>
+<li class="level1"><div class="li"> <strong>GRUB_TIMEOUT=10</strong> est la durée en secondes de l’affichage du menu avant de se lancer sur le menu sélectionné par défaut. (si vous modifiez cette valeur et qu’elle n’est pas prise en compte après un <em>update-grub</em>, il vous faudra peut-être enlever le <a href="http://fr.wikipedia.org/wiki/wiki" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/wiki">croisillon</a> « # » devant GRUB_HIDDEN_TIMEOUT). Mettre cette valeur à <strong>-1</strong> provoquera l’affichage du menu jusqu’à ce que l’utilisateur valide un choix dans la liste proposée.</div>
+</li>
+<li class="level1"><div class="li"> <strong>GRUB_DISTRIBUTOR=&quot;&quot;</strong> est la ligne qui définit la syntaxe des titres du menu (→ <strong><a href="grub#exempletitres_du_menu" title="grub-pc ↵" class="wikilink1">exemple</a></strong>)</div>
+</li>
+<li class="level1"><div class="li"> <strong>GRUB_CMDLINE_LINUX_DEFAULT=&quot;&quot;</strong> et <strong>GRUB_CMDLINE_LINUX=&quot;&quot;</strong> sont des comportements prédéfinis qui affecteront le lancement des systèmes d’exploitation détectés automatiquement.</div>
+</li>
+<li class="level1"><div class="li"> <strong>#GRUB_GFXMODE=640x480</strong> (→ <strong><a href="grub#exempleresolution_d_affichage" title="grub-pc ↵" class="wikilink1">exemple</a></strong>).</div>
+</li>
+<li class="level1"><div class="li"> Depuis <a href="lucid" class="wikilink1" title="lucid">Lucid</a> : <strong>#GRUB_INIT_TUNE=&quot;480 440 1&quot;</strong> permet d’avoir un bip à l’affichage d’un menu Grub si on enlève le <a href="http://fr.wikipedia.org/wiki/wiki" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/wiki">croisillon</a> « # ».</div>
+</li>
+<li class="level1"><div class="li"> <strong>GRUB_GFXPAYLOAD=1024x768</strong> : à ajouter éventuellement. Définit la résolution d’affichage de l’écran de chargement (splash screen tel que <a href="plymouth#augmenter_la_resolution" class="wikilink1" title="plymouth">Plymouth</a> par exemple).</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="un_bon_vieux_menu_a_plat">Un bon vieux menu à plat</h4>
+<div class="level4">
+
+<p>
+Si le principe du sous-menu vous agace, vous pouvez le désactiver en <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">ouvrant</a> avec les <a href="sudo" class="wikilink1" title="sudo">droits d’administration</a> le fichier <strong>/etc/default/grub</strong> pour y ajouter la ligne
+</p>
+<pre class="file">GRUB_DISABLE_SUBMENU=y</pre>
+
+<p>
+Sauvegardez, puis dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a>,
+</p>
+<pre class="code">sudo update-grub</pre>
+
+<p>
+et voilà.
+</p>
+
+</div>
+
+<h4 id="enlever_un_certain_nombre_de_noyaux">Enlever un certain nombre de noyaux</h4>
+<div class="level4">
+
+<p>
+On peut supprimer les <a href="kernel" class="wikilink1" title="kernel">noyaux</a> les plus anciens. <strong>Il est conseillé de laisser les deux derniers noyaux</strong>. Se référer à la documentation <a href="kernel#suppression_des_anciens_noyaux" class="wikilink1" title="kernel">Nettoyer Ubuntu</a>.
+</p>
+
+</div>
+
+<h4 id="desactiver_quelques_automatismes">Désactiver quelques automatismes</h4>
+<div class="level4">
+
+<p>
+Si vous avez créé le dossier <em>zz</em> dans <strong>/etc/grub.d/</strong> (voir note importante plus haut), vous pourrez y déplacer les fichiers :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>20_memtest86+</strong> pour ne plus faire apparaître les tests de mémoire dans le menu de démarrage ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>30_os-prober</strong> pour ne plus déclencher la détection automatique des autres systèmes installés.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/gestionnaire_de_fichiers" class="wikilink1" title="gestionnaire_de_fichiers">Ouvrez le dossier</a> <strong>/etc/grub.d</strong> avec les <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>, par exemple en saisissant dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> :
+</p>
+<pre class="code">sudo xdg-open /etc/grub.d</pre>
+
+<p>
+puis déplacez les fichiers à la souris ou par couper/coller.
+</p>
+
+<p>
+<p><div class="noteimportant">Attention : <strong>si vous voulez cacher GRUB</strong> avec les options <em>GRUB_HIDDEN_TIMEOUT</em> et <em>GRUB_HIDDEN_TIMEOUT_QUIET</em> dans le fichier <strong>/etc/default/grub</strong>, <em>30_os-prober</em> étant le script qui en tient compte, <strong>laissez-le actif et préférez plutôt l’option GRUB_DISABLE_<abbr title="Operating System">OS</abbr>_PROBER=true</strong> dans le fichier <strong>/etc/default/grub</strong>.
+</p>
+
+<p>
+IMPORTANT : notez toutefois que si vous faites ainsi, <em class="u">les autres O.S. ne seront plus détectés et vous ne les aurez plus dans la liste</em>. Pour avoir uniquement le compte à rebours tout en conservant les autres O.S. sur la liste, voir paragraphe plus bas.
+</div></p>
+</p>
+
+</div>
+
+<h5 id="autres_methodes">Autres méthodes </h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> plutôt que de déplacer ces fichiers, on peut aussi désactiver leurs droits d’exécution ; toujours via le <a href="http://doc.ubuntu-fr.org/gestionnaire_de_fichiers" class="wikilink1" title="gestionnaire_de_fichiers">gestionnaire de fichiers</a> :</div>
+<ol>
+<li class="level2"><div class="li"> clic droit sur l’un des fichiers pour accéder à ses <em>Propriétés</em> ;</div>
+</li>
+<li class="level2"><div class="li"> dans l’onglet <em>Permissions</em>, décochez la case <em>Autoriser l’exécution…</em> ;</div>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> de même, il est possible d’&#039;ajouter cette ligne au fichier de configuration <strong>/etc/default/grub</strong> :<pre class="file">GRUB_DISABLE_OS_PROBER=true</pre>
+</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="parametres_personnalises">Paramètres personnalisés</h4>
+<div class="level4">
+
+<p>
+<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Éditez le fichier</a> <strong>/boot/grub/grub.cfg</strong> autogénéré plus haut et le fichier <strong>/etc/grub.d/40_custom</strong>. Copier depuis le grub.cfg (ou une de ses sauvegardes) ce que vous trouverez entre 
+</p>
+<pre class="file">### BEGIN /etc/grub.d/30_os-prober ###</pre>
+
+<p>
+ et 
+</p>
+<pre class="file">### END /etc/grub.d/30_os-prober ###</pre>
+
+<p>
+ et coller le dans 40_custom. Modifiez ensuite les paramètres à votre guise.
+</p>
+
+<p>
+Vous pouvez aussi créer un autre fichier personnalisé avec une numérotation qui le lance avant tous les autres par exemple :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Créez le fichier</a> <strong>/etc/grub.d/07_custom</strong> ;</div>
+</li>
+<li class="level2"><div class="li"> après son enregistrement, vous le rendrez exécutable : <pre class="code">sudo chmod +x /etc/grub.d/07_custom</pre>
+</div>
+</li>
+</ul>
+
+<p>
+Pour appliquer cette nouvelle configuration lancez un :
+</p>
+<pre class="code">sudo update-grub</pre>
+
+<p>
+Puis, relancez votre machine.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Configuration manuelle] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10203-16771" /><input type="submit" value="Modifier" class="button" title="Configuration manuelle" /></div></form></div>
+<h2 class="sectionedit15" id="exemples_et_cas_particuliers">Exemples et cas particuliers</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Exemples et cas particuliers] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="16772-16812" /><input type="submit" value="Modifier" class="button" title="Exemples et cas particuliers" /></div></form></div>
+<h3 class="sectionedit16" id="configurationreconfiguration_automatisee_a_partir_du_live_cd">Configuration/reconfiguration automatisée à partir du live CD</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteimportant">Impose l’emploi d&#039;un support Live 32 bits pour un grub 32 bits à réparer et d’un CD d’une version 64 bits pour réparer une installation 64 bits…
+</div></p>
+</p>
+
+<p>
+Si vous ne pouvez pas démarrer sur la partition qui contient le fichier grub.cfg à mettre à jour, vous pouvez lancer la <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a> <strong>update-grub</strong> sur cette partition après avoir démarré depuis un live-cd ou une autre partition contenant un Ubuntu en état de marche, et en effectuant les opérations suivantes.
+</p>
+
+<p>
+En prenant comme hypothèse que le fichier grub.cfg à mettre à jour se trouve sur la partition sdb1 qui n’est pas déjà montée et qui est normalement montée sur / (donc /boot n’est pas sur une partition séparée).
+</p>
+<pre class="code">sudo mkdir /media/sdb1
+sudo mount /dev/sdb1 /media/sdb1
+cd /media/sdb1
+sudo mount --bind /dev dev
+sudo mount --bind /sys sys
+sudo mount --bind /proc proc
+sudo chroot .</pre>
+
+<p>
+Par contre, si /boot est sur une partition à part (/dev/sdb2 par exemple) et /dev/sdb1 est normalement montée sur /.
+</p>
+<pre class="code">sudo mkdir /media/sdb1
+sudo mount /dev/sdb1 /media/sdb1
+cd /media/sdb1
+sudo mount --bind /dev dev
+sudo mount --bind /sys sys
+sudo mount --bind /proc proc
+sudo chroot .
+sudo mount /dev/sdb2 /boot</pre>
+
+<p>
+À partir de là vous êtes positionnés quasiment comme si vous aviez démarré sur sdb1 qui est devenu votre racine, et vous êtes en root, donc pas besoin de sudo devant les commandes. 
+Ensuite vous pouvez faire votre <em>update-grub</em> normalement :
+</p>
+<pre class="code">sudo update-grub</pre>
+
+<p>
+Pour ré-installer GRUB sur le <a href="http://doc.ubuntu-fr.org/mbr" class="wikilink1" title="mbr">MBR</a> :
+</p>
+<pre class="code">sudo grub-install /dev/sdb</pre>
+
+<p>
+Pour sortir du chroot, demontez /dev/sdb2 si /boot est sur une partition à part,
+</p>
+<pre class="code">sudo umount /dev/sdb2</pre>
+
+<p>
+tapez exit, puis démontez les bind.
+</p>
+<pre class="code">exit
+sudo umount proc
+sudo umount dev
+sudo umount sys
+cd ..
+sudo umount /dev/sdb1</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Configuration/reconfiguration automatisée à partir du live CD] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="16813-18762" /><input type="submit" value="Modifier" class="button" title="Configuration/reconfiguration automatisée à partir du live CD" /></div></form></div>
+<h3 class="sectionedit17" id="cacher_le_menu">Cacher le menu</h3>
+<div class="level3">
+
+<p>
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> suppression car déjà expliqué ici: <a href="grub#etcdefaultgruboptions_par_defaut" title="grub-pc ↵" class="wikilink1">/etc/default/grub : options par défaut</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Cacher le menu] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18763-18922" /><input type="submit" value="Modifier" class="button" title="Cacher le menu" /></div></form></div>
+<h3 class="sectionedit18" id="chainer_un_autre_menu_d_amorcage">Chaîner un autre menu d’amorçage</h3>
+<div class="level3">
+
+<p>
+<strong>chainloader</strong> vous permettra de lancer un autre gestionnaire d’amorçage présent sur le premier secteur des partitions concernées : <strong>Windows, Lilo…</strong> (ne fonctionne pas tel quel vers Grub2). Voici un exemple pour sda7 ajouté sur 40_custom (voir plus haut) :
+</p>
+<pre class="file">menuentry &#039;Bootloader Lilo sur sda7&#039; {
+set root=(hd0,7)
+chainloader +1
+}</pre>
+
+<p>
+<strong>Pour qu’il fonctionne vers grub-legacy</strong>, il faudra que celui-ci soit installé sur le <strong>premier secteur d’une partition</strong> et non le MBR (si ce n’est pas le cas, on lance le système qui a ce grub-legacy et on lance un <em>sudo grub-install /dev/sda7</em> par exemple). <strong> Note</strong> : sur Squeeze le 26 mars 2012, pour que cela fonctionne, il faut utiliser la nomenclature suivante :
+set root (hd0,<strong>msdos7</strong>) au lieu de &quot;set root (hd0,<strong>7</strong>).
+</p>
+
+<p>
+<strong>Pour chaîner vers un autre Grub2</strong>, on procédera ainsi :
+</p>
+<pre class="file">menuentry &#039;Grub 2 sur /dev/sda7&#039; {
+set root=(hd0,7)
+chainloader +1
+}</pre>
+
+<p>
+Si ça n’a pas été fait lors de l’installation de l’OS qui se trouve sur sda7, il faut installer Grub dans le secteur de boot de la partition sda7. Pour réaliser cela dans le cas d’une partition racine Ubuntu 10.10 sur sda7 par exemple, il faut forcer (option –force) :
+</p>
+<pre class="code">sudo grub-install --force /dev/sda7</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Chaîner un autre menu d’amorçage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18923-20255" /><input type="submit" value="Modifier" class="button" title="Chaîner un autre menu d’amorçage" /></div></form></div>
+<h3 class="sectionedit19" id="exempletitres_du_menu">Exemple : Titres du menu</h3>
+<div class="level3">
+
+<p>
+Voici comment s’affichent par défaut les lignes du menu grub : « Ubuntu, Linux 2.6.31-14-generic ».
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour modifier la partie avant la virgule de celui-ci, <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditez le fichier</a> /etc/default/grub et choisissez parmi les possibilités suivantes :</div>
+</li>
+</ul>
+<pre class="file">GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`                   # donne : Ubuntu, Linux 3.13…
+#GRUB_DISTRIBUTOR=`lsb_release -d -s 2&gt; /dev/null || echo Debian`                  # donne : Ubuntu 14.04 LTS, Linux 3.13…
+#GRUB_DISTRIBUTOR=`echo -n $(lsb_release -cds 2&gt; /dev/null || echo Debian)`        # donne : Ubuntu 14.04 LTS lucid, Linux 3.13…
+#GRUB_DISTRIBUTOR=`echo -n TOTO $(lsb_release -r -s 2&gt; /dev/null || echo Debian)`  # donne : TOTO 14.04 LTS, Linux 3.13…
+#GRUB_DISTRIBUTOR=`echo -n TITRE PERSONNALISÉ`                                     # donne : TITRE PERSONNALISÉ, Linux 3.13…</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Exemple : Titres du menu] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="20256-21238" /><input type="submit" value="Modifier" class="button" title="Exemple : Titres du menu" /></div></form></div>
+<h3 class="sectionedit20" id="exempleos_selectionne_par_defaut">Exemple : OS sélectionné par défaut</h3>
+<div class="level3">
+
+<p>
+Pour changer le système d&#039;exploitation sur lequel grub démarre par défaut:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez</a> avec les <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> le fichier <em>/etc/default/grub</em> et choisissez parmi les possibilités suivantes pour la variable <strong>GRUB_DEFAULT=</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> un chiffre (0 = le premier, 1 = le deuxième, etc.) ;</div>
+</li>
+<li class="level1"><div class="li"> saved (sans guillemet) pour ce qui a été sélectionné lors du précédent lancement (nécessite de rajouter GRUB_SAVEDEFAULT=true) ;</div>
+</li>
+<li class="level1"><div class="li"> ou le titre exact d’un menu mis entre <a href="http://fr.wikipedia.org/wiki/guillemet" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/guillemet">guillemets droits</a> (par exemple : &quot;Microsoft Windows 2000 Professionnel (on /dev/sda1)&quot;)</div>
+</li>
+<li class="level1"><div class="li"> ou <strong>sudo mv /etc/grub.d/30_os-prober /etc/grub.d/06_os-prober</strong> (pour mettre windows par défault)<br/>
+ne pas oublier, pour que la modification soit prise en compte: <pre class="code">sudo update-grub</pre>
+</div>
+</li>
+</ul>
+
+<p>
+<p><div class="notetip">Pour obtenir les titres exacts des menus :
+</p>
+<pre class="code">grep menuentry /boot/grub/grub.cfg</pre>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+<p><div class="notewarning">Sous Ubuntu 12-04 et suivants ainsi que sous Grub 1.99, on peut constater (<em>cat /boot/grub/grub.cfg</em>) des sous-menus (en particulier le sous-menu <em>Previous Linux versions</em>) ce qui remet en cause les indications précédentes et il faut spécifier plus précisément dans <em>/etc/default/grub</em> le chemin complet « Submenu N&gt;Submenu X&gt;Menu Entry Y » pour bien démarrer sur la bonne entrée. Voir <a href="http://www.gnu.org/software/grub/manual/html_node/default.html" class="urlextern" title="http://www.gnu.org/software/grub/manual/html_node/default.html"  rel="nofollow">ici</a>.
+Par exemple si on veut booter sur la première entrée des anciens noyaux on peut modifier dans <em>/etc/default/grub</em> la ligne comme suit : GRUB_DEFAULT=&quot;Previous Linux versions&gt;0&quot; ; 0 étant la première ligne. C’est utile quand on utilise des noyaux sécifiques pour Xen par exemple, noyaux qui vont tous se ranger proprement dans un sous-menu spécifique.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Exemple : OS sélectionné par défaut] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21239-23112" /><input type="submit" value="Modifier" class="button" title="Exemple : OS sélectionné par défaut" /></div></form></div>
+<h3 class="sectionedit21" id="exempleresolution_d_affichage">Exemple : Résolution d&#039;affichage</h3>
+<div class="level3">
+
+<p>
+Ce qui suit décrit la procédure pour obtenir une meilleur résolution au démarrage et à l&#039;affichage du splashscreen.
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour avoir la liste de toutes les résolutions supportées pendant le démarrage : taper « c » quand vous êtes dans le menu du boot pour entrer en mode console. Puis :</div>
+</li>
+</ul>
+<pre class="code">vbeinfo</pre>
+
+<p>
+La liste des résolutions supportées par Grub s&#039;affiche. Notez celle qui est la plus haute (par exemple: 1280x1024x32). Elle se trouve généralement tout en bas.
+Puis, appuyez sur la touche <strong>Echap (Esc)</strong> pour revenir au menu de Grub et démarrer votre ordinateur.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> /etc/default/grub.</div>
+</li>
+</ul>
+
+<p>
+Ligne à éditer :
+</p>
+<pre class="file"># GRUB_GFXMODE=640x480</pre>
+
+<p>
+<strong>Enlever le <a href="http://fr.wikipedia.org/wiki/Croisillon_(signe)" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Croisillon_(signe)">Croisillon</a> « # » devant</strong> « GRUB_GFXMODE= » et définir une résolution d’écran en fonction de votre matériel. Cela nous donnera notamment plus de liberté pour configurer un fond d’écran (voir plus bas).
+</p>
+
+<p>
+Exemples :
+</p>
+<pre class="file">GRUB_GFXMODE=1280x1024,1024x768x32</pre>
+
+<p>
+La deuxième valeur sera prise en compte si la première n’est pas supportée par votre matériel. Celle-ci retombera à 640x480 si aucune des deux ne convient. Le x32 est la profondeur de codage des couleurs en bits (attention pas d’espace après la virgule sinon il y aura un message d’erreur lors de l’update-grub).
+</p>
+
+<p>
+Pour prendre en compte le changement :
+</p>
+<pre class="code">sudo update-grub</pre>
+
+<p>
+Si la résolution n&#039;est toujours pas bonne, ou si vous n&#039;avez carrement pas d&#039;affichage de l&#039;écran de démarrage (avec le pilote proporiétaire nvidia et Ati par exemple) essayer avec d&#039;ajouter ceci:
+</p>
+<pre class="file">GRUB_GFXPAYLOAD_LINUX=auto</pre>
+
+<p>
+ ou
+</p>
+<pre class="file">GRUB_GFXPAYLOAD=1280x1024</pre>
+
+<p>
+ en adaptant la résolution à ce que vous avait répondu la commande <code>vbeinfo</code>
+Après la ligne :
+</p>
+<pre class="file">GRUB_GFXMODE=1280x1024,1024x768x32</pre>
+
+<p>
+En dernier recours modifier cette ligne :
+</p>
+<pre class="file">GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;</pre>
+
+<p>
+ par:
+</p>
+<pre class="file">GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=uvesafb:mode_option=1280x1024-24,mtrr=3,scroll=ywrap&quot;</pre>
+
+<p>
+N&#039;oubliez pas le :
+</p>
+<pre class="code">sudo update-grub</pre>
+
+<p>
+Si vous ne pouvez plus démarrer Ubuntu suite à cette manipulation (écran restant indéfiniment noir ou sur l&#039;arrière-plan de grub), redémarrez votre ordinateur et lors de l&#039;affichage du menu de grub, appuyez sur la touche c de votre clavier. Lorsque l&#039;invite de commande de grub s&#039;affiche, tapez la commande suivante :
+</p>
+<pre class="code">set gfxpayload=</pre>
+
+<p>
+puis appuyez sur la touche Entrée. Vous pouvez alors revenir au menu de grub en appuyant sur Échap et démarrer votre ordinateur normalement.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Exemple : Résolution d'affichage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="23113-25811" /><input type="submit" value="Modifier" class="button" title="Exemple : Résolution d'affichage" /></div></form></div>
+<h3 class="sectionedit22" id="exempleancien_parametre_vga_xxx">Exemple : ancien paramètre vga=xxx</h3>
+<div class="level3">
+
+<p>
+Dans les options de boot d’un Linux, on trouve parfois <strong>le paramètre « vga=788 »</strong> pour activer le framebuffer avec une définition d’écran donné. Dans Grub2, il faut utiliser <strong>une ligne à part « set gfxpayload=800x600x16 »</strong> à la place. Pour les autres résolutions, consultez le tableau en lien suivant :
+<strong><a href="http://doc.ubuntu-fr.org/installation/definition_demarrage#tableau_des_codes_pour_le_parametre_vga" class="wikilink1" title="installation:definition_demarrage">Tableau de correspondance entre les codes vga et les résolutions d&#039;écran souhaitées.</a></strong>
+</p>
+
+<p>
+Donc, au lieu de :
+</p>
+<pre class="file">linux /boot/vmlinuz […] vga=788 […]</pre>
+
+<p>
+on aura
+</p>
+<pre class="file">set gfxpayload=800x600x16, 800x600
+linux /boot/vmlinuz […]</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Exemple : ancien paramètre vga=xxx] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="25812-26521" /><input type="submit" value="Modifier" class="button" title="Exemple : ancien paramètre vga=xxx" /></div></form></div>
+<h3 class="sectionedit23" id="exemplefond_d_ecran">Exemple : Fond d&#039;écran</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="pre-requis1">Pré-requis</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Avoir installé le paquet</a><strong> <a href="apt://imagemagick" class="interwiki iw_apt" title="apt://imagemagick">ImageMagick</a></strong> est fortement recommandé.</div>
+</li>
+<li class="level1"><div class="li"> Pour cet exemple :</div>
+<ul>
+<li class="level2"><div class="li"> on fixera une résolution de : <strong>GRUB_GFXMODE=800x600x32,800x600</strong> (voir plus haut) ;</div>
+</li>
+<li class="level2"><div class="li"> on stockera l’image de fond dans le dossier /boot/grub/ car cela simplifie beaucoup les choses pour certains cas particuliers (pour une partition /boot ou /home séparée, pour les partitions LVM, pour une mise à jour en mode recovery/récupération…) et il fait partie des dossiers par défaut inclus dans les scripts de Grub.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h4 id="configuration_deetcgrubd05_debian_theme">Configuration de /etc/grub.d/05_debian_theme</h4>
+<div class="level4">
+
+<p>
+Suivez ces instructions:
+</p>
+<ul>
+<li class="level1"><div class="li"> copier une image (*.jpg, *.png ou *.tga) dans le répertoire /boot/grub (utiliser les <a href="sudo" class="wikilink1" title="sudo">droits superutilisateur</a>) ;</div>
+</li>
+<li class="level1"><div class="li"> dans une console faire un <em>sudo update-grub</em> ;</div>
+</li>
+<li class="level1"><div class="li"> redémarrer et votre nouveau fond d’écran est là (première image rencontrée par ordre alphabétique dans le dossier /boot/grub).</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="images_au_bon_format">Images au bon format</h4>
+<div class="level4">
+
+<p>
+L’image choisie comme fond d’écran peut ne pas fonctionner du premier coup (rapport 16/10ème pour un écran 4/3, provenance macintosh…). Pour la rendre lisible pour Grub, on pourra la convertir, par exemple, comme suit :
+</p>
+<pre class="code">convert $HOME/Images/image_exemple.jpg -resize 1024x768! -depth 16 $HOME/Images/image_exemple_au_bon_format.jpg</pre>
+
+</div>
+
+<h4 id="utilisation">Utilisation</h4>
+<div class="level4">
+
+<p>
+Pour modifier l’image de fond, il suffira de faire une copie de celle-ci avec les <a href="sudo" class="wikilink1" title="sudo">droits superutilisateur</a> vers le dossier grub. Par exemple :
+</p>
+<pre class="code">sudo cp $HOME/Images/image_exemple.jpg /boot/grub/00_image_de_fond.jpg</pre>
+
+<p>
+Lors de la première utilisation, ne pas oublier de lancer un :
+</p>
+<pre class="code">sudo update-grub</pre>
+
+</div>
+
+<h4 id="script_pour_automatiser_les_modifications_de_couleurs_et_image_de_fond_d_ecran">Script pour automatiser les modifications de couleurs et image de fond d&#039;écran</h4>
+<div class="level4">
+
+<p>
+Si les modifications manuelles de /boot/grub/grub.cfg sont déconseillées, il est toutefois possible
+de les faire réaliser par un programme. Vous trouverez <a href="http://patchgrubtheme.poeulfs.org/" class="urlextern" title="http://patchgrubtheme.poeulfs.org/"  rel="nofollow">à cette adresse</a> un script pour changer de fond d’écran de GRUB − par exemple au hasard et à chaque redémarrage −
+dans une sélection de thèmes définis dans un fichier de configuration.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Exemple : Fond d'écran] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="26522-28805" /><input type="submit" value="Modifier" class="button" title="Exemple : Fond d'écran" /></div></form></div>
+<h3 class="sectionedit24" id="tutoriel_pour_demarrer_une_image_iso">Tutoriel pour démarrer une image iso</h3>
+<div class="level3">
+
+<p>
+Dans ce tutoriel vous aurez des exemples de menus « prêts à l&#039;emploi » pour lancer les livecd Ubuntu ou autres :
+<strong><a href="tutoriel/grub2_lancer_des_images_iso" class="wikilink1" title="tutoriel:grub2_lancer_des_images_iso">Lancer des images iso directement depuis GRUB 2</a></strong>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Tutoriel pour démarrer une image iso] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="28806-29072" /><input type="submit" value="Modifier" class="button" title="Tutoriel pour démarrer une image iso" /></div></form></div>
+<h3 class="sectionedit25" id="lancement_depuis_grub-legacy">Lancement depuis Grub-Legacy</h3>
+<div class="level3">
+
+<p>
+En plaçant ces lignes (avec l’UUID correspondant à la partition souhaitée) dans le menu.lst d’un Grub-Legacy, on pourra lancer un Grub-pc derrière un grub-legacy.
+</p>
+<pre class="file">title		Trusty via GRUB-pc
+uuid		70e29811-71a3-4553-a16c-1cce2ff334ed
+kernel		/boot/grub/i386-pc/core.img</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Lancement depuis Grub-Legacy] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="29073-29401" /><input type="submit" value="Modifier" class="button" title="Lancement depuis Grub-Legacy" /></div></form></div>
+<h3 class="sectionedit26" id="rechercher_d_autres_os_presents_sur_la_machine_et_les_rajouter_a_grub_automatiquement">Rechercher d’autres OS présents sur la machine et les rajouter à GRUB automatiquement</h3>
+<div class="level3">
+
+<p>
+Si le script /etc/grub.d/30_os-prober (voir plus haut) n’a pas trouvé les autres systèmes présents sur la machine, il est possible d’utiliser le logiciel <abbr title="Operating System">OS</abbr>-prober pour faire la même chose :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt://os-prober" class="interwiki iw_apt" title="apt://os-prober">os-prober</a></strong> ;</div>
+</li>
+<li class="level1"><div class="li"> puis saisissez dans une <a href="terminal" class="wikilink1" title="terminal">console</a> les commandes suivantes :</div>
+</li>
+</ul>
+<pre class="code">sudo os-prober
+sudo update-grub</pre>
+
+<p>
+<p><div class="noteimportant">l semblerait que os-prober ait encore quelques problèmes avec le RAID (Voir <a href="http://lists.gnu.org/archive/html/bug-grub/2011-02/msg00030.html" class="urlextern" title="http://lists.gnu.org/archive/html/bug-grub/2011-02/msg00030.html"  rel="nofollow">ici</a>) et ne fonctionne pas dans ce cas-là.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Rechercher d’autres OS présents sur la machine et les rajouter à GRUB automatiquement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="29402-30142" /><input type="submit" value="Modifier" class="button" title="Rechercher d’autres OS présents sur la machine et les rajouter à GRUB automatiquement" /></div></form></div>
+<h3 class="sectionedit27" id="ajouter_du_rootdelay_au_demarrage">Ajouter du rootdelay au démarrage</h3>
+<div class="level3">
+
+<p>
+Si vous tombez sur une busybox au démarrage, il est possible que le système n’ait pas attendu assez longtemps pour que les disques durs s’initialisent. Vous pouvez continuer le démarrage par un simple ctrl+d dans la busybox, si ça marche je vous conseil d’ajouter du rootdelay dans grub.
+</p>
+
+<p>
+Pour cela <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditer</a> /etc/default/grub pour changer 
+</p>
+<pre class="file">GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;</pre>
+
+<p>
+en
+</p>
+<pre class="file">GRUB_CMDLINE_LINUX_DEFAULT=&quot;rootdelay=40 quiet splash&quot;</pre>
+
+<p>
+Le temps à attendre est à estimer. Une fois la ligne éditée il faut mettre à jour le fichier de config de grub :
+</p>
+<pre class="code">sudo update-grub</pre>
+
+<p>
+Maintenant à chaque mise à jour du kernel le rootdelay sera inséré.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Ajouter du rootdelay au démarrage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="30143-30928" /><input type="submit" value="Modifier" class="button" title="Ajouter du rootdelay au démarrage" /></div></form></div>
+<h2 class="sectionedit28" id="problemes_connus">Problèmes connus</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Problèmes connus] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="30929-30958" /><input type="submit" value="Modifier" class="button" title="Problèmes connus" /></div></form></div>
+<h3 class="sectionedit29" id="grub_n_apparait_pas_au_demarrage">Grub n&#039;apparaît pas au démarrage</h3>
+<div class="level3">
+
+<p>
+En cas de double boot, le menu de grub doit s’afficher par défaut, si l’écran de l’ordinateur reste noir au démarrage avec un message d’erreur de l’écran, il faut changer une option dans grub pour obliger un affichage non graphique.
+Ouvrir le terminal, écrire
+</p>
+<pre class="code">sudo xdg-open /etc/default/grub</pre>
+
+<p>
+Enlever le <a href="http://fr.wikipedia.org/wiki/wiki" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/wiki">croisillon</a> « # » au début de la ligne
+</p>
+<pre class="file">#GRUB_TERMINAL=console</pre>
+
+<p>
+Enregistrer le fichier et quitter l’éditeur de texte puis dans le terminal :
+</p>
+<pre class="code">sudo update-grub</pre>
+
+<p>
+Redémarrer le pc.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Grub n'apparaît pas au démarrage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="30959-31559" /><input type="submit" value="Modifier" class="button" title="Grub n'apparaît pas au démarrage" /></div></form></div>
+<h3 class="sectionedit30" id="grubsh_shell_grub_2_a_l_amorcage">grub:sh (Shell GRUB 2 à l&#039;amorçage)</h3>
+<div class="level3">
+
+<p>
+Vous démarrez votre ordinateur et au lieu de charger directement Ubuntu ou afficher un menu vous permettant de choisir un système d’exploitation à charger, votre écran vous montre une ligne <strong>grub:sh&gt;</strong>. Ce que vous obtenez ici est un <em>shell</em>, une interface en ligne de commande qui permet de dépanner le chargeur d’amorçage GRUB 2. Si vous obtenez, de manière non-intentionnelle, une telle invite de commande, il y a de fortes chances que le fichier de menu de GRUB 2 soit corrompu. L’invite de commande vous permet d’exécuter des commandes, malgré les erreurs des fichiers de menu, afin de tout de même charger Ubuntu.
+</p>
+
+<p>
+Pour charger tout de même Ubuntu, entrez la suite de commandes suivante.
+</p>
+<ul>
+<li class="level1"><div class="li"> Faites très attention à la structure et la graphie des commandes. Une espace mal placée ou une lettre majuscule inscrite en minuscule peut rendre la commande inopérante ;</div>
+</li>
+<li class="level1"><div class="li"> Chaque ligne doit être entrée séparément. À la fin de chaque ligne de commande, appuyez sur la touche [Entrée] de votre clavier pour la valider.</div>
+</li>
+</ul>
+
+<p>
+Inscrivez chacune des commandes suivantes sur une seule ligne, après l’invite <strong>grub:sh&gt;</strong> :
+</p>
+<pre class="code">search -f --set=Root /boot/grub/core.img</pre>
+<pre class="code">set root=(${Root})</pre>
+<pre class="code">probe -u (${Root}) --set=UUID</pre>
+<pre class="code">linux /vmlinuz root=UUID=${UUID} ro</pre>
+<pre class="code">initrd /initrd.img</pre>
+<pre class="code">boot</pre>
+
+<p>
+Ceci effectué, Ubuntu se charge. Pour regénérer le menu de GRUB 2, vous exécuterez ensuite la commande suivante dans un terminal :
+</p>
+<pre class="code">sudo update-grub</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_30'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[grub:sh (Shell GRUB 2 à l'amorçage)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="31560-33155" /><input type="submit" value="Modifier" class="button" title="grub:sh (Shell GRUB 2 à l'amorçage)" /></div></form></div>
+<h3 class="sectionedit31" id="error_15passage_difficile_a_grub2">Error 15 : passage difficile à Grub2</h3>
+<div class="level3">
+
+<p>
+Si au boot, ou plutôt au lancement de grub, vous vous retrouvez avec ce message (empêchant tout démarrage du système) :
+</p>
+<pre class="code">GRUB Error 15.</pre>
+
+<p>
+réinstallez GRUB2 comme décrit dans <a href="tutoriel/comment_restaurer_grub" class="wikilink1" title="tutoriel:comment_restaurer_grub">ce tutoriel</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_31'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Error 15 : passage difficile à Grub2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="33156-33449" /><input type="submit" value="Modifier" class="button" title="Error 15 : passage difficile à Grub2" /></div></form></div>
+<h3 class="sectionedit32" id="long_temps_de_chargement">Long temps de chargement</h3>
+<div class="level3">
+
+<p>
+Si au boot, le lancement de grub est long et que le disque dur fait du bruit, vous souffrez probablement du bug <a href="https://bugs.launchpad.net/ubuntu/+source/grub2/+bug/420933" class="urlextern" title="https://bugs.launchpad.net/ubuntu/+source/grub2/+bug/420933"  rel="nofollow">420933</a>.
+Le problème semble être que GRUB2 cherche les uuid de toutes les partitions au démarrage, jusqu’à trouver celle contenant /boot/grub. Cela prend du temps.
+</p>
+
+<p>
+Solution : installer une version plus récente de GRUB, par exemple via les Options avancées de <a href="boot-repair" class="wikilink1" title="boot-repair">Boot-Repair</a>.
+</p>
+
+<p>
+Une autre solution est de modifier le disque de démarrage dans le <abbr title="Basic Input-Output System">BIOS</abbr> pour démarrer sur le disque où se trouve votre Ubuntu.
+Plus de détail dans <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=351117" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=351117"  rel="nofollow">ce sujet du forum</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_32'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Long temps de chargement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="33450-34173" /><input type="submit" value="Modifier" class="button" title="Long temps de chargement" /></div></form></div>
+<h3 class="sectionedit33" id="utilisation_du_clavier_freeze_grub-pc">Utilisation du clavier freeze Grub-PC</h3>
+<div class="level3">
+
+<p>
+<strong>Description</strong> : sur certains portables (Compaq 21xx, HP ZE4600, Packard Bell iGo 3581) le démarrage se déroule bien si on le laisse se faire sans intervention, par contre toute pression sur le clavier (que ce soit pour changer de ligne, configurer le démarrage ou passer le compte à rebours) provoque un blocage complet du PC. Seul un redémarrage « sauvage » permet de démarrer l’ordinateur.
+</p>
+
+<p>
+<strong>Origine</strong> : incompatibilité de GrUB-PC et de la gestion de l’USB par certains <abbr title="Basic Input-Output System">BIOS</abbr> (Pheonix KAM 1.60 ?)
+</p>
+
+<p>
+<strong>Solution</strong> : entrer dans les options de <abbr title="Basic Input-Output System">BIOS</abbr> (presser F2 pendant l&#039;affichage du <abbr title="Basic Input-Output System">BIOS</abbr> sur les Compaq 21xx), et désactiver l’option « Prise en charge <abbr title="Universal Serial Bus">USB</abbr> léguée ». Sauvegarder et redémarrer.
+Le démarrage ne devrait plus bloquer.
+<p><div class="noteclassic">La désactivation de cette option n’a pas d&#039;influence sur l’utilisation des ports <abbr title="Universal Serial Bus">USB</abbr> par la suite.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_33'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Utilisation du clavier freeze Grub-PC] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="34174-35106" /><input type="submit" value="Modifier" class="button" title="Utilisation du clavier freeze Grub-PC" /></div></form></div>
+<h3 class="sectionedit34" id="grub_attend_pour_rien_apres_un_petit_crash_serveur">Grub attend pour rien après un petit crash serveur</h3>
+<div class="level3">
+
+<p>
+Problème gênant quand le dit serveur n’a pas de clavier/écran.
+</p>
+
+<p>
+<strong>Solution</strong> : dans le fichier /etc/default/grub ajoutez :
+</p>
+<pre class="file">GRUB_RECORDFAIL_TIMEOUT=0</pre>
+
+<p>
+Dans le fichier /etc/default/rcS ajoutez pour vérifier les disques automatiquement :
+</p>
+<pre class="file">FSCKFIX=yes</pre>
+
+<p>
+Finissez par le <em>sudo update-grub</em> évidemment.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_34'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Grub attend pour rien après un petit crash serveur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="35107-35503" /><input type="submit" value="Modifier" class="button" title="Grub attend pour rien après un petit crash serveur" /></div></form></div>
+<h3 class="sectionedit35" id="apparition_d_images_au_boot">Apparition d’images au boot</h3>
+<div class="level3">
+
+<p>
+Certains noyaux affichent une image lors du chargement du système (manchot, tux…). Une image est générée par processeur que possède la machine (l’HyperThreading sur les processeurs Intel double ce nombre).
+</p>
+
+<p>
+<strong>Solution</strong> : Éditez le fichier /etc/default/grub et ajoutez « logo.nologo » à la ligne GRUB_CMDLINE_LINUX_DEFAULT.
+</p>
+
+<p>
+Le résultat devrait ressembler à ceci :
+</p>
+<pre class="file">GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash logo.nologo&quot;</pre>
+
+<p>
+Finissez par le <em>sudo update-grub</em> évidemment.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_35'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Apparition d’images au boot] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="35504-36049" /><input type="submit" value="Modifier" class="button" title="Apparition d’images au boot" /></div></form></div>
+<h3 class="sectionedit36" id="via_un_cd-live_ou_usb-live">Via un CD-Live ou USB-Live</h3>
+<div class="level3">
+
+<p>
+Possible que vous obteniez cette erreur : 
+</p>
+<pre class="code bash"><span class="sy0">/</span>usr<span class="sy0">/</span>sbin<span class="sy0">/</span>grub-probe: error: failed to get canonical path of <span class="sy0">/</span>cow.</pre>
+
+<p>
+ ou 
+</p>
+<pre class="code">impossible d&#039;obtenir le chemin canonique de &quot;/cow&quot;</pre>
+
+<p>
+Pour y remédier, la solution est le chroot (si vous obtenez une erreur, arrêtez de suite la procédure) :
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> <span class="re5">-s</span>
+<span class="kw2">mkdir</span> <span class="re5">-p</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>newroot
+<span class="kw2">mount</span> <span class="re5">-t</span> ext4 <span class="sy0">/</span>dev<span class="sy0">/</span>sda3 <span class="sy0">/</span>tmp<span class="sy0">/</span>newroot
+<span class="kw2">mount</span> <span class="re5">--bind</span> <span class="sy0">/</span>proc <span class="sy0">/</span>tmp<span class="sy0">/</span>newroot<span class="sy0">/</span>proc
+<span class="kw2">mount</span> <span class="re5">--bind</span> <span class="sy0">/</span>dev <span class="sy0">/</span>tmp<span class="sy0">/</span>newroot<span class="sy0">/</span>dev
+<span class="kw2">mount</span> <span class="re5">--bind</span> <span class="sy0">/</span>sys <span class="sy0">/</span>tmp<span class="sy0">/</span>newroot<span class="sy0">/</span>sys
+<span class="kw2">chroot</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>newroot<span class="sy0">/</span>
+<span class="sy0">/</span>usr<span class="sy0">/</span>sbin<span class="sy0">/</span>update-grub
+<span class="sy0">/</span>usr<span class="sy0">/</span>sbin<span class="sy0">/</span>grub-install <span class="sy0">/</span>dev<span class="sy0">/</span>sda
+<span class="kw3">exit</span></pre>
+
+<p>
+* remplacer sda3 par la réponse que vous donne 
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> os-prober</pre>
+
+<p>
+<a href="http://openclassrooms.com/forum/sujet/pas-de-grub-au-demarrage-du-pc#message-84716723" class="urlextern" title="http://openclassrooms.com/forum/sujet/pas-de-grub-au-demarrage-du-pc#message-84716723"  rel="nofollow">Source</a> de cette astuce.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_36'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Via un CD-Live ou USB-Live] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="36050-36856" /><input type="submit" value="Modifier" class="button" title="Via un CD-Live ou USB-Live" /></div></form></div>
+<h2 class="sectionedit37" id="liens_externes">Liens externes</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.gnu.org/software/grub/manual/grub.html" class="urlextern" title="http://www.gnu.org/software/grub/manual/grub.html"  rel="nofollow">Manuel grub-pc (en anglais)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.tutoriels-video.fr/personnaliser-ubuntu-lecran-de-boot/" class="urlextern" title="http://www.tutoriels-video.fr/personnaliser-ubuntu-lecran-de-boot/"  rel="nofollow">Tutoriel vidéo : Personnaliser l&#039;écran de boot d&#039;ubuntu (fr)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.pixelbeat.org/docs/disk/" class="urlextern" title="http://www.pixelbeat.org/docs/disk/"  rel="nofollow">Comprendre le fonctionnement de Grub avec quelques schémas (en anglais)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.it-connect.fr/contourner-lauthentification-linux-en-editant-le-grub/" class="urlextern" title="http://www.it-connect.fr/contourner-lauthentification-linux-en-editant-le-grub/"  rel="nofollow">Contourner l’authentification Linux en éditant le GRUB (fr)</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_37'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Liens externes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="36857-37378" /><input type="submit" value="Modifier" class="button" title="Liens externes" /></div></form></div>
+<h2 class="sectionedit38" id="autres_pages_en_rapport">Autres pages en rapport</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="grub-customizer" class="wikilink1" title="grub-customizer">Grub Customizer : une interface graphique gérant Grub 2 et permettant de le personnaliser</a>,</div>
+</li>
+<li class="level1"><div class="li"> <a href="tutoriel/grub2_lancer_des_images_iso" class="wikilink1" title="tutoriel:grub2_lancer_des_images_iso">Tutoriel pour lancer des images iso directement depuis GRUB 2</a>.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/burg" class="wikilink1" title="burg">BURG</a> alternative graphique à grub</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em> Contributeurs : <a href="utilisateurs/frombenny" class="wikilink1" title="utilisateurs:frombenny">Frombenny</a> (rédaction de la page), <a href="http://doc.ubuntu-fr.org/utilisateurs/theozzfancometh" class="wikilink2" title="utilisateurs:theozzfancometh" rel="nofollow">Theozzfancometh</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/f.x0" class="wikilink2" title="utilisateurs:f.x0" rel="nofollow">f.x0</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/albanmartel" class="wikilink1" title="utilisateurs:albanmartel">albanmartel</a>, </em><a href="http://doc.ubuntu-fr.org/utilisateurs/perco" class="wikilink2" title="utilisateurs:perco" rel="nofollow">perco</a>.<em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_38'><form class="button btn_secedit" method="post" action="grub-pc"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430813996" /><input type="hidden" name="summary" value="[Autres pages en rapport] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="37379-" /><input type="submit" value="Modifier" class="button" title="Autres pages en rapport" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="grub#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Super Boot Manager gère aussi les <a href="plymouth" class="wikilink1" title="plymouth">Plymouth</a></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/5/5cc92f1fb9efe3fc58143df5183684bb.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/grub-pc?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/grub-pc?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/grub-pc?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/grub-pc?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/grub-pc?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>prelude</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-10-29T19:10:27+0100"/>
+<meta name="keywords" content="reseau,securite,administration,pare-feu,serveur,supervision,entreprise"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../prelude?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="prelude"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/prelude"/>
+<link rel="canonical" href="../../prelude"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"prelude","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="prelude#presentation">Présentation</a></div></li>
+<li class="level1"><div class="li"><a href="prelude#prerequis">Prérequis</a></div></li>
+<li class="level1"><div class="li"><a href="prelude#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="prelude#depot_ubuntu_canonical">Dépôt ubuntu (canonical)</a></div></li>
+<li class="level2"><div class="li"><a href="prelude#site_officiel_derniere_version">Site officiel (dernière version )</a></div></li>
+<li class="level2"><div class="li"><a href="prelude#installer_des_sondes">Installer des sondes</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="prelude#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>,
+	<a href="../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../../pare-feu" class="wikilink1" title="pare-feu" rel="tag">pare-feu</a>,
+	<a href="../../serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="http://doc.ubuntu-fr.org/supervision" class="wikilink1" title="supervision" rel="tag">supervision</a>,
+	<a href="../../entreprise" class="wikilink1" title="entreprise" rel="tag">entreprise</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="prelude_-_systeme_de_detection_d_intrusion">Prelude - Système de détection d&#039;intrusion</h1>
+<div class="level1">
+
+<p>
+Prelude, ou Prelude-IDS, est un système de détection d&#039;intrusion (IDS) hybride composé de types de détecteurs hétérogènes :
+</p>
+<ul>
+<li class="level1"><div class="li"> un NIDS : NetWork Intrusion Detection System ;</div>
+</li>
+<li class="level2"><div class="li"> un HIDS : Host based Intrusion Detection System</div>
+</li>
+<li class="level2"><div class="li"> un LML : Log Monitoring Lackey.</div>
+</li>
+</ul>
+
+<p>
+Site officiel : <a href="http://www.prelude-ids.com/index.php/fr/" class="urlextern" title="http://www.prelude-ids.com/index.php/fr/"  rel="nofollow">http://www.prelude-ids.com/index.php/fr/</a>
+</p>
+
+<p>
+Il est capable d&#039;utiliser différentes &#039;sondes&#039; également libres, open-sources, et reconnus par les professionnels. ( sonde : terme propre à la sécurité réseau mais compréhensible )
+</p>
+
+<p>
+En plus des nombreuses fonctionnalités de Prelude accessibles par tous librement (linux, ubuntu, bsd …), PreludeIDS distribue des modules commerciaux additionnels à l’attention de ses grands utilisateurs. 
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Prelude - Système de détection d'intrusion" [89-887] -->
+<h2 class="sectionedit2" id="presentation">Présentation</h2>
+<div class="level2">
+
+<p>
+À la base, le but d&#039;un IDS est de détecter toutes tentatives d&#039;intrusion, réussies ou non, et d&#039;en faire part à l&#039;administrateur pour qu&#039;il puisse réagir en conséquence. Cependant les prochaines versions de Prelude pourront réagir automatiquement en cas d&#039;attaque, par exemple en changeant les règles du pare-feu.
+</p>
+
+<p>
+<p><div class="noteimportant">
+Vérifier l&#039;état d&#039;avancement de cette possibilité dans prelude et mettre à jour cette page
+</div></p>
+</p>
+
+<p>
+Prelude a été conçu dans le but d&#039;être modulaire, souple, et surtout résistant aux attaques. Sa modularité permet notamment de lui rajouter facilement de nouveaux types de détecteurs d&#039;intrusion (notamment une libraire appelée &#039;libsafe&#039; qui permet de protéger les programmes des buffers overflow en remplaçant certaines fonctions élémentaires, et qui a été modifiée par les concepteurs de Prelude pour en faire aussi un détecteur d&#039;intrusion).
+</p>
+
+<p>
+Prelude est un SIM Universel. Prelude collecte, normalise, catégorise, agrège, corrèle et présente tous les événements sécurité. 
+</p>
+
+<p>
+Visualisez en temps réel l&#039;ensemble de vos données sécurité, exporter des rapports : transformer vos données brutes en information utile. 
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Présentation" [888-2102] -->
+<h2 class="sectionedit3" id="prerequis">Prérequis</h2>
+<div class="level2">
+
+<p>
+Pour fonctionner, Prelude a besoin d&#039;un serveur de base de données parmi :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../mysql" class="wikilink1" title="mysql">MySQL</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../postgresql" class="wikilink1" title="postgresql">PostgreSQL</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../sqlite" class="wikilink1" title="sqlite">SQLite</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Prérequis" [2103-2252] -->
+<h2 class="sectionedit4" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT4 SECTION "Installation" [2253-2277] -->
+<h3 class="sectionedit5" id="depot_ubuntu_canonical">Dépôt ubuntu (canonical)</h3>
+<div class="level3">
+
+<p>
+Installer prelude à partir des dépots Canonical, en cliquant ici ou :
+</p>
+<pre class="code">sudo apt-get install prelude-manager</pre>
+
+</div>
+<!-- EDIT5 SECTION "Dépôt ubuntu (canonical)" [2278-2436] -->
+<h3 class="sectionedit6" id="site_officiel_derniere_version">Site officiel (dernière version )</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.prelude-ids.org/wiki/prelude/InstallingPreludeLibrary" class="urlextern" title="https://www.prelude-ids.org/wiki/prelude/InstallingPreludeLibrary"  rel="nofollow">Télécharger et installer prelude à partir du site officiel</a>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT6 SECTION "Site officiel (dernière version )" [2437-2619] -->
+<h3 class="sectionedit7" id="installer_des_sondes">Installer des sondes</h3>
+<div class="level3">
+<div class="table sectionedit8"><table class="inline">
+	<tr class="row0">
+		<td class="col0 leftalign"> Site du Projet  </td><td class="col1 rightalign">	 Description </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign">	<a href="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartyAuditd" class="urlextern" title="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartyAuditd"  rel="nofollow">AuditD</a>   </td><td class="col1 centeralign">		Auditd fournit des utilitaires pour créer des règles d&#039;audit ainsi que pour stocker et rechercher des enregistrements générés par le système d&#039;audit de Linux 2.6. Il propose un plugin de détection d&#039;intrusion qui analyse le flux d&#039;audit en temps réel et émet des alertes IDMEF grâce à Prelude.  	 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">	<a href="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartyNepenthes" class="urlextern" title="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartyNepenthes"  rel="nofollow">Nepenthes</a>  </td><td class="col1 centeralign">		Nepenthes est un outil polyvalent qui collecte les malwares. Il agit passivement en émulant des vulnérabilités connues et en téléchargent les malwares tentant d&#039;exploiter ces vulnérabilités. 	 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">	<a href="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartyNufw" class="urlextern" title="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartyNufw"  rel="nofollow">NuFW</a>  </td><td class="col1 centeralign">		NuFW ajoute la notion d’utilisateurs aux règles de filtrage. Le projet s’appuie sur Netfilter, la couche pare-feu du noyau Linux et constitue un système de gestion d’identité au niveau des couches réseaux. 	 </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">	<a href="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartyOssec" class="urlextern" title="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartyOssec"  rel="nofollow">OSSEC</a>  </td><td class="col1 centeralign">		OSSEC est un Système de Détection d&#039;Intrusion machine. Il permet l&#039;analyse de journaux, tests d&#039;intégrité, surveillance de la base de registre Windows, détection de rootkit et notifie en temps réel avec réponse active.  </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">	<a href="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartyLinuxpam" class="urlextern" title="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartyLinuxpam"  rel="nofollow">PAM</a>  </td><td class="col1 rightalign">		Linux-PAM est un système de bibliothèques gérant les tâches d&#039;authentification des applications sur un système. La bibliothèque offre une interface fournissant des outils pour les programmes de gestion des droits privilégiés (comme login et su). </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 centeralign">	<a href="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartySamhain" class="urlextern" title="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartySamhain"  rel="nofollow">Samhain</a>  </td><td class="col1 centeralign">		Samhain® est un Système de Détection d&#039;Intrusion multiplateforme open source pour les systèmes POSIX (Unix, Linux, Cygwin/Windows). Il permet la vérification de l&#039;intégrité des fichiers, la détection de rootkits, la surveillance des ports, la détection d&#039;exécutables SUID malveillants et de processus cachés. 	 </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 centeralign">	<a href="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartySancp" class="urlextern" title="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartySancp"  rel="nofollow">SanCP</a>  </td><td class="col1 centeralign">		SanCP est un outil de sécurité réseau conçu pour collecter des informations statistiques sur le trafic réseau et pour enregistrer ce trafic dans un fichier au format PCAP dans une optique : d&#039;audit, d&#039;historique et de découverte réseau.	</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 centeralign">	<a href="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartySnort" class="urlextern" title="https://dev.prelude-ids.com/wiki/prelude/InstallingAgentThirdpartySnort"  rel="nofollow">Snort</a>  </td><td class="col1 centeralign">		Snort® est un système de détection et de prévention d&#039;intrusion réseau basé sur un système de signatures. Il combine les bénéfices des méthodes d&#039;analyse par signature, protocole et anomalie.  </td>
+	</tr>
+</table></div>
+<!-- EDIT8 TABLE [2651-5402] -->
+</div>
+<!-- EDIT7 SECTION "Installer des sondes" [2620-5403] -->
+<h2 class="sectionedit9" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.prelude-ids.org/wiki/prelude/ManualUser" class="urlextern" title="https://www.prelude-ids.org/wiki/prelude/ManualUser"  rel="nofollow">Prelude User Manual</a> ( sur le wiki officiel )</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://www.prelude-ids.org/wiki/prelude/PreludeCompatibility" class="urlextern" title="https://www.prelude-ids.org/wiki/prelude/PreludeCompatibility"  rel="nofollow">Les sondes, et logs de logiciels compatibles</a>( sur le wiki officiel )</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://howtoforge.com/snort-ossec-prelude-on-ubuntu-gutsy-gibbon" class="urlextern" title="http://howtoforge.com/snort-ossec-prelude-on-ubuntu-gutsy-gibbon"  rel="nofollow">Snort (IDS), OSSEC (HbIDS) And Prelude (HIDS) On Ubuntu Gutsy Gibbon</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.supinfo-projects.com/fr/2005/prelude_ids_2005/3/" class="urlextern" title="http://www.supinfo-projects.com/fr/2005/prelude_ids_2005/3/"  rel="nofollow">Mise en place de Prelude IDS au sein de votre réseau</a> ( 2005, aide compilation ).</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs :  <a href="../../utilisateurs/psychederic.1" class="wikilink1" title="utilisateurs:psychederic">Psychederic</a>.</em>
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Liens" [5404-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/0/04c88ca21b6a615435b4321295f01377.xhtml used -->
+</div>
+</body>
+</html>

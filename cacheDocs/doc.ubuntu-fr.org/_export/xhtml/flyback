@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>flyback</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-11-06T18:32:34+0100"/>
+<meta name="keywords" content="sauvegarde,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../flyback?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="flyback"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/flyback"/>
+<link rel="canonical" href="../../flyback"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"flyback","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="flyback#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="flyback#creation_d_un_lanceur">Création d&#039;un lanceur</a></div></li>
+<li class="level1"><div class="li"><a href="flyback#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="flyback#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="flyback#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../sauvegarde" class="wikilink1" title="sauvegarde" rel="tag">sauvegarde</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="flyback">FlyBack</h1>
+<div class="level1">
+
+<p>
+FlyBack est un outil de <a href="../../sauvegarde" class="wikilink1" title="sauvegarde">sauvegarde</a>, projet Google (summer of ?) Code. C&#039;est un clone du fameux Apple timemachine.
+</p>
+
+<p>
+<p><div class="notewarning">Pas de nouvelles versions depuis Mai 2010 ! Il semble que ce projet soit abandonné ! Le dernier problème signalé (Issue 104 de Novembre 2012) indique que FlyBack ne fonctionne pas avec Ubuntu 12.04 !
+</div></p>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "FlyBack" [50-416] -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong><a href="apt://python,python-glade2,python-gnome2,python-gnome2-extras,python-gtk2,python-gconf,python-gobject,rsync" class="urlextern" title="apt://python,python-glade2,python-gnome2,python-gnome2-extras,python-gtk2,python-gconf,python-gobject,rsync"  rel="nofollow">python python-glade2 python-gnome2 python-gnome2-extras python-gtk2 python-gconf python-gobject rsync</a></strong>.
+</p>
+
+<p>
+Téléchargez l&#039;archive sur <a href="http://code.google.com/p/flyback/downloads/list" class="urlextern" title="http://code.google.com/p/flyback/downloads/list"  rel="nofollow">cette page</a>.
+</p>
+
+<p>
+Extrayez l&#039;archive, donnez les droits d&#039;exécution à <strong>flyback.py</strong> puis double-cliquez dessus.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Installation" [417-917] -->
+<h2 class="sectionedit3" id="creation_d_un_lanceur">Création d&#039;un lanceur</h2>
+<div class="level2">
+
+<p>
+Pour intégrer flyback dans le menu &quot;Applications&quot; on peut créer un script puis un <a href="../../raccourci-lanceur" class="wikilink1" title="raccourci-lanceur">lanceur</a>.
+</p>
+
+<p>
+Admettons que vous avez installé le dossier &quot;flyback&quot; dans /home/login/local.
+</p>
+
+<p>
+Créer un document vierge avec le code suivant :
+</p>
+<pre class="code">#!/bin/sh
+cd /home/login/local/flyback
+python flyback.py</pre>
+
+<p>
+Nommez-le &quot;flyback&quot;, placez-le dans votre /home/login et donnez-lui les droits d&#039;exécution.
+</p>
+
+<p>
+Vous n&#039;avez plus qu&#039;à créer un <a href="../../raccourci-lanceur" class="wikilink1" title="raccourci-lanceur">lanceur</a>, en indiquant la commande suivante :
+/home/login/flyback.
+</p>
+
+<p>
+Pour agrémenter le tout on peut choisir une icône (à ma connaissance le projet n&#039;a pas encore d&#039;icône dédiée). J&#039;ai choisi cette icône du pack tango qui correspond à la fonction du logiciel <a href="../../_detail/stock_save.png?id=flyback" class="media" title="stock_save.png"><img src="../../_media/stock_save.png" class="media" alt="" /></a>.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Création d'un lanceur" [918-1707] -->
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Lors du premier lancement de Flyback vous devrez éditer les préférences.
+</p>
+
+<p>
+<strong>L&#039;onglet &quot;Storage location&quot;</strong> vous permet de configurer le répertoire dans lequel vous allez conserver vos sauvegardes. 
+</p>
+
+<p>
+Il est conseillé d&#039;utiliser un disque dur externe. Dans le cas contraire, il ne faut pas utiliser &quot;/&quot;, &quot;/home&quot; ou tout autre répertoire que vous prévoyez d&#039;inclure dans votre sauvegarde. 
+</p>
+
+<p>
+<strong>L&#039;onglet &quot;Included / Excluded Directories&quot;</strong> vous permet de choisir les répertoires à inclure et ceux à exclure de votre sauvegarde. 
+</p>
+
+<p>
+A gauche se trouve la liste des répertoires à inclure et à droite la liste de ceux à exclure.
+</p>
+
+<p>
+Pour une sauvegarde complète du système, choisissez dans la liste en bas à gauche de la fenêtre : &quot;Système de fichiers&quot; puis cliquez sur &quot;Ajoutez&quot;. La racine &quot;/&quot; apparaît dans la liste &quot;Included dirs&quot;.
+</p>
+
+<p>
+Ensuite vous pouvez rajouter des répertoires à exclure de la sauvegarde dans la partie de droite &quot;Exclude patterns&quot;. Il y a déjà une liste de répertoire à exclure de la sauvegarde comme des répertoires contenant des fichiers en cache ou encore /dev/, /proc/, /sys/, /tmp.. Pour rajouter un répertoire, entrez le chemin du répertoire dans la barre en bas et cliquez sur &quot;Ajouter&quot;
+</p>
+
+<p>
+<strong>L&#039;onglet &quot;Backup Schedule&quot;</strong> vous permet de configurer la sauvegarde automatique de votre système. 
+</p>
+
+<p>
+Vous pouvez paramétrer le moment où se déclenchera automatiquement la sauvegarde (minutes, heures, jour du mois, mois, jour de la semaine) ainsi que choisir lorsque seront supprimées les précédentes sauvegardes (à partir d&#039;un certain nombre de Go occupé ou fonction de l&#039;ancienneté de la sauvegarde).
+</p>
+
+<p>
+Cliquez sur &quot;Valider&quot; pour enregistrer vos paramètres.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Configuration" [1708-3444] -->
+<h2 class="sectionedit5" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Cliquez sur &quot;Backup&quot; pour lancer la sauvegarde.
+</p>
+
+<p>
+Une fois celle-ci effectué, elle devient accessible dans la fenêtre de gauche : &quot;System snapshots&quot; avec comme nom la date et l&#039;heure à laquelle elle à été faite.
+</p>
+
+<p>
+Pour restaurer un fichier, sélectionnez la date de la sauvegarde, parcourez les répertoires dans l&#039;explorateur de gauche pour choisir votre fichier. Une fois sélectionné, cliquer sur &quot;Restore&quot;.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Utilisation" [3445-3888] -->
+<h2 class="sectionedit6" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+
+<p>
+ <a href="http://code.google.com/p/flyback/" class="urlextern" title="http://code.google.com/p/flyback/"  rel="nofollow">Site officiel</a>.
+</p>
+
+<p>
+ <a href="http://linuxfr.org/2007/05/07/22461.html" class="urlextern" title="http://linuxfr.org/2007/05/07/22461.html"  rel="nofollow">Système de fichier journalisé &quot;ext3cow&quot;</a>. (pas nécessaire pour flyback)
+</p>
+<hr />
+
+</div>
+<!-- EDIT6 SECTION "Voir aussi" [3889-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/4/4612a4a12c83f8c5854473974f122f1f.xhtml used -->
+</div>
+</body>
+</html>

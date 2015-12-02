@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>aircrack-ng</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-05T15:38:33+0100"/>
+<meta name="keywords" content="brouillon,hardy,systeme"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../aircrack-ng?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="aircrack-ng"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/aircrack-ng"/>
+<link rel="canonical" href="../../aircrack-ng"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"aircrack-ng","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="aircrack-ng#presentation">Présentation</a></div></li>
+<li class="level1"><div class="li"><a href="aircrack-ng#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="aircrack-ng#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="aircrack-ng#par_les_depots_officiels">Par les dépôts officiels</a></div></li>
+<li class="level2"><div class="li"><a href="aircrack-ng#par_compilation_avec_sqlite_pour_la_creation_d_une_base_de_donnees_pour_un_ssid">Par compilation avec sqlite (pour la création d&#039;une base de données pour un SSID)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="aircrack-ng#les_outils">Les outils</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="aircrack-ng#aircrack-ng">aircrack-ng</a></div></li>
+<li class="level2"><div class="li"><a href="aircrack-ng#airdecap-ng">airdecap-ng</a></div></li>
+<li class="level2"><div class="li"><a href="aircrack-ng#airdriver-ng">airdriver-ng</a></div></li>
+<li class="level2"><div class="li"><a href="aircrack-ng#aireplay-ng">aireplay-ng</a></div></li>
+<li class="level2"><div class="li"><a href="aircrack-ng#airmon-ng">airmon-ng</a></div></li>
+<li class="level2"><div class="li"><a href="aircrack-ng#airodump-ng">airodump-ng</a></div></li>
+<li class="level2"><div class="li"><a href="aircrack-ng#airolib-ng">airolib-ng</a></div></li>
+<li class="level2"><div class="li"><a href="aircrack-ng#airserv-ng">airserv-ng</a></div></li>
+<li class="level2"><div class="li"><a href="aircrack-ng#airtun-ng">airtun-ng</a></div></li>
+<li class="level2"><div class="li"><a href="aircrack-ng#easside-ng">easside-ng</a></div></li>
+<li class="level2"><div class="li"><a href="aircrack-ng#packetforge-ng">packetforge-ng</a></div></li>
+<li class="level2"><div class="li"><a href="aircrack-ng#wesside-ng">wesside-ng</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="aircrack-ng#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>,
+	<a href="../../hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">Système</a>
+</span></div>
+
+<h1 class="sectionedit1" id="la_suite_aircrack-ng">La suite Aircrack-ng</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "La suite Aircrack-ng" [34-69] -->
+<h2 class="sectionedit2" id="presentation">Présentation</h2>
+<div class="level2">
+
+<p>
+Aircrack-ng est un outil de sécurité Wi-Fi. Il permet de casser les clés <abbr title="Wireless Equivalent Privacy">WEP</abbr> et WPA-PSK à partir de paquets capturés sur le réseau. Il regroupe plusieurs formes d&#039;attaques connues pour l&#039;intrusion sur un réseau. C&#039;est en fait une boîte à outils pour l&#039;audit de réseaux sans fil. Entre autres, cet outil montre la faiblesse de la protection <abbr title="Wireless Equivalent Privacy">WEP</abbr> du réseau Wi-Fi et de la nécessité d&#039;un mot de passe WPA-PSK compliqué.
+</p>
+
+<p>
+<p><div class="notewarning">Le fait de s&#039;introduire dans un système informatique est illégal et est puni de 3 ans de prison et 100 000 euros d&#039;amende. [Art. 323-1]. 
+N&#039;utilisez cet outil qu&#039;avec la permission du propriétaire du réseau.
+Vous êtes entièrement responsable de vos agissements et Ubuntu-fr.org ne pourra être tenu responsable de l&#039;utilisation malveillante que vous pourriez faire de cette page !!
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Présentation" [70-937] -->
+<h2 class="sectionedit3" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+Pour pouvoir utiliser la suite Aircrack-ng et capturer des paquets, vous avez besoin d&#039;une carte Wi-Fi supportant le mode monitoring. Vérifiez sur le <a href="http://www.aircrack-ng.org/doku.php?id=compatibility_drivers" class="urlextern" title="http://www.aircrack-ng.org/doku.php?id=compatibility_drivers"  rel="nofollow">site officiel</a> si votre carte est supportée.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Pré-requis" [938-1223] -->
+<h2 class="sectionedit4" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT4 SECTION "Installation" [1224-1249] -->
+<h3 class="sectionedit5" id="par_les_depots_officiels">Par les dépôts officiels</h3>
+<div class="level3">
+
+<p>
+Il vous suffit, pour cela, d&#039;<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong> <a href="apt://aircrack-ng" class="urlextern" title="apt://aircrack-ng"  rel="nofollow">aircrack-ng</a> </strong> <br/>
+
+<p><div class="noteimportant">Pour Ubuntu 12.04, Aircrack-ng n&#039;est plus présent dans les dépôts officiels, suite à un problème de licence. Se référer à l&#039;installation par compilation qui suit, ou utiliser un PPA, comme par exemple celui-ci : <a href="https://launchpad.net/~aking1012-com/+archive/aircrack-precise" class="urlextern" title="https://launchpad.net/~aking1012-com/+archive/aircrack-precise"  rel="nofollow">https://launchpad.net/~aking1012-com/+archive/aircrack-precise</a> .
+Pour Ubuntu 12.10, vous pouvez ajouter un des dépot présent <a href="http://packages.ubuntu.com/fr/quantal/aircrack-ng" class="urlextern" title="http://packages.ubuntu.com/fr/quantal/aircrack-ng"  rel="nofollow"> ici</a>
+</div></p>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Par les dépôts officiels" [1250-1852] -->
+<h3 class="sectionedit6" id="par_compilation_avec_sqlite_pour_la_creation_d_une_base_de_donnees_pour_un_ssid">Par compilation avec sqlite (pour la création d&#039;une base de données pour un SSID)</h3>
+<div class="level3">
+
+<p>
+Installer les paquets <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://subversion" class="urlextern" title="apt://subversion"  rel="nofollow">subversion</a> </strong> ,<strong> <a href="apt://libssl-dev" class="urlextern" title="apt://libssl-dev"  rel="nofollow">libssl-dev</a> </strong> et <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong> <a href="apt://libsqlite3-dev" class="urlextern" title="apt://libsqlite3-dev"  rel="nofollow">libsqlite3-dev</a> </strong> <strong> <a href="apt://libnl1" class="urlextern" title="apt://libnl1"  rel="nofollow">libnl1</a> </strong> <strong> <a href="apt://libnl-dev" class="urlextern" title="apt://libnl-dev"  rel="nofollow">libnl-dev</a> </strong> <strong> <a href="apt://build-essential" class="urlextern" title="apt://build-essential"  rel="nofollow">build-essential</a> </strong> <strong> <a href="apt://ksh" class="urlextern" title="apt://ksh"  rel="nofollow">ksh</a> </strong>, puis dans un terminal :
+</p>
+
+<p>
+Puis faites
+</p>
+<pre class="code">sudo apt-get -y remove libnl-3-dev
+sudo apt-get -y install  subversion libssl-dev libsqlite3-dev libnl1 libnl-dev build-essential ksh
+svn co http://svn.aircrack-ng.org/trunk/ aircrack-ng
+cd aircrack-ng </pre>
+
+</div>
+
+<h4 id="installation_de_base">Installation de base</h4>
+<div class="level4">
+
+<p>
+Cette procédure d&#039;install ne fait que compiler/installer les outils &quot;de base&quot; de aircrack, débuggués et finalisés pour la plupart (aircrack-ng, airodump-ng, airtun-ng, aireplay-ng, packetforge-ng, airmon-ng)
+</p>
+<pre class="code">make sqlite=true
+sudo make sqlite=true install
+sudo airodump-ng-oui-update</pre>
+
+</div>
+
+<h4 id="installation_avancee">Installation avancée</h4>
+<div class="level4">
+
+<p>
+Cette procédure d&#039;install n&#039;est en réalité pas plus complexe que l&#039;autre, mais elle ajoute la compilation d&#039;outils plus avancés, et surtout un peu instables d&#039;après les auteurs (wesside, besside, easside, airoscript, etc…)
+</p>
+<pre class="code">make sqlite=true unstable=true 
+sudo make sqlite=true unstable=true install</pre>
+
+</div>
+<!-- EDIT6 SECTION "Par compilation avec sqlite (pour la création d'une base de données pour un SSID)" [1853-3292] -->
+<h2 class="sectionedit7" id="les_outils">Les outils</h2>
+<div class="level2">
+
+<p>
+Aircrack-ng est une suite regroupant plusieurs outils différents. Vous trouverez ici une description de chacun d&#039;eux. Ils sont disponibles grâce à la ligne de commande.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Les outils" [3293-3488] -->
+<h3 class="sectionedit8" id="aircrack-ng">aircrack-ng</h3>
+<div class="level3">
+
+<p>
+aircrack-ng est un outil permettant de retrouver une clé <abbr title="Wireless Equivalent Privacy">WEP</abbr> ou WPA-PSK à partir de paquets réseaux. Les paquets sont capturés à l&#039;aide de l&#039;outil airodump-ng. Il faut collecter environ 10 000 paquets pour pouvoir réaliser l&#039;opération avec succès. 
+</p>
+<pre class="code">sudo aircrack-ng -x *.cap</pre>
+
+</div>
+<!-- EDIT8 SECTION "aircrack-ng" [3489-3808] -->
+<h3 class="sectionedit9" id="airdecap-ng">airdecap-ng</h3>
+<div class="level3">
+
+<p>
+Décrypteur de fichiers <abbr title="Wireless Equivalent Privacy">WEP</abbr>/WPA capturés
+</p>
+
+</div>
+<!-- EDIT9 SECTION "airdecap-ng" [3809-3873] -->
+<h3 class="sectionedit10" id="airdriver-ng">airdriver-ng</h3>
+<div class="level3">
+
+<p>
+Permet d&#039;installer en patchant des drivers, par exemple le rtl8187, ce qui est utile pour faire l&#039;injection de paquet.
+</p>
+
+</div>
+<!-- EDIT10 SECTION "airdriver-ng" [3874-4016] -->
+<h3 class="sectionedit11" id="aireplay-ng">aireplay-ng</h3>
+<div class="level3">
+
+<p>
+aireplay-ng permet de générer du trafic :
+<br/>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> -0 : Envoie une désauthentification.</div>
+</li>
+<li class="level1"><div class="li"> -1 : Envoie une authentification.</div>
+</li>
+<li class="level1"><div class="li"> -3 : Récupère les <abbr title="Adress Resolution Protocol">ARP</abbr> et génère du trafic (Injection)</div>
+</li>
+<li class="level1"><div class="li"> -9 : Test l&#039;injection de paquet sur les AP détectés</div>
+</li>
+</ul>
+
+<p>
+Exemple : 
+</p>
+<pre class="code">sudo aireplay-ng -0 -e NOM_DE_L_AP -a MAC_DE_L_AP -b MAC_DE_L_AP -c MAC_DE_LA_STATION</pre>
+
+<p>
+pour tester l&#039;injection de paquets à partir de l&#039;interface wlan0 :
+</p>
+<pre class="code">sudo aireplay-ng -9 wlan0</pre>
+
+<p>
+Le système affiche :
+</p>
+<pre class="code">16:29:41  wlan0 channel: 9
+16:29:41  Trying broadcast probe requests...
+16:29:41  Injection is working!
+16:29:42  Found 5 APs
+16:29:42  Trying directed probe requests...
+16:29:42  00:09:5B:5C:CD:2A - channel: 11 - &#039;NETGEAR&#039;
+16:29:48  0/30: 0%
+16:29:48  00:14:BF:A8:65:AC - channel: 9 - &#039;title&#039;
+16:29:54  0/30: 0%
+16:29:54  00:14:6C:7E:40:80 - channel: 9 - &#039;teddy&#039;
+16:29:55  Ping (min/avg/max): 2.763ms/4.190ms/8.159ms
+16:29:55  27/30: 90%
+16:29:55  00:C0:49:E2:C4:39 - channel: 11 - &#039;mossy&#039;
+16:30:01  0/30: 0%
+16:30:01  00:0F:66:C3:14:4E - channel: 9 - &#039;tupper&#039;
+16:30:07  0/30: 0%</pre>
+
+<p>
+Analyse de la réponse :
+</p>
+
+<p>
+<em>16:29:41 wlan0 channel: 9</em>: décrit quelle interface et canal ont été utilisés.
+</p>
+
+<p>
+<em>16:29:41 Injection is working!</em>: Cela confirme que votre carte peut injecter.
+</p>
+
+<p>
+<em>16:29:42 Found 5 APs</em>: 5 points d&#039;accès (APs Access points) ont été trouvés.
+</p>
+
+<p>
+<em>16:29:42 00:09:5B:5C:CD:2A - channel: 11 - &#039;NETGEAR&#039;</em>: précise que cet AP 
+est sur le canal 11 et non sur le canal 9 de notre carte. Il est courant que des canaux adjacents interfèrent.
+</p>
+
+<p>
+<em>16:29:55 Ping (min/avg/max): 2.763ms/4.190ms/8.159ms</em>: signifie que l&#039;AP répond au Ping et précise les délais.
+</p>
+
+<p>
+<em>16:29:55 27/30: 90% for teddy</em>: C&#039;est la seule AP avec laquelle la carte peut interragir. Il s&#039;agit d&#039;un autre contrôle pour savoir si votre carte peut injecter.Vous remarquerez que les autres APs sont à 0%.
+</p>
+
+<p>
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<!-- EDIT11 SECTION "aireplay-ng" [4017-5936] -->
+<h3 class="sectionedit12" id="airmon-ng">airmon-ng</h3>
+<div class="level3">
+
+<p>
+Script permettant d&#039;activer (ou désactiver) le mode moniteur d&#039;une carte réseau. Dans ce cas la carte Wi-Fi, se place en &quot;observateur&quot; du réseau.
+</p>
+
+<p>
+Voici comment utiliser cette commande pour activer le mode moniteur sur la carte ath0 :
+</p>
+<pre class="code"> sudo airmon-ng start ath0</pre>
+
+<p>
+Pour n&#039;écouter que le canal 3 :
+</p>
+<pre class="code"> sudo airmon-ng start ath0 3</pre>
+
+<p>
+Arrêter le mode moniteur :
+</p>
+<pre class="code"> sudo airmon-ng stop ath0</pre>
+
+<p>
+vérifier l&#039;état du système :
+</p>
+<pre class="code"> sudo airmon-ng </pre>
+
+<p>
+Il faut veiller à toujours éteindre le mode monitor une fois que vous avez fini votre manipulation.
+</p>
+
+</div>
+<!-- EDIT12 SECTION "airmon-ng" [5937-6499] -->
+<h3 class="sectionedit13" id="airodump-ng">airodump-ng</h3>
+<div class="level3">
+
+<p>
+Il permet de capturer les paquets transitant dans les frames 802.11. Il est utilisé principalement pour collecter les paquets nécessaires au décryptage d&#039;une clé <abbr title="Wireless Equivalent Privacy">WEP</abbr> ou WPA. La vitesse de collecte dépend du nombre de machines et de leur activité sur le réseau. Préalable : il faut mettre sa carte Wi-Fi en mode écoute avec airmon-ng ou iwconfig.
+</p>
+
+<p>
+syntaxe :
+</p>
+<pre class="code">  sudo airodump-ng &lt;options&gt; &lt;interface&gt;</pre>
+
+<p>
+Exemple:
+</p>
+<pre class="code">sudo airodump-ng mon0</pre>
+
+<p>
+Ceci vous donnera<em class="u"> tous</em> les AP à proximité.
+</p>
+<pre class="code">sudo airodump-ng --encrypt wep mon0</pre>
+
+<p>
+Mise en place d&#039;un filtre pour sélectionner seulement les AP ayant une sécurité <abbr title="Wireless Equivalent Privacy">WEP</abbr>. (Filtres possibles: wep,wpa,opn)
+</p>
+<pre class="code">sudo airodump-ng --write capture mon0</pre>
+
+<p>
+Ecriture de la capture dans un fichier. 
+</p>
+
+<p>
+Pour cibler un AP spécifique, il vous suffira de lancer une écoute global. Ensuite d&#039;analyser cette écoute pour trouver l&#039;AP recherché via le ESSID ou le BSSID.
+Une fois ces informations récupérées, vous lancez une écoute ciblée avec un filtre(wep,wpa ou opn), un BSSID, un canal et vous envoyez tout cela dans un fichier de capture. 
+</p>
+
+<p>
+Les différentes options:
+</p>
+<pre class="code">--ivs               : Save only captured IVs
+--gpsd              : Use GPSd
+--write    &lt;prefix&gt; : Dump file prefix
+-w                  : same as --write
+--beacons           : Record all beacons in dump file
+--update     &lt;secs&gt; : Display update delay in seconds
+--showack           : Prints ack/cts/rts statistics
+-h                  : Hides known stations for --showack
+-f          &lt;msecs&gt; : Time in ms between hopping channels
+--berlin     &lt;secs&gt; : Time before removing the AP/client
+                      from the screen when no more packets
+                      are received (Default: 120 seconds)
+-r           &lt;file&gt; : Read packets from that file
+-x          &lt;msecs&gt; : Active Scanning Simulation
+--output-format
+          &lt;formats&gt; : Output format. Possible values:
+                      pcap, ivs, csv, gps, kismet, netxml
+                      Short format &quot;-o&quot;
+                      The option can be specified multiple times.  In this case, each file format
+                          specified will be output.  Only ivs or pcap can be used, not both.</pre>
+
+</div>
+<!-- EDIT13 SECTION "airodump-ng" [6500-8736] -->
+<h3 class="sectionedit14" id="airolib-ng">airolib-ng</h3>
+<div class="level3">
+
+<p>
+airolib-ng un outil très pratique pour le bruteforce de clef WPA.
+Il permet de créer une base de données (rainbowtable) contenant vos fichiers dico pour un SSID (ou plusieurs).
+Le crack WPA est très rapide par cette méthode, le problème c&#039;est que la création de la base de données est elle longue à réaliser.
+</p>
+<ul>
+<li class="level1"><div class="li"> Usage: <code>airolib-ng &lt;database&gt; &lt;operation&gt; [options]</code></div>
+</li>
+</ul>
+
+<p>
+Dans cet exemple, la table sera appelée <code>bddwpa</code>, le fichier contenant l&#039;essid sera appelé <code>essid.txt</code> et le fichier dictionnaire sera <code>dico.txt</code>.
+</p>
+<ul>
+<li class="level1"><div class="li"> Commencez par créer la table et y importer le fichier dictionnaire :</div>
+</li>
+</ul>
+<pre class="code">airolib-ng bddwpa --import passwd /chemin/ver/dico.txt</pre>
+<ul>
+<li class="level1"><div class="li"> Importez le fichier contenant l&#039;essid :</div>
+</li>
+</ul>
+<pre class="code">airolib-ng bddwpa --import essid /chemin/ver/essid.txt</pre>
+<ul>
+<li class="level1"><div class="li"> Vérifiez l&#039;état de la base de données :</div>
+</li>
+</ul>
+<pre class="code">airolib-ng bddwpa --stats</pre>
+<ul>
+<li class="level1"><div class="li"> Nettoyez votre base de données avant le batch :</div>
+</li>
+</ul>
+<pre class="code">airolib-ng bddwpa --clean all</pre>
+<ul>
+<li class="level1"><div class="li"> Lancez le batch (l&#039;étape de pré-computage, la plus longue et la plus gourmande en ressources) !</div>
+</li>
+</ul>
+<pre class="code">airolib-ng bddwpa --batch</pre>
+<ul>
+<li class="level1"><div class="li"> Lancez une vérification générale de la table (facultatif) :</div>
+</li>
+</ul>
+<pre class="code">airolib-ng bddwpa --verify all</pre>
+
+<p>
+La base de données <code>bddwpa</code> étant créée et vérifiée, vous pouvez lancer le crack. 
+Lancez la commande <code>aircrack-ng -r nom-de-la-base-de-données nom-du-fichier-de-capture</code>
+</p>
+<ul>
+<li class="level1"><div class="li"> Dans cet exemple :</div>
+</li>
+</ul>
+<pre class="code">aircrack-ng -r bddwpa *.cap</pre>
+
+<p>
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<!-- EDIT14 SECTION "airolib-ng" [8737-10252] -->
+<h3 class="sectionedit15" id="airserv-ng">airserv-ng</h3>
+<div class="level3">
+
+<p>
+Utilisation d&#039;un serveur pour effectuer une écoute avec la carte wifi d&#039;un ordinateur distant. (sudo airodump-ng –encrypt wep &lt;adresse serveur&gt;).
+</p>
+
+<p>
+Un serveur doit être au préalable configuré. Prenons un exemple simple, pour une écoute en &#039;locale&#039;, avec deux machines.
+</p>
+
+<p>
+Sur la machine serveur :
+</p>
+<pre class="code">sudo airserv-ng &lt;interface&gt;</pre>
+
+<p>
+Sur la machine cliente :
+</p>
+<pre class="code">sudo airodump-ng &lt;adresse serveur&gt;</pre>
+
+</div>
+<!-- EDIT15 SECTION "airserv-ng" [10253-10690] -->
+<h3 class="sectionedit16" id="airtun-ng">airtun-ng</h3>
+<div class="level3">
+
+<p>
+programme pour la création d&#039;une interface virtuelle.
+</p>
+<pre class="code">sudo airtun-ng ath0</pre>
+
+<p>
+Vous aurez la possibilité d&#039;utiliser cette interface avec Wireshark par exemple.
+</p>
+
+</div>
+<!-- EDIT16 SECTION "airtun-ng" [10691-10881] -->
+<h3 class="sectionedit17" id="easside-ng">easside-ng</h3>
+<div class="level3">
+
+<p>
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<!-- EDIT17 SECTION "easside-ng" [10882-10909] -->
+<h3 class="sectionedit18" id="packetforge-ng">packetforge-ng</h3>
+<div class="level3">
+
+<p>
+Packetforge-ng est un outil permettant de forger des paquets <abbr title="Adress Resolution Protocol">ARP</abbr>, UDP, ICMP ou personnalisés. 
+</p>
+<pre class="code">Usage: packetforge-ng &lt;mode&gt; &lt;options&gt;</pre>
+<pre class="code">Forge options:</pre>
+<ol>
+<li class="level1"><div class="li">p &lt;fctrl&gt;     : set frame control word (hex)</div>
+</li>
+<li class="level3"><div class="li">a &lt;bssid&gt;     : set Access Point <abbr title="Medium Access Control">MAC</abbr> address</div>
+</li>
+<li class="level3"><div class="li">c &lt;dmac&gt;      : set Destination  <abbr title="Medium Access Control">MAC</abbr> address</div>
+</li>
+<li class="level3"><div class="li">h &lt;smac&gt;      : set Source       <abbr title="Medium Access Control">MAC</abbr> address</div>
+</li>
+<li class="level3"><div class="li">j             : set FromDS bit</div>
+</li>
+<li class="level3"><div class="li">o             : clear ToDS bit</div>
+</li>
+<li class="level3"><div class="li">e             : disables <abbr title="Wireless Equivalent Privacy">WEP</abbr> encryption</div>
+</li>
+<li class="level3"><div class="li">k &lt;ip[:port]&gt; : set Destination IP [Port]</div>
+</li>
+<li class="level3"><div class="li">l &lt;ip[:port]&gt; : set Source      IP [Port]</div>
+</li>
+<li class="level3"><div class="li">t ttl         : set Time To Live</div>
+</li>
+<li class="level3"><div class="li">w &lt;file&gt;      : write packet to this pcap file</div>
+</li>
+<li class="level3"><div class="li">s &lt;size&gt;      : specify size of null packet</div>
+</li>
+<li class="level3"><div class="li">n &lt;packets&gt;   : set number of packets to generate</div>
+</li>
+</ol>
+<pre class="code">Source options:</pre>
+<ol>
+<li class="level1"><div class="li">r &lt;file&gt;      : read packet from this raw file</div>
+</li>
+<li class="level3"><div class="li">y &lt;file&gt;      : read PRGA from this file</div>
+</li>
+</ol>
+<pre class="code">Modes:</pre>
+<ol>
+<li class="level1"><div class="li">-arp          : forge an <abbr title="Adress Resolution Protocol">ARP</abbr> packet    (-0)</div>
+</li>
+<li class="level3"><div class="li">-udp          : forge an UDP packet    (-1)</div>
+</li>
+<li class="level3"><div class="li">-icmp         : forge an ICMP packet   (-2)</div>
+</li>
+<li class="level3"><div class="li">-null         : build a null packet    (-3)</div>
+</li>
+<li class="level3"><div class="li">-custom       : build a custom packet  (-9)</div>
+</li>
+</ol>
+<ol>
+<li class="level1"><div class="li">-help         : Displays this usage screen</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT18 SECTION "packetforge-ng" [10910-12163] -->
+<h3 class="sectionedit19" id="wesside-ng">wesside-ng</h3>
+<div class="level3">
+
+<p>
+Crack automatiquement une clef <abbr title="Wireless Equivalent Privacy">WEP</abbr> en essayant toutes les attaques sauf l&#039;attaque CHOPCHOP et à FRAGMENTATION.
+Cet outil est avant tout un «proof-of-concept», c&#039;est-à-dire qu&#039;il a pour but de démontrer qu&#039;il est possible de tout automatiser mais n&#039;est pas prévu pour une utilisation courante. Cela peut se traduire par la présence de bugs. Il est donc à éviter si possible.
+</p>
+
+<p>
+A voir aussi besside-ng.  <a href="http://trac.aircrack-ng.org/svn/trunk/src/" class="urlextern" title="http://trac.aircrack-ng.org/svn/trunk/src/"  rel="nofollow">http://trac.aircrack-ng.org/svn/trunk/src/</a>
+Besside-ng est un outil un peu plus évolué pour un crack <abbr title="Wireless Equivalent Privacy">WEP</abbr> ou WPA automatique, il n&#039;est pas présent dans les dépôts.
+</p>
+
+<p>
+A compléter.
+</p>
+
+</div>
+<!-- EDIT19 SECTION "wesside-ng" [12164-12786] -->
+<h2 class="sectionedit20" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.aircrack-ng.org" class="urlextern" title="http://www.aircrack-ng.org"  rel="nofollow">Site officiel de aircrack-ng</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://wiki.backtrack-fr.net/index.php/Loi" class="urlextern" title="http://wiki.backtrack-fr.net/index.php/Loi"  rel="nofollow">wiki france de backtrack, articles de lois</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.aircrack-ng.org/doku.php?id=install_aircrack" class="urlextern" title="http://www.aircrack-ng.org/doku.php?id=install_aircrack"  rel="nofollow">aircrack-ng.org</a></div>
+</li>
+</ul>
+
+<p>
+<em>Contributeurs : <a href="../../utilisateurs/mr_djez" class="wikilink1" title="utilisateurs:mr_djez">Mr_Djez</a></em>
+</p>
+
+</div>
+<!-- EDIT20 SECTION "Liens" [12787-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/4/48f2c10edbaf250fbae662ee395d3b8d.xhtml used -->
+</div>
+</body>
+</html>

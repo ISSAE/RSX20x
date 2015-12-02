@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>dns - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-04-10T18:59:13+0200"/>
+<meta name="keywords" content="serveur,reseau,entreprise"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/dns?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="dns?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/dns"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/dns"/>
+<link rel="canonical" href="dns"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"dns","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="dns#main" tabindex="1">Contenu</a> | <a href="dns#qsearch__in" tabindex="2">Rechercher</a> | <a href="dns#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="dns" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="dns" >dns</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="dns#utiliser_un_serveur_dns">Utiliser un serveur DNS</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="dns#choix_d_un_serveur_dns_alternatif">Choix d&#039;un serveur DNS alternatif</a></div></li>
+<li class="level2"><div class="li"><a href="dns#configuration_d_un_dns_alternatif">Configuration d&#039;un DNS alternatif</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="dns#gerer_son_propre_serveur_dns">Gérer son propre serveur DNS</a></div></li>
+<li class="level1"><div class="li"><a href="dns#problemes_connus">Problèmes connus</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="dns#utilisation_d_un_serveur_dns_local">Utilisation d&#039;un serveur DNS local</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="dns#voir_aussi">Voir aussi</a></div></li>
+<li class="level1"><div class="li"><a href="dns#pages_en_rapport">Pages en rapport</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="entreprise" class="wikilink1" title="entreprise" rel="tag">entreprise</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="dns_-_systeme_de_noms_de_domaine">DNS - Système de noms de domaine</h1>
+<div class="level1">
+
+<p>
+Le <strong><a href="http://fr.wikipedia.org/wiki/Domain Name System" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Domain Name System">Domain Name System</a></strong> (ou <abbr title="Domain Name System">DNS</abbr>, <strong>système de noms de domaine</strong>) est un service permettant d&#039;établir une correspondance entre une adresse IP et un nom de domaine.
+</p>
+
+<p>
+<a href="lib/exe/fetch.php?tok=2fad64&amp;media=http%253A%252F%252Fupload.wikimedia.org%252Fwikipedia%252Fcommons%252Fthumb%252Fc%252Fcc%252FDNS_iterations.svg%252F663px-DNS_iterations.svg.png" class="media" title="http://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/DNS_iterations.svg/663px-DNS_iterations.svg.png"><img src="lib/exe/fetch.php?w=300&amp;tok=dea24c&amp;media=http%253A%252F%252Fupload.wikimedia.org%252Fwikipedia%252Fcommons%252Fthumb%252Fc%252Fcc%252FDNS_iterations.svg%252F663px-DNS_iterations.svg.png" class="mediaright" title="Fonctionnement du système des noms de domaine (Source: Wikipedia)" alt="Fonctionnement du système des noms de domaine (Source: Wikipedia)" width="300" /></a>
+</p>
+
+<p>
+Les réseaux informatiques sont composés d&#039;ordinateurs qui communiquent entre eux à l&#039;aide d&#039;adresses numériques uniques, appelées adresses IP. Chaque adresse IP identifie un ordinateur (clients et serveurs). L&#039;adresse numérique facilite grandement le traitement pour l&#039;ordinateur. Or, pour un être humain, il est beaucoup plus difficile de se souvenir d&#039;une série de de lettres et de mots que d&#039;une suite de chiffres.
+</p>
+
+<p>
+Le système des noms de domaine a été inventé pour palier à ce problème : il fait correspondre une adresse alphanumérique (ex : <em>www.ubuntu-fr.org</em>) à une adresse IP numérique (ex : <em>88.191.119.240</em>). Cette correspondance – appelée <em>résolution</em> – s&#039;effectue à l&#039;intérieur d&#039;un serveur spécialisé dédié à résoudre des noms de domaine : un serveur <abbr title="Domain Name System">DNS</abbr>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="dns"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428685153" /><input type="hidden" name="summary" value="[DNS - Système de noms de domaine] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="42-1259" /><input type="submit" value="Modifier" class="button" title="DNS - Système de noms de domaine" /></div></form></div>
+<h2 class="sectionedit2" id="utiliser_un_serveur_dns">Utiliser un serveur DNS</h2>
+<div class="level2">
+
+<p>
+Lorsque vous vous connectez à Internet, votre fournisseur d&#039;accès à Internet (<abbr title="Fournisseur d&#039;Accès à Internet">FAI</abbr>) met à votre disposition des serveurs <abbr title="Domain Name System">DNS</abbr> qu&#039;il administre lui-même. Par défaut, donc, votre connexion à Internet utilise automatiquement un ou des serveurs <abbr title="Domain Name System">DNS</abbr>, et ceux-ci sont fournis et gérés par votre <abbr title="Fournisseur d&#039;Accès à Internet">FAI</abbr>.
+</p>
+
+<p>
+Pour plusieurs raisons, vous pouvez désirer utiliser d&#039;autres serveurs <abbr title="Domain Name System">DNS</abbr> que ceux gérés par votre <abbr title="Fournisseur d&#039;Accès à Internet">FAI</abbr>. Confidentialité de vos échanges, serveurs <abbr title="Domain Name System">DNS</abbr> hors-ligne ou meilleure vitesse de résolution des noms de domaine sont quelques-unes des plus fréquentes raisons pour lesquelles certains utilisateurs choisissent d&#039;utiliser d&#039;autres serveurs <abbr title="Domain Name System">DNS</abbr> que ceux proposés par leur <abbr title="Fournisseur d&#039;Accès à Internet">FAI</abbr>. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="dns"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428685153" /><input type="hidden" name="summary" value="[Utiliser un serveur DNS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1260-1986" /><input type="submit" value="Modifier" class="button" title="Utiliser un serveur DNS" /></div></form></div>
+<h3 class="sectionedit3" id="choix_d_un_serveur_dns_alternatif">Choix d&#039;un serveur DNS alternatif</h3>
+<div class="level3">
+
+<p>
+Voici une liste de serveurs <abbr title="Domain Name System">DNS</abbr> que vous pouvez librement utiliser :
+</p>
+
+<p>
+Décentralisé :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://sourceforge.net/projects/socialdns/" class="urlextern" title="http://sourceforge.net/projects/socialdns/"  rel="nofollow">SocialDNS</a>: mettant en œuvre le protocole libre go : <del><a href="https://addons.mozilla.org/fr/firefox/addon/8006/" class="urlextern" title="https://addons.mozilla.org/fr/firefox/addon/8006/"  rel="nofollow">Sous forme d&#039;extension firefox</a></del> (lien mort), qui permet de visiter les sites en go://. Inscription libre, et gratuite.</div>
+</li>
+<li class="level1"><div class="li"> <a href="idons" class="wikilink2" title="idons" rel="nofollow">IDONS</a> : Internet Distributed Open Name System (<a href="http://lauren.vortex.com/archive/000787.html" class="urlextern" title="http://lauren.vortex.com/archive/000787.html"  rel="nofollow">site</a>)</div>
+</li>
+<li class="level1"><div class="li"> <a href="dot-p2p" class="wikilink2" title="dot-p2p" rel="nofollow">Dot-P2P</a> (<a href="http://dot-p2p.org/index.php?title=Main_Page" class="urlextern" title="http://dot-p2p.org/index.php?title=Main_Page"  rel="nofollow">site</a>) Système <abbr title="Domain Name System">DNS</abbr> nouvelle génération, décentralisé et libre. <a href="http://fr.wikipedia.org/wiki/Peter Sunde" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Peter Sunde">Peter Sunde</a>, à l’origine du plus connu des sites de torrents du monde et du projet Flattr a lancé un nouvel appel : <strong>En finir avec l’ICANN !</strong> <a href="http://twitter.com/brokep/status/8779363872935936" class="urlextern" title="http://twitter.com/brokep/status/8779363872935936"  rel="nofollow">il a balancé un tweet le 29 novembre 2010</a>, demandant aux fournisseurs d’accès du monde entier de le contacter car lui et son équipe ont mis en place un nouveau serveur root <abbr title="Domain Name System">DNS</abbr> sécurisé et utilisant les technologies p2p. MAIS ce serait un vaporware d&#039;après le spécialiste @Bortzmeyer.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.cs.cornell.edu/people/egs/beehive/codons.php" class="urlextern" title="http://www.cs.cornell.edu/people/egs/beehive/codons.php"  rel="nofollow">CoDoNS</a> Cooperative Domain Name System</div>
+</li>
+<li class="level1"><div class="li"> CoralCDN : <a href="http://fr.wikipedia.org/wiki/Content_Delivery_Network#Liste_des_CDN" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Content_Delivery_Network#Liste_des_CDN">réseau de distribution de contenu</a> <a href="p2p" class="wikilink1" title="p2p">peer-to-peer</a> libre, composé d&#039;un réseau mondial de proxys Web et les serveurs de noms. Une couche <abbr title="Domain Name System">DNS</abbr> en peer-to-peer redirige de manière transparente les navigateurs à participer procurations mise en cache, ce qui à son tour, coopérer en vue de minimiser la charge sur le serveur Web source. <em>(cette phrase a-t-elle un sens ?)</em></div>
+</li>
+</ul>
+
+<p>
+Centralisé avec tous ses inconvénients que l&#039;on connait avec l&#039;icann (censure, faiblesse contre les attaques) :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><a href="http://censurfridns.dk/" class="urlextern" title="http://censurfridns.dk/"  rel="nofollow">CensurFreedns</a> : Dns contre la censure</strong></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://opennicproject.org/" class="urlextern" title="http://opennicproject.org/"  rel="nofollow">OpenNic</a> ( the openNic Project ) est une organisation qui dirige un réseau alternatif de <abbr title="Domain Name System">DNS</abbr>. OpenNIC est détenu et exploité par la communauté OpenNIC. L&#039;adhésion est ouverte à tous ceux qui partagent un intérêt à garder <abbr title="Domain Name System">DNS</abbr> gratuit pour tous les utilisateurs. L&#039;objectif est de vous fournir des services <abbr title="Domain Name System">DNS</abbr> rapides et fiables et l&#039;accès à des domaines ne sont pas administrés par l&#039;ICANN. OpenNIC offre une résolution à tous les domaines de l&#039;ICANN ainsi que les TLDs propres OpenNIC de: . Geek,. Libres. BBS,. Parodie. Oss. Indy,. Fourrure,. Ment,. Micro. Dyn et. Gopher</div>
+</li>
+</ul>
+
+<p>
+<abbr title="Domain Name System">DNS</abbr> gratuit pour noms de domaine :
+</p>
+<ul>
+<li class="level1"><div class="li"> <del><a href="http://www.everydns.com/" class="urlextern" title="http://www.everydns.com/"  rel="nofollow">EveryDNS</a></del> (discontinué)</div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="comparer_les_performances_de_deux_serveurs_dns">Comparer les performances de deux serveurs DNS</h5>
+<div class="level5">
+
+<p>
+Pour comparer les performances entre votre serveur <abbr title="Domain Name System">DNS</abbr> primaire actuel et un autre serveur <abbr title="Domain Name System">DNS</abbr> (par exemple, un autre serveur que vous seriez tenté d&#039;utiliser), utilisez le logiciel <a href="http://code.google.com/p/namebench/" class="urlextern" title="http://code.google.com/p/namebench/"  rel="nofollow">Namebench</a> (Le paquet <strong><a href="apt://namebench" class="interwiki iw_apt" title="apt://namebench">Namebench</a></strong> est maintenant dans les dépôts Ubuntu).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="dns"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428685153" /><input type="hidden" name="summary" value="[Choix d'un serveur DNS alternatif] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1987-5014" /><input type="submit" value="Modifier" class="button" title="Choix d'un serveur DNS alternatif" /></div></form></div>
+<h3 class="sectionedit4" id="configuration_d_un_dns_alternatif">Configuration d&#039;un DNS alternatif</h3>
+<div class="level3">
+
+<p>
+À partir d&#039;Ubuntu 12.04 les versions serveurs et les versions desktop d&#039;Ubuntu utilisent resolvconf<sup><a href="dns#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.
+Les méthodes en lignes de commande sont à effectuer sur les versions serveur d&#039;Ubuntu, pour les versions desktop il est préférable de passer par l&#039;utilitaire graphique (voir la section <span class="curid"><a href="dns#par_interface_graphique" class="wikilink1" title="dns">Par interface graphique</a></span>).
+</p>
+
+</div>
+
+<h4 id="a_partir_d_ubuntu_1204_ligne_de_commande">A PARTIR d&#039;Ubuntu 12.04 (ligne de commande)</h4>
+<div class="level4">
+
+<p>
+Il faut modifier les fichiers de configuration des interfaces réseau. La modification se reportera directement par l’intermédiaire de l&#039;utilitaire <a href="resolvconf" class="wikilink2" title="resolvconf" rel="nofollow">resolvconf</a> au redémarrage du service réseau.
+</p>
+
+<p>
+il faut donc modifier le fichier /etc/network/interfaces
+</p>
+
+<p>
+On créer au préalable une copie :
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> <span class="kw2">cp</span> <span class="sy0">/</span>etc<span class="sy0">/</span>network<span class="sy0">/</span>interfaces <span class="sy0">/</span>etc<span class="sy0">/</span>network<span class="sy0">/</span>interfaces.copie</pre>
+
+<p>
+Puis :
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> <span class="kw2">nano</span> <span class="sy0">/</span>etc<span class="sy0">/</span>network<span class="sy0">/</span>interfaces</pre>
+
+<p>
+Vous devez avoir un contenu du type :
+</p>
+<pre class="code">/etc/network/interfaces# This file describes the network interfaces available o$
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+        address 91.121.0.0
+        netmask 255.255.255.0
+        network 91.121.0.0
+        broadcast 91.121.0.255
+        gateway 91.121.0.254
+        dns-nameservers 8.8.8.8 8.8.4.4</pre>
+
+<p>
+La ligne importante dans notre cas est la dernière ligne. Si elle n&#039;existe pas il suffit juste de la rajouter. Ici les adresses IP des serveurs <abbr title="Domain Name System">DNS</abbr> public de Google 8.8.8.8 et 8.8.4.4 sont utilisées. 
+</p>
+
+<p>
+Ne pas oublier ensuite de relancer le service réseau :
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> service networking restart</pre>
+
+<p>
+Sur Ubuntu 12.04.4 cette commande ne marche plus, mais celle-ci fonctionne 
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> service network-interface restart <span class="re2">INTERFACE</span>=eth0</pre>
+
+<p>
+eth0 est l&#039;interface réseau que vous retrouverez dans le fichier précédent (&quot;iface eth0 …&quot;). 
+A vous de choisir la bonne interface en fonction de votre configuration.
+</p>
+
+</div>
+
+<h4 id="avant_ubuntu_1204_ligne_de_commande">AVANT Ubuntu 12.04 (ligne de commande)</h4>
+<div class="level4">
+
+<p>
+Le changement de <abbr title="Domain Name System">DNS</abbr> s&#039;opère par la configuration du fichier /etc/resolv.conf
+</p>
+
+<p>
+Ouvrez le <a href="terminal" class="wikilink1" title="terminal">terminal</a> et tapez la commande suivante :
+</p>
+<pre class="code">sudo nano /etc/resolv.conf</pre>
+
+<p>
+Le fichier s&#039;ouvrant dans le terminal, comporte deux lignes intitulées nameserver, soit respectivement :
+</p>
+<ul>
+<li class="level1"><div class="li"> Le <abbr title="Domain Name System">DNS</abbr> préféré</div>
+</li>
+<li class="level1"><div class="li"> Le <abbr title="Domain Name System">DNS</abbr> auxiliaire</div>
+</li>
+</ul>
+
+<p>
+que vous prendrez soin de compléter selon le <abbr title="Domain Name System">DNS</abbr> choisi.
+</p>
+
+<p>
+Tapez ctrl+x pour sauvegarder les modifications du fichier.
+</p>
+
+<p>
+Il se peut que certains programmes modifient automatiquement les paramètres <abbr title="Domain Name System">DNS</abbr>. Pour éviter cela, vous pouvez verrouiller le fichier avec la commande suivante :
+</p>
+<pre class="code">sudo chattr +i /run/resolvconf/resolv.conf</pre>
+
+<p>
+Pour déverrouiller le fichier :
+</p>
+<pre class="code">sudo chattr -i /run/resolvconf/resolv.conf</pre>
+
+<p>
+<p><div class="noteclassic"> Dans certains cas, il semble que le redémarrage du service dns-clean ne soit pas nécessaire pour l&#039;application des changements. Il reste donc à définir dans quelles conditions le redémarrage est nécessaire. 
+</div></p>
+</p>
+
+<p>
+Une fois la configuration <abbr title="Domain Name System">DNS</abbr> de votre machine modifiée, il est nécessaire de redémarrer le service dns-clean pour que les changements prennent effet.
+Dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> taper la commande suivante :
+</p>
+<pre class="code">sudo /etc/init.d/dns-clean restart</pre>
+
+</div>
+
+<h4 id="par_interface_graphique">Par interface graphique</h4>
+<div class="level4">
+
+<p>
+Pour modifier les <abbr title="Domain Name System">DNS</abbr> d&#039;une version desktop d&#039;Ubuntu (Unity, KDE etc.), il est préférable de passer par <a href="network-manager" class="wikilink1" title="network-manager">NetworkManager</a>. Il est à noter que NetworkManager, <em>écrase</em> (en créant une copie tout de même) la configuration du fichier /etc/network/interfaces. Il prend donc le dessus vis-à-vis de ce qui aurait pu être configuré en ligne de commande. NetworkManger gère la manière dont le PC se connecte à la box, par défaut il est paramétré pour envoyer une requête <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> au modem/box (attribution IP), dans la foulé ce sont les <abbr title="Domain Name System">DNS</abbr> par défaut du routeur/box qui sont utilisées. Les configurations qui auraient pu être faites au préalable en ligne de commande seront donc irrémédiablement <em>écrasées</em>.
+</p>
+
+<p>
+Avec NetworkManger pour modifier les <abbr title="Domain Name System">DNS</abbr>, procéder comme suit :
+</p>
+<ul>
+<li class="level1"><div class="li"> Clique droit sur l’icône de NetworkManager puis : cliquez sur <em>Modification des connections</em>.</div>
+</li>
+<li class="level1"><div class="li"> Choisir quelle connexion et à modifier (par câble ou par Wifi), puis cliquer sur <em>Modifier</em>.</div>
+</li>
+<li class="level1"><div class="li"> Cliquer sur l&#039;onglet <em>Paramétres IPv4</em>.</div>
+</li>
+<li class="level1"><div class="li"> Dans <em>Méthode</em> sélectionner <strong><em>Adresse automatique uniquement (<abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>)</em></strong>.</div>
+</li>
+<li class="level1"><div class="li"> Dans la case <em>Serveurs <abbr title="Domain Name System">DNS</abbr></em>, entrer la ou les adresses <abbr title="Domain Name System">DNS</abbr> souhaitées (si plusieurs adresses, mettre une virgule entre chaque adresse).</div>
+</li>
+<li class="level1"><div class="li"> Cliquer sur <em>Enregistrer</em>.</div>
+</li>
+</ul>
+
+<p>
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> : en affectant l&#039;entrée <strong><em>Adresse automatique uniquement (<abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>)</em></strong> il doit ensuite être possible de modifier les <abbr title="Domain Name System">DNS</abbr> en ligne de commande sans qu&#039;ils soient écrasées par NetworkManager.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="dns"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428685153" /><input type="hidden" name="summary" value="[Configuration d'un DNS alternatif] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5015-9972" /><input type="submit" value="Modifier" class="button" title="Configuration d'un DNS alternatif" /></div></form></div>
+<h2 class="sectionedit5" id="gerer_son_propre_serveur_dns">Gérer son propre serveur DNS</h2>
+<div class="level2">
+
+<p>
+Pour encore plus de confidentialité, pour avoir de meilleurs temps de réponse ou pour proposer des services Internet à des clients, vous pouvez être amené à installer et administrer vous-même un serveur <abbr title="Domain Name System">DNS</abbr>. Voici une liste de logiciels jouant le rôle de serveur <abbr title="Domain Name System">DNS</abbr> installables sur Ubuntu :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="bind9" class="wikilink1" title="bind9">Bind9</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="configuration_serveur_dns_dhcp" class="wikilink1" title="configuration_serveur_dns_dhcp">Dnsmasq</a> </div>
+</li>
+<li class="level1"><div class="li"> <a href="pdns" class="wikilink1" title="pdns">PowerDNS</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="unbound" class="wikilink1" title="unbound">Unbound</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="dns"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428685153" /><input type="hidden" name="summary" value="[Gérer son propre serveur DNS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9973-10417" /><input type="submit" value="Modifier" class="button" title="Gérer son propre serveur DNS" /></div></form></div>
+<h2 class="sectionedit6" id="problemes_connus">Problèmes connus</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="dns"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428685153" /><input type="hidden" name="summary" value="[Problèmes connus] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10418-10447" /><input type="submit" value="Modifier" class="button" title="Problèmes connus" /></div></form></div>
+<h3 class="sectionedit7" id="utilisation_d_un_serveur_dns_local">Utilisation d&#039;un serveur DNS local</h3>
+<div class="level3">
+
+<p>
+Depuis Ubuntu 12.04, <a href="network-manager" class="wikilink1" title="network-manager">Network-Manager</a> intègre <a href="configuration_serveur_dns_dhcp" class="wikilink1" title="configuration_serveur_dns_dhcp">Dnsmasq</a>, ce qui provoque des perturbations dans la résolution <abbr title="Domain Name System">DNS</abbr> pour un réseau local reposant sur <a href="bind9" class="wikilink1" title="bind9">Bind9</a> par exemple. Le symptôme est simple, parfois l&#039;infrastructure <abbr title="Domain Name System">DNS</abbr> fonctionne, parfois non. La solution ici est de désactiver Dnsmasq dans Network-Manager:
+<p><div class="noteclassic">
+Tout le monde n&#039;a pas de soucis  avec bind9 et dnsmasq
+
+</div></p>
+</p>
+<pre class="code">sudo nano /etc/NetworkManager/NetworkManager.conf</pre>
+
+<p>
+Et de commenter la ligne &quot;dns=dnsmasq&quot; de cette façon:
+</p>
+<pre class="code">#dns=dnsmasq</pre>
+
+<p>
+Il faut aussi désactiver le service dnsmasq au démarrage:
+</p>
+<pre class="code">sudo update-rc.d -f dnsmasq remove</pre>
+
+<p>
+et redémarrer Network-manager
+</p>
+<pre class="code">sudo service network-manager restart</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="dns"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428685153" /><input type="hidden" name="summary" value="[Utilisation d'un serveur DNS local] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10448-11275" /><input type="submit" value="Modifier" class="button" title="Utilisation d'un serveur DNS local" /></div></form></div>
+<h2 class="sectionedit8" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="https://evolvingtrends.wordpress.com/2006/09/02/kill-verisign-p2p-dns-for-firefox/" class="urlextern" title="https://evolvingtrends.wordpress.com/2006/09/02/kill-verisign-p2p-dns-for-firefox/"  rel="nofollow">P2P DNS for Firefox</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://www.advogato.org/article/1033.html" class="urlextern" title="http://www.advogato.org/article/1033.html"  rel="nofollow">Proposal to extend DNS with Peer to Peer server-independence</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://www.cambus.net/free-public-dns-servers-list/" class="urlextern" title="http://www.cambus.net/free-public-dns-servers-list/"  rel="nofollow">Free public DNS servers list</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://code.google.com/intl/fr/speed/public-dns/" class="urlextern" title="http://code.google.com/intl/fr/speed/public-dns/"  rel="nofollow">Google public DNS</a> peut remplacer vos dns actuels.</div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://www.opennicproject.org/" class="urlextern" title="http://www.opennicproject.org/"  rel="nofollow">Opennic project dns</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.planet-libre.org/" class="urlextern" title="http://www.planet-libre.org/"  rel="nofollow">Sécuriser les échanges entre deux serveurs DNS (maitre/esclave)</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="dns"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428685153" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11276-11932" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<h2 class="sectionedit9" id="pages_en_rapport">Pages en rapport</h2>
+<div class="level2">
+<div id="plugin__backlinks">
+<ul class="idx"><li><div class="li"><a href="administration" class="wikilink1" title="administration">Administration de systèmes informatiques</a></div></li><li><div class="li"><a href="anonymat" class="wikilink1" title="anonymat">Anonymat, confidentialité et vie privée</a></div></li><li><div class="li"><a href="bind9" class="wikilink1" title="bind9">BIND9</a></div></li><li><div class="li"><a href="http://doc.ubuntu-fr.org/cloud" class="wikilink1" title="cloud">Infonuagique</a></div></li><li><div class="li"><a href="configuration_serveur_dns_dhcp" class="wikilink1" title="configuration_serveur_dns_dhcp">Comment configurer un serveur léger dns et dhcp alias Dnsmasq ?</a></div></li><li><div class="li"><a href="coovachilli" class="wikilink1" title="coovachilli">CoovaChilli</a></div></li><li><div class="li"><span class="curid"><a href="dns" class="wikilink1" title="dns">DNS - Système de noms de domaine</a></span></div></li><li><div class="li"><a href="dns_dynamique" class="wikilink1" title="dns_dynamique">Les DNS Dynamiques (DDNS)</a></div></li><li><div class="li"><a href="edubuntu_ltsp_configuration" class="wikilink1" title="edubuntu_ltsp_configuration">Configurer un réseau LTSP sur base Edubuntu 11.04</a></div></li><li><div class="li"><a href="http://doc.ubuntu-fr.org/hebergeur" class="wikilink1" title="hebergeur">Annuaire d&#039;hébergeurs</a></div></li><li><div class="li"><a href="hosts" class="wikilink1" title="hosts">Le fichier Hosts</a></div></li><li><div class="li"><a href="installer_un_serveur_debian" class="wikilink1" title="installer_un_serveur_debian">Installation complète d&#039;un serveur web sous Debian 6.0</a></div></li><li><div class="li"><a href="network-manager" class="wikilink1" title="network-manager">Utilitaire de gestion des connexions réseau Network Manager</a></div></li><li><div class="li"><a href="pdns" class="wikilink1" title="pdns">Serveur DNS : PowerDNS</a></div></li><li><div class="li"><a href="http://doc.ubuntu-fr.org/samba-active-directory" class="wikilink1" title="samba-active-directory">Samba - Active Directory Domain Controller (AD DC)</a></div></li><li><div class="li"><a href="tutoriel/comment_configurer_son_reseau_local" class="wikilink1" title="tutoriel:comment_configurer_son_reseau_local">Comment configurer son réseau local ?</a></div></li><li><div class="li"><a href="tutoriel/network_tpme" class="wikilink1" title="tutoriel:network_tpme">Création d&#039;un réseau d&#039;entreprise pour une TPME ou une PME</a></div></li><li><div class="li"><a href="unbound" class="wikilink1" title="unbound">Unbound</a></div></li><li><div class="li"><a href="utilisateurs/bcag2/samba4" class="wikilink1" title="utilisateurs:bcag2:samba4">samba (4) - le  contrôleur de domaine Active Directory</a></div></li><li><div class="li"><a href="utilisateurs/fabux/brouillons/com_sh_reso" class="wikilink1" title="utilisateurs:fabux:brouillons:com_sh_reso">Réseau</a></div></li><li><div class="li"><a href="utilisateurs/vrinse/brouillons/unbound_brouillon" class="wikilink1" title="utilisateurs:vrinse:brouillons:unbound_brouillon">Unbound</a></div></li></ul></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="dns"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428685153" /><input type="hidden" name="summary" value="[Pages en rapport] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11933-" /><input type="submit" value="Modifier" class="button" title="Pages en rapport" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="dns#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<a href="http://askubuntu.com/questions/368435/how-do-i-fix-dns-resolving-which-doesnt-work-after-upgrading-to-ubuntu-13-10-s/368935#368935" class="urlextern" title="http://askubuntu.com/questions/368435/how-do-i-fix-dns-resolving-which-doesnt-work-after-upgrading-to-ubuntu-13-10-s/368935#368935"  rel="nofollow">http://askubuntu.com/questions/368435/how-do-i-fix-dns-resolving-which-doesnt-work-after-upgrading-to-ubuntu-13-10-s/368935#368935</a></div>
+</div>
+
+<!-- no cachefile used, caching forbidden -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/dns?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="dns?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="dns?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="dns?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="dns?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

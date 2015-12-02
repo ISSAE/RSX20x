@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:installation_raid_lvm - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="../_export/xhtml/tutoriel/installation_raid_lvm"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../_export/raw/tutoriel/installation_raid_lvm"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:installation_raid_lvm","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="installation_raid_lvm?do=edit&amp;rev=0#main" tabindex="1">Contenu</a> | <a href="installation_raid_lvm?do=edit&amp;rev=0#qsearch__in" tabindex="2">Rechercher</a> | <a href="installation_raid_lvm?do=edit&amp;rev=0#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="installation_raid_lvm?do=edit&amp;rev=0" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="installation_raid_lvm" >tutoriel:installation_raid_lvm</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<p>
+<strong>Quelques recommandations avant de créer ou de modifier cette page :</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Lisez le <a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">guide du contributeur</a> et la <a href="../wiki/ligne_editoriale" class="wikilink1" title="wiki:ligne_editoriale">ligne éditoriale</a>.</div>
+</li>
+<li class="level1"><div class="li"> Découvrez la <a href="http://doc.ubuntu-fr.org/wiki/syntaxe" class="wikilink1" title="wiki:syntaxe">syntaxe</a> et entraînez-vous dans le <a href="../playground/playground" class="wikilink1" title="playground:playground">bac à sable</a>.</div>
+</li>
+<li class="level1"><div class="li"> Utilisez les modèles (<a href="../wiki/modeles/application" class="wikilink1" title="wiki:modeles:application">application</a>, <a href="../wiki/modeles/materiel" class="wikilink1" title="wiki:modeles:materiel">matériel</a>, <a href="../wiki/modeles/portable" class="wikilink1" title="wiki:modeles:portable">ordinateur portable</a>, <a href="../wiki/modeles/tutoriel" class="wikilink1" title="wiki:modeles:tutoriel">tutoriel</a>, <a href="../wiki/modeles/utilisateur" class="wikilink1" title="wiki:modeles:utilisateur">utilisateur</a>, <a href="../wiki/modeles/portail" class="wikilink1" title="wiki:modeles:portail">portail</a>) et les <a href="../wiki/mini-tutoriels" class="wikilink1" title="wiki:mini-tutoriels">mini-tutoriels</a>.</div>
+</li>
+<li class="level1"><div class="li"> Rapportez toutes créations ou modifications importantes sur <a href="../wiki/liste_discussion#coordination_de_la_documentation" class="wikilink1" title="wiki:liste_discussion">la liste de discussion</a>.</div>
+</li>
+</ol>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fcdb5fe1d67011f56447459483d05597.xhtml used -->
+<script type="text/javascript">/*<![CDATA[*/
+textChanged = false/*!]]>*/</script>
+    <div class="editBox" role="application">
+
+    <div class="toolbar group">
+        <div id="draft__status"></div>
+        <div id="tool__bar"><a href="http://doc.ubuntu-fr.org/lib/exe/mediamanager.php?ns=tutoriel"
+            target="_blank">Sélection de fichiers</a></div>
+    </div>
+    <form id="dw__editform" method="post" action="installation_raid_lvm?do=edit&amp;rev=0" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><input type="hidden" name="id" value="tutoriel:installation_raid_lvm" /><input type="hidden" name="rev" value="0" /><input type="hidden" name="date" value="1323958659" /><input type="hidden" name="prefix" value="." /><input type="hidden" name="suffix" value="" /><input type="hidden" name="changecheck" value="92b97423786fd62e7f10b58c6d94a981" /><input type="hidden" name="target" value="section" /><textarea name="wikitext" id="wiki__text" dir="auto" class="edit" cols="80" rows="10" tabindex="1">
+{{tag&gt;raid}}
+----
+
+====== Installation robuste : utilisation de mdadm + LVM2+UBUNTU-alternate-CD ======
+
+Le but de ce tutoriel est d'expliquer comment installer un système permettant le remplacement d'un disque dur en panne sans perte de données. Nous utiliserons deux types de raid:
+  * le **raid1** pour le point de montage **/boot**
+    &lt;note important&gt;en effet Grub ne sait pas booter sur du LVM.
+En revanche, **Grub2** le permet désormais (au moins depuis la version présente dans Debian/lenny). Cette limitation devient donc caduque même avec une partition de boot LVM+RAID (software).&lt;/note&gt; 
+
+  * le **raid5+LVM** pour la **racine** et **/home** (j'ai choisi de faire des partions LVM sur le raid5 car celle-ci peuvent être facilement dimensionnées  a posteriori.
+=== AVERTISSEMENT : ===
+  * Ce tutoriel n'est en aucun cas un manuel de référence, il est juste le fruit de mon expérience qu'il me semblait intéressant de partager. 
+  * Ce tutoriel n'explique pas non plus ce qu'est le RAID ou le LVM, je vous laisse lire les nombreux wiki qui existent sur la question.
+  * Je vous conseille  de faire quelques tests de pannes tant que vous n'avez pas de données sensibles.
+=== CONFIGURATION : ===
+  * UBUNTU Gutsy 7.10
+  * 3 disques durs de 40 Go 
+=== AVANT DE COMMENCER : ===
+  * Télécharger et graver le alternate-CD de Ubuntu
+
+=== ARCHITECTURE DE L'INSTALLATION : ===
+{{tutoriel:config.png|}}
+
+
+=====  Installation =====
+
+Booter sur le CD, taper F2 pour choisir la langue française puis sélectionner le menu **« Installer sur le disque dur »**. 
+
+(en mode texte, pour éviter certains bugs, avec les disques ide)
+
+
+
+
+==== Partitionnement des disques ====
+Nous allons utiliser l'outil de partitionnement du CD et le faire manuellement. Choisir donc **« partitionnement manuel »**
+Les 3 disques doivent normalement apparaitre comme ci-dessous:
+
+{{tutoriel:disques-avant-partions.jpg|}}
+
+Sélectionner un espace libre et créer les 3 partitions :
+  * une  de 500Mo utilisée comme **« swap »** 
+  * une de 500Mo utilisée comme **« raid »** et rajouter l'indicateur d'amorçage sur &quot;présent&quot;
+  * une dernière de 39 Go utilisé comme  **« raid »**
+
+Répéter l'opération sur les 3 disques. Cela doit donner quelque chose dans ce gout là:
+
+{{tutoriel:disques-partitionnes.jpg|}}
+
+==== Création des périphériques RAID ====
+A l'aide de la barre de défilement verticale remonter et sélectionner le menu « Configurer le  RAID logiciel »
+
+{{tutoriel:menu-config-raid.jpg|}}
+
+Là un écran apparait pour savoir si il faut appliquer les changements, répondre **« oui »**, après quelques minutes d'attente un nouveau menu apparait, celui-ci vous permettra de **«  créer un périphérique multidisque »** autrement dit les deux périphériques RAID.
+A ce stade on va vous demander le type de RAID à créer  ici du RAID 1 (ATTENTION la photo est trompeuse)
+
+{{tutoriel:type-de-raid.jpg|}}
+
+Pour le premier périphérique en RAID 1 choisir les partitions **sda2,sdb2,sdc2** en utilisant la touche « espace » pour sélectionner et la touche « TAB » pour changer d'endroit dans la zone graphique.
+
+{{tutoriel:creation-raid1.jpg|}}
+
+Répondre aux quelques questions qui vous sont posées concernant les caractéristiques du RAID : j'ai personnellement choisi 3 disques, et 0 en secours.
+Réaliser la même opération pour créer le RAID 5 à l'aide des partitions sda3,sdb3 et sdc3
+
+
+Continuer jusqu'à obtenir un écran comme le suivant, confirmant bien la création des périphériques RAID.
+
+{{tutoriel:config-lvm.jpg|}}
+
+C'est à ce moment que le RAID 5 se construit. Avant de faire toutes autres choses, laissez lui le temps de se construire entièrement. Pour vérifier celà, allez en mode console (CTRL ALT F2) et tapez la commande suivante :
+cat /proc/mdstat
+
+Vous voyez l'avancement de la construction de votre RAID 5 (pourcentage et minutes restantes) puis CTRL ALT F1 pour revenir sous l'install d' Ubuntu.
+
+Une fois fini,
+Pour le périphérique RAID 5: __changer le type de système de fichier de partitions, mettre utilisé comme **« LVM »**__
+
+
+
+
+==== Configuration du LVM ===
+A ce stade doit apparaître un menu **« Configurer le gestionnaire de volumes logiques (LVM) » ** qui va nous permettre de créer nos différents:
+  * volumes physiques,
+  * groupes de volumes
+  * et volumes logiques 
+sur le RAID 5.
+
+FIXME Ajout de la possibilité de chiffrer entièrement la LVM à ce stade.
+
+A l'aide des différents écrans, créer :
+  * Un volume physique sur le périphérique RAID5 ici /dev/md1 
+
+__Remarque:__ les périphériques RAID sont nommés md0 et md1 
+
+  * Un groupe de volume appelé //« mvg »//, contenant le volume physique précédent 
+  * Et deux volumes logiques, le 1er  appelé //« racine »// de 10Go et le 2nd appelé //« home »// de 68Go,
+
+A la fin de la configuration vous devez obtenir quelque chose comme ceci:
+
+{{tutoriel:fin-lvm.jpg|}}
+
+puis vous obtenez une nouvelle table de partition
+
+{{tutoriel:fin-partionnement.jpg|}}
+
+__Remarque :__ On peut voir les partitions LVM apparaître.
+
+
+
+==== Finalisation ====
+Il ne nous reste plus qu'à paramétrer le type de système de fichier &quot;ext3&quot; que l'on souhaite sur les partitions et les différents points de montages. A la fin cela doit donner quelque chose dans ce goût là:
+
+{{tutoriel:fin-montage.jpg|}}
+
+Il ne vous reste plus qu'à continuer l'installation normale de UBUNTU
+
+
+
+
+
+===== Modifications complémentaires =====
+Votre système est maintenant installé, démarrez-le. Si vous voulez qu'il arrive à démarrer avec des lecteurs en panne il va falloir faire quelques modifications.
+
+
+
+
+
+==== Modification du fichier de configuration de mdadm ====
+Il ne faut pas oublier de renseigner le fichier de configuration **/etc/mdadm/mdadm.conf** sur les différents RAID existant, voici le mien
+
+	# definitions of existing MD arrays 
+	DEVICE /dev/sda2 /dev/sdb2 /dev/sdc2 /dev/sda3 /dev/sdb3 /dev/sdc3 
+	ARRAY /dev/md0 devices=/dev/sda2,/dev/sdb2,/dev/sdc2 level=raid1 			num-devices=3 UUID=80ebfd5f:2385410e:988bcc54:d4011508 
+	ARRAY /dev/md1 devices=/dev/sda3,/dev/sdb3,/dev/sdc3 level=raid5 			num-devices=3 UUID=74c43784:06f6be21:90a22a85:a8e3aa21 
+
+On peut commencer à remplir automatiquement le fichier en utilisant la commande suivante:
+
+	#mdadm  --examine --scan &gt;&gt; /etc/mdadm/mdadm.conf
+
+==== Installation de Grub sur les autres disques ====
+il suffit de taper les commandes:
+	#grub-install hd1
+	#grub-install hd2
+
+==== Modification du fichier de configuration de GRUB ====
+Par défaut GRUB se sert du premier disque pour démarrer, dans certaines conditions il peut être utile de démarrer à partir des autres disques. Nous allons donc modifier le fichier de configuration  **/boot/grub/menu.lst**. et y ajouter deux autres menus.
+
+NOUVEAU CODE:
+	fallback 1 2
+
+	title           Ubuntu 7.10, kernel 2.6.22-14-generic (disque 0) 
+	root            (hd0,1) 
+	kernel          /vmlinuz-2.6.22-14-generic root=/dev/mapper/mvg-racine ro quiet splash 
+	initrd          /initrd.img-2.6.22-14-generic 
+	quiet 
+
+	title           Ubuntu 7.10, kernel 2.6.22-14-generic (disque 1) 
+	root            (hd1,1) 
+	kernel          /vmlinuz-2.6.22-14-generic root=/dev/mapper/mvg-racine ro quiet splash 
+	initrd          /initrd.img-2.6.22-14-generic 
+	quiet 
+
+	title           Ubuntu 7.10, kernel 2.6.22-14-generic (disque 2) 
+	root            (hd2,1) 
+	kernel          /vmlinuz-2.6.22-14-generic root=/dev/mapper/mvg-racine ro quiet splash 
+	initrd          /initrd.img-2.6.22-14-generic 
+	quiet 
+
+	title           Ubuntu 7.10, kernel 2.6.22-14-generic (recovery mode) 
+	root            (hd0,1) 
+	kernel          /vmlinuz-2.6.22-14-generic root=/dev/mapper/mvg-racine ro single 
+	initrd          /initrd.img-2.6.22-14-generic 
+
+	title           Ubuntu 7.10, memtest86+ 
+	root            (hd0,1) 
+	kernel          /memtest86+.bin 
+	quiet 
+
+==== Désinstaller dmraid si nécessaire ====
+Des problèmes peuvent surgir quand dmraid est installé en même temps que mdadm, voir [[http://ubuntuforums.org/showthread.php?t=1149669&amp;highlight=%2Fdev%2Fblock%2F252%3A1 | ce poste]].
+
+Bien que les disques sont toujours présent dans /dev (/dev/sda, /dev/sdb,..) les partitions des disques (/dev/sda1, /dev/sda2, /dev/sdb1, ..) ont disparu.
+On ne sait dès lors plus manipuler le raid avec mdadm comme il se doit (--add, --fail, --remove) car la partition n'existe plus dans /dev/.
+
+Il suffit de désinstaller dmraid pour régler le problème.
+
+&lt;code&gt;
+sudo apt-get remove dmraid
+&lt;/code&gt;
+
+===== Simulation de pannes =====
+===ATTENTION :=== 
+la reconstruction du RAID 5 peut être longue.
+
+==== 1er test ====
+Mettre en panne le sda2
+	#mdadm --fail /dev/md0 /dev/sda2
+en avoir la confirmation 
+	#cat /proc/mdstat
+le supprimer du tableau RAID
+	#mdadm --remove /dev/md0 /dev/sda2
+vous pouvez redémarrer le PC et l'ajouter à nouveau
+	#mdadm --add /dev/md0 /dev/sda2
+Voir l'avancement de la reconstruction **(Ctrl C pour sortir)**
+	#watch cat /proc/mdstat
+
+
+
+==== 2ème test ====
+débrancher le //sdb// et redémarrer, là le PC bloque, au bout de //10 minutes// vous tombez sur une invite de commande **( Initramfs )**. Le système n'est pas arrivé à assembler les périphériques RAID, il vous suffit alors de taper :
+	#/sbin/mdadm  --assemble --scan
+Puis
+	#exit
+le système devrait arriver à démarrer. Puis en faisant
+	#cat /proc/mdstat
+vous vous apercevez que //sdb2 et sdb3//  sont défectueux, votre système marche bien sur 2 disques. Arrêter le système rebrancher le disque et démarrer le système. //( il vous faudra peu être assembler à nouveau les disques)//
+
+Vous pouvez constater que //sdb2 et sdb3//  sont encore défectueux il faut donc les ajouter à nouveau aux deux tableaux RAID. (quelquefois il faut faire un //--remove// avant le //--add//) 
+	#mdadm --add /dev/md0 /dev/sdb2
+	#mdadm --add /dev/md1 /dev/sdb3
+suivre la reconstruction
+	#watch cat /proc/mdstat
+
+__Remarque :__ si **/sbin/mdadm --assemble --scan** ne marche pas vous pouvez mieux spécifier:
+	#/sbin/mdadm  --assemble /dev/md0 /dev/sdb2
+	#/sbin/mdadm  --assemble /dev/md1 /dev/sdb3
+
+
+==== 3ème test ====
+débrancher le sda et redémarrer, là normalement vous tombez sur le shell GRUB, pour lancer le menu de GRUB taper:
+	configfile (hd0,1)/grub/menu.lst
+vous devez tomber sur le même invite de commande que pour le **2ème test**, faite donc la même chose mais cette fois ci avec sda
+
+__Remarque :__ Le clavier de GRUB est configuré en qwerty a vous de retrouver les bonnes touches.
+
+==== Conclusion ====
+On est donc arrivé à démarrer le système sur seulement 2 disques ce qui permet de changer le 3ème. une fois le nouveau disque inséré il faut le partitionner à l'aide de //cfdisk// par exemple et ajouter chaque partitions dans le bon tableau RAID.
+
+
+===== Alerte de panne =====
+
+Si un disque dur tombe en panne il faut le savoir, le système fonctionnera encore même avec 2 disques (c'est d'ailleurs pour cela que l'on s'est donné tout ce mal), il sera sûrement un peu plus lent.
+
+//mdadm// permet de vous envoyer un mail automatiquement quand un disque est défaillant. Il faut dans un premier temps installer Postfix pour gérer l'envois des mails, cf. « [[:postfix_systeme_satellite]] ».
+
+Il faut en suite renseigner la variable **MAILADDR** en la faisant suivre de votre adresse EMAIL dans le fichier **/etc/mdadm/mdadm.conf**, on peu même spécifier l'expéditeur avec **MAILFROM**.
+Exemple :
+
+  MAILADDR monadresse@domaine.fr 
+  MAILFROM root@localhost
+
+il faut que //mdadm// soit mis en démon en mode //--monitor//, par exemple dans un script de démarrage.
+
+  # mdadm --monitor --scan --daemonise
+
+et le tour est joué.
+
+===== Listes de commandes utiles =====
+Après avoir beaucoup perdu de temps en cherchant des informations à droite et à gauche qui me permettent de récupérer mon système sachant que j'avais installé du RAID ou du LVM ou les deux j'ai donc fait une petite compilation des commandes les plus utiles. Il faut aussi savoir que **mdadm** et **LVM** sont dans **/sbin**. et vous y avez accès même si vous tombez sur une invite de commande du style **( Initramfs )**.
+une fois vos périphérique RAID et vos partitions LVM retrouvées à la main faites un **« exit »** pour continuer le démarrage.
+
+
+==== Commandes RAID ====
+Renseignement sur les périphériques RAID
+	#mdadm --detail /dev/md0
+Renseignement sur une partition particulière
+	#mdadm --examine /dev/sda2
+Assembler un tableau RAID déjà existant sans préciser
+	#mdadm --assemble --scan
+Assembler un tableau RAID déjà existant en précisant (redémarrer le RAID)
+	#mdadm --assemble /dev/md0 /dev/sd[abc]2
+Déclarer un disque dur en panne
+	#mdadm --fail /dev/md0 /dev/sdb2
+Supprimer un disque dur d'un tableau RAID
+	#mdadm --remove /dev/md0 /dev/sdb2
+Pour ajouter un nouveau disque dans le tableau RAID
+	#mdadm --add /dev/md0 dev/sdb2 
+
+Recréer les périphériques multidisque si ils ne sont pas présent dans répertoire /dev
+ 	#mknod /dev/md0 b 9 0
+	#mknod /dev/md1 b 9 1
+
+Créer un nouveau tableau RAID
+	#mdadm --create --verbose /dev/md0 --level=1 --raid-devices=3 /dev/sda2 /dev/sdb2 /dev/sdc2
+
+Pour voir l'état des différents disques RAID consulter le fichier **/proc/mdstat ** en tapant la commande:
+	#watch cat /proc/mdstat 	
+pour sortir  un bon vieux //« Crtl C »//
+
+__Remarque :__ le fichier de configuration de mdadm est **/etc/mdadm/mdadm.conf**
+
+
+==== Commande LVM ====
+
+Recréer les périphériques node dans /dev/mapper
+	#vgmknodes 
+Activer des Groupes Volumes qui existent déjà.
+	#vgchange -a y
+
+Voir aussi **pvs**, **vgs** et **lvs** pour voir ce qui existe comme groupes physiques, groupes de volumes et  volumes logiques.
+
+
+
+
+===== Conclusion =====
+Dans ce document j'ai donc essayé d'avoir une approche très pratique du problème en compilant différentes informations sur mdadm, LVM2, GRUB et l'ALTERNATE-CD de UBUNTU.</textarea>
+<div id="wiki__editbar" class="editBar">
+<div id="size__ctl">
+</div>
+<div class="editButtons">
+<div id="plugin__captcha_wrapper"><input type="hidden" name="b33748d4f4965036c737b7076f70479e" value="I7I8spDEfluU6RCoxBZcAP/fKi4HMISkVpHNEnB8cAs=" /><label for="plugin__captcha">Merci de recopier le code ci-contre pour prouver que vous êtes humain :</label> <span id="plugin__captcha_code">Z​
+YM A C</span> <input type="text" size="5" name="97f8199e76d0087c33b8414f636b6ab3" class="edit" /> <label class="no">Merci de laisser ce champ vide : <input type="text" name="1ba5ada0ca212db606c6b0ffce462316" /></label></div><input name="do[save]" type="submit" value="Enregistrer" class="button" id="edbtn__save" accesskey="s" tabindex="4" title="Enregistrer [S]" />
+<input name="do[preview]" type="submit" value="Aperçu" class="button" id="edbtn__preview" accesskey="p" tabindex="5" title="Aperçu [P]" />
+<input name="do[draftdel]" type="submit" value="Annuler" class="button" tabindex="6" />
+</div>
+<div class="summary">
+<label class="nowrap" for="edit__summary"><span>Résumé</span> <input type="text" id="edit__summary" name="summary" class="edit" size="50" tabindex="2" /></label>
+</div>
+</div>
+<div class="license">
+Note : En modifiant cette page, vous acceptez que le contenu soit placé sous les termes de la licence suivante : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" class="urlextern">CC Paternité-Partage des Conditions Initiales à l'Identique 3.0 Unported</a></div>
+</div></form>
+</div>
+<script type="text/javascript">
+   var saveBtn = document.getElementById('edbtn__save');
+   saveBtn.disabled = true;
+   saveBtn.style.color = 'gray';
+   saveBtn.style.backgroundColor = '#EEEEEE';
+   saveBtn.value = 'Enregistrer (Click \'Aperçu\' first)';
+</script>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="installation_raid_lvm?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="installation_raid_lvm?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="installation_raid_lvm?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

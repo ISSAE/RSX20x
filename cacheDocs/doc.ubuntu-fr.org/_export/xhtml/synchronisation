@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>synchronisation</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-13T16:31:52+0100"/>
+<meta name="keywords" content="brouillon,fichier"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../synchronisation?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="synchronisation"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/synchronisation"/>
+<link rel="canonical" href="../../synchronisation"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"synchronisation","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="synchronisation#types_de_synchronisation">Types de synchronisation</a></div></li>
+<li class="level1"><div class="li"><a href="synchronisation#logiciels_de_synchronisation">Logiciels de synchronisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="synchronisation#avec_une_interface_graphique">Avec une interface graphique</a></div></li>
+<li class="level2"><div class="li"><a href="synchronisation#en_ligne_de_commande">En ligne de commande</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="synchronisation#liste_des_pages_sur_la_synchronisation">Liste des pages sur la synchronisation</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>,
+	<a href="../../fichier?do=showtag&amp;tag=fichier" class="wikilink1" title="fichier" rel="tag">fichier</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="synchronisation">Synchronisation</h1>
+<div class="level1">
+
+<p>
+La synchronisation de fichiers (ou de répertoires) est le processus permettant de faire correspondre les contenus de deux (ou plus) emplacements de stockage.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Synchronisation" [34-224] -->
+<h2 class="sectionedit2" id="types_de_synchronisation">Types de synchronisation</h2>
+<div class="level2">
+
+<p>
+La synchronisation de fichiers peut être à sens unique (unidirectionnelle) ou bidirectionnelle (à deux sens). Dans le cas d&#039;une synchronisation à sens unique, les modifications sont appliquées seulement d&#039;un endroit primaire (source ou &quot;maître&quot;) à un endroit secondaire (cible ou &quot;esclave&quot;) et dans une seule direction, mais aucune modification n&#039;est effectuée de l&#039;endroit secondaire à l&#039;endroit primaire. Dans la synchronisation bidirectionnelle, au contraire, des modifications sont appliquées dans les deux directions, maintenant les contenus des deux endroits parfaitement identiques. <br/>
+
+Il est à noter qu&#039;il est possible de faire deux synchronisations unidirectionnelles, tantôt dans un sens, tantôt dans l&#039;autre mais que cela risque de poser des problèmes avec les fichiers supprimés et ceux modifiés de part et d&#039;autre, alors que la synchronisation bidirectionnelle gère cela.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Types de synchronisation" [225-1165] -->
+<h2 class="sectionedit3" id="logiciels_de_synchronisation">Logiciels de synchronisation</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT3 SECTION "Logiciels de synchronisation" [1166-1207] -->
+<h3 class="sectionedit4" id="avec_une_interface_graphique">Avec une interface graphique</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <strong><a href="../../grsync" class="wikilink1" title="grsync">Grsync</a></strong> : Interface graphique de <a href="../../rsync" class="wikilink1" title="rsync">rsync</a>. Principalement utilisé pour mettre en place des systèmes de sauvegarde distante. Rsync travaille de manière unidirectionnelle.</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../unison-gtk" class="wikilink1" title="unison-gtk">Unison-gtk</a></strong> : Interface graphique de <a href="../../unison" class="wikilink1" title="unison">unison</a>. À la différence de Rsync celui-ci réalise une synchronisation bidirectionnelle.</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../freefilesync" class="wikilink1" title="freefilesync">FreeFileSync</a></strong> : Semblable à Unison, mais beaucoup plus simple. Ne gère pas les dossiers distants.(sauf si on le couple à <a href="../../autofs" class="wikilink1" title="autofs">autofs</a> qui permet d&#039;accéder à des fichiers distants comme si ils étaient en local)</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../synkron" class="wikilink1" title="synkron">Synkron</a></strong> : Relativement simple d&#039;utilisation, multiplateforme, bidirectionnelle et multilingue. Dernière version compilé pour Linux datant de 2009, les sources elles sont plus récentes.</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../conduit" class="wikilink1" title="conduit">Conduit</a></strong> : Outil de synchronisation pour l&#039;environnement de bureau Gnome. Il vous permettra de synchroniser vos photos, documents, calendriers, emails, contacts, notes, marque-pages et flux RSS, … Possibilité de synchroniser les dossiers distants. Dernière version datant de 2010.</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://doc.ubuntu-fr.org/fullsync" class="wikilink1" title="fullsync">FullSync</a></strong>: Logiciel de synchronisation de fichiers/dossiers avec interface graphique. Dernière version datant du 3 décembre 2012.</div>
+</li>
+<li class="level1"><div class="li"> <strong>LuckyBackup</strong>: Logiciel de synchronisation qui utilise rsync. <a href="http://luckybackup.sourceforge.net/" class="urlextern" title="http://luckybackup.sourceforge.net/"  rel="nofollow">http://luckybackup.sourceforge.net/</a> aussi disponible dans les dépots.</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://jfilesync.sourceforge.net/" class="urlextern" title="http://jfilesync.sourceforge.net/"  rel="nofollow">JFileSync</a></strong> <strong>N&#039;est plus développé</strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://www.dirsyncpro.org/" class="urlextern" title="http://www.dirsyncpro.org/"  rel="nofollow">DirSync Pro</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="https://ind.ie/pulse" class="urlextern" title="https://ind.ie/pulse"  rel="nofollow">Pulse</a></strong> (licence GPLv3): Synchroniser des répertoires entre plusieurs machines, le tout de manière sécurisée <a href="http://fr.wikipedia.org/wiki/Chiffrement_RSA" class="urlextern" title="http://fr.wikipedia.org/wiki/Chiffrement_RSA"  rel="nofollow">clés RSA</a> + utilisation de <a href="http://fr.wikipedia.org/wiki/Transport_Layer_Security" class="urlextern" title="http://fr.wikipedia.org/wiki/Transport_Layer_Security"  rel="nofollow">TLS</a>. <strong>Info</strong>:<a href="http://korben.info/syncthing-devient-pulse-et-compte-bien-detroner-bittorrent-sync.html" class="urlextern" title="http://korben.info/syncthing-devient-pulse-et-compte-bien-detroner-bittorrent-sync.html"  rel="nofollow">ici</a></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../bittorrentsync" class="wikilink1" title="bittorrentsync">BtSync</a></strong> (logiciel fermé &amp; <strong>bientot payant</strong>): Synchroniser des répertoires entre plusieurs machines en local &amp; Internet, Crypté <a href="http://fr.wikipedia.org/wiki/Advanced_Encryption_Standard" class="urlextern" title="http://fr.wikipedia.org/wiki/Advanced_Encryption_Standard"  rel="nofollow">AES-256</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT4 SECTION "Avec une interface graphique" [1208-3333] -->
+<h3 class="sectionedit5" id="en_ligne_de_commande">En ligne de commande</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <strong><a href="../../rsync" class="wikilink1" title="rsync">Rsync</a></strong> : Principalement utilisé pour mettre en place des systèmes de sauvegarde distante. Rsync travaille de manière unidirectionnelle.</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../unison" class="wikilink1" title="unison">Unison</a></strong> : À la différence de Rsync celui-ci réalise une synchronisation bidirectionnelle.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT5 SECTION "En ligne de commande" [3334-3620] -->
+<h2 class="sectionedit6" id="liste_des_pages_sur_la_synchronisation">Liste des pages sur la synchronisation</h2>
+<div class="level2">
+<div class="table">
+<table class="inline">
+	<tr>
+		<th class="page">Page</th>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../tutoriel/sync_wm5-6" class="wikilink1" title="tutoriel:sync_wm5-6">Comment synchroniser Ubuntu avec les PDA et smartphones sous Windows™ Mobile 5/6 ou Windows Phone7 ? (mode synchronisation RNDIS)</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../conduit" class="wikilink1" title="conduit">Conduit</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../davical" class="wikilink1" title="davical">DAViCal, serveur de calendrier CalDAV</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../dropbox" class="wikilink1" title="dropbox">Dropbox</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../utilisateurs/woulouf/dropbox" class="wikilink1" title="utilisateurs:woulouf:dropbox">Dropbox</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../freefilesync" class="wikilink1" title="freefilesync">FreeFileSync</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/fullsync" class="wikilink1" title="fullsync">FullSync : Synchroniser en toute simplicité</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../grsync" class="wikilink1" title="grsync">Grsync</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../hubic" class="wikilink1" title="hubic">hubiC</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../funambol" class="wikilink1" title="funambol">Installation et configuration de Funambol</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../korganizer" class="wikilink1" title="korganizer">Korganizer: gestion de votre Agenda</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../nevernote" class="wikilink1" title="nevernote">NixNote : synchronisez vos notes Evernote</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../rsync" class="wikilink1" title="rsync">rsync</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../tutoriel/serveur_de_synchronisation_avec_rsync" class="wikilink1" title="tutoriel:serveur_de_synchronisation_avec_rsync">Serveur de synchronisation avec rsync</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../sparkleshare" class="wikilink1" title="sparkleshare">SparkleShare</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/utilisateurs/tuxmouraille/sparkleshare" class="wikilink1" title="utilisateurs:tuxmouraille:sparkleshare">SparkleShare</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../spideroak" class="wikilink1" title="spideroak">SpiderOak</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../syncevolution" class="wikilink1" title="syncevolution">SyncEvolution : Synchronisation d&#039;Evolution avec le serveur funambol ou les sites scheduleworld/memotoo</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../nokia_6110_navigator" class="wikilink1" title="nokia_6110_navigator">Synchronisation d&#039;un Nokia 6110 Navigator avec Evolution</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/palmos" class="wikilink1" title="palmos">Synchronisation d&#039;un PDA fonctionnant avec PalmOS sous Linux Ubuntu et Kubuntu</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/ubuntuone_fichiers" class="wikilink1" title="ubuntuone_fichiers">Synchronisation de dossiers/fichiers avec Ubuntu One</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/synchronisation_kontact" class="wikilink1" title="synchronisation_kontact">Synchronisation de Kontact et d&#039;un agenda de téléphone mobile</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../ubuntuone_notes" class="wikilink1" title="ubuntuone_notes">Synchronisation de vos notes avec Ubuntu One</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/telephones" class="wikilink1" title="telephones">Synchronisation mobiles : liste d’appareils</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../synkron" class="wikilink1" title="synkron">Synkron</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/ubuntuone" class="wikilink1" title="ubuntuone">Ubuntu One : un &quot;nuage personnel&quot;</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../unison" class="wikilink1" title="unison">Unison</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/zsync" class="wikilink1" title="zsync">zsync</a></td>
+	</tr>
+</table>
+</div>
+
+</div>
+<!-- EDIT6 SECTION "Liste des pages sur la synchronisation" [3621-] -->
+<!-- no cachefile used, caching forbidden -->
+</div>
+</body>
+</html>

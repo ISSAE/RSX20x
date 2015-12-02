@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>tmpfs</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-05-30T07:54:40+0200"/>
+<meta name="keywords" content="systeme,optimisation"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../tmpfs?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="tmpfs"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/tmpfs"/>
+<link rel="canonical" href="../../tmpfs"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"tmpfs","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="tmpfs#presentation_de_tmpfs">Présentation de tmpfs</a></div></li>
+<li class="level1"><div class="li"><a href="tmpfs#avantages_et_inconvenients">Avantages et Inconvénients</a></div></li>
+<li class="level1"><div class="li"><a href="tmpfs#mise_en_place">Mise en place</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="tmpfs#mettretmp_en_tmpfs">Mettre /tmp en tmpfs</a></div></li>
+<li class="level2"><div class="li"><a href="tmpfs#creer_un_tmpfs_personnalise">Créer un tmpfs personnalisé</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="tmpfs#quelques_exemples_d_utilisation">Quelques exemples d&#039;utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="tmpfs#le_dossiertmp">Le dossier /tmp</a></div></li>
+<li class="level2"><div class="li"><a href="tmpfs#vartmp_ouvarlock">/var/tmp ou /var/lock</a></div></li>
+<li class="level2"><div class="li"><a href="tmpfs#accelerer_firefox">Accélérer Firefox</a></div></li>
+<li class="level2"><div class="li"><a href="tmpfs#copier_des_fichiers">Copier des fichiers</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="tmpfs#l_utilite_des_fichiers_rclocal_et_rclocalshutdown">L&#039;utilité des fichiers rc.local et rc.local.shutdown</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../optimisation" class="wikilink1" title="optimisation" rel="tag">optimisation</a>
+</span></div>
+
+<h1 class="sectionedit1" id="tmpfs">tmpfs</h1>
+<div class="level1">
+
+<p>
+<p><div class="notewarning">L&#039;utilisation de la commande tmpfs peut aboutir à des pertes de données en cas de mauvaise manipulation, prenez le temps de bien comprendre ce système et ses implications !
+</div></p>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "tmpfs" [32-250] -->
+<h2 class="sectionedit2" id="presentation_de_tmpfs">Présentation de tmpfs</h2>
+<div class="level2">
+
+<p>
+Tmpfs est implémenté directement dans le noyau Linux depuis la version 2.6
+(c&#039;est à dire qu&#039;il est disponible dans toutes les versions d&#039;ubuntu supportés officiellement).
+</p>
+
+<p>
+Il remplace les commandes de création de ramdisk, et offre l&#039;avantage de redonner la mémoire vive aux systèmes d&#039;exploitations en cas de non utilisation de celle-ci.
+</p>
+
+<p>
+Un RAMDisk ou un volume Tmpfs dans ce cas présent est un espace dans la mémoire vive qui est utilisé pour stocker des fichiers temporairement (en effet le volume est vidé à chaque arrêt du système).
+</p>
+
+<p>
+Un tmpfs est donc idéal pour stocker les fichiers temporaires de votre ordinateur. Ces fichiers temporaires sont des fichiers qui sont, par exemple, créé puis effacés lors de l&#039;extraction d&#039;un fichier compressé, lors d&#039;une mise à jour, etc …
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Présentation de tmpfs" [251-1090] -->
+<h2 class="sectionedit3" id="avantages_et_inconvenients">Avantages et Inconvénients</h2>
+<div class="level2">
+
+<p>
+Tmpfs permet de créer un espace de stockage dans la mémoire vive, Il y a plusieurs conséquences:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em class="u"><strong>Tous les fichiers seront effacés dès le prochain redémarrage ou après une coupure de courant !</strong></em> (En utilisation pour des fichiers temporaires l&#039;inconvénient devient ici un avantage, car les fichiers seront purgés même si le programme oubli de le faire !)</div>
+</li>
+<li class="level1"><div class="li"> Vitesse d&#039;accès aux fichiers accrue.</div>
+</li>
+<li class="level1"><div class="li"> Économie de consommation électrique.</div>
+</li>
+<li class="level1"><div class="li"> Baisse de l&#039;usure des disques (surtout pour les SSD).</div>
+</li>
+<li class="level1"><div class="li"> Baisse des coûts d&#039;accès aux disques lors ceux-ci sont payants (par exemple pour les disques réseaux EBS d&#039;Amazon)</div>
+</li>
+<li class="level1"><div class="li"> tmpfs, si la RAM est pleine, vient automatiquement s&#039;écrire sur le disque dur dans la partition &quot;swap&quot; ce qui permet de ne pas impacter les performances si le PC a besoin de toute votre RAM</div>
+</li>
+<li class="level1"><div class="li"> un tmpfs de 1 GO ne prendra 1 GO de place dans la RAM que s&#039;il est plein, en effet il ne prendra que la place des fichiers qu&#039;il contient.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Avantages et Inconvénients" [1091-2108] -->
+<h2 class="sectionedit4" id="mise_en_place">Mise en place</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT4 SECTION "Mise en place" [2109-2135] -->
+<h3 class="sectionedit5" id="mettretmp_en_tmpfs">Mettre /tmp en tmpfs</h3>
+<div class="level3">
+
+<p>
+C&#039;est le but même de tmpfs à l&#039;origine !
+</p>
+
+<p>
+pour ce faire il suffit <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">d&#039;ajouter au fichier texte</a> <strong>/etc/fstab</strong> la ligne:
+</p>
+<pre class="code">tmpfs /tmp tmpfs defaults,size=32M 0 0</pre>
+
+<p>
+Cette modification est effective au prochain démarrage.
+</p>
+
+<p>
+<p><div class="noteimportant">N&#039;hésitez pas à changer l&#039;espace en Mo associé au tmpfs (ici 32 Mo) par l&#039;espace voulu si besoin. En effet certains programmes demanderont peut être plus d&#039;espace (rare).
+</div></p>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Mettre /tmp en tmpfs" [2136-2631] -->
+<h3 class="sectionedit6" id="creer_un_tmpfs_personnalise">Créer un tmpfs personnalisé</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="creer_votre_repertoire">Créer votre répertoire</h4>
+<div class="level4">
+<pre class="code">sudo mkdir /media/virtuelram</pre>
+
+<p>
+Tout ce qui sera dans ce répertoire sera stocké en mémoire vive.
+</p>
+
+</div>
+
+<h4 id="definir_les_droits">Définir les droits</h4>
+<div class="level4">
+
+<p>
+Et oui, pour pouvoir écrire dedans depuis n&#039;importe quel utilisateur :
+</p>
+<pre class="code">sudo chmod 777 /media/virtuelram</pre>
+
+</div>
+
+<h4 id="monter_l_acces">Monter l&#039;accès</h4>
+<div class="level4">
+
+<p>
+Si vous voulez le monter ponctuellement : 
+</p>
+<pre class="code">sudo mount -t tmpfs -o size=512M tmpfs /media/virtuelram</pre>
+
+<p>
+l&#039;option size permet de définir la quantité de mémoire allouée.
+</p>
+
+<p>
+Si elle n&#039;est pas définie, le système attribuera la moitié de la quantité de la mémoire physique.
+<p><div class="notetip">Vous pouvez mettre ce code pour faire un raccourci (créer un lancer, rubrique commande).
+</div></p>
+</p>
+
+<p>
+Pour le monter à chaque démarrage, il faut <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditer le fichier</a> <strong>fstab</strong>. Pour cela, il suffit d&#039;entrer cette commande dans un terminal
+</p>
+
+<p>
+Et ajouter une de ces lignes de commande dans le ficher et enregistrer les modifications
+</p>
+<pre class="code">tmpfs /media/virtuelram tmpfs defaults,size=512M 0 0</pre>
+
+<p>
+pour 512 Mo
+</p>
+<pre class="code">tmpfs /media/virtuelram tmpfs defaults,size=1g 0 0</pre>
+
+<p>
+pour 1 Go
+</p>
+
+<p>
+Etc…
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Créer un tmpfs personnalisé" [2632-3762] -->
+<h2 class="sectionedit7" id="quelques_exemples_d_utilisation">Quelques exemples d&#039;utilisation</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT7 SECTION "Quelques exemples d'utilisation" [3763-3807] -->
+<h3 class="sectionedit8" id="le_dossiertmp">Le dossier /tmp</h3>
+<div class="level3">
+
+<p>
+contient des fichiers temporaires qui de toutes façons s&#039;effacent au redémarrage, donc c&#039;est sans risque de perte de données.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Le dossier /tmp" [3808-3963] -->
+<h3 class="sectionedit9" id="vartmp_ouvarlock">/var/tmp ou /var/lock</h3>
+<div class="level3">
+
+<p>
+Classiquement ces dossiers contiennent des fichiers temporaires mais qui ne s&#039;effacent pas automatiquement.
+Globalement cela ralenti un peu le lancement des programmes (qui doivent réécrire ces fichiers à chaque fois).
+</p>
+
+<p>
+<a href="http://refspecs.linuxfoundation.org/FHS_2.3/fhs-2.3.html#VARTMPTEMPORARYFILESPRESERVEDBETWEE" class="urlextern" title="http://refspecs.linuxfoundation.org/FHS_2.3/fhs-2.3.html#VARTMPTEMPORARYFILESPRESERVEDBETWEE"  rel="nofollow">http://refspecs.linuxfoundation.org/FHS_2.3/fhs-2.3.html#VARTMPTEMPORARYFILESPRESERVEDBETWEE</a>
+</p>
+
+</div>
+<!-- EDIT9 SECTION "/var/tmp ou /var/lock" [3964-4312] -->
+<h3 class="sectionedit10" id="accelerer_firefox">Accélérer Firefox</h3>
+<div class="level3">
+
+<p>
+Sous ce titre un peu racoleur, il s&#039;agit de placer le cache en tmpfs.
+</p>
+
+<p>
+Pour cela dans la barre d&#039;adresse de firefox taper <code>about:config</code>
+</p>
+
+<p>
+Rechercher la l&#039;entrée <code>browser.cache.disk.enable</code> et passez la valeur à <code>false</code> (double click sur la ligne)
+</p>
+
+<p>
+Vérifiez que <code>browser.cache.memory.enable</code> soit &quot;true&quot; (valeur par défaut)
+</p>
+
+<p>
+Optionnel : Vous pouvez configurer la taille du cache en ajoutant une entrée (click droit → nouveau → entier) <code>browser.cache.memory.capacity</code> puis renseignez la capacité du cache (valeur en Kilo-octet)  ou -1 pour une gestion automatique du cache. (Passer cette étape aura le même effet que de mettre la valeur à -1.)
+</p>
+
+<p>
+<p><div class="notehelp">
+<strong>Note :</strong> <code>browser.cache.disk.parent_directory</code> est obsolète
+</p>
+
+<p>
+Source : <a href="https://wiki.archlinux.org/index.php/Firefox_Ramdisk" class="urlextern" title="https://wiki.archlinux.org/index.php/Firefox_Ramdisk"  rel="nofollow">https://wiki.archlinux.org/index.php/Firefox_Ramdisk</a>
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Accélérer Firefox" [4313-5159] -->
+<h3 class="sectionedit11" id="copier_des_fichiers">Copier des fichiers</h3>
+<div class="level3">
+
+<p>
+L&#039;autonomie des portables en mode lecture vidéo par exemple, est plus grande avec un fichier en mémoire vive.
+La conversion des fichiers en divx, le rippage des CD, DVD etc … sont nettement plus rapides en mémoire vive.
+Etc…
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Copier des fichiers" [5160-5423] -->
+<h2 class="sectionedit12" id="l_utilite_des_fichiers_rclocal_et_rclocalshutdown">L&#039;utilité des fichiers rc.local et rc.local.shutdown</h2>
+<div class="level2">
+
+<p>
+Et oui ! Ce sont des fichiers qui permettent d&#039;exécuter des commandes au démarrage et à l&#039;extinction
+utile pour améliorer l&#039;utilisation de tmpfs (Vous pouvez par exemple copier des fichiers au démarrage dans votre tmpfs, ou les copier en dehors avant l&#039;extinction automatiquement via ces deux scripts).
+</p>
+
+</div>
+<!-- EDIT12 SECTION "L'utilité des fichiers rc.local et rc.local.shutdown" [5424-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/2dff43d23135d2d10a1422d9ad951ab0.xhtml used -->
+</div>
+</body>
+</html>

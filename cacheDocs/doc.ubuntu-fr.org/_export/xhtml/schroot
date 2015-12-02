@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>schroot</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-05-19T04:35:48+0200"/>
+<meta name="keywords" content="systeme,securite,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../schroot?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="schroot"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/schroot"/>
+<link rel="canonical" href="../../schroot"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"schroot","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="schroot#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="schroot#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="schroot#l_arborescence">L&#039;arborescence</a></div></li>
+<li class="level1"><div class="li"><a href="schroot#mise_en_place_d_un_environnement_chroot">Mise en place d&#039;un environnement chroot</a></div></li>
+<li class="level1"><div class="li"><a href="schroot#utilisation_courante">Utilisation courante</a></div></li>
+<li class="level1"><div class="li"><a href="schroot#exemple_d_utilisation_avancee">Exemple d&#039;utilisation avancée</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="schroot#configuration_de_schroot">Configuration de schroot</a></div></li>
+<li class="level2"><div class="li"><a href="schroot#installation_du_serveur_lamp">Installation du serveur LAMP</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="schroot#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="schroot">schroot</h1>
+<div class="level1">
+
+<p>
+<strong>schroot</strong> permet de gérer plus efficacement un environnement <a href="http://fr.wikipedia.org/wiki/chroot" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/chroot">chroot</a>. L&#039;usage de ces deux outils (schroot et chroot) permet de créer un <a href="http://doc.ubuntu-fr.org/virtualisation" class="wikilink1" title="virtualisation">environnement virtualisé</a> minimal. Puisque le système d&#039;exploitation de l&#039;environnement chroot partage le même noyau que le système « hôte », les ressources système (mémoire vive, processeur) sont moins sollicitées, mis à part l&#039;utilisation du disque dur.
+</p>
+
+<p>
+En terme de sécurité, schroot est moins robuste que les solutions de <a href="http://doc.ubuntu-fr.org/virtualisation" class="wikilink1" title="virtualisation">virtualisation</a> régulières.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "schroot" [44-608] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [609-752] -->
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Il suffit d&#039;<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer les paquets</a> <strong><a href="apt://schroot,debootstrap" class="urlextern" title="apt://schroot,debootstrap"  rel="nofollow">schroot debootstrap</a></strong>.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Installation" [753-910] -->
+<h2 class="sectionedit4" id="l_arborescence">L&#039;arborescence</h2>
+<div class="level2">
+
+<p>
+Voici un petit descriptif de l&#039;arborescence de <strong>/etc/schroot</strong> :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>chroot.d</strong> : On peut placer des fichiers de configuration supplémentaires dans ce répertoire qui seront lus de la même manière que schroot.conf</div>
+</li>
+<li class="level1"><div class="li"> <strong>copyfiles-defaults</strong> : Les fichiers à copier à partir du système hôte dans l&#039;environnement chroot</div>
+</li>
+<li class="level1"><div class="li"> <strong>mount-defaults</strong> : Les systèmes de fichiers à monter à l&#039;intérieur du chroot.</div>
+</li>
+<li class="level1"><div class="li"> <strong>nssdatabases-defaults</strong> : Système de base de données NSS à copier dans le chroot.</div>
+</li>
+<li class="level1"><div class="li"> <strong>schroot.conf</strong> : Définit chaque chroot à mettre en place</div>
+</li>
+<li class="level1"><div class="li"> <strong>script-defaults</strong> : Script à exécuter par défaut lors du démarrage de l&#039;environnement chroot</div>
+</li>
+<li class="level1"><div class="li"> <strong>setup.d</strong> : Dossier qui possède des scripts de configuration</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT4 SECTION "L'arborescence" [911-1686] -->
+<h2 class="sectionedit5" id="mise_en_place_d_un_environnement_chroot">Mise en place d&#039;un environnement chroot</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Création du répertoire :<pre class="code">sudo mkdir /chroot</pre>
+
+<p>
+N&#039;importe quel répertoire peut faire l&#039;affaire. L&#039;exemple est donné avec <strong>/chroot</strong>, à changer à loisir.
+</p>
+</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Installation d&#039;une distribution (Ubuntu). Pour cela, on récupérera l&#039;ensemble des paquets. Pour du 64 bits :<pre class="code">sudo debootstrap --arch amd64 quantal /chroot/quantal http://us.archive.ubuntu.com/ubuntu/</pre>
+
+<p>
+Ou bien, pour installer l&#039;environnement en 32 bits :
+</p>
+<pre class="code">sudo debootstrap --arch i386 quantal /chroot/quantal http://us.archive.ubuntu.com/ubuntu/</pre>
+
+<p>
+Après cela, le dossier <strong>/chroot/quantal/</strong> contient l&#039;arborescence habituelle de la racine de la distribution Ubuntu Quantal Lynx 10.04.
+</p>
+</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Pour conserver les logins utilisateurs, mots de passe, groupes etc du système hôte, ajouter ces lignes au fichier /etc/schroot/defaults/copyfiles :<pre class="code">/etc/passwd
+/etc/shadow
+/etc/group
+/etc/sudoers
+/etc/hosts
+/etc/hostname</pre>
+
+<p>
+Pour conserver les dépôts de paquets (NE PAS FAIRE lorsque les distributions sont différentes…), ajouter cette ligne:
+</p>
+<pre class="code">/etc/apt/sources.list</pre>
+</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Configuration du fichier</a> <strong>/etc/schroot/schroot.conf</strong><pre class="file">[quantal]
+description=quantal
+directory=/chroot/quantal
+users=user1,user2,...
+root-groups=root
+root-users=root
+type=directory
+aliases=default</pre>
+
+<p>
+Et remplacer &quot;user1&quot;, &quot;user2&quot; par les utilisateurs ayant le droit d&#039;utiliser le chroot. La ligne peut être remplacée par &quot;groups=schroot&quot; par exemple, en ajoutant les utilisateurs au groupe &quot;schroot&quot;.
+</p>
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT5 SECTION "Mise en place d'un environnement chroot" [1687-3282] -->
+<h2 class="sectionedit6" id="utilisation_courante">Utilisation courante</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Pour se connecter dans un environnement chroot et avoir la main en ligne de commande :<pre class="code">schroot</pre>
+
+<p>
+ ou bien, si plusieurs environnements chroot sont installés :
+</p>
+<pre class="code">schroot -c lucid</pre>
+
+<p>
+Pour quitter l&#039;environnement, utiliser les touches <strong>Ctrl+d</strong> ou bien la commande <strong>exit</strong>.
+</p>
+</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Démarrer un environnement chroot :<pre class="code">schroot -b -c lucid</pre>
+
+<p>
+Lors du démarrage du chroot, schroot nous donne l&#039;identifiant du chroot, par exemple <strong>lucid-00e8c158-e183-48ad-8407-272808c6b0c6</strong>
+</p>
+</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> S&#039;identifier dans l&#039;environnement schroot :<pre class="code">schroot -r -c lucid-00e8c158-e183-48ad-8407-272808c6b0c6</pre>
+</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Stopper le chroot :<pre class="code">schroot -e -c lucid-00e8c158-e183-48ad-8407-272808c6b0c6</pre>
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT6 SECTION "Utilisation courante" [3283-4027] -->
+<h2 class="sectionedit7" id="exemple_d_utilisation_avancee">Exemple d&#039;utilisation avancée</h2>
+<div class="level2">
+
+<p>
+Nous allons installé un serveur <a href="../../lamp" class="wikilink1" title="lamp">LAMP</a> dans un environnement chroot. Le système exploitation hôte sera une distribution ubuntu. Par contre le système invité sera une distribution debian.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Exemple d'utilisation avancée" [4028-4271] -->
+<h3 class="sectionedit8" id="configuration_de_schroot">Configuration de schroot</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Installation d&#039;une distribution Debian. Pour cela, on récupérera l&#039;ensemble des paquets :</div>
+</li>
+</ul>
+<pre class="code">debootstrap --arch amd64 squeeze /chroot/squeeze http://ftp.fr.debian.org/debian/</pre>
+<ul>
+<li class="level1"><div class="li"> <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Configuration du fichier</a> <strong>/etc/schroot/schroot.conf</strong>, on ajoute notre nouvelle distribution debian.</div>
+</li>
+</ul>
+<pre class="file">[squeeze]
+description=squeeze
+directory=/chroot/squeeze
+root-groups=root
+root-users=root
+type=directory
+script-config=script-squeeze</pre>
+<ul>
+<li class="level1"><div class="li"> On crée le fichier script-squeeze qui a la même structure et que se trouve dans répertoire que script-defaults</div>
+</li>
+</ul>
+<pre class="code">touch /etc/schroot/script-squeeze</pre>
+<ul>
+<li class="level1"><div class="li"> Puis, on édite le fichier <strong>/etc/schroot/script-squeeze</strong></div>
+</li>
+</ul>
+<pre class="file"># Default settings for chroot setup and exec scripts.
+# See schroot-script-config(5) for further details.
+
+# Filesystems to mount inside the chroot.
+FSTAB=&quot;/etc/schroot/mount-squeeze&quot;</pre>
+<ul>
+<li class="level1"><div class="li"> On copie le fichier /etc/schroot/mount-defaults</div>
+</li>
+</ul>
+<pre class="code">cp /etc/schroot/mount-defaults /etc/schroot/mount-squeeze</pre>
+<ul>
+<li class="level1"><div class="li"> On commente les lignes dont le montage ne doit pas s&#039;effectuer</div>
+</li>
+</ul>
+<pre class="file"># mount.defaults: static file system information for chroots.
+# Note that the mount point will be prefixed by the chroot path
+# (CHROOT_PATH)
+#
+# &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;
+proc            /proc           proc    defaults        0       0
+#procbususb      /proc/bus/usb   usbfs   defaults        0       0
+/dev            /dev            none    rw,bind         0       0
+/dev/pts        /dev/pts        none    rw,bind         0       0
+/dev/shm        /dev/shm        none    rw,bind         0       0
+#/home          /home           none    rw,bind         0       0
+#/tmp           /tmp            none    rw,bind         0       0</pre>
+
+</div>
+<!-- EDIT8 SECTION "Configuration de schroot" [4272-6082] -->
+<h3 class="sectionedit9" id="installation_du_serveur_lamp">Installation du serveur LAMP</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="installation1">Installation</h4>
+<div class="level4">
+<pre class="code">sudo -s
+schroot -b -c lenny
+schroot -r -c lenny-00e8c158-e183-48ad-8407-272808c6b0c6
+apt-get install apache2 mysql-server php5</pre>
+
+</div>
+
+<h4 id="demarrage_automatique_du_serveur_lamp">Démarrage automatique du serveur lamp</h4>
+<div class="level4">
+
+<p>
+Pour démarrer de façon automatique la chroot et tout les services que vous désirez, je vous propose ce script : 
+</p>
+<pre class="code bash"><span class="co0">#!/bin/bash</span>
+&nbsp;
+<span class="co0">#******************************************************************************</span>
+<span class="co0"># File : /etc/init.d/schrootlamp</span>
+<span class="co0">#</span>
+<span class="co0"># Auteur : Zarkxe</span>
+<span class="co0">#</span>
+<span class="co0"># Date create : Mon Nov  1 16:01:09 2010</span>
+<span class="co0"># Description : démarrer de façon automatique la chroot et tout les services</span>
+<span class="co0">#		que vous désiré</span>
+<span class="co0">#******************************************************************************</span>
+&nbsp;
+. <span class="sy0">/</span>lib<span class="sy0">/</span>lsb<span class="sy0">/</span>init-functions
+&nbsp;
+<span class="re2">NAMESCRIPT</span>=<span class="st0">&quot;schrootlamp&quot;</span>
+&nbsp;
+do_start<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&nbsp;
+	<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="sy0">!</span> <span class="re5">-e</span> <span class="st0">&quot;/tmp/schroot/<span class="es2">$NAMESCRIPT</span>&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+&nbsp;
+		<span class="re2">SCHROOT_ID</span>=$<span class="br0">&#40;</span>schroot <span class="re5">-b</span> <span class="re5">-c</span> lenny<span class="br0">&#41;</span>
+&nbsp;
+		schroot <span class="re5">-r</span> <span class="re5">-c</span> <span class="re1">$SCHROOT_ID</span> <span class="sy0">/</span>etc<span class="sy0">/</span>init.d<span class="sy0">/</span>mtab.sh		
+		schroot <span class="re5">-r</span> <span class="re5">-c</span> <span class="re1">$SCHROOT_ID</span> <span class="sy0">/</span>etc<span class="sy0">/</span>init.d<span class="sy0">/</span>mysql start
+		schroot <span class="re5">-r</span> <span class="re5">-c</span> <span class="re1">$SCHROOT_ID</span> <span class="sy0">/</span>etc<span class="sy0">/</span>init.d<span class="sy0">/</span>apache2 start
+		schroot <span class="re5">-r</span> <span class="re5">-c</span> <span class="re1">$SCHROOT_ID</span> <span class="sy0">/</span>etc<span class="sy0">/</span>init.d<span class="sy0">/</span>exim4 start
+&nbsp;
+		<span class="kw2">mkdir</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>schroot<span class="sy0">/</span>
+		<span class="kw3">echo</span> <span class="re1">$SCHROOT_ID</span> <span class="sy0">&gt;</span>  <span class="sy0">/</span>tmp<span class="sy0">/</span>schroot<span class="sy0">/</span><span class="re1">$NAMESCRIPT</span>
+&nbsp;
+	<span class="kw1">elif</span> <span class="br0">&#91;</span> <span class="re5">-e</span> <span class="st0">&quot;/tmp/schroot/<span class="es2">$NAMESCRIPT</span>&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+		<span class="kw3">echo</span> <span class="st0">&quot;<span class="es2">$NAMESCRIPT</span> is already running&quot;</span>
+	<span class="kw1">fi</span>
+<span class="br0">&#125;</span>
+&nbsp;
+do_stop<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&nbsp;
+	<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="re5">-e</span> <span class="st0">&quot;/tmp/schroot/<span class="es2">$NAMESCRIPT</span>&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+		<span class="re2">SCHROOT_ID</span>=$<span class="br0">&#40;</span><span class="kw2">cat</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>schroot<span class="sy0">/</span><span class="re1">$NAMESCRIPT</span><span class="br0">&#41;</span>
+		schroot <span class="re5">-r</span> <span class="re5">-c</span> <span class="re1">$SCHROOT_ID</span> <span class="sy0">/</span>etc<span class="sy0">/</span>init.d<span class="sy0">/</span>mysql stop
+		schroot <span class="re5">-r</span> <span class="re5">-c</span> <span class="re1">$SCHROOT_ID</span> <span class="sy0">/</span>etc<span class="sy0">/</span>init.d<span class="sy0">/</span>apache2 stop
+		schroot <span class="re5">-r</span> <span class="re5">-c</span> <span class="re1">$SCHROOT_ID</span> <span class="sy0">/</span>etc<span class="sy0">/</span>init.d<span class="sy0">/</span>exim4 stop
+		schroot <span class="re5">-e</span> <span class="re5">-c</span> <span class="re1">$SCHROOT_ID</span>
+&nbsp;
+		<span class="kw2">rm</span> <span class="re5">-R</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>schroot<span class="sy0">/</span>
+	<span class="kw1">elif</span> <span class="br0">&#91;</span> <span class="sy0">!</span> <span class="re5">-e</span> <span class="st0">&quot;/tmp/schroot/<span class="es2">$NAMESCRIPT</span>&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+		<span class="kw3">echo</span> <span class="st0">&quot;<span class="es2">$NAMESCRIPT</span> is not starting&quot;</span>
+	<span class="kw1">fi</span>
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="kw1">case</span> <span class="re4">$1</span> <span class="kw1">in</span> 
+ start<span class="br0">&#41;</span>
+	log_daemon_msg <span class="st0">&quot;Starting configuration&quot;</span> <span class="re1">$NAMESCRIPT</span>
+	<span class="kw1">if</span> <span class="br0">&#91;</span><span class="br0">&#91;</span> <span class="re1">$EUID</span> = <span class="nu0">0</span> <span class="br0">&#93;</span><span class="br0">&#93;</span>
+	<span class="kw1">then</span>
+		do_start
+		log_end_msg <span class="nu0">0</span>
+	<span class="kw1">else</span>
+		log_end_msg <span class="nu0">1</span>
+		<span class="kw3">echo</span> <span class="st0">&quot;You are not root !&quot;</span>
+&nbsp;
+	<span class="kw1">fi</span>
+	<span class="sy0">;;</span>
+ stop<span class="br0">&#41;</span>
+	log_daemon_msg  <span class="st0">&quot;Stopping configuration&quot;</span> <span class="re1">$NAMESCRIPT</span>
+	<span class="kw1">if</span> <span class="br0">&#91;</span><span class="br0">&#91;</span> <span class="re1">$EUID</span> = <span class="nu0">0</span> <span class="br0">&#93;</span><span class="br0">&#93;</span>
+	<span class="kw1">then</span>
+		do_stop
+		log_end_msg <span class="nu0">0</span>
+	<span class="kw1">else</span>
+		log_end_msg <span class="nu0">1</span>
+		<span class="kw3">echo</span> <span class="st0">&quot;You are not root !&quot;</span>
+	<span class="kw1">fi</span> 
+	<span class="sy0">;;</span>
+ restart<span class="br0">&#41;</span>
+	log_daemon_msg  <span class="st0">&quot;restarting configuration&quot;</span> <span class="re1">$NAMESCRIPT</span>
+	<span class="kw1">if</span> <span class="br0">&#91;</span><span class="br0">&#91;</span> <span class="re1">$EUID</span> = <span class="nu0">0</span> <span class="br0">&#93;</span><span class="br0">&#93;</span>
+	<span class="kw1">then</span>
+		do_stop
+		do_start
+		log_end_msg <span class="nu0">0</span>
+	<span class="kw1">else</span>
+		log_end_msg <span class="nu0">1</span>
+		<span class="kw3">echo</span> <span class="st0">&quot;You are not root !&quot;</span>
+	<span class="kw1">fi</span> 
+	<span class="sy0">;;</span>
+ status<span class="br0">&#41;</span>
+	<span class="kw1">if</span> <span class="br0">&#91;</span><span class="br0">&#91;</span> <span class="re1">$EUID</span> = <span class="nu0">0</span> <span class="br0">&#93;</span><span class="br0">&#93;</span>
+	<span class="kw1">then</span>
+		<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="sy0">!</span> <span class="re5">-e</span> <span class="st0">&quot;/tmp/schroot/<span class="es2">$NAMESCRIPT</span>&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+			<span class="kw3">echo</span> <span class="st0">&quot;<span class="es2">$NAMESCRIPT</span> isn't running&quot;</span>
+		<span class="kw1">elif</span> <span class="br0">&#91;</span> <span class="re5">-e</span> <span class="st0">&quot;/tmp/schroot/<span class="es2">$NAMESCRIPT</span>&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+			<span class="re2">SCHROOT_ID</span>=$<span class="br0">&#40;</span><span class="kw2">cat</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>schroot<span class="sy0">/</span><span class="re1">$NAMESCRIPT</span><span class="br0">&#41;</span>
+			<span class="kw3">echo</span> <span class="st0">&quot;<span class="es2">$NAMESCRIPT</span> is running : <span class="es2">$SCHROOT_ID</span>&quot;</span>
+		<span class="kw1">fi</span>
+	<span class="kw1">else</span>
+		<span class="kw3">echo</span> <span class="st0">&quot;You are not root !&quot;</span>
+	<span class="kw1">fi</span>
+	<span class="sy0">;;</span>
+     <span class="sy0">*</span><span class="br0">&#41;</span>
+	log_daemon_msg  <span class="st0">&quot;./<span class="es2">$NAMESCRIPT</span> [start|stop|restart|status]&quot;</span>
+	<span class="sy0">;;</span>
+<span class="kw1">esac</span></pre>
+
+</div>
+<!-- EDIT9 SECTION "Installation du serveur LAMP" [6083-8688] -->
+<h2 class="sectionedit10" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/chroot" class="wikilink1" title="chroot">chroot</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <a href="http://ftp.traduc.org/doc-vf/gazette-linux/html/2008/150/lg150-C.html" class="urlextern" title="http://ftp.traduc.org/doc-vf/gazette-linux/html/2008/150/lg150-C.html"  rel="nofollow">Virtualiser sans virtualiser</a>, article sur l&#039;usage de chroot et schroot</div>
+</li>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <a href="http://cepcasa.info/apt/debootstrap.html" class="urlextern" title="http://cepcasa.info/apt/debootstrap.html"  rel="nofollow">Installer Debian depuis une distribution Debian avec debootstrap</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://www.debian-administration.org/articles/566" class="urlextern" title="http://www.debian-administration.org/articles/566"  rel="nofollow">schroot - chroot for any users</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeur principal : …</em>
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Voir aussi" [8689-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/8/8b8bd320fe4148aedcc8d5680e8a42ef.xhtml used -->
+</div>
+</body>
+</html>

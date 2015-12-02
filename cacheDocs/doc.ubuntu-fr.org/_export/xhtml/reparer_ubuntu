@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>reparer_ubuntu</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-11-19T16:32:16+0100"/>
+<meta name="keywords" content="hardy,lucid,maverick,natty,administration,diagnostic,sauvegarde"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../reparer_ubuntu?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="reparer_ubuntu"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/reparer_ubuntu"/>
+<link rel="canonical" href="../../reparer_ubuntu"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"reparer_ubuntu","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="reparer_ubuntu#le_bug_hyper_classique_du_grub">Le bug hyper classique du GRUB</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="reparer_ubuntu#utiliser_la_console_de_recuperation">Utiliser la console de récupération</a></div></li>
+<li class="level2"><div class="li"><a href="reparer_ubuntu#utiliser_un_live_cd_d_ubuntu">Utiliser un live CD d&#039;Ubuntu</a></div></li>
+<li class="level2"><div class="li"><a href="reparer_ubuntu#autres_outils">Autres outils</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="reparer_ubuntu#recuperation_des_donnees">Récupération des données</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="reparer_ubuntu#le_disque_dur_fonctionne_et_aucun_fichier_n_a_ete_efface">Le disque dur fonctionne et aucun fichier n&#039;a été effacé</a></div></li>
+<li class="level2"><div class="li"><a href="reparer_ubuntu#vos_fichiers_ont_ete_effaces_le_disque_fonctionne">Vos fichiers ont été effacés , le disque fonctionne</a></div></li>
+<li class="level2"><div class="li"><a href="reparer_ubuntu#le_disque_ne_fonctionne_pas_ou_mal">Le disque ne fonctionne pas ou mal</a></div></li>
+<li class="level2"><div class="li"><a href="reparer_ubuntu#vos_donnees_sont_sous_ubuntu_installe_en_mode_wubi">Vos données sont sous Ubuntu installé en mode wubi</a></div></li>
+<li class="level2"><div class="li"><a href="reparer_ubuntu#plus_d_informations">Plus d&#039;informations</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="reparer_ubuntu#voir_aussi">Voir aussi</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="reparer_ubuntu#pages_sur_le_sujet">Pages sur le sujet</a></div></li>
+<li class="level2"><div class="li"><a href="reparer_ubuntu#live_cd_de_depannage">Live CD de dépannage</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="../../lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="../../maverick" class="wikilink1" title="maverick" rel="tag">Maverick</a>,
+	<a href="../../natty" class="wikilink1" title="natty" rel="tag">Natty</a>,
+	<a href="../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../../diagnostic" class="wikilink1" title="diagnostic" rel="tag">diagnostic</a>,
+	<a href="../../sauvegarde" class="wikilink1" title="sauvegarde" rel="tag">sauvegarde</a>
+</span></div>
+<hr />
+
+<p>
+<p><div class="notetip">Page a coordonner avec <a href="../../diagnostic" class="wikilink1" title="diagnostic">diagnostic</a> et <a href="../../diagnostic_outil" class="wikilink1" title="diagnostic_outil">diagnostic_outil</a>
+Aldian ton mail serait utile pour te contacter. ⇒ ben clique sur mon nom et/ou poste dans la mailing list ;)
+</div></p>
+</p>
+
+<h1 class="sectionedit1" id="reparer_ubuntu_en_cas_de_plantage_majeur">Réparer Ubuntu en cas de plantage majeur</h1>
+<div class="level1">
+
+<p>
+Comme dit dans le titre, cette page a pour vocation de donner les moyens de réparer Ubuntu ou de sauver ce qui peut l&#039;être en cas de plantage majeur. Par plantage majeur, on entend tout ce qui vous empêche d&#039;administrer Ubuntu à partir de votre interface graphique habituelle. Par exemple quand le système ne veut pas démarrer, ou s&#039;avère très instable, ou quand vous avez des problèmes avec les partitions.
+</p>
+
+<p>
+Nous allons recenser ici divers moyens de secourir votre système, et en dernier recours de sauvegarder au moins vos données.
+</p>
+
+<p>
+<p><div class="notehelp">Si vous recherchez de l&#039;aide concernant les problèmes de système qui gèlent/rament énormément, reportez vous plutôt à la <a href="../../tutoriel/lorsque_le_systeme_gele" class="wikilink1" title="tutoriel:lorsque_le_systeme_gele">page dédiée au problème</a> et à celle sur les <a href="http://doc.ubuntu-fr.org/touches_magiques" class="wikilink1" title="touches_magiques">touches_magiques</a>. On pourra aussi utilement consulter la page <a href="http://petaramesh.org/post/2007/10/31/Mon-Linux-est-plante" class="urlextern" title="http://petaramesh.org/post/2007/10/31/Mon-Linux-est-plante"  rel="nofollow">Mon Linux est planté !</a>.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Réparer Ubuntu en cas de plantage majeur" [270-1260] -->
+<h2 class="sectionedit2" id="le_bug_hyper_classique_du_grub">Le bug hyper classique du GRUB</h2>
+<div class="level2">
+
+<p>
+Avant d&#039;aller plus avant, il convient de parler du bug du Grub, qui en a dégoûté plus d&#039;un, mais qui est heureusement très simple à réparer.
+</p>
+
+</div>
+
+<h5 id="symptomes">Symptômes</h5>
+<div class="level5">
+
+<p>
+Vous avez un ordinateur sur lequel <a href="http://doc.ubuntu-fr.org/windows" class="wikilink1" title="windows">Windows</a> et Ubuntu sont installés en dual boot. Vous aviez installé en premier Ubuntu, puis ensuite Windows sur une autre partition. Ou bien vous avez installé en premier Windows puis Ubuntu, et tout avait très bien marché, jusqu&#039;à une mise à jour de sécurité Windows. Ou vous vous trouvez dans une situation comparable dans laquelle deux systèmes d&#039;exploitation (ou plus) sont installés sur un même ordinateur.
+</p>
+
+<p>
+Et un beau jour plus rien ne marche. Vous allumez l&#039;ordinateur, il démarre, il affiche quelque chose comme « Grub loading stage 1… » et au bout de quelques secondes de plus il redémarre, recommence le même topo… ça peut durer longtemps.
+</p>
+
+</div>
+
+<h5 id="solution">Solution</h5>
+<div class="level5">
+
+<p>
+Cessez de vous arracher les cheveux et félicitez-vous car de tous les gros plantages que vous êtes susceptible de rencontrer, c&#039;est sans doute l&#039;un des plus faciles à résoudre, et d&#039;ailleurs il a amplement été traité dans la documentation. Se reporter au  <a href="../../tutoriel/comment_restaurer_grub" class="wikilink1" title="tutoriel:comment_restaurer_grub">tutoriel de restauration du grub</a>.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Le bug hyper classique du GRUB" [1261-2540] -->
+<h3 class="sectionedit3" id="utiliser_la_console_de_recuperation">Utiliser la console de récupération</h3>
+<div class="level3">
+
+<p>
+Elle est accessible via le menu de démarrage du Grub. Il suffit de la sélectionner, son nom est très explicite. Il est également possible d&#039;accéder à une <a href="../../console" class="wikilink1" title="console">console</a> à partir de l&#039;écran de login. 
+</p>
+
+<p>
+Cet outil est vraiment très efficace, tant pour les habitués qui pourront s&#039;en servir utilement pour accomplir la plupart de leurs taches d&#039;administration, que pour les débutants qui pourront y tester les solutions trouvées sur le forum comme le classique
+<code>sudo dpkg-reconfigure -phigh xserver-xorg</code>
+qui permet à ceux qui ont des problèmes graphiques de restaurer des paramètres viables pour leur session graphique.
+</p>
+
+<p>
+La console est également accessible depuis un live CD.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Utiliser la console de récupération" [2541-3279] -->
+<h3 class="sectionedit4" id="utiliser_un_live_cd_d_ubuntu">Utiliser un live CD d&#039;Ubuntu</h3>
+<div class="level3">
+
+<p>
+Dans le cas où la console n&#039;est pas accessible ou trop complexe à utiliser, une bonne solution est d&#039;utiliser un <a href="../../live_cd" class="wikilink1" title="live_cd"> live CD</a>. Cela vous permettra de démarrer un système Ubuntu fonctionnel avec lequel vous pourrez accéder à vos fichiers et faire des opérations de maintenance en mode graphique. Vous pourrez vous connecter à internet et ajouter à votre session live les logiciels d&#039;administration nécessaires s&#039;ils ne sont pas sur le live CD. Parmi les logiciels pouvant vous êtres utiles, citons par exemple <a href="../../gparted" class="wikilink1" title="gparted">Gparted</a>, qui est inclus sur le live CD et permet d&#039;intervenir sur les partitions, ou encore <a href="../../testdisk" class="wikilink1" title="testdisk">Testdisk</a>, qui par contre n&#039;est pas inclus dans le cd mais peut facilement être installé sur la session live.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Utiliser un live CD d'Ubuntu" [3280-4079] -->
+<h3 class="sectionedit5" id="autres_outils">Autres outils</h3>
+<div class="level3">
+
+<p>
+Parmi les autres outils à la disposition du sauveteur, il y a encore les clés <abbr title="Universal Serial Bus">USB</abbr> avec Ubuntu installé très pratiques en cas de problème de CD, ou de manière plus exotique, des disquettes de boot. Un sauveteur trouvera également des outils sur l&#039;alternate cd d&#039;Ubuntu ou encore sur le DVD complet qui permettent de restaurer le Grub via l&#039;option de restauration de système, de procéder à des installations en mode texte, ou à des mises à jour.
+</p>
+
+<p>
+Il est également possible de se tourner vers des distributions spécialement dédiées au sauvetage de système, comme <a href="http://www.sysresccd.org/Page_Principale" class="urlextern" title="http://www.sysresccd.org/Page_Principale"  rel="nofollow">System Rescue CD</a>, ou encore <a href="http://www.tux.org/pub/people/kent-robotti/looplinux/rip/" class="urlextern" title="http://www.tux.org/pub/people/kent-robotti/looplinux/rip/"  rel="nofollow">Recovery Is Possible</a> dont la page d&#039;accueil ne paie pas de mine et qui pourtant est un vrai bijou, surtout pour les débutants.
+</p>
+
+<p>
+Il existe aussi des live CD dédiés à un logiciel particulier. Ainsi il peut être utile d&#039;avoir sous la main un <a href="http://gparted.sourceforge.net/download.php" class="urlextern" title="http://gparted.sourceforge.net/download.php"  rel="nofollow">live CD de Gparted</a> (quoique le logiciel est inclus dans le CD de Recovery Is Possible), ou encore un <a href="http://www.supergrubdisk.org/index.php?pid=5" class="urlextern" title="http://www.supergrubdisk.org/index.php?pid=5"  rel="nofollow">Super Grub Disk</a> (extrêmement utile). Enfin, si ce qui vous bloque est un problème de connexion internet, <a href="../../tutoriel/comment_ajouter_des_paquets_sans_internet" class="wikilink1" title="tutoriel:comment_ajouter_des_paquets_sans_internet">cette page</a> est faite pour vous.
+</p>
+
+<p>
+Aussi, Redo Backup : simple et efficace : <a href="http://redobackup.fr/" class="urlextern" title="http://redobackup.fr/"  rel="nofollow">http://redobackup.fr/</a> (Attention : Redo Backup n&#039;est pas fiable - erreurs à la restauration - pour les installations en mode EFI. A utiliser seulement pour la sauvegarde/restauration d&#039;installations classiques en mode Bios)
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Autres outils" [4080-5720] -->
+<h2 class="sectionedit6" id="recuperation_des_donnees">Récupération des données</h2>
+<div class="level2">
+
+<p>
+Récupérer ses données est aisé si vous les sauvegardez régulièrement : le plus simple est de <a href="../../tutoriel/sauvegarder_home" class="wikilink1" title="tutoriel:sauvegarder_home">sauvegarder le dossier des utilisateurs</a> <em>/home</em>.
+</p>
+
+<p>
+Dans la récupération de données, il y a deux situations :
+</p>
+<ul>
+<li class="level1"><div class="li"> les enregistrements sur le support de stockage sont sains (aucune panne ni mécanique ni logicielle)</div>
+</li>
+<li class="level1"><div class="li"> les enregistrements sur le support de stockage n&#039;existent plus, ou le support est en panne (mécanique ou logicielle)</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT6 SECTION "Récupération des données" [5721-6231] -->
+<h3 class="sectionedit7" id="le_disque_dur_fonctionne_et_aucun_fichier_n_a_ete_efface">Le disque dur fonctionne et aucun fichier n&#039;a été effacé</h3>
+<div class="level3">
+
+<p>
+Il suffit de le lire sur un ordinateur sous <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux qui reconnaît plusieurs formats d&#039;enregistrement de données aussi bien sur les Unices, que Windows, ou MacOS … ou plus simplement utilisez un <a href="../../live_cd" class="wikilink1" title="live_cd">LiveCD Ubuntu</a>; vous pouvez également recourir à un <span class="curid"><a href="../../reparer_ubuntu#live_cd_de_depannage" class="wikilink1" title="reparer_ubuntu">LiveCD spécialisé</a></span>.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Le disque dur fonctionne et aucun fichier n'a été effacé" [6232-6629] -->
+<h3 class="sectionedit8" id="vos_fichiers_ont_ete_effaces_le_disque_fonctionne">Vos fichiers ont été effacés , le disque fonctionne</h3>
+<div class="level3">
+
+<p>
+Si vous n&#039;avez pas de sauvegardes récentes de données, vous pouvez utilisez un logiciel de dés-effacement / restauration, dans la mesure où l&#039;espace d&#039;enregistrement des données effacées n&#039;a pas été ré-utilisé par le système. Simplement, utilisez une interface graphique <a href="../../foremostgui" class="wikilink1" title="foremostgui">ForemostGui</a>.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Vos fichiers ont été effacés , le disque fonctionne" [6630-7006] -->
+<h3 class="sectionedit9" id="le_disque_ne_fonctionne_pas_ou_mal">Le disque ne fonctionne pas ou mal</h3>
+<div class="level3">
+
+<p>
+Si le disque ne fonctionne plus ou semble &quot;cogner&quot;, assurez-vous que vos disques durs et lecteurs CD/DVD soient branchés dans le bon ordre sur les prises <abbr title="Serial Advanced Technology Attachment">SATA</abbr> de votre carte-mère, sinon, Vous devrez vous adresser à un professionnel …
+</p>
+
+<p>
+Si le disque fonctionne encore, effectuez le plus rapidement possible une image de votre disque (ou de la partition incriminée), le plus simple étant d&#039;utiliser un LiveCD spécialisé comme <a href="http://clonezilla.org" class="urlextern" title="http://clonezilla.org"  rel="nofollow">CloneZilla</a>.
+</p>
+
+<p>
+L&#039;image d&#039;un disque consiste en la recopie bit-à-bit ou bloc-à-bloc de toute ou partie de la zone consignée comme zone d&#039;enregistrement lors de la préparation du disque (soit en usine, soit à domicile); pour cela l&#039;outil le plus couramment utilisé est <a href="../../dd" class="wikilink1" title="dd">dd</a> ou <a href="../../ddrescue" class="wikilink1" title="ddrescue">ddrescue</a>.
+</p>
+
+<p>
+Le travail de récupération s&#039;effectuera sur l&#039;image du disque :
+</p>
+<ul>
+<li class="level1"><div class="li"> analyse, vérification, restauration des partitions éventuelles avec <a href="../../testdisk" class="wikilink1" title="testdisk">testdisk</a></div>
+</li>
+<li class="level1"><div class="li"> restauration des fichiers perdus avec <a href="../../photorec" class="wikilink1" title="photorec">photorec</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT9 SECTION "Le disque ne fonctionne pas ou mal" [7007-8046] -->
+<h3 class="sectionedit10" id="vos_donnees_sont_sous_ubuntu_installe_en_mode_wubi">Vos données sont sous Ubuntu installé en mode wubi</h3>
+<div class="level3">
+
+<p>
+Si vous avez sous Windows, dans le module <em>Ajout/Suppression de programmes</em>, une ligne concernant l&#039;application Ubuntu, alors Ubuntu est installé en mode wubi.
+</p>
+
+<p>
+Lisez l&#039;explication de la documentation : <a href="../../wubi#comment_puis-je_acceder_a_mon_wubi_apres_installation_et_le_reparer_s_il_ne_demarre_pas" class="wikilink1" title="wubi">comment lire la partition Ubuntu installée en mode wubi</a>
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Vos données sont sous Ubuntu installé en mode wubi" [8047-8472] -->
+<h3 class="sectionedit11" id="plus_d_informations">Plus d&#039;informations</h3>
+<div class="level3">
+
+<p>
+<a href="http://www.cgsecurity.org/wiki/TestDisk_Etape_par_Etape" class="urlextern" title="http://www.cgsecurity.org/wiki/TestDisk_Etape_par_Etape"  rel="nofollow">TestDisk Etape par Etape</a>
+</p>
+
+<p>
+<a href="http://www.cgsecurity.org/wiki/PhotoRec_Etape_par_Etape" class="urlextern" title="http://www.cgsecurity.org/wiki/PhotoRec_Etape_par_Etape"  rel="nofollow">PhotoRec Etape par Etape</a>
+</p>
+
+<p>
+<a href="http://www.cgsecurity.org/wiki/Formats_de_fichier_r%C3%A9cup%C3%A9r%C3%A9s_par_PhotoRec" class="urlextern" title="http://www.cgsecurity.org/wiki/Formats_de_fichier_r%C3%A9cup%C3%A9r%C3%A9s_par_PhotoRec"  rel="nofollow">Les formats de fichier récupérés par PhotoRec</a>
+</p>
+
+<p>
+<a href="http://www.cgsecurity.org/wiki/Exemples_de_R%C3%A9cup%C3%A9ration_de_donn%C3%A9es" class="urlextern" title="http://www.cgsecurity.org/wiki/Exemples_de_R%C3%A9cup%C3%A9ration_de_donn%C3%A9es"  rel="nofollow">Exemples de Récupération de données</a>
+</p>
+
+<p>
+<a href="http://www.linuxpedia.fr/doku.php/deb/clonezilla" class="urlextern" title="http://www.linuxpedia.fr/doku.php/deb/clonezilla"  rel="nofollow">Documentation CloneZilla en français</a>
+</p>
+
+<p>
+<a href="http://linuxgravity.com/creating-and-restoring-an-image-of-hard-disk-with-clonzilla" class="urlextern" title="http://linuxgravity.com/creating-and-restoring-an-image-of-hard-disk-with-clonzilla"  rel="nofollow">Creating and restoring an image of hard disk with Clonezilla</a>
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Plus d'informations" [8473-9184] -->
+<h2 class="sectionedit12" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT12 SECTION "Voir aussi" [9185-9208] -->
+<h3 class="sectionedit13" id="pages_sur_le_sujet">Pages sur le sujet</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://petaramesh.org/post/2007/10/31/Mon-Linux-est-plante" class="urlextern" title="http://petaramesh.org/post/2007/10/31/Mon-Linux-est-plante"  rel="nofollow">Mon Linux est planté !</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.livecdlist.com/?pick=All&amp;showonly=rescue" class="urlextern" title="http://www.livecdlist.com/?pick=All&amp;showonly=rescue"  rel="nofollow">Liste des live CD de sauvetage</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.commentcamarche.net/faq/sujet-4883-knoppix-utiliser-knoppix-comme-cd-de-secours" class="urlextern" title="http://www.commentcamarche.net/faq/sujet-4883-knoppix-utiliser-knoppix-comme-cd-de-secours"  rel="nofollow">Utiliser knoppix comme CD de secours</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.korben.info/6-outils-pour-cloner-un-disque-dur-sous-windows-et-linux.html" class="urlextern" title="http://www.korben.info/6-outils-pour-cloner-un-disque-dur-sous-windows-et-linux.html"  rel="nofollow">6 outils pour cloner un disque dur sous Windows et Linux</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://fr.gentoo-wiki.com/R%C3%A9cup%C3%A9ration_de_donn%C3%A9es" class="urlextern" title="http://fr.gentoo-wiki.com/R%C3%A9cup%C3%A9ration_de_donn%C3%A9es"  rel="nofollow">Récupération de données</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://neoflow.fr/accueil/modules/smartsection/item.php?itemid=101" class="urlextern" title="http://neoflow.fr/accueil/modules/smartsection/item.php?itemid=101"  rel="nofollow">Sauvegarder et restaurer son PC avec Redo Backup and Recovery</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT13 SECTION "Pages sur le sujet" [9209-9953] -->
+<h3 class="sectionedit14" id="live_cd_de_depannage">Live CD de dépannage</h3>
+<div class="level3">
+
+</div>
+
+<h5 id="ubuntu">Ubuntu</h5>
+<div class="level5">
+
+<p>
+Lisez bien la page. Les options par défaut amènent au téléchargement d&#039;un desktop CD, mais elle permet également le téléchargement de l&#039;alternate CD et du DVD complet.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.ubuntu-fr.org/telechargement" class="urlextern" title="http://www.ubuntu-fr.org/telechargement"  rel="nofollow">Page de téléchargement d&#039;Ubuntu</a></div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="redo_backup_and_recovery">Redo Backup and Recovery</h5>
+<div class="level5">
+
+<p>
+Solution simple, pour réparer ou cloner un disque dur (système autonome sous LXDE)
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://redobackup.org/" class="urlextern" title="http://redobackup.org/"  rel="nofollow">Site officiel</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://redobackup.fr/" class="urlextern" title="http://redobackup.fr/"  rel="nofollow">Site en français</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://redobackup.org/download.php" class="urlextern" title="http://redobackup.org/download.php"  rel="nofollow">Page de téléchargement</a></div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="gparted_live_cd">Gparted Live CD</h5>
+<div class="level5">
+
+<p>
+<a href="../../gparted" class="wikilink1" title="gparted">Gparted</a> est un logiciel de partitionnement accessible à tous et simple d&#039;utilisation. S&#039;inspirer de <a href="http://www.breizh-ardente.fr/article/les-partitions" class="urlextern" title="http://www.breizh-ardente.fr/article/les-partitions"  rel="nofollow">l&#039;excellent tutoriel sur l&#039;installation manuelle d&#039;Ubuntu</a> de Breizh Ardente.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://gparted.sourceforge.net/" class="urlextern" title="http://gparted.sourceforge.net/"  rel="nofollow">Site officiel (en)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://sourceforge.net/project/showfiles.php?group_id=115843&amp;package_id=271779" class="urlextern" title="http://sourceforge.net/project/showfiles.php?group_id=115843&amp;package_id=271779"  rel="nofollow">Page de téléchargements</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.framasoft.net/article4368.html" class="urlextern" title="http://www.framasoft.net/article4368.html"  rel="nofollow">Page relative en Français</a></div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="super_grub_disk">Super Grub Disk</h5>
+<div class="level5">
+
+<p>
+Cet outil indispensable permet de naviguer dans son Grub comme on le veut. Accessible à tous.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.supergrubdisk.org/" class="urlextern" title="http://www.supergrubdisk.org/"  rel="nofollow">Site officiel (en)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.supergrubdisk.org/index.php?pid=4" class="urlextern" title="http://www.supergrubdisk.org/index.php?pid=4"  rel="nofollow">Page de téléchargements</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.framasoft.net/article4617.html" class="urlextern" title="http://www.framasoft.net/article4617.html"  rel="nofollow">Page relative en Français</a></div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="trinity_rescue_kit">Trinity Rescue Kit</h5>
+<div class="level5">
+
+<p>
+A réserver plutôt pour les utilisateurs avancés.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://trinityhome.org/Home/index.php?wpid=1&amp;front_id=12" class="urlextern" title="http://trinityhome.org/Home/index.php?wpid=1&amp;front_id=12"  rel="nofollow">Site officiel (en)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://trinityhome.org/Home/index.php?wpid=5&amp;front_id=12" class="urlextern" title="http://trinityhome.org/Home/index.php?wpid=5&amp;front_id=12"  rel="nofollow">Page de téléchargements</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.korben.info/trinity-rescue-kit-quand-linux-vient-au-secours-de-windows.html" class="urlextern" title="http://www.korben.info/trinity-rescue-kit-quand-linux-vient-au-secours-de-windows.html"  rel="nofollow">Page relative en Français</a></div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="system_rescue_cd">System Rescue CD</h5>
+<div class="level5">
+
+<p>
+Plus simple d&#039;utilisation  que le Trinity rescue kit. Mais pas forcément évident à manier pour un débutant.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.sysresccd.org/Index.fr.php" class="urlextern" title="http://www.sysresccd.org/Index.fr.php"  rel="nofollow">Site officiel (en &amp; fr)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.sysresccd.org/Download" class="urlextern" title="http://www.sysresccd.org/Download"  rel="nofollow">Page de téléchargements</a></div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="recovery_is_possible">Recovery is Possible</h5>
+<div class="level5">
+
+<p>
+Très convivial (mis à part la page d&#039;accueil officielle)
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.tux.org/pub/people/kent-robotti/looplinux/rip/" class="urlextern" title="http://www.tux.org/pub/people/kent-robotti/looplinux/rip/"  rel="nofollow">Site officiel &amp; page de télé chargements (en)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://translate.google.fr/translate?u=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FRecovery_Is_Possible&amp;sl=en&amp;tl=fr&amp;hl=fr&amp;ie=UTF-8" class="urlextern" title="http://translate.google.fr/translate?u=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FRecovery_Is_Possible&amp;sl=en&amp;tl=fr&amp;hl=fr&amp;ie=UTF-8"  rel="nofollow">Page relative en Français</a></div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="ultimate_boot_cd">Ultimate Boot CD</h5>
+<div class="level5">
+
+<p>
+C&#039;est plutot un CD pour utilisateurs de Windows, mais il contient quelques trucs utiles.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.ultimatebootcd.com/index.html" class="urlextern" title="http://www.ultimatebootcd.com/index.html"  rel="nofollow">Site officiel (en)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.ultimatebootcd.com/download.html" class="urlextern" title="http://www.ultimatebootcd.com/download.html"  rel="nofollow">Page de téléchargements</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gihem.info/spip.php?article440" class="urlextern" title="http://www.gihem.info/spip.php?article440"  rel="nofollow">Page relative en Français</a></div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="active_patition_recovery">Active Patition Recovery</h5>
+<div class="level5">
+
+<p>
+Egalement plutôt orienté utilisateurs de Windows, il permet de vérifier facilement si les partitions disparues sont vraiment perdues.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.partition-recovery.com/" class="urlextern" title="http://www.partition-recovery.com/"  rel="nofollow">Site officiel (en)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.partition-recovery.com/download.htm" class="urlextern" title="http://www.partition-recovery.com/download.htm"  rel="nofollow">Page de téléchargements</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.01net.com/telecharger/windows/Utilitaire/disque_dur_cdrom_dvd/fiches/21469.html" class="urlextern" title="http://www.01net.com/telecharger/windows/Utilitaire/disque_dur_cdrom_dvd/fiches/21469.html"  rel="nofollow">Page relative en Français</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs: <a href="../../utilisateurs/aldian" class="wikilink1" title="utilisateurs:aldian">Aldian</a></em>
+</p>
+
+</div>
+<!-- EDIT14 SECTION "Live CD de dépannage" [9954-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/b/b75c338bef5d8c6eb499a0eb70c36688.xhtml used -->
+</div>
+</body>
+</html>

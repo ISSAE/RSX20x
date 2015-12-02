@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:acceder_a_votre_nas_depuis_toutes_les_applications - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-05-16T20:25:01+0200"/>
+<meta name="keywords" content="nfs,reseau,nas"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/acceder_a_votre_nas_depuis_toutes_les_applications?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/acceder_a_votre_nas_depuis_toutes_les_applications?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/acceder_a_votre_nas_depuis_toutes_les_applications"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/acceder_a_votre_nas_depuis_toutes_les_applications"/>
+<link rel="canonical" href="acceder_a_votre_nas_depuis_toutes_les_applications"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:acceder_a_votre_nas_depuis_toutes_les_applications","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="acceder_a_votre_nas_depuis_toutes_les_applications#main" tabindex="1">Contenu</a> | <a href="acceder_a_votre_nas_depuis_toutes_les_applications#qsearch__in" tabindex="2">Rechercher</a> | <a href="acceder_a_votre_nas_depuis_toutes_les_applications#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="acceder_a_votre_nas_depuis_toutes_les_applications" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="acceder_a_votre_nas_depuis_toutes_les_applications" >tutoriel:acceder_a_votre_nas_depuis_toutes_les_applications</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="acceder_a_votre_nas_depuis_toutes_les_applications#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="acceder_a_votre_nas_depuis_toutes_les_applications#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="acceder_a_votre_nas_depuis_toutes_les_applications#creation_d_un_point_de_montage">Création d&#039;un point de montage</a></div></li>
+<li class="level1"><div class="li"><a href="acceder_a_votre_nas_depuis_toutes_les_applications#modification_du_fichier_fstab">Modification du fichier fstab</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="acceder_a_votre_nas_depuis_toutes_les_applications#l_acces_a_votre_nas_ne_necessite_pas_de_mot_de_passe">L&#039;accès à votre NAS ne nécessite pas de mot de passe</a></div></li>
+<li class="level2"><div class="li"><a href="acceder_a_votre_nas_depuis_toutes_les_applications#l_acces_a_votre_nas_necessite_un_mot_de_passe">L&#039;accès à votre NAS nécessite un mot de passe</a></div></li>
+<li class="level2"><div class="li"><a href="acceder_a_votre_nas_depuis_toutes_les_applications#tester_le_fichier_fstab">Tester le fichier fstab</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="acceder_a_votre_nas_depuis_toutes_les_applications#connexion_wifi">Connexion WIFI</a></div></li>
+<li class="level1"><div class="li"><a href="acceder_a_votre_nas_depuis_toutes_les_applications#aller_plus_loin">Aller plus loin</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="acceder_a_votre_nas_depuis_toutes_les_applications#options_de_montage">Options de montage</a></div></li>
+<li class="level2"><div class="li"><a href="acceder_a_votre_nas_depuis_toutes_les_applications#protocole_gnulinux_nfs">Protocole GNU/Linux NFS</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="acceder_a_votre_nas_depuis_toutes_les_applications#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../nfs" class="wikilink1" title="nfs" rel="tag">nfs</a>,
+	<a href="../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="http://doc.ubuntu-fr.org/nas" class="wikilink1" title="nas" rel="tag">nas</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="acceder_a_votre_nas_depuis_toutes_les_applications">Accéder à votre NAS depuis toutes les applications</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[Accéder à votre NAS depuis toutes les applications] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="32-98" /><input type="submit" value="Modifier" class="button" title="Accéder à votre NAS depuis toutes les applications" /></div></form></div>
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+De plus en plus, nous trouvons sur le marché des petites unités de stockage pour les particuliers se connectant au réseau dénommé <a href="http://fr.wikipedia.org/wiki/Network_attached_storage" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Network_attached_storage">N.A.S</a>.<br/>
+
+Ces unités offrent de multiples avantages par rapport aux unités connectées en USB: rapidité de transfert, grosses capacités de stockage, accès depuis n&#039;importe quel poste du réseau voire depuis internet,… et le prix a rendu maintenant ces dernières accessibles.
+</p>
+
+<p>
+Bien qu&#039;Ubuntu permette de se connecter à un dossier partagé de votre NAS de manière très simple, en utilisant le lien &quot;explorer le réseau&quot;, cela ne résout pas tous les problèmes. En effet, certaines applications, telles que par exemple <a href="../libreoffice" class="wikilink1" title="libreoffice">libreoffice</a> ou <a href="../firefox" class="wikilink1" title="firefox">firefox</a>, ne savent pas utiliser ces connexions réseaux pour ouvrir ou enregistrer les fichiers.<br/>
+
+Pour que les liens et signets vers les dossiers de votre NAS apparaissent et soient accessibles dans tous les menus des applications, <a href="http://doc.ubuntu-fr.org/gestionnaire_de_fichiers" class="wikilink1" title="gestionnaire_de_fichiers">gestionnaire de fichiers</a> compris, il est alors nécessaire de <a href="../mount_fstab" class="wikilink1" title="mount_fstab">monter</a> automatiquement la partition de l&#039;unité NAS <strong><em class="u">avant</em></strong> le démarrage complet d&#039;Ubuntu.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[Introduction] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="99-1298" /><input type="submit" value="Modifier" class="button" title="Introduction" /></div></form></div>
+<h2 class="sectionedit3" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+<li class="level1"><div class="li"> Avoir fait une <a href="comment_sauver_et_restaurer_un_fichier" class="wikilink1" title="tutoriel:comment_sauver_et_restaurer_un_fichier">sauvegarde</a> du fichier <strong>/etc/fstab</strong></div>
+</li>
+<li class="level1"><div class="li"> Avoir <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installé les paquets</a> <strong><a href="apt://samba" class="interwiki iw_apt" title="apt://samba">samba</a></strong> et <strong><a href="apt://cifs-utils" class="interwiki iw_apt" title="apt://cifs-utils">cifs-utils</a></strong>.</div>
+</li>
+<li class="level1"><div class="li"> Vérifier si le NAS est configuré pour Windows®. Les NAS étant tous compatibles Windows®, la gestion de fichier (ou service de fichiers) Windows® est très certainement activée par défaut.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1299-1804" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit4" id="creation_d_un_point_de_montage">Création d&#039;un point de montage</h2>
+<div class="level2">
+
+<p>
+Dans le dossier <strong>/media</strong> prévu à cet effet, créez avec les droits d&#039;administration un dossier (nommé pour l&#039;exemple <strong>documents</strong>) en saisissant dans un <a href="../terminal" class="wikilink1" title="terminal">terminal</a> la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante:
+</p>
+<pre class="code">sudo mkdir /media/documents</pre>
+
+<p>
+Vous pouvez choisir un autre nom pour ce dossier mais pour éviter tous problèmes, n&#039;utilisez pas d&#039;espaces ni de caractères spéciaux.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[Création d'un point de montage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1805-2243" /><input type="submit" value="Modifier" class="button" title="Création d'un point de montage" /></div></form></div>
+<h2 class="sectionedit5" id="modification_du_fichier_fstab">Modification du fichier fstab</h2>
+<div class="level2">
+
+<p>
+ Il n&#039;est pas nécessaire de monter le dossier racine du NAS mais plutôt le dossier partagé avec les autres ordinateurs du réseau. Dans l&#039;exemple ci-dessous, il s&#039;agira du dossier partagé par défaut : <strong>share</strong> présent sur beaucoup de ces unités. (Dans le cas où le nom du dossier partagé du NAS contiendrait des espaces, remplacez les espaces par <code> \040 </code>) <br/>
+
+Pour repérer l&#039;unité NAS sur le réseau, il est possible d&#039;utiliser son nom ou bien son adresse IP si celle-ci est fixe. Pour l&#039;exemple ci dessous, l&#039;adresse IP sera <strong>192.168.0.10</strong>.
+la ligne à ajouter sera de la forme:<br/>
+
+</p>
+<pre class="file">//192.168.0.10/share	/media/documents	cifs	guest,iocharset=utf8,gid=100,uid=1000,_netdev	0	0</pre>
+
+<p>
+où :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>uid=1000</strong> indique l&#039;id du user local et règle les conflits de propriété sur les fichiers et dossiers entre le user local et le user du NAS on peut le connaître en exécutant <code>id -u &quot;IDENTIFIANT&quot;</code> (voir <a href="http://microitblog.com/micro-it-blog/2011/04/21/mounting-cifs-shares-through-linux-with-write-permissions" class="urlextern" title="http://microitblog.com/micro-it-blog/2011/04/21/mounting-cifs-shares-through-linux-with-write-permissions"  rel="nofollow">ce post</a>)</div>
+</li>
+<li class="level1"><div class="li"> <strong>_netdev</strong> fait attendre le montage que la partie réseau soit démarrée.</div>
+</li>
+<li class="level1"><div class="li"> <em>L&#039;option <strong>rw</strong> (écriture) n&#039;est plus nécessaire, elle est maintenant &quot;par défaut&quot; dans la version actuelle de <strong>cifs</strong></em></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[Modification du fichier fstab] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2244-3553" /><input type="submit" value="Modifier" class="button" title="Modification du fichier fstab" /></div></form></div>
+<h3 class="sectionedit6" id="l_acces_a_votre_nas_ne_necessite_pas_de_mot_de_passe">L&#039;accès à votre NAS ne nécessite pas de mot de passe</h3>
+<div class="level3">
+
+<p>
+ <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Éditez avec les droits d&#039;administration</a> le fichier <strong>/etc/fstab</strong> pour y ajouter les lignes suivantes à la suite des autres lignes présentes :
+</p>
+<pre class="file"># Monter NAS
+//192.168.0.10/share	/media/documents	cifs	guest,iocharset=utf8,gid=100,uid=1000,_netdev	0	0</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[L'accès à votre NAS ne nécessite pas de mot de passe] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3554-3928" /><input type="submit" value="Modifier" class="button" title="L'accès à votre NAS ne nécessite pas de mot de passe" /></div></form></div>
+<h3 class="sectionedit7" id="l_acces_a_votre_nas_necessite_un_mot_de_passe">L&#039;accès à votre NAS nécessite un mot de passe</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Créer avec les droits d&#039;administration</a> un fichier <strong>/root/.smbcredentials</strong> contenant  ses 2 lignes <dl class="file">
+<dt><a href="http://doc.ubuntu-fr.org/_export/code/tutoriel/acceder_a_votre_nas_depuis_toutes_les_applications?codeblock=3" title="Télécharger un extrait" class="mediafile mf_smbcredentials_">/root/.smbcredentials </a></dt>
+<dd><pre class="code file bash"><span class="re2">username</span>=IDENTIFIANT
+<span class="re2">password</span>=MOT_DE_PASSE</pre>
+</dd></dl>
+
+<p>
+ Remplacer <em>IDENTIFIANT</em> et <em>MOT_DE_PASSE</em> par votre identifiant et mot de passe vous permettant d&#039;accéder à votre NAS. Il peut contenir éventuellement une 3ème ligne si un nom de domaine est nécessaire pour accéder à votre NAS mais rien d&#039;autre.
+</p>
+<pre class="file">domain=NOM_DE_DOMAINE</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Éditer avec les droits d&#039;administration</a> le fichier <strong>/etc/fstab</strong> pour y ajouter les lignes suivantes à la suite des autres lignes présentes :<pre class="file"># Monter NAS
+//192.168.0.10/share	/media/documents	cifs	credentials=/root/.smbcredentials,iocharset=utf8,gid=100,uid=1000,_netdev	0	0</pre>
+</div>
+</li>
+</ol>
+
+<p>
+<p><div class="notetip">Vous pouvez si ce n&#039;est déjà fait, créer les liens et signets vers les dossiers de votre NAS.<br/>
+
+Et seulement après un redémarrage d&#039;Ubuntu, ils apparaîtront dans toutes vos applications, <a href="http://doc.ubuntu-fr.org/gestionnaire_de_fichiers" class="wikilink1" title="gestionnaire_de_fichiers">gestionnaire de fichiers</a> compris.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[L'accès à votre NAS nécessite un mot de passe] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3929-5126" /><input type="submit" value="Modifier" class="button" title="L'accès à votre NAS nécessite un mot de passe" /></div></form></div>
+<h3 class="sectionedit8" id="tester_le_fichier_fstab">Tester le fichier fstab</h3>
+<div class="level3">
+
+<p>
+Vous pouvez tester votre fichier <strong>fstab</strong> en saisissant dans un <a href="../terminal" class="wikilink1" title="terminal">terminal</a> la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">  sudo mount -a</pre>
+
+<p>
+Si le message suivant apparaît : 
+</p>
+<pre class="code">mount error(13): Permission denied</pre>
+
+<p>
+vous devez rajouter dans le fstab à la fin des options de la ligne rajoutée la mention <em> ,sec=ntlmv2. </em> Ce qui donnerait dans notre exemple :
+</p>
+<pre class="file"># Monter NAS
+//192.168.0.10/share	/media/documents	cifs	credentials=/root/.smbcredentials,guest,iocharset=utf8,gid=100,uid=1000,sec=ntlmv2	0	0 </pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[Tester le fichier fstab] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5127-5697" /><input type="submit" value="Modifier" class="button" title="Tester le fichier fstab" /></div></form></div>
+<h2 class="sectionedit9" id="connexion_wifi">Connexion WIFI</h2>
+<div class="level2">
+
+<p>
+La méthode décrite ci-dessus est proposée pour une connexion filaire (par réseau câblé ou CPL). 
+</p>
+
+<p>
+ Elle fonctionne aussi avec une connexion Wi-Fi. Le démarrage d&#039;Ubuntu prendra alors quelques secondes en plus pour laisser le temps à la connexion Wi-Fi de s&#039;établir <em class="u"><strong>avant</strong></em> l&#039;exécution du fichier <strong>/etc/fstab</strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[Connexion WIFI] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5698-6053" /><input type="submit" value="Modifier" class="button" title="Connexion WIFI" /></div></form></div>
+<h2 class="sectionedit10" id="aller_plus_loin">Aller plus loin</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[Aller plus loin] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6054-6080" /><input type="submit" value="Modifier" class="button" title="Aller plus loin" /></div></form></div>
+<h3 class="sectionedit11" id="options_de_montage">Options de montage</h3>
+<div class="level3">
+
+<p>
+Pour en savoir plus sur les options de <strong>cifs</strong>, saisir dans un <a href="../terminal" class="wikilink1" title="terminal">terminal</a> la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">man mount.cifs</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[Options de montage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6081-6257" /><input type="submit" value="Modifier" class="button" title="Options de montage" /></div></form></div>
+<h3 class="sectionedit12" id="protocole_gnulinux_nfs">Protocole GNU/Linux NFS</h3>
+<div class="level3">
+
+<p>
+<a href="../samba" class="wikilink1" title="samba">Samba</a> permet de partager et d&#039;accéder aux ressources du NAS en réseau avec des clients aux systèmes d&#039;exploitation différents. C&#039;est pourquoi dans le but de simplifier et généraliser les procédures pour tous, ce tutoriel est basé sur le protocole <strong>samba/cifs</strong>. <br/>
+
+<br/>
+
+Certains NAS sont aussi compatibles GNU/Linux et peuvent alors utiliser le protocole <a href="../nfs" class="wikilink1" title="nfs">NFS</a>.  Si vous n&#039;avez que des ordinateurs GNU/linux sur le réseau, vous pouvez bien sûr utiliser ce protocole pour monter votre NAS avant le démarrage complet d&#039;Ubuntu. La procédure à suivre est à peu près la même.
+</p>
+<ul>
+<li class="level1"><div class="li"> Création d&#039;un point de montage;</div>
+</li>
+<li class="level1"><div class="li"> Modification du fichier <strong>/etc/fstab</strong>.</div>
+</li>
+</ul>
+
+<p>
+Pour en savoir plus, voir <a href="../nfs#client_nfs" class="wikilink1" title="nfs">le paragraphe de la page NFS consacré au montage NFS</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[Protocole GNU/Linux NFS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6258-7074" /><input type="submit" value="Modifier" class="button" title="Protocole GNU/Linux NFS" /></div></form></div>
+<h2 class="sectionedit13" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/nas" class="wikilink1" title="nas">La page consacrée aux N.A.S.</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../nfs#client_nfs" class="wikilink1" title="nfs">Le paragraphe de la page NFS consacré au montage NFS</a></div>
+</li>
+</ul>
+
+<p>
+—-
+<em> Contributeurs: <a href="../utilisateurs/cafecho" class="wikilink1" title="utilisateurs:cafecho">Cafecho</a> </em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="acceder_a_votre_nas_depuis_toutes_les_applications"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431800701" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7075-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/7/71c36b3c4577f86a89ebfe97dc8da812.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/acceder_a_votre_nas_depuis_toutes_les_applications?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/acceder_a_votre_nas_depuis_toutes_les_applications?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/acceder_a_votre_nas_depuis_toutes_les_applications?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/acceder_a_votre_nas_depuis_toutes_les_applications?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/acceder_a_votre_nas_depuis_toutes_les_applications?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

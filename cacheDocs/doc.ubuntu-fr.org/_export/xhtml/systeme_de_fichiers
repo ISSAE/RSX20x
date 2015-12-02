@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>systeme_de_fichiers</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-01-20T09:33:24+0100"/>
+<meta name="keywords" content="installation,systeme,partitions"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../systeme_de_fichiers?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="systeme_de_fichiers"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/systeme_de_fichiers"/>
+<link rel="canonical" href="../../systeme_de_fichiers"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"systeme_de_fichiers","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="systeme_de_fichiers#qu_est-ce_qu_un_systeme_de_fichiers">Qu&#039;est-ce qu&#039;un système de fichiers ?</a></div></li>
+<li class="level1"><div class="li"><a href="systeme_de_fichiers#les_qualifications_d_un_systeme_de_fichiers">Les qualifications d&#039;un système de fichiers</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="systeme_de_fichiers#la_taille_maximale_d_un_fichier">La taille maximale d&#039;un fichier</a></div></li>
+<li class="level2"><div class="li"><a href="systeme_de_fichiers#la_taille_maximale_d_une_partition">La taille maximale d&#039;une partition</a></div></li>
+<li class="level2"><div class="li"><a href="systeme_de_fichiers#la_gestion_des_droits_d_acces_aux_fichiers_et_repertoires">La gestion des droits d&#039;accès aux fichiers et répertoires</a></div></li>
+<li class="level2"><div class="li"><a href="systeme_de_fichiers#la_journalisation">La journalisation</a></div></li>
+<li class="level2"><div class="li"><a href="systeme_de_fichiers#particularite_des_systemes_de_fichiers_nixinode">Particularité des systèmes de fichiers *nix : inode</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="systeme_de_fichiers#comparaison_de_systemes_de_fichiers">Comparaison de systèmes de fichiers</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="systeme_de_fichiers#systemes_de_fichiers_fat32_et_ntfs">* Systèmes de fichiers FAT32 et NTFS</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="systeme_de_fichiers#quelques_commandes_utiles">Quelques commandes utiles</a></div></li>
+<li class="level1"><div class="li"><a href="systeme_de_fichiers#plus_d_informations">Plus d&#039;informations</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../installation.1" class="wikilink1" title="installation" rel="tag">installation</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../partitions" class="wikilink1" title="partitions" rel="tag">partitions</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="les_systemes_de_fichiers_sous_linuxmacwindows">Les systèmes de fichiers sous Linux / Mac / Windows</h1>
+<div class="level1">
+
+<p>
+Les systèmes de fichiers, il en existe de multiples, gèrent l&#039;organisation des informations mémorisées sur les périphériques de l&#039;ordinateur. Chacun offre des avantages pour certains types d&#039;utilisation… et des désavantages pour d&#039;autres. Connaître leurs principales caractéristiques est nécessaire pour la bonne utilisation d&#039;un équipement.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Les systèmes de fichiers sous Linux / Mac / Windows" [51-472] -->
+<h2 class="sectionedit2" id="qu_est-ce_qu_un_systeme_de_fichiers">Qu&#039;est-ce qu&#039;un système de fichiers ?</h2>
+<div class="level2">
+
+<p>
+Dans le cœur d&#039;un ordinateur, tout est constitué de 1 et de 0, mais l&#039;organisation de ces données n&#039;est pas aussi simple.  Un bit est un 1 ou un 0 ; un octet (<em>byte</em> en anglais) est composé de huit bits ; un kilo-octet binaire(<em>kibibyte</em>) est un groupe de 1024 octets ; un méga-octet binaire(<em>mebibyte</em>) se constitue de 1024 kilo-octets binaires ; et ainsi se poursuit la chaîne.
+</p>
+
+<p>
+Un disque dur (<em>hard drive</em> ou <em>hard disk</em>) stocke toutes vos données : à chaque fois que vous enregistrez un fichier, vous écrivez des milliers de 1 et de 0 sur un disque métallique, le piquant littéralement et créant une indentation qui pourra plus tard être relue en tant que 1 ou 0 par votre ordinateur. En réalité, vous magnétisez des milliers de petits bâtons (que nous appellerons <em>clusters</em>) qui seront polarisés dans un sens ou dans un autre (N-S ou S-N) ; cette polarisation différente sera ré-interprétée plus tard par l&#039;ordinateur en tant que 1 ou 0.
+</p>
+
+<p>
+Il y a tellement de données sur un disque dur qu&#039;il doit obligatoirement y avoir un moyen de les organiser.  C&#039;est un peu comme les anciens classeurs de cartes d&#039;identification de livres dans une bibliothèque municipale, dans lesquels tous les livres sont recensés : sans ces index, il serait impossible de retrouver facilement les livres que nous recherchons.  Les bibliothèques utilisent pour la plupart le système décimal Dewey pour organiser les livres en sujets ; il existe aussi d&#039;autres systèmes de classification arrivant à un résultat similaire, bien qu&#039;aucun d&#039;entre eux n&#039;ait atteint la même popularité que le système de Dewey.
+</p>
+
+<p>
+Les systèmes de fichiers jouent exactement le même rôle que ces index : organiser les fichiers de votre ordinateur sur votre disque dur de façon à pouvoir les retrouver lorsque vous en aurez besoin.  Les systèmes de fichiers les plus utilisés à l&#039;heure actuelle sont sûrement le FAT32 et le NTFS, qui sont les deux seuls systèmes de fichiers que Microsoft® Windows® peut nativement lire.  Mais, tout comme il existe d&#039;autres systèmes pour classer des livres dans une bibliothèque, il existe de nombreux autres systèmes de fichiers : ext2, ext3, ReiserFS, JFS, XFS,…
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Qu'est-ce qu'un système de fichiers ?" [473-2740] -->
+<h2 class="sectionedit3" id="les_qualifications_d_un_systeme_de_fichiers">Les qualifications d&#039;un système de fichiers</h2>
+<div class="level2">
+
+<p>
+De nombreux attributs différents sont nécessaires afin de définir un système de fichiers.  Ils incluent entre autres la taille maximale que peut avoir un fichier dans ce système de fichiers, la taille maximale d&#039;une partition et la journalisation ou non du système de fichiers.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Les qualifications d'un système de fichiers" [2741-3083] -->
+<h3 class="sectionedit4" id="la_taille_maximale_d_un_fichier">La taille maximale d&#039;un fichier</h3>
+<div class="level3">
+
+<p>
+Ce critère définit la taille maximale qu&#039;un fichier quelconque enregistré sur un système de fichiers peut avoir.  Ainsi, si vous possédez un fichier de 100 mégaoctets et que vous tentez de l&#039;enregistrer sur un système de fichiers n&#039;acceptant pas les fichiers plus grands que 90 mégaoctets, l&#039;opération d&#039;enregistrement ne pourra pas être complétée et vous disposerez d&#039;un fichier corrompu, incomplet.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "La taille maximale d'un fichier" [3084-3539] -->
+<h3 class="sectionedit5" id="la_taille_maximale_d_une_partition">La taille maximale d&#039;une partition</h3>
+<div class="level3">
+
+<p>
+Ce critère définit la taille maximale que peut avoir une partition sur un disque dur. De nombreuses caractéristiques causent des limitations plus ou moins grandes quant à la taille d&#039;une partition formatée dans un système de fichiers donné.  Vous retrouverez, plus bas dans cette page, un tableau résumé des principaux systèmes de fichiers rencontrés dans le monde linuxien; nous y avons indiqué la taille maximale que peut avoir une partition selon chacun de ces systèmes de fichiers.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "La taille maximale d'une partition" [3540-4084] -->
+<h3 class="sectionedit6" id="la_gestion_des_droits_d_acces_aux_fichiers_et_repertoires">La gestion des droits d&#039;accès aux fichiers et répertoires</h3>
+<div class="level3">
+
+<p>
+Ce critère définit s&#039;il est possible ou non d&#039;attribuer la possession d&#039;un fichier ou d&#039;un répertoire à un utilisateur et à un groupe d&#039;utilisateurs, de même que de définir quelles actions les utilisateurs ont le droit d&#039;effectuer sur les fichiers et répertoires, selon qu&#039;ils sont propriétaires du fichier, membre du groupe propriétaire du fichier ou ni l&#039;un ni l&#039;autre.  La possession et la gestion des droits d&#039;accès associés s&#039;effectue individuellement avec chaque fichier et répertoire.
+</p>
+
+<p>
+Les <a href="../../permissions" class="wikilink1" title="permissions">droits d&#039;accès</a> que l&#039;on trouve habituellement sont la lecture du fichier ou répertoire, l&#039;écriture dans celui-ci et son exécution.  Par exemple, l&#039;utilisateur <em>toto</em> dispose des droits de lecture et d&#039;exécution sur le répertoire <code>foo</code>, mais pas d&#039;écriture; <em>toto</em> peut donc lancer les programmes présents dans ce répertoire et ouvrir les fichiers qu&#039;il contient, mais ne peut pas les modifier ni en créer de nouveaux.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "La gestion des droits d'accès aux fichiers et répertoires" [4085-5116] -->
+<h3 class="sectionedit7" id="la_journalisation">La journalisation</h3>
+<div class="level3">
+
+<p>
+Parlons maintenant de la journalisation.  Un système de fichiers journalisé est plus fiable lorsqu&#039;on entre dans le domaine du stockage des données.  Il a été expliqué plus haut ce qui se produit réellement lorsqu&#039;un fichier est enregistré sur un disque dur (une suite de 1 et de 0 est inscrite sur le disque) ; mais que se produit-il si l&#039;écriture de la chaîne est interrompue avant son terme (ce qui se produit, par exemple, lors d&#039;une coupure de courant) ?  Votre fichier devient « corrompu », incomplet.
+</p>
+
+<p>
+Un système de fichiers  journalisé travaille de façon à prévenir une telle corruption : lors de la sauvegarde d&#039;un fichier, au lieu d&#039;écrire immédiatement sur le disque dur les données à l&#039;endroit exact où elles devraient être enregistrées, le système de fichiers écrit les données dans une autre partie du disque dur et note les changements nécessaire dans un journal, et ensuite, en arrière-plan, il repasse chacune des entrées du journal et termine le travail commencé ; lorsque la tâche est accomplie, il raye la tâche de la liste.
+</p>
+
+<p>
+Mais comment cela prévient-il la perte de données ?  Prenons un exemple : disons que vous cliquez sur le bouton <em>Enregistrer</em> de votre logiciel de traitement de texte pour sauvegarder le fichier <code>foo.txt</code>.  L&#039;ordinateur écrit d&#039;abord un « brouillon » de <code>foo.txt</code> dans une partie différente du disque dur et écrit le changement dans le journal du système de fichiers.  Une fois cela effectué, l&#039;ordinateur commence à retranscrire le fichier <em>(la suite de 1 et de 0)</em> à son endroit définitif sur le disque dur.  Soudain, il survient une panne de courant ; alors la transcription du fichier est interrompue.  Lorsque le courant revient, même si le « propre », la version finale de votre fichier est incomplète, vous possédez toujours votre brouillon dans le journal du système de fichiers ; l&#039;ordinateur recommence donc la retranscription du fichier, écrasant les données corrompues.
+</p>
+
+<p>
+Et si, par hasard, le courant était coupé lorsque l&#039;ordinateur écrivait dans le journal, vous disposeriez toujours d&#039;un brouillon précédemment écrit dans le journal pour récupérer votre travail.
+</p>
+
+<p>
+<em>« Mais,</em> direz-vous,<em> il est beaucoup plus avantageux d&#039;utiliser un système de fichiers journalisé !  C&#039;est bien plus sécurisé !  Pourquoi utiliserais-je un système de fichiers non journalisé ? »</em>  L&#039;utilisation d&#039;un journal requiert des capacités de stockage importantes sur vos périphériques ; ces systèmes de fichiers ne sont donc pas adaptés aux médias de faible capacité, telles les cartes mémoires (<em>memory sticks</em>) et les disquettes.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "La journalisation" [5117-7803] -->
+<h3 class="sectionedit8" id="particularite_des_systemes_de_fichiers_nixinode">Particularité des systèmes de fichiers *nix : inode</h3>
+<div class="level3">
+
+<p>
+Les utilisateurs habitués de Microsoft Windows savent qu&#039;il n&#039;est normalement pas possible de modifier les propriétés d&#039;un fichier (renommer, déplacer, supprimer…) quand celui-ci est ouvert par un programme ; cette restriction n&#039;existe pas sur les systèmes de fichiers de type Unix (ext2, ext3, ReiserFS…). La raison est que sur les systèmes de fichiers *nix, les fichiers sont indexés selon un numéro, appelé <em>inode</em> ou <em>i-node</em>, et que chaque inode possède de nombreux attributs associés à lui, tels les droits d&#039;accès, l&#039;horodatage, la taille du fichier etc. Lorsque vous supprimez un fichier, ce qui se produit réellement est que l&#039;inode est « délié » du système de fichiers (c&#039;est-à-dire qu&#039;il n&#039;est plus indexé), mais si des programmes ont un lien avec l&#039;inode (par exemple, si un document texte est ouvert dans un éditeur de texte, il a un lien avec cet éditeur de texte), le fichier auquel l&#039;inode est associé continue d&#039;exister dans le système d&#039;exploitation et continue d&#039;être mis à jour. Un fichier n&#039;est réellement effacé que lorsque tous les liens avec son inode ont été coupés <em>(et encore, les données résident encore sur le disque dur, mais comme elles ne sont plus indexées, il est difficile de les récupérer)</em>. Ce que tout ceci signifie est que vous pouvez supprimer des programmes alors qu&#039;ils sont en fonctionnement sans faire planter votre système d&#039;exploitation, renommer ou déplacer des fichiers avant qu&#039;ils aient fini d&#039;être téléchargés sans les corrompre et supprimer un fichier alors qu&#039;il est encore ouvert dans un logiciel.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Particularité des systèmes de fichiers *nix : inode" [7804-9472] -->
+<h2 class="sectionedit9" id="comparaison_de_systemes_de_fichiers">Comparaison de systèmes de fichiers</h2>
+<div class="level2">
+
+<p>
+Ci-dessous se trouve une très brève comparaison des systèmes de fichiers les plus communs et les plus utilisés dans le monde linuxien.
+</p>
+<div class="table sectionedit10"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign">   Nom du système de fichiers   </th><th class="col1 centeralign">   Taille maximale d&#039;un fichier   </th><th class="col2 centeralign">   Taille maximale d&#039;une partition   </th><th class="col3 centeralign">   Journalisée ou non ?  </th><th class="col4 centeralign">  Gestion des droits d&#039;accès?  </th><th class="col5 centeralign">   Notes   </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">  <strong>ext2fs</strong><br/>
+(Extended File System)  </td><td class="col1"> 2 TiB </td><td class="col2"> 4 TiB </td><td class="col3"> Non </td><td class="col4"> Oui </td><td class="col5"> Extended File System est le système de fichiers natif de Linux.  En ses versions 1 et 2, on peut le considérer comme désuet, car il ne dispose pas de la journalisation.  Ext2 peut tout de même s&#039;avérer utile sur des disquettes 3½ et sur les autres périphériques dont l&#039;espace de stockage est restreint, car aucun espace ne doit être réservé à un journal. </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  <strong>ext3fs</strong>  </td><td class="col1"> 2 TiB </td><td class="col2"> 4 TiB </td><td class="col3"> Oui </td><td class="col4"> Oui </td><td class="col5"> ext3 est essentiellement ext2 avec la gestion de la journalisation.  Il est possible de <a href="http://qliu.free.fr/Linux/ext3.html#s4" class="urlextern" title="http://qliu.free.fr/Linux/ext3.html#s4"  rel="nofollow">passer une partition formatée en ext2 vers le système de fichiers ext3</a> (et <em>vice versa</em>) sans formatage. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  <strong>ext4fs</strong>  </td><td class="col1"> 16 TiB </td><td class="col2"> 1 EiB </td><td class="col3"> Oui </td><td class="col4"> Oui </td><td class="col5"> ext4 est le successeur du système de fichiers ext3. Il est cependant considéré par ses propres concepteurs comme une solution intermédiaire en attendant le vrai système de nouvelle génération que sera Btrfs</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">  <strong>ReiserFS</strong>  </td><td class="col1"> 8 TiB </td><td class="col2"> 16 TiB </td><td class="col3"> Oui </td><td class="col4"> Oui </td><td class="col5"> Développé par Hans Reiser et la société Namesys, ReiserFS est reconnu particulièrement pour bien gérer les fichiers de moins de 4 ko.  Un avantage du ReiserFS, par rapport à ext3, est qu&#039;il ne nécessite pas une hiérarchisation aussi poussée: il s&#039;avère intéressant pour le stockage de plusieurs fichiers temporaires provenant d&#039;Internet.  Par contre, ReiserFS n&#039;est pas recommandé pour les ordinateurs portables, car le disque dur tourne en permanence, ce qui consomme beaucoup d&#039;énergie. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">  <strong>FAT</strong><br/>
+(File Allocation Table)  </td><td class="col1"> 2 GiB </td><td class="col2"> 2 GiB </td><td class="col3"> Non </td><td class="col4"> Non* </td><td class="col5"> Développé par Microsoft, ce système de fichiers se rencontre moins fréquemment aujourd&#039;hui.  Il reste néanmoins utilisé sur les disquettes 3½ formatées sous Windows et devrait être utilisé sous Linux si une disquette doit aussi être lue sous Windows.  Il est aussi utilisé par plusieurs constructeurs comme système de fichiers pour cartes mémoires (<em>memory sticks</em>), car, bien documenté, ce système de fichiers reste le plus universellement utilisé et accessible. </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 centeralign">  <strong>FAT32</strong>  </td><td class="col1"> 4 GiB </td><td class="col2"> 8 TiB </td><td class="col3"> Non </td><td class="col4"> Non* </td><td class="col5"> Ce système de fichiers, aussi créé par Microsoft, est une évolution de son prédécesseur. Depuis ses versions 2000 SP4 et XP, Windows ne peut pas formater (ou bloque volontairement le formatage) une partition en FAT32 d&#039;une taille supérieure à 32 Go. Cette limitation ne s&#039;applique pas sous Linux, de même qu&#039;avec des versions antérieures de Windows.  Une partition FAT32 d&#039;une taille supérieure à 32 Go déjà formatée pourra être lue par Windows, peu importe sa version. </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 centeralign">  <strong>NTFS</strong><br/>
+(New Technology File System)  </td><td class="col1"> 16 TiB </td><td class="col2"> 256 TiB </td><td class="col3"> Oui </td><td class="col4"> Oui* </td><td class="col5"> Ce système de fichiers a aussi été développé par Microsoft, et il reste très peu documenté. L&#039;écriture depuis Linux sur ce système de fichiers est stable à l&#039;aide du pilote <strong><a href="http://doc.ubuntu-fr.org/tutoriel/ntfs" class="wikilink1" title="tutoriel:ntfs">ntfs-3g</a></strong>. Ce pilote est inclus de base dans <a href="../../gutsy" class="wikilink1" title="gutsy">Ubuntu 7.10</a>, et disponible en paquets dans les <a href="../../depots" class="wikilink1" title="depots">dépôts</a> pour les versions antérieures. </td>
+	</tr>
+	<tr class="row8">
+		<th class="col0 leftalign" colspan="6"> EiB = Exbioctets (1024 pébioctets) :: PiB = Pébioctet (1024 tébioctet) :: TiB = Tébioctet (1024 gibioctets) :: GiB = Gibioctet (1024 mibioctets) [ <a href="http://fr.wikipedia.org/wiki/Octet" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Octet">Plus d&#039;informations sur la Wikipedia</a> ]   </th>
+	</tr>
+</table></div>
+<!-- EDIT10 TABLE [9662-13118] -->
+<p>
+Ci-dessus vous voyez aussi une comparaison de deux autres des principaux attributs d&#039;un système de fichiers, à savoir la taille maximale d&#039;un fichier sur une partition et la taille la plus grande que peut avoir une partition avec un système de fichiers particulier.
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Comparaison de systèmes de fichiers" [9473-13389] -->
+<h3 class="sectionedit11" id="systemes_de_fichiers_fat32_et_ntfs">* Systèmes de fichiers FAT32 et NTFS</h3>
+<div class="level3">
+
+<p>
+Parmi les systèmes de fichiers précédents, les seuls sur lesquels on ne peut pas installer Linux sont le NTFS, la FAT et la FAT32.  En théorie, il pourrait être possible d&#039;installer Linux sur l&#039;un de ces systèmes de fichiers, mais comme ce système de fichiers ne gère pas les droits d&#039;accès, il résulterait un système d&#039;exploitation hautement non-sécurisé.
+</p>
+
+<p>
+Les systèmes de fichiers créés par Microsoft (FAT, FAT32 et NTFS) ne gèrent pas les droits d&#039;accès aux fichiers comme les systèmes de fichiers de type Unix (ext2, ext3, ReiserFS…). Toutefois, pour être accessible sous Linux, un système de fichiers doit disposer du système de droits d&#039;accès; pour contourner cette limitation, les droits d&#039;accès de type Unix sont émulés sur ces systèmes de fichiers. Cette émulation est effectuée au montage d&#039;une partition de disque dur formatée selon l&#039;un de ces systèmes de fichiers, et ces droits sont immuables tout le temps que ce système de fichiers est en cours d&#039;utilisation.
+</p>
+
+<p>
+Il n&#039;est pas possible de modifier les permissions ou les propriétés d&#039;un fichier ou d&#039;un dossier situé dans un système de fichiers NTFS ou FAT32. Le seul moyen de changer ce comportement est de démonter le système de fichiers puis le remonter avec des options de montage différentes.
+</p>
+
+<p>
+Sous Microsoft® Windows®, le système de fichiers NTFS gère les droits d&#039;accès basé sur une liste de contrôle (<abbr title="Access Control List">ACL</abbr>) qui n&#039;est pas prise en compte sous Linux. Linux peut aussi prendre en charge une forme d&#039;<abbr title="Access Control List">ACL</abbr>, mais celle-ci est différente de celle implantée dans NTFS. Pour cette raison, les <abbr title="Access Control List">ACL</abbr> des systèmes de fichiers NTFS sont simplement ignorées.
+</p>
+
+<p>
+<p><div class="notehelp"><strong><em>«Je désire créer une partition d&#039;échange de fichiers entre Ubuntu et Microsoft® Windows®. Quel système de fichiers devrais-je préférer ?»</em></strong>
+</p>
+
+<p>
+Vous devriez faire une partition d&#039;échange formatée en NTFS. Elle sera pleinement gérée par Windows NT/2000/XP/Vista et Ubuntu. <br/>
+
+Le désavantage de cette option est que les droits d&#039;accès aux fichiers ne sont pas disponibles, et donc l&#039;ensemble des données seront accessibles sous Ubuntu à tous les utilisateurs. Ceci peut être dérangeant sur des systèmes multi-utilisateurs qui doivent partager des fichiers sensibles.
+</p>
+
+<p>
+Il n&#039;existe aucun moyen de contourner ce problème, vous pouvez créer une partition d&#039;échange formatée en ext3, mais le problème se retrouvera sous Windows ce coup ci, avec des problèmes de sécurités plus importants encore.
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT11 SECTION "* Systèmes de fichiers FAT32 et NTFS" [13390-15951] -->
+<h2 class="sectionedit12" id="quelques_commandes_utiles">Quelques commandes utiles</h2>
+<div class="level2">
+
+<p>
+Afficher le système de fichier d&#039;une partition
+</p>
+<ul>
+<li class="level1"><div class="li"> partition montée</div>
+</li>
+</ul>
+<pre class="code">     df -h</pre>
+<ul>
+<li class="level1"><div class="li"> partition quelconque (nécessite que le paquet <strong>parted</strong> soit installé et que le disque /dev/sda existe)</div>
+</li>
+</ul>
+<pre class="code">     sudo parted /dev/sda print all  </pre>
+
+</div>
+<!-- EDIT12 SECTION "Quelques commandes utiles" [15952-16232] -->
+<h2 class="sectionedit13" id="plus_d_informations">Plus d&#039;informations</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://en.wikipedia.org/wiki/Comparison_of_file_systems" class="interwiki iw_wp" title="http://en.wikipedia.org/wiki/Comparison_of_file_systems">Wikipedia : Comparison of File Systems</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://fr.wikipedia.org/wiki/Système de fichiers" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Système de fichiers">Système de fichiers</a> (fr)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://fr.wikipedia.org/wiki/Ext2" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Ext2">Ext2</a>, <a href="http://fr.wikipedia.org/wiki/Ext3" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Ext3">Ext3</a>, <a href="http://fr.wikipedia.org/wiki/Ext4" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Ext4">Ext4</a>, <a href="http://fr.wikipedia.org/wiki/ReiserFS" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/ReiserFS">ReiserFS</a> (fr)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://linuxgazette.net/122/TWDT.html#piszcz" class="urlextern" title="http://linuxgazette.net/122/TWDT.html#piszcz"  rel="nofollow"> Comparaison de performance</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://plfnicolarius.free.fr/tutoriel_logiciel_linux_verifier_systeme_de_fichiers.php" class="urlextern" title="http://plfnicolarius.free.fr/tutoriel_logiciel_linux_verifier_systeme_de_fichiers.php"  rel="nofollow">Vérifier son système de fichiers sous Linux</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.opendedup.org/" class="urlextern" title="http://www.opendedup.org/"  rel="nofollow">OpenDedup</a> (SDFS) : système de fichier supportant la déduplication.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs: <a href="../../utilisateurs/alexandrep" class="wikilink1" title="utilisateurs:alexandrep">AlexandreP</a>,<a href="../../utilisateurs/fnx" class="wikilink1" title="utilisateurs:fnx">fnx</a> <br/>
+
+Basé sur <a href="https://wiki.ubuntu.com/LinuxFilesystemsExplained" class="urlextern" title="https://wiki.ubuntu.com/LinuxFilesystemsExplained"  rel="nofollow">Linux Filesystems Explained</a></em>
+</p>
+
+</div>
+<!-- EDIT13 SECTION "Plus d'informations" [16233-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/8/8f302b9517ebd00b0869798fc30d0237.xhtml used -->
+</div>
+</body>
+</html>

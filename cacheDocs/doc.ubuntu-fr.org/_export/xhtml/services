@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>services</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-05-19T15:19:14+0200"/>
+<meta name="keywords" content="systeme,administration,services"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../services?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="services"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/services"/>
+<link rel="canonical" href="../../services"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"services","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="services#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="services#description_des_services">Description des services</a></div></li>
+<li class="level1"><div class="li"><a href="services#manipulation_des_services">Manipulation des services</a></div></li>
+<li class="level1"><div class="li"><a href="services#optimisation">Optimisation</a></div></li>
+<li class="level1"><div class="li"><a href="services#logiciels">Logiciels</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../../services" class="wikilink1" title="services" rel="tag">services</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="les_services_systeme">Les Services système</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Les Services système" [48-84] -->
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+Jusqu&#039;à <a href="http://doc.ubuntu-fr.org/edgy" class="wikilink1" title="edgy">Ubuntu 6.10 &quot;Edgy Eft&quot;</a>, les services étaient des scripts d&#039;initialisation du système, appelés <a href="http://doc.ubuntu-fr.org/script_sysv" class="wikilink1" title="script_sysv">scripts system V</a> <sup><a href="services#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.<br/>
+
+Selon les paramètres qui leur étaient attribués, ces services étaient actifs, ou non, et ce dès le démarrage de la machine et pour le reste de la session.<br/>
+
+Depuis, le nouveau système <a href="http://doc.ubuntu-fr.org/upstart" class="wikilink1" title="upstart">Upstart</a> a intégré la notion d’événement à appliquer aux services. Ceci fait qu&#039;une partie de ces scripts ont évolué pour plus de souplesse.<br/>
+
+En effet, un service peut toujours être exécuté au démarrage de la machine, comme le faisaient déjà les <a href="http://doc.ubuntu-fr.org/script_sysv" class="wikilink1" title="script_sysv">scripts system V</a>, mais il peut désormais lui être attribué certaines conditions pour l&#039;activer ou le désactiver.<br/>
+
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Introduction" [85-939] -->
+<h2 class="sectionedit3" id="description_des_services">Description des services</h2>
+<div class="level2">
+
+<p>
+La page de documentation « <strong><a href="../../init_d" class="wikilink1" title="init_d">Description des services /etc/init.d</a></strong> » en donne une liste non exhaustive.<br/>
+
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Description des services" [940-1098] -->
+<h2 class="sectionedit4" id="manipulation_des_services">Manipulation des services</h2>
+<div class="level2">
+
+<p>
+La migration de l&#039;ancien système d&#039;initialisation vers Upstart n&#039;étant pas encore complète, vous trouverez dans le dossier <strong>/etc/init.d/</strong> les scripts d&#039;initialisation système V dont certains sont redirigés vers le script /lib/init/update-job. 
+C&#039;est ce dernier qui permet l&#039;usage d&#039; <a href="http://doc.ubuntu-fr.org/upstart" class="wikilink1" title="upstart">Upstart</a> et ses fichiers de configuration placés dans <strong>/etc/init/</strong>
+</p>
+
+<p>
+Les outils pour gérer les services n&#039;étant pas les mêmes selon leur type (script système V ou Upstart), il existe des <a href="services#logiciels" title="services ↵" class="wikilink1">logiciels</a> qui peuvent prendre en charge les scripts système V ou upstart voire les deux.<br/>
+
+Néanmoins, la gestion des services se fait traditionnellement par l&#039;usage de la ligne de commande dans un <a href="../../terminal" class="wikilink1" title="terminal">terminal</a> ou une <a href="../../console" class="wikilink1" title="console">console</a>.<br/>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> Vous trouverez sur la page « <strong><a href="http://doc.ubuntu-fr.org/script_sysv" class="wikilink1" title="script_sysv">Les scripts d&#039;initialisation système V</a></strong> » les commandes qui lui sont propres.<br/>
+</div>
+</li>
+<li class="level1"><div class="li"> Vous trouverez sur la page « <strong><a href="http://doc.ubuntu-fr.org/upstart" class="wikilink1" title="upstart">Upstart</a></strong> » les commandes qui lui sont propres.</div>
+</li>
+</ul>
+
+<p>
+Une bonne gestion des services permet, en plus de mieux comprendre son système, d&#039;optimiser conséquemment la machine sur laquelle elle est usitée.<br/>
+
+En effet, certains services de démarrage peuvent ne pas être utiles à votre configuration, notamment si vous utilisez un ordinateur de bureau.<br/>
+
+</p>
+
+<p>
+<p><div class="notewarning"><strong>Faites attention aux services que vous modifiez !</strong> <br/>
+
+Modifier le comportement d&#039;un service peut rendre inopérant votre système Ubuntu. Ne désactivez que les services que vous connaissez et dont vous savez qu&#039;ils ne causeront aucun tort au processus de démarrage d&#039;Ubuntu.<br/>
+
+C&#039;est pourquoi il est vivement conseillé de <strong><a href="../../tutoriel/comment_sauver_et_restaurer_un_fichier" class="wikilink1" title="tutoriel:comment_sauver_et_restaurer_un_fichier">faire une sauvegarde</a></strong> de tous fichiers que vous serez amené à modifier.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Manipulation des services" [1099-2869] -->
+<h2 class="sectionedit5" id="optimisation">Optimisation</h2>
+<div class="level2">
+
+<p>
+Vous trouverez sur la <a href="http://doc.ubuntu-fr.org/script_sysv#modifier_definitivement_un_service" class="wikilink1" title="script_sysv">page destinée à la gestion des scripts sysv</a> de nombreuses optimisations. Cependant, il est possible qu&#039;une partie de ces informations ne soient plus viables. Dans ce cas se reporter à la page «<strong> <a href="http://doc.ubuntu-fr.org/upstart" class="wikilink1" title="upstart">Upstart</a> </strong>»
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Optimisation" [2870-3184] -->
+<h2 class="sectionedit6" id="logiciels">Logiciels</h2>
+<div class="level2">
+
+<p>
+Voici une liste non exhaustive de logiciels permettant la gestion des services :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><a href="../../bum" class="wikilink1" title="bum">Boot-Up Manager</a></strong> (BUM) : Gère les <a href="http://doc.ubuntu-fr.org/script_sysv" class="wikilink1" title="script_sysv">scripts système V</a> et uniquement le démarrage/arrêt manuel des services <a href="http://doc.ubuntu-fr.org/upstart" class="wikilink1" title="upstart">Upstart</a> ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://plfnicolarius.free.fr/tutoriel_logiciel_linux_controler_le_demarrage_de_debian_et_ubuntu.php#rcconf" class="urlextern" title="http://plfnicolarius.free.fr/tutoriel_logiciel_linux_controler_le_demarrage_de_debian_et_ubuntu.php#rcconf"  rel="nofollow">Rcconf</a></strong> : Semi graphique, il gère les <a href="http://doc.ubuntu-fr.org/script_sysv" class="wikilink1" title="script_sysv">scripts système V</a> (fonctions réduites). <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://rcconf" class="urlextern" title="apt://rcconf"  rel="nofollow">rrconf</a></strong> ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://doc.ubuntu-fr.org/jobs-admin" class="wikilink1" title="jobs-admin">System Jobs Administration</a></strong> : Gère les <a href="http://doc.ubuntu-fr.org/script_sysv" class="wikilink1" title="script_sysv">scripts système V</a> et <a href="http://doc.ubuntu-fr.org/upstart" class="wikilink1" title="upstart">Upstart</a> pour <a href="../../maverick" class="wikilink1" title="maverick">Ubuntu 10.10</a> et <a href="../../natty" class="wikilink1" title="natty">Ubuntu 11.04</a> ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://doc.ubuntu-fr.org/simple-service-manager" class="wikilink1" title="simple-service-manager">Simple Service Manager</a></strong> : Activer/désactiver le démarrage automatique des services pour les <a href="http://doc.ubuntu-fr.org/script_sysv" class="wikilink1" title="script_sysv">scripts système V</a> et <a href="http://doc.ubuntu-fr.org/upstart" class="wikilink1" title="upstart">Upstart</a> ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://ubuntuforums.org/showthread.php?t=1336067" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=1336067"  rel="nofollow">ServiceManager</a></strong> : Gère les <a href="http://doc.ubuntu-fr.org/script_sysv" class="wikilink1" title="script_sysv">scripts système V</a> et uniquement le démarrage/arrêt manuel des services <a href="http://doc.ubuntu-fr.org/upstart" class="wikilink1" title="upstart">Upstart</a> ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://www.commentcamarche.net/faq/6761-activer-desactiver-les-services-au-demarrage" class="urlextern" title="http://www.commentcamarche.net/faq/6761-activer-desactiver-les-services-au-demarrage"  rel="nofollow">sysv-rc-conf</a></strong> : Semi-graphique gère les <a href="http://doc.ubuntu-fr.org/script_sysv" class="wikilink1" title="script_sysv">scripts système V</a> selon le niveau d&#039;exécution ;</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../../utilisateurs/fabux.1" class="wikilink1" title="utilisateurs:fabux">fabux</a>, <a href="../../utilisateurs/vincent85" class="wikilink2" title="utilisateurs:vincent85" rel="nofollow">Vincent85</a></em>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Logiciels" [3185-] --><div class="footnotes">
+<div class="fn"><sup><a href="services#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Version majeure d&#039;une des deux principales branches de la famille des systèmes UNIX</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/9/909cb44a61a5bcd6de84402b9b38560d.xhtml used -->
+</div>
+</body>
+</html>

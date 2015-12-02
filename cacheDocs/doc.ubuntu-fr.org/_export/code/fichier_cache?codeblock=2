@@ -1,0 +1,10 @@
+  #!/bin/bash
+  printf %s "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | while read -r line
+  do
+          if grep -q "${line##*/}" ".hidden"
+          then
+                  sed -i "/^${line##*/}/d" ".hidden"
+          else
+                  echo "${line##*/}" >>".hidden"
+          fi
+  done

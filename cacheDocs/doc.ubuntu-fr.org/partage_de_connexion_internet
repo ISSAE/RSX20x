@@ -1,0 +1,955 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>partage_de_connexion_internet - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-04-10T12:03:55+0200"/>
+<meta name="keywords" content="partage,reseau,serveur,vetuste"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/partage_de_connexion_internet?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/partage_de_connexion_internet?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/partage_de_connexion_internet"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/partage_de_connexion_internet"/>
+<link rel="canonical" href="partage_de_connexion_internet"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"partage_de_connexion_internet","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="partage_de_connexion_internet#main" tabindex="1">Contenu</a> | <a href="partage_de_connexion_internet#qsearch__in" tabindex="2">Rechercher</a> | <a href="partage_de_connexion_internet#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="partage_de_connexion_internet" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="partage_de_connexion_internet" >partage_de_connexion_internet</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est considée comme <a href="vetuste">vétuste</a> et ne contient plus d'informations utiles.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="partage_de_connexion_internet#configuration_cote_serveur">Configuration côté serveur</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="partage_de_connexion_internet#avec_network_manager">Avec Network Manager</a></div></li>
+<li class="level2"><div class="li"><a href="partage_de_connexion_internet#avec_le_transfert_d_ip">Avec le transfert d&#039;ip</a></div></li>
+<li class="level2"><div class="li"><a href="partage_de_connexion_internet#avec_un_pont_reseau">Avec un pont réseau</a></div></li>
+<li class="level2"><div class="li"><a href="partage_de_connexion_internet#ancienne_methode">Ancienne méthode</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="partage_de_connexion_internet#configuration_cote_client">Configuration coté client</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="partage_de_connexion_internet#en_dhcp">En DHCP</a></div></li>
+<li class="level2"><div class="li"><a href="partage_de_connexion_internet#en_ip_fixe">En IP Fixe</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="partage_de_connexion_internet#problemes_rencontres">Problèmes rencontrés</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="partage_de_connexion_internet#les_dns_ne_fonctionnent_pas">Les DNS ne fonctionnent pas</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="partage_de_connexion_internet#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="partage" class="wikilink1" title="partage" rel="tag">partage</a>,
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="vetuste" class="wikilink1" title="vetuste" rel="tag">vétuste</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_partager_une_connexion_internet">Comment partager une connexion internet ?</h1>
+<div class="level1">
+
+<p>
+Vous pouvez paramétrer votre carte réseau (wifi ou non) pour qu&#039;elle serve de pont entre plusieurs réseaux. Le plus fréquemment, on rencontre cette configuration lorsque votre ordinateur sous Ubuntu est relié directement au modem de votre fournisseur d&#039;accès à Internet, et que vous désirez partager votre accès à Internet avec un autre ordinateur supplémentaire.
+</p>
+
+<p>
+Si vous avez un réseau avec un modem qui ne peut pas dupliquer la connexion lui même, ou, si vous voulez faire un sous réseau, avoir plus d&#039;emprise sur le filtrage en transformant un ordinateur en routeur, ou n&#039;importe quoi d&#039;autre, il vous faudra partager votre connexion internet avec les autres ordinateurs.
+</p>
+
+<p>
+Si le contenu de cette page vous dépasse, vous pouvez opter pour l&#039;achat d&#039;un routeur ou 
+modem-routeur. <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=3041586#p3041586" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=3041586#p3041586"  rel="nofollow">Son utilisation est décrite dans le forum</a>.
+</p>
+
+</div>
+
+<h4 id="un_peu_de_vocabulaire">Un peu de vocabulaire</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> L&#039;ordinateur qui met en place le partage de connexion sera nommé <strong>Serveur ICS</strong> <a href="http://en.wikipedia.org/wiki/Internet_Connection_Sharing" class="urlextern" title="http://en.wikipedia.org/wiki/Internet_Connection_Sharing"  rel="nofollow">Internet Connection Sharing</a></div>
+</li>
+<li class="level1"><div class="li"> Un ordinateur relié au serveur ICS sera appelé <strong>Client</strong></div>
+</li>
+<li class="level1"><div class="li"> Une carte réseau ou Wi-Fi est une <strong>interface réseau</strong></div>
+</li>
+<li class="level1"><div class="li"> Une <strong>adresse IP</strong> ou une <strong>IP</strong> est l&#039;identifiant d&#039;un ordinateur sur le réseau</div>
+</li>
+</ul>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/config_rl2.png?id=partage_de_connexion_internet" class="media" title="applications:config_rl2.png"><img src="_media/applications/config_rl2.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+<p><div class="noteclassic">Petite note sur l&#039;illustration, le switch (sorte de multi-prises réseau) n&#039;est indispensable que si vous voulez relier plus d&#039;un ordinateur au serveur ICS.
+</div></p>
+</p>
+
+<p>
+Il y a plusieurs façons de faire, ici trois seront présentées. La première est très simple et efficace techniquement, la seconde est disponible si la première ne marche pas et la dernière est une ancienne technique très personnalisable et parfaitement opérationnelle, même si elle ne convient pas vraiment aux besoins des utilisateurs standard.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="partage_de_connexion_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428660235" /><input type="hidden" name="summary" value="[Comment partager une connexion internet ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="48-1993" /><input type="submit" value="Modifier" class="button" title="Comment partager une connexion internet ?" /></div></form></div>
+<h2 class="sectionedit2" id="configuration_cote_serveur">Configuration côté serveur</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="partage_de_connexion_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428660235" /><input type="hidden" name="summary" value="[Configuration côté serveur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1994-2035" /><input type="submit" value="Modifier" class="button" title="Configuration côté serveur" /></div></form></div>
+<h3 class="sectionedit3" id="avec_network_manager">Avec Network Manager</h3>
+<div class="level3">
+
+<p>
+Network Manager permet de partager sa connexion simplement, il suffit de cliquer une connexion encore libre (celle qui ne vous relie pas déjà à internet) et de demander de partager la connexion par cette connexion. Si cette dite connexion est une carte wifi, on vous demandera de créer une clé <abbr title="Wireless Equivalent Privacy">WEP</abbr>, WPA<sup><a href="partage_de_connexion_internet#fn__1" id="fnt__1" class="fn_top">1)</a></sup> ou de créer un réseau non protégé<sup><a href="partage_de_connexion_internet#fn__2" id="fnt__2" class="fn_top">2)</a></sup> pour le réseau que vous venez de créer.
+</p>
+
+<p>
+Voir <strong><a href="network-manager#modifier_les_parametres_ip_pour_le_partage_d_une_connexion_internet" class="wikilink1" title="network-manager">La partie consacrée au partage réseau dans la documentation de NetworkManager</a></strong> pour plus d&#039;informations.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="partage_de_connexion_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428660235" /><input type="hidden" name="summary" value="[Avec Network Manager] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2036-2771" /><input type="submit" value="Modifier" class="button" title="Avec Network Manager" /></div></form></div>
+<h3 class="sectionedit4" id="avec_le_transfert_d_ip">Avec le transfert d&#039;ip</h3>
+<div class="level3">
+
+<p>
+<strong>Cette méthode utilise les concepts « ip forward » et « masquerading ».</strong>
+</p>
+
+</div>
+
+<h4 id="pre-requis">Pré-requis</h4>
+<div class="level4">
+
+<p>
+La méthode ci-dessous est basé sur un exemple complet, à vous de l&#039;adapter à votre cas.
+</p>
+
+<p>
+<p><div class="noteclassic"> Si vous avez des interfaces finissant par <strong>avah</strong>, n&#039;en tenez pas compte, ce sont des duplications. L&#039;interface de partage ne pourra pas commencer par <strong>ppp</strong> ou <strong>lo</strong>
+</div></p>
+</p>
+
+<p>
+Il faut connaître le nom de l&#039;interface réseau reliée à Internet et le nom de la carte qui servira au partage. Entrez, dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> : 
+</p>
+<pre class="code">ifconfig</pre>
+
+<p>
+Vous devriez avoir un résultat semblable à celui-ci (si ce n&#039;est pas le cas, tentez &quot;<code>ifconfig -a</code>&quot;):
+</p>
+<pre class="file">eth0      Lien encap:Ethernet  HWaddr 00:11:22:33:44:55  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          (...) 
+
+eth1      Lien encap:Ethernet  HWaddr 00:AA:BB:CC:DD:EE  
+          inet adr:192.168.0.0  Bcast:192.168.0.255  Masque:255.255.255.0
+          adr inet6: fe80::219:d2ff:fed6:e69/64 Scope:Lien
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          (...)</pre>
+
+<p>
+Dans ce cas, on voit clairement que l&#039;interface réseau possédant une connexion Internet est l&#039;interface eth1, grâce à la seconde ligne : 
+</p>
+<pre class="file">inet adr:192.168.0.0  Bcast:192.168.0.255  Masque:255.255.255.0</pre>
+<ul>
+<li class="level1"><div class="li"> <strong>eth1</strong> étant l&#039;interface ayant accès à Internet ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>eth0</strong> étant l&#039;interface partageant la connexion internet ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>192.168.10.0</strong> étant l&#039;adresse du réseau local partageant la connexion internet ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>192.168.10.1</strong> étant l&#039;adresse du serveur ICS partageant la connexion internet.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="activation_du_partage">Activation du partage</h4>
+<div class="level4">
+<ol>
+<li class="level1"><div class="li"> Activation du forwarding (transfert) des IP <pre class="code">sudo sysctl -w net.ipv4.ip_forward=1</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Pour rendre la modification permanente, décommenter dans le fichier <strong>/etc/sysctl.conf</strong> la ligne suivante : <pre class="file">  net.ipv4.ip_forward=1</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Activation de L&#039;IP Masquerade <pre class="code">sudo iptables -t nat -A POSTROUTING -s 192.168.10.0/24 -o eth1 -j MASQUERADE</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Pour que cette dernière règle soit prise en compte à chaque démarrage de la machine, installer le paquet iptables-persistent si ce n&#039;est déjà fait, puis exécuter la commande : <pre class="code">sudo service iptables-persistent save</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Pour terminer, configuration de l&#039;interface qui partagera la connexion Internet aux autres PC <pre class="code">sudo ifconfig eth0 192.168.10.1</pre>
+</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="partage_de_connexion_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428660235" /><input type="hidden" name="summary" value="[Avec le transfert d'ip] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2772-5183" /><input type="submit" value="Modifier" class="button" title="Avec le transfert d'ip" /></div></form></div>
+<h3 class="sectionedit5" id="avec_un_pont_reseau">Avec un pont réseau</h3>
+<div class="level3">
+
+<p>
+Cette astuce est tirée du blog Only Ubuntu, et permet de partager une connexion avec le paquet bridge-utils, qui permet de gérer les ponts réseaux sous Ubuntu.
+</p>
+
+</div>
+
+<h4 id="pre-requis1">Pré-Requis</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://bridge-utils" class="urlextern" title="apt://bridge-utils"  rel="nofollow">bridge utils</a></strong> :</div>
+</li>
+</ul>
+<pre class="code">sudo apt-get install bridge-utils</pre>
+<ul>
+<li class="level1"><div class="li"> Il faut connaître le nom de l&#039;interface réseau reliée à Internet et le nom de la carte qui servira au partage. Entrez, dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> :</div>
+</li>
+</ul>
+<pre class="code"> ifconfig</pre>
+
+<p>
+ Vous devriez avoir un résultat semblable à celui-ci (si ce n&#039;est pas le cas, tentez &quot;<code>ifconfig -a</code>&quot;):
+</p>
+<pre class="file">eth0      Lien encap:Ethernet  HWaddr 00:11:22:33:44:55  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          (...) 
+
+eth1      Lien encap:Ethernet  HWaddr 00:AA:BB:CC:DD:EE  
+          inet adr:192.168.0.0  Bcast:192.168.0.255  Masque:255.255.255.0
+          adr inet6: fe80::219:d2ff:fed6:e69/64 Scope:Lien
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          (...)</pre>
+
+<p>
+Dans ce cas, on voit clairement que l&#039;interface réseau possédant une connexion Internet est l&#039;interface eth1, grâce à la seconde ligne :
+</p>
+<pre class="code">inet adr:192.168.0.0  Bcast:192.168.0.255  Masque:255.255.255.0</pre>
+
+<p>
+L&#039;autre, eth0, sera donc celle de partage.
+</p>
+
+<p>
+<p><div class="noteclassic"> Si vous avez des interfaces finissant par <em class="u">avah</em>, n&#039;en tenez pas compte, ce sont des duplications. L&#039;interface de partage ne pourra pas commencer par <strong>ppp</strong> ou <strong>lo</strong>
+</div></p>
+</p>
+
+</div>
+
+<h4 id="creation_du_pont">Création du pont</h4>
+<div class="level4">
+
+<p>
+Stoppez le service des réseaux :
+</p>
+<pre class="code">sudo /etc/init.d/networking stop</pre>
+
+<p>
+Modifier le fichier /etc/network/interfaces :
+</p>
+<pre class="code">sudo gedit /etc/network/interfaces</pre>
+
+<p>
+Et remplacez son contenu par celui-ci, en modifiant bien entendu eth0 par l&#039;interface internet, et eth1 par l&#039;interface de partage : (Attention, cet exemple est à l&#039;inverse du précédent : eth0 devient eth1)
+</p>
+<pre class="file">auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet manual
+
+auto eth1
+iface eth1 inet manual
+
+auto br0
+iface br0 inet dhcp
+bridge_ports eth0 eth1</pre>
+
+<p>
+Relancez les services : 
+</p>
+<pre class="code">sudo /etc/init.d/networking start</pre>
+
+<p>
+ ou (Si start ne fonctionne pas):
+</p>
+<pre class="code">sudo /etc/init.d/networking restart</pre>
+
+<p>
+ ou (si networking ne fonctionne pas)
+</p>
+<pre class="code">sudo ifdown --exclude=lo -a &amp;&amp; sudo ifup --exclude=lo -a</pre>
+
+<p>
+Et le partage est fait ! Les PC client peuvent se connecter au PC qui partage sa connexion de façon similaire à un routeur.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="partage_de_connexion_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428660235" /><input type="hidden" name="summary" value="[Avec un pont réseau] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5184-7581" /><input type="submit" value="Modifier" class="button" title="Avec un pont réseau" /></div></form></div>
+<h3 class="sectionedit6" id="ancienne_methode">Ancienne méthode</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="quelques_precisions">Quelques précisions</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Sur Intrepid, avec la disparition de <strong>gnome-network-admin</strong> (que vous pouvez tout de même <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer</a> grâce au paquet du même nom), il est sûrement possible que ça ne marche sans rien faire, où en utilisant le programme de configuration de network manager, si vous en avez constaté la véracité, veuillez mettre une note ici même dans le wiki.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Sur Hardy, il est possible qu&#039;il faille laisser l&#039;interface par laquelle on partage la connexion en itinérant, à tester si après avoir fait tout le nécessaire ça ne marche pas …</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic">Sur Hardy Heron (8.04) si l&#039;interface réseau reliée à Internet est une connexion Wi-Fi il faut la laisser en itinérant 
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> Cette documentation a été testée sur Ubuntu 7.10 &quot;Gutsy&quot;, avec une carte Wi-Fi et une carte &quot;câble&quot;.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Deuxième test concluant : Gutsy, avec un <a href="http://doc.ubuntu-fr.org/modem_sagem_fast_800" class="wikilink1" title="modem_sagem_fast_800">modem sagem fast 800</a> et une carte câble… ⇒ voir ici : <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=1352433#p1352433" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=1352433#p1352433"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?pid=1352433#p1352433</a></div>
+</li>
+</ul>
+
+<p>
+Pour une adaptation pour Kubuntu/Xubuntu et/ou si vous avez des problèmes, avec votre configuration : contactez-moi → <a href="utilisateurs/fabien26" class="wikilink1" title="utilisateurs:fabien26">Fabien26</a>
+</p>
+
+<p>
+Cette documentation est une simplification/actualisation/remise en forme de cette page : <a href="tutoriel/comment_configurer_son_reseau_local#methode_avancee_configuration_dynamique_et_centralisee" class="wikilink1" title="tutoriel:comment_configurer_son_reseau_local">Configurer son réseau local</a>
+</p>
+
+</div>
+
+<h4 id="pre-requis2">Pré-requis</h4>
+<div class="level4">
+
+<p>
+<p><div class="noteimportant">Firestarter n&#039;est plus compatible avec dnsmasq, utiliser ICS <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> à la place.
+Il serait bien de changer le tuto pour pouvoir utiliser dnsmasq quand même ou mettre un tuto pour installer ICS <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> à la place
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> Vous devez avoir deux interfaces réseau (une Wi-Fi et une câble, deux câbles, ou un modem et un câble)</div>
+</li>
+<li class="level1"><div class="li"> L&#039;interface réseau avec laquelle vous allez faire le partage doit être une interface câblée !</div>
+</li>
+<li class="level1"><div class="li"> Le câble doit être pour le moment débranché !</div>
+</li>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://dnsmasq" class="urlextern" title="apt://dnsmasq"  rel="nofollow">dnsmasq</a></strong> </div>
+</li>
+<li class="level1"><div class="li"> Ouvrez la configuration du réseau (<strong>Système→Administration→Réseau</strong>)</div>
+<ul>
+<li class="level2"><div class="li"> Cliquez sur la carte réseau avec laquelle vous voulez partager et changez les cases, dans l&#039;ordre :</div>
+<ul>
+<li class="level3"><div class="li"> <em class="u">Configuration</em> : Adresse IP statique</div>
+</li>
+<li class="level3"><div class="li"> <em class="u">Adresse IP</em> : 192.168.10.1</div>
+</li>
+<li class="level3"><div class="li"> <em class="u">Masque de sous-réseau</em> : 255.255.255.0</div>
+</li>
+<li class="level3"><div class="li"> <em class="u">Passerelle</em> : Vide…</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> Faites <strong>Valider</strong> puis <strong>Fermer</strong></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Ensuite, pour trouver le nom de l&#039;interface réseau reliée à Internet et le nom de la carte qui servira au partage, entrez, dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a>:</div>
+</li>
+</ul>
+<pre class="code">ifconfig</pre>
+
+<p>
+Vous devez retrouver quelque chose qui ressemble à ça :
+</p>
+<pre class="file">eth0      Lien encap:Ethernet  HWaddr 00:15:C5:79:59:B5  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          Packets reçus:0 erreurs:0 :0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 lg file transmission:1000 
+          Octets reçus:0 (0.0 b) Octets transmis:0 (0.0 b)
+          Interruption:17 
+
+eth1      Lien encap:Ethernet  HWaddr 00:19:D2:D6:0E:69  
+          inet adr:192.168.0.75  Bcast:192.168.0.255  Masque:255.255.255.0
+          adr inet6: fe80::219:d2ff:fed6:e69/64 Scope:Lien
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Packets reçus:767 erreurs:4 :39 overruns:0 frame:0
+          TX packets:825 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 lg file transmission:1000 
+          Octets reçus:687753 (671.6 KB) Octets transmis:107141 (104.6 KB)
+          Interruption:17 Adresse de base:0xe000 Mémoire:efdff000-efdfffff 
+
+lo        Lien encap:Boucle locale  
+          inet adr:127.0.0.1  Masque:255.0.0.0
+          adr inet6: ::1/128 Scope:Hôte
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          Packets reçus:60 erreurs:0 :0 overruns:0 frame:0
+          TX packets:60 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 lg file transmission:0 
+          Octets reçus:3947 (3.8 KB) Octets transmis:3947 (3.8 KB)</pre>
+
+<p>
+<p><div class="notehelp"><strong>Si vous trouvez des interfaces &quot;<em class="u">quelques chose:avah</em>&quot; ignorez-les, ce ne sont que des duplications des interfaces déjà présentes, qui ne servent pas pour notre configuration</strong>.
+</div></p>
+</p>
+
+<p>
+Dans mon cas, nous voyons clairement que l&#039;interface réseau qui va partager la connexion est <strong>eth0</strong>, car elle n&#039;a pas de ligne de ce genre : 
+</p>
+<pre class="code">inet adr:192.168.0.75  Bcast:192.168.0.255  Masque:255.255.255.0
+adr inet6: fe80::219:d2ff:fed6:e69/64 Scope:Lien</pre>
+
+<p>
+Ce qui signifie qu&#039;elle n&#039;est pour l&#039;instant reliée à aucun réseau.
+</p>
+
+<p>
+Par déduction, car je n&#039;ai que deux cartes réseau, <strong>eth1</strong> est l&#039;interface réseau reliée à Internet. (de plus elle a les lignes si dessus, ce qui veux dire qu&#039;un réseau y est branché, en l&#039;occurrence une freebox).
+</p>
+
+<p>
+<p><div class="noteclassic">Si vous utilisez un modem branché en <abbr title="Universal Serial Bus">USB</abbr>, ou en port série, l&#039;interface réseau connectée à Internet est dans 99% des cas <strong>ppp0</strong>
+</div></p>
+</p>
+
+<p>
+<p><div class="noteimportant">L&#039;interface avec laquelle vous ferez le partage sera obligatoirement une <strong>eth</strong> <code>un numéro</code>, elle ne peut pas être une ppp, ni autre chose.
+</div></p>
+</p>
+
+<p>
+<p><div class="notehelp"><strong>lo</strong> est l&#039;interface que l&#039;on appelle loopback, elle permet à l&#039;ordinateur de communiquer avec lui même via les protocoles réseau…Cette interface ne sera pas évoquée dans cette documentation
+</div></p>
+</p>
+
+<p>
+<strong>Retenez bien les valeurs que vous avez trouvées !</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><em class="u">Attention !!!</em>: Dans la suite nous assumerons que vous avez une configuration comme la mienne, si ce n&#039;est pas le cas, effectuez les changements comme indiqué !</strong></div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="configuration_de_dnsmasq">Configuration de dnsmasq</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Tous d&#039;abord sauvegardons le fichier de configuration originel ailleurs, en tapant dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a>, ceci:</div>
+</li>
+</ul>
+<pre class="code">sudo cp /etc/dnsmasq.conf /etc/dnsmasq.conf.orig</pre>
+<ul>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/dnsmasq.conf</strong> pour y mettre ça :</div>
+</li>
+</ul>
+<pre class="code"># Fichier de Configuration pour dnsmasq.
+#
+# pour éviter de fournir du trafic DHCP/DNS inutile du coté internet
+##domain-needed
+bogus-priv
+# (Optionnel) Si vous avez une ip fixe,
+# décommentez cette ligne.
+# no-poll
+# pour limiter l&#039;écoute de requêtes DHCP du coté réseau local
+interface=eth0
+# nom de votre domaine pour dnsmasq
+domain=inet
+# activez le serveur DHCP:
+dhcp-range=192.168.10.100,192.168.10.150,255.255.255.0,12h</pre>
+<ul>
+<li class="level1"><div class="li"> Adaptez la ligne 10 selon ce que vous avez trouvé précedemment.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Enregistrez le fichier.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="faire_un_script_d_execution_automatique_du_partage_de_connexion">Faire un script d&#039;exécution automatique du partage de connexion</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Créez le fichier</a> <strong>/etc/init.d/iptables</strong> pour y mettre ça :</div>
+</li>
+</ul>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+<span class="co0">#</span>
+<span class="co0"># Script de démarrage qui lance l'interface réseau internet,</span>
+<span class="co0"># met en place un firewall basique et un partage de connexion</span>
+<span class="co0">#</span>
+<span class="co0"># Inspiré du script de Mjules_at_ifrance.com</span>
+<span class="co0">#</span>
+&nbsp;
+<span class="re2">interface</span>=eth1
+&nbsp;
+start<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="co0"># init du la périphérique internet (ici derriere un modem ADSL ethernet, DHCP client)</span>
+&nbsp;
+<span class="sy0">/</span>sbin<span class="sy0">/</span><span class="kw2">ifup</span> <span class="re1">$interface</span>
+&nbsp;
+<span class="co0"># Dans cette partie, on met en place le firewall</span>
+<span class="co0">#vidage des chaines</span>
+iptables <span class="re5">-F</span>
+<span class="co0">#destruction des chaines personnelles</span>
+iptables <span class="re5">-X</span>
+&nbsp;
+<span class="co0">#stratégies par défaut</span>
+iptables <span class="re5">-P</span> INPUT DROP
+iptables <span class="re5">-P</span> FORWARD DROP
+iptables <span class="re5">-P</span> OUTPUT ACCEPT
+&nbsp;
+<span class="co0">#init des tables NAT et MANGLE (pas forcément nécessaire)</span>
+iptables <span class="re5">-t</span> nat <span class="re5">-F</span>
+iptables <span class="re5">-t</span> nat <span class="re5">-X</span>
+iptables <span class="re5">-t</span> nat <span class="re5">-P</span> PREROUTING ACCEPT
+iptables <span class="re5">-t</span> nat <span class="re5">-P</span> POSTROUTING ACCEPT
+iptables <span class="re5">-t</span> nat <span class="re5">-P</span> OUTPUT ACCEPT
+&nbsp;
+iptables <span class="re5">-t</span> mangle <span class="re5">-F</span>
+iptables <span class="re5">-t</span> mangle <span class="re5">-X</span>
+iptables <span class="re5">-t</span> mangle <span class="re5">-P</span> PREROUTING ACCEPT
+iptables <span class="re5">-t</span> mangle <span class="re5">-P</span> OUTPUT ACCEPT
+&nbsp;
+&nbsp;
+<span class="co0"># Acceptation de toutes les connexions en local (un process avec l'autre)</span>
+iptables <span class="re5">-A</span> INPUT <span class="re5">-i</span> lo <span class="re5">-j</span> ACCEPT
+iptables <span class="re5">-A</span> OUTPUT <span class="re5">-o</span> lo <span class="re5">-j</span> ACCEPT
+&nbsp;
+<span class="co0"># PORT FORWARDING:</span>
+<span class="co0"># attention : on ne peut malheureusement pas mettre un nom de machine en destination, il faut mettre l'adresse IP.</span>
+<span class="co0"># exemple : on veut qu'un serveur HTTP installé sur une machine du réseau local soit visible depuis l'extérieur.</span>
+<span class="co0">###iptables -t nat -A PREROUTING -i $interface -p tcp --dport 80 -j DNAT --to-destination 192.168.10.121:80</span>
+<span class="co0">###iptables -A FORWARD -p tcp -i $interface --dport 80 -j ACCEPT</span>
+&nbsp;
+&nbsp;
+<span class="co0">#création d'une nouvelle règle</span>
+iptables <span class="re5">-N</span> MAregle
+&nbsp;
+<span class="co0">#définition de la règle : accepter les nouvelles connexions ne venant pas de l'interface internet</span>
+<span class="co0"># et accepter toutes les connexions établies et reliées (ex: une demande de page HTML provoque l'ouverture</span>
+<span class="co0"># d'une connexion reliée pour acheminer cette page vers l'ordinateur)</span>
+&nbsp;
+iptables <span class="re5">-A</span> MAregle <span class="re5">-m</span> state <span class="re5">--state</span> NEW <span class="sy0">!</span> <span class="re5">-i</span> <span class="re1">$interface</span> <span class="re5">-j</span> ACCEPT
+iptables <span class="re5">-A</span> MAregle <span class="re5">-m</span> state <span class="re5">--state</span> ESTABLISHED,RELATED <span class="re5">-j</span> ACCEPT
+&nbsp;
+<span class="co0">#application de la règle au partage de connexion</span>
+iptables <span class="re5">-A</span> INPUT <span class="re5">-j</span> MAregle
+iptables <span class="re5">-A</span> FORWARD <span class="re5">-j</span> MAregle
+&nbsp;
+<span class="co0"># activation du forwarding dans le noyau</span>
+<span class="co0"># mise en place du partage de connexion sur le réseau local</span>
+&nbsp;
+<span class="kw3">echo</span> <span class="nu0">1</span> <span class="sy0">&gt;/</span>proc<span class="sy0">/</span>sys<span class="sy0">/</span>net<span class="sy0">/</span>ipv4<span class="sy0">/</span>ip_forward
+iptables <span class="re5">-t</span> nat <span class="re5">-A</span> POSTROUTING <span class="re5">-s</span> 192.168.10.0<span class="sy0">/</span><span class="nu0">24</span> <span class="re5">-o</span> <span class="re1">$interface</span> <span class="re5">-j</span> MASQUERADE
+&nbsp;
+<span class="br0">&#125;</span>
+&nbsp;
+stop<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw3">echo</span> <span class="nu0">0</span> <span class="sy0">&gt;/</span>proc<span class="sy0">/</span>sys<span class="sy0">/</span>net<span class="sy0">/</span>ipv4<span class="sy0">/</span>ip_forward
+        <span class="kw2">ifdown</span> <span class="re1">$interface</span>
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="kw1">case</span> <span class="st0">&quot;$1&quot;</span> <span class="kw1">in</span>
+ start<span class="br0">&#41;</span>
+        start
+        <span class="sy0">;;</span>
+&nbsp;
+stop<span class="br0">&#41;</span>
+        stop
+        <span class="sy0">;;</span>
+restart<span class="br0">&#41;</span>
+        stop <span class="sy0">&amp;&amp;</span> start
+        <span class="sy0">;;</span>
+<span class="sy0">*</span><span class="br0">&#41;</span>
+        <span class="kw3">echo</span> <span class="st0">&quot;Usage $0 {start|stop|restart}&quot;</span>
+        <span class="kw3">exit</span> <span class="nu0">1</span>
+<span class="kw1">esac</span>
+&nbsp;
+<span class="kw3">exit</span> <span class="nu0">0</span></pre>
+<ul>
+<li class="level1"><div class="li"> Si vous avez comme <em class="u">interface réseau avec internet</em>: <strong>eth0</strong> ou <strong>ppp0</strong>, ou autre, et non pas <strong>eth1</strong>, changez la ligne 9 (<strong>interface=eth1</strong>), par <strong>interface=</strong> ce que vous avez.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Enregistrez le fichier</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Exécutez ensuite dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> :</div>
+</li>
+</ul>
+<pre class="code">sudo chmod +x /etc/init.d/iptables</pre>
+
+<p>
+puis :
+</p>
+<pre class="code">sudo update-rc.d iptables start 99 2 . stop 00 2 0 1 6 .</pre>
+
+</div>
+
+<h4 id="optionnel_-_configuration_du_client_dhcp_pour_permettre_l_affichage_des_noms_des_machines_locales">Optionnel - Configuration du client DHCP pour permettre l&#039;affichage des noms des machines locales</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/dhcp3/dhclient.conf</strong></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Enlevez le <strong>#</strong> devant la ligne <strong>prepend domain-name-servers 127.0.0.1;</strong> (ligne 18 ~)</div>
+</li>
+<li class="level1"><div class="li"> Enregistrez le fichier</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="optionnel_-_nom_d_hote_du_serveur_ics">Optionnel - Nom d&#039;hôte du serveur ICS</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/hosts</strong></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Ajoutez dans ce fichier, <strong>192.168.10.1   serveurICS</strong> après la ligne : <strong>127.0.0.1	localhost</strong></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Enregistrez le fichier</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="optionnel_si_besoin_-_configurer_le_pare-feu">Optionnel (si besoin) - Configurer le pare-feu</h4>
+<div class="level4">
+
+<p>
+<p><div class="noteimportant">Etape à ne réaliser que si les ordinateurs clients n&#039;arrivent pas à se connecter à Internet
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> Si ce n&#039;est déjà fait, <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt://firestarter" class="urlextern" title="apt://firestarter"  rel="nofollow">firestarter</a></strong></div>
+</li>
+<li class="level1"><div class="li"> lancer Système/Administration/Firestarter ;</div>
+</li>
+<li class="level1"><div class="li"> cliquer sur Préférences/configuration du réseau ;</div>
+</li>
+<li class="level1"><div class="li"> cocher &quot;Autoriser le partage de la connexion internet&quot; ;</div>
+</li>
+<li class="level1"><div class="li"> Accepter la modification des Préférences ;</div>
+</li>
+<li class="level1"><div class="li"> Arrêter puis redémarrer le pare-feu ;</div>
+</li>
+<li class="level1"><div class="li"> Quitter Firestarter.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="c_est_fini_comment_ca_marche">C&#039;est fini, comment ça marche ?</h4>
+<div class="level4">
+
+<p>
+Et voila, branchez enfin les câbles, redémarrer votre serveur ICS, puis redémarrer les autres machines de votre réseau local.
+</p>
+
+<p>
+Quand une machine du réseau local démarre, voici ce qu&#039;elle fait :
+</p>
+<ul>
+<li class="level1"><div class="li"> recherche d&#039;un serveur <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> –&gt; le serveur ICS répond.</div>
+</li>
+<li class="level1"><div class="li"> le serveur ICS fourni une adresse <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> dans la plage 192.168.10.100 à 192.168.10.150.</div>
+</li>
+<li class="level1"><div class="li"> le serveur ICS renseigne le fichier /etc/resolv.conf de votre machine automatiquement : il se met lui-même (192.168.10.1), car il est serveur relais <abbr title="Domain Name System">DNS</abbr>.</div>
+</li>
+<li class="level1"><div class="li"> le serveur ICS renseigne la route par défaut. Il se donne lui-même en route par défaut car c&#039;est lui qui effectue le partage de la connexion internet.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="partage_de_connexion_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428660235" /><input type="hidden" name="summary" value="[Ancienne méthode] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7582-19045" /><input type="submit" value="Modifier" class="button" title="Ancienne méthode" /></div></form></div>
+<h2 class="sectionedit7" id="configuration_cote_client">Configuration coté client</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="partage_de_connexion_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428660235" /><input type="hidden" name="summary" value="[Configuration coté client] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="19046-19085" /><input type="submit" value="Modifier" class="button" title="Configuration coté client" /></div></form></div>
+<h3 class="sectionedit8" id="en_dhcp">En DHCP</h3>
+<div class="level3">
+
+<p>
+Sous linux mettre l&#039;interface réseau du client en mode dhcp (c&#039;est la configuration par défaut).
+</p>
+
+<p>
+Sur une machine Windows laissez le paramétrage <abbr title="Transmission Control Protocol">TCP</abbr>/IP et les <abbr title="Domain Name System">DNS</abbr> sur &quot;obtenir automatiquement&quot;, elle sera reconnue automatiquement.
+</p>
+
+<p>
+Tous les ordinateurs reliés devraient marcher, qu&#039;ils soient sous windows, linux, <abbr title="Berkeley Software Distribution">BSD</abbr> ou autre.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="partage_de_connexion_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428660235" /><input type="hidden" name="summary" value="[En DHCP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="19086-19436" /><input type="submit" value="Modifier" class="button" title="En DHCP" /></div></form></div>
+<h3 class="sectionedit9" id="en_ip_fixe">En IP Fixe</h3>
+<div class="level3">
+
+<p>
+Logiquement, nous pouvons assigner une ip statique (du moment qu&#039;elle est comprise entre 192.168.10.100 et 192.168.10.150 pour l&#039;ancienne méthode).
+</p>
+<ul>
+<li class="level1"><div class="li"> Ouvrez la configuration du réseau (<strong>Système→Administration→Réseau</strong>)</div>
+</li>
+<li class="level1"><div class="li"> Ouvrez la carte réseau du client et changer les cases, dans l&#039;ordre:</div>
+<ul>
+<li class="level2"><div class="li"> <em class="u">Configuration</em>: Adresse IP statique</div>
+</li>
+<li class="level2"><div class="li"> <em class="u">Adresse IP:</em> 192.168.10.*  <br/>
+<em>remplacer * par un numéro entre 100 et 150, en tous cas vous ne devez surtout pas mettre le même sur deux pc différents !!!</em></div>
+</li>
+<li class="level2"><div class="li"> <em class="u">Masque de sous-réseau:</em> 255.255.255.0</div>
+</li>
+<li class="level2"><div class="li"> <em class="u">Passerelle:</em> 192.168.10.1</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Faites <strong>Valider</strong> puis <strong>Fermer</strong></div>
+</li>
+</ul>
+<div class="table sectionedit10"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Action         </th><th class="col1 leftalign"> ? Avant Jaunty ?         </th><th class="col2 leftalign"> Jaunty Jackalope 9.04                             </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> Ouvrez la configuration du réseau </td><td class="col1 leftalign"><strong>Système → Administration → Réseau</strong>   </td><td class="col2 leftalign"> <strong>Système → Préférences → Connexions Réseau</strong>     </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">Ouvrez la carte réseau du client</td><td class="col1 leftalign"> Sélectionner la carte concernée puis <strong>Propriétés</strong> <br/>
+remplir comme suit :   </td><td class="col2"> Dans l&#039;onglet <strong>Filaire</strong><br/>
+Choisir la carte réseau concernée<br/>
+Puis Modifier</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">Remplissez les paramètres</td><td class="col1 leftalign"> <em class="u">Configuration</em>: Adresse IP statique<br/>
+IP statique : 192.168.1.20<br/>
+Masque : 255.255.255.0<br/>
+Passerelle :<br/>
+passerelle du modem pour avoir Internet<br/>
+(avec alice : 192.168.1.1) (avec freebox : 192.168.0.254)   </td><td class="col2">Dans l&#039;onglet IPv4<br/>
+Choisir Méthode: Mannuel<br/>
+Puis remplir comme ci-contre</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0" colspan="3">Validez <br/>
+Puis fermez</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="partage_de_connexion_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428660235" /><input type="hidden" name="summary" value="[En IP Fixe] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="19437-20889" /><input type="submit" value="Modifier" class="button" title="En IP Fixe" /></div></form></div>
+<h2 class="sectionedit11" id="problemes_rencontres">Problèmes rencontrés</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="partage_de_connexion_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428660235" /><input type="hidden" name="summary" value="[Problèmes rencontrés] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="20890-20924" /><input type="submit" value="Modifier" class="button" title="Problèmes rencontrés" /></div></form></div>
+<h3 class="sectionedit12" id="les_dns_ne_fonctionnent_pas">Les DNS ne fonctionnent pas</h3>
+<div class="level3">
+
+<p>
+La solution est d&#039;installer un serveur <abbr title="Domain Name System">DNS</abbr> sur son ordinateur, pour résoudre soi-même les noms de domaine, et ne pas dépendre d&#039;autrui (typiquement, de son <abbr title="Fournisseur d&#039;Accès à Internet">FAI</abbr>). Pour cela, il faut installer le paquet <a href="apt://bind9" class="urlextern" title="apt://bind9"  rel="nofollow">apt://bind9</a>.
+</p>
+
+<p>
+Les 2 commandes suivantes sont a exécuter après chaque redémarrage, dès que les deux interfaces sont connectées :
+</p>
+<pre class="code">sudo su
+echo &#039;nameserver 127.0.0.1&#039; &gt; /etc/resolv.conf</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="partage_de_connexion_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428660235" /><input type="hidden" name="summary" value="[Les DNS ne fonctionnent pas] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="20925-21365" /><input type="submit" value="Modifier" class="button" title="Les DNS ne fonctionnent pas" /></div></form></div>
+<h2 class="sectionedit13" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://blog.creaone.fr/post/2008/05/29/Partager-sa-connexion-3G-entre-Linux-et-Windows" class="urlextern" title="http://blog.creaone.fr/post/2008/05/29/Partager-sa-connexion-3G-entre-Linux-et-Windows"  rel="nofollow">http://blog.creaone.fr/post/2008/05/29/Partager-sa-connexion-3G-entre-Linux-et-Windows</a> Partage de connexion avec firestarter</div>
+</li>
+</ul>
+
+<p>
+—-
+<em>Contributeurs: <a href="utilisateurs/sksbir" class="wikilink2" title="utilisateurs:sksbir" rel="nofollow">sksbir</a>, <a href="utilisateurs/borislehachoir" class="wikilink2" title="utilisateurs:borislehachoir" rel="nofollow">BorisLeHachoir</a>, <a href="utilisateurs/fabien26" class="wikilink1" title="utilisateurs:fabien26">Fabien26</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="partage_de_connexion_internet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428660235" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21366-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="partage_de_connexion_internet#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+respectez les règles de création de clé pour que cela fonctionne</div>
+<div class="fn"><sup><a href="partage_de_connexion_internet#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+vos voisins pourront y avoir accès</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/5/571c9b1fd58a94cebd8c9bd8b77de351.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/partage_de_connexion_internet?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/partage_de_connexion_internet?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/partage_de_connexion_internet?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/partage_de_connexion_internet?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/partage_de_connexion_internet?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

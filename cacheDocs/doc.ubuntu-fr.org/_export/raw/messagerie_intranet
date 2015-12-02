@@ -1,0 +1,86 @@
+{{tag>messagerie_instantanée réseau serveur vétuste}}
+----
+
+
+======= Messagerie en Intranet ======
+
+Le système Edubuntu, comme tous les systèmes gérant les clients légers, est destiné à accueillir de nombreux utilisateurs. Il serait alors intéressant de pouvoir échanger des messages en intranet.
+
+<note important>Ce document date de 2007, a mettre a jour SVP</note>
+
+===== Introduction =====
+
+Tout système Linux inclut une messagerie au format "mbox". Dans Ubuntu, on trouve cette boîte à lettre dans le répertoire :
+    /var/mail/identifiant-utilisateur
+
+
+On trouve le même fichier dans le répertoire :
+    /var/spool/mail/identifiant-utilisateur
+
+C'est dans cette boîte que l'utilisateur principal reçoit les messages système (cron ou autre).
+
+
+=====Installation client mode console =====
+====Karmic et versions supérieures d'Ubuntu ====
+
+On peut manipuler simplement cette messagerie en installant "mailx" par l'interface [[Synaptic]] ou bien en ligne de commande :
+    sudo apt-get install bsd-mailx
+
+====Hardy ====
+
+On peut manipuler simplement cette messagerie en installant "mailx" par l'interface [[Synaptic]] ou bien en ligne de commande :
+    sudo apt-get install mailx
+
+===== Utilisation=====
+L'utilisation de cette messagerie est très simple :
+    mailx riri   # pour envoyer un message à l'utilisateur "riri"
+    mailx        # pour lire sa boîte à lettre
+
+Par défaut, mail fonctionne de manière interactive, mais on peut l'utiliser dans un script :
+    mailx -s sujet riri < chemin-vers-un-fichier-texte-contenant-le-message
+
+===== Configuration =====
+
+==== Paramétrage Evolution ====
+
+Le logiciel [[Evolution]] peut inclure cette boîte en effectuant "Edition->Préférences->Ajouter un compte".
+
+{{applications:edu:evolution-mbox1.png}}
+
+**__Attention__** : le fichier "/var/mail/identifiant-utilisateur" n'est créé que lors de la réception d'un premier message (à l'aide d'un script utilisant "mail", par exemple).
+
+L'envoi vers la messagerie interne est géré par "Sendmail" :
+
+{{installation:edu:evolution-mbox2.png}}
+
+On obtient une boîte à lettre dite "de spool" pleinement fonctionnelle :
+
+{{installation:edu:evolution-mbox3.png}}
+
+En tapant simplement "riri" dans le champ "Destinataire" d'un nouveau courrier, on envoie un message à l'utilisateur "riri".
+
+==== Paramétrage serveur local ====
+
+Pour pouvoir envoyer des messages de type "riri@quelque-chose" et donc envoyer un message d'un poste client autre qu'un client léger, il faut donner un nom au serveur.
+
+Editer le fichier "resolv.conf" :
+    sudo gedit /etc/resolv.conf
+
+et ajouter la ligne :
+    search nom-du-serveur
+
+Les messages envoyés sont traités par le MTA (mail transport agent) Postfix. Il faut regarder dans "main.cf" quelles destinations sont traitées comme internes.
+    sudo gedit /etc/postfix/main.cf
+
+On ajoute alors le nom choisi pour le serveur à la rubrique "MyDestination" :
+    mydestination = edubuntu, localhost.localdomain, localhost.localdomain, localhost
+
+Nota : pour accéder à sa boîte depuis un poste client Windows, il faudrait mettre en place un serveur de type "webmail" (à réfléchir).
+
+
+
+----
+
+//Contributeurs: Equipe Edubuntu-fr, [[utilisateurs:françoisb]], [[contributeurs|les contributeurs d'Ubuntu-fr]]//
+
+

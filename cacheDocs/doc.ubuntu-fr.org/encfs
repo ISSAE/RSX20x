@@ -1,0 +1,882 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>encfs - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-01-20T09:17:36+0100"/>
+<meta name="keywords" content="securite,chiffrement"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/encfs?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/encfs?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/encfs"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/encfs"/>
+<link rel="canonical" href="encfs"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"encfs","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="encfs#main" tabindex="1">Contenu</a> | <a href="encfs#qsearch__in" tabindex="2">Rechercher</a> | <a href="encfs#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="encfs" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="encfs" >encfs</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="encfs#de_quoi_s_agit-il">De quoi s&#039;agit-il ?</a></div></li>
+<li class="level1"><div class="li"><a href="encfs#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="encfs#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="encfs#versions_de_linux_modernes">Versions de Linux modernes</a></div></li>
+<li class="level2"><div class="li"><a href="encfs#paquets_module_fuse">Paquets   module &#039;&#039;fuse&#039;&#039;</a></div></li>
+<li class="level2"><div class="li"><a href="encfs#creation_des_repertoires">Création des répertoires</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="encfs#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="encfs#exemples_sur_un_terminal">Exemples sur un terminal</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="encfs#changement_du_mot_de_passe">Changement du mot de passe</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="encfs#automatiser_le_lancementarret">Automatiser le lancement/arrêt</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="encfs#pam_mount">pam_mount</a></div></li>
+<li class="level2"><div class="li"><a href="encfs#gnome_encfs_manager">Gnome Encfs Manager</a></div></li>
+<li class="level2"><div class="li"><a href="encfs#cryptkeeper">Cryptkeeper</a></div></li>
+<li class="level2"><div class="li"><a href="encfs#fusible">Fusible</a></div></li>
+<li class="level2"><div class="li"><a href="encfs#avec_des_commandes">avec des commandes</a></div></li>
+<li class="level2"><div class="li"><a href="encfs#avec_un_script">avec un script</a></div></li>
+<li class="level2"><div class="li"><a href="encfs#un_script_qui_resume_et_qui_va_bien_par_bhubuntu">un script qui résume et qui va bien par bhubuntu :</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="encfs#problemes_connus">Problèmes connus</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="encfs#acces_impossible">Accès impossible ?</a></div></li>
+<li class="level2"><div class="li"><a href="encfs#module_fuse">Module &#039;&#039;fuse&#039;&#039;</a></div></li>
+<li class="level2"><div class="li"><a href="encfs#migration_depuis_intrepid_ibex_2010">Migration depuis Intrepid Ibex (2010)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="encfs#avantagesdefauts">Avantages/défauts</a></div></li>
+<li class="level1"><div class="li"><a href="encfs#ressources">Ressources</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>,
+	<a href="http://doc.ubuntu-fr.org/chiffrement?do=showtag&amp;tag=chiffrement" class="wikilink1" title="chiffrement" rel="tag">chiffrement</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="chiffrez_aisement_vos_repertoires_avec_encfs">Chiffrez aisément vos répertoires avec EncFS</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Chiffrez aisément vos répertoires avec EncFS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="39-100" /><input type="submit" value="Modifier" class="button" title="Chiffrez aisément vos répertoires avec EncFS" /></div></form></div>
+<h2 class="sectionedit2" id="de_quoi_s_agit-il">De quoi s&#039;agit-il ?</h2>
+<div class="level2">
+
+<p>
+Apprendre à installer et utiliser le système de chiffrement EncFS qui fonctionne de façon <strong>simple</strong> sur tout système de fichiers grâce à <a href="http://doc.ubuntu-fr.org/fuse" class="wikilink1" title="fuse">fuse</a>. Pour en savoir plus sur le chiffrement: <a href="http://fr.wikipedia.org/wiki/Chiffrement" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Chiffrement">Chiffrement</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[De quoi s'agit-il ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="101-351" /><input type="submit" value="Modifier" class="button" title="De quoi s'agit-il ?" /></div></form></div>
+<h2 class="sectionedit3" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+Vous souhaitez conserver des données sensibles et/ou privées, mais sans chiffrer tout votre disque dur. Idéalement, vous voudriez pouvoir restreindre l&#039;accès à certains répertoires seulement, par mot de passe. Les données stockées dans ce(s) répertoire(s) seraient chiffrées et accessibles <em>uniquement</em> après authentification.
+</p>
+
+<p>
+EncFS permet de réaliser cela très simplement. Pour ce faire, vous allez utiliser deux répertoires :
+</p>
+<ol>
+<li class="level1"><div class="li"> un premier répertoire dans lequel seront <em>stockées</em> les données <em>chiffrées</em> (&quot;<em>source directory</em>&quot;) ;</div>
+</li>
+<li class="level1"><div class="li"> un second répertoire dans lequel vous pourrez créer des données <em>en clair</em>, après authentification (&quot;<em>mount directory</em>&quot;).</div>
+</li>
+</ol>
+
+<p>
+L&#039;idée est la suivante : vous donnez temporairement accès au second répertoire en fournissant un mot de passe (initialement choisi par vous), et créez vos données en clair dans ce répertoire. Ensuite, vous refermez l&#039;accès à ce répertoire. EncFS s&#039;occupe de &quot;copier&quot; les données du second répertoire (accès temporaire) vers le premier (stockage permanent), tout en les chiffrant. Après avoir fermé l&#039;accès au second répertoire, ce dernier apparaît vide, tandis que le premier répertoire contient les fichiers chiffrés, donc inaccessibles. Pour pouvoir de nouveau modifier les données conservées dans le répertoire de stockage, il faut redonner accès par mot de passe au second répertoire, qui sert donc de répertoire de travail.
+</p>
+
+<p>
+Note technique : EncFS gère donc des couples de fichiers « en clair / chiffré ». Dans le répertoire de stockage, les noms de fichiers sont par ailleurs chiffrés. Les avantages d&#039;EncFS par rapport aux autres programmes de chiffrement de données sont principalement sa simplicité et sa souplesse d&#039;utilisation. Voyez en fin de page les avantages/défauts courants.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Introduction] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="352-2199" /><input type="submit" value="Modifier" class="button" title="Introduction" /></div></form></div>
+<h2 class="sectionedit4" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2200-2225" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit5" id="versions_de_linux_modernes">Versions de Linux modernes</h3>
+<div class="level3">
+
+<p>
+Depuis Ubuntu 13.10 Saucy il n&#039;est plus nécessaire d&#039;appliquer ce paragraphe. L&#039;installation du seul paquet <strong><a href="apt://encfs" class="interwiki iw_apt" title="apt://encfs">encfs</a></strong> suffit.
+</p>
+
+<p>
+Pour un usage simple, installez gnome-encfs-manager (via un ppa) ou <strong><a href="apt://cryptkeeper" class="interwiki iw_apt" title="apt://cryptkeeper">cryptkeeper</a></strong>, en tenant compte des bugs qui entachent ce dernier.
+</p>
+
+<p>
+Pour les faire fonctionner sous Unity, il suffit d&#039;utiliser l&#039;astuce pour retrouver ses applications dans la zone de notification du tableau de bord Unity.  Prenez une console, et tapez en mode utilisateur 
+</p>
+<pre class="code">  gsettings set com.canonical.Unity.Panel systray-whitelist &quot;[&#039;all&#039;]&quot; </pre>
+
+<p>
+Relancer votre session pour appliquer la nouvelle configuration (puis alt+f2 et &quot;unity –replace&quot; ).<br/>
+
+Sous 13.10, il faut utiliser les commandes suivantes dans un terminal :
+</p>
+<pre class="code">  dconf reset -f /org/compiz/
+  setsid unity
+  unity --reset-icons</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Versions de Linux modernes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2226-3080" /><input type="submit" value="Modifier" class="button" title="Versions de Linux modernes" /></div></form></div>
+<h3 class="sectionedit6" id="paquets_module_fuse">Paquets   module &#039;&#039;fuse&#039;&#039;</h3>
+<div class="level3">
+
+<p>
+Installez, par <code>apt-get install</code> ou <em>via</em> <a href="synaptic" class="wikilink1" title="synaptic">Synaptic</a>, les deux paquets suivants : <strong><a href="apt://fuse-utils" class="interwiki iw_apt" title="apt://fuse-utils">fuse-utils</a></strong> et <strong><a href="apt://encfs" class="interwiki iw_apt" title="apt://encfs">encfs</a></strong>
+Les dépendances nécessaires seront installées automatiquement.
+</p>
+<pre class="code">  #Installation de fuse-utils :
+  sudo apt-get install fuse-utils
+  #Installation de encfs ( ceci installera aussi librlog1c2a )
+  sudo apt-get install encfs
+  #Il semble que fuse soit intégré directement dans le noyau proposé par Ubuntu depuis la version 2.6.28
+  #Il n&#039;y a donc ni module ni groupe à ajouter si vous êtes dans ce cas, et vous pouvez passer à la partie suivante
+  #Pour les versions précédentes:
+  #Ajout du module fuse dans /etc/modules afin qu&#039;il soit actif au démarrage du système :
+  sudo sh -c &quot;echo fuse &gt;&gt; /etc/modules&quot;
+  #Vous pouvez vérifier, en ouvrant le fichier /etc/modules par gksudo gedit /etc/modules que le mot fuse a bien été rajouté à ce fichier.  
+  #Prise en charge du module :
+  sudo modprobe fuse
+  #On ajoute son nom d&#039;utilisateur au groupe fuse
+  sudo adduser $USER fuse
+  #On vérife ensuite que l&#039;utilisateur &#039;VotreNom&#039; fait bien partie du groupe fuse. Le numéro (ici 118) peut varier.
+  grep &quot;fuse&quot; &quot;/etc/group&quot;
+  &#039;&#039;fuse:x:118:VotreNom&#039;&#039;
+  #Puis on réouvre une session
+  su - $USER
+  #Vous pouvez vérifier que vous êtes bien dans le groupe &#039;&#039;fuse&#039;&#039; en tapant :
+  groups</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Paquets   module ''fuse''] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3081-4495" /><input type="submit" value="Modifier" class="button" title="Paquets   module ''fuse''" /></div></form></div>
+<h3 class="sectionedit7" id="creation_des_repertoires">Création des répertoires</h3>
+<div class="level3">
+
+<p>
+Dans notre exemple, le répertoire de stockage des données chiffrées sera <code>~/.coffre</code> et le répertoire « de travail » (pour manipuler les données en clair après authentification) sera <code>~/coffre_open</code>. Tapez donc :
+</p>
+<pre class="code">encfs /home/$USER/.coffre/ /home/$USER/coffre_open/</pre>
+
+<p>
+Attention, la commande <code>encfs</code> attend des chemins complets : écrivez donc <code>/home/$USER/</code> et pas le raccourci <code>~/</code> !
+</p>
+
+<p>
+La première fois qu&#039;elle est écrite, cette commande permet de créer et paramétrer les répertoires utilisés pour stocker et manipuler les données chiffrées par EncFS. Voici un exemple de ce que vous devriez obtenir dans votre terminal :
+</p>
+<pre class="code">  [user@yop ~] encfs /home/$USER/.coffre/ /home/$USER/coffre_open
+  The directory &quot;/home/user/.coffre/&quot; does not exist. Should it be created? (y,n) y
+  The directory &quot;/home/user/coffre_open&quot; does not exist. Should it be created? (y,n) y
+  Création d&#039;un nouveau volume chiffré.
+  Veuillez choisir au moins une des options suivantes :
+  entrez &quot;x&quot; pour le mode de configuration expert,
+  entrez &quot;p&quot; pour un mode pré-configuré paranoïaque,
+  n&#039;importe quoi d&#039;autre ou une ligne vide sélectionnera le mode standard.
+  ?&gt; p
+  
+  Configuration paranoïaque sélectionnée.
+  
+  Configuration terminée. Le système de fichiers sur le
+  point d&#039;être créé a les caractéristiques suivantes :
+  Chiffrement de système de fichiers &quot;ssl/aes&quot;, version 2:1:1
+  Encodage du nom de fichier : &quot;nameio/block&quot;, version 3:0:1
+  Taille de clé : 256 bits
+  Taille de bloc : 512 octets, y compris 8 octets d&#039;en-tête MAC
+  Chaque fichier comprend un en-tête de 8 octets avec des données IV uniques.
+  Nom de fichiers chiffrés en utilisant le mode de chaînage IV.
+  L&#039;IV des données du fichier est chaînée à l&#039;IV du nom de fichier.
+
+  -------------------------- AVERTISSEMENT --------------------------
+    The external initialization-vector chaining option has been
+    enabled.  This option disables the use of hard links on the
+    filesystem. Without hard links, some programs may not work.
+    The programs &#039;mutt&#039; and &#039;procmail&#039; are known to fail.  For
+    more information, please see the encfs mailing list.
+    If you would like to choose another configuration setting,
+    please press CTRL-C now to abort and start over.
+
+    Vous devez entrer un mot de passe pour votre système de fichiers.
+    Vous devez vous en souvenir, car il n&#039;existe aucun mécanisme de récupération.
+    Toutefois, le mot de passe peut être changé plus tard à l&#039;aide d&#039;encfsctl.
+
+    Nouveau mot de passe : votre_passe
+    Vérifier le mot de passe : votre_passe</pre>
+
+<p>
+À la question « Veuillez choisir au moins une des options suivantes », vous pouvez choisir le mode « paranoïaque » en tapant <code>p</code> puis <code>[Entrée]</code>. Ce mode est le plus sécurisé.
+</p>
+
+<p>
+<strong>Vérifiez le montage du répertoire chiffré :</strong>
+</p>
+<pre class="code">   cat /proc/mounts</pre>
+
+<p>
+vous donnera, entre autres, une entrée de ce type :
+</p>
+<pre class="code">   encfs /home/$USER/coffre_open fuse rw,nosuid,nodev,user_id=1000,group_id=1000,default_permissions 0 0</pre>
+
+<p>
+<strong>Note</strong> : si vous chiffrez des fichiers en utilisant ce mode « paranoïaque », certaines applications pourront ne pas fonctionner normalement en utilisant ces fichiers chiffrés. Cela vient du fait que les liens (<em>hard</em>) ne peuvent être recopiés dans le dossier de stockage. Si vous rencontrez des problèmes de ce type, recréez un couple de répertoires et changez de mode.
+</p>
+
+<p>
+<strong>Note2</strong> : le répertoire des données en clair (ici &quot;coffre&quot;) peut être changé à volonté. Il n&#039;y a pas de lien définitif entre les deux répertoires. Veillez toutefois dans ce cas à ce que :
+</p>
+<ul>
+<li class="level1"><div class="li"> le nouveau répertoire ait bien été créé et soit vide</div>
+</li>
+<li class="level1"><div class="li"> il y ait concordance entre le chemin de montage et celui de démontage.<img src="lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Création des répertoires] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4496-8313" /><input type="submit" value="Modifier" class="button" title="Création des répertoires" /></div></form></div>
+<h2 class="sectionedit8" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Elle est basique puisqu&#039;il vous suffit de deux commandes du type ON/OFF
+</p>
+
+<p>
+1. <strong>ON</strong> Pour <em>accéder</em> aux données en clair, il suffit de réutiliser la même commande qu&#039;au début, à savoir, dans notre exemple :
+</p>
+<pre class="code">encfs /home/$USER/.coffre/ /home/$USER/coffre_open/</pre>
+
+<p>
+Contrairement à la première fois, EncFS détecte qu&#039;une initialisation a déjà été faite sur ces deux répertoires et se contente de demander le mot de passe pour débloquer l&#039;accès au répertoire « de travail » (qu&#039;il montera pour vous avec la commande <code>fusermount</code>).
+</p>
+
+<p>
+<strong>Toute donnée créée/copiée/déplacée en clair dans le répertoire de travail (ici, <code>~/coffre_open</code>) sera <em>automatiquement</em> stockée sous forme chiffrée dans le répertoire de stockage (ici, <code>~/.coffre</code>).</strong>
+</p>
+
+<p>
+2. <strong>OFF</strong> Pour ne <em>plus pouvoir accéder</em> aux données en clair, il suffit de démonter le répertoire « de travail », soit dans notre exemple :
+</p>
+<pre class="code">fusermount -u /home/$USER/coffre_open</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8314-9300" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h2 class="sectionedit9" id="exemples_sur_un_terminal">Exemples sur un terminal</h2>
+<div class="level2">
+
+<p>
+Vous trouverez sur la page <a href="http://doc.ubuntu-fr.org/encfs_exemples" class="wikilink1" title="encfs_exemples">encfs_exemples</a> quelques exemples d&#039;utilisation  à partir d&#039;un terminal. 
+</p>
+
+<p>
+Notez en particulier que, puisque vous utilisez fuse, il vous est possible de travailler sur un couple de répertoires placé sur une partition NTFS.
+</p>
+
+<p>
+Nota : la plus récente version du pilote  <a href="http://doc.ubuntu-fr.org/tutoriel/ntfs" class="wikilink1" title="tutoriel:ntfs">ntfs-3g</a> en version bêta, basée notamment sur la version 2.6 de <a href="http://doc.ubuntu-fr.org/fuse" class="wikilink1" title="fuse">fuse</a> permet d&#039;écrire sur les partitions NTFS. Elle ne fonctionne pas encore avec des données chiffrées. Avant d&#039;utiliser conjointement ces deux programmes sur une partition NTFS, vérifiez si cette information est toujours d&#039;actualité. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Exemples sur un terminal] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9301-9971" /><input type="submit" value="Modifier" class="button" title="Exemples sur un terminal" /></div></form></div>
+<h3 class="sectionedit10" id="changement_du_mot_de_passe">Changement du mot de passe</h3>
+<div class="level3">
+
+<p>
+Le mot de passe peut être changé, grâce à la commande (nom du répertoire à adapter si différent) :
+</p>
+<pre class="code">encfsctl passwd ~/.coffre</pre>
+
+<p>
+À l&#039;invite, entrer l&#039;ancien mot de passe et 2 fois le nouveau.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Changement du mot de passe] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9972-10219" /><input type="submit" value="Modifier" class="button" title="Changement du mot de passe" /></div></form></div>
+<h2 class="sectionedit11" id="automatiser_le_lancementarret">Automatiser le lancement/arrêt</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Pour automatiser sur une session, choisissez <strong>pam_mount</strong></div>
+</li>
+<li class="level1"><div class="li"> Sur une interface Gnome ou Unity, choisissez <strong>Gnome EncFS</strong> Manager ou <strong>Cryptkeeper</strong>, qui sont écrits en gtk&quot;</div>
+</li>
+<li class="level1"><div class="li"> Sur une interface KDE, choisissez <strong>Fusible</strong>.</div>
+</li>
+</ul>
+
+<p>
+Pour les autres cas, voyez les autres méthodes.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Automatiser le lancement/arrêt] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10220-10550" /><input type="submit" value="Modifier" class="button" title="Automatiser le lancement/arrêt" /></div></form></div>
+<h3 class="sectionedit12" id="pam_mount">pam_mount</h3>
+<div class="level3">
+
+<p>
+Il est possible de configurer Ubuntu pour qu&#039;il monte le système de fichier encrypté au démarrage de la session et ceci de manière automatique et sans redemander le mot de passe additionnel.
+</p>
+
+<p>
+<strong>Note</strong>: Il est impératif que le mot de passe de la session soit identique à celui d&#039;encfs. En effet, pam_mount va transmettre le mot de passe tapé lors de l&#039;ouverture de la session à encfs pour le déchiffrement du système de fichiers.
+</p>
+
+<p>
+L&#039;exemple suivant montre comment utiliser cette technique pour sécuriser des données qui seront ensuite synchronisées sur <a href="http://doc.ubuntu-fr.org/ubuntuone" class="wikilink1" title="ubuntuone">Ubuntu One</a>. Vous devez avoir au préalable avoir créé un répertoire ~/Ubuntu One/.Encrypted comme décrit dans le début de cet article.
+</p>
+
+<p>
+Installer pam_mount
+</p>
+<pre class="code">  sudo apt-get install  libpam-mount libpam-encfs</pre>
+
+<p>
+Créer le répertoire de stockage sécurisé et le point de montage
+</p>
+<pre class="code">  cd
+  mkdir ~/Encrypted/
+  ln -s ~/Ubuntu\ One/.Encrypted/ .Encrypted</pre>
+
+<p>
+Editer le fichier /etc/security/pam_mount.conf.xml
+Rechercher la ligne &lt;!– Volume definitions –&gt;
+Ajouter la ligne suivante juste après en remplaçant «utilisateur» par votre login
+</p>
+<pre class="code">  &lt;volume user=&quot;&lt;&lt;utilisateur&gt;&gt;&quot; fstype=&quot;fuse&quot; path=&quot;encfs#/home/&lt;&lt;utilisateur&gt;&gt;/.Encrypted&quot; mountpoint=&quot;/home/&lt;&lt;utilisateur&gt;&gt;/Encrypted&quot; /&gt;</pre>
+
+<p>
+A la prochaine ouverture de session, le système de fichier encrypté sera automatiquement monté dans le répertoire ~/Encrypted et les données de ce répertoire seront automatiquement encryptées et sauvegardées grâce à <a href="http://doc.ubuntu-fr.org/ubuntuone" class="wikilink1" title="ubuntuone">Ubuntu One</a>. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[pam_mount] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10551-12095" /><input type="submit" value="Modifier" class="button" title="pam_mount" /></div></form></div>
+<h3 class="sectionedit13" id="gnome_encfs_manager">Gnome Encfs Manager</h3>
+<div class="level3">
+
+<p>
+À l&#039;instar de CryptKeeper, <a href="http://doc.ubuntu-fr.org/gnome-encfs-manager" class="wikilink1" title="gnome-encfs-manager">Gnome EncFS Manager</a> fournit des facilités pour l&#039;utilisation du système de chiffrement <span class="curid"><a href="encfs" class="wikilink1" title="encfs">EncFS</a></span>.<br/>
+
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/encfs/encfsm2.png?id=encfs" class="media" title="applications:encfs:encfsm2.png"><img src="http://doc.ubuntu-fr.org/_media/applications/encfs/encfsm2.png?w=600&amp;tok=10fa0c" class="mediacenter" alt="" width="600" /></a><br/>
+
+Ce Gestionnaire vous permet d&#039;automatiser le montage en cochant simplement une case dans les &quot;Préférences&quot;, idem pour le démontage à la connexion, etc.<br/>
+
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/encfs/pref_gencfsm.png?id=encfs" class="media" title="applications:encfs:pref_gencfsm.png"><img src="http://doc.ubuntu-fr.org/_media/applications/encfs/pref_gencfsm.png?w=400&amp;tok=85c2b8" class="mediacenter" alt="" width="400" /></a><br/>
+
+<p><div class="noteclassic">Il fonctionne parfaitement sous <a href="http://doc.ubuntu-fr.org/trusty" class="wikilink1" title="trusty">Trusty</a> Tahr en interface Unity, avec cette icône dans la barre d&#039;indicateurs : <a href="http://doc.ubuntu-fr.org/_detail/applications/encfs/gencfsm.png?id=encfs" class="media" title="applications:encfs:gencfsm.png"><img src="http://doc.ubuntu-fr.org/_media/applications/encfs/gencfsm.png?w=30&amp;tok=ef0f2e" class="media" alt="" width="30" /></a>.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Gnome Encfs Manager] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12096-12717" /><input type="submit" value="Modifier" class="button" title="Gnome Encfs Manager" /></div></form></div>
+<h3 class="sectionedit14" id="cryptkeeper">Cryptkeeper</h3>
+<div class="level3">
+
+<p>
+Cryptkeeper est une application gtk (gnome) qui se loge dans la zone de notification.  Il fournit une interface graphique conviviale.  Il n&#039;est pas intégré à Nautilus : vous devez utiliser cette application pour démonter le dossier chiffré (coffre).
+</p>
+
+<p>
+&quot;Effacer le dossier chiffré&quot; peut effacer le contenu du dossier chiffré et/ou le supprimer de la liste des répertoires chiffrés sans en altérer le contenu.  L&#039;interface permet de créer un nouveau dossier chiffré.
+</p>
+
+<p>
+<p><div class="noteclassic">Avec Ubuntu 11.04 Natty, Cryptkeeper ne fonctionne plus avec la nouvelle interface Unity - mais fonctionne encore sous Gnome panel (Ubuntu Classic). Ce bug a été rapporté à <a href="https://bugs.launchpad.net/ubuntu/+source/cryptkeeper/+bug/1173716" class="urlextern" title="https://bugs.launchpad.net/ubuntu/+source/cryptkeeper/+bug/1173716"  rel="nofollow">Launchpad</a>.  <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> est-il possible d&#039;avoir un lien vers le bug de la plume du rédacteur original ?
+</p>
+
+<p>
+Pour le faire fonctionner sous Unity, il suffit d&#039;utiliser l&#039;astuce pour <a href="http://www.clapico.com/2011/04/17/unity/" class="urlextern" title="http://www.clapico.com/2011/04/17/unity/"  rel="nofollow">retrouver ses applications dans la zone de notification du tableau de bord Unity</a>
+</p>
+<pre class="code">$ gsettings set com.canonical.Unity.Panel systray-whitelist &quot;[&#039;all&#039;]&quot; </pre>
+
+<p>
+puis alt+f2 et unity –replace
+</p>
+
+<p>
+Plus de détails <a href="indicator-applications#retrouver_les_applications_dans_la_barre_de_notification" class="wikilink1" title="indicator-applications">ici</a>.
+
+</div></p>
+</p>
+
+<p>
+Pour installer Cryptkeeper : <a href="apt://cryptkeeper" class="urlextern" title="apt://cryptkeeper"  rel="nofollow">Cryptkeeper</a>
+</p>
+
+<p>
+Enfin, vous souhaiterez sans doute activer Cryptkeeper automatiquement à chaque démarrage plutôt que de le lancer manuellement à chaque fois. Pour ce faire, allez dans Système &gt; Préférences &gt; Applications au démarrage, et ajoutez une application ayant pour nom Cryptkeeper et lançant la commande &quot;cryptkeeper&quot;.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Cryptkeeper] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12718-14388" /><input type="submit" value="Modifier" class="button" title="Cryptkeeper" /></div></form></div>
+<h3 class="sectionedit15" id="fusible">Fusible</h3>
+<div class="level3">
+
+<p>
+<a href="fusible" class="wikilink1" title="fusible">Fusible</a> est une interface graphique kde4 pour tous les points de montage de type FUSE et donc EncFS.
+Il s&#039;utilise avec des plugins ; celui pour EncFS est disponible.
+L&#039;installation et l&#039;utilisation sont détaillées sur la page qui lui est consacrée.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Fusible] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14389-14666" /><input type="submit" value="Modifier" class="button" title="Fusible" /></div></form></div>
+<h3 class="sectionedit16" id="avec_des_commandes">avec des commandes</h3>
+<div class="level3">
+
+<p>
+Vous pouvez créer deux commandes pour ouvrir et fermer rapidement l&#039;accès au répertoire de travail :
+</p>
+<pre class="code">gksudo gedit /usr/bin/decrypt</pre>
+
+<p>
+Copiez-y le texte suivant :
+</p>
+<pre class="code">#!/bin/sh
+encfs /home/$USER/.coffre/ /home/$USER/coffre_open/</pre>
+<pre class="code">gksudo gedit /usr/bin/encrypt</pre>
+
+<p>
+Copiez-y le texte suivant :
+</p>
+<pre class="code">#!/bin/sh
+fusermount -u /home/$USER/coffre_open</pre>
+
+<p>
+Vérifiez que vous utilisez bien les noms de répertoires que vous avez choisis ! Ensuite, donnez les droits nécessaires à ces deux commandes :
+</p>
+<pre class="code">sudo chown $USER /usr/bin/decrypt /usr/bin/encrypt</pre>
+<pre class="code">chmod 700 /usr/bin/decrypt /usr/bin/encrypt</pre>
+
+<p>
+Désormais, vous pouvez taper <code>decrypt</code> pour libérer l&#039;accès au répertoire de travail et manipuler vos données chiffrées, puis <code>encrypt</code> pour refermer l&#039;accès. Vous pouvez aussi utiliser ces commandes pour créer des lanceurs/raccourcis.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[avec des commandes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14667-15560" /><input type="submit" value="Modifier" class="button" title="avec des commandes" /></div></form></div>
+<h3 class="sectionedit17" id="avec_un_script">avec un script</h3>
+<div class="level3">
+
+<p>
+Vous trouverez ici un script qui vous permettra de monter et démonter aisément votre répertoire de travail. Il peut remplacer les deux commandes ci-dessus.
+</p>
+
+<p>
+Code :
+</p>
+<pre class="code">   #!/bin/bash
+   # Script de montage de dossier chiffré avec encfs et fuse.
+   # A utiliser avec Thunar ou Nautilus, ou en ligne de commande :
+   # ./mount_enc ~/dossier_de_montage
+   # Variable à modifier : repertoire contenant les fichiers chiffrés CRYPTEDFOLDER=/home/$USER/.coffre 
+   gksudo -p -m &quot;Entrez le mot de passe&quot; | encfs -S $CRYPTEDFOLDER $1
+   zenity --info --text=&quot;Cliquez sur valider pour démonter&quot;
+   fusermount -u $1</pre>
+
+<p>
+Ce programme prend comme argument le dossier à monter. Une fois que le dossier est monté, il fait apparaître une boîte de dialogue grâce à Zenity. Et quand on ferme la boîte de dialogue, le dossier chiffré est démonté.
+</p>
+
+<p>
+Pour en savoir plus à ce sujet :
+</p>
+
+<p>
+<a href="http://ratur.ovh.org/index.php?post/2006/08/22/Cryptez-vos-donnees-avec-Encfs-et-Fuse" class="urlextern" title="http://ratur.ovh.org/index.php?post/2006/08/22/Cryptez-vos-donnees-avec-Encfs-et-Fuse"  rel="nofollow">http://ratur.ovh.org/index.php?post/2006/08/22/Cryptez-vos-donnees-avec-Encfs-et-Fuse</a>
+</p>
+
+<p>
+Nota : si vous préférez voir une icône dans le systray au lieu d&#039;une boîte de dialogue, remplacer l&#039;expression :
+</p>
+<pre class="code">   zenity --info --text=&quot;Cliquez sur valider pour démonter&quot;</pre>
+
+<p>
+par celle-ci :
+</p>
+<pre class="code">   zenity --notification --text=&quot;Démonter EncFs&quot;</pre>
+
+<p>
+Voila un autre script simple qui permet de monter et démonter le dossier crypté sans devoir laisser la boîte de dialogue et le terminal ouvert:
+lancer le script, une foi le dossier monté le terminal se ferme; Relancez le script quand vous souhaitez démonter le dossier. 
+</p>
+<pre class="code">   #!/bin/bash
+   # Définition de la variable N, chemin du dossier Normal (à modifier avec votre propre chemin)
+   N=/home/user/coffre/
+   # Définition de la variable C, chemin du dossier Crypté (à modifier avec votre propre chemin)
+   C=/home/user/.coffre/
+   # Définition de la variable T, chemin du fichier de test de condition (créer un fichier quelconque caché dans le répertoire crypté, par exemple &quot;.pointeur.txt&quot;)
+   T=/home/user/coffre/.pointeur.txt
+   # Test de condition (Est ce que le fichier &quot;.pointeur.txt&quot; existe?, si oui démonte le dossier crypté, sinon monte le dossier)
+   if [ -e &quot;$T&quot; ]; then
+   # Démontage du dossier crypté
+   echo &quot;démontage du répertoire chiffré&quot;	
+   # L&#039;utilisation de la ligne suivante est facultative, elle permet juste de créer une fenetre pour confirmer le démontage
+   zenity --info --text=&quot;Cliquez sur OK pour démonter le répertoire chiffré&quot;
+   fusermount -u $N
+   # Interdiction d&#039;écriture dans le dossier Normal.
+   chmod 440 $N
+   exit
+   else
+   # Autorisation d&#039;écriture sur le dossier Décrypté
+   chmod 750 $N
+   # Montage du dossier crypté
+   echo &quot;Montage du répertoire chiffré, entrer le mot de passe&quot;
+   encfs $C $N
+   # Ouverture du dossier dans Nemo
+   nemo $N
+   fi
+   exit</pre>
+
+<p>
+(Ne pas oublier de créer un fichier (de préference caché) vers lequel le script va pointer dans votre dossier crypté. Il est possible aussi de pointer vers un fichier existant mais il faudra prendre garde à ne pas l&#039;effacer, le déplacer ou le renommer)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[avec un script] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15561-18667" /><input type="submit" value="Modifier" class="button" title="avec un script" /></div></form></div>
+<h3 class="sectionedit18" id="un_script_qui_resume_et_qui_va_bien_par_bhubuntu">un script qui résume et qui va bien par bhubuntu :</h3>
+<div class="level3">
+
+<p>
+(modifié)
+</p>
+<pre class="code">  #!/bin/sh
+  # script pour ouvrir .coffre et le fermer facilement
+  # 2 Variables à modifier = 2 répertoires contenant 1) fichiers chiffré et 2) fichiers à monter déchiffré
+  # la commande set attribue les valeurs à $1 et $2
+  set /home/$USER/.coffre/dossier_crypte_encfs /home/$USER/.coffre/dossier_montage 
+  # on autorise l&#039;écriture sur le dossier déchiffré (voir plus bas)
+  chmod 750 $2
+  gksudo -p -m &quot;Entrez le mot de passe pour ouvrir .coffre&quot; | encfs -S $1 $2
+  # on teste si le dossier par exemple ici &#039;Perso&#039; est présent
+  # si le mot de passe était faux le dossier montage apparaitrait vide donc on passe à else
+  #
+  if [ -e $2&quot;/Perso&quot; ]; then
+  # on affiche le dossier crypté dans nautilus
+  nautilus $2
+  # notification dans le systray pour masquer le dossier crypté
+  zenity --notification --text &quot;cliquer ici pour fermer votre dossier décrypté&quot;
+  fusermount -u $2
+  zenity --warning --title=Fermeture --text &quot;votre dossier décrypté a été définitivement fermé et masqué&quot;
+  else
+  zenity --info --title=Erreur --text &quot;mot de passe erroné: recommencez !&quot;
+  # on interdit l&#039;écriture dans le dossier déchiffré. Cela permet d&#039;éviter d&#039;enregistrer par erreur un document non chiffré s&#039;il était encore ouvert.
+  chmod 440 $2
+  fi
+  exit</pre>
+
+<p>
+Pour utiliser ce script, il faut le copier dans un fichier texte, puis rendre le fichier exécutable. Ensuite, il suffit de cliquer sur l&#039;icône du fichier dans nautilus.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[un script qui résume et qui va bien par bhubuntu :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18668-20241" /><input type="submit" value="Modifier" class="button" title="un script qui résume et qui va bien par bhubuntu :" /></div></form></div>
+<h2 class="sectionedit19" id="problemes_connus">Problèmes connus</h2>
+<div class="level2">
+
+<p>
+Sous <strong>Ubuntu 14.04LTS</strong> (Trusty Thar) lors de la création d&#039;un nouveau dossier chiffré la zone de sélection du répertoire de destination est écrasée, il est extrêmement difficile voire impossible de visualiser le répertoire sélectionné.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Problèmes connus] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="20242-20521" /><input type="submit" value="Modifier" class="button" title="Problèmes connus" /></div></form></div>
+<h3 class="sectionedit20" id="acces_impossible">Accès impossible ?</h3>
+<div class="level3">
+
+<p>
+<strong>Important</strong> : pour pouvoir accéder aux données en clair, il est nécessaire <em>en plus du mot de passe</em> de vérifier si le fichier <code>.encfs5</code> est bien présent dans le répertoire de l&#039;utilisateur. 
+</p>
+
+<p>
+Le fichier .encfs5 se trouve dans le répertoire chiffré à la racine du répertoire de stockage. Ce <a href="dossiers_et_fichiers_caches" class="wikilink1" title="dossiers_et_fichiers_caches">fichier caché</a> contient notamment les données propres au chiffrement. Il ne doit donc en aucun cas être supprimé sous peine de perte de vos données. Si vous devez faire une sauvegarde des répertoires de travail encfs (répertoire chiffré et répertoire ouvert), il faut penser à sauvegarder aussi le fichier .encfs5 correspondant.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Accès impossible ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="20522-21235" /><input type="submit" value="Modifier" class="button" title="Accès impossible ?" /></div></form></div>
+<h3 class="sectionedit21" id="module_fuse">Module &#039;&#039;fuse&#039;&#039;</h3>
+<div class="level3">
+
+<p>
+Vérifier
+</p>
+<ul>
+<li class="level1"><div class="li"> - la présence du module <em>fuse</em> ( lsmod | grep fuse) </div>
+</li>
+<li class="level1"><div class="li"> - que l&#039;utilisateur a les droits requis (grep &quot;fuse&quot; &quot;/etc/group&quot;)</div>
+</li>
+</ul>
+
+<p>
+Au cas où le module <em>fuse</em> n&#039;est pas trouvé au moment du chargement, il se peut qu&#039;il faille modifier le noyau (ce ne devrait <em>pas</em> être le cas sous Breezy, Dapper ou Edgy). Dans ce cas, faire :
+</p>
+<pre class="code">sudo apt-get install module-assistant</pre>
+
+<p>
+puis :
+</p>
+<pre class="code">sudo module-assistant</pre>
+
+<p>
+puis <code>prepare</code>, puis <code>select</code>, puis <code>fuse</code>, puis <code>build</code>, puis appuyer sur [Entrée] au moment du &quot;The source package may not be installed…&quot;, puis <code>exit</code>&#039;. Arrivé là, le <code>modprobe fuse</code> devrait fonctionner.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Module ''fuse''] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21236-21907" /><input type="submit" value="Modifier" class="button" title="Module ''fuse''" /></div></form></div>
+<h3 class="sectionedit22" id="migration_depuis_intrepid_ibex_2010">Migration depuis Intrepid Ibex (2010)</h3>
+<div class="level3">
+
+<p>
+ le fichier contenant les paramètres de chiffrement a changé de nom à partir d&#039;Intrepid, il s&#039;appelle désormais <strong>.encfs6.xml</strong>
+</p>
+
+<p>
+<em class="u">Conséquence importante :</em> afin d&#039;assurer la compatibilité ascendante, si vous partagez un dossier chiffré entre un système Hardy ou antérieur, et un système Intrepid ou supérieur, il convient d&#039;avoir créé le chiffrement avec la version la plus ancienne. En effet, il y a <strong>compatibilité ascendante</strong>, mais pas descendante !.. Ainsi, une version Intrepid ou supérieure pourra utiliser un chiffrement créé avec une version antérieure et donc marqué avec .encfs5, par contre l&#039;inverse n&#039;est pas vrai. Si le chiffrement est créé par Intrepid ou postérieur, Hardy verra votre chiffrement  comme non initialisé puisqu&#039;il ne connaît pas .encfs6.xml et ne trouve pas de .encfs5
+</p>
+
+<p>
+- fuse-utils semble installé dans le package par défaut (vrai à partir de Hardy)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Migration depuis Intrepid Ibex (2010)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21908-22872" /><input type="submit" value="Modifier" class="button" title="Migration depuis Intrepid Ibex (2010)" /></div></form></div>
+<h2 class="sectionedit23" id="avantagesdefauts">Avantages/défauts</h2>
+<div class="level2">
+
+<p>
+Il existe beaucoup d&#039;autres méthodes pour chiffrer des données sous Linux, mais celle-ci a beaucoup d&#039;avantages :
+</p>
+<ul>
+<li class="level1"><div class="li"> une installation en quelques commandes, une utilisation basique avec deux commandes,</div>
+</li>
+<li class="level1"><div class="li"> l&#039;installation est durable. Aucune compilation ou réinstallation n&#039;est nécessaire en cas de mise à jour du kernel, </div>
+</li>
+<li class="level1"><div class="li"> il n&#039;est pas nécessaire de créer de fichier/répertoire d&#039;une taille <em>fixe</em> dédié à l&#039;espace chiffré,</div>
+</li>
+<li class="level1"><div class="li"> l&#039;utilisateur a le libre choix des répertoires,</div>
+</li>
+<li class="level1"><div class="li"> le fait de voir le nombre de fichiers chiffrés, leur taille et droits d&#039;accès peut être utile, et représente un avantage lors de l&#039;utilisation de <em>backups</em> incrémentaux par exemple ;</div>
+</li>
+<li class="level1"><div class="li"> les performances semblent correctes (contrairement à d&#039;autres solutions).</div>
+</li>
+<li class="level1"><div class="li"> fonctionnement possible sur différents types de système de fichier (dont NTFS)</div>
+</li>
+</ul>
+
+<p>
+Parmi les défauts, ou désavantages, on peut citer :
+</p>
+<ul>
+<li class="level1"><div class="li"> le fait que le dossier de stockage soit visible et donne donc accès à quelques méta-données (nombre de fichiers chiffrés -mais pas leur nom-, leur taille et droits d&#039;accès…),</div>
+</li>
+<li class="level1"><div class="li"> le fait que les données chiffrées doivent obligatoirement utiliser le système de fichier utilisé pour les données en clair (même partition).</div>
+</li>
+<li class="level1"><div class="li"> absence de <a href="http://fr.wikipedia.org/wiki/D%C3%A9ni_plausible" class="urlextern" title="http://fr.wikipedia.org/wiki/D%C3%A9ni_plausible"  rel="nofollow">déni plausible</a> ou de volume caché.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Avantages/défauts] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="22873-24258" /><input type="submit" value="Modifier" class="button" title="Avantages/défauts" /></div></form></div>
+<h2 class="sectionedit24" id="ressources">Ressources</h2>
+<div class="level2">
+
+<p>
+Pour plus de détails less /usr/share/doc/encfs/README.gz
+</p>
+
+<p>
+EncFS peut faire un peu plus que ce que cette aide n&#039;a présenté. Pour plus d&#039;informations, voyez :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.arg0.net/encfs" class="urlextern" title="http://www.arg0.net/encfs"  rel="nofollow">Site officiel d&#039;EncFS</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.arg0.net/encfsintro" class="urlextern" title="http://www.arg0.net/encfsintro"  rel="nofollow">Introduction détaillée à EncFS</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://manpages.ubuntu.com/cgi-bin/search.py?q=encfs" class="urlextern" title="http://manpages.ubuntu.com/cgi-bin/search.py?q=encfs"  rel="nofollow">Page man d&#039;EncFS</a> (ou <code>man encfs</code> dans votre terminal)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://en.wikipedia.org/wiki/EncFS" class="urlextern" title="http://en.wikipedia.org/wiki/EncFS"  rel="nofollow">Article « EncFS » sur en.wikipedia.org</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="davfs2#astucenuage_et_vie_privee" class="wikilink1" title="davfs2">Utiliser EncFs dans le nuage</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Un <abbr title="Graphical User Interface">GUI</abbr> (interface graphique) est en cours de développement : <a href="fusible" class="wikilink1" title="fusible">Fusible</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/gnome-encfs-manager" class="wikilink1" title="gnome-encfs-manager">Gnome Encfs Manager</a> une interface graphique pour Encfs.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/uggy" class="wikilink1" title="utilisateurs:uggy">Uggy</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/jd" class="wikilink1" title="utilisateurs:jd">jd</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/spomky" class="wikilink1" title="utilisateurs:spomky">Spomky</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/zakhar" class="wikilink1" title="utilisateurs:zakhar">Zakhar</a> (changelog avril 2010) </em>
+</p>
+
+<p>
+<em> Basé sur : <a href="http://blog.uggy.org/post/2006/05/17/90-chiffrer-ses-donnees-avec-encfs" class="urlextern" title="http://blog.uggy.org/post/2006/05/17/90-chiffrer-ses-donnees-avec-encfs"  rel="nofollow">ce billet original</a>. Équivalent anglophone disponible sur ce <a href="http://ubuntuforums.org/showthread.php?t=148600" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=148600"  rel="nofollow">topic d&#039;ubuntuforums.org</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="encfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421741856" /><input type="hidden" name="summary" value="[Ressources] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="24259-" /><input type="submit" value="Modifier" class="button" title="Ressources" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/2b696a7a67f9051363cbbdfce248b91d.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/encfs?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/encfs?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/encfs?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/encfs?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/encfs?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

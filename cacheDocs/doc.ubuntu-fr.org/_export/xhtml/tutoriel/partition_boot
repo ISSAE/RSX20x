@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>tutoriel:partition_boot</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-11-16T12:24:33+0100"/>
+<meta name="keywords" content="precise,quantal,raring,systeme,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="../../../tutoriel/partition_boot?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="partition_boot"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../raw/tutoriel/partition_boot"/>
+<link rel="canonical" href="../../../tutoriel/partition_boot"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:partition_boot","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="partition_boot#procedure">Procédure</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="partition_boot#etape_1">Étape 1</a></div></li>
+<li class="level2"><div class="li"><a href="partition_boot#etape_2">Étape 2</a></div></li>
+<li class="level2"><div class="li"><a href="partition_boot#etape_3">Étape 3</a></div></li>
+<li class="level2"><div class="li"><a href="partition_boot#etape_4">Étape 4</a></div></li>
+<li class="level2"><div class="li"><a href="partition_boot#etape_5">Étape 5</a></div></li>
+<li class="level2"><div class="li"><a href="partition_boot#etape_6">Étape 6</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="partition_boot#remarques">Remarques</a></div></li>
+<li class="level1"><div class="li"><a href="partition_boot#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="../../../quantal" class="wikilink1" title="quantal" rel="tag">Quantal</a>,
+	<a href="../../../raring" class="wikilink1" title="raring" rel="tag">Raring</a>,
+	<a href="../../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="partition_boot_separee">Partition boot séparée</h1>
+<div class="level1">
+
+<p>
+Certaines situations (par ex une limitation du <abbr title="Basic Input-Output System">BIOS</abbr>) nécessitent de <strong>créer une partition /boot au début du disque, et configurer Ubuntu pour qu&#039;elle l&#039;utilise.</strong>
+</p>
+
+<p>
+Voici comment faire ceci très facilement :
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Partition boot séparée" [56-307] -->
+<h2 class="sectionedit2" id="procedure">Procédure</h2>
+<div class="level2">
+
+<p>
+<strong>Pré-requis:</strong> avoir sauvegardé vos données.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Procédure" [308-381] -->
+<h3 class="sectionedit3" id="etape_1">Étape 1</h3>
+<div class="level3">
+
+<p>
+Démarrez votre ordinateur sur :
+</p>
+<ul>
+<li class="level1"><div class="li"> un DVD ou liveUSB <a href="../../../linux_secure_remix" class="wikilink1" title="linux_secure_remix">Linux Secure</a>, puis passez directement à l&#039;<strong>étape 3 ci-dessous</strong>.</div>
+</li>
+<li class="level1"><div class="li"> ou un CD ou liveUSB Ubuntu, choisissez &quot;Essayer Ubuntu&quot;, puis passez à l&#039;<strong>étape 2 ci-dessous</strong>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Étape 1" [382-652] -->
+<h3 class="sectionedit4" id="etape_2">Étape 2</h3>
+<div class="level3">
+
+<p>
+Une fois dans la session Ubuntu, installez <a href="../../../boot-repair" class="wikilink1" title="boot-repair">Boot-Repair</a> en connectant internet puis en saisissant dans un <a href="../../../terminal" class="wikilink1" title="terminal">terminal</a> les commandes suivantes :
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour <a href="../../../precise" class="wikilink1" title="precise">Precise 12.04 LTS</a><sup><a href="partition_boot#fn__1" id="fnt__1" class="fn_top">1)</a></sup> <pre class="code">sudo add-apt-repository ppa:yannubuntu/boot-repair</pre>
+</div>
+</li>
+<li class="level2"><div class="li"> Pour <a href="http://doc.ubuntu-fr.org/trusty" class="wikilink1" title="trusty">Trusty 14.04 LTS</a> et suivantes<sup><a href="partition_boot#fn__2" id="fnt__2" class="fn_top">2)</a></sup> <pre class="code">sudo add-apt-repository ppa:kranich/cubuntu</pre>
+</div>
+</li>
+</ul>
+
+<p>
+Puis mettez à jour vos paquets et finalisez l&#039;installation de boot-repair :
+</p>
+<pre class="code"> sudo apt-get update; sudo apt-get install -y boot-repair</pre>
+
+</div>
+<!-- EDIT4 SECTION "Étape 2" [653-1315] -->
+<h3 class="sectionedit5" id="etape_3">Étape 3</h3>
+<div class="level3">
+
+<p>
+Lancez gParted via :
+</p>
+<ul>
+<li class="level1"><div class="li"> le Dash (Ubuntu 11.04 et suivantes):  cliquer sur le logo Ubuntu en haut à gauche de l&#039;écran, puis saisir <strong>gparted</strong> et cliquer sur l&#039;icône gParted qui apparaîtra.</div>
+</li>
+<li class="level1"><div class="li"> ou le menu Système→Administration→gParted (Ubuntu 10.04)</div>
+</li>
+<li class="level1"><div class="li"> ou en saisissant <strong>gksudo gparted</strong> dans un terminal </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT5 SECTION "Étape 3" [1316-1652] -->
+<h3 class="sectionedit6" id="etape_4">Étape 4</h3>
+<div class="level3">
+
+<p>
+Via gParted:
+</p>
+<ul>
+<li class="level1"><div class="li"> Réduisez une des premières partitions du disque afin de <strong>créer un espace libre de 1Go (=1000Mo) au début du disque</strong> où Ubuntu a été installé. Cet espace libre doit être compris <strong>dans les premiers 100Go du disque</strong> (par exemple de 0Go à 1Go). Important: pour redimensionner des partitions Windows Vista/7/8, n&#039;utilisez pas gParted mais les outils Windows. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../../lib/exe/fetch.php?tok=43dc11&amp;media=http%253A%252F%252Fpix.toile-libre.org%252Fupload%252Foriginal%252F1343736829.png" class="media" title="http://pix.toile-libre.org/upload/original/1343736829.png"><img src="../../../lib/exe/fetch.php?w=500&amp;tok=9c5fee&amp;media=http%253A%252F%252Fpix.toile-libre.org%252Fupload%252Foriginal%252F1343736829.png" class="media" alt="" width="500" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> dans cet espace libre, créez une partition de 1Go formatée en EXT2 (ou EXT4). Remarque: il se peut que Gparted refuse de créer cette partition, par exemple si votre disque a un type de table de partitions Ms-Dos et qu&#039;il possède déjà 4 partitions principales. Dans ce cas, demandez conseil sur le forum.</div>
+</li>
+<li class="level1"><div class="li"> sur un papier, notez le nom de cette nouvelle partition. Cela devrait être quelque chose comme <strong>sdXY</strong> (X étant une lettre, Y un chiffre).</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT6 SECTION "Étape 4" [1653-2596] -->
+<h3 class="sectionedit7" id="etape_5">Étape 5</h3>
+<div class="level3">
+
+<p>
+Lancez Boot-Repair via :
+</p>
+<ul>
+<li class="level1"><div class="li"> le Dash: cliquer sur le logo Ubuntu en haut à gauche de l&#039;écran, puis saisir <strong>boot</strong> et cliquer sur l&#039;icône &quot;Réparateur de démarrage&quot; qui apparaîtra.</div>
+</li>
+<li class="level1"><div class="li"> ou en saisissant <strong>boot-repair</strong> dans un terminal </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT7 SECTION "Étape 5" [2597-2859] -->
+<h3 class="sectionedit8" id="etape_6">Étape 6</h3>
+<div class="level3">
+
+<p>
+Dans Boot-Repair :
+</p>
+<ul>
+<li class="level1"><div class="li"> Cliquez sur &quot;<strong>Options avancées</strong>&quot;</div>
+</li>
+<li class="level1"><div class="li"> Allez dans l&#039;<strong>onglet &quot;Emplacement de GRUB&quot;</strong></div>
+</li>
+<li class="level1"><div class="li"> cochez l&#039;option &quot;Partition /boot séparée: sdXY&quot; (sdXY étant votre partition de 1Go)</div>
+</li>
+</ul>
+
+<p>
+<a href="../../../lib/exe/fetch.php?tok=e59909&amp;media=http%253A%252F%252Fpix.toile-libre.org%252Fupload%252Foriginal%252F1343736862.png" class="media" title="http://pix.toile-libre.org/upload/original/1343736862.png"><img src="../../../lib/exe/fetch.php?w=500&amp;tok=dc7e4a&amp;media=http%253A%252F%252Fpix.toile-libre.org%252Fupload%252Foriginal%252F1343736862.png" class="media" alt="" width="500" /></a>
+</p>
+
+<p>
+ * Cliquez sur le bouton &quot;<strong>Appliquer</strong>&quot;
+ * Notez sur un papier l&#039;<abbr title="Uniform Resource Locator">URL</abbr> (<strong>paste.ubuntu.com/XXXXXX/</strong>) qui apparaîtra
+ * Éteignez l&#039;ordinateur
+ * Retirez le CD et/ou la clé <abbr title="Universal Serial Bus">USB</abbr>
+ * Redémarrez l&#039;ordinateur. Vous devriez maintenant pouvoir démarrer Ubuntu. 
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Étape 6" [2860-3407] -->
+<h2 class="sectionedit9" id="remarques">Remarques</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> si vous avez besoin d&#039;aide veuillez créer une nouvelle discussion <a href="http://forum.ubuntu-fr.org/post.php?fid=10" class="urlextern" title="http://forum.ubuntu-fr.org/post.php?fid=10"  rel="nofollow">ICI</a> (n&#039;oubliez pas d&#039;y indiquer l&#039;<abbr title="Uniform Resource Locator">URL</abbr> que vous avez noté précédemment)</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT9 SECTION "Remarques" [3408-3623] -->
+<h2 class="sectionedit10" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=10200851#p10200851" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=10200851#p10200851"  rel="nofollow">Discussion à propos de ce tutoriel</a> sur le forum ubuntu-fr</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://help.ubuntu.com/community/CreateBootPartitionAfterInstall" class="urlextern" title="https://help.ubuntu.com/community/CreateBootPartitionAfterInstall"  rel="nofollow">https://help.ubuntu.com/community/CreateBootPartitionAfterInstall</a></div>
+</li>
+</ul>
+
+<p>
+—-
+<em>Contributeurs principaux : <a href="http://doc.ubuntu-fr.org/utilisateurs/yannubuntu" class="wikilink1" title="utilisateurs:yannubuntu">YannUbuntu</a>.</em>
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Voir aussi" [3624-] --><div class="footnotes">
+<div class="fn"><sup><a href="partition_boot#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<a href="https://launchpad.net/~yannubuntu/+archive/ubuntu/boot-repair" class="urlextern" title="https://launchpad.net/~yannubuntu/+archive/ubuntu/boot-repair"  rel="nofollow">https://launchpad.net/~yannubuntu/+archive/ubuntu/boot-repair</a></div>
+<div class="fn"><sup><a href="partition_boot#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<a href="https://launchpad.net/~kranich/+archive/ubuntu/cubuntu" class="urlextern" title="https://launchpad.net/~kranich/+archive/ubuntu/cubuntu"  rel="nofollow">https://launchpad.net/~kranich/+archive/ubuntu/cubuntu</a></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/3/30b71e35cea2acbd22f80ff8bac20a4a.xhtml used -->
+</div>
+</body>
+</html>

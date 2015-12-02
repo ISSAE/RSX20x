@@ -1,0 +1,599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>mailman - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="mailman?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/mailman"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/mailman"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"mailman","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="mailman?do=edit&amp;rev=0#main" tabindex="1">Contenu</a> | <a href="mailman?do=edit&amp;rev=0#qsearch__in" tabindex="2">Rechercher</a> | <a href="mailman?do=edit&amp;rev=0#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="mailman?do=edit&amp;rev=0" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="mailman" >mailman</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<p>
+<strong>Quelques recommandations avant de créer ou de modifier cette page :</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Lisez le <a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">guide du contributeur</a> et la <a href="wiki/ligne_editoriale" class="wikilink1" title="wiki:ligne_editoriale">ligne éditoriale</a>.</div>
+</li>
+<li class="level1"><div class="li"> Découvrez la <a href="http://doc.ubuntu-fr.org/wiki/syntaxe" class="wikilink1" title="wiki:syntaxe">syntaxe</a> et entraînez-vous dans le <a href="playground/playground" class="wikilink1" title="playground:playground">bac à sable</a>.</div>
+</li>
+<li class="level1"><div class="li"> Utilisez les modèles (<a href="wiki/modeles/application" class="wikilink1" title="wiki:modeles:application">application</a>, <a href="wiki/modeles/materiel" class="wikilink1" title="wiki:modeles:materiel">matériel</a>, <a href="wiki/modeles/portable" class="wikilink1" title="wiki:modeles:portable">ordinateur portable</a>, <a href="wiki/modeles/tutoriel" class="wikilink1" title="wiki:modeles:tutoriel">tutoriel</a>, <a href="wiki/modeles/utilisateur" class="wikilink1" title="wiki:modeles:utilisateur">utilisateur</a>, <a href="wiki/modeles/portail" class="wikilink1" title="wiki:modeles:portail">portail</a>) et les <a href="wiki/mini-tutoriels" class="wikilink1" title="wiki:mini-tutoriels">mini-tutoriels</a>.</div>
+</li>
+<li class="level1"><div class="li"> Rapportez toutes créations ou modifications importantes sur <a href="wiki/liste_discussion#coordination_de_la_documentation" class="wikilink1" title="wiki:liste_discussion">la liste de discussion</a>.</div>
+</li>
+</ol>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fcdb5fe1d67011f56447459483d05597.xhtml used -->
+<script type="text/javascript">/*<![CDATA[*/
+textChanged = false/*!]]>*/</script>
+    <div class="editBox" role="application">
+
+    <div class="toolbar group">
+        <div id="draft__status"></div>
+        <div id="tool__bar"><a href="http://doc.ubuntu-fr.org/lib/exe/mediamanager.php?ns="
+            target="_blank">Sélection de fichiers</a></div>
+    </div>
+    <form id="dw__editform" method="post" action="mailman?do=edit&amp;rev=0" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><input type="hidden" name="id" value="mailman" /><input type="hidden" name="rev" value="0" /><input type="hidden" name="date" value="1406281033" /><input type="hidden" name="prefix" value="." /><input type="hidden" name="suffix" value="" /><input type="hidden" name="changecheck" value="b32216559090cd893f68e2ed9c1de314" /><input type="hidden" name="target" value="section" /><textarea name="wikitext" id="wiki__text" dir="auto" class="edit" cols="80" rows="10" tabindex="1">
+{{tag&gt;hardy jaunty serveur}}
+
+----
+
+====== Les liste de diffusions Mailman ======
+
+
+{{serveur:mailman.jpg }}
+
+**Mailman** est une application libre pour gérer des listes de diffusion électroniques, les listes de discussion et les « newsletters » (traduisez littéralement par « lettres d'information »). La plupart des listes de diffusions de logiciel libre utilisent Mailman comme programme de gestion des messages. Ce dernier est performant, facile à installer et facile à maintenir. 
+
+
+
+===== Pré-requis =====
+
+Il est nécessaire, pour la suite de ce tutoriel, de connaître les commandes Linux, [[:tutoriel:comment_editer_un_fichier|savoir éditer un fichier]], et démarrer/arrêter un service sous Linux. Il est aussi requis que vous soyez actuellement sous un système Ubuntu, que vous ayez un accès root (super-utilisateur), et bien sûr que vous souhaitiez utiliser le programme Mailman.
+
+Enfin, il est nécessaire que vous ayez une connexion internet, et que vous ayez configuré le fichier « /etc/apt/sources.list » (voir [[:depots|la page des dépôts]]).
+
+
+
+
+==== Apache2 ====
+
+[[Apache2]] est déjà disponible dans les dépôts, donc [[:tutoriel:comment_installer_un_paquet|installez-le]] avec les paquets **apache2 apache2-common** [[apt://apache2,apache2-common|{{apt.png}}]].
+&lt;note important&gt;Le paquet apache2-common est remplacé par apache2.2-common dans Ubuntu 12.04 LTS&lt;/note&gt;
+==== Exim4 ====
+
+&lt;note important&gt;L'installation d'exim4 **supprimera postfix** si celui ci est présent. (cf. [[http://doc.ubuntu-fr.org/exim4-satellite|installation d'exim4]])&lt;/note&gt;
+[[:tutoriel:comment_installer_un_paquet|Installez les paquets]] **exim4 exim4-base exim4-config**[[apt://exim4,exim4-base,exim4-config|{{apt.png}}]].
+
+Une fois Exim4 installé, les fichiers de configuration se trouvent dans « /etc/exim4/ ». Dans Ubuntu, par défaut, les fichiers de configuration de Exim4 sont répartis en plusieurs fichiers.
+
+Vous pouvez changer ceci en éditant la variable ci-dessous dans « /etc/exim4/update-exim4.conf.conf » :
+
+  dc_use_split_config='true' # ='false' pour désactiver l'option
+
+Si vous faites face à un problème durant l'installation et que vous êtes incapable de résoudre ce dernier, référez-vous à la liste de diffusion appropriée pour plus d'assistance.
+
+==== Mailman ====
+
+[[:tutoriel:comment_installer_un_paquet|Installez le paquet]] **mailman**.
+
+Cette dernière copiera les fichiers d'installation dans le dossier « /var/lib/mailman » et installera les scripts CGI dans le dossier « /usr/lib/cgi-bin/mailman ».
+Enfin, le programme créera le groupe et l'utilisateur « list ». Notez que le processus « mailman » doit être lancé avec les privilèges super-utilisateur.
+
+
+===== Configuration =====
+
+Pour cette section, il est nécessaire que vous ayez complété avec succès l'installation de Mailman, Apache et Exim4. Ici, nous allons voir les étapes de configuration. À la fin de cette section, Mailman devrait être prêt à être utilisé.
+
+==== Apache ====
+
+Une fois l'installation d'Apache2 effectuée, vous pouvez le démarrer avec la commande suivante :
+
+  sudo /etc/init.d/apache2 start
+
+Mailman utilise Apache pour créer un rendu de ses scripts CGI. Les scripts de Mailman se trouvent dans le dossier « /usr/lib/cgi-bin/mailman ». Dans le fichier « /etc/apache2/apache2.conf », rajoutez une ligne :
+  ScriptAlias /mailman/ /usr/lib/cgi-bin/mailman/
+Ceci aura pour effet de poser le répertoire /usr/lib/cgi-bin/mailman/ à la racine du serveur, c'est-à-dire en http://votre_domaine/mailman. Faites de même pour que les archives soient accessibles en http://votre_domaine/archives :
+   Alias /archives/ /var/lib/mailman/archives/public/
+
+Vous pouvez évidemment fignoler les préférences, par exemple en ajoutant dans ce même fichier :
+&lt;code&gt;&lt;Directory /usr/lib/cgi-bin/mailman/&gt;
+    AllowOverride None
+    Options ExecCGI
+    Order allow,deny
+    Allow from all
+&lt;/Directory&gt;
+&lt;Directory /var/lib/mailman/archives/public&gt;
+    Options Indexes MultiViews FollowSymLinks
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+&lt;/Directory&gt;&lt;/code&gt;
+
+
+
+==== Exim4 ====
+
+Pour que Mailman puisse fonctionner avec Exim4, vous êtes supposé configurer ce dernier. Comme mentionné plus haut, par défaut, Exim4 utilise de multiples fichiers de configurations, et de tout type. Pour plus de détails, merci de vous référer au site [[http://www.exim.org|officiel d'Exim]].
+
+Pour démarrer Mailman, nous devons ajouter un nouveau fichier de configuration avec les catégories suivantes :
+  * Configuration globale (main)
+  * Transport
+  * Routeur (router)
+
+Exim crée un fichier principal de configuration, ainsi que plusieurs mini-fichiers de configuration. C'est pourquoi, l'ordre de ces fichiers de configuration est important. Une fois ces fichiers créés, vous pouvez lancer Exim4 avec la commande :
+
+  sudo /etc/init.d/exim4 start
+
+
+
+=== Configuration globale (main) ===
+
+Tous les fichiers de configuration concernant le type « main » sont stockés dans le dossier « /etc/exim4/conf.d/main/ ». Vous pouvez [[:tutoriel:comment_editer_un_fichier|ajouter]] les lignes suivantes dans un nouveau fichier nommé « 04_exim4-config_mailman » :
+
+&lt;file&gt;
+# start
+# Home dir for your Mailman installation -- aka Mailman's prefix
+# directory.
+# By default this is set to &quot;/usr/local/mailman&quot;
+# On a Red Hat/Fedora system using the RPM use &quot;/var/mailman&quot;
+# On Debian using the deb package use &quot;/var/lib/mailman&quot;
+# This is normally the same as ~mailman
+MM_HOME=/var/lib/mailman
+#
+# User and group for Mailman, should match your --with-mail-gid
+# switch to Mailman's configure script.  Value is normally &quot;mailman&quot;
+MM_UID=list
+MM_GID=list
+#
+# Domains that your lists are in - colon separated list
+# you may wish to add these into local_domains as well
+domainlist mm_domains=bluestar.co.in
+#
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#
+# These values are derived from the ones above and should not need
+# editing unless you have munged your mailman installation
+#
+# The path of the Mailman mail wrapper script
+MM_WRAP=MM_HOME/mail/mailman
+#
+# The path of the list config file (used as a required file when
+# verifying list addresses)
+MM_LISTCHK=MM_HOME/lists/${lc::$local_part}/config.pck
+# end
+&lt;/file&gt;
+
+=== Transport ===
+
+Tous les fichiers de configuration concernant le type « transport » sont stockés dans le dossier « /etc/exim4/conf.d/transport/ ». Vous pouvez ajouter les lignes suivantes dans un nouveau fichier nommé « 04_exim4-config_mailman »:
+
+&lt;file&gt;
+mailman_transport:
+ driver = pipe
+ command = MM_WRAP \
+             '${if def:local_part_suffix \
+                   {${sg{$local_part_suffix}{-(\\w+)(\\+.*)?}{\$1}}} \
+                   {post}}' \
+             $local_part
+  current_directory = MM_HOME
+  home_directory = MM_HOME
+  user = MM_UID
+  group = MM_GID
+&lt;/file&gt;
+
+=== Routeur (router) ===
+
+Tous les fichiers de configuration concernant le type « router » sont stockés dans le dossier « /etc/exim4/conf.d/router/ ». Vous pouvez ajouter les lignes suivantes dans un nouveau fichier nommé « 04_exim4-config_mailman »:
+
+&lt;file&gt;
+mailman_router:
+ driver = accept
+ require_files = MM_HOME/lists/$local_part/config.pck
+ local_part_suffix_optional
+ local_part_suffix = -bounces : -bounces+* : \
+                     -confirm+* : -join : -leave : \
+                     -owner : -request : -admin
+ transport = mailman_transport
+&lt;/file&gt;
+
+==== Mailman ====
+
+Modifiez d'abord les paramètres de mailman afin qu'il reconnaisse votre nom de domaine. Éditez le fichier /etc/mailman/mm_cfg.py et ajoutez-y :
+  DEFAULT_EMAIL_HOST = 'votre_domaine.fr'
+  DEFAULT_URL_HOST = 'votre_domaine.fr'
+L'adresse de la liste sera du type **nom_liste@votre_domaine.fr**.
+
+Créez ensuite une liste de diffusion, ici « mailman »:
+&lt;code&gt;
+$ sudo newlist mailman
+
+Entrez l'adresse courriel du gestionnaire de la liste : utilisateur@serveur.com
+Mot de passe initial de la liste mailman :
+Pour achever la création de votre liste de diffusion, vous devez
+modifier votre fichier /etc/aliases (ou équivalent) en y ajoutant les
+lignes suivantes et peut être exécuter le programme « newaliases »:
+
+liste de diffusion ## mailman
+mailman:              &quot;|/var/lib/mailman/mail/mailman post mailman&quot;
+mailman-admin:        &quot;|/var/lib/mailman/mail/mailman admin mailman&quot;
+mailman-bounces:      &quot;|/var/lib/mailman/mail/mailman bounces mailman&quot;
+mailman-confirm:      &quot;|/var/lib/mailman/mail/mailman confirm mailman&quot;
+mailman-join:         &quot;|/var/lib/mailman/mail/mailman join mailman&quot;
+mailman-leave:        &quot;|/var/lib/mailman/mail/mailman leave mailman&quot;
+mailman-owner:        &quot;|/var/lib/mailman/mail/mailman owner mailman&quot;
+mailman-request:      &quot;|/var/lib/mailman/mail/mailman request mailman&quot;
+mailman-subscribe:    &quot;|/var/lib/mailman/mail/mailman subscribe mailman&quot;
+mailman-unsubscribe:  &quot;|/var/lib/mailman/mail/mailman unsubscribe mailman&quot;
+
+Tapez sur Entrée pour aviser le propriétaire de mailman...
+&lt;/code&gt;
+
+Nous avons configuré Exim afin qu'il reconnaisse tous les courriels de Mailman. Ainsi, il n'est plus obligatoire de créer des entrées dans « /etc/aliases ». Si vous avez effectué un changement quelconque, merci de vous assurer que vous ayez redémarré tous les services, avant de passer à la section suivante.
+
+Enfin, démarrez Mailman :
+
+  sudo /etc/init.d/mailman start
+
+===== Administration =====
+
+{{ serveur:mailman-webbased-admin2.png }}
+
+Nous allons maintenant voir comment administrer Mailman. Cette étape considère que l'installation de ce dernier a correctement été effectuée. 
+
+Mailman fournit une administration web facile d'utilisation. Pour y accéder, entrez le lien suivant dans votre navigateur internet : http://serveur/cgi-bin/mailman/admin
+
+La liste de diffusion par défaut « mail » devrait apparaître sur l'écran. Si vous cliquez sur celle-ci, on vous demandera un mot de passe pour vous identifier. Si vous entrez le bon mot de passe, vous pourrez changer les options d'administration de la liste de diffusion.
+
+Vous pouvez créer une nouvelle liste de diffusion en utilisant l'utilitaire « ''newlist'' » en ligne de commande. Alternativement, vous pourez utiliser l'interface web pour en créer une nouvelle.
+
+
+===== Utilisateurs =====
+
+Mailman fournit aussi une interface web pour les utilisateurs. Pour y accéder, entrez le lien suivant dans votre navigateur : 
+http://serveur/cgi-bin/mailman/listinfo
+
+La liste de diffusion par défaut, « mailman », devrait apparaître à l'écran. Si vous cliquez sur le nom de la liste de diffusion, l'interface affichera le formulaire de souscription. Vous pouvez entrer votre adresse électronique, votre nom (optionnel), et un mot de passe, afin de vous inscrire. Suivez les instructions contenues dans le courriel envoyé à la fin de l'inscription, pour finir cette dernière.
+
+===== Handlers =====
+==== Principe ====
+Il peut être utile de modifier les mails que l’on envoie d’une manière n’étant pas prévue par Mailman. Dans cette optique on peut vouloir par exemple changer les en-têtes d’un mail, le corps des messages ou tout simplement effectuer une modération selon certains critères préprogrammés.  Un exemple concret est disponible dans la [[mailman#Je ne reçois pas mes propres mails depuis mon entreprise|FAQ de cette page]].
+
+Le traitement des mails depuis leur réception jusqu’à leur renvoi à la liste est décomposé par Mailman en plusieurs phases, appelées « Handlers », dont l’ordre et l’usage est défini dans le fichier « Mailman/defaults.py » par la ligne suivante :
+
+&lt;code&gt;
+GLOBAL_PIPELINE = [
+    'SpamDetect',
+    'Approve',
+…
+    'Acknowledge',
+    'ToOutgoing',
+    ]
+&lt;/code&gt;
+
+Tous les handlers de cette liste sont des fichiers contenant du code en Python et sont situés dans le répertoire « Mailman/Handlers ». Bien entendu il est possible de les modifier directement afin de personnaliser le comportement de l’application, mais un meilleur moyen est de créer un handler personnalisé et de l’insérer à l’endroit où on le souhaite dans le traitement.
+
+==== Handlers personnalisés====
+=== Avantages===
+Les handlers personnalisés ont plusieurs avantages :
+    * Ils permettent de ne pas modifier le code original de l’application. Cela évite les dommages collatéraux non prévus et facilite la maintenance ultérieure par une tierce personne.
+    * Ils ne seront pas affectés par une mise à jour de l’application.
+    * Ils permettent de n’être appliqués qu’à une collection spécifique de listes. Le code du handler n’a donc pas à effectuer de filtre pour savoir s’il doit, ou non, s’appliquer en fonction de la liste qui l’appelle.
+    * Tous les changements sont regroupés ce qui permet une désactivation ou suppression aisée du comportement modifié.
+
+=== Code===
+Un handler est codé en python. Il doit nécessairement définir la fonction « process(mlist, msg, msgdata) » qui sera appelée par Mailman avec ces trois arguments :
+    * mlist est l’instance de la liste
+    * msg est l’instance du mail
+    * msgdata contient les méta-données du mail
+Toutes les méthodes relatives à la liste ou au message peuvent donc être appelées à l’intérieur de cette fonction.
+Toutes les modifications qui sont effectuées dans cette fonction affecteront le message et donc le traitement qui sera effectué par les handlers suivants. Il convient donc de placer le handler personnalisé au bon endroit dans le pipeline de traitement du mail.
+
+=== Insertion du handler===
+Considérons que notre handler personnalisé a bien été créé et est sauvegardé dans le répertoire « Mailman/Handlers » sous le doux nom « MonHandler ». Il faut alors choisir où insérer le code créé.
+Pour cela je vous laisse vous reporter à la liste de handlers que nous avons vu plus haut (le champ GLOBAL_PIPELINE dans le fichier « Defaults.py »).
+Pour l’exemple nous allons le positionner avant le handler « Moderate ». 
+Une fois que l’on sait où placer notre code, il existe plusieurs moyens de le faire prendre en compte par l’application :
+    * L’insertion globale qui va l’appliquer à toutes les listes sans modifier les autres handlers. Nous allons alors éditer le fichier de configuration de Mailman (/etc/mailman/mm_cfg.py) et y ajouter la ligne suivante :
+&lt;code&gt;
+GLOBAL_PIPELINE.insert(GLOBAL_PIPELINE.index('Moderate'), ' MonHandler')
+&lt;/code&gt;
+    * Le remplacement global, qui va remplacer un des handlers par défaut par notre nouveau handler. Comme au dessus, nous allons ajouter dans le fichier de configuration de Mailman la ligne suivante :
+&lt;code&gt;
+GLOBAL_PIPELINE[GLOBAL_PIPELINE.index('Moderate')] = ' MonHandler'
+&lt;/code&gt;
+    * L’insertion/remplacement spécifique, qui ne va impacter que les listes que nous aurons déterminées. Pour cela nous allons utiliser le fichier « bin/config_list ». Pour ce faire, il nous faut créer un fichier contenant les informations que nous voulons injecter dans la liste. Nous allons donc créer un fichier « MonFichier » qui contiendra les informations suivantes :
+&lt;code&gt;
+mlist.pipeline = [
+'SpamDetect',
+   'Approve',
+   …
+   'Replybot',
+   'MonHandler',
+   'Moderate',
+   …
+   'Acknowledge',
+   'ToOutgoing',
+    ]
+&lt;/code&gt;
+Soit le pipeline global au complet ainsi que notre handler personnalisé inséré au bon endroit. Bien sûr si vous souhaitez remplacer « Moderate » par « MonHandler », vous supprimez « Moderate » du pipeline.
+
+Ensuite pour l’appliquer à la liste « MaListe » il ne reste qu’à exécuter la commande :
+&lt;code&gt;
+bin/config_list -i MonFichier MaListe
+&lt;/code&gt;
+
+
+Enfin redémarrez Mailman :
+&lt;code&gt;
+sudo /etc/init.d/mailman restart
+&lt;/code&gt;
+
+
+
+===== FAQ =====
+====Envoi de mails avec Exim====
+Si vous n'arrivez pas à envoyer de mails avec exim, vérifiez que vos fichiers logs ne contiennent pas une des erreurs suivantes :
+
+=== 554 SMTP service not available ===
+
+Il suffit d'autorisez l'accès au service exim en ajoutant dans le fichier /etc/hosts.allow la ligne :
+  exim : ALL
+
+=== 553 sorry, your envelope sender domain must exist (#5.7.1) ===
+
+Modifiez le paramètre **primary_hostname** dans le fichier de configuration d'exim, /etc/mail/exim.conf, de telle sorte qu'il contienne votre nom de domaine :
+  primary_hostname = mon_domaine.fr
+
+==== Je ne reçois pas mes propres mails depuis mon entreprise ====
+Avec mon adresse professionnelle, je ne recevais pas mes propres mails, ni ceux venant d’autres personnes de ma société. Cela venait du fait que le serveur de messagerie de l’entreprise n’autorisait pas de mails entrant si le nom de domaine était celui de la boite. Afin de contourner le problème il faut simplement supprimer le nom de domaine du champ d’en-tête « from ». Nous allons donc créer un handler personnalisé nommé « RemoveDomain.py » que l’on va placer dans le dossier « Mailman/Handlers ». Il contient le code suivant :
+&lt;code&gt;
+&quot;&quot;&quot;Remove '@domain' from the messages From: header.
+&quot;&quot;&quot;
+
+import re
+
+def process(mlist, msg, msgdata):
+    from_val = msg.get('from')
+    if from_val:
+        from_val = re.sub('@[^ &gt;,]*', '', from_val)
+        del msg['from']
+        msg['From'] = from_val
+&lt;/code&gt;
+
+Pour corriger le problème sur toutes les listes et éviter que cela arrive sur les listes futures, nous allons insérer ce handler de manière globale dans le pipeline :
+&lt;code&gt;
+GLOBAL_PIPELINE.insert(GLOBAL_PIPELINE.index('Cleanse'), ' RemoveDomain ')
+&lt;/code&gt;
+
+Pourquoi l’insérer avant « Cleanse » ? En fait on l’insère plutôt après « AvoidDuplicates ». Si nous l’avions inséré n’importe où avant ce handler, Mailman aurait considéré que vous n’étiez pas l’expéditeur du mail (vu que le nom de domaine est différent) et vous aurait donc envoyé une copie de votre propre mail malgré le fait que vous ayez configuré l’option « Recevez les messages que vous envoyez à la liste ? » à « Non ».
+
+==== Migrer MailMan entre 2 serveurs ====
+
+&lt;code&gt;
+for list in &lt;vos_listes_ici&gt;; do
+echo $list
+rsync -az --progress -e ssh &lt;ancien_serveur&gt;:/var/lib/mailman/archives/public/$list /var/lib/mailman/archives/public/
+rsync -az --progress -e ssh &lt;ancien_serveur&gt;:/var/lib/mailman/archives/private/$list /var/lib/mailman/archives/private/
+rsync -az --progress -e ssh &lt;ancien_serveur&gt;:/var/lib/mailman/archives/private/${list}.mbox /var/lib/mailman/archives/private/
+rsync -az --progress -e ssh &lt;ancien_serveur&gt;:/var/lib/mailman/lists/$list /var/lib/mailman/lists/
+done
+# Vérifier les listes visibles sur le nouveau serveur
+list_lists
+# Si utilisation sur un nom DNS qui n'est pas dédié aux listes mailman, on regénère les aliases à utiliser dans le MTA
+/usr/lib/mailman/bin/genaliases
+# Démarrage du service
+/etc/init.d/mailman start
+# Paramétrer le serveur web et le MTA (comme une nouvelle installation)
+# Vérifier le bon fonctionnement
+&lt;/code&gt;
+
+Ressources :
+  * [[http://wiki.list.org/display/DOC/How+do+I+move+a+list+to+a+different+server-Mailman+installation.]] 
+  * [[http://www.mail-archive.com/mailman-users@python.org/msg08534.html]]
+
+==== Mailman ne fonctionne qu'en local après migration vers Precise 12.04 (Relay access denied) ====
+
+Si l'envoi de mails depuis l'extérieur sur la liste échoue ou que mailman n'arrive pas à envoyer les mails à tous les destinataires, cela peut provenir d'un problème de résolution DNS.
+
+Un exemple de log Postfix :
+&lt;code&gt;May  1 10:46:08 server-mail postfix/smtpd[17869]: warning: hostname ns.****.** does not resolve to address 192.168.1.11: No address associated with hostname
+May  1 10:46:08 server-mail postfix/smtpd[17869]: connect from unknown[192.168.1.11]
+May  1 10:46:08 server-mail postfix/smtpd[17869]: Anonymous TLS connection established from unknown[192.168.1.11]: TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits)
+May  1 10:46:08 server-mail postfix/smtpd[17869]: CCE521FCD0: client=unknown[192.168.1.11], sasl_method=PLAIN, sasl_username=truc
+May  1 10:46:08 server-mail postfix/cleanup[17874]: CCE521FCD0: message-id=&lt;4F9FA2CF.1000208@****.**&gt;
+May  1 10:46:08 server-mail postfix/qmgr[3072]: CCE521FCD0: from=&lt;*****@****.**&gt;, size=720, nrcpt=1 (queue active)
+May  1 10:46:08 server-mail postfix/smtpd[17869]: disconnect from unknown[192.168.1.11]
+May  1 10:46:09 server-mail postfix/pipe[17875]: CCE521FCD0: to=&lt;****@****.**&gt;, relay=mailman, delay=0.38, delays=0.09/0.01/0/0.29, dsn=2.0.0, status=sent (delivered via mailman service)
+May  1 10:46:09 server-mail postfix/qmgr[3072]: CCE521FCD0: removed
+May  1 10:46:11 server-mail postfix/smtpd[17869]: warning: hostname localhost does not resolve to address ::1: No address associated with hostname
+May  1 10:46:11 server-mail postfix/smtpd[17869]: connect from unknown[::1]
+May  1 10:46:11 server-mail postfix/smtpd[17869]: NOQUEUE: reject: RCPT from unknown[::1]: 554 5.7.1 &lt;*******@orange.fr&gt;: Relay access denied; from=&lt;***-bounces@***&gt; to=&lt;*******@****&gt; proto=ESMTP helo=&lt;[127.0.1.1]&gt;&lt;/code&gt;
+
+Ubuntu lors de la migration vers Precise modifie le fichier ''/etc/hosts'', il suffit d'[[:tutoriel:comment_editer_un_fichier|éditer le fichier]] avec les droits d'administrateur pour commenter les lignes suivantes :
+&lt;code&gt;::1 localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts&lt;/code&gt;
+
+[[http://ubuntuforums.org/showthread.php?t=1970483|Source]]
+
+===== Dbmail =====
+[[dbmail#mailman|Dbmail et Mailman]]
+
+===== Lien =====
+Site officiel [[http://www.gnu.org/software/mailman/]]
+----
+
+//Contributeurs : [[utilisateurs:Kmeleon]] ([[https://wiki.ubuntu.com/Mailman|traduction]]), [[utilisateurs:Ner0lph]] (mise aux normes), [[utilisateurs:piccolo]] (handlers).//</textarea>
+<div id="wiki__editbar" class="editBar">
+<div id="size__ctl">
+</div>
+<div class="editButtons">
+<div id="plugin__captcha_wrapper"><input type="hidden" name="8f445b9e25ba150453c96dbc95a5d2e3" value="0y83Oq4PmE/ig2HoSCp+RaO+6HNW5oDpcQMBSrn4rmQ=" /><label for="plugin__captcha">Merci de recopier le code ci-contre pour prouver que vous êtes humain :</label> <span id="plugin__captcha_code">R
+K L W I</span> <input type="text" size="5" name="dd0ba088c4c717f28dadf2eb42ff5ecc" class="edit" /> <label class="no">Merci de laisser ce champ vide : <input type="text" name="088cb114de300680dbeefc879d2eb903" /></label></div><input name="do[save]" type="submit" value="Enregistrer" class="button" id="edbtn__save" accesskey="s" tabindex="4" title="Enregistrer [S]" />
+<input name="do[preview]" type="submit" value="Aperçu" class="button" id="edbtn__preview" accesskey="p" tabindex="5" title="Aperçu [P]" />
+<input name="do[draftdel]" type="submit" value="Annuler" class="button" tabindex="6" />
+</div>
+<div class="summary">
+<label class="nowrap" for="edit__summary"><span>Résumé</span> <input type="text" id="edit__summary" name="summary" class="edit" size="50" tabindex="2" /></label>
+</div>
+</div>
+<div class="license">
+Note : En modifiant cette page, vous acceptez que le contenu soit placé sous les termes de la licence suivante : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" class="urlextern">CC Paternité-Partage des Conditions Initiales à l'Identique 3.0 Unported</a></div>
+</div></form>
+</div>
+<script type="text/javascript">
+   var saveBtn = document.getElementById('edbtn__save');
+   saveBtn.disabled = true;
+   saveBtn.style.color = 'gray';
+   saveBtn.style.backgroundColor = '#EEEEEE';
+   saveBtn.value = 'Enregistrer (Click \'Aperçu\' first)';
+</script>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="mailman?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mailman?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="mailman?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="mailman?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="mailman?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

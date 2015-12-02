@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>tutoriel:verrouiller_les_parametres_de_firefox</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-09-03T10:10:36+0200"/>
+<meta name="keywords" content="tutoriel,navigateur,administration"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/verrouiller_les_parametres_de_firefox?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="verrouiller_les_parametres_de_firefox"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/verrouiller_les_parametres_de_firefox"/>
+<link rel="canonical" href="../../../tutoriel/verrouiller_les_parametres_de_firefox"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:verrouiller_les_parametres_de_firefox","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="verrouiller_les_parametres_de_firefox#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="verrouiller_les_parametres_de_firefox#preparation">Préparation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="verrouiller_les_parametres_de_firefox#creation_et_exemple_du_fichier_de_verrouillage">Création et exemple du fichier de verrouillage</a></div></li>
+<li class="level2"><div class="li"><a href="verrouiller_les_parametres_de_firefox#activation_du_fichier_de_verrouillage">Activation du fichier de verrouillage</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="verrouiller_les_parametres_de_firefox#parametres_de_verrouillage">Paramètres de verrouillage</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="verrouiller_les_parametres_de_firefox#page_d_accueil">Page d’accueil</a></div></li>
+<li class="level2"><div class="li"><a href="verrouiller_les_parametres_de_firefox#telechargements">Téléchargements</a></div></li>
+<li class="level2"><div class="li"><a href="verrouiller_les_parametres_de_firefox#vie_privee">Vie privée</a></div></li>
+<li class="level2"><div class="li"><a href="verrouiller_les_parametres_de_firefox#reseau">Réseau</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="verrouiller_les_parametres_de_firefox#conclusion">Conclusion</a></div></li>
+<li class="level1"><div class="li"><a href="verrouiller_les_parametres_de_firefox#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../../../navigateur" class="wikilink1" title="navigateur" rel="tag">navigateur</a>,
+	<a href="../../../administration" class="wikilink1" title="administration" rel="tag">administration</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="verrouiller_des_parametres_de_firefox">Verrouiller des paramètres de Firefox</h1>
+<div class="level1">
+
+<p>
+Ce tutoriel vous explique comment verrouiller certains paramètres de <a href="../../../firefox" class="wikilink1" title="firefox">Firefox</a> afin d&#039;éviter des modifications de ceux-ci par les utilisateurs.<br/>
+
+Vous pouvez ainsi, par exemple, choisir et verrouiller la page de lancement de Firefox. Ou encore, et c&#039;est le plus intéressant, de paramétrer et de verrouiller l&#039;accès réseau lors d&#039;un passage par un <a href="../../../proxy" class="wikilink1" title="proxy">proxy</a>: les utilisateurs pourront toujours accéder à internet mais ne pourront plus modifier les paramètres d&#039;accès réseau.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Verrouiller des paramètres de Firefox" [50-593] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [594-671] -->
+<h2 class="sectionedit3" id="preparation">Préparation</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT3 SECTION "Préparation" [672-697] -->
+<h3 class="sectionedit4" id="creation_et_exemple_du_fichier_de_verrouillage">Création et exemple du fichier de verrouillage</h3>
+<div class="level3">
+
+<p>
+S&#039;il n&#039;existe pas déjà, <a href="../../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">créez avec les droits d&#039;administration</a> le fichier <strong>/usr/lib/firefox/firefox.cfg</strong>.<br/>
+
+Insérez-y les informations suivantes, qui ne sont qu&#039;un exemple de verrouillage à adapter selon vos besoins en suivant les quelques paramètres portés au <a href="verrouiller_les_parametres_de_firefox#quelques_parametres_de_verrouillage" title="tutoriel:verrouiller_les_parametres_de_firefox ↵" class="wikilink1">chapitre suivant</a>:
+</p>
+<pre class="code file php"><span class="co1">// Fichier verrouillant la page d'accueil et la configuration du proxy</span>
+lockPref<span class="br0">&#40;</span><span class="st0">&quot;network.proxy.type&quot;</span><span class="sy0">,</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Configuration manuelle du proxy</span>
+<span class="co1">// Pour une configuration automatique par url, mettre la valeur de ce paramètre à 2 et définir l'url du fichier PAC</span>
+<span class="co1">// lockPref(&quot;network.proxy.autoconfig_url&quot;, &quot;url_fichier_PAC&quot;);</span>
+lockPref<span class="br0">&#40;</span><span class="st0">&quot;network.proxy.http&quot;</span><span class="sy0">,</span> <span class="st0">&quot;192.168.0.1&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Adresse du proxy</span>
+lockPref<span class="br0">&#40;</span><span class="st0">&quot;network.proxy.http_port&quot;</span><span class="sy0">,</span> <span class="nu0">3128</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Port d'écoute du proxy</span>
+lockPref<span class="br0">&#40;</span><span class="st0">&quot;network.proxy.share_proxy_settings&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Utiliser le proxy pour tous les protocoles</span>
+lockPref<span class="br0">&#40;</span><span class="st0">&quot;network.proxy.no_proxies_on&quot;</span><span class="sy0">,</span> <span class="st0">&quot;127.0.0.1, localhost&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Pas de proxy pour localhost et 127.0.0.1</span>
+lockPref<span class="br0">&#40;</span><span class="st0">&quot;browser.startup.homepage&quot;</span><span class="sy0">,</span> <span class="st0">&quot;http://www.ubuntu-fr.org&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Page d'accueil</span></pre>
+
+</div>
+<!-- EDIT4 SECTION "Création et exemple du fichier de verrouillage" [698-1901] -->
+<h3 class="sectionedit5" id="activation_du_fichier_de_verrouillage">Activation du fichier de verrouillage</h3>
+<div class="level3">
+
+<p>
+<a href="../../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Éditez avec les droits d&#039;administration</a> le fichier <strong>/etc/firefox/syspref.js</strong> pour y ajouter les deux lignes suivantes à la fin du fichier :
+</p>
+<pre class="code file php">pref<span class="br0">&#40;</span><span class="st0">&quot;general.config.obscure_value&quot;</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+pref<span class="br0">&#40;</span><span class="st0">&quot;general.config.filename&quot;</span><span class="sy0">,</span> <span class="st0">&quot;firefox.cfg&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre>
+
+<p>
+Relancez <a href="../../../firefox" class="wikilink1" title="firefox">Firefox</a>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Activation du fichier de verrouillage" [1902-2266] -->
+<h2 class="sectionedit6" id="parametres_de_verrouillage">Paramètres de verrouillage</h2>
+<div class="level2">
+
+<p>
+Une liste décrivant la plupart des paramètres disponibles peut être consultée en ligne <a href="http://kb.mozillazine.org/About:config_entries" class="urlextern" title="http://kb.mozillazine.org/About:config_entries"  rel="nofollow">ici</a>. Vous pouvez également consulter la page <code>about:config</code><sup><a href="verrouiller_les_parametres_de_firefox#fn__1" id="fnt__1" class="fn_top">1)</a></sup> directement à partir de <a href="../../../firefox" class="wikilink1" title="firefox">Firefox</a>.<br/>
+
+Vous pouvez évidemment <a href="../../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">modifier le fichier</a> <strong>/usr/lib/firefox/firefox.cfg</strong> pour ajouter un ou plusieurs de ces paramètres mais ce chapitre s’arrêtera au verrouillage:
+</p>
+<ul>
+<li class="level1"><div class="li"> de la <a href="verrouiller_les_parametres_de_firefox#page_d_accueil" title="tutoriel:verrouiller_les_parametres_de_firefox ↵" class="wikilink1">page d&#039;accueil</a> pour imposer son affichage dès l’ouverture de Firefox et/ou quelle page.</div>
+</li>
+<li class="level1"><div class="li"> de la fenêtre de <a href="verrouiller_les_parametres_de_firefox#telechargements" title="tutoriel:verrouiller_les_parametres_de_firefox ↵" class="wikilink1">téléchargements</a> pour imposer son comportement</div>
+</li>
+<li class="level1"><div class="li"> de votre <a href="verrouiller_les_parametres_de_firefox#vie_privee" title="tutoriel:verrouiller_les_parametres_de_firefox ↵" class="wikilink1">vie privée</a> dans le navigateur pour les différents historiques, cache et autres cookies.</div>
+</li>
+<li class="level1"><div class="li"> de la gestion du <a href="verrouiller_les_parametres_de_firefox#reseau" title="tutoriel:verrouiller_les_parametres_de_firefox ↵" class="wikilink1">réseau</a> dans le navigateur pour paramétrer le proxy.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT6 SECTION "Paramètres de verrouillage" [2267-3176] -->
+<h3 class="sectionedit7" id="page_d_accueil">Page d’accueil</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="imposer_l_affichage_de_la_page_d_accueil_a_l_ouverture_de_firefox">Imposer l’affichage de la page d’accueil à l’ouverture de Firefox</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;browser.startup.page&quot;</span><span class="sy0">,</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+</div>
+
+<h4 id="imposer_la_page_d_accueil">Imposer la page d’accueil</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;browser.startup.homepage&quot;</span><span class="sy0">,</span> <span class="st0">&quot;http://12.207.202.10&quot;</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+<p>
+où vous remplacerez <a href="https://www.google.fr/" class="urlextern" title="https://www.google.fr/"  rel="nofollow">https://www.google.fr/</a> par l’adresse de votre propre page d’accueil.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Page d’accueil" [3177-3558] -->
+<h3 class="sectionedit8" id="telechargements">Téléchargements</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="imposer_l_ouverture_de_la_fenetre_telechargements_au_debut_d_un_telechargement">Imposer l’ouverture de la fenêtre &quot;Téléchargements&quot; au début d’un téléchargement</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;browser.download.manager.showWhenStarting&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+<p>
+Pour imposer la non-ouverture de cette fenêtre, remplacez &quot;true&quot; par &quot;false&quot;
+</p>
+
+</div>
+
+<h4 id="imposer_la_fermeture_de_la_fenetre_telechargements_a_la_fin_d_un_telechargement">Imposer la fermeture de la fenêtre &quot;Téléchargements&quot; à la fin d’un téléchargement</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;browser.download.manager.closeWhenDone&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+<p>
+Pour imposer la non-fermeture de cette fenêtre, remplacez &quot;true&quot; par &quot;false&quot;
+</p>
+
+</div>
+
+<h4 id="interdire_de_cocher_toujours_demander_ou_enregistrer_les_fichiers">Interdire de cocher &quot;Toujours demander où enregistrer les fichiers&quot;</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;browser.download.useDownloadDir&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+</div>
+<!-- EDIT8 SECTION "Téléchargements" [3559-4257] -->
+<h3 class="sectionedit9" id="vie_privee">Vie privée</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="desactiver_l_historique_des_pages_visitees">Désactiver l&#039;historique des pages visitées</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;browser.history_expire_days&quot;</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="sy0">;</span>
+lockPref<span class="br0">&#40;</span><span class="st0">&quot;browser.history_expire_days.mirror&quot;</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+<p>
+Il reste possible de réactiver l’historique pendant une session, mais celui-ci est automatiquement désactivé au redémarrage de Firefox.
+</p>
+
+</div>
+
+<h4 id="desactiver_l_historique_de_la_barre_de_recherche_et_des_formulaires">Désactiver l’historique de la barre de recherche et des formulaires</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;browser.formfill.enable&quot;</span><span class="sy0">,</span> <span class="kw4">false</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+</div>
+
+<h4 id="imposer_la_suppression_des_cookies_a_la_fermeture_de_firefox">Imposer la suppression des cookies à la fermeture de Firefox</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;network.cookie.lifetimePolicy&quot;</span><span class="sy0">,</span> <span class="nu0">2</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+<p>
+Pour imposer la conservation des cookies jusqu’à leur suppression, remplacer &quot;2&quot; par &quot;0&quot;.
+</p>
+
+</div>
+
+<h4 id="imposer_l_effacement_des_traces_a_la_fermeture_de_firefox">Imposer l’effacement des traces à la fermeture de Firefox</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;privacy.sanitize.sanitizeOnShutdown&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+</div>
+
+<h4 id="imposer_quelles_traces_effacer_a_la_fermeture_de_firefox">Imposer quelles traces effacer à la fermeture de Firefox</h4>
+<div class="level4">
+<pre class="code file php">Cache <span class="sy0">:</span> lockPref<span class="br0">&#40;</span><span class="st0">&quot;privacy.item.cache&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span>
+Cookies <span class="sy0">:</span> lockPref<span class="br0">&#40;</span><span class="st0">&quot;privacy.item.cookies&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span>
+Téléchargements <span class="sy0">:</span> lockPref<span class="br0">&#40;</span><span class="st0">&quot;privacy.item.downloads&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span>
+Données de formulaires enregistrés <span class="sy0">:</span> lockPref<span class="br0">&#40;</span><span class="st0">&quot;privacy.item.formdata&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span>
+Historique de navigation <span class="sy0">:</span> lockPref<span class="br0">&#40;</span><span class="st0">&quot;privacy.item.history&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span>
+Mots de passe <span class="sy0">:</span> lockPref<span class="br0">&#40;</span><span class="st0">&quot;privacy.item.passwords&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span>
+Sessions d’identification <span class="sy0">:</span> lockPref<span class="br0">&#40;</span><span class="st0">&quot;privacy.item.sessions&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+<p>
+Mettre &quot;true&quot; pour activer l’effacement, et mettre &quot;false&quot; pour le désactiver.
+</p>
+
+</div>
+
+<h4 id="demander_avant_d_effacer_les_traces">Demander avant d’effacer les traces</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;privacy.sanitize.promptOnSanitize&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+<p>
+Mettre &quot;true&quot; pour activer la demande, et mettre &quot;false&quot; pour désactiver la demande.
+</p>
+
+</div>
+
+<h4 id="ne_pas_enregistrer_les_mots_de_passe">Ne pas enregistrer les mots de passe</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;signon.rememberSignons&quot;</span><span class="sy0">,</span> <span class="kw4">false</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+</div>
+<!-- EDIT9 SECTION "Vie privée" [4258-6039] -->
+<h3 class="sectionedit10" id="reseau">Réseau</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="forcer_l_utilisation_d_un_proxy">Forcer l’utilisation d’un proxy</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;network.proxy.type&quot;</span><span class="sy0">,</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+</div>
+
+<h4 id="forcer_l_adresse_et_le_port_du_proxy">Forcer l’adresse et le port du proxy</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;network.proxy.http&quot;</span><span class="sy0">,</span> <span class="st0">&quot;192.168.0.254&quot;</span><span class="br0">&#41;</span> <span class="sy0">;</span>
+lockPref<span class="br0">&#40;</span><span class="st0">&quot;network.proxy.http_port&quot;</span><span class="sy0">,</span> <span class="nu0">3128</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+<p>
+ Modifiez les adresses selon votre réseau !
+</p>
+
+</div>
+
+<h4 id="forcer_l_application_de_la_meme_adresse_de_proxy_pour_tous_les_protocoles">Forcer l’application de la même adresse de proxy pour tous les protocoles</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;network.proxy.share_proxy_settings&quot;</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+</div>
+
+<h4 id="forcer_les_adresses_pour_lesquelles_il_ne_faut_pas_passer_par_le_proxy">Forcer les adresses pour lesquelles il ne faut pas passer par le proxy</h4>
+<div class="level4">
+<pre class="code file php">lockPref<span class="br0">&#40;</span><span class="st0">&quot;network.proxy.no_proxies_on&quot;</span><span class="sy0">,</span> <span class="st0">&quot;192.168.0.254, 127.0.0.1, localhost, 192.168.0.4&quot;</span><span class="br0">&#41;</span> <span class="sy0">;</span></pre>
+
+<p>
+Modifiez les adresses selon votre réseau !
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Réseau" [6040-6764] -->
+<h2 class="sectionedit11" id="conclusion">Conclusion</h2>
+<div class="level2">
+
+<p>
+Les verrouillages sont à utiliser avec parcimonie et précaution pour éviter de rendre imbuvable l&#039;expérience utilisateur d&#039;arpentage internet.
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Conclusion" [6765-6936] -->
+<h2 class="sectionedit12" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.linuxjournal.com/content/lock-firefox-6-prefs-also-versions-3-4-5" class="urlextern" title="http://www.linuxjournal.com/content/lock-firefox-6-prefs-also-versions-3-4-5"  rel="nofollow">Un tutoriel en anglais</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://kb.mozillazine.org/Locking_preferences" class="urlextern" title="http://kb.mozillazine.org/Locking_preferences"  rel="nofollow">Les paramètres de verrouillage</a> (en) </div>
+</li>
+<li class="level1"><div class="li"> <a href="http://kb.mozillazine.org/About:config_entries" class="urlextern" title="http://kb.mozillazine.org/About:config_entries"  rel="nofollow">Liste détaillée des paramètres de configuration</a> (en)</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="http://doc.ubuntu-fr.org/utilisateurs/bionet" class="wikilink1" title="utilisateurs:bionet">Bionet</a>.</em>
+</p>
+
+</div>
+<!-- EDIT12 SECTION "Voir aussi" [6937-] --><div class="footnotes">
+<div class="fn"><sup><a href="verrouiller_les_parametres_de_firefox#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+à saisir dans la barre d&#039;adresse</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/f79195ca597c673c84dedd4f0e787d54.xhtml used -->
+</div>
+</body>
+</html>

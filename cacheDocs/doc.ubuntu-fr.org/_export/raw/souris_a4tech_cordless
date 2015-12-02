@@ -1,0 +1,202 @@
+{{tag>Breezy Dapper Edgy Feisty matériel souris BROUILLON}}
+
+----
+
+====== Souris : A4 Tech Cordless ======
+
+> FIXME Vérifier la validité des informations de cette page. --- //[[:utilisateurs:Ner0lph|Ner0lph]] Le 25/11/2009, 12:53//
+
+//Comment configurer une souris A4 Tech Cordless (ou toute autre souris compatible)//
+
+===== Modifier la configuration de X =====
+
+Pour débuter, il faut [[:tutoriel:comment_modifier_un_fichier|modifier le fichier]] de configuration de X, ce qui n'est pas une mince affaire pour le débutant. Nous allons pour simplifier grandement la tâche.
+
+==== xorg.conf ====
+
+> FIXME Dans les versions récentes d'Ubuntu, ce fichier n'est plus nécessaire (car les paramètres sont déterminés à la volée au démarrage), sauf configuration spécifique. Merci d'y ajouter plus de détails concernant cela. --- //[[:utilisateurs:Ner0lph|Ner0lph]] Le 25/11/2009, 12:47//
+
+Ce fichier xorg.conf regroupe les paramètres vitaux de votre interface graphique. Si vous prenez le soin de visiter, vous trouverez les paramètres de votre écran, votre carte graphique, de votre clavier et du sujet qui nous intéresse : la souris.
+
+[[:tutoriel:comment_modifier_un_fichier|Ouvrez le fichier]] **/etc/X11/xorg.conf** et modifier comme ceci :
+
+<code>Section "InputDevice"
+    Identifier     "Configured Mouse"
+    Driver         "mouse"    
+    Option         "CorePointer"
+    Option         "Device" "/dev/input/mice"
+    Option         "Protocol" "ExplorerPS/2"
+    Option         "Emulate3Buttons" "false"
+    Option         "Buttons" "7"
+    Option         "ZAxisMapping" "4 5"
+EndSection</code>
+
+
+À ce stade, les boutons latéraux fonctionnent avec Firefox ce qui la plupart du temps est suffisant. Maintenant, si vous voulez aller plus loin, il faut lire la suite.
+
+Dans Firefox, les fonctions qui permettent de revenir en arrière avec les boutons latéraux, fermer un onglet avec le bouton du milieu ne marchent que si la valeur  ''middlemouse.contentLoadURL'' est sur ''False'' dans about:config.
+
+  * Lancez Firefox puis dans la barre d'adresse tapez « about:config ».
+  * Cherchez la clé ''middlemouse.contentLoadURL'' et donnez la valeur ''False''.
+
+===== imwheel =====
+
+==== Installation ====
+
+[[:tutoriel:comment_installer_un_paquet|Installez le paquet]] **[[apt://imwheel|imwheel]]**.
+
+Il est préférable ensuite de sauvegarder l'original du fichier de configuration imwheel :
+
+<code>sudo cp /etc/X11/imwheel/startup.conf /etc/X11/imwheel/startup.conf.bak</code>
+
+
+==== Configuration ====
+
+Lancez la commande suivante
+
+<code>sudo gedit /etc/X11/imwheel/startup.conf</code>
+
+Trouvez la ligne 
+<code>IMWHEEL_START=0</code>
+Et la modifier comme ceci
+<code>IMWHEEL_START=1</code>
+
+Décommenter la ligne :
+
+<code>IMWHEEL_PARAMS='-k -b "0 0 9 8"'</code>
+
+Ctrl + Alt + Backspace pour redémarrer le serveur X. Il ne vous reste qu'a créer le fichier .imwhellrc, comme montré ci dessous. A la suite de cette étape la configuration pour les utilisateurs de Edgy est terminée.
+
+
+==== Configuration de .imwheelrc ====
+
+[[:tutoriel:comment_modifier_un_fichier|Créez un fichier]] **.imwheelrc** dans votre répertoire personnel.
+
+=== Un fichier passe partout ===
+
+et tapez ce texte pour une configuration gnome ou kde :
+
+<code>
+ ".*"
+ None, Up, Alt_L|Left
+ None, Down, Alt_L|Right
+  
+ "(null)"
+ None, Up, Alt_L|Left
+ None, Down, Alt_L|Right
+</code>
+
+=== Un fichier pour Gnome ===
+
+Le fichier imwheelrc spécifique à Gnome à vous de choisir ;) :
+
+<code>"^Firefox-bin$"
+# Flip between browser tabs
+None, Up, Alt_L|Left
+None, Down, Alt_L|Right
+
+"Nautilus"
+# suivant/precedent
+None, Left, Alt_L|Left
+None, Right, Alt_L|Right
+# Zoom
+Control_L, Up, Control_L|KP_Subtract
+Control_L, Down, Control_L|KP_Add
+
+#Navigue entre les onglets du terminal
+"^gnome-terminal"
+None, Up, Control_L|Page_Up
+None, Down, Control_L|Page_Down
+
+"Rhythmbox"
+None, Up, Alt_L|Left
+None, Down, Alt_L|Right
+
+".*"
+#None, Up, Alt_L|Left
+#None, Down, Alt_L|Right
+</code>
+
+==== La configuration pour tous ====
+
+Pour que la configuration soit commune à l'ensemble des utilisateurs, il faut modifier le fichier /etc/X11/imwheel/imwheelrc avec les droits de superutilisateur.
+
+
+==== Comment ça marche ? ====
+
+La syntaxe du fichier imwheelrc utilise les règles suivantes :
+
+"NOM DU PROGRAMME"
+
+TOUCHE CLAVIER UTILISE (en même temps que les boutons latéraux), BOUTON UTILISE, TOUCHES DU CLAVIER, COMBIEN DE TEMPS
+
+Pour ceux désirant personnaliser l'utilisation de leur souris, l'auteur de imwheel met à disposition son fichier de configuration à cette adresse : http://imwheel.sourceforge.net/imwheelrc.
+
+===== Pour Feisty =====
+
+
+La configuration se fera en 4 étapes avec des parties communes à Edgy, d'autres différentes et une nouveauté.
+
+
+==== Modification de xorg.conf ====
+
+Utiliser la configuration suivante de la section "InputDevice" correspondant à la souris :
+
+<code>
+Section "InputDevice"
+	Identifier	"Configured Mouse"
+	Driver		"mouse"
+	Option		"CorePointer"
+	Option		"Device"	"/dev/input/mice"
+	Option		"Protocol"	"ExplorerPS/2"
+	Option		"Emulate3Buttons"	"false"
+	Option		"Buttons"	"7"
+	Option		"ZAxisMapping"	"4 5"
+        Option          "ButtonMapping" "1 2 3 7 6"	
+EndSection
+</code>
+
+
+==== Configuration de imwheel ====
+
+Installer imwheel comme pour Edgy et utiliser la même configuration.
+
+
+==== Configuration de imwheelrc ====
+
+Là aussi la configuration est la même que pour Edgy.
+
+
+
+
+==== Création d'un script utilisant xmodmap ====
+
+  * Création d'un script de démarrage imwheel : <code>
+sudo mkdir /home/login
+gksudo gedit /home/login/souris
+</code>
+  * Insérer le texte suivant dans le nouveau fichier "souris" : <code>
+#!/bin/sh
+exec xmodmap -e "pointer = 1 2 3 4 5 6 7" &
+exec imwheel -k -b "6 7" &
+exec $REALSTARTUP
+</code>
+  * Donner les droits d'exécution de ce script à tous les utilisateurs : <code>
+sudo chmod +x /home/login/souris
+</code>
+  * Configurer le script pour qu'il se lance à chaque démarrage :
+      - aller dans //Système -> Préférences -> Sessions// ;
+      - cliquer sur l'onglet //Programmes au démarrage// ;
+      - cliquer sur //Ajouter//, dans //Nom// taper ''souris'' et dans //Commande// taper ''/home/login/souris'' ;
+      - cliquer sur //Valider// et //Fermer//.
+  * Redémarrer votre environnement graphique par un petit <Ctrl><Alt><Eff.Arr.> et ça marche !!!
+
+
+
+===== Pour aller plus loin =====
+
+Consulter la page souris en suivant ce [[:souris#les_exemples_configuration_de_imwheel|lien]].
+
+----
+
+//Contributeurs principaux : FIXME.//

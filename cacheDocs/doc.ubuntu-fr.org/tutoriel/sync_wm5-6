@@ -1,0 +1,801 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:sync_wm5-6 - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2011-05-09T13:20:23+0200"/>
+<meta name="keywords" content="tutoriel,pda,hardy,intrepid,jaunty,lucid,maverick,courrier,bureautique,synchronisation"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/sync_wm5-6?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/sync_wm5-6?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/sync_wm5-6"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/sync_wm5-6"/>
+<link rel="canonical" href="sync_wm5-6"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:sync_wm5-6","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="sync_wm5-6#main" tabindex="1">Contenu</a> | <a href="sync_wm5-6#qsearch__in" tabindex="2">Rechercher</a> | <a href="sync_wm5-6#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="sync_wm5-6" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="sync_wm5-6" >tutoriel:sync_wm5-6</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+Selon les <a href="../tags">tags</a> présents sur cette page, les informations qu'elle contient  n'ont pas été vérifiées depuis <a href="../lucid">Ubuntu 10.04 LTS.</a><br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="sync_wm5-6#faire_communiquer_ubuntu_avec_l_appareil_mobile">Faire communiquer Ubuntu avec l&#039;appareil mobile</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="sync_wm5-6#pre-requis">Pré-requis</a></div></li>
+<li class="level2"><div class="li"><a href="sync_wm5-6#installation_sous_jaunty_intrepid_hardy_karmic_lucid_maverick">Installation sous Jaunty, Intrepid, Hardy, Karmic, Lucid, Maverick</a></div></li>
+<li class="level2"><div class="li"><a href="sync_wm5-6#cas_particuliers">Cas particuliers</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="sync_wm5-6#premier_test">Premier Test</a></div></li>
+<li class="level1"><div class="li"><a href="sync_wm5-6#la_synchronisation">La synchronisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="sync_wm5-6#les_partenariats">Les partenariats</a></div></li>
+<li class="level2"><div class="li"><a href="sync_wm5-6#utilisation">Utilisation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="sync_wm5-6#navigation_dans_les_fichiers_du_pdasmartphone_sous_gnome">Navigation dans les fichiers du PDA/smartphone sous GNOME</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="sync_wm5-6#installation1">Installation</a></div></li>
+<li class="level2"><div class="li"><a href="sync_wm5-6#utilisation1">Utilisation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="sync_wm5-6#installation_de_logiciel_cab">Installation de logiciel (.cab)</a></div></li>
+<li class="level1"><div class="li"><a href="sync_wm5-6#sources_et_liens">Sources et liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="http://doc.ubuntu-fr.org/pda" class="wikilink1" title="pda" rel="tag">pda</a>,
+	<a href="../hardy" class="wikilink1" title="hardy" rel="tag">hardy</a>,
+	<a href="../intrepid" class="wikilink1" title="intrepid" rel="tag">intrepid</a>,
+	<a href="../jaunty" class="wikilink1" title="jaunty" rel="tag">jaunty</a>,
+	<a href="../lucid" class="wikilink1" title="lucid" rel="tag">lucid</a>,
+	<a href="../maverick" class="wikilink1" title="maverick" rel="tag">maverick</a>,
+	<a href="http://doc.ubuntu-fr.org/courrier" class="wikilink1" title="courrier" rel="tag">courrier</a>,
+	<a href="../bureautique" class="wikilink1" title="bureautique" rel="tag">bureautique</a>,
+	<a href="../synchronisation" class="wikilink1" title="synchronisation" rel="tag">synchronisation</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_synchroniser_ubuntu_avec_les_pda_et_smartphones_sous_windows_mobile_56_ou_windows_phone7_mode_synchronisation_rndis">Comment synchroniser Ubuntu avec les PDA et smartphones sous Windows™ Mobile 5/6 ou Windows Phone7 ? (mode synchronisation RNDIS)</h1>
+<div class="level1">
+
+<p>
+La synchronisation est désormais possible en local avec les PDA/Smartphones sous Windows mobile 5/6 ainsi que sous Windows Phone 7. Si vous cherchez une méthode de synchronisation locale et à distance, tournez vous vers <a href="../funambol" class="wikilink1" title="funambol">funambol</a>.
+</p>
+
+<p>
+<p><div class="noteclassic">L&#039;ancien mode de synchronisation série <abbr title="Universal Serial Bus">USB</abbr> est documenté sur la page <a href="http://doc.ubuntu-fr.org/tutoriel/comment_connecter_un_pda_sous_windows_mobile_5_en_usb" class="wikilink1" title="tutoriel:comment_connecter_un_pda_sous_windows_mobile_5_en_usb">Comment connecter un PDA sous Windows Mobile 5 en USB</a>.
+</div></p>
+</p>
+
+<p>
+Ce sujet évoluant rapidement, les indications de cette page peuvent être rapidement dépassées. N&#039;hésitez pas à vous reporter aux liens à la fin de cette page.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Comment synchroniser Ubuntu avec les PDA et smartphones sous Windows™ Mobile 5/6 ou Windows Phone7 ? (mode synchronisation RNDIS)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="104-812" /><input type="submit" value="Modifier" class="button" title="Comment synchroniser Ubuntu avec les PDA et smartphones sous Windows™ Mobile 5/6 ou Windows Phone7 ? (mode synchronisation RNDIS)" /></div></form></div>
+<h2 class="sectionedit2" id="faire_communiquer_ubuntu_avec_l_appareil_mobile">Faire communiquer Ubuntu avec l&#039;appareil mobile</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> La communication avec le pda se fait avec <strong>SynCE</strong>. Il existe 2 implémentations de dcmm permettant de se connecter pour le système RNDIS : synce-hal et odccm (obsolète). synce_hal devrait faire tout ce que faisait l&#039;implémentation odccm, mais d&#039;une façon plus simple et plus propre.<br/>
+</div>
+</li>
+<li class="level1"><div class="li"> La synchronisation se fait avec la librairie d&#039;exécution <strong>OpenSync</strong> qui nécessite une interface utilisateur pour la configurer : en ligne de commande (Msynctool) ou avec une interface graphique.</div>
+</li>
+<li class="level1"><div class="li"> La navigation dans les fichiers de l&#039;appareil mobile est possible sous gnome avec <strong>synce-gvfs</strong>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Faire communiquer Ubuntu avec l'appareil mobile] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="813-1474" /><input type="submit" value="Modifier" class="button" title="Faire communiquer Ubuntu avec l'appareil mobile" /></div></form></div>
+<h3 class="sectionedit3" id="pre-requis">Pré-requis</h3>
+<div class="level3">
+
+<p>
+SynCE utilise le mode de synchronisation RNDIS d&#039;ActiveSync. Le périphérique doit être réglé pour utiliser ce mode sinon cela ne marchera pas.
+Sous WM5/6, l&#039;appareil est normalement déjà configuré en RNDIS. Si ce n&#039;est pas le cas, procéder comme suit :
+</p>
+<ul>
+<li class="level1"><div class="li"> Sous WM5 : Démarrer → Paramètres → Connexions → Mode ActiveSync : choisir &quot;Mode sync RNDIS&quot;.</div>
+</li>
+<li class="level1"><div class="li"> Sous WM6 : Démarrer → Paramètres → Connexions → Paramètres <abbr title="Universal Serial Bus">USB</abbr> : choisir &quot;ActiveSync&quot;.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1475-1961" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h3 class="sectionedit4" id="installation_sous_jaunty_intrepid_hardy_karmic_lucid_maverick">Installation sous Jaunty, Intrepid, Hardy, Karmic, Lucid, Maverick</h3>
+<div class="level3">
+
+<p>
+Des dépôts contenant les dernières versions sont disponible à cette adresse :
+</p>
+<pre class="code">deb http://ppa.launchpad.net/synce/ubuntu jaunty main
+deb-src http://ppa.launchpad.net/synce/ubuntu jaunty main</pre>
+<pre class="code">deb http://ppa.launchpad.net/synce/ubuntu intrepid main
+deb-src http://ppa.launchpad.net/synce/ubuntu intrepid main</pre>
+<pre class="code">deb http://ppa.launchpad.net/synce/ubuntu hardy main
+deb-src http://ppa.launchpad.net/synce/ubuntu hardy main</pre>
+<pre class="code">deb http://ppa.launchpad.net/synce/ubuntu karmic main
+deb-src http://ppa.launchpad.net/synce/ubuntu karmic main</pre>
+<pre class="code">deb http://ppa.launchpad.net/synce/ubuntu lucid main
+deb-src http://ppa.launchpad.net/synce/ubuntu lucid main</pre>
+<pre class="code">deb http://ppa.launchpad.net/synce/ubuntu maverick main
+deb-src http://ppa.launchpad.net/synce/ubuntu maverick main</pre>
+
+<p>
+<p><div class="noteimportant">
+Il semble que Lucid possede une nouvelle version de SWIG, ce qui entraîne des changements dans la façon dont python est gérée. En attendant que le bug soit fixé, il est nécessaire de suivre les instructions suivantes données ici: <a href="https://bugs.launchpad.net/ubuntu/+source/opensync/+bug/584997" class="urlextern" title="https://bugs.launchpad.net/ubuntu/+source/opensync/+bug/584997"  rel="nofollow">https://bugs.launchpad.net/ubuntu/+source/opensync/+bug/584997</a>. 
+Testé par mes soins, completement opérationnel (Asus P552 Windows Phone 7 &amp; Lucid sur Dell Precision M4400). 
+
+</div></p>
+</p>
+
+<p>
+Pour importer la clé :
+</p>
+<pre class="code">gpg --keyserver keyserver.ubuntu.com --recv-key D246C25D &amp;&amp; gpg --armor --export D246C25D | sudo apt-key add - </pre>
+
+<p>
+ <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> suivants :
+</p>
+
+</div>
+
+<h5 id="pour_synce">Pour SynCE</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> <a href="apt://librapi2-tools" class="urlextern" title="apt://librapi2-tools"  rel="nofollow">librapi2-tools</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="apt://librra-tools" class="urlextern" title="apt://librra-tools"  rel="nofollow">librra-tools</a>.</div>
+</li>
+<li class="level1"><div class="li"> <a href="apt://synce-trayicon" class="urlextern" title="apt://synce-trayicon"  rel="nofollow">synce-trayicon</a> : permet de surveiller quand le périphérique Windows CE est connecté, de gérer les partenariats, les programmes installé, l&#039;état du périphérique…<br/>
+</div>
+</li>
+</ul>
+
+<p>
+Il faut ajouter le programme <strong>synce-trayicon</strong> au démarrage de la session Gnome (Système&gt;Préférences&gt;Sessions) sauf si vous utilisez la dernière version des dépôts ppa qui se lance automatiquement au démarrage mais qui n&#039;apparait qu&#039;au branchement du PDA.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="apt://synce-hal" class="urlextern" title="apt://synce-hal"  rel="nofollow">synce-hal</a></div>
+</li>
+<li class="level1"><div class="li"> pour natty le paquet synce-hal est obselete, utiliser : <a href="apt://synce-connector" class="urlextern" title="apt://synce-connector"  rel="nofollow">synce-connector</a></div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="pour_opensync">Pour OpenSync</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> <a href="apt://opensync-plugin-synce" class="urlextern" title="apt://opensync-plugin-synce"  rel="nofollow">opensync-plugin-synce</a> : le plugin SynCE pour OpenSync. OpenSync utilise SynCE pour la communication avec le PDA. Il installe par défaut synce-hal si celui-ci n&#039;a pas été installé précédemment.</div>
+</li>
+<li class="level1"><div class="li"> (Ajouter dans les sources logiciel: <a href="http://ppa.launchpad.net/opensync/opensync-0.22/ubuntu" class="urlextern" title="http://ppa.launchpad.net/opensync/opensync-0.22/ubuntu"  rel="nofollow">http://ppa.launchpad.net/opensync/opensync-0.22/ubuntu</a> maverick main ce qui permettra d&#039;installer le paquet synce-module-python et ses dépendances)</div>
+</li>
+<li class="level1"><div class="li"> <a href="apt://opensync-plugin-evolution" class="urlextern" title="apt://opensync-plugin-evolution"  rel="nofollow">opensync-plugin-evolution</a> ou <a href="apt://opensync-plugin-sunbird" class="urlextern" title="apt://opensync-plugin-sunbird"  rel="nofollow">opensync-plugin-sunbird</a> ou <a href="apt://opensync-plugin-kdepim" class="urlextern" title="apt://opensync-plugin-kdepim"  rel="nofollow">opensync-plugin-kdepim</a>… : le plugin correspondant à votre client mail et/ou calendrier pour OpenSync.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic">Il n&#039;existe pas encore de plugin de synchronisation pour <strong>thunderbird</strong> dans les dépôts. Si vous êtes intéressé par son développement, allez voir ce <a href="http://bluezync.kaarposoft.dk/" class="urlextern" title="http://bluezync.kaarposoft.dk/"  rel="nofollow">site</a>. Une solution alternative pour <strong>thunderbird</strong> consiste à passer par <strong>funambol</strong>.
+
+</div></p>
+</p>
+
+</div>
+
+<h5 id="pour_l_interface_utilisateur_de_opensync">Pour l&#039;interface utilisateur de Opensync</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> <a href="apt://multisync0.90" class="urlextern" title="apt://multisync0.90"  rel="nofollow">multisync0.90</a> : interface graphique, pour gnome (Applications&gt;Accessoires&gt;Multisync-gui)</div>
+</li>
+</ul>
+
+<p>
+ou
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="apt://multisync-tools" class="urlextern" title="apt://multisync-tools"  rel="nofollow">multisync-tools</a> : interface en ligne de commande :</div>
+</li>
+</ul>
+<pre class="code">msynctool [options]</pre>
+
+</div>
+
+<h5 id="pour_la_navigation_dans_les_fichiers_du_pda">Pour la navigation dans les fichiers du PDA</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> <a href="apt://synce-gvfs" class="urlextern" title="apt://synce-gvfs"  rel="nofollow">synce-gvfs</a></div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="il_faut_ouvrir_les_ports_locaux_dans_le_pare-feu_si_necessaire">Il faut ouvrir les ports locaux dans le pare-feu si nécessaire</h5>
+<div class="level5">
+<pre class="code">sudo ufw allow from 169.254.2.0/24 to any</pre>
+
+<p>
+Le système doit être redémarré pour une meilleur prise en compte des modifications.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Installation sous Jaunty, Intrepid, Hardy, Karmic, Lucid, Maverick] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1962-5775" /><input type="submit" value="Modifier" class="button" title="Installation sous Jaunty, Intrepid, Hardy, Karmic, Lucid, Maverick" /></div></form></div>
+<h3 class="sectionedit5" id="cas_particuliers">Cas particuliers</h3>
+<div class="level3">
+
+</div>
+
+<h5 id="ajout_et_compilation_de_rndis_noyau_linux_2624-19">Ajout et compilation de rndis (noyau Linux &lt; 2.6.24-19)</h5>
+<div class="level5">
+
+<p>
+<p><div class="notetip">Les manipulation de cette partie ne sont nécessaire que si la version de votre noyau Linux est antérieure à la 2.6.24-19.
+</p>
+
+<p>
+Votre version en cours est vérifiable par la commande :
+</p>
+<pre class="code"> uname -a </pre>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+On va chercher et compiler le nouveau pilote <strong>rndis</strong>. Tout d&#039;abord bien décharger tous les modules chargés par défaut dans le noyau :
+</p>
+<pre class="code">sudo rmmod rndis_host cdc_ether usbnet</pre>
+
+<p>
+Ensuite, suppression des anciens pilotes pour que le noyau ne les recharge pas au prochain amorçage :
+</p>
+<pre class="code">sudo rm /lib/modules/`uname -r`/kernel/drivers/net/usb/{rndis_host,cdc_ether,usbnet}.ko</pre>
+
+<p>
+Compilation des nouveaux pilotes :
+</p>
+<pre class="code">sudo apt-get install usb-rndis-source cdbs
+sudo module-assistant auto-install usb-rndis</pre>
+
+</div>
+
+<h5 id="probleme_de_connexion_ne_devrait_pas_se_poser_pour_les_versions_d_ubuntu_hardy">Problème de connexion (ne devrait pas se poser pour les versions d&#039;Ubuntu &gt; Hardy)</h5>
+<div class="level5">
+
+<p>
+Si vous utilisez un gestionnaire de connexion tel que network-manager ou WICD il se peut que vous perdiez votre/vos connexion(s) a(ux) reseau(x). Pour remédier a cela il suffit d&#039;identifier quelle est l&#039;interface utilise par synce pour communiquer avec le pda/smartphone.<br/>
+
+Tapez dans un terminal : 
+</p>
+<pre class="code">/sbin/ifconfig -a | grep 80:00:60:0f:e8:00  | cut -d &quot; &quot; -f 1</pre>
+
+<p>
+le résultat de la commande vous renvoie directement l&#039;interface réseau concernée. Il suffit alors d&#039;ouvrir le fichier /etc/network/interfaces et d&#039;ajouter les lignes suivantes : 
+</p>
+<pre class="code">iface &lt;interface du pda&gt; inet dhcp</pre>
+
+<p>
+(en ayant au préalable remplacé &quot;&lt;interface du pda&gt;&quot; par le résultat de la commande ci dessus et de sauvegarder le fichier.
+</p>
+
+<p>
+Afin de redistribuer convenablement les adresses IP des différentes connexions, il est nécessaire de redémarrer manuellement le réseau :
+</p>
+<pre class="code">sudo /etc/init.d/networking restart</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Cas particuliers] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5776-7604" /><input type="submit" value="Modifier" class="button" title="Cas particuliers" /></div></form></div>
+<h2 class="sectionedit6" id="premier_test">Premier Test</h2>
+<div class="level2">
+
+<p>
+Branchez votre joli PDA/smartphone et taper un petit : 
+</p>
+<pre class="code">synce-pls</pre>
+
+<p>
+ dans un terminal. Le résultat de la commande doit retourner la liste des fichiers présents dans le répertoire « Mes Documents » de l&#039;appareil mobile.
+Il est probable que cette commande vous renvoie une erreur du type 
+</p>
+<pre class="code"> ** Message: Device /org/freedesktop/Hal/devices/net_80_00_60_0f_e8_00 not fully set in Hal, skipping
+** Message: Odccm is not running, ignoring
+synce-pls: Could not find configuration at path &#039;(Default)&#039; </pre>
+
+<p>
+On va donc lui donner un fichier de configuration pour y remedier; pour cela; entrez dans un terminal:
+</p>
+<pre class="code"> sudo gedit /etc/synce-hal.conf </pre>
+
+<p>
+Puis rajouter les lignes 
+</p>
+<pre class="code">[general]
+loglevel: debug</pre>
+
+<p>
+Sauvegardez le fichier; fermez gedit; Rebranchez votre terminal; et cette fois le problème devrait être résolu.
+</p>
+
+<p>
+<p><div class="noteimportant">Il semble que, avec la version du paquet synce-hal proposée dans ubuntu, il faut créer un fichier /etc/dbus-1/system.d/synce-hal.conf avec le contenu suivant:
+</p>
+<pre class="code">&lt;!DOCTYPE busconfig PUBLIC
+ &quot;-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN&quot;
+ &quot;http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd&quot;&gt;
+&lt;busconfig&gt;
+
+  &lt;!-- This configuration file specifies the required security policies
+       for synce-hal to work. --&gt;
+
+  &lt;!-- Allow anyone to invoke methods on the Synce interface --&gt;
+  &lt;policy context=&quot;default&quot;&gt;
+    &lt;allow send_destination=&quot;org.freedesktop.Hal&quot;
+       send_interface=&quot;org.freedesktop.Hal.Device.Synce&quot;/&gt;
+
+  &lt;/policy&gt;
+
+&lt;/busconfig&gt;</pre>
+
+<p>
+source : <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=315034" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=315034"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=315034</a>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Premier Test] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7605-9240" /><input type="submit" value="Modifier" class="button" title="Premier Test" /></div></form></div>
+<h2 class="sectionedit7" id="la_synchronisation">La synchronisation</h2>
+<div class="level2">
+
+<p>
+La gestion de la synchronisation peut se faire par des interfaces graphiques. Choisissez en une qui correspond à votre environnement de bureau.
+</p>
+
+<p>
+Si vous avez un décalage horaire (décalage entre l&#039;heure locale et l&#039;heure UTC) entre un événement créé sur le PDA et l&#039;évenement synchronisé sur votre ordinateur, la solution consiste à mettre la variable &quot;AppendDefaultTimezone&quot; à 1 dans le fichier ~/.synce/config.xml.
+</p>
+
+</div>
+
+<h4 id="synchronisation_pour_gnome">Synchronisation pour GNOME</h4>
+<div class="level4">
+
+<p>
+ActiveSync demande de créer des partenariats avant de pouvoir synchroniser deux éléments. Il y a une limite de deux partenariats pour windows mobile. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[La synchronisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9241-9891" /><input type="submit" value="Modifier" class="button" title="La synchronisation" /></div></form></div>
+<h3 class="sectionedit8" id="les_partenariats">Les partenariats</h3>
+<div class="level3">
+
+<p>
+Les partenariats peuvent être configurés en ligne de commande ou graphiquement.
+</p>
+
+</div>
+
+<h5 id="methode_graphique">Méthode graphique :</h5>
+<div class="level5">
+
+<p>
+Cliquez droit sur <strong>synce-trayicon</strong>, sélectionnez le PDA et cliquez sur &quot;View device status&quot;. Une fenêtre s&#039;ouvre, choisissez l&#039;onglet &quot;Partners&quot;. Cliquez sur &quot;Create&quot;. Entrez un nom de partenariat et sélectionnez tous les items que vous désirez synchroniser notamment &quot;Calendar&quot;, &quot;Contacts&quot; et &quot;Tasks&quot;.  Cliquez sur valider.
+Pour le supprimer : &quot;remove&quot;.
+</p>
+
+</div>
+
+<h5 id="methode_en_ligne_de_commande">Méthode en ligne de commande :</h5>
+<div class="level5">
+<pre class="code">synce-create-partnership &quot;&lt;nom_du_partenariat&gt;&quot; &quot;&lt;éléments_à_synchroniser&quot;</pre>
+
+<p>
+Les éléments que l&#039;ont peut synchroniser sont à choisir parmi la liste suivante : Contacts,Calendar,Tasks,Files. Ils doivent être séparés par un virgule dans la commande précédente.
+</p>
+
+<p>
+Pour supprimer un partenariat :
+</p>
+<pre class="code">synce-delete-partnership</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Les partenariats] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9892-10764" /><input type="submit" value="Modifier" class="button" title="Les partenariats" /></div></form></div>
+<h3 class="sectionedit9" id="utilisation">Utilisation</h3>
+<div class="level3">
+
+<p>
+Une fois le partenariat établi, il faut créer un groupe et choisir les éléments à synchroniser.
+</p>
+
+</div>
+
+<h5 id="methode_graphique1">Méthode graphique :</h5>
+<div class="level5">
+
+<p>
+Lancez Multisync-gui dans Application&gt;Accessoire puis ajouter un groupe. Allez dans modifier puis &quot;Add Member&quot; : choisissez deux éléments : synce-opensync-plugin dans tous les cas et le plugin correspondant à votre client mail (ex : evo2-sync pour évolution si vous avez installé opensync-plugin-evolution). Ensuite utilisez le bouton Actualiser pour lancer la synchronisation.
+</p>
+
+</div>
+
+<h5 id="methode_en_ligne_de_commande1">Méthode en ligne de commande :</h5>
+<div class="level5">
+
+<p>
+Avec multisync-tools
+</p>
+
+<p>
+D&#039;abord, il faut lister les plugins disponibles. la commande suivante :
+</p>
+<pre class="code">msynctool --listplugins</pre>
+
+<p>
+..devrait vous donner un résultat qui ressemble à ça :
+</p>
+<pre class="code">Available plugins:
+synce-opensync-plugin
+evo2-sync</pre>
+
+<p>
+Si vous utilisez utilisez le gestionnaire de mail de Kde, vous aurez <em>kdepim-sync</em> à la place de <em>evo2-sync</em>.
+</p>
+
+<p>
+Il faut ensuite créer un groupe de connexion :
+</p>
+<pre class="code">msynctool --addgroup &lt;nom du groupe&gt;</pre>
+
+<p>
+et y ajouter les 2 plugins :
+</p>
+<pre class="code">msynctool --addmember &lt;nom du groupe&gt; synce-opensync-plugin
+msynctool --addmember &lt;nom du groupe&gt; evo2-sync</pre>
+
+<p>
+(Bien sur, là encore remplacez  <em>evo2-sync</em> par <em>kdepim-sync</em> si vous êtes sous KDE).
+</p>
+
+<p>
+Et voilà. Pour lancer la synchro,
+</p>
+<ol>
+<li class="level1"><div class="li"> Commencez par vous assurer que la mémoire tampon de votre terminal est suffisante car cette commande trace énormément;</div>
+</li>
+<li class="level1"><div class="li"> Fermez votre gestionnaire de contacts/ calendrier pour éviter les verrouillages éventuels.</div>
+</li>
+<li class="level1"><div class="li"> puis lancez :</div>
+</li>
+</ol>
+<pre class="code">msynctool --sync &lt;nom du groupe&gt;</pre>
+
+<p>
+Soyez patient, ça prend un peu de temps.
+</p>
+
+<p>
+Au cours de la synchro, si des entrées en conflit existent entre le Pda et votre ordinateur, la console vous présentera les entrées en conflit (dans un format XML assez difficile à lire) et vous demandera laquelle choisir :
+</p>
+<pre class="code">Overwriting conflict
+Conflict for Mapping 0xb234e3c0: 
+Entry 1:
+UID: pas-id-48FB3D4B0000001F
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;contact&gt;
+  &lt;Revision&gt;
+    &lt;Content&gt;20081019T135939Z&lt;/Content&gt;
+  &lt;/Revision&gt;
+  &lt;Uid&gt;
+    &lt;Content&gt;pas-id-48FB3D4B0000001F&lt;/Content&gt;
+  &lt;/Uid&gt;
+  &lt;FileAs&gt;
+    &lt;Content&gt;XXXXX&lt;/Content&gt;
+  &lt;/FileAs&gt;
+  ...
+&lt;/contact&gt;
+
+Entry 2:
+UID: pas-id-CD512BC3D421FBAD
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;contact xmlns:AS=&quot;http://synce.org/formats/airsync_wm5/airsync&quot;&gt;
+  &lt;FileAs&gt;
+    &lt;Content&gt;XXXXX&lt;/Content&gt;
+  &lt;/FileAs&gt;
+  ...
+&lt;/contact&gt;
+
+
+Which entry do you want to use? [1-9] To select a side, [D]uplicate, Keep [N]ewer:</pre>
+<ul>
+<li class="level1"><div class="li"> Tapez un chiffre pour choisir une des ressources en conflit (<em>n</em> choisit l&#039;&quot;Entry <em>n</em>&quot;);</div>
+</li>
+<li class="level1"><div class="li"> D pour dupliquer les 2 entrées sur le PDA et le PC;</div>
+</li>
+<li class="level1"><div class="li"> N pour ne garder que la plus récente.</div>
+</li>
+</ul>
+
+<p>
+Il n&#039;existe malheureusement pas d&#039;option de fusion des entrées en conflit.
+</p>
+
+</div>
+
+<h4 id="synchronisation_pour_kdesynce-kpm">Synchronisation pour KDE : SynCE-KPM</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="installation">Installation</h5>
+<div class="level5">
+
+<p>
+ <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong>synce-kpm</strong>.
+</p>
+
+</div>
+
+<h5 id="synchro">Synchro</h5>
+<div class="level5">
+
+<p>
+Dans une console tapez:
+</p>
+<pre class="code">synce-kpm</pre>
+
+<p>
+Une fenêtre aux fonctionnalités de ActiveSync apparaît.
+Vous pouvez choisir les éléments à synchroniser et lancer l&#039;installation de programme (fichier .cab)
+</p>
+
+<p>
+Voila vous avez terminé, le dossier &quot;Mes Documents&quot; de votre pda/smartphone est maintenant synchronisé avec le dossier &quot;PDAFiles&quot; de votre home.
+</p>
+
+<p>
+<p><div class="noteimportant">NOTE 1.5 : pour ceux qui avait un soucis avec la note 3 le problème devrait être résolu. Vous pouvez verifier en lançant synce-kpm (voir ci-dessous).
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">Synce-kpm : avec synce-kpm vous pouvez dès à présent installer/désinstaller des logiciels (onglet Software Manager) voir l&#039;état de votre périphérique (état batterie, propriétaire, utilisation d&#039;espace disque….) et générer des partenariats à la manière d&#039;ActiveSync.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10765-14544" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h2 class="sectionedit10" id="navigation_dans_les_fichiers_du_pdasmartphone_sous_gnome">Navigation dans les fichiers du PDA/smartphone sous GNOME</h2>
+<div class="level2">
+
+<p>
+<p><div class="notetip">Ceci ne fonctionne que dans l&#039;environnement GNOME. Synce peut être interfacé avec le système de fichier GVFS pour être utilisé de manière transparente par les applications GNOME.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Navigation dans les fichiers du PDA/smartphone sous GNOME] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14545-14818" /><input type="submit" value="Modifier" class="button" title="Navigation dans les fichiers du PDA/smartphone sous GNOME" /></div></form></div>
+<h3 class="sectionedit11" id="installation1">Installation</h3>
+<div class="level3">
+
+<p>
+Il faut avoir installer ensuite le paquet <strong><a href="apt://synce-gvfs" class="urlextern" title="apt://synce-gvfs"  rel="nofollow">synce-gvfs</a></strong>.
+</p>
+
+<p>
+&lt;note tip&gt;Sous Lucid, il faut ajouter les dépôts PPA pour Synce et mettre à jour avant d&#039;installer synce-gvfs.
+</p>
+<pre class="code">sudo apt-add-repository ppa:synce/ppa ; sudo apt-get update ; sudo apt-get install synce-gvfs </pre>
+
+<p>
+Lien : <a href="https://launchpad.net/~synce/+archive/ppa" class="urlextern" title="https://launchpad.net/~synce/+archive/ppa"  rel="nofollow">https://launchpad.net/~synce/+archive/ppa</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14819-15203" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit12" id="utilisation1">Utilisation</h3>
+<div class="level3">
+
+<p>
+Il ne vous reste plus qu&#039;à parcourir le périphérique.
+</p>
+<ul>
+<li class="level1"><div class="li"> si vous avez installé le paquet <strong><a href="apt://synce-trayicon" class="urlextern" title="apt://synce-trayicon"  rel="nofollow">synce-trayicon</a></strong> et lancé l&#039;application, faites un clic droit sur l&#039;icône de la barre des tâches, puis sélectionner le PDA puis parcourir le périphérique (&quot;explore with filemanager&quot;).</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> ou en tapant dans la barre d&#039;adresse de <a href="../nautilus" class="wikilink1" title="nautilus">nautilus</a>.</div>
+</li>
+</ul>
+<pre class="code">synce:///</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15204-15622" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h2 class="sectionedit13" id="installation_de_logiciel_cab">Installation de logiciel (.cab)</h2>
+<div class="level2">
+
+<p>
+Vous pouvez bien sûr copier le .cab directement sur le PDA et l&#039;installer ensuite à partir de celui-ci mais aussi l&#039;installer directement : une fois votre fichier téléchargé sur le pc, faites un clic droit sur l&#039;icône de la barre des tâche, puis sélectionner le PDA &gt; &quot;view device status&quot;&gt; Applications &gt; Ajouter.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Installation de logiciel (.cab)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15623-15990" /><input type="submit" value="Modifier" class="button" title="Installation de logiciel (.cab)" /></div></form></div>
+<h2 class="sectionedit14" id="sources_et_liens">Sources et liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong><code>(en)</code></strong> <a href="http://www.synce.org/moin/SynceInstallation/Ubuntu/ModernDevice" class="urlextern" title="http://www.synce.org/moin/SynceInstallation/Ubuntu/ModernDevice"  rel="nofollow">http://www.synce.org/moin/SynceInstallation/Ubuntu/ModernDevice</a> — Faire communiquer Ubuntu avec l&#039;appareil mobile (worked perfectly with Mio P550 <img src="../lib/images/smileys/icon_smile2.gif" class="icon" alt="=)" />)</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>(en)</code></strong> <a href="http://www.synce.org/moin/SynceWithUbuntu" class="urlextern" title="http://www.synce.org/moin/SynceWithUbuntu"  rel="nofollow">SynceWithUbuntu</a> — Faire communiquer Ubuntu avec l&#039;appareil mobile</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>(en)</code></strong> <a href="http://ubuntuforums.org/showthread.php?p=5105611#post5105611" class="urlextern" title="http://ubuntuforums.org/showthread.php?p=5105611#post5105611"  rel="nofollow">Ubuntun-EN Forums</a> — Parcours des fichiers et répertoires du PDA/smartphone</div>
+</li>
+<li class="level1"><div class="li"> <strong><code>(en)</code></strong> <a href="http://www.opensync.org" class="urlextern" title="http://www.opensync.org"  rel="nofollow">http://www.opensync.org</a></div>
+</li>
+<li class="level1"><div class="li"> <strong><code>(en)</code></strong> <a href="http://www.synce.org" class="urlextern" title="http://www.synce.org"  rel="nofollow">http://www.synce.org</a> et <a href="http://sourceforge.net/projects/synce" class="urlextern" title="http://sourceforge.net/projects/synce"  rel="nofollow">http://sourceforge.net/projects/synce</a></div>
+</li>
+</ul>
+
+<p>
+—-
+</p>
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/tekman54000" class="wikilink2" title="utilisateurs:tekman54000" rel="nofollow">tekman54000</a>, <a href="../utilisateurs/fnx" class="wikilink1" title="utilisateurs:fnx">fnx</a>, <a href="../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="sync_wm5-6"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304940023" /><input type="hidden" name="summary" value="[Sources et liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15991-" /><input type="submit" value="Modifier" class="button" title="Sources et liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/3/38c07dbf36ce77dc6dcb10d2083a9741.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/sync_wm5-6?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/sync_wm5-6?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/sync_wm5-6?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/sync_wm5-6?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/sync_wm5-6?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

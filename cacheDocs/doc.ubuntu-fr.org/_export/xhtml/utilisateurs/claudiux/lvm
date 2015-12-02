@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>utilisateurs:claudiux:lvm</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-30T19:42:49+0200"/>
+<meta name="keywords" content="utilisateurs,claudiux,lvm"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../../index.html"/>
+<link rel="contents" href="../../../../utilisateurs/claudiux/lvm?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../../feed.php?mode=list&amp;ns=utilisateurs:claudiux"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="lvm"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../../raw/utilisateurs/claudiux/lvm"/>
+<link rel="canonical" href="../../../../utilisateurs/claudiux/lvm"/>
+<link rel="stylesheet" type="text/css" href="../../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='utilisateurs:claudiux';var JSINFO = {"id":"utilisateurs:claudiux:lvm","namespace":"utilisateurs:claudiux"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<h1 class="sectionedit1" id="lvmlogical_volume_management">LVM : Logical Volume Management</h1>
+<div class="level1">
+
+<p>
+Puis-je faire en sorte que mes partitions soient extensibles ?
+</p>
+
+<p>
+Je ne veux pas être bloqué avec des partitions rigides. Comment faire en sorte de pouvoir les étendre à volonté, éventuellement en les faisant déborder sur un autre disque dur ?
+</p>
+
+<p>
+Réponse:
+</p>
+
+<p>
+Il faut utiliser le LVM (Logical Volume Management) et des partitions formatées en XFS (et non en ext4) pour pouvoir en augmenter la taille sans les démonter (génial !)
+</p>
+
+<p>
+<strong>Guide rapide :</strong>
+</p>
+
+<p>
+Pour installer LVM (version 2), si ce n&#039;est déjà fait :
+</p>
+<pre class="code">sudo apt-get install lvm2</pre>
+
+<p>
+Pour créer, sur la première partition du second disque (voire le second disque entier), un volume physique (pv) pour le LVM (Opération destructrice!) :
+</p>
+<pre class="code">sudo pvcreate /dev/sdb1</pre>
+
+<p>
+(voire <code>sudo pvcreate /dev/sdb</code>)
+</p>
+
+<p>
+Pour créer un groupe de volumes (vg) sur le pv précédent (remplacer mon_groupe_de_volumes par un identifiant, tel vg0) :
+</p>
+<pre class="code">sudo vgcreate mon_groupe_de_volumes /dev/sdb1</pre>
+
+<p>
+(voire <code>/dev/sdb</code>)
+</p>
+
+<p>
+Activez votre vg :
+</p>
+<pre class="code">sudo vgchange -a y mon_groupe_de_volumes</pre>
+
+<p>
+Les commandes pvscan et vgscan vous diront l&#039;essentiel…
+</p>
+
+<p>
+Pour créer un volume logique (lv) de 2 Go, qui sera nommé home, dans le vg mon_groupe_de_volumes (remplacer mon_groupe_de_volumes par l&#039;identifiant valide, tel vg0) :
+</p>
+<pre class="code">sudo lvcreate --size 2G --name home mon_groupe_de_volumes</pre>
+
+<p>
+cela va créer le device spécial : /dev/mon_groupe_de_volumes/home que l&#039;on va pouvoir formater en XFS :
+</p>
+<pre class="code">sudo mkfs.xfs /dev/mon_groupe_de_volumes/home</pre>
+
+<p>
+On peut ensuite monter ce volume logique, par exemple dans /home (renommer l&#039;ancien /home en /home_OLD et créer le dossier /home avant d&#039;effectuer cette commande) :
+</p>
+<pre class="code">sudo mount -t xfs /dev/mon_groupe_de_volumes/home /home</pre>
+
+<p>
+Copier ou déplacer le contenu de /home_OLD dans /home.
+</p>
+
+<p>
+Modifier le /etc/fstab en conséquence.
+</p>
+
+<p>
+Pour agrandir de 5 Go la taille du lv /dev/mon_groupe_de_volumes/home :
+</p>
+
+<p>
+On fait d&#039;abord un bilan, à l&#039;aide des 3 commandes :
+</p>
+<pre class="code">df -h
+sudo pvscan
+sudo lvscan</pre>
+
+<p>
+On agrandit le volume logique (lv) :
+</p>
+<pre class="code">sudo lvextend --size +5G /dev/mon_groupe_de_volumes/home</pre>
+
+<p>
+Encore faut-il que xfs prenne en compte ce nouvel espace :
+</p>
+<pre class="code">sudo xfs_growfs /home (attention, indiquer le point de montage /home, et non le lv /dev/mon_groupe_de_volumes/home !)</pre>
+
+<p>
+Les commandes :
+</p>
+<pre class="code">sudo pvscan</pre>
+
+<p>
+et
+</p>
+<pre class="code">df -h</pre>
+
+<p>
+permettent de connaître la taille occupée/restante de vos pv, et celles de vos partitions montées. 
+</p>
+
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c61b1f65567ad47f33173fdf5923c387.xhtml used -->
+</div>
+</body>
+</html>

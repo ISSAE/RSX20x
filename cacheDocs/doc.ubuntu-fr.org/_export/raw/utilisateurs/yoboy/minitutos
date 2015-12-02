@@ -1,0 +1,94 @@
+====== Refonte des minitutos ======
+<note>Cette refonte vise à simplifier les minitutos afin qu'ils aillent à l'essentiel sans oublier certaines facettes du monde ubuntu et tout en restant très concis</note>
+
+----
+----
+{{tag>Dapper Hardy Intrepid Jaunty Karmic administration sécurité tutoriel}}
+----
+======  Droits administrateur ======
+<note warning> Toute la page [[:sudo]] est beaucoup trop compliquée pour être un mini tuto. Il faut avoir une page **sudo** contenant tout ça ET une page **droit_administrateur** pour le mini-tutoriel</note>
+
+Les tâches courantes d'administrations, les modifications des fichiers systèmes et l'exécution des applications systèmes nécessitent les droits d'administrateur.
+
+Sous Ubuntu, il n'y a pas de compte administrateur activé ( //identifiant :// **root** ). C'est l'utilisateur ayant le rôle d'administrateur qui doit explicitement endosser ce rôle en tapant son propre mot de passe.
+<note important>Si vous n'êtes pas l'utilisateur principal (utilisateur créé à l'installation et qui possède nécessairement les droits d'administration) ou que vous ne possédez pas les privilèges d'administrateur, veuillez contacter l'administrateur de votre ordinateur pour qu'il effectue ces commandes à votre place.</note>
+<note warning>Les actions effectuées en tant qu'administrateur permettent d'altérer votre système intégralement, et comportent de ce fait un risque. Prenez soin de bien vérifier ce que vous faîtes, de contrôler vos sources. En cas de doutes sur une commande n'hésitez pas à demander conseil auprès de la communauté.</note>
+<note warning>La documentation ubuntu-fr.org étant rédigée par de nombreux contributeurs, nous ne pouvons certifier l'exactitude de toutes les informations que vous pouvez y trouver. Malgré notre vigilance, certaines commandes exécutées en mode administrateur peuvent comporter des risques pour votre système. Restez donc tout autant vigilant sur les informations présente dans la documentation (ainsi que sur le forum). En cas de doutes sur une commande n'hésitez pas à demander conseil auprès de la communauté.</note>
+
+===== Les raccourcis =====
+{{  applications:gksudo.jpg}} 
+Lorsque vous lancez des programmes d'administration, il vous est demandé votre mot de passe.
+
+Saisissez le mot de passe de votre compte.
+
+
+===== Déverrouiller =====
+D'autres programmes vous demanderont d'être "déverrouillé":
+[Screenshot du bouton déverrouiller]
+
+===== Autre méthode =====
+Enfin, si vous n'avez pas à votre disposition de raccourci, il faut lancer vous même la commande du programme en appuyant sur ALT et F2 en même temps, et taper votre **commande**((Une commande peut être le nom du programme, suivi ou non d'un ou plusieurs paramètres))
+^ Ubuntu / Edubuntu / Gnome | gksudo commande |
+^ Kubuntu / KDE | kdesudo commande |
+^ Xubuntu / xFCE | gksudo commande |
+
+<note important>Le mot de passe demandé est celui de l'utilisateur **courant**.  La commande sera exécutée si le mot de passe entré est correct et que l'utilisateur courant peut effectuer des tâches d'administration.</note>
+
+Ces commandes ci dessus peuvent être également lancées à partir d'un [[:terminal]] pour le même résultat, et si vous voulez lancer un programme dans le terminal, tapez :
+^ Terminal / ligne de commande | sudo commande |
+
+**gksudo** et **kdesudo** sont des interfaces graphiques pour [[:sudo]] qui est l'utilitaire permettant d'endosser le rôle de l'administrateur. Plus d'information sur cette application sur la page [[:sudo]]
+
+
+
+----
+----
+
+
+
+
+
+
+
+
+
+{{tag>Dapper Hardy Intrepid Jaunty Karmic tutoriel}}
+----
+
+====== Comment modifier un fichier ? ======
+
+Comment **créer** ou **modifier** un fichier avec ou sans les [[:sudo|droits d'administration]] et sous divers environnements en utilisant un éditeur de texte simple((éditeur disponible dés l'installation, rangés dans le menu de votre bureau, les applications pour le [[:terminal]] sont disponibles sur tous les systèmes.)).
+
+
+===== Modifier vos fichiers =====
+Pour modifier vos fichier (ceux dans votre dossier personnel), vous pouvez soit 
+  * ouvrir votre éditeur de texte (emplacement ci-dessous) et ensuite aller parcourir vos dossier en passant par le menu **Fichier→Ouvrir…**.
+  * ouvrir votre éditeur de texte et commencer à taper dans le document vierge et l'enregistrer ensuite (pour créer ce fichier)
+  * parcourir vos dossiers avec votre [[:gestionnaire de fichiers]] et ouvrir le document désiré avec un double click si il est dans le format qu'il faut (format texte simple) ou avec le bouton droit de votre souris.
+
+Vous pouvez aussi passer par le lanceur d'application en appuyant sur **ALT** et **F2** en même temps et taper la commande lançant le programme suivi du nom du fichier à créer ou modifier, soit:
+| ^  Emplacement  ^  Application  ^  Commande  ^
+^ [[:Ubuntu]]/[[:Edubuntu]]/[[:Gnome]] |  **Applications→Accessoires**  |  [[:gedit]]  | **gedit /chemin/fichier** |
+^ [[:Kubuntu]]/[[:KDE]] |    **K→Utilitaires**  |  [[:kate]]  | **kate /chemin/fichier** |
+^ [[:Xubuntu]]/[[:xFCE]] |  **Applications→Accessoires**  |  [[:mousepad]]  | **mousepad /chemin/fichier** |
+
+Ces commandes ci dessus peuvent être également lancées à partir d'un [[:terminal]] pour le même résultat, et si vous voulez utiliser un éditeur dans le terminal, tapez l'une de ces commandes :
+| ^  Application  ^  Commande  ^
+^ [[:terminal]] / ligne de commande |[[:nano]] \\ [[:vim]]  |**nano /chemin/fichier** \\ **vim /chemin/fichier** |
+
+===== Modifier les autres fichiers =====
+Vous ne pouvez pas créer ou modifier directement des fichiers qui ne vous appartiennent pas (fichier système, dans un dossier système, ou d'un autre utilisateur). Pour faire cela, il faut être administrateur et utiliser ce que l'on appelle les [[:sudo|droits d'administrateur]].
+<note warning>Vous allez ouvrir et modifier des fichiers en tant qu'administrateur. Vous risquez d'endommager des fichiers systèmes en ne les éditant pas correctement. À n'utiliser qu'en cas de besoin et en prenant soin de tout vérifier plusieurs fois.</note>
+
+Pour créer ou modifier ces fichiers, il vous faut impérativement lancer l'éditeur de fichier avec le lanceur d'application en  appuyant sur **ALT** et **F2** en même temps et taper la commande lançant l'environnement administrateur et le programme suivi du nom du fichier à créer ou modifier, soit:
+^ Ubuntu / Edubuntu / Gnome | **gksudo gedit /chemin/fichier** |
+^ Kubuntu / KDE | **kdesudo kate /chemin/fichier** |
+^ Xubuntu / xFCE | **gksudo mousepad /chemin/fichier** |
+Il vous sera alors demandé de taper votre mot de passe pour vous identifier en tant qu'administrateur.
+
+Ces commandes ci dessus peuvent être également lancées à partir d'un [[:terminal]] pour le même résultat, et si vous voulez utiliser un éditeur dans le terminal, tapez l'une de ces commandes :
+^ Terminal / ligne de commande | **sudo nano /chemin/fichier** \\ **sudo vim /chemin/fichier** |
+
+----
+----
+//Contributeurs principaux : [[:utilisateurs:Ner0lph]], [[:utilisateurs:_Enchained]], [[:utilisateurs:Grummfy]], [[utilisateurs:Fabien26]], [[utilisateurs:YannUbuntu]].//

@@ -1,0 +1,709 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>trac - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-10-02T11:12:02+0200"/>
+<meta name="keywords" content="gutsy,hardy,serveur,svn,gestion de projet,bug,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/trac?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/trac?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/trac"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/trac"/>
+<link rel="canonical" href="trac"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"trac","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="trac#main" tabindex="1">Contenu</a> | <a href="trac#qsearch__in" tabindex="2">Rechercher</a> | <a href="trac#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="trac" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="trac" >trac</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="versions">versions supportées d'Ubuntu</a>.<br />
+Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="trac#prerequis">Prérequis</a></div></li>
+<li class="level1"><div class="li"><a href="trac#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="trac#depuis_les_depots">Depuis les dépôts</a></div></li>
+<li class="level2"><div class="li"><a href="trac#depuis_subversion_version_trac_012dev">Depuis Subversion (version Trac 0.12dev)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="trac#creation_d_une_instance_trac_pour_votre_projet">Création d&#039;une instance Trac pour votre projet</a></div></li>
+<li class="level1"><div class="li"><a href="trac#creer_un_ou_plusieurs_utilisateurs_trac_et_subversion_gerer_les_autorisations">Créer un ou plusieurs utilisateurs Trac et Subversion, gérer les autorisations</a></div></li>
+<li class="level1"><div class="li"><a href="trac#installer_trac_webadmin_trac_version_011">Installer Trac WebAdmin ( Trac version &lt; 0.11 )</a></div></li>
+<li class="level1"><div class="li"><a href="trac#creer_un_hote_virtuel_apache">Créer un hôte virtuel Apache</a></div></li>
+<li class="level1"><div class="li"><a href="trac#personnaliser_trac">Personnaliser Trac</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="trac#mettre_en_couleur_le_code">Mettre en couleur le code</a></div></li>
+<li class="level2"><div class="li"><a href="trac#personnaliser_le_logo">Personnaliser le logo</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="trac#depannage">Dépannage</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="trac#no_module_named_scriptsadmin">No module named scripts.admin</a></div></li>
+<li class="level2"><div class="li"><a href="trac#clearsilver_not_installed">ClearSilver not installed</a></div></li>
+<li class="level2"><div class="li"><a href="trac#mod_pythonthis_module_does_not_exist">mod_python: This module does not exist!</a></div></li>
+<li class="level2"><div class="li"><a href="trac#no_module_named_svn">No module named svn</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="trac#references">Références</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="gutsy" class="wikilink1" title="gutsy" rel="tag">Gutsy</a>,
+	<a href="hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="http://doc.ubuntu-fr.org/svn?do=showtag&amp;tag=svn" class="wikilink1" title="svn" rel="tag">svn</a>,
+	<a href="http://doc.ubuntu-fr.org/gestion_de_projet" class="wikilink1" title="gestion_de_projet" rel="tag">gestion de projet</a>,
+	<a href="bug" class="wikilink1" title="bug" rel="tag">bug</a>,
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">brouillon</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="tracenvironnement_de_suivi_de_projet_technique">Trac : environnement de suivi de projet technique</h1>
+<div class="level1">
+
+<p>
+Instructions pour installer et configurer Apache2, Trac et Subversion sous Ubuntu. Trac intègre aussi un wiki et un système de <em>bug tracking</em> évolué.
+</p>
+
+<p>
+<p><div class="noteclassic">Mise à jour necessaire
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Trac : environnement de suivi de projet technique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="73-333" /><input type="submit" value="Modifier" class="button" title="Trac : environnement de suivi de projet technique" /></div></form></div>
+<h2 class="sectionedit2" id="prerequis">Prérequis</h2>
+<div class="level2">
+
+<p>
+Avant toute chose, il est bien entendu impératif de disposer d&#039;une distribution Ubuntu et d&#039;un accès <a href="sudo" class="wikilink1" title="sudo">privilégié</a> sur la machine.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Prérequis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="334-502" /><input type="submit" value="Modifier" class="button" title="Prérequis" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="503-527" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit4" id="depuis_les_depots">Depuis les dépôts</h3>
+<div class="level3">
+
+<p>
+Tout d&#039;abord, <a href="depots" class="wikilink1" title="depots">activez les dépôts « Universe » d&#039;Ubuntu</a>.
+Ceci fait, voici la liste des <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">paquets à installer</a> : subversion, libapache2-svn, libapache2-mod-python et trac.
+</p>
+<pre class="code">sudo apt-get install subversion libapache2-svn libapache2-mod-python libapache2-mod-wsgi trac</pre>
+
+<p>
+On crée le répertoire système pour les instances de Trac, par exemple dans « /var/trac » sans oublier de le rendre accessible en écriture par Apache :
+</p>
+<pre class="code">sudo mkdir /var/trac
+sudo chown www-data:www-data /var/trac</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Depuis les dépôts] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="528-1116" /><input type="submit" value="Modifier" class="button" title="Depuis les dépôts" /></div></form></div>
+<h3 class="sectionedit5" id="depuis_subversion_version_trac_012dev">Depuis Subversion (version Trac 0.12dev)</h3>
+<div class="level3">
+
+<p>
+Ceci va vous permettre d&#039;utiliser la toute dernière version (évidemment à vos risques et périls), mais qui permet de configurer la langue (nouvelle capacité de la version 0.12)
+</p>
+
+<p>
+Placez-vous dans un dossier qui va servir à récupérer la dernière version de trac (par exemple votre home), les données seront chargées dans un sous-dossier trac qui sera créé à cette occasion.
+</p>
+<pre class="code">svn co http://svn.edgewall.org/repos/trac/trunk trac
+cd trac
+python ./setup.py compile_catalog -f       #compilation des fichiers de langues
+sudo python ./setup.py install
+sudo /etc/init.d/apache2 restart           #redémarrage d&#039;apache pour prendre en compte cette mise à jour de Trac</pre>
+
+<p>
+<p><div class="notewarning">L&#039;utilisation tel quel de ces commandes n&#039;est peut-être pas compatible avec les autres instructions: à vérifier
+</div></p>
+</p>
+
+<p>
+Le réglage de la langue se fait dans un des onglets du panneau de préférences des utilisateurs.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Depuis Subversion (version Trac 0.12dev)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1117-2101" /><input type="submit" value="Modifier" class="button" title="Depuis Subversion (version Trac 0.12dev)" /></div></form></div>
+<h2 class="sectionedit6" id="creation_d_une_instance_trac_pour_votre_projet">Création d&#039;une instance Trac pour votre projet</h2>
+<div class="level2">
+
+<p>
+Il nous faut maintenant importer un projet dans Subversion. Pour l&#039;exemple, nous créerons un projet nommé « monzouliprojet ». Pour cela, rien de plus simple… sauf pour les feignants. En étant moi-même un des plus féroces, j&#039;ai pensé à mes compatriotes et leur ai créé un script qui leur permettra d&#039;importer automatiquement leurs projets dans Subversion et de les rendre ainsi facilement accessibles à l&#039;instance de Trac que nous créerons par la suite. Vous <a href="http://www.prendreuncafe.com/blog/share/bash/create_svn_repo.sh" class="urlextern" title="http://www.prendreuncafe.com/blog/share/bash/create_svn_repo.sh"  rel="nofollow">trouverez le code ici</a> (certainement très perfectible, contributions bienvenues).
+</p>
+
+<p>
+Vous pouvez sauvegarder ce script dans un fichier « create_svn_repo.sh » par exemple, sans oublier de le rendre exécutable :
+</p>
+<pre class="code">chmod +x create_svn_repo.sh</pre>
+
+<p>
+Il faudra bien sûr le lancer au moyen de « sudo » afin d&#039;avoir les droits d&#039;écriture dans les répertoires système concernés. Pour importer un nouveau projet Subversion à partir de vos sources existantes, il suffit de lancer le script et de répondre aux questions posées :
+</p>
+
+<p>
+<p><div class="noteimportant">semble ne plus fonctionner sur intrépide et trac 0.11 besoin d&#039;être mis a jour.<br/>
+
+Voir <a href="http://trac.edgewall.org/wiki/0.11/TracOnUbuntu" class="urlextern" title="http://trac.edgewall.org/wiki/0.11/TracOnUbuntu"  rel="nofollow">http://trac.edgewall.org/wiki/0.11/TracOnUbuntu</a>
+</div></p>
+</p>
+<pre class="code">niko@nikobox:~$ sudo sh create_svn_repo.sh  
+#######################################
+Création d&#039;un nouveau projet Subversion
+#######################################
+
+Tapez le nom du nouveau projet :
+monzouliprojet
+Tapez maintenant le chemin du répertoire source :
+(Note: les répertoires trunk, branches et tags seront créés automatiquement)
+/home/niko/monzouliprojet/
+Création du projet monzouliprojet depuis /home/niko/monzouliprojet/...
+Adding         /tmp/svn/monzouliprojet/trunk
+Adding         /tmp/svn/monzouliprojet/trunk/test
+Adding         /tmp/svn/monzouliprojet/trunk/test/main
+...
+
+Committed revision 1.
+
+Projet subversion monzouliprojet créé avec succès !</pre>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/icons/iconnote.png?id=trac" class="media" title="icons:iconnote.png"><img src="http://doc.ubuntu-fr.org/_media/icons/iconnote.png" class="medialeft" alt="" /></a>
+</p>
+<blockquote><div class="no">
+Vous pouvez éditer le fichier du script pour y spécifier notamment le chemin de la racine subversion : <pre class="file">SVN_ROOT=&quot;/var/svn&quot;</pre>
+</div></blockquote>
+
+<p>
+Ensuite, il faut initialiser l&#039;environnement trac pour notre projet récemment importé dans Subversion, ce que l&#039;on fait au moyen de la série de commande suivante :
+</p>
+
+<p>
+<del>sudo mkdir /var/trac</del> <em>si on execute cette commande la suite ne fonctionne pas car trac-admin va créer le répertoire.</em>
+</p>
+<pre class="code">sudo trac-admin /var/trac/monzouliprojet initenv
+sudo chown -R www-data /var/trac/</pre>
+
+<p>
+Notez encore une fois que je crée la racine trac dans « /var/trac » mais vous pouvez tout à fait utiliser un autre emplacement.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Création d'une instance Trac pour votre projet] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2102-4778" /><input type="submit" value="Modifier" class="button" title="Création d'une instance Trac pour votre projet" /></div></form></div>
+<h2 class="sectionedit7" id="creer_un_ou_plusieurs_utilisateurs_trac_et_subversion_gerer_les_autorisations">Créer un ou plusieurs utilisateurs Trac et Subversion, gérer les autorisations</h2>
+<div class="level2">
+
+<p>
+Par défaut, une instance Trac permet à tous les visiteurs anonymes d&#039;en modifier les contenus ; bien évidemment, c&#039;est un comportement de l&#039;application particulièrement risqué, ne serait-ce qu&#039;en regard du pourriel potentiel que vous pourriez récolter. Nous allons donc successivement créer un utilisateur subversion, puis désactiver les contributions anonymes pour Trac et ajouter un utilisateur possédant les droits d&#039;administration Trac. Notez que nous utiliserons le même fichier de stockage des noms d&#039;utilisateurs et de mots de passe pour Trac et Subversion ; ce fichier sera appelé au niveau de notre fichier de configuration Apache - défini un peu plus bas dans ce tutoriel.
+</p>
+
+<p>
+Créons tout d&#039;abord le fichier de stockage des mots de passe Trac/Subversion et ajoutons un utilisateur « maintener » :
+</p>
+<pre class="code">sudo htpasswd2 -c /etc/apache2/dav_svn.passwd maintener</pre>
+
+<p>
+Attribuez-lui un mot de passe. Bien, cet utilisateur aura par la suite officiellement accès à notre dépôt Subversion. Donnons-lui maintenant les droits d&#039;administration totale de Trac :
+</p>
+<pre class="code">sudo trac-admin /var/trac/monzouliprojet permission add maintener TRAC_ADMIN</pre>
+
+<p>
+On peut également imaginer la création d&#039;un compte utilisateur développeur, qui peut créer des tickets, en fermer et maintenir le wiki :
+</p>
+<pre class="code">sudo htpasswd2 /etc/apache2/dav_svn.passwd dev
+sudo trac-admin /var/trac/monzouliprojet permission add dev WIKI_CREATE WIKI_MODIFY TICKET_CREATE TICKET_MODIFY</pre>
+
+<p>
+Il nous reste à désactiver les contributions anonymes :
+</p>
+<pre class="code">sudo trac-admin /var/trac/monzouliprojet permission remove anonymous WIKI_CREATE WIKI_MODIFY TICKET_CREATE TICKET_MODIFY</pre>
+
+<p>
+Par la suite, vous pourrez effectuer la plupart de ces opérations par le biais du plugin WebAdmin dont nous détaillerons l&#039;installation dans la partie suivante. 
+</p>
+
+<p>
+Vous trouverez plus d&#039;informations sur les privilèges de Trac sur <a href="http://trac.edgewall.org/wiki/TracPermissions" class="urlextern" title="http://trac.edgewall.org/wiki/TracPermissions"  rel="nofollow">la page qui lui est consacrée</a>.
+</p>
+
+<p>
+Côté Subversion, il nous faut autoriser les <em>checkouts</em> anonymes mais s&#039;assurer que l&#039;utilisateur est authentifié avant d&#039;accepter ses <em>commits</em>. Cela se configure très facilement dans le fichier « /var/svn/monzouliprojet/conf/svnserve.conf », dans lequel vous pouvez saisir :
+</p>
+<pre class="file">[general]
+anon-access = read
+auth-access = write
+password-db = passwd 
+# authz-db = authz
+realm = MonZouliProjet Subversion Repository</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Créer un ou plusieurs utilisateurs Trac et Subversion, gérer les autorisations] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4779-7267" /><input type="submit" value="Modifier" class="button" title="Créer un ou plusieurs utilisateurs Trac et Subversion, gérer les autorisations" /></div></form></div>
+<h2 class="sectionedit8" id="installer_trac_webadmin_trac_version_011">Installer Trac WebAdmin ( Trac version &lt; 0.11 )</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteimportant">L&#039;utilisation de mod_python n&#039;est pas conseillée pour de nouvelles installations de Trac. Voir <a href="http://trac.edgewall.org/wiki/TracModPython" class="urlextern" title="http://trac.edgewall.org/wiki/TracModPython"  rel="nofollow">http://trac.edgewall.org/wiki/TracModPython</a>
+</div></p>
+</p>
+
+<p>
+<a href="http://trac.edgewall.org/wiki/WebAdmin" class="urlextern" title="http://trac.edgewall.org/wiki/WebAdmin"  rel="nofollow">Trac WebAdmin</a> est une interface web d&#039;administration de votre ou vos instances Trac offrant un confort appréciable pour administrer vos projets et en gérer les paramètres. Même si nous n&#039;avons pas encore défini d&#039;hôtes virtuels Apache, rien ne nous empêche d&#039;installer le greffon, qui passe d&#039;abord par l&#039;installation des « setuptools » :
+</p>
+<pre class="code">wget http://peak.telecommunity.com/dist/ez_setup.py
+sudo python ez_setup.py</pre>
+
+<p>
+Ceci fait, téléchargez le fichier de plugin <a href="http://trac.edgewall.org/wiki/TracWebAdmin" class="urlextern" title="http://trac.edgewall.org/wiki/TracWebAdmin"  rel="nofollow">http://trac.edgewall.org/wiki/WebAdmin</a> sur le site de Trac, et installez-le au moyen du programme « easy_install » précédemment installé, comme suit :
+</p>
+
+<p>
+<del>sudo easy_install <a href="http://svn.edgewall.com/repos/trac/sandbox/webadmin" class="urlextern" title="http://svn.edgewall.com/repos/trac/sandbox/webadmin"  rel="nofollow">http://svn.edgewall.com/repos/trac/sandbox/webadmin</a></del>
+(l&#039;url a changé:)
+</p>
+<pre class="code">sudo easy_install http://svn.edgewall.org/repos/trac/plugins/0.10/webadmin/</pre>
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez</a> votre fichier de configuration d&#039;instance Trac (« /var/trac/monzouliprojet/conf/trac.ini ») et ajoutez-y la section suivante (si elle n&#039;existe pas) :
+</p>
+<pre class="file">[components]
+webadmin.* = enabled</pre>
+
+<p>
+Enregistrez le fichier et quittez.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Installer Trac WebAdmin ( Trac version &lt; 0.11 )] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7268-8686" /><input type="submit" value="Modifier" class="button" title="Installer Trac WebAdmin ( Trac version &lt; 0.11 )" /></div></form></div>
+<h2 class="sectionedit9" id="creer_un_hote_virtuel_apache">Créer un hôte virtuel Apache</h2>
+<div class="level2">
+
+<p>
+Cette section s&#039;applique uniquement si vous souhaitez configurer Trac avec Apache et ModPython. Trac (0.11) est distribué avec son propre serveur internet, <a href="http://trac.edgewall.org/wiki/TracStandalone" class="urlextern" title="http://trac.edgewall.org/wiki/TracStandalone"  rel="nofollow">tracd</a>, qui est la méthode la plus simple pour mettre son serveur en ligne.
+</p>
+
+<p>
+Nous devons rendre accessible par le web notre instance de Trac ainsi que le dépôt Subversion associé, par le biais d&#039;un hôte virtuel apache dédié :
+</p>
+<pre class="code">sudo vi /etc/apache2/sites-available/trac.mondomaine.org</pre>
+
+<p>
+On y écrit les paramètres de notre hôte dédié, en admettant que nous disposons du domaine « mondomaine.org » nanti d&#039;un sous-domaine « trac » :
+</p>
+<pre class="file">&lt;VirtualHost *&gt; 
+    ServerAdmin webmaster@mondomaine.org
+    ServerName trac.mondomaine.org
+    
+    DocumentRoot /var/trac/monzouliprojet
+    &lt;Location /&gt;
+        SetHandler mod_python
+        PythonHandler trac.web.modpython_frontend
+        PythonOption TracEnv /var/trac/monzouliprojet
+        PythonOption TracUriRoot /
+        PythonPath &quot;sys.path + [&#039;/var/trac/monzouliprojet&#039;]&quot;
+    &lt;/Location&gt;
+
+    ErrorLog  /var/log/apache2/error.trac.domaine.org.log
+    CustomLog /var/log/apache2/access.trac.domaine.org.log combined
+    
+    &lt;Location /svn&gt;
+        DAV svn
+        SVNPath /var/svn/monzouliprojet
+        AuthType Basic
+        AuthName &quot;Monzouliprojet Subversion repository&quot;
+        AuthUserFile /etc/apache2/dav_svn.passwd
+        &lt;LimitExcept GET PROPFIND OPTIONS REPORT&gt; 
+            Require valid-user
+        &lt;/LimitExcept&gt;
+    &lt;/Location&gt;
+    
+    &lt;Location &quot;/login&quot;&gt;
+        AuthType Basic
+        AuthName &quot;Trac login&quot;
+        AuthUserFile /etc/apache2/dav_svn.passwd
+        Require valid-user
+    &lt;/Location&gt;
+
+&lt;/VirtualHost&gt;</pre>
+
+<p>
+Vous devrez bien entendu enregistrer le domaine et le sous domaine dans votre fichier de configuration <abbr title="Domain Name System">DNS</abbr>, voire simplement dans votre fichier « /etc/hosts » si vous disposez d&#039;un service de gestion <abbr title="Domain Name System">DNS</abbr> décentralisé comme celui que propose la société <a href="http://www.gandi.net" class="urlextern" title="http://www.gandi.net"  rel="nofollow">Gandi</a>. Par exemple :
+</p>
+<pre class="file">## Fichier /etc/hosts
+127.0.0.1         localhost localhost.localdomain mamachine
+123.124.125.126   trac.mondomaine.org</pre>
+
+<p>
+Nous utilisons « mod_python » (précédemment installé), n&#039;oublions pas de l&#039;activer :
+</p>
+<pre class="code">sudo a2enmod mod_python</pre>
+
+<p>
+ou en cas d&#039;erreur (13.04+) :
+</p>
+
+<p>
+ sudo a2enmod python
+</p>
+
+<p>
+Ceci fait, il nous reste à activer le nouvel hôte apache et à relancer ce dernier :
+</p>
+<pre class="code">sudo a2ensite trac.mondomaine.org
+sudo /etc/init.d/apache2 restart</pre>
+
+<p>
+Pour vérifier que tout s&#039;est déroulé correctement, faites pointer votre navigateur préféré vers l&#039;adresse « trac.mondomaine.org », vous devriez accéder sans encombres à votre instance nouvellement créée. Vous pouvez vous identifier en cliquant sur le lien « Login » et en fournissant les paramètres d&#039;accès utilisateur que vous avez définis précédemment. Si vous vous identifiez en administrateur Trac, vous devriez disposer du menu « Admin » donnant accès à l&#039;extension WebAdmin où vous pourrez ajuster les paramètres de votre instance aux petits oignons.
+</p>
+
+<p>
+Côté subversion, vous pouvez effectuer un <em>checkout</em> de votre projet de cette façon :
+</p>
+<pre class="code">svn co http://trac.mondomaine.org/svn/trunk/ .</pre>
+
+<p>
+Un commit nécessitera cependant l&#039;authentification ; vous pourrez forcer le nom d&#039;utilisateur à utiliser :
+</p>
+<pre class="code">svn commit -m &quot;test de commit&quot; main/test/toto.txt --username mainteneur</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Créer un hôte virtuel Apache] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8687-12137" /><input type="submit" value="Modifier" class="button" title="Créer un hôte virtuel Apache" /></div></form></div>
+<h2 class="sectionedit10" id="personnaliser_trac">Personnaliser Trac</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Personnaliser Trac] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12138-12169" /><input type="submit" value="Modifier" class="button" title="Personnaliser Trac" /></div></form></div>
+<h3 class="sectionedit11" id="mettre_en_couleur_le_code">Mettre en couleur le code</h3>
+<div class="level3">
+
+<p>
+Lorsque vous vous logez sur Trac, et que vous utilisez le <strong>Browse Source</strong>, le code est entièrement en noir sur fond blanc, et basta.
+</p>
+
+<p>
+Bien, je vous annonce que comme dans les éditeurs de textes, Trac gère la coloration syntaxique !
+</p>
+
+<p>
+Pour l&#039;installer, ca n&#039;est pas difficile ! Un apt-get et c&#039;est bon !
+Et le voici le petit apt-get:
+</p>
+<pre class="code">sudo apt-get install python-pygments enscript</pre>
+
+<p>
+Voila, maintenant votre code est en couleur… C&#039;est mieux hun !? <img src="lib/images/smileys/icon_cool.gif" class="icon" alt="8-)" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Mettre en couleur le code] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12170-12679" /><input type="submit" value="Modifier" class="button" title="Mettre en couleur le code" /></div></form></div>
+<h3 class="sectionedit12" id="personnaliser_le_logo">Personnaliser le logo</h3>
+<div class="level3">
+
+<p>
+Il est possible de changer le logo de trac en éditant le fichier trac.ini dans le dossier /conf du projet.
+</p>
+<pre class="code">gedit /var/trac/monzouliprojet/conf/trac.ini</pre>
+
+<p>
+Dans celui-ci il faut modifier cette partie:
+</p>
+<pre class="code">[header_logo]
+src = site/my_logo.gif
+alt = My Project
+width = 300
+height = 100</pre>
+
+<p>
+Il faut changer le my_logo.gif par ce que vous voulez. Moi j&#039;ai créé un fichier logo.png.
+</p>
+
+<p>
+Pour que le trac s&#039;adapte à la taille de votre image, il faut mettre <strong>-1</strong> pour width et height.
+</p>
+
+<p>
+Ensuite, il ne reste plus qu&#039;à placer votre image dans le dossier <strong>htdocs/</strong> du projet et voila ! <img src="lib/images/smileys/icon_cool.gif" class="icon" alt="8-)" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Personnaliser le logo] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12680-13317" /><input type="submit" value="Modifier" class="button" title="Personnaliser le logo" /></div></form></div>
+<h2 class="sectionedit13" id="depannage">Dépannage</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Dépannage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13318-13343" /><input type="submit" value="Modifier" class="button" title="Dépannage" /></div></form></div>
+<h3 class="sectionedit14" id="no_module_named_scriptsadmin">No module named scripts.admin</h3>
+<div class="level3">
+
+<p>
+Si vous obtenez cette erreur :
+</p>
+<pre class="code">Traceback (most recent call last):
+  File &quot;/usr/bin/trac-admin&quot;, line 21, in &lt;module&gt;
+    from trac.scripts.admin import run
+ImportError: No module named scripts.admin</pre>
+
+<p>
+Il vous faut redéfinir la variable d&#039;environnement PYTHONPATH.
+Pour ce faire :
+</p>
+<pre class="code">export PYTHONPATH=$PYTHONPATH:/usr/lib/svn-python</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[No module named scripts.admin] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13344-13742" /><input type="submit" value="Modifier" class="button" title="No module named scripts.admin" /></div></form></div>
+<h3 class="sectionedit15" id="clearsilver_not_installed">ClearSilver not installed</h3>
+<div class="level3">
+
+<p>
+Si vous obtenez cette erreur :
+</p>
+<pre class="code">TracError: ClearSilver not installed (No module named neo_cgi)</pre>
+
+<p>
+Et si vous êtes en 64bits, il faut installer ce paquet: <a href="http://mathiasson.nu/debian/pool/main/c/clearsilver/python-clearsilver_0.10.4-1.0pm0_amd64.deb" class="urlextern" title="http://mathiasson.nu/debian/pool/main/c/clearsilver/python-clearsilver_0.10.4-1.0pm0_amd64.deb"  rel="nofollow">http://mathiasson.nu/debian/pool/main/c/clearsilver/python-clearsilver_0.10.4-1.0pm0_amd64.deb</a>
+Ticket LaunchPad: <a href="https://bugs.launchpad.net/ubuntu/+source/clearsilver/+bug/86685" class="urlextern" title="https://bugs.launchpad.net/ubuntu/+source/clearsilver/+bug/86685"  rel="nofollow">https://bugs.launchpad.net/ubuntu/+source/clearsilver/+bug/86685</a>
+</p>
+
+<p>
+Et voila ! <img src="lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[ClearSilver not installed] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13743-14148" /><input type="submit" value="Modifier" class="button" title="ClearSilver not installed" /></div></form></div>
+<h3 class="sectionedit16" id="mod_pythonthis_module_does_not_exist">mod_python: This module does not exist!</h3>
+<div class="level3">
+
+<p>
+Si vous avez cette erreur quand vous faites <strong>sudo a2enmod mod_python</strong> c&#039;est que normalement vous n&#039;avez pas installé le paquet libapache2-mod-python vous répondront les gens. Dans 98% des cas, ce sera vrai ! 
+</p>
+
+<p>
+Mais je viens de vivre le cas où j&#039;ai le paquet installé … mais rien à faire.
+</p>
+
+<p>
+Pourquoi ? je sais pas… mais le fichier <strong>mod_python.load</strong> n&#039;a pas été créé.
+J&#039;ai d&#039;ailleurs tenté de réinstaller le paquet etc .. mais rien à faire !
+</p>
+
+<p>
+Que cela ne tienne !
+C&#039;est pas mon PC qui va me dicter sa loi… donc on va le créer ce fichier manquant !
+</p>
+<pre class="code">sudo gedit /etc/apache2/mods-available/mod_python.load</pre>
+
+<p>
+Et on colle dedans la ligne :
+</p>
+<pre class="code">LoadModule python_module /usr/lib/apache2/modules/mod_python.so</pre>
+
+<p>
+Et voila ! Maintenant :
+</p>
+<pre class="code">sudo a2enmod mod_python</pre>
+
+</div>
+
+<h4 id="solution_alternative">Solution alternative</h4>
+<div class="level4">
+
+<p>
+En fait, il semble que a2enmod n&#039;ai plus besoin du préfixe &quot;mod_&quot; pour retrouver les modules installés.
+Voici donc une alternative à cet ensemble de commandes : 
+</p>
+<pre class="code"> sudo a2enmod python</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[mod_python: This module does not exist!] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14149-15238" /><input type="submit" value="Modifier" class="button" title="mod_python: This module does not exist!" /></div></form></div>
+<h3 class="sectionedit17" id="no_module_named_svn">No module named svn</h3>
+<div class="level3">
+
+<p>
+Cette fois, vous avez sur le site trac ce message qui s&#039;affiche :
+</p>
+<pre class="code">Unsupported version control system &quot;svn&quot;: &quot;No module named svn&quot;</pre>
+
+<p>
+Damned ! Quel journée !
+Heureusement je me suis fais avoir avant vous … et j&#039;ai trouvé la solution ! <img src="lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />
+</p>
+
+<p>
+Il suffit d&#039;installer le paquet python-subversion et de redémarrer apache … et voila !! <img src="lib/images/smileys/icon_cool.gif" class="icon" alt="8-)" />
+</p>
+<pre class="code">sudo apt-get install python-subversion</pre>
+<pre class="code">sudo /etc/init.d/apache2 restart</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[No module named svn] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15239-15718" /><input type="submit" value="Modifier" class="button" title="No module named svn" /></div></form></div>
+<h2 class="sectionedit18" id="references">Références</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Cet article est la reprise d&#039;un <a href="http://www.prendreuncafe.com/blog/2006/09/05/489-installer-et-configurer-apache2-trac-et-subversion-sur-ubuntu" class="urlextern" title="http://www.prendreuncafe.com/blog/2006/09/05/489-installer-et-configurer-apache2-trac-et-subversion-sur-ubuntu"  rel="nofollow">billet</a> publié sur le blog de <a href="http://www.prendreuncafe.com" class="urlextern" title="http://www.prendreuncafe.com"  rel="nofollow">Nicolas Perriault</a> sous licence <a href="http://creativecommons.org/licenses/by-sa/2.0/fr/" class="urlextern" title="http://creativecommons.org/licenses/by-sa/2.0/fr/"  rel="nofollow">CC BY-SA</a>.</div>
+</li>
+<li class="level1"><div class="li"> La doc officiel [anglais]: <a href="http://trac.edgewall.org/wiki/TracInstall" class="urlextern" title="http://trac.edgewall.org/wiki/TracInstall"  rel="nofollow">http://trac.edgewall.org/wiki/TracInstall</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/blackpegaz" class="wikilink2" title="utilisateurs:blackpegaz" rel="nofollow">Blackpegaz</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/ju" class="wikilink2" title="utilisateurs:ju" rel="nofollow">Ju</a>, <a href="utilisateurs/teke" class="wikilink1" title="utilisateurs:teke">Teke</a>, <a href="utilisateurs/zedtux" class="wikilink1" title="utilisateurs:zedtux">zedtux</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="trac"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1380705122" /><input type="hidden" name="summary" value="[Références] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15719-" /><input type="submit" value="Modifier" class="button" title="Références" /></div></form></div>
+<!-- no cachefile used, but created /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/cee63ea21c237ef6ceb732e36a2f6008.xhtml -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/trac?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/trac?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/trac?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/trac?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/trac?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

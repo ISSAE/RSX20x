@@ -1,0 +1,1080 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>init_d - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-02-21T17:45:53+0100"/>
+<meta name="keywords" content="brouillon,services"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/init_d?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/init_d?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/init_d"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/init_d"/>
+<link rel="canonical" href="init_d"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"init_d","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="init_d#main" tabindex="1">Contenu</a> | <a href="init_d#qsearch__in" tabindex="2">Rechercher</a> | <a href="init_d#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="init_d" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="init_d" >init_d</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="init_d#acpi-support">acpi-support :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#acpid">acpid :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#alsa">alsa :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#alsa-utils">alsa-utils :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#anacron">anacron :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#apmd">apmd :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#atd">atd :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#binfmt-support">binfmt-support :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#bluetooth">bluetooth :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#bootcleansh">bootclean.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#bootlogd">bootlogd :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#bootmiscsh">bootmisc.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#checkfssh">checkfs.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#checkrootsh">checkroot.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#console-screensh">console-screen.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#cron">cron :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#cupsys">cupsys :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#dbus">dbus :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#dns-clean">dns-clean:</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#evms">evms :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#fetchmail">fetchmail :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#gdm">gdm :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#halt">halt :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#hdparm">hdparm :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#hostnamesh">hostname.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#hotkey-setup">hotkey-setup :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#hotplug">hotplug :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#hotplug-net">hotplug-net :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#hplip">hplip :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#hwclocksh">hwclock.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#hwclockfirstsh">hwclockfirst.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#ifrename">ifrename:</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#ifupdown">ifupdown :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#ifupdown-clean">ifupdown-clean :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#keymapsh">keymap.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#klogd">klogd :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#linux-restricted-modules-common">linux-restricted-modules-common :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#lvm">lvm :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#makedev">makedev :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#mdadm-raid">mdadm-raid :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#mdadm">mdadm :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#module-init-tools">module-init-tools :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#mountallsh">mountall.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#mountnfssh">mountnfs.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#mountvirtfs">mountvirtfs :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#networking">networking :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#ntpdate">ntpdate :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#pcmcia">pcmcia :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#powernowd">powernowd :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#ppp">ppp :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#pppd-dns">pppd-dns :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#procpssh">procps.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#rc">rc :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#rcs">rcS :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#readahead">readahead :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#reboot">reboot :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#rmnologin">rmnologin:</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#rsync">rsync :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#samba">samba :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#screen-cleanup">screen-cleanup :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#sendsigs">sendsigs :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#single">single :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#ssh">ssh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#stop-bootlogd">stop-bootlogd :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#sudo">sudo :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#sysklogd">sysklogd :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#udev">udev :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#udev-mtab">udev-mtab :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#umountfs">umountfs :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#umountnfssh">umountnfs.sh :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#urandom">urandom :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#usplash">usplash :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#vbesave">vbesave :</a></div></li>
+<li class="level1"><div class="li"><a href="init_d#xorg-common">xorg-common :</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">brouillon</a>,
+	<a href="services" class="wikilink1" title="services" rel="tag">services</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="description_des_servicesetcinitd">Description des services /etc/init.d</h1>
+<div class="level1">
+
+<p>
+Cette page décrit les scripts du répertoire <em>/etc/init.d</em>.
+</p>
+
+<p>
+Cette page ne prétend pas définir quels scripts peuvent être désactivés afin d&#039;optimiser le démarrage. La grande majorité des scripts est nécessaire au bon fonctionnement d&#039;Ubuntu. Il est donc recommandé de ne pas les désactiver.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[Description des services /etc/init.d] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="33-391" /><input type="submit" value="Modifier" class="button" title="Description des services /etc/init.d" /></div></form></div>
+<h2 class="sectionedit2" id="acpi-support">acpi-support :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description :  Vérifie si on est sur batterie au démarrage, afin de mettre le portable en mode économie d&#039;énergie.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[acpi-support :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="392-564" /><input type="submit" value="Modifier" class="button" title="acpi-support :" /></div></form></div>
+<h2 class="sectionedit3" id="acpid">acpid :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère les évènements liés à la gestion d&#039;énergie (batterie/secteur, bouton power, ouverture/fermeture écran).</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[acpid :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="565-737" /><input type="submit" value="Modifier" class="button" title="acpid :" /></div></form></div>
+<h2 class="sectionedit4" id="alsa">alsa :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage (obsolète depuis Breezy ?)</div>
+</li>
+<li class="level1"><div class="li"> Description : Charge les pilotes de son, et restaure le volume sonore.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[alsa :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="738-882" /><input type="submit" value="Modifier" class="button" title="alsa :" /></div></form></div>
+<h2 class="sectionedit5" id="alsa-utils">alsa-utils :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Restaure le volume sonore.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[alsa-utils :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="883-975" /><input type="submit" value="Modifier" class="button" title="alsa-utils :" /></div></form></div>
+<h2 class="sectionedit6" id="anacron">anacron :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Programme qui gère des tâches périodiques. Dans la configuration Ubuntu standard, c&#039;est lui qui va notamment vérifier si des mises à jour du système sont nécessaires.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[anacron :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="976-1212" /><input type="submit" value="Modifier" class="button" title="anacron :" /></div></form></div>
+<h2 class="sectionedit7" id="apmd">apmd :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Démon qui gère l&#039;énergie (bouton power).</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[apmd :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1213-1312" /><input type="submit" value="Modifier" class="button" title="apmd :" /></div></form></div>
+<h2 class="sectionedit8" id="atd">atd :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Démon qui gère des tâches périodiques.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[atd :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1313-1410" /><input type="submit" value="Modifier" class="button" title="atd :" /></div></form></div>
+<h2 class="sectionedit9" id="binfmt-support">binfmt-support :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Permet l&#039;exécution de formats binaires supplémentaires.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[binfmt-support :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1411-1538" /><input type="submit" value="Modifier" class="button" title="binfmt-support :" /></div></form></div>
+<h2 class="sectionedit10" id="bluetooth">bluetooth :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Permet la gestion des périphériques bluetooth.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[bluetooth :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1539-1648" /><input type="submit" value="Modifier" class="button" title="bluetooth :" /></div></form></div>
+<h2 class="sectionedit11" id="bootcleansh">bootclean.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Nettoie les répertoires /tmp /var/run et /var/lock.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[bootclean.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1649-1769" /><input type="submit" value="Modifier" class="button" title="bootclean.sh :" /></div></form></div>
+<h2 class="sectionedit12" id="bootlogd">bootlogd :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Il enregistre les évènements liés au démarrage.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[bootlogd :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1770-1881" /><input type="submit" value="Modifier" class="button" title="bootlogd :" /></div></form></div>
+<h2 class="sectionedit13" id="bootmiscsh">bootmisc.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Prépare la machine au démarrage.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[bootmisc.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1882-1983" /><input type="submit" value="Modifier" class="button" title="bootmisc.sh :" /></div></form></div>
+<h2 class="sectionedit14" id="checkfssh">checkfs.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Vérifie les systèmes de fichiers autres que /.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[checkfs.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1984-2098" /><input type="submit" value="Modifier" class="button" title="checkfs.sh :" /></div></form></div>
+<h2 class="sectionedit15" id="checkrootsh">checkroot.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Vérifie le système de fichiers de /.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[checkroot.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2099-2205" /><input type="submit" value="Modifier" class="button" title="checkroot.sh :" /></div></form></div>
+<h2 class="sectionedit16" id="console-screensh">console-screen.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Charge les paramètres pour les consoles textes.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[console-screen.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2206-2327" /><input type="submit" value="Modifier" class="button" title="console-screen.sh :" /></div></form></div>
+<h2 class="sectionedit17" id="cron">cron :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Démon qui gère des tâches périodiques.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[cron :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2328-2426" /><input type="submit" value="Modifier" class="button" title="cron :" /></div></form></div>
+<h2 class="sectionedit18" id="cupsys">cupsys :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère les imprimantes.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[cupsys :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2427-2507" /><input type="submit" value="Modifier" class="button" title="cupsys :" /></div></form></div>
+<h2 class="sectionedit19" id="dbus">dbus :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Système de messagerie inter-applications.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[dbus :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2508-2606" /><input type="submit" value="Modifier" class="button" title="dbus :" /></div></form></div>
+<h2 class="sectionedit20" id="dns-clean">dns-clean:</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Nettoie les tables <abbr title="Domain Name System">DNS</abbr>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[dns-clean:] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2607-2694" /><input type="submit" value="Modifier" class="button" title="dns-clean:" /></div></form></div>
+<h2 class="sectionedit21" id="evms">evms :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Initialise les différents disques,  et en particulier les disques raids logiciels.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[evms :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2695-2838" /><input type="submit" value="Modifier" class="button" title="evms :" /></div></form></div>
+<h2 class="sectionedit22" id="fetchmail">fetchmail :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Ramène les e-mails distants en tant que mail locaux.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[fetchmail :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2839-2953" /><input type="submit" value="Modifier" class="button" title="fetchmail :" /></div></form></div>
+<h2 class="sectionedit23" id="gdm">gdm :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Gestionnaire de connexion graphique pour Gnome.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[gdm :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2954-3056" /><input type="submit" value="Modifier" class="button" title="gdm :" /></div></form></div>
+<h2 class="sectionedit24" id="halt">halt :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : arrêt</div>
+</li>
+<li class="level1"><div class="li"> Description : Arrête la machine.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[halt :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3057-3132" /><input type="submit" value="Modifier" class="button" title="halt :" /></div></form></div>
+<h2 class="sectionedit25" id="hdparm">hdparm :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Règle certains paramètres sur les disques et cdrom/dvdrom <abbr title="Integrated Drive Electronics">IDE</abbr>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[hdparm :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3133-3260" /><input type="submit" value="Modifier" class="button" title="hdparm :" /></div></form></div>
+<h2 class="sectionedit26" id="hostnamesh">hostname.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Définit le nom de la machine.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[hostname.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3261-3358" /><input type="submit" value="Modifier" class="button" title="hostname.sh :" /></div></form></div>
+<h2 class="sectionedit27" id="hotkey-setup">hotkey-setup :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Permet l&#039;utilisation des touches « spéciales » de certains portables.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[hotkey-setup :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3359-3499" /><input type="submit" value="Modifier" class="button" title="hotkey-setup :" /></div></form></div>
+<h2 class="sectionedit28" id="hotplug">hotplug :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère la détection de matériel, et charge les modules associés.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[hotplug :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3500-3625" /><input type="submit" value="Modifier" class="button" title="hotplug :" /></div></form></div>
+<h2 class="sectionedit29" id="hotplug-net">hotplug-net :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère les cartes réseaux.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[hotplug-net :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3626-3719" /><input type="submit" value="Modifier" class="button" title="hotplug-net :" /></div></form></div>
+<h2 class="sectionedit30" id="hplip">hplip :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère les imprimantes et scanner HP.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_30'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[hplip :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3720-3813" /><input type="submit" value="Modifier" class="button" title="hplip :" /></div></form></div>
+<h2 class="sectionedit31" id="hwclocksh">hwclock.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Synchronise l&#039;heure système avec celle du <abbr title="Basic Input-Output System">BIOS</abbr>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_31'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[hwclock.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3814-3928" /><input type="submit" value="Modifier" class="button" title="hwclock.sh :" /></div></form></div>
+<h2 class="sectionedit32" id="hwclockfirstsh">hwclockfirst.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Synchronise l&#039;heure système avec celle du <abbr title="Basic Input-Output System">BIOS</abbr>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_32'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[hwclockfirst.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3929-4048" /><input type="submit" value="Modifier" class="button" title="hwclockfirst.sh :" /></div></form></div>
+<h2 class="sectionedit33" id="ifrename">ifrename:</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Renomme les cartes réseaux.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_33'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[ifrename:] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4049-4140" /><input type="submit" value="Modifier" class="button" title="ifrename:" /></div></form></div>
+<h2 class="sectionedit34" id="ifupdown">ifupdown :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Démarre les interfaces réseaux.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_34'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[ifupdown :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4141-4238" /><input type="submit" value="Modifier" class="button" title="ifupdown :" /></div></form></div>
+<h2 class="sectionedit35" id="ifupdown-clean">ifupdown-clean :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Efface l&#039;ancien état des interfaces réseaux.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_35'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[ifupdown-clean :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4239-4355" /><input type="submit" value="Modifier" class="button" title="ifupdown-clean :" /></div></form></div>
+<h2 class="sectionedit36" id="keymapsh">keymap.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Charge la langue du clavier pour la console texte.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_36'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[keymap.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4356-4471" /><input type="submit" value="Modifier" class="button" title="keymap.sh :" /></div></form></div>
+<h2 class="sectionedit37" id="klogd">klogd :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Note les informations fournies par le kernel dans des fichiers de logs.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_37'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[klogd :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4472-4600" /><input type="submit" value="Modifier" class="button" title="klogd :" /></div></form></div>
+<h2 class="sectionedit38" id="linux-restricted-modules-common">linux-restricted-modules-common :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : ???</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_38'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[linux-restricted-modules-common :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4601-4691" /><input type="submit" value="Modifier" class="button" title="linux-restricted-modules-common :" /></div></form></div>
+<h2 class="sectionedit39" id="lvm">lvm :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Démarre les périphériques disques gérés via LVM (Linux Volume Manager). LVM permet d&#039;avoir des partitions plus dynamiques, réparties sur plusieurs disques, ou redimensionnables.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_39'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[lvm :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4692-4934" /><input type="submit" value="Modifier" class="button" title="lvm :" /></div></form></div>
+<h2 class="sectionedit40" id="makedev">makedev :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Permet la création de certains devices dans /dev</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_40'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[makedev :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4935-5047" /><input type="submit" value="Modifier" class="button" title="makedev :" /></div></form></div>
+<h2 class="sectionedit41" id="mdadm-raid">mdadm-raid :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère le raid logiciel.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_41'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[mdadm-raid :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5048-5133" /><input type="submit" value="Modifier" class="button" title="mdadm-raid :" /></div></form></div>
+<h2 class="sectionedit42" id="mdadm">mdadm :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère le raid logiciel.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_42'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[mdadm :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5134-5214" /><input type="submit" value="Modifier" class="button" title="mdadm :" /></div></form></div>
+<h2 class="sectionedit43" id="module-init-tools">module-init-tools :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Charge les modules nécessaires à la machine.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_43'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[module-init-tools :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5215-5334" /><input type="submit" value="Modifier" class="button" title="module-init-tools :" /></div></form></div>
+<h2 class="sectionedit44" id="mountallsh">mountall.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Monte les partitions locales.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_44'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[mountall.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5335-5431" /><input type="submit" value="Modifier" class="button" title="mountall.sh :" /></div></form></div>
+<h2 class="sectionedit45" id="mountnfssh">mountnfs.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Monte les partitions <abbr title="Network File System">NFS</abbr>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_45'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[mountnfs.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5432-5524" /><input type="submit" value="Modifier" class="button" title="mountnfs.sh :" /></div></form></div>
+<h2 class="sectionedit46" id="mountvirtfs">mountvirtfs :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Monte les File Systems virtuels (/proc /sys /dev/pts /proc/bus/usb).</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_46'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[mountvirtfs :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5525-5660" /><input type="submit" value="Modifier" class="button" title="mountvirtfs :" /></div></form></div>
+<h2 class="sectionedit47" id="networking">networking :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Initialise les cartes réseaux.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_47'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[networking :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5661-5758" /><input type="submit" value="Modifier" class="button" title="networking :" /></div></form></div>
+<h2 class="sectionedit48" id="ntpdate">ntpdate :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Synchronise l&#039;horloge locale avec l&#039;horloge d&#039;Ubuntu sur Internet.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_48'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[ntpdate :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5759-5888" /><input type="submit" value="Modifier" class="button" title="ntpdate :" /></div></form></div>
+<h2 class="sectionedit49" id="pcmcia">pcmcia :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère les périphériques PCMCIA.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_49'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[pcmcia :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5889-5980" /><input type="submit" value="Modifier" class="button" title="pcmcia :" /></div></form></div>
+<h2 class="sectionedit50" id="powernowd">powernowd :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère la fréquence des processeurs à fréquence variable.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_50'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[powernowd :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5981-6102" /><input type="submit" value="Modifier" class="button" title="powernowd :" /></div></form></div>
+<h2 class="sectionedit51" id="ppp">ppp :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Démarre les connexions sur ligne série ou modem.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_51'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[ppp :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6103-6212" /><input type="submit" value="Modifier" class="button" title="ppp :" /></div></form></div>
+<h2 class="sectionedit52" id="pppd-dns">pppd-dns :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Récupère le fichier /etc/resolv.conf après un crash de la ligne série ou du modem.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_52'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[pppd-dns :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6213-6363" /><input type="submit" value="Modifier" class="button" title="pppd-dns :" /></div></form></div>
+<h2 class="sectionedit53" id="procpssh">procps.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Règle le noyau selon les paramètres de /etc/sysctl.conf.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_53'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[procps.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6364-6487" /><input type="submit" value="Modifier" class="button" title="procps.sh :" /></div></form></div>
+<h2 class="sectionedit54" id="rc">rc :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère le démarrage et l&#039;arrêt des services.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_54'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[rc :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6488-6591" /><input type="submit" value="Modifier" class="button" title="rc :" /></div></form></div>
+<h2 class="sectionedit55" id="rcs">rcS :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère le démarrage des scripts de /etc/rcS.d.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_55'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[rcS :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6592-6697" /><input type="submit" value="Modifier" class="button" title="rcS :" /></div></form></div>
+<h2 class="sectionedit56" id="readahead">readahead :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Optimise le démarrage du bureau en lisant certains fichiers en avance.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_56'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[readahead :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6698-6834" /><input type="submit" value="Modifier" class="button" title="readahead :" /></div></form></div>
+<h2 class="sectionedit57" id="reboot">reboot :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : arrêt</div>
+</li>
+<li class="level1"><div class="li"> Description : Redémarre la machine.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_57'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[reboot :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6835-6915" /><input type="submit" value="Modifier" class="button" title="reboot :" /></div></form></div>
+<h2 class="sectionedit58" id="rmnologin">rmnologin:</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type: démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description: Permet aux utilisateurs de se logguer à la fin du démarrage.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_58'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[rmnologin:] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6916-7040" /><input type="submit" value="Modifier" class="button" title="rmnologin:" /></div></form></div>
+<h2 class="sectionedit59" id="rsync">rsync :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère la synchronisation de répertoires locaux avec des répertoires distants.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_59'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[rsync :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7041-7177" /><input type="submit" value="Modifier" class="button" title="rsync :" /></div></form></div>
+<h2 class="sectionedit60" id="samba">samba :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère le partage de fichiers avec les machines Windows.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_60'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[samba :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7178-7290" /><input type="submit" value="Modifier" class="button" title="samba :" /></div></form></div>
+<h2 class="sectionedit61" id="screen-cleanup">screen-cleanup :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Enlève les restes des screens précédents.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_61'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[screen-cleanup :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7291-7405" /><input type="submit" value="Modifier" class="button" title="screen-cleanup :" /></div></form></div>
+<h2 class="sectionedit62" id="sendsigs">sendsigs :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : arrêt</div>
+</li>
+<li class="level1"><div class="li"> Description : Arrête les processes lors de l&#039;arrêt de la machine.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_62'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[sendsigs :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7406-7519" /><input type="submit" value="Modifier" class="button" title="sendsigs :" /></div></form></div>
+<h2 class="sectionedit63" id="single">single :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Prépare la machine à passer en mode single.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_63'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[single :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7520-7627" /><input type="submit" value="Modifier" class="button" title="single :" /></div></form></div>
+<h2 class="sectionedit64" id="ssh">ssh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Permet les connections SSH sur la machine.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_64'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[ssh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7628-7725" /><input type="submit" value="Modifier" class="button" title="ssh :" /></div></form></div>
+<h2 class="sectionedit65" id="stop-bootlogd">stop-bootlogd :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : arrêt</div>
+</li>
+<li class="level1"><div class="li"> Description : Stoppe le démon de logging des évènements du noyau.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_65'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[stop-bootlogd :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7726-7845" /><input type="submit" value="Modifier" class="button" title="stop-bootlogd :" /></div></form></div>
+<h2 class="sectionedit66" id="sudo">sudo :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Réinitialise les droits pour sudo.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_66'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[sudo :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7846-7941" /><input type="submit" value="Modifier" class="button" title="sudo :" /></div></form></div>
+<h2 class="sectionedit67" id="sysklogd">sysklogd :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Démon qui loggue les évènements systèmes.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_67'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[sysklogd :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7942-8047" /><input type="submit" value="Modifier" class="button" title="sysklogd :" /></div></form></div>
+<h2 class="sectionedit68" id="udev">udev :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démon</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère les périphériques de la machine.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_68'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[udev :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8048-8144" /><input type="submit" value="Modifier" class="button" title="udev :" /></div></form></div>
+<h2 class="sectionedit69" id="udev-mtab">udev-mtab :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Ajoute /dev à la liste des file systems montés.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_69'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[udev-mtab :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8145-8259" /><input type="submit" value="Modifier" class="button" title="udev-mtab :" /></div></form></div>
+<h2 class="sectionedit70" id="umountfs">umountfs :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : arrêt</div>
+</li>
+<li class="level1"><div class="li"> Description : Démonte les file systems locaux.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_70'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[umountfs :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8260-8353" /><input type="submit" value="Modifier" class="button" title="umountfs :" /></div></form></div>
+<h2 class="sectionedit71" id="umountnfssh">umountnfs.sh :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : arrêt</div>
+</li>
+<li class="level1"><div class="li"> Description : Démonte les file systems <abbr title="Network File System">NFS</abbr>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_71'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[umountnfs.sh :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8354-8448" /><input type="submit" value="Modifier" class="button" title="umountnfs.sh :" /></div></form></div>
+<h2 class="sectionedit72" id="urandom">urandom :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage, arrêt</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère la graine pour les nombres aléatoires.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_72'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[urandom :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8449-8566" /><input type="submit" value="Modifier" class="button" title="urandom :" /></div></form></div>
+<h2 class="sectionedit73" id="usplash">usplash :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Gère les graphismes du boot.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_73'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[usplash :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8567-8659" /><input type="submit" value="Modifier" class="button" title="usplash :" /></div></form></div>
+<h2 class="sectionedit74" id="vbesave">vbesave :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : arrêt</div>
+</li>
+<li class="level1"><div class="li"> Description : Sauve l&#039;état de la carte vidéo pour mettre la machine en veille.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_74'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[vbesave :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8660-8785" /><input type="submit" value="Modifier" class="button" title="vbesave :" /></div></form></div>
+<h2 class="sectionedit75" id="xorg-common">xorg-common :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Type : démarrage</div>
+</li>
+<li class="level1"><div class="li"> Description : Prépare le démarrage du serveur X.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_75'><form class="button btn_secedit" method="post" action="init_d"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1393001153" /><input type="hidden" name="summary" value="[xorg-common :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8786-" /><input type="submit" value="Modifier" class="button" title="xorg-common :" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/d497c92b2cb94d777fe4e8dbab89bbf6.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/init_d?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/init_d?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/init_d?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/init_d?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/init_d?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

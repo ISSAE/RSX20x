@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>mpd_client - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-10-30T10:12:27+0100"/>
+<meta name="keywords" content="lecteur audio,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/mpd_client?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/mpd_client?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/mpd_client"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/mpd_client"/>
+<link rel="canonical" href="mpd_client"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"mpd_client","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="mpd_client#main" tabindex="1">Contenu</a> | <a href="mpd_client#qsearch__in" tabindex="2">Rechercher</a> | <a href="mpd_client#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="mpd_client" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="mpd_client" >mpd_client</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="mpd_client#gmpc_gnome_music_player_client">gmpc (Gnome Music Player Client)</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mpd_client#possibilites">Possibilités</a></div></li>
+<li class="level2"><div class="li"><a href="mpd_client#captures_d_ecran">Captures d&#039;écran</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mpd_client#ario">Ario</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mpd_client#possibilites1">Possibilités</a></div></li>
+<li class="level2"><div class="li"><a href="mpd_client#capture_d_ecran">Capture d&#039;écran</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mpd_client#ncmpc_ncurse_music_player_client">ncmpc (NCurse Music Player Client)</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mpd_client#captures_d_ecran1">Captures d&#039;écran</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mpd_client#ncmpcpp">ncmpcpp</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mpd_client#captures_d_ecran2">Captures d&#039;écran</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mpd_client#sonata">Sonata</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mpd_client#possibilites2">Possibilités</a></div></li>
+<li class="level2"><div class="li"><a href="mpd_client#capture_d_ecran1">Capture d&#039;écran</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mpd_client#emphasis">Emphasis</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mpd_client#possibilites3">Possibilités</a></div></li>
+<li class="level2"><div class="li"><a href="mpd_client#capture_d_ecran2">Capture d&#039;écran</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mpd_client#fookebox">Fookebox</a></div></li>
+<li class="level1"><div class="li"><a href="mpd_client#ogg123_via_le_terminal">Ogg123 (via le terminal)</a></div></li>
+<li class="level1"><div class="li"><a href="mpd_client#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/lecteur_audio" class="wikilink1" title="lecteur_audio" rel="tag">lecteur audio</a>,
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">brouillon</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="les_principaux_clients_mpd">Les principaux clients MPD</h1>
+<div class="level1">
+
+<p>
+Vous trouverez sur cette page une liste des clients les plus connus pour le lecteur de musique <a href="mpd" class="wikilink1" title="mpd">MPD</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Les principaux clients MPD] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="39-185" /><input type="submit" value="Modifier" class="button" title="Les principaux clients MPD" /></div></form></div>
+<h2 class="sectionedit2" id="gmpc_gnome_music_player_client">gmpc (Gnome Music Player Client)</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[gmpc (Gnome Music Player Client)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="186-231" /><input type="submit" value="Modifier" class="button" title="gmpc (Gnome Music Player Client)" /></div></form></div>
+<h3 class="sectionedit3" id="possibilites">Possibilités</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Supporte la sauvegarde et la création de playlists</div>
+</li>
+<li class="level1"><div class="li"> Permet de naviguer dans la bibliothèque de musique disponible</div>
+</li>
+<li class="level1"><div class="li"> Basé sur les informations des tag ID3</div>
+</li>
+<li class="level1"><div class="li"> Permet des recherches variées, dans les artistes, albums, titres et noms de fichiers</div>
+</li>
+<li class="level1"><div class="li"> Un affichage dans la zone de notification</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Possibilités] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="232-558" /><input type="submit" value="Modifier" class="button" title="Possibilités" /></div></form></div>
+<h3 class="sectionedit4" id="captures_d_ecran">Captures d&#039;écran</h3>
+<div class="level3">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/gmpctray.png?id=mpd_client" class="media" title="applications:gmpctray.png"><img src="http://doc.ubuntu-fr.org/_media/applications/gmpctray.png" class="media" alt="" /></a>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/gmpcinterface.png?id=mpd_client" class="media" title="applications:gmpcinterface.png"><img src="http://doc.ubuntu-fr.org/_media/applications/gmpcinterface.png" class="media" alt="" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Captures d'écran] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="559-654" /><input type="submit" value="Modifier" class="button" title="Captures d'écran" /></div></form></div>
+<h2 class="sectionedit5" id="ario">Ario</h2>
+<div class="level2">
+
+<p>
+<a href="http://ario-player.sourceforge.net/" class="urlextern" title="http://ario-player.sourceforge.net/"  rel="nofollow">Site officiel</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Ario] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="655-727" /><input type="submit" value="Modifier" class="button" title="Ario" /></div></form></div>
+<h3 class="sectionedit6" id="possibilites1">Possibilités</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Permet la navigation dans la bibliothèque</div>
+</li>
+<li class="level1"><div class="li"> Permet la navigation dans le système de fichiers</div>
+</li>
+<li class="level1"><div class="li"> Téléchargement de pochettes d&#039;albums et de paroles de chansons</div>
+</li>
+<li class="level1"><div class="li"> Supporte la sauvegarde et la création de playlists</div>
+</li>
+<li class="level1"><div class="li"> Permet des recherches variées, dans les artistes, albums, titres et noms de fichiers</div>
+</li>
+<li class="level1"><div class="li"> Un affichage dans la zone de notification</div>
+</li>
+<li class="level1"><div class="li"> Extensible par plugin</div>
+</li>
+<li class="level1"><div class="li"> Plugin audioscrobbler</div>
+</li>
+<li class="level1"><div class="li"> Playlist dynamique avec LastFm</div>
+</li>
+<li class="level1"><div class="li"> Edition des tags</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Possibilités] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="728-1222" /><input type="submit" value="Modifier" class="button" title="Possibilités" /></div></form></div>
+<h3 class="sectionedit7" id="capture_d_ecran">Capture d&#039;écran</h3>
+<div class="level3">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/ario-middle.png?id=mpd_client" class="media" title="ario-middle.png"><img src="http://doc.ubuntu-fr.org/_media/ario-middle.png" class="media" alt="" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Capture d'écran] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1223-1272" /><input type="submit" value="Modifier" class="button" title="Capture d'écran" /></div></form></div>
+<h2 class="sectionedit8" id="ncmpc_ncurse_music_player_client">ncmpc (NCurse Music Player Client)</h2>
+<div class="level2">
+
+<p>
+Ce logiciel ne semble plus trop mis à jour.
+</p>
+
+<p>
+<a href="http://www.musicpd.org/clients/ncmpc/" class="urlextern" title="http://www.musicpd.org/clients/ncmpc/"  rel="nofollow"> site officiel</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[ncmpc (NCurse Music Player Client)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1273-1424" /><input type="submit" value="Modifier" class="button" title="ncmpc (NCurse Music Player Client)" /></div></form></div>
+<h3 class="sectionedit9" id="captures_d_ecran1">Captures d&#039;écran</h3>
+<div class="level3">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/ncmpc.png?id=mpd_client" class="media" title="applications:ncmpc.png"><img src="http://doc.ubuntu-fr.org/_media/applications/ncmpc.png" class="media" alt="" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Captures d'écran] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1425-1481" /><input type="submit" value="Modifier" class="button" title="Captures d'écran" /></div></form></div>
+<h2 class="sectionedit10" id="ncmpcpp">ncmpcpp</h2>
+<div class="level2">
+
+<p>
+Client proche de <a href="mpd_client#ncmpc" title="mpd_client ↵" class="wikilink1">ncmpc</a> mais avec plus de fonctionnalités.
+</p>
+
+<p>
+<a href="http://unkart.ovh.org/ncmpcpp/" class="urlextern" title="http://unkart.ovh.org/ncmpcpp/"  rel="nofollow">Site officiel</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[ncmpcpp] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1482-1615" /><input type="submit" value="Modifier" class="button" title="ncmpcpp" /></div></form></div>
+<h3 class="sectionedit11" id="captures_d_ecran2">Captures d&#039;écran</h3>
+<div class="level3">
+
+<p>
+Se reporter à <a href="http://unkart.ovh.org/ncmpcpp/screenshots.php" class="urlextern" title="http://unkart.ovh.org/ncmpcpp/screenshots.php"  rel="nofollow">cette page</a> du site officiel.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Captures d'écran] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1616-1739" /><input type="submit" value="Modifier" class="button" title="Captures d'écran" /></div></form></div>
+<h2 class="sectionedit12" id="sonata">Sonata</h2>
+<div class="level2">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/sonata" class="wikilink1" title="sonata">Sonata</a> est un client graphique pour MPD.
+<a href="http://sonata.berlios.de/" class="urlextern" title="http://sonata.berlios.de/"  rel="nofollow">Site officiel</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Sonata] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1740-1849" /><input type="submit" value="Modifier" class="button" title="Sonata" /></div></form></div>
+<h3 class="sectionedit13" id="possibilites2">Possibilités</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Supporte la sauvegarde et la création de playlists</div>
+</li>
+<li class="level1"><div class="li"> Permet de naviguer dans la bibliothèque de musique disponible (selon les fichiers, les albums ou les artistes)</div>
+</li>
+<li class="level1"><div class="li"> Basé sur les informations des tag ID3</div>
+</li>
+<li class="level1"><div class="li"> Permet des recherches variées, dans les artistes, albums, titres, genres et noms de fichiers</div>
+</li>
+<li class="level1"><div class="li"> Gère le streaming de radios via le net</div>
+</li>
+<li class="level1"><div class="li"> Un affichage optionnel dans la zone de notification lors du changement de musique</div>
+</li>
+<li class="level1"><div class="li"> Recherche les pochettes (local puis net)</div>
+</li>
+<li class="level1"><div class="li"> Sait se faire discret (une seule icône sur la zone de notification)</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Possibilités] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1850-2435" /><input type="submit" value="Modifier" class="button" title="Possibilités" /></div></form></div>
+<h3 class="sectionedit14" id="capture_d_ecran1">Capture d&#039;écran</h3>
+<div class="level3">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/sonata.png?id=mpd_client" class="media" title="applications:sonata.png"><img src="http://doc.ubuntu-fr.org/_media/applications/sonata.png" class="media" alt="" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Capture d'écran] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2436-2493" /><input type="submit" value="Modifier" class="button" title="Capture d'écran" /></div></form></div>
+<h2 class="sectionedit15" id="emphasis">Emphasis</h2>
+<div class="level2">
+
+<p>
+<a href="http://emphasis.tuxfamily.org" class="urlextern" title="http://emphasis.tuxfamily.org"  rel="nofollow">Site officiel</a>
+</p>
+
+<p>
+Client utilisant les librairies ETK, plus particulièrement destiné aux utilisateurs d&#039;<a href="http://doc.ubuntu-fr.org/enlightenment" class="wikilink1" title="enlightenment">enlightenment</a>. N&#039;étant pas encore disponible dans les dépôts, vous aurez à le compiler.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Emphasis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2494-2749" /><input type="submit" value="Modifier" class="button" title="Emphasis" /></div></form></div>
+<h3 class="sectionedit16" id="possibilites3">Possibilités</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Supporte la sauvegarde et la création de playlists</div>
+</li>
+<li class="level1"><div class="li"> Permet de naviguer dans la bibliothèque de musique disponible (selon les fichiers, les albums ou les artistes)</div>
+</li>
+<li class="level1"><div class="li"> Basé sur les informations des tag ID3</div>
+</li>
+<li class="level1"><div class="li"> Permet des recherches variées, dans les artistes, albums, titres, genres et noms de fichiers</div>
+</li>
+<li class="level1"><div class="li"> Recherche les pochettes (local puis net)</div>
+</li>
+<li class="level1"><div class="li"> Permet la création de playlists</div>
+</li>
+<li class="level1"><div class="li"> Affichage des paroles à venir</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Possibilités] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2750-3204" /><input type="submit" value="Modifier" class="button" title="Possibilités" /></div></form></div>
+<h3 class="sectionedit17" id="capture_d_ecran2">Capture d&#039;écran</h3>
+<div class="level3">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/emphasis.png?id=mpd_client" class="media" title="emphasis.png"><img src="http://doc.ubuntu-fr.org/_media/emphasis.png" class="media" alt="" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Capture d'écran] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3205-3249" /><input type="submit" value="Modifier" class="button" title="Capture d'écran" /></div></form></div>
+<h2 class="sectionedit18" id="fookebox">Fookebox</h2>
+<div class="level2">
+
+<p>
+<a href="http://code.google.com/p/fookebox/" class="urlextern" title="http://code.google.com/p/fookebox/"  rel="nofollow">Fookebox</a> Est un client MPD qui prend la forme d&#039;un jukebox.
+</p>
+
+<p>
+Pour installer ce logiciel, il suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://fookebox" class="urlextern" title="apt://fookebox"  rel="nofollow">fookebox</a></strong> (présent dans les dépots depuis Oneiric).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Fookebox] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3250-3549" /><input type="submit" value="Modifier" class="button" title="Fookebox" /></div></form></div>
+<h2 class="sectionedit19" id="ogg123_via_le_terminal">Ogg123 (via le terminal)</h2>
+<div class="level2">
+
+<p>
+Ogg123 est un client en ligne de commande, extrêmement léger.
+</p>
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://vorbis-tools" class="urlextern" title="apt://vorbis-tools"  rel="nofollow">
+vorbis-tools</a></strong>.
+</p>
+
+<p>
+Pour lancer le lecteur client, taper :
+</p>
+<pre class="code">ogg123 http://192.168.0.1:8000/mpd.ogg</pre>
+
+<p>
+(en adaptant l&#039;adresse IP, avec celle de votre serveur mpd).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Ogg123 (via le terminal)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3550-3900" /><input type="submit" value="Modifier" class="button" title="Ogg123 (via le terminal)" /></div></form></div>
+<h2 class="sectionedit20" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://mpd.wikia.com/wiki/Clients" class="urlextern" title="http://mpd.wikia.com/wiki/Clients"  rel="nofollow">Liste plus importante de Clients</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="mpd_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1414660347" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3901-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/2c99ef0712e0c66d2643422cbb556608.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/mpd_client?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mpd_client?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mpd_client?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mpd_client?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mpd_client?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

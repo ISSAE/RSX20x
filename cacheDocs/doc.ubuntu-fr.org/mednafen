@@ -1,0 +1,685 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>mednafen - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-12T22:04:46+0100"/>
+<meta name="keywords" content="emulateurs console,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/mednafen?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/mednafen?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/mednafen"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/mednafen"/>
+<link rel="canonical" href="mednafen"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"mednafen","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="mednafen#main" tabindex="1">Contenu</a> | <a href="mednafen#qsearch__in" tabindex="2">Rechercher</a> | <a href="mednafen#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="mednafen" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="mednafen" >mednafen</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="mednafen#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="mednafen#installation_depuis_les_depots_officiels">Installation depuis les dépôts officiels</a></div></li>
+<li class="level1"><div class="li"><a href="mednafen#installation_de_l_interface_graphique">Installation de l&#039;interface graphique</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mednafen#sous_ubuntu_1104_natty_ubuntu_1204_precise">Sous Ubuntu 11.04 (Natty), Ubuntu 12.04 (Precise)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mednafen#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="mednafen#configuration_des_touches">Configuration des touches</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mednafen#methode_simple">Méthode simple</a></div></li>
+<li class="level2"><div class="li"><a href="mednafen#methode_complexe">Méthode &quot;Complexe&quot;</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mednafen#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="mednafen#problemes_et_bugs_courant">Problèmes et bugs courant</a></div></li>
+<li class="level1"><div class="li"><a href="mednafen#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/emulateurs_console" class="wikilink1" title="emulateurs_console" rel="tag">émulateurs console</a>,
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="mednafenemulateur_multiplate-forme">Mednafen: Émulateur multiplate-forme</h1>
+<div class="level1">
+
+<p>
+Mednafen est un émulateur permettant d&#039;émuler ces consoles:
+</p>
+<ul>
+<li class="level1"><div class="li"> Atari Lynx</div>
+</li>
+<li class="level1"><div class="li"> Famicom / NES</div>
+</li>
+<li class="level1"><div class="li"> GameBoy (Color)</div>
+</li>
+<li class="level1"><div class="li"> GameBoy Advance</div>
+</li>
+<li class="level1"><div class="li"> Neo Geo Pocket (Color)</div>
+</li>
+<li class="level1"><div class="li"> NES, both NTSC and PAL</div>
+</li>
+<li class="level1"><div class="li"> PC Engine/TurboGrafx 16 (CD) et SuperGrafx</div>
+</li>
+<li class="level1"><div class="li"> PC-FX</div>
+</li>
+<li class="level1"><div class="li"> WonderSwan (Color)</div>
+</li>
+</ul>
+
+<p>
+Support expérimental ou moins compatible pour ces consoles (cherchez des émulateurs spécifiques pour ces consoles si la compatibilité n&#039;est pas suffisante):
+</p>
+<ul>
+<li class="level1"><div class="li"> Sega Master System</div>
+</li>
+<li class="level1"><div class="li"> Gamegear</div>
+</li>
+<li class="level1"><div class="li"> Megadrive</div>
+</li>
+<li class="level1"><div class="li"> Super Nintendo</div>
+</li>
+<li class="level1"><div class="li"> Nintendo Virtual Boy</div>
+</li>
+<li class="level1"><div class="li"> Sony Playstation (Très très expérimental)</div>
+</li>
+</ul>
+
+<p>
+Son installation est simple et il est possible d&#039;installer une interface graphique.<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="mednafen"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426194286" /><input type="hidden" name="summary" value="[Mednafen: Émulateur multiplate-forme] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="45-772" /><input type="submit" value="Modifier" class="button" title="Mednafen: Émulateur multiplate-forme" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="mednafen"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426194286" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="773-916" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation_depuis_les_depots_officiels">Installation depuis les dépôts officiels</h2>
+<div class="level2">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://mednafen" class="interwiki iw_apt" title="apt://mednafen">mednafen</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="mednafen"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426194286" /><input type="hidden" name="summary" value="[Installation depuis les dépôts officiels] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="917-1067" /><input type="submit" value="Modifier" class="button" title="Installation depuis les dépôts officiels" /></div></form></div>
+<h2 class="sectionedit4" id="installation_de_l_interface_graphique">Installation de l&#039;interface graphique</h2>
+<div class="level2">
+
+<p>
+<p><div class="notewarning">Obsolète.
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> Téléchargez puis <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez</a> la dernière version du paquet .deb depuis le <strong><a href="http://sourceforge.net/projects/mednafenfe/files/" class="urlextern" title="http://sourceforge.net/projects/mednafenfe/files/"  rel="nofollow">site officiel</a></strong>. </div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="mednafen"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426194286" /><input type="hidden" name="summary" value="[Installation de l'interface graphique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1068-1346" /><input type="submit" value="Modifier" class="button" title="Installation de l'interface graphique" /></div></form></div>
+<h3 class="sectionedit5" id="sous_ubuntu_1104_natty_ubuntu_1204_precise">Sous Ubuntu 11.04 (Natty), Ubuntu 12.04 (Precise)</h3>
+<div class="level3">
+
+<p>
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> <em>Et sous Ubuntu 12.10 (Quantal) ?</em>
+</p>
+
+<p>
+Le paquet <em>mednafenfe_0.1.6-0ubuntu1_all.deb</em> ne fonctionne pas sous <a href="natty" class="wikilink1" title="natty">Ubuntu Natty</a> ni même sous <a href="precise" class="wikilink1" title="precise">Ubuntu Precise</a>, mais il est tout de même possible d&#039;avoir une interface graphique en suivant la méthode suivante :
+</p>
+<ol>
+<li class="level1"><div class="li"> Télécharger puis <a href="archivage#graphiquement" class="wikilink1" title="archivage">extraire l&#039;archive</a> .tar.gz depuis le <a href="http://sourceforge.net/projects/mednafenfe/files/" class="urlextern" title="http://sourceforge.net/projects/mednafenfe/files/"  rel="nofollow">site officiel</a></div>
+</li>
+<li class="level1"><div class="li"> Depuis le dossier où vous aurez extrait l&#039;archive, saisissez dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> la <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante: <pre class="code">sudo python setup.py install</pre>
+</div>
+</li>
+</ol>
+
+</div>
+
+<h4 id="exemple_en_ligne_de_commande">Exemple en ligne de commande</h4>
+<div class="level4">
+
+<p>
+Exemple pour l&#039;archive <em>mfe-0.1.6.tar.gz</em> téléchargée dans le dossier <strong>Téléchargements</strong> de votre Dossier Personnel
+</p>
+<pre class="code">cd ~/Téléchargements
+tar xvfz mfe-0.1.6.tar.gz
+sudo python setup.py install</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="mednafen"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426194286" /><input type="hidden" name="summary" value="[Sous Ubuntu 11.04 (Natty), Ubuntu 12.04 (Precise)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1347-2273" /><input type="submit" value="Modifier" class="button" title="Sous Ubuntu 11.04 (Natty), Ubuntu 12.04 (Precise)" /></div></form></div>
+<h2 class="sectionedit6" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Lancez l&#039;application depuis le menu <em>Applications→Jeux→Mednafen</em> ou depuis un <a href="terminal" class="wikilink1" title="terminal">terminal</a> saisissez la <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">mfe</pre>
+
+<p>
+<p><div class="notetip">Si mednafen ne se lance pas, il vous faudra également <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer la librairie</a> <strong><a href="apt://python-configobj" class="interwiki iw_apt" title="apt://python-configobj">python-configobj</a></strong>
+</div></p>
+</p>
+
+<p>
+Bon jeu ! <img src="lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="mednafen"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426194286" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2274-2661" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h2 class="sectionedit7" id="configuration_des_touches">Configuration des touches</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="mednafen"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426194286" /><input type="hidden" name="summary" value="[Configuration des touches] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2662-2700" /><input type="submit" value="Modifier" class="button" title="Configuration des touches" /></div></form></div>
+<h3 class="sectionedit8" id="methode_simple">Méthode simple</h3>
+<div class="level3">
+
+<p>
+Il est désormais possible de configurer simplement et rapidement les touches en appuyant sur la combinaison de touche <em>Alt</em>+<em>Shift</em>+<em>1</em> une fois dans le jeu (Shift = Majuscule). 
+</p>
+
+<p>
+<strong>Si le raccourci <em>Alt+Shift+1</em> ne fonctionne pas:</strong> <br/>
+
+<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">ouvrez le fichier</a> <strong>~/.mednafen/mednafen.cfg</strong>. <br/>
+
+Recherchez la chaine <em>input_config1</em> pour remplacer 
+</p>
+<pre class="file">command.input_config1 keyboard 50+alt+shift</pre>
+
+<p>
+par
+</p>
+<pre class="file">command.input_config1 keyboard 109</pre>
+
+<p>
+<em>109 correspond à la touche </em>m<em> du clavier, qui devient ainsi le raccourci.</em><br/>
+
+Une fois dans le jeu, appuyez sur <strong><em>m</em></strong> pour activer la configuration des touches.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="mednafen"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426194286" /><input type="hidden" name="summary" value="[Méthode simple] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2701-3401" /><input type="submit" value="Modifier" class="button" title="Méthode simple" /></div></form></div>
+<h3 class="sectionedit9" id="methode_complexe">Méthode &quot;Complexe&quot;</h3>
+<div class="level3">
+
+<p>
+Il est également possible de modifier ces touches en <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditant le fichier </a> <strong>.mednafen/mednafen.cfg</strong> présent dans votre Dossier Personnel et y ajouter par exemple le contenu présent ci-dessous:
+<p><div class="noteimportant">Il faut utiliser les équivalents claviers SDL. Ayant été long à trouver, ils sont rapportés ici <img src="lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />
+</div></p>
+</p>
+<pre class="file">    SDLK_UNKNOWN         = 0,
+    SDLK_FIRST        = 0,
+    SDLK_BACKSPACE         = 8,
+    SDLK_TAB        = 9,
+    SDLK_CLEAR        = 12,
+    SDLK_RETURN        = 13,
+    SDLK_PAUSE        = 19,
+    SDLK_ESCAPE        = 27,
+    SDLK_SPACE        = 32,
+    SDLK_EXCLAIM         = 33,
+    SDLK_QUOTEDBL         = 34,
+    SDLK_HASH        = 35,
+    SDLK_DOLLAR        = 36,
+    SDLK_AMPERSAND         = 38,
+    SDLK_QUOTE        = 39,
+    SDLK_LEFTPAREN         = 40,
+    SDLK_RIGHTPAREN         = 41,
+    SDLK_ASTERISK         = 42,
+    SDLK_PLUS        = 43,
+    SDLK_COMMA        = 44,
+    SDLK_MINUS        = 45,
+    SDLK_PERIOD        = 46,
+    SDLK_SLASH        = 47,
+    SDLK_0            = 48,
+    SDLK_1            = 49,
+    SDLK_2            = 50,
+    SDLK_3            = 51,
+    SDLK_4            = 52,
+    SDLK_5            = 53,
+    SDLK_6            = 54,
+    SDLK_7            = 55,
+    SDLK_8            = 56,
+    SDLK_9            = 57,
+    SDLK_COLON        = 58,
+    SDLK_SEMICOLON         = 59,
+    SDLK_LESS        = 60,
+    SDLK_EQUALS        = 61,
+    SDLK_GREATER         = 62,
+    SDLK_QUESTION         = 63,
+    SDLK_AT             = 64,
+    /*
+        Skip uppercase letters
+     */
+    SDLK_LEFTBRACKET     = 91,
+    SDLK_BACKSLASH         = 92,
+    SDLK_RIGHTBRACKET     = 93,
+    SDLK_CARET         = 94,
+    SDLK_UNDERSCORE          = 95,
+    SDLK_BACKQUOTE         = 96,
+    SDLK_a             = 97,
+    SDLK_b             = 98,
+    SDLK_c             = 99,
+    SDLK_d             = 100,
+    SDLK_e             = 101,
+    SDLK_f             = 102,
+    SDLK_g             = 103,
+    SDLK_h             = 104,
+    SDLK_i             = 105,
+    SDLK_j             = 106,
+    SDLK_k             = 107,
+    SDLK_l             = 108,
+    SDLK_m             = 109,
+    SDLK_n             = 110,
+    SDLK_o             = 111,
+    SDLK_p             = 112,
+    SDLK_q             = 113,
+    SDLK_r             = 114,
+    SDLK_s             = 115,
+    SDLK_t             = 116,
+    SDLK_u             = 117,
+    SDLK_v             = 118,
+    SDLK_w             = 119,
+    SDLK_x             = 120,
+    SDLK_y             = 121,
+    SDLK_z             = 122,
+    SDLK_DELETE         = 127,
+    /* End of ASCII mapped keysyms */
+    /* International keyboard syms */
+    SDLK_WORLD_0         = 160,       /* 0xA0 */
+    SDLK_WORLD_1         = 161,
+    SDLK_WORLD_2         = 162,
+    SDLK_WORLD_3         = 163,
+    SDLK_WORLD_4         = 164,
+    SDLK_WORLD_5         = 165,
+    SDLK_WORLD_6         = 166,
+    SDLK_WORLD_7         = 167,
+    SDLK_WORLD_8         = 168,
+    SDLK_WORLD_9         = 169,
+    SDLK_WORLD_10         = 170,
+    SDLK_WORLD_11         = 171,
+    SDLK_WORLD_12         = 172,
+    SDLK_WORLD_13         = 173,
+    SDLK_WORLD_14         = 174,
+    SDLK_WORLD_15         = 175,
+    SDLK_WORLD_16         = 176,
+    SDLK_WORLD_17         = 177,
+    SDLK_WORLD_18         = 178,
+    SDLK_WORLD_19         = 179,
+    SDLK_WORLD_20         = 180,
+    SDLK_WORLD_21         = 181,
+    SDLK_WORLD_22         = 182,
+    SDLK_WORLD_23         = 183,
+    SDLK_WORLD_24         = 184,
+    SDLK_WORLD_25         = 185,
+    SDLK_WORLD_26         = 186,
+    SDLK_WORLD_27         = 187,
+    SDLK_WORLD_28         = 188,
+    SDLK_WORLD_29         = 189,
+    SDLK_WORLD_30         = 190,
+    SDLK_WORLD_31         = 191,
+    SDLK_WORLD_32        = 192,
+    SDLK_WORLD_33        = 193,
+    SDLK_WORLD_34        = 194,
+    SDLK_WORLD_35        = 195,
+    SDLK_WORLD_36        = 196,
+    SDLK_WORLD_37        = 197,
+
+    SDLK_WORLD_38        = 198,
+    SDLK_WORLD_39        = 199,
+    SDLK_WORLD_40        = 200,
+    SDLK_WORLD_41        = 201,
+    SDLK_WORLD_42        = 202,
+    SDLK_WORLD_43        = 203,
+    SDLK_WORLD_44        = 204,
+    SDLK_WORLD_45        = 205,
+    SDLK_WORLD_46        = 206,
+    SDLK_WORLD_47        = 207,
+    SDLK_WORLD_48        = 208,
+    SDLK_WORLD_49        = 209,
+    SDLK_WORLD_50        = 210,
+    SDLK_WORLD_51        = 211,
+    SDLK_WORLD_52        = 212,
+    SDLK_WORLD_53        = 213,
+    SDLK_WORLD_54        = 214,
+    SDLK_WORLD_55        = 215,
+    SDLK_WORLD_56        = 216,
+    SDLK_WORLD_57        = 217,
+    SDLK_WORLD_58        = 218,
+    SDLK_WORLD_59        = 219,
+    SDLK_WORLD_60        = 220,
+    SDLK_WORLD_61        = 221,
+    SDLK_WORLD_62        = 222,
+    SDLK_WORLD_63        = 223,
+    SDLK_WORLD_64        = 224,
+    SDLK_WORLD_65        = 225,
+    SDLK_WORLD_66        = 226,
+    SDLK_WORLD_67        = 227,
+    SDLK_WORLD_68        = 228,
+    SDLK_WORLD_69        = 229,
+    SDLK_WORLD_70        = 230,
+    SDLK_WORLD_71        = 231,
+    SDLK_WORLD_72        = 232,
+    SDLK_WORLD_73        = 233,
+    SDLK_WORLD_74        = 234,
+    SDLK_WORLD_75        = 235,
+    SDLK_WORLD_76        = 236,
+    SDLK_WORLD_77        = 237,
+    SDLK_WORLD_78        = 238,
+    SDLK_WORLD_79        = 239,
+    SDLK_WORLD_80        = 240,
+    SDLK_WORLD_81        = 241,
+    SDLK_WORLD_82        = 242,
+    SDLK_WORLD_83        = 243,
+    SDLK_WORLD_84        = 244,
+    SDLK_WORLD_85        = 245,
+    SDLK_WORLD_86        = 246,
+    SDLK_WORLD_87        = 247,
+    SDLK_WORLD_88        = 248,
+    SDLK_WORLD_89        = 249,
+    SDLK_WORLD_90        = 250,
+    SDLK_WORLD_91        = 251,
+    SDLK_WORLD_92        = 252,
+    SDLK_WORLD_93        = 253,
+    SDLK_WORLD_94        = 254,
+    SDLK_WORLD_95        = 255,     /* 0xFF */
+    /* Numeric keypad */
+    SDLK_KP0        = 256,
+    SDLK_KP1        = 257,
+    SDLK_KP2        = 258,
+    SDLK_KP3        = 259,
+    SDLK_KP4        = 260,
+    SDLK_KP5        = 261,
+    SDLK_KP6         =  262,
+    SDLK_KP7         =  263,
+    SDLK_KP8         =  264,
+    SDLK_KP9         =  265,
+    SDLK_KP_PERIOD           = 266,
+    SDLK_KP_DIVIDE           = 267,
+    SDLK_KP_MULTIPLY      = 268,
+    SDLK_KP_MINUS          = 269,
+    SDLK_KP_PLUS          = 270,
+    SDLK_KP_ENTER          = 271,
+    SDLK_KP_EQUALS           = 272,
+    /* Arrows + Home/End pad */
+    SDLK_UP              = 273,
+    SDLK_DOWN          = 274,
+    SDLK_RIGHT          = 275,
+    SDLK_LEFT          = 276,
+    SDLK_INSERT          = 277,
+    SDLK_HOME          = 278,
+    SDLK_END         = 279,
+    SDLK_PAGEUP          = 280,
+    SDLK_PAGEDOWN          = 281,
+    /* Function keys */
+    SDLK_F1              = 282,
+    SDLK_F2              = 283,
+    SDLK_F3              = 284,
+    SDLK_F4              = 285,
+    SDLK_F5              = 286,
+    SDLK_F6              = 287,
+    SDLK_F7              = 288,
+    SDLK_F8              = 289,
+    SDLK_F9              = 290,
+    SDLK_F10         = 291,
+    SDLK_F11         = 292,
+    SDLK_F12         = 293,
+    SDLK_F13         = 294,
+    SDLK_F14         = 295,
+    SDLK_F15         = 296,
+    /* Key state modifier keys */
+    SDLK_NUMLOCK          = 300,
+    SDLK_CAPSLOCK          = 301,
+    SDLK_SCROLLOCK           = 302,
+    SDLK_RSHIFT          = 303,
+    SDLK_LSHIFT          = 304,
+    SDLK_RCTRL          = 305,
+    SDLK_LCTRL          = 306,
+    SDLK_RALT          = 307,
+    SDLK_LALT          = 308,
+    SDLK_RMETA          = 309,
+    SDLK_LMETA          = 310,
+    SDLK_LSUPER          = 311,         /* Left &quot;Windows&quot; key */
+    SDLK_RSUPER          = 312,         /* Right &quot;Windows&quot; key */
+    SDLK_MODE          = 313,        /* &quot;Alt Gr&quot; key */
+    SDLK_COMPOSE          = 314,         /* Multi-key compose key */
+    /* Miscellaneous   function keys */
+    SDLK_HELP          = 315,
+    SDLK_PRINT          = 316,
+    SDLK_SYSREQ          = 317,
+    SDLK_BREAK          = 318,
+    SDLK_MENU          = 319,
+    SDLK_POWER          = 320,        /* Power Macintosh power key */
+    SDLK_EURO          = 321,        /* Some european keyboards */
+    SDLK_UNDO          = 322</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="mednafen"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426194286" /><input type="hidden" name="summary" value="[Méthode Complexe] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3402-11566" /><input type="submit" value="Modifier" class="button" title="Méthode Complexe" /></div></form></div>
+<h2 class="sectionedit10" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer son paquet</a>. Selon la méthode choisie, la configuration globale de l&#039;application est conservée ou supprimée. Les journaux du système, et les fichiers de préférence des utilisateurs dans leurs dossiers personnels sont toujours conservés.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="mednafen"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426194286" /><input type="hidden" name="summary" value="[Désinstallation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11567-11939" /><input type="submit" value="Modifier" class="button" title="Désinstallation" /></div></form></div>
+<h2 class="sectionedit11" id="problemes_et_bugs_courant">Problèmes et bugs courant</h2>
+<div class="level2">
+
+</div>
+
+<h4 id="forcer_le_rendu_sdl_virer_opengl">Forcer le rendu SDL (virer openGL)</h4>
+<div class="level4">
+
+<p>
+Si votre ordinateur a du mal avec OpenGL (pilote pas encore sorti ou ordinateur trop vieux pour le supporter correctement) vous pouvez forcer le rendu software en tapant ceci:
+</p>
+<pre class="code">mednafen -vdriver 1 &quot;glissez une rom&quot;</pre>
+
+<p>
+Voilà tout, l&#039;option <strong><em>-vdriver 1</em></strong> permet de choisir un rendu vidéo alternatif très avantageux si OpenGL galère.
+</p>
+
+</div>
+
+<h4 id="pas_de_son_dans_mednafen">Pas de son dans mednafen</h4>
+<div class="level4">
+
+<p>
+Ouvrez mednafen avec la commande:
+</p>
+<pre class="code">mednafen -sounddriver sdl &quot;glissez une rom&quot;</pre>
+
+<p>
+Vous devriez normalement avoir du son si ce n&#039;est pas le cas vous pouvez essayer:
+</p>
+<pre class="code">mednafen -sounddriver alsa &quot;glissez une rom&quot;</pre>
+
+<p>
+Vous pouvez ensuite utiliser mednafen comme bon vous semble sans l&#039;option &quot;-sounddriver *&quot; car mednafen garde en mémoire les configurations que vous lui donnez.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="mednafen"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426194286" /><input type="hidden" name="summary" value="[Problèmes et bugs courant] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11940-12780" /><input type="submit" value="Modifier" class="button" title="Problèmes et bugs courant" /></div></form></div>
+<h2 class="sectionedit12" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://mednafen.sourceforge.net" class="urlextern" title="http://mednafen.sourceforge.net"  rel="nofollow">Site officiel</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=255339" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=255339"  rel="nofollow">Forum Ubuntu &quot;Mednafen et configuration des touches&quot; voir post #9</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="mednafen"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426194286" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12781-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/9/90288cc9f6b39ae4842ca2f429115f84.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/mednafen?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mednafen?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mednafen?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mednafen?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/mednafen?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

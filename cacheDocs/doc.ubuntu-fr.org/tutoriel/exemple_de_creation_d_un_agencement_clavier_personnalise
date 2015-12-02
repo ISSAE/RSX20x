@@ -1,0 +1,1018 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:exemple_de_creation_d_un_agencement_clavier_personnalise - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-05-21T08:36:24+0200"/>
+<meta name="keywords" content="natty,tutoriel,clavier,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/exemple_de_creation_d_un_agencement_clavier_personnalise?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/exemple_de_creation_d_un_agencement_clavier_personnalise?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/exemple_de_creation_d_un_agencement_clavier_personnalise"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/exemple_de_creation_d_un_agencement_clavier_personnalise"/>
+<link rel="canonical" href="exemple_de_creation_d_un_agencement_clavier_personnalise"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:exemple_de_creation_d_un_agencement_clavier_personnalise","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="exemple_de_creation_d_un_agencement_clavier_personnalise#main" tabindex="1">Contenu</a> | <a href="exemple_de_creation_d_un_agencement_clavier_personnalise#qsearch__in" tabindex="2">Rechercher</a> | <a href="exemple_de_creation_d_un_agencement_clavier_personnalise#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="exemple_de_creation_d_un_agencement_clavier_personnalise" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise" >tutoriel:exemple_de_creation_d_un_agencement_clavier_personnalise</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#description_de_l_objectif">Description de l&#039;objectif</a></div></li>
+<li class="level1"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#prise_de_connaissance_de_la_configuration_actuelle">Prise de connaissance de la configuration actuelle</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#manipulations_preliminaires">Manipulations préliminaires</a></div></li>
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#connaitre_avec_le_clavier">Connaître avec le clavier</a></div></li>
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#connaitre_les_fichiers_de_configuration_actifs">Connaître les fichiers de configuration actifs</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#creation_d_un_agencement_ordinaire_sur_huit_niveaux">Création d&#039;un agencement ordinaire sur huit niveaux</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#recuperation_d_une_base_de_depart">Récupération d&#039;une base de départ</a></div></li>
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#introduction_des_niveaux_superieurs_a_quatre">Introduction des niveaux supérieurs à quatre</a></div></li>
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#ajout_des_nouveaux_symboles">Ajout des nouveaux symboles</a></div></li>
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#creation_de_la_touche_d_acces_au_niveau_5_et_superieurs">Création de la touche d&#039;accès au niveau 5 et supérieurs</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#probleme_non_resolus">Problème non résolus</a></div></li>
+<li class="level1"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#autre_exempleclavier_se_comportant_comme_sous_windows_xfce">Autre exemple : clavier se comportant comme sous Windows (Xfce)</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#pre-requis">Pré-requis</a></div></li>
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#sauvegarde_des_fichiers">Sauvegarde des fichiers</a></div></li>
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#declaration_de_la_variante">Déclaration de la variante</a></div></li>
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#creation_de_la_variante">Création de la variante</a></div></li>
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#verification_de_la_presence_de_la_variante_dans_la_configuration_clavier_xfce">Vérification de la présence de la variante dans la configuration clavier Xfce</a></div></li>
+<li class="level2"><div class="li"><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#restauration_des_fichiers_de_sauvegarde_si_besoin">Restauration des fichiers de sauvegarde (si besoin)</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../natty" class="wikilink1" title="natty" rel="tag">Natty</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../clavier" class="wikilink1" title="clavier" rel="tag">clavier</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="exemple_de_creation_d_un_agencement_de_clavier_personnalise">Exemple de création d&#039;un agencement de clavier personnalisé</h1>
+<div class="level1">
+
+<p>
+Cette page illustre par un exemple concret et complet, la mise en place d&#039;un agencement personnalisé disponible ensuite dans l&#039;interface graphique au même titre que ceux fournis avec la distribution.
+</p>
+
+<p>
+Il s&#039;agit avant tout de la description <strong>détaillée</strong> des raisonnements suivis et de l&#039;utilisation des outils disponibles pour faciliter ce travail. Néanmoins, pour faciliter la vision d&#039;ensemble, les grandes lignes de la méthode sont présentées sur la page «<strong> <a href="creer_et_utiliser_un_agencement_de_clavier_personnalise" class="wikilink1" title="tutoriel:creer_et_utiliser_un_agencement_de_clavier_personnalise">Créer et utiliser un agencement de clavier personnalisé</a></strong> ».
+</p>
+
+<p>
+<p><div class="noteclassic">S&#039;agissant ici d&#039;un exemple pour lequel aucune latitude n&#039;est laissée au lecteur qui doit rester relativement passif en s&#039;attachant simplement à comprendre ce qui se passe et en le reproduisant éventuellement, la deuxième personne du pluriel qui prévaut en général dans les tutoriels est ici volontairement remplacée par une première personne du pluriel.<br/>
+
+En bref, écoutez et comprenez ce que<strong> nous faisons</strong>. Vous aurez ensuite tout le loisir de l&#039;adapter à vos fins.
+</div></p>
+</p>
+
+<p>
+La lecture de cette page suppose compris les concepts généraux présentés sur la page « <strong><a href="comprendre_la_configuration_du_clavier" class="wikilink1" title="tutoriel:comprendre_la_configuration_du_clavier">Comprendre la configuration du clavier</a></strong> ».
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Exemple de création d'un agencement de clavier personnalisé] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="48-1417" /><input type="submit" value="Modifier" class="button" title="Exemple de création d'un agencement de clavier personnalisé" /></div></form></div>
+<h2 class="sectionedit2" id="description_de_l_objectif">Description de l&#039;objectif</h2>
+<div class="level2">
+
+<p>
+L&#039;objectif est de :
+</p>
+<ol>
+<li class="level1"><div class="li"> disposer d&#039;un agencement personnalisé basé sur <a href="http://typematrix.com/bepo.php" class="urlextern" title="http://typematrix.com/bepo.php"  rel="nofollow">le clavier bépo français 2030 USB de marque Typematrix</a>,</div>
+</li>
+<li class="level1"><div class="li"> compléter, voire ré-organiser, la distribution des symboles sur les touches.</div>
+</li>
+<li class="level1"><div class="li"> en particulier, créer des niveaux supplémentaires pour ajouter à certaines touches les symboles monétaires de certaines devises et quelques symboles mathématiques.</div>
+</li>
+<li class="level1"><div class="li"> utiliser la touche <em>Alt</em> de gauche pour accéder aux niveaux au delà de quatre.</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Description de l'objectif] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1418-1965" /><input type="submit" value="Modifier" class="button" title="Description de l'objectif" /></div></form></div>
+<h2 class="sectionedit3" id="prise_de_connaissance_de_la_configuration_actuelle">Prise de connaissance de la configuration actuelle</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Prise de connaissance de la configuration actuelle] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1966-2029" /><input type="submit" value="Modifier" class="button" title="Prise de connaissance de la configuration actuelle" /></div></form></div>
+<h3 class="sectionedit4" id="manipulations_preliminaires">Manipulations préliminaires</h3>
+<div class="level3">
+
+<p>
+Pour éviter toute interférence nuisible à la perception de la situation de base, nous ne conserverons qu&#039;un seul agencement (pour les besoin de cet exemple <em>&quot;France - Bepo, ergonomic, Dvorak way&quot;</em>), qui servira de base, en utilisant le dialogue des préférences du clavier accessible par le menu <em>Système → Préférence → Clavier</em>. 
+</p>
+
+<p>
+Ensuite, par le bouton <em>Options</em> présent dans ce dialogue, supprimons toutes les options, en les notant si besoin, qui s&#039;écartent de la configuration par défaut, exceptée celle qui se trouve sous la rubrique <em><strong>Séquence de touche pour fermer le serveur X : Control +Alt + Eff. arrière</strong></em> que nous conservons, ou ajoutons le cas échéant.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Manipulations préliminaires] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2030-2763" /><input type="submit" value="Modifier" class="button" title="Manipulations préliminaires" /></div></form></div>
+<h3 class="sectionedit5" id="connaitre_avec_le_clavier">Connaître avec le clavier</h3>
+<div class="level3">
+
+<p>
+Depuis un <a href="../terminal" class="wikilink1" title="terminal">terminal</a>, entrons la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">xkbprint -label name $DISPLAY - | gv -orientation=seascape -</pre>
+
+<p>
+Une image du clavier portant les noms symboliques des touches et le code de ces touches, apparaît. Nous devrons nous y référer chaque fois qu&#039;il nous sera nécessaire d&#039;identifier précisément une touche.
+</p>
+
+<p>
+<p><div class="noteimportant">Attention cependant, la description de ce clavier fait intervenir des fichiers descriptifs indépendants du fonctionnement du clavier. Il arrive que ces fichiers soient erronés sans que cela ait le moindre retentissement sur le fonctionnement, ce qui ne facilite pas la mise en évidence des erreurs. Pour garantir les informations sur la touche, il faut faire appel à l&#039;utilitaire <strong>xev</strong>
+</div></p>
+</p>
+
+<p>
+Ouvrons un <a href="../terminal" class="wikilink1" title="terminal">terminal</a> et entrons la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">xev</pre>
+
+<p>
+Une fenêtre de terminal s&#039;ouvre ainsi qu&#039;une fenêtre plus petite intitulée <em>Event tester</em>.<br/>
+
+Frappons sur une touche (k par exemple). Dans la fenêtre du terminal, un grand nombre d&#039;informations sur les différents évènements générés s&#039;affichent. Nous y trouvons en particulier les lignes suivantes :
+</p>
+<blockquote><div class="no">
+KeyRelease event, serial 37, synthetic NO, window 0x4c00001,<br/>
+    root 0x15a, subw 0x0, time 50238474, (229,1101), root:(230,1128),<br/>
+   state 0x10, <strong>keycode 56 (keysym 0x6b, k)</strong>, same_screen YES,<br/>
+   XLookupString gives 1 bytes: (6b) &quot;k&quot;<br/>
+    XFilterEvent returns: False</div></blockquote>
+
+<p>
+La partie qui nous intéresse ici est en gras. Elle devrait confirmer les informations de l&#039;image précédente, à savoir que le code de la touche marquée «k» est 56 et que le symbole de touche associé est k <sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fn__1" id="fnt__1" class="fn_top">1)</a></sup>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Connaître avec le clavier] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2764-4532" /><input type="submit" value="Modifier" class="button" title="Connaître avec le clavier" /></div></form></div>
+<h3 class="sectionedit6" id="connaitre_les_fichiers_de_configuration_actifs">Connaître les fichiers de configuration actifs</h3>
+<div class="level3">
+
+<p>
+Dans un <a href="../terminal" class="wikilink1" title="terminal">terminal</a>, entrons la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">setxkbmap -print</pre>
+
+<p>
+Le résultat affiché est le suivant :
+</p>
+<pre class="code">xkb_keymap {
+xkb_keycodes  { include &quot;evdev+aliases(azerty)&quot;	};
+xkb_types     { include &quot;complete&quot;	};
+xkb_compat    { include &quot;complete&quot;	};
+xkb_symbols   { include &quot;pc+fr(bepo)+inet(evdev)+terminate(ctrl_alt_bksp)&quot;	};
+xkb_geometry  { include &quot;typematrix(tm2030USB)&quot;	};
+};</pre>
+
+</div>
+
+<h4 id="les_options">Les options</h4>
+<div class="level4">
+
+<p>
+Avant de nous intéresser aux autres fichiers de configuration, arrêtons nous un instant sur la fin de la ligne qui commence par xkb_symbols, c&#039;est à dire : <code>&quot;+terminate(ctrl_alt_bksp)&quot;</code>.<br/>
+
+Cette expression représente la traduction, en terme de configuration de l&#039;option que nous n&#039;avons pas supprimée, définissant le choix de la commande à utiliser pour arrêter le serveur X.
+</p>
+
+<p>
+Si nous explorons le dossier <strong>/usr/share/X11/xkb/symbols</strong> où sont censés se trouver les fichiers de définitions des symboles associés aux touches, nous y trouvons le fichier <em>terminate</em> dont le contenu est le suivant :
+</p>
+<blockquote><div class="no">
+partial default modifier_keys<br/>
+xkb_symbols &quot;ctrl_alt_bksp&quot; {<br/>
+   key &lt;BKSP&gt; {<br/>
+        type=&quot;CTRL+ALT&quot;,<br/>
+        symbols[Group1] = [ NoSymbol,       <strong> Terminate_Server</strong> ]<br/>
+   };<br/>
+};</div></blockquote>
+
+<p>
+Nous voyons que le symbole de terminaison du serveur, <em>Terminate_Server</em>, en gras ici, est associé à la touche &lt;BKSP&gt; qui possède deux niveaux et dont l&#039;accès au deuxième niveau est donné par la combinaison de touches <em>Ctrl + Alt</em> comme le décrit l&#039;extrait suivant du fichier <strong>/usr/share/X11/xkb/types/pc</strong> :
+</p>
+<blockquote><div class="no">
+   <strong> type &quot;CTRL+ALT&quot;</strong> {<br/>
+	modifiers = Control+Alt;<br/>
+	map[Control+Alt] = Level2;<br/>
+	level_name[Level1] = &quot;Base&quot;;<br/>
+	<strong>level_name[Level2] = &quot;Ctrl+Alt&quot;;</strong><br/>
+    };</div></blockquote>
+
+<p>
+Nous notons au passage que l&#039;option, introduite par un signe <strong>+</strong>, s&#039;ajoute <sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fn__2" id="fnt__2" class="fn_top">2)</a></sup> en mode <em><strong>override</strong></em>, c&#039;est à dire qu&#039;elle prend l&#039;avantage sur toute déclaration antérieure. 
+</p>
+
+<p>
+<p><div class="noteclassic">Notons également qu&#039;il en va de même pour toutes les options qui ont pour ainsi dire le dernier mot.
+</div></p>
+</p>
+
+</div>
+
+<h4 id="les_fichiers_de_symboles">Les fichiers de symboles</h4>
+<div class="level4">
+
+<p>
+Reprenons la ligne qui parle des symboles dans la sortie de la commande <em>setxkbmap -print</em> :
+</p>
+<pre class="code">xkb_symbols   { include &quot;pc+fr(bepo)+inet(evdev)+terminate(ctrl_alt_bksp)&quot;	};</pre>
+
+<p>
+Mise à part les options qui viennent en plus, nous lisons que l&#039;affectation des symboles de touche aux touches, se fait par les définitions du fichier <em><strong>pc</strong></em> auxquelles viennent se surajouter, en mode <em><strong>override</strong></em>  (signe +), celles de la section <em><strong>bépo</strong></em> du fichier <em><strong>fr</strong></em>, puis celles de la section <em><strong>evdev</strong></em> du fichier <em><strong>inet</strong></em>. Tous ces fichiers étant bien-sûr ceux du dossier  <strong>/usr/share/X11/xkb/symbols</strong>.
+</p>
+
+<p>
+En regardant les instructions d&#039;inclusion à l&#039;intérieur des fichiers, nous pouvons établir le schéma structurel suivant :
+<a href="http://doc.ubuntu-fr.org/_detail/tutoriel/symbols-str.jpg?id=tutoriel%3Aexemple_de_creation_d_un_agencement_clavier_personnalise" class="media" title="tutoriel:symbols-str.jpg"><img src="http://doc.ubuntu-fr.org/_media/tutoriel/symbols-str.jpg?w=400&amp;tok=2ade24" class="mediacenter" alt="" width="400" /></a>
+</p>
+
+<p>
+Dans ces fichiers, seul nous intéresse le contenu de la section <em>fr (bépo)</em>; a priori, nous n&#039;avons pas besoin de changer les fichiers inclus.<br/>
+
+Il nous faudra néanmoins rajouter quelque part une section pour permuter les rôles des touches <em>Alt</em> de gauche et <em>Logo</em> de gauche et faire de la touche <em>Alt</em> une touche de sélection des niveaux supérieurs à quatre.
+</p>
+
+<p>
+<p><div class="noteimportant">Le schéma ci-dessus concerne l&#039;agencement pris en exemple et n&#039;a pas valeur générale. Dans le cas d&#039;un autre agencement. la structure aurait pu être totalement différente. Il importe cependant de se représenter très clairement cette structure avant toute tentative de modification.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Connaître les fichiers de configuration actifs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4533-8347" /><input type="submit" value="Modifier" class="button" title="Connaître les fichiers de configuration actifs" /></div></form></div>
+<h2 class="sectionedit7" id="creation_d_un_agencement_ordinaire_sur_huit_niveaux">Création d&#039;un agencement ordinaire sur huit niveaux</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Création d'un agencement ordinaire sur huit niveaux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8348-8413" /><input type="submit" value="Modifier" class="button" title="Création d'un agencement ordinaire sur huit niveaux" /></div></form></div>
+<h3 class="sectionedit8" id="recuperation_d_une_base_de_depart">Récupération d&#039;une base de départ</h3>
+<div class="level3">
+
+<p>
+Dans un <a href="../terminal" class="wikilink1" title="terminal">terminal</a>, entrons la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">gksudo gedit /usr/share/X11/xkb/symbols/fr</pre>
+
+<p>
+Après avoir saisi notre mot de passe, enregistrons le fichier ouvert sous le nom : <em><strong>mon_fr_bépo</strong></em>.
+</p>
+
+<p>
+Ajoutons en tête des commentaires de début, la ligne suivante : 
+</p>
+<pre class="file">créé le «« août 2011 par jaaf64 sur la base de fr</pre>
+
+<p>
+Ne conservons que la section «bépo». C&#039;est à dire supprimons les lignes depuis :
+</p>
+<pre class="file">partial default alphanumeric_keys
+xkb_symbols &quot;basic&quot; {</pre>
+
+<p>
+incluse, jusqu&#039;aux lignes 
+</p>
+<pre class="file">partial alphanumeric_keys
+xkb_symbols &quot;bepo&quot; {</pre>
+
+<p>
+non comprises. 
+</p>
+
+<p>
+Puis les lignes depuis :
+</p>
+<pre class="file">partial alphanumeric_keys
+xkb_symbols &quot;bepo_latin9&quot; {</pre>
+
+<p>
+incluses, jusqu&#039;à la fin.
+</p>
+
+<p>
+Transformons également la ligne: 
+ 
+</p>
+<pre class="file">name[Group1]= &quot;France - Bepo, ergonomic, Dvorak way&quot;;</pre>
+
+<p>
+en :
+</p>
+<pre class="file">name[Group1]= &quot;France - Bepo, personnalisé&quot;;</pre>
+
+<p>
+C&#039;est ce nom qui apparaîtra dans l&#039;interface graphique.
+</p>
+
+<p>
+Nous remarquons que certaines lignes portent une information sur le type 
+</p>
+<pre class="file">type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;</pre>
+
+<p>
+celle-ci annihile le choix du type par défaut. Si nous nous référons aux indications données dans le fichier <strong>/usr/share/X11/xkb/types/extra</strong>, nous observons que ce type se différencie très légèrement du type par défaut <em>&quot;FOUR_LEVEL_ALPHABETIC&quot;</em> dans l&#039;interprétation de la touche <em>Verr num</em> pour les niveaux 3 et 4.
+</p>
+
+<p>
+ Nous n&#039;allons pas toucher ces lignes ici, mais si nous le faisions il nous faudrait faire un choix quant à ce fonctionnement.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Récupération d'une base de départ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8414-10030" /><input type="submit" value="Modifier" class="button" title="Récupération d'une base de départ" /></div></form></div>
+<h3 class="sectionedit9" id="introduction_des_niveaux_superieurs_a_quatre">Introduction des niveaux supérieurs à quatre</h3>
+<div class="level3">
+
+<p>
+Nous allons maintenant avoir besoin d&#039;un type de touche à plus de quatre niveaux. Nous devons explorer les fichiers du dossier <strong>/usr/share/X11/xkb/types</strong> pour savoir si un tel type n&#039;existe pas déjà. Le fichier level5 <sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fn__3" id="fnt__3" class="fn_top">3)</a></sup> devrait logiquement faire l&#039;affaire. Bingo ! Il existe bien dans ce fichier le type suivant :
+</p>
+<pre class="file">  type &quot;EIGHT_LEVEL_ALPHABETIC&quot; {
+	modifiers = Shift+Lock+LevelThree+LevelFive;
+	map[None] = Level1;
+	map[Shift] = Level2;
+	map[Lock]  = Level2;
+	map[LevelThree] = Level3;
+	map[Shift+LevelThree] = Level4;
+	map[Lock+LevelThree] =  Level4;
+	map[Lock+Shift+LevelThree] = Level3;
+	map[LevelFive] = Level5;
+	map[Shift+LevelFive] = Level6;
+	map[Lock+LevelFive]  = Level6;
+	map[LevelThree+LevelFive] = Level7;
+	map[Shift+LevelThree+LevelFive] = Level8;
+	map[Lock+LevelThree+LevelFive] =  Level8;
+	map[Lock+Shift+LevelThree+LevelFive] = Level7;
+
+	level_name[Level1] = &quot;Base&quot;;
+	level_name[Level2] = &quot;Shift&quot;;
+	level_name[Level3] = &quot;Alt Base&quot;;
+	level_name[Level4] = &quot;Shift Alt&quot;;
+	level_name[Level5] = &quot;X&quot;;
+	level_name[Level6] = &quot;X Shift&quot;;
+	level_name[Level7] = &quot;X Alt Base&quot;;
+	level_name[Level8] = &quot;X Shift Alt&quot;;
+   };</pre>
+
+<p>
+Celui-ci fait parfaitement notre affaire. Nous allons donc ajouter devant le signe <strong>[</strong> de chacune des lignes de touches alphabétiques de notre nouveau fichier <strong>/usr/share/X11/xkb/symbols/mon_fr_bépo</strong>, le texte suivant :
+</p>
+<pre class="file">type[group1] = &quot;EIGHT_LEVEL_ALPHABETIC&quot;, </pre>
+
+<p>
+puis, derrière le dernier symbole précédant le signe <strong>]</strong> de ces mêmes lignes, le texte suivant :
+</p>
+<pre class="file">, noSymbol, noSymbol, noSymbol, noSymbol</pre>
+
+<p>
+Une ligne modifiée devrait se présenter ainsi :
+</p>
+<pre class="file">key &lt;AD01&gt; { type[group1] = &quot;EIGHT_LEVEL_ALPHABETIC&quot;, [  b,  B,  bar, brokenbar, noSymbol, noSymbol, noSymbol, noSymbol] }; // b B | ¦</pre>
+
+<p>
+ <p><div class="noteimportant">On veillera à ne pas insérer d&#039;espace entre le dernier symbole pré-existant et la première virgule du texte inséré. Par contre, on veillera à bien laisser une espace au moins juste avant le signe <strong>[</strong>.
+
+</div></p>
+<p><div class="noteclassic">Si le fichier décrivant le type à huit niveaux n&#039;avait pas été présent ( cas d&#039;une distribution différente par exemple), il nous aurait alors fallu le créer.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Introduction des niveaux supérieurs à quatre] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10031-12291" /><input type="submit" value="Modifier" class="button" title="Introduction des niveaux supérieurs à quatre" /></div></form></div>
+<h3 class="sectionedit10" id="ajout_des_nouveaux_symboles">Ajout des nouveaux symboles</h3>
+<div class="level3">
+
+<p>
+Aux emplacements des nouveaux niveaux, on remplacera les <em>noSymbol</em> par les symboles nouveaux dont nous souhaitons disposer. À titre d&#039;exemple voici la ligne du <strong>i</strong> sur laquelle nous avons rajouté les symboles de la <em>roupie indienne</em> et du nouveau <em>sheqel</em> israélien. <sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fn__4" id="fnt__4" class="fn_top">4)</a></sup>
+</p>
+<pre class="file">key &lt;AC03&gt; { type[group1] = &quot;EIGHT_LEVEL_ALPHABETIC&quot;, [  i, I, dead_diaeresis,  dead_abovedot, grave, U20B9, U20AA, noSymbol, noSymbol  ] }; // i I ̈ ˙ ₹ ₪</pre>
+
+<p>
+<p><div class="noteclassic">Les symboles de touche sont entrés sous forme UXXXX de l&#039;Unicode. Attention : le U doit impérativement être en majuscule:
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Ajout des nouveaux symboles] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12292-13015" /><input type="submit" value="Modifier" class="button" title="Ajout des nouveaux symboles" /></div></form></div>
+<h3 class="sectionedit11" id="creation_de_la_touche_d_acces_au_niveau_5_et_superieurs">Création de la touche d&#039;accès au niveau 5 et supérieurs</h3>
+<div class="level3">
+
+<p>
+Rappelons que nous souhaitons permuter les rôles des touches <em>Alt</em>et <em>Logo</em> de gauche et faire de la touche <em>Alt</em> de gauche la touche d&#039;accès au niveau 5.
+</p>
+
+<p>
+Pour nous donner une idée sur la manière de procéder, dans le dialogue des préférences du clavier, ajoutons l&#039;option <em><strong>Right Alt chose fifth level</strong></em><sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fn__5" id="fnt__5" class="fn_top">5)</a></sup>, dans la partie <em><strong>Keys to chose fifth level</strong></em>.<sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fn__6" id="fnt__6" class="fn_top">6)</a></sup> (<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> : présente dans Natty mais quid des versions antérieures ?)
+</p>
+
+<p>
+Dans un <a href="../terminal" class="wikilink1" title="terminal">terminal</a>, entrons à nouveau la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">setxkbmap -print</pre>
+
+<p>
+Le résultat est le suivant :
+</p>
+<blockquote><div class="no">
+xkb_symbols   { include &quot;pc+fr(bepo)+inet(evdev)+terminate(ctrl_alt_bksp)<strong>+level5(ralt_switch_lock)&quot;</strong>	};</div></blockquote>
+
+<p>
+Il nous montre que l&#039;accès au niveau 5 est défini dans la section &quot;ralt_switch_lock&quot; du fichier <strong>/usr/share/X11/xkb/symbols/level5</strong>.<br/>
+
+Pour simplifier, comme nous ne cherchons pas à avoir des fonctions de verrouillage sur les niveaux hauts, nous nous intéresserons plutôt à une section &quot;ralt_switch&quot; dont le texte sera le suivant :<br/>
+
+<em class="u"><strong>Texte option 1</strong></em>
+</p>
+<pre class="file">partial modifier_keys
+xkb_symbols &quot;ralt_switch&quot; {
+  key &lt;RALT&gt; {
+    type[Group1]=&quot;ONE_LEVEL&quot;,
+    symbols[Group1] = [ ISO_Level5_Shift ]
+   };
+  modifier_map Mod3   { ISO_Level5_Shift };
+};.</pre>
+
+<p>
+Maintenant, toujours dans le dialogue des préférences du clavier supprimons cette option et ajoutons l&#039;option &quot;<em>La touche Alt de gauche est échangée avec la touche Logo de gauche</em>&quot; dans la partie <em>Comportement des touches Alt et Logo</em>. 
+</p>
+
+<p>
+Dans un <a href="../terminal" class="wikilink1" title="terminal">terminal</a>, entrons une fois de plus la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">setxkbmap -print</pre>
+
+<p>
+Le résultat est le suivant :
+</p>
+<blockquote><div class="no">
+ xkb_symbols   { include &quot;pc+fr(bepo)+inet(evdev)<strong>+altwin(swap_lalt_lwin)</strong>+terminate(ctrl_alt_bksp)&quot;	};</div></blockquote>
+
+<p>
+Il nous montre que la permutation est définie dans la section <strong>swap_lalt_lwin</strong> du fichier <strong>du dossier /usr/share/X11/xkb/symbols/altwin</strong> dont voici le texte :<br/>
+
+<em class="u"><strong>Texte option 2</strong></em>
+</p>
+<pre class="file">partial modifier_keys 
+xkb_symbols &quot;swap_lalt_lwin&quot; {
+   key &lt;LALT&gt; { type[Group1] = &quot;ONE_LEVEL&quot;,
+                 symbols[Group1] = [ Super_L ] };
+   key &lt;LWIN&gt; {	[	Alt_L,	Meta_L		]	};
+};</pre>
+
+<p>
+Nous pouvons, en nous inspirant de ces deux extraits<sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fn__7" id="fnt__7" class="fn_top">7)</a></sup>, écrire notre option personnalisée comme suit :
+</p>
+<pre class="file">partial modifier_keys 
+xkb_symbols &quot;my_swap_lalt_lwin&quot; {
+  key &lt;LALT&gt; { type[Group1]=&quot;ONE_LEVEL&quot;, symbols[Group1] = [ ISO_Level5_Shift ] };
+  key &lt;LWIN&gt; {	[	Alt_L,	Meta_L		]	};
+  modifier_map Mod3   { ISO_Level5_Shift };
+};</pre>
+
+<p>
+Puis la placer dans un fichier <em>my_level5</em> du dossier   <em>/usr/share/X11/xkb/symbols</em>.par exemple. 
+</p>
+
+</div>
+
+<h4 id="utiliser_l_option">Utiliser l&#039;option</h4>
+<div class="level4">
+
+<p>
+Maintenant, en début de notre agencement personnalisé, derrière la ligne :
+ 
+</p>
+<pre class="file">include &quot;level3(ralt_switch)&quot;
+ </pre>
+
+<p>
+placons la ligne suivante
+ 
+</p>
+<pre class="file">include &quot;my_level5(my_swap_lalt_lwin)&quot;
+ </pre>
+
+<p>
+puis déconnectons nous pour nous re-connecter aussitôt.
+</p>
+
+<p>
+<p><div class="notewarning">À partir de la version 13.10 d&#039;Ubuntu il est nécessaire d&#039;effacer l&#039;ensemble des fichiers *.xkm du répertoire /var/lib/xkb puis de redémarrer le système pour que les modifications de clavier soient prises en compte.
+</div></p>
+</p>
+
+<p>
+Nous avons maintenant accès aux niveaux des touches selon le tableau suivant :
+</p>
+<div class="table sectionedit12"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Niveau </th><th class="col1"> Touche d&#039;accès </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">Niveau 1</td><td class="col1"> pas de touche modificatrice</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">Niveau 2</td><td class="col1"> ⇧ </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">Niveau 3</td><td class="col1"> Alt gr</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">Niveau 4</td><td class="col1"> Alt gr + ⇧</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">Niveau 5</td><td class="col1"> Alt</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">Niveau 6</td><td class="col1"> Alt + ⇧</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">Niveau 7</td><td class="col1"> Alt gr + Alt</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">Niveau 8</td><td class="col1"> Alt gr + Alt + ⇧</td>
+	</tr>
+</table></div>
+
+<p>
+<p><div class="noteclassic">Pensons à   <a href="comment_sauver_et_restaurer_un_fichier" class="wikilink1" title="tutoriel:comment_sauver_et_restaurer_un_fichier">sauvegarder</a> les fichiers <strong>mon_fr_bepo</strong> et <strong>my_level5</strong> dans un dossier personnel, car en cas de réinstallation, ils seraient irrémédiablement écrasés.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Création de la touche d'accès au niveau 5 et supérieurs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13016-16903" /><input type="submit" value="Modifier" class="button" title="Création de la touche d'accès au niveau 5 et supérieurs" /></div></form></div>
+<h2 class="sectionedit13" id="probleme_non_resolus">Problème non résolus</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Il semblerait que l&#039;accès aux niveaux supérieurs à 4 nécessite que l&#039;agencement soit placé en tête de liste dans les préférences du clavier.</div>
+</li>
+<li class="level1"><div class="li"> <img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Il faut parfois effectuer une commutation des agencements pour réactiver les niveaux supérieurs à 4.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Problème non résolus] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="16904-17212" /><input type="submit" value="Modifier" class="button" title="Problème non résolus" /></div></form></div>
+<h2 class="sectionedit14" id="autre_exempleclavier_se_comportant_comme_sous_windows_xfce">Autre exemple : clavier se comportant comme sous Windows (Xfce)</h2>
+<div class="level2">
+
+<p>
+De nombreuses personnes désirant passer de Windows à Linux sont souvent déstabilisées par le clavier (comportement différent avec la touche Verrouillage majuscule) sous Xubuntu (Xfce). 
+</p>
+
+<p>
+Contrairement à Gnome, il n&#039;existe pas d&#039;outils graphique de configuration d&#039;agencement de clavier sous Xfce. Du coup, cet exemple va vous guider pour créer une variante d&#039;agencement simulant le comportement d&#039;un clavier comme sous Windows pour Xcfe.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Autre exemple : clavier se comportant comme sous Windows (Xfce)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17213-17735" /><input type="submit" value="Modifier" class="button" title="Autre exemple : clavier se comportant comme sous Windows (Xfce)" /></div></form></div>
+<h3 class="sectionedit15" id="pre-requis">Pré-requis</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17736-17811" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h3 class="sectionedit16" id="sauvegarde_des_fichiers">Sauvegarde des fichiers</h3>
+<div class="level3">
+
+<p>
+Avant toute manipulation, il est intéressant de sauvegarder les fichiers que nous allons manipuler car un Linuxien avertit en vaut deux :). Ça vous évitera de devoir réinstaller votre système en entier en cas de &quot;plantage&quot;.
+Donc les fichiers à sauvegarder sont les suivants :
+</p>
+<ul>
+<li class="level1"><div class="li"> le fichier de définition des agencements du clavier (/usr/share/X11/xkb/rules/evdev.xml).</div>
+</li>
+<li class="level1"><div class="li"> le fichier des symboles (touches) correspondant à la langue Française (/usr/share/X11/xkb/symbols/fr).</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="sauvegarde_du_fichier_de_definition_des_agencements_du_clavier">Sauvegarde du fichier de définition des agencements du clavier</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Ouvrez un <a href="../terminal" class="wikilink1" title="terminal">terminal</a> (Console ou Émulateur de terminal).</div>
+</li>
+<li class="level1"><div class="li"> Collez-y (Ctrl + Shift + V) la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante : </div>
+</li>
+</ul>
+<pre class="code">sudo cp /usr/share/X11/xkb/rules/evdev.xml /usr/share/X11/xkb/rules/evdev_original.xml</pre>
+
+</div>
+
+<h4 id="sauvegarde_du_fichier_des_symboles_touches_correspondant_a_la_langue_francaise">Sauvegarde du fichier des symboles (touches) correspondant à la langue Française</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Ouvrez un <a href="../terminal" class="wikilink1" title="terminal">terminal</a> (Console ou Émulateur de terminal).</div>
+</li>
+<li class="level1"><div class="li"> Collez-y (Ctrl + Shift + V) la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante : </div>
+</li>
+</ul>
+<pre class="code">sudo cp /usr/share/X11/xkb/symbols/fr /usr/share/X11/xkb/symbols/fr_original</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Sauvegarde des fichiers] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17812-18967" /><input type="submit" value="Modifier" class="button" title="Sauvegarde des fichiers" /></div></form></div>
+<h3 class="sectionedit17" id="declaration_de_la_variante">Déclaration de la variante</h3>
+<div class="level3">
+
+<p>
+Le but de la manœuvre va être de dire à Xubuntu (le gestionnaire xkb pour être exact) qu&#039;on veut lui déclarer une nouvelle variante de clavier Français qu&#039;on appellera : Français (style Windows). 
+Pour ce :
+</p>
+<ul>
+<li class="level1"><div class="li"> Ouvrez le fichier <strong>/usr/share/X11/xkb/rules/evdev.xml</strong> avec un <a href="comment_modifier_un_fichier#sous_xubuntu_xfce" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditeur de texte en mode administrateur</a>.</div>
+</li>
+<li class="level1"><div class="li"> Recherchez le bloc suivant : </div>
+</li>
+</ul>
+<pre class="code">      &lt;variant&gt;
+        &lt;configItem&gt;
+          &lt;name&gt;geo&lt;/name&gt;
+          &lt;description&gt;Georgian (France, AZERTY Tskapo)&lt;/description&gt;
+          &lt;languageList&gt;
+            &lt;iso639Id&gt;geo&lt;/iso639Id&gt;
+          &lt;/languageList&gt;
+        &lt;/configItem&gt;
+      &lt;/variant&gt;</pre>
+<ul>
+<li class="level1"><div class="li"> A la suite de ce bloc, et avant &lt;/variantList&gt; insérez le bloc suivant : </div>
+</li>
+</ul>
+<pre class="code">      &lt;variant&gt;
+        &lt;configItem&gt;
+          &lt;name&gt;win_fr&lt;/name&gt;
+          &lt;description&gt;Français (style Windows)&lt;/description&gt;
+          &lt;languageList&gt;
+            &lt;iso639Id&gt;fr&lt;/iso639Id&gt;
+          &lt;/languageList&gt;
+        &lt;/configItem&gt;
+      &lt;/variant&gt;</pre>
+
+<p>
+resultat
+</p>
+<pre class="code">        &lt;/configItem&gt;
+      &lt;/variant&gt;
+      &lt;variant&gt;
+        &lt;configItem&gt;
+          &lt;name&gt;geo&lt;/name&gt;
+          &lt;description&gt;Georgian (France, AZERTY Tskapo)&lt;/description&gt;
+          &lt;languageList&gt;
+            &lt;iso639Id&gt;geo&lt;/iso639Id&gt;
+          &lt;/languageList&gt;
+        &lt;/configItem&gt;
+      &lt;/variant&gt;
+     &lt;variant&gt;
+      &lt;configItem&gt;
+        &lt;name&gt;win_fr&lt;/name&gt;
+        &lt;description&gt;Français (style Windows)&lt;/description&gt;
+        &lt;languageList&gt;
+          &lt;iso639Id&gt;fr&lt;/iso639Id&gt;
+        &lt;/languageList&gt;
+      &lt;/configItem&gt;
+    &lt;/variant&gt;            
+    &lt;/variantList&gt;
+  &lt;/layout&gt;
+   &lt;layout&gt;
+    &lt;configItem&gt;</pre>
+
+<p>
+Explications pour les curieux :
+</p>
+<ul>
+<li class="level1"><div class="li"> Structure du bloc : </div>
+<ul>
+<li class="level2"><div class="li"> Le format de fichier est de type XML qui est un format structuré délimité par des balises.</div>
+</li>
+<li class="level2"><div class="li"> Le bloc que nous insérons est composé de 6 balises : <strong>variant</strong>, <strong>configItem</strong>, <strong>name</strong>, <strong>description</strong>, <strong>languageList</strong> et <strong>iso639Id</strong>. </div>
+</li>
+<li class="level2"><div class="li"> Chaque balise est toujours délimitée par une balise de début &lt;&gt; et une balise de fin &lt;/&gt;. Dans le cas de la balise <strong>variant</strong>, la balise de début est <strong>&lt;variant&gt;</strong> et la balise de fin <strong>&lt;/variant&gt;</strong>.</div>
+</li>
+<li class="level2"><div class="li"> La balise <strong>iso639Id</strong> est incluse (appartient) à la balise <strong>languageList</strong>. Les balises <strong>name</strong>, <strong>description</strong> et <strong>languageList</strong> sont incluses dans la balise <strong>configItem</strong> qui elle même est incluse dans la balise <strong>variant</strong>.</div>
+</li>
+<li class="level2"><div class="li"> En Français, ça donne : la nouvelle variante ajoutée à pour nom <strong>win_fr</strong>, pour description <strong>Français (style Windows)</strong> et est basée sur la norme ISO 639 <strong>fr</strong> qui définit la disposition de base du clavier pour la France.</div>
+</li>
+<li class="level2"><div class="li"> Les petits malins se seront aperçus que notre nouvelle balise <strong>variant</strong> est elle même incluse dans une balise <strong>variantList</strong> qui est incluse dans une balise <strong>layout</strong> incluse elle-même dans etc.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Déclaration de la variante] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18968-21944" /><input type="submit" value="Modifier" class="button" title="Déclaration de la variante" /></div></form></div>
+<h3 class="sectionedit18" id="creation_de_la_variante">Création de la variante</h3>
+<div class="level3">
+
+<p>
+Dans cette partie, nous allons ajouter notre variante avec les touches redéfinies. 
+</p>
+<ul>
+<li class="level1"><div class="li"> Ouvrez le fichier <strong>/usr/share/X11/xkb/symbols/fr</strong> avec un <a href="comment_modifier_un_fichier#sous_xubuntu_xfce" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditeur de texte en mode administrateur</a>.</div>
+</li>
+<li class="level1"><div class="li"> Tout à la fin du fichier, ajouter le bloc suivant :</div>
+</li>
+</ul>
+<pre class="code">partial default alphanumeric_keys
+xkb_symbols &quot;win_fr&quot; {
+
+    include &quot;latin&quot;
+
+    name[Group1]=&quot;Français (style Windows)&quot;;
+
+    key &lt;AE01&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [ ampersand,          1,  onesuperior,   exclamdown ]	};
+    key &lt;AE02&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [    eacute,          2,   asciitilde,    oneeighth ]	};
+    key &lt;AE03&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [  quotedbl,          3,   numbersign,     sterling ]	};
+    key &lt;AE04&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [apostrophe,          4,    braceleft,       dollar ]	};
+    key &lt;AE05&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [ parenleft,          5,  bracketleft, threeeighths ]	};
+    key &lt;AE06&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [     minus,          6,          bar,  fiveeighths ]	};
+    key &lt;AE07&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [    egrave,          7,        grave, seveneighths ]	};
+    key &lt;AE08&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [underscore,          8,    backslash,    trademark ]	};
+    key &lt;AE09&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [  ccedilla,          9,  asciicircum,    plusminus ]	};
+    key &lt;AE10&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [    agrave,          0,           at,       degree ]	};
+    key &lt;AE11&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [parenright,     degree, bracketright, questiondown ]	};
+    key &lt;AE12&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [     equal,       plus,   braceright,  dead_ogonek ]	};
+
+    key &lt;AD01&gt;	{ [         a,          A,           ae,           AE ]	};
+    key &lt;AD02&gt;	{ [         z,          Z, guillemotleft,        less ]	};
+    key &lt;AD03&gt;	{ [         e,          E,     EuroSign,         cent ]	};
+    key &lt;AD11&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [dead_circumflex, dead_diaeresis, dead_diaeresis, dead_abovering ] };
+    key &lt;AD12&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [    dollar,   sterling,     currency,  dead_macron ]	};
+
+    key &lt;AC01&gt;	{ [         q,          Q,           at,  Greek_OMEGA ]	};
+    key &lt;AC10&gt;	{ [         m,          M,           mu,    masculine ]	};
+    key &lt;AC11&gt;	{ [    ugrave,    percent, dead_circumflex, dead_caron]	};
+    key &lt;TLDE&gt;	{ [twosuperior, asciitilde,     notsign,      notsign ]	};
+
+    key &lt;BKSL&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [  asterisk,         mu,   dead_grave,   dead_breve ]	};
+    key &lt;AB01&gt;	{ [         w,          W,      lstroke,      Lstroke ]	};
+    key &lt;AB07&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [     comma,   question,   dead_acute, dead_doubleacute ] };
+    key &lt;AB08&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [ semicolon,     period, horizconnector,   multiply ]	};
+    key &lt;AB09&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [     colon,      slash, periodcentered,   division ]	};
+    key &lt;AB10&gt;	{ type[group1] = &quot;FOUR_LEVEL_SEMIALPHABETIC&quot;, [    exclam,    section, dead_belowdot, dead_abovedot ] };
+
+    include &quot;level3(ralt_switch)&quot;
+};</pre>
+
+<p>
+<p><div class="noteimportant">Les deux touches windows LWIN et RWIN ne fonctionnent pas pour le moment.
+</div></p>
+</p>
+
+<p>
+Explications pour les curieux :
+</p>
+<ul>
+<li class="level1"><div class="li"> Structure du bloc :</div>
+<ul>
+<li class="level2"><div class="li"> Le format de fichier n&#039;est malheureusement pas de type XML, snif <img src="../lib/images/smileys/icon_sad.gif" class="icon" alt=":-(" /> Il est néanmoins très compréhensible même si de premier abord, il fait peur <img src="../lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<p><div class="noteimportant">En cours de rédaction <img src="../lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Création de la variante] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21945-25694" /><input type="submit" value="Modifier" class="button" title="Création de la variante" /></div></form></div>
+<h3 class="sectionedit19" id="verification_de_la_presence_de_la_variante_dans_la_configuration_clavier_xfce">Vérification de la présence de la variante dans la configuration clavier Xfce</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Redémarrez l&#039;ordinateur, en ayant pris soins d&#039;avoir mémorisé l&#039;adresse de cette page pour y revenir après le redémarrage. Pour redémarrer en mode console entrez la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante dans un <a href="../terminal" class="wikilink1" title="terminal">terminal</a>  :</div>
+</li>
+</ul>
+<pre class="code">xfce4-session-logout -r</pre>
+
+<p>
+Après le redémarrage,
+</p>
+<ul>
+<li class="level1"><div class="li"> Exécutez le programme <strong>xfce4-keyboard-settings</strong> en entrant la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante dans un <a href="../terminal" class="wikilink1" title="terminal">terminal</a>  :</div>
+</li>
+</ul>
+<pre class="code">xfce4-keyboard-settings</pre>
+<ul>
+<li class="level1"><div class="li"> Dans l&#039;onglet <strong>Disposition</strong>, décochez la case <strong>Utiliser les paramètres par défaut</strong>.</div>
+</li>
+<li class="level1"><div class="li"> Dans la liste disposition du clavier ajoutez la variante que l&#039;on a créée : <strong>Français (style Windows)</strong> qui se trouve dans le sous-menu clavier Français.</div>
+</li>
+<li class="level1"><div class="li"> Déconnectez-vous de votre session (xfce4-session-logout -l) puis reconnectez-vous.</div>
+</li>
+<li class="level1"><div class="li"> Votre clavier fonctionne maintenant comme sous Windows.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic">Au fur et à mesure, essayez d&#039;abandonner progressivement l&#039;utilisation du clavier style Windows sur Xubuntu. Au début, c&#039;est un peu difficile mais au bout d&#039;un mois, on s&#039;y habitue <img src="../lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />
+Pour revenir à un clavier style Linux, re-cochez la case  <strong>Utiliser les paramètres par défaut</strong>.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Vérification de la présence de la variante dans la configuration clavier Xfce] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="25695-26976" /><input type="submit" value="Modifier" class="button" title="Vérification de la présence de la variante dans la configuration clavier Xfce" /></div></form></div>
+<h3 class="sectionedit20" id="restauration_des_fichiers_de_sauvegarde_si_besoin">Restauration des fichiers de sauvegarde (si besoin)</h3>
+<div class="level3">
+
+<p>
+Votre clavier se comporte bizarrement. Pas de panique <img src="../lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" /> Voilà la méthode pour restaurer vos fichiers originaux :
+</p>
+<ul>
+<li class="level1"><div class="li"> Ouvrez un <a href="../terminal" class="wikilink1" title="terminal">terminal</a> (Console ou Émulateur de terminal).</div>
+</li>
+<li class="level1"><div class="li"> Collez-y (Ctrl + Shift + V) la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :</div>
+</li>
+</ul>
+<pre class="code">sudo cp /usr/share/X11/xkb/rules/evdev_original.xml /usr/share/X11/xkb/rules/evdev.xml</pre>
+
+<p>
+* Puis collez-y (Ctrl + Shift + V) la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">sudo cp /usr/share/X11/xkb/symbols/fr_original /usr/share/X11/xkb/symbols/fr</pre>
+<hr />
+
+<p>
+<em>Contributeurs: <a href="http://doc.ubuntu-fr.org/utilisateurs/jaaf64" class="wikilink1" title="utilisateurs:jaaf64">jaaf64</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/fabienco" class="wikilink2" title="utilisateurs:fabienco" rel="nofollow">fabienCo</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="exemple_de_creation_d_un_agencement_clavier_personnalise"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1400654184" /><input type="hidden" name="summary" value="[Restauration des fichiers de sauvegarde (si besoin)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="26977-" /><input type="submit" value="Modifier" class="button" title="Restauration des fichiers de sauvegarde (si besoin)" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+à condition de ne pas appuyer sur ⇧en même temps. </div>
+<div class="fn"><sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+selon les règles de fusion citées à la section <strong>Mise en œuvre des modes de fusion</strong> de la page « <a href="comprendre_la_configuration_du_clavier" class="wikilink1" title="tutoriel:comprendre_la_configuration_du_clavier">Comprendre la configuration du clavier</a> »</div>
+<div class="fn"><sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+niveau5</div>
+<div class="fn"><sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+notre moyen mnémotechnique ici étant de placer les monnaies selon l&#039;initiale du pays.</div>
+<div class="fn"><sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fnt__5" id="fn__5" class="fn_bot">5)</a></sup> 
+La touche Alt de droite choisit le niveau 5</div>
+<div class="fn"><sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fnt__6" id="fn__6" class="fn_bot">6)</a></sup> 
+Touche pour choisir le niveau 5</div>
+<div class="fn"><sup><a href="exemple_de_creation_d_un_agencement_clavier_personnalise#fnt__7" id="fn__7" class="fn_bot">7)</a></sup> 
+<strong>Texte option 1</strong> et <strong>Texte option 2</strong></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/0/0f31fd00585360b90277617d2a702480.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/exemple_de_creation_d_un_agencement_clavier_personnalise?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/exemple_de_creation_d_un_agencement_clavier_personnalise?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/exemple_de_creation_d_un_agencement_clavier_personnalise?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/exemple_de_creation_d_un_agencement_clavier_personnalise?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/exemple_de_creation_d_un_agencement_clavier_personnalise?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

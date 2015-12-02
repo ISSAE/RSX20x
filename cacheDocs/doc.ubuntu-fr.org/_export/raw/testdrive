@@ -1,0 +1,58 @@
+{{tag>Karmic Lucid Maverick Natty système}}
+
+-----
+
+
+{{https://launchpadlibrarian.net/43118125/testdrive_64.png  |TestDrive est une solution simple pour tester Ubuntu}}
+====== TestDrive : tester des versions de développement d'Ubuntu ======
+Le programme **TestDrive** est une solution simple permettant de tester la dernière version de développement d'Ubuntu. TestDrive propose, à partir d'une seule fenêtre de terminal, de télécharger la dernière compilation d'image disque de la version de test d'Ubuntu, de créer une machine virtuelle et d'y charger cette image, et optionnellement de créer une clé USB amorçable de test.
+
+
+
+===== Pré-requis =====
+Pour que TestDrive fonctionne, vous devez installer au moins un logiciel de virtualisation parmi les choix suivants :
+  * [[KVM]]
+  * [[VirtualBox]] (version 3.0 à 3.2, édition OSE ou PUEL. La version 4.0.x de VirtualBox n'est pas prise en charge)
+
+Si le paquet d'installation détecte que vous disposez de l'un ou l'autre des hyperviseurs précédents, TestDrive l'utilisera. En l'absence d'un hyperviseur pris en charge, TestDrive installe automatiquement KVM. Les autres logiciels de virtualisation, tels VMware Player et Xen, ne sont pas gérés par TestDrive.
+
+
+
+===== Installation =====
+=== Depuis les dépôts ==
+TestDrive fait partie des dépôts officiels depuis [[lucid|Ubuntu 10.04 LTS]]. Il suffit d'[[:tutoriel:comment_installer_un_paquet|installer le paquet]] **[[apt://testdrive|testdrive]]**.
+
+=== Depuis le PPA ===
+
+Le dépôt PPA du projet donne accès à une version plus récente que celle des dépôts pour Ubuntu 10.04 LTS et 10.10.
+
+[[PPA|Ajoutez le dépôt]] **ppa:testdrive/ppa**((https://launchpad.net/~testdrive/+archive/ppa)) dans vos sources de logiciels, puis [[:tutoriel:comment_modifier_sources_maj#recharger_la_liste_des_paquets|rechargez la liste des paquets]] et [[:tutoriel:comment_installer_un_paquet|installez le paquet]] **[[apt://testdrive|testdrive]]**.
+
+===== Utilisation =====
+
+Une fois installé, TestDrive est disponible dans le menu //Applications -> Outils Système -> Test Drive an Ubuntu ISO//.
+
+{{  testdrive.png  |Le raccourci de TestDrive se trouve dans le menu "Applications -> Outils Système"}}
+
+\\ \\
+
+{{  testdrive-interface.png?300|Inscrivez le numéro d'action à effectuer, puis appuyez sur [Entrée].}}
+
+Appuyez sur ce raccourci pour ouvrir une fenêtre de terminal simple dans laquelle vous est proposé un menu. Ce menu liste diverses images disque de la version de développement d'Ubuntu disponibles actuellement à tester. À l'invite de commande, inscrivez le chiffre correspondant à la version d'Ubuntu que vous souhaitez tester (image pour postes de travail, image alternative, image pour serveurs, image pour Netbooks ; en version 32 bits ou 64 bits) puis appuyez sur la touche [Entrée] de votre clavier. TestDrive se charge du reste !
+
+Une fois votre action choisie, TestDrive se charge de lui-même de télécharger la plus récente image CD de la version de développement d'Ubuntu depuis les serveurs d'Ubuntu. Puis, il crée une machine virtuelle dans le logiciel de virtualisation que vous avez précédemment installé (KVM ou VirtualBox). Enfin, il démarre la nouvelle machine virtuelle et charge l'image CD téléchargée. Le résultat obtenu est identique à celui que vous auriez obtenu en téléchargeant vous-même l'image CD de votre choix et que vous l'aviez gravé dans un CD-ROM.
+
+{{  testdrive-fonction.png?300  |Ubuntu 10.04 en version de développement, exécutée à partir de TestDrive}}
+
+===== Désinstallation =====
+
+Pour supprimer cette application, il suffit de [[:tutoriel:comment_supprimer_un_paquet|supprimer son paquet]]. Selon la méthode choisie, la configuration globale de l'application est conservée ou supprimée. Les journaux du système, et les fichiers de préférence des utilisateurs dans leurs dossiers personnels sont toujours conservés.
+
+
+
+===== Voir aussi =====
+
+  * **(en)** [[https://launchpad.net/testdrive|Page officielle de TestDrive]]
+
+----
+//Contributeurs principaux : ...//

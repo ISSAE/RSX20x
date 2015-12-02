@@ -1,0 +1,39 @@
+{{tag>personnalisation système vetuste}}
+
+----
+
+====== Créer un thème d'icône ======
+Il faut d'abord créer un répertoire portant le nom du thème 
+   mkdir mon_thème
+Placez-vous dans ce répertoire et créez le sous-répertoire 128x128
+  cd mon_thème/ && mkdir 128x128
+Dans ce sous-répertoire créez encore les dossiers action, apps, devices, filesystems et mimetypes
+   cd 128x128/ && mkdir action apps devices filesystems mimetypes
+Placez ensuite dans chacun de ces répertoires les icônes que vous souhaitez utiliser pour votre thème. Reportez vous à un thème déjà existant pour placer les icônes dans les bonnes catégories et avec les noms adéquats. Il faut utiliser des images au format png.\\
+A titre indicatif les répertoires doivent contenir les icônes suivants:
+  * **action** : tous les icônes attribuées aux actions dans vos différentes applications, par exemple "play", "stop", "ffwd" et "rew" dans Amarok, ou "avancer" et "reculer" dans Konqueror, ou encore "nouveau message" dans Kmail, etc, etc...  
+  * **apps** : les icônes des applications
+  * **devices** : les icônes attribuées aux média et matériel
+  * **filesystems** : les dossiers et les corbeilles
+  * **mimetypes** : les icônes des différents types de fichier (mp3, avi, deb, jpeg, odt, etc, etc...)
+
+Télécharger ce {{tutoriel:script_theme_icone.tar.gz|paquet}} et décompressez-le. Copiez les fichiers **buildset** et **index.desktop** qu'il contient dans le répertoire principal du thème que vous avez créé.\\
+\\
+Modifier le script buildset en rajoutant le nom que vous souhaitez donner à votre thème
+  nano buildset
+et modifiez la ligne **PACKAGENAME="nom_du_theme"**\\
+\\
+Editez ensuite index.desktop
+  nano index.desktop
+et modifiez les lignes **Name=nom_du_theme** et **Comment=votre_commentaire**\\
+\\
+Rendez ensuite le script exécutable
+  chmod a+x buildset
+et exécutez-le
+  ./buildset
+Après quelques instants (plus ou moins long suivant votre machine), votre thème est créé. Il s'agit d'une archive tar.gz installable par **Réglages du système --> Apparence --> Icônes --> Installer un nouveau thème...**\\
+\\
+S'il peut être fastidieux de créer un thème de toutes pièces en partant de zéro, on peut facilement combiner des thèmes déjà existant pour en créer un original.
+
+<note warning>Si les icônes placés dans filesystems ne fonctionne pas. Remplacer ce dernier par places, et modifier en conséquence le script buildset ainsi que le fichier index.desktop</note>
+<note warning>**Attention**, le script buildset convertira les icônes uniquement dans les dossiers action, apps, devices, filesystems et mimetypes. Pour qu'il se charge d'autres dossier ajoutez les au script.</note>

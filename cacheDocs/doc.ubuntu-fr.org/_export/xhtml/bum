@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>bum</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-11-19T10:27:41+0100"/>
+<meta name="keywords" content="lucid,natty,oneiric,precise,services,administration"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../bum?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="bum"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/bum"/>
+<link rel="canonical" href="../../bum"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"bum","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="bum#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="bum#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="bum#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="bum#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="bum#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="../../natty" class="wikilink1" title="natty" rel="tag">Natty</a>,
+	<a href="../../oneiric" class="wikilink1" title="oneiric" rel="tag">Oneiric</a>,
+	<a href="../../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="../../services" class="wikilink1" title="services" rel="tag">services</a>,
+	<a href="../../administration" class="wikilink1" title="administration" rel="tag">administration</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="gestionnaire_de_services_bootup-manager">Gestionnaire de services « BootUp-Manager »</h1>
+<div class="level1">
+
+<p>
+Le logiciel <strong>BootUp-Manager</strong> également appelé <strong>bum</strong> est un gestionnaire graphique de <a href="../../services" class="wikilink1" title="services">services système</a> sous licence libre (<a href="http://fr.wikipedia.org/wiki/Licence_publique_g%C3%A9n%C3%A9rale_GNU" class="urlextern" title="http://fr.wikipedia.org/wiki/Licence_publique_g%C3%A9n%C3%A9rale_GNU"  rel="nofollow">GPL v3</a>), ayant la particularité de pouvoir sélectionner les services système devant être démarrés au chargement d&#039;Ubuntu et ceux ne devant pas l&#039;être.
+</p>
+
+<p>
+<a href="../../_detail/media/bum-capture.png?id=bum" class="media" title="media:bum-capture.png"><img src="../../_media/media/bum-capture.png?w=500&amp;tok=c18318" class="media" title="Capture écran de BootUp-Manager" alt="Capture écran de BootUp-Manager" width="500" /></a>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Gestionnaire de services « BootUp-Manager »" [67-567] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Avoir activé l&#039;accès au <a href="../../depots#depots_officiels" class="wikilink1" title="depots">dépôt Universe</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Avoir des connaissances sur les services système d&#039;Ubuntu ou avoir consulté la <a href="../../init_d" class="wikilink1" title="init_d">description des services</a>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [568-846] -->
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Pour installer ce logiciel, il suffit d&#039;<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer les paquets</a> <strong><a href="apt://bum" class="interwiki iw_apt" title="apt://bum">bum</a></strong>.
+</p>
+<pre class="code">sudo apt-get install bum</pre>
+
+</div>
+<!-- EDIT3 SECTION "Installation" [847-1036] -->
+<h2 class="sectionedit4" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+<p><div class="notewarning">Faites attention aux services que vous modifiez ! 
+ Modifier le comportement d&#039;un service peut rendre inopérant votre système Ubuntu. Ne désactivez que les service que vous connaissez et dont vous savez qu&#039;ils ne causeront aucun tort au processus de démarrage d&#039;Ubuntu.
+
+</div></p>
+</p>
+
+<p>
+Lancez l&#039;application via le <a href="../../unity#tableau_de_bord_dash" class="wikilink1" title="unity">dash</a> (Ubuntu 11.04 et ultérieures) ou via le <a href="../../terminal" class="wikilink1" title="terminal">terminal</a> (toutes versions d&#039;Ubuntu) avec la <a href="../../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">sudo bum</pre>
+
+<p>
+En attendant qu&#039;un rédacteur étoffe cette rubrique, vous pouvez consulter la documentation officielle : <a href="http://www.marzocca.net/linux/bumdocs.html#use" class="urlextern" title="http://www.marzocca.net/linux/bumdocs.html#use"  rel="nofollow">http://www.marzocca.net/linux/bumdocs.html#use</a> <strong>(en)</strong>.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Utilisation" [1037-1739] -->
+<h2 class="sectionedit5" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="../../tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer son paquet</a>. Selon la méthode choisie, la configuration globale de l&#039;application est conservée ou supprimée. Les journaux du système, et les fichiers de préférence des utilisateurs dans leurs dossiers personnels sont toujours conservés.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Désinstallation" [1740-2112] -->
+<h2 class="sectionedit6" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://www.marzocca.net/linux/bum.html" class="urlextern" title="http://www.marzocca.net/linux/bum.html"  rel="nofollow">Site officiel du logiciel BootUp-Manager</a> ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="https://launchpad.net/ubuntu/+source/bum" class="urlextern" title="https://launchpad.net/ubuntu/+source/bum"  rel="nofollow">Projet BootUp-Manager sur Launchpad</a> à utiliser pour les soumissions de rapports de bug.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT6 SECTION "Voir aussi" [2113-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/9/945b0b9147e55f66da9c7a17a43ec739.xhtml used -->
+</div>
+</body>
+</html>

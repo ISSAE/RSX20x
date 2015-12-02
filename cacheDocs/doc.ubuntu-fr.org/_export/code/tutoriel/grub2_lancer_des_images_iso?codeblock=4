@@ -1,0 +1,13 @@
+menuentry ".. Ubuntu 14.04 Trusty i386" {
+    insmod loopback
+    insmod iso9660
+    set isofile="/ubuntu-14.04-desktop-i386.iso"
+    #recherche de la partition dans laquelle se trouve le fichier ISO et montage de celle ci dans "/"
+    search -sf $isofile
+    #Montage du fichier ISO dans (loop)/
+    loopback loop $isofile
+    echo	'Chargement du noyau Linux ...'
+    linux (loop)/casper/vmlinuz.efi locale=fr_FR bootkbd=fr console-setup/layoutcode=fr iso-scan/filename=$isofile boot=casper file=/cdrom/preseed/ubuntu.seed quiet splash --
+    echo	'Chargement du disque mémoire initial ...'
+    initrd (loop)/casper/initrd.lz
+}

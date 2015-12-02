@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>greasemonkey - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-10-05T11:31:54+0200"/>
+<meta name="keywords" content="extension,programmation,optimisation,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/greasemonkey?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/greasemonkey?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/greasemonkey"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/greasemonkey"/>
+<link rel="canonical" href="greasemonkey"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"greasemonkey","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="greasemonkey#main" tabindex="1">Contenu</a> | <a href="greasemonkey#qsearch__in" tabindex="2">Rechercher</a> | <a href="greasemonkey#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="greasemonkey" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="greasemonkey" >greasemonkey</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/extension?do=showtag&amp;tag=extension" class="wikilink1" title="extension" rel="tag">extension</a>,
+	<a href="programmation" class="wikilink1" title="programmation" rel="tag">programmation</a>,
+	<a href="optimisation" class="wikilink1" title="optimisation" rel="tag">optimisation</a>,
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">brouillon</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="greasemonkey_-_developper_la_puissance_du_web">Greasemonkey - Développer la puissance du web</h1>
+<div class="level1">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=573a52&amp;media=http%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fd%2Fd3%2FGm_icon.png" class="media" title="http://upload.wikimedia.org/wikipedia/en/d/d3/Gm_icon.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=573a52&amp;media=http%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fd%2Fd3%2FGm_icon.png" class="mediaright" title="Greasemonkey logo" alt="Greasemonkey logo" /></a>
+<strong>Greasemonkey</strong> est une extension pour les navigateurs Web Mozilla Firefox et Epiphany permettant de modifier le comportement d&#039;une page Web en associant un script JavaScript au chargement de celle-ci. Il est ainsi possible d&#039;intervenir sur une page Web pour y ajouter ou supprimer du contenu et y modifier le comportement des liens, entre autres.
+</p>
+
+<p>
+De très nombreux scripts sont mis à disposition par les internautes qui les ont conçus.
+</p>
+
+<p>
+<a href="http://userscripts.org" class="urlextern" title="http://userscripts.org"  rel="nofollow">Site officiel pour les scripts (communauté userscript.org)</a>.
+</p>
+
+<p>
+<p><div class="notewarning">Attention :<a href="http://userscripts.org" class="urlextern" title="http://userscripts.org"  rel="nofollow">http://userscripts.org</a> ne fonctionne plus sous cette forme il faut rajouter :8080 a la fin comme ceci : <a href="http://userscripts.org:8080" class="urlextern" title="http://userscripts.org:8080"  rel="nofollow">http://userscripts.org:8080</a>
+</p>
+
+<p>
+<a href="http://www.greasespot.net/" class="urlextern" title="http://www.greasespot.net/"  rel="nofollow">Site officiel de Greasemonkey</a>
+</p>
+
+<p>
+Vous pouvez également transformer les scripts en <a href="http://doc.ubuntu-fr.org/bookmarklet" class="wikilink1" title="bookmarklet">bookmarklet</a>.
+</p>
+
+<p>
+<p><div class="notewarning">Attention : Certains scripts peuvent être dangereux, préférez le site officiel, veuillez lire la description - et vérifier les avis.
+</div></p>
+</p>
+
+<p>
+===== Téléchargement =====
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="https://addons.mozilla.org/fr/firefox/addon/748" class="urlextern" title="https://addons.mozilla.org/fr/firefox/addon/748"  rel="nofollow">Page téléchargement officiel de l&#039;extension greasemonkey</a></div>
+</li>
+</ul>
+
+<p>
+===== Sélection de scripts =====
+</p>
+
+<p>
+====Changer le design/style des pages ====
+</p>
+
+<p>
+Greasemonkey peut changer le design des pages, mais on lui préférera l&#039;extension <a href="stylish" class="wikilink1" title="stylish">stylish</a>. <strong>Stylish</strong> affectera le rendu directement contrairement à greasemonkey qui le changera par javascript (donc on aperçoit la page non changée à chaque fois). Vous pouvez tout de même utiliser les script - modificateur de style de la communauté <a href="http://www.userstyles.org" class="urlextern" title="http://www.userstyles.org"  rel="nofollow">userstyles.org</a>.
+</p>
+
+<p>
+<a href="stylish#selection_de_styles" class="wikilink1" title="stylish">Voir également la sélection de style sur le wiki</a>.
+</p>
+
+<p>
+==== Optimisation ====
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/55739" class="urlextern" title="http://userscripts.org/scripts/show/55739"  rel="nofollow">Forcer la qualité du flash à bas sur toutes les pages</a>. (utile pour netbook/ultraportable ou pc n&#039;ayant pas suffisamment de ressource ou si vous allez surtout écouter de la musique sur internet, ne change que la qualité graphique).</div>
+</li>
+<li class="level1"><div class="li"> Permettre de lire des vidéos flash avec un plugin vidéo</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Permettre de lire des vidéos flash avec un plugin vidéo (<strong><a href="apt://gecko-mediaplayer" class="urlextern" title="apt://gecko-mediaplayer"  rel="nofollow">gecko-mediaplayer</a></strong>,<a href="apt://mozilla-plugin-vlc" class="urlextern" title="apt://mozilla-plugin-vlc"  rel="nofollow">vlc</a>,<a href="apt://gnome-mplayer" class="urlextern" title="apt://gnome-mplayer"  rel="nofollow">mplayer</a>,<a href="apt://totem-mozilla" class="urlextern" title="apt://totem-mozilla"  rel="nofollow">totem</a>) pour que cela consomme moins de ressource (utile sur netbook ou pc vieillissant).</div>
+</li>
+</ul>
+
+<p>
+Puis utilisez
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour youtube : </div>
+<ul>
+<li class="level4"><div class="li"> <a href="https://doc.ubuntu-fr.org/flash?&amp;#choisir_une_solution_de_remplacement_libre_ou_installer_le_lecteur_officiel_proprietaire" class="urlextern" title="https://doc.ubuntu-fr.org/flash?&amp;#choisir_une_solution_de_remplacement_libre_ou_installer_le_lecteur_officiel_proprietaire"  rel="nofollow">Viewtube</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="http://userscripts.org/scripts/show/34765" class="urlextern" title="http://userscripts.org/scripts/show/34765"  rel="nofollow">Free Youtube!</a> (fonctionne aussi pour Vimeo, Google Video, blip.tv, viddler) </div>
+</li>
+<li class="level4"><div class="li"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=3095548#p3095548" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=3095548#p3095548"  rel="nofollow">Script sur le forum</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Pour dailymotion : </div>
+<ul>
+<li class="level4"><div class="li"> <a href="https://doc.ubuntu-fr.org/flash?&amp;#choisir_une_solution_de_remplacement_libre_ou_installer_le_lecteur_officiel_proprietaire" class="urlextern" title="https://doc.ubuntu-fr.org/flash?&amp;#choisir_une_solution_de_remplacement_libre_ou_installer_le_lecteur_officiel_proprietaire"  rel="nofollow">Viewtube</a></div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic">Le plugin vlc est plus performant mais il n&#039;y a pas de contrôle (ex: bouton pause) et il faut attendre que toute la vidéo soit chargée. Il y a peut être des options à régler …?
+</p>
+
+<p>
+Une alternative est l&#039;utilisation de l&#039;extension firefox <a href="https://addons.mozilla.org/fr/firefox/addon/446" class="urlextern" title="https://addons.mozilla.org/fr/firefox/addon/446"  rel="nofollow">MediaPlayerConnectivity</a> et le configurer pour lancer dans <a href="http://doc.ubuntu-fr.org/vlc" class="wikilink1" title="vlc">vlc</a> ( par exemple ) - nécessite d&#039;avoir les dernières versions.
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/53683" class="urlextern" title="http://userscripts.org/scripts/show/53683"  rel="nofollow">Redirection automatique pour certains sites ayant une page sur laquelle il y a un lien du type &quot;Cliquez ici pour entrer sur le site&quot;</a> ( et autres, exemple allocine ).</div>
+</li>
+</ul>
+
+<p>
+==== Sécurité ====
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/29090" class="urlextern" title="http://userscripts.org/scripts/show/29090"  rel="nofollow">Forcer la connection sécurisée ( https ) sur certain site.</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/52584" class="urlextern" title="http://userscripts.org/scripts/show/52584"  rel="nofollow">LongURL : afficher les url des url raccourcis (bit.li , ... )</a></div>
+</li>
+</ul>
+
+<p>
+==== Mot de passe ====
+</p>
+<ul>
+<li class="level1"><div class="li"> Améliorer le gestionnaire de mot de passe (il existe des logiciels payants sous windows pour faire la même chose).</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/588" class="urlextern" title="http://userscripts.org/scripts/show/588"  rel="nofollow">Pouvoir enregistrer ses mots de passe sur n&#039;importe quelle page</a> ( en retirant le autocomplete=&quot;off&quot; des sites qui l&#039;utilisent).</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/1050" class="urlextern" title="http://userscripts.org/scripts/show/1050"  rel="nofollow">Se logger automatiquement sur les sites ou vous avez déjà sauvé les mots de passe</a>.</div>
+</li>
+</ul>
+
+<p>
+==== Video =====
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/81167" class="urlextern" title="http://userscripts.org/scripts/show/81167"  rel="nofollow">Pluzz sans silverlight</a></div>
+</li>
+<li class="level1"><div class="li"> Voir également <a href="http://doc.ubuntu-fr.org/arte_7_recorder" class="wikilink1" title="arte_7_recorder">arte+7 recorder</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/7686" class="urlextern" title="http://userscripts.org/scripts/show/7686"  rel="nofollow">Ajouter Automatiquement les vidéos quand il y a un lien vers une vidéo</a> ( exemple lien youtube, dailymotion , …).</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/47636" class="urlextern" title="http://userscripts.org/scripts/show/47636"  rel="nofollow">Pouvoir télécharger les vidéos à partir de youtube, dailymotion, google, facebook et beaucoup d&#039;autre.</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/22569" class="urlextern" title="http://userscripts.org/scripts/show/22569"  rel="nofollow">Afficher les paroles à côté des vidéos de musique sur youtube</a>.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/33042" class="urlextern" title="http://userscripts.org/scripts/show/33042"  rel="nofollow">Youtube Enhancer : Améliorer youtube...</a></div>
+</li>
+</ul>
+
+<p>
+==== Musique ====
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/1820" class="urlextern" title="http://userscripts.org/scripts/show/1820"  rel="nofollow">Générer une playlist des mp3 sur la page et pouvoir la télécharger ( donc la lancer )</a>.</div>
+</li>
+</ul>
+
+<p>
+Ajouter un lecteur mp3 dans la page à côté des liens mp3.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/6353" class="urlextern" title="http://userscripts.org/scripts/show/6353"  rel="nofollow">Version petite et pratique google</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/9238" class="urlextern" title="http://userscripts.org/scripts/show/9238"  rel="nofollow">Version grande (Jw)</a></div>
+</li>
+</ul>
+
+<p>
+==== Image ====
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/3400" class="urlextern" title="http://userscripts.org/scripts/show/3400"  rel="nofollow">Afficher l&#039;image d&#039;un lien qui mène vers une image dans la page</a> (greased lightbox ).</div>
+</li>
+</ul>
+
+<p>
+==== Jeux ====
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/61588" class="urlextern" title="http://userscripts.org/scripts/show/61588"  rel="nofollow">Ajouter la possibilité de jouer aux jeux de kongregate.com en plein écran.</a></div>
+</li>
+</ul>
+
+<p>
+==== Site de Dépôt/Téléchargement ====
+</p>
+<ul>
+<li class="level1"><div class="li"> Voir également le portail <a href="http://doc.ubuntu-fr.org/gestionnaire_de_telechargements" class="wikilink1" title="gestionnaire_de_telechargements">gestionnaire de téléchargements</a> ( <a href="http://doc.ubuntu-fr.org/jdownloader" class="wikilink1" title="jdownloader">jdownloader</a>).</div>
+</li>
+</ul>
+
+<p>
+A utiliser conjointement avec l&#039;extension linkification pour transformer les liens texte, en véritable lien cliquable (au lieu de copier le texte pour le mettre dans la bar d&#039;url) :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="https://addons.mozilla.org/fr/firefox/addon/190" class="urlextern" title="https://addons.mozilla.org/fr/firefox/addon/190"  rel="nofollow">Linkification pour firefox.</a></div>
+</li>
+<li class="level1"><div class="li"> Les <a href="http://doc.ubuntu-fr.org/bookmarklet" class="wikilink1" title="bookmarklet">bookmarklet</a> <a href="https://www.squarefree.com/bookmarklets/pagelinks.html" class="urlextern" title="https://www.squarefree.com/bookmarklets/pagelinks.html"  rel="nofollow">&quot;Linked page&quot; ou &quot;Open All Links&quot;</a> ouvre tous les liens de la page dans une nouvelle page. Avec les scripts suivant cela devrait s&#039;automatiser.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/29222" class="urlextern" title="http://userscripts.org/scripts/show/29222"  rel="nofollow">Vérifier automatiquement les liens sur les pages menant vers rapidshare, megaupload,  filefactory ... ( sur plus de 40 sites )
+</a></div>
+</li>
+</ul>
+
+<p>
+Télécharger automatiquement à partir de :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/38985" class="urlextern" title="http://userscripts.org/scripts/show/38985"  rel="nofollow"> rapidshare.</a> </div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/56989" class="urlextern" title="http://userscripts.org/scripts/show/56989"  rel="nofollow">Megaupload </a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/11630" class="urlextern" title="http://userscripts.org/scripts/show/11630"  rel="nofollow">Depositfiles </a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/40269" class="urlextern" title="http://userscripts.org/scripts/show/40269"  rel="nofollow">Megavideo</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/46894" class="urlextern" title="http://userscripts.org/scripts/show/46894"  rel="nofollow">zShare</a></div>
+</li>
+<li class="level1"><div class="li"> etc …</div>
+</li>
+</ul>
+
+<p>
+==== Google ====
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/16341" class="urlextern" title="http://userscripts.org/scripts/show/16341"  rel="nofollow">Ajouter la gestion de compte multiple sur tous les sites google</a> (google,gmail, … ).</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/55098" class="urlextern" title="http://userscripts.org/scripts/show/55098"  rel="nofollow">Voir les images directement dans google images</a> ( au lieu de la page ou elles se trouvent )</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/31950" class="urlextern" title="http://userscripts.org/scripts/show/31950"  rel="nofollow">Script apportant beaucoup d&#039;améliorations.</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/12917" class="urlextern" title="http://userscripts.org/scripts/show/12917"  rel="nofollow">Google en version noir.</a></div>
+</li>
+</ul>
+
+<p>
+==== Google books ====
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/37933" class="urlextern" title="http://userscripts.org/scripts/show/37933"  rel="nofollow">Télécharger des livres de google book.</a>, méthode légale pour les œuvres du <strong>domaine public</strong>, pour cela faire <a href="http://books.google.com/advanced_book_search?hl=fr" class="urlextern" title="http://books.google.com/advanced_book_search?hl=fr"  rel="nofollow">une recherche avancée</a>.</div>
+</li>
+</ul>
+
+<p>
+==== Facebook ====
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/8861" class="urlextern" title="http://userscripts.org/scripts/show/8861"  rel="nofollow">Facebook Fixer</a> : script le plus complet ajoutant beaucoup de fonctions.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/9580" class="urlextern" title="http://userscripts.org/scripts/show/9580"  rel="nofollow">Voir les albums photos</a></div>
+</li>
+</ul>
+
+<p>
+==== Web 3.0 ====
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/7715" class="urlextern" title="http://userscripts.org/scripts/show/7715"  rel="nofollow">Pouvoir rechercher et avoir les résultat d&#039;un site sur la page que vous visitez</a> ( exemple : geek sur wikipedia )</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://userscripts.org/scripts/show/8551" class="urlextern" title="http://userscripts.org/scripts/show/8551"  rel="nofollow">Chargement automatique des pages à la suite de la page actuelle. (autopager)</a></div>
+</li>
+</ul>
+
+<p>
+===== Transformer un script Greasemonkey en extension Firefox =====
+</p>
+
+<p>
+Utiliser <a href="http://blog.arpitnext.com/greasemonkey-compiler-xpi/" class="urlextern" title="http://blog.arpitnext.com/greasemonkey-compiler-xpi/"  rel="nofollow">cette page</a> ou l&#039;<a href="https://addons.mozilla.org/en-US/firefox/addon/scriptify/" class="urlextern" title="https://addons.mozilla.org/en-US/firefox/addon/scriptify/"  rel="nofollow">extension scriptify</a>pour convertir les scripts greasemonkey en extension Firefox. ( fonctionne également pour tout autre script javascript ).
+</p>
+
+<p>
+Procédure :
+</p>
+<ul>
+<li class="level1"><div class="li"> Remplir les champs (optionnel).</div>
+</li>
+<li class="level1"><div class="li"> Coller le script dans &quot;user script&quot;.</div>
+</li>
+<li class="level1"><div class="li"> Cliquer sur compiler.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>Voilà.</strong></div>
+</li>
+</ul>
+
+<p>
+===== Transformer un script Greasemonkey en Bookmarklet =====
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/bookmarklet#transformer_un_script_greasemonkey_en_bookmarklet" class="wikilink1" title="bookmarklet">Transformer un script Greasemonkey en Bookmarklet, sur la page bookmarklet.</a>
+</p>
+<hr />
+
+<p>
+<em>Contributeurs :  <a href="utilisateurs/psychederic.1" class="wikilink1" title="utilisateurs:psychederic">Psychederic</a>.</em>
+</p>
+
+<p>
+Excuse, je n&#039;ai pas trouvé comment t&#039;atteindre. J&#039;avais rédigé un petit how-to à l&#039;intention des débutants. Si jamais ça t&#039;intéresse de l&#039;intégrer à la doc sous une forme ou une autre: 
+<a href="http://forum.ubuntu-fr.org/viewtopic.php?id=1181531" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=1181531"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=1181531</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="greasemonkey"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412501514" /><input type="hidden" name="summary" value="[Greasemonkey - Développer la puissance du web] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="61-" /><input type="submit" value="Modifier" class="button" title="Greasemonkey - Développer la puissance du web" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/9/9bd77d326a0883c7cb8b02c5e857dcb0.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/greasemonkey?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/greasemonkey?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/greasemonkey?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/greasemonkey?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/greasemonkey?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

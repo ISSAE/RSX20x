@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>adduser</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-04-24T11:18:55+0200"/>
+<meta name="keywords" content="administration"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/adduser?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="adduser"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/adduser"/>
+<link rel="canonical" href="../../adduser"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"adduser","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="adduser#adduser">adduser</a></div></li>
+<li class="level1"><div class="li"><a href="adduser#addgroup">addgroup</a></div></li>
+<li class="level1"><div class="li"><a href="adduser#creer_un_compte_ou_un_groupe_d_utilisateurs_de_maniere_non-interactive">Créer un compte ou un groupe d&#039;utilisateurs de manière non-interactive</a></div></li>
+<li class="level1"><div class="li"><a href="adduser#fichiers_impactes">Fichiers impactés</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../administration" class="wikilink1" title="administration" rel="tag">administration</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="adduser_et_addgroupoutils_interactifs_de_creation_d_un_compte_d_utilisateur_et_d_un_groupe_d_utilisateurs">adduser et addgroup : outils interactifs de création d&#039;un compte d&#039;utilisateur et d&#039;un groupe d&#039;utilisateurs</h1>
+<div class="level1">
+
+<p>
+Ubuntu, comme tous les autres systèmes d&#039;exploitation de la famille <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux, est un système foncièrement multi-utilisateurs. Cela signifie que vous n&#039;êtes pas limité à un seul compte d&#039;utilisateur dans le fonctionnement de votre ordinateur. Vous pouvez créer plusieurs comptes d&#039;utilisateurs pour chaque usager de votre ordinateur, de même que pour divers usages.
+</p>
+<ul>
+<li class="level1"><div class="li"> <em><strong><a href="../../utilisateur" class="wikilink1" title="utilisateur">Qu&#039;est-ce qu&#039;un compte d&#039;utilisateur?</a></strong></em></div>
+</li>
+</ul>
+
+<p>
+<code>adduser</code> est un outil en mode console permettant de créer un compte d&#039;utilisateur de manière interactive. Il s&#039;agit d&#039;un script Perl propre à Debian et les distributions qui lui sont dérivées – comme Ubuntu – posant des questions à propos d&#039;un compte à créer, puis invoque le programme <code><a href="../../usermod" class="wikilink2" title="usermod" rel="nofollow">usermod</a></code> en lui passant en arguments les informations récupérées. Cet outil est donc très facile et intuitif à utiliser. <code>addgroup</code> est son pendant en ce qui concerne la création d&#039;un groupe d&#039;utilisateurs.
+</p>
+
+<p>
+Seul un <a href="../../sudo" class="wikilink1" title="sudo">administrateur du système</a> est en mesure de créer un nouveau compte ou groupe d&#039;utilisateur.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "adduser et addgroup : outils interactifs de création d'un compte d'utilisateur et d'un groupe d'utilisateurs" [30-1232] -->
+<h2 class="sectionedit2" id="adduser">adduser</h2>
+<div class="level2">
+
+<p>
+La commande <code>adduser</code>, invoquée par un compte d&#039;administration, démarre le script de création de compte d&#039;utilisateur : 
+</p>
+<pre class="code">sudo adduser identifiant</pre>
+
+<p>
+Sont ensuite demandées, une à une, les informations à affecter au nouveau compte d&#039;utilisateur. Appuyer sur la touche [Entrée] du clavier enregistre l&#039;information renseignée et passe à la question suivante.
+</p>
+
+<p>
+Lorsque toutes les informations requises ont été récupérées, un récapitulatif est présenté à l&#039;administrateur. Celui-ci doit alors confirmer la création du nouveau compte ou recommencer l&#039;opération. Sur confirmation des informations, le script appelle <code><a href="http://doc.ubuntu-fr.org/useradd" class="wikilink1" title="useradd">useradd</a></code> pour créer le nouveau compte et crée un nouveau dossier personnel à partir de la structure contenue dans le répertoire <code>/etc/skel/</code>.
+</p>
+
+<p>
+Certaines options peuvent être précisées à <code>adduser</code>, pour fournir certains paramètres supplémentaires. Consultez <a href="http://manpages.ubuntu.com/adduser" class="urlextern" title="http://manpages.ubuntu.com/adduser"  rel="nofollow">le manuel de adduser (en)</a> pour lire davantage à propos de ces options.
+</p>
+
+</div>
+
+<h5 id="exemple">Exemple</h5>
+<div class="level5">
+<pre class="code">administrateur@ordinateur:~$ sudo adduser jdoe
+[sudo] password for administrateur:        
+Adding user `jdoe&#039; ...
+Adding new group `jdoe&#039; (1001) ...
+Adding new user `jdoe&#039; (1001) with group `jdoe&#039; ...
+Creating home directory `/home/jdoe&#039; ...
+Copying files from `/etc/skel&#039; ...
+Entrez le nouveau mot de passe UNIX : (nouveau mot de passe)
+Retapez le nouveau mot de passe UNIX : (mot de passe répété)
+passwd : le mot de passe a été mis à jour avec succès
+Changing the user information for jdoe
+Enter the new value, or press ENTER for the default
+	Full Name []: John Doe
+	Room Number []: 333, rue des Érables
+	Work Phone []: (555) 123-4567
+	Home Phone []: (555) 987-6543
+	Other []: john@doe.com
+Is the information correct? [Y/n] y
+administrateur@ordinateur:~$ _</pre>
+
+</div>
+<!-- EDIT2 SECTION "adduser" [1233-3082] -->
+<h2 class="sectionedit3" id="addgroup">addgroup</h2>
+<div class="level2">
+
+<p>
+La commande <code>addgroup</code>, invoquée par un compte d&#039;administration, démarre le script de création de groupe d&#039;utilisateurs : 
+</p>
+<pre class="code">sudo addgroup nom_groupe</pre>
+
+<p>
+Aucune autre information n&#039;a a être saisie. Certaines options peuvent être précisées à <code>addgroup</code>, pour fournir certains paramètres supplémentaires. Consultez <a href="http://manpages.ubuntu.com/adduser" class="urlextern" title="http://manpages.ubuntu.com/adduser"  rel="nofollow">le manuel de addgroup (en)</a> pour lire davantage à propos de ces options.
+</p>
+
+<p>
+Pour affecter un compte d&#039;utilisateur à ce nouveau groupe, utilisez <code>adduser</code> de la manière suivante : 
+</p>
+<pre class="code">sudo adduser identifiant nom_groupe</pre>
+
+<p>
+ où <code>identifiant</code> est un identifiant de compte d&#039;utilisateur existant. Le compte doit déjà exister; la commande ne fonctionne pas avec un compte qui n&#039;existe pas.
+</p>
+
+</div>
+
+<h5 id="exemple1">Exemple</h5>
+<div class="level5">
+<pre class="code">administrateur@ordinateur:~$ sudo addgroup famille
+[sudo] password for administrateur:        
+Adding group `famille&#039; (GID 1002) ...
+Done.
+
+administrateur@ordinateur:~$ sudo adduser jdoe famille
+Adding user `jdoe&#039; to group `famille&#039; ...
+Adding user jdoe to group famille
+Done.</pre>
+
+</div>
+<!-- EDIT3 SECTION "addgroup" [3083-4182] -->
+<h2 class="sectionedit4" id="creer_un_compte_ou_un_groupe_d_utilisateurs_de_maniere_non-interactive">Créer un compte ou un groupe d&#039;utilisateurs de manière non-interactive</h2>
+<div class="level2">
+
+<p>
+<code>adduser</code> et <code>addgroup</code> sont des outils interactifs, c&#039;est-à-dire qu&#039;ils posent une série de questions à laquelle doit répondre l&#039;administrateur pour que le compte ou le groupe d&#039;utilisateurs soit créé. Ceci est intéressant pour créer un seul compte ou groupe, mais devient handicapant pour en créer plusieurs à la fois. <code>adduser</code> et <code>addgroup</code> ne sont pas <em>scriptables</em>. Pour utiliser un outil non-interactif, renseignez-vous à propos de :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/useradd" class="wikilink1" title="useradd">useradd</a> pour les comptes d&#039;utilisateur</div>
+</li>
+<li class="level1"><div class="li"> <a href="../../groupadd" class="wikilink2" title="groupadd" rel="nofollow">groupadd</a> pour les groupes d&#039;utilisateurs</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT4 SECTION "Créer un compte ou un groupe d'utilisateurs de manière non-interactive" [4183-4826] -->
+<h2 class="sectionedit5" id="fichiers_impactes">Fichiers impactés</h2>
+<div class="level2">
+
+<p>
+Les commandes ci-dessus modifient les fichiers systèmes suivants qu&#039;il est évidemment fortement déconseillé de modifier manuellement
+</p>
+<pre class="code">/etc/passwd
+/etc/shadow
+/etc/group</pre>
+
+<p>
+Le fichier /etc/passwd contient les informations suivantes sur les comptes utilisateurs :
+</p>
+<pre class="code">nom_utilisateur:mot_de_passe:uuid:guid:commentaire:home:shell</pre>
+<ul>
+<li class="level1"><div class="li"> nom_utilisateur correspond au login de l&#039;utilisateur.</div>
+</li>
+<li class="level1"><div class="li"> mot_de_passe correspond au mot de passe de l&#039;utilisateur remplacer par un x pour des raisons de sécurité.</div>
+</li>
+<li class="level1"><div class="li"> uuid correspond à l&#039;identifiant système de l&#039;utilisateur.</div>
+</li>
+<li class="level1"><div class="li"> guid correspond au groupe principal de l&#039;utilisateur.</div>
+</li>
+<li class="level1"><div class="li"> commentaire (parfois appelé <a href="http://fr.wikipedia.org/wiki/Champ_Gecos" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Champ_Gecos">champ GECOS</a>) correspond à un commentaire textuel sur l&#039;utilisateur qui est souvent son nom réél (Prénom et Nom) et autres informations (n° bureau, téléphone..) séparées par des virgules.</div>
+</li>
+<li class="level1"><div class="li"> home correspond au répertoire home de l&#039;utilisateur sur ce système.</div>
+</li>
+<li class="level1"><div class="li"> shell correspond à l&#039;interpréteur shell par défaut de l&#039;utilisateur.</div>
+</li>
+</ul>
+
+<p>
+extrait de <a href="http://dev.petitchevalroux.net/linux/format-etc-passwd-linux.217.html" class="urlextern" title="http://dev.petitchevalroux.net/linux/format-etc-passwd-linux.217.html"  rel="nofollow">détails du fichier /etc/passwd</a>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Fichiers impactés" [4827-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/2e95a88fbcec1fbd97fcbbe2f9e41182.xhtml used -->
+</div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>eterm</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2010-04-16T12:27:48+0200"/>
+<meta name="keywords" content="dapper,edgy,console,systeme"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../eterm?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="eterm"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/eterm"/>
+<link rel="canonical" href="../../eterm"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"eterm","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="eterm#installer_eterm_et_devil_s_pie">Installer Eterm et Devil&#039;s pie</a></div></li>
+<li class="level1"><div class="li"><a href="eterm#configuration_de_devil_s_pie">Configuration de Devil&#039;s pie</a></div></li>
+<li class="level1"><div class="li"><a href="eterm#configurer_eterm">Configurer Eterm</a></div></li>
+<li class="level1"><div class="li"><a href="eterm#utiliser_esetroot">Utiliser Esetroot</a></div></li>
+<li class="level1"><div class="li"><a href="eterm#configuration_de_la_session">Configuration de la session</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../dapper" class="wikilink1" title="dapper" rel="tag">dapper</a>,
+	<a href="http://doc.ubuntu-fr.org/edgy" class="wikilink1" title="edgy" rel="tag">edgy</a>,
+	<a href="../../console" class="wikilink1" title="console" rel="tag">console</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>
+</span></div>
+<hr />
+
+<p>
+<p><div class="notewarning">Manipulation similaire mais avec gnome-terminal
+</div></p>
+</p>
+
+<h1 class="sectionedit1" id="installer_eterm_transparent_sur_tous_les_bureaux">Installer Eterm transparent sur tous les bureaux</h1>
+<div class="level1">
+
+<p>
+<strong>Attention : ne fonctionne pas avec Beryl.</strong>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Installer Eterm transparent sur tous les bureaux" [113-224] -->
+<h2 class="sectionedit2" id="installer_eterm_et_devil_s_pie">Installer Eterm et Devil&#039;s pie</h2>
+<div class="level2">
+
+<p>
+On installe Eterm (un terminal) et Devil&#039;s pie qui permet de configurer Eterm sur tous le bureaux et de le rendre invisible dans la barre de tache.
+</p>
+<pre class="code">sudo apt-get install eterm devilspie</pre>
+
+<p>
+Pour Ubuntu « Gutsy Gibbon » 7.10 il suffit de <a href="apt://eterm,devilspie" class="urlextern" title="apt://eterm,devilspie"  rel="nofollow">cliquer ici</a>.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Installer Eterm et Devil's pie" [225-556] -->
+<h2 class="sectionedit3" id="configuration_de_devil_s_pie">Configuration de Devil&#039;s pie</h2>
+<div class="level2">
+
+<p>
+On crée un dossier .devilspie dans le dossier home.<br/>
+
+Dans ce dossier on crée un fichier eterm.ds
+</p>
+<pre class="code">sudo gedit /home/$USER/.devilspie/eterm.ds</pre>
+
+<p>
+On y met ceci :
+</p>
+<pre class="code">(if (is (application_name) &quot;Eterm&quot;)
+(begin
+(skip_tasklist)
+(skip_pager)
+(pin)
+(below)
+(undecorate)
+(geometry &quot;400x300&quot;)
+(geometry &quot;+1000+40&quot;)
+))</pre>
+
+<p>
+(below) permet de le forcer à rester sous les applications.<br/>
+
+(pin) permet de le mettre sur tous les bureaux.<br/>
+
+La première ligne geometry donne la taille du terminal (en pixel).<br/>
+
+La deuxième ligne geometry donne la position du terminal (en pixel).<br/>
+
+On sauvegarde le document.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Configuration de Devil's pie" [557-1213] -->
+<h2 class="sectionedit4" id="configurer_eterm">Configurer Eterm</h2>
+<div class="level2">
+
+<p>
+On lance Eterm avec Alt+F2, on inscrit Eterm.<br/>
+
+On met le fond en transparent, on règle les polices.<br/>
+
+Avec Ctrl + click droit on sauvegarde User Settings et Theme Settings.<br/>
+
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Configurer Eterm" [1214-1419] -->
+<h2 class="sectionedit5" id="utiliser_esetroot">Utiliser Esetroot</h2>
+<div class="level2">
+
+<p>
+Cette fonction permet de charger le fond d&#039;écran avant Eterm pour bien le rendre transparent.<br/>
+
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Utiliser Esetroot" [1420-1547] -->
+<h2 class="sectionedit6" id="configuration_de_la_session">Configuration de la session</h2>
+<div class="level2">
+
+<p>
+On va dans Système &gt; Préférences &gt; Sessions<br/>
+
+Dans programmes au démarrage on ajoute : 
+</p>
+<pre class="code">devilspie\\
+Esetroot -f /chemin/fond.extension\\
+Eterm -x --scrollbar=off --buttonbar=off</pre>
+
+<p>
+On redémarre.
+</p>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../../utilisateurs/mathieu11" class="wikilink2" title="utilisateurs:mathieu11" rel="nofollow">Mathieu11</a></em>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Configuration de la session" [1548-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/da23f0d3fb4cf411174cc20cff2eeb25.xhtml used -->
+</div>
+</body>
+</html>

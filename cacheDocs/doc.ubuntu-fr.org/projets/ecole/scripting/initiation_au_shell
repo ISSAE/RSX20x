@@ -1,0 +1,929 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>projets:ecole:scripting:initiation_au_shell - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-05-21T03:29:43+0200"/>
+<meta name="keywords" content="script,shell,brouillon,programmation"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/projets/ecole/scripting/initiation_au_shell?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="http://doc.ubuntu-fr.org/feed.php?mode=list&amp;ns=projets:ecole:scripting"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/projets/ecole/scripting/initiation_au_shell"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/projets/ecole/scripting/initiation_au_shell"/>
+<link rel="canonical" href="initiation_au_shell"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='projets:ecole:scripting';var JSINFO = {"id":"projets:ecole:scripting:initiation_au_shell","namespace":"projets:ecole:scripting"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="initiation_au_shell#main" tabindex="1">Contenu</a> | <a href="initiation_au_shell#qsearch__in" tabindex="2">Rechercher</a> | <a href="initiation_au_shell#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../../../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="initiation_au_shell" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="initiation_au_shell" >projets:ecole:scripting:initiation_au_shell</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="initiation_au_shell#generalites">Généralités</a></div></li>
+<li class="level1"><div class="li"><a href="initiation_au_shell#entreessorties">Entrées / Sorties</a></div></li>
+<li class="level1"><div class="li"><a href="initiation_au_shell#redirections">Redirections</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="initiation_au_shell#sorties">Sorties</a></div></li>
+<li class="level2"><div class="li"><a href="initiation_au_shell#entrees">Entrées</a></div></li>
+<li class="level2"><div class="li"><a href="initiation_au_shell#devnull_2_1">&gt;/dev/null 2&gt;&amp;1</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="initiation_au_shell#commandes_de_base_pour_traiter_les_fichiers">Commandes de base pour traiter les fichiers</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="initiation_au_shell#cut">Cut</a></div></li>
+<li class="level2"><div class="li"><a href="initiation_au_shell#head_et_tail">Head et Tail</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="initiation_au_shell#les_pipes">Les pipes</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="initiation_au_shell#presentation_de">Présentation de &quot;|&quot;</a></div></li>
+<li class="level2"><div class="li"><a href="initiation_au_shell#presentation_de1">Présentation de &quot;&amp;&quot;</a></div></li>
+<li class="level2"><div class="li"><a href="initiation_au_shell#presentation_de2">Présentation de &quot;&amp;&amp;&quot;</a></div></li>
+<li class="level2"><div class="li"><a href="initiation_au_shell#presentation_de3">Présentation de &quot;||&quot;</a></div></li>
+<li class="level2"><div class="li"><a href="initiation_au_shell#presentation_de4">Présentation de &quot;;&quot;</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="initiation_au_shell#les_expressions_regulieres">Les expressions régulières</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="initiation_au_shell#les_modificateurs">Les modificateurs</a></div></li>
+<li class="level2"><div class="li"><a href="initiation_au_shell#sed">Sed</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="initiation_au_shell#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../../script" class="wikilink1" title="script" rel="tag">script</a>,
+	<a href="http://doc.ubuntu-fr.org/shell" class="wikilink1" title="shell" rel="tag">shell</a>,
+	<a href="../../../brouillon" class="wikilink1" title="brouillon" rel="tag">brouillon</a>,
+	<a href="../../../programmation" class="wikilink1" title="programmation" rel="tag">programmation</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="initiation_au_shell">Initiation au Shell</h1>
+<div class="level1">
+
+<p>
+Ceci est un compte-rendu du cours donné par gapz et FiFouille sur le canal <abbr title="Internet Relay Chat">IRC</abbr> #ubuntu-fr-classroom le 27 janvier 2007. Ce cours est orienté débutant et a pour but de donner de solides bases. Pour le suivre il suffit de savoir ouvrir un terminal.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit2" id="generalites">Généralités</h2>
+<div class="level2">
+
+<p>
+Le <strong>Shell</strong> est une interface entre l&#039;utilisateur et le système d&#039;exploitation. L&#039;utilisateur entre des commandes, qui sont ensuite interprétées par le Shell, et celui-ci renvoie un certain résultat.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/icons/iconnote.png?id=projets%3Aecole%3Ascripting%3Ainitiation_au_shell" class="media" title="icons:iconnote.png"><img src="http://doc.ubuntu-fr.org/_media/icons/iconnote.png" class="medialeft" alt="" /></a>
+</p>
+<blockquote><div class="no">
+Quand on parle du Shell, on fait souvent référence à l&#039;interpréteur de commande, autrefois nommé sh (contraction de shell), et qui a ensuite donné naissance à tout un éventail d&#039;interpréteurs tels que bash, csh, zsh, ksh… qu&#039;il ne faut pas confondre avec un émulateur de terminal comme xterm, eterm, gnome-terminal qui est un outil graphique qui permet d&#039;avoir accès au shell.</div></blockquote>
+
+<p>
+En réalité, les vrais terminaux sont accessibles via la combinaison de touche CTRL + ALT + Fx (où x est un chiffre entre 1 et 6) lorsque vous êtes dans un environnement graphique, le 7 correspondant à cette session. Si vous êtes dans un vrai Terminal, il faut théoriquement utiliser ALT + Fx. À noter également qu&#039;un émulateur permet d&#039;afficher une sorte de <abbr title="Terminal Texte">TTY</abbr> (TéléTYpe) dans la session graphique.
+</p>
+
+<p>
+Le Shell vous donne accès à toute une gamme d&#039;outils très performants qui permettent d&#039;effectuer des tâches impossibles jusque là mais aussi de les automatiser, et cela d&#039;une manière assez simple. De nombreuses interfaces graphiques sont certes disponibles, mais le shell reste très léger, rapide, accessible, efficace…
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit3" id="entreessorties">Entrées / Sorties</h2>
+<div class="level2">
+
+<p>
+En général, un programme dispose d&#039;une <strong>entrée standard</strong>, d&#039;une <strong>sortie standard</strong>, et d&#039;une <strong>sortie d&#039;erreur standard</strong>, aussi connues sous le nom de <strong>stdin</strong>, <strong>stdout</strong>, <strong>stderr</strong>. Globalement stdin représente le clavier, stdout l&#039;écran et stderr la sortie des messages d&#039;erreur vers l&#039;écran : ceci peut bien entendu varier suivant les programmes, il ne s&#039;agit que d&#039;un exemple.
+</p>
+
+<p>
+À chaque entrée/sortie est associée un numéro appelé <strong>descripteur de fichier</strong> comme vous pouvez le voir dans ce tableau récapitulatif :
+</p>
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Entrées/Sorties             </th><th class="col1 leftalign"> Nom      </th><th class="col2 leftalign"> Numéro   </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> Entrée standard             </td><td class="col1 centeralign">  stdin   </td><td class="col2 centeralign">   0      </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> Sortie standard             </td><td class="col1 centeralign">  stdout  </td><td class="col2 centeralign">   1      </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> Sortie d&#039;erreur standard    </td><td class="col1 centeralign">  stderr  </td><td class="col2 centeralign">   2      </td>
+	</tr>
+</table></div>
+
+<p>
+Par exemple, prenons un programme censé effectuer l&#039;addition de 1 et de 1. Une fois lancé, ce programme donnera un résultat dans la sortie standard alors que s&#039;il y a une erreur, elle nous parviendra via la sortie d&#039;erreur standard.
+</p>
+
+<p>
+Concrètement si vous exécutez &quot;lfdfdfj&quot; dans un terminal, &quot;bash: lfdfdfj: command not found&quot; sera retourné sur stderr. Par contre, si vous tapez ls, le résultat sera retourné sur stdout.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit5" id="redirections">Redirections</h2>
+<div class="level2">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/icons/icone_danger.png?id=projets%3Aecole%3Ascripting%3Ainitiation_au_shell" class="media" title="icons:icone_danger.png"><img src="http://doc.ubuntu-fr.org/_media/icons/icone_danger.png" class="medialeft" alt="" /></a>
+</p>
+<blockquote><div class="no">
+Dokuwiki remplace automatiquement &gt; &gt;  et &lt; &lt;(sans l&#039;espace entre les deux) par un guillemet comme ça » et comme ça «, donc jusqu&#039;à ce qu&#039;une solution soit trouvée (par vous peut être…) pensez à faire le changement mentalement.</div></blockquote>
+
+<p>
+Les <strong>redirections</strong> permettent simplement (comme leur nom l&#039;indique), de rediriger un des trois descripteurs de fichier vu plus haut vers à peu près tout ce que vous voulez. Les opérateurs utilisés sont 
+</p>
+<pre class="code">&quot;&gt;&quot;, &quot;&gt;&gt;&quot;, &quot;&lt;&quot;, &quot;&lt;&lt;&quot;</pre>
+
+</div>
+
+<h3 class="sectionedit6" id="sorties">Sorties</h3>
+<div class="level3">
+
+<p>
+Prenons un exemple, on connaît la commande &quot;ls&quot; qui donne la liste des fichiers d&#039;un répertoire et on veut enregistrer le résultat dans un fichier. Pour cela on    va rediriger le résultat de la sortie standard dans le fichier test à l&#039;aide de la commande suivante :
+</p>
+<pre class="code">ls &gt; test</pre>
+
+<p>
+De même si on veut enregistrer stderr de la commande &quot;lfdfdfj&quot;, on utilise :
+</p>
+<pre class="code">lfdfdfj 2&gt; test</pre>
+
+<p>
+Dans le premier exemple, on peut constater que l&#039;on ne précise pas le descripteur de fichier redirigé (1), en effet le descripteur de fichier redirigé par défaut est stdout.
+</p>
+
+<p>
+Techniquement, lorsque &quot;&gt;&quot; est utilisé le fichier vers lequel la sortie est redirigée est créé s&#039;il n&#039;existait pas auparavant, sinon il est écrasé.
+</p>
+
+<p>
+Pour conserver le fichier original, vous pouvez utiliser &quot;»&quot; qui n&#039;écrasera pas le contenu du fichier s&#039;il existe déjà. Par exemple :
+</p>
+<pre class="code">ls &gt;&gt; test</pre>
+
+<p>
+Si test n&#039;existe pas il sera créé, si il existe le résultat sera ajouté à son contenu (à la fin du fichier). De la même manière, vous pouvez rediriger stderr : 
+</p>
+<pre class="code">lfdfdfj 2&gt;&gt; test</pre>
+
+<p>
+Mais il est également possible de rediriger une sortie vers une autre sortie, par exemple &quot;2&gt;&amp;1&quot; signifie &quot;rediriger stderr vers ce que représente stdout&quot;. Ainsi 
+</p>
+<pre class="code">ls &gt; test 2&gt;&amp;1</pre>
+
+<p>
+redirigera stdout et stderr dans le fichier test. Vous remarquerez que les redirections s&#039;effectuent de droite à gauche : la sortie stderr 2 est tout d&#039;abord redirigée vers la sortie stdout 1, puis la sortie standard de ls s&#039;inscrit dans le fichier test.
+</p>
+
+</div>
+
+<h3 class="sectionedit7" id="entrees">Entrées</h3>
+<div class="level3">
+
+<p>
+Pour rediriger vers l&#039;entrée standard stdin, nous allons utiliser &quot;&lt;&quot; et &quot;«&quot;. 
+</p>
+
+<p>
+&quot;wc&quot; permet de compter le nombre de lignes (option -l) ou de mots (option -w), plus d&#039;informations dans la page man de wc, en entrée. Pour compter le nombre de lignes d&#039;un fichier on peut donc utiliser :
+</p>
+<pre class="code">wc -l &lt; fichier</pre>
+
+<p>
+Cette commande donnera le même résultat car wc peut prendre un fichier comme paramètre :
+</p>
+<pre class="code">wc -l fichier</pre>
+
+<p>
+&quot;«&quot; permet lui aussi de rediriger stdin mais jusqu&#039;à une chaîne de caractère que l&#039;on précisera : littéralement on pourrait dire que « transmet notre entrée standard (clavier) au programme à sa gauche, et cela jusqu&#039;à ce qu&#039;il rencontre une ligne <abbr title="End of file">EOF</abbr> <sup><a href="initiation_au_shell#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.
+</p>
+
+<p>
+Par exemple la commande suivante vous permettra de taper un texte, d&#039;aller à la ligne autant de fois que vous voulez en appuyant sur Entrée, puis lorsque vous taperez <abbr title="End of file">EOF</abbr> (pour End of File, fin du fichier) et entrée, elle comptera le nombre de lignes (celle de <abbr title="End of file">EOF</abbr> non comprise) que vous avez entrées.
+</p>
+<pre class="code">wc -l &lt;&lt; EOF</pre>
+
+<p>
+Vous pouvez bien sur spécifier un chaîne différente de <abbr title="End of file">EOF</abbr> comme FIN, END…
+</p>
+
+<p>
+En utilisant &quot;»&quot; et &quot;«&quot; nous pouvons facilement ajouter du texte dans un fichier de notre choix de la même manière qu&#039;un éditeur de texte : 
+</p>
+<pre class="code">cat &gt;&gt; fichier &lt;&lt; EOF</pre>
+
+<p>
+Le texte tapé sera ajouté au fichier jusqu&#039;à ce que vous vous écriviez <abbr title="End of file">EOF</abbr> et validiez par entrée.
+</p>
+
+</div>
+
+<h3 class="sectionedit8" id="devnull_2_1">&gt;/dev/null 2&gt;&amp;1</h3>
+<div class="level3">
+
+<p>
+Expliquons cette syntaxe très souvent rencontrée et reprise sans explication : 
+</p>
+<pre class="code">commande &gt;/dev/null 2&gt;&amp;1</pre>
+
+<p>
+Dans l&#039;ordre, est exécuté :
+</p>
+
+<p>
+- commande (dont les stdout et stderr sont redirigées)
+</p>
+
+<p>
+- stdout vers /dev/null (le trou noir)
+</p>
+
+<p>
+- stderr vers stdout … donc vers /dev/null
+</p>
+
+<p>
+La commande exécutée ne renverra ni sa sortie, ni ses messages d&#039;erreur.
+C&#039;est équivalent à : 
+</p>
+<pre class="code">commande &gt; /dev/null 2 &gt; /dev/null</pre>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/icons/iconnote.png?id=projets%3Aecole%3Ascripting%3Ainitiation_au_shell" class="media" title="icons:iconnote.png"><img src="http://doc.ubuntu-fr.org/_media/icons/iconnote.png" class="medialeft" alt="" /></a>
+</p>
+<blockquote><div class="no">
+Même si cela ne traite pas directement des redirections, il est important de connaitre un fichier spécial nommé <strong>null</strong>. Il permet de rediriger un descripteur de fichier vers un fichier qui supprimera toutes les données qui lui seront ajoutées. Il porte le nom d&#039;<strong>absorbeur de données</strong>. Si par exemple vous ne voulez pas voir le résultat d&#039;une commande, il vous suffit de rediriger stdout vers /dev/null : &quot;ls &gt;/dev/null&quot;. Pour plus d&#039;information sur le fichier null voir la page man de null.</div></blockquote>
+<hr />
+
+</div>
+
+<h2 class="sectionedit9" id="commandes_de_base_pour_traiter_les_fichiers">Commandes de base pour traiter les fichiers</h2>
+<div class="level2">
+
+<p>
+Si vous avez besoin de plus d&#039;informations sur une commande n&#039;hésitez pas à consulter son manuel via la commande :
+</p>
+<pre class="code">man nom_du_programme</pre>
+
+<p>
+Pour cette partie, consulter <a href="http://doc.ubuntu-fr.org/console/commandes_de_base" class="urlextern" title="http://doc.ubuntu-fr.org/console/commandes_de_base"  rel="nofollow">http://doc.ubuntu-fr.org/console/commandes_de_base</a> pour les commandes fondadamentales : cp, mv, ls, cd, rm, chmod, chown et find.
+</p>
+
+</div>
+
+<h3 class="sectionedit10" id="cut">Cut</h3>
+<div class="level3">
+
+<p>
+Pour présenter l&#039;outil <strong>cut</strong> nous allons par exemple considérer que nous voulons obtenir le premier mot (correspondant au nom de l&#039;utilisateur) du fichier /etc/passwd.
+</p>
+
+<p>
+Avec cut, vous pouvez supprimer une partie de chaque ligne d&#039;un fichier, soit en indiquant un séparateur (avec l&#039;option -d), soit en indiquant la position (via -c). 
+</p>
+
+<p>
+Voyons tout de suite un exemple : 
+</p>
+<pre class="code">cut -d: -f1 /etc/passwd</pre>
+
+<p>
+L&#039;option &quot;-d:&quot; indique que le <strong>séparateur</strong> sera &quot;:&quot;, et &quot;-f1&quot; indique que l&#039;on veut récupérer seulement la <strong>première partie</strong>. 
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/icons/icontip.png?id=projets%3Aecole%3Ascripting%3Ainitiation_au_shell" class="media" title="icons:icontip.png"><img src="http://doc.ubuntu-fr.org/_media/icons/icontip.png" class="medialeft" alt="" /></a>
+</p>
+<blockquote><div class="no">
+Pour utiliser l&#039;espace comme caractère de séparation, utilisez l&#039;option -d&quot; &quot;.</div></blockquote>
+
+<p>
+On peut aussi récupérer plusieurs parties en une seule fois en les séparant par des virgules, ici les parties 1 et 5 :
+</p>
+<pre class="code">cut -d&quot; &quot; -f1,5 un_fichier</pre>
+
+<p>
+Maintenant si l&#039;on travaille en fonction de la position : 
+</p>
+<pre class="code">cut -c 1-10 /etc/passwd</pre>
+
+<p>
+Vous l&#039;aurez compris cette commande récupère les caractères de 1 à 10 du fichier passwd.
+</p>
+
+</div>
+
+<h3 class="sectionedit11" id="head_et_tail">Head et Tail</h3>
+<div class="level3">
+
+<p>
+Il est souvent utile de ne voir que le début ou que la fin d&#039;un texte, du résultat d&#039;une commande,… Il existe pour cela deux outils : <strong>head</strong> (tête en français) et <strong>tail</strong> (queue en français).
+</p>
+
+<p>
+Par exemple, on désire afficher les 5 premières lignes du fichier /var/log/Xorg.0.log :
+</p>
+<pre class="code">head -n 5 /var/log/Xorg.0.log</pre>
+
+<p>
+Pour les 5 dernières :
+</p>
+<pre class="code">tail -n 5 /var/log/Xorg.0.log</pre>
+
+<p>
+Pour récupérer le résultat d&#039;une commande, nous allons utiliser l&#039;opérateur | appelé <strong>pipe</strong> (qui signifie tuyau…), son fonctionnement sera expliqué plus bas. Pour récupérer les 5 dernières du résultat de dmesg :
+</p>
+<pre class="code">dmesg | tail -n 5</pre>
+
+<p>
+L&#039;option -f permet d&#039;afficher, à chaque fois qu&#039;ils ont lieu, les ajouts au fichier, par exemple : 
+</p>
+<pre class="code">tail -f /var/log/syslog</pre>
+
+</div>
+
+<h2 class="sectionedit12" id="les_pipes">Les pipes</h2>
+<div class="level2">
+
+<p>
+D&#039;une manière générale les pipes sont tout une gamme d&#039;<strong>opérateurs</strong>. Par exemple les opérateurs de redirection sont des pipes. La plupart du temps lorsque l&#039;on parle de pipe, on parle seulement de &quot;|&quot;.
+</p>
+
+</div>
+
+<h3 class="sectionedit13" id="presentation_de">Présentation de &quot;|&quot;</h3>
+<div class="level3">
+
+<p>
+Cet opérateur permet d&#039;envoyer la <strong>sortie standard</strong> d&#039;un programme <strong>vers</strong> <strong>l&#039;entrée standard</strong> d&#039;un second programme, cela permet ainsi l&#039;enchaînement des commandes. Par exemple : 
+</p>
+<pre class="code">ls | wc -l</pre>
+
+<p>
+La sortie standard de &quot;ls&quot; devient l&#039;entrée standard de &quot;wc -l&quot;.
+</p>
+
+<p>
+Autres exemples : 
+</p>
+<pre class="code">cat fichier | wc -l</pre>
+<pre class="code">ls -l | sort</pre>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/icons/icontip.png?id=projets%3Aecole%3Ascripting%3Ainitiation_au_shell" class="media" title="icons:icontip.png"><img src="http://doc.ubuntu-fr.org/_media/icons/icontip.png" class="medialeft" alt="" /></a>
+</p>
+<blockquote><div class="no">
+sort permet de trier les lignes d&#039;un fichier texte, pour plus d&#039;information &quot;man sort&quot;. </div></blockquote>
+
+<p>
+Vous pouvez bien sûr étendre cela à plus de deux programmes : 
+</p>
+<pre class="code">cat fichier | wc -l | wc -L</pre>
+
+<p>
+Vous pouvez aussi utiliser les redirections vues précédemment : 
+</p>
+<pre class="code">ls -la &gt; fichier | wc -l</pre>
+
+<p>
+Dans le cas de &quot;ls -la &gt; fichier&quot; nous pouvons remarquer qu&#039;il n&#039;y a rien sur stdout ou stderr. Pour pallier à cela le programme tee permet de copier l&#039;entrée standard sur la sortie standard et dans un fichier : &quot;ls -la | tee fichier&quot;. 
+</p>
+
+<p>
+Ainsi on utilisera :
+</p>
+<pre class="code">ls -la | tee fichier | wc -l</pre>
+
+</div>
+
+<h3 class="sectionedit14" id="presentation_de1">Présentation de &quot;&amp;&quot;</h3>
+<div class="level3">
+
+<p>
+Cet opérateur permet de lancer simultanément deux commandes dont la première sera lancée en arrière plan. Par exemple :
+</p>
+<pre class="code">ls &amp; ls -la</pre>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/icons/iconnote.png?id=projets%3Aecole%3Ascripting%3Ainitiation_au_shell" class="media" title="icons:iconnote.png"><img src="http://doc.ubuntu-fr.org/_media/icons/iconnote.png" class="medialeft" alt="" /></a>
+</p>
+<blockquote><div class="no">
+Vous pouvez aussi l&#039;utiliser pour mettre un programme en arrière plan : &quot;ed &amp;&quot;. Pour reprendre la main sur ce programme il faut utiliser la commande fg.</div></blockquote>
+
+</div>
+
+<h3 class="sectionedit15" id="presentation_de2">Présentation de &quot;&amp;&amp;&quot;</h3>
+<div class="level3">
+
+<p>
+Pour pouvoir bien comprendre ce que fait cet opérateur il faut d&#039;abord parler rapidement des <strong>codes de retour</strong> : quand vous lancez une commande, si elle se termine correctement alors le code de retour est &quot;0&quot;, ce qui correspond à un succès, dans le cas contraire le code de retour est différent de 0 (bien entendu les codes de retour différents de 0 ont une signification qui ne sera pas expliquée ici). 
+</p>
+
+<p>
+Si par exemple vous rentrez une commande erronée, le code de retour sera différent de 0 : &quot;fgsfdg&quot;. 
+</p>
+
+<p>
+Pour voir le code de retour de la dernière commande lancée : 
+</p>
+<pre class="code">echo $?</pre>
+
+<p>
+L&#039;opérateur &quot;&amp;&amp;&quot; permet de lancer une commande si et seulement si la première (celle à gauche de l&#039;opérateur) s&#039;est correctement terminée : 
+</p>
+<pre class="code">ls &amp;&amp; ls /</pre>
+
+<p>
+Si la commande &quot;ls&quot; se termine correctement alors &quot;ls /&quot; sera exécutée. Un second exemple : 
+</p>
+<pre class="code">fdgfdsg &amp;&amp; ls</pre>
+
+</div>
+
+<h3 class="sectionedit16" id="presentation_de3">Présentation de &quot;||&quot;</h3>
+<div class="level3">
+
+<p>
+C&#039;est simplement l&#039;inverse de &quot;&amp;&amp;&quot;. La commande à gauche de l&#039;opérateur est exécutée seulement si le code de retour de la première commande est différent de 0 (donc s&#039;il y a eu une erreur) :
+</p>
+<pre class="code">fhgfdsjk || ls</pre>
+
+<p>
+Dans ce cas &quot;ls&quot; sera exécuté.
+</p>
+
+</div>
+
+<h3 class="sectionedit17" id="presentation_de4">Présentation de &quot;;&quot;</h3>
+<div class="level3">
+
+<p>
+Cet opérateur est équivalent à un retour à la ligne, c&#039;est à dire que &quot;ls; ls -l&quot; exécutera &quot;ls&quot; dans un premier temps puis, une fois la première commande finie et quel que soit son code de retour, &quot;ls -l&quot; sera exécuté.
+</p>
+<hr />
+
+</div>
+
+<h2 class="sectionedit18" id="les_expressions_regulieres">Les expressions régulières</h2>
+<div class="level2">
+
+<p>
+Les <strong>expressions rationnelles</strong>, souvent appelées <strong>expressions régulières</strong>, <strong>regex</strong> ou <strong>regular expressions</strong> sont des notations qui permettent de décrire des chaînes de caractères, d&#039;en reconnaître, d&#039;en manipuler.
+</p>
+
+<p>
+Pour commencer nous allons chercher grâce à elles des mots dans le dictionnaire /usr/share/dict/french, malheureusement celui-ci a des problèmes d&#039;accents, on va donc le convertir en un fichier où l&#039;on pourra lire les accents :
+</p>
+<pre class="code">iconv -f ISO-8859-15 -t UTF-8 /usr/share/dict/french &gt; /tmp/french.utf8</pre>
+
+<p>
+Pour plus d&#039;informations sur iconv, voir la page du manuel. Maintenant notre dictionnaire est /tmp/french.utf8 .
+</p>
+
+<p>
+Nous allons chercher les mots qui finissent par -er, pour cela on parcourt le fichier avec grep et on ne sort que les lignes finissant par -er :
+</p>
+<pre class="code">grep &#039;er$&#039; /tmp/french.utf8</pre>
+
+<p>
+L&#039;opérateur <strong>$</strong> indique donc la <strong>fin de ligne</strong>.
+</p>
+
+<p>
+Maintenant on désire chercher les mots commençant par absol- :
+</p>
+<pre class="code">grep &#039;^absol&#039; /tmp/french.utf8</pre>
+
+<p>
+L&#039;opérateur <strong>^</strong> indique le <strong>début d&#039;une ligne</strong>.
+</p>
+
+<p>
+On cherche maintenant les mots de 4 caractères commençant et finissant par un t, pour cela on utilise l&#039;opérateur &quot;<strong>.</strong>&quot; qui remplace n&#039;importe quel caractère, il est parfois appelé <strong>wildcard</strong> : 
+</p>
+<pre class="code">grep &#039;^t..t$&#039; /tmp/french.utf8</pre>
+
+<p>
+Pour avoir exactement la ligne contenant &quot;coucou&quot;, qui doit donc commencer et finir par coucou : 
+</p>
+<pre class="code">grep &#039;^coucou$&#039; /tmp/french.utf8</pre>
+
+</div>
+
+<h3 class="sectionedit19" id="les_modificateurs">Les modificateurs</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> * représente <strong>0 ou plus</strong> caractères. Exemple : d* = 0 ou plus fois &quot;d&quot;.</div>
+</li>
+<li class="level1"><div class="li"> + représente <strong>1 ou plus</strong> caractères.  </div>
+</li>
+<li class="level1"><div class="li"> ? représente <strong>0 ou 1</strong> caractère.</div>
+</li>
+</ul>
+
+<p>
+Par exemple si l&#039;on cherche les mots commençant par &quot;t&quot; et finissant par &quot;tant&quot; : 
+</p>
+<pre class="code">grep &#039;^t.*tant$&#039; /tmp/french.utf8</pre>
+
+<p>
+&quot;^t&quot; nous donne les mots commençant par &quot;t&quot;, &quot;tant$&quot; prends ceux finissant par &quot;tant&quot; et au milieu on veut 0 ou plus fois n&#039;importe quel caractère, donc le &quot;.&quot;.
+</p>
+
+<p>
+On veut maintenant chercher les mots contenant &quot;m&quot; ou &quot;mm&quot;, pour cela on va utiliser une expression régulière étendue, il faudra donc utiliser l&#039;option &quot;-E&quot; de grep : 
+</p>
+<pre class="code">grep -E &#039;m{1,2}&#039; /tmp/french.utf8</pre>
+
+<p>
+Remarque : cette expression donne les mots contenant 1 ou 2 m consécutifs ou non.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/icons/icontip.png?id=projets%3Aecole%3Ascripting%3Ainitiation_au_shell" class="media" title="icons:icontip.png"><img src="http://doc.ubuntu-fr.org/_media/icons/icontip.png" class="medialeft" alt="" /></a>
+</p>
+<blockquote><div class="no">
+Les expressions régulières étendues se calculent moins rapidement que celles de bases, pour alléger les programmes elles sont regroupées et accessibles via -E.</div></blockquote>
+
+<p>
+Pour être toujours plus fou, on veut maintenant trouver tous les noms finissant par &quot;eux&quot; ou &quot;eut&quot; pour créer des noms de domaines en &quot;.eu&quot;. Pour cela on prend les mots qui commencent par n&#039;importe quoi grâce à &quot;^.*&quot;, puis qui terminent par &quot;x&quot; ou &quot;t&quot; grâce à &quot;[xt]&quot;, tout ça avec &quot;eu&quot; au milieu bien sûr :
+</p>
+<pre class="code">grep &#039;^.*eu[xt]$&#039; /tmp/french.utf8</pre>
+
+<p>
+On peut ainsi chercher les jeux pour KDE et pour GNOME, en supposant que tout jeu pour KDE qui se respecte commence par un &quot;k&quot; et par &quot;g&quot; pour GNOME. Pour cela on cherche tous les jeux, et on ne garde que ceux qui commencent par &quot;k&quot; ou &quot;g&quot; :
+</p>
+<pre class="code">apt-cache search games | grep &#039;^[gk]&#039;</pre>
+
+<p>
+Maintenant on veut chercher les jeux qui ne commencent ni par &quot;g&quot; ni par &quot;k&quot; :
+</p>
+<pre class="code">apt-cache search games | grep &#039;^[^gk].*&#039; | grep -v &#039;^lib&#039;</pre>
+
+<p>
+Comme on l&#039;a déjà vu [^gk] retourne ce qui commence par un &quot;g&quot; ou un &quot;k&quot;, le &quot;^&quot; devant l&#039;expression <strong>[]</strong> joue le rôle de <strong>négation</strong> : on prends ceux qui ne commencent ni par &quot;g&quot; ni par &quot;k&quot;. Puis grâce à &quot;.*&quot; on accepte n&#039;importe quelle fin. Mais cette requête renvoie beaucoup trop de résultats, on effectue donc un deuxième filtrage en éliminant ceux qui commencent par &quot;lib&quot; grâce à l&#039;option -v de grep qui enlève les lignes correspondant à la condition.
+</p>
+
+<p>
+Autre exemple instructif :
+</p>
+<pre class="code">ls / | grep -E &#039;^m(edia|root)&#039;</pre>
+
+<p>
+Les parenthèses permettent d&#039;isoler un regroupement, et le | correspond à &quot;où&quot;. Ceci renvoie donc les fichiers/dossiers à la racine commençant par media ou mroot.
+</p>
+
+<p>
+Alors que : 
+</p>
+<pre class="code">ls / | grep -E &#039;^media|root&#039;</pre>
+
+<p>
+renvoie les fichiers/dossiers commençant par media ou par root.
+</p>
+
+</div>
+
+<h3 class="sectionedit20" id="sed">Sed</h3>
+<div class="level3">
+
+<p>
+L&#039;utilisation de cet outil se fait comme ceci :
+</p>
+<pre class="code">sed -e &#039;expression&#039; [-e &#039;expression] [fichier]</pre>
+
+<p>
+ou
+</p>
+<pre class="code">echo &quot;du texte&quot; | sed &#039;une_seule_expression&#039;</pre>
+
+<p>
+Un premier exemple de substitution :
+</p>
+<pre class="code">echo &quot;jean.durand@gmail.com&quot; | sed &#039;s/@/ at /&#039; | sed &#039;s/\./ pOiNt /&#039;</pre>
+
+<p>
+renvoie :
+</p>
+<pre class="code">jean pOiNt durand at gmail.com</pre>
+
+<p>
+On remplace le &quot;.&quot; par &quot; pOiNt &quot; et le &quot;@&quot; par &quot; at &quot;, on voit ici que l&#039;on a mis &quot;\&quot; devant le &quot;.&quot;, le &quot;\&quot; est le caractère d&#039;échappement : le &quot;.&quot; est alors considéré comme le caractère &quot;.&quot;. 
+</p>
+
+<p>
+De même si on veut remplacer &quot;/&quot; par &quot;slash&quot;, on utiliserait
+</p>
+<pre class="code">s/\// slash /</pre>
+
+<p>
+On peut faire la même chose en moins long en utilisant l&#039;autre version de sed:
+</p>
+<pre class="code">echo &quot;jean.durand@gmail.com&quot; | sed -e &#039;s/@/ at /&#039; -e &#039;s/\./ pOiNt /&#039;</pre>
+
+<p>
+On peut aussi utiliser 
+</p>
+<pre class="code">s///g</pre>
+
+<p>
+ pour remplacer toutes les occurrences d&#039;une chaîne de caractères et non seulement la première :
+</p>
+<pre class="code">echo &quot;jean.durand@gmail.com&quot; | sed -e &#039;s/@/ at /&#039; -e &#039;s/\./ pOiNt /g&#039;</pre>
+
+<p>
+Remplace les deux occurrences du &quot;.&quot;.
+</p>
+
+<p>
+On peut de même l&#039;appliquer sur des fichiers :
+</p>
+<pre class="code">sed &#039;s/kikoo/#kikoolol/g&#039; /etc/config.txt</pre>
+
+<p>
+Ceci remplace toute occurrence de &quot;kikoo&quot; par &quot;#kikoolol&quot; dans le fichier /etc/config.txt mais ne le modifie pas, le résultat est donné sur la sortie standard. Pour modifier le fichier il faut ajouter l&#039;option -i à sed.
+</p>
+
+<p>
+On peut enfin spécifier l’occurrence à remplacer :
+</p>
+<pre class="code">echo &quot;moimoimoi&quot; | sed &#039;s/moi/toi/3&#039;</pre>
+
+<p>
+Donne : 
+</p>
+<pre class="code">moimoitoi</pre>
+
+<p>
+<p><div class="notewarning">l&#039;action de l&#039;option /n (n=1,2,3…) et /g sur un fichier n&#039;est pas identique
+en effet
+si /g modifie bien toutes les occurrences du fichier
+/n ne modifie que la première ligne du fichier
+c&#039;est pas clair : un exemple  
+</p>
+
+<p>
+le fichier1 contient 3 lignes identiques kikoo
+</p>
+
+<p>
+le fichier2 contient kikookikookikoo et 2 lignes kikoo
+</p>
+
+<p>
+résultat de
+sed -i &#039;s/kikoo/#kikoo/2 :
+</p>
+
+<p>
+le fichier1 n&#039;est pas modifié !
+</p>
+
+<p>
+le fichier 2 devient kikoo#kikookikoo les 2 autres lignes ne sont pas modifiées             
+</p>
+<hr />
+
+<p>
+résultat de 
+sed -i &#039;s/kikoo/#kikoo/g  : les deux fichiers sont modifiés  
+</p>
+
+<p>
+tous les kikoo deviennent #kikoo 
+</p>
+<hr />
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+Nous allons maintenant voir l&#039;utilisation de variables avec sed ce qui permet d&#039;échanger, de déplacer des parties d&#039;une chaîne de caractères. Exemple : 
+</p>
+<pre class="code">echo &quot;jean.durand&quot;  | sed -r &#039;s/(.*)\.(.*)/\2.\1/&#039;</pre>
+
+<p>
+(.*) représente l&#039;affectation des variables et \n la n-ième variable, ici on met donc ce qu&#039;il y a avant le point (&quot;\.&quot;) dans \1 et ce qu&#039;il y a après dans \2 puis on met \2 devant \1, on obtient :
+</p>
+<pre class="code">durand.jean</pre>
+
+<p>
+Pour terminer nous allons voir un exemple pratique : nous avons de nombreux dossiers contenant de nombreux mp3 nommés selon le schéma Knoklezout_au_taquet-Jamendo-David_TMX.mp3 et on désire avoir le nom d&#039;artiste avant le titre de la chanson tout en enlevant la publicité pour Jamendo. 
+</p>
+
+<p>
+Pour cela nous allons utiliser <strong>rename</strong> (qui vient avec perl) et nos chères expressions régulières :
+</p>
+<pre class="code">rename &#039;s/^(.*)-Jamendo-(.*)\.mp3/$2_-_$1.mp3/&#039; *.mp3</pre>
+
+<p>
+Le principe est le même qu&#039;avec sed sauf que les variables sont notées $n et non plus \n : on met ce qu&#039;il y a avant &quot;-Jamendo-&quot; dans $1 et ce qu&#039;il y a après (&quot;.mp3&quot; non compris) dans $2 puis on formate comme on le veut.
+</p>
+
+<p>
+<strong>rename</strong> renomme les fichiers dans le dossier courant, pour plus de sécurité on peut utiliser <strong> rename -n &#039;s/&#039;</strong> qui nous affiche les changements sans les effectuer, puis les effectuer une fois que l&#039;on est sûr.
+</p>
+
+</div>
+
+<h2 class="sectionedit21" id="liens">Liens</h2>
+<div class="level2">
+
+<p>
+Une introduction à Perl et une introduction au regexp :
+<a href="http://sylvain.lhullier.org/publications/perl.html" class="urlextern" title="http://sylvain.lhullier.org/publications/perl.html"  rel="nofollow">http://sylvain.lhullier.org/publications/perl.html</a> (FR)
+</p>
+
+<p>
+Le livre de référence (édition 1) de Ruby avec une petite partie sur les regexp
+<a href="http://rubycentral.com/book/language.html" class="urlextern" title="http://rubycentral.com/book/language.html"  rel="nofollow">http://rubycentral.com/book/language.html</a> (EN)
+</p>
+
+<p>
+Une introduction rapide réalisée dans notre FSUG (merci à Krunch) :
+<a href="http://www.fsugar.be/docu/regex/regex.html" class="urlextern" title="http://www.fsugar.be/docu/regex/regex.html"  rel="nofollow">http://www.fsugar.be/docu/regex/regex.html</a> (FR)
+</p>
+
+<p>
+Une approche plus théorique avec Python:
+<a href="http://www.amk.ca/python/howto/regex/" class="urlextern" title="http://www.amk.ca/python/howto/regex/"  rel="nofollow">http://www.amk.ca/python/howto/regex/</a> (EN)
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/icons/iconnote.png?id=projets%3Aecole%3Ascripting%3Ainitiation_au_shell" class="media" title="icons:iconnote.png"><img src="http://doc.ubuntu-fr.org/_media/icons/iconnote.png" class="medialeft" alt="" /></a>
+</p>
+<blockquote><div class="no">
+Les expressions régulières sont utilisés en Python, Perl , Ruby, PHP, Java, C, C++, par des programmes comme sed, awk, grep, vim, rename, ou encore des filtres dans apache et lighttpd ( mod_rewrite, vhosts …), adblock dans firefox… Cette liste est bien sûr non exhaustive.    </div></blockquote>
+<hr />
+
+<p>
+Rédigé par : <a href="../../../utilisateurs/qazer" class="wikilink2" title="utilisateurs:qazer" rel="nofollow">jeromeg</a>, ptitdav69 et Wazzaaabid
+</p>
+
+</div>
+<div class="footnotes">
+<div class="fn"><sup><a href="initiation_au_shell#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+End of File : Fin de fichier</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/7/756a48c03b4f1ed82e37e63ef05f948a.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../../../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/projets/ecole/scripting/initiation_au_shell?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/projets/ecole/scripting/initiation_au_shell?do=edit&amp;rev=0"  class="action source" accesskey="v" rel="nofollow" title="Afficher le texte source [V]">Afficher le texte source</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/projets/ecole/scripting/initiation_au_shell?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/projets/ecole/scripting/initiation_au_shell?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/projets/ecole/scripting/initiation_au_shell?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../../../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../../../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

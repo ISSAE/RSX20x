@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>tutoriel:comment_garder_synchrones_les_horloges_d_un_reseau_local</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-12-31T03:04:16+0100"/>
+<meta name="keywords" content="hardy,intrepid,jaunty,karmic,lucid,precise,reseau,systeme,entreprise,tutoriel,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="../../../tutoriel/comment_garder_synchrones_les_horloges_d_un_reseau_local?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="comment_garder_synchrones_les_horloges_d_un_reseau_local"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../raw/tutoriel/comment_garder_synchrones_les_horloges_d_un_reseau_local"/>
+<link rel="canonical" href="../../../tutoriel/comment_garder_synchrones_les_horloges_d_un_reseau_local"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_garder_synchrones_les_horloges_d_un_reseau_local","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#l_interet_d_horloge_synchrones">L&#039;intérêt d&#039;horloge synchrones</a></div></li>
+<li class="level1"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#le_moyenntp">Le moyen : NTP</a></div></li>
+<li class="level1"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#monter_un_serveur_ntp">Monter un serveur NTP</a></div></li>
+<li class="level1"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#utiliser_le_serveur_dans_votre_reseau">Utiliser le serveur dans votre réseau</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#renseigner_l_adresse_localement_sur_les_clients">Renseigner l&#039;adresse localement sur les clients</a></div></li>
+<li class="level2"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#envoi_par_dhcp">Envoi par DHCP</a></div></li>
+<li class="level2"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#broadcast">Broadcast</a></div></li>
+<li class="level2"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#kde">Kde</a></div></li>
+<li class="level2"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#gnome">Gnome</a></div></li>
+<li class="level2"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#windows">Windows</a></div></li>
+<li class="level2"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#mac_os">Mac OS</a></div></li>
+<li class="level2"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#autres">Autres</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_garder_synchrones_les_horloges_d_un_reseau_local#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../../hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="../../../intrepid" class="wikilink1" title="intrepid" rel="tag">Intrepid</a>,
+	<a href="../../../jaunty" class="wikilink1" title="jaunty" rel="tag">Jaunty</a>,
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">Karmic</a>,
+	<a href="../../../lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="../../../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="../../../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../../entreprise" class="wikilink1" title="entreprise" rel="tag">entreprise</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_garder_synchrones_les_horloges_d_un_reseau_local">Comment garder synchrones les horloges d&#039;un réseau local</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Comment garder synchrones les horloges d'un réseau local" [108-180] -->
+<h2 class="sectionedit2" id="l_interet_d_horloge_synchrones">L&#039;intérêt d&#039;horloge synchrones</h2>
+<div class="level2">
+
+<p>
+Dès que l&#039;on crée un réseau d&#039;ordinateurs (réseau d&#039;entreprises, d&#039;universités, voire plus simplement réseau familial) avec des ressources en commun (des fichiers partagés par <a href="../../../nfs" class="wikilink1" title="nfs">nfs</a> par exemple…), conserver la même heure système sur l&#039;ensemble des machines du réseau devient important.
+</p>
+<ul>
+<li class="level1"><div class="li"> Les fichiers peuvent sinon être créées dans le futur (il suffit que l&#039;ordinateur qui vous envoie le fichier ait 5 minutes d&#039;avance sur le votre…)</div>
+</li>
+<li class="level1"><div class="li"> Certains protocoles de sécurité sont basés sur des systèmes de temps, notamment kerebos</div>
+</li>
+<li class="level1"><div class="li"> Enfin, en tant qu&#039;être humain et simple utilisateur de votre système, avoir la même heure sur les ordinateur de votre réseau vous permet de mieux travailler (pensez à l&#039;entreprise où vous demandez :</div>
+</li>
+</ul>
+
+<p>
+Quelle heure est-il ?
+</p>
+<blockquote><div class="no">
+ 14 h 10<blockquote><div class="no">
+ Moi j&#039;ai 13 h 50<blockquote><div class="no">
+ Hein ? Alors je suis en retard ou en avance pour la réunion ?</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+
+</div>
+<!-- EDIT2 SECTION "L'intérêt d'horloge synchrones" [181-1109] -->
+<h2 class="sectionedit3" id="le_moyenntp">Le moyen : NTP</h2>
+<div class="level2">
+
+<p>
+Il faut monter dans votre réseau d&#039;entreprise en serveur <abbr title="Network Time Protocol">NTP</abbr> qui permettra à toutes les machines de se synchroniser dessus. Ce serveur doit être unique, de façon que les horloges aient toutes la même référence. Vous ne pouvez donc pas utiliser le <a href="http://www.pool.ntp.org" class="urlextern" title="http://www.pool.ntp.org"  rel="nofollow">pool de serveurs ntp</a>. En effet, chaque serveur dans le pool a une heure <em>légèrement</em> différente des autres.
+</p>
+
+<p>
+De même, il est préférable d&#039;avoir son propre serveur plutôt que d&#039;utiliser un serveur d&#039;internet, car en cas de chute d&#039;un routeur ou d&#039;un élément du réseau, vous n&#039;aurez plus de source de temps. Il est toujours plus sûr d&#039;utiliser ses propres ressources (et ce quelque soit le service : temps, mail, …) que celles qui se trouve on ne sait où et qu&#039;on ne maîtrise pas.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Le moyen : NTP" [1110-1916] -->
+<h2 class="sectionedit4" id="monter_un_serveur_ntp">Monter un serveur NTP</h2>
+<div class="level2">
+
+<p>
+Vous devez suivre l&#039;article <a href="../../../ntp" class="wikilink1" title="ntp">ntp</a> qui vous expliquera comment monter votre serveur. Si vous connaissez la marche à suivre, utilisez juste les <a href="../../../ntp#serveurs_ntp" class="wikilink1" title="ntp">listes de serveur sources</a>.
+</p>
+
+<p>
+Si vous êtes un peu feignant, vous pouvez utiliser le pool comme référence pour votre serveur, mais pour lui uniquement !
+</p>
+
+<p>
+Mettez trois lignes :
+</p>
+<pre class="file">Server 0.fr.pool.ntp.org
+Server 1.fr.pool.ntp.org
+Server 2.fr.pool.ntp.org</pre>
+
+<p>
+Et c&#039;est bon.
+</p>
+
+<p>
+Si vous êtes dans un réseau connecté à internet et avez une (ou des) IP fixes (cas dans la majorité des entreprises), vous devriez considérer le fait de rendre votre serveur public et de l&#039;inscrire dans le pool (dans ce cas, vous ne pouvez utiliser ses sources dans votre serveur). La charge sur le système et la bande passante utilisée sont très faibles et vous contribuez donc à la communauté sans rien dépenser (presque).
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Monter un serveur NTP" [1917-2837] -->
+<h2 class="sectionedit5" id="utiliser_le_serveur_dans_votre_reseau">Utiliser le serveur dans votre réseau</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT5 SECTION "Utiliser le serveur dans votre réseau" [2838-2889] -->
+<h3 class="sectionedit6" id="renseigner_l_adresse_localement_sur_les_clients">Renseigner l&#039;adresse localement sur les clients</h3>
+<div class="level3">
+
+<p>
+Le meilleur moyen pour vos machines d&#039;utiliser votre serveur ntp et d&#039;inscrire son adresse, nom d&#039;hôte ou alias dans le fichier <strong>/etc/default/ntpdate</strong>, comme décrit dans l&#039;article <a href="../../../ntpdate" class="wikilink1" title="ntpdate">ntpdate</a>.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Renseigner l'adresse localement sur les clients" [2890-3147] -->
+<h3 class="sectionedit7" id="envoi_par_dhcp">Envoi par DHCP</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="sur_le_serveur">Sur le serveur</h4>
+<div class="level4">
+
+<p>
+Vous pouvez renseigner l&#039;adresse IP (je ne sais pas si cela fonctionne avec les noms d&#039;hôtes, la page de man de dhcp-options dis bien : &quot;ip-adress&quot;) dans l&#039;annonce dhcp.
+</p>
+
+<p>
+Sur le fichier de configuration de votre serveur dhcp :
+</p>
+
+<p>
+<strong>/etc/dhcp3/dhcpd.conf</strong>
+</p>
+<pre class="file">option ntp-servers 192.168.0.2;</pre>
+
+<p>
+Le point-virgule fait partie de la syntaxe de <a href="../../../dhcp3-server" class="wikilink1" title="dhcp3-server">dhcp</a>. Vérifiez bien votre configuration.
+</p>
+
+</div>
+
+<h4 id="sur_le_client">Sur le client</h4>
+<div class="level4">
+
+<p>
+Par défaut, le client dhcp ne tiens pas compte de l&#039;option serveur ntp.
+</p>
+
+<p>
+Pour l&#039;activer, reportez vous à la <a href="http://support.ntp.org/bin/view/Support/ConfiguringNTP#Section_6.12" class="urlextern" title="http://support.ntp.org/bin/view/Support/ConfiguringNTP#Section_6.12"  rel="nofollow">documentation officielle</a> (En).
+.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Envoi par DHCP" [3148-3841] -->
+<h3 class="sectionedit8" id="broadcast">Broadcast</h3>
+<div class="level3">
+
+<p>
+Il existe un mode broadcast, similaire à l&#039;horloge parlante au téléphone : le serveur envoie périodiquement un signal de temps, sans se préoccuper de savoir si on l&#039;écoute ou pas.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Broadcast" [3842-4049] -->
+<h3 class="sectionedit9" id="kde">Kde</h3>
+<div class="level3">
+
+<p>
+KDE4 comporte un une interface graphique pour régler l&#039;heure dans le panneau de configuration. Dedans, vous trouverez une option pour synchroniser votre horloge sur un serveur de temps.
+</p>
+
+<p>
+<p><div class="notewarning">Cette interface graphique n&#039;est pas encore pleinement fonctionnelle au moment de la rédaction. L&#039;auteur ne l&#039;utilise pas, bien que fan de Kde.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Kde" [4050-4419] -->
+<h3 class="sectionedit10" id="gnome">Gnome</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT10 SECTION "Gnome" [4420-4437] -->
+<h3 class="sectionedit11" id="windows">Windows</h3>
+<div class="level3">
+
+<p>
+Windows, depuis XP, comporte nativement un client ntp. Il vous suffit d&#039;ouvrir le menu contextuel de l&#039;horloge (click droit sur l&#039;heure &gt; régler la dâte et l&#039;heure &gt; temps internet).
+</p>
+
+<p>
+Vous pouvez aussi inscrire la synchronisation à la connection dans le domaine ou groupe de travail Windows grâce au script de montage des partages windows (vous trouverez des infos sur la page <a href="../../../samba" class="wikilink1" title="samba">samba</a> et sur google.
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Windows" [4438-4864] -->
+<h3 class="sectionedit12" id="mac_os">Mac OS</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT12 SECTION "Mac OS" [4865-4883] -->
+<h3 class="sectionedit13" id="autres">Autres</h3>
+<div class="level3">
+
+<p>
+Il existe des implémentations ntp pour windows mobile, et d&#039;autres systèmes d&#039;exploitation.
+</p>
+
+</div>
+<!-- EDIT13 SECTION "Autres" [4884-4996] -->
+<h2 class="sectionedit14" id="liens">Liens</h2>
+<div class="level2">
+
+<p>
+<a href="http://www.ntp.org" class="urlextern" title="http://www.ntp.org"  rel="nofollow">NTP</a>
+</p>
+
+<p>
+<a href="http://www.pool.ntp.org" class="urlextern" title="http://www.pool.ntp.org"  rel="nofollow">Pool de serveurs NTP</a>
+</p>
+
+<p>
+—
+</p>
+
+<p>
+Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/stephaneguedon" class="wikilink1" title="utilisateurs:stephaneguedon">stephaneguedon</a>
+</p>
+
+</div>
+<!-- EDIT14 SECTION "Liens" [4997-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/b/b9297d58b2a39e6a19ab997a5063ab7d.xhtml used -->
+</div>
+</body>
+</html>

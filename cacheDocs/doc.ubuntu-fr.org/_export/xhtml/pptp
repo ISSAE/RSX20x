@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>pptp</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-06-22T19:03:36+0200"/>
+<meta name="keywords" content="reseau,administration,vetuste"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../pptp?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="pptp"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/pptp"/>
+<link rel="canonical" href="../../pptp"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"pptp","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<div class="tags"><span>
+	<a href="../../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../../vetuste" class="wikilink1" title="vetuste" rel="tag">vétuste</a>
+</span></div>
+<hr />
+
+<p>
+PPTP (Point-to-point tunneling protocol) est un protocole d&#039;encapsulation <abbr title="Protocole Point à Point">PPP</abbr> sur IP conçu par Microsoft, permettant la mise en place de réseaux privés virtuels (<abbr title="Virtual Private Network">VPN</abbr>) au-dessus d&#039;un réseau public. Layer 2 Tunneling Protocol (L2TP) et IPsec sont des protocoles inspirés de PPTP et chargés de le remplacer.
+</p>
+
+<p>
+En français, PPTP signifie protocole de tunnel point-à-point.
+</p>
+
+<h1 class="sectionedit1" id="installation_du_support_de_pptp_dans_le_network_manager_sous_feisty_fawn">Installation du support de PPTP dans le Network Manager sous Feisty Fawn</h1>
+<div class="level1">
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://network-manager-pptp" class="urlextern" title="apt://network-manager-pptp"  rel="nofollow">apt://network-manager-pptp</a></strong>.
+</p>
+<pre class="code">sudo apt-get install network-manager-pptp</pre>
+
+<p>
+Une fois le paquet installé via la ligne de commande, nous allons redémarrer uniquement les deux services réseaux ci-dessous afin d&#039;éviter un redémarrage intégral de la machine. Sans cette opération, la prise en compte du paquet installé ci-dessous ne sera effectuée qu&#039;au prochain redémarrage de la machine.
+</p>
+<pre class="code">sudo /etc/dbus-1/event.d/25NetworkManager restart
+sudo /etc/dbus-1/event.d/26NetworkManagerDispatcher restart</pre>
+
+<p>
+Une fois l&#039;installation réalisée, il suffit de cliquer sur l&#039;applet du <em>Network Manager</em> qui se trouve sur la barre de menu (systray) en haut à droite avec le bouton gauche de la souris<sup><a href="pptp#fn__1" id="fnt__1" class="fn_top">1)</a></sup> :
+</p>
+
+<p>
+Système → Administration → Réseau
+</p>
+
+<p>
+Choisir l&#039;option Connexion <abbr title="Virtual Private Network">VPN</abbr> puis Configurer le réseau <abbr title="Virtual Private Network">VPN</abbr> pour créer la connexion <abbr title="Virtual Private Network">VPN</abbr> en cliquant sur le bouton Ajouter et en répondant au question de l&#039;assistant.<sup><a href="pptp#fn__2" id="fnt__2" class="fn_top">2)</a></sup>
+</p>
+
+<p>
+Pour un complément (et troubleshooting) voir le site en anglais :
+<a href="https://help.ubuntu.com/community/VPNClient" class="urlextern" title="https://help.ubuntu.com/community/VPNClient"  rel="nofollow">https://help.ubuntu.com/community/VPNClient</a>
+</p>
+
+<p>
+Pour une installation d&#039;un serveur PPTP sous 12.04 LTS il suffit d&#039;installer le paquet pptpd.
+</p>
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://pptpd" class="urlextern" title="apt://pptpd"  rel="nofollow">apt://pptpd</a></strong>.
+</p>
+<pre class="code">sudo apt-get install pptpd</pre>
+
+<p>
+Le daemon sera automatiquement lancé après l&#039;installation.
+</p>
+
+<p>
+Pour afficher toutes commandes et les configuration possible :
+</p>
+<pre class="code">pptpd --help</pre>
+
+<p>
+<p><div class="notetip">Un pulgin Webmin est installé mais désactive par défaut, qui permet de configurer PPTPD.
+</div></p>
+</p>
+<hr />
+
+<p>
+<em>Contributeur : <a href="../../utilisateurs/nicolebot" class="wikilink2" title="utilisateurs:nicolebot" rel="nofollow">nicolebot</a>, <a href="../../utilisateurs/apokalypse" class="wikilink1" title="utilisateurs:apokalypse">apokalypse</a>, <a href="../../utilisateurs/fullme" class="wikilink2" title="utilisateurs:fullme" rel="nofollow">fullme</a></em>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Installation du support de PPTP dans le Network Manager sous Feisty Fawn" [426-] --><div class="footnotes">
+<div class="fn"><sup><a href="pptp#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> il n&#039;y a pas un cheminement du genre Systeme ⇒ Préférences…etc ?</div>
+<div class="fn"><sup><a href="pptp#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Un peu d&#039;explication ne ferait pas de mal non plus ici.</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/1/15843e70d8ef3824e6e8218d242c2204.xhtml used -->
+</div>
+</body>
+</html>

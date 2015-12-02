@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:msi_wind_u100-u90_maj_bios - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2010-05-02T12:20:52+0200"/>
+<meta name="keywords" content="karmic,tutoriel,netbook,ecran,carte mere,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/msi_wind_u100-u90_maj_bios?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/msi_wind_u100-u90_maj_bios?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/msi_wind_u100-u90_maj_bios"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/msi_wind_u100-u90_maj_bios"/>
+<link rel="canonical" href="msi_wind_u100-u90_maj_bios"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:msi_wind_u100-u90_maj_bios","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="msi_wind_u100-u90_maj_bios#main" tabindex="1">Contenu</a> | <a href="msi_wind_u100-u90_maj_bios#qsearch__in" tabindex="2">Rechercher</a> | <a href="msi_wind_u100-u90_maj_bios#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="msi_wind_u100-u90_maj_bios" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="msi_wind_u100-u90_maj_bios" >tutoriel:msi_wind_u100-u90_maj_bios</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="msi_wind_u100-u90_maj_bios#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="msi_wind_u100-u90_maj_bios#installer_les_logiciels_necessaires">Installer les logiciels nécessaires</a></div></li>
+<li class="level1"><div class="li"><a href="msi_wind_u100-u90_maj_bios#recuperer_le_bios_du_msi_wind_u90_et_u100">Récupérer le Bios du MSI Wind U90 et U100</a></div></li>
+<li class="level1"><div class="li"><a href="msi_wind_u100-u90_maj_bios#creer_un_disque_usb_bootable_sous_freedos">Créer un disque USB bootable sous FreeDOS</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="msi_wind_u100-u90_maj_bios#formater_la_clef_usb_et_la_rendre_bootable">Formater la clef usb et la rendre bootable</a></div></li>
+<li class="level2"><div class="li"><a href="msi_wind_u100-u90_maj_bios#installer_freedos_sur_la_clef">Installer FreeDOS sur la clef</a></div></li>
+<li class="level2"><div class="li"><a href="msi_wind_u100-u90_maj_bios#installer_les_logiciels_de_mise_a_jour_du_bios_sur_la_clef">Installer les logiciels de mise à jour du BIOS sur la clef</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="msi_wind_u100-u90_maj_bios#configurer_le_bios_du_msi_wind_u90_et_u100_pour_qu_il_boot_sur_la_clef">Configurer le BIOS du MSI wind U90 et U100 pour qu&#039;il boot sur la clef</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="msi_wind_u100-u90_maj_bios#modifier_l_ordre_de_boot">Modifier l&#039;ordre de boot</a></div></li>
+<li class="level2"><div class="li"><a href="msi_wind_u100-u90_maj_bios#flashage_du_bios">Flashage du BIOS</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="msi_wind_u100-u90_maj_bios#probleme_connu">Problème connu</a></div></li>
+<li class="level1"><div class="li"><a href="msi_wind_u100-u90_maj_bios#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">Karmic</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../netbook" class="wikilink1" title="netbook" rel="tag">netbook</a>,
+	<a href="../ecran" class="wikilink1" title="ecran" rel="tag">écran</a>,
+	<a href="../carte_mere" class="wikilink1" title="carte_mere" rel="tag">carte mère</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="mise_a_jour_du_bios_du_msi_wind_u90_et_u100_sous_ubuntu_karmic_koala">Mise à jour du Bios du MSI wind U90 et U100 sous Ubuntu Karmic Koala.</h1>
+<div class="level1">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=fe97fa&amp;media=http%3A%2F%2Fimg571.imageshack.us%2Fimg571%2F1816%2Fu90.jpg" class="media" title="http://img571.imageshack.us/img571/1816/u90.jpg"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=fe97fa&amp;media=http%3A%2F%2Fimg571.imageshack.us%2Fimg571%2F1816%2Fu90.jpg" class="mediacenter" title="u90.jpg" alt="u90.jpg" /></a>
+</p>
+
+<p>
+ Ce sujet concerne les modèles Wind U90 et Wind U100 de MSI. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Mise à jour du Bios du MSI wind U90 et U100 sous Ubuntu Karmic Koala.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="69-271" /><input type="submit" value="Modifier" class="button" title="Mise à jour du Bios du MSI wind U90 et U100 sous Ubuntu Karmic Koala." /></div></form></div>
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+Si vous avez un problème d&#039;écran clignotant au lancement de Ubuntu 9.10 Karmic Koala, et que celui-ci persiste surtout lorsque vous êtes sous batterie (le réglage de la luminosité ne cesse pas de fonctionner, ralentissant les mouvements de la souris et la frappe du clavier), il est alors nécessaire de mettre à jour le <strong><abbr title="Basic Input-Output System">BIOS</abbr></strong><sup><a href="msi_wind_u100-u90_maj_bios#fn__1" id="fnt__1" class="fn_top">1)</a></sup> pour résoudre ce problème.
+</p>
+
+<p>
+<em>Or, comment mettre à jour le <abbr title="Basic Input-Output System">BIOS</abbr> lorsque les logiciels de mise à jour de MSI sont écrits pour windows et que vous êtes sous Ubuntu ?</em>
+En fait c&#039;est simple: nous allons démarrer le MSI Wind sous un autre système d&#039;exploitation, sans rien désinstaller. Ce système d&#039;exploitation pourra lancer les logiciels de mise à jour qui ont été écrits pour lui. Ce système d&#039;exploitation s&#039;appelle <strong>FreeDOS</strong><sup><a href="msi_wind_u100-u90_maj_bios#fn__2" id="fnt__2" class="fn_top">2)</a></sup>. Une fois la mise à jour du <abbr title="Basic Input-Output System">BIOS</abbr> effectuée, il suffira tout simplement de redémarrer sous notre <em>Ubuntu</em> préféré et le problème de réglage de luminosité intempestif sera réglé.
+</p>
+
+<p>
+<p><div class="notewarning">Le flashage de <abbr title="Basic Input-Output System">BIOS</abbr> est une opération délicate, qui peut entraîner la destruction du composant électronique qui le contient. En flashant le <abbr title="Basic Input-Output System">BIOS</abbr>, on remplace son contenu par un fichier image plus récent. Il ne faut surtout pas de microcoupures électriques ou de coupures de courant durant ces quelques secondes d&#039;opération !
+</div></p>
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=d9eace&amp;media=http%3A%2F%2Fimg121.imageshack.us%2Fimg121%2F2369%2Fusbfm.jpg" class="media" title="http://img121.imageshack.us/img121/2369/usbfm.jpg"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=d9eace&amp;media=http%3A%2F%2Fimg121.imageshack.us%2Fimg121%2F2369%2Fusbfm.jpg" class="medialeft" title="usbfm.jpg" alt="usbfm.jpg" /></a>
+Pour se faire, nous installerons <em>FreeDOS</em> sur une petite clef <abbr title="Universal Serial Bus">USB</abbr> d&#039;au moins 1GO, et nous ferons en sorte que le MSI Wind démarre directement dessus. Une fois <em>FreeDOS</em> chargé, le MSI Wind réagira comme si FreeDOS était installé. Nous pourrons alors utiliser les logiciels de mise à jour du <abbr title="Basic Input-Output System">BIOS</abbr> et procéder au flashage<sup><a href="msi_wind_u100-u90_maj_bios#fn__3" id="fnt__3" class="fn_top">3)</a></sup> de celui-ci. Nous utiliserons donc un logiciel pour préparer la clef <abbr title="Universal Serial Bus">USB</abbr> à être formatée et devenir bootable, ainsi qu&#039;un logiciel qui installera <em>FreeDOS</em> sur cette clef, soit respectivement, <a href="../gparted" class="wikilink1" title="gparted">GParted</a> et <a href="../unetbootin" class="wikilink1" title="unetbootin">UNetbootin</a>.
+</p>
+
+<p>
+<p><div class="noteclassic">Le système d&#039;exploitation <em>FreeDOS</em> est directement inclus dans <em>UNetbootin</em>.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Introduction] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="272-2827" /><input type="submit" value="Modifier" class="button" title="Introduction" /></div></form></div>
+<h2 class="sectionedit3" id="installer_les_logiciels_necessaires">Installer les logiciels nécessaires</h2>
+<div class="level2">
+
+<p>
+Installer les logiciels <strong><a href="../gparted#installation" class="wikilink1" title="gparted">GParted</a></strong> et <strong><a href="../unetbootin#installation" class="wikilink1" title="unetbootin">UNetBootIn</a></strong>. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Installer les logiciels nécessaires] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2828-2989" /><input type="submit" value="Modifier" class="button" title="Installer les logiciels nécessaires" /></div></form></div>
+<h2 class="sectionedit4" id="recuperer_le_bios_du_msi_wind_u90_et_u100">Récupérer le Bios du MSI Wind U90 et U100</h2>
+<div class="level2">
+
+<p>
+Telechargez le dernier <em><abbr title="Basic Input-Output System">BIOS</abbr></em><sup><a href="msi_wind_u100-u90_maj_bios#fn__4" id="fnt__4" class="fn_top">4)</a></sup> depuis le <a href="http://eu.msi.com/index.php?func=downloadfile&amp;dno=6915&amp;type=bios" class="urlextern" title="http://eu.msi.com/index.php?func=downloadfile&amp;dno=6915&amp;type=bios"  rel="nofollow">site officiel</a>:
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=7b2374&amp;media=http%3A%2F%2Fimg688.imageshack.us%2Fimg688%2F8008%2Fmsibios.png" class="media" title="http://img688.imageshack.us/img688/8008/msibios.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=7b2374&amp;media=http%3A%2F%2Fimg688.imageshack.us%2Fimg688%2F8008%2Fmsibios.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Décompressez l&#039;archive <strong>n011_10g.zip</strong> dans un dossier réservé à cet effet. Vous verrez apparaître les 3 fichiers suivants:
+</p>
+<ul>
+<li class="level1"><div class="li">flash.bat</div>
+</li>
+<li class="level1"><div class="li">EN011IMS.10G</div>
+</li>
+<li class="level1"><div class="li">EAFUDOS.exe</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Récupérer le Bios du MSI Wind U90 et U100] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2990-3475" /><input type="submit" value="Modifier" class="button" title="Récupérer le Bios du MSI Wind U90 et U100" /></div></form></div>
+<h2 class="sectionedit5" id="creer_un_disque_usb_bootable_sous_freedos">Créer un disque USB bootable sous FreeDOS</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Créer un disque USB bootable sous FreeDOS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3476-3529" /><input type="submit" value="Modifier" class="button" title="Créer un disque USB bootable sous FreeDOS" /></div></form></div>
+<h3 class="sectionedit6" id="formater_la_clef_usb_et_la_rendre_bootable">Formater la clef usb et la rendre bootable</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteimportant">
+Pensez à <strong>sauvegarder le contenu de votre clef</strong>, car celle-ci sera formatée et donc tout son contenu disparaitra.
+
+</div></p>
+</p>
+
+<p>
+Maintenant, il faut créer un disque <a href="../live_usb" class="wikilink1" title="live_usb">USB bootable</a> qui chargera FreeDOS sur le MSI Wind u90 et nous permettra de lancer les logiciels de mises à jour du <abbr title="Basic Input-Output System">BIOS</abbr> de MSI écrits pour DOS.
+</p>
+
+<p>
+Pour commencer, insérez votre clef <abbr title="Universal Serial Bus">USB</abbr> puis lancez <strong><em>GParted</em></strong>. <em>Ubuntu</em> vous demandera votre mot de passe. L&#039;onglet de droite vous montrera les disques disponibles. Sélectionnez celui qui correspond à votre clef (<code>/dev/sdb</code> par exemple), puis sélectionnez le grand rectangle vert (voir image) et faites un clic droit pour choisir <code><em>démonter</em></code>. 
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=5a9e16&amp;media=http%3A%2F%2Fimg682.imageshack.us%2Fimg682%2F9026%2Fgpartedl.png" class="media" title="http://img682.imageshack.us/img682/9026/gpartedl.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=5a9e16&amp;media=http%3A%2F%2Fimg682.imageshack.us%2Fimg682%2F9026%2Fgpartedl.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Maintenant que le disque est démonté, nous allons pouvoir le manipuler. Refaites un clic droit pour choisir <code><em>Formater en fat32</em></code>, puis cliquez sur le bouton <code><em>appliquer toutes les opérations</em></code>. La clef sera formatée en Fat32 et tout ce qui était dessus sera effacé. Il ne reste plus qu&#039;à lui indiquer que la clef doit être bootable en faisant maintenant un clic droit, <code><em>gérer les drapeaux</em></code> et en cochant <code><em>boot</em></code>.
+</p>
+
+<p>
+La clef est prête.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Formater la clef usb et la rendre bootable] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3530-4811" /><input type="submit" value="Modifier" class="button" title="Formater la clef usb et la rendre bootable" /></div></form></div>
+<h3 class="sectionedit7" id="installer_freedos_sur_la_clef">Installer FreeDOS sur la clef</h3>
+<div class="level3">
+
+<p>
+Dans la barre des tâches, sélectionnez <code><em>Applications</em></code> → <code><em>Outils système</em></code> → <code><em>UNetbootin</em></code>. <em>Ubuntu</em> vous demandera votre mot de passe.
+Lorsque UNetbootin sera lancé, cochez <code><em>Distribution</em></code> et choisissez <code><em>FreeDOS</em></code>. En bas, sélectionnez votre clef <abbr title="Universal Serial Bus">USB</abbr>. Puis faites <code><em>OK</em></code>. Après quelques secondes, votre clef sera prête et bootable sous DOS. 
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=4e2066&amp;media=http%3A%2F%2Fit-experts.dk%2Fcfs-filesystemfile.ashx%2F__key%2FCommunityServer.Blogs.Components.WeblogFiles%2Fjjonsson%2F3010.UNetbootin.png" class="media" title="http://it-experts.dk/cfs-filesystemfile.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/jjonsson/3010.UNetbootin.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=4e2066&amp;media=http%3A%2F%2Fit-experts.dk%2Fcfs-filesystemfile.ashx%2F__key%2FCommunityServer.Blogs.Components.WeblogFiles%2Fjjonsson%2F3010.UNetbootin.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Vous pouvez fermer le programme.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Installer FreeDOS sur la clef] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4812-5400" /><input type="submit" value="Modifier" class="button" title="Installer FreeDOS sur la clef" /></div></form></div>
+<h3 class="sectionedit8" id="installer_les_logiciels_de_mise_a_jour_du_bios_sur_la_clef">Installer les logiciels de mise à jour du BIOS sur la clef</h3>
+<div class="level3">
+
+<p>
+Ouvrez votre clef, et déposez-y les trois fichiers que vous aviez décompressé en provenance de l&#039;archive de MSI.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Installer les logiciels de mise à jour du BIOS sur la clef] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5401-5589" /><input type="submit" value="Modifier" class="button" title="Installer les logiciels de mise à jour du BIOS sur la clef" /></div></form></div>
+<h2 class="sectionedit9" id="configurer_le_bios_du_msi_wind_u90_et_u100_pour_qu_il_boot_sur_la_clef">Configurer le BIOS du MSI wind U90 et U100 pour qu&#039;il boot sur la clef</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Configurer le BIOS du MSI wind U90 et U100 pour qu'il boot sur la clef] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5590-5672" /><input type="submit" value="Modifier" class="button" title="Configurer le BIOS du MSI wind U90 et U100 pour qu'il boot sur la clef" /></div></form></div>
+<h3 class="sectionedit10" id="modifier_l_ordre_de_boot">Modifier l&#039;ordre de boot</h3>
+<div class="level3">
+
+<p>
+Nous allons maintenant redémarrer le MSI Wind et configurer le <abbr title="Basic Input-Output System">BIOS</abbr> pour que l&#039;ordinateur démarre sur la clef <abbr title="Universal Serial Bus">USB</abbr> et charge <em>FreeDOS</em>. En effet, par défaut, le MSI boote sur le Disque Dur (Hard Disk) sur lequel est installé <em>Ubuntu</em>.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=278983&amp;media=http%3A%2F%2Fimg682.imageshack.us%2Fimg682%2F7710%2Flogousb.jpg" class="media" title="http://img682.imageshack.us/img682/7710/logousb.jpg"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=278983&amp;media=http%3A%2F%2Fimg682.imageshack.us%2Fimg682%2F7710%2Flogousb.jpg" class="medialeft" title="logousb.jpg" alt="logousb.jpg" /></a>Insérez la clef <abbr title="Universal Serial Bus">USB</abbr> dans le MSI.
+</p>
+
+<p>
+Relancer le MSI wind et laissez la touche <strong>f11</strong> apppuyée. Un écran bleu apparaitra et vous aurez alors accès au <abbr title="Basic Input-Output System">BIOS</abbr> dans lequel vous pourrez selectionner l&#039;ordre de boot. Par défaut, le MSI est prévu pour booter sur le disque dur (Hard Disk). Nous allons modifier l&#039;ordre de boot pour que l&#039;ordinateur démarre depuis la clef <abbr title="Universal Serial Bus">USB</abbr> et charge <em>FreeDOS</em> comme système d&#039;exploitation.
+</p>
+
+<p>
+<p><div class="notetip">
+<em>Petit rappel pour naviguer dans un bios:</em>
+</p>
+<ul>
+<li class="level1"><div class="li">Se déplacer dans les menus :</div>
+<ul>
+<li class="level2"><div class="li">Flêches</div>
+</li>
+<li class="level2"><div class="li">TAB (à gauche du clavier)</div>
+</li>
+<li class="level2"><div class="li">Orig/Fin</div>
+</li>
+<li class="level2"><div class="li">Page Précédente/Page Suivante</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li">Entrer dans un menu après avoir au préalable selectionné le bon menu avec les touches de déplacement :</div>
+<ul>
+<li class="level2"><div class="li">Entrée</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li">Modifier des valeurs :</div>
+<ul>
+<li class="level2"><div class="li">chiffres</div>
+</li>
+<li class="level2"><div class="li">+/- (pour modifier une valeur numérique)</div>
+</li>
+<li class="level2"><div class="li">flèches</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li">Sauvegarder les changements :</div>
+<ul>
+<li class="level2"><div class="li">F10</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+Selectionnez <code><em>Enter Setup</em></code> qui vous amènera sur l&#039;espace de configuration du <abbr title="Basic Input-Output System">BIOS</abbr>. Sélectionnez avec les flèches directionnelles <code><em>Boot</em></code> puis <code><em>Boot option #1</em></code>. Sélectionnez en tapant la touche entrée et choisissez <code><em><abbr title="Universal Serial Bus">USB</abbr> Hard Disk</em></code>. 
+</p>
+
+<p>
+Puis appuyez sur la touche <strong>F10</strong> pour sauvegarder vos changement et sélectionnez <code><em>yes</em></code>. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Modifier l'ordre de boot] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5673-7254" /><input type="submit" value="Modifier" class="button" title="Modifier l'ordre de boot" /></div></form></div>
+<h3 class="sectionedit11" id="flashage_du_bios">Flashage du BIOS</h3>
+<div class="level3">
+
+<p>
+Le MSI va redémarrer, booter sur la clef <abbr title="Universal Serial Bus">USB</abbr> et charger <em>FreeDOS</em>. Il vous présentera le disque par défaut <code>A:/</code>. Vous devez aller dans le disque <code>C:</code> en tapant <strong>C:</strong>. Puis tapez la commande <strong>dir</strong> qui vous listera le contenu de la clef. 
+Il vous suffit alors de taper:
+</p>
+<pre class="code">C:\&gt; flash.bat</pre>
+
+<p>
+Le flashage du <abbr title="Basic Input-Output System">BIOS</abbr> commencera et prendra quelques secondes, puis il sera vérifié.
+</p>
+
+<p>
+Vous pouvez redémarrez le MSI wind, et retourner dans le <abbr title="Basic Input-Output System">BIOS</abbr> pour désactiver le boot <abbr title="Universal Serial Bus">USB</abbr> et remettre le boot Hard Disk (voir plus haut). Lorsque vous aurez sauvegarder vos changements, vous pouvez relancer le MSI Wind.
+</p>
+
+<p>
+Le problème d&#039;écran clignotant a disparu, le flashage du bios a corrigé ce problème.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Flashage du BIOS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7255-7991" /><input type="submit" value="Modifier" class="button" title="Flashage du BIOS" /></div></form></div>
+<h2 class="sectionedit12" id="probleme_connu">Problème connu</h2>
+<div class="level2">
+<blockquote><div class="no">
+ ERROR: <abbr title="Basic Input-Output System">BIOS</abbr> has no flash information available.</div></blockquote>
+
+<p>
+C&#039;est un mécanisme de protection qui prévient le crash du systeme si celui-ci se retrouve sans ressources d&#039;énergie tandis que le processus de flashage est en cours. 
+<strong>Il suffit de brancher le boitier d&#039;alimentation du MSI</strong> pour passer ce mécanisme de protection.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Problème connu] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7992-8340" /><input type="submit" value="Modifier" class="button" title="Problème connu" /></div></form></div>
+<h2 class="sectionedit13" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Site Officiel de MSI : <a href="http://eu.msi.com/" class="urlextern" title="http://eu.msi.com/"  rel="nofollow">http://eu.msi.com/</a></div>
+</li>
+<li class="level1"><div class="li"> Téléchargement du <abbr title="Basic Input-Output System">BIOS</abbr> : <a href="http://eu.msi.com/index.php?func=downloadfile&amp;dno=6915&amp;type=bios" class="urlextern" title="http://eu.msi.com/index.php?func=downloadfile&amp;dno=6915&amp;type=bios"  rel="nofollow">page download</a></div>
+</li>
+<li class="level1"><div class="li"> Documentation sur le <a href="../msi_wind_u90_x" class="wikilink1" title="msi_wind_u90_x">msi wind u90 x</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contribution</em> : <a href="http://doc.ubuntu-fr.org/utilisateurs/nuxos" class="wikilink1" title="utilisateurs:nuxos">Nuxos</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/draco31.fr" class="wikilink1" title="utilisateurs:draco31.fr">draco31.fr</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="msi_wind_u100-u90_maj_bios"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1272795652" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8341-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="msi_wind_u100-u90_maj_bios#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Le <abbr title="Basic Input-Output System">BIOS</abbr> (système élémentaire d&#039;entrée/sortie) est, au sens strict, un ensemble de fonctions, contenu dans la mémoire morte (ROM) de la carte mère d&#039;un ordinateur lui permettant d&#039;effectuer des opérations élémentaires lors de sa mise sous tension</div>
+<div class="fn"><sup><a href="msi_wind_u100-u90_maj_bios#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+FreeDOS a pour but d&#039;être un système d&#039;exploitation complet, libre, et 100% compatible MS-DOS.</div>
+<div class="fn"><sup><a href="msi_wind_u100-u90_maj_bios#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+Le flashage du <abbr title="Basic Input-Output System">BIOS</abbr> est une opération de modification du programme de la mémoire flash contenant le <abbr title="Basic Input-Output System">BIOS</abbr> d&#039;un ordinateur.</div>
+<div class="fn"><sup><a href="msi_wind_u100-u90_maj_bios#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+Dernier Bios en date : 2010-01-04, version 1.0G, Taille 721KB</div>
+</div>
+
+<!-- no cachefile used, but created /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/0/0fd40551d388ba38a62865dc12866482.xhtml -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/msi_wind_u100-u90_maj_bios?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/msi_wind_u100-u90_maj_bios?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/msi_wind_u100-u90_maj_bios?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/msi_wind_u100-u90_maj_bios?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/msi_wind_u100-u90_maj_bios?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

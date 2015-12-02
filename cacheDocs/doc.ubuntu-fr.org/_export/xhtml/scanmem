@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>scanmem</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2010-09-01T15:40:34+0200"/>
+<meta name="keywords" content="jeu,systeme"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../scanmem?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="scanmem"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/scanmem"/>
+<link rel="canonical" href="../../scanmem"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"scanmem","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="scanmem#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="scanmem#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="scanmem#interface_graphique">Interface graphique</a></div></li>
+<li class="level1"><div class="li"><a href="scanmem#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../jeu" class="wikilink1" title="jeu" rel="tag">jeu</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="scanmemmodifier_la_memoire_a_chaud">Scanmem : modifier la mémoire à chaud</h1>
+<div class="level1">
+
+<p>
+<strong>Scanmem</strong> permet de modifier la mémoire à chaud, c&#039;est à dire que l&#039;on peut modifier une variable du système. Cela peut être utiliser pour « tricher » ou changer le comportement d’un jeu.
+</p>
+
+<p>
+<p><div class="notewarning">Modifier les variables du système n&#039;est pas sans risque, cela peut entrainer une instabilité ou un plantage de votre système. A utiliser avec précaution et à vos risques et périls.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Scanmem : modifier la mémoire à chaud" [29-492] -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Il suffit d&#039;<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://scanmem" class="urlextern" title="apt://scanmem"  rel="nofollow">scanmem</a></strong>.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Installation" [493-624] -->
+<h2 class="sectionedit3" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Pour l&#039;exemple, nous allons le tester sur Gnometris (le Tetris-like intégré à Gnome) pour exploser le record.
+</p>
+
+<p>
+Lançons le jeu, et récupérons son pid :
+</p>
+<pre class="code">$ gnometris &amp;
+[1] 30814</pre>
+
+<p>
+Démarrons scanmem avec comme paramètre le pid de Gnometris :
+</p>
+<pre class="code">sudo scanmem 30814</pre>
+
+<p>
+NB : Il faut être root pour lire et écrire la mémoire des autres programmes lancés
+</p>
+
+<p>
+On obtient un joli prompt :
+</p>
+<pre class="code">0&gt; </pre>
+
+<p>
+Il va falloir tout d’abord trouver où se trouve en mémoire la variable à modifier (celle qui contient le score courant). Pour cela, c’est très simple, vu que le score est affiché à l’écran, il suffit d’indiquer à scanmem sa valeur. Pour l’instant, mon score est de 0, je rentre donc 0 :
+</p>
+<pre class="code">0&gt; 0
+info: 01/126 searching   0x621000 -   0x623000...........ok
+info: 02/126 searching  0x1f9d000 -  0x2f4e000...........ok
+…
+info: 125/126 searching 0xe83f9000 - 0xe83fa000.ok
+info: 126/126 searching 0xdab4b000 - 0xdab67000.ok
+info: we currently have 12352024 matches.
+12352024&gt; </pre>
+
+<p>
+Il y a donc 12352024 variables dans la mémoire utilisée par Gnometris qui sont à 0 (pas étonnant).
+</p>
+
+<p>
+Je joue un peu, histoire de faire évoluer le score… tac tac tac tac… Voilà, j’ai 100 points (j’ai fait 2 lignes), je tape donc 100 :
+</p>
+<pre class="code">12352024&gt; 100
+info: we currently have 36 matches.
+36&gt; </pre>
+
+<p>
+Il y a 36 variables qui étaient à 0 tout à l’heure et qui sont à 100 maintenant. Je rejoue, je fais 1 ligne, j’ai 140 points, je tape donc 140 :
+</p>
+<pre class="code">36&gt; 140
+info: we currently have 1 matches.
+info: match identified, use &quot;set&quot; to modify value.
+info: enter &quot;help&quot; for other commands.</pre>
+
+<p>
+Voilà, j’ai trouvé la variable qui contient le score, maintenant je peux la modifier :
+</p>
+<pre class="code">1&gt; set 12345678
+info: setting *0x22e38f0 to 0xbc614e...</pre>
+
+<p>
+Rien ne se passe dans le jeu, c’est normal : pour Gnometris, le score n’a pas pu changer, le label de l’interface graphique contenant le score n’a donc pas été rafraîchi. Il suffit de gagner quelques points pour s’apercevoir que la modification a bien été prise en compte :
+</p>
+
+<p>
+Ça fonctionne bien évidemment sur tous les programmes, mais c’est plus intéressant pour les jeux <img src="../../lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Utilisation" [625-2810] -->
+<h2 class="sectionedit4" id="interface_graphique">Interface graphique</h2>
+<div class="level2">
+
+<p>
+Pour avoir une interface graphique, il vous faut avoir au minimum la version 0.08.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj" class="wikilink1" title="tutoriel:comment_modifier_sources_maj">Modifiez vos sources de mises à jour</a> pour y ajouter le(s) dépôt(s) suivant(s) :
+</p>
+
+<p>
+Pour Ubuntu 10.04 <a href="../../lucid" class="wikilink1" title="lucid">Lucid</a> Lynx :
+</p>
+<pre class="code">sudo add-apt-repository ppa:coolwanglu/scanmem</pre>
+
+<p>
+Versions antérieures:
+</p>
+<pre class="code">deb http://ppa.launchpad.net/coolwanglu/scanmem/ubuntu VOTRE_DISTRIBUTION main</pre>
+<pre class="code">deb-src http://ppa.launchpad.net/coolwanglu/scanmem/ubuntu VOTRE_DISTRIBUTION main</pre>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj#gerer_les_cles_d_authentification" class="wikilink1" title="tutoriel:comment_modifier_sources_maj">installez la clé</a>:
+</p>
+<pre class="code">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EFB612A8</pre>
+
+<p>
+Lancer l&#039;interface graphique:
+</p>
+<pre class="code">gameconqueror</pre>
+
+</div>
+<!-- EDIT4 SECTION "Interface graphique" [2811-3596] -->
+<h2 class="sectionedit5" id="liens">Liens</h2>
+<div class="level2">
+
+<p>
+Site: <a href="http://code.google.com/p/scanmem/" class="urlextern" title="http://code.google.com/p/scanmem/"  rel="nofollow">http://code.google.com/p/scanmem/</a>
+</p>
+
+<p>
+Information issue de ce <a href="http://blog.rom1v.com/" class="urlextern" title="http://blog.rom1v.com/"  rel="nofollow">blog de Rom</a>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Liens" [3597-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/e/e6a9befa1460562b7c59b5fcc84298cf.xhtml used -->
+</div>
+</body>
+</html>

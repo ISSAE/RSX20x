@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>trickle</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-04-01T00:02:47+0200"/>
+<meta name="keywords" content="internet,reseau"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../trickle?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="trickle"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/trickle"/>
+<link rel="canonical" href="../../trickle"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"trickle","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<div class="tags"><span>
+	<a href="../../internet" class="wikilink1" title="internet" rel="tag">internet</a>,
+	<a href="../../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="tricklelimitation_de_la_bande_passante">trickle : limitation de la bande passante</h1>
+<div class="level1">
+
+<p>
+Trickle vous permet de limiter la bande passante d&#039;un programme en envoi et en réception. Par exemple, si vous remarquez qu&#039;il vous est impossible de surfer avec un navigateur internet alors que vous êtes en train d&#039;uploader avec scp, il est utile de limiter légèrement la bande passante allouée à scp de façon à avoir le minimum de bande passante en upload pour pouvoir surfer en même temps.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "trickle : limitation de la bande passante" [33-492] -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Pour pouvoir utiliser trickle, <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt://trickle" class="urlextern" title="apt://trickle"  rel="nofollow">trickle</a></strong>.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Installation" [493-643] -->
+<h2 class="sectionedit3" id="utilisation">Utilisation</h2>
+<div class="level2">
+<pre class="code">trickle  -s -d VITESSE -u VITESSE PROGRAMME</pre>
+
+<p>
+où :
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>-s</code>  exécuter trickle en mode autonome, indépendamment de trickled (daemon)</div>
+</li>
+<li class="level1"><div class="li"> <code>-d</code> est la vitesse maximum de réception autorisée en ko/s</div>
+</li>
+<li class="level1"><div class="li"> <code>-u</code> est la vitesse maximum d&#039;envoi autorisée en ko/s</div>
+</li>
+</ul>
+
+<p>
+<strong>Exemples</strong> :
+</p>
+<ul>
+<li class="level1"><div class="li"> pour limiter le programme yafc à 150ko/s en réception et à 10ko/s pour l&#039;envoi, saisissez dans un <a href="../../terminal" class="wikilink1" title="terminal">terminal</a> la commande suivante :</div>
+</li>
+</ul>
+<pre class="code">trickle -s -d 150 -u 10 yafc</pre>
+<ul>
+<li class="level1"><div class="li"> pour limiter TOUTES les commandes que vous lancerez depuis un terminal, le plus simple est de lancer la commande</div>
+</li>
+</ul>
+<pre class="code">trickle -s -u 70 bash</pre>
+
+<p>
+celle-ci a pour effet de limiter à 70Ko/s la nouvelle session de bash que l&#039;on crée. Ainsi, toute les commandes ultérieures lancées depuis ce terminal seront ainsi limitées en upload. C&#039;est intéressant par exemple pour lancer des scripts que trickle ne reconnait pas comme des programmes et ne permet pas de limiter autrement. 
+</p>
+<hr />
+
+</div>
+<!-- EDIT3 SECTION "Utilisation" [644-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/2a8a9d473c6ef3ba277b7721f210fc02.xhtml used -->
+</div>
+</body>
+</html>

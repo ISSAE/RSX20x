@@ -1,0 +1,254 @@
+{{tag>récupérer système}}
+
+----------------------------------------------
+====== ForemostGUI ======
+
+
+**ForemostGUI** comme son nom nous l'indique n'est ni plus ni moins qu'une interface graphique pour le logiciel de récupération de données [[:foremost|Foremost]].\\
+Foremost est un outil en ligne de commande qui donne la possibilité de récupérer simplement des fichiers qui ont été effacés. Il a été développé à l'origine pour le service d'enquêtes spéciales de l'US Air Force.
+
+
+===== Installation =====
+
+Le script installe automatiquement [[:foremost|Foremost]].\\
+
+<note>Par défaut Zenity est installé sur Ubuntu</note>
+
+Enregistrez le code ci dessous dans un fichier texte (foremost.sh par exemple) et rendez le exécutable.
+
+<code>
+chmod +x foremost.sh
+</code>
+\\
+<code>
+#!/bin/bash
+
+if ! [ $(dpkg -l | awk '/foremost/ { print $2 }') ]; then sudo apt-get -y install foremost; fi
+
+# zenity process box
+# affichée tant que le process en argument existe, cancel déclenche l'arrêt de foremost
+function _wait_process() {
+	while pgrep $1 &>/dev/null; do echo yes && sleep 1; done | zenity --progress --pulsate --auto-close --text="Récupération en cours..." --title="ForemostGUI"	
+}
+
+# zenity dialog box
+# sélection des paramêtres de récupération
+function _select_options(){
+	options=`zenity --list \
+	--title="ForemostGUI" \
+	--text="			Sélectionnez les options de récupération\n				Par défaut, le rapport seul est généré" \
+	--checklist \
+	--column="Cocher" \
+	--column="Description" \
+	True "Générer un rapport sans récupérer" "\-w" \
+	False "Indirect block detection (fichiers Unix/Linux)" "\-d" \
+	False Verbose "\-v" \
+	False "Quick mode (Analyse seulement le début des secteurs, déconseillé sur NTFS)" "\-q" \
+	False "All headers (y compris les fichiers corrompus)" "\-a" \
+	--column="Option" \
+	--hide-column="3" \
+	--print-column="3" \
+	--separator=" " \
+	--width="800" \
+	--height="270"`
+	if [ "$?" -eq 1 ]; then
+    echo 1
+    else
+	options=$(echo $options | sed 's/\\//g')
+	echo $options
+	fi
+}
+
+# zenity dialog box
+# sélection des types de fichiers
+function _select_extensions(){
+	extensions=`zenity --list \
+	--title="ForemostGUI" \
+	--text="			Sélectionnez les types de fichiers\n				Par défaut, tous les types" \
+	--checklist \
+	--column="Cocher" \
+	--column="Description" \
+	False "jpg Images .jpg, .jfif et exif" jpg \
+	False "gif Images .gif" gif \
+	False "png Images .png" png \
+	False "bmp Images bitmap"  bmp \
+	False "avi Vidéos .avi seulement" avi \
+	False "exe Exécutables .exe et .dll" exe \
+	False "mpg Vidéos .mpg" mpg \
+	False "wav Audio .wav" wav \
+	False "riff Vidéos .avi et .riff" riff \
+	False "wmv Windows média (audio et vidéo)" wmv \
+	False "mov Vidéos .mov" mov \
+	False "pdf Portable document format" pdf \
+	False "ole Documents PowerPoint, Word, Excel, Access, et StarWriter" ole \
+	False "doc Documents Word uniquement" doc \
+	False "zip Fichier zippés, y compris .jar et xml comme les formats openoffice" zip \
+	False "rar Archive .rar" rar \
+	False "htm Fichiers .htm" htm \
+	False "cpp Fichiers source C,C++ ou autres" cpp \
+	--column="Option" \
+	--hide-column="3" \
+	--print-column="3" \
+	--separator="," \
+	--width="800" \
+	--height="270"`
+	if [ "$?" -eq 1 ]; then
+    echo 1
+    else
+	echo $extensions
+	fi
+}
+
+function _foremost() {
+# Formulaire 1, options de foremost
+	params=$(_select_options)
+	if [ "$params" = "1" ]; then
+    exit
+    fi
+# paramètres par défaut -w
+if ! [ -n "$params" ] 
+	then params="-w"
+fi
+# Formulaire 2, types de fichiers
+	extension=$(_select_extensions)
+	if [ "$extension" = "1" ]; then
+    exit
+    fi
+# types de fichiers par défaut : all
+if ! [ -n "$extension" ] 
+	then extension="all"
+fi
+
+# On crée le formulaire en stockant les valeurs de sortie dans $cfgpass :/
+parts=`df -Th | grep -e "^/dev/*" | tr "\n" "|"`
+cfg=`zenity --forms \
+        --title="ForemostGUI" \
+        --text="Configurer votre récupération de données" \
+        --width="800" \
+        --add-list="Partitions :" \
+        --column-values="Partitions :" \
+        --list-values="${parts%?}" \
+        --add-entry="Destination :
+(default:$PWD/output)" \
+        --separator="@"`
+
+#Si on clique sur le bouton Annuler
+if [ "$?" -eq 1 ]; then
+    #On quitte le script
+    exit
+fi
+#Sinon on continue
+addr=`echo "$cfg" | awk -F"@| +" '{ print $1}'` #Addresse absolue de la partitions sélection
+outdir=`echo "$cfg" | awk -F"@| +" '{ print $8}'` #dossier de sortie
+
+if [ "$outdir" = "" ]; then
+	outdir="$PWD/output"
+fi
+
+params="$params -t $extension -i $addr -o $outdir"
+
+#on lance foremost
+gksudo -m "L'execution de Foremost nécessite les privilèges administrateur" "foremost $params" &>$PWD/foremost_log.txt &
+
+# zenity process box
+_wait_process gksudo
+
+# zenity process box
+_wait_process foremost
+
+# on redemande le mot de passe si on annule avant la fin, sinon on affiche le résultat 
+if [ "$(pgrep foremost)" ]
+	then gksudo -m "La fermeture de Foremost nécessite les privilèges administrateur" "pkill -15 foremost"
+else
+	if [ -s "$PWD/foremost_log.txt" ]; then
+		# on filtre le contenu du fichier de log
+		if [ "$(grep -i error $PWD/foremost_log.txt)" ]; then
+			mapfile -t filecontent < $PWD/foremost_log.txt
+			errors=$(printf "%s\n" "${filecontent[@]}")
+		fi
+		# dialog box différente s'il y a des erreurs
+		if [ -n "$errors" ]; then
+			zenity --error --title="ForemostGUI" \
+			--text="La récupération est terminée.\nles erreurs suivantes ont été détectées :\n\n\"$errors\"" \
+			--width="400"
+		else
+			zenity --info --title="ForemostGUI" \
+			--text="La récupération est terminée.\nVos fichiers et/ou le rapport sont récupérables ici:\n\"$outdir\" avec les privilèges administrateur"
+		fi
+	else
+	# Si le fichier de log est vide
+	zenity --info --title="ForemostGUI" \
+	--text="La récupération a été annulée ou une erreur bloque l'éxécution de foremost\nLancez ce script dans un terminal et vérifiez la sortie."
+	fi
+fi
+
+_foremost
+}
+
+_foremost
+
+</code>
+
+===== Utilisation du script =====
+
+Lancer le script dans un terminal ou double-cliquez dessus.\\
+
+<code>
+./foremost.sh
+</code>
+
+
+
+===== Utilisation de l'ancienne version en FreePascal =====
+
+vous pouvez aussi téléchargez l'installateur de l'ancienne version développé en FreePascal [[http://ckdevelop.org/download/download.php?id=4|DEBIAN ICI]].
+Celui-ci devrait vous installer au passage [[:foremost|Foremost]].
+
+<note warning>
+L'installation de ForemostGUI ne fonctionne pas sous Natty via le dépôt officiel du logiciel (erreur dans synaptic). en ce qui concerne le téléchargement direct du .deb, la logithèque ubuntu signale que le paquet est de mauvaise qualité ou que l'architecture i386 du logiciel est incorrecte sous Natty x64. Le logiciel est pour l'instant en arrêt de développement. Vous pouvez donc plutôt vous tourner vers Foremost en mode Terminal.
+</note>
+
+Lancez l'application depuis le menu Applications -> Outils système -> ForemostGUI.
+
+Sélectionnez la partition à analyser.
+
+{{http://www.ckdevelop.org/articles/captures/foremostgui_partition.png}}
+
+Sélectionnez les types de fichiers à restaurer.
+
+{{http://www.ckdevelop.org/articles/captures/foremostgui_types.png}}
+
+
+Appuyez sur 'Lancez la récupération' on vous demandera alors dans une fenêtre [[:xterm|XTerm]] le mot de passe administrateur (ROOT) (il n'affiche pas la sortie du mot de passe dans [[:xterm|XTerm]])
+
+{{http://www.ckdevelop.org/articles/captures/foremostgui_rootanalyse.png}}
+
+
+Analyse en cours...
+
+{{http://www.ckdevelop.org/articles/captures/foremostgui_analyse.png}}
+
+A la fin de la restauration le navigateur de fichier [[:nautilus|Nautilus]] démarre en [[:root|mode administrateur (ROOT)]] dans le dossier de restauration
+
+<note tip>~/Output</note>
+
+{{http://www.ckdevelop.org/articles/captures/foremostgui_output.png}}
+
+
+===== Désinstallation =====
+
+Pour supprimer cette application, il suffit de [[:tutoriel:comment_supprimer_un_paquet|supprimer son paquet]]. Selon la méthode choisie, la configuration globale de l'application est conservée ou supprimée. Les journaux du système, et les fichiers de préférence des utilisateurs dans leurs dossiers personnels sont toujours conservés.
+
+
+===== Voir aussi =====
+
+     *[[http://www.ckdevelop.org/articles/articles.php?id=4&cat=1|Site officiel de ForemostGUI]]
+     
+     *[[http://www.ckdevelop.org/download/download.php?id=4|Télécharger ForemostGUI]]
+
+     *[[:foremost|Foremost]]
+
+
+----
+
+**Contributeurs principaux :** //[[:utilisateurs:ckdevelop|CKDevelop]]...à suivre//

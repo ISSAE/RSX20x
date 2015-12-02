@@ -1,0 +1,636 @@
+{{tag>bureautique mathématiques}}
+
+----
+====== LaTeX, langage de description de document ====== 
+
+**LaTeX** est un langage de description de document. Si vous avez déjà utilisé le langage HTML, ou édité un wiki, vous êtes déjà familier à l'idée d'utiliser des symboles ou des commandes au sein d'un texte pour en définir le rendu et la mise en page. LaTeX est utilisé couramment pour les publications scientifiques. Il est très utile pour créer des documents formatés de manière logique, avec un excellent rendu des équations et formules. Il permet également de générer facilement sommaires, listes de figures et numéros d'équation. Les fichiers LaTeX peuvent ensuite être convertis en un grand nombre de formats différents comme par exemple PDF, PostScript, DVI, et HTML. Il se prononce "Latèque" ou "Latec" mais certainement pas Latex.
+
+Un fichier LaTeX est un fichier contenant du texte et des commandes de marquage. Il peut être écrit avec un [[éditeur de texte]] ([[:Gedit]] par exemple), il est ensuite converti vers d'autres formats grâce à un compilateur LaTeX. Certaines personnes préféreront écrire des fichiers LaTeX dans un environnement intégré, avec menus et boutons de formatage de texte comme l'excellent et très complet [[:kile| Kile]] ou aussi  [[Texmaker|Texmaker]]. Il existe également de nombreux paquets additionnels permettant d'enrichir LaTeX en fonctionnalités diverses.
+
+===== Pré-requis =====
+ 
+  * Disposer des [[:sudo|droits d'administration]].
+  * Disposer d'une connexion à Internet configurée et activée.
+
+===== Installation =====
+Tout comme GNU/Linux, LaTeX est en fait une collection de plusieurs outils et fichiers indépendants. Et pour éviter de devoir les rechercher un par un, puis de les installer, il existe une distribution LaTeX.
+
+Sous Ubuntu, c'est //TeX-Live// présent dans le dépôt « Universe » qui permet de faire du LaTeX.
+  * Pour l'installation minimale, [[:tutoriel:comment_installer_un_paquet|installez le paquet]] **[[apt>texlive|texlive]]**.
+  * Pour le support de la langue française, [[:tutoriel:comment_installer_un_paquet|installez le paquet]] **[[apt>texlive-lang-french|texlive-lang-french]]**.
+  * Pour une compilation de greffons bien utiles, [[:tutoriel:comment_installer_un_paquet|installez le paquet]] **[[apt>texlive-latex-extra|texlive-latex-extra]]**.
+  * Pour l'installation complète sans se poser de questions au sujet des paquets supplémentaires, [[:tutoriel:comment_installer_un_paquet|installez le paquet]] **[[apt>texlive-full|texlive-full]]**.
+<note important>Dans le cas de l'installation complète, l'ensemble des paquets est très volumineux !</note>
+<note important>L'installation via les dépôts « Universe » va installer TeX-Live 2013 (Ubuntu 14.04). <del>Dans certains cas, cette version peut causer des bugs.</del>
+Une méthode pour installer la dernière version est exposée ici : [[http://www.tug.org/texlive/doc/texlive-fr/texlive-fr.html|http://www.tug.org/texlive/doc/texlive-fr/texlive-fr.html]]</note>
+
+
+==== Paquets additionnels ====
+LaTeX peut être complété par des paquets additionnels.
+=== Installation automatique ===
+<note important>
+Cette manipulation est faite pour un utilisateur avancé de Latex.
+</note>
+
+Si vous voulez  que ces paquets s'installent automatiquement il faut la commande **tlmgr**. 
+
+Pour cela il faut installer directement TexLive sur votre Ubuntu sans installer les paquets fournit pour votre distribution.
+
+Télécharger [[http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz|texliveunix]].
+
+positionnez-vous dans le répertoire de téléchargement du fichier.
+
+Extraction du script
+<code bash>
+tar zxvf install-tl-unx.tar.gz
+</code>
+
+Installation des paquets nécessaires
+<code bash>
+sudo apt-get install tex-common texinfo equivs perl-tk perl-doc
+</code>
+
+<code bash>
+cd /home/user/install-tl-20131112
+sudo ./install-tl 
+</code>
+ <note>
+Vous pouvez aussi utiliser le mode graphique pour l'installation avec la commande :
+<code>
+sudo ./install-tl -gui
+</code>
+</note>
+Si vous le souhaitez vous pouvez commencer par changer le mode d'installation (complète (par défaut), minimaliste...) en allant dans le menu Scheme (Tapez S).
+
+Changer les options d’installation pour avoir des liens symboliques : 
+<code bash>
+ <O> options:
+   [ ] use letter size instead of A4 by default
+   [X] allow execution of restricted list of programs via \write18
+   [X] create all format files
+   [X] install macro/font doc tree
+   [X] install macro/font source tree
+
+ <V> set up for portable installation
+
+Actions:
+ <I> start installation to hard disk
+ <H> help
+ <Q> quit
+
+Enter command: O
+</code>
+
+<code bash>
+===============================================================================
+Options setup:
+
+ <P> use letter size instead of A4 by default: [ ]
+ <E> execution of restricted list of programs: [X]
+ <F> create format files:                      [X]
+ <D> install font/macro doc tree:              [X]
+ <S> install font/macro source tree:           [X]
+ <L> create symlinks in standard directories:  [ ]
+            binaries to: 
+            manpages to: 
+                info to: 
+
+Actions: (disk space required: 3072 MB)
+ <R> return to main menu
+ <Q> quit
+
+Enter command: L
+New value for binary directory [/usr/local/bin]: 
+New value for man directory    [/usr/local/man]: 
+New value for info directory   [/usr/local/info]:
+</code>
+
+Choisir les langues à installer
+<code>
+===============================================================================
+Options setup:
+
+ <P> use letter size instead of A4 by default: [ ]
+ <E> execution of restricted list of programs: [X]
+ <F> create format files:                      [X]
+ <D> install font/macro doc tree:              [X]
+ <S> install font/macro source tree:           [X]
+ <L> create symlinks in standard directories:  [X]
+            binaries to: /usr/local/bin
+            manpages to: /usr/local/man
+                info to: /usr/local/info
+
+Actions: (disk space required: 3072 MB)
+ <R> return to main menu
+ <Q> quit
+
+Enter command: R
+</code>
+
+<code>
+Actions:
+ <I> start installation to hard disk
+ <H> help
+ <Q> quit
+
+Enter command: L
+===============================================================================
+Language support:
+
+ a [X] African scripts                   s [X] Indic scripts                   
+ b [X] Arabic                            t [X] Italian                         
+ c [X] Armenian                          u [X] Latin                           
+ d [X] Chinese, Japanese, Korean         v [X] Latvian                         
+ e [X] Croatian                          w [X] Lithuanian                      
+ f [X] Cyrillic                          x [X] Mongolian                       
+ g [X] Czech/Slovak                      y [X] Norwegian                       
+ h [X] Danish                            z [X] Other hyphenation patterns      
+ i [X] Dutch                             0 [X] Polish                          
+ j [X] US and UK English                 1 [X] Portuguese                      
+ k [X] Finnish                           2 [X] Spanish                         
+ l [X] French                            3 [X] Swedish                         
+ m [X] German                            4 [X] Tibetan                         
+ n [X] Greek                             5 [X] Turkmen                         
+ o [X] Hebrew                            6 [X] Vietnamese                      
+ p [X] Hungarian                        
+
+Language-specific documentation:
+
+ A [X] Arabic documentation              M [X] Mongolian documentation         
+ B [X] Bulgarian documentation           N [X] Polish documentation            
+ C [X] Chinese documentation             O [X] Portuguese documentation        
+ D [X] Czech/Slovak documentation        P [X] Russian documentation           
+ E [X] Dutch documentation               S [X] Serbian documentation           
+ F [X] English documentation             T [X] Slovenian documentation         
+ G [X] Finnish documentation             U [X] Spanish documentation           
+ H [X] French documentation              V [X] Thai documentation              
+ I [X] German documentation              W [X] Turkish documentation           
+ J [X] Italian documentation             X [X] Ukrainian documentation         
+ K [X] Japanese documentation            Y [X] Vietnamese documentation        
+ L [X] Korean documentation             
+
+Actions: (disk space required: 3072 MB)
+ <+> select all
+ <-> deselect all
+ <R> return to main menu
+ <Q> quit
+
+Enter letter(s) to select language(s): R
+</code>
+
+<note>
+Vous pouvez tout dé-sélectionner et ne choisir que le français pour une installation plus rapide. Vous pourrez toujours installer ultérieurement ce dont vous avez besoin. 
+</note>
+
+Commencer l'installation
+<code>
+Actions:
+ <I> start installation to hard disk
+ <H> help
+ <Q> quit
+
+Enter command: I
+</code>
+
+Fin de l'installation de TexLive
+<code>
+...
+ See
+   /usr/local/texlive/2012/index.html
+ for links to documentation.  The TeX Live web site
+ contains updates and corrections: http://tug.org/texlive.
+
+ TeX Live is a joint project of the TeX user groups around the world;
+ please consider supporting it by joining the group best for you. The
+ list of user groups is on the web at http://tug.org/usergroups.html.
+
+
+ Add /usr/local/texlive/2012/texmf/doc/man to MANPATH, if not dynamically determined.
+ Add /usr/local/texlive/2012/texmf/doc/info to INFOPATH.
+
+ Most importantly, add /usr/local/texlive/2012/bin/x86_64-linux
+ to your PATH for current and future sessions.
+
+ Welcome to TeX Live!
+Logfile: /usr/local/texlive/2012/install-tl.log
+</code>
+
+Valider l'exécution de texlive
+<code>
+echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+</code>
+
+si le chemin /usr/local/texlive/2011/bin/x86_64-linux n’apparaît pas 
+<code>
+nano $HOME/.bashrc
+</code>
+ajoutez à la fin de votre .bashrc pour un shell bash.
+<code>
+PATH=/usr/local/texlive/2011/bin/x86_64-linux:$PATH
+</code>
+
+Tester que tlmgr fonctionne
+<code>
+tlmgr --help
+</code>
+
+Administration graphique
+<code>
+sudo tlmgr -gui
+</code>
+
+Mettre à jour TexLive a partir des dépots CTAN
+<code>
+sudo tlmgr update --self --all
+</code>
+
+Installation du paquet **siunitx** :
+<code>
+sudo tlmgr install siunitx
+</code>
+
+=== Méthode manuelle ===
+Vous trouverez la liste détaillée sur le site du  [[http://www.ctan.org/tex-archive/help/Catalogue/brief.html | Catalogue Tex en ligne]] ou sur le [[http://www.ctan.org/ | Réseau d'archives TeX]]. Ils peuvent en général être téléchargés sous forme de fichiers compressés « tar.gz » ou « zip ». Pour les installer, il faut d'abord les décompresser puis les copier dans le répertoire « /usr/local/share/texmf/tex/latex/ ». Lancez ensuite ''texhash'', pour mettre à jour la base de données.
+<note important>Dans la version 10.04, le répertoire à utiliser est « /usr/share/texmf/tex/latex/ »</note>
+Supposons que vous avez téléchargé le paquet « mhchem.zip » vers votre répertoire personnel, les commandes suivantes devraient fonctionner :
+
+  sudo mkdir -p /usr/local/share/texmf/tex/latex
+  cd /usr/local/share/texmf/tex/latex
+  sudo unzip $HOME/mhchem.zip
+  sudo texhash
+
+
+<note important>
+Une méthode plus simple est exposée ici :
+http://forum.ubuntu-fr.org/viewtopic.php?pid=9408961#p9408961
+</note>
+
+
+
+Parmi d'autres paquets utiles :
+  * [[http://mirror.ibcp.fr/pub/CTAN/help/Catalogue/entries/mhchem.html|mhchem]] : molécules chimiques, réactions chimiques, etc.
+  * [[http://mirror.ibcp.fr/pub/CTAN/help/Catalogue/entries/isotope.html|Isotope]]
+  * [[http://www.ctan.org/tex-archive/help/Catalogue/entries/unicode.html|Package UTF-8]]
+
+
+===== Logiciels dédiés à LaTeX =====
+
+==== Logiciels graphiques d'édition du code ====
+
+=== TeXworks ===
+
+**[[texworks|texworks]]** est un excellent éditeur de texte pour **LaTeX** qui s'inspire de l'éditeur **TeXShop** bien connu des adeptes de LaTeX sous Mac OS X. Cet éditeur est particulièrement simple d'utilisation.
+
+
+===Kile=== 
+
+  * Page dédiée sur le wiki : [[:kile]]
+  * [[:tutoriel:comment_installer_un_paquet|Installation]] de Kile : **[[apt>kile|kile]]**
+
+Dans la même veine que Texmaker, [[http://kile.sourceforge.net/|Kile]] est un logiciel avec une interface graphique KDE et très complet. Vous pouvez l'installer facilement, le paquet **kile** est présent dans les dépôts.
+
+**Si vous rencontrez des problèmes d'accents lors des ouvertures et sauvegardes sous Kile**, pensez à spécifier qu'il doit utiliser le bon encodage (UTF-8 par défaut). Pour ce faire, allez dans //Settings -> Configure Kile -> Editor -> Open/Save//.
+En haut, pour « Encoding », choisissez « Western European (ISO 8859-15) ».
+Pensez également à ouvrir vos fichiers en « Western European (ISO 8859-15) », en haut à gauche quand vous ouvrez un fichier.
+
+===Texmaker=== 
+  * Page dédiée sur le wiki : [[:texmaker]]
+  * [[:tutoriel:comment_installer_un_paquet|Installation]] de Texmaker : **[[apt>texmaker|texmaker]]**
+
+Éditeur de texte spécialisé dans la conception de texte LaTeX. 
+Cet éditeur utilise la bibliothèque Qt et est donc optimisé pour KDE (KUbuntu).
+
+===Eclipse=== 
+
+Le plug-in Texlipse permet d'éditer un fichier latex dans Eclipse : http://texlipse.sourceforge.net/
+
+Pour l'installer, ajouter http://texlipse.sourceforge.net/ au gestionnaire de mise à jours Eclipse.
+
+Voir aussi : [[eclipse#eclipse_pour_latex]]
+
+
+=== LaTeXila ===
+
+  * [[:LaTeXila]] : éditeur de code LaTeX pour Gnome [[http://projects.gnome.org/latexila/]]
+
+
+=== Winefish ===
+
+**WineFish** (n'est plus mis à jour depuis 2006. Dernière version disponible 1.33)
+
+
+=== TeXstudio ===
+  * Page dédiée sur le wiki : [[:texstudio|TeXstudio]]
+À l'origine TeXstudio était appelé TexMakerX. C'est un "fork" the Texmaker.
+[[http://texstudio.sourceforge.net/]]
+
+
+==== Logiciels graphiques d'édition WYSIWYM (What you see is what you mean) ====
+
+===LyX=== 
+  * Page dédiée sur le wiki : [[:lyx]]
+  * [[:tutoriel:comment_installer_un_paquet|Installation]] de LyX : **[[apt>lyx|lyx]]**
+
+Un logiciel libre d'édition de documents qui lui aussi utilise LaTeX, mais avec une interface très différente des précédentes. L'avantage de ce logiciel est de permettre une pseudo-visualisation en direct de ce qu'on veut obtenir, ce qui permet en un clin d'œil de repérer la structure du document. 
+
+===Gummi===
+  * Page dédiée sur le wiki : [[:Gummi]]
+
+Voir [[http://forum.ubuntu-fr.org/viewtopic.php?pid=3691822#p3691822|ce post]].
+
+==== Autres logiciels pouvant créer des fichiers LaTeX ====
+
+=== Vim ===
+  * Page dédiée sur le wiki : [[:vim]]
+  * [[:tutoriel:comment_installer_un_paquet|Installation]] de Vim : **[[apt>vim|vim]]**
+  * Plugin vim-latexsuite **[[apt>vim-latexsuite|vim-latexsuite]]**
+Vim a aussi son plugin latex :)
+
+=== Emacs ===
+  * Page du wiki montrant un exemple de configuration d'emacs avec AucTeX: [[:emacs#ecrire_en_latex_avec_emacs_exemple_de_configuration|Écrire en LaTeX avec Emacs : exemple de configuration]]
+  * [[:tutoriel:comment_installer_un_paquet|Installation]] : **[[apt>emacs|emacs]]**
+  * Plugin auctex : **[[apt>auctex|auctex]]** (conseillé)
+Emacs permet d'éditer du code, l'édition est aussi facilitée avec son plugin auctex.
+  * Plugin Whizzytex : **[[apt>whizzytex|whizzytex]]**
+  * Plugin yatex **[[apt>yatex|yatex]]**
+  * Plugin  texmacs **[[apt>texmacs|texmacs]]**
+
+===Gedit===
+  * Page dédiée sur le wiki : [[:gedit]].
+  * [[:tutoriel:comment_installer_un_paquet|Installation]] de gedit : **[[apt>gedit|gedit]]**
+  * [[:tutoriel:comment_installer_un_paquet|Installation]] de gedit LaTeX Plugin : **[[apt>gedit-latex-plugin|gedit-latex-plugin]]**
+  * [[:tutoriel:comment_installer_un_paquet|Installation]] d'une liste de plugins gedit : **[[apt>gedit-plugins|gedit-plugins]]**
+
+En premier lieu, il est fortement conseillé de configurer gedit de façon à faciliter la programmation. En particulier, dans Préférences -> Affichage, cocher
+  * Afficher les numéros de ligne (indispensable pour revenir rapidement sur des lignes incorrectes relevées lors d'une compilation)
+  * Surligner la ligne actuelle (plutôt utile pour se repérer rapidement dans le code
+  * Surligner les parenthèses correspondantes (permet en particulier d'identifier rapidement si les {} des commandes sont bien situés).
+Dans Préférences -> Éditeur, il est aussi fortement conseillé d'activer l'indentation automatique.
+
+Quelques raccourcis par défaut, qui s'avèrent très utiles à l'usage:
+  * Ctrl + D permet de supprimer la ligne courante.
+  * Alt + flèche haut ou bas permet de déplacer d'un bloc la ligne courante respectivement au dessus de la ligne supérieure ou en dessous de la ligne inférieure.
+
+Notons enfin que depuis la version 10.04, une (ou plusieurs) ligne sélectionnée sera automatiquement indentée par la commande tabulation, et désindentée par la commande shift + tabulation.
+
+**Une des façons les plus simples est d'utiliser [[http://live.gnome.org/Gedit/LaTeXPlugin|le plugin latex]] de [[:gedit]]. **
+
+Attention cependant à ne pas oublier l'extension .tex (exemple : fichier.tex) dans votre fichier sinon gedit vous indiquera qu'il n'arrive pas à compiler.
+
+Installation du plugin pour Ubuntu 8.10 et inférieur :
+  * Télécharger [[http://sourceforge.net/project/showfiles.php?group_id=204144|l'archive]] et copier son contenu dans ~/.gnome2/gedit/plugins.
+  * Installer les paquets **[[apt>rubber|rubber]]** et **[[apt>texlive-latex-recommended|texlive-latex-recommended]]**
+  * Activer le plugin dans [[:gedit]] (édition->préférence->greffon). [[http://live.gnome.org/Gedit/LaTeXPlugin/Screenshots|Enjoy !]] 
+
+**Utilisation alternative de Gedit sans le plugin LaTex dédié.**
+
+Pour ceux qui n'ont pas été convaincus par le plugin dédié à LaTex, Gedit peut malgré tout être un outil assez puissant pour LaTeX pour peu que l'on utilise quelques plugins appropriés du paquet **[[apt>gedit-plugins|gedit-plugins]]**
+Pour activer ces plugins, aller dans Édition -> Préférences -> Greffons. Parmi les plugins les plus intéressants, on note:
+  * « Commentateur de code » : permet de commenter/décommenter une ligne avec un raccourci clavier (Ctrl + M / Ctrl + Shift + M) (ce plugin peut aussi servir pour d'autres langages de programmation)
+  * « Signets » : permet d'installer des marqueurs dans le fichier source pour en avoir un accès rapide via un raccourci clavier
+  * « Outils externes » : permet de programmer des scripts qui pourront par exemple effectuer la compilation automatique du document latex (les résultats de la compilation s'afficheront dans une console en bas de gedit)
+  * « Extraits de code » : particulièrement utile (et même indispensable pour ceux qui en ont pris l'habitude), ce plugin permet de programmer des raccourcis clavier personnalisés pour entrer des commandes courantes de LaTeX. Par exemple, « sec » suivi immédiatement d'une tabulation sera remplacé par \section{[un texte à remplir]} ; une nouvelle tabulation amènera ensuite immédiatement à la ligne suivante (ou en fin de ligne, au choix).
+
+L'emploi de ces quatre plugins (éventuellement combinés avec d'autres dans la liste des greffons) permet déjà une pratique extrêmement confortable (même si le plugin LaTeX dédié peut éventuellement faire l'affaire à lui seul).
+
+=== Geany ===
+  * Page dédiée sur le wiki : [[:geany]]
+  * [[:tutoriel:comment_installer_un_paquet|Installation]] de geany : **[[apt>geany|geany]]**
+  * Plugin : **[[apt>geany-plugin-latex|geany-plugin-latex]]**
+Geany est un IDE, et ce plugin permet d'éditer du code latex.
+
+===== Consulter la documentation =====
+Pour consulter la documentation d'un package : 
+<code>texdoc nom_du_package</code>
+===== Faire des présentations en Latex =====
+
+Un module vous permet de réaliser vos présentations en latex : **[[apt>latex-beamer|latex-beamer]]**
+
+Placez ensuite en en-tête de votre document :
+
+<code latex>
+\documentclass[slidetop,9pt]{beamer}
+</code>
+
+puis initialisez le document :
+
+<code latex>
+\begin{document}
+</code>
+
+Pour insérer une diapo, procédez comme suit :
+
+<code latex>
+\begin{frame}{Le titre de la diapo dans la barre de menu}
+   \frametitle{Le titre de la diapo}
+   Le contenu de la diapo
+\end{frame} 
+</code>
+
+et terminez le document avec :
+
+<code latex>
+\end{document}
+</code>
+
+Vous trouverez un tutoriel complet [[http://www.math-linux.com/spip.php?article76|ici]].
+
+De nombreux thèmes de présentation sont disponibles : en voir un aperçu [[http://mcclinews.free.fr/latex/beamergalerie.php|ici]]
+
+
+
+===== LaTeX dans des logiciels variés =====
+
+==== Les formules latex dans divers logiciels ====
+
+=== Traitements de texte et chaînes éditoriales  ===
+
+== OpenOffice ==
+  * L'extension [[:ooolatex|OOoLatex]] permet d'intégrer des équations LaTeX dans des documents OpenOffice (Writer et Impress).
+  * L'extension [[https://sourceforge.net/projects/texmaths/|TexMaths]] permet d'intégrer des équations LaTeX dans des documents LibreOffice (Writer, Impress et Draw).
+
+== Scenari ==
+  * la chaine éditoriale [[Scenari]] et plus spécifiquement [[Opale]] permettent d'intégrer et de générer des documents avec des formules LaTeX.
+
+== L'œuf ou la poule ==
+  * [[la poule ou l'oeuf|la poule ou l'œuf]] est une chaîne éditoriale prenant en compte le format LaTeX
+
+== SPIP ==
+  * [[SPIP]] est un CMS qui permet de générer automatiquement des contenus avec des formules LaTeX
+
+=== Messageries instantanées ===
+
+== Gajim ==
+  * Gajim permet de taper des formules en latex après avoir activé l'option use_latex  (nécessite le programme **[[apt>dvipng|dvipng]]**).
+
+== Kopete ==
+  * Pidgin dispose d'un greffon (installé par défaut) permettant de taper des formules en latex.
+
+== Pidgin ==
+  * Pidgin dispose d'un [[:pidgin#greffon_latex|greffon]] permettant de taper des formules en latex.
+
+=== Graphisme ===
+
+== Inkscape ==
+  * Inkscape dispose d'une [[:inkscape#effets|fonctionnalité]] permettant de représenter des formules en latex.
+
+
+== latexdraw ==
+  * latexdraw est un logiciel de dessin vectoriel pour latex. Il génère soit du code PSTricks, soit un pdf compilé avec latex le tout intégrable dans un document comme figure. À partir de sa version 3, latexdraw permet notamment d'éditer et de visualiser nativement du texte et des formules latex. [[http://latexdraw.sourceforge.net/|latexdraw.sourceforge.net]] **[[apt>latexdraw|latexdraw]]**
+
+=== Education  ===
+
+== Anki ==
+  * [[anki]]
+ 
+== Mnemosyne ==
+  * [[mnemosyne]]
+
+==== Convertir un document en latex ====
+
+=== Page HTML ===
+
+Voir [[pandoc|Pandoc]].
+
+=== Document odt ===
+
+  * On peut exporter un document odt en latex avec OpenOffice.org (il faut installer le paquet **[[apt>openoffice.org-writer2latex|openoffice.org-writer2latex]]**).
+  * Writer2latex permet de convertir les documents odt en fichier latex.
+
+=== Document doc ===
+Utiliser **[[apt>wv]]**
+
+==== Exporter du Latex ====
+
+Il se peut que vous ayez besoin de convertir un document Latex vers un autre format. 
+
+<note tip>Le logiciel **[[pandoc|Pandoc]]** permet, en ligne de commande, de passer directement du format LaTeX (.tex) aux formats Rich Text File (.rtf), Word 2010 (.docx), OpenDocument (.odt), HTML, mathML et bien d'autres. Les solutions ci-dessous sont déjà anciennes voire obsolètes, moins complètes et souvent bugguées FIXME.</note>
+
+=== PDF, PS, DVI ===
+
+Ces formats sont gérés de base avec toutes les distributions latex.
+Voici les commandes respectives pour créer ces fichiers : 
+  * PDF : pdflatex
+  * DVI : latex
+  * PS : latex puis dvi2ps
+
+=== Latex en RTF ===
+
+Le RTF est un format de fichier de traitement de texte que vous pourrez facilement convertir ensuite en format Microsoft Word ou OpenOffice.org avec [[openoffice.org]]. Il suffit d'installer le paquet **[[apt>latex2rtf]]**.
+
+Ensuite pour convertir :
+
+<code>latex2rtf -M12 fichier.tex</code>
+
+L'option **-M12** permet de convertir en images les formules de votre document grâce au script latex2png.
+
+=== Latex en html ===
+Plusieurs utilitaires permettent de créer un document html à partir d'un fichier latex :
+
+  * **[[apt>tex4ht]]**
+  * **[[apt>hevea]]**
+  * **[[apt>latex2html]]**
+  * **[[apt>tth]]**
+
+Nous vous conseillons d'essayer d'abord le premier qui en général rend de meilleurs résultats, puis le second, ...
+
+
+=== Latex en odt  ===
+Il y a deux moyens de créer des documents odt à partir d'un fichier latex : 
+  * Soit on crée d'abord un fichier html comme expliqué plus haut, puis on l'ouvre avec OpenOffice.org
+  * Soit on utilise **[[apt>tex4ht]]** avec une de ces deux commandes : 
+<code sh>
+mk4ht oolatex fichier.tex
+mk4ht ooxelatex fichier.tex
+</code>
+(Il peut être utile de lancer plusieurs fois la commande pour avoir un bon résultat, comme pour toute compilation latex !)
+
+
+===== Problèmes =====
+
+==== Remarque concernant les accents ====
+
+Contrairement à Windows, il vous faudra utiliser le codage de caractères UTF-8 (et non latin1).
+L'en-tête contient alors :
+
+<code latex>
+...
+\usepackage[utf8]{inputenc}   % accents dans la source
+...
+</code>
+
+Par contre, si vous souhaitez encoder vos fichiers en latin1, vous pouvez aussi taper le code suivant :
+
+<code latex>
+...
+\usepackage[latin1]{inputenc}
+...
+</code>
+
+Toutefois, si certains caractères unicode posent problème lors du rendu final, ajouter les dans l'entête avec :
+
+<code latex>
+\PrerenderUnicode{é,è,à} 
+</code>
+
+Enfin si vous voulez convertir l'encodage d'un fichier tex, de latin1 vers UTF8 par exemple, vous pouvez utiliser la ligne de commande [[iconv|iconv]]. 
+
+Un autre moyen est d'utiliser  **[[apt>recode]]** pour transformer les caractères accentués en balise LaTeX :
+
+Si fichier.tex utilise UTF-8
+<code> recode -d UTF-8..LaTeX fichier.tex </code>
+Si fichier.tex utilise latin1
+<code> recode -d latin1..LaTeX fichier.tex </code>
+ou si on veut préserver le fichier original :
+<code> recode -d UTF-8..LaTeX < fichier.tex > nouveau_fichier.tex</code>
+
+Pour en finir avec les problèmes d'encodage, on utilisera [[XeLaTex]] ou [[LuaLaTeX]].
+==== Sélection du texte des PDF dans Evince ====
+
+Si vous avez un problème pour la sélection de texte avec Evince allez jeter un œil sur la page consacrée à [[Evince]].
+
+==== Erreur à la compilation ====
+
+Si vous obtenez des erreurs du type :
+
+<code>
+Font OT1/ptm/m/n/20.74=ptmr7t at 20.74pt not loadable: Metric (TFM) file not found
+</code>
+
+L'installation du paquet **[[apt>latex2html]]** peut corriger le problème.
+===== Désinstallation =====
+FIXME
+
+===== Ressources =====
+
+==== Liens officiels ====
+  * [[http://www.latex-project.org/guides/|Documentation LaTeX]] [en]
+  * [[http://www.gutenberg.eu.org/ |Groupe francophone des utilisateurs de TeX]]
+
+==== Livres ====
+  * [[http://framabook.org/5-tout-ce-que-vous-avez-toujours-voulu-savoir-sur-latex-sans-jamais-oser-le-demander/|Le framabook (livre libre) Latex]] : très bon livre assez complet (~300 pages).
+  * [[http://hivernal.org/static/computing/doc/lshort-fr.fr.html| Une courte introduction à LaTeX]] : une référence ...ressuscitée (~130 pages)
+  * [[http://fr.wikibooks.org/wiki/Programmation_LaTeX|Guide LaTeX sur Wikibook]]
+
+==== Tutoriel et FAQ de grande qualité ====
+  * [[http://www.grappa.univ-lille3.fr/FAQ-LaTeX/| FAQ-LaTeX]] [fr]
+  * [[http://www.tuteurs.ens.fr/logiciels/latex/|La page LaTeX des tuteurs de l'ENS (École Normale Supérieure)]] : excellent guide donnant de nombreuses bases essentielles dans la rédaction d'un document TeX.
+  * [[http://openclassrooms.com/courses/redigez-des-documents-de-qualite-avec-latex|Tutoriel LaTeX sur le Site du Zéro]][fr].
+
+==== À propos de Beamer ====
+  * [[http://www.math-linux.com/spip.php?article76|Tutorial Beamer]]
+  * [[http://mcclinews.free.fr/latex/beamergalerie.php|Liste des thèmes beamer]]
+
+==== Autre ====
+  * [[http://www.math-linux.com/spip.php?article52|Introduction au LaTeX - www.math-linux.com]]
+  * [[http://www.tug.org/interest.html|Groupe d'utilisateurs TeX]] [en] et d'autres liens intéressants
+  * [[http://www.traduc.org/docs/HOWTO/vf/TeTeX-HOWTO.html|Guide Pratique teTeX]] [fr]
+  * [[http://latex.developpez.com/faq/?page=sommaire|FAQ Latex de Développez.com]]
+  * [[http://www.mathematex.net|Communauté active d'utilisateurs de LaTex en Mathématiques]]
+
+
+----
+
+//Contributeurs : [[utilisateurs:Gauthier]], [[utilisateurs:Freetux]], djibi, L.Bellegarde, Steren Giannini, [[utilisateurs:Ner0lph]]//.
+Remise en forme par [[utilisateurs:quent57]] et [[utilisateurs:Darkar]]

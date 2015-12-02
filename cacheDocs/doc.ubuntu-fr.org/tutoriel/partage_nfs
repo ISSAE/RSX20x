@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:partage_nfs - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-03-06T16:34:41+0100"/>
+<meta name="keywords" content="tutoriel,reseau,nfs"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/partage_nfs?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/partage_nfs?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/partage_nfs"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/partage_nfs"/>
+<link rel="canonical" href="partage_nfs"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:partage_nfs","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="partage_nfs#main" tabindex="1">Contenu</a> | <a href="partage_nfs#qsearch__in" tabindex="2">Rechercher</a> | <a href="partage_nfs#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="partage_nfs" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="partage_nfs" >tutoriel:partage_nfs</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="partage_nfs#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="partage_nfs#schema_de_principe">Schéma de principe</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="partage_nfs#connaitre_les_adresses_ip_locales_de_serveur_et_de_client">Connaître les adresses IP locales de Serveur et de Client</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="partage_nfs#donnees_sur_la_configuration">Données sur la configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="partage_nfs#ordinateur_1">Ordinateur 1</a></div></li>
+<li class="level2"><div class="li"><a href="partage_nfs#ordinateur2">Ordinateur2</a></div></li>
+<li class="level2"><div class="li"><a href="partage_nfs#ordinateur_3">Ordinateur 3</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="partage_nfs#installation_des_paquets_et_configuration">Installation des paquets et configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="partage_nfs#creation_des_repertoires_partages">Création des répertoires partagés</a></div></li>
+<li class="level2"><div class="li"><a href="partage_nfs#creation_des_points_de_montage_et_commandes_de_montage">Création des points de montage et commandes de montage</a></div></li>
+<li class="level2"><div class="li"><a href="partage_nfs#preparation_de_l_exportation_et_commande">Préparation de l&#039;exportation et commande</a></div></li>
+<li class="level2"><div class="li"><a href="partage_nfs#gestion_des_autorisations">Gestion des autorisations</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="partage_nfs#finalisation">Finalisation</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../nfs" class="wikilink1" title="nfs" rel="tag">nfs</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="exemple_de_partage_avec_nfs">Exemple de partage avec NFS</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Exemple de partage avec NFS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="37-77" /><input type="submit" value="Modifier" class="button" title="Exemple de partage avec NFS" /></div></form></div>
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+Cette page est un exemple de réseau entre 3 ordinateurs pour permettre l&#039;échange et le partage de fichiers avec le minimum de contraintes.
+En particulier :
+</p>
+<ol>
+<li class="level1"><div class="li"> Chaque ordinateur dispose d&#039;un espace accessible aux autres sans contraintes liées aux droits d&#039;accès.</div>
+</li>
+<li class="level1"><div class="li"> Le montage des répertoires est automatique.</div>
+</li>
+</ol>
+
+<p>
+Le tutoriel reste bien-sûr adaptable (nombre d&#039;ordinateurs, adresses IP, etc.)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Introduction] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="78-503" /><input type="submit" value="Modifier" class="button" title="Introduction" /></div></form></div>
+<h2 class="sectionedit3" id="schema_de_principe">Schéma de principe</h2>
+<div class="level2">
+
+<p>
+Dans le schéma ci-dessous on représente trois ordinateurs appartenant à un même réseau local (celui de Paul, Lucette et Jean).
+</p>
+<ul>
+<li class="level1"><div class="li"> Chacun d&#039;eux partage (exporte) le répertoire /home/agora,</div>
+</li>
+<li class="level1"><div class="li"> Chacun d&#039;eux récupère (importe) les partages mis à disposition par les autres ordinateurs dans /media.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/tutoriel/partage_familial_hardy_01.jpg?id=tutoriel%3Apartage_nfs" class="media" title="tutoriel:partage_familial_hardy_01.jpg"><img src="http://doc.ubuntu-fr.org/_media/tutoriel/partage_familial_hardy_01.jpg?w=320&amp;h=544&amp;tok=271d2a" class="mediacenter" title="partage_familial_hardy_01.jpg" alt="partage_familial_hardy_01.jpg" width="320" height="544" /></a>
+</p>
+
+<p>
+Les lignes en pointillés figurent le montage des répertoires &quot;agora&quot; sur les systèmes de fichiers des différents clients.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Schéma de principe] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="504-1028" /><input type="submit" value="Modifier" class="button" title="Schéma de principe" /></div></form></div>
+<h3 class="sectionedit4" id="connaitre_les_adresses_ip_locales_de_serveur_et_de_client">Connaître les adresses IP locales de Serveur et de Client</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteclassic">
+Dans le terminal lancer « ifconfig », l&#039;adresse est à la ligne « <code>inet adr:</code> », paragraphe « <code>eth</code> » si vous êtes connecté en ethernet, « <code>wlan</code> » pour une connexion Wi-Fi.
+
+</div></p>
+</p>
+
+<p>
+Pour la suite de cet exemple, on considèrera que Paul, Lucette et Jean ont les adresses locales suivantes :
+</p>
+<ul>
+<li class="level1"><div class="li"> Paul : <strong>192.168.1.10</strong></div>
+</li>
+<li class="level1"><div class="li"> Jean : <strong>192.168.1.11</strong></div>
+</li>
+<li class="level1"><div class="li"> Lucette : <strong>192.168.1.12</strong></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Connaître les adresses IP locales de Serveur et de Client] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1029-1503" /><input type="submit" value="Modifier" class="button" title="Connaître les adresses IP locales de Serveur et de Client" /></div></form></div>
+<h2 class="sectionedit5" id="donnees_sur_la_configuration">Données sur la configuration</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Données sur la configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1504-1547" /><input type="submit" value="Modifier" class="button" title="Données sur la configuration" /></div></form></div>
+<h3 class="sectionedit6" id="ordinateur_1">Ordinateur 1</h3>
+<div class="level3">
+
+<p>
+Utilisateur principal <strong><em>Paul</em></strong> UID=1000 group &quot;users&quot;  espace partagé <strong><code>/home/agora</code></strong>.
+Point de montage des dossiers partagés des autres ordinateurs :
+</p>
+<ul>
+<li class="level1"><div class="li"> /media/chez_Lucette</div>
+</li>
+<li class="level1"><div class="li"> /media/chez_Jean</div>
+</li>
+</ul>
+
+<p>
+Adresse IP : <code>192.168.1.10</code>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Ordinateur 1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1548-1809" /><input type="submit" value="Modifier" class="button" title="Ordinateur 1" /></div></form></div>
+<h3 class="sectionedit7" id="ordinateur2">Ordinateur2</h3>
+<div class="level3">
+
+<p>
+Utilisateur principal <strong><em>Jean</em></strong> UID=1000 group &quot;users&quot;  espace partagé <strong><code>/home/agora</code></strong>.
+Point de montage des dossiers partagés des autres ordinateurs :
+</p>
+<ul>
+<li class="level1"><div class="li"> /media/chez_Lucette</div>
+</li>
+<li class="level1"><div class="li"> /media/chez_Paul</div>
+</li>
+</ul>
+
+<p>
+Adresse IP : <code>192.168.1.11</code>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Ordinateur2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1810-2070" /><input type="submit" value="Modifier" class="button" title="Ordinateur2" /></div></form></div>
+<h3 class="sectionedit8" id="ordinateur_3">Ordinateur 3</h3>
+<div class="level3">
+
+<p>
+Utilisateur principal <strong><em>Lucette</em></strong> UID=1000 group &quot;users&quot;  espace partagé <strong><code>/home/agora</code></strong>.
+Point de montage des dossiers partagés des autres ordinateurs :
+</p>
+<ul>
+<li class="level1"><div class="li"> /media/chez_Paul</div>
+</li>
+<li class="level1"><div class="li"> /media/chez_Jean</div>
+</li>
+</ul>
+
+<p>
+Adresse IP : <code>192.168.1.12</code>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Ordinateur 3] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2071-2332" /><input type="submit" value="Modifier" class="button" title="Ordinateur 3" /></div></form></div>
+<h2 class="sectionedit9" id="installation_des_paquets_et_configuration">Installation des paquets et configuration</h2>
+<div class="level2">
+
+<p>
+Sur chacun des ordinateurs <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer les paquets</a> suivants : <strong><a href="apt://nfs-common" class="urlextern" title="apt://nfs-common"  rel="nofollow">nfs-common</a></strong> et<strong> <a href="apt://nfs-kernel-server" class="urlextern" title="apt://nfs-kernel-server"  rel="nofollow">nfs-kernel-server</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Installation des paquets et configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2333-2583" /><input type="submit" value="Modifier" class="button" title="Installation des paquets et configuration" /></div></form></div>
+<h3 class="sectionedit10" id="creation_des_repertoires_partages">Création des répertoires partagés</h3>
+<div class="level3">
+
+<p>
+La procédure est identique sur chacun des ordinateurs. 
+</p>
+
+<p>
+<p><div class="notehelp">Les commandes indiquées dans les boîtes grises sont à entrer dans un <a href="../terminal" class="wikilink1" title="terminal">terminal</a>. (menu : Applications ⇒ Accessoires ⇒ Terminal)
+</div></p>
+</p>
+<pre class="code">sudo mkdir /home/agora
+sudo chown Paul:users /home/agora</pre>
+
+<p>
+Une vérification par 
+</p>
+<pre class="code">ls -ld /home/agora</pre>
+
+<p>
+donne comme <strong>réponse</strong> pour Paul :
+</p>
+<pre class="file">drwxr-xr-x 2 Paul users 4096 aaaa-mm-jj /home/agora</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Création des répertoires partagés] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2584-3078" /><input type="submit" value="Modifier" class="button" title="Création des répertoires partagés" /></div></form></div>
+<h3 class="sectionedit11" id="creation_des_points_de_montage_et_commandes_de_montage">Création des points de montage et commandes de montage</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="pour_l_ordinateur_de_jean">Pour l&#039;ordinateur de Jean</h4>
+<div class="level4">
+<pre class="code">sudo mkdir /media/chez_Lucette
+sudo mkdir /media/chez_Paul</pre>
+
+<p>
+Puis pour assurer le montage automatique, <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">ajouter</a> les lignes suivantes dans <strong>/etc/fstab</strong> :
+</p>
+<pre class="file">192.168.1.10:/home/agora /media/chez_Paul nfs rw 0 0
+192.168.1.12:/home/agora /media/chez_Lucette nfs rw 0 0</pre>
+
+</div>
+
+<h4 id="pour_l_ordinateur_de_lucette">Pour l&#039;ordinateur de Lucette</h4>
+<div class="level4">
+<pre class="code">sudo mkdir /media/chez_Jean
+sudo mkdir /media/chez_Paul</pre>
+
+<p>
+Puis pour assurer le montage automatique, <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">ajouter</a> les lignes suivantes dans <strong>/etc/fstab</strong> :
+</p>
+<pre class="file">192.168.1.11:/home/agora /media/chez_Jean nfs rw 0 0
+192.168.1.10:/home/agora /media/chez_Paul nfs rw 0 0</pre>
+
+</div>
+
+<h4 id="pour_l_ordinateur_de_paul">Pour l&#039;ordinateur de Paul</h4>
+<div class="level4">
+<pre class="code">sudo mkdir /media/chez_Lucette
+sudo mkdir /media/chez_Jean</pre>
+
+<p>
+Puis pour assurer le montage automatique, <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">ajouter</a> les lignes suivantes dans <strong>/etc/fstab</strong> :
+</p>
+<pre class="file">192.168.1.11:/home/agora /media/chez_Jean nfs rw 0 0
+192.168.1.12:/home/agora /media/chez_Lucette nfs rw 0 0</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Création des points de montage et commandes de montage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3079-4241" /><input type="submit" value="Modifier" class="button" title="Création des points de montage et commandes de montage" /></div></form></div>
+<h3 class="sectionedit12" id="preparation_de_l_exportation_et_commande">Préparation de l&#039;exportation et commande</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="pour_l_ordinateur_de_paul1">Pour l&#039;ordinateur de Paul</h4>
+<div class="level4">
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Ajouter</a> la ligne suivante dans <strong>/etc/exports</strong>
+</p>
+<pre class="file">/home/agora 192.168.1.11(rw,all_squash,anonuid=1000,anongid=100,sync) 192.168.1.12(rw,all_squash,anonuid=1000,anongid=100,sync)</pre>
+
+<p>
+et relancer le serveur <abbr title="Network File System">NFS</abbr> par :
+</p>
+<pre class="code">sudo /etc/init.d/nfs-kernel-server restart</pre>
+
+</div>
+
+<h4 id="pour_l_ordinateur_de_jean1">Pour l&#039;ordinateur de Jean</h4>
+<div class="level4">
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Ajouter</a> la ligne suivante dans <strong>/etc/exports</strong>
+</p>
+<pre class="file">/home/agora 192.168.1.10(rw,all_squash,anonuid=1000,anongid=100,sync) 192.168.1.12(rw,all_squash,anonuid=1000,anongid=100,sync)</pre>
+
+<p>
+et relancer le serveur <abbr title="Network File System">NFS</abbr> par :
+</p>
+<pre class="code">sudo /etc/init.d/nfs-kernel-server restart</pre>
+
+</div>
+
+<h4 id="pour_l_ordinateur_de_lucette1">Pour l&#039;ordinateur de Lucette</h4>
+<div class="level4">
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Ajouter</a> la ligne suivante dans <strong>/etc/exports</strong>
+</p>
+<pre class="file">/home/agora 192.168.1.11(rw,all_squash,anonuid=1000,anongid=100,sync) 192.168.1.10(rw,all_squash,anonuid=1000,anongid=100,sync)</pre>
+
+<p>
+et relancer le serveur <abbr title="Network File System">NFS</abbr> par :
+</p>
+<pre class="code">sudo /etc/init.d/nfs-kernel-server restart</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Préparation de l'exportation et commande] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4242-5357" /><input type="submit" value="Modifier" class="button" title="Préparation de l'exportation et commande" /></div></form></div>
+<h3 class="sectionedit13" id="gestion_des_autorisations">Gestion des autorisations</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="pour_tous_les_ordinateurs">Pour tous les ordinateurs</h4>
+<div class="level4">
+
+<p>
+L&#039;objectif de cette étape est de sécuriser l&#039;installation. À ce stade, n&#039;importe quel ordinateur du réseau local est susceptible d&#039;accéder aux partages <abbr title="Network File System">NFS</abbr> que nous avons mis en place. Nous allons à présent en restreindre l&#039;accès.
+</p>
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Editer le fichier</a> <strong>/etc/hosts.allow</strong> et y ajouter les lignes suivantes :
+</p>
+<pre class="file">portmap: 192.168.1.10 192.168.1.11 192.168.1.12
+lockd: 192.168.1.10 192.168.1.11 192.168.1.12
+mountd: 192.168.1.10 192.168.1.11 192.168.1.12
+rquotad: 192.168.1.10 192.168.1.11 192.168.1.12
+statd: 192.168.1.10 192.168.1.11 192.168.1.12</pre>
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Editer le fichier</a> <strong>/etc/hosts.deny</strong> et y ajouter les lignes suivantes :
+</p>
+<pre class="file">portmap: ALL
+nfsd: ALL
+mountd: ALL</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Gestion des autorisations] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5358-6200" /><input type="submit" value="Modifier" class="button" title="Gestion des autorisations" /></div></form></div>
+<h2 class="sectionedit14" id="finalisation">Finalisation</h2>
+<div class="level2">
+
+<p>
+Redémarrer tous les ordinateurs.
+Si le montage n&#039;a pas eu lieu, lancer la commande de montage suivante (adresse à adapter) dans un terminal.
+</p>
+<pre class="code">sudo mount -t nfs -o rw 192.168.1.13:/home/agora /media/chez_shimako</pre>
+
+<p>
+Bon partage et amusez-vous bien ! 
+</p>
+<hr />
+
+<p>
+<em> Contributeur : José Fournier </em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="partage_nfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1331048081" /><input type="hidden" name="summary" value="[Finalisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6201-" /><input type="submit" value="Modifier" class="button" title="Finalisation" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/f605e9de20232aad619fc97eb9c7a806.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/partage_nfs?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/partage_nfs?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/partage_nfs?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/partage_nfs?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/partage_nfs?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

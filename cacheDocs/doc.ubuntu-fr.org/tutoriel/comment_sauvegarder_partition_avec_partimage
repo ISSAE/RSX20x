@@ -1,0 +1,719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:comment_sauvegarder_partition_avec_partimage - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-07-04T10:04:46+0200"/>
+<meta name="keywords" content="sauvegarde,partitions"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/comment_sauvegarder_partition_avec_partimage?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/comment_sauvegarder_partition_avec_partimage?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/comment_sauvegarder_partition_avec_partimage"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/comment_sauvegarder_partition_avec_partimage"/>
+<link rel="canonical" href="comment_sauvegarder_partition_avec_partimage"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_sauvegarder_partition_avec_partimage","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="comment_sauvegarder_partition_avec_partimage#main" tabindex="1">Contenu</a> | <a href="comment_sauvegarder_partition_avec_partimage#qsearch__in" tabindex="2">Rechercher</a> | <a href="comment_sauvegarder_partition_avec_partimage#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="comment_sauvegarder_partition_avec_partimage" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="comment_sauvegarder_partition_avec_partimage" >tutoriel:comment_sauvegarder_partition_avec_partimage</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_sauvegarder_partition_avec_partimage#partimage_presentation">Partimage (présentation)</a></div></li>
+<li class="level1"><div class="li"><a href="comment_sauvegarder_partition_avec_partimage#sauvegarde_de_windows_a_partir_d_ubuntu_exmontage_en_dual_boot">Sauvegarde de Windows à partir d&#039;Ubuntu (ex : montage en dual boot)</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_sauvegarder_partition_avec_partimage#cas_d_un_enregistrement_sur_la_partition_ubuntu">Cas d&#039;un enregistrement sur la partition ubuntu</a></div></li>
+<li class="level2"><div class="li"><a href="comment_sauvegarder_partition_avec_partimage#cas_d_un_enregistrement_sur_un_disque_dur_externe_usb">Cas d&#039;un enregistrement sur un disque dur externe usb</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_sauvegarder_partition_avec_partimage#sauvegarde_d_une_partition_a_partir_d_un_livecd">Sauvegarde d&#039;une partition à partir d&#039;un liveCD</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_sauvegarder_partition_avec_partimage#cas_d_un_enregistrement_sur_un_disque_dur_externe_usb1">Cas d&#039;un enregistrement sur un disque dur externe (usb)</a></div></li>
+<li class="level2"><div class="li"><a href="comment_sauvegarder_partition_avec_partimage#cas_d_un_enregistrement_sur_un_partage_windows_samba_sur_le_reseau">Cas d&#039;un enregistrement sur un partage windows ( samba ) sur le réseau</a></div></li>
+<li class="level2"><div class="li"><a href="comment_sauvegarder_partition_avec_partimage#cas_d_un_enregistrement_de_toutes_les_partitions_sur_un_partage_windows_samba_sur_le_reseau_avec_ping">Cas d&#039;un enregistrement de toutes les partitions sur un partage windows ( samba ) sur le réseau  avec Ping</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_sauvegarder_partition_avec_partimage#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../sauvegarde" class="wikilink1" title="sauvegarde" rel="tag">sauvegarde</a>,
+	<a href="../partitions" class="wikilink1" title="partitions" rel="tag">partitions</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="sauvegarde_d_une_partition_avec_partimage">Sauvegarde d&#039;une partition avec Partimage</h1>
+<div class="level1">
+
+<p>
+<p><div class="noteimportant">Partimage à ce jour (14/11/2009) ne supporte pas le système de fichiers ext4 <a href="http://www.partimage.org/Supported-Filesystems" class="urlextern" title="http://www.partimage.org/Supported-Filesystems"  rel="nofollow">voir le site de Partimage</a>. Vous devez maintenant vous tourner vers <a href="../clonezilla" class="wikilink1" title="clonezilla">clonezilla</a>.
+</div></p>
+Sauvegarder une partition permet de restaurer, si besoin, l&#039;intégralité du système de fichiers qu&#039;elle contient au moment de la sauvegarde.
+</p>
+
+</div>
+
+<h5 id="ce_principe_est_souvent_utilise_pour_sauvegarder_l_integralite_d_un_systeme_d_exploitation_appele_aussi_backup">Ce principe est souvent utilisé pour sauvegarder l&#039;intégralité d&#039;un système d&#039;exploitation (appelé aussi backup)</h5>
+<div class="level5">
+
+<p>
+. Cela ne semble pas adapté à la sauvegarde de documents personnels où l&#039;on préfèrera <strong><a href="../backup-manager" class="wikilink1" title="backup-manager">backup-manager</a></strong> ou <strong><a href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_home_avec_rsync" class="wikilink1" title="tutoriel:sauvegarder_home_avec_rsync">rsync</a></strong>.
+</p>
+
+<p>
+Sauvegarder une partition de son disque dur peut s&#039;avérer bien utile dans certaines circonstances : 
+</p>
+
+<p>
+* Préserver sa partition windows afin d&#039;éviter une réinstallation causant la perte de votre GRUB
+</p>
+
+<p>
+* Réaliser des manipulations aventureuses de votre système en toute confiance
+</p>
+
+<p>
+* Essayer temporairement une autre distribution 
+</p>
+
+<p>
+* ou tout simplement : être (r-) assuré dans le cas d&#039;un éventuel dysfonctionnement du système
+</p>
+
+<p>
+* … etc.
+</p>
+
+<p>
+J&#039;utilise ici &quot;partimage&quot; afin de sauvegarder la ou les partitions souhaitées.  
+</p>
+
+</div>
+
+<h4 id="la_restauration_de_votre_systeme_peut_prendre_environ_20_min_pour_40_gib_variable_et_votre_systeme_sera_identique_a_celui_sauvegarde">La restauration de votre système peut prendre environ 20 min pour 40 GiB (Variable ) et votre système sera identique à celui sauvegardé</h4>
+<div class="level4">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="comment_sauvegarder_partition_avec_partimage"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1341389086" /><input type="hidden" name="summary" value="[Sauvegarde d'une partition avec Partimage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="39-1469" /><input type="submit" value="Modifier" class="button" title="Sauvegarde d'une partition avec Partimage" /></div></form></div>
+<h2 class="sectionedit2" id="partimage_presentation">Partimage (présentation)</h2>
+<div class="level2">
+
+<p>
+Partimage est un logiciel graphiquement simple, mais graphique tout de même. (cependant très puissant), un &quot;générique&quot; de Ghost. 
+</p>
+
+</div>
+
+<h5 id="er_ecran">1er écran</h5>
+<div class="level5">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/partim111.png?id=tutoriel%3Acomment_sauvegarder_partition_avec_partimage" class="media" title="applications:partim111.png"><img src="http://doc.ubuntu-fr.org/_media/applications/partim111.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Comme vous le constatez, les renseignements demandés sont assez simples.
+1- La partition concernée
+2- Le fichier de sauvegarde ou de restauration 
+3- Sauvegarder ou restaurer
+4- Serveur (nous utiliserons un partage samba mais sans passer par ici) 
+</p>
+
+</div>
+
+<h4 id="l_ensemble_de_notre_description_concernera_particulierement_la_designation_du_fichier_a_sauvegarderrestaurer">L&#039;ensemble de notre description concernera particulièrement la désignation du fichier à sauvegarder / restaurer</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="second_ecran">second écran</h5>
+<div class="level5">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/partim112.png?id=tutoriel%3Acomment_sauvegarder_partition_avec_partimage" class="media" title="applications:partim112.png"><img src="http://doc.ubuntu-fr.org/_media/applications/partim112.png" class="media" alt="" /></a>
+</p>
+
+</div>
+
+<h4 id="apres_avoir_designe_le_chemin_et_le_fichier_de_l_image_a_sauvegarderrestaurer">Après avoir désigné le chemin et le fichier de l&#039;image à sauvegarder/restaurer :</h4>
+<div class="level4">
+
+<p>
+Une fois que le nom du fichier à sauvegarder est saisi : 
+sélectionner &lt;suivant&gt; ou F5 
+</p>
+
+<p>
+Ici, nous choisissons de garder la configuration par défaut : 
+faite &lt;suivant&gt; ou F5 et sélectionner OK jusqu&#039;à la fin. 
+</p>
+
+<p>
+(le support NTFS expérimental ne pose vraisemblablement pas de problème)
+</p>
+
+<p>
+<p><div class="notetip"><strong>Message d&#039;erreur lors de la restauration d&#039;une sauvegarde au format Gzip</strong>
+</p>
+
+<p>
+Vous sélectionnez le fichier à restaurer &quot;nom_fichier.000&quot; et appuyez sur F5, Partimage vous dit &quot;Invalid Compression level&quot;…
+</p>
+
+<p>
+Il semblerait que si l&#039;image fait plus de 2Go, il y ait une erreur de compression.
+</p>
+
+<p>
+Il faut renommer le fichier :
+</p>
+<pre class="code"> sudo mv nom_fichier.000 nom_fichier.000.gz</pre>
+
+<p>
+Puis :
+</p>
+<pre class="code"> sudo gunzip nom_fichier.000.gz</pre>
+
+<p>
+Gzip va recréer l&#039;archive correctement.
+Ouf, vous pouvez enfin restaurer !
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="comment_sauvegarder_partition_avec_partimage"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1341389086" /><input type="hidden" name="summary" value="[Partimage (présentation)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1470-3017" /><input type="submit" value="Modifier" class="button" title="Partimage (présentation)" /></div></form></div>
+<h2 class="sectionedit3" id="sauvegarde_de_windows_a_partir_d_ubuntu_exmontage_en_dual_boot">Sauvegarde de Windows à partir d&#039;Ubuntu (ex : montage en dual boot)</h2>
+<div class="level2">
+
+<p>
+Cela peut être utile afin de restaurer votre partition windows à partir d&#039;Ubuntu. 
+</p>
+
+<p>
+Pour commencer, il nous faut démonter (dans le cas où il est monté bien sûr)le volume correspondant à la partition à sauvegarder : 
+</p>
+
+<p>
+si windows est installé sur la première partition du disque dur : 
+</p>
+<pre class="code">sudo umount /dev/hda1 </pre>
+
+<p>
+s&#039;il est installé sur un second disque dur : 
+</p>
+<pre class="code">sudo umount /dev/hdb1</pre>
+
+<p>
+Installer partimage directement sur votre Ubuntu, vous pouvez l&#039;installer en utilisant la commande (dans un terminal, la mise à jour du système aura été réalisée au préalable) :
+</p>
+<pre class="code">sudo apt-get install partimage</pre>
+
+<p>
+Vous pouvez lancer l&#039;application de la manière suivante : 
+</p>
+<pre class="code">sudo partimage</pre>
+
+<p>
+A partir de là, notez que la navigation s&#039;effectue à partir des flèches, la sélection avec la barre d&#039;espace, la validation avec la touche entrée.
+</p>
+
+<p>
+<strong>Dans &quot;Partition à sauvegarder/restaurer&quot; sélectionner la partition à sauvegarder ou à restaurer</strong>
+</p>
+
+</div>
+
+<h4 id="fichier_image_a_creerutiliser_des_exemples">Fichier image à créer/utiliser (des exemples)</h4>
+<div class="level4">
+
+<p>
+C&#039;est le point essentiel : il se compose du chemin permettant d&#039;accéder au fichier avec le fichier qui va être créé, soit : 
+</p>
+<pre class="code">/&quot;dossier existant&quot;/&quot;dossier existant&quot;/..../nom_choisi_pour_le_fichier_image</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="comment_sauvegarder_partition_avec_partimage"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1341389086" /><input type="hidden" name="summary" value="[Sauvegarde de Windows à partir d'Ubuntu (ex : montage en dual boot)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3018-4315" /><input type="submit" value="Modifier" class="button" title="Sauvegarde de Windows à partir d'Ubuntu (ex : montage en dual boot)" /></div></form></div>
+<h3 class="sectionedit4" id="cas_d_un_enregistrement_sur_la_partition_ubuntu">Cas d&#039;un enregistrement sur la partition ubuntu</h3>
+<div class="level3">
+
+<p>
+Pour plus de commodité, nous choisissons d&#039;enregistrer dans le dossier /root/partition (à titre d&#039;exemple) 
+</p>
+
+<p>
+On se place dans le répertoire /root
+</p>
+<pre class="code">cd /root</pre>
+
+<p>
+On créé le répertoire partition 
+</p>
+<pre class="code">sudo mkdir partition </pre>
+
+<p>
+Le ctition/&quot;exemple:sauvegarde_windows.000&quot;
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="comment_sauvegarder_partition_avec_partimage"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1341389086" /><input type="hidden" name="summary" value="[Cas d'un enregistrement sur la partition ubuntu] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4316-4646" /><input type="submit" value="Modifier" class="button" title="Cas d'un enregistrement sur la partition ubuntu" /></div></form></div>
+<h3 class="sectionedit5" id="cas_d_un_enregistrement_sur_un_disque_dur_externe_usb">Cas d&#039;un enregistrement sur un disque dur externe usb</h3>
+<div class="level3">
+
+<p>
+Repérer le point de montage noté dans : Propriété, sous l&#039;onglet Volume.
+Par exemple : Le chemin et le fichier dans &quot;image à créer/utiliser&quot; est le suivant :
+</p>
+<pre class="code">/media/disk/&quot;mon_fichier_à_créer&quot;</pre>
+
+<p>
+pour restaurer : 
+</p>
+<pre class="code">/media/disk/&quot;mon_fichier_créer.000&quot;</pre>
+
+</div>
+
+<h4 id="apres_avoir_designe_le_chemin_et_le_fichier_de_l_image_a_sauvegarderrestaurer1">Après avoir désigné le chemin et le fichier de l&#039;image à sauvegarder/restaurer</h4>
+<div class="level4">
+
+<p>
+Une fois que le nom du fichier à sauvegarder est saisi : 
+sélectionner &lt;suivant&gt; ou F5
+</p>
+
+<p>
+Ici, nous choisissons de garder la configuration par défaut : 
+faire &lt;suivant&gt; ou F5 et sélectionner OK jusqu&#039;à la fin. 
+</p>
+
+<p>
+(le support NTFS expérimental ne pose vraisemblablement pas de problème)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="comment_sauvegarder_partition_avec_partimage"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1341389086" /><input type="hidden" name="summary" value="[Cas d'un enregistrement sur un disque dur externe usb] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4647-5373" /><input type="submit" value="Modifier" class="button" title="Cas d'un enregistrement sur un disque dur externe usb" /></div></form></div>
+<h2 class="sectionedit6" id="sauvegarde_d_une_partition_a_partir_d_un_livecd">Sauvegarde d&#039;une partition à partir d&#039;un liveCD</h2>
+<div class="level2">
+
+<p>
+Ce cas s&#039;applique à toutes les partitions. 
+Dans notre cas, nous utilisons un live-cd (quelconque) Le dernier Gparted semble très bien (tous inclus) : <a href="http://switch.dl.sourceforge.net/sourceforge/gparted/gparted-livecd-0.3.4-6.iso" class="urlextern" title="http://switch.dl.sourceforge.net/sourceforge/gparted/gparted-livecd-0.3.4-6.iso"  rel="nofollow">http://switch.dl.sourceforge.net/sourceforge/gparted/gparted-livecd-0.3.4-6.iso</a>
+</p>
+
+<p>
+Le principe est simple : on boot à partir du cd, on installe partimage (si le live-cd ne le propose pas déjà), on monte l&#039;espace de sauvegarde à partir du live cd, puis on lance partimage.
+</p>
+
+<p>
+on sélectionne la partition à sauvegarder / restaurer 
+</p>
+
+<p>
+on désigne le chemin comprenant le fichier qui sera créé par partimage
+</p>
+
+<p>
+on complète et valide l&#039;ensemble par F5, … OK 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="comment_sauvegarder_partition_avec_partimage"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1341389086" /><input type="hidden" name="summary" value="[Sauvegarde d'une partition à partir d'un liveCD] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5374-6064" /><input type="submit" value="Modifier" class="button" title="Sauvegarde d'une partition à partir d'un liveCD" /></div></form></div>
+<h3 class="sectionedit7" id="cas_d_un_enregistrement_sur_un_disque_dur_externe_usb1">Cas d&#039;un enregistrement sur un disque dur externe (usb)</h3>
+<div class="level3">
+
+<p>
+Nous allons utiliser le live cd Gparted ( <a href="http://gparted.sourceforge.net/livecd.php" class="urlextern" title="http://gparted.sourceforge.net/livecd.php"  rel="nofollow">http://gparted.sourceforge.net/livecd.php</a> ) afin de repérer l&#039;espace de sauvegarde. Cependant System Rescue Cd fonctionne tout aussi bien <a href="http://www.sysresccd.org/Index.fr.php" class="urlextern" title="http://www.sysresccd.org/Index.fr.php"  rel="nofollow">http://www.sysresccd.org/Index.fr.php</a>. 
+</p>
+
+<p>
+Après gravure du fichier ISO, on boot avec le CD. 
+</p>
+
+<p>
+Dans notre cas, on repère le disque dur externe destiné à la future sauvegarde : /dev/sda 
+</p>
+
+<p>
+Ouvrir le terminal 
+On créé un dossier partition dans /root, 
+Pour cela on se place dans le répertoire root
+</p>
+<pre class="code">cd /root</pre>
+
+<p>
+On créé un dossier nommé &quot;partition&quot; (ou &quot;tartuf&quot;)
+</p>
+<pre class="code">mkdir partition</pre>
+
+<p>
+On monte le disque dur externe 
+</p>
+<pre class="code">mount /dev/sda1 /root/partition</pre>
+
+<p>
+On lance partimage 
+</p>
+<pre class="code">partimage</pre>
+
+<p>
+Dans la partie &quot;fichiers de sauvegarde&quot;
+</p>
+<pre class="code">/root/partition/&quot;fichier_image_qui_sera_créé&quot;</pre>
+
+<p>
+Pour restaurer :
+</p>
+<pre class="code">/root/partition/&quot;fichier_image_qui_sera_créé.000&quot;</pre>
+
+<p>
+Nous aurions pu le placer dans un dossier sur le disque externe : 
+</p>
+<pre class="code">/root/partition/&quot;dossier_sur_le_DDE&quot;/&quot;fichier_image_qui_sera_créé&quot;</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="comment_sauvegarder_partition_avec_partimage"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1341389086" /><input type="hidden" name="summary" value="[Cas d'un enregistrement sur un disque dur externe (usb)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6065-7123" /><input type="submit" value="Modifier" class="button" title="Cas d'un enregistrement sur un disque dur externe (usb)" /></div></form></div>
+<h3 class="sectionedit8" id="cas_d_un_enregistrement_sur_un_partage_windows_samba_sur_le_reseau">Cas d&#039;un enregistrement sur un partage windows ( samba ) sur le réseau</h3>
+<div class="level3">
+
+<p>
+Le partage samba doit être fonctionnel, pare-feu configuré, l&#039;utilisateur root a accès au partage par un code d&#039;accès (sur le pc offrant le partage : dans un terminal :  
+</p>
+<pre class="code">smbpasswd root       </pre>
+
+<p>
+Nous utilisons ici un live-CD, un choix personnel s&#039;impose. 
+</p>
+
+<p>
+Nous utilisons pour notre exemple partimage sur &quot; ping 1.11 &quot; <a href="http://www.windowsdream.com/ping/download.html" class="urlextern" title="http://www.windowsdream.com/ping/download.html"  rel="nofollow">http://www.windowsdream.com/ping/download.html</a> bien que system rescue CD soit très bien aussi <a href="http://www.sysresccd.org/Main_Page" class="urlextern" title="http://www.sysresccd.org/Main_Page"  rel="nofollow">http://www.sysresccd.org/Main_Page</a> (mais il plante aujourd&#039;hui)
+</p>
+
+<p>
+On boot directement sur le CD.  
+et on choisit le shell et non &quot;ping 1.11&quot; 
+Sélectionner x puis &lt;entrée&gt;
+</p>
+<pre class="code">x         ## puis taper &lt;entrée&gt;
+Linux login: root</pre>
+
+</div>
+
+<h5 id="la_ligne_de_commande_vous_tend_les_bras">La ligne de commande vous tend les bras :</h5>
+<div class="level5">
+
+<p>
+<strong>On configure le réseau</strong>
+</p>
+
+<p>
+En mode automatique : 
+</p>
+<pre class="code">dhcpcd ethO</pre>
+
+<p>
+Ou manuellement si besoin
+</p>
+<pre class="code">ifconfig ethO 192.168.xx.xx netmask 255.255.255.0 broadcast 192.168.xx.xx</pre>
+
+<p>
+Vérification : 
+</p>
+<pre class="code">ping &quot;IP du pc partageant son répertoire&quot;</pre>
+
+<p>
+ctrl + C pour stopper le ping.
+On créé un dossier &quot;partage&quot; dans /root
+</p>
+<pre class="code">mkdir partage</pre>
+
+<p>
+On monte le partage windows ( Samba ) 
+</p>
+<pre class="code">smbmount //&quot;le_nom_du_serveur&quot;/&quot;le_nom_du_dossier_partagé&quot; /root/partage</pre>
+
+<p>
+Le mot de passe utilisateur samba (serveur) vous est demandé : <strong>*_</strong><strong>_</strong>**
+</p>
+
+<p>
+On lance l&#039;application partimage
+</p>
+<pre class="code">partimage </pre>
+
+<p>
+On notera pour le nom du fichier image à sauvegarder : 
+</p>
+<pre class="code">/root/partition/&quot;fichier_image_qui_sera_créé&quot;</pre>
+
+<p>
+Pour restaurer :
+</p>
+<pre class="code">/root/partition/&quot;fichier_image_qui_sera_créé.000&quot;</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="comment_sauvegarder_partition_avec_partimage"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1341389086" /><input type="hidden" name="summary" value="[Cas d'un enregistrement sur un partage windows ( samba ) sur le réseau] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7124-8657" /><input type="submit" value="Modifier" class="button" title="Cas d'un enregistrement sur un partage windows ( samba ) sur le réseau" /></div></form></div>
+<h3 class="sectionedit9" id="cas_d_un_enregistrement_de_toutes_les_partitions_sur_un_partage_windows_samba_sur_le_reseau_avec_ping">Cas d&#039;un enregistrement de toutes les partitions sur un partage windows ( samba ) sur le réseau  avec Ping</h3>
+<div class="level3">
+
+<p>
+La sauvegarde concerne l&#039;ensemble des partitions avec ping (une solution simple et très efficace) 
+</p>
+
+</div>
+
+<h5 id="telechargement_de_ping_111_partimage_is_not_ghost">Téléchargement de Ping 1.11 ( Partimage is Not Ghost )</h5>
+<div class="level5">
+
+<p>
+sur <a href="http://www.windowsdream.com/ping/download.html" class="urlextern" title="http://www.windowsdream.com/ping/download.html"  rel="nofollow">http://www.windowsdream.com/ping/download.html</a>
+</p>
+<ul>
+<li class="level1"><div class="li"> télécharger PING-1.11.iso et graver l&#039;ISO </div>
+</li>
+<li class="level1"><div class="li"> télécharger  PartImage.zip </div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="pre-requis">Pré-requis</h5>
+<div class="level5">
+
+<p>
+Décompresser l&quot;archive PartImage.zip et coller le dossier (sans le renommer) dans le répertoire partagé windows (ou Samba). 
+</p>
+
+</div>
+
+<h5 id="utilisation">Utilisation</h5>
+<div class="level5">
+
+<p>
+Redémarrer à partir du cd. (boot sur le CD) 
+</p>
+
+<p>
+Avant de taper &lt;Entrée&gt;, retirer le CD. 
+Taper de nouveau &lt;Entrée&gt;  
+Première écran : entrer l&#039;adresse IP de la machine offrant le partage
+</p>
+<pre class="code">192.168.XX.XX        (exemple)</pre>
+
+<p>
+Entrer le nom du répertoire partagé 
+</p>
+<pre class="code">IMAGES       (exemple)</pre>
+
+<p>
+Entrer le nom d&#039;un utilisateur ayant accès au partage 
+</p>
+<pre class="code">utilistateur2001   (exemple)</pre>
+
+<p>
+Entrer le mot de passe pour l&#039;utilisateur
+</p>
+<pre class="code">Hd6pt:UZ     (exemple) (dans ping mot de passe s&#039;affiche en clair) </pre>
+
+<p>
+Entrer le nom du dossier décompresser
+</p>
+<pre class="code">partimage</pre>
+
+<p>
+Que voulez vous faire ? Créer une image, Restaurer une image… etc. 
+</p>
+
+<p>
+En fonction de ce que vous avez choisi…
+</p>
+<ul>
+<li class="level1"><div class="li"> Create new image, puis entrer un nom pour la sauvegarde</div>
+</li>
+</ul>
+
+<p>
+  sauvegarde_du_pc_de_oncle_luc
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour restaurer, sélectionner directement le fichier à restaurer. </div>
+</li>
+</ul>
+
+<p>
+Note (pour 2 et 4) : pas de &quot;/&quot; pour la racine du disque
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="comment_sauvegarder_partition_avec_partimage"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1341389086" /><input type="hidden" name="summary" value="[Cas d'un enregistrement de toutes les partitions sur un partage windows ( samba ) sur le réseau  avec Ping] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8658-10132" /><input type="submit" value="Modifier" class="button" title="Cas d'un enregistrement de toutes les partitions sur un partage windows ( samba ) sur le réseau  avec Ping" /></div></form></div>
+<h2 class="sectionedit10" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.partimage.org/Partimage-manual" class="urlextern" title="http://www.partimage.org/Partimage-manual"  rel="nofollow">http://www.partimage.org/Partimage-manual</a> (en)</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.sysresccd.org/Sysresccd-manual-fr_R%C3%A9seau" class="urlextern" title="http://www.sysresccd.org/Sysresccd-manual-fr_R%C3%A9seau"  rel="nofollow">http://www.sysresccd.org/Sysresccd-manual-fr_R%C3%A9seau</a> (fr)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.sysresccd.org/Main_Page" class="urlextern" title="http://www.sysresccd.org/Main_Page"  rel="nofollow">http://www.sysresccd.org/Main_Page</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://gparted.sourceforge.net/larry/livecd/main/livecd.htm" class="urlextern" title="http://gparted.sourceforge.net/larry/livecd/main/livecd.htm"  rel="nofollow">http://gparted.sourceforge.net/larry/livecd/main/livecd.htm</a> (en)</div>
+</li>
+</ul>
+
+<p>
+Documentation PING 1.10 et 1.11 ( Partimage Is Not Ghost )
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.windowsdream.com/ping/download.html" class="urlextern" title="http://www.windowsdream.com/ping/download.html"  rel="nofollow">http://www.windowsdream.com/ping/download.html</a> (en) </div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="comment_sauvegarder_partition_avec_partimage"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1341389086" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10133-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/5/5d71a5f34e0b1ef0df831e970804a519.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_sauvegarder_partition_avec_partimage?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_sauvegarder_partition_avec_partimage?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_sauvegarder_partition_avec_partimage?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_sauvegarder_partition_avec_partimage?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_sauvegarder_partition_avec_partimage?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,613 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>kvm - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-12-23T22:29:40+0100"/>
+<meta name="keywords" content="lucid,precise,virtualisation,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/kvm?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/kvm?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/kvm"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/kvm"/>
+<link rel="canonical" href="kvm"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"kvm","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="kvm#main" tabindex="1">Contenu</a> | <a href="kvm#qsearch__in" tabindex="2">Rechercher</a> | <a href="kvm#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="kvm" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="kvm" >kvm</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, les informations qu'elle contient n'ont pas été vérifiées depuis <a href="precise">Ubuntu 12.04 LTS.</a><br />
+Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="kvm#mise_en_place">Mise en place</a></div></li>
+<li class="level1"><div class="li"><a href="kvm#droits_utilisateur">Droits utilisateur</a></div></li>
+<li class="level1"><div class="li"><a href="kvm#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="kvm#suppression_de_kvm">Suppression de Kvm</a></div></li>
+<li class="level1"><div class="li"><a href="kvm#utilisation_avancee">Utilisation avancée</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="kvm#conversion_d_image_disque">Conversion d&#039;image disque</a></div></li>
+<li class="level2"><div class="li"><a href="kvm#conversion_d_image_disque_img_vers_un_lv_lvm">Conversion d&#039;image disque IMG vers un LV (LVM)</a></div></li>
+<li class="level2"><div class="li"><a href="kvm#amelioration_des_performances">Amélioration des performances</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="kvm#astuces">Astuces</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="kvm#arreter_proprement_une_vm_windows">Arrêter proprement une VM Windows</a></div></li>
+<li class="level2"><div class="li"><a href="kvm#reduire_l_usage_cpu">Réduire l&#039;usage CPU</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="kvm#autres_outils_permettant_d_administrer_les_machines_virtuelles_gerees_par_kvm">Autres outils permettant d&#039;administrer les machines virtuelles gérées par kvm</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="kvm#outils_graphiques">Outils Graphiques</a></div></li>
+<li class="level2"><div class="li"><a href="kvm#outils_en_ligne_de_commande">Outils en ligne de commande</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="kvm#ressources_externes">Ressources externes</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="lucid" class="wikilink1" title="lucid" rel="tag">lucid</a>,
+	<a href="precise" class="wikilink1" title="precise" rel="tag">precise</a>,
+	<a href="http://doc.ubuntu-fr.org/virtualisation" class="wikilink1" title="virtualisation" rel="tag">virtualisation</a>,
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+
+<h1 class="sectionedit1" id="kernel_virtual_machine">Kernel Virtual Machine</h1>
+<div class="level1">
+
+<p>
+<strong>KVM</strong>, <em>Kernel Virtual Machine</em>, est intégré depuis le noyau 2.6.20 et permet une virtualisation matérielle et donc une accélération de la virtualisation de système d’exploitation.
+</p>
+
+<p>
+C&#039;est un système optimisé pour la virtualisation de serveur. Pour virtualiser des systèmes de type desktop, on peut lui préférer <a href="virtualbox" class="wikilink1" title="virtualbox">virtualbox</a>. <strong>KVM</strong> semble en effet plus performant en consommation de processeur mais plus lent pour l&#039;émulation du périphérique graphique. L&#039;utilisation d&#039;un bureau virtualisé dans <strong>VirtualBox</strong> pourra donc laisser une meilleure impression à l&#039;utilisateur. Vous pouvez tout de même préférer KVM pour sa meilleure compatibilité avec des système d&#039;exploitations anciens ou peu populaires.
+</p>
+
+<p>
+Néanmoins, <strong>KVM</strong> est complètement libre, performant et très facile à installer et à utiliser. L&#039;interface graphique <strong><a href="virt-manager" class="wikilink1" title="virt-manager">virt-manager</a></strong> pourra aider les néophytes à paramétrer KVM et pourra rendre la vie plus simple aux administrateurs réseaux.
+</p>
+
+<p>
+<p><div class="noteimportant">Vous ne pouvez pas utiliser <strong>KVM</strong> en même temps que <strong>VirtualBox</strong>. Il faudra en effet <a href="kvm#suppression_de_kvm" title="kvm ↵" class="wikilink1">fermer KVM</a> pour utiliser VirtualBox et vice versa. Ou désactiver le support de la virtualisation processeur dans VirtualBox.
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">apparemment on peut désormais(test effectué sur ubuntu 12.04 amd64) installer kvm et virtualbox sans problème et il n&#039;y a plus besoin de recharger les modules pour passer de l&#039;un à l&#039;autre, Simplement si vous lancez virtualbox alors que kvm tourne, virtualbox plantera, si vous lancez kvm alors que virtualbox tourne, qemu  démarrera en mode tcg accelerator(avec des performance très faibles)
+voir ce post <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=917021" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=917021"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=917021</a>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Kernel Virtual Machine] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="51-1830" /><input type="submit" value="Modifier" class="button" title="Kernel Virtual Machine" /></div></form></div>
+<h2 class="sectionedit2" id="mise_en_place">Mise en place</h2>
+<div class="level2">
+
+<p>
+Tout d’abord, assurez-vous que votre processeur supporte la virtualisation matérielle et, si c’est bien le cas, assurez-vous également que ce support est bien activé par le <abbr title="Basic Input-Output System">BIOS</abbr>. Pour cela tapez cette commande :
+</p>
+<pre class="code">egrep &#039;^flags.*(vmx|svm)&#039; /proc/cpuinfo</pre>
+
+<p>
+Si un résultat s&#039;affiche, c&#039;est que le processeur supporte la virtualisation.
+</p>
+
+<p>
+On peut aussi taper la commande :
+</p>
+<pre class="code">sudo kvm-ok</pre>
+
+<p>
+On obtient soit :
+</p>
+<pre class="code">INFO: Your CPU supports KVM extensions</pre>
+<pre class="code">INFO: /dev/kvm exists
+KVM acceleration can be used</pre>
+
+<p>
+ou cela :
+</p>
+<pre class="code">INFO: Your CPU does not support KVM extensions</pre>
+
+<p>
+Il suffit ensuite d&#039;<a href="apt" class="wikilink1" title="apt">installer</a> le paquet <strong><a href="apt://qemu-kvm" class="urlextern" title="apt://qemu-kvm"  rel="nofollow">qemu-kvm</a></strong>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Mise en place] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1831-2514" /><input type="submit" value="Modifier" class="button" title="Mise en place" /></div></form></div>
+<h2 class="sectionedit3" id="droits_utilisateur">Droits utilisateur</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteimportant">Le périphérique &#039;/dev/kvm&#039; n&#039;est accessible en écriture qu&#039;aux utilisateurs du groupe kvm. Votre utilisateur sera normalement ajouté automatiquement, mais vous pouvez ajouter d&#039;autres utilisateurs.
+</div></p>
+</p>
+
+<p>
+Ajouter votre utilisateur à ce groupe, soit à l’aide de votre outil de gestion des groupes, soit avec cette commande :
+</p>
+<pre class="code">sudo adduser $USER kvm</pre>
+
+<p>
+Redémarrez enfin l&#039;ordinateur (ou simplement la session si aucune console tty n&#039;est ouverte) afin que l&#039;utilisateur soit affecté au groupe.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Droits utilisateur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2515-3074" /><input type="submit" value="Modifier" class="button" title="Droits utilisateur" /></div></form></div>
+<h2 class="sectionedit4" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Vous voilà prêt à installer un système d’exploitation virtuel.
+</p>
+
+<p>
+Commencez par créer le fichier image qui va accueillir ce système :
+</p>
+<pre class="code">qemu-img create -f qcow2 emplacement/du/fichier_image.img 6G</pre>
+
+<p>
+Où :
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>emplacement/du/fichier_image.img</code> est l’emplacement du fichier qui sera créé, </div>
+</li>
+<li class="level1"><div class="li"> <code>6G</code> est la taille virtuelle de ce système de fichier virtuel.</div>
+</li>
+</ul>
+
+<p>
+Puis installez votre système dessus en utilisant un CD-ROM d’installation :
+</p>
+<pre class="code">kvm -m 256 -cdrom /dev/cdrom -boot d emplacement/du/fichier_image.img</pre>
+
+<p>
+Où <code>256</code> est la quantité de mémoire à utiliser.
+</p>
+
+<p>
+Vous pouvez également utiliser une image ISO sans la graver :
+</p>
+<pre class="code">kvm -m 256 -cdrom emplacement/de/l_image.iso -boot d emplacement/du/fichier_image.img</pre>
+
+<p>
+Pour quitter la fenêtre de virtualisation, il vous faut utiliser les combinaisons de touches &quot;<code>CTRL-ALT</code>&quot;
+Une fois l&#039;installation terminée, démarrez votre système virtuel :
+</p>
+<pre class="code">kvm -m 256 emplacement/du/fichier_image.img</pre>
+
+<p>
+pour l&#039;activation du son et de l&#039;<abbr title="Universal Serial Bus">USB</abbr> :
+</p>
+<pre class="code">kvm -m 386 -std-vga -cdrom /dev/cdrom emplacement/du/fichier_image.img -soundhw all -usb</pre>
+
+</div>
+
+<h4 id="pour_restaurer_une_sauvegarde_clonezilla_sur_peripherique_usb_dans_une_image_virtuelle">Pour restaurer une sauvegarde clonezilla sur périphérique USB dans une image virtuelle :</h4>
+<div class="level4">
+
+<p>
+Connaitre les groupes de mon compte utilisateur :
+</p>
+<pre class="code">id $USER</pre>
+
+<p>
+Autoriser mon compte utilisateur à accéder aux disques :
+</p>
+<pre class="code">sudo adduser $USER disk fuse</pre>
+
+<p>
+Se déconnecter et reconnecter pour prendre en compte les modifications de son compte utilisateur.
+Connaitre le périphérique <abbr title="Universal Serial Bus">USB</abbr> de restauration :
+</p>
+
+<p>
+<strong>Sans le disque :</strong>
+</p>
+<pre class="code">sudo fdisk -l</pre>
+
+<p>
+<strong>Avec le disque <abbr title="Universal Serial Bus">USB</abbr> :</strong>
+</p>
+<pre class="code">sudo fdisk -l</pre>
+
+<p>
+Notez le périphérique /dev/sdx supplémentaire affiché, c&#039;est votre disque <abbr title="Universal Serial Bus">USB</abbr>.
+Puis lancez la restauration dans votre machine virtuelle :
+</p>
+<pre class="code">kvm -m 512 -cdrom /emplacement_du_fichier/clonezilla.iso -boot d /emplacement_du_fichier/fichier_image-virtuelle.img -hdb /dev/sdx</pre>
+
+<p>
+<p><div class="noteclassic">La taille du disque du fichier d&#039;image virtuelle doit-être égal ou plus grande que la taille du disque sauvegardé
+</div></p>
+</p>
+
+<p>
+Voir aussi les autres paramètres de <a href="http://doc.ubuntu-fr.org/qemu" class="wikilink1" title="qemu">qemu</a> qui peuvent être passés à kvm.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3075-5260" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h2 class="sectionedit5" id="suppression_de_kvm">Suppression de Kvm</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, <a href="tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimez son paquet</a>. Selon la méthode choisie, la configuration globale de l&#039;application est conservée ou supprimée. Les journaux du système, et les fichiers de préférence des utilisateurs dans leurs dossiers personnels sont toujours conservés.
+</p>
+
+<p>
+A partir de Ubuntu 9.10 et suivant, il faut également <a href="tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer le paquet</a> <strong>qemu-kvm</strong> pour que la désinstallation soit complète.  
+</p>
+
+<p>
+<p><div class="notetip">S&#039;il reste encore les modules installés à la main ( dans la partie mise en place de cette page), ouvrez un terminal puis tapez : 
+</p>
+<pre class="code">lsmod | grep -e &#039;^kvm&#039;</pre>
+
+<p>
+Pour retirer les modules, tapez :
+</p>
+<pre class="code">sudo rmmod (nom_du_module)</pre>
+
+<p>
+<p><div class="notewarning">Les modules seront à nouveau chargés au prochain redémarrage.
+</div></p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Suppression de Kvm] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5261-6148" /><input type="submit" value="Modifier" class="button" title="Suppression de Kvm" /></div></form></div>
+<h2 class="sectionedit6" id="utilisation_avancee">Utilisation avancée</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Utilisation avancée] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6149-6182" /><input type="submit" value="Modifier" class="button" title="Utilisation avancée" /></div></form></div>
+<h3 class="sectionedit7" id="conversion_d_image_disque">Conversion d&#039;image disque</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Compression d&#039;une image disque au format qcow2 (attention la compression est &quot;perdue&quot; à la réécriture pour toutes les données qui seront modifiées) :</div>
+</li>
+</ul>
+<pre class="code">$ kvm-img convert -c -f qcow2 image.qcow2 -O qcow2 image-compressed.qcow2</pre>
+<ul>
+<li class="level1"><div class="li"> Conversion d&#039;une image disque</div>
+</li>
+</ul>
+<pre class="code">$ kvm-img convert -f vmdk image.vmdk -O qcow2 image.qcow2</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Conversion d'image disque] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6183-6573" /><input type="submit" value="Modifier" class="button" title="Conversion d'image disque" /></div></form></div>
+<h3 class="sectionedit8" id="conversion_d_image_disque_img_vers_un_lv_lvm">Conversion d&#039;image disque IMG vers un LV (LVM)</h3>
+<div class="level3">
+
+<p>
+Vous pouvez monter directement un LV sur votre machine virtuelle. Ceci explique comment convertir un fichier .img en un Logical Volume sur LVM (visible depuis votre serveur KVM)
+Vous devez avoir au préalable déjà préparé un VG qui contiendra les data pour vos VM (ici appelé &quot;vg_data&quot;). (cf:<a href="lvm.1" class="wikilink1" title="lvm">Doc Ubuntu</a>)
+</p>
+<ul>
+<li class="level1"><div class="li"> Vérifier que le VG dispose de la place nécessaire </div>
+</li>
+<li class="level1"><div class="li"> Création du LV &quot;lv_VmName&quot; sur le VG &quot;vg_data&quot; : </div>
+</li>
+</ul>
+<pre class="code">lvcreate -L80G -n lv_v-VmName vg_data</pre>
+
+<p>
+* Arrêt de votre VM
+* Copie du contenu de l&#039;image IMG vers le LV :
+</p>
+<pre class="code">dd if=/path/to/image/v-VmName.coe.int.img of=/dev/vg_data/lv_v-VmName</pre>
+
+<p>
+* Configurer votre VM pour utiliser ce LV
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Conversion d'image disque IMG vers un LV (LVM)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6574-7305" /><input type="submit" value="Modifier" class="button" title="Conversion d'image disque IMG vers un LV (LVM)" /></div></form></div>
+<h3 class="sectionedit9" id="amelioration_des_performances">Amélioration des performances</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="virtio">VirtIO</h4>
+<div class="level4">
+
+<p>
+L&#039;utilisation des bus virtio permet de prendre en compte la virtualisation par l&#039;invité grâce à des pilotes spécifiques qui lui permettent de travailler en collaboration avec l&#039;hyperviseur kvm de l&#039;hôte.
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour les disques :</div>
+<ul>
+<li class="level2"><div class="li"> à partir de Linux 2.6.25 (sur l&#039;invité) on peut utiliser le bus virtio de manière transparente. Les disques apparaissent comme des périphériques /dev/vdX sur l&#039;invité</div>
+</li>
+<li class="level2"><div class="li"> sous Windows, télécharger l&#039;<a href="http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/bin/" class="urlextern" title="http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/bin/"  rel="nofollow">iso des pilotes</a> (comme indiqué <a href="http://www.linux-kvm.org/page/WindowsGuestDrivers/Download_Drivers" class="urlextern" title="http://www.linux-kvm.org/page/WindowsGuestDrivers/Download_Drivers"  rel="nofollow">ici</a>) puis installer les pilotes.<br/>
+Windows ne permet pas d&#039;installer les pilotes si un disque dur n&#039;utilise pas le bus virtio, d&#039;où l&#039;<a href="http://www.linux-kvm.com/content/redhat-54-windows-virtio-drivers-part-2-block-drivers" class="urlextern" title="http://www.linux-kvm.com/content/redhat-54-windows-virtio-drivers-part-2-block-drivers"  rel="nofollow">astuce suivante</a> pour installer le pilote :</div>
+<ol>
+<li class="level3"><div class="li"> démarrer l&#039;invité normalement (disque dur sur bus ide par exemple)</div>
+</li>
+<li class="level3"><div class="li"> ajouter un second disque dur (cette fois sur le bus virtio ; le disque dur n&#039;a pas besoin de contenir de données)</div>
+</li>
+<li class="level3"><div class="li"> installer les pilotes sur l&#039;invité</div>
+</li>
+<li class="level3"><div class="li"> éteindre l&#039;invité</div>
+</li>
+<li class="level3"><div class="li"> supprimer le second disque dur (inutile) puis le premier disque (sur bus ide par exemple)</div>
+</li>
+<li class="level3"><div class="li"> ajouter le premier disque dur sur bus virtio</div>
+</li>
+<li class="level3"><div class="li"> redémarrer l&#039;invité</div>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Pour le réseau : les idées précédentes sont applicables pour le réseau </div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="autres">Autres</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Améliorer les accès disques: passez le mode de cache de vos disques dur en mode &quot;writeback&quot;</div>
+</li>
+<li class="level1"><div class="li"> Pour les guests Linux sans Virtio : <em>gestion par l&#039;hôte de l&#039;ordonnancement d&#039;accès au fichier</em>.  Sur la ligne de commande Linux du grub de la machine virtuelle, passer le paramètre <strong>elevator=noop</strong> (procédure détaillée en anglais <a href="http://blog.bodhizazen.net/linux/improve-kvm-performance/" class="urlextern" title="http://blog.bodhizazen.net/linux/improve-kvm-performance/"  rel="nofollow">ici</a>)</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Amélioration des performances] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7306-9214" /><input type="submit" value="Modifier" class="button" title="Amélioration des performances" /></div></form></div>
+<h2 class="sectionedit10" id="astuces">Astuces</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Astuces] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9215-9235" /><input type="submit" value="Modifier" class="button" title="Astuces" /></div></form></div>
+<h3 class="sectionedit11" id="arreter_proprement_une_vm_windows">Arrêter proprement une VM Windows</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Si vous avez des connexions RDP sur votre VM, celle-ci empêche l&#039;arrêt de la VM par la méthode ACPI si les sessions Windows ne sont pas fermées (mais juste verrouillées par exemple). Pour supprimer la fenêtre de confirmation &quot;Des utilisateurs ont ouvert une session sur cet ordinateur. La fermeture de Windows peut provoquer la perte de données&quot;, il faut ajouter une clef registre : voir <a href="http://mindref.blogspot.fr/2011/04/kvm-shutdown-windows-guest-gracefullly.html" class="urlextern" title="http://mindref.blogspot.fr/2011/04/kvm-shutdown-windows-guest-gracefullly.html"  rel="nofollow">ici</a> ou <a href="http://ethertubes.com/unattended-acpi-shutdown-of-windows-server/" class="urlextern" title="http://ethertubes.com/unattended-acpi-shutdown-of-windows-server/"  rel="nofollow">là</a>. Pour XP, voir <a href="https://forums.virtualbox.org/viewtopic.php?f=8&amp;t=24719#p215403" class="urlextern" title="https://forums.virtualbox.org/viewtopic.php?f=8&amp;t=24719#p215403"  rel="nofollow">là</a>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Arrêter proprement une VM Windows] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9236-9933" /><input type="submit" value="Modifier" class="button" title="Arrêter proprement une VM Windows" /></div></form></div>
+<h3 class="sectionedit12" id="reduire_l_usage_cpu">Réduire l&#039;usage CPU</h3>
+<div class="level3">
+
+<p>
+De manière générale, il est important d&#039;avoir une couche kvm récente pour bénéficier des corrections de bugs et en particulier ceux liés à la performance. Il faut également avoir l&#039;accélération matérielle du CPU pour la virtualisation (VT chez Intel, et AMD-V pour AMD).
+</p>
+
+<p>
+Si votre VM ne fait rien, l&#039;usage CPU de l&#039;hôte ne devrait pas dépasser 3%. Voici quelques causes pouvant entraîner un usage CPU trop élevé (20% par exemple) :
+</p>
+<ul>
+<li class="level1"><div class="li"> utilisation d&#039;une carte virtio sur un système invité trop « ancien » : tester en passant à e1000</div>
+</li>
+<li class="level1"><div class="li"> FreeBSD</div>
+<ul>
+<li class="level2"><div class="li"> utilisation d&#039;un pointeur « Tablette graphique <abbr title="Universal Serial Bus">USB</abbr> » (constaté avec FreeBSD 9)</div>
+</li>
+<li class="level2"><div class="li"> FreeBSD jusqu&#039;à la 8 : diminuter le paramètre kern.hz en ajoutant la ligne suivante au fichier /boot/loader.conf: kern.hz=100</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Réduire l'usage CPU] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9934-10754" /><input type="submit" value="Modifier" class="button" title="Réduire l'usage CPU" /></div></form></div>
+<h2 class="sectionedit13" id="autres_outils_permettant_d_administrer_les_machines_virtuelles_gerees_par_kvm">Autres outils permettant d&#039;administrer les machines virtuelles gérées par kvm</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Autres outils permettant d'administrer les machines virtuelles gérées par kvm] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10755-10846" /><input type="submit" value="Modifier" class="button" title="Autres outils permettant d'administrer les machines virtuelles gérées par kvm" /></div></form></div>
+<h3 class="sectionedit14" id="outils_graphiques">Outils Graphiques</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"><a href="virt-manager" class="wikilink1" title="virt-manager">virt-manager</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://sourceforge.net/projects/aqemu/" class="urlextern" title="http://sourceforge.net/projects/aqemu/"  rel="nofollow">aqemu</a> est une  interface graphique en <a href="http://fr.wikipedia.org/wiki/Qt#Qt4" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Qt#Qt4">Qt4</a> de gestion de <a href="http://doc.ubuntu-fr.org/qemu" class="wikilink1" title="qemu">qemu</a> et kvm. ( <a href="apt://aqemu" class="urlextern" title="apt://aqemu"  rel="nofollow">aqemu</a> )</div>
+</li>
+<li class="level1"><div class="li">qemu-launcher interface graphique en <a href="http://fr.wikipedia.org/wiki/GTK%2B" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/GTK%2B">Gtk</a> de gestion de <a href="http://doc.ubuntu-fr.org/qemu" class="wikilink1" title="qemu">qemu</a> et kvm. ( <a href="apt://qemu-launcher" class="urlextern" title="apt://qemu-launcher"  rel="nofollow">qemu-launcher</a> )</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Outils Graphiques] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10847-11191" /><input type="submit" value="Modifier" class="button" title="Outils Graphiques" /></div></form></div>
+<h3 class="sectionedit15" id="outils_en_ligne_de_commande">Outils en ligne de commande</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">  <a href="http://linux.die.net/man/1/virsh" class="urlextern" title="http://linux.die.net/man/1/virsh"  rel="nofollow">Virsh</a> est une interface en ligne de commande qui permet au travers de <a href="http://www.libvirt.org/virshcmdref.html#description" class="urlextern" title="http://www.libvirt.org/virshcmdref.html#description"  rel="nofollow">libvirt</a> la création et la gestion de vos machines virtuelles.  <br/>
+</div>
+</li>
+</ul>
+
+<p>
+(cf: <a href="https://help.ubuntu.com/community/KVM/Virsh" class="urlextern" title="https://help.ubuntu.com/community/KVM/Virsh"  rel="nofollow">KVM virsh sur help ubuntu</a>)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Outils en ligne de commande] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11192-11545" /><input type="submit" value="Modifier" class="button" title="Outils en ligne de commande" /></div></form></div>
+<h2 class="sectionedit16" id="ressources_externes">Ressources externes</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://fr.wikipedia.org/wiki/Kernel-based_Virtual_Machine" class="urlextern" title="http://fr.wikipedia.org/wiki/Kernel-based_Virtual_Machine"  rel="nofollow">Article wikipedia</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/qemu" class="wikilink1" title="qemu">qemu</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://help.ubuntu.com/community/KVM" class="urlextern" title="https://help.ubuntu.com/community/KVM"  rel="nofollow">Article sur le wiki anglophone</a></div>
+</li>
+<li class="level1"><div class="li"> Amélioration des performances des disques virtuels <a href="http://blog.bodhizazen.net/linux/improve-kvm-performance/" class="urlextern" title="http://blog.bodhizazen.net/linux/improve-kvm-performance/"  rel="nofollow">ici (en)</a>.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.linux-kvm.com/content/be-more-productive-base-images-part-3" class="urlextern" title="http://www.linux-kvm.com/content/be-more-productive-base-images-part-3"  rel="nofollow">Manipulation des images disque dur avec image de &quot;base&quot;</a> (utilisée par des images &quot;cow&quot; : copy on write). Voir aussi les &quot;part 1&quot; et &quot;2&quot;. (Remarque : pour chaîner plus d&#039;une fois l&#039;image, voir <a href="https://bugs.launchpad.net/ubuntu-release-notes/+bug/656173" class="urlextern" title="https://bugs.launchpad.net/ubuntu-release-notes/+bug/656173"  rel="nofollow">l&#039;aspect sécurité présenté sur Launchpad</a>).</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.linux-france.org/prj/inetdoc/articles/vm/" class="urlextern" title="http://www.linux-france.org/prj/inetdoc/articles/vm/"  rel="nofollow">A voir surtout pour la partie réseau,bridge,vlan</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://xenman.sourceforge.net/index.html" class="urlextern" title="http://xenman.sourceforge.net/index.html"  rel="nofollow">http://xenman.sourceforge.net/index.html</a> ConVirt un Gui pour la virtualisation (simple et efficace)</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  * Une liste d&#039;outils de gestion de VM KVM <a href="http://www.linux-kvm.org/page/Management_Tools" class="urlextern" title="http://www.linux-kvm.org/page/Management_Tools"  rel="nofollow">http://www.linux-kvm.org/page/Management_Tools</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="kvm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1419370180" /><input type="hidden" name="summary" value="[Ressources externes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11546-" /><input type="submit" value="Modifier" class="button" title="Ressources externes" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/4/4be6cf45c46a6328fefdd926805851ca.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/kvm?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/kvm?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/kvm?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/kvm?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/kvm?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

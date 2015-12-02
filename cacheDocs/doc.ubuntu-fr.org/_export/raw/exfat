@@ -1,0 +1,31 @@
+{{tag>système partitions}}
+----
+====== exFAT======
+L'exFAT (ou FAT64) est le dernier système de fichier de microsoft (donc propriétaire) pour les mémoires flash, il a surtout permis de dépasser la limite de 4Go/fichier du FAT32. 
+Les paquets sont disponibles dans les dépôts d'Ubuntu 13.10.
+
+===== Avoir accès à l'exFAT en écriture =====
+
+testez cette commande 
+
+<code>sudo apt-get install exfat-fuse exfat-utils</code>
+
+sinon :
+<note>
+En l'absence de //add-apt-repository// et  de //apt-add-repository// dans votre système, 
+commencez par [[:tutoriel:comment_installer_un_paquet|installer le paquet]] **[[apt>python-software-properties]]**.
+</note>
+Il vous faut ajouter le ppa:relan/exfat ((https://launchpad.net/~relan/+archive/exfat)) et installer les paquets de gestion de exFAT.\\
+Exécutez ces commandes depuis un terminal:
+<code>sudo add-apt-repository -y ppa:relan/exfat
+sudo apt-get update
+sudo apt-get install exfat-utils</code>
+
+Maintenant, vos clefs USB, SDXC et autres périphériques utilisant ce formatage seront montées automatiquement dès leur branchement.
+<note>Sous Ubuntu 12.04 (à vérifier pour les versions plus récentes...) pour le montage automatique il est impératif d'installer également le paquet fuse-exfat. La troisième commande devient donc : <code>sudo apt-get install exfat-utils fuse-exfat</code></note>
+
+
+===== Articles traitant d'exFAT ===== 
+  * [[http://la-vache-libre.org/exfat-1-0-un-nouveau-driver-disponible-pour-linux| La vache libre]]
+
+----

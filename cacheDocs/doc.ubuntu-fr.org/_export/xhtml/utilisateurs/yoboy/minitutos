@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>utilisateurs:yoboy:minitutos</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2010-02-26T18:54:07+0100"/>
+<meta name="keywords" content="dapper,hardy,intrepid,jaunty,karmic,administration,securite,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../../index.html"/>
+<link rel="contents" href="../../../../utilisateurs/yoboy/minitutos?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../../feed.php?mode=list&amp;ns=utilisateurs:yoboy"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="minitutos"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../../raw/utilisateurs/yoboy/minitutos"/>
+<link rel="canonical" href="../../../../utilisateurs/yoboy/minitutos"/>
+<link rel="stylesheet" type="text/css" href="../../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='utilisateurs:yoboy';var JSINFO = {"id":"utilisateurs:yoboy:minitutos","namespace":"utilisateurs:yoboy"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="minitutos#les_raccourcis">Les raccourcis</a></div></li>
+<li class="level1"><div class="li"><a href="minitutos#deverrouiller">Déverrouiller</a></div></li>
+<li class="level1"><div class="li"><a href="minitutos#autre_methode">Autre méthode</a></div></li>
+<li class="level1"><div class="li"><a href="minitutos#modifier_vos_fichiers">Modifier vos fichiers</a></div></li>
+<li class="level1"><div class="li"><a href="minitutos#modifier_les_autres_fichiers">Modifier les autres fichiers</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="refonte_des_minitutos">Refonte des minitutos</h1>
+<div class="level1">
+
+<p>
+<p><div class="noteclassic">Cette refonte vise à simplifier les minitutos afin qu&#039;ils aillent à l&#039;essentiel sans oublier certaines facettes du monde ubuntu et tout en restant très concis
+</div></p>
+</p>
+<hr />
+<hr />
+<div class="tags"><span>
+	<a href="../../../../dapper" class="wikilink1" title="dapper" rel="tag">Dapper</a>,
+	<a href="../../../../hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="../../../../intrepid" class="wikilink1" title="intrepid" rel="tag">Intrepid</a>,
+	<a href="../../../../jaunty" class="wikilink1" title="jaunty" rel="tag">Jaunty</a>,
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">Karmic</a>,
+	<a href="../../../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+</div>
+<!-- EDIT1 SECTION "Refonte des minitutos" [1-306] -->
+<h1 class="sectionedit2" id="droits_administrateur">Droits administrateur</h1>
+<div class="level1">
+
+<p>
+<p><div class="notewarning"> Toute la page <a href="../../../../sudo" class="wikilink1" title="sudo">sudo</a> est beaucoup trop compliquée pour être un mini tuto. Il faut avoir une page <strong>sudo</strong> contenant tout ça ET une page <strong>droit_administrateur</strong> pour le mini-tutoriel
+</div></p>
+</p>
+
+<p>
+Les tâches courantes d&#039;administrations, les modifications des fichiers systèmes et l&#039;exécution des applications systèmes nécessitent les droits d&#039;administrateur.
+</p>
+
+<p>
+Sous Ubuntu, il n&#039;y a pas de compte administrateur activé ( <em>identifiant :</em> <strong>root</strong> ). C&#039;est l&#039;utilisateur ayant le rôle d&#039;administrateur qui doit explicitement endosser ce rôle en tapant son propre mot de passe.
+<p><div class="noteimportant">Si vous n&#039;êtes pas l&#039;utilisateur principal (utilisateur créé à l&#039;installation et qui possède nécessairement les droits d&#039;administration) ou que vous ne possédez pas les privilèges d&#039;administrateur, veuillez contacter l&#039;administrateur de votre ordinateur pour qu&#039;il effectue ces commandes à votre place.
+</div></p>
+<p><div class="notewarning">Les actions effectuées en tant qu&#039;administrateur permettent d&#039;altérer votre système intégralement, et comportent de ce fait un risque. Prenez soin de bien vérifier ce que vous faîtes, de contrôler vos sources. En cas de doutes sur une commande n&#039;hésitez pas à demander conseil auprès de la communauté.
+</div></p>
+<p><div class="notewarning">La documentation ubuntu-fr.org étant rédigée par de nombreux contributeurs, nous ne pouvons certifier l&#039;exactitude de toutes les informations que vous pouvez y trouver. Malgré notre vigilance, certaines commandes exécutées en mode administrateur peuvent comporter des risques pour votre système. Restez donc tout autant vigilant sur les informations présente dans la documentation (ainsi que sur le forum). En cas de doutes sur une commande n&#039;hésitez pas à demander conseil auprès de la communauté.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Droits administrateur" [307-2144] -->
+<h2 class="sectionedit3" id="les_raccourcis">Les raccourcis</h2>
+<div class="level2">
+
+<p>
+<a href="../../../../_detail/applications/gksudo.jpg?id=utilisateurs%253Ayoboy%253Aminitutos" class="media" title="applications:gksudo.jpg"><img src="../../../../_media/applications/gksudo.jpg" class="mediaright" title="gksudo.jpg" alt="gksudo.jpg" /></a>
+Lorsque vous lancez des programmes d&#039;administration, il vous est demandé votre mot de passe.
+</p>
+
+<p>
+Saisissez le mot de passe de votre compte.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Les raccourcis" [2145-2342] -->
+<h2 class="sectionedit4" id="deverrouiller">Déverrouiller</h2>
+<div class="level2">
+
+<p>
+D&#039;autres programmes vous demanderont d&#039;être &quot;déverrouillé&quot;:
+[Screenshot du bouton déverrouiller]
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Déverrouiller" [2343-2471] -->
+<h2 class="sectionedit5" id="autre_methode">Autre méthode</h2>
+<div class="level2">
+
+<p>
+Enfin, si vous n&#039;avez pas à votre disposition de raccourci, il faut lancer vous même la commande du programme en appuyant sur ALT et F2 en même temps, et taper votre <strong>commande</strong><sup><a href="minitutos#fn__1" id="fnt__1" class="fn_top">1)</a></sup>
+</p>
+<div class="table sectionedit6"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> Ubuntu / Edubuntu / Gnome </th><td class="col1"> gksudo commande </td>
+	</tr>
+	<tr class="row1">
+		<th class="col0"> Kubuntu / KDE </th><td class="col1"> kdesudo commande </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0"> Xubuntu / xFCE </th><td class="col1"> gksudo commande </td>
+	</tr>
+</table></div>
+<!-- EDIT6 TABLE [2772-2893] -->
+<p>
+<p><div class="noteimportant">Le mot de passe demandé est celui de l&#039;utilisateur <strong>courant</strong>.  La commande sera exécutée si le mot de passe entré est correct et que l&#039;utilisateur courant peut effectuer des tâches d&#039;administration.
+</div></p>
+</p>
+
+<p>
+Ces commandes ci dessus peuvent être également lancées à partir d&#039;un <a href="../../../../terminal" class="wikilink1" title="terminal">terminal</a> pour le même résultat, et si vous voulez lancer un programme dans le terminal, tapez :
+</p>
+<div class="table sectionedit7"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> Terminal / ligne de commande </th><td class="col1"> sudo commande </td>
+	</tr>
+</table></div>
+<!-- EDIT7 TABLE [3301-3349] -->
+<p>
+<strong>gksudo</strong> et <strong>kdesudo</strong> sont des interfaces graphiques pour <a href="../../../../sudo" class="wikilink1" title="sudo">sudo</a> qui est l&#039;utilitaire permettant d&#039;endosser le rôle de l&#039;administrateur. Plus d&#039;information sur cette application sur la page <a href="../../../../sudo" class="wikilink1" title="sudo">sudo</a>
+</p>
+<hr />
+<hr />
+<div class="tags"><span>
+	<a href="../../../../dapper" class="wikilink1" title="dapper" rel="tag">Dapper</a>,
+	<a href="../../../../hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="../../../../intrepid" class="wikilink1" title="intrepid" rel="tag">Intrepid</a>,
+	<a href="../../../../jaunty" class="wikilink1" title="jaunty" rel="tag">Jaunty</a>,
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">Karmic</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+</div>
+<!-- EDIT5 SECTION "Autre méthode" [2472-3639] -->
+<h1 class="sectionedit8" id="comment_modifier_un_fichier">Comment modifier un fichier ?</h1>
+<div class="level1">
+
+<p>
+Comment <strong>créer</strong> ou <strong>modifier</strong> un fichier avec ou sans les <a href="../../../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> et sous divers environnements en utilisant un éditeur de texte simple<sup><a href="minitutos#fn__2" id="fnt__2" class="fn_top">2)</a></sup>.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Comment modifier un fichier ?" [3640-4017] -->
+<h2 class="sectionedit9" id="modifier_vos_fichiers">Modifier vos fichiers</h2>
+<div class="level2">
+
+<p>
+Pour modifier vos fichier (ceux dans votre dossier personnel), vous pouvez soit
+</p>
+<ul>
+<li class="level1"><div class="li"> ouvrir votre éditeur de texte (emplacement ci-dessous) et ensuite aller parcourir vos dossier en passant par le menu <strong>Fichier→Ouvrir…</strong>.</div>
+</li>
+<li class="level1"><div class="li"> ouvrir votre éditeur de texte et commencer à taper dans le document vierge et l&#039;enregistrer ensuite (pour créer ce fichier)</div>
+</li>
+<li class="level1"><div class="li"> parcourir vos dossiers avec votre <a href="http://doc.ubuntu-fr.org/gestionnaire_de_fichiers" class="wikilink1" title="gestionnaire_de_fichiers">gestionnaire de fichiers</a> et ouvrir le document désiré avec un double click si il est dans le format qu&#039;il faut (format texte simple) ou avec le bouton droit de votre souris.</div>
+</li>
+</ul>
+
+<p>
+Vous pouvez aussi passer par le lanceur d&#039;application en appuyant sur <strong>ALT</strong> et <strong>F2</strong> en même temps et taper la commande lançant le programme suivi du nom du fichier à créer ou modifier, soit:
+</p>
+<div class="table sectionedit10"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<td class="col0"> </td><th class="col1 centeralign">  Emplacement  </th><th class="col2 centeralign">  Application  </th><th class="col3 centeralign">  Commande  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<th class="col0"> <a href="http://doc.ubuntu-fr.org/ubuntu" class="wikilink1" title="ubuntu">Ubuntu</a>/<a href="../../../../edubuntu" class="wikilink1" title="edubuntu">Edubuntu</a>/<a href="../../../../gnome" class="wikilink1" title="gnome">Gnome</a> </th><td class="col1 centeralign">  <strong>Applications→Accessoires</strong>  </td><td class="col2 centeralign">  <a href="../../../../gedit" class="wikilink1" title="gedit">gedit</a>  </td><td class="col3"> <strong>gedit /chemin/fichier</strong> </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0"> <a href="../../../../kubuntu" class="wikilink1" title="kubuntu">Kubuntu</a>/<a href="../../../../kde" class="wikilink1" title="kde">KDE</a> </th><td class="col1 centeralign">    <strong>K→Utilitaires</strong>  </td><td class="col2 centeralign">  <a href="../../../../kate" class="wikilink1" title="kate">kate</a>  </td><td class="col3"> <strong>kate /chemin/fichier</strong> </td>
+	</tr>
+	<tr class="row3">
+		<th class="col0"> <a href="../../../../xubuntu" class="wikilink1" title="xubuntu">Xubuntu</a>/<a href="../../../../xfce" class="wikilink1" title="xfce">xFCE</a> </th><td class="col1 centeralign">  <strong>Applications→Accessoires</strong>  </td><td class="col2 centeralign">  <a href="../../../../mousepad" class="wikilink1" title="mousepad">mousepad</a>  </td><td class="col3"> <strong>mousepad /chemin/fichier</strong> </td>
+	</tr>
+</table></div>
+<!-- EDIT10 TABLE [4830-5201] -->
+<p>
+Ces commandes ci dessus peuvent être également lancées à partir d&#039;un <a href="../../../../terminal" class="wikilink1" title="terminal">terminal</a> pour le même résultat, et si vous voulez utiliser un éditeur dans le terminal, tapez l&#039;une de ces commandes :
+</p>
+<div class="table sectionedit11"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<td class="col0"> </td><th class="col1 centeralign">  Application  </th><th class="col2 centeralign">  Commande  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<th class="col0"> <a href="../../../../terminal" class="wikilink1" title="terminal">terminal</a> / ligne de commande </th><td class="col1 leftalign"><a href="../../../../nano" class="wikilink1" title="nano">nano</a> <br/>
+<a href="../../../../vim" class="wikilink1" title="vim">vim</a>  </td><td class="col2"><strong>nano /chemin/fichier</strong> <br/>
+<strong>vim /chemin/fichier</strong> </td>
+	</tr>
+</table></div>
+<!-- EDIT11 TABLE [5403-5550] -->
+</div>
+<!-- EDIT9 SECTION "Modifier vos fichiers" [4018-5551] -->
+<h2 class="sectionedit12" id="modifier_les_autres_fichiers">Modifier les autres fichiers</h2>
+<div class="level2">
+
+<p>
+Vous ne pouvez pas créer ou modifier directement des fichiers qui ne vous appartiennent pas (fichier système, dans un dossier système, ou d&#039;un autre utilisateur). Pour faire cela, il faut être administrateur et utiliser ce que l&#039;on appelle les <a href="../../../../sudo" class="wikilink1" title="sudo">droits d&#039;administrateur</a>.
+<p><div class="notewarning">Vous allez ouvrir et modifier des fichiers en tant qu&#039;administrateur. Vous risquez d&#039;endommager des fichiers systèmes en ne les éditant pas correctement. À n&#039;utiliser qu&#039;en cas de besoin et en prenant soin de tout vérifier plusieurs fois.
+</div></p>
+</p>
+
+<p>
+Pour créer ou modifier ces fichiers, il vous faut impérativement lancer l&#039;éditeur de fichier avec le lanceur d&#039;application en  appuyant sur <strong>ALT</strong> et <strong>F2</strong> en même temps et taper la commande lançant l&#039;environnement administrateur et le programme suivi du nom du fichier à créer ou modifier, soit:
+</p>
+<div class="table sectionedit13"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> Ubuntu / Edubuntu / Gnome </th><td class="col1"> <strong>gksudo gedit /chemin/fichier</strong> </td>
+	</tr>
+	<tr class="row1">
+		<th class="col0"> Kubuntu / KDE </th><td class="col1"> <strong>kdesudo kate /chemin/fichier</strong> </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0"> Xubuntu / xFCE </th><td class="col1"> <strong>gksudo mousepad /chemin/fichier</strong> </td>
+	</tr>
+</table></div>
+<!-- EDIT13 TABLE [6447-6621] -->
+<p>
+Il vous sera alors demandé de taper votre mot de passe pour vous identifier en tant qu&#039;administrateur.
+</p>
+
+<p>
+Ces commandes ci dessus peuvent être également lancées à partir d&#039;un <a href="../../../../terminal" class="wikilink1" title="terminal">terminal</a> pour le même résultat, et si vous voulez utiliser un éditeur dans le terminal, tapez l&#039;une de ces commandes :
+</p>
+<div class="table sectionedit14"><table class="inline">
+	<tr class="row0">
+		<th class="col0"> Terminal / ligne de commande </th><td class="col1"> <strong>sudo nano /chemin/fichier</strong> <br/>
+<strong>sudo vim /chemin/fichier</strong> </td>
+	</tr>
+</table></div>
+<!-- EDIT14 TABLE [6927-7023] --><hr />
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="../../../../utilisateurs/ner0lph" class="wikilink1" title="utilisateurs:ner0lph">Ner0lph</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/enchained" class="wikilink1" title="utilisateurs:enchained">_Enchained</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/grummfy" class="wikilink1" title="utilisateurs:grummfy">Grummfy</a>, <a href="../../../../utilisateurs/fabien26" class="wikilink1" title="utilisateurs:fabien26">Fabien26</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/yannubuntu" class="wikilink1" title="utilisateurs:yannubuntu">YannUbuntu</a>.</em>
+</p>
+
+</div>
+<!-- EDIT12 SECTION "Modifier les autres fichiers" [5552-] --><div class="footnotes">
+<div class="fn"><sup><a href="minitutos#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Une commande peut être le nom du programme, suivi ou non d&#039;un ou plusieurs paramètres</div>
+<div class="fn"><sup><a href="minitutos#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+éditeur disponible dés l&#039;installation, rangés dans le menu de votre bureau, les applications pour le <a href="../../../../terminal" class="wikilink1" title="terminal">terminal</a> sont disponibles sur tous les systèmes.</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c0a478b6108b60bb93c662c51fe8c157.xhtml used -->
+</div>
+</body>
+</html>

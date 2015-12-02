@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:creer_une_session_dediee_au_gnome-shell - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-16T13:13:29+0100"/>
+<meta name="keywords" content="karmic,lucid,gnome,gnome-shell,lightdm,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/creer_une_session_dediee_au_gnome-shell?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/creer_une_session_dediee_au_gnome-shell?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/creer_une_session_dediee_au_gnome-shell"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/creer_une_session_dediee_au_gnome-shell"/>
+<link rel="canonical" href="creer_une_session_dediee_au_gnome-shell"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:creer_une_session_dediee_au_gnome-shell","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="creer_une_session_dediee_au_gnome-shell#main" tabindex="1">Contenu</a> | <a href="creer_une_session_dediee_au_gnome-shell#qsearch__in" tabindex="2">Rechercher</a> | <a href="creer_une_session_dediee_au_gnome-shell#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="creer_une_session_dediee_au_gnome-shell" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="creer_une_session_dediee_au_gnome-shell" >tutoriel:creer_une_session_dediee_au_gnome-shell</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, les informations qu'elle contient  n'ont pas été vérifiées depuis <a href="../lucid">Ubuntu 10.04 LTS.</a><br />
+Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="creer_une_session_dediee_au_gnome-shell#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="creer_une_session_dediee_au_gnome-shell#principe_de_la_demarche">Principe de la démarche</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="creer_une_session_dediee_au_gnome-shell#rappels_sur_les_sessions">Rappels sur les &quot;sessions&quot;</a></div></li>
+<li class="level2"><div class="li"><a href="creer_une_session_dediee_au_gnome-shell#principe_general_et_position_du_probleme">Principe général et position du problème</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="creer_une_session_dediee_au_gnome-shell#premiere_etapecreer_une_session_personnalisee">Première étape : créer une session personnalisée</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="creer_une_session_dediee_au_gnome-shell#lightdm">Lightdm</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="creer_une_session_dediee_au_gnome-shell#deuxieme_etapeconfigurer_cette_session_pour_qu_elle_devienne_une_session_gnome-shell">Deuxième étape : configurer cette session pour qu&#039;elle devienne une session gnome-shell</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">Karmic</a>,
+	<a href="../lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="../gnome" class="wikilink1" title="gnome" rel="tag">gnome</a>,
+	<a href="http://doc.ubuntu-fr.org/gnome-shell" class="wikilink1" title="gnome-shell" rel="tag">gnome-shell</a>,
+	<a href="../lightdm" class="wikilink1" title="lightdm" rel="tag">lightdm</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+
+<h1 class="sectionedit1" id="comment_faire_cohabiter_gnome-shell_et_gnome_230">Comment faire cohabiter gnome-shell et gnome 2.30.</h1>
+<div class="level1">
+
+<p>
+Ce tutoriel décrit une solution permettant de créer une session X dédiée au gnome-shell. Cela permet de garder la session gnome 2.3 &quot;classique&quot; en plus du gnome-shell : comme lorsque l&#039;on choisit kde à la place de gnome!
+</p>
+
+<p>
+Ce tutoriel s&#039;adresse tout particulièrement aux utilisateurs désireux de faire de gnome-shell leur interface par défaut mais qui, en cas de bug, peuvent revenir à tout moment à la session d&#039;origine sans rien avoir à modifier dans les applications au démarrage… (ou autre méthode pour lancer le gnome-shell).
+</p>
+
+<p>
+<p><div class="noteclassic">La démarche expliquée ici est similaire à celle visant à <a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau" class="wikilink1" title="tutoriel:faire_cohabiter_plusieurs_gestionnaires_de_bureau">avoir plusieurs gestionnaires de bureaux</a> et en propose une extension dans le seul gestionnaire qu&#039;est gnome.
+</div></p>
+</p>
+
+<p>
+<p><div class="notewarning">Attention! Cette démarche fait  intervenir des fichiers systèmes. Les risques sont modérés (juste ajout de nouveaux fichiers), cependant une erreur de manipulation pourrait poser des problèmes.
+</div></p>
+<p><div class="noteclassic">Installer le paquet gnome3-session et vous pourrez choisir &quot;Gnome 3&quot; dans Lightdm sans rien faire de plus
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="creer_une_session_dediee_au_gnome-shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426508009" /><input type="hidden" name="summary" value="[Comment faire cohabiter gnome-shell et gnome 2.30.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="58-1255" /><input type="submit" value="Modifier" class="button" title="Comment faire cohabiter gnome-shell et gnome 2.30." /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="../sudo" class="wikilink1" title="sudo">Disposer des droits d&#039;administration</a>.</div>
+</li>
+<li class="level1"><div class="li"> Avoir installé le gestionnaire de fenêtres <a href="http://doc.ubuntu-fr.org/gnome-shell" class="wikilink1" title="gnome-shell">gnome-shell</a> (connexion internet nécessaire) pleinement opérationnel.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="creer_une_session_dediee_au_gnome-shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426508009" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1256-1457" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="principe_de_la_demarche">Principe de la démarche</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteclassic">Si vous voulez vous passer d&#039;explications allez directement à la section &quot;ligne de commande&quot; de ce tutoriel.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="creer_une_session_dediee_au_gnome-shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426508009" /><input type="hidden" name="summary" value="[Principe de la démarche] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1458-1617" /><input type="submit" value="Modifier" class="button" title="Principe de la démarche" /></div></form></div>
+<h3 class="sectionedit4" id="rappels_sur_les_sessions">Rappels sur les &quot;sessions&quot;</h3>
+<div class="level3">
+
+<p>
+On appelle ici une &quot;session&quot; un ensemble de choses qui sont plus ou moins solidaires et qui constituent a peu près ce qu&#039;on nommerait l&#039;interface (définition hasardeuse!) : Gnome, KDE sont par exemple des noms que l&#039;on peut donner à une session. Chaque session a un gestionnaire de fenêtres défini, un ensemble de logiciels qui démarrent en même temps qu&#039;elle…
+<p><div class="noteclassic">Attention à ne pas confondre le mot session utilisé ici avec celui servant à désigner un compte utilisateur (sens utilisé sous windows notamment).
+</div></p>
+En pratique une session n&#039;est qu&#039;un script shell (un peu spécial) qui se situe dans le dossier /usr/share/xsessions. Si vous l&#039;ouvrez avec gedit vous verrez qu&#039;il n&#039;y a pratiquement rien (en général)! La gestionnaire de connexion (le programme qui vous invite à donner vous login et mot de passe juste après le démarrage) se contente (presque) en fait de lancer un de ces scripts.
+<p><div class="noteimportant">Attention à ne pas ouvrir avec nautilus une de ces fameuses sessions! Ouvrir ces fichiers .desktop &quot;éxécute&quot; simplement la session : vous aller vous retrouver avec un enchevêtrement de sessions!.
+</div></p>
+Voici par exemple la session par défaut de gnome : 
+</p>
+<pre class="code">[Desktop Entry]
+Name=GNOME-SHELL
+Comment=Vous démarrez avec le GNOME-SHELL
+Exec=gnome-session
+TryExec=gnome-session
+Icon=
+Type=Application
+X-Ubuntu-Gettext-Domain=gnome-session-2.0</pre>
+
+<p>
+On remarque que la seule &quot;réelle&quot; commande est de lancer la &quot;gnome-session&quot;. Ensuite c&#039;est cette commande &quot;gnome-session&quot; qui s&#039;occupe du reste.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="creer_une_session_dediee_au_gnome-shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426508009" /><input type="hidden" name="summary" value="[Rappels sur les sessions] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1618-3198" /><input type="submit" value="Modifier" class="button" title="Rappels sur les sessions" /></div></form></div>
+<h3 class="sectionedit5" id="principe_general_et_position_du_probleme">Principe général et position du problème</h3>
+<div class="level3">
+
+<p>
+Grâce à ce tutoriel, vous serez en mesure de créer une session supplémentaire qui lancera le gnome-shell!
+Comme on vient de le voir, pour lancer une session, il suffit presque d&#039;une seule commande, commande qui se charge de lancer différents logiciels, gestionnaires de fenêtres…etc qui sont caractéristiques de chaque session. 
+Ainsi l&#039;utilisateur intelligent se demande en quoi un &quot;problème&quot; est mentionné dans le titre puisqu&#039;il suffit de se faire une commande personnalisée qui lance le gnome-shell…
+Cependant ce problème existe vraiment : Dans le cas de KDE (par exemple), il suffit de créer un nouveau script qui lancera la session  KDE. Cependant ici notre script lancera toujours une session gnome! Il faut donc trouver un moyen pour que le &quot;gnome-session&quot; &quot;différencie&quot; la session par défaut et la session que l&#039;on va créer.
+La solution se trouve grâce à la puissance de gnome : &quot;gnome-session&quot; est capable de se doter de paramètres particuliers en fonction du nom de la session qui l&#039;a lancé!
+</p>
+
+<p>
+La démarche se constitue donc en deux étapes simples :
+</p>
+<ul>
+<li class="level1"><div class="li"> Créer une session gnome personnalisée</div>
+</li>
+<li class="level1"><div class="li"> Ajuster les paramètres de la session gnome pour que gnome-shell devienne le gestionnaire de fenêtres par défaut.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="creer_une_session_dediee_au_gnome-shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426508009" /><input type="hidden" name="summary" value="[Principe général et position du problème] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3199-4504" /><input type="submit" value="Modifier" class="button" title="Principe général et position du problème" /></div></form></div>
+<h2 class="sectionedit6" id="premiere_etapecreer_une_session_personnalisee">Première étape : créer une session personnalisée</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="creer_une_session_dediee_au_gnome-shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426508009" /><input type="hidden" name="summary" value="[Première étape : créer une session personnalisée] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4505-4571" /><input type="submit" value="Modifier" class="button" title="Première étape : créer une session personnalisée" /></div></form></div>
+<h3 class="sectionedit7" id="lightdm">Lightdm</h3>
+<div class="level3">
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> ceci étant écrit pour gdm au départ il n&#039;est plus valable pour Lightdm.<br/>
+
+<a href="../lightdm" class="wikilink1" title="lightdm">LightDm</a> (gnome display manager) est l&#039;écran de connexion par défaut d&#039;Ubuntu. Cette rubrique se destine donc à tous les utilisateurs ayant directement installé Ubuntu ( et non kubuntu, xubuntu…). 
+</p>
+
+</div>
+
+<h4 id="de_maniere_graphique_avec_nautilus_et_gedit">De manière graphique avec nautilus et gedit</h4>
+<div class="level4">
+
+</div>
+
+<h4 id="en_ligne_de_commande">En ligne de commande</h4>
+<div class="level4">
+
+<p>
+Ouvrez un terminal et exécutez les commandes suivantes :
+</p>
+<pre class="code">cd /usr/share/xsessions
+sudo cp gnome.desktop nom_de_votre_session.desktop</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="creer_une_session_dediee_au_gnome-shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426508009" /><input type="hidden" name="summary" value="[Lightdm] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4572-5112" /><input type="submit" value="Modifier" class="button" title="Lightdm" /></div></form></div>
+<h2 class="sectionedit8" id="deuxieme_etapeconfigurer_cette_session_pour_qu_elle_devienne_une_session_gnome-shell">Deuxième étape : configurer cette session pour qu&#039;elle devienne une session gnome-shell</h2>
+<div class="level2">
+
+<p>
+Cette étape est des plus simples : il s&#039;agit de lancer automatiquement au démarrage de notre session une commande qui lance le gnome-shell.
+La commande la plus simple reste encore : 
+</p>
+<pre class="code">gnome-shell --replace</pre>
+
+<p>
+<p><div class="notetip">Cette commande, bien que la plus simple pour lancer le gnome-shell, a ses défauts : compiz (ou autre) démarre puis est tué pour laisser la place à gnome-shell.
+</p>
+
+<p>
+Une autre solution serait de modifier <a href="../gconf" class="wikilink1" title="gconf">l&#039;éditeur de configuration gconf</a> mais qui s&#039;avère un peu plus complexe.
+(En effet, Gnome-shell ne se limite pas à être une gestionnaire de fenêtres… contrairement à compiz, on ne peut donc pas se contenter de remplacer &quot;compiz&quot; par &quot;gnome-shell&quot; dans gconf!
+</div></p>
+</p>
+
+<p>
+Il faut donc que cette session gnome-shell ait cette commande en autostart.
+Pour ce faire, il suffit de créer un script shell contenant la commande désirée et le mettre dans le dossier /etc/xdg/xdg-&lt;nom_de_votre_session&gt;/autostart
+</p>
+
+<p>
+Ouvrez gedit en mode administrateur (Applications/Accessoires/terminal et tapez &quot;sudo gedit&quot;) et collez ce qui suit : 
+</p>
+<pre class="code">[Desktop Entry]
+Type=Application
+Name=GNOME Shell
+Comment=Window management and application launching
+Exec=/usr/bin/gnome-shell
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gnome-shell
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=2.28.1
+Categories=GNOME;GTK;Utility;Core;
+OnlyShowIn=GNOME;
+NoDisplay=true
+X-GNOME-Autostart-Phase=WindowManager
+X-GNOME-Provides=panel;windowmanager;
+X-GNOME-Autostart-Notify=true
+X-Ubuntu-Gettext-Domain=gnome-shell</pre>
+
+<p>
+Ensuite vous faites &quot;fichier/enregistrer sous&quot; et enregistrez ce fichier avec l&#039;extension .desktop dans le dossier /etc/xdg/xdg-nom_de_votre_session/autostart
+</p>
+
+<p>
+<p><div class="notehelp">Si vous recherchez un moyen rapide de créer le fichier .desktop contenant la commande désirée, vous pouvez tout simplement le créer à l&#039;aide des &quot;applications au démarrage&quot; (Système/Préférences/Applications au démarrage).
+Vous faites &quot;ajouter&quot;, donnez le nom que vous voulez et tapez &quot;gnome-shell -r&quot; dans l&#039;espace réservé à la commande.
+Ensuite un fichier tel que celui que vous recherchez apparaîtra dans : etc/xdg/autostart. Il ne reste plus qu&#039;à faire un &quot;couper-coller&quot; dans le dossier qui nous intéresse. (Attention à bien couper et non copier!)
+
+</div></p>
+</p>
+
+<p>
+Voilà, c&#039;est fini !
+Il ne vous reste maintenant qu&#039;à vous déconnecter (ou redémarrer) et choisir votre session gnome-shell! (en bas)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="creer_une_session_dediee_au_gnome-shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426508009" /><input type="hidden" name="summary" value="[Deuxième étape : configurer cette session pour qu'elle devienne une session gnome-shell] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5113-" /><input type="submit" value="Modifier" class="button" title="Deuxième étape : configurer cette session pour qu'elle devienne une session gnome-shell" /></div></form></div>
+<!-- no cachefile used, but created /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/b/b5a420ffb8d0f1a5a59d9f41d2e304a8.xhtml -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_une_session_dediee_au_gnome-shell?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_une_session_dediee_au_gnome-shell?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_une_session_dediee_au_gnome-shell?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_une_session_dediee_au_gnome-shell?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_une_session_dediee_au_gnome-shell?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,265 @@
+{{tag>système optimisation énergie}}
+
+----
+
+====== La gestion de l'énergie sous Ubuntu ======
+
+
+Vous trouverez sur cette page un maximum d'astuces pour faire diminuer la consommation de votre ordinateur, que ce soit un serveur, un ordinateur de bureau ou un [[:portable]].
+
+===== Réglages de base =====
+
+On peut diminuer la consommation d'énergie en :
+  * Modifiant les préférences du gestionnaire d'énergie via le menu //Système -> Préférences -> Gestionnaire d'énergie//
+  * Exploitant le(s) bon(s) pilote(s) pour sa(ses) [[carte_graphique|carte(s) graphique(s)]] (en particulier pour les PC portables avec graphique hybride).
+  * Désinstallant les paquetages correspondant à des [[:services]] inutiles (on évite de rechercher le fichier de configuration et éventuellement d'en lire le contenu)
+  * Désactivant des [[:services]] inutiles (dont les paquetages ne peuvent être désinstallés)
+  * <del>Forçant l'activation du mode [[http://en.wikipedia.org/wiki/ASPM|ASPM]] (en) pour les cartes et bus PCI-E depuis Ubuntu 11.04. Voir [[https://bugs.launchpad.net/ubuntu/+source/linux/+bug/760131|ce bug]] (en) : ajouter le paramètre **pcie_aspm=force** au paramètre [[http://doc.ubuntu-fr.org/grub-pc#etcdefaultgrub_options_par_defaut|GRUB_CMDLINE_LINUX_DEFAULT de grub]]. Par exemple si vous avez GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”, ajoutez **pcie_aspm=force** à la fin de la ligne (précédé d’un espace) soit: **GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash pcie_aspm=force”**. A tester sur les configurations récentes, peut faire gagner plus de 20% d'autonomie!</del>
+  * Désactivant la compression lors de la rotation des fichiers journaux réalisée par [[:logrotate]]
+  * Configurant un format de date plus court dans /etc/[[rsyslog.conf]]
+  * Utilisant l'écran vide comme économiseur d'écran
+==== Sous KDE (Kubuntu) ====
+
+Kde propose des services assez gourmands en ressources qui peuvent être facilement désactivés, voir ici: [[tutoriel:accelerer_kde|Optimiser KDE pour les ordinateurs portables]].
+
+=== Corriger certains bugs concernant l'indicateur de batterie (Testé sous KDE et Ubuntu 13.04) ===
+
+SI l'indicateur de batterie ne fonctionne pas ou mal, la barre de status n'affiche pas le pourcentage de la batterie, ou celui-ci ne change jamais de taux, restant comme figé,
+si la recharge ne semble pas fonctionner, n'est pas prise en compte:
+
+Assurez-vous que votre ordinateur est bien éteint et la prise d'alimentation débranchée.
+
+<note important> Problème: il est déconseillé de bouger un ordinateur en fonctionnement notamment pour ne pas abîmer le disque dur qui est en fonctionnement.
+Les disques durs de type SSD utilisant de la mémoire flash ne sont pas concernés par ce problème.
+
+Pour le résoudre s'assurer de positionner l'ordinateur de telle façon qu'on puisse reclipser la batterie 
+sans avoir à bouger énormément l'ordinateur et en le maintenant toujours droit à l'aide d'une surface plane.
+Par exemple en déconnectant légèrement la batterie sans l'enlever complètement pour n'avoir ensuite qu'à pousser légèrement (et donc clipser la batterie).
+
+Agissez avec précautions en veillant à maintenir l'ordinateur portable bien droit posé sur une surface plane en se servant par exemple du rebord d'une table pour accéder à la batterie en positionnant l'ordinateur dans le sens contraire et en tirant légèrement vers soi pour accéder facilement à la batterie.</note>
+
+L'astuce va consister à déconnecter la batterie et redémarrer l'ordinateur sur secteur puis
+une fois que la session est ouverte et que l'indicateur de batterie affiche une croix rouge (batterie absente),
+rebrancher la batterie (en laissant toujours l'alimentation sur secteur) et attendre quelques instants.
+L'indicateur de batterie devrait se réinitialiser et ainsi aux prochains redémarrages le problème aura disparu.
+
+Pour le vérifier il suffit alors de noter le taux affiché (par exemple 10%) , puis un peu plus tard (5 minutes par exemple), noter à nouveau le taux affiché (par exemple 25%),
+indiquant que le problème a disparu.
+
+
+
+
+
+=====Personnaliser l'extinction=====
+====supprimer la  boite de dialogue de confirmation====
+Par défaut Ubuntu propose une boite de dialogue de confirmation lorsque l'on choisit éteindre dans le menu.
+Pour la supprimer, installer **[[apt>dconf-tools]]**
+Puis lancer dconf Editor
+Aller dans apps>indicator-session et cocher la clé  suppress-logout-restart-shutdown 
+====Forcer l'extinction par appui du bouton power====
+Par défaut, une boîte de dialogue demande l'action à effectuer lorsque l'on appuie sur le bouton power de l'ordinateur. On peut toutefois modifier cette action, mais cela est moins trivial sous Unity que sous Gnome 2 : 
+On va modifier l'action déclenchée par l'appui du bouton dans la procédure qui est appelée.
+Dans un terminal, taper :
+  sudo gedit /etc/acpi/events/powerbtn
+Le fichier s'ouvre et on va ajouter # pour commenter (rendre inactive) la ligne : #action=/etc/acpi/powerbtn.sh
+
+Ajouter une nouvelle ligne : action=/sbin/poweroff
+
+Sauver le fichier et quitter.
+
+Toujours dans le terminal taper :  
+  sudo acpid restart
+<note help> Cette manipulation seule fonctionne sur la plupart des ordinateurs. Mais pour certains ordinateurs, comme le portable HP Pavillon dm1 cela provoque un freeze ; précisement lors de l'affichage du logo Ubuntu au premier point rouge.
+Pour cela il suffit de rallumer le swap par la commande : 
+<code>sudo swapon -a</code>
+</note>
+===== Outils =====
+
+  * **[[:Eee-control]]**, recommandé pour [[:asus_eee_pc|Eee PC]] ;
+  * **[[http://sourceforge.net/projects/eeepc-acpi-util/files/|EeePC ACPI Utilies]]** ;
+  * **[[http://sourceforge.net/projects/eee-applet/|Eee-applet]]** (disponible dans les dépôts) ;
+  * **Eee PC ACPI script** (disponible dans les dépôts) ;
+  * **[[:Acer ACPI]]**, pour les [[:liste_portables_acer|portables Acer]] ;
+  * **[[http://www.buzzard.me.uk/toshiba/|Toshutils]]**, pour les [[:liste_portables_toshiba|portables Toshiba]], (disponible dans les dépôts) ; pas de mise à jour depuis 2002 ;
+  * **Toshset**, recommandé pour les [[:liste_portables_toshiba|portables Toshiba]] (disponible dans les dépôts) ;
+  * **FNFXD**, recommandé pour les [[:liste_portables_toshiba|portables Toshiba]] (disponible dans les dépôts) ;
+
+Il existe d'autres outils et d'autres solutions plus générales :
+
+  * **[[:PowerTOP]]** pour la gestion des processeurs Intel ;
+  * **[[:ATHcool]]** pour la gestion des processeurs AMD ;
+  * **Cpufreqd**, pour la modification de fréquence de processeur (disponible dans les dépôts) ;
+  * **Powernowd**, pour la modification de fréquence de processeur (disponible dans les dépôts) ;
+  * **[[:CPU-frequtils]]**, pour la modification de fréquence de processeur (disponible dans les dépôts) ;
+  * **[[:laptop-mode-tools|Laptop mode tools]]**, gestion de l'énergie ;
+  * **[[:battery-status|Battery Status]]**, ajoute l'affichage du pourcentage d'énergie (qui n'est plus affiché sous Lucid) et la [[:energie#processeur_et_ventilateur|manipulation des fréquences du processeur]].
+  * **[[:Jupiter]]** pour la gestion d'énergie sur ordinateur portable en général, et plus particulièrement les [[:asus_eee_pc|Eee PC]] ;
+  * **[[http://sourceforge.net/projects/undervolt/|undervolt]]**, pour la modification des tensions d'alimentation des CPU de type AMD Brazos.
+  * **[[http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html|TLP]]** [[TLP]] vous apporte les bénéfices de la gestion avancée de l'alimentation sans avoir besoin de connaître tous les détails techniques.
+
+
+===== Processeur et ventilateur =====
+==== Fréquence du processeur en fonction de l'état batterie/secteur ====
+Pour étendre l'autonomie de la batterie, le gestionnaire de fréquence peut être choisi en fonction du branchement ou non de la batterie sur le secteur.
+D'abord, il faut installer le paquet qui contient les modules "conservative" et "powersave" :
+<code>
+sudo apt-get install cpufrequtils
+</code>
+Ensuite, il faut créer une règle qui réagit au changement de mode d'alimentation dans /etc/pm/power.d/cpufreq_governor :
+<code>
+#!/bin/sh
+case $1 in
+    true) # mode batterie
+        cpufreq-set -g conservative -d 1
+        # or more agressive :
+        # cpufreq-set -g powersave
+	;;
+    false) # mode secteur
+        cpufreq-set -g ondemand
+	;;
+    *) exit $NA ;;
+esac
+exit 0
+</code>
+==== Fréquence du processeur ====
+
+Pour cela, il suffit d'autoriser un utilisateur normal à changer la fréquence du processeur :
+
+   sudo dpkg-reconfigure gnome-applets
+
+On peut ajouter l'applet au tableau de bord en effectuant un clic droit sur le tableau de bord, puis :
+  - Ajouter au tableau de bord
+  - Système et matériel
+  - Moniteur de fréquence du processeur
+  - Ajouter
+
+L'avantage des gouverneurs est que vous pouvez fixer par exemple :
+
+  * ondemand : fréquence variable (par défaut), selon l'utilisation de la machine
+  * performance : fréquence CPU au maximum (jeux, gros calculs, compilations)
+  * powersave : fréquence CPU au minimum (économie d'énergie)
+
+Pour plus d'informations : [[:cpu-frequtils]]
+
+Si vous avez un ordinateur sur lequel cette manipulation ne fonctionne pas (par exemple plus ancien), vous pouvez essayer ce qui est indiqué sur cette page :
+ http://forum.ubuntu-fr.org/viewtopic.php?id=39565
+Mais cela est une manipulation peu recommandable car sans intérêt notable pour la température ou l'autonomie.
+
+==== Baisser la tension du processeur ====
+
+Voir la page : [[undervolting]]
+
+==== Contrôler le Ventilateur ====
+
+<note important>**En réduisant la vitesse du ventilateur, vous favorisez la surchauffe du micro-processeur, ce qui risque fortement de le détruire!! Vous utilisez ce logiciel a vos risques et périls!**</note>
+
+Voir la page : [[:lm-sensors]]
+
+
+===== Carte Wi-Fi =====
+
+Pour activer le mode 'gestion d'énergie automatique' (moyen), [[:tutoriel:comment_modifier_un_fichier|éditez le fichier]] **''/etc/network/interfaces''**, et  rajoutez, sous la ligne de votre carte Wifi (généralement eth1 ou wlan0), la ligne suivante :
+
+   wireless-power on 
+
+Redémarrez ou faites :
+  sudo /etc/init.d/networking restart  
+
+Vérifiez à l'aide de la commande iwconfig eth1 (ou wlan0) => 'Power management' doit être à 'on'.
+
+<note>Ne fonctionne pas avec toutes les cartes Wi-Fi
+Pour les cartes Atheros (ainsi que toutes les autres en principe) il faut désactiver le module qui gère la carte (ath_pci pourra être remplacé par un autre module): 
+<code>sudo rmmod ath_pci</code></note>
+<note>Comment fait-on avec Network Manager ? (le fichier interfaces n'est plus utilisé) </note>
+
+Il faut taper :
+
+  sudo iwconfig interface power on 
+
+pour activer la gestion d'énergie :
+
+(ou  "sudo iwconfig wlan0 power on")
+
+
+===== Logiciel =====
+
+Pour que Firefox place son cache dans le répertoire /tmp (mémoire vive). Taper about:config dans Firefox et créer une nouvelle chaîne de caractères que vous nommerez browser.cache.disk.parent_directory et entrez dans la case /tmp. 
+Moins d'accès disque donc moins de consommation.
+===== Carte Graphique =====
+
+==== ATI/AMD ====
+
+Avec le pilote libre propriétaire fglrx : voir [[:aticonfig|les options pour bien configurer votre ATI]] (Catégorie Powerplay options)
+
+Avec le pilote libre radeon :
+  * **Dynamic Power Management (DPM)** pour Linux 3.11 et supérieur, avec les cartes AMD série HD2000 et supérieur [[http://www.botchco.com/agd5f/?p=57|infos ici (en)]] : activé par défaut dès Linux 3.12.
+  * **dynamic clock switching** pour le reste : [[http://www.overclock.net/t/731469/how-to-power-saving-with-the-radeon-driver|infos ici (en)]]
+
+==== nVidia ====
+
+Changer fréquence horloge, gérer les ventilateurs ... : [[:nvclock]]
+Pour les gpu plus recent voir [[http://forum.ubuntu-fr.org/viewtopic.php?id=1589261|Nvidiux]]
+===== Écran =====
+
+Dans certains cas, le rétro-éclairage de l'écran n'est pas coupé alors qu'il n'y a plus aucune image envoyée (écran noir). Cela est gênant par exemple lorsqu'on utilise un ordinateur portable en temps que serveur.
+
+Pour couper le rétro éclairage :
+  * si aucune session graphique n'est démarrée, utiliser une des commandes suivantes (la second si la première ne fonctionne pas) : <code>
+sudo vbetool dpms off
+sudo vbetool dpms standby
+</code>
+  * si une session graphique est démarrée, préférer xset qui rallumera l'écran lorsque vous bougerez la souris : <code>
+xset dpms force off
+xset dpms standby
+</code>
+===== Périphériques USB, PCMCIA  =====
+
+Couper alimentation du lecteur PCMCIA (A tester) : 
+    cardctl suspend
+Pour le réalimenter :
+    cardctl resume
+
+
+Plus généralement, je pense que si on décharge le module correspondant au périphérique ça suffit :
+    modprobe -r nom_du_module
+
+
+===== Disque Dur =====
+
+Voir [[gnome-disk-utility#gestion_d_energie|Disques]].
+===== Batterie =====
+
+Par défaut, Ubuntu lance une hibernation de l'ordinateur portable quand la batterie est à un niveau de charge exprimé en minutes. Cela peut correspondre à un niveau très différent suivant les ordinateurs. 
+On peut souhaiter changer ce niveau, le voir exprimé en pourcentage, changer l'action à effectuer. Ces modifications se font sur [[gconf|gconf]].
+pour cela : alt-f2 et gconf-editor (et pour Xubuntu?)
+
+  * pour expression en pourcentage : désactiver use_time_for_policy dans apps/gnome-power-manager/general
+  * mettre le % et l'action (suspend par exemple) dans apps/gnome-power-manager/thresholds
+
+À partir de **Ubuntu 12.04** (et probablement 11.10 mais c'est à tester) ces options sont à gérer non plus avec gconf mais avec [[dconf-tools|dconf]]. Pour les faire il faut installer le paquet dconf-editor puis le lancer en faisant Alt+F2 puis dconf-editor. la clef à modifier est toujous use_time_for_policy mais se situe dans : org.gnome.settings-daemon.plugins.power.
+
+<note tip>
+Ce paramétrage est notamment très utile pour éviter de passer en hibernation lorsqu'on débranche le câble d'alimentation secteur et que la batterie est pourtant à 100%. Gnome Power Manager calcule mal le temps restant (1 minute) et prend la décision d'hiberner la machine. En utilisant l'expression en pourcentage, le temps restant (affiché lors de la déconnexion du câble d'alimentation) reste faux mais la machine ne s'éteint pas !</note>
+
+<note tip>Pas valable avec Ubuntu 11.10</note>
+===== Onduleurs =====
+
+Si votre ordinateur est connecté à un onduleur (ou alimentation sans interruption((en anglais UPS)) ) il est intéressant de le superviser.
+Cela permet, entre autre chose, d'éteindre proprement l'ordinateur si le courant ne revient pas et que la batterie de l'onduleur atteint un seuil critique.
+  * La plupart des onduleurs sont reconnus par le logiciel [[:nut|NUT (Network UPS Tool)]].
+  * Les onduleurs de marque EATON ou MGE peuvent être supervisés par le logiciel [[:onduleur_mge_ups_systems_psp|MGE Office Protection System : Personal Solution Pack]].
+
+
+===== Voir aussi =====
+
+  * Moins de Watts consommé par le PC portable : http://www.lesswatts.org/ (en) : site dédié aux plateformes Intel.
+  * Discussion sur le forum ubuntu-fr: http://forum.ubuntu-fr.org/viewtopic.php?id=43463
+
+
+===== Pages en rapport =====
+
+{{topic>énergie}}
+
+----
+
+//Contributeurs : [[utilisateurs:Id2ndR]], [[utilisateurs:Percherie]]//

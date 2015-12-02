@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>souris_a4tech_cordless</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2009-11-25T12:59:19+0100"/>
+<meta name="keywords" content="breezy,dapper,edgy,feisty,materiel,souris,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/souris_a4tech_cordless?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="souris_a4tech_cordless"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/souris_a4tech_cordless"/>
+<link rel="canonical" href="../../souris_a4tech_cordless"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"souris_a4tech_cordless","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="souris_a4tech_cordless#modifier_la_configuration_de_x">Modifier la configuration de X</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="souris_a4tech_cordless#xorgconf">xorg.conf</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="souris_a4tech_cordless#imwheel">imwheel</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="souris_a4tech_cordless#installation">Installation</a></div></li>
+<li class="level2"><div class="li"><a href="souris_a4tech_cordless#configuration">Configuration</a></div></li>
+<li class="level2"><div class="li"><a href="souris_a4tech_cordless#configuration_de_imwheelrc">Configuration de .imwheelrc</a></div></li>
+<li class="level2"><div class="li"><a href="souris_a4tech_cordless#la_configuration_pour_tous">La configuration pour tous</a></div></li>
+<li class="level2"><div class="li"><a href="souris_a4tech_cordless#comment_ca_marche">Comment ça marche ?</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="souris_a4tech_cordless#pour_feisty">Pour Feisty</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="souris_a4tech_cordless#modification_de_xorgconf">Modification de xorg.conf</a></div></li>
+<li class="level2"><div class="li"><a href="souris_a4tech_cordless#configuration_de_imwheel">Configuration de imwheel</a></div></li>
+<li class="level2"><div class="li"><a href="souris_a4tech_cordless#configuration_de_imwheelrc1">Configuration de imwheelrc</a></div></li>
+<li class="level2"><div class="li"><a href="souris_a4tech_cordless#creation_d_un_script_utilisant_xmodmap">Création d&#039;un script utilisant xmodmap</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="souris_a4tech_cordless#pour_aller_plus_loin">Pour aller plus loin</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../breezy" class="wikilink1" title="breezy" rel="tag">Breezy</a>,
+	<a href="../../dapper" class="wikilink1" title="dapper" rel="tag">Dapper</a>,
+	<a href="http://doc.ubuntu-fr.org/edgy" class="wikilink1" title="edgy" rel="tag">Edgy</a>,
+	<a href="../../feisty" class="wikilink1" title="feisty" rel="tag">Feisty</a>,
+	<a href="../../materiel" class="wikilink1" title="materiel" rel="tag">matériel</a>,
+	<a href="../../souris" class="wikilink1" title="souris" rel="tag">souris</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="sourisa4_tech_cordless">Souris : A4 Tech Cordless</h1>
+<div class="level1">
+<blockquote><div class="no">
+ <img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Vérifier la validité des informations de cette page. — <em><a href="../../utilisateurs/ner0lph" class="wikilink1" title="utilisateurs:ner0lph">Ner0lph</a> Le 25/11/2009, 12:53</em></div></blockquote>
+
+<p>
+<em>Comment configurer une souris A4 Tech Cordless (ou toute autre souris compatible)</em>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Souris : A4 Tech Cordless" [69-323] -->
+<h2 class="sectionedit2" id="modifier_la_configuration_de_x">Modifier la configuration de X</h2>
+<div class="level2">
+
+<p>
+Pour débuter, il faut <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">modifier le fichier</a> de configuration de X, ce qui n&#039;est pas une mince affaire pour le débutant. Nous allons pour simplifier grandement la tâche.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Modifier la configuration de X" [324-580] -->
+<h3 class="sectionedit3" id="xorgconf">xorg.conf</h3>
+<div class="level3">
+<blockquote><div class="no">
+ <img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Dans les versions récentes d&#039;Ubuntu, ce fichier n&#039;est plus nécessaire (car les paramètres sont déterminés à la volée au démarrage), sauf configuration spécifique. Merci d&#039;y ajouter plus de détails concernant cela. — <em><a href="../../utilisateurs/ner0lph" class="wikilink1" title="utilisateurs:ner0lph">Ner0lph</a> Le 25/11/2009, 12:47</em></div></blockquote>
+
+<p>
+Ce fichier xorg.conf regroupe les paramètres vitaux de votre interface graphique. Si vous prenez le soin de visiter, vous trouverez les paramètres de votre écran, votre carte graphique, de votre clavier et du sujet qui nous intéresse : la souris.
+</p>
+
+<p>
+<a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Ouvrez le fichier</a> <strong>/etc/X11/xorg.conf</strong> et modifier comme ceci :
+</p>
+<pre class="code">Section &quot;InputDevice&quot;
+    Identifier     &quot;Configured Mouse&quot;
+    Driver         &quot;mouse&quot;    
+    Option         &quot;CorePointer&quot;
+    Option         &quot;Device&quot; &quot;/dev/input/mice&quot;
+    Option         &quot;Protocol&quot; &quot;ExplorerPS/2&quot;
+    Option         &quot;Emulate3Buttons&quot; &quot;false&quot;
+    Option         &quot;Buttons&quot; &quot;7&quot;
+    Option         &quot;ZAxisMapping&quot; &quot;4 5&quot;
+EndSection</pre>
+
+<p>
+À ce stade, les boutons latéraux fonctionnent avec Firefox ce qui la plupart du temps est suffisant. Maintenant, si vous voulez aller plus loin, il faut lire la suite.
+</p>
+
+<p>
+Dans Firefox, les fonctions qui permettent de revenir en arrière avec les boutons latéraux, fermer un onglet avec le bouton du milieu ne marchent que si la valeur  <code>middlemouse.contentLoadURL</code> est sur <code>False</code> dans about:config.
+</p>
+<ul>
+<li class="level1"><div class="li"> Lancez Firefox puis dans la barre d&#039;adresse tapez « about:config ».</div>
+</li>
+<li class="level1"><div class="li"> Cherchez la clé <code>middlemouse.contentLoadURL</code> et donnez la valeur <code>False</code>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "xorg.conf" [581-2183] -->
+<h2 class="sectionedit4" id="imwheel">imwheel</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT4 SECTION "imwheel" [2184-2204] -->
+<h3 class="sectionedit5" id="installation">Installation</h3>
+<div class="level3">
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://imwheel" class="urlextern" title="apt://imwheel"  rel="nofollow">imwheel</a></strong>.
+</p>
+
+<p>
+Il est préférable ensuite de sauvegarder l&#039;original du fichier de configuration imwheel :
+</p>
+<pre class="code">sudo cp /etc/X11/imwheel/startup.conf /etc/X11/imwheel/startup.conf.bak</pre>
+
+</div>
+<!-- EDIT5 SECTION "Installation" [2205-2502] -->
+<h3 class="sectionedit6" id="configuration">Configuration</h3>
+<div class="level3">
+
+<p>
+Lancez la commande suivante
+</p>
+<pre class="code">sudo gedit /etc/X11/imwheel/startup.conf</pre>
+
+<p>
+Trouvez la ligne 
+</p>
+<pre class="code">IMWHEEL_START=0</pre>
+
+<p>
+Et la modifier comme ceci
+</p>
+<pre class="code">IMWHEEL_START=1</pre>
+
+<p>
+Décommenter la ligne :
+</p>
+<pre class="code">IMWHEEL_PARAMS=&#039;-k -b &quot;0 0 9 8&quot;&#039;</pre>
+
+<p>
+Ctrl + Alt + Backspace pour redémarrer le serveur X. Il ne vous reste qu&#039;a créer le fichier .imwhellrc, comme montré ci dessous. A la suite de cette étape la configuration pour les utilisateurs de Edgy est terminée.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Configuration" [2503-3009] -->
+<h3 class="sectionedit7" id="configuration_de_imwheelrc">Configuration de .imwheelrc</h3>
+<div class="level3">
+
+<p>
+<a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Créez un fichier</a> <strong>.imwheelrc</strong> dans votre répertoire personnel.
+</p>
+
+</div>
+
+<h4 id="un_fichier_passe_partout">Un fichier passe partout</h4>
+<div class="level4">
+
+<p>
+et tapez ce texte pour une configuration gnome ou kde :
+</p>
+<pre class="code"> &quot;.*&quot;
+ None, Up, Alt_L|Left
+ None, Down, Alt_L|Right
+  
+ &quot;(null)&quot;
+ None, Up, Alt_L|Left
+ None, Down, Alt_L|Right</pre>
+
+</div>
+
+<h4 id="un_fichier_pour_gnome">Un fichier pour Gnome</h4>
+<div class="level4">
+
+<p>
+Le fichier imwheelrc spécifique à Gnome à vous de choisir ;) :
+</p>
+<pre class="code">&quot;^Firefox-bin$&quot;
+# Flip between browser tabs
+None, Up, Alt_L|Left
+None, Down, Alt_L|Right
+
+&quot;Nautilus&quot;
+# suivant/precedent
+None, Left, Alt_L|Left
+None, Right, Alt_L|Right
+# Zoom
+Control_L, Up, Control_L|KP_Subtract
+Control_L, Down, Control_L|KP_Add
+
+#Navigue entre les onglets du terminal
+&quot;^gnome-terminal&quot;
+None, Up, Control_L|Page_Up
+None, Down, Control_L|Page_Down
+
+&quot;Rhythmbox&quot;
+None, Up, Alt_L|Left
+None, Down, Alt_L|Right
+
+&quot;.*&quot;
+#None, Up, Alt_L|Left
+#None, Down, Alt_L|Right</pre>
+
+</div>
+<!-- EDIT7 SECTION "Configuration de .imwheelrc" [3010-3967] -->
+<h3 class="sectionedit8" id="la_configuration_pour_tous">La configuration pour tous</h3>
+<div class="level3">
+
+<p>
+Pour que la configuration soit commune à l&#039;ensemble des utilisateurs, il faut modifier le fichier /etc/X11/imwheel/imwheelrc avec les droits de superutilisateur.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "La configuration pour tous" [3968-4170] -->
+<h3 class="sectionedit9" id="comment_ca_marche">Comment ça marche ?</h3>
+<div class="level3">
+
+<p>
+La syntaxe du fichier imwheelrc utilise les règles suivantes :
+</p>
+
+<p>
+&quot;NOM DU PROGRAMME&quot;
+</p>
+
+<p>
+TOUCHE CLAVIER UTILISE (en même temps que les boutons latéraux), BOUTON UTILISE, TOUCHES DU CLAVIER, COMBIEN DE TEMPS
+</p>
+
+<p>
+Pour ceux désirant personnaliser l&#039;utilisation de leur souris, l&#039;auteur de imwheel met à disposition son fichier de configuration à cette adresse : <a href="http://imwheel.sourceforge.net/imwheelrc" class="urlextern" title="http://imwheel.sourceforge.net/imwheelrc"  rel="nofollow">http://imwheel.sourceforge.net/imwheelrc</a>.
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Comment ça marche ?" [4171-4602] -->
+<h2 class="sectionedit10" id="pour_feisty">Pour Feisty</h2>
+<div class="level2">
+
+<p>
+La configuration se fera en 4 étapes avec des parties communes à Edgy, d&#039;autres différentes et une nouveauté.
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Pour Feisty" [4603-4744] -->
+<h3 class="sectionedit11" id="modification_de_xorgconf">Modification de xorg.conf</h3>
+<div class="level3">
+
+<p>
+Utiliser la configuration suivante de la section &quot;InputDevice&quot; correspondant à la souris :
+</p>
+<pre class="code">Section &quot;InputDevice&quot;
+	Identifier	&quot;Configured Mouse&quot;
+	Driver		&quot;mouse&quot;
+	Option		&quot;CorePointer&quot;
+	Option		&quot;Device&quot;	&quot;/dev/input/mice&quot;
+	Option		&quot;Protocol&quot;	&quot;ExplorerPS/2&quot;
+	Option		&quot;Emulate3Buttons&quot;	&quot;false&quot;
+	Option		&quot;Buttons&quot;	&quot;7&quot;
+	Option		&quot;ZAxisMapping&quot;	&quot;4 5&quot;
+        Option          &quot;ButtonMapping&quot; &quot;1 2 3 7 6&quot;	
+EndSection</pre>
+
+</div>
+<!-- EDIT11 SECTION "Modification de xorg.conf" [4745-5207] -->
+<h3 class="sectionedit12" id="configuration_de_imwheel">Configuration de imwheel</h3>
+<div class="level3">
+
+<p>
+Installer imwheel comme pour Edgy et utiliser la même configuration.
+</p>
+
+</div>
+<!-- EDIT12 SECTION "Configuration de imwheel" [5208-5315] -->
+<h3 class="sectionedit13" id="configuration_de_imwheelrc1">Configuration de imwheelrc</h3>
+<div class="level3">
+
+<p>
+Là aussi la configuration est la même que pour Edgy.
+</p>
+
+</div>
+<!-- EDIT13 SECTION "Configuration de imwheelrc" [5316-5412] -->
+<h3 class="sectionedit14" id="creation_d_un_script_utilisant_xmodmap">Création d&#039;un script utilisant xmodmap</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Création d&#039;un script de démarrage imwheel : <pre class="code">sudo mkdir /home/login
+gksudo gedit /home/login/souris</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Insérer le texte suivant dans le nouveau fichier &quot;souris&quot; : <pre class="code">#!/bin/sh
+exec xmodmap -e &quot;pointer = 1 2 3 4 5 6 7&quot; &amp;
+exec imwheel -k -b &quot;6 7&quot; &amp;
+exec $REALSTARTUP</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Donner les droits d&#039;exécution de ce script à tous les utilisateurs : <pre class="code">sudo chmod +x /home/login/souris</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Configurer le script pour qu&#039;il se lance à chaque démarrage :</div>
+<ol>
+<li class="level3"><div class="li"> aller dans <em>Système → Préférences → Sessions</em> ;</div>
+</li>
+<li class="level3"><div class="li"> cliquer sur l&#039;onglet <em>Programmes au démarrage</em> ;</div>
+</li>
+<li class="level3"><div class="li"> cliquer sur <em>Ajouter</em>, dans <em>Nom</em> taper <code>souris</code> et dans <em>Commande</em> taper <code>/home/login/souris</code> ;</div>
+</li>
+<li class="level3"><div class="li"> cliquer sur <em>Valider</em> et <em>Fermer</em>.</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Redémarrer votre environnement graphique par un petit &lt;Ctrl&gt;&lt;Alt&gt;&lt;Eff.Arr.&gt; et ça marche !!!</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT14 SECTION "Création d'un script utilisant xmodmap" [5413-6340] -->
+<h2 class="sectionedit15" id="pour_aller_plus_loin">Pour aller plus loin</h2>
+<div class="level2">
+
+<p>
+Consulter la page souris en suivant ce <a href="../../souris#les_exemples_configuration_de_imwheel" class="wikilink1" title="souris">lien</a>.
+</p>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />.</em>
+</p>
+
+</div>
+<!-- EDIT15 SECTION "Pour aller plus loin" [6341-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/4/4d4e92c1d184763216c49f2477e499e3.xhtml used -->
+</div>
+</body>
+</html>

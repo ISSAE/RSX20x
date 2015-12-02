@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>lvm</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-02-21T20:52:30+0100"/>
+<meta name="keywords" content="partitions,administration,systeme"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../lvm?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="lvm"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/lvm"/>
+<link rel="canonical" href="../../lvm.1"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"lvm","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="lvm#introduction">Introduction</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="lvm#avantages_de_lvm">Avantages de LVM</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#inconvenients_de_lvm">Inconvénients de LVM</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="lvm#but_de_ce_document">But de ce document</a></div></li>
+<li class="level1"><div class="li"><a href="lvm#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="lvm#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="lvm#notions_et_vocabulaire">Notions et vocabulaire</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="lvm#volume_physique">Volume physique</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#volume_logique">Volume logique</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#synthese_graphique">Synthèse graphique</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="lvm#creation">Création</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="lvm#disque_physique">Disque physique</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#groupe_de_volumes">Groupe de volumes</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#volume_logique1">Volume logique</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#systeme_de_fichiers">Système de fichiers</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="lvm#suppression">Suppression</a></div></li>
+<li class="level1"><div class="li"><a href="lvm#redimensionnement">Redimensionnement</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="lvm#volume_physique1">Volume physique</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#volume_logique2">Volume logique</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#agrandissement">Agrandissement</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#retrecissement">Rétrécissement</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="lvm#snapshot">Snapshot</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="lvm#creation_d_un_snapshot_lvm">Création d&#039;un snapshot LVM</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#redimensionnement_du_snapshot">Redimensionnement du snapshot</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#fusionner_un_snapshot">Fusionner un snapshot</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="lvm#changement_d_un_disque_defectueux">Changement d&#039;un disque défectueux</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="lvm#principe">Principe</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#avec_gparted">Avec GParted</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#en_ligne_de_commande">En ligne de commande</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#finalisation">Finalisation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="lvm#mieux_comprendre_ou_aller_plus_loin">Mieux comprendre ou aller plus loin</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="lvm#notion_d_extent">Notion d&#039;« extent »</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#glossaire">Glossaire</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#lvm_et_raid">LVM et RAID</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#lvm_miroir">LVM miroir</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#interface_graphique_pour_lvm">Interface graphique pour LVM</a></div></li>
+<li class="level2"><div class="li"><a href="lvm#references">Références</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../partitions" class="wikilink1" title="partitions" rel="tag">partitions</a>,
+	<a href="../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="lvm_une_autre_maniere_de_partitionner">LVM, une autre manière de partitionner</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "LVM, une autre manière de partitionner" [51-105] -->
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+<strong>LVM</strong> (Logical Volume Manager, ou <em>gestionnaire de volumes logiques</em> en français) permet la création et la gestion de volume logique sous Linux. L&#039;utilisation de volumes logiques remplace en quelque sorte le partitionnement des disques. C&#039;est un système beaucoup plus souple, qui permet par exemple de diminuer la taille d&#039;un système de fichier pour pouvoir en agrandir un autre, sans se préoccuper de leur emplacement sur le disque.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Introduction" [106-576] -->
+<h3 class="sectionedit3" id="avantages_de_lvm">Avantages de LVM</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Il n&#039;y a pas de limitations « étranges » comme avec les partitions (primaire, étendue, etc.).</div>
+</li>
+<li class="level1"><div class="li"> On ne se préoccupe plus de l&#039;emplacement exact des données.</div>
+</li>
+<li class="level1"><div class="li"> On peut conserver quelques giga-octets de libres pour pouvoir les ajouter n&#039;importe où et n&#039;importe quand.</div>
+</li>
+<li class="level1"><div class="li"> Les opérations de redimensionnement deviennent quasiment sans risques, contrairement au redimensionnement des partitions.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Avantages de LVM" [577-1012] -->
+<h3 class="sectionedit4" id="inconvenients_de_lvm">Inconvénients de LVM</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Si un des volumes physiques devient HS, alors c&#039;est l&#039;ensemble des volumes logiques qui utilisent ce volume physique qui sont perdus. Pour éviter ce désastre, il faudra utiliser LVM sur des disques raid par exemple.</div>
+</li>
+</ul>
+
+<p>
+Depuis Intrepid, il existe le paquet <a href="apt://system-config-lvm" class="urlextern" title="apt://system-config-lvm"  rel="nofollow">system-config-lvm</a> dans les dépôts Universe, qui propose une interface graphique.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Inconvénients de LVM" [1013-1418] -->
+<h2 class="sectionedit5" id="but_de_ce_document">But de ce document</h2>
+<div class="level2">
+
+<p>
+Découvrir le principe de LVM, créer un ou deux volumes logiques <strong>sans modifier son système existant</strong>.
+</p>
+
+<p>
+La « conversion » de son système pour le migrer entièrement vers LVM ne fait donc pas partie de ce document pour l&#039;instant, mais au moins, vous aurez les bases pour le faire. <img src="../../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />
+</p>
+
+</div>
+<!-- EDIT5 SECTION "But de ce document" [1419-1742] -->
+<h2 class="sectionedit6" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Un disque ou une partition libre.</div>
+</li>
+<li class="level1"><div class="li"> Ne pas avoir peur de la ligne de commande.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT6 SECTION "Pré-requis" [1743-1853] -->
+<h2 class="sectionedit7" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="../../gestionnaire_de_paquets" class="wikilink1" title="gestionnaire_de_paquets">Installez</a> le paquet <a href="apt://lvm2" class="urlextern" title="apt://lvm2"  rel="nofollow">lvm2</a>.
+Ok j&#039;avoue, c&#039;était la partie la plus facile. Maintenant, avant d&#039;utiliser réellement LVM, il faut comprendre un peu de vocabulaire. Ne vous inquiétez pas si tout n&#039;est pas encore très clair, ça viendra au fur et à mesure, en passant à la pratique.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Installation" [1854-2206] -->
+<h2 class="sectionedit8" id="notions_et_vocabulaire">Notions et vocabulaire</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT8 SECTION "Notions et vocabulaire" [2207-2242] -->
+<h3 class="sectionedit9" id="volume_physique">Volume physique</h3>
+<div class="level3">
+
+<p>
+Un volume physique ou « PV » pour « <em>physical volume</em> » est tout simplement un disque ou une partition. Bref, c&#039;est un espace de stockage bien réel (autrement dit un périphérique de la forme <code>/dev/sda2</code> par exemple), que l&#039;on va confier à LVM. Bien évidemment, tout ce qui était présent sur la partition sera effacé.
+<p><div class="noteimportant">avant de pouvoir définir le volume physique, il est nécessaire qu&#039;une partition existe. Pour cela vous pouvez avoir recours à <a href="../../gparted" class="wikilink1" title="gparted">gparted</a> sur un PC desktop.et à <a href="http://www.gnu.org/software/parted/manual/parted.html" class="urlextern" title="http://www.gnu.org/software/parted/manual/parted.html"  rel="nofollow">parted</a> sur serveur
+</div></p>
+</p>
+
+<p>
+Un groupe de volumes ou « VG » pour « <em>volume group</em> » est, comme son nom l&#039;indique, un ensemble de volumes physiques. On a donc un ou plusieurs volumes physiques dans un groupe de volumes, et pour utiliser LVM, il faut obligatoirement au moins un groupe de volumes. Habituellement, sur les gros serveurs, on essaye de regrouper les disques en fonction de leur caractéristiques (capacités, performances, etc.). Pour un particulier, le fait de mettre plusieurs disques dans un même groupe de volume peut permettre « d&#039;étaler » un système de fichiers sur plusieurs disques, et d&#039;avoir donc <code>/home</code> par exemple qui utiliserait 2 disques. Une telle configuration est tout de même assez dangereuse en cas de perte d&#039;un disque… De plus, cela n&#039;apporterait aucun gain de performance contrairement à du RAID-0 par exemple.
+:)
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Volume physique" [2243-3715] -->
+<h3 class="sectionedit10" id="volume_logique">Volume logique</h3>
+<div class="level3">
+
+<p>
+Un volume logique ou « LV » pour « <em>logical volume</em> » est ce que nous allons utiliser au final. Un volume logique est un espace « quelque part dans un groupe de volume » où l&#039;on peut mettre un système de fichiers. C&#039;est donc ce qui remplace les partitions. On peut donc utiliser un volume logique pour mettre la mémoire virtuelle, un pour <code>/home</code>, &quot;/&quot;, etc.
+</p>
+
+<p>
+<p><div class="noteimportant">Évitez de mettre &quot;/boot/&quot; dans un volume logique.
+</p>
+
+<p>
+Cela peut encore poser des problèmes pour le démarrage du système.
+</div></p>
+</p>
+
+<p>
+On peut y mettre a peu près tout … mais il vaux mieux éviter d&#039;y mettre &quot;/boot&quot;. Techniquement, ça doit fonctionner à peu près correctement depuis Grub 2, mais cela est encore sensible suivant la configuration (et perdre la capacité de démarrer est … gênant), pour le moment il est vivement conseillé d&#039;avoir au moins une partition de l&#039;ancien temps avec &quot;/boot&quot; (ou &quot;/&quot; si le dossier &quot;/boot&quot; n&#039;est pas séparé) pour éviter les ennuis.
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Volume logique" [3716-4711] -->
+<h3 class="sectionedit11" id="synthese_graphique">Synthèse graphique</h3>
+<div class="level3">
+
+<p>
+On peut voir les choses ainsi :
+</p>
+
+<p>
+<a href="../../_detail/lvm.jpg?id=lvm" class="media" title="lvm.jpg"><img src="../../_media/lvm.jpg" class="media" alt="" /></a>
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Synthèse graphique" [4712-4790] -->
+<h2 class="sectionedit12" id="creation">Création</h2>
+<div class="level2">
+
+<p>
+Bien, passons à la pratique !
+</p>
+
+<p>
+Puisque nous allons entrer toutes les commandes à venir en tant que <em>root</em>, je vous conseille de passer <em>root</em> « une bonne fois pour toutes » :
+</p>
+<pre class="code">sudo -i</pre>
+
+<p>
+Voilà : le <em>prompt</em> est maintenant en mode root « # », cela nous évitera d&#039;avoir à préfixer chaque commande par <em>sudo</em>.
+</p>
+
+<p>
+Bonne nouvelle, les commandes LVM sont extrêmement simples à utiliser, et elles intègrent toutes une aide en ligne très bien conçue, claire, courte, mais suffisante. De plus, leurs noms se « devinent » assez facilement :
+</p>
+<ul>
+<li class="level1"><div class="li"> toutes les commandes agissant sur les volumes physiques commencent par <em>pv</em> (pour <em>physical volume</em>);</div>
+</li>
+<li class="level1"><div class="li"> toutes les commandes agissant sur les groupes de volumes commencent par <em>vg</em> (pour <em>volumes group</em>);</div>
+</li>
+<li class="level1"><div class="li"> toutes les commandes agissant sur les volumes logiques commencent par <em>lv</em> (pour <em>logical volume</em>).</div>
+</li>
+</ul>
+
+<p>
+La première chose à faire est de créer <strong>un volume physique</strong>, en attribuant une partition à LVM.
+</p>
+
+<p>
+Essayez la commande suivante pour connaître la liste des commandes disponibles pour les volumes physiques :
+</p>
+<pre class="code">man -k ^pv</pre>
+
+<p>
+Parmi toutes les commandes renvoyées, on remarque une « pvcreate », ça doit être celle-là… <img src="../../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /> Cette astuce fonctionne avec toutes les commandes LVM et permet de les retrouver facilement.
+</p>
+
+</div>
+<!-- EDIT12 SECTION "Création" [4791-6122] -->
+<h3 class="sectionedit13" id="disque_physique">Disque physique</h3>
+<div class="level3">
+
+<p>
+<strong> J&#039;utilise <code>/dev/sdc1</code> pour l&#039;exemple, adaptez à votre cas ! Toutes les données de cette partition seront effacées !</strong>
+</p>
+
+<p>
+<p><div class="notetip">Même si ce n&#039;est pas techniquement obligatoire, il est bon de définir correctement le type de la partition /dev/sdc1. Celui-ci devrait être <strong>Linux LVM</strong>, c-à-d. un code 8E sous <em><a href="../../fdisk" class="wikilink1" title="fdisk">fdisk</a></em> (8E00 sous <em>gdisk</em> sinon activer le drapeau <em>lvm</em> avec les outils basés sur <em>libparted</em>)
+</div></p>
+</p>
+<pre class="code">pvcreate /dev/sdc1</pre>
+
+<p>
+Si tout s&#039;est bien passé, aucun message d&#039;erreur n&#039;apparaît.
+</p>
+
+<p>
+Si vous obtenez le message « <code>No program &quot;pvcreate&quot; found for your current version of LVM.</code> », c&#039;est que le service LVM n&#039;est pas actif. Lancez-le avec la commande suivante :
+</p>
+<pre class="code">/etc/init.d/lvm start</pre>
+
+<p>
+Si votre distribution est récente, il est probable que cela ne soit pas nécessaire. La prise en compte de LVM et l&#039;activation des volumes groupes déjà présents est automatique lors de l&#039;installation du paquet.
+</p>
+<blockquote><div class="no">
+ Je veux utiliser la totalité d&#039;un disque, <em>sdc</em> par exemple, puis-je faire <code>pvcreate /dev/sdc</code> (sans numéro de partition) ?</div></blockquote>
+
+<p>
+Oui et non… Techniquement, oui, pas de problème. Seulement, le fait que votre disque ne soit même plus partitionné pourrait vous poser problème un jour ou l&#039;autre. Je vous conseille plutôt de créer une seule partition sdc1 (primaire) utilisant tout le disque dur, sans la formater. Ensuite, lancez la commande en utilisant cette partition (pvcreate /dev/sdc1).
+</p>
+
+<p>
+On peut vérifier le résultat avec la commande <em>pvdisplay</em>.
+</p>
+
+</div>
+<!-- EDIT13 SECTION "Disque physique" [6123-7663] -->
+<h3 class="sectionedit14" id="groupe_de_volumes">Groupe de volumes</h3>
+<div class="level3">
+
+<p>
+Il existe de nombreuses options lors de la création d&#039;un groupe de volumes… Mais continuons de faire au plus simple. Le seul paramètre indispensable sera de lui donner un nom, nous utiliserons les valeurs par défaut pour tout le reste. Pour une raison que j&#039;expliquerai par la suite, donnons-lui un nom très court (2 ou 3 caractères). Par exemple : « mvg » pour « mon vg ».
+</p>
+
+<p>
+Pour connaitre la syntaxe de la commande <em>vgcreate</em> (comme pour toutes les autres commandes LVM), tapez simplement son nom :
+</p>
+<pre class="code">vgcreate</pre>
+
+<p>
+La syntaxe est donc :
+</p>
+<pre class="code">vgcreate VolumeGroupName PhysicalVolume [optionnellement d&#039;autres PhysicalVolume]</pre>
+
+<p>
+Allons-y :
+</p>
+<pre class="code">vgcreate mvg /dev/sdc1</pre>
+
+<p>
+Si tout se passe bien, vous avez maintenant un groupe de volumes, contenant un disque physique. Vous pouvez obtenir d&#039;autres informations sur ce groupe de volumes en tapant <em>vgdisplay</em>:
+</p>
+<pre class="code">vgdisplay
+--- Volume group ---
+VG Name               mvg
+System ID             
+Format                lvm2
+Metadata Areas        1
+Metadata Sequence No  3
+VG Access             read/write
+VG Status             resizable
+MAX LV                0
+Cur LV                2
+Open LV               0
+Max PV                0
+Cur PV                1
+Act PV                1
+VG Size               186,31 GiB
+PE Size               4,00 MiB
+Total PE              47695
+Alloc PE / Size       15360 / 60,00 GiB
+Free  PE / Size       32335 / 126,31 GiB
+VG UUID               BaTuai-1I8o-3rkY-Ut1r-ybta-mJnl-9X0oNZ</pre>
+
+</div>
+<!-- EDIT14 SECTION "Groupe de volumes" [7664-9195] -->
+<h3 class="sectionedit15" id="volume_logique1">Volume logique</h3>
+<div class="level3">
+
+<p>
+Nous y voilà… Cette fois-ci, nous allons vraiment créer deux espaces que l&#039;on pourra ensuite « formater » en <em>ext4</em> par exemple.
+</p>
+
+<p>
+Comme précédemment, le plus simple est de commencer par jeter un œil sur la syntaxe de la commande :
+</p>
+<pre class="code">lvcreate</pre>
+
+<p>
+Les deux options vraiment importantes sont « -n » pour son nom, et « -L » pour sa taille. Le paramètre principal est « OriginalLogicalVolume ». Il s&#039;agit peut-être d&#039;une erreur dans le manuel (<em>man</em>). En fait, ce qu&#039;il faut indiquer, c&#039;est bien le groupe de volumes dans lequel nous allons créer le volume logique. Pour l&#039;exemple présent, je fais ici deux volumes, 10 Gio et 50 Gio :
+</p>
+<pre class="code">lvcreate -n Vol1 -L 10g mvg
+lvcreate -n Vol2 -L 50g mvg</pre>
+
+<p>
+Idem, on peut vérifier avec la commande <em>lvdisplay</em>:
+</p>
+<pre class="code">~# lvdisplay
+--- Logical volume ---
+LV Name                /dev/mvg/Vol1
+VG Name                mvg
+LV UUID                q0D6cQ-mcMP-q8sf-XTlI-DdxX-QHd1-qkaB5J
+LV Write Access        read/write
+LV Status              available
+# open                 0
+LV Size                10,00 GiB
+Current LE             2560
+Segments               1
+Allocation             inherit
+Read ahead sectors     auto
+- currently set to     256
+Block device           252:0
+ 
+--- Logical volume ---
+LV Name                /dev/mvg/Vol2
+VG Name                mvg
+LV UUID                JZjMxI-cTAw-cbs6-02BM-4Mev-P2E7-b8JX0x
+LV Write Access        read/write
+LV Status              available
+# open                 0
+LV Size                50,00 GiB
+Current LE             12800
+Segments               1
+Allocation             inherit
+Read ahead sectors     auto
+- currently set to     256
+Block device           252:1</pre>
+
+</div>
+<!-- EDIT15 SECTION "Volume logique" [9196-10953] -->
+<h3 class="sectionedit16" id="systeme_de_fichiers">Système de fichiers</h3>
+<div class="level3">
+
+<p>
+Avec les partitions, on avait des noms ressemblant à <code>/dev/sda3</code>, etc. Avec LVM, on utilise aussi des périphériques dans <code>/dev</code>, mais le chemin est de la forme <code>/dev/nom_du_vg/nom_du_lv</code>.
+Autrement dit, puisqu&#039;on a décidé d&#039;appeler nos volumes logiques &quot;Vol1&quot; et &quot;Vol2&quot;, les noms de ces périphériques de ce volume logique sont &quot;/dev/mvg/Vol1&quot; et &quot;/dev/mvg/Vol2&quot;.
+À partir de maintenant, <code>/dev/mvg/Volx</code> peut être utilisé dans toutes les situations et avec toutes les commandes qui attendent quelque chose de la forme <code>/dev/…</code> Par exemple :
+</p>
+<pre class="code">mkfs -t ext4 /dev/mvg/Vol1
+mkfs -t ext4 /dev/mvg/Vol2
+mkdir /Essai1
+mount /dev/mvg/Vol1 /Essai1
+df -h</pre>
+
+<p>
+Et normalement, <code>/dev/mvg/Vol1</code> devrait être monté sur <code>/Essai</code>. Regardez bien la ligne correspondante. Si on avait choisi un nom de VG ou de LV plus long, la sortie de <em>df</em> aurait été modifiée, car le nom aurait « touché » les valeurs… On aurait été obligé de passer des lignes et l&#039;affichage aurait été plus difficile à lire. Techniquement, choisir des noms « longs » pour les VG et les LV ne pose aucun problème, mais c&#039;est l&#039;affichage qui sera parfois délicat. Pour cette raison uniquement, je préconise de se limiter à 7 caractères au total (donc par exemple 3 pour le VG et 4 pour le LV, ou 2 et 5, comme vous voulez).
+</p>
+<blockquote><div class="no">
+ Pourquoi est-il écrit <code>/dev/mapper/mvg-Vol1</code> et non <code>/dev/mvg/Vol1</code> ?</div></blockquote>
+
+<p>
+Avec LVM en version 1, c&#039;est bien <code>/dev/mvg/Vol1</code> qui aurait été affiché. Depuis la version 2, LVM utilise le périphérique <em>mapper</em>, ce qui permet pas mal de choses (comme chiffrer les volumes logiques, etc.). Pour simplifier, disons que ces deux notations « /dev/mvg/Vol1 » et « /dev/mapper/mvg-Vol1 » sont synonymes. Dans la pratique, il est conseillé quand même d&#039;utiliser plutôt la forme « /dev/mvg/Vol1 », certaines commandes ne passeront pas autrement.
+</p>
+
+</div>
+<!-- EDIT16 SECTION "Système de fichiers" [10954-12874] -->
+<h2 class="sectionedit17" id="suppression">Suppression</h2>
+<div class="level2">
+
+<p>
+Rien de plus simple :
+</p>
+<pre class="code">umount /Essai1  # si le volume Vol1 est monté en /Essai1
+lvremove /dev/mvg/Vol1</pre>
+
+<p>
+<img src="../../lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /> Attention, une fois un volume logique effacé, il est <strong>totalement impossible</strong> de récupérer les données qu&#039;il contenait.
+</p>
+
+</div>
+<!-- EDIT17 SECTION "Suppression" [12875-13140] -->
+<h2 class="sectionedit18" id="redimensionnement">Redimensionnement</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT18 SECTION "Redimensionnement" [13141-13173] -->
+<h3 class="sectionedit19" id="volume_physique1">Volume physique</h3>
+<div class="level3">
+
+<p>
+Imaginons maintenant que notre groupe de volume (mvg) n&#039;ait plus suffisamment d&#039;espace libre. On souhaite donc lui rajouter un volume physique afin de rajouter de l&#039;espace libre. Ça tombe bien, on dispose d&#039;un volume physique sdc2 que l&#039;on va pouvoir ajouter à mvg :
+</p>
+
+<p>
+On initialise le volume en vue de son utilisation dans LVM :
+</p>
+<pre class="code">pvcreate /dev/sdc2</pre>
+
+<p>
+On rajoute le volume sdc2 au groupe de volume mvg :
+</p>
+<pre class="code">vgextend mvg /dev/sdc2</pre>
+
+</div>
+<!-- EDIT19 SECTION "Volume physique" [13174-13639] -->
+<h3 class="sectionedit20" id="volume_logique2">Volume logique</h3>
+<div class="level3">
+
+<p>
+Il est très facile d&#039;augmenter ou de diminuer la taille d&#039;un volume logique. Mais attention, la taille d&#039;un LV n&#039;a pas de lien direct avec la taille de ce qu&#039;il contient (<em>swap</em> ou système de fichier). Le LV est une boîte, le système de fichier est le contenu de la boîte. Augmenter la taille de la boîte sans augmenter la taille du contenu ne pose pas de problème, mais l&#039;inverse…
+</p>
+
+</div>
+<!-- EDIT20 SECTION "Volume logique" [13640-14065] -->
+<h3 class="sectionedit21" id="agrandissement">Agrandissement</h3>
+<div class="level3">
+
+<p>
+Bien qu&#039;il soit évidemment moins risqué d&#039;agrandir ou de diminuer la taille d&#039;un système de fichiers après l&#039;avoir démonté, la plupart des formats (ext3, reisersfs, ext4…) supportent désormais cette modification &quot;à chaud&quot; (avec des données qui restent donc accessibles en lecture/écriture durant toute l&#039;opération).
+</p>
+
+<p>
+Pour ne courir aucun risque, il faut dans l&#039;ordre :
+</p>
+<ul>
+<li class="level1"><div class="li"> démonter le système de fichier ;</div>
+</li>
+<li class="level1"><div class="li"> augmenter la taille du volume logique (la &quot;boîte&quot;) ;</div>
+</li>
+<li class="level1"><div class="li"> vérifier que tout est OK ;</div>
+</li>
+<li class="level1"><div class="li"> puis augmenter la taille du système de fichier.</div>
+</li>
+</ul>
+
+<p>
+Il ne reste plus qu&#039;à le remonter. 
+</p>
+
+<p>
+Voilà donc un exemple :
+</p>
+<pre class="code">umount /Essai2          # démontage du volume  
+e2fsck -f /dev/mvg/Vol2       # vérification du volume
+lvresize -L 55g /dev/mvg/Vol2 # redimensionnement du volume
+resize2fs /dev/mvg/Vol2       # redimensionnement du système de fichier
+mount /dev/mvg/Vol2 /Essai2</pre>
+
+<p>
+<p><div class="noteimportant">Attention : le paramètre &#039;55g&#039; passé à la commande <em>lvresize</em> correspond à la taille totale finale du lv et doit donc être supérieure à la taille originale du lv !
+</div></p>
+</p>
+
+<p>
+Notez que :
+</p>
+<ul>
+<li class="level1"><div class="li"> Si jamais vous indiquez une taille (ici 55 Gio) inférieure à celle de départ, vous <strong>détruirez</strong> le système de fichier (toute la partie qui ne « rentrera plus dans la boîte dont vous venez de diminuer la taille ». Donc, indiquez bien une taille supérieure à celle qu&#039;elle avait. (Vous pouvez aussi utiliser la notion « <code>+ng</code> » par exemple pour indiquer +10g ou +100m ou… ) ;</div>
+</li>
+<li class="level1"><div class="li"> J&#039;utilise <em>resize2fs</em> car le système de fichier est en ext4 (ou 3), il faudrait utiliser un autre programme pour reiserfs ou autre ;</div>
+</li>
+<li class="level1"><div class="li"> Si vous obtenez un message d&#039;erreur vous demandant de refaire un <em>fsck</em> (ou un <em>e2fsck</em> ) alors que vous l&#039;avez fait et qu&#039;il n&#039;y a pas d&#039;erreur, il est possible de forcer le redimensionnement (option « -f »). N&#039;utilisez pas cette option dans d&#039;autres circonstances… ;</div>
+</li>
+<li class="level1"><div class="li"> Tous les systèmes de fichiers ne sont pas extensibles de cette façon !</div>
+</li>
+</ul>
+
+<p>
+Globalement, la modification à chaud (surtout l&#039;agrandissement !) ne pose vraiment plus de soucis, et les opérations précédentes peuvent donc êtres résumées en :
+</p>
+<pre class="code">lvresize -L 55g /dev/mvg/Vol2 # redimensionnement du volume
+resize2fs /dev/mvg/Vol2       # redimensionnement du système de fichier</pre>
+
+</div>
+<!-- EDIT21 SECTION "Agrandissement" [14066-16414] -->
+<h3 class="sectionedit22" id="retrecissement">Rétrécissement</h3>
+<div class="level3">
+
+<p>
+Diminuer la taille d&#039;un système de fichier est un peu plus délicat.
+En effet, si jamais on commet l&#039;erreur de diminuer la taille de la &quot;boîte&quot;
+(le volume logique) avant de réduire la taille du contenu (le système de fichier lui même) alors on détruit son système de fichier… pareil si on réduit trop la taille du volume logique.
+</p>
+
+<p>
+Pour éviter tout risque, je conseille d&#039;utiliser la méthode suivante (un peu plus longue que la normale, mais beaucoup plus fiable) :
+</p>
+<ul>
+<li class="level1"><div class="li"> Réduire la taille du système de fichier plus que nécessaire</div>
+</li>
+<li class="level1"><div class="li"> Réduire la taille du volume logique pour lui donner exactement la nouvelle taille souhaitée.</div>
+</li>
+<li class="level1"><div class="li"> Agrandir le système de fichier pour qu&#039;il occupe tout l&#039;espace disponible.</div>
+</li>
+</ul>
+
+<p>
+De cette façon, le risque d&#039;erreur est beaucoup plus faible.
+</p>
+
+<p>
+Attention, tous les systèmes de fichiers ne peuvent pas être &quot;réduits&quot;. Pour ext3 et reiserfs, cela se fait très bien. 
+Voila un exemple avec reiserfs…
+</p>
+<pre class="code">df -h | grep ca
+/dev/mapper/svg-ca    512M  230M  283M  45% /home/ca</pre>
+
+<p>
+Dans cet exemple, le volume &quot;ca&quot;, se trouve dans le groupe de volume svg.
+Sur ce volume logique existe un système de fichier en reiserfs d&#039;une taille de 512 Mo. Or, je n&#039;utilise que 230 Mo. De plus, je sais que je n&#039;ajouterai jamais rien dans ce volume. Je désire donc diminuer sa taille à 256 Mo (pour se laisser une marge de sécurité, et parce que ça fait un compte rond ;)
+Je commence par démonter le système de fichier :
+</p>
+<pre class="code">umount /home/ca</pre>
+
+<p>
+Ensuite je vais donc diminuer la taille du système de fichier, plus que nécessaire. Plutôt que de retirer 256 Mo, je vais donc en retirer 258.
+Je peux le faire, car il reste 283 Mo de libre… Evidemment, retirer plus
+de place qu&#039;il n&#039;en reste serait suicidaire…
+</p>
+<pre class="code">e2fsck -f /dev/mvg/toto
+resize_reiserfs -s -258M /dev/svg/ca</pre>
+
+<p>
+<strong>ATTENTION</strong> : Si vous êtes en ext3, on ne peut pas indiquer la quantité d&#039;espace à enlever, il faut donner la taille finale voulue (512-258).
+la bonne commande aurait été :
+</p>
+<pre class="code">e2fsck -f /dev/mvg/toto
+resize2fs -p /dev/svg/ca 254M</pre>
+
+<p>
+<strong>Remarque</strong> : On notera l&#039;utilisation de e2fsck pour vérifier l&#039;intégrité de sa partition et la continuité des données.
+</p>
+
+<p>
+Maintenant que le système de fichier a diminué, il faut donner au volume logique sa nouvelle taille, 256 Mo au lieu de 512 
+(<strong>ATTENTION</strong> : le paramètre &quot;-256M&quot; de la commande lvresize signifie que l&#039;on enlève 256 Mo au volume logique et non pas que l&#039;on fixe sa taille à 256 Mo) :
+</p>
+<pre class="code">lvresize -L -256M /dev/svg/ca
+  WARNING: Reducing active logical volume to 256.00 MB
+  THIS MAY DESTROY YOUR DATA (filesystem etc.)
+Do you really want to reduce ca? [y/n]: y
+  Reducing logical volume ca to 256.00 MB</pre>
+
+<p>
+Plus qu&#039;une dernière étape, on indique au système de fichier qu&#039;il peut
+s&#039;étendre automatiquement pour prendre tout l&#039;espace disponible. Il devrait
+donc pouvoir grandir de 2 Mo. Il trouvera tout seul la taille exacte en nombre de blocs etc… On n&#039;a pas pris le risque de faire une erreur en le réduisant &quot;pile poil&quot; de la même taille que le volume logique, car la moindre erreur aurait pu corrompre le système de fichier à quelques blocs près.
+</p>
+<pre class="code">resize_reiserfs /dev/svg/ca</pre>
+
+<p>
+ou, si vous utilisez ext3 :
+</p>
+<pre class="code">resize2fs /dev/svg/ca</pre>
+
+<p>
+Il ne reste plus qu&#039;à remonter le système de fichier :
+</p>
+<pre class="code">mount /dev/svg/ca /home/ca
+df -h | grep ca
+/dev/mapper/svg-ca    256M  230M   27M  90% /home/ca</pre>
+
+<p>
+C&#039;est gagné… Le système de fichier fait maintenant 256 Mo, et nous avons toujours nos 230 Mo de données à l&#039;intérieur.
+Conclusion : Jouer avec la taille des volumes logiques fonctionne très bien, il faut juste prendre son temps et ne pas faire n&#039;importe quoi :)
+</p>
+
+</div>
+<!-- EDIT22 SECTION "Rétrécissement" [16415-20177] -->
+<h2 class="sectionedit23" id="snapshot">Snapshot</h2>
+<div class="level2">
+
+<p>
+<em class="u">Comprendre la magie du Snapshot LVM :</em>
+</p>
+
+<p>
+<em>Pourquoi donner une taille au snapshot ? Tout simplement parce que celui-ci est intelligent, donc il ne va pas copier l&#039;intégralité du LV original. Au contraire, il ne va stocker que les différences. C&#039;est pourquoi il est instantané et commence avec une occupation taille nulle. La commande lvdisplay permet de voir l&#039;évolution de la taille.</em>
+</p>
+
+<p>
+<strong>Avec LVM 1</strong>, les instantanés sont en lecture seule. Ils fonctionnent par l&#039;utilisation d&#039;une table d&#039;exception qui trace les blocs modifiés : lorsqu&#039;un bloc est modifié sur la source, il est d&#039;abord copié dans l&#039;instantané, marqué comme modifié dans la table d&#039;exceptions et ensuite modifié sur le volume source avec les nouvelles données.
+</p>
+
+<p>
+<strong>Avec LVM 2</strong>, les instantanés sont par défaut en lecture/écriture. Le fonctionnement est similaire aux instantanés en lecture seule avec la possibilité supplémentaire d&#039;écrire sur l&#039;instantané : le bloc est alors marqué comme utilisé dans la table d&#039;exceptions et ne sera plus récupéré du volume source. Cela ouvre de nouvelles perspectives par rapport au fonctionnement en lecture seule de LVM 1. Par exemple, on peut faire l&#039;instantané d&#039;un volume, le monter et tester un programme expérimental qui modifie les fichiers dessus. Si le résultat n&#039;est pas satisfaisant, on peut le démonter, le supprimer et remonter le système de fichiers originel à la place. C&#039;est aussi utile pour créer des volumes utilisés avec Xen. Vous pouvez créer une image disque et en faire un instantané que vous pourrez modifier avec une instance spécifique de domU. Vous pourrez ensuite créer un autre instantané de l&#039;image originale et le modifier avec une autre instance de domU. Comme les instantanés ne stockent que les blocs modifiés, la majeure partie du volume sera partagée entre les domUs.
+</p>
+
+</div>
+<!-- EDIT23 SECTION "Snapshot" [20178-22057] -->
+<h3 class="sectionedit24" id="creation_d_un_snapshot_lvm">Création d&#039;un snapshot LVM</h3>
+<div class="level3">
+<pre class="code">lvcreate -L 10g -s -n lv_test_20110617 /dev/vg_data/lv_test</pre>
+
+<p>
+Va créer un snapshot du LV &quot;<strong>lv_test</strong>&quot; à la taille de <strong>10Go</strong> qui va avoir comme nom &quot;<strong>lv_test_20110617</strong>&quot;.
+Attention, la taille d&#039;utilisation du snapshot évolue avec l&#039;utilisation. Si ce snapshot se retrouve rempli à 100%, il devient alors inutilisable (état &quot;INACTIVE&quot;) mais pas d’inquiétude car il n&#039;y a pas d’impact pour le LV d&#039;origine. 
+</p>
+
+</div>
+<!-- EDIT24 SECTION "Création d'un snapshot LVM" [22058-22527] -->
+<h3 class="sectionedit25" id="redimensionnement_du_snapshot">Redimensionnement du snapshot</h3>
+<div class="level3">
+
+<p>
+La taille du snapshot est trop petite et elle arrive bientôt à 100%, pourtant vous avez encore besoin d&#039;utiliser ce snap ? Il faut donc redimensionner !
+Vérifier avec vgdisplay que le VG dispose encore d&#039;assez d&#039;espace libre (Free PE / Size) puis effectuer :
+</p>
+<pre class="code">lvresize -L +3GB /dev/vg_data/lv_test_20110617</pre>
+
+<p>
+Va ajouter <strong>3Go</strong> au snap <strong>lv_test_20110617</strong> qui est présent dans le VG <strong>vg_data</strong>.
+</p>
+
+</div>
+<!-- EDIT25 SECTION "Redimensionnement du snapshot" [22528-22978] -->
+<h3 class="sectionedit26" id="fusionner_un_snapshot">Fusionner un snapshot</h3>
+<div class="level3">
+
+<p>
+Le but ici est de fusionner un snapshot modifié vers le LV d&#039;origine. Pour ainsi dire, &quot;faire que les modifications apportées sur le snapshot se retrouvent sur le LV d&#039;origine&quot;.
+</p>
+<pre class="code">lvconvert --merge /path/to/dev/snap</pre>
+
+<p>
+Attention : vous avez besoin d&#039;un kernel (&gt;=2.6.33)
+</p>
+
+</div>
+<!-- EDIT26 SECTION "Fusionner un snapshot" [22979-23292] -->
+<h2 class="sectionedit27" id="changement_d_un_disque_defectueux">Changement d&#039;un disque défectueux</h2>
+<div class="level2">
+
+<p>
+Votre disque /dev/sda présente des signes de faiblesse (signalés par SMART, par la présence de nombreux fichiers dans les dossiers &quot;lost + found&quot; de vos partitions). Vous désirez le remplacer par un disque neuf, de taille plus importante (surtout pas plus petite !), que vous avez installé dans la machine (ou sur un port <abbr title="Universal Serial Bus">USB</abbr>) et qui est reconnu par le système comme étant /dev/sdb.
+</p>
+
+</div>
+<!-- EDIT27 SECTION "Changement d'un disque défectueux" [23293-23730] -->
+<h3 class="sectionedit28" id="principe">Principe</h3>
+<div class="level3">
+
+<p>
+Supposons que votre disque initial (/dev/sda) ait été formaté ainsi :
+/dev/sda1 est une partition primaire, de type bootable, montée sur /boot.
+/dev/sda2 est une partition étendue, contenant la partition logique /dev/sda5 de type lvm2.
+</p>
+
+<p>
+Vous avez besoin de copier /dev/sda1 sur une partition /dev/sdb1, et /dev/sda5 sur une partition /dev/sdb5.
+</p>
+
+<p>
+Vous allez utiliser l&#039;outil GParted pour préparer le disque /dev/sdb et copier la partition de boot. Gparted ne gérant pas lvm2, nous utiliserons la ligne de commande pour la copie de /dev/sda5.
+</p>
+
+</div>
+<!-- EDIT28 SECTION "Principe" [23731-24299] -->
+<h3 class="sectionedit29" id="avec_gparted">Avec GParted</h3>
+<div class="level3">
+
+<p>
+Lancez Gparted (Système → Administration → Editeur de partitions GParted). 
+Les partitions de votre disque /dev/sda s&#039;affichent. Notez la taille de /dev/sda1, ainsi que son filesystem (ext2/ext3/ext4). 
+</p>
+
+<p>
+Passez au disque /dev/sdb. Créez-y une nouvelle partition primaire /dev/sdb1, de taille légèrement supérieure à celle de /dev/sda1. &quot;Appliquez&quot; pour que la création soit effective, puis modifiez (par clic droit) les drapeaux de /dev/sdb1 pour rendre cette partition bootable. Créez une partition étendue /dev/sdb2, occupant le reste du disque. Sur cette partition, créez une partition logique /dev/sdb5 non formatée. &quot;Appliquez&quot; pour que vos créations soient effectives.
+</p>
+
+<p>
+Repassez au disque /dev/sda. Cliquez-droit sur /dev/sda1 et choisissez &quot;Démonter&quot; puis &quot;Copier&quot;. Repassez au disque /dev/sdb. Cliquez-droit sur /dev/sdb1 et choisissez &quot;Coller&quot; (ou &quot;Paste&quot;). &quot;Appliquez&quot; à nouveau. Fermez GParted.
+</p>
+
+</div>
+<!-- EDIT29 SECTION "Avec GParted" [24300-25246] -->
+<h3 class="sectionedit30" id="en_ligne_de_commande">En ligne de commande</h3>
+<div class="level3">
+
+<p>
+Remontez votre partition de boot : 
+</p>
+<pre class="code">sudo mount /boot</pre>
+
+<p>
+Faites un scan des volumes physiques de LVM :
+</p>
+<pre class="code">sudo pvscan 
+  PV /dev/sda5   VG delphy   lvm2 [148,81 GiB / 4,87 GiB free]
+  Total: 1 [148,81 GiB] / in use: 1 [148,81 GiB] / in no VG: 0 [0   ]</pre>
+
+<p>
+Cela signifie que le volume physique (PV) /dev/sda5 est inclus dans le groupe de volumes (VG) nommé ici delphy (bien sûr le vôtre porte un autre nom).
+</p>
+
+<p>
+Déclarez /dev/sdb5 comme volume physique :
+</p>
+<pre class="code">sudo pvcreate /dev/sdb5
+  Physical volume &quot;/dev/sdb5&quot; successfully created</pre>
+
+<p>
+Vérifiez qu&#039;il existe bien, mais n&#039;est pas encore attribué à un groupe de volumes :
+</p>
+<pre class="code">sudo pvscan 
+  PV /dev/sda5   VG delphy          lvm2 [148,81 GiB / 4,87 GiB free]
+  PV /dev/sdb5                      lvm2 [465,47 GiB]
+  Total: 2 [614,28 GiB] / in use: 1 [148,81 GiB] / in no VG: 1 [465,47 GiB]</pre>
+
+<p>
+Attribuez /dev/sdb5 à votre groupe de volumes (ici delphy). Ce groupe de volumes est &quot;étendu&quot; à /dev/sdb5 :
+</p>
+<pre class="code">sudo vgextend delphy /dev/sdb5
+  Volume group &quot;delphy&quot; successfully extended</pre>
+
+<p>
+Vérification :
+</p>
+<pre class="code">sudo pvscan 
+  PV /dev/sda5   VG delphy   lvm2 [148,81 GiB / 4,87 GiB free]
+  PV /dev/sdb5   VG delphy   lvm2 [465,46 GiB / 465,46 GiB free]
+  Total: 2 [614,27 GiB] / in use: 2 [614,27 GiB] / in no VG: 0 [0   ]</pre>
+
+<p>
+Lancez enfin le déplacement des données, du volume physique /dev/sda5 vers le volume physique /dev/sdb5 :
+</p>
+<pre class="code">sudo pvmove /dev/sda5 /dev/sdb5
+  /dev/sda5: Moved: 0,3%
+  /dev/sda5: Moved: 0,7%
+  /dev/sda5: Moved: 1,0%
+  /dev/sda5: Moved: 1,3%
+  ...  
+  /dev/sda5: Moved: 99,8%
+  /dev/sda5: Moved: 100,0%</pre>
+
+<p>
+Attention, l&#039;opération peut prendre du temps (plusieurs heures pour les grosses partitions), suivant la taille des données à transférer, la rapidité des disques, etc.
+</p>
+
+<p>
+Vérifiez que le contenu de /dev/sda5 a bien été transféré sur /dev/sdb5 :
+</p>
+<pre class="code">sudo pvscan 
+  PV /dev/sda5   VG delphy   lvm2 [148,81 GiB / 148,81 GiB free]
+  PV /dev/sdb5   VG delphy   lvm2 [465,46 GiB / 321,53 GiB free]</pre>
+
+<p>
+En effet, la totalité de /dev/sda5 est libre, et /dev/sdb5 est occupée par les données transférées.
+</p>
+
+<p>
+Supprimez /dev/sda5 du groupe de volumes delphy :
+</p>
+<pre class="code">sudo vgreduce delphy /dev/sda5
+  Removed &quot;/dev/sda5&quot; from volume group &quot;delphy&quot;</pre>
+
+<p>
+Vérifiez :
+</p>
+<pre class="code">sudo pvscan 
+  PV /dev/sdb5   VG delphy          lvm2 [465,46 GiB / 321,53 GiB free]
+  PV /dev/sda5                      lvm2 [148,81 GiB]
+  Total: 2 [614,28 GiB] / in use: 1 [465,46 GiB] / in no VG: 1 [148,81 GiB]</pre>
+
+<p>
+Enlevez le disque des volumes physiques :
+</p>
+<pre class="code">sudo pvremove /dev/sda5
+  Labels on physical volume &quot;/dev/sda5&quot; successfully wiped</pre>
+
+<p>
+<strong>Vous pouvez désormais enlever le disque.</strong>
+</p>
+
+</div>
+<!-- EDIT30 SECTION "En ligne de commande" [25247-27921] -->
+<h3 class="sectionedit31" id="finalisation">Finalisation</h3>
+<div class="level3">
+
+<p>
+Réinstallez GRUB sur le MBR de votre disque dur :
+</p>
+<pre class="code">sudo grub-install /dev/sdb</pre>
+
+<p>
+Eteignez votre ordinateur, enlevez l&#039;ancien disque et remplacez-le par le nouveau, au niveau des branchements.
+</p>
+
+</div>
+<!-- EDIT31 SECTION "Finalisation" [27922-28139] -->
+<h2 class="sectionedit32" id="mieux_comprendre_ou_aller_plus_loin">Mieux comprendre ou aller plus loin</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT32 SECTION "Mieux comprendre ou aller plus loin" [28140-28188] -->
+<h3 class="sectionedit33" id="notion_d_extent">Notion d&#039;« extent »</h3>
+<div class="level3">
+
+<p>
+Un <em>extent</em>, ou « <em>physical extent</em> » aussi appelé « PE », est un tout petit morceau d&#039;un groupe de volumes. En fait, au moment de la création d&#039;un groupe de volumes, le ou les disques sont découpés en morceaux de quelques Mio (4 Mio par défaut). Lorsqu&#039;on crée un volume logique, LVM va utiliser autant de PE que nécessaires. La taille d&#039;un volume logique sera donc toujours un multiple de la taille d&#039;un PE.
+</p>
+
+</div>
+<!-- EDIT33 SECTION "Notion d'« extent »" [28189-28650] -->
+<h3 class="sectionedit34" id="glossaire">Glossaire</h3>
+<div class="level3">
+<div class="table sectionedit35"><table class="inline">
+	<tr class="row0">
+		<td class="col0">abréviation</td><td class="col1">anglais</td><td class="col2">français</td><td class="col3">description</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">VG</td><td class="col1"><strong>V</strong>olume <strong>G</strong>roup </td><td class="col2"><strong>G</strong>roupe de <strong>V</strong>olumes </td><td class="col3"> </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">LV</td><td class="col1"><strong>L</strong>ogical <strong>V</strong>olume</td><td class="col2"><strong>V</strong>olume <strong>L</strong>ogique</td><td class="col3"> une &quot;partition&quot; dans un groupe de volumes </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">PV</td><td class="col1"><strong>P</strong>hysical <strong>V</strong>olume</td><td class="col2"><strong>V</strong>olume <strong>P</strong>hysique</td><td class="col3"> </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">PE</td><td class="col1"><strong>P</strong>hysical <strong>E</strong>xtent</td><td class="col2"> <strong>E</strong>tendue <strong>P</strong>hysique</td><td class="col3">un tout petit morceau d&#039;un groupe de volumes </td>
+	</tr>
+</table></div>
+<!-- EDIT35 TABLE [28672-29023] -->
+</div>
+<!-- EDIT34 SECTION "Glossaire" [28651-29024] -->
+<h3 class="sectionedit36" id="lvm_et_raid">LVM et RAID</h3>
+<div class="level3">
+
+<p>
+Il est tout à fait possible d&#039;utiliser LVM sur un volume en RAID logiciel. Une fois que le RAID a été créé (<code>/dev/md0</code> par exemple), il suffit de le donner à LVM, avec la commande habituelle :
+</p>
+<pre class="code">pvcreate /dev/md0</pre>
+
+<p>
+Bien qu&#039;il soit possible de partitionner le raid <code>/dev/md0</code> comme n&#039;importe quel disque ordinaire (ce qui permet d&#039;obtenir des devices de la forme /dev/md0p1, /dev/md0p2 etc), je vous le déconseille vivement. En effet le but est bien d&#039;utiliser LVM pour découper l&#039;espace, et plus l&#039;ancienne notion de partition physique. De plus, l&#039;utilisation de ces partitions nécessiterait des changements dans la configuration de LVM (filter dans /etc/lvm/lvm.conf). Bref, C&#039;est se donner du mal pour pas grand chose.
+</p>
+
+<p>
+Donc comme le montre la commande plus haut, le mieux est de donner l&#039;intégralité du RAID. Un exemple de création de RAID est donné sur la <a href="../../raid_logiciel" class="wikilink1" title="raid_logiciel">page ad hoc</a>.
+</p>
+
+<p>
+Vous pouvez aussi aller voir le tutoriel <a href="../../tutoriel/installation_raid_lvm" class="wikilink1" title="tutoriel:installation_raid_lvm">installation_raid_lvm</a>
+</p>
+
+</div>
+<!-- EDIT36 SECTION "LVM et RAID" [29025-30033] -->
+<h3 class="sectionedit37" id="lvm_miroir">LVM miroir</h3>
+<div class="level3">
+
+<p>
+Convertir un LVM en miroir
+</p>
+<pre class="code">lvconvert -m 1 Volume_Group/Logical_Volume /dev/sdx1 /dev/sdy1</pre>
+
+<p>
+ou /dev/sdx1 est la partition LVM miroir à ajouter et /dev/sdy1 est la partition LVM de journalisation du miroir
+</p>
+
+<p>
+Voir l&#039;état du miroir
+</p>
+<pre class="code">lvs -a -o +devices</pre>
+<pre class="code">LV                          VG                   Attr  LSize    Origin Snap%  Move Log                   Copy%    Convert Devices                          
+Logical_Volume              Volume_Group mwi-a-        465.00g                     Logical_Volume_mlog   1.56             Home_mimage_0(0),Home_mimage_1(0)
+[Logical_Volume_mimage_0]   Volume_Group Iwi-ao        465.00g                                                            /dev/sdw1(0)                     
+[Logical_Volume_mimage_1]   Volume_Group Iwi-ao        465.00g                                                            /dev/sdx1(0)                     
+[Logical_Volume_mlog]       Volume_Group lwi-ao        4.00m                                                              /dev/sdy1(0)</pre>
+
+</div>
+<!-- EDIT37 SECTION "LVM miroir" [30034-31077] -->
+<h3 class="sectionedit38" id="interface_graphique_pour_lvm">Interface graphique pour LVM</h3>
+<div class="level3">
+
+<p>
+Il existe une interface graphique pour LVM, qui permet de manipuler les volumes logiques : system-config-lvm. (disponible dans les dépôts de la 11.04).
+</p>
+
+<p>
+Attention néanmoins, celle-ci applique DIRECTEMENT les changements, vérifiez donc bien ce que vous faites, ainsi que le disque sur lequel vous appliquez vos modifications, sans quoi vous risquez de perdre irrémédiablement vos données.
+</p>
+
+</div>
+<!-- EDIT38 SECTION "Interface graphique pour LVM" [31078-31513] -->
+<h3 class="sectionedit39" id="references">Références</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://hoper.dnsalias.net/tdc/index.php?pages/Documentation-LVM" class="urlextern" title="http://hoper.dnsalias.net/tdc/index.php?pages/Documentation-LVM"  rel="nofollow">l&#039;origine de cette page </a> par <a href="../../utilisateurs/hoper" class="wikilink1" title="utilisateurs:hoper">Hoper</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.lea-linux.org/documentations/index.php/Leapro-pro_sys-lvm" class="urlextern" title="http://www.lea-linux.org/documentations/index.php/Leapro-pro_sys-lvm"  rel="nofollow">Article de Léa Linux</a> un peu vieux (LVM 1) mais plus complet que le mien…</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://linux.developpez.com/lvm/#L4.1.1" class="urlextern" title="http://linux.developpez.com/lvm/#L4.1.1"  rel="nofollow">Article de developpez.com</a> excellent aussi (attention, sauf la partie réduction !)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://tldp.org/HOWTO/LVM-HOWTO/" class="urlextern" title="http://tldp.org/HOWTO/LVM-HOWTO/"  rel="nofollow">LVM HOW TO (en)</a> un how to assez complet en anglais</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.traduc.org/Guides_pratiques/Suivi/LVM-HOWTO/Document" class="urlextern" title="http://www.traduc.org/Guides_pratiques/Suivi/LVM-HOWTO/Document"  rel="nofollow"> Guide pratique de LVM (fr)</a> un guide assez complet en français</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.korben.info/comment-chiffrer-une-partition-systeme-linux-ici-ubuntu.html#comment-164907" class="urlextern" title="http://www.korben.info/comment-chiffrer-une-partition-systeme-linux-ici-ubuntu.html#comment-164907"  rel="nofollow">Comment chiffrer une partition système Linux</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.it-connect.fr/gestion-des-lvm-sous-linux/" class="urlextern" title="http://www.it-connect.fr/gestion-des-lvm-sous-linux/"  rel="nofollow">Gestion des LVM sous Linux</a> sur IT-Connect.fr</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : Koshie-2.0, <a href="../../utilisateurs/claudiux" class="wikilink1" title="utilisateurs:claudiux">claudiux</a> (remplacement disque défectueux) ; merci à <a href="../../utilisateurs/ner0lph" class="wikilink1" title="utilisateurs:ner0lph">Ner0lph</a> et à tous les autres correcteurs :)</em>
+</p>
+
+</div>
+<!-- EDIT39 SECTION "Références" [31514-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/6/6e572ee6458ac3d336063a63f33fda71.xhtml used -->
+</div>
+</body>
+</html>

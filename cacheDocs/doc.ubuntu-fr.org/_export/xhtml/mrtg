@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>mrtg</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2010-03-25T09:50:45+0100"/>
+<meta name="keywords" content="hardy,serveur,reseau,systeme,supervision,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../mrtg?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="mrtg"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/mrtg"/>
+<link rel="canonical" href="../../mrtg"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"mrtg","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="mrtg#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="mrtg#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="mrtg#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="mrtg#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="mrtg#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="mrtg#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<p><div class="noteimportant">
+Cette page est encore en chantier et ne produit pas (encore) de résultat fonctionnel.
+Il <strong>ne</strong> faut <strong>pas</strong> l&#039;utiliser si vous n&#039;êtes pas sûr de ce que vous faites.
+</p>
+
+<p>
+Toutes les contributions sont les bienvenues pour l&#039;améliorer.
+
+</div></p>
+</p>
+<div class="tags"><span>
+	<a href="../../hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="../../serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="../../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="http://doc.ubuntu-fr.org/supervision" class="wikilink1" title="supervision" rel="tag">supervision</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="mrtgsupervision_reseau_via_le_protocole_snmp">MRTG : supervision réseau via le protocole SNMP</h1>
+<div class="level1">
+
+<p>
+MRTG est un programme qui permet de créer des graphiques de l&#039;activité de votre ordinateur. Ces graphiques sont sauvegardés sous forme de fichiers <abbr title="HyperText Markup Language">HTML</abbr>.
+Le but est bien entendu de les rendre accessible depuis l&#039;extérieur en utilisant un serveur web, comme Apache, ce qui permet de surveiller l&#039;activité de l&#039;ordinateur à distance, depuis un simple navigateur web.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "MRTG : supervision réseau via le protocole SNMP" [329-763] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée ;</div>
+</li>
+<li class="level1"><div class="li"> Avoir activé l&#039;accès aux <a href="../../depots#universe_et_multiverse" class="wikilink1" title="depots">dépôts Universe et Multiverse</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Avoir un serveur web (Apache) fonctionnel et accessible depuis l&#039;extérieur.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [764-1090] -->
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Il vous suffit, pour cela, d&#039;<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer les paquets</a> <strong><a href="apt://mrtg" class="urlextern" title="apt://mrtg"  rel="nofollow">mrtg</a></strong>.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Installation" [1091-1237] -->
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> <strong>Partie à compléter</strong>
+</p>
+
+<p>
+<p><div class="notehelp">Je suppose ici que le répertoire de votre serveur web est <strong>/var/www/</strong>. Si ce répertoire est différent, adaptez les commandes en conséquence.
+</div></p>
+</p>
+
+<p>
+Tout d&#039;abord, rendez-vous dans le répertoire de votre serveur web, créez-y un sous-dossier mrtg et rendez-vous dans ce sous-dossier.
+</p>
+<pre class="code">cd /var/www &amp;&amp; sudo mkdir mrtg &amp;&amp; cd mrtg</pre>
+
+<p>
+Maintenant, nous allons récupérer mrtg-sys, qui est un ensemble de scripts Perl destiné à récupérer l&#039;activité de l&#039;ordinateur et créer les graphes d&#039;utilisation de ce dernier.
+Pour cela, utilisez la commande 
+</p>
+<pre class="code">sudo wget http://www.bozorokus.net/mrtg-sys.tgz</pre>
+
+<p>
+On décompresse l&#039;archive :
+</p>
+<pre class="code">sudo tar xvfz mrtg-sys.tgz</pre>
+
+<p>
+Enfin, l&#039;on crée les fichiers de configuration :
+</p>
+<pre class="code">sudo ./install.pl</pre>
+
+<p>
+Ce dernier script nous donne une ligne à ajouter dans le fichier <strong>/etc/crontab</strong> . Cette ligne nécessite quelques adaptations que nous verrons cela tout à l&#039;heure. Gardez-là sous la main pour le moment <img src="../../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /> .
+</p>
+
+<p>
+Maintenant, nous allons faire en sorte que notre index soit généré automatiquement. Déjà, nous allons revenir dans le répertoire principal de mrtg :
+</p>
+<pre class="code">cd /var/www/mrtg</pre>
+
+<p>
+Ensuite, l&#039;on exécute cette commande (<strong>Remplacez XXXX par le nom de votre machine</strong>) :
+</p>
+<pre class="code">sudo indexmaker --output=index.html /var/www/mrtg/mrtg-sys/mrtg_XXXX.cfg</pre>
+
+<p>
+Maintenant, vous pouvez ressortir la ligne donnée par le script d&#039;installation de MRTG-sys. Toutefois, cette ligne ne marche pas sur Ubuntu (elle suppose que vous avez compilé mrtg, alors que nous l&#039;avons installé avec apt-get).
+La ligne donnée est du style (où XXXX est le nom de votre ordinateur):
+</p>
+<pre class="code">*/5 * * * * root /usr/local/mrtg-2/bin/mrtg /var/www/mrtg/mrtg-sys/mrtg_XXXX.cfg  &gt;/dev/null 2&gt;/dev/null</pre>
+
+<p>
+Pour que cette ligne soit fonctionnelle, remplacez le chemin <strong>/usr/local/mrtg-2/bin/mrtg</strong> par <strong>/usr/bin/mrtg</strong>. De plus, pour évitez les avertissements, il faut ajouter <strong>env LANG=C</strong> devant le chemin de l&#039;exécutable.
+</p>
+
+<p>
+La ligne finale à <a href="../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">ajouter</a> dans <strong>/etc/crontab</strong> est donc (<strong>pensez à remplacer XXXX par votre nom de machine !</strong>) :
+</p>
+<pre class="code">*/5 * * * * root  env LANG=C /usr/bin/mrtg /var/www/mrtg/mrtg-sys/mrtg_XXXX.cfg  &gt;/dev/null 2&gt;/dev/null</pre>
+
+<p>
+Attendez 5 min que le cron s&#039;exécute, et le premier graphe devrait être généré.
+</p>
+
+<p>
+<p><div class="notetip">Attention, les scripts proposés sont destinés à des serveurs OVH - Voir Topic sur le forum pour plus d&#039;infos : <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=3360310#p3360310" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=3360310#p3360310"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?pid=3360310#p3360310</a> 
+</div></p>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Configuration" [1238-3860] -->
+<h2 class="sectionedit5" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Pour utiliser mrtg, il suffit de regarder le répertoire dans lequel vous avez installé mrtg avec un navigateur web.
+</p>
+
+<p>
+Soit, dans notre exemple :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://localhost/mrtg" class="urlextern" title="http://localhost/mrtg"  rel="nofollow">http://localhost/mrtg</a> depuis votre ordinateur</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://votre_ip/mrtg" class="urlextern" title="http://votre_ip/mrtg"  rel="nofollow">http://votre_ip/mrtg</a> depuis l&#039;extérieur</div>
+</li>
+</ul>
+
+<p>
+Si vous avez un nom de domaine, vous pouvez bien entendu l&#039;utiliser ;) .
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Utilisation" [3861-4208] -->
+<h2 class="sectionedit6" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="../../tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer son paquet</a> et de supprimer la ligne de /etc/crontab.
+</p>
+
+<p>
+Vous pouvez également supprimer 
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Désinstallation" [4209-4428] -->
+<h2 class="sectionedit7" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://oss.oetiker.ch/mrtg/" class="urlextern" title="http://oss.oetiker.ch/mrtg/"  rel="nofollow">http://oss.oetiker.ch/mrtg/</a>, le site du projet.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../../utilisateurs/kankan_01" class="wikilink2" title="utilisateurs:kankan_01" rel="nofollow">kankan_01</a>, <a href="../../utilisateurs/neurones67" class="wikilink2" title="utilisateurs:neurones67" rel="nofollow">Neurones67</a></em>
+</p>
+
+<p>
+<em> Basé sur <a href="http://guides.ovh.com/InstallMRTGSys" class="urlextern" title="http://guides.ovh.com/InstallMRTGSys"  rel="nofollow">Installation de MRTG-sys</a> sur le site d&#039;OVH (adapté à la gestion des paquets Debian).</em>
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Voir aussi" [4429-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/b/bae133a3b3f5099f55d4df6526ac8be6.xhtml used -->
+</div>
+</body>
+</html>

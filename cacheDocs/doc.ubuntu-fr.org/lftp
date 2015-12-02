@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>lftp - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-10-04T10:35:41+0200"/>
+<meta name="keywords" content="ftp"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/lftp?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/lftp?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/lftp"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/lftp"/>
+<link rel="canonical" href="lftp"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"lftp","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="lftp#main" tabindex="1">Contenu</a> | <a href="lftp#qsearch__in" tabindex="2">Rechercher</a> | <a href="lftp#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="lftp" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="lftp" >lftp</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="lftp#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="lftp#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="lftp#mise_a_jour_de_votre_site_internet_modifie_localement">Mise à jour de votre site Internet modifié localement</a></div></li>
+<li class="level1"><div class="li"><a href="lftp#sauvegarde_sur_votre_ordinateur_de_votre_site_web">Sauvegarde sur votre ordinateur de votre site web</a></div></li>
+<li class="level1"><div class="li"><a href="lftp#simplification_de_la_commande_tapee_dans_la_console">Simplification de la commande tapée dans la console</a></div></li>
+<li class="level1"><div class="li"><a href="lftp#automatiser_une_tache">Automatiser une tâche</a></div></li>
+<li class="level1"><div class="li"><a href="lftp#lien">Lien</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="ftp" class="wikilink1" title="ftp" rel="tag">ftp</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="client_ftplftp">Client FTP : lftp</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="lftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412411741" /><input type="hidden" name="summary" value="[Client FTP : lftp] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="23-57" /><input type="submit" value="Modifier" class="button" title="Client FTP : lftp" /></div></form></div>
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+Lftp est un client <abbr title="File Transfer Protocol">FTP</abbr> permettant facilement en ligne de commande de faire des transferts de fichiers (par exemple pour mettre à jour votre site Internet modifié localement ou pour faire une sauvegarde sur votre ordinateur).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="lftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412411741" /><input type="hidden" name="summary" value="[Introduction] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="58-312" /><input type="submit" value="Modifier" class="button" title="Introduction" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+En installant le paquet lftp via synaptic ou directement en cliquant sur <a href="apt://lftp" class="urlextern" title="apt://lftp"  rel="nofollow">lftp</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="lftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412411741" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="313-432" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit4" id="mise_a_jour_de_votre_site_internet_modifie_localement">Mise à jour de votre site Internet modifié localement</h2>
+<div class="level2">
+
+<p>
+Pour mettre à jour votre site Internet à partir de votre site en local, il faut utiliser la commande suivante :
+</p>
+<pre class="code">lftp ftp://identifiant:mot_de_passe@site_de_connexion -e &quot;mirror -e -R -x dossier_ignoré -x dossier_ignoré /emplacement_local /emplacement_distant ; quit&quot;</pre>
+
+<p>
+Cette commande ne transfère dans l&#039;emplacement distant que les fichiers modifiés dans l&#039;emplacement local et les nouveaux fichiers et efface dans l&#039;emplacement distant les fichiers qui n&#039;existent plus en local. Voici une description sommaire des éléments de la commande :
+</p>
+<ul>
+<li class="level1"><div class="li"> Le <strong>-e</strong> commande à lftp d&#039;exécuter ce qui est entre guillemets.</div>
+</li>
+<li class="level1"><div class="li"> Le <strong>mirror</strong> crée une copie exacte.</div>
+</li>
+<li class="level1"><div class="li"> Le <strong>-e</strong> de <strong>mirror</strong> efface les fichiers qui n&#039;existent plus.</div>
+</li>
+<li class="level1"><div class="li"> Le <strong>-R</strong> signifie que le transfert se fait de l&#039;emplacement local à l&#039;emplacement distant.</div>
+</li>
+<li class="level1"><div class="li"> Le <strong>-x</strong> désigne les dossiers qu&#039;il ne faut pas prendre en compte dans le transfert. On met autant de <strong>-x dossier_ignoré</strong> qu&#039;il y a d&#039;emplacements à ignorer. S&#039;il n&#039;y en a pas, on ne met tout simplement pas de <strong>-x</strong>. <strong>NOTE :</strong> Le chemin indiqué pour les dossiers à ignorer dépend du dossier local déclaré.</div>
+</li>
+<li class="level1"><div class="li"> Le <strong>quit</strong> coupe la connexion après le transfert.</div>
+</li>
+</ul>
+
+<p>
+Voici un exemple pour aider à comprendre la commande :
+</p>
+<pre class="code">lftp ftp://moi:motdepasse@ftp.perso.com -e &quot;mirror -e -R -x gestion/exemples/ -x documents/multimedia/musique/ /var/www/mon_site/ / ; quit&quot;</pre>
+
+<p>
+Dans cet exemple, l&#039;identifiant <strong>moi</strong> se connecte avec le mot de passe <strong>motdepasse</strong> au site <strong><a href="ftp://ftp.perso.com" class="urlextern" title="ftp://ftp.perso.com"  rel="nofollow">ftp.perso.com</a></strong> pour transférer ce qui est dans <strong>/var/www/mon_site/</strong> (l&#039;emplacement local) dans l&#039;emplacement distant <strong>/</strong> (la racine de l&#039;emplacement distant), et ce en ignorant tout ce qu&#039;il y a dans les dossiers locaux <strong>/var/www/mon_site/gestion/exemples/</strong> et <strong>/var/www/mon_site/documents/multimedia/musique/</strong>.
+</p>
+
+<p>
+<p><div class="noteclassic">Lorsqu&#039;on souhaite juste mettre un fichier sur le serveur distant, c&#039;est la fonction <em>put</em> qu&#039;il faut utiliser : <br/>
+<code>lftp <a href="ftp://identifiant:mot_de_passe@site_de_connexion" class="urlextern" title="ftp://identifiant:mot_de_passe@site_de_connexion"  rel="nofollow">ftp://identifiant:mot_de_passe@site_de_connexion</a> -e &quot;put -O /repertoire/fichier/distant/ /chemin/local/du/fichier; quit&quot;</code> <br/>
+
+Si l&#039;on souhaite rapatrier un fichier, c&#039;est la fonction <em>get</em> : \\ <code>lftp <a href="ftp://identifiant:mot_de_passe@site_de_connexion" class="urlextern" title="ftp://identifiant:mot_de_passe@site_de_connexion"  rel="nofollow">ftp://identifiant:mot_de_passe@site_de_connexion</a> -e &quot;get /repertoire/fichier/distant/ -o /chemin/local/du/fichier; quit&quot;</code>
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="lftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412411741" /><input type="hidden" name="summary" value="[Mise à jour de votre site Internet modifié localement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="433-2822" /><input type="submit" value="Modifier" class="button" title="Mise à jour de votre site Internet modifié localement" /></div></form></div>
+<h2 class="sectionedit5" id="sauvegarde_sur_votre_ordinateur_de_votre_site_web">Sauvegarde sur votre ordinateur de votre site web</h2>
+<div class="level2">
+
+<p>
+Pour faire une sauvegarde sur votre ordinateur de votre site Internet, il faut utiliser la commande suivante :
+</p>
+<pre class="code">lftp ftp://identifiant:mot_de_passe@site_de_connexion -e &quot;mirror -e -x dossier_ignoré -x dossier_ignoré /emplacement_distant /emplacement_local ; quit&quot;</pre>
+
+<p>
+Cette commande ne transfère sur l&#039;ordinateur que les fichiers modifiés dans l&#039;emplacement distant et les nouveaux fichiers et efface sur l&#039;ordinateur les fichiers qui n&#039;existent plus dans l&#039;emplacement distant. Voici une description sommaire des éléments de la commande :
+</p>
+<ul>
+<li class="level1"><div class="li"> Le <strong>-e</strong> commande à lftp d&#039;exécuter ce qui est entre guillemets.</div>
+</li>
+<li class="level1"><div class="li"> Le <strong>mirror</strong> crée une copie exacte.</div>
+</li>
+<li class="level1"><div class="li"> Le <strong>-e</strong> de <strong>mirror</strong> efface les fichiers qui n&#039;existent plus.</div>
+</li>
+<li class="level1"><div class="li"> Le <strong>-x</strong> désigne les dossiers qu&#039;il ne faut pas prendre en compte dans le transfert. On met autant de <strong>-x dossier_ignoré</strong> qu&#039;il y a d&#039;emplacements à ignorer. S&#039;il n&#039;y en a pas, on ne met tout simplement pas de <strong>-x</strong>. <strong>NOTE :</strong> Le chemin indiqué pour les dossiers à ignorer dépend du dossier distant déclaré.</div>
+</li>
+<li class="level1"><div class="li"> Le <strong>quit</strong> coupe la connexion après le transfert.</div>
+</li>
+</ul>
+
+<p>
+Voici un exemple pour aider à comprendre la commande :
+</p>
+<pre class="code">lftp ftp://moi:motdepasse@ftp.perso.com -e &quot;mirror -e -x public/ -x documents/perso/textes/ /html/ /var/www/mon_site/ ; quit&quot;</pre>
+
+<p>
+Dans cet exemple, l&#039;identifiant <strong>moi</strong> se connecte avec le mot de passe <strong>motdepasse</strong> au site <strong><a href="ftp://ftp.perso.com" class="urlextern" title="ftp://ftp.perso.com"  rel="nofollow">ftp.perso.com</a></strong> pour transférer ce qui est dans <strong>/html/</strong> (de l&#039;emplacement distant) dans l&#039;emplacement local <strong>/var/www/mon_site/</strong>, et ce en ignorant tout ce qu&#039;il y a dans les dossiers distants <strong>/html/public/</strong> et <strong>/html/documents/perso/textes/</strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="lftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412411741" /><input type="hidden" name="summary" value="[Sauvegarde sur votre ordinateur de votre site web] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2823-4557" /><input type="submit" value="Modifier" class="button" title="Sauvegarde sur votre ordinateur de votre site web" /></div></form></div>
+<h2 class="sectionedit6" id="simplification_de_la_commande_tapee_dans_la_console">Simplification de la commande tapée dans la console</h2>
+<div class="level2">
+
+<p>
+Pour ne pas avoir à taper la commande à chaque fois que vous en avez besoin ou avoir à la chercher dans l&#039;historique de la console, vous pouvez la remplacer par un alias. Pour ce faire, il faut ouvrir le fichier <strong>/home/utilisateur/.bashrc</strong>, ce qui donne en ligne de commande :
+</p>
+<pre class="code">gedit /home/utilisateur/.bashrc</pre>
+
+<p>
+Il faut ensuite écrire ceci à la fin du fichier :
+</p>
+<pre class="code">alias nom_voulu_pour_la_commande=&#039;commande&#039;</pre>
+
+<p>
+Cela peut donner par exemple : 
+</p>
+<pre class="code">alias maj_site=&#039;lftp ftp://moi:motdepasse@ftp.perso.com -e &quot;mirror -e -R -x gestion/exemples/ -x documents/multimedia/musique/ /var/www/mon_site/ / ; quit&quot;&#039;</pre>
+
+<p>
+Vous enregistrez le fichier et vous ouvrez la console. En tapant <strong>maj_site</strong>, vous démarrez la commande lftp.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="lftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412411741" /><input type="hidden" name="summary" value="[Simplification de la commande tapée dans la console] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4558-5377" /><input type="submit" value="Modifier" class="button" title="Simplification de la commande tapée dans la console" /></div></form></div>
+<h2 class="sectionedit7" id="automatiser_une_tache">Automatiser une tâche</h2>
+<div class="level2">
+
+<p>
+Par exemple, pour sauvegarder votre site régulièrement, faites un <a href="tutoriel/script_shell" class="wikilink1" title="tutoriel:script_shell">script</a> et utilisez <a href="cron" class="wikilink1" title="cron">cron</a> ou <a href="http://doc.ubuntu-fr.org/fcron" class="wikilink1" title="fcron">fcron</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="lftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412411741" /><input type="hidden" name="summary" value="[Automatiser une tâche] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5378-5550" /><input type="submit" value="Modifier" class="button" title="Automatiser une tâche" /></div></form></div>
+<h2 class="sectionedit8" id="lien">Lien</h2>
+<div class="level2">
+
+<p>
+<a href="http://lftp.yar.ru/" class="urlextern" title="http://lftp.yar.ru/"  rel="nofollow">Site officiel de lftp (en)</a>
+</p>
+<hr />
+
+<p>
+<em>Contributeur : <a href="utilisateurs/luron" class="wikilink1" title="utilisateurs:luron">luron</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="lftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412411741" /><input type="hidden" name="summary" value="[Lien] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5551-" /><input type="submit" value="Modifier" class="button" title="Lien" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/b/b080ed45f32d5f2e6360e1c7abd87124.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/lftp?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/lftp?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/lftp?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/lftp?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/lftp?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

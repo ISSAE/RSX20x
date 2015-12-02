@@ -1,0 +1,632 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>pspice - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2010-08-05T06:11:23+0200"/>
+<meta name="keywords" content="conception electronique,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/pspice?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/pspice?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/pspice"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/pspice"/>
+<link rel="canonical" href="pspice"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"pspice","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="pspice#main" tabindex="1">Contenu</a> | <a href="pspice#qsearch__in" tabindex="2">Rechercher</a> | <a href="pspice#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="pspice" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="pspice" >pspice</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="pspice#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="pspice#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="pspice#debut_d_installation_via_wine">Début d&#039;installation via Wine</a></div></li>
+<li class="level2"><div class="li"><a href="pspice#configuration_de_wine">Configuration de wine</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="pspice#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="pspice#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="pspice#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="pspice#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="conception_electronique" class="wikilink1" title="conception_electronique" rel="tag">conception électronique</a>,
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="pspice">Pspice</h1>
+<div class="level1">
+
+<p>
+<strong>Pspice</strong> est un logiciel de simulation électronique propriétaire permettant notamment d&#039;étudier des montages électriques, de tracer des diagrammes de Bode, de calculer des gains, etc.
+</p>
+
+<p>
+Prévu pour Windows, on peut tout à fait le faire fonctionner sous Ubuntu après quelques manipulations.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="pspice"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1280981483" /><input type="hidden" name="summary" value="[Pspice] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="53-371" /><input type="submit" value="Modifier" class="button" title="Pspice" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée.</div>
+</li>
+<li class="level1"><div class="li"> Disposer du logiciel d&#039;installation setup.exe permettant son installation sous Windows.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="pspice"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1280981483" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="372-607" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteclassic">Toutes les manipulations qui suivent ont été testées sur Ubuntu <a href="jaunty" class="wikilink1" title="jaunty">Jaunty</a> 64bits, la version de <a href="wine" class="wikilink1" title="wine">Wine</a> utilisée est la 1.1.31 (celle présente dans les dépôts wineHQ en octobre 2009).
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="pspice"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1280981483" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="608-840" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit4" id="debut_d_installation_via_wine">Début d&#039;installation via Wine</h3>
+<div class="level3">
+
+<p>
+Tout d&#039;abord, il faut <a href="wine" class="wikilink1" title="wine">installer la dernière version de Wine</a>.
+Ensuite, double-cliquer sur le setup.exe qui lancera la procédure d&#039;installation standard.
+</p>
+
+<p>
+<p><div class="noteclassic">Il faut cocher les cases Schematics ET Capture lorsqu&#039;il est demandé de sélectionner un des deux. Sinon, il sera impossible de lancer une simulation (fichier de configuration absent).
+</div></p>
+</p>
+
+<p>
+Cependant, bien que l&#039;installation se soit bien passée, certaines fonctionnalités demeurent inaccessibles. Pour y avoir accès, il faut d&#039;abord déplacer le dossier OrCAD_Demo apparu dans ~/.wine/drive_c/Program Files vers un emplacement ne contenant pas d&#039;espace (Pspice ne les apprécie pas).
+</p>
+
+<p>
+Par exemple, je l&#039;ai déplacé vers ~/.wine/drive_c
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="pspice"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1280981483" /><input type="hidden" name="summary" value="[Début d'installation via Wine] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="841-1596" /><input type="submit" value="Modifier" class="button" title="Début d'installation via Wine" /></div></form></div>
+<h3 class="sectionedit5" id="configuration_de_wine">Configuration de wine</h3>
+<div class="level3">
+
+<p>
+Ensuite, il faut installer <a href="http://doc.ubuntu-fr.org/winetricks" class="wikilink1" title="winetricks">winetricks</a> puis l&#039;utiliser pour installer <strong>dcom98</strong>. Pour cela, il suffit de saisir ceci dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> :
+</p>
+<pre class="code">wget http://www.kegel.com/wine/winetricks
+chmod 777 winetricks
+./winetricks dcom98</pre>
+
+<p>
+Ce n&#039;est pas encore fini !
+Tapez ceci dans un terminal :
+</p>
+<pre class="code">winecfg</pre>
+
+<p>
+Cela ouvre le menu de configuration de wine.
+</p>
+
+<p>
+A partir de là :
+</p>
+<ul>
+<li class="level1"><div class="li"> aller à l&#039;onglet Application</div>
+</li>
+<li class="level1"><div class="li"> sélectionner &quot;windows 98&quot; comme version de windows (à la place de &quot;windows XP&quot;).</div>
+</li>
+<li class="level1"><div class="li"> aller à l&#039;onglet Librairies.</div>
+</li>
+<li class="level1"><div class="li"> sélectionner les trois &quot;overrides&quot; ole32, oleaut32 et rpcrt4 puis cliquer sur &quot;Edit&quot; et, enfin, choisir &quot;Native when builtin&quot; à la place de &quot;Native (windows).</div>
+</li>
+</ul>
+
+<p>
+Enfin, il faut remplacer le fichier PSPICEEV.INI qui se trouve dans le dossier ~/.wine/drive_c/windows par celui provenant d&#039;une installation propre sur windows puis l&#039;éditer pour avoir les chemins corrects. 
+</p>
+
+<p>
+…
+</p>
+
+<p>
+Sinon, si vous ne vous sentez pas d&#039;humeur (ou si tous vous amis sont sous <abbr title="GNU&#039;s Not Unix">GNU</abbr>/linux <img src="lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /> ), il suffit de créer le fichier PSPICEEV.INI, de l&#039;ouvrir avec un éditeur de texte puis de copier/coller le contenu suivant dedans :
+</p>
+<pre class="code">[PSPICE]
+LIBPATH=&quot;&quot;C:\OrCAD_Demo\PSpice\UserLib&quot;;&quot;C:\OrCAD_Demo\Capture\Library\PSpice&quot;;&quot;C:\OrCAD_Demo\PSpice\Library&quot;&quot;
+BACKUP=&quot;C:\OrCAD_Demo\PSpice\Backup&quot;
+PROBECMD=&quot;&quot;PROBE.EXE&quot;&quot;
+STMEDCMD=&quot;&quot;STMED.EXE&quot;&quot;
+PARTSCMD=&quot;&quot;MODELED.EXE&quot;&quot;
+SCHEMATICSCMD=&quot;&quot;PSCHED.EXE&quot;&quot;
+OPTIMIZERCMD=&quot;&quot;OPTIMIZE.EXE&quot;&quot;
+MSGVIEWCMD=&quot;&quot;MSGVIEW.EXE&quot;&quot;
+PSPICECMD=&quot;&quot;PSPICEAD.EXE&quot;&quot;
+TEXTEDITCMD=&quot;&quot;NOTEPAD.EXE&quot;&quot;
+BOMOUTPUTTYPE=&quot;TEXT&quot;
+COMPDESCFILE=&quot;user.cdf&quot;
+[PSPICE NETLIST]
+LINE1=.lib &quot;C:\OrCAD_Demo\PSpice\UserLib\eea.lib&quot;
+LINE2=.lib &quot;nom.lib&quot;
+[PROBE]
+PRBFILE=&quot;C:\OrCAD_Demo\PSpice\Common\PSPICE.PRB&quot;
+MARKDATAPOINTS=OFF
+TRACESYMBOLS=ALWAYS
+TRACECOLORSCHEME=NORMAL
+STATUSLINEON=ON
+DISPLAYEVALON=OFF
+HISTNDIVISIONS=10
+HISTSHOWSTATSON=ON
+CURSORRIGHT=0
+CURSORBOTTOM=0
+cursorndigits=5
+errorMsgDlgLeft=-1
+errorMsgDlgTop=-1
+displaytoolbar=ON
+[PROBE DISPLAY COLORS]
+NUMTRACECOLORS=12
+BACKGROUND=BLACK
+FOREGROUND=WHITE
+TRACE_1=BRIGHTGREEN
+TRACE_2=BRIGHTRED
+TRACE_3=BRIGHTBLUE
+TRACE_4=BRIGHTYELLOW
+TRACE_5=BRIGHTMAGENTA
+TRACE_6=BRIGHTCYAN
+TRACE_7=MUSTARD
+TRACE_8=PINK
+TRACE_9=LIGHTGREEN
+TRACE_10=DARKPINK
+TRACE_11=LIGHTBLUE
+TRACE_12=PURPLE
+; This is set up for a VGA.  If you are using a display that can show
+; more than 16 colors simultaneously, change NUMTRACECOLORS to 12.
+; You will probably have to experiment with the trace colors to determine
+; which ones look good on your display.
+; The following is setup for a black and white printer
+; For a color printer, set NUMTRACECOLORS=n where n is a number between
+; 1 and 12 that represents the number of different trace colors you want.
+; It&#039;s usually best to set it to 12 if you&#039;re using 12 for the display, and
+; if your printer supports 12 colors.
+[PROBE PRINTER COLORS]
+NUMTRACECOLORS=0
+BACKGROUND=BRIGHTWHITE
+FOREGROUND=BLACK
+TRACE_1=GREEN
+TRACE_2=RED
+TRACE_3=BLUE
+TRACE_4=YELLOW
+TRACE_5=MAGENTA
+TRACE_6=CYAN
+TRACE_7=MUSTARD
+TRACE_8=PINK
+TRACE_9=LIGHTGREEN
+TRACE_10=DARKPINK
+TRACE_11=LIGHTBLUE
+TRACE_12=PURPLE
+[Stimulus Editor]
+defaultMax=1e-006
+lastfile1=&quot;(none)&quot;
+lastfile2=&quot;(none)&quot;
+lastfile3=&quot;(none)&quot;
+lastfile4=&quot;(none)&quot;
+cursorright=0
+cursorbottom=0
+cursorndigits=5
+errorMsgDlgLeft=-1
+errorMsgDlgTop=-1
+statuslineon=ON
+displaytoolbar=ON
+[Stimulus Editor DISPLAY COLORS]
+NUMTRACECOLORS=6
+BACKGROUND=BLACK
+FOREGROUND=WHITE
+TRACE_1=BRIGHTGREEN
+TRACE_2=BRIGHTRED
+TRACE_3=BRIGHTBLUE
+TRACE_4=BRIGHTYELLOW
+TRACE_5=BRIGHTMAGENTA
+TRACE_6=BRIGHTCYAN
+[Stimulus Editor PRINTER COLORS]
+NUMTRACECOLORS=6
+BACKGROUND=BRIGHTWHITE
+FOREGROUND=BLACK
+TRACE_1=GREEN
+TRACE_2=RED
+TRACE_3=BLUE
+TRACE_4=YELLOW
+TRACE_5=MAGENTA
+TRACE_6=CYAN
+[Optimizer]
+[Model Editor]
+UserSymLibPath=&quot;C:\OrCAD_Demo\Capture\Library\PSpice\modeled.etc&quot;
+BaseSymLibPath=&quot;C:\OrCAD_Demo\Capture\Library\PSpice\modeled.etc&quot;
+Translator=&quot;C:\OrCAD_Demo\Capture\sch2cap.exe&quot;
+displaytoolbar=ON
+AlwaysCreatePart=OFF
+SymbolPathAsModel=ON
+SchSymCreationType=OFF
+SchSymSamePath=ON
+UserSchSymPath=&quot;(none)&quot;
+BaseSchSymPath=&quot;C:\OrCAD_Demo\PSpice\.\Library\ModelEd.slb&quot;
+AutoSplitterResizing=ON
+AutoGraphRefresh=ON
+cursorright=0
+cursorbottom=0
+cursorndigits=5
+errorMsgDlgLeft=-1
+errorMsgDlgTop=-1
+statuslineon=ON
+PrintLeftMargin=500
+PrintTopMargin=500
+PrintRightMargin=500
+PrintBottomMargin=500
+[Stimulus Editor BORDER]
+left=54
+top=54
+width=768
+height=530
+zoomed=0
+[SCHEMATICS LAYERS]
+SIM_VOLTAGES=PRINT:ON,OVERBARSALLOWED:ON,DISPLAY_INFO:LineOn:ON,LineColor:255/255/255,LineWidth:0,LineStyle:0,ArrowHead:4/1/5/5,Fill:ON,FillColor:0/128/0,Frame:ON,FrameColor:0/128/0,FrameWidth:0,FrameStyle:0,FrameRounded:ON,FontName:Arial,FontHeight:8
+HIDDENPINS=OVERBARSALLOWED:ON;DISPLAY_INFO:LineOn:ON,LineColor:0/0/255,LineWidth:0,LineStyle:0,ArrowHead:4/1/5/5,Fill:OFF,FillColor:0/255/0,Frame:OFF,FrameColor:0/0/255,FrameWidth:0,FrameStyle:0,FrameRounded:OFF,FontName:Arial,FontHeight:8
+[SCHEMATICS INTERFACES]
+PCBOARDS=EXT:.nlf ECOEXT:.bco MAPFILE1:pcboards.xnt PAREX:MSIM REFPINSEP:2 RDBEXT:.si
+[SCHEMATICS]
+DFLTTITLESYM=titleblk
+[PACKAGE TYPES]
+DIP6=DIP
+DIP8=DIP
+DIP14=DIP
+DIP16=DIP
+DIP16X=DIP
+DIP18=DIP
+DIP20=DIP
+DIP22=DIP
+DIP22L=DIP
+DIP24=DIP
+DIP24L=DIP
+DIP24X=DIP
+DIP28=DIP
+DIP28L=DIP
+DIP28X=DIP
+DIP32=DIP
+DIP32X=DIP
+DIP36X=DIP
+DIP36XX=DIP
+DIP40X=DIP
+DIP42X=DIP
+DIP48X=DIP
+DIP50XX=DIP
+DIP52XX=DIP
+DIP64XX=DIP
+LCC18=LCC
+LCC20=LCC
+LCC28=LCC
+SO8=SOIC
+SO8W=SOIC
+SO14=SOIC
+SO14L/MO-046AA=SOIC
+SO14W=SOIC
+SO16=SOIC
+SO16L/MO-046AB=SOIC
+SO16W=SOIC
+SO20L/MO-046AC=SOIC
+SO20W=SOIC
+SO24W=SOIC
+SO24X=SOIC
+SO28W=SOIC
+SO28X=SOIC
+SO32W=SOIC
+SO32X=SOIC
+SO36W=SOIC
+SO36X=SOIC
+SOJ14/300=SOJ
+SOJ14/350=SOJ
+SOJ16/300=SOJ
+SOJ16/350=SOJ
+SOJ18/300=SOJ
+SOJ18/350=SOJ
+SOJ20/300=SOJ
+SOJ20/350=SOJ
+SOJ22/300=SOJ
+SOJ22/350=SOJ
+SOJ24/300=SOJ
+SOJ24/350=SOJ
+TO-3=TO
+TO-3-8=TO
+TO-3P=TO
+TO-5=TO
+TO-8=TO
+TO-18=TO
+TO-39=TO
+TO-46=TO
+TO-52=TO
+TO-64=TO
+TO-61=TO
+TO-66=TO
+TO-78=TO
+TO-92=TO
+TO-99=TO
+TO-100=TO
+TO-204=TO
+TO-205=TO
+TO-206=TO
+TO-218=TO
+TO-220=TO
+TO-226=TO
+TO-238=TO
+TO-252=TO
+TO-254=TO
+TSOP6X14-16=TSOP
+TSOP6X14-24=TSOP
+TSOP6X14-24R=TSOP
+TSOP6X16-24=TSOP
+TSOP6X18-24=TSOP
+TSOP6X18-24R=TSOP
+TSOP6X18-28=TSOP
+PQFP84=PQFP
+PQFP100=PQFP
+PQFP132=PQFP
+PQFP164=PQFP
+PQFP196=PQFP
+PQFP244=PQFP
+DO-4=DISCRETE
+DO-7=DISCRETE
+DO-13=DISCRETE
+DO-21=DISCRETE
+DO-35=DISCRETE
+DO-41=DISCRETE
+DO-203=DISCRETE
+DO-204=DISCRETE
+DO-204AA=DISCRETE
+DO-208=DISCRETE
+[PART LIBS]
+LIB1=abm [.slb]
+LIB2=analog [.slb , .plb]
+LIB3=analog_p [.slb]
+LIB4=breakout [.slb]
+LIB5=eval [.slb , .plb]
+LIB6=port [.slb]
+LIB7=source [.slb]
+LIB8=sourcstm [.slb]
+LIB9=special [.slb]
+[MsgView]
+left=50
+top=50
+width=454
+height=354
+toolbar=1
+statusbar=1
+senderclr=1
+timestamps=1
+col0width=-1
+col1width=-1
+col2width=-1
+col3width=-1
+fontsize=-13
+fontwidth=0
+fontweight=400
+fontitalic=0
+fontname=MS Sans Serif
+[Schematics MRP LIST]
+MaxMRPListSize=10
+PART1=C
+PART2=D1N4148
+PART3=NMOS5
+PART4=r
+PART5=GND_ANALOG
+PART6=vdc
+PART7=PMOS5</pre>
+
+<p>
+Placez le ensuite dans ~/.wine/drive_c/windows .
+</p>
+
+<p>
+Ca y est ! Pspice est (enfin) totalement fonctionnel !
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="pspice"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1280981483" /><input type="hidden" name="summary" value="[Configuration de wine] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1597-8589" /><input type="submit" value="Modifier" class="button" title="Configuration de wine" /></div></form></div>
+<h2 class="sectionedit6" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="pspice"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1280981483" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8590-8621" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h2 class="sectionedit7" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="pspice"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1280981483" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8622-8651" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h2 class="sectionedit8" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="pspice"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1280981483" /><input type="hidden" name="summary" value="[Désinstallation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8652-8687" /><input type="submit" value="Modifier" class="button" title="Désinstallation" /></div></form></div>
+<h2 class="sectionedit9" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Ce tutoriel a été rédigé en grande partie grâce à <a href="http://ubuntuforums.org/showthread.php?t=550991" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=550991"  rel="nofollow">cette page [en] </a>. </div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs: <a href="http://doc.ubuntu-fr.org/utilisateurs/le_rouge" class="wikilink1" title="utilisateurs:le_rouge">Le Rouge</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="pspice"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1280981483" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8688-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/7/7db892c2244f80bf36a832f1dee60daf.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/pspice?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pspice?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pspice?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pspice?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pspice?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

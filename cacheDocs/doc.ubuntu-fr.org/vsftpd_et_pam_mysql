@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>vsftpd_et_pam_mysql - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-04-30T15:44:24+0200"/>
+<meta name="keywords" content="brouillon,gutsy,hardy,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/vsftpd_et_pam_mysql?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/vsftpd_et_pam_mysql?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/vsftpd_et_pam_mysql"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/vsftpd_et_pam_mysql"/>
+<link rel="canonical" href="vsftpd_et_pam_mysql"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"vsftpd_et_pam_mysql","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="vsftpd_et_pam_mysql#main" tabindex="1">Contenu</a> | <a href="vsftpd_et_pam_mysql#qsearch__in" tabindex="2">Rechercher</a> | <a href="vsftpd_et_pam_mysql#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="vsftpd_et_pam_mysql" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="vsftpd_et_pam_mysql" >vsftpd_et_pam_mysql</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="versions">versions supportées d'Ubuntu</a>.<br />
+Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="vsftpd_et_pam_mysql#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="vsftpd_et_pam_mysql#configuration_de_vsftpd">Configuration de VsftpD</a></div></li>
+<li class="level1"><div class="li"><a href="vsftpd_et_pam_mysql#configuration_de_mysql">Configuration de MySQL</a></div></li>
+<li class="level1"><div class="li"><a href="vsftpd_et_pam_mysql#configuration_du_certificat_ssl">Configuration du certificat SSL</a></div></li>
+<li class="level1"><div class="li"><a href="vsftpd_et_pam_mysql#configuration_de_pam_mysql">Configuration de pam_mysql</a></div></li>
+<li class="level1"><div class="li"><a href="vsftpd_et_pam_mysql#configuration_des_partages">Configuration des partages</a></div></li>
+<li class="level1"><div class="li"><a href="vsftpd_et_pam_mysql#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>,
+	<a href="gutsy" class="wikilink1" title="gutsy" rel="tag">Gutsy</a>,
+	<a href="hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">Tutoriel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="vsftpd_et_authentification_via_pam_mysql_sur_base_de_donnees_sql">VsftpD et authentification via pam_mysql sur base de données SQL</h1>
+<div class="level1">
+
+<p>
+Ce tutoriel vous servira à authentifier des utilisateurs VsftpD grâce à une base de données MySQL. Le but étant de ne pas utiliser une base de données Berkeley qui doit être re-générée à chaque création, suppression ou mise à jour d&#039;utilisateur. Je précise que j&#039;ai réalisé cette installation sur une Ubuntu 8.04 Server.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="vsftpd_et_pam_mysql"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1398865464" /><input type="hidden" name="summary" value="[VsftpD et authentification via pam_mysql sur base de données SQL] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="47-466" /><input type="submit" value="Modifier" class="button" title="VsftpD et authentification via pam_mysql sur base de données SQL" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong><a href="apt://vsftpd,mysql-server,libpam-mysql,openssl" class="urlextern" title="apt://vsftpd,mysql-server,libpam-mysql,openssl"  rel="nofollow">vsftpd mysql-server libpam-mysql openssl</a></strong>
+</p>
+
+<p>
+Une fois ces logiciels installés, je vous conseille de suivre ce <a href="mysql" class="wikilink1" title="mysql">tutoriel MySQL</a> afin de correctement sécuriser votre serveur
+de base de données, notamment la partie <strong>Configuration</strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="vsftpd_et_pam_mysql"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1398865464" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="467-852" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit3" id="configuration_de_vsftpd">Configuration de VsftpD</h2>
+<div class="level2">
+
+<p>
+On commence par sauvegarder le nécessaire :
+</p>
+<pre class="code">sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.OK</pre>
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> en tant qu&#039;<a href="sudo" class="wikilink1" title="sudo">administrateur</a>.
+</p>
+
+<p>
+Ci dessous la configuration du fichier <strong>/etc/vsftpd.conf</strong> avec le détail de chaque option. Les utilisateurs virtuels se
+connectent et sont emprisonnés (chroot) dans un même dossier, les connections sont encryptées en SSL (<strong>Cipher DES-CBC3-<abbr title="Secure Hash Algorithm">SHA</abbr></strong>)
+et les options de connexion passives sont activées.
+</p>
+<pre class="file">
+# Serveur en écoute
+listen=YES
+# Port d’écoute du serveur
+listen_port=21
+
+# Options des utilisateurs anonymes ici désactivés
+anonymous_enable=NO
+# Autorisation d&#039;upload pour les utilisateurs anonymes
+anon_upload_enable=NO
+# Autorisation de création de répertoire pour les utilisateurs anonymes
+# mais aussi de suppression et de renommage
+anon_other_write_enable=NO
+anon_mkdir_write_enable=NO
+# Autorisation de connexion anonyme en ssl
+allow_anon_ssl=NO
+# Autorise les utilisateurs locaux ou virtuels a se connecter
+local_enable=YES
+# Autorise l&#039;ecriture sur le serveur (upload)
+write_enable=YES
+# Masque d&#039;upload de fichier 022 =&gt; correspond a un chmod 755
+local_umask=022
+# Monitoring de base via `ps -ef | grep vsftpd`
+setproctitle_enable=YES
+# Active les messages de changement de répertoire
+dirmessage_enable=YES
+# Utilisation de log pour les uploads et downloads (par defaut /var/log/vsftpd.log)
+xferlog_enable=YES
+# Emplacement du fichier de log 
+xferlog_file=/var/log/vsftpd.log
+# Formatage de la log au standard wu-ftpd
+xferlog_std_format=YES
+# Utilisation de 2 fichiers de log différents (Par défaut /var/log/xferlog et /var/log/vsftpd.log)
+dual_log_enable=YES
+
+# Options de connexion
+# Nombre de clients maximum
+max_clients=30
+# Nombre maximum de connexions par clients
+max_per_ip=3
+# Durée en secondes d’inactivité avant déconnexion de la session
+idle_session_timeout=60
+# Durée en secondes d’inactivité avant déconnexion de données
+data_connection_timeout=120
+# Débit maximum du serveur en bytes par secondes (0 = débit illimité)
+local_max_rate=0
+# Message de bienvenue affiche durant la phase de connexion
+ftpd_banner=Bienvenue sur le serveur VsftpD
+# Bloquer les utilisateurs dans un dossier
+chroot_local_user=YES
+# Dossier utiliser pour le chroot (doit appartenir a root et avec un chmod 755)
+# car il ne doit surtout pas être inscriptible (writable) par tous le monde
+secure_chroot_dir=/var/run/vsftpd
+# Nom du service d&#039;authentification utilise par le serveur vsftpd
+pam_service_name=vsftpd
+# Utilisation des privilèges locaux pour les utilisateurs virtuels
+# permet notamment de donner les droits d’écriture car sinon les 
+# utilisateurs virtuels ont des droits d&#039;utilisateurs anonymes
+virtual_use_local_privs=YES
+# Autoriser les utilisateurs virtuels
+guest_enable=YES
+# Utilisateur du lancement du serveur vsftpd
+# ici c&#039;est le même utilisateur que le serveur apache
+# mais vous pouvez créer un utilisateur dédie à cette tache
+guest_username=www-data
+# Dossier ou vont être encapsules les utilisateurs virtuels
+# représente le / du site ftp
+local_root=/home/vsftpd</pre>
+
+<p>
+<p><div class="notetip">
+Options supplémentaires pour le SSL, utiles si vous voulez encrypter les connexions utilisateur et connexions de données.
+
+</div></p>
+</p>
+<pre class="file"># Activation du SSL
+ssl_enable=YES
+# Oblige les connexions de données a passer par du SSL
+# Si cette option est activée les clients ftp ne gérant pas 
+# SSL ne pourront envoyer ni recevoir de données
+force_local_data_ssl=NO
+# Oblige la connexion d&#039;identification a être encryptée en SSL
+# Si cette option est activée les clients ftp ne gérant pas 
+# SSL ne pourront plus se connecter
+force_local_logins_ssl=YES
+# Versions de SSL pris en charge par le serveur VsftpD
+ssl_sslv2=YES
+ssl_sslv3=YES
+ssl_tlsv1=YES
+# Emplacement du certificat d&#039;encryption SSL
+rsa_cert_file=/etc/ssl/certs/vsftpd/vsftpd.pem
+# Emplacement de la clé privée (inutile et ne fonctionne pas ,il va la chercher dans le cert)
+#rsa_private_key_file=/etc/ssl/certs/vsftpd/vsftpd.key</pre>
+
+<p>
+<p><div class="notetip">
+Options supplémentaires d&#039;utilisation de VsftpD derrière un routeur (<abbr title="Network Address Translation">NAT</abbr>), pensez bien à ouvrir et rediriger les ports décrits ci-dessous vers l&#039;adresse IP locale de la machine hébergeant VsftpD
+
+</div></p>
+</p>
+<pre class="file"># Option permettant de désactiver la méthode passive (PASV)
+# déconseille si vous êtes derrière un routeur
+pasv_promiscuous=NO
+# Mode passif autorise
+pasv_enable=YES
+# Debut de la plage de ports passifs
+pasv_min_port=21000
+# Debut de la plage de ports passifs
+pasv_max_port=21100
+# Adresse IP ou nom de domaine a renseigner
+pasv_address=monsiteftp.com
+# Demande de résolution DNS du nom de domaine (pour tous ceux en DynDNS, no-ip, etc ...)
+pasv_addr_resolve=YES
+# Option permettant de désactiver la méthode (PORT)
+port_promiscuous=NO</pre>
+
+<p>
+Il faut penser à créer le dossier <strong>secure_chroot_dir</strong> Vsftpd (dans notre exemple <strong>/var/run/vsftpd</strong>)
+et lui appliquer les <a href="permissions" class="wikilink1" title="permissions">permissions</a> adéquates, il ne faut pas que les utilisateurs aient des droits d&#039;écriture dans ce répertoire.
+</p>
+<pre class="code">sudo mkdir /var/run/vsftpd
+sudo chown root:root /var/run/vsftpd
+sudo chmod 660 /var/run/vsftpd</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="vsftpd_et_pam_mysql"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1398865464" /><input type="hidden" name="summary" value="[Configuration de VsftpD] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="853-6085" /><input type="submit" value="Modifier" class="button" title="Configuration de VsftpD" /></div></form></div>
+<h2 class="sectionedit4" id="configuration_de_mysql">Configuration de MySQL</h2>
+<div class="level2">
+
+<p>
+À ce stade, plusieurs possibilités pour administrer la base de données MySQL :<br/>
+
+</p>
+
+<p>
+En commande, pas très convivial mais efficace ou via une interface Web comme <a href="lamp" class="wikilink1" title="lamp">PhpMyAdmin</a> ou <a href="http://doc.ubuntu-fr.org/webmin" class="wikilink1" title="webmin">Webmin</a>.
+Concernant PhpMyAdmin et Webmin je vous laisse chercher, je vais donner les commandes MySQL de base tout en précisant les besoins.
+</p>
+<pre class="code">sudo mysql -u root -p (puis taper le mot de passe de votre superutilisateur MySQL)
+mysql&gt; 
+
+# Création d&#039;une nouvelle base nommée &quot;vsftpd&quot;
+CREATE DATABASE vsftpd;
+# Attribution des privilèges a l&#039;utilisateur vsftpd avec comme mot de passe : MOTDEPASSE_VSFTPD
+# MOTDEPASSE_VSFTPD ne doit pas contenir de caractère # : interpréte le reste de la ligne comme un commentaire. 
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON vsftpd.* TO &#039;vsftpd&#039;@&#039;localhost&#039; IDENTIFIED BY &#039;MOTDEPASSE_VSFTPD&#039;;
+# Application des privileges
+FLUSH PRIVILEGES;
+# Utilisation de la base de données fraîchement créée
+USE vsftpd;
+
+# Création d&#039;une table utilisateurs avec 4 champs (ID, NOM, PASS, CRYPTAGE)
+# ID =&gt; identifiant unique (auto-incrémentation et clé primaire)
+# NOM =&gt; texte (nul non autorise)
+# PASS =&gt; texte (nul non autorise)
+# CRYPTAGE =&gt; texte (nul autorise)
+CREATE TABLE `utilisateurs` ( `ID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY , `NOM` TEXT NOT NULL , `PASS` TEXT NOT NULL , `CRYPTAGE` TEXT );
+
+# Création d&#039;une table logging avec 6 champs (ID, USER, HOST, RHOST, MSG, TIME)
+# ID =&gt; identifiant unique (auto-incrémentation et clé primaire)
+# USER =&gt; texte (nul non autorise)
+# HOST =&gt; texte (nul non autorise)
+# RHOST =&gt; texte (nul non autorise)
+# TIME =&gt; texte (nul non autorise)
+# MSG =&gt; =&gt; texte (nul non autorise)
+# PID =&gt; texte (nul non autorisé)
+CREATE TABLE `logging` ( `ID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY , `USER` TEXT NOT NULL , `HOST` TEXT NOT NULL , `RHOST` TEXT NOT NULL , `TIME` TEXT NOT NULL , `MSG` TEXT NOT NULL , `PID` TEXT NOT NULL);</pre>
+
+<p>
+Notre base de données est créée et nous allons donc la renseigner avec un jeu d&#039;utilisateurs de test, voici la syntaxe pour ajouter un utilisateur, sachant
+que cette commande est aussi utilisable sous <a href="lamp" class="wikilink1" title="lamp">PhpMyAdmin</a> ou <a href="http://doc.ubuntu-fr.org/webmin" class="wikilink1" title="webmin">Webmin</a> pour ceux qui n&#039;ont pas envie de s&#039;embêter. Nous allons créer 3 utilisateurs nommés respectivement
+&quot;toto&quot;, &quot;tata&quot; et &quot;titi&quot; avec comme mots de passes respectifs <strong>toto</strong>, <strong>tata</strong> et <strong>titi</strong>.
+Ceci afin de détailler l&#039;utilisation de la librairie pam_mysql et de MySQL-server. 
+</p>
+<pre class="code"># Création de l&#039;utilisateur toto avec comme mot de passe toto stocke en clair (aucun cryptage)
+INSERT INTO utilisateurs (NOM, PASS, CRYPTAGE) VALUES(&#039;toto&#039;, &#039;toto&#039;, &#039;aucun&#039; );
+
+# Création de l&#039;utilisateur tata avec comme mot de passe tata crypte avec la fonction MySQL PASSWORD() =&gt; deconseille dans le manuel MySQL
+INSERT INTO utilisateurs (NOM, PASS, CRYPTAGE) VALUES(&#039;tata&#039;, PASSWORD(&#039;tata&#039;), &#039;PASSWORD&#039; );
+
+# Création de l&#039;utilisateur titi avec comme mot de passe titi crypte avec la fonction MySQL ENCRYPT() =&gt; conseille a la place de PASSWORD()
+INSERT INTO utilisateurs (NOM, PASS, CRYPTAGE) VALUES(&#039;titi&#039;, ENCRYPT(&#039;titi&#039;), &#039;ENCRYPT&#039; );</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="vsftpd_et_pam_mysql"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1398865464" /><input type="hidden" name="summary" value="[Configuration de MySQL] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6086-9245" /><input type="submit" value="Modifier" class="button" title="Configuration de MySQL" /></div></form></div>
+<h2 class="sectionedit5" id="configuration_du_certificat_ssl">Configuration du certificat SSL</h2>
+<div class="level2">
+
+<p>
+<p><div class="notewarning"> La commande <strong>sudo head -15 vsftpd.pem &gt; vsftpd.key</strong>
+peut rendre votre système fortement instable
+</div></p>
+</p>
+<pre class="code"># Creation du repertoire pour stocker les certificats
+sudo mkdir /etc/ssl/certs/vsftpd &amp;&amp; cd /etc/ssl/certs/vsftpd
+# Creation du certificat SSL valable 1 an 
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout vsftpd.pem -out vsftpd.pem
+# Copie de la partie [PRIVATE_KEY] du certificat dans le fichier vsftpd.key
+sudo head -15 vsftpd.pem &gt; vsftpd.key
+# Protection du certificat et de la cle privee
+sudo chmod 600 *</pre>
+
+<p>
+<p><div class="noteimportant">
+La clé privée générée est auto-signée et certains clients vont donc afficher des alertes de sécurité,
+car la clé n&#039;est pas validée par une authorité de certification reconnue (Thawte, Verisign, etc)
+
+</div></p>
+</p>
+
+<p>
+Exemple de clé privée :
+</p>
+<pre class="file">-----BEGIN RSA PRIVATE KEY-----
+MIICXAIBAAKBgQDA4ApkDJ3bW16Fgp2voDLr0ku7IYNP1tz43i1zWdwlPuoXtNyQ
+Gl8jO6QjWfPY1p/LpK7KM434yZeC53QO8cJA60KFDUTdNpxmknZBWblU86nHiYNZ
+IOy/ojEt7I5/4pQEVG0ns9JEmpNje1pjPX/K2vX4yRHxDdJhlJS+zlUgNQIDAQAB
+AoGAeAb0cG6pjei+Wbd/CdxX1Al6t2mTngvIV9dr0W0KYuNUKoyS9dpzeimTa6x+
+42Is7z38yDhtEXXio8QFpYctqsKQsekB/iboA9Qvh2+NONBVv/9oFxdRE2lZHVc/
+YdiFv17LlN34FEGb7CgkJtA30ma09wwWEtAS11Fo2nFMOcECQQD3fo7oX2pMH74W
+WQl/+RmQlC2OF+6HZko73TrGTBVzhhcKzqtbrTyD2gPid9QHCKKQB1gMsoPi3+HV
+20uBrfDPAkEAx4DyEOLK8EX0vHg8k57WESQpd2bbL+ugUaksmBGmPcuXsP6tGBan
+6jtYip8tKgVAZ89oYxtw8hFI+69u6sp3uwJAQE/sxsl0j893z8rXQx/x2rYGmHPz
+kc+s3p2AVmMS9/ASMMa/lJURspmGhOTqfeFqjM67vKDu0Jeo0a+okUwn1QJBAJGh
+rxJke3+pkV2C57Va3SjmHN7sVlREzGLP+52GRLQXSkQJpJFQ+IIjkB6g03c5Hiqp
+XKn7/ha2R3ByP6Vk5sECQCZRJ0c1TEsmt4sZAO2rfWHeQ5D6GZWjsqY/WW2TInM/
+ynrPiJyfS8mVrKmwZa4JjL/1ohDd+ma8MsgWIXBc7ck=
+-----END RSA PRIVATE KEY-----</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="vsftpd_et_pam_mysql"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1398865464" /><input type="hidden" name="summary" value="[Configuration du certificat SSL] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9246-11021" /><input type="submit" value="Modifier" class="button" title="Configuration du certificat SSL" /></div></form></div>
+<h2 class="sectionedit6" id="configuration_de_pam_mysql">Configuration de pam_mysql</h2>
+<div class="level2">
+
+<p>
+On commence par sauvegarder l&#039;existant :
+</p>
+<pre class="code">sudo cp /etc/pam.d/vsftpd /etc/pam.d/vsftpd.ok</pre>
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/pam.d/vsftpd</strong> vous devriez tomber sur quelque chose ressemblant à ça :
+</p>
+<pre class="file"># Standard behaviour for ftpd(8).
+auth    required        pam_listfile.so item=user sense=deny file=/etc/ftpusers onerr=succeed
+
+# Note: vsftpd handles anonymous logins on its own.  Do not enable
+# pam_ftp.so.
+
+# Standard blurb.
+@include common-account
+@include common-session
+
+@include common-auth
+auth    required        pam_shells.so</pre>
+
+<p>
+Il faut commenter toutes les lignes avec un <strong>#</strong> ou effacer tout le contenu du fichier et coller le code ci dessous à la place.
+</p>
+<pre class="code">
+# fonction pam_mysql crypt=1 OK avec la fonction ENCRYPT() de MySQL
+# fonction pam_mysql crypt=2 OK avec la fonction PASSWORD() de MySQL
+
+# Minimum necesaire afin de se connecter
+# auth required pam_mysql.so user=vsftpd passwd=VsftpD host=localhost db=vsftpd table=users usercolumn=nom passwdcolumn=mdp crypt=1
+# account required pam_mysql.so user=vsftpd passwd=VsftpD host=localhost db=vsftpd table=users usercolumn=nom passwdcolumn=mdp crypt=1
+
+# Connexion avec logging en base de donnees des acces
+auth required pam_mysql.so verbose=1 user=vsftpd passwd=VsftpD host=localhost db=vsftpd table=utilisateurs usercolumn=NOM passwdcolumn=PASS crypt=1 sqllog=true logtable=logging logmsgcolumn=msg logusercolumn=user loghostcolumn=host logrhostcolumn=rhost logtimecolumn=time logpidcolumn=pid
+account required pam_mysql.so verbose=1 user=vsftpd passwd=VsftpD host=localhost db=vsftpd table=utilisateurs usercolumn=NOM passwdcolumn=PASS crypt=1 sqllog=true logtable=logging logmsgcolumn=msg logusercolumn=user loghostcolumn=host logrhostcolumn=rhost logtimecolumn=time logpidcolumn=pid</pre>
+
+<p>
+<p><div class="noteclassic">
+N&#039;oubliez pas de remplacer VsftpD par le mot de passe que vous avez choisi lors de la création de la base de données
+
+</div></p>
+La librairie pam_mysql acceptent plusieurs arguments dont voici le détail :
+<br/>
+
+<strong>verbose</strong>  ⇒ Mode verbeux, nécessaire pour logger les accès ( 0=désactivé, 1 = activé )<br/>
+
+<strong>user</strong> ⇒ Utilisateur employé par VsftpD pour se conncter à MySQL<br/>
+
+<strong>password</strong> ⇒ Mot de passe de l&#039;utilsateur employé par VsftpD pour se connecter à MySQL<br/>
+
+<strong>host</strong> ⇒ Hote hébergeant le serveur MySQL (localhost ou adresse IP)<br/>
+
+<strong>db</strong> ⇒ nom de la base de données à utiliser<br/>
+
+<strong>table</strong> ⇒ nom de la table contenant les utilisateurs<br/>
+
+<strong>usercolumn</strong> ⇒ nom de la colonne contenant les noms des utilisateurs<br/>
+
+<strong>passwdcolumn</strong> ⇒ nom de la colone contenant les mot de passe des utilisateurs<br/>
+
+<strong>crypt</strong> ⇒ type de cryptage utilisé pour les mots de passe ( 0 = clair , 1 = fonction ENCRYPT(), 2 = fonction PASSWORD(), 3 = fonction MD5(), 4 = fonction SHA1() )<br/>
+
+<strong>sqllog</strong> ⇒ activation du logging d&#039;accès en base SQL ( 0 = désactivé, 1 = activé )<br/>
+
+<strong>logtable</strong> ⇒ nom de la table de log des accès utilisateurs<br/>
+
+<strong>logmsgcolumn</strong> ⇒ nom de la colonne ou seront stockés les messages de pam_mysql<br/>
+
+<strong>logusercolumn</strong> ⇒ nom de la colonne ou seront stockés les nom des utilisateurs<br/>
+
+<strong>logpidcolumn</strong> ⇒ nom de la colonne ou seront stockés les numéros de process (pid)<br/>
+
+<strong>loghostcolumn</strong> ⇒ nom de la colonne ou seront stockés les adresses ou se connectent les utilisateurs (en général le serveur lui même)<br/>
+
+<strong>logrhostcolumn</strong> ⇒ nom de la colonne ou seront stockés les adresses distantes des utilisateurs<br/>
+
+<strong>logtimecolumn</strong> ⇒ nom de la colonne ou seront stockés les heures de connexion<br/>
+
+</p>
+
+<p>
+La fonction <strong>crypt</strong> de la librairie pam_mysql accepte différents arguments (<strong>0</strong>, <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, <strong>4</strong>) , cependant je n&#039;en ai trouvé que deux qui fonctionnent avec mysql-server, bien que, sous mysql la fonction <strong>MD5()</strong> et la fonction <strong>SHA1()</strong> existent, elles ne renvoient pas les mêmes valeurs que le <strong>crypt</strong> fourni par pam_mysql. Autrement dit, les valeurs ne correspondent pas et l&#039;authentification échoue systématiquement.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="vsftpd_et_pam_mysql"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1398865464" /><input type="hidden" name="summary" value="[Configuration de pam_mysql] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11022-15069" /><input type="submit" value="Modifier" class="button" title="Configuration de pam_mysql" /></div></form></div>
+<h2 class="sectionedit7" id="configuration_des_partages">Configuration des partages</h2>
+<div class="level2">
+
+<p>
+Nos utilisateurs virtuels se connectent et sont emprisonnés dans un dossier dans lequel il n&#039;ont pas les droits en écriture. Il faut donc leur monter des
+répertoires en lecture et en écriture (si besoin). Dans notre exemple (cf fichier <strong>/etc.vsftpd.conf</strong>) ce dossier <strong>/home/vsftpd</strong>
+</p>
+
+<p>
+Nous allons monter deux repertoires nommés <strong>dossier1</strong> accessible en lecture et <strong>dossier2</strong> accessible en écriture dans <strong>/home/vsftpd</strong> et les faire pointer vers deux dossiers existants <strong>dossier1</strong> et <strong>dossier2</strong> dans <strong>/media/donnees</strong><br/>
+
+</p>
+<pre class="code">cd /home/vsftpd
+# Creer les repertoires de destination des montages
+sudo mkdir dossier1 dossier2
+# Donner les droits en ecriture a tout le monde sur dossier2
+sudo chmod 777 dossier2 </pre>
+
+<p>
+Il faut ensuite modifier le fichier <strong>/etc/fstab</strong> pour monter à chaque démarrage les répertoires partagés sur le serveur VsftpD,
+ajoutez à la fin de <strong>/etc/fstab</strong> les deux lignes suivantes.
+</p>
+<pre class="code">/home/vsftpd/dossier1           /media/donnees/dossier1         none  bind,defaults,auto     0    0
+/home/vsftpd/dossier2		/media/donnees/dossier2		none  bind,defaults,auto     0    0</pre>
+
+<p>
+Pour que <strong>dossier2</strong> soit en lecture/écriture il faut penser aux permissions du répertoire de destination.
+</p>
+<pre class="code">sudo chmod 777 /media/donnees/dossier2</pre>
+
+<p>
+===== Utilisation ===== test
+</p>
+
+<p>
+Pour faire mes tests j&#039;ai utilisé différents clients ftp, cependant je conseille <strong>ftp-ssl</strong> pour les tests car les messages d&#039;erreurs sont plus
+parlants. Autrement il existe <strong>Filezilla</strong> ou <strong>FireFTP</strong> sous Mozilla qui fonctionnent très bien.
+</p>
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> suivants :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="apt://filezilla" class="urlextern" title="apt://filezilla"  rel="nofollow">filezilla</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="apt://ftp-ssl" class="urlextern" title="apt://ftp-ssl"  rel="nofollow">ftp-ssl</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://addons.mozilla.org/fr/firefox/addon/684" class="urlextern" title="https://addons.mozilla.org/fr/firefox/addon/684"  rel="nofollow">Plugin FireFTP pour Firefox</a></div>
+</li>
+</ul>
+
+<p>
+Pour commencer il faut recharger le fichier de configuration VsftpD.
+</p>
+<pre class="code">sudo /etc/init.d/vsftpd restart</pre>
+
+<p>
+Ensuite tentative de connexion en commande ou via un client graphique qui devrait normalement vous répondre comme ci-dessous. Il est aussi possible de tester via un navigateur à l&#039;adresse <a href="ftp://toto@localhost:21" class="urlextern" title="ftp://toto@localhost:21"  rel="nofollow">ftp://toto@localhost:21</a> si vous avez laisser les options adéquates.<br/>
+
+</p>
+<pre class="code">ftp-ssl localhost 21
+Connected to localhost.
+220 Bienvenue sur le serveur VsftpD
+Name (localhost:toto): toto
+234 Proceed with negotiation.
+[SSL Cipher DES-CBC3-SHA]
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp&gt; </pre>
+
+<p>
+Si toutefois vous avez des problèmes de connexion (Authentication Failed) vérifiez les paramètres de cryptage de pam_mysql et la fonction<br/>
+
+utilisée dans MySQL-server pour crypter le mot de passe. Pour les problèmes de connexion sur nom de domaine vérifiez bien que tous les ports<br/>
+
+(connexion et plage de ports passifs) sont bien ouverts et redirigés vers l&#039;adresse IP locale de votre machine.
+</p>
+
+<p>
+Une autre solution est de venir en discuter <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=198367" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=198367"  rel="nofollow">ici</a> ou <a href="http://forum.ubuntu-fr.org" class="urlextern" title="http://forum.ubuntu-fr.org"  rel="nofollow">ici</a>. Bon courage.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="vsftpd_et_pam_mysql"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1398865464" /><input type="hidden" name="summary" value="[Configuration des partages] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15070-18170" /><input type="submit" value="Modifier" class="button" title="Configuration des partages" /></div></form></div>
+<h2 class="sectionedit8" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://vsftpd.beasts.org/vsftpd_conf.html" class="urlextern" title="http://vsftpd.beasts.org/vsftpd_conf.html"  rel="nofollow">Page officielle du manuel VsftpD)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/vsftpd" class="wikilink1" title="vsftpd">Vsftpd sur ubuntu-fr</a> (pour toute la partie installation du serveur et configuration des certificats SSL)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://pam-mysql.sourceforge.net/Documentation/package-readme.php?seemore=y" class="urlextern" title="http://pam-mysql.sourceforge.net/Documentation/package-readme.php?seemore=y"  rel="nofollow">le README de la librairie pam_mysql</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeur : <a href="http://doc.ubuntu-fr.org/utilisateurs/maclane45" class="wikilink1" title="utilisateurs:maclane45">maclane45</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="vsftpd_et_pam_mysql"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1398865464" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18171-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/6/69a762e45c48c9f17208c24e200011c6.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/vsftpd_et_pam_mysql?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/vsftpd_et_pam_mysql?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/vsftpd_et_pam_mysql?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/vsftpd_et_pam_mysql?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/vsftpd_et_pam_mysql?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

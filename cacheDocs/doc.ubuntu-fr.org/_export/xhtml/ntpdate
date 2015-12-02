@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>ntpdate</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-04-28T12:17:48+0200"/>
+<meta name="keywords" content="karmic,jaunty,intrepid,reseau,systeme,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../ntpdate?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="ntpdate"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/ntpdate"/>
+<link rel="canonical" href="../../ntpdate"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"ntpdate","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="ntpdate#pre-requis">Pré-Requis</a></div></li>
+<li class="level1"><div class="li"><a href="ntpdate#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="ntpdate#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="ntpdate#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="ntpdate#quelques_serveurs_ntp">Quelques serveurs NTP</a></div></li>
+<li class="level1"><div class="li"><a href="ntpdate#desinstallation">Désinstallation</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">Karmic</a>,
+	<a href="../../jaunty" class="wikilink1" title="jaunty" rel="tag">Jaunty</a>,
+	<a href="../../intrepid" class="wikilink1" title="intrepid" rel="tag">Intrepid</a>,
+	<a href="../../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+
+<h1 class="sectionedit1" id="ntpdate">Ntpdate</h1>
+<div class="level1">
+
+<p>
+Ntpdate est un logiciel inclus par défaut dans ubuntu. Il permet de maintenir votre horloge système &quot;à l&#039;heure&quot;.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Ntpdate" [60-198] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-Requis</h2>
+<div class="level2">
+
+<p>
+<abbr title="Network Time Protocol">NTP</abbr> étant un protocole réseau, vous devez impérativement avoir au moins une connexion réseau (internet ou intranet) active.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Pré-Requis" [199-352] -->
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+S&#039;il n&#039;est pas déjà installé, il vous faut suivre le <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">tutoriel comment installer le paquet</a> ntpdate.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Installation" [353-523] -->
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Il vous faut modifier le fichier <strong>/etc/default/ntpdate</strong>
+</p>
+
+<p>
+Voici le mien :
+</p>
+<pre class="code"># The settings in this file are used by the program ntpdate-debian, but not
+# by the upstream program ntpdate.
+
+# Set to &quot;yes&quot; to take the server list from /etc/ntp.conf, from package ntp,
+# so you only have to keep it in one place.
+NTPDATE_USE_NTP_CONF=no
+
+# List of NTP servers to use  (Separate multiple servers with spaces.)
+# Not used if NTPDATE_USE_NTP_CONF is yes.
+NTPSERVERS=&quot;einstein&quot;
+
+# Additional options to pass to ntpdate
+NTPOPTIONS=&quot;&quot;</pre>
+
+<p>
+L&#039;endroit le plus important est le paramètre NTPSERVERS. Ici on a un nom de serveur, einstein.
+Vous pouvez mettre une adresse ip, ipv6, ou un nom d&#039;hôte pleinement qualifié, ou un alias host.
+Ici, einstein fait partie du réseau local de l&#039;auteur.
+Le serveur d&#039;origne est ntp.ubuntu.com, son adresse ip est 91.189.94.4
+</p>
+
+<p>
+Votre ordinateur ira chercher l&#039;heure sur le serveur ntp indiqué dès que sa configuration réseau sera opérationnelle
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Configuration" [524-1535] -->
+<h2 class="sectionedit5" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Vous pouvez lancer une mise à jour ponctuelle par cette commande :
+</p>
+<pre class="code">sudo ntpdate adresse_du_serveur</pre>
+
+<p>
+La mise à jour de l&#039;heure étant une commande système, il vous faut être <strong>root</strong>, d&#039;où le <a href="../../sudo" class="wikilink1" title="sudo">sudo</a> !
+</p>
+
+<p>
+Si vous souhaitez monter votre propre serveur ntp pour votre réseau local, allez sur l&#039;article <a href="../../ntp" class="wikilink1" title="ntp">ntp</a>. Si vous souhaitez juste trouver des adresses de serveurs que vous pouvez mettre en source, allez dans la section <a href="../../ntp#serveurs_ntp" class="wikilink1" title="ntp">serveurs NTP</a> de l&#039;article ntp.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Utilisation" [1536-2051] -->
+<h2 class="sectionedit6" id="quelques_serveurs_ntp">Quelques serveurs NTP</h2>
+<div class="level2">
+
+<p>
+<a href="http://www.pool.ntp.org/zone/fr" class="urlextern" title="http://www.pool.ntp.org/zone/fr"  rel="nofollow"> pool de serveurs NTP français</a>
+</p>
+
+<p>
+Par opérateur :
+</p>
+<ul>
+<li class="level1"><div class="li"> free.fr :</div>
+<ul>
+<li class="level2"><div class="li"> depuis un réseau sur freebox revolution (v6) : &quot;<strong>mafreebox.free.fr</strong>&quot; (cf. <a href="http://www.universfreebox.com/article/13349/Freebox-Revolution-Comment-configurer-votre-ordinateur-avec-le-NTP" class="urlextern" title="http://www.universfreebox.com/article/13349/Freebox-Revolution-Comment-configurer-votre-ordinateur-avec-le-NTP"  rel="nofollow">http://www.universfreebox.com/article/13349/Freebox-Revolution-Comment-configurer-votre-ordinateur-avec-le-NTP</a>)</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> …</div>
+</li>
+<li class="level1"><div class="li"> online.net :</div>
+<ul>
+<li class="level2"><div class="li"> depuis un serveur dedibox : &quot;<strong>ntp.online.net</strong>&quot; (cf. <a href="http://documentation.online.net/fr/serveur-dedie/reseau/information-parametres-reseau-dedibox#serveurs_ntp" class="urlextern" title="http://documentation.online.net/fr/serveur-dedie/reseau/information-parametres-reseau-dedibox#serveurs_ntp"  rel="nofollow">http://documentation.online.net/fr/serveur-dedie/reseau/information-parametres-reseau-dedibox#serveurs_ntp</a>)</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> …</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT6 SECTION "Quelques serveurs NTP" [2052-2591] -->
+<h2 class="sectionedit7" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="../../tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer son paquet</a>. La configuration de l&#039;application sera conservée ou supprimée selon la méthode de désinstallation que vous choisirez.
+</p>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="http://doc.ubuntu-fr.org/utilisateurs/stephaneguedon" class="wikilink1" title="utilisateurs:stephaneguedon">stephaneguedon</a>.</em>
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Désinstallation" [2592-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/8/8c3c528f3ba63d2ead31f6eb78d3f072.xhtml used -->
+</div>
+</body>
+</html>

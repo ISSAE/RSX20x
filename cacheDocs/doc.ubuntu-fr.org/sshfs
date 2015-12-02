@@ -1,0 +1,770 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>sshfs - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-04-08T02:59:13+0200"/>
+<meta name="keywords" content="ssh,securite"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/sshfs?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/sshfs?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/sshfs"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/sshfs"/>
+<link rel="canonical" href="sshfs"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"sshfs","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="sshfs#main" tabindex="1">Contenu</a> | <a href="sshfs#qsearch__in" tabindex="2">Rechercher</a> | <a href="sshfs#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="sshfs" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="sshfs" >sshfs</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="sshfs#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="sshfs#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="sshfs#utilisation_en_mode_console">Utilisation en mode console</a></div></li>
+<li class="level1"><div class="li"><a href="sshfs#utilisation_viaetcfstab">Utilisation via /etc/fstab</a></div></li>
+<li class="level1"><div class="li"><a href="sshfs#montage_a_la_connexion">Montage à la connexion</a></div></li>
+<li class="level1"><div class="li"><a href="sshfs#autofs">Autofs</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="sshfs#installation_d_autofs">Installation d&#039;autofs</a></div></li>
+<li class="level2"><div class="li"><a href="sshfs#configuration_d_autofs">Configuration d&#039;autofs</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="sshfs#utilisation_en_mode_graphique">Utilisation en mode graphique</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="sshfs#re_methodefusauto">1re méthode : fusauto</a></div></li>
+<li class="level2"><div class="li"><a href="sshfs#e_methodexsshfs">2e méthode : Xsshfs</a></div></li>
+<li class="level2"><div class="li"><a href="sshfs#e_methodesshfs-dialogsh">3e méthode : sshfs-dialog.sh</a></div></li>
+<li class="level2"><div class="li"><a href="sshfs#e_methodefusible">4e méthode : Fusible</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="sshfs#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="ssh" class="wikilink1" title="ssh" rel="tag">ssh</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="ssh_filesystem">SSH Filesystem</h1>
+<div class="level1">
+
+<p>
+SshFS sert à monter sur son système de fichier, un autre système de fichier distant, à travers une connexion <a href="ssh" class="wikilink1" title="ssh">SSH</a>, le tout avec des droits utilisateur.
+L&#039;avantage est de manipuler les données distantes avec n&#039;importe quel gestionnaire de fichier (Nautilus, Konqueror, ROX, ou même la ligne de commande), ce qui est bien plus pratique que la commande scp couplée avec ssh.
+SshFS apporte ce qui pouvait manquer à certains utilisateurs Windows qui utilisaient WinSCP.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[SSH Filesystem] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="30-537" /><input type="submit" value="Modifier" class="button" title="SSH Filesystem" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée.</div>
+</li>
+<li class="level1"><div class="li"> Avoir installé et configuré <a href="http://doc.ubuntu-fr.org/fuse#installation_de_fuse" class="wikilink1" title="fuse">FUSE</a>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="538-752" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Il suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://sshfs" class="urlextern" title="apt://sshfs"  rel="nofollow">sshfs</a></strong>.
+</p>
+
+<p>
+Il faut veiller à ce que les utilisateurs potentiels de sshfs fassent bien partie du groupe fuse.
+</p>
+
+<p>
+Il est probable, surtout si vous utilisez l&#039;authentification ssh par certificat, que vous deviez redémarrer la machine…
+</p>
+
+<p>
+Vous obtiendrez l&#039;erreur <em>failed to open /dev/fuse: Permission denied</em> si les points précédents ne sont pas vérifiés.
+</p>
+
+<p>
+Voilà, vous pouvez utiliser SshFS !
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="753-1269" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit4" id="utilisation_en_mode_console">Utilisation en mode console</h2>
+<div class="level2">
+
+<p>
+Rien de plus simple maintenant :
+</p>
+<pre class="code">~$ mkdir tmp
+~$ sshfs toto@lecole.fr:Document/Blagues tmp</pre>
+
+<p>
+Ou plus généralement :   
+</p>
+<pre class="code">     sshfs [user@]host:[dir] mountpoint [options]</pre>
+
+<p>
+Pour démonter, vérifier que rien n&#039;accède au point de montage (fichier ouvert ou gestionnaire de fichier), et effectuer la commande :
+</p>
+<pre class="code">~$ fusermount -u tmp</pre>
+
+<p>
+<p><div class="noteclassic">
+</p>
+
+<p>
+Si vous avez l&#039;erreur suivante : <strong>fuse: bad mount point `tmp&#039;: Transport endpoint is not connected</strong>, veuillez exécuter la commande suivante:
+</p>
+<pre class="code">fusermount -u tmp</pre>
+
+<p>
+, et relancer la procédure ci-dessus (sans la partie <strong>mkdir</strong>, bien entendu.)
+</div></p>
+</p>
+
+<p>
+<strong>Remarque 1 : </strong>
+Il arrive que le répertoire monté ait un autre user.group que ceux attendus sur le client.  C&#039;est que ce sont les uid et gid en chiffres qui sont passés et qu&#039;ils ne correspondent pas toujours aux mêmes utilisateurs et groupes sur le serveur et sur le client.  Utiliser les options : 
+</p>
+<pre class="code">$ sshfs -o uid=xxxx -o gid=yyyy [user@]host:[dir] mountpoint [options]</pre>
+
+<p>
+<strong>Remarque 2 : </strong>
+Pour monter un disque dans un répertoire autre que le home afin de faire une sauvegarde du home par exemple il faut tout d&#039;abord créer ce dossier puis autoriser son accès (en remplaçant your-username par votre login):
+</p>
+<pre class="code">sudo mkdir /mnt/backup
+sudo chown your-username /mnt/backup</pre>
+
+<p>
+Le reste de la procédure est identique
+</p>
+
+<p>
+<strong>Fusauto:</strong>
+Il est possible de monter/démonter en une seule commande simple, <a href="http://doc.ubuntu-fr.org/fusauto" class="wikilink1" title="fusauto">voir la documentation</a>.
+</p>
+<pre class="code">fusauto /point/de/montage</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[Utilisation en mode console] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1270-2812" /><input type="submit" value="Modifier" class="button" title="Utilisation en mode console" /></div></form></div>
+<h2 class="sectionedit5" id="utilisation_viaetcfstab">Utilisation via /etc/fstab</h2>
+<div class="level2">
+
+<p>
+si vous montez souvent les mêmes répertoires, il peut être sympa de les entrer dans le fichier <a href="mount_fstab" class="wikilink1" title="mount_fstab">fstab</a>.
+</p>
+
+<p>
+D&#039;abord, créez un répertoire, dans cet exemple sous /mnt, puis assignez-lui les droits :
+</p>
+<pre class="code">sudo mkdir /mnt/mon_rep
+sudo chown root:users /mnt/mon_rep
+sudo chmod 0770 /mnt/mon_rep</pre>
+
+<p>
+Ensuite <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">modifiez le fichier</a> <strong>/etc/fstab</strong>.
+</p>
+
+<p>
+Il faut y rajouter la ligne suivante :
+</p>
+<pre class="file">sshfs#user@machine:/dossier/distant                /mnt/mon_rep          fuse            port=22,user,noauto,noatime     0 0</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[Utilisation via /etc/fstab] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2813-3426" /><input type="submit" value="Modifier" class="button" title="Utilisation via /etc/fstab" /></div></form></div>
+<h2 class="sectionedit6" id="montage_a_la_connexion">Montage à la connexion</h2>
+<div class="level2">
+
+<p>
+Une autre possibilité est de monter le disque à la connexion de l&#039;utilisateur. Cela peut être très utile lorsque la connexion ne se fait pas immédiatement (Connexion Wifi e.g.), et représente une alternative à Autofs (cf ci-dessous).
+</p>
+
+<p>
+Pour se faire,  <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">créez le fichier</a> <strong>/usr/bin/monterSSHFS</strong> en mode <a href="sudo" class="wikilink1" title="sudo">sudo</a>:
+</p>
+<pre class="code">#!/bin/bash
+sleep 15
+sshfs &lt;user&gt;@&lt;serveur&gt;:/Dossier/a/recuperer /Point/de/montage</pre>
+
+<p>
+Modifiez les droits du fichier pour le rendre exécutable:
+</p>
+<pre class="code">~$ sudo chmod 0755 /usr/bin/monterSSHFS</pre>
+
+<p>
+La commande <em>sleep 15</em> permet d&#039;attendre que le réseau soit bien monté. Elle peut être réduite en cas de réseau filaire.
+</p>
+
+<p>
+Ensuite, <a href="ssh#authentification_par_un_systeme_de_cles_publiqueprivee" class="wikilink1" title="ssh">créez une clef ssh avec passphrase vide</a> (ça permettra de lancer la connexion sans avoir à attendre SSH-Askpass.
+</p>
+
+<p>
+Enfin, ajoutez le fichier <strong>/usr/bin/monterSSHFS</strong> aux actions de démarrage. Et roulez jeunesse !
+</p>
+
+<p>
+Vous pouvez ainsi monter un nombre quasi-illimité de dossiers. Attention tout de même la connexion est permanente et consomme des ressources (limitées).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[Montage à la connexion] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3427-4619" /><input type="submit" value="Modifier" class="button" title="Montage à la connexion" /></div></form></div>
+<h2 class="sectionedit7" id="autofs">Autofs</h2>
+<div class="level2">
+
+<p>
+Le montage manuel ou par fstab a plusieurs inconvénients.
+Le principal, c&#039;est qu&#039;il n&#039;est pas toujours possible de rendre le montage automatique : si lors du montage vous n&#039;êtes pas encore connecté (en wifi par exemple), et bien le montage ne se fait pas, et il faut effectuer le montage manuellement.
+Un autre inconvénient, moins important, est que même si vous n&#039;utilisez pas les dossiers montés, ils restent montés et consomment des ressources.
+</p>
+
+<p>
+<strong>autofs</strong> permet de résoudre ces 2 problèmes.
+</p>
+
+<p>
+<p><div class="noteclassic">Une autre alternative est d&#039;ajouter <strong>_netdev</strong> et de supprimer le paramètre <strong>noauto</strong> à la fin de la ligne de son fstab ce qui donnera alors:
+</p>
+<pre class="code">sshfs#user@machine:/dossier/distant                /mnt/mon_rep          fuse            port=22,user,noatime,allow_other,_netdev     0 0</pre>
+
+<p>
+L&#039;installation d&#039;Autofs devient donc inutile. L&#039;ajout du paramètre <strong>_netdev</strong> dit à l&#039;ordinateur: &quot;Attention ce répertoire que tu veux monter est un répertoire réseau, il faut donc que tu attendes de t&#039;être bien connecté avant d&#039;essayer de le monter&quot;
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[Autofs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4620-5713" /><input type="submit" value="Modifier" class="button" title="Autofs" /></div></form></div>
+<h3 class="sectionedit8" id="installation_d_autofs">Installation d&#039;autofs</h3>
+<div class="level3">
+
+<p>
+Pour l&#039;installer, il suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer les paquets</a> <strong><a href="apt://autofs" class="urlextern" title="apt://autofs"  rel="nofollow">autofs</a></strong> et <strong><a href="apt://sshfs" class="urlextern" title="apt://sshfs"  rel="nofollow">sshfs</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[Installation d'autofs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5714-5898" /><input type="submit" value="Modifier" class="button" title="Installation d'autofs" /></div></form></div>
+<h3 class="sectionedit9" id="configuration_d_autofs">Configuration d&#039;autofs</h3>
+<div class="level3">
+
+<p>
+Pour rappel, il faut que vous ayez installé fuse, sshfs et autofs
+</p>
+
+<p>
+Contrairement au montage <abbr title="Network File System">NFS</abbr> par autofs, SSHFS a besoin d&#039;une authentification, et cette authentification doit se faire &quot;automatiquement&quot;.
+Pour cela, il faut utiliser le système de clés publiques/privées pour l&#039;authentification ssh, et utiliser l&#039;user-agent (par ssh-add) si vous avez défini une passphrase. Pour cela reportez-vous à la page <a href="ssh" class="wikilink1" title="ssh">ssh</a>.
+</p>
+
+<p>
+Le problème avec autofs, c&#039;est qu&#039;il s&#039;exécute en root. Il faut donc créer une paire de clés publiques/privées pour l&#039;utilisateur root sur le client:
+</p>
+<pre class="code">sudo ssh-keygen -t dsa</pre>
+
+<p>
+et l&#039;autoriser sur le serveur en rajoutant le contenu <em>/root/.ssh/id_dsa.pub</em> du poste client dans <em>~/.ssh/authorized_keys</em> du poste serveur, pour chaque compte utilisateur auquel il sera possible de se connecter.
+</p>
+<pre class="code">sudo ssh-copy-id -i /root/.ssh/id_dsa.pub &lt;utilisateur&gt;@&lt;ip serveur&gt;</pre>
+
+<p>
+Maintenant que les problèmes de connexions ssh sont résolus, supprimez (ou commentez) dans <em>/etc/fstab</em> les montages que vous voulez gérer par <strong>autofs</strong> (si vous en aviez écrit auparavant).
+</p>
+
+<p>
+Afin d&#039;être propriétaire des répertoires qui vont être créés automatiquement par autofs, nous allons récupérer l&#039;userid de l&#039;utilisateur :
+</p>
+<pre class="code">benoit@Jack:~$ cat /etc/passwd | grep benoit
+benoit:x:1000:1000:Benoit,,,:/home/benoit:/bin/bash</pre>
+
+<p>
+Ensuite, <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditez le fichier</a> <strong>/etc/auto.master</strong>, pour y ajouter la ligne :
+</p>
+<pre class="file">/net   /etc/auto.sshfs  uid=1000,gid=1000, --timeout=30, --ghost</pre>
+
+<p>
+L&#039;option ghost permet de toujours afficher les dossiers, même lorsqu&#039;ils ne sont pas montés. Il ne reste plus qu&#039;à double-cliquer dessus dans le navigateur pour les monter automatiquement.
+</p>
+
+<p>
+Créez alors un fichier <strong>/etc/auto.sshfs</strong> :
+</p>
+<pre class="file">mondossier -fstype=fuse,port=22,rw,allow_other :sshfs\#votrelogin@192.168.0.1\:/media/share</pre>
+
+<p>
+Le montage se fera alors dans <em>/net/mondossier</em> et pointera vers la machine <em>192.168.0.1</em> sur le répertoire <em>/media/share</em>.
+Vous pouvez dans ce même fichier écrire plusieurs lignes pour chacun de vos points de montage.
+</p>
+
+<p>
+Autre exemple :
+</p>
+<pre class="file">ZIK-portable -fstype=fuse,rw,nodev,nonempty,noatime,allow_other,max_read=65536 :sshfs\#benoit@192.168.1.110\:/musique</pre>
+
+<p>
+Le montage se fera dans <em>/net/ZIK-portable</em> et pointera vers la machine <em>192.168.1.110</em> sur le répertoire <em>musique</em>.
+</p>
+
+<p>
+Il ne reste plus qu&#039;à lancer le serveur :
+</p>
+<pre class="code">sudo start autofs</pre>
+
+<p>
+Si vous avez défini une passphrase pour la clé de l&#039;utilisateur root, vous devrez enregistrer auparavant (une seule fois pour chaque session) cette clé dans l&#039;user-agent, par ssh-add.
+</p>
+
+<p>
+Malheureusement, après avoir entré une clé dans ssh-add, il faut relancer le serveur autofs:
+</p>
+<pre class="code">sudo restart autofs</pre>
+
+<p>
+Si vous avez une autre solution, éditez cette page et contactez l&#039;auteur par jabber (rom1v@jabber.fr) svp :)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[Configuration d'autofs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5899-8849" /><input type="submit" value="Modifier" class="button" title="Configuration d'autofs" /></div></form></div>
+<h2 class="sectionedit10" id="utilisation_en_mode_graphique">Utilisation en mode graphique</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[Utilisation en mode graphique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8850-8891" /><input type="submit" value="Modifier" class="button" title="Utilisation en mode graphique" /></div></form></div>
+<h3 class="sectionedit11" id="re_methodefusauto">1re méthode : fusauto</h3>
+<div class="level3">
+
+<p>
+À exploiter directement depuis votre gestionnaire de fichier, voir la documentation <a href="http://doc.ubuntu-fr.org/fusauto" class="wikilink1" title="fusauto">fusauto</a>.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/application/xsshfs_0.4.png?id=sshfs" class="media" title="application:xsshfs_0.4.png"><img src="http://doc.ubuntu-fr.org/_media/application/xsshfs_0.4.png?w=300&amp;tok=8d697e" class="mediaright" alt="" width="300" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[1re méthode : fusauto] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8892-9062" /><input type="submit" value="Modifier" class="button" title="1re méthode : fusauto" /></div></form></div>
+<h3 class="sectionedit12" id="e_methodexsshfs">2e méthode : Xsshfs</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="presentation">Présentation</h4>
+<div class="level4">
+
+<p>
+<a href="http://xsshfs.zici.fr" class="urlextern" title="http://xsshfs.zici.fr"  rel="nofollow">xsshfs</a> est un petit programme écrit en perl/glade offrant une interface graphique à sshfs
+</p>
+
+<p>
+Quelques fonctions de ce programme :
+</p>
+<ul>
+<li class="level1"><div class="li"> Monter des dossier sshfs</div>
+</li>
+<li class="level1"><div class="li"> Démonter des dossier sshfs</div>
+</li>
+<li class="level1"><div class="li"> Enregistrer vos connexions préférées</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://xsshfs.zici.fr/changelog" class="urlextern" title="http://xsshfs.zici.fr/changelog"  rel="nofollow">...</a></div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="installation1">Installation</h4>
+<div class="level4">
+
+<p>
+Deux possibilités :
+</p>
+<ol>
+<li class="level1"><div class="li"> Suivre les <a href="http://xsshfs.zici.fr/installation" class="urlextern" title="http://xsshfs.zici.fr/installation"  rel="nofollow">instructions</a> et ouvrir un terminal et taper directement la commande : <pre class="code">wget http://xsshfs.zici.fr/files/xsshfs_current.deb ; sudo dpkg -i xsshfs_current.deb ; sudo apt-get install -f ; rm xsshfs_current.deb</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Utiliser le dépôt PPA suivant: <strong>ppa:profnoel/xsshfs</strong> et tapez la commande suivante : <pre class="code">sudo add-apt-repository ppa:profnoel/xsshfs &amp;&amp; sudo apt-get update &gt;/dev/null &amp;&amp; sudo apt-get install xsshfs</pre>
+</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[2e méthode : Xsshfs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9063-9956" /><input type="submit" value="Modifier" class="button" title="2e méthode : Xsshfs" /></div></form></div>
+<h3 class="sectionedit13" id="e_methodesshfs-dialogsh">3e méthode : sshfs-dialog.sh</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="creation_et_explication_de_sshfs-dialogsh">Création et explication de sshfs-dialog.sh</h4>
+<div class="level4">
+
+<p>
+Voici un petit programme écrit en GtkDialog, il faut donc l&#039;installer. De plus, il faut pouvoir renseigner le mot de passe d&#039;une manière sécurisée, pour cela il y a ssh-askpass-gnome : installez les paquets <strong><a href="apt://gtkdialog,ssh-askpass-gnome" class="urlextern" title="apt://gtkdialog,ssh-askpass-gnome"  rel="nofollow">gtkdialog ssh-askpass-gnome</a></strong>.
+</p>
+
+<p>
+Le programme est un script, <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditez le fichier</a> <strong>sshfs-dialog.sh</strong> puis collez-y le code suivant : <span class="curid"><a href="sshfs#code_de_ssh-dialogsh" class="wikilink1" title="sshfs">bas de page</a></span>
+</p>
+
+<p>
+Ne pas oublier de le rendre exécutable :
+</p>
+<pre class="code">chmod u+x sshfs-dialog.sh</pre>
+<hr />
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/sshfs-dialog_00.png?id=sshfs" class="media" title="sshfs-dialog_00.png"><img src="http://doc.ubuntu-fr.org/_media/sshfs-dialog_00.png" class="mediaright" title="Fenêtre d&#039;sshfs-dialog" alt="Fenêtre d&#039;sshfs-dialog" /></a>
+</p>
+
+<p>
+Exécutez le script directement dans votre gestionnaire de fichiers ou dans une console (le mot de passe sera demandé dans la console), et vous obtiendrez une fenêtre nécessitant quelques renseignements comme :
+</p>
+<ul>
+<li class="level1"><div class="li"> l&#039;adresse du serveur</div>
+</li>
+<li class="level1"><div class="li"> le numéro de port</div>
+</li>
+<li class="level1"><div class="li"> le nom de l&#039;utilisateur distant</div>
+</li>
+<li class="level1"><div class="li"> le point de montage distant (par défaut, le HOME de l&#039;utilisateur distant)</div>
+</li>
+<li class="level1"><div class="li"> le nom du point de montage</div>
+</li>
+</ul>
+
+<p>
+Une fois tout renseigné, cliquez sur <strong>mount</strong>, et un répertoire du nom du point de montage doit se créer, le mot de passe de l&#039;utilisateur distant vous est demandé, et votre connexion montée sur le système de fichier !!
+</p>
+
+<p>
+Quand vous avez fini, quittez le répertoire monté, et faîtes <strong>Umount</strong>
+Il est possible de sauvegarder la configuration en appuyant sur <strong>Save</strong>
+</p>
+
+<p>
+Pour recharger la configuration, il faut passer un fichier .essh en paramètre du script (en faisant un glisser-déposer avec un gestionnaire de fichiers).
+</p>
+
+</div>
+
+<h4 id="suggestion_d_utilisation">Suggestion d&#039;utilisation</h4>
+<div class="level4">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/sshfs-dialog_01.png?id=sshfs" class="media" title="sshfs-dialog_01.png"><img src="http://doc.ubuntu-fr.org/_media/sshfs-dialog_01.png?w=250&amp;tok=f4a8e7" class="mediaright" title="Utilisation d&#039;sshfs-dialog avec Rox-filer" alt="Utilisation d&#039;sshfs-dialog avec Rox-filer" width="250" /></a>
+</p>
+
+<p>
+Créez quelque part dans votre arborescence, un répertoire SSH ( /home/toto/Network/SSH ).<br/>
+
+</p>
+
+<p>
+Déplacez le script dans ce répertoire.<br/>
+
+</p>
+
+<p>
+Remplissez la fenêtre normalement, testez la connexion, et sauvegardez.<br/>
+
+</p>
+
+<p>
+Vous obtenez des fichiers .essh, comme par exemple &quot;toto@portable.essh&quot; &quot;tata@gouv.fr.essh&quot;.<br/>
+
+</p>
+
+<p>
+Glisser/déposer le fichier toto@portable.essh sur sshfs-dialog.sh, et la fenêtre s&#039;ouvre directement avec les informations renseignées.<br/>
+
+</p>
+
+<p>
+Vous pouvez aussi cliquer-droit sur le fichier *.essh puis propriètés – &gt; onglet &quot;ouvrir avec&quot; –&gt; ajouter   et là vous sélectionnez l&#039;emplacement du script sshfs-dialog.sh grâce à la commande &quot;parcourir&quot;. Ainsi vous pourrez créer des lanceurs sur le bureau. Le script s&#039;exécutera maintenant automatiquement en cliquant sur un fichier *.essh. <br/>
+
+</p>
+
+</div>
+
+<h4 id="code_de_ssh-dialogsh">Code de ssh-dialog.sh</h4>
+<div class="level4">
+<pre class="code bash"><span class="co0">#! /bin/bash</span>
+<span class="kw3">export</span> <span class="re2">SSH_ASKPASS</span>=<span class="sy0">/</span>usr<span class="sy0">/</span>lib<span class="sy0">/</span>openssh<span class="sy0">/</span>gnome-ssh-askpass
+&nbsp;
+<span class="kw3">export</span> <span class="re2">DIR</span>=<span class="re1">$PWD</span>
+&nbsp;
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="re4">$1</span> <span class="br0">&#93;</span> ; <span class="kw1">then</span>
+	<span class="kw3">export</span> <span class="re2">DIR</span>=<span class="sy0">`</span><span class="kw2">dirname</span> <span class="re4">$1</span><span class="sy0">`</span>
+	<span class="kw1">while</span> <span class="kw2">read</span> ligne ; <span class="kw1">do</span>
+		<span class="re2">first</span>=<span class="nu0">1</span>
+		<span class="re2">val</span>=<span class="st0">&quot;&quot;</span>
+		<span class="kw1">for</span> mot <span class="kw1">in</span> <span class="re1">$ligne</span> ; <span class="kw1">do</span>
+			<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="re1">$first</span> <span class="re5">-eq</span> <span class="nu0">1</span> <span class="br0">&#93;</span> ; <span class="kw1">then</span>
+				<span class="re2">var</span>=<span class="re1">$mot</span>
+				<span class="re2">first</span>=<span class="nu0">0</span>
+			<span class="kw1">else</span>
+				<span class="re2">val</span>=<span class="re1">$val</span><span class="re1">$mot</span><span class="st0">&quot; &quot;</span>
+			<span class="kw1">fi</span>
+		<span class="kw1">done</span>
+		<span class="kw3">export</span> <span class="re1">$var</span>=<span class="st0">&quot;<span class="es2">$val</span>&quot;</span>
+	<span class="kw1">done</span> <span class="sy0">&lt;</span> <span class="re4">$1</span>
+<span class="kw1">fi</span>
+&nbsp;
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="re5">-z</span> <span class="st0">&quot;<span class="es2">$PORT</span>&quot;</span> <span class="br0">&#93;</span> ; <span class="kw1">then</span>
+	<span class="kw3">export</span> <span class="re2">PORT</span>=<span class="nu0">22</span>
+<span class="kw1">fi</span>
+&nbsp;
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="re5">-z</span> <span class="st0">&quot;<span class="es2">$DISTUSER</span>&quot;</span> <span class="br0">&#93;</span> ; <span class="kw1">then</span>
+	<span class="kw3">export</span> <span class="re2">DISTUSER</span>=<span class="re1">$USER</span>
+<span class="kw1">fi</span>
+&nbsp;
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="re5">-z</span> <span class="st0">&quot;<span class="es2">$MOUNT</span>&quot;</span> <span class="br0">&#93;</span> ; <span class="kw1">then</span>
+	<span class="kw3">export</span> <span class="re2">MOUNT</span>=<span class="re1">$DISTUSER</span><span class="re1">$SERVEUR</span>
+<span class="kw1">fi</span>
+&nbsp;
+<span class="kw3">export</span> <span class="re2">MAIN_DIALOG</span>=<span class="st_h">'
+ &lt;vbox&gt;
+  &lt;hbox&gt;
+		&lt;text&gt;&lt;label&gt;Serveur:&lt;/label&gt;&lt;/text&gt;
+		&lt;entry&gt;
+			&lt;input&gt;echo $SERVEUR&lt;/input&gt;
+			&lt;variable&gt;SERVEUR&lt;/variable&gt;
+		&lt;/entry&gt;
+	&lt;/hbox&gt;
+	&lt;hbox&gt;
+		&lt;text&gt;&lt;label&gt;Port:&lt;/label&gt;&lt;/text&gt;
+		&lt;entry&gt;
+			&lt;input&gt;echo $PORT&lt;/input&gt;
+			&lt;variable&gt;PORT&lt;/variable&gt;
+		&lt;/entry&gt;
+	&lt;/hbox&gt;
+  &lt;hbox&gt;
+		&lt;text&gt;&lt;label&gt;User:&lt;/label&gt;&lt;/text&gt;
+		&lt;entry&gt;
+			&lt;input&gt;echo $DISTUSER&lt;/input&gt;
+			&lt;variable&gt;DISTUSER&lt;/variable&gt;
+		&lt;/entry&gt;
+	&lt;/hbox&gt;
+  &lt;hbox&gt;
+		&lt;text&gt;&lt;label&gt;Remote Point:&lt;/label&gt;&lt;/text&gt;
+		&lt;entry&gt;
+			&lt;input&gt;echo $REMOTE&lt;/input&gt;
+			&lt;variable&gt;REMOTE&lt;/variable&gt;
+		&lt;/entry&gt;
+	&lt;/hbox&gt;
+  &lt;hbox&gt;
+		&lt;text&gt;&lt;label&gt;Mount Name:&lt;/label&gt;&lt;/text&gt;
+		&lt;entry&gt;
+			&lt;input&gt;echo $MOUNT&lt;/input&gt;
+			&lt;variable&gt;MOUNT&lt;/variable&gt;
+		&lt;/entry&gt;
+	&lt;/hbox&gt;
+  &lt;hbox&gt;
+		&lt;button&gt;
+			&lt;label&gt;Term&lt;/label&gt;
+			&lt;action&gt;x-terminal-emulator -e ssh -p $PORT $DISTUSER@$SERVEUR&lt;/action&gt;
+		&lt;/button&gt;
+		&lt;button&gt;
+			&lt;label&gt;Mount&lt;/label&gt;
+			&lt;action&gt;fusermount -u $DIR/$MOUNT&lt;/action&gt;
+			&lt;action&gt;rmdir $DIR/$MOUNT&lt;/action&gt;
+			&lt;action&gt;mkdir $DIR/$MOUNT&lt;/action&gt;
+			&lt;action&gt;sshfs $DISTUSER@$SERVEUR:$REMOTE $DIR/$MOUNT -p $PORT&lt;/action&gt;
+		&lt;/button&gt;
+		&lt;button&gt;
+			&lt;label&gt;Umount&lt;/label&gt;
+			&lt;action&gt;fusermount -u $DIR/$MOUNT&lt;/action&gt;
+			&lt;action&gt;rmdir $DIR/$MOUNT&lt;/action&gt;
+		&lt;/button&gt;
+		&lt;button&gt;
+			&lt;label&gt;Save&lt;/label&gt;
+			&lt;action&gt;echo SERVEUR $SERVEUR | tee $DIR/$MOUNT.essh&lt;/action&gt;
+			&lt;action&gt;echo PORT $PORT | tee -a $DIR/$MOUNT.essh&lt;/action&gt;
+			&lt;action&gt;echo DISTUSER $DISTUSER | tee -a $DIR/$MOUNT.essh&lt;/action&gt;
+			&lt;action&gt;echo REMOTE $REMOTE | tee -a $DIR/$MOUNT.essh&lt;/action&gt;
+			&lt;action&gt;echo MOUNT $MOUNT | tee -a $DIR/$MOUNT.essh&lt;/action&gt;
+		&lt;/button&gt;
+  &lt;/hbox&gt;
+ &lt;/vbox&gt;
+'</span>
+&nbsp;
+gtkdialog <span class="re5">--program</span>=MAIN_DIALOG</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[3e méthode : sshfs-dialog.sh] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9957-14712" /><input type="submit" value="Modifier" class="button" title="3e méthode : sshfs-dialog.sh" /></div></form></div>
+<h3 class="sectionedit14" id="e_methodefusible">4e méthode : Fusible</h3>
+<div class="level3">
+
+<p>
+<a href="fusible" class="wikilink1" title="fusible">Fusible</a> est une interface graphique pour tous points de montage FUSE.
+Un plugin pour SSHFS est prévu et permettra d&#039;accéder à toutes les fonctionnalités et options de SSHFS et de FUSE.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[4e méthode : Fusible] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14713-14939" /><input type="submit" value="Modifier" class="button" title="4e méthode : Fusible" /></div></form></div>
+<h2 class="sectionedit15" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://fuse.sourceforge.net/sshfs.html" class="urlextern" title="http://fuse.sourceforge.net/sshfs.html"  rel="nofollow">Site officiel</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=38912" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=38912"  rel="nofollow">commentaires et discussion ici</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : …</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="sshfs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428454753" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14940-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/20ea0a18873f2a36517038ed82982bb1.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/sshfs?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/sshfs?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/sshfs?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/sshfs?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/sshfs?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

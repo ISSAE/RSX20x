@@ -1,0 +1,733 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>rtorrent - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-01-01T00:13:52+0100"/>
+<meta name="keywords" content="feisty,gutsy,reseau,p2p,bittorrent"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/rtorrent?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/rtorrent?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/rtorrent"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/rtorrent"/>
+<link rel="canonical" href="rtorrent"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"rtorrent","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="rtorrent#main" tabindex="1">Contenu</a> | <a href="rtorrent#qsearch__in" tabindex="2">Rechercher</a> | <a href="rtorrent#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="rtorrent" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="rtorrent" >rtorrent</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="versions">versions supportées d'Ubuntu</a>.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="rtorrent#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="rtorrent#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="rtorrent#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="rtorrent#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="rtorrent#rtorrent_en_daemon">rtorrent en daemon...</a></div></li>
+<li class="level1"><div class="li"><a href="rtorrent#interfaces_graphiques">Interfaces graphiques</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="rtorrent#interfaces_lourdes">Interfaces &quot;lourdes&quot;</a></div></li>
+<li class="level2"><div class="li"><a href="rtorrent#interfaces_web">Interfaces &quot;Web&quot;</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="rtorrent#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="feisty" class="wikilink1" title="feisty" rel="tag">Feisty</a>,
+	<a href="gutsy" class="wikilink1" title="gutsy" rel="tag">Gutsy</a>,
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="p2p" class="wikilink1" title="p2p" rel="tag">p2p</a>,
+	<a href="http://doc.ubuntu-fr.org/bittorrent" class="wikilink1" title="bittorrent" rel="tag">bittorrent</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="rtorrent">rTorrent</h1>
+<div class="level1">
+
+<p>
+<strong>rTorrent</strong> est un client BitTorrent très léger fonctionnant en ligne de commande. Il n&#039;utilise que très peu de ressources (pratique si vous disposez d&#039;une vieille machine).
+</p>
+
+<p>
+<a href="http://i.imgur.com/6V6pB.png" class="urlextern" title="http://i.imgur.com/6V6pB.png"  rel="nofollow">http://i.imgur.com/6V6pB.png</a>
+</p>
+
+<p>
+La seule contrainte de cet outil est qu&#039;on ne peut pas fermer le terminal dans lequel il est lancé sans le stopper. Pour contourner ce problème, on utilisera le programme <a href="http://doc.ubuntu-fr.org/screen" class="wikilink1" title="screen">Screen</a> ou dtach.
+Il est également possible d&#039;utiliser <a href="http://doc.ubuntu-fr.org/alltray" class="wikilink1" title="alltray">alltray</a> afin d&#039;envoyer l&#039;icône du terminal dans la zone de notification.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="rtorrent"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1420067632" /><input type="hidden" name="summary" value="[rTorrent] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="52-600" /><input type="submit" value="Modifier" class="button" title="rTorrent" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+Vous devez activer les <a href="depots#universe_et_multiverse" class="wikilink1" title="depots">dépôts Multiverse</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="rtorrent"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1420067632" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="601-704" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong><a href="apt://rtorrent" class="urlextern" title="apt://rtorrent"  rel="nofollow">rtorrent</a></strong> et <strong><a href="apt://screen" class="urlextern" title="apt://screen"  rel="nofollow">screen</a></strong> (ou <strong><a href="apt://dtach" class="urlextern" title="apt://dtach"  rel="nofollow">dtach</a></strong>).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="rtorrent"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1420067632" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="705-889" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Tout d&#039;abord, commencez par créer le fichier de configuration. 
+</p>
+
+<p>
+Copier le fichier <strong>/usr/share/doc/rtorrent/examples/rtorrent.rc</strong> dans votre dossier personnel.
+</p>
+<pre class="code">cp /usr/share/doc/rtorrent/examples/rtorrent.rc ~/.rtorrent.rc</pre>
+
+<p>
+Puis <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a>.
+</p>
+
+<p>
+Voici une configuration basique de ce fichier. Pour plus de détails, consultez la <a href="man" class="wikilink1" title="man">page de manuel</a> de rTorrent.
+</p>
+<pre class="file"># Fichier de configuration de rtorrent.
+# Par défaut, c&#039;est le fichier ~/.rtorrent.rc
+
+# Limites des taux de téléchargement en réception et en envoi. &quot;0&quot; équivaut à aucune limite. 
+#download_rate = 500
+#upload_rate = 150
+
+# Répertoire qui contient les fichiers téléchargés.
+directory = ~/torrent/data
+
+# Répertoire où rtorrent stocke l&#039;état de téléchargement des torrents.
+session = ~/torrent/session
+# Utilisez un chemin //relatif// si vous êtes susceptible de lancer plusieurs
+# instances de rtorrent ! Commentez la ligne précédente et décommentez celle-ci :
+#session = ./session
+
+# Ports utilisables par rtorrent (utilisez deux fois la même valeur pour utiliser tout le temps ce port)
+port_range = 6881-6999
+port_random = no
+
+# Vérification des données à la fin du téléchargement
+check_hash = yes
+
+# Ce répertoire contient les fichiers .torrent. 
+# Dès qu&#039;un nouveau .torrent y est ajouté, le téléchargement commence.
+schedule = watch_directory,15,15,load_start=~/torrent/torrent_active/*.torrent
+
+# Dès que le téléchargement est achevé, le fichier est déplacé dans le
+# répertoire ~/torrent_finis.
+# Pour les versions récentes de rtorrent (0.8.4 et supérieures), utilisez la ligne suivante :
+#system.method.set_key = event.download.finished,move_complete,&quot;execute=mv,-u,$d.get_base_path=,~/torrent_finis/;d.set_directory=~/torrent_finis/&quot;
+# Pour les versions 0.7.7 de 0.8.3, utilisez la ligne suivante :
+#on_finished = move_complete,&quot;execute=mv,-u,$d.get_base_path=,~/torrent_finis/;d.set_directory=~/torrent_finis/&quot;
+
+# Activation de DHT pour les torrents sans trackers.
+# Il est obligatoire de définir un répertoire de session (voir plus haut).
+dht = auto
+
+# Port UDP pour l&#039;utilisation de DHT. 
+dht_port = 6880
+
+# Forcer l&#039;utilisation de transactions chiffrées, pour ne recevoir et n&#039;envoyer que des données protégées.
+# En revanche, les identités du l&#039;expéditeur et du destinataire restent visibles.
+encryption = allow_incoming,require,require_rc4</pre>
+
+<p>
+<p><div class="notetip">Il faut penser à ouvrir les ports utilisés par rtorrent dans <a href="iptables" class="wikilink1" title="iptables">iptables</a>.
+</p>
+
+<p>
+Note: quels ports ? rtorrent utilise un port pour chaque echange avec les peer, Réponse : Les ports définis dans port_range &amp; dht_port.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="rtorrent"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1420067632" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="890-3595" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h2 class="sectionedit5" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Pour lancer rtorrent, tapez dans une console :
+</p>
+<pre class="code">rtorrent</pre>
+
+<p>
+<p><div class="noteimportant">  rtorrent vérifie à chaque démarrage le hash de vos fichiers. Ceci peut être très long et monopoliser des ressources importantes si vous avez un grand nombre de fichiers en seed. Pour éviter cela éditez votre fichier .rtorrent.rc et n&#039;oubliez pas de créer un dossier <strong>torrent</strong> et sous-dossier <strong>session</strong> dans votre home.
+</p>
+<pre class="code"># Default session directory. Make sure you don&#039;t run multiple instance
+# of rtorrent using the same session directory. Perhaps using a
+# relative path?
+session = ~/torrent/session</pre>
+
+<p>
+ Ces modifications permettront de conserver vos préférences.
+
+</div></p>
+Vous pouvez ajouter des fichiers *.torrent de deux façons :
+</p>
+<ul>
+<li class="level1"><div class="li"> En pressant, dans rtorrent, la touche backspace, vous pouvez entrer le chemin complet du torrent ou bien une url du torrent.</div>
+</li>
+<li class="level1"><div class="li"> En enregistrant directement le torrent dans le répertoire que vous avez indiqué dans votre fichier de configuration avec la commande watch_directory (dans le fichier de configuration plus haut, il s&#039;agit du répertoire /home/nom_utilisateur/torrent/torrent_active/)</div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="les_combinaisons_de_touches">Les combinaisons de touches</h5>
+<div class="level5">
+
+<p>
+Pour agir sur un torrent, vous devez le sélectionner (avec les touches haut et bas). Le torrent sélectionné est indiqué par 3 étoiles sur le côté gauche.
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour mettre en pause un torrent, pressez ctrl+d.</div>
+</li>
+<li class="level1"><div class="li"> Pour relancer un torrent en pause, pressez ctrl+s.</div>
+</li>
+<li class="level1"><div class="li"> Pour retirer un torrent, vous devez presser deux fois ctrl+d : il se met en pause la première fois, puis est effacé la deuxième.</div>
+</li>
+<li class="level1"><div class="li">Pour donner la priorité à un morceau du fichier (ou ne pas le télécharger), appuyez deux fois sur la touche « flèche droite », sélectionnez le fichier qui vous intéresse, puis pressez la touche « Espace ».</div>
+</li>
+<li class="level1"><div class="li"> Pour que le torrent ignore/prenne en compte les commandes du fichier de configuration (telles que move_complete dans l&#039;exemple), pressez I.</div>
+</li>
+<li class="level1"><div class="li"> Pour modifier les taux limites d&#039;envoi et de réception :</div>
+<ul>
+<li class="level2"><div class="li"> a / s / d : Augmente le taux en envoi de 1 / 5 / 50 Ko</div>
+</li>
+<li class="level2"><div class="li"> A / S / D : Augmente le taux en réception de 1 / 5 / 50 Ko</div>
+</li>
+<li class="level2"><div class="li"> z / x / c : Diminue le taux en envoi de 1 / 5 / 50 Ko</div>
+</li>
+<li class="level2"><div class="li"> Z / X / C : Diminute le taux en récption de 1 / 5 / 50 Ko</div>
+</li>
+<li class="level2"><div class="li"> pour demander le download d&#039;une peer : ^x puis d.add_peer=xxx.xxx.xxx.xxx:port (^ veut dire Ctrl, remplacer xxx… par l&#039;ip de la peer et port par le numero du port utilisée par la peer)</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Pour quitter rtorrent, pressez ctrl+q.</div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="signification_des_informations_donnees_par_rtorrent">Signification des informations données par rtorrent</h5>
+<div class="level5">
+
+<p>
+Voici l&#039;exemple d&#039;un torrent :
+</p>
+<pre class="code">*  ubuntu-11.04-install-i386.iso
+* Torrent:  161.6 /  617.2 MB Rate:   1.1 /  41.3 KB Uploaded:     5.1 MB [24%]  0d  3:09 [TI R: 0.03]
+*</pre>
+
+<p>
+Voici sa signification :
+</p>
+<pre class="code">ubuntu-11.04-install-i386.iso </pre>
+
+<p>
+Nom du fichier téléchargé.
+</p>
+<pre class="code">Torrent: 161.6 / 617.2 MB</pre>
+
+<p>
+Nombre de Mo déjà téléchargés / nombre total du torrent.
+</p>
+<pre class="code">Rate: 1.1 / 41.3 KB</pre>
+
+<p>
+Vitesses de téléchargement en envoi et en réception.
+</p>
+<pre class="code">Uploaded: 5.1 MB</pre>
+
+<p>
+Nombre de Mo déjà envoyés.
+</p>
+<pre class="code">[24%]</pre>
+
+<p>
+Pourcentage du torrent déjà téléchargé. 
+</p>
+<pre class="code">0d 3:09</pre>
+
+<p>
+Estimation du temps restant (ce chiffre se fonde sur la vitesse courante en réception du téléchargement). Si la vitesse en réception reste la même, le téléchargement sera terminé dans 0 jours, 3 heures et 9 minutes.
+</p>
+<pre class="code">T</pre>
+
+<p>
+Indique que le torrent a été chargé à l&#039;aide d&#039;un fichier *.torrent stocké localement (le flag n&#039;est pas présent lorsque le fichier torrent est chargé par le biais d&#039;une <abbr title="Uniform Resource Locator">URL</abbr>)
+</p>
+<pre class="code">I</pre>
+
+<p>
+Indique que le torrent ignore les commandes (telles que stop_on_ratio, move_complete)
+</p>
+<pre class="code">R: 0.03</pre>
+
+<p>
+Indique le pourcentage de partage (<em>share ratio</em>) : c&#039;est le nombre de données envoyées par rapport au nombre de données reçues. Ici, vous avez jusqu&#039;ici envoyés 5.1 Mo et vous avez reçu 161.6 Mo, vous avez donc partagé 3 % du torrent.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="rtorrent"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1420067632" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3596-7482" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h2 class="sectionedit6" id="rtorrent_en_daemon">rtorrent en daemon...</h2>
+<div class="level2">
+
+</div>
+
+<h4 id="avec_dtach">... avec dtach</h4>
+<div class="level4">
+
+<p>
+Voici un petit script qui permet de lancer rtorrent au démarrage de la distribution tout en se laissant la possibilité d&#039;accéder à l&#039;interface console.
+</p>
+
+<p>
+Vous devez tout d&#039;abord avoir <a href="apt://dtach" class="urlextern" title="apt://dtach"  rel="nofollow">dtach</a>.
+</p>
+
+<p>
+Ensuite dans <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">/etc/init.d/rtorrentd</a> on écrit :
+</p>
+<pre class="code">#!/bin/sh -e
+#
+### BEGIN INIT INFO
+# Provides: rtorrentd
+# Required-Start: $network $syslog
+# Required-Stop: $network
+# Default-Start: 2 3 5
+# Default-Stop: 0 1 6
+# Description: Démarrer/arrêter rtorrent sous forme de daemon.
+### END INIT INFO
+user=
+NAME=rtorrentd
+SCRIPTNAME=/etc/init.d/$NAME
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# path du fichier temporaire
+TMP=/tmp/rtorrent.dtach
+# user qui lance le torrent
+
+# chemin vers fichier conf
+CONF=/home/${user}/.rtorrent.rc
+
+start() {
+        echo -n $&quot;Starting $NAME: &quot;
+        su -l ${user} -c &quot;dtach -n $TMP rtorrent -n -o import=$CONF&quot;
+        chmod 666 /tmp/rtorrent.dtach
+        echo &quot;started&quot;  
+}
+
+stop() {
+        echo -n $&quot;Stopping $NAME: &quot;
+        killall -r &quot;rtorrent&quot;
+        echo &quot;stopped&quot;
+}
+
+restart() {
+
+        if [ &quot;$(ps aux | grep -e &#039;rtorrent&#039; -c)&quot; != 0  ]; then
+        {
+                stop
+                sleep 5
+        }
+        fi
+        start
+}
+
+
+case $1 in
+        start)
+               start
+        ;;
+        stop)
+                stop
+        ;;
+        restart)
+                restart
+        ;;
+        *)
+                echo &quot;Usage:  {start|stop|restart}&quot; &gt;&amp;2
+                exit 2
+        ;;
+esac
+</pre>
+
+<p>
+<p><div class="notetip">N&#039;oubliez pas de renseigner compléter &quot;user=&quot;  par votre nom d&#039;utilisateur.  
+</div></p>
+</p>
+
+<p>
+Pensez à rendre votre script exécutable :
+</p>
+<pre class="code">sudo chmod +x /etc/init.d/rtorrentd</pre>
+
+<p>
+On termine avec la commande suivante pour indiquer que ce script doit s&#039;exécuter au démarrage :
+</p>
+<pre class="code">​sudo ​update-rc.d ​rtorrentd ​defaults 99</pre>
+
+<p>
+Maintenant, à chaque démarrage du système, rtorrent se lancera automatiquement.
+</p>
+
+<p>
+Pour pouvoir accéder à l&#039;interface console il suffit d&#039;utiliser la commande :
+</p>
+<pre class="code">dtach -a /tmp/rtorrent.dtach -r winch</pre>
+
+<p>
+<p><div class="notetip">Vous pouvez créer un <a href="alias" class="wikilink1" title="alias">alias</a> pour exécuter plus facilement la commande précédente.
+</div></p>
+</p>
+
+<p>
+Pour détacher ensuite l&#039;interface console il suffit de
+</p>
+<ul>
+<li class="level1"><div class="li"> en qwerty: taper CTRL + \</div>
+</li>
+<li class="level3"><div class="li"> en azerty: taper CTRL + MAJ + 4</div>
+</li>
+<li class="level3"><div class="li"> mac avec clavier suisse, le backslash se fait avec Maj + Alt + 7</div>
+</li>
+<li class="level3"><div class="li"> Ctrl + $</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="avec_screen">... avec screen</h4>
+<div class="level4">
+
+<p>
+Installez <a href="apt://screen" class="urlextern" title="apt://screen"  rel="nofollow">screen</a> qui est un outil plus répandu que dtach, il n&#039;est pas aussi léger mais offre plus de fonctionnalités.
+Ensuite dans <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">/etc/init.d/rtorrent-daemon</a> on écrit :
+</p>
+<pre class="code">#!/bin/sh -e
+# Start/Stop rtorrent sous forme de daemon.
+user=
+NAME=rtorrent-daemon
+SCRIPTNAME=/etc/init.d/$NAME
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+case $1 in
+        start)
+                echo &quot;Starting rtorrent... &quot;
+                su -l ${user} -c &quot;screen -fn -dmS rtd nice -19 rtorrent&quot;
+                echo &quot;Terminated&quot;
+        ;;
+        stop)
+                if [ &quot;$(ps aux | grep -e &#039;.*rtorrent$&#039; -c)&quot; != 0  ]; then
+                {
+                        echo &quot;Shutting down rtorrent... &quot;
+                        killall -r &quot;^.*rtorrent$&quot;
+                        echo &quot;Terminated&quot;
+                }
+                else
+                {
+                        echo &quot;rtorrent not yet started !&quot;
+                        echo &quot;Terminated&quot;
+                }
+                fi
+        ;;
+        restart)
+                if [ &quot;$(ps aux | grep -e &#039;.*rtorrent$&#039; -c)&quot; != 0  ]; then
+                {
+                        echo &quot;Shutting down rtorrent... &quot;
+                        killall -r &quot;^.*rtorrent$&quot;
+                        echo &quot;Starting rtorrent... &quot;
+                        su -l ${user} -c &quot;screen -fn -dmS rtd nice -19 rtorrent&quot;
+                        echo &quot;Terminated&quot;
+                }
+                else
+                {
+                        echo &quot;rtorrent not yet started !&quot;
+                        echo &quot;Starting rtorrent... &quot;
+                        su -l ${user} -c &quot;screen -fn -dmS rtd nice -19 rtorrent&quot;
+                        echo &quot;Terminated&quot;
+                }
+                fi
+        ;;
+        *)
+                echo &quot;Usage: $SCRIPTNAME {start|stop|restart}&quot; &gt;&amp;2
+                exit 2
+        ;;
+esac</pre>
+
+<p>
+<p><div class="notetip">N&#039;oubliez pas de compléter &quot;user=&quot; par votre nom d&#039;utilisateur.
+</div></p>
+Pensez à rendre votre script exécutable:
+</p>
+<pre class="code">sudo chmod +x /etc/init.d/rtorrent-daemon</pre>
+
+<p>
+On termine avec la commande suivante pour indiquer que ce script doit s&#039;exécuter au démarrage :
+</p>
+<pre class="code">​sudo ​update-rc.d ​rtorrent-daemon ​defaults 99</pre>
+
+<p>
+Maintenant, à chaque démarrage du système, rtorrent se lancera automatiquement.
+</p>
+
+<p>
+Pour pouvoir accéder à l&#039;interface console on utilise la commande:
+</p>
+<pre class="code">stty stop undef; stty start undef; screen -r rtd</pre>
+
+<p>
+<p><div class="notetip">Vous pouvez vous créer un <a href="tutoriel/script_shell" class="wikilink1" title="tutoriel:script_shell">script</a> ou un <a href="alias" class="wikilink1" title="alias">alias</a> pour exécuter plus facilement la commande précédente.
+</div></p>
+</p>
+
+<p>
+Pour détacher ensuite l&#039;interface console il suffit de taper Ctrl + a puis d .
+</p>
+
+</div>
+
+<h4 id="avec_crontab">... avec crontab</h4>
+<div class="level4">
+
+<p>
+Dans la crontab de l&#039;utilisateur en lançant dtach.
+L&#039;utilisateur torrent lancera le dtach à chaque démarrage de la machine.
+C&#039;est simple, efficace, mais un peu brutal.
+</p>
+<pre class="code"> sudo crontab -e -u torrent</pre>
+
+<p>
+On rajoute cette ligne 
+</p>
+
+<p>
+# Start rtorrent in a detached session
+@reboot TERM=xterm dtach -n ~/torrents/rtorrent rtorrent
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="rtorrent"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1420067632" /><input type="hidden" name="summary" value="[rtorrent en daemon...] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7483-13069" /><input type="submit" value="Modifier" class="button" title="rtorrent en daemon..." /></div></form></div>
+<h2 class="sectionedit7" id="interfaces_graphiques">Interfaces graphiques</h2>
+<div class="level2">
+
+<p>
+Ce qui fait toute la puissance de rTorrent est son <abbr title="Application Programming Interface">API</abbr> : xmlrpc. Elle permet a un logiciel client de se connecter à rTorrent et à fournir une interface en se basant sur le moteur du logiciel. Cette flexibilité, obtenu à un coût très raisonnable (installation du paquet rtorrent), permet d&#039;utiliser rTorrent de multiples façons.
+Il peut être nécessaire d&#039;installer pour ces clients mod_scgi :
+<a href="apt://libapache2-mod-scgi" class="urlextern" title="apt://libapache2-mod-scgi"  rel="nofollow">libapache2-mod-scgi</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="rtorrent"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1420067632" /><input type="hidden" name="summary" value="[Interfaces graphiques] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13070-13555" /><input type="submit" value="Modifier" class="button" title="Interfaces graphiques" /></div></form></div>
+<h3 class="sectionedit8" id="interfaces_lourdes">Interfaces &quot;lourdes&quot;</h3>
+<div class="level3">
+
+<p>
+<a href="http://code.google.com/p/ntorrent/" class="urlextern" title="http://code.google.com/p/ntorrent/"  rel="nofollow">nTorrent</a> est une interface dite &quot;lourde&quot;. 
+Elle est programmée en java et a donc l&#039;avantage d&#039;être disponible sur beaucoup de plate-forme.
+</p>
+
+<p>
+<a href="http://code.google.com/p/n2hell/" class="urlextern" title="http://code.google.com/p/n2hell/"  rel="nofollow">http://code.google.com/p/n2hell/</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="rtorrent"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1420067632" /><input type="hidden" name="summary" value="[Interfaces lourdes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13556-13801" /><input type="submit" value="Modifier" class="button" title="Interfaces lourdes" /></div></form></div>
+<h3 class="sectionedit9" id="interfaces_web">Interfaces &quot;Web&quot;</h3>
+<div class="level3">
+
+<p>
+<a href="http://code.google.com/p/rutorrent/wiki/Main" class="urlextern" title="http://code.google.com/p/rutorrent/wiki/Main"  rel="nofollow">ruTorrent</a> est une interface web en php.
+Elle est basée sur l&#039;apparence (très agréable au demeurant) de uTorrent, le logiciel windows. Bien penser à lire la <a href="http://code.google.com/p/rutorrent/wiki/Main" class="urlextern" title="http://code.google.com/p/rutorrent/wiki/Main"  rel="nofollow">mise en route</a>
+Voir aussi <a href="http://doc.ubuntu-fr.org/rutorrent" class="wikilink1" title="rutorrent">rutorrent</a>
+</p>
+
+<p>
+<a href="http://www.wtorrent-project.org/" class="urlextern" title="http://www.wtorrent-project.org/"  rel="nofollow">wTorrent</a> est une interface web en php.
+</p>
+
+<p>
+<a href="http://web-gmui.sourceforge.net/" class="urlextern" title="http://web-gmui.sourceforge.net/"  rel="nofollow">web-gmui</a> est une interface web en php.
+Elle est non seulement compatible avec rTorrent, mais aussi avec MLdonkey, aMule, Transmission et giFT.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="rtorrent"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1420067632" /><input type="hidden" name="summary" value="[Interfaces Web] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13802-14385" /><input type="submit" value="Modifier" class="button" title="Interfaces Web" /></div></form></div>
+<h2 class="sectionedit10" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://libtorrent.rakshasa.no/" class="urlextern" title="http://libtorrent.rakshasa.no/"  rel="nofollow">Site officiel de rTorrent</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://libtorrent.rakshasa.no/wiki/UtilsList" class="urlextern" title="http://libtorrent.rakshasa.no/wiki/UtilsList"  rel="nofollow">Une liste de logiciels se greffant sur rTorrent</a> (en)</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/yoann" class="wikilink2" title="utilisateurs:yoann" rel="nofollow">Yoann</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/samaga" class="wikilink1" title="utilisateurs:samaga">Samaga</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/flayor" class="wikilink1" title="utilisateurs:flayor">Flayor</a>, Geek Spirit, Simtris.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="rtorrent"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1420067632" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14386-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/e/e13b54fc76ce19017fe25f25c254c399.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/rtorrent?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rtorrent?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rtorrent?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rtorrent?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rtorrent?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

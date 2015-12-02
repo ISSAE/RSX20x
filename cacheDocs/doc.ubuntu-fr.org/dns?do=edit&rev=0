@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>dns - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/dns?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/dns"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/dns"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"dns","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="dns?do=edit&amp;rev=0#main" tabindex="1">Contenu</a> | <a href="dns?do=edit&amp;rev=0#qsearch__in" tabindex="2">Rechercher</a> | <a href="dns?do=edit&amp;rev=0#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="dns?do=edit&amp;rev=0" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="dns" >dns</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<p>
+<strong>Quelques recommandations avant de créer ou de modifier cette page :</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Lisez le <a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">guide du contributeur</a> et la <a href="wiki/ligne_editoriale" class="wikilink1" title="wiki:ligne_editoriale">ligne éditoriale</a>.</div>
+</li>
+<li class="level1"><div class="li"> Découvrez la <a href="http://doc.ubuntu-fr.org/wiki/syntaxe" class="wikilink1" title="wiki:syntaxe">syntaxe</a> et entraînez-vous dans le <a href="playground/playground" class="wikilink1" title="playground:playground">bac à sable</a>.</div>
+</li>
+<li class="level1"><div class="li"> Utilisez les modèles (<a href="wiki/modeles/application" class="wikilink1" title="wiki:modeles:application">application</a>, <a href="wiki/modeles/materiel" class="wikilink1" title="wiki:modeles:materiel">matériel</a>, <a href="wiki/modeles/portable" class="wikilink1" title="wiki:modeles:portable">ordinateur portable</a>, <a href="wiki/modeles/tutoriel" class="wikilink1" title="wiki:modeles:tutoriel">tutoriel</a>, <a href="wiki/modeles/utilisateur" class="wikilink1" title="wiki:modeles:utilisateur">utilisateur</a>, <a href="wiki/modeles/portail" class="wikilink1" title="wiki:modeles:portail">portail</a>) et les <a href="wiki/mini-tutoriels" class="wikilink1" title="wiki:mini-tutoriels">mini-tutoriels</a>.</div>
+</li>
+<li class="level1"><div class="li"> Rapportez toutes créations ou modifications importantes sur <a href="wiki/liste_discussion#coordination_de_la_documentation" class="wikilink1" title="wiki:liste_discussion">la liste de discussion</a>.</div>
+</li>
+</ol>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fcdb5fe1d67011f56447459483d05597.xhtml used -->
+<script type="text/javascript">/*<![CDATA[*/
+textChanged = false/*!]]>*/</script>
+    <div class="editBox" role="application">
+
+    <div class="toolbar group">
+        <div id="draft__status"></div>
+        <div id="tool__bar"><a href="http://doc.ubuntu-fr.org/lib/exe/mediamanager.php?ns="
+            target="_blank">Sélection de fichiers</a></div>
+    </div>
+    <form id="dw__editform" method="post" action="dns?do=edit&amp;rev=0" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><input type="hidden" name="id" value="dns" /><input type="hidden" name="rev" value="0" /><input type="hidden" name="date" value="1428685153" /><input type="hidden" name="prefix" value="." /><input type="hidden" name="suffix" value="" /><input type="hidden" name="changecheck" value="d26ef9328dfe3b6824816a4a40bda165" /><input type="hidden" name="target" value="section" /><textarea name="wikitext" id="wiki__text" dir="auto" class="edit" cols="80" rows="10" tabindex="1">
+{{tag&gt;serveur réseau entreprise}}
+----
+
+======DNS - Système de noms de domaine ======
+Le **[[wpfr&gt;Domain Name System]]** (ou DNS, **système de noms de domaine**) est un service permettant d'établir une correspondance entre une adresse IP et un nom de domaine.
+
+{{  http://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/DNS_iterations.svg/663px-DNS_iterations.svg.png?300|Fonctionnement du système des noms de domaine (Source: Wikipedia)}}
+
+Les réseaux informatiques sont composés d'ordinateurs qui communiquent entre eux à l'aide d'adresses numériques uniques, appelées adresses IP. Chaque adresse IP identifie un ordinateur (clients et serveurs). L'adresse numérique facilite grandement le traitement pour l'ordinateur. Or, pour un être humain, il est beaucoup plus difficile de se souvenir d'une série de de lettres et de mots que d'une suite de chiffres.
+
+Le système des noms de domaine a été inventé pour palier à ce problème : il fait correspondre une adresse alphanumérique (ex : //%%www.ubuntu-fr.org%%//) à une adresse IP numérique (ex : //88.191.119.240//). Cette correspondance -- appelée //résolution// -- s'effectue à l'intérieur d'un serveur spécialisé dédié à résoudre des noms de domaine : un serveur DNS.
+
+
+
+===== Utiliser un serveur DNS =====
+Lorsque vous vous connectez à Internet, votre fournisseur d'accès à Internet (FAI) met à votre disposition des serveurs DNS qu'il administre lui-même. Par défaut, donc, votre connexion à Internet utilise automatiquement un ou des serveurs DNS, et ceux-ci sont fournis et gérés par votre FAI.
+
+Pour plusieurs raisons, vous pouvez désirer utiliser d'autres serveurs DNS que ceux gérés par votre FAI. Confidentialité de vos échanges, serveurs DNS hors-ligne ou meilleure vitesse de résolution des noms de domaine sont quelques-unes des plus fréquentes raisons pour lesquelles certains utilisateurs choisissent d'utiliser d'autres serveurs DNS que ceux proposés par leur FAI. 
+
+==== Choix d'un serveur DNS alternatif ====
+
+Voici une liste de serveurs DNS que vous pouvez librement utiliser :
+
+Décentralisé :
+   * [[http://sourceforge.net/projects/socialdns/|SocialDNS]]: mettant en œuvre le protocole libre go : &lt;del&gt;[[https://addons.mozilla.org/fr/firefox/addon/8006/|Sous forme d'extension firefox]]&lt;/del&gt; (lien mort), qui permet de visiter les sites en &lt;nowiki&gt;go://&lt;/nowiki&gt;. Inscription libre, et gratuite.
+   * [[IDONS]] : Internet Distributed Open Name System ([[http://lauren.vortex.com/archive/000787.html|site]])
+   * [[Dot-P2P]] ([[http://dot-p2p.org/index.php?title=Main_Page|site]]) Système DNS nouvelle génération, décentralisé et libre. [[wpfr&gt;Peter Sunde]], à l’origine du plus connu des sites de torrents du monde et du projet Flattr a lancé un nouvel appel : **En finir avec l’ICANN !** [[http://twitter.com/brokep/status/8779363872935936|il a balancé un tweet le 29 novembre 2010]], demandant aux fournisseurs d’accès du monde entier de le contacter car lui et son équipe ont mis en place un nouveau serveur root DNS sécurisé et utilisant les technologies p2p. MAIS ce serait un vaporware d'après le spécialiste @Bortzmeyer.
+   * [[http://www.cs.cornell.edu/people/egs/beehive/codons.php|CoDoNS]] Cooperative Domain Name System
+   * CoralCDN : [[wpfr&gt;Content_Delivery_Network#Liste_des_CDN|réseau de distribution de contenu]] [[P2P|peer-to-peer]] libre, composé d'un réseau mondial de proxys Web et les serveurs de noms. Une couche DNS en peer-to-peer redirige de manière transparente les navigateurs à participer procurations mise en cache, ce qui à son tour, coopérer en vue de minimiser la charge sur le serveur Web source. //(cette phrase a-t-elle un sens ?)//
+
+Centralisé avec tous ses inconvénients que l'on connait avec l'icann (censure, faiblesse contre les attaques) :
+   * **[[http://censurfridns.dk/|CensurFreedns]] : Dns contre la censure**
+   * [[http://opennicproject.org/|OpenNic]] ( the openNic Project ) est une organisation qui dirige un réseau alternatif de DNS. OpenNIC est détenu et exploité par la communauté OpenNIC. L'adhésion est ouverte à tous ceux qui partagent un intérêt à garder DNS gratuit pour tous les utilisateurs. L'objectif est de vous fournir des services DNS rapides et fiables et l'accès à des domaines ne sont pas administrés par l'ICANN. OpenNIC offre une résolution à tous les domaines de l'ICANN ainsi que les TLDs propres OpenNIC de: . Geek,. Libres. BBS,. Parodie. Oss. Indy,. Fourrure,. Ment,. Micro. Dyn et. Gopher
+
+DNS gratuit pour noms de domaine :
+  * &lt;del&gt;[[http://www.everydns.com/|EveryDNS]]&lt;/del&gt; (discontinué)
+
+== Comparer les performances de deux serveurs DNS ==
+Pour comparer les performances entre votre serveur DNS primaire actuel et un autre serveur DNS (par exemple, un autre serveur que vous seriez tenté d'utiliser), utilisez le logiciel [[http://code.google.com/p/namebench/|Namebench]] (Le paquet **[[apt&gt;namebench|Namebench]]** est maintenant dans les dépôts Ubuntu).
+  
+==== Configuration d'un DNS alternatif ====
+
+À partir d'Ubuntu 12.04 les versions serveurs et les versions desktop d'Ubuntu utilisent resolvconf((http://askubuntu.com/questions/368435/how-do-i-fix-dns-resolving-which-doesnt-work-after-upgrading-to-ubuntu-13-10-s/368935#368935)).
+Les méthodes en lignes de commande sont à effectuer sur les versions serveur d'Ubuntu, pour les versions desktop il est préférable de passer par l'utilitaire graphique (voir la section [[:dns#Par_interface_graphique|Par interface graphique]]).
+
+=== A PARTIR d'Ubuntu 12.04 (ligne de commande) ===
+
+Il faut modifier les fichiers de configuration des interfaces réseau. La modification se reportera directement par l’intermédiaire de l'utilitaire [[resolvconf]] au redémarrage du service réseau.
+
+il faut donc modifier le fichier /etc/network/interfaces
+
+On créer au préalable une copie :
+
+&lt;code bash&gt;
+sudo cp /etc/network/interfaces /etc/network/interfaces.copie
+&lt;/code&gt;
+
+Puis :
+
+&lt;code bash&gt;
+sudo nano /etc/network/interfaces
+&lt;/code&gt;
+
+Vous devez avoir un contenu du type :
+&lt;code&gt;
+/etc/network/interfaces# This file describes the network interfaces available o$
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+        address 91.121.0.0
+        netmask 255.255.255.0
+        network 91.121.0.0
+        broadcast 91.121.0.255
+        gateway 91.121.0.254
+        dns-nameservers 8.8.8.8 8.8.4.4
+&lt;/code&gt;
+
+La ligne importante dans notre cas est la dernière ligne. Si elle n'existe pas il suffit juste de la rajouter. Ici les adresses IP des serveurs DNS public de Google 8.8.8.8 et 8.8.4.4 sont utilisées. 
+
+Ne pas oublier ensuite de relancer le service réseau :
+&lt;code bash&gt;
+sudo service networking restart
+&lt;/code&gt;
+
+Sur Ubuntu 12.04.4 cette commande ne marche plus, mais celle-ci fonctionne 
+&lt;code bash&gt;
+sudo service network-interface restart INTERFACE=eth0
+&lt;/code&gt;
+eth0 est l'interface réseau que vous retrouverez dans le fichier précédent (&quot;iface eth0 ...&quot;). 
+A vous de choisir la bonne interface en fonction de votre configuration.
+
+=== AVANT Ubuntu 12.04 (ligne de commande) ===
+
+Le changement de DNS s'opère par la configuration du fichier /etc/resolv.conf
+
+Ouvrez le [[terminal]] et tapez la commande suivante :
+  sudo nano /etc/resolv.conf
+  
+Le fichier s'ouvrant dans le terminal, comporte deux lignes intitulées nameserver, soit respectivement :
+  * Le DNS préféré
+  * Le DNS auxiliaire
+que vous prendrez soin de compléter selon le DNS choisi.
+
+Tapez ctrl+x pour sauvegarder les modifications du fichier.
+
+Il se peut que certains programmes modifient automatiquement les paramètres DNS. Pour éviter cela, vous pouvez verrouiller le fichier avec la commande suivante :
+  sudo chattr +i /run/resolvconf/resolv.conf
+
+Pour déverrouiller le fichier :
+  sudo chattr -i /run/resolvconf/resolv.conf
+
+&lt;note&gt; Dans certains cas, il semble que le redémarrage du service dns-clean ne soit pas nécessaire pour l'application des changements. Il reste donc à définir dans quelles conditions le redémarrage est nécessaire. &lt;/note&gt;
+
+Une fois la configuration DNS de votre machine modifiée, il est nécessaire de redémarrer le service dns-clean pour que les changements prennent effet.
+Dans un [[terminal]] taper la commande suivante :
+  sudo /etc/init.d/dns-clean restart
+  
+=== Par interface graphique ===
+
+Pour modifier les DNS d'une version desktop d'Ubuntu (Unity, KDE etc.), il est préférable de passer par [[:network-manager|NetworkManager]]. Il est à noter que NetworkManager, //écrase// (en créant une copie tout de même) la configuration du fichier /etc/network/interfaces. Il prend donc le dessus vis-à-vis de ce qui aurait pu être configuré en ligne de commande. NetworkManger gère la manière dont le PC se connecte à la box, par défaut il est paramétré pour envoyer une requête DHCP au modem/box (attribution IP), dans la foulé ce sont les DNS par défaut du routeur/box qui sont utilisées. Les configurations qui auraient pu être faites au préalable en ligne de commande seront donc irrémédiablement //écrasées//.
+
+Avec NetworkManger pour modifier les DNS, procéder comme suit :
+
+   * Clique droit sur l’icône de NetworkManager puis : cliquez sur //Modification des connections//.
+   * Choisir quelle connexion et à modifier (par câble ou par Wifi), puis cliquer sur //Modifier//.
+   * Cliquer sur l'onglet //Paramétres IPv4//.
+   * Dans //Méthode// sélectionner **//Adresse automatique uniquement (DHCP)//**.
+   * Dans la case //Serveurs DNS//, entrer la ou les adresses DNS souhaitées (si plusieurs adresses, mettre une virgule entre chaque adresse).
+   * Cliquer sur //Enregistrer//.
+
+FIXME : en affectant l'entrée **//Adresse automatique uniquement (DHCP)//** il doit ensuite être possible de modifier les DNS en ligne de commande sans qu'ils soient écrasées par NetworkManager.
+
+
+===== Gérer son propre serveur DNS =====
+Pour encore plus de confidentialité, pour avoir de meilleurs temps de réponse ou pour proposer des services Internet à des clients, vous pouvez être amené à installer et administrer vous-même un serveur DNS. Voici une liste de logiciels jouant le rôle de serveur DNS installables sur Ubuntu :
+  * [[Bind9]]
+  * [[configuration_serveur_dns_dhcp|Dnsmasq]] 
+  * [[pdns|PowerDNS]]
+  * [[Unbound]]
+ 
+ ===== Problèmes connus=====
+==== Utilisation d'un serveur DNS local ====
+Depuis Ubuntu 12.04, [[network-manager|Network-Manager]] intègre [[configuration_serveur_dns_dhcp|Dnsmasq]], ce qui provoque des perturbations dans la résolution DNS pour un réseau local reposant sur [[bind9|Bind9]] par exemple. Le symptôme est simple, parfois l'infrastructure DNS fonctionne, parfois non. La solution ici est de désactiver Dnsmasq dans Network-Manager:
+&lt;note&gt;
+Tout le monde n'a pas de soucis  avec bind9 et dnsmasq
+&lt;/note&gt;
+&lt;code&gt;sudo nano /etc/NetworkManager/NetworkManager.conf&lt;/code&gt;
+Et de commenter la ligne &quot;dns=dnsmasq&quot; de cette façon:
+&lt;code&gt;#dns=dnsmasq&lt;/code&gt;
+
+Il faut aussi désactiver le service dnsmasq au démarrage:
+&lt;code&gt;sudo update-rc.d -f dnsmasq remove&lt;/code&gt;
+
+et redémarrer Network-manager
+&lt;code&gt;sudo service network-manager restart&lt;/code&gt;
+
+=====Voir aussi =====
+
+   * **(en)** [[https://evolvingtrends.wordpress.com/2006/09/02/kill-verisign-p2p-dns-for-firefox/|P2P DNS for Firefox]]
+   * **(en)** [[http://www.advogato.org/article/1033.html|Proposal to extend DNS with Peer to Peer server-independence]]
+   * **(en)** [[http://www.cambus.net/free-public-dns-servers-list/|Free public DNS servers list]]
+   * **(en)** [[http://code.google.com/intl/fr/speed/public-dns/|Google public DNS]] peut remplacer vos dns actuels.
+   * **(en)** [[http://www.opennicproject.org/|Opennic project dns]]
+   * [[http://www.planet-libre.org/|Sécuriser les échanges entre deux serveurs DNS (maitre/esclave)]]
+
+
+
+===== Pages en rapport =====
+
+{{backlinks&gt;dns}}</textarea>
+<div id="wiki__editbar" class="editBar">
+<div id="size__ctl">
+</div>
+<div class="editButtons">
+<div id="plugin__captcha_wrapper"><input type="hidden" name="41345b4419745c05146a5c9971fe2f4b" value="lFdpwDJz1JhL88+hZsK0JPbAuRdsEY00mKV+dwmoZIg=" /><label for="plugin__captcha">Merci de recopier le code ci-contre pour prouver que vous êtes humain :</label> <span id="plugin__captcha_code">U W R I
+D</span> <input type="text" size="5" name="7219cd4a5f723fa759133cb3f72d724a" class="edit" /> <label class="no">Merci de laisser ce champ vide : <input type="text" name="5a5301a763f26ba6364b8e660e627354" /></label></div><input name="do[save]" type="submit" value="Enregistrer" class="button" id="edbtn__save" accesskey="s" tabindex="4" title="Enregistrer [S]" />
+<input name="do[preview]" type="submit" value="Aperçu" class="button" id="edbtn__preview" accesskey="p" tabindex="5" title="Aperçu [P]" />
+<input name="do[draftdel]" type="submit" value="Annuler" class="button" tabindex="6" />
+</div>
+<div class="summary">
+<label class="nowrap" for="edit__summary"><span>Résumé</span> <input type="text" id="edit__summary" name="summary" class="edit" size="50" tabindex="2" /></label>
+</div>
+</div>
+<div class="license">
+Note : En modifiant cette page, vous acceptez que le contenu soit placé sous les termes de la licence suivante : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" class="urlextern">CC Paternité-Partage des Conditions Initiales à l'Identique 3.0 Unported</a></div>
+</div></form>
+</div>
+<script type="text/javascript">
+   var saveBtn = document.getElementById('edbtn__save');
+   saveBtn.disabled = true;
+   saveBtn.style.color = 'gray';
+   saveBtn.style.backgroundColor = '#EEEEEE';
+   saveBtn.value = 'Enregistrer (Click \'Aperçu\' first)';
+</script>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/dns?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/dns?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="dns?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="dns?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="dns?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

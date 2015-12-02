@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>aticonfig - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-10-14T11:04:50+0200"/>
+<meta name="keywords" content="materiel,carte graphique,amd-ati,catalyst"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/aticonfig?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/aticonfig?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/aticonfig"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/aticonfig"/>
+<link rel="canonical" href="aticonfig"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"aticonfig","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="aticonfig#main" tabindex="1">Contenu</a> | <a href="aticonfig#qsearch__in" tabindex="2">Rechercher</a> | <a href="aticonfig#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="aticonfig" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="aticonfig" >aticonfig</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="aticonfig#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="aticonfig#les_options">Les options</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="aticonfig#configuration_initiale_necessaire_et_suffisante_du_pilote_ati">Configuration initiale nécessaire et suffisante du pilote ATI</a></div></li>
+<li class="level2"><div class="li"><a href="aticonfig#tv_options">TV Options</a></div></li>
+<li class="level2"><div class="li"><a href="aticonfig#fsaa_options">FSAA Options</a></div></li>
+<li class="level2"><div class="li"><a href="aticonfig#options_relatives_aux_ecrans">Options relatives aux écrans</a></div></li>
+<li class="level2"><div class="li"><a href="aticonfig#powerplay_options">Powerplay Options</a></div></li>
+<li class="level2"><div class="li"><a href="aticonfig#advanced_options">Advanced Options</a></div></li>
+<li class="level2"><div class="li"><a href="aticonfig#miscellaneous_options">Miscellaneous Options</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="aticonfig#les_exemples">Les exemples</a></div></li>
+<li class="level1"><div class="li"><a href="aticonfig#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="materiel" class="wikilink1" title="materiel" rel="tag">matériel</a>,
+	<a href="carte_graphique" class="wikilink1" title="carte_graphique" rel="tag">carte graphique</a>,
+	<a href="http://doc.ubuntu-fr.org/amd-ati" class="wikilink1" title="amd-ati" rel="tag">amd-ati</a>,
+	<a href="catalyst" class="wikilink1" title="catalyst" rel="tag">catalyst</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="aticonfigles_options_pour_bien_configurer_votre_carte_graphique_amd-ati">Aticonfig: les options pour bien configurer votre carte graphique AMD-ATI</h1>
+<div class="level1">
+
+<p>
+<strong>aticonfig</strong> est la commande qui permet de paramétrer le pilote propriétaire de votre carte graphique <a href="http://doc.ubuntu-fr.org/amd-ati" class="wikilink1" title="amd-ati">Amd-ati</a>.<br/>
+
+Cette commande, associée à une ou plusieurs options permettra ainsi de configurer le fichier <strong>/etc/X11/xorg.conf</strong> et ainsi régler votre <a href="xorg" class="wikilink1" title="xorg">serveur X</a>.
+</p>
+
+<p>
+<p><div class="noteclassic">Le pendant graphique de cette commande est accessible depuis le panneau de contrôle <a href="catalyst" class="wikilink1" title="catalyst">Catalyst</a>.
+</div></p>
+</p>
+
+<p>
+<p><div class="noteimportant"><em class="u"><strong>Avant</strong></em> d&#039;appliquer la moindre commande, faites une <a href="tutoriel/comment_sauver_et_restaurer_un_fichier" class="wikilink1" title="tutoriel:comment_sauver_et_restaurer_un_fichier">sauvegarde</a> dur fichier <strong>/etc/X11/xorg.conf</strong>
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="aticonfig"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413277490" /><input type="hidden" name="summary" value="[Aticonfig: les options pour bien configurer votre carte graphique AMD-ATI] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="58-725" /><input type="submit" value="Modifier" class="button" title="Aticonfig: les options pour bien configurer votre carte graphique AMD-ATI" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="aticonfig"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413277490" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="726-801" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="les_options">Les options</h2>
+<div class="level2">
+
+<p>
+Pour afficher la liste des options tapez dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> la <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">aticonfig</pre>
+
+<p>
+qui devrait répondre
+</p>
+<pre class="code">Usage: aticonfig [OPTION] ...
+Parses an existing X-Server configuration file and modifies it to
+operate with ATI products.
+The following command-line options can be invoked as parameters: (...)</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="aticonfig"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413277490" /><input type="hidden" name="summary" value="[Les options] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="802-1186" /><input type="submit" value="Modifier" class="button" title="Les options" /></div></form></div>
+<h3 class="sectionedit4" id="configuration_initiale_necessaire_et_suffisante_du_pilote_ati">Configuration initiale nécessaire et suffisante du pilote ATI</h3>
+<div class="level3">
+
+<p>
+Les options :
+</p>
+<pre class="code">--initial
+        Generate a default ATI device section in the configuration
+        file which is capable of loading the fglrx driver.
+
+--initial=dual-head
+        Same as &#039;--initial&#039; but generate a basic dual head
+        configuration file.</pre>
+
+<p>
+Exemple la <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a>
+</p>
+<pre class="code">sudo aticonfig --initial=dual-head</pre>
+
+<p>
+ met en place une config Dual Screen. Voilà, vous avez compris. Même chose pour la suite.
+</p>
+
+<p>
+Note : pour les adeptes du vrai Dual Screen <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> <strong>c&#039;est à dire ?</strong>, lancez plutôt :
+</p>
+<pre class="code">sudo aticonfig --dtop=horizontal --overlay-on=1</pre>
+
+<p>
+Cette commande est spécifiée par Ati en guise d&#039;exemple en bas de page (Big Desktop <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> ?)<br/>
+
+Pour que vous puissiez voir les effets, il vous faut <a href="http://doc.ubuntu-fr.org/tutoriel/comment_redemarrer_le_serveur_graphique" class="wikilink1" title="tutoriel:comment_redemarrer_le_serveur_graphique">redémarrer le serveur X</a> ou redémarrer votre ordinateur.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="aticonfig"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413277490" /><input type="hidden" name="summary" value="[Configuration initiale nécessaire et suffisante du pilote ATI] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1187-2125" /><input type="submit" value="Modifier" class="button" title="Configuration initiale nécessaire et suffisante du pilote ATI" /></div></form></div>
+<h3 class="sectionedit5" id="tv_options">TV Options</h3>
+<div class="level3">
+<pre class="code">--tvf, --tv-format-type=STRING
+        Change the TV signal format. STRING can be one of:
+        NTSC-M
+        NTSC-JPN
+        PAL-B
+        PAL-D
+        PAL-G
+        PAL-H
+        PAL-I
+        PAL-K
+        PAL-K1
+        PAL-L
+        PAL-M
+        PAL-N
+        PAL-CN
+        PAL-SCART</pre>
+
+<p>
+Permet de choisir le standard télé en fonction du pays.
+</p>
+<pre class="code">        PAL-B : 	en Belgique, Danmark, Finland, Allemagne,
+                        Guinée, Hong Kong, Inde, Indonesie,
+                        Italie, Malaysie, Les Pays Bas, Norvège,
+                        Portugal, Singapoure, Espagne, Suède,
+                        et Suisse
+        PAL-D : 	en Chine and Corée du Nord
+        PAL-G : 	au Danmark, Finland, Allemagne, Italie,
+                        Malaysie, Les Pays Bas, Norvège, Portugal,
+                        Espagne, Suède, et Suisse
+        PAL-H : 	en Belgique
+        PAL-I : 	à Hong Kong et au Royaume Uni
+        PAL-K1 : 	en Guinée
+        PAL-M : 	au Brézil
+        PAL-N : 	en France, Paraguay, et Uruguay
+        PAL-NC : 	en Argentine
+        NTSC-J : 	au Japan
+        NTSC-M : 	au Canada, Chili, Colombie, Costa Rica,
+                        Ecuador, Haiti, Honduras, Mexique, Panama,
+                        Porto Rico, Corée du Sud, Taiwan, USA,
+                        et Venezuela</pre>
+<pre class="code">--tvs, --tv-standard-type=STRING
+        Change the TV standard for TV output. STRING can be one of:
+        VIDEO
+        SCART
+        YUV</pre>
+
+<p>
+La fonction overscan qui permet un plein écran ou surbalayage de l&#039;écran pour ôter les bandes noires sur votre tv:
+</p>
+<pre class="code"> --tv-overscan={on|off}
+       Enable or disable overscan mode for TVout
+       Note, not all tv-formats support overscan. Try to
+       toggle overscan off before changing tv-format if
+       and error occurs.</pre>
+
+<p>
+Donne des infos sur votre tv.
+</p>
+<pre class="code"> --tv-info
+         Print out the current tv geometry, tv format, and if the
+         tv is physically connected.</pre>
+
+<p>
+Options pour les cartes FireGL Workstation :
+</p>
+<pre class="code">--app, --use-app-profile=STRING
+        Change the application profile for a FireGL workstation board.
+        STRING can be one of:
+        default
+        maya
+        softimage-xsi
+        softimage-3d
+        houdini4.0
+        houdini5.0
+        houdini5.5</pre>
+
+<p>
+Cette commande permet d&#039;optimiser les paramètres de votre machine pour des applications 3d spécifiques. Tous les logiciels qui suivent sont des logiciels de 3d. Maya par exemple à servi pour l&#039;épisode 3 de Star Wars<br/>
+
+Exemple :
+</p>
+<pre class="code">sudo aticonfig --use-app-profile=maya</pre>
+<pre class="code">--dw, --disable-workstation=STRING
+        Disable a FireGL workstation board feature. STRING can be one of:
+        all
+        timmo
+        timmo-extreme</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="aticonfig"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413277490" /><input type="hidden" name="summary" value="[TV Options] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2126-4941" /><input type="submit" value="Modifier" class="button" title="TV Options" /></div></form></div>
+<h3 class="sectionedit6" id="fsaa_options">FSAA Options</h3>
+<div class="level3">
+<pre class="code">--fsaa={on|off}
+        Enable/disable full scene anti-aliasing. Enable this option
+        to enhance photo-realism in 3D rendering. Disable it to get
+        the most accurate 3D image.</pre>
+
+<p>
+Cette option permet d&#039;activer l&#039;<a href="catalyst#anticrenelage_ou_antialiasing" class="wikilink1" title="catalyst">anti-aliasing</a> des cartes 3d.<br/>
+
+Dans les faits, la carte graphique lisse les contours des objets 3d pour permettre de diminuer l&#039;effet de crénelage
+</p>
+<pre class="code">--fs, --fsaa-samples={off,0,2,4,6}
+        Set the number of FSAA samples per pixel or 2, 4, 6. off is
+        the same as setting 0 samples.</pre>
+
+<p>
+Cette option détermine le taux de lissage que vous voulez appliquer à votre objets 3d: plus le chiffre est grand, plus l&#039;image sera douce, mais plus les ressources demandées à la carte graphique augmentent.<br/>
+
+<strong>Petites cartes s&#039;abstenir…</strong>
+</p>
+<pre class="code">--fsg, --fsaa-gamma={on|off}
+        Enable/disable FSAA gamma.</pre>
+
+<p>
+Activer le gamma permet de corriger un défaut de beaucoup de moniteurs.<br/>
+
+Il est conseillé de l&#039;activer, ou tout au moins de le tester, surtout si vous êtes équipé d&#039;un écran <a href="http://fr.wikipedia.org/wiki/Tube_cathodique" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Tube_cathodique">CRT</a>.<br/>
+
+Si vous êtes infographiste, ou comptez le devenir, il est important de connaître, ce qu&#039;est <a href="http://www.profil-couleur.com/pp/204-gamma-ecran.php" class="urlextern" title="http://www.profil-couleur.com/pp/204-gamma-ecran.php"  rel="nofollow">une courbe de gamma</a>.
+</p>
+<pre class="code">--fmsp, --fsaa-ms-positions=x0,y0,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5
+        Change the FSAA Multi-Sample Positions for x0,y0 to x5,y5. You must
+        specify exactly 12 real number values separated by commas.</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="aticonfig"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413277490" /><input type="hidden" name="summary" value="[FSAA Options] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4942-6488" /><input type="submit" value="Modifier" class="button" title="FSAA Options" /></div></form></div>
+<h3 class="sectionedit7" id="options_relatives_aux_ecrans">Options relatives aux écrans</h3>
+<div class="level3">
+<pre class="code">--ovt, --overlay-type=STRING
+        Change the overlay for the X server. STRING can be one of:
+        opengl
+        Xv
+        disable
+
+--ovon, --overlay-on={0|1}
+        Choose which head the hardware overlay should be visible on. The hardware overlay can be used for either OpenGL, video, pseudo-color or stereo.
+
+--lcd, --lcd-mode=STRING
+
+        Change the LCD mode. STRING can be one of:
+        center
+        full</pre>
+<pre class="code">aticonfig --desktop-setup= horizontal
+    --dtop, --desktop-setup=STRING
+
+        Change the desktop setup for multiple display adapters.
+        STRING can be one of:
+
+            single 	          1 screen, second dark
+            mirror                2 screens - same content, identical refresh rate/resolution
+            clone 	          2 screens - same content, allows for different refresh rates/resolutions
+            horizontal            2 screens - one framebuffer, screen 1 right of screen 0 
+            horizontal,reverse 	  2 screens - one framebuffer, screen 1 left of screen 0
+            vertical 	          2 screens - one framebuffer, screen 1 above of screen 0
+            vertical,reverse 	  2 screens - one framebuffer, screen 1 below of screen 0
+
+            Note: This option is not valid if &#039;--initial=dual-head&#039; is specified.</pre>
+
+<p>
+Permet de gérer l&#039;organisation des écrans les uns par rapport aux autres.
+</p>
+<pre class="code">--vs, --sync-vsync={on|off}
+            Enable/disable sync buffer swaps with vsync.
+            Enable this option to prevent tearing during 3D rendering.</pre>
+
+<p>
+Si vous possédez un écran <abbr title="Liquid Crystal Display">LCD</abbr>, évite l&#039;effet d&#039;escalier dans les jeux de type FPS.
+</p>
+<pre class="code">--psc, --pseudo-color={on|off}
+            Enable/disable pseudo-color visuals. Enable this option
+            to get 16-bit color support.
+
+--stereo={on|off}
+            Enable/disable quad-buffer stereo support.
+            Enable this option only for using applications that support the use of hardware 3D shutter glasses.
+
+--ss, --stereo-sync={on|off}
+            Enable/disable quad-buffer stereo sync. Enable this option to get 3D glasses to synchronize with the infrared transmitter.
+
+--resolution=W1xH1,W2xH2,W3xH3,...
+            Set the modes for the first screen. You may specify several resolutions separated by commas.
+
+--hsync=LOW-HIGH
+            Change the horizontal sync range of the first monitor.
+            Make sure you know the capabilities of your monitor before changing this option.
+
+--vrefresh=LOW-HIGH
+            Change the vertical refresh range of the first monitor.
+            Make sure you know the capabilities of your monitor before changing this option.
+
+--resolution2=W1xH1,W2xH2,W3xH3,...
+            Change the modes for the second screen for dual head.
+            You may specify several resolutions separated by commas.
+            Note: The secondary screen must exist.
+
+--hsync2=LOW-HIGH
+            Change the horizontal sync range of the second display.
+            Make sure you know the capabilities of your monitor before changing this option.
+
+--vrefresh2=LOW-HIGH
+            Change the vertical refresh range of the second display.
+            Make sure you know the capabilities of your monitor before changing this option.
+
+--mode2=W1xH1,W2XH2,W3xH3,...
+            Change the modes for the second display.
+            You may specify several resolutions separated by commas.
+            Only valid for clone and big desktop settings.</pre>
+<pre class="code">--screen-layout={left|right|above|below}
+            Set the secondary screen position for dual head.
+</pre>
+
+<p>
+Change l&#039;ordre de disposition des écrans
+</p>
+<pre class="code">--screen-overlap=NUM
+             Set the screen overlap region in big desktop mode to be NUM pixels.</pre>
+
+<p>
+L&#039;oververlapping permet, quand on veut maximiser un fenêtre de la répartir sur les deux écrans. Il est déconseillé de l&#039;activer car cela pose des problèmes pour l&#039;affichage des vidéos plein écran.
+</p>
+<pre class="code">--force-monitor=STRING[,STRING...]
+
+              Describe all displays that are to be enabled and/or disabled regardless of physical connection.
+              STRING can be one or more of the following set, separated by commas:
+                crt1
+                crt2
+                lvds
+                tv
+                tmds1
+                tmds2
+                tmds2i
+                nocrt1
+                nocrt2
+                nolvds
+                notv
+                notmds1
+                notmds2
+                notmds2i</pre>
+
+<p>
+Permet d&#039;activer ou désactiver les différentes connexions physiques, crt1 et crt2 pour activer les sorties écrans 1 et 2, nocrt1 et nocrt2 pour désactiver les sorties écrans 1 et 2, tv pour la sortie tv, etc.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="aticonfig"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413277490" /><input type="hidden" name="summary" value="[Options relatives aux écrans] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6489-11238" /><input type="submit" value="Modifier" class="button" title="Options relatives aux écrans" /></div></form></div>
+<h3 class="sectionedit8" id="powerplay_options">Powerplay Options</h3>
+<div class="level3">
+
+<p>
+Option disponible uniquement sur les modèles <em>mobility</em>. Elle permet de régler les différents modes de la carte afin de baisser ou d&#039;augmenter sa fréquence.<br/>
+
+Exemple, sur <em>mobility x1800</em>  il existe trois modes : <em>eco, defaut</em> et <em>perf</em>  qui font respectivement comme résultat avec <a href="catalyst#glxgears" class="wikilink1" title="catalyst">glxgears</a>  : 3000 / 5500 / 8500.
+</p>
+<pre class="code">--lsp, --list-powerstates
+              Print information about power states and exit.
+
+--set-powerstate=NUMBER
+              Set a power state listed by --list-powerstates.</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="aticonfig"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413277490" /><input type="hidden" name="summary" value="[Powerplay Options] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11239-11809" /><input type="submit" value="Modifier" class="button" title="Powerplay Options" /></div></form></div>
+<h3 class="sectionedit9" id="advanced_options">Advanced Options</h3>
+<div class="level3">
+<pre class="code">--tls={on|off}
+              Enable/disable fast thread local storage.
+              Disable this option when virtual machines or
+              WineX fail to work properly.
+
+--sb, --signal-block={on|off}
+
+              Enable/disable signal blocking. Disable this option when debugging a
+              multi-threaded OpenGL application.
+
+--iagp, --internal-agp={on|off}
+
+               Enable/disable internal AGP gart. Enable this option to use the ATI
+               AGP GART module. Disable it to use the module included with the Linux
+               kernel. Changing this option may help resolve display-related issues.
+
+--agpl, --agp-locked-userpages={on|off}
+
+               Enable/disable AGP locked user pages. Disable this option if the system
+               hangs when running fgl_glxgears.
+
+--gcpu, --generic-cpu={on|off}
+
+               Enable/disable generic CPU. Use this option if the CPU is being
+               reported improperly. For example: If you have an AMD cpu that is
+               being reported as Intel.</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="aticonfig"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413277490" /><input type="hidden" name="summary" value="[Advanced Options] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11810-12886" /><input type="submit" value="Modifier" class="button" title="Advanced Options" /></div></form></div>
+<h3 class="sectionedit10" id="miscellaneous_options">Miscellaneous Options</h3>
+<div class="level3">
+<pre class="code">-v, --verbose
+              Show what aticonfig is doing.
+
+-q, --quiet
+              Disable all information output except for errors.
+
+--effective={now,startup}
+              Choose when the requested changes should take effect.
+
+              now: Immediately. This change will affect the running X
+              session if applicable. Only &#039;set-powerstate&#039; and
+              &#039;overlay-on&#039; are applicable for now.
+              startup: On future X server startups. This change will modify the
+              X server configuration file if applicable.
+              The default is &#039;now,startup&#039;, i.e., do both as applicable.
+
+-i, --input=FILE
+               Select a FILE to input as the configuration file. Set FILE to &#039;-&#039; to
+               pipe from standard input. Without this option, aticonfig will search
+               /etc/X11 for the default configuration file.
+
+-o, --output=FILE
+                Select a FILE to output the new configuration file to. Set FILE to &#039;-&#039;
+                to print to standard output. Without this option, aticonfig will
+                replace the input file with the newly generated file.
+
+-h, --help
+                Display this help screen.
+
+-f, --force
+                Only valid with &#039;initial&#039; option. Force aticonfig to generate default
+                Monitor, Device, and Screen sections even if the original configuration
+                file has invalid settings in these sections.
+</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="aticonfig"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413277490" /><input type="hidden" name="summary" value="[Miscellaneous Options] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12887-14367" /><input type="submit" value="Modifier" class="button" title="Miscellaneous Options" /></div></form></div>
+<h2 class="sectionedit11" id="les_exemples">Les exemples</h2>
+<div class="level2">
+<pre class="code">1. Setting up fglrx for the first time.
+
+Single head :	aticonfig --initial
+                --input=/etc/X11/xorg.conf
+----
+Dual head :	aticonfig --initial=dual-head --screen-layout=above
+            	This command will generate a dual head configuration
+                file with the second screen located above the first
+                screen.
+2. Setting up big desktop to horizontal and set overlay on secondary display.
+                aticonfig --dtop=horizontal --overlay-on=1
+
+3. Setting up modes for primary display.
+                aticonfig --resolution=1600x1200,1280x1024,1024x768
+
+4. Force primary CRT on and TV-out off.
+                aticonfig --force-monitor=crt1,notv</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="aticonfig"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413277490" /><input type="hidden" name="summary" value="[Les exemples] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14368-15094" /><input type="submit" value="Modifier" class="button" title="Les exemples" /></div></form></div>
+<h2 class="sectionedit12" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Source de cette page: l&#039;aide d&#039; <code>aticonfig</code></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://support.ati.com" class="urlextern" title="http://support.ati.com"  rel="nofollow">Contacter Ati</a> pour rapporter d&#039;éventuels bugs</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/amd-ati" class="wikilink1" title="amd-ati">amd-ati</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="utilisateurs/kao_chen" class="wikilink1" title="utilisateurs:kao_chen">kao_chen</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/urss" class="wikilink1" title="utilisateurs:urss">urss</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="aticonfig"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413277490" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15095-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/7/7aa44fcaad57fca86cf27c3cbb7522f2.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/aticonfig?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/aticonfig?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/aticonfig?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/aticonfig?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/aticonfig?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

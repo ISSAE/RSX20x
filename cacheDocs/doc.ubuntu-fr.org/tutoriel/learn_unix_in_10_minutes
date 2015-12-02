@@ -1,0 +1,1030 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:learn_unix_in_10_minutes - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2011-12-15T15:17:40+0100"/>
+<meta name="keywords" content="console,a recycler"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/learn_unix_in_10_minutes?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/learn_unix_in_10_minutes?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/learn_unix_in_10_minutes"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/learn_unix_in_10_minutes"/>
+<link rel="canonical" href="learn_unix_in_10_minutes"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:learn_unix_in_10_minutes","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="learn_unix_in_10_minutes#main" tabindex="1">Contenu</a> | <a href="learn_unix_in_10_minutes#qsearch__in" tabindex="2">Rechercher</a> | <a href="learn_unix_in_10_minutes#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="learn_unix_in_10_minutes" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="learn_unix_in_10_minutes" >tutoriel:learn_unix_in_10_minutes</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="learn_unix_in_10_minutes#avant_propos">Avant Propos</a></div></li>
+<li class="level1"><div class="li"><a href="learn_unix_in_10_minutes#sections">Sections</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#chemins">Chemins</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#se_deplacer_dans_le_systeme_de_fichier">Se déplacer dans le système de fichier</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#lister_le_contenu_d_un_dossier">Lister le contenu d&#039;un dossier</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#modifier_les_permissions_et_les_droits">Modifier les permissions et les droits</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#deplacer_renommer_et_copier_des_fichiers">Déplacer, renommer et copier des fichiers</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#visualiser_et_editer_les_fichiers">Visualiser et éditer les fichiers</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#shells">Shells</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#variables_d_environnement">Variables d&#039;environnement</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#historique_interactif">Historique Interactif</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#completion_des_noms_de_fichiers">Complétion des noms de fichiers</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#bash_vous_montre_la_voie">Bash vous montre la voie</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#redirection">Redirection</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#pipes">Pipes</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#substitution_de_commande">Substitution de Commande</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#creer_des_archives_grappe_de_fichierla_commande_tar">Créer des archives (&#039;grappe de fichier&#039;) : La commande tar</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#compression_de_fichiergzip_bzip2">Compression de fichier : gzip, bzip2</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#besoin_d_aidela_commande_man">Besoin d&#039;aide : La commande man</a></div></li>
+<li class="level2"><div class="li"><a href="learn_unix_in_10_minutes#commandes_de_base_de_l_editeur_vi">Commandes de base de l&#039;éditeur Vi</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="learn_unix_in_10_minutes#faqs">FAQs</a></div></li>
+<li class="level1"><div class="li"><a href="learn_unix_in_10_minutes#copyrights">Copyrights</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../console" class="wikilink1" title="console" rel="tag">console</a>,
+	<a href="http://doc.ubuntu-fr.org/a_recycler" class="wikilink1" title="a_recycler" rel="tag">à recycler</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="learn_unix_in_10_minutes_version_12_fr_10">Learn UNIX in 10 minutes. Version 1.2 FR 1.0</h1>
+<div class="level1">
+
+<p>
+Les commandes de base de la ligne de commande UNIX (le shell) : dernière révision 17 Mai 2001<br/>
+
+Site Original : <a href="http://freeengineer.org/learnUNIXin10minutes.html" class="urlextern" title="http://freeengineer.org/learnUNIXin10minutes.html"  rel="nofollow">Learn UNIX in 10 minutes</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Learn UNIX in 10 minutes. Version 1.2 FR 1.0] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="35-290" /><input type="submit" value="Modifier" class="button" title="Learn UNIX in 10 minutes. Version 1.2 FR 1.0" /></div></form></div>
+<h2 class="sectionedit2" id="avant_propos">Avant Propos</h2>
+<div class="level2">
+
+<p>
+Ce document a été rédigé il y a quelques années pour des étudiants en Dessin Assisté par Ordinateur (<abbr title="Dessin Assisté par Ordinateur">DAO</abbr>) .
+Le but était d&#039;avoir sur une page les commandes de base pour utiliser le Shell Unix (comme ça ils ne me demanderaient pas quoi faire lorsque quelqu&#039;un leur donnerait une sauvegarde)
+</p>
+
+<p>
+Ce document est copyrighté mais peut être reproduit selon les termes de la <a href="http://www.gnu.org/copyleft/fdl.html" class="urlextern" title="http://www.gnu.org/copyleft/fdl.html"  rel="nofollow">GFDL</a>.
+Envoyez-moi vos commentaires, corrections ou tout autre ajout qui vous semble absolument nécessaire dans ce document.<sup><a href="learn_unix_in_10_minutes#fn__1" id="fnt__1" class="fn_top">1)</a></sup>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Avant Propos] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="291-1429" /><input type="submit" value="Modifier" class="button" title="Avant Propos" /></div></form></div>
+<h2 class="sectionedit3" id="sections">Sections</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Sections] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1430-1455" /><input type="submit" value="Modifier" class="button" title="Sections" /></div></form></div>
+<h3 class="sectionedit4" id="chemins">Chemins</h3>
+<div class="level3">
+
+<p>
+Les chemins de fichiers et de dossiers sous Unix utilisent le slash &quot;/&quot; pour séparer les noms des dossiers.
+</p>
+
+<p>
+Exemples :
+</p>
+<div class="table sectionedit5"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> / </td><td class="col1 rightalign">   Dossier &quot;racine&quot;</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">/usr </td><td class="col1 rightalign">  Dossier usr (sous-dossier du dossier &quot;racine&quot;) </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">/usr/STRIM100 </td><td class="col1 rightalign">           STRIM100 est un sous-dossier de /usr </td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Chemins] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1456-1748" /><input type="submit" value="Modifier" class="button" title="Chemins" /></div></form></div>
+<h3 class="sectionedit6" id="se_deplacer_dans_le_systeme_de_fichier">Se déplacer dans le système de fichier</h3>
+<div class="level3">
+<div class="table sectionedit7"><table class="inline">
+	<tr class="row0">
+		<td class="col0 leftalign"> pwd  </td><td class="col1 leftalign"> montre le nom du dossier de travail courant (<em>Print Working Directory</em>)     </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> cd   </td><td class="col1"> change le dossier de travail pour un autre dossier </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> cd /usr/STRIM100 </td><td class="col1"> change le dossier de travail pour /usr/STRIM100 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> cd INIT  </td><td class="col1 leftalign"> change le dossier de travail pour INIT, qui est un sous-dossier du dossier courant  </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> cd ..  </td><td class="col1"> change le dossier de travail pour le dossier parent </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> cd $STRMWORK </td><td class="col1"> change le dossier de travail pour le dossier défini par la variable d&#039;environnement &#039;STRMWORK&#039;</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Se déplacer dans le système de fichier] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1749-2302" /><input type="submit" value="Modifier" class="button" title="Se déplacer dans le système de fichier" /></div></form></div>
+<h3 class="sectionedit8" id="lister_le_contenu_d_un_dossier">Lister le contenu d&#039;un dossier</h3>
+<div class="level3">
+
+<p>
+<code>ls</code> liste le dossier de travail courant
+</p>
+
+<p>
+<code>ls -l <em>dossier</em></code> liste au format détaillé le dossier <em>dossier</em>
+</p>
+
+<p>
+Par exemple : 
+</p>
+<pre class="code"> $ ls -l /home/sheherazade/work/
+ drwxr-xr-x    4 sheherazade    staff     1024  2004-04-04 09:40 ToDo
+ -rw-r--r--    1 sheherazade    staff    767392 2004-04-04 14:28 scanlib.tar.gz
+ ^^ ^  ^  ^     ^   ^             ^           ^      ^        ^      ^
+ || |  |  |     |   |             |           |      |        |      |  
+ || |  |  |     |  Propriétaire  Groupe      Taille Date     Heure  Nom 
+ || |  |  |    Nombre de fichiers ou dossiers que le dossier listé contient
+ || |  | Permissions pour tous
+ || | Permissions pour les membres du groupe staff
+ ||Permissions pour le propriétaire  r = lecture (read), w = écriture (write), x = exécute (execute),  
+ |  - =  pas de droits
+Type de fichier * : - = Fichier régulier, d = Dossier, l = Lien symbolique ou autre...</pre>
+
+<p>
+* <a href="http://www.ac-creteil.fr/reseaux/systemes/linux/droits-fichiers.html" class="urlextern" title="http://www.ac-creteil.fr/reseaux/systemes/linux/droits-fichiers.html"  rel="nofollow">Permissions d&#039;accès aux fichiers</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Lister le contenu d'un dossier] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2303-3395" /><input type="submit" value="Modifier" class="button" title="Lister le contenu d'un dossier" /></div></form></div>
+<h3 class="sectionedit9" id="modifier_les_permissions_et_les_droits">Modifier les permissions et les droits</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="chmod">chmod</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="en_employant_la_methode_alphabetique">En employant la méthode alphabétique:</h5>
+<div class="level5">
+
+<p>
+Ce qu&#039;il faut savoir:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em class="u">u</em>: utilisateur (<strong>u</strong>ser), <em class="u">g</em>: groupe (<strong>g</strong>roup) et <em class="u">o</em>: autres (<strong>o</strong>ther)</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <em class="u">r</em>: lire (<strong>r</strong>ead), <em class="u">w</em>: écrire (<strong>w</strong>rite) et <em class="u">x</em>: exécuter (e<strong>x</strong>ecute)</div>
+</li>
+</ul>
+<pre class="code"> chmod [ugo][+-=][rwx] fichier</pre>
+
+<p>
+Vous devez donc choisir le groupe à modifier (u, g, o) suivis du symbole + pour donner une permission, du symbole - pour la retirer ou du symbole = pour définir la permission exacte suivi des permissions à appliquer (r, w, x).
+</p>
+
+<p>
+Par exemple pour accorder à l&#039;utilisateur d&#039;exécuter le fichier.
+</p>
+<pre class="code"> chmod u+x fichier</pre>
+
+<p>
+Ou pour retirer les droits d&#039;écriture et d&#039;exécution au groupe et aux autres.
+</p>
+<pre class="code"> chmod go-wx fichier</pre>
+
+</div>
+
+<h5 id="en_employant_la_methode_numerique">En employant la méthode numérique:</h5>
+<div class="level5">
+
+<p>
+Il faut savoir que x=1, w=2 et r=4 ensuite vous additionnez les chiffres si vous voulez cumuler les droits. L&#039;ordre des chiffres est propriétaire/groupe/autres.  
+</p>
+
+<p>
+Par exemple pour accorder la lecture, l&#039;écriture et l&#039;exécution pour le propriétaire et la lecture et l&#039;exécution pour le groupe et les autres.
+</p>
+<pre class="code">chmod 755 fichier</pre>
+
+<p>
+On a propriétaire/groupe/autres donc rwx/rx/rx donc 4+2+1/4+1/4+1 et donc 7/5/5.
+</p>
+
+<p>
+Astuce pour ceux qui connaissent le binaire. On veut  rwx lire/écrire/exécuter donc 111 en binaire qui vaut 7 en décimal. On veut r-x lire/<strong>pas ecrire</strong>/exécuter donc 101 en binaire qui vaut 5 en décimal. 
+</p>
+
+</div>
+
+<h4 id="chgrp">chgrp</h4>
+<div class="level4">
+<pre class="code">chgrp staff fichier</pre>
+
+<p>
+change le fichier <em>fichier</em> afin qu&#039;il appartienne au groupe <em>staff</em>.
+</p>
+
+</div>
+
+<h4 id="chown">chown</h4>
+<div class="level4">
+<pre class="code">chown sheherazade fichier</pre>
+
+<p>
+fait de sheherazade la propriétaire du fichier  <em>fichier</em>.
+</p>
+<pre class="code">chown -R sheherazade dir</pre>
+
+<p>
+fait de sheherazade la propriétaire du dossier <em>dir</em> et de <strong>tous</strong> ses sous dossiers.
+</p>
+
+<p>
+<p><div class="noteimportant">Vous devez être le/la propriétaire du fichier/dossier ou être root avant de taper ces commandes. Sous Ubuntu il faut les préfixer par <strong>sudo</strong>.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Modifier les permissions et les droits] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3396-5371" /><input type="submit" value="Modifier" class="button" title="Modifier les permissions et les droits" /></div></form></div>
+<h3 class="sectionedit10" id="deplacer_renommer_et_copier_des_fichiers">Déplacer, renommer et copier des fichiers</h3>
+<div class="level3">
+<div class="table sectionedit11"><table class="inline">
+	<tr class="row0">
+		<td class="col0">cp fichier_source fichier_destination </td><td class="col1"> copie un fichier </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">cp -r dossier_source dossier_destination </td><td class="col1"> copie un dossier </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> mv fichier1 nouveau_nom_fichier1 </td><td class="col1"> déplace ou renomme un fichier </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> rm fichier1 [fichier2 …] </td><td class="col1"> supprime un fichier (ou une liste de fichiers) <sup><a href="learn_unix_in_10_minutes#fn__2" id="fnt__2" class="fn_top">2)</a></sup> </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> rm -r dossier1 [dossier2…] </td><td class="col1"> supprime un dossier et <strong>tous</strong> ses sous-dossiers, à manier avec précaution </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> mkdir dossier1 [dossier2…]   </td><td class="col1 leftalign"> crée un dossier  </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">rmdir dossier1 [dossier2…] </td><td class="col1"> supprime un dossier vide</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Déplacer, renommer et copier des fichiers] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5372-5960" /><input type="submit" value="Modifier" class="button" title="Déplacer, renommer et copier des fichiers" /></div></form></div>
+<h3 class="sectionedit12" id="visualiser_et_editer_les_fichiers">Visualiser et éditer les fichiers</h3>
+<div class="level3">
+<div class="table sectionedit13"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> cat fichier </td><td class="col1"> affiche le contenu du fichier à l&#039;écran en <abbr title="American Standard Code for Information Interchange">ASCII</abbr> </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> more fichier </td><td class="col1"> affiche progressivement un fichier à l&#039;écran : Entrer = descend d&#039;une ligne, Espace = descend d&#039;une page, q = quitte </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> less fichier </td><td class="col1"> comme more, mais on peut utiliser la touche Page Précédente. Pas disponible sur tous les systèmes. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> vi fichier </td><td class="col1"> éditer un fichier avec l&#039;éditeur vi. Tous les systèmes Unix ont un éditeur <em>à la</em> vi. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> emacs fichier </td><td class="col1"> éditer un fichier avec l&#039;éditeur emacs. Pas disponible sur tous les systèmes. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> head fichier </td><td class="col1"> affiche par défaut les 10 premières lignes d&#039;un fichier </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> head -n{N} fichier </td><td class="col1"> affiche les N premières lignes d&#039;un fichier </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> tail fichier </td><td class="col1"> affiche par défaut les 10 dernières lignes d&#039;un fichier </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> tail -n{N} fichier </td><td class="col1"> affiche les N dernières lignes d&#039;un fichier </td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Visualiser et éditer les fichiers] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5961-6842" /><input type="submit" value="Modifier" class="button" title="Visualiser et éditer les fichiers" /></div></form></div>
+<h3 class="sectionedit14" id="shells">Shells</h3>
+<div class="level3">
+
+<p>
+Le comportement de l&#039;interface en ligne de commande diffère légèrement en fonction du programme shell utilisé.
+</p>
+
+<p>
+Suivant le shell utilisé, quelques comportements peuvent être pratiques.
+</p>
+
+<p>
+Vous pouvez connaître le shell que vous utilisez avec la commande :
+</p>
+<pre class="code">printenv SHELL</pre>
+
+<p>
+Vous pouvez bien évidemment créer un fichier contenant une liste de commandes shell et l&#039;exécuter comme un programme pour exécuter une tâche. On appelle cela un script shell. C&#039;est en fait le but premier de la plupart des shells, et non pas le comportement interactif de la ligne de commande.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Shells] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6843-7441" /><input type="submit" value="Modifier" class="button" title="Shells" /></div></form></div>
+<h3 class="sectionedit15" id="variables_d_environnement">Variables d&#039;environnement</h3>
+<div class="level3">
+
+<p>
+Vous pouvez apprendre au shell à &#039;mémoriser&#039; des informations pour utilisation ultérieure grâce aux variables d&#039;environnement.
+Par exemple avec bash :
+</p>
+<pre class="code">export CASROOT=/usr/local/CAS3.0 	</pre>
+
+<p>
+définit la variable CASROOT avec la valeur /usr/local/CAS3.0.
+</p>
+<pre class="code">cd $CASROOT				</pre>
+
+<p>
+change le répertoire de travail courant pour CASROOT.
+</p>
+<pre class="code">export LD_LIBRARY_PATH=$CASROOT/Linux/lib  	</pre>
+
+<p>
+définit la variable LD_LIBRARY_PATH qui prendra la valeur CASROOT avec /Linux/lib ajouté à la fin, c&#039;est-à-dire /usr/local/CAS3.0/Linux/lib.
+</p>
+<pre class="code">printenv</pre>
+
+<p>
+affiche toutes les variables d&#039;environnement
+</p>
+<pre class="code">printenv CASROOT 		</pre>
+
+<p>
+affiche la valeur de la variable d&#039;environnement nommée CASROOT : <em>/usr/local/CAS3.0.</em>
+</p>
+<pre class="code">echo $CASROOT 			</pre>
+
+<p>
+fait exactement la même chose.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Variables d'environnement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7442-8233" /><input type="submit" value="Modifier" class="button" title="Variables d'environnement" /></div></form></div>
+<h3 class="sectionedit16" id="historique_interactif">Historique Interactif</h3>
+<div class="level3">
+
+<p>
+Une fonctionnalité de bash et tcsh (et parfois d&#039;autres) est de pouvoir utiliser la touche &quot;flèche vers le haut&quot; pour accéder aux dernières commandes entrées, les éditer, et les re-exécuter.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Historique Interactif] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8234-8466" /><input type="submit" value="Modifier" class="button" title="Historique Interactif" /></div></form></div>
+<h3 class="sectionedit17" id="completion_des_noms_de_fichiers">Complétion des noms de fichiers</h3>
+<div class="level3">
+
+<p>
+Une des fonctionnalités de bash et tcsh (et probablement d&#039;autres) est de pouvoir utiliser la touche TAB pour compléter un nom de fichier tapé partiellement. Par exemple, si vous avez un fichier nommé constantine-monks-and-willy-wonka.txt dans votre répertoire et si vous voulez l&#039;éditer, vous pouvez taper &#039;vi const&#039;, enfoncer la touche TAB, et le shell va remplir le reste du nom pour vous (à condition qu&#039;il soit unique).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Complétion des noms de fichiers] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8467-8946" /><input type="submit" value="Modifier" class="button" title="Complétion des noms de fichiers" /></div></form></div>
+<h3 class="sectionedit18" id="bash_vous_montre_la_voie">Bash vous montre la voie</h3>
+<div class="level3">
+
+<p>
+Bash complète aussi bien les noms de commandes que les variables d&#039;environnement.
+En cas de possibilités multiples de complétion, taper deux fois sur la touche TAB vous montrera toutes les complétions possibles. Bash est le shell par défaut de la plupart des systèmes Linux.
+</p>
+
+</div>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Bash vous montre la voie] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8947-9277" /><input type="submit" value="Modifier" class="button" title="Bash vous montre la voie" /></div></form></div>
+<h3 class="sectionedit19" id="redirection">Redirection</h3>
+<div class="level3">
+<pre class="code">grep chaine fichier &gt; nouveau_fichier </pre>
+
+<p>
+redirige la sortie de la commande précédente &#039;grep&#039; dans un fichier nommé <em>nouveau_fichier</em>. <em>Si nouveau_fichier existe il sera remplacé/ecrasé</em>
+</p>
+<pre class="code">grep chaine fichier &gt;&gt; fichier_existant</pre>
+
+<p>
+ajoute la sortie de la commande &#039;grep&#039; à la fin du fichier <em>fichier_existant</em>.
+</p>
+
+<p>
+Les opérateurs de redirection &gt; et &gt;&gt; peuvent être utilisés sur la sortie de la plupart des commandes, pour les placer dans un fichier.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Redirection] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9278-9768" /><input type="submit" value="Modifier" class="button" title="Redirection" /></div></form></div>
+<h3 class="sectionedit20" id="pipes">Pipes</h3>
+<div class="level3">
+
+<p>
+Le symbole tube (&quot;pipe&quot;) &quot;|&quot; est utilisé pour rediriger la sortie d&#039;une commande vers une autre.
+</p>
+
+<p>
+Par exemple :
+</p>
+<pre class="code">ls -l | more</pre>
+
+<p>
+Cette commande prend la sortie du listage au format long des fichiers dans un répertoire produit par &quot;ls -l&quot; et la redirige vers la commande &quot;more&quot; (aussi appelé filtre). Dans ce cas, une très longue liste de fichier peut être vue page par page.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Pipes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9769-10166" /><input type="submit" value="Modifier" class="button" title="Pipes" /></div></form></div>
+<h3 class="sectionedit21" id="substitution_de_commande">Substitution de Commande</h3>
+<div class="level3">
+
+<p>
+Vous pouvez utiliser le résultat d&#039;une commande comme paramètre d&#039;entrée pour une autre, en d&#039;autres termes pour une substitution de commande.
+Une substitution de commande a lieu lorsque vous encadrez une commande avec des apostrophes inversées.
+Par exemple :
+</p>
+<pre class="code">cat `find . -name aaa.txt`</pre>
+
+<p>
+va afficher à l&#039;ecran (voir cat) le contenu de tous les fichiers nommés aaa.txt dans le dossier de travail courant ou ses sous-dossiers.
+<p><div class="noteclassic">Cette syntaxe est dépassée, on lui préfère maintenant la notation $( expression ) 
+</div></p>
+</p>
+<pre class="code">cat $(find . -name aaa.txt)</pre>
+
+</div>
+
+<h4 id="rechercher_une_chaine_de_caracteresla_commande_grep">Rechercher une chaîne de caractères : La commande grep</h4>
+<div class="level4">
+<pre class="code">grep chaine fichier</pre>
+
+<p>
+affiche toutes les lignes de <em>fichier</em> contenant <em>chaine</em>
+</p>
+
+</div>
+
+<h4 id="rechercher_des_fichiersla_commande_find">Rechercher des fichiers : La commande find</h4>
+<div class="level4">
+
+<p>
+Syntaxe :
+</p>
+<pre class="code">find chemin -name fichier</pre>
+<pre class="code">find . -name aaa.txt    </pre>
+
+<p>
+cherche les fichiers nommés aaa.txt dans le dossier courant ou ses sous-dossiers.
+</p>
+<pre class="code">find / -name vimrc</pre>
+
+<p>
+cherche les fichiers nommés vimrc depuis le dossier racine
+</p>
+<pre class="code">find /usr/local/games -name &quot;*xpilot*&quot; </pre>
+
+<p>
+cherche tous les fichiers dont le nom contient <em>xpilot</em> dans le dossier /usr/local/games 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Substitution de Commande] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10167-11349" /><input type="submit" value="Modifier" class="button" title="Substitution de Commande" /></div></form></div>
+<h3 class="sectionedit22" id="creer_des_archives_grappe_de_fichierla_commande_tar">Créer des archives (&#039;grappe de fichier&#039;) : La commande tar</h3>
+<div class="level3">
+
+<p>
+La commande tar signifie &#039;<strong>t</strong>ape <strong>ar</strong>chive&#039; (archive sur bande). C&#039;est la méthode &#039;standard&#039; pour lire et écrire des archives. Le sens commun d&#039;archives papier est ici dépassé et élargi : il s&#039;agit simplement de regrouper plusieurs fichiers dans un &#039;pack&#039; en un seul nouveau fichier, pour des raisons pratiques de transfert (une seule pièce jointe dans un email par exemple), de stockage (par thème, par année,…) ou de dépendances (installation d&#039;une application, d&#039;un système d&#039;exploitation,…) par exemple. Il faut noter que les fichiers ainsi rassemblés restent &#039;indépendants&#039; et ne se mélangent pas comme on pourrait le faire en fusionnant les données (avec un traitement de texte par exemple). 
+</p>
+
+<p>
+Vous trouverez souvent des archives de fichiers avec des noms comme fichiers.tar, ou fichiers.tar.gz. Ce sont respectivement des fichiers dans une archive tar et des fichiers dans une archive tar qui a été compressée avec le programme de compression gzip.
+</p>
+
+<p>
+Il est très probable, si quelqu&#039;un vous envoie des fichiers, qu&#039;ils soient compressés dans une archive tar.
+</p>
+
+<p>
+De même, si vous devez envoyer des fichiers, vous devriez utiliser tar.
+</p>
+<div class="table sectionedit23"><table class="inline">
+	<tr class="row0">
+		<td class="col0 leftalign"> <code>tar -xvf archive.tar</code>  </td><td class="col1"> e<strong>x</strong>trait les fichiers de l&#039;archive archive.tar, en affichant les noms des fichiers qui la composent </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> <code>tar -xvzf archive.tar.gz</code>  </td><td class="col1"> e<strong>x</strong>trait les fichiers de l&#039;archive en utilisant gzip puis tar </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> <code>tar -jxvf archive.tar.bz2</code>  </td><td class="col1"> e<strong>x</strong>trait les fichiers de l&#039;archive en utilisant bzip2 puis tar </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> <code>tar -cvf archive.tar fichier1 [fichier2…]</code>  </td><td class="col1"> <strong>C</strong>rée un fichier &quot;archive.tar&quot; contenant fichier1,  fichier2… </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> <code>tar -cvzf archive.tar.gz mon_dossier</code> </td><td class="col1"> crée un fichier gzip contenant tout le contenu du dossier &#039;mon_dossier&#039;</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Créer des archives ('grappe de fichier') : La commande tar] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11350-13174" /><input type="submit" value="Modifier" class="button" title="Créer des archives ('grappe de fichier') : La commande tar" /></div></form></div>
+<h3 class="sectionedit24" id="compression_de_fichiergzip_bzip2">Compression de fichier : gzip, bzip2</h3>
+<div class="level3">
+
+</div>
+
+<h5 id="gzip">gzip</h5>
+<div class="level5">
+
+<p>
+gzip est un outil <abbr title="GNU&#039;s Not Unix">GNU</abbr> de compression et de decompression. L&#039;extension pour les fichiers gzippés est .gz.
+</p>
+<div class="table sectionedit25"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> gzip fichier.txt </td><td class="col1"> crée le fichier compressé fichier.txt.gz </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> gunzip fichier.txt.gz </td><td class="col1"> extrait le fichier fichier.txt </td>
+	</tr>
+</table></div>
+
+</div>
+
+<h5 id="bzip2">bzip2</h5>
+<div class="level5">
+
+<p>
+L&#039;utilitaire bzip2 offre (en général) un meilleur taux de compression que gzip, mais au coût d&#039;un temps de compression et décompression plus élevé.
+</p>
+<div class="table sectionedit26"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> bzip2 fichier.txt </td><td class="col1"> crée le fichier fichier.txt.bz2 </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> bunzip2 fichier.txt.bz2 </td><td class="col1 leftalign"> décompresse le fichier fichier.txt.bz2.  </td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Compression de fichier : gzip, bzip2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13175-13768" /><input type="submit" value="Modifier" class="button" title="Compression de fichier : gzip, bzip2" /></div></form></div>
+<h3 class="sectionedit27" id="besoin_d_aidela_commande_man">Besoin d&#039;aide : La commande man</h3>
+<div class="level3">
+
+<p>
+La plupart des commandes ont une page de manuel qui donne une description de leurs utilisations plus ou moins détaillées, parfois utiles, parfois obscures. Certains disent qu&#039;elles ont été appelées &quot;man pages&quot;, parce qu&#039;elles ne s&#039;adressent qu&#039;aux vrais Hommes.
+</p>
+
+<p>
+Exemple:
+</p>
+<pre class="code">man ls</pre>
+
+<p>
+affiche la page de manuel pour la commande ls
+</p>
+
+<p>
+Pour obtenir des man pages en français :
+</p>
+<pre class="code">sudo apt-get install manpages-fr</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Besoin d'aide : La commande man] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13769-14222" /><input type="submit" value="Modifier" class="button" title="Besoin d'aide : La commande man" /></div></form></div>
+<h3 class="sectionedit28" id="commandes_de_base_de_l_editeur_vi">Commandes de base de l&#039;éditeur Vi</h3>
+<div class="level3">
+
+</div>
+
+<h5 id="ouvrir_un_fichier">Ouvrir un fichier</h5>
+<div class="level5">
+<pre class="code">vi nom_du_fichier</pre>
+
+</div>
+
+<h5 id="mode_edition">Mode édition</h5>
+<div class="level5">
+
+<p>
+<code>i</code> :    <strong>i</strong>nsère avant le curseur<br/>
+
+</p>
+
+<p>
+<code>I</code> :   <strong>I</strong>nsère au début de la ligne courante<br/>
+
+</p>
+
+<p>
+<code>a</code> :    insère <strong>a</strong>près le curseur<br/>
+
+</p>
+
+<p>
+<code>A</code> :    insère à la fin de la ligne<br/>
+
+</p>
+
+<p>
+<code>r</code> :    remplace 1 caractère<br/>
+
+</p>
+
+<p>
+<code>R</code> :    passe en mode <strong>R</strong>emplacement\
+</p>
+
+<p>
+<code>&lt;ECHAP&gt;</code> : met fin au mode Edition (insertion ou remplacement)
+</p>
+
+</div>
+
+<h5 id="effacer_du_texte">Effacer du texte</h5>
+<div class="level5">
+
+<p>
+<code>x</code> :    efface un seul caractère<br/>
+
+</p>
+
+<p>
+<code>dd</code> :   efface la ligne courante et la place dans un buffer<br/>
+
+</p>
+
+<p>
+<code><em>n</em>dd</code> :  Efface <em>n</em> lignes (n est un nombre) et les place dans le buffer<br/>
+
+</p>
+
+<p>
+<code>J</code> :    déplace la ligne suivante à la fin de la ligne courante (effacement des caractères de retour chariot)
+</p>
+
+</div>
+
+<h5 id="oups">Oups</h5>
+<div class="level5">
+
+<p>
+<code>u </code> :   annule la dernière commande
+</p>
+
+</div>
+
+<h5 id="copier_et_coller">Copier et coller</h5>
+<div class="level5">
+
+<p>
+<code>yy</code> :   copie la ligne courante dans le buffer
+</p>
+
+<p>
+<code><em>n</em>yy</code> :  copie <em>n</em> lignes dans le buffer (n est un nombre)
+</p>
+
+<p>
+<code>p</code> :    colle le contenu du buffer après la ligne courante
+</p>
+
+<p>
+<code>P</code> :    colle le contenu du buffer avant la ligne courante
+</p>
+
+</div>
+
+<h5 id="positionnement_du_curseur">Positionnement du curseur</h5>
+<div class="level5">
+
+<p>
+<code>gg</code> :   va en haut de la page
+</p>
+
+<p>
+<code>G</code> :  va en bas de la page
+</p>
+
+<p>
+<code>:n</code> :   positionne le curseur à la ligne n
+</p>
+
+<p>
+<code>:$</code> :   positionne le curseur à la fin de la ligne
+</p>
+
+<p>
+<code>^g</code> :   affiche le numéro de la ligne
+</p>
+
+<p>
+<code>h,j,k,l</code> : respectivement gauche, bas, haut et droite ; les flèches de direction fonctionnent aussi…
+</p>
+
+</div>
+
+<h5 id="recherche_de_chaine_de_caracteres">Recherche de chaîne de caractères</h5>
+<div class="level5">
+
+<p>
+<code>/chaîne</code>: recherche &quot;chaîne&quot;. <code>n</code> permet le passage à l&#039;occurrence suivante. <code>#</code> permet de passage à l&#039;occurrence précédente.
+</p>
+
+<p>
+<code>*</code>: recherche avant de la chaîne de caractères présente sous le curseur.
+</p>
+
+<p>
+<code>#</code>: recherche arrière de la chaîne de caractères présente sous le curseur.
+</p>
+
+</div>
+
+<h5 id="substitution_de_chaine_de_caracteres">Substitution de chaîne de caractères</h5>
+<div class="level5">
+
+<p>
+<code>:n1,n2:s/chaîne1/chaîne2/[g][c]</code> :      substitue chaîne1 pour chaîne2 sur les lignes n1 à n2. Si g est indiqué (<strong>g</strong>lobal),  toutes les références de chaîne1 sont remplacées, sinon seule la première référence est remplacée. Si c est indiqué (<strong>c</strong>onfirm), une confirmation sera demandée avant chaque modification.
+</p>
+
+<p>
+<code>^</code> : méta-caractère de début de ligne
+</p>
+
+<p>
+<code>.</code> : méta-caractère, vrai sur n&#039;importe quel unique caractère sauf retour chariot
+</p>
+
+<p>
+<code>$</code> : méta-caractère de fin de ligne
+</p>
+
+<p>
+Ces caractères, tout comme les autres caractères spéciaux, peuvent être &#039;échappés&#039; à l&#039;aide du \ :
+c&#039;est-à-dire pour capturer la chaîne de caractères &quot;/usr/STRIM100/SOFT&quot;, il faut utiliser l&#039;expression régulière &quot;\/usr\/STRIM100\/SOFT&quot; 
+</p>
+
+<p>
+Exemples:
+</p>
+<pre class="code">:1,$:s/chien/chat/g</pre>
+
+<p>
+Remplace &#039;chien&#039; par &#039;chat&#039;, pour chaque occurrence du fichier - de la ligne 1 à la fin du fichier ($)
+</p>
+<pre class="code">:23,25:s/chien/chat/</pre>
+
+<p>
+Remplace &#039;chien&#039; par &#039;chat&#039; des lignes 23 à 25. Une fois par ligne, dès la première apparition.
+</p>
+
+</div>
+
+<h5 id="sauver_quitter_et_commandes_d_execution">Sauver, quitter et commandes d&#039;exécution</h5>
+<div class="level5">
+
+<p>
+Ces commandes sont toutes préfixées par les deux points (:) et apparaissent dans le coin inférieur gauche de la fenêtre. <br/>
+
+Vous ne pouvez pas saisir ces commandes en mode édition.
+Appuyer sur  &lt;ECHAP&gt; pour sortir du mode édition
+</p>
+
+<p>
+<code>:w</code> :              enregistre le fichier (<strong>W</strong>rite)
+</p>
+
+<p>
+<code>:w nouveau.fichier</code> :       enregistre le fichier sous le nom &#039;nouveau.fichier&#039;
+</p>
+
+<p>
+<code>:wq</code> :              enregistre le fichier et quitte le programme
+</p>
+
+<p>
+<code>:q</code> :              quitte
+</p>
+
+<p>
+<code>:q!</code>  :            quitte sans enregistrer les changements
+</p>
+
+<p>
+<code>:e fichier</code> :       ouvre &#039;fichier&#039; pour l&#039;édition
+</p>
+
+<p>
+<code>:set number</code> :      affiche les numéros de ligne
+</p>
+
+<p>
+<code>:set nonumber</code> :    cache les numéros de ligne
+</p>
+
+<p>
+<code>:set noai</code> :        désactive l&#039;auto-indentation
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Commandes de base de l'éditeur Vi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14223-17902" /><input type="submit" value="Modifier" class="button" title="Commandes de base de l'éditeur Vi" /></div></form></div>
+<h2 class="sectionedit29" id="faqs">FAQs</h2>
+<div class="level2">
+
+<p>
+Vous trouverez la plupart du temps toutes les réponses à vos questions dans le manuel ou la documentation du programme.
+Si toutefois vous ne trouvez pas de réponse, pensez à chercher sur les forums ou les groupes de discussion <strong>avant</strong> de poser votre question.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[FAQs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17903-18189" /><input type="submit" value="Modifier" class="button" title="FAQs" /></div></form></div>
+<h2 class="sectionedit30" id="copyrights">Copyrights</h2>
+<div class="level2">
+
+<p>
+Le document original a été rédigé à l&#039;aide de Vim. Vim est la meilleure version du seul véritable éditeur de texte : vi (sans compter emacs, bien entendu <img src="../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /> )
+</p>
+
+<p>
+Copyright ©  2000,2001  C R Johnson
+Permission vous est donnée de copier, distribuer et/ou modifier ces documents selon les termes de la Licence <abbr title="GNU&#039;s Not Unix">GNU</abbr> Free Documentation License, Version 1.1 ou ultérieure publiée par la Free Software Foundation ;  avec comme la préface section invariante, pas de couverture ni quatrième de couverture. Consultez la <abbr title="GNU&#039;s Not Unix">GNU</abbr> Free Documentation License : <a href="http://www.gnu.org/licenses/fdl.html" class="urlextern" title="http://www.gnu.org/licenses/fdl.html"  rel="nofollow">GFDL</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_30'><form class="button btn_secedit" method="post" action="learn_unix_in_10_minutes"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958660" /><input type="hidden" name="summary" value="[Copyrights] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18190-" /><input type="submit" value="Modifier" class="button" title="Copyrights" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="learn_unix_in_10_minutes#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+This is something that I had given out to students (CAD user training) in years past. 
+The purpose was to have on one page the basics commands for getting started using 
+the UNIX shell (so that they didn&#039;t call me asking what to do the first time someone 
+gave them a tape). <br/>
+
+This document is copyrighted but freely redistributable under the terms of the GFDL . 
+Send me comments, corrections, and extra stuff that you think should absolutly must be 
+included. I&#039;ll gladly listen.<br/>
+
+<a href="http://www.faqs.org/docs/linux_intro/gfdl-8.html" class="urlextern" title="http://www.faqs.org/docs/linux_intro/gfdl-8.html"  rel="nofollow">Invariant translations</a></div>
+<div class="fn"><sup><a href="learn_unix_in_10_minutes#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+ <strong>Il n&#039;y a pas de corbeille</strong></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/1/150c783f8e9c2020c2754f7e2153df8c.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/learn_unix_in_10_minutes?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/learn_unix_in_10_minutes?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="learn_unix_in_10_minutes?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/learn_unix_in_10_minutes?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/learn_unix_in_10_minutes?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

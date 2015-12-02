@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>foremost</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-13T14:04:39+0100"/>
+<meta name="keywords" content="precise,trusty,recuperer,systeme"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../foremost?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="foremost"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/foremost"/>
+<link rel="canonical" href="../../foremost"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"foremost","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="foremost#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="foremost#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="foremost#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="foremost#lister_les_fichiers">Lister les fichiers</a></div></li>
+<li class="level2"><div class="li"><a href="foremost#recuperer_les_fichiers">Récupérer les fichiers</a></div></li>
+<li class="level2"><div class="li"><a href="foremost#acceder_aux_fichiers">Accéder aux fichiers</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="foremost#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="foremost#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="http://doc.ubuntu-fr.org/trusty" class="wikilink1" title="trusty" rel="tag">Trusty</a>,
+	<a href="http://doc.ubuntu-fr.org/recuperer?do=showtag&amp;tag=r%C3%A9cup%C3%A9rer" class="wikilink1" title="recuperer" rel="tag">récupérer</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>
+</span></div>
+
+<h1 class="sectionedit1" id="foremost">Foremost</h1>
+<div class="level1">
+
+<p>
+<p><div class="noteimportant">Aussitôt que vous constatez la perte de fichiers, arrêtez d&#039;utiliser, autant que faire se peut, le disque dur (ou autre périphérique de stockage) sur lequel a eu lieu la perte. Autrement, vous risquez de ré-écrire par dessus vos fichiers perdus.
+</div></p>
+</p>
+
+<p>
+<strong>Foremost</strong> est une application en <a href="../../commande_shell" class="wikilink1" title="commande_shell">lignes de commande</a> qui donne la possibilité de récupérer simplement des fichiers qui ont été effacés où encore des fichiers &quot;disparus&quot; suite à un &quot;formatage rapide&quot; (reconstruction de l&#039;index de la <a href="../../partitions" class="wikilink1" title="partitions">partition</a>).  Il a été développé à l&#039;origine pour le service d&#039;enquêtes spéciales de l&#039;US Air Force.<br/>
+
+La récupération d&#039;un fichier effacé part d&#039;un concept simple… quand vous supprimez un fichier, c&#039;est uniquement le pointeur vers celui-ci qui est brisé mais il n&#039;est pas immédiatement écrasé par d&#039;autres données. Le fichier est donc toujours physiquement présent sur le disque dur. Évidement, plus vous attendez avant de récupérer un fichier, plus celui-ci a de chance de disparaître à jamais…
+</p>
+
+<p>
+À noter que <strong>Foremost</strong> ne reconstruit pas l&#039;index de la partition.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Foremost" [47-1216] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>;</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée;</div>
+</li>
+<li class="level1"><div class="li"> Connaître la <a href="../../partitions" class="wikilink1" title="partitions">partition</a> des fichiers corrompus;</div>
+</li>
+<li class="level1"><div class="li"> Une place suffisante sur la partition devant recevoir les fichiers récupérés.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [1217-1512] -->
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installer le paquet</a> <strong><a href="apt://foremost" class="interwiki iw_apt" title="apt://foremost">foremost</a></strong>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Installation" [1513-1621] -->
+<h2 class="sectionedit4" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+<em>(L&#039;utilisation se fait en <a href="../../commande_shell" class="wikilink1" title="commande_shell">lignes de commande</a> depuis un <a href="../../terminal" class="wikilink1" title="terminal">terminal</a> avec les <a href="../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> et ce, même pour lire les fichiers d&#039;information et manipuler les fichiers récupérés). </em>
+</p>
+
+<p>
+Avant de commencer, vous devez connaître la <a href="../../partitions" class="wikilink1" title="partitions">partition</a> sur laquelle vous voulez récupérer des fichiers (exemple: /dev/hda1,…). Pour cela, vous pouvez utiliser l&#039;<a href="../../gnome-disk-utility" class="wikilink1" title="gnome-disk-utility">utilitaire de disque</a> installé par défaut dans Ubuntu.
+</p>
+
+<p>
+Nous allons prendre comme exemple la récupération de photos depuis une <a href="http://fr.wikipedia.org/wiki/carte SD" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/carte SD">carte SD</a> malencontreusement &quot;formaté rapidement&quot;. Une fois inséré dans le lecteur de cartes de l&#039;ordinateur, l&#039;<a href="../../gnome-disk-utility" class="wikilink1" title="gnome-disk-utility">utilitaire de disque</a> nous donnera <strong>/dev/sdc</strong> comme partition. À vous d’adapter en conséquence.
+</p>
+
+<p>
+<p><div class="notehelp"> <em class="u">À savoir</em>: Par défaut, <strong>Foremost</strong> créera à chaque utilisation un dossier nommé &quot;output&quot; dans votre dossier personnel où seront déposés le fichier d&#039;information &quot;audit.txt&quot; et les fichiers récupérés. Si vous utilisez <strong>Foremost</strong> plusieurs fois, il vous faudra, toujours avec les <a href="../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>, soit renommer ou déplacer ou supprimer ce dossier. <br/>
+
+Pour éviter ces manipulations, il suffit d&#039;ajouter l&#039;argument <strong>-T</strong> dans les lignes de commande. Cet argument en ajoutant l&#039;heuristique au nom du dossier, permet d&#039;avoir un dossier différent à chaque fois.<br/>
+
+Vous pouvez aussi créer un autre emplacement en ajoutant l&#039;argument <strong>-o</strong> suivi du nom et du chemin et du fichier.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Utilisation" [1622-3193] -->
+<h3 class="sectionedit5" id="lister_les_fichiers">Lister les fichiers</h3>
+<div class="level3">
+
+<p>
+Si vous souhaitez connaître la liste des fichiers qu&#039;il est possible de récupérer sur votre partition sans les extraire (argument <strong>-w</strong>), entrez la <a href="../../commande_shell" class="wikilink1" title="commande_shell">ligne de commande</a>:
+</p>
+<pre class="code">sudo foremost -w /dev/sdc</pre>
+
+<p>
+<em>(La liste nommée &quot;audit.txt&quot; sera déposé dans le dossier &quot;output&quot; de votre dossier personnel).</em>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Lister les fichiers" [3194-3554] -->
+<h3 class="sectionedit6" id="recuperer_les_fichiers">Récupérer les fichiers</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Pour récupérer les fichiers images au format .jpg de la carte:<pre class="code">sudo foremost -t jpg /dev/sdc</pre>
+
+<p>
+ Évidement, si les images ont commencé à être écrasées, vous récupérerez des demi images mais c&#039;est déjà ça…
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Pour tout récupérer: <pre class="code">sudo foremost all /dev/sdc</pre>
+</div>
+</li>
+</ul>
+
+<p>
+Afin de récupérer d&#039;autres fichiers, plusieurs autres options sont disponibles :
+</p>
+<ul>
+<li class="level1"><div class="li"> jpg : images jpeg</div>
+</li>
+<li class="level1"><div class="li"> gif : images animées gif</div>
+</li>
+<li class="level1"><div class="li"> png : images PNG</div>
+</li>
+<li class="level1"><div class="li"> bmp : images bimap</div>
+</li>
+<li class="level1"><div class="li"> avi : vidéos avi</div>
+</li>
+<li class="level1"><div class="li"> exe : exécutables Windows</div>
+</li>
+<li class="level1"><div class="li"> mpg : images mpeg</div>
+</li>
+<li class="level1"><div class="li"> wav : fichiers son wav</div>
+</li>
+<li class="level1"><div class="li"> riff : vidéos riff</div>
+</li>
+<li class="level1"><div class="li"> wmv : fichiers vidéo wmv et formas similaires</div>
+</li>
+<li class="level1"><div class="li"> mov : Videos</div>
+</li>
+<li class="level1"><div class="li"> pdf : documents pdf</div>
+</li>
+<li class="level1"><div class="li"> ole : inconnu</div>
+</li>
+<li class="level1"><div class="li"> doc : Documents</div>
+</li>
+<li class="level1"><div class="li"> zip : archives zip</div>
+</li>
+<li class="level1"><div class="li"> rar : archives rar</div>
+</li>
+<li class="level1"><div class="li"> htm : fichiers de codage html</div>
+</li>
+<li class="level1"><div class="li"> cpp : fichiers de codage C</div>
+</li>
+<li class="level1"><div class="li"> all : tous les types de fichiers</div>
+</li>
+</ul>
+
+<p>
+Pour plus de détails et options: 
+</p>
+<pre class="code">man foremost</pre>
+
+</div>
+<!-- EDIT6 SECTION "Récupérer les fichiers" [3555-4530] -->
+<h3 class="sectionedit7" id="acceder_aux_fichiers">Accéder aux fichiers</h3>
+<div class="level3">
+
+<p>
+Le dossier de récupération créé par <strong>Foremost</strong> est accessible uniquement avec les <a href="../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>. Vous ne pourrez donc pas accéder aux fichiers récupérés ni les manipuler depuis votre <a href="http://doc.ubuntu-fr.org/gestionnaire_de_fichiers" class="wikilink1" title="gestionnaire_de_fichiers">gestionnaire de fichiers</a> habituel. Pour cela, nous devrons avant tout, modifier les droits d&#039;accès de ce dossier.
+</p>
+<pre class="code">sudo chown -R &lt;utilisateur&gt; output</pre>
+
+<p>
+<em>(Remplacer &quot;&lt;utilisateur&gt;&quot; par votre nom d&#039;utilisateur)</em> <br/>
+
+Vous pouvez maintenant utiliser votre <a href="http://doc.ubuntu-fr.org/gestionnaire_de_fichiers" class="wikilink1" title="gestionnaire_de_fichiers">gestionnaire de fichiers</a> normalement.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Accéder aux fichiers" [4531-5087] -->
+<h2 class="sectionedit8" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="../../tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer son paquet</a>. Selon la méthode choisie, la configuration globale de l&#039;application est conservée ou supprimée. Les journaux du système, et les fichiers de préférence des utilisateurs dans leurs dossiers personnels sont toujours conservés.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Désinstallation" [5088-5457] -->
+<h2 class="sectionedit9" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://foremost.sourceforge.net/" class="urlextern" title="http://foremost.sourceforge.net/"  rel="nofollow">Site officiel</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://manpages.ubuntu.com/foremost" class="interwiki iw_man" title="http://manpages.ubuntu.com/foremost">Foremost man page</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="../../photorec" class="wikilink1" title="photorec">Photorec</a> (fr)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.itu.dk/people/jobr/magicrescue/" class="urlextern" title="http://www.itu.dk/people/jobr/magicrescue/"  rel="nofollow">Magicrescue</a> (en) gère aussi les formats mp3 et canon/nikon RAW.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../../utilisateurs/cafecho" class="wikilink1" title="utilisateurs:cafecho">cafecho</a>
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Voir aussi" [5458-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fa8411c0b7c50bb43d37a5d76eb6333b.xhtml used -->
+</div>
+</body>
+</html>

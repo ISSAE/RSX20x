@@ -1,0 +1,754 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:installation_raid_lvm - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="../_export/xhtml/tutoriel/installation_raid_lvm"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../_export/raw/tutoriel/installation_raid_lvm"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:installation_raid_lvm","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="installation_raid_lvm?do=revisions#main" tabindex="1">Contenu</a> | <a href="installation_raid_lvm?do=revisions#qsearch__in" tabindex="2">Rechercher</a> | <a href="installation_raid_lvm?do=revisions#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="installation_raid_lvm?do=revisions" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="installation_raid_lvm" >tutoriel:installation_raid_lvm</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<h1 class="sectionedit1" id="anciennes_revisions">Anciennes révisions</h1>
+<div class="level1">
+
+<p>
+Voici les anciennes révisions de la page en cours. Pour revenir à une ancienne révision, sélectionnez-la ci-dessous, cliquez sur le bouton « Modifier cette page » et enregistrez-la.
+</p>
+
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c094095a2fd85a3488cba30c5d00321e.xhtml used -->
+<form id="page__revisions" class="changes" method="post" action="installation_raid_lvm?do=revisions" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><ul >
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="current"/>
+<span class="date">
+Le 15/12/2011, 15:17</span>
+<img src="http://doc.ubuntu-fr.org/lib/images/blank.gif" width="15" height="11" alt="" /><a class="wikilink1" href="installation_raid_lvm">
+tutoriel:installation_raid_lvm</a>
+<span class="sum">
+ – </span>
+<span class="user">
+(modification externe)</span>
+(Version actuelle)</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1308399440"/>
+<span class="date">
+Le 18/06/2011, 14:17</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1308399440&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1308399440" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="sum">
+ – <bdi>Ménage: suppressions choses dépassées depuis 8.04 + double numérotation aberrante</bdi></span>
+<span class="user">
+<bdi>mysteroïd</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1290876912"/>
+<span class="date">
+Le 27/11/2010, 17:55</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1290876912&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1290876912" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="sum">
+ – <bdi>ancienne révision restaurée + suppr. d'un des titres H1</bdi></span>
+<span class="user">
+<bdi>Gemnoc</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1290876779"/>
+<span class="date">
+Le 27/11/2010, 17:52</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1290876779&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1290876779" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="sum">
+ – <bdi>yzLGcqIui</bdi></span>
+<span class="user">
+<bdo dir="ltr">58.26.247.139</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1276514610"/>
+<span class="date">
+Le 14/06/2010, 13:23</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1276514610&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1276514610" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">81.241.124.198</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1268174106"/>
+<span class="date">
+Le 09/03/2010, 23:35</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1268174106&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1268174106" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1250772043"/>
+<span class="date">
+Le 20/08/2009, 14:40</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1250772043&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1250772043" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1250546930"/>
+<span class="date">
+Le 18/08/2009, 00:08</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1250546930&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1250546930" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1246444423"/>
+<span class="date">
+Le 01/07/2009, 12:33</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1246444423&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1246444423" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="sum">
+ – <bdi>--daemonise</bdi></span>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1239916403"/>
+<span class="date">
+Le 16/04/2009, 23:13</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1239916403&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1239916403" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1239280508"/>
+<span class="date">
+Le 09/04/2009, 14:35</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1239280508&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1239280508" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1235367858"/>
+<span class="date">
+Le 23/02/2009, 06:44</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1235367858&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1235367858" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1235150848"/>
+<span class="date">
+Le 20/02/2009, 18:27</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1235150848&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1235150848" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1228399776"/>
+<span class="date">
+Le 04/12/2008, 15:09</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1228399776&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1228399776" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1227653294"/>
+<span class="date">
+Le 25/11/2008, 23:48</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1227653294&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1227653294" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1225728780"/>
+<span class="date">
+Le 03/11/2008, 17:13</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1225728780&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1225728780" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1223751649"/>
+<span class="date">
+Le 11/10/2008, 21:00</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1223751649&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1223751649" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="sum">
+ – <bdi>Lien interne.</bdi></span>
+<span class="user">
+<bdi>Ner0lph</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1222881129"/>
+<span class="date">
+Le 01/10/2008, 19:12</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1222881129&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1222881129" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">91.168.175.239, 127.0.0.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1222881054"/>
+<span class="date">
+Le 01/10/2008, 19:10</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1222881054&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1222881054" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">91.168.175.239, 127.0.0.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1222881025"/>
+<span class="date">
+Le 01/10/2008, 19:10</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1222881025&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1222881025" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">91.168.175.239, 127.0.0.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1220409905"/>
+<span class="date">
+Le 03/09/2008, 04:45</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1220409905&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1220409905" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">172.17.1.161, 202.171.79.12, 127.0.0.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1220409846"/>
+<span class="date">
+Le 03/09/2008, 04:44</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1220409846&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1220409846" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">172.17.1.161, 202.171.79.12, 127.0.0.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1217006621"/>
+<span class="date">
+Le 25/07/2008, 19:23</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1217006621&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1217006621" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">85.68.245.173, 127.0.0.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1214845318"/>
+<span class="date">
+Le 30/06/2008, 19:01</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1214845318&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1214845318" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdi>grummfy</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1214480947"/>
+<span class="date">
+Le 26/06/2008, 13:49</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1214480947&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1214480947" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdi>vince07</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1214480901"/>
+<span class="date">
+Le 26/06/2008, 13:48</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1214480901&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1214480901" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdi>vince07</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1214480869"/>
+<span class="date">
+Le 26/06/2008, 13:47</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1214480869&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1214480869" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdi>vince07</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1211021770"/>
+<span class="date">
+Le 17/05/2008, 12:56</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1211021770&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1211021770" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">88.182.132.95</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1210201553"/>
+<span class="date">
+Le 08/05/2008, 01:05</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1210201553&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1210201553" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">88.182.132.95, 213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1209917110"/>
+<span class="date">
+Le 04/05/2008, 18:05</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209917110&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209917110" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">87.231.182.60, 213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1209916516"/>
+<span class="date">
+Le 04/05/2008, 17:55</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916516&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916516" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">87.231.182.60</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1209916470"/>
+<span class="date">
+Le 04/05/2008, 17:54</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916470&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916470" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">87.231.182.60</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1209916424"/>
+<span class="date">
+Le 04/05/2008, 17:53</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916424&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916424" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">87.231.182.60</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1209916367"/>
+<span class="date">
+Le 04/05/2008, 17:52</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916367&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916367" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">87.231.182.60</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1209916280"/>
+<span class="date">
+Le 04/05/2008, 17:51</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916280&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916280" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">87.231.182.60</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1209916204"/>
+<span class="date">
+Le 04/05/2008, 17:50</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916204&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916204" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">87.231.182.60</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1209916164"/>
+<span class="date">
+Le 04/05/2008, 17:49</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916164&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209916164" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">87.231.182.60, 213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1209644235"/>
+<span class="date">
+Le 01/05/2008, 14:17</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209644235&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209644235" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">82.243.169.209</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1209643782"/>
+<span class="date">
+Le 01/05/2008, 14:09</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209643782&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209643782" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">82.243.169.209</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1209643712"/>
+<span class="date">
+Le 01/05/2008, 14:08</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209643712&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209643712" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">82.243.169.209</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1209641386"/>
+<span class="date">
+Le 01/05/2008, 13:29</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209641386&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?rev=1209641386" class="wikilink1">
+tutoriel:installation_raid_lvm</a>
+<span class="user">
+<bdo dir="ltr">82.243.169.209</bdo></span>
+</div>
+</li>
+</ul>
+<input name="do[diff]" type="submit" value="Différences entre les versions sélectionnées" class="button" />
+</div></form>
+<div class="pagenav"><div class="pagenav-next"><form class="button btn_older" method="get" action="installation_raid_lvm"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="first" value="40" /><input type="submit" value="Moins récent &gt;&gt;" class="button" accesskey="n" title="Moins récent &gt;&gt; [N]" /></div></form></div></div>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/installation_raid_lvm?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="installation_raid_lvm?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="installation_raid_lvm?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="installation_raid_lvm?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

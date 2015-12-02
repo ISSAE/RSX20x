@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:raid10 - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-05-09T16:37:50+0200"/>
+<meta name="keywords" content="lucid,oneiric,administration,systeme,tutoriel,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/raid10?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/raid10?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/raid10"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/raid10"/>
+<link rel="canonical" href="raid10"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:raid10","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="raid10#main" tabindex="1">Contenu</a> | <a href="raid10#qsearch__in" tabindex="2">Rechercher</a> | <a href="raid10#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="raid10" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="raid10" >tutoriel:raid10</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+Selon les <a href="../tags">tags</a> présents sur cette page, les informations qu'elle contient  n'ont pas été vérifiées depuis <a href="../lucid">Ubuntu 10.04 LTS.</a><br />
+Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="raid10#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="raid10#explication">Explication</a></div></li>
+<li class="level1"><div class="li"><a href="raid10#mise_en_place_du_raid-1">Mise en place du RAID-1</a></div></li>
+<li class="level1"><div class="li"><a href="raid10#mise_en_place_du_lvm">Mise en place du LVM</a></div></li>
+<li class="level1"><div class="li"><a href="raid10#formatage_et_montage_des_partitions">Formatage et montage des partitions</a></div></li>
+<li class="level1"><div class="li"><a href="raid10#rajouter_des_disques">Rajouter des disques</a></div></li>
+<li class="level1"><div class="li"><a href="raid10#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="../oneiric" class="wikilink1" title="oneiric" rel="tag">Oneiric</a>,
+	<a href="../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_creer_un_raid_10">Comment créer un RAID 10?</h1>
+<div class="level1">
+
+<p>
+Ce tutoriel décrit les démarches pour créer un volume RAID 10.
+Il ne s&#039;agit pas réellement d&#039; un niveau de RAID, mais d&#039;une combinaison de 2 systèmes.
+RAID 1 et LVM sur 2 * N disques.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="raid10"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431182270" /><input type="hidden" name="summary" value="[Comment créer un RAID 10?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="72-303" /><input type="submit" value="Modifier" class="button" title="Comment créer un RAID 10?" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée.</div>
+</li>
+<li class="level1"><div class="li"> Avoir <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installé le paquet</a> <strong><a href="apt:////mdadm" class="interwiki iw_apt" title="apt:////mdadm">mdadm</a></strong>, et  <strong><a href="apt:////lvm2" class="interwiki iw_apt" title="apt:////lvm2">lvm2</a></strong>.</div>
+</li>
+<li class="level1"><div class="li"> Avoir un minimum de 2 disques</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="raid10"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431182270" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="304-609" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="explication">Explication</h2>
+<div class="level2">
+
+<p>
+Le RAID 10 est en faite appelée RAID-1+0.Un mélange de RAID-1 et de RAID-0, qui ce dernier est de plus en plus remplacé par le LVM, qui est plus souple pour manipuler les partitions. Le RAID 10 tolère la panne de disques multiples, jusqu&#039;à N dans le cas d&#039;un groupe de 2*N, à condition qu&#039;au moins un disque reste fonctionnel dans chaque paire associée en RAID-1.
+Voici les différentes étapes de la mise en place d&#039;un RAID 10
+</p>
+<pre class="code">       1° mise en place du volume RAID niveau 1
+       2° création des volumes logique LVM
+       3° formatage des partitions
+       4° montage auto des partitions</pre>
+
+<p>
+Je vais prendre l&#039;exemple simple d&#039;un serveur tout neuf, tout beau, qui va nous servir à stocker des données pour une famille ou autre et dont le volume de donnée va croître de façon régulière.
+Voici donc mes 2 disques, sda1 de 2500Go et sdb1 de 2500Go, il est préférable pour des raisons de performance que les 2 disques soit exactement les mêmes en tout point.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="raid10"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431182270" /><input type="hidden" name="summary" value="[Explication] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="610-1622" /><input type="submit" value="Modifier" class="button" title="Explication" /></div></form></div>
+<h2 class="sectionedit4" id="mise_en_place_du_raid-1">Mise en place du RAID-1</h2>
+<div class="level2">
+
+<p>
+Dans un premier temps je vous conseille de prendre connaissance de cette page <a href="../installation/raid1_software" class="wikilink1" title="installation:raid1_software">Comment installer Ubuntu sur un RAID-1 logiciel ?</a> qui vous explique l’installation d&#039;un RAID-1.
+</p>
+
+<p>
+Vous avez donc lu la page.
+On va pouvoir mettre en place notre RAID-1.
+</p>
+<pre class="code">           sudo -i
+           apt-get install mdadm ////si c est pas déjà fait//
+           mdadm -- create /dev/md1 --level=1 --raid-devices=2 /dev/sda1 /dev/sdb1
+           [....]
+           Continue creating array? y</pre>
+
+<p>
+on regarde le resultat
+</p>
+<pre class="code">           mdadm --detail /dev/md1
+           
+          /dev/md1:
+      Version : 1.2
+Creation Time : Sat May 12 08:53:01 2012
+   Raid Level : raid1
+   Array Size : 2441887608 (2328.77 GiB 2500.49 GB)
+Used Dev Size : 2441887608 (2328.77 GiB 2500.49 GB)
+ Raid Devices : 2
+Total Devices : 2
+  Persistence : Superblock is persistent</pre>
+<pre class="code">  Update Time : Mon May 21 17:16:48 2012
+        State : clean 
+Active Devices : 2
+Working Devices : 2
+Failed Devices : 0
+ Spare Devices : 0</pre>
+<pre class="code">         Name : serveur:1  (local to host serveur)
+         UUID : d94b1ade:07a484a0:90db2fc2:66f467e7
+       Events : 76</pre>
+<pre class="code">  Number   Major   Minor   RaidDevice State
+     0       8        1        0      active sync   /dev/sda1
+     1       8       17        1      active sync   /dev/sdb1</pre>
+
+<p>
+<p><div class="noteimportant">Faite une pause.  
+Le temps que la syncro se fasse entre les 2 disques. 
+Allez au cafe.
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">Plus les disque sont gros, plus c&#039;est long. 
+Moi je l&#039;ai fait avec 2 disques de 2.5To. Il a fallu environ 6 heures pour finir la syncro
+</div></p>
+</p>
+
+<p>
+La syncro est fini, et avec la permiere partie.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="raid10"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431182270" /><input type="hidden" name="summary" value="[Mise en place du RAID-1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1623-3324" /><input type="submit" value="Modifier" class="button" title="Mise en place du RAID-1" /></div></form></div>
+<h2 class="sectionedit5" id="mise_en_place_du_lvm">Mise en place du LVM</h2>
+<div class="level2">
+
+<p>
+Dans un premier temps, je vous conseille de prendre connaissance de cette page <a href="../lvm.1" class="wikilink1" title="lvm">LVM, une autre manière de partitionner</a> qui vous explique l’installation d&#039;un LVM.
+</p>
+
+<p>
+Vous avez donc lu la page. On va pouvoir mettre en place nos volume LVM.
+</p>
+
+<p>
+le but est de créer 4 volumes logiques de taille différente accessibles par toutes les membres de la famille.
+le premier va servir a stocker les souvenir de famille.
+le deuxième pour sauvegarder les sessions de chaque ordinateur .
+le troisième la médiathèque musicale de la famille.
+le dernier une vidéothèque.
+</p>
+<pre class="code">    pvcreate /dev/md1
+    pvdisplay
+            
+--- Physical volume ---
+PV Name               /dev/md1
+VG Name               serveur
+PV Size               2,27 TiB / not usable 3,87 MiB
+Allocatable           yes 
+PE Size               4,00 MiB
+Total PE              596163
+Free PE               14420
+Allocated PE          581743
+PV UUID               JZZNgH-ebSM-NmX4-EVv2-yMGs-cXJm-k4v36Q
+            </pre>
+
+<p>
+Comme vous avez pu le remarque je ne travail plus sur les disques mais sur le volume RAID 1 /dev/md1
+</p>
+<pre class="code">      vgcreate serveur /dev/md1
+             
+      vgdisplay
+--- Volume group ---
+VG Name               serveur
+System ID             
+Format                lvm2
+Metadata Areas        1
+Metadata Sequence No  5
+VG Access             read/write
+VG Status             resizable
+MAX LV                0
+Cur LV                4
+Open LV               4
+Max PV                0
+Cur PV                1
+Act PV                1
+VG Size               2,27 TiB
+PE Size               4,00 MiB
+Total PE              596163
+Alloc PE / Size       581743 / 2,22 TiB
+Free  PE / Size       14420 / 56,33 GiB
+VG UUID               EtDat7-3IIi-Cksu-8z2N-l4On-IWxC-H9KbBk</pre>
+
+<p>
+on passe au volume logique
+</p>
+<pre class="code">    lvcreate -n musique -L 40G serveur
+    lvcreate -n famille -L 250G serveur
+    lvcreate -n sauvegarde -L 250G serveur
+    lvcreate -n video -L 1.9T serveur
+             
+    lvdisplay
+--- Logical volume ---
+LV Name                /dev/serveur/musique
+VG Name                serveur
+LV UUID                UpHWMM-Z1Kp-A2cj-9KlJ-YjdE-rLfO-NTZX1M
+LV Write Access        read/write
+LV Status              available
+# open                 1
+LV Size                37,25 GiB
+Current LE             9537
+Segments               1
+Allocation             inherit
+Read ahead sectors     auto
+- currently set to     256
+Block device           252:0
+ 
+--- Logical volume ---
+LV Name                /dev/serveur/famille
+VG Name                serveur
+LV UUID                Uaer4T-W6EX-0P8E-e5MN-fSPv-WBQA-0qjSxs
+LV Write Access        read/write
+LV Status              available
+# open                 1
+LV Size                232,83 GiB
+Current LE             59605
+Segments               1
+Allocation             inherit
+Read ahead sectors     auto
+- currently set to     256
+Block device           252:1
+ 
+--- Logical volume ---
+LV Name                /dev/serveur/sauvegarde
+VG Name                serveur
+LV UUID                4hVBoS-rAXc-NzgL-HV57-2pJi-PBOz-E2cBfI
+LV Write Access        read/write
+LV Status              available
+# open                 1
+LV Size                232,83 GiB
+Current LE             59605
+Segments               1
+Allocation             inherit
+Read ahead sectors     auto
+- currently set to     256
+Block device           252:2
+ 
+--- Logical volume ---
+LV Name                /dev/serveur/video
+VG Name                serveur
+LV UUID                5aw1LX-d0yz-VAD5-ssrf-Fg9u-CpKm-EI1MTf
+LV Write Access        read/write
+LV Status              available
+# open                 1
+LV Size                1,73 TiB
+Current LE             452996
+Segments               1
+Allocation             inherit
+Read ahead sectors     auto
+- currently set to     256
+Block device           252:3
+             </pre>
+
+<p>
+<p><div class="notetip">Si vous comptez bien il reste de l&#039;espace de disque non affecté. C&#039;est normale. Je fais ainsi au cas ou j aurrai besoin de place sur un volume ou sur un autre
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="raid10"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431182270" /><input type="hidden" name="summary" value="[Mise en place du LVM] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3325-7523" /><input type="submit" value="Modifier" class="button" title="Mise en place du LVM" /></div></form></div>
+<h2 class="sectionedit6" id="formatage_et_montage_des_partitions">Formatage et montage des partitions</h2>
+<div class="level2">
+
+<p>
+Cela reste du classique, on fait comme pour du lvm normal.
+</p>
+
+<p>
+Formatage des partition lvm en ext4
+</p>
+<pre class="code">       mkfs -t ext4 /dev/serveur/musique
+       mkfs -t ext4 /dev/serveur/famille
+       mkfs -t ext4 /dev/serveur/sauvegarde
+       mkfs -t ext4 /dev/serveur/video</pre>
+<pre class="code">       mkdir /media/musique
+       mkdir /media/famille
+       mkdir /media/sauvegarde
+       mkdir /media/video</pre>
+
+<p>
+On monte nos partitions dans les fichiers crée juste avant         
+</p>
+<pre class="code">       mount /dev/serveur/musique /media/musique
+       mount /dev/serveur/famille /media/famille
+       mount /dev/serveur/sauvegarde /media/sauvegarde
+       mount /dev/serveur/video /media/video</pre>
+
+<p>
+on regarde le resultat
+</p>
+<pre class="code">      df -h</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="raid10"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431182270" /><input type="hidden" name="summary" value="[Formatage et montage des partitions] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7524-8278" /><input type="submit" value="Modifier" class="button" title="Formatage et montage des partitions" /></div></form></div>
+<h2 class="sectionedit7" id="rajouter_des_disques">Rajouter des disques</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteclassic">A venir
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="raid10"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431182270" /><input type="hidden" name="summary" value="[Rajouter des disques] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8279-8333" /><input type="submit" value="Modifier" class="button" title="Rajouter des disques" /></div></form></div>
+<h2 class="sectionedit8" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="../installation/raid1_software" class="wikilink1" title="installation:raid1_software">Comment installer Ubuntu sur un RAID-1 logiciel ?</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../lvm.1" class="wikilink1" title="lvm">LVM, une autre manière de partitionner</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="../utilisateurs/syl_l_ancien" class="wikilink2" title="utilisateurs:syl_l_ancien" rel="nofollow">syl_l_ancien</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="raid10"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431182270" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8334-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/f62562bf29242270eb004be4681568f6.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/raid10?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/raid10?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/raid10?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/raid10?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/raid10?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>smartmontools</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-05-03T21:37:08+0200"/>
+<meta name="keywords" content="disque dur"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../smartmontools?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="smartmontools"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/smartmontools"/>
+<link rel="canonical" href="../../smartmontools"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"smartmontools","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="smartmontools#preambule">Préambule</a></div></li>
+<li class="level1"><div class="li"><a href="smartmontools#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="smartmontools#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="smartmontools#notification_automatique_d_un_probleme">Notification automatique d&#039;un problème</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="smartmontools#activer_le_daemon_smartd">activer le daemon smartd</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="smartmontools#traduire_l_alerte">Traduire l&#039;alerte</a></div></li>
+<li class="level1"><div class="li"><a href="smartmontools#interface_graphique_pour_smartmontools">Interface Graphique pour smartmontools</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="smartmontools#installation1">Installation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="smartmontools#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../disque_dur" class="wikilink1" title="disque_dur" rel="tag">disque dur</a>
+</span></div>
+
+<h1 class="sectionedit1" id="smartmontools">SMARTMONTOOLS</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "SMARTMONTOOLS" [23-51] -->
+<h2 class="sectionedit2" id="preambule">Préambule</h2>
+<div class="level2">
+
+<p>
+Smartmontools est un paquet regroupant un ensemble d&#039;outils basés sur la &quot;technologie&quot; <em class="u">SMART</em>. Cette technologie est un protocole qui permet de suivre et contrôler l&#039;état des disques durs et de différents composants de votre ordinateur.
+</p>
+
+<p>
+le protocole SMART est reconnu et implémenté sur la plupart des disques durs depuis la fin des années 1990.
+</p>
+
+<p>
+<p><div class="notetip">L&#039;intérêt principal de ces outils et de la technologie SMART est de <strong> déceler des signes précurseurs de vieillissement et de pannes </strong>  des disques durs avant qu&#039;ils ne soient définitivement en panne.
+</p>
+
+<p>
+En configurant correctement le daemon <strong>smartd</strong> (fichier <em class="u">/etc/smartd.conf</em>, il est possible d&#039;être prévenu automatiquement si des problèmes sont détectés).
+</p>
+
+<p>
+<em> De façon incompréhensible, le paquet <em class="u">smartmontools</em> n&#039;est pas installé par défaut et fait l&#039;objet de relativement peu de publicité</em>
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Préambule" [52-970] -->
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Commencez par <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a>
+<strong><a href="apt://smartmontools" class="interwiki iw_apt" title="apt://smartmontools">smartmontools</a></strong>.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Installation" [971-1114] -->
+<h2 class="sectionedit4" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Dans les exemples suivants, on va considérer le disque dur nommé <em> /dev/sdX </em>, qu&#039;il faudra remplacer par le nom du disque que vous voulez tester, par exemple <em>/dev/hda</em>, <em>/dev/sdc</em> <sup><a href="smartmontools#fn__1" id="fnt__1" class="fn_top">1)</a></sup> ou <em>/dev/sg1</em> <sup><a href="smartmontools#fn__2" id="fnt__2" class="fn_top">2)</a></sup>
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour activer SMART sur un disque, taper la commande suivante (nécessaire une seule fois seulement pour chaque disque, mais peut être répétée sans danger) :</div>
+</li>
+</ul>
+<pre class="code"> sudo smartctl --smart=on --offlineauto=on --saveauto=on /dev/sdX</pre>
+<ul>
+<li class="level1"><div class="li"> Pour obtenir quelques infos disponibles par SMART sur le disque</div>
+</li>
+</ul>
+<pre class="code"> sudo smartctl -H -i /dev/sdX</pre>
+
+<p>
+Pour obtenir toutes les infos disponibles par SMART sur le disque
+</p>
+<pre class="code"> sudo smartctl -a /dev/sdX</pre>
+<ul>
+<li class="level1"><div class="li"> Pour faire des tests</div>
+</li>
+</ul>
+
+<p>
+Au moins deux types de tests sont possibles, les courts (~1 min) et les longs (~10 min à 90 min).
+</p>
+
+<p>
+Pour lancer l&#039;exécution des tests
+</p>
+<pre class="code">sudo smartctl -t short /dev/sdX
+sudo smartctl -t long  /dev/sdX</pre>
+<ul>
+<li class="level1"><div class="li"> Ensuite pour accéder au résultats/statistiques de ces tests :</div>
+</li>
+</ul>
+<pre class="code">sudo smartctl -l selftest /dev/sdX</pre>
+
+<p>
+ou en plus bref (retourne un message seulement si le disque retourne un indicateur SMART &quot;failing&quot; ou si des autotests ont enregistré des erreurs) 
+</p>
+<pre class="code">sudo smartctl -q errorsonly -H -l selftest /dev/sdX</pre>
+
+</div>
+<!-- EDIT4 SECTION "Utilisation" [1115-3128] -->
+<h2 class="sectionedit5" id="notification_automatique_d_un_probleme">Notification automatique d&#039;un problème</h2>
+<div class="level2">
+
+<p>
+Grâce au service (daemon) <strong>smartd</strong> il est possible de faire une analyse régulière et ainsi suivre sur le long terme l&#039;état des disques durs et de votre matériel. 
+</p>
+
+<p>
+Il est aussi possible de paramétrer des alertes automatiques (envoi de mail, messages utilisateur par wall, syslog, … ) en cas de détections d&#039;erreurs ou de signes de vieillissement.
+</p>
+
+<p>
+<strong>smartd</strong> est inclus dans le paquet <em>smartmontools</em>
+</p>
+
+<p>
+Le fichier de configuration est <em class="u">/etc/smartd.conf</em>  Par défaut, il est configuré pour scanner tous les disques.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Notification automatique d'un problème" [3129-3714] -->
+<h3 class="sectionedit6" id="activer_le_daemon_smartd">activer le daemon smartd</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteimportant"><strong> Par défaut, le demon smart n&#039;est pas activé. Il est indispensable de le faire manuellement.</strong>
+</p>
+
+<p>
+<a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Éditez le fichier</a> <em class="u">/etc/default/smartmontools</em> et décommenter <em class="u">start_smartd=yes</em> puis démarrer le service en tapant dans un <a href="../../terminal" class="wikilink1" title="terminal">terminal</a>:
+</div></p>
+</p>
+<pre class="code">sudo /etc/init.d/smartmontools start </pre>
+
+<p>
+A signaler aussi le paquet <a href="apt://smart-notifier" class="urlextern" title="apt://smart-notifier"  rel="nofollow">smart-notifier</a> qui vous préviendra de tout problème imminent. 
+L&#039;action de ce programme est de se mettre à l&#039;écoute des messages de tests et  d&#039;ouvrir une fenêtre d&#039;avertissement s&#039;il détecte un problème.
+</p>
+
+<p>
+<p><div class="notetip">Pour que <strong>smart-notifier</strong> lance ces messages d&#039;alertes, il faut que smartd soit actif et que la session en cours ait été redémarrée
+
+</div></p>
+</p>
+
+<p>
+Si vous voyez une alerte SMART, il y a de fortes chances pour que votre disque soit en train de flancher. Dans votre intérêt, faites immédiatement une copie de vos fichiers ailleurs (clé <abbr title="Universal Serial Bus">USB</abbr>, disque dur externe, gravure sur CD/DVD…).
+</p>
+
+<p>
+Pour tester que smart-notifier fonctionne :
+</p>
+<pre class="code">sudo sh -c &#039;echo test de message | smart-notifier --notify&#039;</pre>
+
+<p>
+Ce qui affichera :
+</p>
+
+<p>
+<a href="../../_detail/smart-notifier.png?id=smartmontools" class="media" title="smart-notifier.png"><img src="../../_media/smart-notifier.png" class="media" alt="" /></a>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "activer le daemon smartd" [3715-4920] -->
+<h2 class="sectionedit7" id="traduire_l_alerte">Traduire l&#039;alerte</h2>
+<div class="level2">
+
+<p>
+Lorsque vous équipez un autre pc que le votre de la notification il serait dommage qu&#039;elle soit ignorée pour une bête impossibilité de compréhension du message…
+</p>
+
+<p>
+Sauvegarder l&#039;original en cas de boulette en tapant dans <a href="../../terminal" class="wikilink1" title="terminal">terminal</a>: 
+</p>
+<pre class="code">        
+ sudo cp /usr/share/smart-notifier/smart_notifier/smart-notifier.glade /usr/share/smart-notifier/smart_notifier/smart-notifier.glade.old</pre>
+
+<p>
+puis <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditez le fichier</a>  <em class="u">/usr/share/smart-notifier/smart_notifier/smart-notifier.glade</em>
+et modifiez les lignes indiquées ci-dessous.
+</p>
+
+</div>
+
+<h4 id="titre_de_la_fenetre_ligne_31">Titre de la Fenêtre, ligne 31</h4>
+<div class="level4">
+
+<p>
+&lt;property name=&quot;title&quot; context=&quot;True&quot; translatable=&quot;True&quot;&gt;Alerte Disque-dur !&lt;/property&gt;
+</p>
+
+</div>
+
+<h4 id="titre_du_message_ligne_56">Titre du Message, ligne 56</h4>
+<div class="level4">
+
+<p>
+<code>&lt;property name=&quot;label&quot; context=&quot;True&quot; translatable=&quot;True&quot;&gt;&amp;lt;big&amp;gt;&amp;lt;b&amp;gt;Alerte ! Disque-dur en Danger !&amp;lt;/b&amp;gt;&amp;lt;/big&amp;gt;&lt;/property&gt;</code>
+</p>
+
+</div>
+
+<h4 id="corps_du_message_ligne_69">Corps du Message, ligne 69</h4>
+<div class="level4">
+
+<p>
+<code>&lt;property name=&quot;label&quot; context=&quot;True&quot; translatable=&quot;True&quot;&gt;S.m.a.r.t. surveille en permanence les disques-durs et donne l&#039;alerte en cas de variation importante dans les normales relevées. 60% des pannes de disques-durs sont mécaniques, s.m.a.r.t. peut en détecter 30%. Cette alerte n&#039;est pas à prendre à la légère et peut annoncer une panne imminente. Planifier rapidement vos sauvegardes et le remplacement de vos disques-durs.&lt;/property&gt;</code>
+</p>
+
+</div>
+
+<h4 id="message_de_smartd_ligne_92">Message de smartd, ligne 92</h4>
+<div class="level4">
+
+<p>
+<code>&lt;property name=&quot;label&quot; context=&quot;True&quot; translatable=&quot;True&quot;&gt;Message original de smartd :&lt;/property&gt;</code>
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Traduire l'alerte" [4921-6458] -->
+<h2 class="sectionedit8" id="interface_graphique_pour_smartmontools">Interface Graphique pour smartmontools</h2>
+<div class="level2">
+
+<p>
+gsmartcontrol est une interface graphique (en anglais) de smartmontools. 
+</p>
+
+<p>
+Le site officiel est ici : <a href="http://gsmartcontrol.sourceforge.net/home/index.php" class="urlextern" title="http://gsmartcontrol.sourceforge.net/home/index.php"  rel="nofollow">GSmartControl</a>.
+On trouvera des copies d&#039;écran ici : <a href="http://gsmartcontrol.sourceforge.net/home/index.php/Screenshots" class="urlextern" title="http://gsmartcontrol.sourceforge.net/home/index.php/Screenshots"  rel="nofollow">Copies d&#039;écran</a>.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Interface Graphique pour smartmontools" [6459-6808] -->
+<h3 class="sectionedit9" id="installation1">Installation</h3>
+<div class="level3">
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://gsmartcontrol" class="interwiki iw_apt" title="apt://gsmartcontrol">gsmartcontrol</a></strong>.
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Installation" [6809-6936] -->
+<h2 class="sectionedit10" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://smartmontools.sourceforge.net" class="urlextern" title="http://smartmontools.sourceforge.net"  rel="nofollow">Site officiel Smartmontools</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://smartlinux.sourceforge.net/smart/attributes.php" class="urlextern" title="http://smartlinux.sourceforge.net/smart/attributes.php"  rel="nofollow">Index des SMART Attributes</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.lea-linux.org/documentations/index.php/Hardware-hard_plus-smart" class="urlextern" title="http://www.lea-linux.org/documentations/index.php/Hardware-hard_plus-smart"  rel="nofollow">tuto sur le système smart</a> : tutoriel de Lea-linux</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://fr.wikipedia.org/wiki/Self-Monitoring%2C_Analysis_and_Reporting_Technology" class="urlextern" title="http://fr.wikipedia.org/wiki/Self-Monitoring%2C_Analysis_and_Reporting_Technology"  rel="nofollow">Wikipédia : SMART</a></div>
+</li>
+<li class="level1"><div class="li">  <a href="http://valaurea.free.fr/documents/sig11_smart.html" class="urlextern" title="http://valaurea.free.fr/documents/sig11_smart.html"  rel="nofollow">Tout savoir de ses disques durs avec smartmontools (sig-11.org)</a></div>
+</li>
+<li class="level1"><div class="li">  <a href="http://smartmontools.sourceforge.net/badblockhowto.html" class="urlextern" title="http://smartmontools.sourceforge.net/badblockhowto.html"  rel="nofollow">Bad block HOWTO for smartmontools</a> : Pour aller un plus loin lorsqu&#039;une erreur est détectée.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../../utilisateurs/didrocks" class="wikilink1" title="utilisateurs:didrocks">didrocks</a>, <a href="../../utilisateurs/fnx" class="wikilink1" title="utilisateurs:fnx">fnx</a>, <a href="../../utilisateurs/amalric" class="wikilink1" title="utilisateurs:amalric">.amalric.</a> pour la traduction, <a href="../../utilisateurs/furious-therapy" class="wikilink1" title="utilisateurs:furious-therapy">furious-therapy</a> : DEB pour Jaunty.</em>
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Voir aussi" [6937-] --><div class="footnotes">
+<div class="fn"><sup><a href="smartmontools#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+ la liste des noms de disques durs de votre système peut s&#039;obtenir par : <pre class="code">sudo fdisk -l </pre>
+</div>
+<div class="fn"><sup><a href="smartmontools#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+les périphériques du type <em>/dev/sg#</em> permettent d&#039;atteindre les disques qui composent un volume géré par un contrôleur RAID hardware. Dans un tel cas, les périphériques du type <em>/dev/sdX</em> ne sont pas utilisables car à ce niveau l&#039;<abbr title="Operating System">OS</abbr> ne voit que le volume géré par le contrôleur RAID (un disque logique sans information SMART) et non des disques qui le composent (disques physiques avec information SMART). Par exemple, pour obtenir les informations SMART sur un disque <abbr title="Serial Advanced Technology Attachment">SATA</abbr> faisant partie d&#039;un volume RAID 5 géré par un contrôleur Adaptec :<pre class="code">sudo smartctl -a -d sat /dev/sg1</pre>
+Référence: <a href="http://www.cyberciti.biz/faq/linux-checking-sas-sata-disks-behind-adaptec-raid-controllers/" class="urlextern" title="http://www.cyberciti.biz/faq/linux-checking-sas-sata-disks-behind-adaptec-raid-controllers/"  rel="nofollow">http://www.cyberciti.biz/faq/linux-checking-sas-sata-disks-behind-adaptec-raid-controllers/</a>
+</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/5/5c097d22583576e5a5d13fa71a81c06f.xhtml used -->
+</div>
+</body>
+</html>

@@ -1,0 +1,728 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:mirroring_sur_deux_serveurs - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="mirroring_sur_deux_serveurs?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="../_export/xhtml/tutoriel/mirroring_sur_deux_serveurs"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../_export/raw/tutoriel/mirroring_sur_deux_serveurs"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:mirroring_sur_deux_serveurs","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="mirroring_sur_deux_serveurs?do=revisions#main" tabindex="1">Contenu</a> | <a href="mirroring_sur_deux_serveurs?do=revisions#qsearch__in" tabindex="2">Rechercher</a> | <a href="mirroring_sur_deux_serveurs?do=revisions#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="mirroring_sur_deux_serveurs?do=revisions" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="mirroring_sur_deux_serveurs" >tutoriel:mirroring_sur_deux_serveurs</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<h1 class="sectionedit1" id="anciennes_revisions">Anciennes révisions</h1>
+<div class="level1">
+
+<p>
+Voici les anciennes révisions de la page en cours. Pour revenir à une ancienne révision, sélectionnez-la ci-dessous, cliquez sur le bouton « Modifier cette page » et enregistrez-la.
+</p>
+
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c094095a2fd85a3488cba30c5d00321e.xhtml used -->
+<form id="page__revisions" class="changes" method="post" action="mirroring_sur_deux_serveurs?do=revisions" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><ul >
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="current"/>
+<span class="date">
+Le 15/03/2013, 11:59</span>
+<img src="http://doc.ubuntu-fr.org/lib/images/blank.gif" width="15" height="11" alt="" /><a class="wikilink1" href="mirroring_sur_deux_serveurs">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – [À ne faire que sur le serveur primaire] </span>
+<span class="user">
+chacmool</span>
+(Version actuelle)</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1363099481"/>
+<span class="date">
+Le 12/03/2013, 15:44</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1363099481&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1363099481" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>[À faire sur chaque serveur en même temps] </bdi></span>
+<span class="user">
+<bdi>Chacmool</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1332667455"/>
+<span class="date">
+Le 25/03/2012, 11:24</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1332667455&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1332667455" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>Correction de certains liens internes (pas de changement de texte)</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1332030264"/>
+<span class="date">
+Le 18/03/2012, 01:24</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1332030264&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1332030264" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>Pseudo restauration, cf mailing liste &quot;Remplacement infondé&quot;</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1324030135"/>
+<span class="date">
+Le 16/12/2011, 11:08</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1324030135&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1324030135" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>[Configuration du pare-feu (Firewall)] </bdi></span>
+<span class="user">
+<bdo dir="ltr">194.230.107.143</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1278080050"/>
+<span class="date">
+Le 02/07/2010, 16:14</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1278080050&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1278080050" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>tags superflus </bdi></span>
+<span class="user">
+<bdi>YoBoY</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1267350344"/>
+<span class="date">
+Le 28/02/2010, 10:45</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1267350344&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1267350344" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>Mise en forme</bdi></span>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1267350245"/>
+<span class="date">
+Le 28/02/2010, 10:44</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1267350245&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1267350245" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>Fôôte d'aurtograf + Mise en forme</bdi></span>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1267346383"/>
+<span class="date">
+Le 28/02/2010, 09:39</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1267346383&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1267346383" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>Fôôte d'aurtograf x 2</bdi></span>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1267346066"/>
+<span class="date">
+Le 28/02/2010, 09:34</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1267346066&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1267346066" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>Fôôte d'aurtograf</bdi></span>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1261039293"/>
+<span class="date">
+Le 17/12/2009, 09:41</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1261039293&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1261039293" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1259915575"/>
+<span class="date">
+Le 04/12/2009, 09:32</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1259915575&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1259915575" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1254384000"/>
+<span class="date">
+Le 01/10/2009, 10:00</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1254384000&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1254384000" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1254383803"/>
+<span class="date">
+Le 01/10/2009, 09:56</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1254383803&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1254383803" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1253734827"/>
+<span class="date">
+Le 23/09/2009, 21:40</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1253734827&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1253734827" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1247814879"/>
+<span class="date">
+Le 17/07/2009, 09:14</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1247814879&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1247814879" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1247814655"/>
+<span class="date">
+Le 17/07/2009, 09:10</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1247814655&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1247814655" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1245331743"/>
+<span class="date">
+Le 18/06/2009, 15:29</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1245331743&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1245331743" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1244129805"/>
+<span class="date">
+Le 04/06/2009, 17:36</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1244129805&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1244129805" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>une faute</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1241041744"/>
+<span class="date">
+Le 29/04/2009, 23:49</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1241041744&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1241041744" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>Ajout d'un &quot;/&quot; manquant</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1240777452"/>
+<span class="date">
+Le 26/04/2009, 22:24</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1240777452&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1240777452" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>Mise à jour : ajout de détails concernant la séparation des flux</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1237466298"/>
+<span class="date">
+Le 19/03/2009, 13:38</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1237466298&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1237466298" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1236775997"/>
+<span class="date">
+Le 11/03/2009, 13:53</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1236775997&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1236775997" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>erreur de manipulation du wiki</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1236775861"/>
+<span class="date">
+Le 11/03/2009, 13:51</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1236775861&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1236775861" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>ancienne révision restaurée</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1236775736"/>
+<span class="date">
+Le 11/03/2009, 13:48</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1236775736&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1236775736" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1235255344"/>
+<span class="date">
+Le 21/02/2009, 23:29</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1235255344&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1235255344" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>mise à jour config de samba</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1234019285"/>
+<span class="date">
+Le 07/02/2009, 16:08</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1234019285&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1234019285" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1233914399"/>
+<span class="date">
+Le 06/02/2009, 10:59</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233914399&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233914399" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdi>Ner0lph</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1233836671"/>
+<span class="date">
+Le 05/02/2009, 13:24</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233836671&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233836671" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1233836561"/>
+<span class="date">
+Le 05/02/2009, 13:22</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233836561&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233836561" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>Mise en forme correcte des liens internes</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1233520929"/>
+<span class="date">
+Le 01/02/2009, 21:42</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233520929&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233520929" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1233519837"/>
+<span class="date">
+Le 01/02/2009, 21:23</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233519837&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233519837" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>petites corrections</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1233504209"/>
+<span class="date">
+Le 01/02/2009, 17:03</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233504209&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233504209" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1233496884"/>
+<span class="date">
+Le 01/02/2009, 15:01</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233496884&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233496884" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1233441370"/>
+<span class="date">
+Le 31/01/2009, 23:36</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233441370&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233441370" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>tag tutoriel</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1233439856"/>
+<span class="date">
+Le 31/01/2009, 23:10</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233439856&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233439856" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>ajout des tags</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1233439576"/>
+<span class="date">
+Le 31/01/2009, 23:06</span>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233439576&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?rev=1233439576" class="wikilink1">
+tutoriel:mirroring_sur_deux_serveurs</a>
+<span class="sum">
+ – <bdi>création</bdi></span>
+<span class="user">
+<bdi>MrWaloo</bdi></span>
+</div>
+</li>
+</ul>
+<input name="do[diff]" type="submit" value="Différences entre les versions sélectionnées" class="button" />
+</div></form>
+<div class="pagenav"></div>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="mirroring_sur_deux_serveurs?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/mirroring_sur_deux_serveurs?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="mirroring_sur_deux_serveurs?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="mirroring_sur_deux_serveurs?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="mirroring_sur_deux_serveurs?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

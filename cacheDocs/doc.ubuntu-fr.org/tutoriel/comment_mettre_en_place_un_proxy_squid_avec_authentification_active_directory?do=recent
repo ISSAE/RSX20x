@@ -1,0 +1,820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="../_export/xhtml/tutoriel/comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../_export/raw/tutoriel/comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=recent#main" tabindex="1">Contenu</a> | <a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=recent#qsearch__in" tabindex="2">Rechercher</a> | <a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=recent#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=recent" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory" >tutoriel:comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<h1 class="sectionedit1" id="derniers_changements">Derniers changements</h1>
+<div class="level1">
+
+<p>
+Les pages suivantes ont été modifiées récemment.
+</p>
+
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/8/8528b372fe8557583b556cf2368288f4.xhtml used -->
+<div class="level1"><p>Vous êtes actuellement en train de regarder les modifications au sein de la catégorie <strong>tutoriel</strong>. Vous pouvez également <a href="http://doc.ubuntu-fr.org/Accueil?do=recent">afficher les derniers changements sur l'ensemble du wiki</a>.</p></div><form id="dw__recent" method="get" class="changes" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=recent" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="do" value="recent" /><input type="hidden" name="id" value="tutoriel:comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory" /><div class="changeType"><label><span>Voir les changements</span> <select name="show_changes" class="quickselect">
+<option value="pages">Pages</option><option value="mediafiles">Fichiers multimédias</option><option value="both" selected="selected">Pages et fichiers multimédias</option>
+</select></label>
+<input name="do[recent]" type="submit" value="Appliquer" class="button" />
+</div><ul >
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:console_commandes_de_base" class="icon" /><span class="date">
+Le 19/05/2015, 06:23</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/console_commandes_de_base?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/console_commandes_de_base?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="console_commandes_de_base" class="wikilink1" title="tutoriel:console_commandes_de_base">tutoriel:console_commandes_de_base</a><span class="sum">
+ – [rm] </span>
+<span class="user">
+<bdo dir="ltr">78.250.44.150</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:installer_imprimante_canon" class="icon" /><span class="date">
+Le 18/05/2015, 22:58</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/installer_imprimante_canon?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/installer_imprimante_canon?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installer_imprimante_canon" class="wikilink1" title="tutoriel:installer_imprimante_canon">tutoriel:installer_imprimante_canon</a><span class="sum">
+ – [Problèmes de dépendances libtiff4] </span>
+<span class="user">
+<bdo dir="ltr">82.247.18.152</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:comment_sauvegarder_le_mbr" class="icon" /><span class="date">
+Le 18/05/2015, 14:40</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_sauvegarder_le_mbr?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_sauvegarder_le_mbr?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="comment_sauvegarder_le_mbr" class="wikilink1" title="tutoriel:comment_sauvegarder_le_mbr">tutoriel:comment_sauvegarder_le_mbr</a><span class="sum">
+ – [Qu'est-ce que le MBR, pourquoi le sauvegarder ?] </span>
+<span class="user">
+<bdo dir="ltr">78.229.32.71</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:personnaliser_xfce" class="icon" /><span class="date">
+Le 17/05/2015, 19:26</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/personnaliser_xfce?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/personnaliser_xfce?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/personnaliser_xfce" class="wikilink1" title="tutoriel:personnaliser_xfce">tutoriel:personnaliser_xfce</a><span class="sum">
+ – [Matériel] </span>
+<span class="user">
+<bdi>thibaud</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:acceder_a_votre_nas_depuis_toutes_les_applications" class="icon" /><span class="date">
+Le 16/05/2015, 20:25</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/acceder_a_votre_nas_depuis_toutes_les_applications?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/acceder_a_votre_nas_depuis_toutes_les_applications?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="acceder_a_votre_nas_depuis_toutes_les_applications" class="wikilink1" title="tutoriel:acceder_a_votre_nas_depuis_toutes_les_applications">tutoriel:acceder_a_votre_nas_depuis_toutes_les_applications</a><span class="sum">
+ – [Pré-requis] </span>
+<span class="user">
+<bdo dir="ltr">88.183.61.160</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:compiler_linux" class="icon" /><span class="date">
+Le 16/05/2015, 18:43</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/compiler_linux?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/compiler_linux?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/compiler_linux" class="wikilink1" title="tutoriel:compiler_linux">tutoriel:compiler_linux</a><span class="sum">
+ – [Introduction] </span>
+<span class="user">
+<bdo dir="ltr">78.235.210.106</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:modifier_ordre_amorcage_du_bios" class="icon" /><span class="date">
+Le 16/05/2015, 13:48</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/modifier_ordre_amorcage_du_bios?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/modifier_ordre_amorcage_du_bios?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/modifier_ordre_amorcage_du_bios" class="wikilink1" title="tutoriel:modifier_ordre_amorcage_du_bios">tutoriel:modifier_ordre_amorcage_du_bios</a><span class="sum">
+ – [Mettez l'ordinateur sous tension] </span>
+<span class="user">
+<bdo dir="ltr">82.243.167.92</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:comment_mettre_en_place_un_controle_parental" class="icon" /><span class="date">
+Le 15/05/2015, 15:05</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_un_controle_parental?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="comment_mettre_en_place_un_controle_parental?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="comment_mettre_en_place_un_controle_parental" class="wikilink1" title="tutoriel:comment_mettre_en_place_un_controle_parental">tutoriel:comment_mettre_en_place_un_controle_parental</a><span class="sum">
+ – [dnsmasq et blacklist de l'université de Toulouse] </span>
+<span class="user">
+<bdo dir="ltr">82.254.230.48</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:demarrer_un_projet_web_avec_symfony" class="icon" /><span class="date">
+Le 14/05/2015, 13:24</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/demarrer_un_projet_web_avec_symfony?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/demarrer_un_projet_web_avec_symfony?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/demarrer_un_projet_web_avec_symfony" class="wikilink1" title="tutoriel:demarrer_un_projet_web_avec_symfony">tutoriel:demarrer_un_projet_web_avec_symfony</a><span class="sum">
+ – [Configurer un domaine local virtuel] correction orthographique</span>
+<span class="user">
+<bdo dir="ltr">86.74.148.126</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:comment_modifier_sources_maj" class="icon" /><span class="date">
+Le 13/05/2015, 23:54</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj" class="wikilink1" title="tutoriel:comment_modifier_sources_maj">tutoriel:comment_modifier_sources_maj</a><span class="sum">
+ – [Ajout du dépôt partenaire Canonical] MAJ de version</span>
+<span class="user">
+<bdi>cafecho</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:script_shell" class="icon" /><span class="date">
+Le 12/05/2015, 21:51</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/script_shell?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/script_shell?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="script_shell" class="wikilink1" title="tutoriel:script_shell">tutoriel:script_shell</a><span class="sum">
+ – [Les différents types de shells] </span>
+<span class="user">
+<bdo dir="ltr">213.245.83.187</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:comment_redemarrer_le_serveur_graphique" class="icon" /><span class="date">
+Le 11/05/2015, 19:13</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_redemarrer_le_serveur_graphique?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_redemarrer_le_serveur_graphique?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/comment_redemarrer_le_serveur_graphique" class="wikilink1" title="tutoriel:comment_redemarrer_le_serveur_graphique">tutoriel:comment_redemarrer_le_serveur_graphique</a><span class="sum">
+ – modif de forme</span>
+<span class="user">
+<bdi>fodoc22</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:lorsque_le_systeme_gele" class="icon" /><span class="date">
+Le 11/05/2015, 18:42</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/lorsque_le_systeme_gele?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/lorsque_le_systeme_gele?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="lorsque_le_systeme_gele" class="wikilink1" title="tutoriel:lorsque_le_systeme_gele">tutoriel:lorsque_le_systeme_gele</a><span class="sum">
+ – reformulation</span>
+<span class="user">
+<bdi>fodoc22</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:raid10" class="icon" /><span class="date">
+Le 09/05/2015, 16:37</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/raid10?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/raid10?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="raid10" class="wikilink1" title="tutoriel:raid10">tutoriel:raid10</a><span class="sum">
+ – [Mise en place du RAID-1] </span>
+<span class="user">
+<bdo dir="ltr">46.246.70.202</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:reverse_ssh" class="icon" /><span class="date">
+Le 06/05/2015, 15:18</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/reverse_ssh?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/reverse_ssh?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/reverse_ssh" class="wikilink1" title="tutoriel:reverse_ssh">tutoriel:reverse_ssh</a><span class="sum">
+ – [Connexion par un serveur tiers] </span>
+<span class="user">
+<bdo dir="ltr">88.177.53.158</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:monter_un_volume_automatiquement" class="icon" /><span class="date">
+Le 06/05/2015, 09:09</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/monter_un_volume_automatiquement?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/monter_un_volume_automatiquement?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="monter_un_volume_automatiquement" class="wikilink1" title="tutoriel:monter_un_volume_automatiquement">tutoriel:monter_un_volume_automatiquement</a><span class="sum">
+ – [Quels volumes monter automatiquement avec Ubuntu ? Lesquels laisser avec le comportement par défaut (montage dynamique) ?]  </span>
+<span class="user">
+<bdi>bcag2</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:creer_un_miroir_de_depot_local" class="icon" /><span class="date">
+Le 05/05/2015, 14:04</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/creer_un_miroir_de_depot_local?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/creer_un_miroir_de_depot_local?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/creer_un_miroir_de_depot_local" class="wikilink1" title="tutoriel:creer_un_miroir_de_depot_local">tutoriel:creer_un_miroir_de_depot_local</a><span class="sum">
+ – [Installation de « apt-mirror »] </span>
+<span class="user">
+<bdo dir="ltr">86.199.94.33</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:installation_sur_disque_usb" class="icon" /><span class="date">
+Le 05/05/2015, 00:20</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/installation_sur_disque_usb?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/installation_sur_disque_usb?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installation_sur_disque_usb" class="wikilink1" title="tutoriel:installation_sur_disque_usb">tutoriel:installation_sur_disque_usb</a><span class="sum">
+ – [Installation d'Ubuntu sur un disque USB] </span>
+<span class="user">
+<bdo dir="ltr">78.250.55.117</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:dossier_de_partage" class="icon" /><span class="date">
+Le 04/05/2015, 16:27</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/dossier_de_partage?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/dossier_de_partage?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="dossier_de_partage" class="wikilink1" title="tutoriel:dossier_de_partage">tutoriel:dossier_de_partage</a><span class="sum">
+ – [Modification du masque utilisateur par défaut] </span>
+<span class="user">
+<bdi>bcag2</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:comment_modifier_un_fichier" class="icon" /><span class="date">
+Le 04/05/2015, 13:54</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_un_fichier?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_un_fichier?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">tutoriel:comment_modifier_un_fichier</a><span class="sum">
+ – [Comment modifier un fichier ?] </span>
+<span class="user">
+<bdi>moissan</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:comment_utiliser_fichier_zvr" class="icon" /><span class="date">
+Le 03/05/2015, 16:49</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_utiliser_fichier_zvr?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_utiliser_fichier_zvr?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/comment_utiliser_fichier_zvr" class="wikilink1" title="tutoriel:comment_utiliser_fichier_zvr">tutoriel:comment_utiliser_fichier_zvr</a><span class="sum">
+ – Maj de la page (fait les test le convertisseur en wav)</span>
+<span class="user">
+<bdi>L&#039;Africain</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:sauvegarder_home" class="icon" /><span class="date">
+Le 03/05/2015, 14:04</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_home?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_home?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="sauvegarder_home" class="wikilink1" title="tutoriel:sauvegarder_home">tutoriel:sauvegarder_home</a><span class="sum">
+ – [Détails] màj chemin vers keyrings</span>
+<span class="user">
+<bdi>mohican</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:securiser_ubuntu_avec_peripherique_externe" class="icon" /><span class="date">
+Le 03/05/2015, 00:22</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/securiser_ubuntu_avec_peripherique_externe?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/securiser_ubuntu_avec_peripherique_externe?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/securiser_ubuntu_avec_peripherique_externe" class="wikilink1" title="tutoriel:securiser_ubuntu_avec_peripherique_externe">tutoriel:securiser_ubuntu_avec_peripherique_externe</a><span class="sum">
+ – [Etape 2 : Préparer la séquence de démarrage] </span>
+<span class="user">
+<bdi>tuxmouraille</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:imprimante_canon_lbp800" class="icon" /><span class="date">
+Le 01/05/2015, 20:56</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/imprimante_canon_lbp800?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/imprimante_canon_lbp800?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/imprimante_canon_lbp800" class="wikilink1" title="tutoriel:imprimante_canon_lbp800">tutoriel:imprimante_canon_lbp800</a><span class="sum">
+ – créée déplacement de matériel vers tutoriel</span>
+<span class="user">
+<bdi>L&#039;Africain</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:reactver_hibernation" class="icon" /><span class="date">
+Le 30/04/2015, 22:05</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/reactver_hibernation?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/reactver_hibernation?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="reactver_hibernation" class="wikilink1" title="tutoriel:reactver_hibernation">tutoriel:reactver_hibernation</a><span class="sum">
+ – ancienne révision (Le 27/05/2014, 12:01) restaurée</span>
+<span class="user">
+<bdo dir="ltr">90.38.148.231</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:boot-info" class="icon" /><span class="date">
+Le 28/04/2015, 06:44</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/boot-info?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="boot-info?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="boot-info" class="wikilink1" title="tutoriel:boot-info">tutoriel:boot-info</a><span class="sum">
+ – [Méthode alternative: depuis Boot-Repair-Disk] </span>
+<span class="user">
+<bdo dir="ltr">78.250.201.232</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:utilisation_avancee_du_clavier" class="icon" /><span class="date">
+Le 28/04/2015, 04:41</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/utilisation_avancee_du_clavier?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/utilisation_avancee_du_clavier?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="utilisation_avancee_du_clavier" class="wikilink1" title="tutoriel:utilisation_avancee_du_clavier">tutoriel:utilisation_avancee_du_clavier</a><span class="sum">
+ – [XFCE] </span>
+<span class="user">
+<bdi>hibou7</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:comment_installer_imprimante_reseau_brother_dcp" class="icon" /><span class="date">
+Le 27/04/2015, 22:23</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_installer_imprimante_reseau_brother_dcp?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_installer_imprimante_reseau_brother_dcp?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/comment_installer_imprimante_reseau_brother_dcp" class="wikilink1" title="tutoriel:comment_installer_imprimante_reseau_brother_dcp">tutoriel:comment_installer_imprimante_reseau_brother_dcp</a><span class="sum">
+ – [Téléchargez les pilotes (drivers) depuis le site Brother Solutions] </span>
+<span class="user">
+<bdo dir="ltr">81.49.164.249</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:installer_imprimante_lexmark" class="icon" /><span class="date">
+Le 24/04/2015, 18:01</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/installer_imprimante_lexmark?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/installer_imprimante_lexmark?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installer_imprimante_lexmark" class="wikilink1" title="tutoriel:installer_imprimante_lexmark">tutoriel:installer_imprimante_lexmark</a><span class="sum">
+ – </span>
+<span class="user">
+<bdi>L&#039;Africain</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:pilote_lexmarkz08" class="icon" /><span class="date">
+Le 24/04/2015, 18:00</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/pilote_lexmarkz08?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/pilote_lexmarkz08?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/pilote_lexmarkz08" class="wikilink1" title="tutoriel:pilote_lexmarkz08">tutoriel:pilote_lexmarkz08</a><span class="sum">
+ – </span>
+<span class="user">
+<bdi>L&#039;Africain</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:lubuntu_usb_creator" class="icon" /><span class="date">
+Le 22/04/2015, 18:12</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/lubuntu_usb_creator?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/lubuntu_usb_creator?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/lubuntu_usb_creator" class="wikilink1" title="tutoriel:lubuntu_usb_creator">tutoriel:lubuntu_usb_creator</a><span class="sum">
+ – liens vers forum</span>
+<span class="user">
+<bdi>lenainjaune</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:completer_installation_ubuntu" class="icon" /><span class="date">
+Le 20/04/2015, 15:23</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/completer_installation_ubuntu?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/completer_installation_ubuntu?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="completer_installation_ubuntu" class="wikilink1" title="tutoriel:completer_installation_ubuntu">tutoriel:completer_installation_ubuntu</a><span class="sum">
+ – ancienne révision (Le 10/01/2015, 11:16) restaurée</span>
+<span class="user">
+<bdo dir="ltr">90.50.249.251</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:convertir_des_images_cd" class="icon" /><span class="date">
+Le 19/04/2015, 11:30</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/convertir_des_images_cd?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/convertir_des_images_cd?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/convertir_des_images_cd" class="wikilink1" title="tutoriel:convertir_des_images_cd">tutoriel:convertir_des_images_cd</a><span class="sum">
+ – [Images DiskCopy (.dmg)] </span>
+<span class="user">
+<bdo dir="ltr">192.159.166.92</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:regler_le_volume_sonore" class="icon" /><span class="date">
+Le 18/04/2015, 17:56</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/regler_le_volume_sonore?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/regler_le_volume_sonore?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="regler_le_volume_sonore" class="wikilink2" title="tutoriel:regler_le_volume_sonore" rel="nofollow">tutoriel:regler_le_volume_sonore</a><span class="sum">
+ – Page transférée à sa place :gnome-alsamixer</span>
+<span class="user">
+<bdi>cafecho</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:installer_imprimante_ricoh" class="icon" /><span class="date">
+Le 17/04/2015, 14:17</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/installer_imprimante_ricoh?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/installer_imprimante_ricoh?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/installer_imprimante_ricoh" class="wikilink1" title="tutoriel:installer_imprimante_ricoh">tutoriel:installer_imprimante_ricoh</a><span class="sum">
+ – </span>
+<span class="user">
+<bdi>L&#039;Africain</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:deplacer_home" class="icon" /><span class="date">
+Le 17/04/2015, 10:01</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/deplacer_home?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/deplacer_home?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/tutoriel/deplacer_home" class="wikilink1" title="tutoriel:deplacer_home">tutoriel:deplacer_home</a><span class="sum">
+ – utilise Disque intégré</span>
+<span class="user">
+<bdi>ekimia</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="http://doc.ubuntu-fr.org/lib/images/fileicons//png.png" alt="tutoriel:luc_synoptic.png" class="icon" /><span class="date">
+Le 14/04/2015, 21:42</span>
+<img src="http://doc.ubuntu-fr.org/lib/images/blank.gif" width="15" height="11" alt="" /><a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?tab_details=history&amp;image=tutoriel%3Aluc_synoptic.png&amp;ns=tutoriel&amp;do=media">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a class="wikilink1" href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?tab_details=view&amp;image=tutoriel%3Aluc_synoptic.png&amp;ns=tutoriel&amp;do=media">
+tutoriel:luc_synoptic.png</a>
+<span class="sum">
+ – créée</span>
+<span class="user">
+<bdi>lenainjaune</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:comment_ajouter_machine_ubuntu_dans_domaine_active_directory" class="icon" /><span class="date">
+Le 14/04/2015, 08:27</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_ajouter_machine_ubuntu_dans_domaine_active_directory?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_ajouter_machine_ubuntu_dans_domaine_active_directory?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="comment_ajouter_machine_ubuntu_dans_domaine_active_directory" class="wikilink1" title="tutoriel:comment_ajouter_machine_ubuntu_dans_domaine_active_directory">tutoriel:comment_ajouter_machine_ubuntu_dans_domaine_active_directory</a><span class="sum">
+ – [PAM] </span>
+<span class="user">
+<bdo dir="ltr">212.203.82.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="../lib/images/fileicons/file.png" alt="tutoriel:grub2_lancer_des_images_iso" class="icon" /><span class="date">
+Le 13/04/2015, 09:14</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/grub2_lancer_des_images_iso?do=diff">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="grub2_lancer_des_images_iso?do=revisions">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a href="grub2_lancer_des_images_iso" class="wikilink1" title="tutoriel:grub2_lancer_des_images_iso">tutoriel:grub2_lancer_des_images_iso</a><span class="sum">
+ – [Parted Magic] </span>
+<span class="user">
+<bdo dir="ltr">88.219.231.202</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<img src="http://doc.ubuntu-fr.org/lib/images/fileicons//png.png" alt="tutoriel:controleur_volume.png" class="icon" /><span class="date">
+Le 12/04/2015, 18:09</span>
+<a class="diff_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?tab_details=history&amp;mediado=diff&amp;image=tutoriel%3Acontroleur_volume.png&amp;ns=tutoriel&amp;do=media">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a class="revisions_link" href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?tab_details=history&amp;image=tutoriel%3Acontroleur_volume.png&amp;ns=tutoriel&amp;do=media">
+<img src="http://doc.ubuntu-fr.org/lib/images/history.png" width="12" height="14" title="Anciennes révisions" alt="Anciennes révisions"/>
+</a>
+<a class="wikilink1" href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?tab_details=view&amp;image=tutoriel%3Acontroleur_volume.png&amp;ns=tutoriel&amp;do=media">
+tutoriel:controleur_volume.png</a>
+<span class="sum">
+ – </span>
+<span class="user">
+<bdi>cafecho</bdi></span>
+</div>
+</li>
+</ul>
+<div class="pagenav">
+<div class="pagenav-next">
+<input type="submit" name="first[40]" value="Moins récent &gt;&gt;" accesskey="p" title="Moins récent &gt;&gt; [P]" class="button show"/>
+</div>
+</div>
+</div></form>
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

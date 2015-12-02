@@ -1,0 +1,559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:comment_mettre_en_place_une_station_cliente_legere - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-04-10T23:09:49+0200"/>
+<meta name="keywords" content="breezy,tutoriel,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_une_station_cliente_legere?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_une_station_cliente_legere?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/comment_mettre_en_place_une_station_cliente_legere"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/comment_mettre_en_place_une_station_cliente_legere"/>
+<link rel="canonical" href="comment_mettre_en_place_une_station_cliente_legere"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_mettre_en_place_une_station_cliente_legere","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="comment_mettre_en_place_une_station_cliente_legere#main" tabindex="1">Contenu</a> | <a href="comment_mettre_en_place_une_station_cliente_legere#qsearch__in" tabindex="2">Rechercher</a> | <a href="comment_mettre_en_place_une_station_cliente_legere#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="comment_mettre_en_place_une_station_cliente_legere" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="comment_mettre_en_place_une_station_cliente_legere" >tutoriel:comment_mettre_en_place_une_station_cliente_legere</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#qu_est_ce_qu_une_station_cliente_legere">Qu&#039;est ce qu&#039;une station cliente légère ?</a></div></li>
+<li class="level1"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#comment_fonctionne_une_station_cliente">Comment fonctionne une station cliente ?</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#reponse_basique">Réponse basique</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#reponse_technique">Réponse technique</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#prerequis">Prérequis</a></div></li>
+<li class="level1"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#pour_commencer">Pour commencer</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#parametrer_le_serveur_dhcp">Paramétrer le serveur DHCP</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#construction_de_l_environnement_d_execution_du_client_leger">Construction de l‘environnement d‘exécution du client léger</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#verifier_le_fichier_de_configuration_ssh_known_hosts">Vérifier le fichier de configuration « ssh_known_hosts »</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#creer_eventuellement_le_fichieroptltspi386etcltsconf">Créer éventuellement le fichier /opt/ltsp/i386/etc/lts.conf.</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#lancer_le_client_par_pxe_et_observer_le_resultat">5.      Lancer le client par PXE et observer le résultat.</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#connectez-vous_avec_un_identifiant_autorise_pour_la_connexion_ssh_a_distance">6.      Connectez-vous avec un identifiant autorisé pour la connexion ssh à distance</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#trucs_astuces">Trucs &amp; Astuces</a></div></li>
+<li class="level1"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#bogue_signale">Bogue signalé</a></div></li>
+<li class="level1"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#cas_d_une_station_cliente_nat">Cas d&#039;une station cliente NAT</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#prerequis1">Prérequis :</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_une_station_cliente_legere#pour_commencer1">Pour commencer</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../breezy" class="wikilink1" title="breezy" rel="tag">Breezy</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_mettre_en_place_une_station_cliente_legere">Comment mettre en place une station cliente légère ?</h1>
+<div class="level1">
+
+<p>
+NOTE IMPORTANTE : le logiciel dont il est ici question est en pré-version. Vous pourriez donc ne pas en être pleinement satisfait… tant que vous n&#039;aurez pas vous-même participé à son déboguage. Si vous recherchez une solution plus stable, reportez-vous au site du <a href="http://www.ltsp.org" class="urlextern" title="http://www.ltsp.org"  rel="nofollow">Linux Terminal Server Project</a>, ou au <a href="../ltsp" class="wikilink1" title="ltsp">tutoriel LTSP</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Comment mettre en place une station cliente légère ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="42-470" /><input type="submit" value="Modifier" class="button" title="Comment mettre en place une station cliente légère ?" /></div></form></div>
+<h2 class="sectionedit2" id="qu_est_ce_qu_une_station_cliente_legere">Qu&#039;est ce qu&#039;une station cliente légère ?</h2>
+<div class="level2">
+
+<p>
+D&#039;un point de vue utilisateur, une station cliente ressemble à un ordinateur de bureau banal. Pour l&#039;administrateur en revanche, une station cliente est synonyme de machine dépourvue de capacité de stockage, facile à gérer, et pouvant offrir à l&#039;utilisateur un certain confort informatique même avec du matériel ancien.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Qu'est ce qu'une station cliente légère ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="471-856" /><input type="submit" value="Modifier" class="button" title="Qu'est ce qu'une station cliente légère ?" /></div></form></div>
+<h2 class="sectionedit3" id="comment_fonctionne_une_station_cliente">Comment fonctionne une station cliente ?</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Comment fonctionne une station cliente ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="857-910" /><input type="submit" value="Modifier" class="button" title="Comment fonctionne une station cliente ?" /></div></form></div>
+<h3 class="sectionedit4" id="reponse_basique">Réponse basique</h3>
+<div class="level3">
+
+<p>
+Les stations clientes se contentent de charger en mémoire un système d&#039;exploitation réduit et de se connecter ensuite à un serveur. Les applications s&#039;exécutent sur le serveur mais s&#039;affichent sur l&#039;écran de la station cliente.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Réponse basique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="911-1174" /><input type="submit" value="Modifier" class="button" title="Réponse basique" /></div></form></div>
+<h3 class="sectionedit5" id="reponse_technique">Réponse technique</h3>
+<div class="level3">
+
+<p>
+Séquence de démarrage (d&#039;un point de vue station cliente) : la station cliente peut soit disposer d&#039;un noyau sur un média de stockage local, soit le charger depuis le serveur au travers du réseau (en utilisant les instructions appropriés, il est possible de charger le noyau linux depuis un serveur au travers d&#039;une carte réseau de démarrage. Ainsi, la station cliente n&#039;a plus besoin de stocker quoi que ce soit, si ce n&#039;est sur la mémoire morte de la carte réseau.)
+</p>
+<ul>
+<li class="level1"><div class="li"> Séquence de démarrage -</div>
+</li>
+</ul>
+
+<p>
+La carte réseau PXE lance une requête <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> sur le réseau local. Le serveur <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> répond en indiquant à la carte où se trouve le noyau linux. Le noyau est alors chargé au travers du réseau via le protocole TFTP.
+</p>
+
+<p>
+Une fois le noyau chargé, il est exécuté, et la machine démarre sous linux. <code>initramfs</code> est chargé avec le noyau linux et il est monté comme système de fichiers <code>root</code>. Ceci procure automatiquement les pilotes nécessaires pour la carte réseau, la souris, le clavier, etc… Une fois le pilote de carte réseau chargé en mémoire, une seconde requête <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> fournit aux clients les informations comme l&#039;adresse IP, le masque réseau, la passerelle, le serveur <abbr title="Domain Name System">DNS</abbr> et le point de montage root <abbr title="Network File System">NFS</abbr> (Network File System) .
+</p>
+
+<p>
+Le noyau linux exécute <code>ubuntu initramfs</code>, qui monte le système de fichiers root partagé du serveur, sur la machine cliente, en lecture seule. La station cliente a donc alors un noyau linux de démarrage, un système de fichiers <code>root</code>, comme un vrai système Linux. A partir de maintenant, quand nous parlerons du système de fichiers de la station client, il s&#039;agira en fait du système de fichiers root du serveur monté en lecture seule. Le système de fichiers <code>root</code> monté par la station cliente est différent du système de fichiers root que le serveur utilise lui-même, mais il est conçu spécialement pour les stations clientes, et il est partagé entre toutes celles connectées au serveur (il est situé dans le répertoire /opt/ltsp/&lt;arch&gt; sur le serveur) . <code>initramfs</code> appelle le programme <code>init</code>, les paramètres du serveur X sont autodéctées et le gestionnaire de connexion <code>ubuntu breezy ltsp</code>, que l&#039;on appelle <code>ldm</code> est exécuté.
+</p>
+
+<p>
+- X nuts and bolts -
+</p>
+
+<p>
+Une fois connecté, <code>ldm</code> crée un tunnel <code>ssh</code> et démarre une session X sur le serveur avec affichage sur les stations clientes via le tunnel. L&#039;utilisation de <code>ssh</code> procure des avantages : vous n&#039;avez pas à configurer le serveur X sur la station cliente,  et aucun transport de données par protocole <code>tcp</code> non sécurisé n&#039;est initialisée, comme cela pouvait l&#039;être auparavant avec <code>ltsp</code>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Réponse technique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1175-3869" /><input type="submit" value="Modifier" class="button" title="Réponse technique" /></div></form></div>
+<h2 class="sectionedit6" id="prerequis">Prérequis</h2>
+<div class="level2">
+
+<p>
+Il vous faut avant tout :
+</p>
+<ul>
+<li class="level1"><div class="li"> Une machine sous <code>Ubuntu Breezy 5.10</code> qui jouera le rôle de serveur,</div>
+</li>
+<li class="level2"><div class="li"> au moins une machine avec démarrage <code>PXE</code> qui jouera le rôle du client,</div>
+</li>
+<li class="level2"><div class="li"> un espace libre sur le disque dur,</div>
+</li>
+<li class="level2"><div class="li"> un connexion internet rapide, un mirroir local pour <code>Breezy</code>, ou beaucoup de patience,</div>
+</li>
+<li class="level2"><div class="li"> un serveur <code><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></code> capable de supporter des clients <code>PXE</code>, ou un segment de réseau séparé où vous pouvez lancer un serveur <code><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></code> dédié,</div>
+</li>
+<li class="level2"><div class="li"> une certaine aisance avec la ligne de commande,</div>
+</li>
+<li class="level2"><div class="li"> un certain goût du risque,</div>
+</li>
+<li class="level2"><div class="li"> et un désir brûlant d&#039;envoyer vos commentaires aux développeurs d&#039;Ubuntu !</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Prérequis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3870-4543" /><input type="submit" value="Modifier" class="button" title="Prérequis" /></div></form></div>
+<h2 class="sectionedit7" id="pour_commencer">Pour commencer</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Pour commencer] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4544-4571" /><input type="submit" value="Modifier" class="button" title="Pour commencer" /></div></form></div>
+<h3 class="sectionedit8" id="parametrer_le_serveur_dhcp">Paramétrer le serveur DHCP</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="si_vous_disposez_deja_d_un_serveur_dhcp_avec_prise_en_charge_des_clients_pxe">Si vous disposez déjà d&#039;un serveur DHCP avec prise en charge des clients PXE</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Le configurer de façon à obtenir un fichier de démarrage <code>/ltsp/pxelinux.0</code> et un chemin root vers <code>/opt/ltsp/i386</code>.</div>
+</li>
+</ul>
+
+<p>
+    (Pour les versions supérieures à Breezy, le chemin de pxelinux.0 à spécifier est <code>/ltsp/i386/pxelinux.0</code>).
+</p>
+<ul>
+<li class="level1"><div class="li"> Avec ISC DHCPD, utiliser les options suivantes :<pre class="file">  filename &quot;/ltsp/pxelinux.0&quot;;
+  option root-path &quot;/opt/ltsp/i386&quot;;</pre>
+</div>
+</li>
+<li class="level5"><div class="li"> <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installer le paquet</a> <strong>ltsp-server</strong> sur le serveur.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="si_vous_souhaitez_un_serveur_dhcp_dedie">Si vous souhaitez un serveur DHCP dédié</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installer le paquet</a> <strong>ltsp-server-standalone</strong> sur le serveur.</div>
+</li>
+<li class="level1"><div class="li"> Si besoin, adapter le fichier de configuration « /etc/ltsp/dhcpd.conf » (configuré par défaut pour un serveur d&#039;adresse IP 192.168.0.1 relié à des clients &#039;PXE&#039;)</div>
+</li>
+<li class="level1"><div class="li"> Si un firewall est présent sur le serveur, il vous faudra autoriser <code>TFTP</code> et <code><abbr title="Network File System">NFS</abbr></code> (et <code><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></code> si vous exécutez un serveur standalone). Assurez-vous également que <code>portmap</code> n&#039;est pas limité à l&#039;interface de bouclage (loopback) dans /etc/default/portmap (commentez la ligne &quot;-i 127.0.0.1&quot; si elle existe). Editez éventuellement `/etc/hosts.allow&#039; pour limiter l&#039;accès à portmap, rpc.mountd, rpc.statd, et in.tftpd, uniquement depuis le réseau local :<pre class="file">
+  portmap:    192.168.0.0/24
+  rpc.mountd: 192.168.0.0/24
+  rpc.statd:  192.168.0.0/24
+  in.tftpd:   192.168.0.0/24</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Relancer le sous-système <code>nfs</code> :<pre class="code">  sudo invoke-rc.d nfs-kernel-server restart 
+  sudo invoke-rc.d nfs-common restart
+  sudo invoke-rc.d portmap restart</pre>
+</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Paramétrer le serveur DHCP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4572-6292" /><input type="submit" value="Modifier" class="button" title="Paramétrer le serveur DHCP" /></div></form></div>
+<h3 class="sectionedit9" id="construction_de_l_environnement_d_execution_du_client_leger">Construction de l‘environnement d‘exécution du client léger</h3>
+<div class="level3">
+<pre class="code">sudo ltsp-build-client </pre>
+<ul>
+<li class="level1"><div class="li"> Ce script est prévu pour fonctionner avec un mirroir spécial Ubuntu. Mais vous pouvez également le modifier si vous avez un miroir plus proche ou un cédérom :</div>
+</li>
+</ul>
+<pre class="code">sudo ltsp-build-client --mirror [WWW] file://cdrom</pre>
+
+<p>
+en n&#039;oubliant pas de copier les sources.list du serveur en chroot. Soyez patient, selon la vitesse de votre connexion Internet et la puissance de  votre serveur, la construction peut prendre plusieurs minutes …
+</p>
+
+<p>
+<p><div class="noteimportant">Attention : si vous avez modifié les paramètres de dépendances d<code>&#039;apt</code> pour que les paquets recommandés ne soient pas sélectionnés automatiquement, il vous manquera certains paquets avec le script. Aucune connexion avec <code>sdm</code> ne sera alors possible puisque certains composants du serveur X seront manquants.
+</div></p>
+</p>
+<pre class="code">apt-get install openssh-server 
+sudo ltsp-update-sshkeys</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Construction de l‘environnement d‘exécution du client léger] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6293-7239" /><input type="submit" value="Modifier" class="button" title="Construction de l‘environnement d‘exécution du client léger" /></div></form></div>
+<h3 class="sectionedit10" id="verifier_le_fichier_de_configuration_ssh_known_hosts">Vérifier le fichier de configuration « ssh_known_hosts »</h3>
+<div class="level3">
+
+<p>
+Pensez à consulter le fichier « /opt/ltsp/i386/etc/ssh/ssh_known_hosts » et assurez-vous que votre nom d&#039;hôte est bien associé à l&#039;adresse IP. Selon la configuration spécifiée dans le fichier « /etc/hosts », il se peut que cette association soit automatique. Si le contenu du fichier ressemble à :
+</p>
+<pre class="code">servername ssh-rsa AAAAB3NzaC1yc2EAAAABI...</pre>
+
+<p>
+…ajouter alors l&#039;adresse IP de la façon suivante :
+</p>
+<pre class="code">servername,192.168.0.1 ssh-rsa AAAAB3NzaC1yc2EAAAABI...</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Vérifier le fichier de configuration « ssh_known_hosts »] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7240-7781" /><input type="submit" value="Modifier" class="button" title="Vérifier le fichier de configuration « ssh_known_hosts »" /></div></form></div>
+<h3 class="sectionedit11" id="creer_eventuellement_le_fichieroptltspi386etcltsconf">Créer éventuellement le fichier /opt/ltsp/i386/etc/lts.conf.</h3>
+<div class="level3">
+
+<p>
+Dans le cas contraire, les valeurs par défaut seront utilisées.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Créer éventuellement le fichier /opt/ltsp/i386/etc/lts.conf.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7782-7922" /><input type="submit" value="Modifier" class="button" title="Créer éventuellement le fichier /opt/ltsp/i386/etc/lts.conf." /></div></form></div>
+<h3 class="sectionedit12" id="lancer_le_client_par_pxe_et_observer_le_resultat">5.      Lancer le client par PXE et observer le résultat.</h3>
+<div class="level3">
+
+<p>
+Si tout se passe bien, vous devriez avoir une ouverture de session en mode graphique.
+</p>
+
+<p>
+Si votre station client est dépourvue de carte réseau PXE, vous pouvez créer un cédérom ou une disquette de démarrage via <a href="http://www.rom-o-matic.net/" class="urlextern" title="http://www.rom-o-matic.net/"  rel="nofollow">le site ROM-o-matic.net</a>. Graver alors l&#039;image iso ou enregistrer l&#039;image disquette, et démarrer à partir du média créé.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[5.      Lancer le client par PXE et observer le résultat.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7923-8368" /><input type="submit" value="Modifier" class="button" title="5.      Lancer le client par PXE et observer le résultat." /></div></form></div>
+<h3 class="sectionedit13" id="connectez-vous_avec_un_identifiant_autorise_pour_la_connexion_ssh_a_distance">6.      Connectez-vous avec un identifiant autorisé pour la connexion ssh à distance</h3>
+<div class="level3">
+
+<p>
+et observez le résultat. Si tout fonctionne correctement, vous devriez maintenant être dans une session de travail sur le serveur.
+</p>
+
+</div>
+
+<h5 id="et_pour_terminer_envoyez_un_courriel_aux_developpeurs_d_ubuntu_pour_partager_vos_decouvertes">...et pour terminer... envoyez un courriel aux développeurs d&#039;Ubuntu pour partager vos découvertes !</h5>
+<div class="level5">
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[6.      Connectez-vous avec un identifiant autorisé pour la connexion ssh à distance] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8369-8709" /><input type="submit" value="Modifier" class="button" title="6.      Connectez-vous avec un identifiant autorisé pour la connexion ssh à distance" /></div></form></div>
+<h2 class="sectionedit14" id="trucs_astuces">Trucs &amp; Astuces</h2>
+<div class="level2">
+
+<p>
+Si vous utilisez un serveur <code><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></code> dédié sur lequel vous ne souhaitez pas installer LTSP, vous pouvez vous contenter de rediriger la station cliente vers un serveur différent.
+</p>
+
+<p>
+Dans le fichier de configuration du serveur <code><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></code>, <code>dhcpd.conf</code>:
+</p>
+<pre class="code">next-server 192.168.0.3; </pre>
+
+<p>
+où 192.168.0.3 est l&#039;adresse de votre serveur LTSP.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Trucs &amp; Astuces] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8710-9075" /><input type="submit" value="Modifier" class="button" title="Trucs &amp; Astuces" /></div></form></div>
+<h2 class="sectionedit15" id="bogue_signale">Bogue signalé</h2>
+<div class="level2">
+
+<p>
+* Bogue 19407: OpenSSH semble ne pas attribuer correctement les ports pour faire du X forwarding, ce qui empêche de se déconnecter et de se reconnecter immédiatement après, si la prise en charge IPv6 est activée. Désactivez en ajoutant la ligne &quot;AddressFamily inet&quot; au fichier <code>/etc/ssh/sshd_config</code>, et relancez le démon <code>openssh</code>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Bogue signalé] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9076-9448" /><input type="submit" value="Modifier" class="button" title="Bogue signalé" /></div></form></div>
+<h2 class="sectionedit16" id="cas_d_une_station_cliente_nat">Cas d&#039;une station cliente NAT</h2>
+<div class="level2">
+
+<p>
+Ce tutoriel est en fait la synthèse d&#039;informations diverses sur le partage d&#039;une connexion internet entre un serveur et ses stations clientes. The latter will act as <abbr title="Network Address Translation">NAT</abbr>/gateway.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Cas d'une station cliente NAT] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9449-9672" /><input type="submit" value="Modifier" class="button" title="Cas d'une station cliente NAT" /></div></form></div>
+<h3 class="sectionedit17" id="prerequis1">Prérequis :</h3>
+<div class="level3">
+
+<p>
+Vous aurez besoin de :
+</p>
+<ul>
+<li class="level1"><div class="li"> un poste client serveur entièrement configuré, disposant d&#039;au moins deux interfaces réseaux, la première connectée à internet, la seconde connectée au réseau interne. Pour les étapes suivantes, nous supposerons que votre serveur est également configuré en <code>gateway</code> réseau. </div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Prérequis :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9673-10017" /><input type="submit" value="Modifier" class="button" title="Prérequis :" /></div></form></div>
+<h3 class="sectionedit18" id="pour_commencer1">Pour commencer</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Vérifier que les 2 interfaces sont bien configurées dans « /etc/network/interfaces »,</div>
+</li>
+<li class="level1"><div class="li"> Vérifier avec la commande <code>ifconfig</code> qu&#039;elles sont toutes deux actives,</div>
+</li>
+<li class="level1"><div class="li"> Assurez-vous que le serveur peut se connecter à internet.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic">Remarque : les étapes décrites ci-dessus sont très importantes ! Prenez le soin de procéder à toutes ces vérifications, ceci vous épargnera bien des tracas pour la suite. Si vous n&#039;êtes pas sûrs des paramètres réseau, adressez-vous à l&#039;administrateur de votre réseau local.
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditer le fichier</a> <strong>/etc/network/options</strong> et autoriser l’<code>ip_forward</code>. Vous devriez obtenir ceci :</div>
+</li>
+</ul>
+<pre class="code">ip_forward=yes
+spoofprotect=yes
+syncookies=no</pre>
+
+<p>
+Puis lancer la commande suivante :
+</p>
+<pre class="code">sudo sh -c &#039;echo 1 &gt; /proc/sys/net/ipv4/ip_forward&#039;</pre>
+
+<p>
+pour autoriser immédiatement la fonction de redirection d&#039;IP du noyau.
+</p>
+<ul>
+<li class="level1"><div class="li"> Activer le masquage d&#039;adresse. Par défaut, le réseau ltsp utilise l&#039;adresse 192.168.0.0/24. N&#039;oubliez de la modifier pour être cohérent avec votre réseau, en utilisant la commande :</div>
+</li>
+</ul>
+<pre class="code">sudo iptables --table nat --append POSTROUTING --jump MASQUERADE  --source 192.168.0.0/24</pre>
+
+<p>
+pour autoriser <code><abbr title="Network Address Translation">NAT</abbr></code>.
+</p>
+<ul>
+<li class="level1"><div class="li"> Entrez votre login sur une des stations clientes et appréciez les joies de l&#039;internet. Si cette étape échoue, essayez de remplacer <code>–append</code> par <code>–delete</code> dans la commande ci-dessus.</div>
+</li>
+<li class="level2"><div class="li"> Pour fixer les règles <abbr title="Network Address Translation">NAT</abbr> d<code>&#039;iptables</code>, lancez les commandes suivantes :</div>
+</li>
+</ul>
+<pre class="code">sudo sh -c &#039;iptables-save &gt; /etc/ltsp/nat.conf&#039;</pre>
+<ul>
+<li class="level1"><div class="li"> <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditer le fichier</a> <strong>/etc/network/interfaces</strong> et ajouter la ligne suivante à l&#039;interface interne stanza :</div>
+</li>
+</ul>
+<pre class="code">up iptables-restore &lt; /etc/ltsp/nat.conf</pre>
+
+<p>
+Vous devriez obtenir l&#039;affichage suivant :
+</p>
+<pre class="code">auto eth1
+iface eth1 inet static
+      address 192.168.0.1
+      netmask 255.255.255.0
+      broadcast 192.168.0.255
+      network 192.168.0.0
+      up iptables-restore &lt; /etc/ltsp/nat.conf</pre>
+
+<p>
+pour vous assurez que les tables <code>nat</code> sont configurées correctement à chaque redémarrage.
+</p>
+<ul>
+<li class="level1"><div class="li"> Ensuite, il faut s&#039;assurer que le paramètre ip_forward qui a été autorisé (mis à &quot;1&quot;, voir plus haut) soit conservé après le redémarrage. Pour cela, <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditez le fichier</a> <strong>/etc/sysctl.conf</strong> et décommentez la ligne (en retirant le &quot;<strong>#</strong>):</div>
+</li>
+</ul>
+<pre class="code">  #net.ipv4.conf.default.forwarding=1   </pre>
+
+<p>
+Votre connexion internet sera maintenant également disponible après un redémarrage.
+</p>
+<hr />
+
+<p>
+<em>Contributeurs :   * <a href="https://wiki.ubuntu.com/ThinClientHowto" class="urlextern" title="https://wiki.ubuntu.com/ThinClientHowto"  rel="nofollow">Traduction et amélioration</a> par <a href="../utilisateurs/gauthier" class="wikilink1" title="utilisateurs:gauthier">Gauthier</a>.  * <a href="https://wiki.ubuntu.com/ThinClientHowto" class="urlextern" title="https://wiki.ubuntu.com/ThinClientHowto"  rel="nofollow">Persistence de l&#039;&quot;ip forwarding&quot; après redémarrage</a> par <a href="http://doc.ubuntu-fr.org/utilisateurs/vpxavier" class="wikilink1" title="utilisateurs:vpxavier">vpxavier</a>
+</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_une_station_cliente_legere"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1397164189" /><input type="hidden" name="summary" value="[Pour commencer] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10018-" /><input type="submit" value="Modifier" class="button" title="Pour commencer" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/9/95b4e17af512b99093aead3e60d1fba7.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_une_station_cliente_legere?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_une_station_cliente_legere?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_une_station_cliente_legere?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_une_station_cliente_legere?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_mettre_en_place_une_station_cliente_legere?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

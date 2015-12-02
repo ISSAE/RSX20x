@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:installation_ubuntu_8.04_plesk_9.5_freebox_hd - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2011-12-15T15:17:39+0100"/>
+<meta name="keywords" content="hardy,tutoriel,reseau,freebox,vetuste"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/installation_ubuntu_8.04_plesk_9.5_freebox_hd?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/installation_ubuntu_8.04_plesk_9.5_freebox_hd?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/installation_ubuntu_8.04_plesk_9.5_freebox_hd"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/installation_ubuntu_8.04_plesk_9.5_freebox_hd"/>
+<link rel="canonical" href="installation_ubuntu_8.04_plesk_9.5_freebox_hd"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:installation_ubuntu_8.04_plesk_9.5_freebox_hd","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="installation_ubuntu_8.04_plesk_9.5_freebox_hd#main" tabindex="1">Contenu</a> | <a href="installation_ubuntu_8.04_plesk_9.5_freebox_hd#qsearch__in" tabindex="2">Rechercher</a> | <a href="installation_ubuntu_8.04_plesk_9.5_freebox_hd#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="installation_ubuntu_8.04_plesk_9.5_freebox_hd" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="installation_ubuntu_8.04_plesk_9.5_freebox_hd" >tutoriel:installation_ubuntu_8.04_plesk_9.5_freebox_hd</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="tags"><span>
+	<a href="../hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="http://doc.ubuntu-fr.org/freebox" class="wikilink1" title="freebox" rel="tag">freebox</a>,
+	<a href="../vetuste" class="wikilink1" title="vetuste" rel="tag">vétuste</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_installer_ubuntu_804_lts_avec_plesk_95_connecte_a_une_freebox_hd">Comment installer Ubuntu 8.04 LTS avec plesk 9.5 connecté à une freebox HD ?</h1>
+<div class="level1">
+
+<p>
+<p><div class="noteimportant">
+Ce tuto s&#039;adresse à tout ceux qui se sont levé au beau matin et qui se sont dit 
+</p>
+
+<p>
+&quot;Tiens <img src="http://doc.ubuntu-fr.org/lib/images/smileys/icon_eek.gif" class="icon" alt="8-o" /> ! si je montais un serveur Ubuntu 8.04 avec plesk derrière ma Freebox hd ?!!&quot;
+
+</div></p>
+</p>
+
+<p>
+<p><div class="noteclassic">
+<strong>Se dont on a besoin pour tout ça…</strong>
+</p>
+
+<p>
+1 - Un cd/dvd d&#039;Ubuntu 8.04 Server chaudement gravé ! (<a href="http://releases.ubuntu.com/hardy/" class="urlextern" title="http://releases.ubuntu.com/hardy/"  rel="nofollow">http://releases.ubuntu.com/hardy/</a>)
+</p>
+
+<p>
+2 - FileZilla (<a href="http://www.filezilla.fr/" class="urlextern" title="http://www.filezilla.fr/"  rel="nofollow">http://www.filezilla.fr/</a>)
+</p>
+
+<p>
+3 - Putty (<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/" class="urlextern" title="http://www.chiark.greenend.org.uk/~sgtatham/putty/"  rel="nofollow">http://www.chiark.greenend.org.uk/~sgtatham/putty/</a>)
+</p>
+
+<p>
+4 - Notepad++ (<a href="http://notepad-plus-plus.org/download" class="urlextern" title="http://notepad-plus-plus.org/download"  rel="nofollow">http://notepad-plus-plus.org/download</a>)
+</p>
+
+<p>
+5 - Une FREEBOX HD (c&#039;est la config avec laquelle j&#039;ai réalisé le tuto, ça peut aussi bien marcher avec une Freebox classique, enfin, je le souhaite si vous êtes là pour ça..<img src="../lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />)
+</p>
+
+<p>
+6 - Une connexion internet <img src="http://doc.ubuntu-fr.org/lib/images/smileys/icon_silenced.gif" class="icon" alt=":-X" /> …
+
+</div></p>
+</p>
+
+<p>
+<strong>Préambule :</strong>
+<em>Vous devez disposer d&#039;un PC qui nous servira à monter notre serveur Ubuntu, et du Serveur, donc 2 PC..<img src="../lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /></em>
+</p>
+
+<p>
+(ou un serveur et un <abbr title="Medium Access Control">MAC</abbr>.. arff j&#039;aime pas dire sa..<img src="http://doc.ubuntu-fr.org/lib/images/smileys/icon_neutral.gif" class="icon" alt=":-|" />, soit, chacun son truc..)
+Bon allez, je sent que vous vous impatientez…
+</p>
+
+<p>
+<p><div class="noteimportant">
+1° <strong>Configuration de la Freebox</strong>
+
+</div></p>
+</p>
+
+<p>
+Pour commencer nous allons <strong>configurer notre freebox</strong> afin que nous puissions utiliser notre serveur.
+Rendez sur votre compte free(<a href="https://subscribe.free.fr/login" class="urlextern" title="https://subscribe.free.fr/login"  rel="nofollow">https://subscribe.free.fr/login</a>), 
+</p>
+
+<p>
+connectez vous et allez dans la section &quot;<strong>Internet</strong>&quot;, puis &quot;<strong>Configurer mon routeur Freebox</strong>&quot;.
+</p>
+
+<p>
+Renseignez les champs comme ce ci.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/internet/freebox-configuration.png?id=tutoriel%3Ainstallation_ubuntu_8.04_plesk_9.5_freebox_hd" class="media" title="internet:freebox-configuration.png"><img src="http://doc.ubuntu-fr.org/_media/internet/freebox-configuration.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Nous avons ouvert les ports suivant:
+</p>
+
+<p>
+8443 : pour accéder à l&#039;admin de Plesk
+</p>
+
+<p>
+80 : pour l&#039;accès à nos/notre site(s)
+</p>
+
+<p>
+21 : pour le serveur <abbr title="File Transfer Protocol">FTP</abbr>
+</p>
+
+<p>
+22 : pour le serveur SSH
+</p>
+
+<p>
+Ces ports sont ouverts afin d&#039;être utilisés de l&#039;extérieur, il va de soit qu&#039;en local tout ce ci n&#039;a pas besoin d&#039;être ouvert. <img src="../lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />
+</p>
+
+<p>
+<em class="u">Voila notre Freebox est opérationnelle, pensez à la redémarrer pour que les configs soient prises en compte.</em>
+</p>
+
+<p>
+<p><div class="noteimportant">
+2° <strong>Installation d&#039;Ubuntu 8.04 Server</strong>
+
+</div></p>
+</p>
+
+<p>
+Insérez le CD/DVD si c&#039;est pas déjà fait, et bootez dessus !
+En avant !!
+</p>
+
+<p>
+Suivez les instructions d&#039;installation, laissez par défaut si vous ne savez pas.
+A la fin de l&#039;installation on va vous demander de <strong>choisir des composants</strong>.
+</p>
+<pre class="file"># Sélectionnez uniquement celui-là !
+# Pressez la touche &lt;espace&gt; pour le sélectionner/dé-sélectionner et valider par [entrée]
+
+[*] OpenSSH server
+</pre>
+
+<p>
+Super une fois tout ça de fait on touche au but,
+Ubuntu devrais pas tarder d&#039;éjecter le CD/DVD pour nous dire:
+</p>
+
+<p>
+&quot;ON VA REBOOTER GICLE-MOI TON CD/DVD!&quot; , enfin..bon, p&#039;tète pas sur se ton-là..<img src="http://doc.ubuntu-fr.org/lib/images/smileys/icon_eek.gif" class="icon" alt="8-O" />
+</p>
+
+<p>
+<p><div class="noteimportant">
+3° <strong>Mise en place d&#039;une adresse IP FIXE</strong>
+
+</div></p>
+</p>
+
+<p>
+Pour commencer faut connaître l&#039;IP de notre serveur, qui doit être relié par un câble ! Et non par du wifi (c&#039;est trop lent).
+</p>
+
+<p>
+Pour la première mise en route d&#039;Ubuntu 8.04 server, on va vous demander de rentrer le nom d&#039;utilisateur que l&#039;on vous a demandé lors de l&#039;installation. 
+</p>
+
+<p>
+- Rentrez-le, puis le mot de passe.
+</p>
+
+<p>
+On commence les choses sérieuses, ne vous plantez pas..
+</p>
+
+<p>
+Configurons notre mot de passe root maintenant.
+</p>
+
+<p>
+- Entrez cette commande
+</p>
+<pre class="file">sudo passwd root</pre>
+
+<p>
+- Puis entrez le mot de passe du compte utilisateur (en cours)
+- Puis celui du super utilisateur root
+- vous devriez avoir à l’écran : 
+</p>
+<pre class="file">mon-login@server-name:~$</pre>
+
+<p>
+- Faites la commande suivante:
+</p>
+<pre class="file">ifconfig</pre>
+
+<p>
+- Notez l&#039;adresse de la ligne suivante, celle qui nous intéresse c&#039;est celle de <strong>inet addr</strong>
+</p>
+<pre class="file">inet addr:192.168.0.?? Bcast:192.168.0.255 Mask:255.255.255.0</pre>
+
+<p>
+A partir de maintenant, on n&#039;a plus besoin de toucher à notre serveur…<img src="../lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />
+</p>
+
+<p>
+Si vous avez un ordinateur portable, installez-vous sur le divan, tout commence ici !
+</p>
+
+<p>
+Ouvrez votre FileZilla.
+</p>
+
+<p>
+Une fois ouvert, faites &quot;Fichier&quot; puis &quot;Gestionnaire de Sites…&quot; ou bien CTRL+S pour le freestyle <img src="../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />
+</p>
+
+<p>
+Faites &quot;Nouveau site&quot;, appelez-le comme bon vous semble.
+</p>
+
+<p>
+<strong>Dans Hôte</strong> : entrez l&#039;adresse IP relevée plus haut, rappelez-vous. (inet addr:192.168.0.??)
+</p>
+
+<p>
+<strong>Serveur type</strong> : Choisissez &quot;SFTP SSH FILE Transfer protocol&quot;
+</p>
+
+<p>
+<strong>Logon type</strong> : Choisissez &quot;Normal&quot;
+</p>
+
+<p>
+<strong>Identifiant</strong> : Mettez <strong>root</strong> (important!)
+</p>
+
+<p>
+<strong>Mot de passe</strong> : Entrez le mot de passe root que vous avez saisi dans l&#039;étape précédente.
+</p>
+
+<p>
+Allez GO ! modifions quelques fichiers, faites &quot;Connexion&quot;
+</p>
+
+<p>
+Merveilleux ! la liste des dossiers du serveur s&#039;affichent, mais ne bidouillez pas trop.. <img src="http://doc.ubuntu-fr.org/lib/images/smileys/icon_eek.gif" class="icon" alt="8-O" /> ça peut vite tourner au drame.
+</p>
+
+<p>
+- Allez dans <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">/etc/network</a> et cherchez le fichier <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">interfaces</a>
+</p>
+
+<p>
+- Faites un clique droit dessus puis  &quot;Afficher / Editer&quot; (Sélectionnez notepad++ si c&#039;est pas déjà fait)
+</p>
+
+<p>
+- Nous voila en présence de ceci : 
+</p>
+<pre class="file"># This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth0
+iface eth0 inet dhcp</pre>
+
+<p>
+Allé ! tutoyons nous..<img src="../lib/images/smileys/icon_lol.gif" class="icon" alt="LOL" />
+- Copiez les lignes ci-dessous
+</p>
+<pre class="file">auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+        address 192.168.0.10
+        netmask 255.255.255.0
+        gateway 192.168.0.254</pre>
+
+<p>
+- Retournez dans votre éditeur notepad++ faite du freestyle, un beau CTRL+A pour tout sélectionner,
+- puis un CTRL+V pour coller la nouvelle config.
+- Enregistrez et fermez.
+- FileZilla devrait vous demandez confirmation pour ré-envoyer de fichier, acceptez.
+</p>
+
+<p>
+En voila déjà un. La suite..
+Allez dans <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">/etc</a> et cherchez un fichier nommé <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">host</a>, même topos, ouvrez le..
+- Vous devriez avoir ceci en haut:
+</p>
+<pre class="file">127.0.0.1	localhost
+127.0.1.1	server-name</pre>
+
+<p>
+-Remplacez par ça :
+</p>
+<pre class="file">127.0.0.1       localhost.server-name localhost server-name
+192.168.0.10    server-name</pre>
+
+<p>
+On va maintenant redémarrer le service réseaux pour que nos modifications soient prises en compte. 
+- <strong>Ouvrez Putty.</strong>
+Entrez la même adresse IP que vous vous êtes servi dans FileZilla et envoyez la sauce.
+</p>
+<pre class="file"># On se logue en tant que root c&#039;est mieux.
+
+login as: root
+# puis &lt;entrer&gt;
+
+root@192.168.0.??&#039;s password: votre mot de passe
+# puis &lt;entrer&gt;</pre>
+
+<p>
+On est maintenant connecté au serveur par SSH.
+On va relancer le service réseaux. tapez la commande suivante.
+</p>
+<pre class="file">/etc/init.d/networking restart</pre>
+
+<p>
+-Quittez Putty et FilZilla.
+</p>
+
+<p>
+-Ré-ouvrez Putty mais avec l&#039;adresse suivante : 192.168.0.10, qui est l&#039;adresse IP fixe que nous venons de configurer.
+</p>
+
+<p>
+<p><div class="noteimportant">
+4° <strong>INSTALLATION DE PLESK</strong>
+
+</div></p>
+<strong>Nous voila fin prêt à débuter l&#039;installation de plesk !!</strong>
+</p>
+
+<p>
+On est en SSH pour faire tout ça (<strong>Putty</strong> par exemple : lien de téléchargement au début du tuto)
+</p>
+
+<p>
+On va créer un dossier pour l&#039;installe de Plesk.
+Tapez le code(toujours en SSH) ci dessous.
+</p>
+<pre class="file">mkdir /root/plesk</pre>
+
+<p>
+Maintenant en va dans ce répertoire.
+</p>
+<pre class="file">cd /root/plesk</pre>
+
+<p>
+Parfait, on va télécharger dans ce répertoire l&#039;auto installeur de plesk.
+Tapez ces commandes (bon allé je répète plus &quot;tapez ces commandes, vous avez compris.. <img src="../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /> )
+</p>
+
+<p>
+C&#039;est l&#039;auto installeur le plus récent à l&#039;écriture de ce tuto.
+</p>
+<pre class="file">wget http://download1.parallels.com/Plesk/PPP9/Ubuntu8.04/parallels_installer_v3.6.0_build100407.15_os_Ubuntu_8.04_i386</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="installation_ubuntu_8.04_plesk_9.5_freebox_hd"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958659" /><input type="hidden" name="summary" value="[Comment installer Ubuntu 8.04 LTS avec plesk 9.5 connecté à une freebox HD ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="55-" /><input type="submit" value="Modifier" class="button" title="Comment installer Ubuntu 8.04 LTS avec plesk 9.5 connecté à une freebox HD ?" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/e/ea655184ce21a082cec753770e3b2eed.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/installation_ubuntu_8.04_plesk_9.5_freebox_hd?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/installation_ubuntu_8.04_plesk_9.5_freebox_hd?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/installation_ubuntu_8.04_plesk_9.5_freebox_hd?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/installation_ubuntu_8.04_plesk_9.5_freebox_hd?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/installation_ubuntu_8.04_plesk_9.5_freebox_hd?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>testdisk</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-02T10:42:44+0100"/>
+<meta name="keywords" content="precise,trusty,recuperer,systeme,disque dur"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../testdisk?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="testdisk"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/testdisk"/>
+<link rel="canonical" href="../../testdisk"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"testdisk","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="testdisk#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="testdisk#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="testdisk#via_les_depots_officiels">Via les dépôts officiels</a></div></li>
+<li class="level2"><div class="li"><a href="testdisk#via_le_site_officiel">Via le site officiel</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="testdisk#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="testdisk#lancement">Lancement</a></div></li>
+<li class="level1"><div class="li"><a href="testdisk#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="testdisk#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="testdisk#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="http://doc.ubuntu-fr.org/trusty" class="wikilink1" title="trusty" rel="tag">Trusty</a>,
+	<a href="http://doc.ubuntu-fr.org/recuperer?do=showtag&amp;tag=r%C3%A9cup%C3%A9rer" class="wikilink1" title="recuperer" rel="tag">récupérer</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../disque_dur" class="wikilink1" title="disque_dur" rel="tag">disque dur</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="testdisk">Testdisk</h1>
+<div class="level1">
+
+<p>
+<p><div class="noteimportant">Aussitôt que vous constatez la perte de fichiers, arrêtez d&#039;utiliser, autant que faire se peut, le disque dur (ou autre périphérique de stockage sur lequel a eu lieu la perte). Autrement, vous risquez de ré-écrire par dessus vos fichiers perdus. Ainsi pour l&#039;installation de PhotoRec puis la sauvegarde des fichiers récupérés, vous ne devez pas utiliser la partition sur laquelle les fichiers ont été perdus.
+</div></p>
+</p>
+
+<p>
+<strong>Testdisk</strong> est un outil analysant un disque dur à la recherche de <a href="../../partitions" class="wikilink1" title="partitions">partitions</a> effacées ou endommagées. Il recherche un « index » permettant de retrouver une partition formatée à tort. Ayant retrouvé cet index, il reconstitue le <a href="../../systeme_de_fichiers" class="wikilink1" title="systeme_de_fichiers">système de fichiers</a>.<br/>
+
+Il est fourni avec <a href="../../photorec" class="wikilink1" title="photorec">Photorec</a>, un outil permettant d&#039;analyser une partition pour retrouver puis récupérer des fichiers effacés.<br/>
+
+L&#039;utilisation ensuite de<a href="../../fsck" class="wikilink1" title="fsck">fsck</a> peut compléter la récupération après l&#039;utilisation de TestDisk en corrigeant la structure du <a href="../../systeme_de_fichiers" class="wikilink1" title="systeme_de_fichiers">système de fichiers</a> de la partition récupérée.<br/>
+
+Testdisk est distribué sous <a href="http://www.gnu.org/licenses/gpl.html" class="urlextern" title="http://www.gnu.org/licenses/gpl.html"  rel="nofollow">Licence GPLv2</a> et fonctionne sous Windows, GNU/Linux, Mac OS X, Solaris et BSD.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Testdisk" [62-1309] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+ * Disposer des <a href="../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.
+</p>
+<ul>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée.</div>
+</li>
+<li class="level1"><div class="li"> Savoir ce qu&#039;est un <a href="http://fr.wikipedia.org/wiki/disque dur" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/disque dur">disque dur</a>.</div>
+</li>
+<li class="level1"><div class="li"> Savoir exactement où est branché le disque dur sur son ordinateur :</div>
+<ul>
+<li class="level2"><div class="li"> 1er/2e disque dur <abbr title="Serial Advanced Technology Attachment">SATA</abbr> ?</div>
+</li>
+<li class="level2"><div class="li"> Sur le contrôleur <abbr title="Integrated Drive Electronics">IDE</abbr> 1 ou 2, en maître ou en esclave ?</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Savoir ce qu&#039;est une partition et ce qu&#039;est le formatage d&#039;un disque dur.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [1310-1743] -->
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT3 SECTION "Installation" [1744-1769] -->
+<h3 class="sectionedit4" id="via_les_depots_officiels">Via les dépôts officiels</h3>
+<div class="level3">
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installer le paquet</a> <strong><a href="apt://testdisk" class="interwiki iw_apt" title="apt://testdisk">testdisk</a></strong> (le dépot universe doit être activé).
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Via les dépôts officiels" [1770-1939] -->
+<h3 class="sectionedit5" id="via_le_site_officiel">Via le site officiel</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteimportant">Installer un paquet hors des dépôts officiels peut présenter un risque d&#039;instabilité pour votre système.
+</div></p>
+</p>
+
+<p>
+Si vous souhaitez installer les dernières versions (stable et développement) de TestDisk (et <a href="../../photorec" class="wikilink1" title="photorec">PhotoRec</a>), les fichiers se trouvent sur <a href="http://www.cgsecurity.org/wiki/TestDisk_Download" class="urlextern" title="http://www.cgsecurity.org/wiki/TestDisk_Download"  rel="nofollow">la page de téléchargements du site</a>.
+</p>
+<ol>
+<li class="level1"><div class="li"> Télécharger l&#039;<a href="../../archivage" class="wikilink1" title="archivage">archive</a> depuis le <a href="http://www.cgsecurity.org/wiki/TestDisk_Download" class="urlextern" title="http://www.cgsecurity.org/wiki/TestDisk_Download"  rel="nofollow">site officiel</a>. </div>
+</li>
+<li class="level1"><div class="li"> <a href="../../archivage" class="wikilink1" title="archivage">Extraire l&#039;archive</a> dans votre dossier personnel (Cela créera le dossier <code>testdisk suivi_du_N°_de_version</code>).<br/>
+Puis depuis un <a href="../../terminal" class="wikilink1" title="terminal">terminal</a> avec les <a href="../../commande_shell" class="wikilink1" title="commande_shell">commandes</a> suivantes:</div>
+</li>
+<li class="level1"><div class="li"> Se déplacer dans le dossier créé<pre class="code">cd testdisk*</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Pour exécuter Testdisc<pre class="code">sudo ./testdisk_static</pre>
+
+<p>
+ et pour PhotoRec 
+</p>
+<pre class="code">sudo ./photorec_static</pre>
+</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT5 SECTION "Via le site officiel" [1940-2853] -->
+<h2 class="sectionedit6" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Pas de configuration particulière.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Configuration" [2854-2916] -->
+<h2 class="sectionedit7" id="lancement">Lancement</h2>
+<div class="level2">
+
+<p>
+Dans un <a href="../../terminal" class="wikilink1" title="terminal">terminal</a>, saisir la <a href="../../commande_shell" class="wikilink1" title="commande_shell">commande</a> 
+</p>
+<pre class="code">sudo testdisk</pre>
+
+</div>
+<!-- EDIT7 SECTION "Lancement" [2917-3025] -->
+<h2 class="sectionedit8" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+La version actuelle stable des dépôts offciels Ubuntu (décembre 2014) est la version 6.14 de juillet 2013.
+Lancée sur mon ordinateur elle a détecté une partition recovery qui est certainement celle de windows 8.1. 
+une description du fonctionnement d&#039;une version plus récente est disponible <a href="http://www.cgsecurity.org/wiki/TestDisk_Etape_par_Etape" class="urlextern" title="http://www.cgsecurity.org/wiki/TestDisk_Etape_par_Etape"  rel="nofollow">ici</a>
+</p>
+
+<p>
+(capture d&#039;une version Windows ici, mais il n&#039;y a aucune différence visible entre les versions).
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_m3a5d0d83.png?id=testdisk" class="media" title="tuto_20testdisk_htm_m3a5d0d83.png"><img src="../../_media/tuto_20testdisk_htm_m3a5d0d83.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Puis avec les flèches haut et bas, on choisit le disque dur sur lequel se trouve la partition formatée à tort.
+</p>
+
+<p>
+<p><div class="notetip">
+Conseils :
+</p>
+<ul>
+<li class="level1"><div class="li"><del> 1er disque dur (<abbr title="Integrated Drive Electronics">IDE</abbr>) = C:\ = hda</del></div>
+</li>
+<li class="level1"><div class="li"> 2e disque dur (<abbr title="Serial Advanced Technology Attachment">SATA</abbr>) = D:\ = sda</div>
+</li>
+</ul>
+
+<p>
+Une bonne méthode pour repérer le bon disque dur est par rapport à sa capacité. Dans cet exemple, il y a 3 disques de 232 GiB, donc, on peut éventuellement se tromper.
+</p>
+
+<p>
+Depuis Hardy, le kernel ne distingue plus les ports PATA (EIDE) et <abbr title="Serial Advanced Technology Attachment">SATA</abbr>, ils sont tous nommés sdX (X est une lettre), avec en priorité les disques SCSI puis les disques <abbr title="Serial Advanced Technology Attachment">SATA</abbr> et enfin les disques PATA (EIDE), le lecteur CD/DVD quant à lui porte la mention scdX (et X est un chiffre correspondant au numéro du lecteur, 0 pour le premier).
+
+</div></p>
+</p>
+
+<p>
+<p><div class="notewarning">Attention si vous vous trompez de disque dur vous risquez de perdre des données (cela équivaut à le formater en fait).
+</div></p>
+</p>
+
+<p>
+On choisit l&#039;option « Proceed » en bas avec les flèches « ← » et « → » puis on valide avec « Entrée ».
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_9eaff93.png?id=testdisk" class="media" title="tuto_20testdisk_htm_9eaff93.png"><img src="../../_media/tuto_20testdisk_htm_9eaff93.png" class="media" alt="" /></a>
+</p>
+
+<p>
+On choisit le type de partition. Notez qu&#039;on peut ainsi récupérer différents <a href="../../systeme_de_fichiers" class="wikilink1" title="systeme_de_fichiers">systeme_de_fichiers</a> : des disques XBox, Mac ou Sun. Dans la plupart des cas, ce sera Intel donc pour un PC Windows ou <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux.
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_5925d16b.png?id=testdisk" class="media" title="tuto_20testdisk_htm_5925d16b.png"><img src="../../_media/tuto_20testdisk_htm_5925d16b.png" class="media" alt="" /></a>
+</p>
+
+<p>
+On choisit ensuite « analyse » :
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_m34fbf52.png?id=testdisk" class="media" title="tuto_20testdisk_htm_m34fbf52.png"><img src="../../_media/tuto_20testdisk_htm_m34fbf52.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Il nous dit comment est partitionné le disque dur pour le moment. Ici, il y a une grosse partition en FAT32 créée par erreur.
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_m504776e1.png?id=testdisk" class="media" title="tuto_20testdisk_htm_m504776e1.png"><img src="../../_media/tuto_20testdisk_htm_m504776e1.png" class="media" alt="" /></a>
+</p>
+
+<p>
+On choisit donc l&#039;option « proceed » :
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_36b2c2db.png?id=testdisk" class="media" title="tuto_20testdisk_htm_36b2c2db.png"><img src="../../_media/tuto_20testdisk_htm_36b2c2db.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Il nous dit que la partition actuelle est en bonne santé ; on peut lister les fichiers qu&#039;elle contient et d&#039;autres manipulations, moins conseillées si on ne sait pas ce qu&#039;on fait.
+Donc on appuie juste sur « Entrée » pour passer a l&#039;étape suivante.
+</p>
+
+<p>
+Là on choisit « Search » cela va lancer le scan.
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_m504776e1.png?id=testdisk" class="media" title="tuto_20testdisk_htm_m504776e1.png"><img src="../../_media/tuto_20testdisk_htm_m504776e1.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Scan lancé.
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_1bd09c81.png?id=testdisk" class="media" title="tuto_20testdisk_htm_1bd09c81.png"><img src="../../_media/tuto_20testdisk_htm_1bd09c81.png" class="media" alt="" /></a>
+</p>
+
+<p>
+On laisse mijoter ainsi longtemps… très longtemps ici pour un disque dur de 250 Gio
+Mais on constate que, au bout de quelques secondes, il a déjà retrouvé la partition :
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_5a611058.png?id=testdisk" class="media" title="tuto_20testdisk_htm_5a611058.png"><img src="../../_media/tuto_20testdisk_htm_5a611058.png" class="media" alt="" /></a>
+</p>
+
+<p>
+On appuie donc sur « Entrée » pour arrêter la recherche car nous avons reconnu notre partition (inutile d&#039;attendre qu&#039;il analyse tout le disque).
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_m4b4b19da.png?id=testdisk" class="media" title="tuto_20testdisk_htm_m4b4b19da.png"><img src="../../_media/tuto_20testdisk_htm_m4b4b19da.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Il me liste les partitions effacées qu&#039;il a découvertes.
+Ici, une autre partition en FAT32 (sûrement une partition encore plus vieille) et MA partition en NTFS ; je vois même le label (le nom) de mon ancienne partition.
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_m79e6954e.png?id=testdisk" class="media" title="tuto_20testdisk_htm_m79e6954e.png"><img src="../../_media/tuto_20testdisk_htm_m79e6954e.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Pour récupérer cette partition, il faut appuyer sur les flèches droites et gauche.
+En effet, on remarque au début de la ligne un « D » ce qui signifie <em>Deleted</em> (effacée) on va changer ça.
+On peu choisir soit :
+</p>
+<ul>
+<li class="level1"><div class="li"> L = logical</div>
+</li>
+<li class="level1"><div class="li"> E = extended</div>
+</li>
+<li class="level1"><div class="li"> P = primary</div>
+</li>
+<li class="level1"><div class="li"> * = primaire et bootable</div>
+</li>
+</ul>
+
+<p>
+Dans mon cas, c&#039;est <em>primary bootable</em> à noter que je n&#039;ai le choix que entre « primary »
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_18d5b64c.png?id=testdisk" class="media" title="tuto_20testdisk_htm_18d5b64c.png"><img src="../../_media/tuto_20testdisk_htm_18d5b64c.png" class="media" alt="" /></a>
+</p>
+
+<p>
+et « primary bootable »
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_ea9bfb4.png?id=testdisk" class="media" title="tuto_20testdisk_htm_ea9bfb4.png"><img src="../../_media/tuto_20testdisk_htm_ea9bfb4.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Je mets donc le flag « primary bootable » et j&#039;appuie sur « Entrée » pour valider.
+</p>
+
+<p>
+<a href="../../_detail/tuto_20testdisk_htm_70ce73a8.png?id=testdisk" class="media" title="tuto_20testdisk_htm_70ce73a8.png"><img src="../../_media/tuto_20testdisk_htm_70ce73a8.png" class="media" alt="" /></a>
+</p>
+
+<p>
+<p><div class="noteimportant">
+Attention, en choisissant « write », il réécrit l&#039;index du disque dur donc tout ce qu&#039;il y a actuellement sur le disque dur sera effacé par contre on pourra récupérer les données de l&#039;ancienne partition (si on n&#039;a pas réécrit dessus).
+
+</div></p>
+</p>
+
+<p>
+Puis on redémarre l&#039;ordinateur et c&#039;est tout bon.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Utilisation" [3026-7199] -->
+<h2 class="sectionedit9" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="../../tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer son paquet</a>. La configuration de l&#039;application sera conservée ou supprimée selon la méthode de désinstallation que vous choisirez.
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Désinstallation" [7200-7463] -->
+<h2 class="sectionedit10" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(fr, en)</strong> <a href="http://www.cgsecurity.org/wiki/TestDisk_Etape_par_Etape" class="urlextern" title="http://www.cgsecurity.org/wiki/TestDisk_Etape_par_Etape"  rel="nofollow">TestDisk, étape par étape</a> : mode d&#039;emploi simple et détaillé sur le site officiel.</div>
+</li>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <a href="https://www.benji1000.net/recuperer-les-donnees-dun-disque-dur-non-reconnu/" class="urlextern" title="https://www.benji1000.net/recuperer-les-donnees-dun-disque-dur-non-reconnu/"  rel="nofollow">Récupérer les données d’un disque-dur non reconnu</a> : tutoriel étape par étape sur le blog de benji1000.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../../utilisateurs/toth_o" class="wikilink2" title="utilisateurs:toth_o" rel="nofollow">toth_o</a>.</em>
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Voir aussi" [7464-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/3/300256217d8ecea0b754e6582a8fa068.xhtml used -->
+</div>
+</body>
+</html>

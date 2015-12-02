@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>gag</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-07-04T23:59:07+0200"/>
+<meta name="keywords" content="lucid,natty,oneiric,precise,installation,systeme"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../gag?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="gag"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/gag"/>
+<link rel="canonical" href="../../gag"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"gag","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="gag#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="gag#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="gag#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="../../natty" class="wikilink1" title="natty" rel="tag">Natty</a>,
+	<a href="../../oneiric" class="wikilink1" title="oneiric" rel="tag">Oneiric</a>,
+	<a href="../../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="../../installation.1" class="wikilink1" title="installation" rel="tag">installation</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="le_chargeur_d_amorcage_gag">Le chargeur d&#039;amorcage GAG</h1>
+<div class="level1">
+
+<p>
+GAG (Gestor de Arranque Grafico en espagnol) est un <a href="http://fr.wikipedia.org/wiki/Chargeur_d'amorçage" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Chargeur_d'amorçage">chargeur d&#039;amorçage</a>, c&#039;est-à-dire un programme qui sert à choisir et démarrer le système d&#039;exploitation à utiliser.
+C&#039;est une alternative au chargeur d&#039;amorçage par défaut d&#039;Ubuntu: <a href="../../grub-pc" class="wikilink1" title="grub-pc">GRUB</a>.
+</p>
+
+<p>
+Remarque: GAG n&#039;est pas compatible avec GPT, EFI, MacOS<sup><a href="gag#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.
+</p>
+
+<p>
+<p><div class="noteimportant">Attention, GAG n&#039;est plus développé depuis août 2008. Utilisez-le à vos risques et périls.
+</div></p>
+</p>
+
+<p>
+<a href="../../lib/exe/fetch.php?tok=8c8600&amp;media=http%253A%252F%252Fgag.sourceforge.net%252Fgagn3.gif" class="media" title="http://gag.sourceforge.net/gagn3.gif"><img src="../../lib/exe/fetch.php?w=500&amp;tok=4e2685&amp;media=http%253A%252F%252Fgag.sourceforge.net%252Fgagn3.gif" class="media" title="Ecran de choix des OS dans sa version anglaise" alt="Ecran de choix des OS dans sa version anglaise" width="500" /></a>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Le chargeur d'amorcage GAG" [66-735] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>sauvegarder vos données</strong> sur un autre support tel que disque externe, dvd ou cd. Une erreur de manipulation peut entraîner la perte totale de vos données.</div>
+</li>
+<li class="level1"><div class="li"> Pour chaque système d&#039;exploitation Linux (Ubuntu, etc) ou <abbr title="Berkeley Software Distribution">BSD</abbr>, installer son amorceur dans le <a href="http://en.wikipedia.org/wiki/Partition_Boot_Record" class="interwiki iw_wp" title="http://en.wikipedia.org/wiki/Partition_Boot_Record">PBR</a> de sa partition système. Par exemple si la partition système de votre Ubuntu est /dev/sda1, <a href="../../tutoriel/comment_restaurer_grub" class="wikilink1" title="tutoriel:comment_restaurer_grub">installer GRUB</a> dans le PBR de sda1.</div>
+</li>
+<li class="level1"><div class="li"> Pas d&#039;opération spécifique pour Windows</div>
+</li>
+<li class="level1"><div class="li"> <a href="../../tutoriel/comment_sauvegarder_le_mbr" class="wikilink1" title="tutoriel:comment_sauvegarder_le_mbr">Sauvegarder le MBR</a> du disque (car il sera écrasé par GAG)</div>
+</li>
+<li class="level1"><div class="li"> Télécharger l&#039;archive ZIP sur <a href="http://gag.sourceforge.net/download.html" class="urlextern" title="http://gag.sourceforge.net/download.html"  rel="nofollow">cette page</a>.</div>
+</li>
+<li class="level1"><div class="li"> Extraire l&#039;archive et fabriquer le média d&#039;installation, ou bien graver le cd d&#039;installation depuis le fichier iso.</div>
+</li>
+<li class="level1"><div class="li"> Démarrer l&#039;ordinateur sur ce média d&#039;installation</div>
+</li>
+<li class="level1"><div class="li"> Suivre les instructions d&#039;installation ci-dessous afin d&#039;installer GAG dans le <a href="http://fr.wikipedia.org/wiki/Master_boot_record" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Master_boot_record">MBR</a> du disque dur</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [736-1777] -->
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Bootez sur le CD/disquette GAG que vous avez gravé</div>
+</li>
+<li class="level1"><div class="li"> choisissez <strong>4</strong> &quot;installer&quot;, <strong>2</strong> &quot;AZERTY&quot;, <strong>G</strong> ou <strong>9</strong> (selon version) &quot;Français&quot;. </div>
+</li>
+<li class="level1"><div class="li"> Dans le menu, <strong>C</strong> pour Configurer, <strong>j</strong> pour ajouter un nouvel <abbr title="Operating System">OS</abbr>. </div>
+</li>
+<li class="level1"><div class="li"> Choisissez la partition sur laquelle se trouve l&#039;<abbr title="Operating System">OS</abbr> à ajouter en tapant 2 pour les partitions Ext - Linux/Ubuntu - (et B pour la partition windows), que vous nommez dans le champ description, et pour lequel vous choisissez une des icônes proposées, <strong>j</strong> pour ajouter un autre <abbr title="Operating System">OS</abbr> (Windows, par exemple), puis <strong>D</strong> pour sauver sur disque dur. C&#039;est à ce moment là que GAG s&#039;installe dans le MBR.</div>
+</li>
+<li class="level1"><div class="li"> Retirez le CD/disquette, redémarrez votre ordinateur.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Installation" [1778-2496] -->
+<h2 class="sectionedit4" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> (en) <a href="http://gag.sourceforge.net/" class="urlextern" title="http://gag.sourceforge.net/"  rel="nofollow">Site officiel de GAG</a></div>
+</li>
+<li class="level1"><div class="li"> Page <a href="http://fr.wikipedia.org/wiki/Chargeur_d'amorçage" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Chargeur_d'amorçage">chargeur d&#039;amorçage</a> de Wikipedia</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/yannubuntu" class="wikilink1" title="utilisateurs:yannubuntu">YannUbuntu</a></em>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Voir aussi" [2497-] --><div class="footnotes">
+<div class="fn"><sup><a href="gag#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=9903701#p9903701" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=9903701#p9903701"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?pid=9903701#p9903701</a></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/22b3eaa2ecf1b88e6dd854005a2dce73.xhtml used -->
+</div>
+</body>
+</html>

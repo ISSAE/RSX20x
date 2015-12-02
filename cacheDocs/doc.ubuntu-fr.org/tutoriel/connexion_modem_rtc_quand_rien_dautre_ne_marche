@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:connexion_modem_rtc_quand_rien_dautre_ne_marche - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2009-10-16T03:18:19+0200"/>
+<meta name="keywords" content="hoary,internet,reseau,modem,vetuste,a recycler"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/connexion_modem_rtc_quand_rien_dautre_ne_marche?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/connexion_modem_rtc_quand_rien_dautre_ne_marche?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/connexion_modem_rtc_quand_rien_dautre_ne_marche"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/connexion_modem_rtc_quand_rien_dautre_ne_marche"/>
+<link rel="canonical" href="connexion_modem_rtc_quand_rien_dautre_ne_marche"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:connexion_modem_rtc_quand_rien_dautre_ne_marche","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="connexion_modem_rtc_quand_rien_dautre_ne_marche#main" tabindex="1">Contenu</a> | <a href="connexion_modem_rtc_quand_rien_dautre_ne_marche#qsearch__in" tabindex="2">Rechercher</a> | <a href="connexion_modem_rtc_quand_rien_dautre_ne_marche#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="connexion_modem_rtc_quand_rien_dautre_ne_marche" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="connexion_modem_rtc_quand_rien_dautre_ne_marche" >tutoriel:connexion_modem_rtc_quand_rien_dautre_ne_marche</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+Cette page est considée comme <a href="../vetuste">vétuste</a> et ne contient plus d'informations utiles.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="connexion_modem_rtc_quand_rien_dautre_ne_marche#pilote_pour_winmodem_conexant_sous_ubuntu_pour_feisty">Pilote pour winmodem conexant sous ubuntu pour feisty</a></div></li>
+<li class="level1"><div class="li"><a href="connexion_modem_rtc_quand_rien_dautre_ne_marche#se_connecter_a_internet_via_un_modem_analogique">Se connecter à Internet via un modem analogique</a></div></li>
+<li class="level1"><div class="li"><a href="connexion_modem_rtc_quand_rien_dautre_ne_marche#collecte_d_informations">Collecte d&#039;informations</a></div></li>
+<li class="level1"><div class="li"><a href="connexion_modem_rtc_quand_rien_dautre_ne_marche#configuration_de_ppp">Configuration de PPP</a></div></li>
+<li class="level1"><div class="li"><a href="connexion_modem_rtc_quand_rien_dautre_ne_marche#changer_le_volume_du_haut-parleur">Changer le volume du haut-parleur</a></div></li>
+<li class="level1"><div class="li"><a href="connexion_modem_rtc_quand_rien_dautre_ne_marche#resolution_de_probleme">Résolution de problème</a></div></li>
+<li class="level1"><div class="li"><a href="connexion_modem_rtc_quand_rien_dautre_ne_marche#solution_libre_modem_chips_conexant_hsf_kpp">Solution libre Modem chips conexant hsf + kpp</a></div></li>
+<li class="level1"><div class="li"><a href="connexion_modem_rtc_quand_rien_dautre_ne_marche#utiliser_l_applet_lumieres_du_modem">Utiliser l&#039;applet &quot;Lumières du Modem&quot;</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../hoary" class="wikilink1" title="hoary" rel="tag">Hoary</a>,
+	<a href="../internet" class="wikilink1" title="internet" rel="tag">internet</a>,
+	<a href="../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../modem" class="wikilink1" title="modem" rel="tag">modem</a>,
+	<a href="../vetuste" class="wikilink1" title="vetuste" rel="tag">vétuste</a>,
+	<a href="http://doc.ubuntu-fr.org/a_recycler" class="wikilink1" title="a_recycler" rel="tag">à recycler</a>
+</span></div>
+<hr />
+
+<p>
+<p><div class="notewarning">Cette page decrit l&#039;utilisation de pppconfig. A recycler dans la page <a href="../modem" class="wikilink1" title="modem">modem</a> ou <a href="http://doc.ubuntu-fr.org/gnome-ppp" class="wikilink1" title="gnome-ppp">gnome-ppp</a> ???
+</div></p>
+</p>
+
+<p>
+<a href="https://wiki.ubuntu.com/DialupModemHowto" class="urlextern" title="https://wiki.ubuntu.com/DialupModemHowto"  rel="nofollow"> Traduit </a> par <a href="../utilisateurs/fredb" class="wikilink2" title="utilisateurs:fredb" rel="nofollow">FredB</a>
+</p>
+
+<h2 class="sectionedit1" id="pilote_pour_winmodem_conexant_sous_ubuntu_pour_feisty">Pilote pour winmodem conexant sous ubuntu pour feisty</h2>
+<div class="level2">
+
+<p>
+Vous avez dans ce site un tutoriel pour installer un .deb 
+développé par un fabricant.
+<a href="http://brenta.free.fr/spip.php?article87" class="urlextern" title="http://brenta.free.fr/spip.php?article87"  rel="nofollow">http://brenta.free.fr/spip.php?article87</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="connexion_modem_rtc_quand_rien_dautre_ne_marche"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1255655899" /><input type="hidden" name="summary" value="[Pilote pour winmodem conexant sous ubuntu pour feisty] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="282-487" /><input type="submit" value="Modifier" class="button" title="Pilote pour winmodem conexant sous ubuntu pour feisty" /></div></form></div>
+<h2 class="sectionedit2" id="se_connecter_a_internet_via_un_modem_analogique">Se connecter à Internet via un modem analogique</h2>
+<div class="level2">
+
+<p>
+Cette page fournit les informations essentielles si vous utilisez une version antérieure à Warty (4.10) dans laquelle l&#039;interface graphique de configuration de la numérotation et de <code>pppconfig</code> ne fonctionne pas très bien.
+</p>
+
+<p>
+Sous Hoary (5.04) l&#039;outil graphique de configuration fonctionne, <em class="u">vous devriez donc d&#039;abord l&#039;essayer</em> (Système ⇒ Administration ⇒ Réseau). Utilisez le moniteur de modem GNOME et l&#039;applet de moniteur de réseau si vous souhaitez arrêter, démarrer ou surveiller les connexions modem sans ouvrir systématiquement l&#039;interface de gestion réseau. Quelques personnes ont comme problème un modem qui numérote durant la séquence de boot. Cela peut être lié au paramétrage du modem comme route par défaut vers Internet dans l&#039;onglet option des propriétés de l&#039;interface.
+</p>
+
+<p>
+Mon premier essai (infructueux) pour me connecter fut par le biais de Système ⇒ Configuration ⇒ Réseau. Après quelques recherches, j&#039;ai trouvé cette méthode alternative afin de me connecter. Cela a bien fonctionné, car c&#039;est plus facile que de passer par l&#039;interface de gestion du réseau.
+</p>
+
+<p>
+Sous <strong>Intrepid (8.10)</strong> pour ma part, vu les insuccès de configuration en RTC avec les interfaces Gnome et autres, j&#039;ai utilisé pppconfig pour me connecter en secours sur RTC. Cela a marché du premier coup.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="connexion_modem_rtc_quand_rien_dautre_ne_marche"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1255655899" /><input type="hidden" name="summary" value="[Se connecter à Internet via un modem analogique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="488-1873" /><input type="submit" value="Modifier" class="button" title="Se connecter à Internet via un modem analogique" /></div></form></div>
+<h2 class="sectionedit3" id="collecte_d_informations">Collecte d&#039;informations</h2>
+<div class="level2">
+
+<p>
+Vous avez besoin :
+</p>
+<ul>
+<li class="level1"><div class="li"> du numéro de téléphone de votre <abbr title="Fournisseur d&#039;Accès à Internet">FAI</abbr> (Fournisseur d&#039;Accès à Internet)</div>
+</li>
+<li class="level1"><div class="li"> de votre nom d&#039;utilisateur et du mot de passe fournis par votre <abbr title="Fournisseur d&#039;Accès à Internet">FAI</abbr></div>
+</li>
+<li class="level1"><div class="li"> du nom de votre modem (/dev/…)</div>
+</li>
+</ul>
+
+<p>
+Si votre modem est connecté à un port série et que vous connaissez ce port, le nom de votre périphérique sera /dev/ttySx où x est le numéro de port COM moins un.
+</p>
+
+<p>
+Exemple : si le modem est connecté au port COM2, le périphérique sera <strong>/dev/ttyS1</strong>, ou si votre modem est sur le port COM1 alors votre périphérique sera <strong>/dev/ttyS0</strong>.
+</p>
+
+<p>
+Si vous utilisez un modem interne alors votre périphérique devrait être <strong>/dev/modem</strong>.
+</p>
+<ol>
+<li class="level1"><div class="li"> Liste numérotée</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="connexion_modem_rtc_quand_rien_dautre_ne_marche"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1255655899" /><input type="hidden" name="summary" value="[Collecte d'informations] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1874-2581" /><input type="submit" value="Modifier" class="button" title="Collecte d'informations" /></div></form></div>
+<h2 class="sectionedit4" id="configuration_de_ppp">Configuration de PPP</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Ouvrez un terminal (Applications &gt; Outils Système &gt; Terminal)</div>
+</li>
+<li class="level1"><div class="li"> Tapez :</div>
+</li>
+</ul>
+<pre class="code">	sudo pppconfig
+	</pre>
+<ul>
+<li class="level1"><div class="li"> Vous arriverez alors dans le menu principal. Choisissez <code>Créer une connexion</code></div>
+</li>
+<li class="level1"><div class="li"> Laissez le nom à &quot;provider&quot; et cliquez sur <code>OK</code></div>
+</li>
+<li class="level1"><div class="li"> Sélectionnez : PAP Peer Authentication Protocol (Protocole d&#039;Authentification par Paires), cliquez sur <code>OK</code></div>
+</li>
+<li class="level1"><div class="li"> Entrez votre nom d&#039;utilisateur fourni par votre <abbr title="Fournisseur d&#039;Accès à Internet">FAI</abbr> puis cliquez sur <code>OK</code></div>
+</li>
+<li class="level1"><div class="li"> Entrez votre mot de passe fourni par votre <abbr title="Fournisseur d&#039;Accès à Internet">FAI</abbr> puis cliquez sur <code>OK</code></div>
+</li>
+<li class="level1"><div class="li"> Laissez la vitesse à 115200 et cliquez sur <code>OK</code></div>
+</li>
+<li class="level1"><div class="li"> Choisissez numérotation par impulsion ou par tonalité et cliquez sur <code>OK</code></div>
+</li>
+<li class="level1"><div class="li"> Vous pouvez essayer de détecter automatiquement votre modem, mais cela n&#039;a pas fonctionné pour moi, même avec mon modem facilement détectable</div>
+</li>
+<li class="level1"><div class="li"> Si le modem n&#039;a pas été détecté, il vous sera demandé le port sur lequel se trouve votre modem. Entrez le nom de votre modem et cliquez sur <code>OK</code></div>
+</li>
+<li class="level1"><div class="li"> Un écran de résumé apparaîtra et vous donnera la possibilité de faire des changements si besoin est. <br/>
+</div>
+</li>
+</ul>
+
+<p>
+Nous avons presque fini avec ce programme. Les prochaines étapes permettront de se connecter et de se déconnecter sans utiliser sudo : avec votre compte utilisateur normal (vous n&#039;aurez donc pas besoin de taper un mot de passe afin de vous connecter).<br/>
+
+Choisissez <code>Options Avancées</code>
+</p>
+<ul>
+<li class="level1"><div class="li"> Choisissez <code>Ajouter un utilisateur ppp</code></div>
+</li>
+<li class="level1"><div class="li"> Supprimez tous les caractères inutiles en pressant la touche Retour Arrière (si nécessaire), là inscrivez votre nom d&#039;utilisateur Ubuntu et cliquez sur <code>OK</code>.</div>
+</li>
+<li class="level1"><div class="li"> Choisissez <code>Previous Retour au menu précédent</code></div>
+</li>
+<li class="level1"><div class="li"> Choisissez <code>Finished Sauvegarder la configuration et revenir au menu principal</code></div>
+</li>
+<li class="level1"><div class="li"> Choisissez <code>Quitter</code></div>
+</li>
+<li class="level1"><div class="li"> Quittez le terminal en tapant </div>
+</li>
+</ul>
+<pre class="code">exit</pre>
+<ul>
+<li class="level1"><div class="li"> redémarrez votre PC (afin de prendre en compte les paramétrages de groupe). Auparavant, vous pouvez tester votre connexion en tapant </div>
+</li>
+</ul>
+<pre class="code">sudo pon</pre>
+
+<p>
+pour vous déconnecter tapez :
+</p>
+<pre class="code">sudo poff</pre>
+
+<p>
+Après le redémarrage, taper simplement <code>pon</code> ou <code>pof</code> devrait suffire.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="connexion_modem_rtc_quand_rien_dautre_ne_marche"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1255655899" /><input type="hidden" name="summary" value="[Configuration de PPP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2582-4723" /><input type="submit" value="Modifier" class="button" title="Configuration de PPP" /></div></form></div>
+<h2 class="sectionedit5" id="changer_le_volume_du_haut-parleur">Changer le volume du haut-parleur</h2>
+<div class="level2">
+
+<p>
+Afin de diminuer le volume ou couper les sons de connexion (numérotation, négociation, etc.),<br/>
+
+suivez ces étapes :
+</p>
+
+<p>
+Ouvrez un terminal (Applications &gt; Outils Système &gt; Terminal)
+Tapez :
+</p>
+<pre class="code">sudo gedit /etc/chatscripts/provider</pre>
+
+<p>
+Repérez la ligne <code>OK-AT-OK</code>
+Changez <code>ATDT</code> en <code>ATxxDT</code> ou xx est un des paramètres suivants :<br/>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> M0 Eteint le haut parleur</div>
+</li>
+<li class="level1"><div class="li"> L1 volume bas</div>
+</li>
+<li class="level1"><div class="li"> L2 volume moyen</div>
+</li>
+<li class="level1"><div class="li"> L3 volume haut</div>
+</li>
+</ul>
+
+<p>
+Exemple : <code>ATM0DT</code>
+</p>
+
+<p>
+Laissez le reste de la ligne inchangé
+</p>
+
+<p>
+sauvez et quittez
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="connexion_modem_rtc_quand_rien_dautre_ne_marche"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1255655899" /><input type="hidden" name="summary" value="[Changer le volume du haut-parleur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4724-5290" /><input type="submit" value="Modifier" class="button" title="Changer le volume du haut-parleur" /></div></form></div>
+<h2 class="sectionedit6" id="resolution_de_probleme">Résolution de problème</h2>
+<div class="level2">
+
+<p>
+En cas de problème de connexion assurez-vous d&#039;avoir le bon pilote correspondant au chipset de votre modem. Avec les &quot;Winmodems&quot; la commande <code>lspci</code> ne donne pas toujours suffisamment d&#039;informations. Un script que vous trouverez ici : <a href="http://linmodems.technion.ac.il" class="urlextern" title="http://linmodems.technion.ac.il"  rel="nofollow">http://linmodems.technion.ac.il</a> vous permettra d&#039;identifier précisément le chipset.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="connexion_modem_rtc_quand_rien_dautre_ne_marche"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1255655899" /><input type="hidden" name="summary" value="[Résolution de problème] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5291-5655" /><input type="submit" value="Modifier" class="button" title="Résolution de problème" /></div></form></div>
+<h2 class="sectionedit7" id="solution_libre_modem_chips_conexant_hsf_kpp">Solution libre Modem chips conexant hsf + kpp</h2>
+<div class="level2">
+<pre class="code">Réalisé avec une Ubuntu Dapper</pre>
+
+<p>
+Si dans ⇒ système ⇒ Administration ⇒ gestionnaire de périphériques 
+vous avez une carte modem : HSF 56k HSFi Modem, allez-y !
+</p>
+
+<p>
+Si vous ne voulez pas mettre Kppp c&#039;est tout à fait possible mais je ne sais plus quels sont les paquets à ne pas télécharger… alors j&#039;ai mis tout ce que j&#039;ai fait.
+Je pense que c&#039;est ceux-ci <img src="../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />
+kdelibs4c2a_3.5.2-0ubuntu18_i386.deb 
+kdelibs-bin_4%3a3.5.2-0ubuntu18_i386.deb 
+kdelibs-data_4%3a3.5.2-0ubuntu18_all.deb 
+kppp_3.5.2-0ubuntu6_i386.deb 
+</p>
+
+<p>
+Téléchargez d&#039;un autre accès internet les éléments suivants :
+</p>
+
+<p>
+Avec  : <a href="http://packages.ubuntu.com/" class="urlextern" title="http://packages.ubuntu.com/"  rel="nofollow">http://packages.ubuntu.com/</a>
+</p>
+
+<p>
+À placer dans :
+</p>
+<pre class="code">/media/hdb6/aremmettre/archives/debhelper_5.0.7ubuntu13_all.deb
+/media/hdb6/aremmettre/archives/kdelibs4c2a_3.5.2-0ubuntu18_i386.deb
+/media/hdb6/aremmettre/archives/kdelibs-bin_4%3a3.5.2-0ubuntu18_i386.deb
+/media/hdb6/aremmettre/archives/kdelibs-data_4%3a3.5.2-0ubuntu18_all.deb
+/media/hdb6/aremmettre/archives/kppp_3.5.2-0ubuntu6_i386.deb
+/media/hdb6/aremmettre/archives/libarts1c2a_1.5.2-0ubuntu1_i386.deb
+/media/hdb6/aremmettre/archives/libartsc0_1.5.2-0ubuntu1_i386.deb
+/media/hdb6/aremmettre/archives/libavahi-qt3-1_0.6.10-0ubuntu3_i386.deb
+/media/hdb6/aremmettre/archives/libopenexr2c2a_1.2.2-4ubuntu2_i386.deb
+/media/hdb6/aremmettre/archives/libpcre3_6.4-1.1ubuntu4_i386.deb</pre>
+
+<p>
+Suivez les instructions de ce HOWTO.txt :
+</p>
+<pre class="code"># 1) THIS IS BOTH A HOWTO FILE AND AN EXECUTABLE SCRIPT
+# 2) YOU NEED TO HAVE THREE FILES IN THE SAME DIRECTORY:
+#     - conexant_192-1ubuntu-1.tar.gz
+#     - THIS SCRIPT
+#     - modem-hsfpci-0.1 SUB DIRECTORY
+# 3) YOU CAN DOWNLOAD conexant_192-1ubuntu-1.tar.gz FROM EITHER:
+#  http://www.surak.eti.br/linux/ubuntu/deb/conexant/conexant_192-1ubuntu-1.tar.gz</pre>
+
+<p>
+Suivez les instructions de ce HOWTO.txt :
+</p>
+<pre class="code">#  ftp://ftp.wizzy.com/pub/wizzy/conexant/conexant_192-1ubuntu-1.tar.gz
+# 4) YOU ALREADY USED tar xjvf modem-hsfpci.tar.bz2 TO UNPACK THIS FILE AND
+#    THE modem-hsfpci-0.1 SUB DIRECTORY IN THE SAME DIRECTORY</pre>
+
+<p>
+J&#039;ai désarchivé ici (clic droit sur fichier) conexant_192-1ubuntu-1.tar.gz qui m&#039;a créé un 
+dossier conexant.
+J&#039;y ai replacé l&#039;archive conexant_192-1ubuntu-1.tar.gz à l&#039;intérieur.
+J&#039;ai désarchivé modem-hsfpci.tar.bz2 dans le dossier conexant.
+J&#039;y ai replacé l&#039;archive modem-hsfpci.tar.bz2 dans le dossier conexant.
+</p>
+<pre class="code"># 5) YOU ALSO HAVE TO HAVE fakeroot, build-essential, linux-headers </pre>
+
+<p>
+sont bien sur le cd ⇒ APPLICATION ⇒ AJOUTER/ENLEVER ⇒ AVANCER 
+Menu ⇒ Fichier ⇒ ajouter les paquets téléchargés 
+⇒ Recherchez et installez-les.
+</p>
+<pre class="code"># for
+#    your specific kernel, and debhelper INSTALLED ALREADY. THESE ARE AVAILABLE
+#     ON THE (K)UBUNTU INSTALL CD. TRY:
+#      apt-get install fakeroot
+#      apt-get install debhelper
+#      apt-get install build-essential
+#      apt-get linux-headers-`uname -r`   (NOTICE THE ` SYMBOL IS NOT A QUOTE &#039;
+#    AND IS OFTEN FOUND ON THE SAME KEY THAT HAS THE ~ SYMBOL
+# 6) RUN THIS SCRIPT BY OPENING A TERMINAL, CHANGING TO THIS DIRECTORY, AND
+#    ENTERING ./HOWTO.hsf AT THE PROMPT</pre>
+
+<p>
+⇒ Application ⇒ Accessoire ⇒ Terminal
+</p>
+<pre class="code">sudo ./HOWTO.txt</pre>
+<pre class="code"># 7) THE SCRIPT WILL CHECK FOR ALL THE ABOVE AND GIVE YOU AN ERROR MESSAGE IF
+#    ANYTHING IS MISSING.  ONCE EVERYTHING IS OK, IT WILL UNPACK
+#    conexant_192-1ubuntu-1.tar.gz AND MOVE IT TO modem-hsfpci-0.1/ AND THEN
+#    BUILD THE PACKAGE.  THE PACKAGE WILL BE IN THIS MAIN DIRECTORY.</pre>
+
+<p>
+Le paquet sera créé dans ce dossier… ne le cherchez pas sur internet vous l&#039;avez dans votre dossier <img src="../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />
+</p>
+<pre class="code"># 8) USE dpkg -i modem-hsfpci_0.1-0ubuntu1_i386.deb TO INSTALL IT</pre>
+
+<p>
+Double cliquez le et installez,
+Vous êtes sur la bonne voie. Encore un petit effort !
+⇒ système ⇒ Administration ⇒ gestionnaire de périphériques 
+dans votre carte exemple HSF 56k HSFi Modem
+relevez les deux éléments suivants dans les éléments avancés :
+pci.vendor_id :
+pci.product_id :
+# 9) CHECK /usr/share/doc/modem-hsfpci/README.Debian FOR INSTRUCTIONS TO
+#    BUILD YOUR DRIVER
+⇒ Application ⇒ Accessoires ⇒ Terminal
+</p>
+<pre class="code">gksudo gedit /usr/share/doc/modem-hsfpci/README.Debian</pre>
+
+<p>
+retirez les 2 # pour votre pays et votre adresse de carte modem
+soit pour moi :
+</p>
+<pre class="code">Country=&quot;FRANCE&quot;
+VendorID=14F1 ; DeviceID=2F00 </pre>
+
+<p>
+⇒ Application ⇒ Accessoire ⇒ Terminal
+Lancez la commande :
+</p>
+<pre class="code">sudo /usr/sbin/modem-hsf --install</pre>
+
+<p>
+Lancer ⇒ Système ⇒ Administration ⇒ gestionnaire de paquets ⇒ avancé ⇒ Recherchez et installez
+Menu ⇒ Fichier ⇒ ajoutez les paquets téléchargés 
+Menu ⇒ Fichier ⇒ ajoutez les paquets téléchargés 
+Cochez et intallez kppp
+</p>
+
+<p>
+⇒ Application ⇒ Accessoires ⇒ Terminal
+Lancez la commande :
+</p>
+<pre class="code">gksudo gedit /etc/ppp/options</pre>
+
+<p>
+ligne 35 changer l&#039;option auth en noauth
+Paramétrez votre connexion dans kppp… et cela roule.
+</p>
+
+<p>
+Nom du modem : Modem
+Périphérique modem : /dev/modem
+allez dans l&#039;onglet modem et cliquez sur interrogation modem… et là il cause le modem <img src="../lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />
+placez le numéro de téléphone de votre fournisseur… nom de connexion et mot de passe de connexion …
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="connexion_modem_rtc_quand_rien_dautre_ne_marche"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1255655899" /><input type="hidden" name="summary" value="[Solution libre Modem chips conexant hsf + kpp] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5656-10744" /><input type="submit" value="Modifier" class="button" title="Solution libre Modem chips conexant hsf + kpp" /></div></form></div>
+<h1 class="sectionedit8" id="mise_a_jour_du_noyau">Mise à jour du noyau</h1>
+<div class="level1">
+
+<p>
+Laissez faire JUSQU&#039;AU BOUT et redémarrez une fois tout fini.
+En particulier les fakeroot, build-essential, linux-headers
+Au redémarrage votre modem ne fonctionne plus ; c&#039;est normal si vous avez changé de noyau.
+Lancez la commande :
+</p>
+<pre class="code">sudo /usr/sbin/modem-hsf --install</pre>
+
+<p>
+Et tout remarche alors.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="connexion_modem_rtc_quand_rien_dautre_ne_marche"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1255655899" /><input type="hidden" name="summary" value="[Mise à jour du noyau] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10745-11080" /><input type="submit" value="Modifier" class="button" title="Mise à jour du noyau" /></div></form></div>
+<h2 class="sectionedit9" id="utiliser_l_applet_lumieres_du_modem">Utiliser l&#039;applet &quot;Lumières du Modem&quot;</h2>
+<div class="level2">
+
+<p>
+Alors qu&#039;il est déjà bon de pouvoir se connecter, il pourrait être génial de n&#039;avoir qu&#039;une seule méthode pour se connecter ou se déconnecter.<br/>
+
+La méthode la plus simple consiste à utiliser &quot;lumières du modem&quot;.<br/>
+
+Faites un clic droit sur le tableau de bord, sélectionnez &quot;Ajouter au tableau de bord&quot; et choisissez &quot;Lumières du Modem&quot;.<br/>
+
+Si votre modem est un périphérique autre que ttyS0, vous devrez configurer l&#039;applet.<br/>
+
+Faites un clic droit sur Lumières du Modem, choisissez Préférences &gt; Avancé, et changez le fichier de verrouillage afin qu&#039;il pointe vers votre périphérique.<br/>
+
+</p>
+
+<p>
+Par exemple, si vous avez un modem interne sur /dev/modem, le périphérique devrait être ppp0 et le fichier de verrouillage /var/lock/LCK..modem<br/>
+
+</p>
+
+<p>
+En plus de vous permettre de vous connecter d&#039;un seul clic, Lumières du Modem  vous donne également des informations sur votre durée de connexion, et une vue graphique de l&#039;activité de votre modem. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="connexion_modem_rtc_quand_rien_dautre_ne_marche"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1255655899" /><input type="hidden" name="summary" value="[Utiliser l'applet Lumières du Modem] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11081-" /><input type="submit" value="Modifier" class="button" title="Utiliser l'applet Lumières du Modem" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/df3a1f640107e95946d6ddb76d7214be.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/connexion_modem_rtc_quand_rien_dautre_ne_marche?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/connexion_modem_rtc_quand_rien_dautre_ne_marche?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/connexion_modem_rtc_quand_rien_dautre_ne_marche?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/connexion_modem_rtc_quand_rien_dautre_ne_marche?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/connexion_modem_rtc_quand_rien_dautre_ne_marche?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

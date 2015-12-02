@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>avast</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-12-16T22:55:17+0100"/>
+<meta name="keywords" content="karmic,antivirus,securite"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/avast?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="avast"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/avast"/>
+<link rel="canonical" href="../../avast"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"avast","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="avast#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="avast#telechargement">Téléchargement</a></div></li>
+<li class="level2"><div class="li"><a href="avast#obtention_de_la_cle">Obtention de la clé</a></div></li>
+<li class="level2"><div class="li"><a href="avast#installation_du_paquet">Installation du paquet</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="avast#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="avast#avec_l_interface_graphique">Avec l&#039;interface graphique</a></div></li>
+<li class="level2"><div class="li"><a href="avast#en_ligne_de_commande">En ligne de commande</a></div></li>
+<li class="level2"><div class="li"><a href="avast#scanner_une_cle_usb_ou_une_partition_avec_avast">Scanner une clé USB ou une partition  avec Avast!</a></div></li>
+<li class="level2"><div class="li"><a href="avast#pourquoi_le_mode_super_utilisateur">Pourquoi le mode super utilisateur ?</a></div></li>
+<li class="level2"><div class="li"><a href="avast#problemes_connus_et_resolus">Problèmes connus et [Résolus]</a></div></li>
+<li class="level2"><div class="li"><a href="avast#les_fausses_alertes">Les fausses alertes</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="avast#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">Karmic</a>,
+	<a href="../../antivirus" class="wikilink1" title="antivirus" rel="tag">antivirus</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="avast_4_linux_edition_familiale">Avast! 4 Linux Édition Familiale</h1>
+<div class="level1">
+
+<p>
+<strong>Avast!</strong> est un antivirus propriétaire, et gratuit pour une utilisation personnelle. Il est très réputé sous Microsoft Windows. Mais il existe aussi pour <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux en tarball <sup><a href="avast#fn__1" id="fnt__1" class="fn_top">1)</a></sup>, paquet Debian et paquet RPM.
+</p>
+
+<p>
+Il peut être pratique d&#039;avoir sous la main un antivirus pour les environnements Microsoft Windows et leurs données qui transite sur votre ordinateur ou en périphérie. Sous Linux vous ne courrez pas de danger ! Par exemple, si vous branchez des périphériques à votre ordinateur, tel que disque dur, clé mémoire ou si vous avez un lecteur de CD ou DVD ou toute autre unité de stockage, vous pourrez rendre le service de les vérifier et éventuellement de les réparer ou de les décontaminer !
+</p>
+
+<p>
+Un autre cas de figure, ce sont les installations en double ou multiple amorçage (dual-boot) Microsoft et Linux. Pourquoi redémarrer l&#039;ordinateur sous Windows pour les vérifications périodiques des partitions fat16 ou fat32 ou NTFS, si on peut le faire depuis Linux dans nos temps morts ? Vérifier les partitions Microsoft depuis Linux est même plus sécuritaire et a plus de chance de bien réparer les problèmes que de le faire sous Windows, on n&#039;a pas à scier la branche sur laquelle on est assis !
+</p>
+<blockquote><div class="no">
+Les logiciels antivirus fonctionnent classiquement en se basant sur l&#039;exploitation de bases de données de virus, complétée par des méthodes de détection diverses. <em class="u">Les logiciels tels que Avast ou AVG, bien que disponibles sous Linux, utilisent une base de données de virus développés pour Windows. Or ces virus sont inoffensifs sous Linux</em>, aussi ces logiciels n&#039;apportent aucune protection autre que l&#039;éventuelle détection de comportements suspects.<sup><a href="avast#fn__2" id="fnt__2" class="fn_top">2)</a></sup><br/>
+En revanche, <strong>Avast!</strong> peut être utile pour une analyse antivirale, lors d&#039;un transfert de fichier sous Windows. </div></blockquote>
+
+<p>
+<strong>Attention !L&#039;installation d&#039;Avast! n&#039;est pas recommandée pour Ubuntu 13.04 comme le dit la logithèque : […]Le paquet est de mauvaise qualité et peut endommager votre ordinateur[…]</strong>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Avast! 4 Linux Édition Familiale" [44-2150] -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Vous pouvez télécharger et installer Avast! à l&#039;aide de ce script à lancer dans un terminal:
+</p>
+<pre class="code">  wget http://avast-linux-home-edition.fr.uptodown.com/ubuntu/telecharger
+  sudo dpkg -i avast4workstation_1.3.0-2_i386.deb
+  </pre>
+
+<p>
+Si vous avez une version 64 bits du système, la commande d&#039;installation du package est la suivante:
+</p>
+<pre class="code">  sudo dpkg --force-architecture -i avast4workstation_1.3.0-2_i386.deb</pre>
+
+</div>
+<!-- EDIT2 SECTION "Installation" [2151-2580] -->
+<h3 class="sectionedit3" id="telechargement">Téléchargement</h3>
+<div class="level3">
+
+<p>
+Le téléchargement se fait sur <a href="http://avast.com/fre/download-avast-for-linux-edition.html" class="urlextern" title="http://avast.com/fre/download-avast-for-linux-edition.html"  rel="nofollow">Avast France</a> ou <a href="http://www.avast.com/fr-ca/linux-home-edition" class="urlextern" title="http://www.avast.com/fr-ca/linux-home-edition"  rel="nofollow">Avast Canada</a> ! Choisissez le <strong>paquet Debian</strong>.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Téléchargement" [2581-2817] -->
+<h3 class="sectionedit4" id="obtention_de_la_cle">Obtention de la clé</h3>
+<div class="level3">
+
+<p>
+Pour l&#039;utiliser, il vous faudra vous procurer une clé Avast!. Mais ne vous inquiétez pas, c&#039;est gratuit <img src="../../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />. Il vous suffit d&#039;aller sur la 
+<a href="http://www.avast.com/registration-free-antivirus.php" class="urlextern" title="http://www.avast.com/registration-free-antivirus.php"  rel="nofollow">page d&#039;enregistrement</a> et de suivre les instructions.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Obtention de la clé" [2818-3101] -->
+<h3 class="sectionedit5" id="installation_du_paquet">Installation du paquet</h3>
+<div class="level3">
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet#paquet_deb_telecharge" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> que vous avez téléchargé via la méthode des paquets téléchargés sur internet individuellement.
+</p>
+
+<p>
+<p><div class="noteimportant">Sous Kubuntu 9.10 32 Bits (2010-04-12), avec l&#039;installateur de paquet <strong>GDebi Package Installer</strong> tout fonctionne bien, mais pas avec <strong>KPackageKit</strong> !
+</p>
+
+<p>
+Pour l&#039;installer correctement sous KDE, allez sur le paquet téléchargé, avec le bouton droit de la souris, sélectionnez le sous-menu <strong>Ouvrir avec</strong> et cliquez sur <strong>GDebi Package Installer</strong>. Suivez les instructions et tout devrait bien se dérouler !
+</div></p>
+<p><div class="notetip">Il est possible que vous obteniez un message indiquant que le paquet est de mauvaise qualité.
+Cliquez simplement sur <strong>Ignorer et installer</strong> pour continuer l&#039;installation.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Installation du paquet" [3102-3948] -->
+<h2 class="sectionedit6" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT6 SECTION "Utilisation" [3949-3973] -->
+<h3 class="sectionedit7" id="avec_l_interface_graphique">Avec l&#039;interface graphique</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="sous_ubuntu">Sous Ubuntu</h4>
+<div class="level4">
+
+<p>
+Allez dans le menu Applications → Accessoires → Avast.
+</p>
+
+</div>
+
+<h4 id="sous_kubuntu">Sous Kubuntu</h4>
+<div class="level4">
+
+<p>
+Aller dans le menu KDE → Utilitaires → Avast! Antivirus.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Avec l'interface graphique" [3974-4176] -->
+<h3 class="sectionedit8" id="en_ligne_de_commande">En ligne de commande</h3>
+<div class="level3">
+
+<p>
+Vous pouvez aussi faire un scan sous console :
+</p>
+<pre class="code">sudo avast</pre>
+
+<p>
+Mais Avast! est aussi une commande :
+</p>
+
+<p>
+Syntaxe :
+</p>
+<pre class="code">avast [option] &lt;chemin du balayage&gt;</pre>
+<div class="table sectionedit9"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0" colspan="2"> Option </th><th class="col2"> Signification </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> -_ </td><td class="col1"> --console </td><td class="col2"> Lance  l&#039;application en mode console </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> -a </td><td class="col1"> --all </td><td class="col2"> Teste tous les fichiers (option par défaut) </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> -b </td><td class="col1"> --blockdevices </td><td class="col2"> Teste les périphériques de stockage (disquette, CD-ROM, disque dur, …) </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> -c </td><td class="col1"> --testfull </td><td class="col2"> Teste l&#039;intégralité des fichiers </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> -d </td><td class="col1"> --directory </td><td class="col2"> Teste seulement le contenu du répertoire </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> -i </td><td class="col1"> --ignoretype </td><td class="col2"> Ignore l&#039;ensemble des virus </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> -n </td><td class="col1"> --nostats </td><td class="col2"> Pas de statistique en fin de test antiviral </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> -p </td><td class="col1"> --continue=134 </td><td class="col2"> Action automatique avec les fichiers infectés<br/>
+1: Supprimer<br/>
+3: Réparer<br/>
+4: Arrêter </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> -r </td><td class="col1"> --report[=adresse fichier] </td><td class="col2"> Crée un fichier de rapport pour les résultats &quot;OK&quot; </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"> -t </td><td class="col1"> --archive[=ZGBTIJRXOQHFVPYD6UWAN] </td><td class="col2"> Teste les archives :<br/>
+Z: ZIP ( par défaut)<br/>
+G: GZ (par défaut)<br/>
+B: BZIP2 (par défaut)<br/>
+T: TAR (par défaut)<br/>
+I: MIME<br/>
+J:ARJ<br/>
+R:RAR<br/>
+X: Exec (par défaut)<br/>
+O: ZOO<br/>
+Q: ARC<br/>
+H: LHA<br/>
+F: TNEF<br/>
+V: CPIO<br/>
+P: RPM<br/>
+Y:ISO<br/>
+D: DBX<br/>
+6: SIS<br/>
+U:OLE<br/>
+W: WINEXEC (par défaut)<br/>
+A: Toutes<br/>
+N: Aucune </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"> -v </td><td class="col1"> --viruslist[=masque] </td><td class="col2"> Affiche la liste de tous les virus spécifiés </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"> -h </td><td class="col1"> --help </td><td class="col2"> Affiche la liste d&#039;aide </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"> </td><td class="col1"> --usage </td><td class="col2"> Affiche la syntaxe </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"> -V </td><td class="col1"> --version </td><td class="col2"> Affiche la version du programme </td>
+	</tr>
+</table></div>
+<!-- EDIT9 TABLE [4359-5669] -->
+<p>
+Pour mettre à jour Avast!, utilisez la commande suivante :
+</p>
+<pre class="code">avast-update</pre>
+
+</div>
+<!-- EDIT8 SECTION "En ligne de commande" [4177-5746] -->
+<h3 class="sectionedit10" id="scanner_une_cle_usb_ou_une_partition_avec_avast">Scanner une clé USB ou une partition  avec Avast!</h3>
+<div class="level3">
+
+<p>
+Pour plus d&#039;efficacité, je vous conseille de lancer ce scan en mode super utilisateur <em class="u">(Mode non-conseillé pour une partition Windows)</em> :
+</p>
+<pre class="code">sudo avastgui     </pre>
+
+<p>
+0) <em class="u">Pour les partitions</em>: Il faut d&#039;abord &quot;Monter&quot; la partition à scanner à l&#039;aide de &quot;Nautilus&quot; (gestionnaire de fichiers par défaut sous Ubuntu). Il suffit juste de cliquer sur le nom de la partition sur la partie supérieure gauche de &quot;Nautilus&quot;
+</p>
+
+<p>
+1) Choisir &quot;dossiers sélectionnés&quot; dans la fenêtre principale et cliquer sur le &quot;+&quot; présent.
+</p>
+
+<p>
+2) Se rendre sur l&#039;icône de l&#039;ordinateur et cliquer sur le petit triangle.
+</p>
+
+<p>
+3) Ouvrir le dossier &quot;media&quot; et choisir son périphérique ou la partition  à scanner.
+</p>
+
+<p>
+4) Lancer le scan.
+</p>
+
+<p>
+<p><div class="noteimportant">Dans le cas d&#039;un scan d&#039;une partition Windows, Avast! peut entrer en conflits avec des fichiers de d&#039;autres antivirus présents sous Windows, vous devez donc placer les dossiers de ces antivirus dans la liste blanche Avast!
+</div></p>
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Scanner une clé USB ou une partition  avec Avast!" [5747-6756] -->
+<h3 class="sectionedit11" id="pourquoi_le_mode_super_utilisateur">Pourquoi le mode super utilisateur ?</h3>
+<div class="level3">
+
+<p>
+Je vous conseille d&#039;utiliser Avast! en mode super utilisateur pour qu&#039;il ait accès à tous les fichiers.
+Voici la commande à lancer dans un terminal pour lancer Avast! en mode super utilisateur:
+</p>
+<pre class="code"> sudo avastgui</pre>
+
+<p>
+<p><div class="noteimportant">En mode super utilisateur, Avast! peut porter préjudice à des fichiers importants du système, mode à utiliser avec beaucoup de précaution.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Pourquoi le mode super utilisateur ?" [6757-7185] -->
+<h3 class="sectionedit12" id="problemes_connus_et_resolus">Problèmes connus et [Résolus]</h3>
+<div class="level3">
+
+<p>
+Dans cette sous-section vous trouverez la solution pour des problèmes connus !
+</p>
+
+</div>
+
+<h4 id="message_an_error_occured_in_avast_engineargument_invalide">Message « An error occured in avast! engine: Argument invalide »</h4>
+<div class="level4">
+
+<p>
+Vous pouvez obtenir le message d&#039;avertissement « An error occured in avast! engine: Argument invalide » au redémarrage d&#039;Avast, après la mise à jour des données des signatures des virus.
+</p>
+
+<p>
+La raison est que les noyaux Linux ont une limite artificielle qui dicte la taille maximale d&#039;un bloc SHM en bits. Et une des bases de signatures de virus d&#039;Avast dépasse cette taille. On a donc simplement à augmenter la limite supérieure de taille de fichier pour corriger le problème. 
+</p>
+
+<p>
+Pour connaître les valeurs actuelles, exécutez dans une console, la commande suivante, qui nous renvoie trois valeurs (mni, all, max) :
+</p>
+<pre class="code">sysctl -a | grep shm</pre>
+
+<p>
+Cette commande devrait vous retourner des valeurs qui ressemblent à :
+</p>
+<pre class="code">kernel.shmmni = 4096
+kernel.shmall = 2097152
+kernel.shmmax = 33554432</pre>
+
+<p>
+Ce qui nous intéresse, c&#039;est la valeur « kernel.shmmax = 33554432 », qui est devenu trop faible dernièrement. En date du 19 juillet 2012, le fait de tripler cette valeur pour « <strong>104857600</strong> », devrait corriger le problème pour quelques années !
+</p>
+
+<p>
+Dans une console, exécutez la commande suivante :
+</p>
+<pre class="code">sudo sysctl -w kernel.shmmax=104857600</pre>
+
+<p>
+Démarrez maintenant Avast et procédez à la mise à jour des données virus et redémarrez Avast et tout est rentré dans l&#039;ordre, avec toutes les signatures de virus disponibles !
+</p>
+
+<p>
+Pour que cette valeur soit permanente, il vous faut ajouter cette commande à votre fichier de configuration de Linux.
+</p>
+
+<p>
+Pour éditer le fichier par une ligne de commande dans la console, chez moi je suis sous Kubuntu avec KDE, alors :
+</p>
+<pre class="code">sudo kwrite /etc/init.d/rcS</pre>
+
+<p>
+Ou :
+</p>
+<pre class="code">sudo kate /etc/init.d/rcS</pre>
+
+<p>
+Si vous êtes sous Ubuntu avec Gnome, alors :
+</p>
+<pre class="code">sudo gedit /etc/init.d/rcS</pre>
+
+<p>
+ <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Modifiez le fichier avec les droits d&#039;administration</a> <strong>/etc/init.d/rcS</strong>, et ajoutez la ligne suivante au début du fichier, après la première série de ligne qui commence par le caractère « # » :
+</p>
+<pre class="code">sysctl -w kernel.shmmax=104857600</pre>
+
+<p>
+Cela devrait ressembler à :
+</p>
+<pre class="code">#! /bin/sh
+#
+# rcS
+#
+# Call all S??* scripts in /etc/rcS.d/ in numerical/alphabetical order
+#
+sysctl -w kernel.shmmax=104857600
+...</pre>
+
+<p>
+Enregistrez le fichier et le tour est joué de manière permanente !
+</p>
+
+<p>
+Un très grand merci à <a href="../../utilisateur/fake" class="wikilink2" title="utilisateur:fake" rel="nofollow">Fake</a>, pour  <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=389430&amp;p=2#16" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=389430&amp;p=2#16"  rel="nofollow">les détails de cette solution</a> !
+</p>
+
+</div>
+<!-- EDIT12 SECTION "Problèmes connus et [Résolus]" [7186-9785] -->
+<h3 class="sectionedit13" id="les_fausses_alertes">Les fausses alertes</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="les_bombe_de_decompression">Les « bombe de décompression »</h4>
+<div class="level4">
+
+<p>
+Tiré du lien qui suit :
+</p>
+
+<p>
+« En cherchant sur Internet, on tombe, sur tout et n&#039;importe quoi, avec une préférence pour les liens vers les sites qui expliquent ce que sont les &quot;vraies&quot; bombes de décompressions, qui elles sont dangereuses…
+</p>
+
+<p>
+Seulement, voilà, la plupart du temps, ce que trouve Avast n&#039;est qu&#039;un fichier zippé qui ne contient rien de grave. C&#039;est que Avast n&#039;est pas par défaut paramétré pour décompresser ce type de fichiers, par exemple parce que la taille du fichier décompressé risque d&#039;entraîner une analyse trop longue… »
+</p>
+
+<p>
+Dans les faits, il n&#039;y a pas de danger et il n&#039;y a rien à corriger ! 
+</p>
+
+<p>
+Pour des explications détaillées, lire jusqu&#039;à la fin, ce fil de discussion du forum Comment ça marche : <a href="http://www.commentcamarche.net/forum/affich-2424524-analyse-avast-bombe-de-decompression-zip" class="urlextern" title="http://www.commentcamarche.net/forum/affich-2424524-analyse-avast-bombe-de-decompression-zip"  rel="nofollow">Analyse AVAST / bombe de décompression + ZIP [Résolu]</a> !
+</p>
+
+</div>
+<!-- EDIT13 SECTION "Les fausses alertes" [9786-10757] -->
+<h2 class="sectionedit14" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <a href="http://www.avast.com/fr-fr/" class="urlextern" title="http://www.avast.com/fr-fr/"  rel="nofollow">Site officiel du logiciel</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://forum.avast.com/index.php" class="urlextern" title="http://forum.avast.com/index.php"  rel="nofollow">Forum officiel des utilisateurs</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeur(e)s : Metallica_POTTER (L&#039;auteur), <a href="../../utilisateurs/ner0lph" class="wikilink1" title="utilisateurs:ner0lph">Ner0lph</a>, ostaquet, taico, <a href="../../utilisateurs/fabien26" class="wikilink1" title="utilisateurs:fabien26">fabien26</a>, frosch74, <a href="http://doc.ubuntu-fr.org/utilisateurs/yannubuntu" class="wikilink1" title="utilisateurs:yannubuntu">YannUbuntu</a>, <a href="../../utilisateurs/richard973" class="wikilink2" title="utilisateurs:richard973" rel="nofollow"> richard973</a>, <a href="../../utilisateurs/lami" class="wikilink1" title="utilisateurs:lami">L&#039;ami René</a> (ajout mineur)+(Mise en page)+(Problèmes connus et [Résolus])+(Les fausses alertes), <a href="../../utilisateurs/beastie" class="wikilink2" title="utilisateurs:beastie" rel="nofollow">Beastie</a> (installation amd64 - test shmmax 2012).</em>
+</p>
+
+</div>
+<!-- EDIT14 SECTION "Liens" [10758-] --><div class="footnotes">
+<div class="fn"><sup><a href="avast#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+fichiers d&#039;extension « tar.gz »</div>
+<div class="fn"><sup><a href="avast#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<a href="../../antivirus" class="wikilink1" title="antivirus">antivirus</a></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/d2417504c07d7299ac6386e338a21404.xhtml used -->
+</div>
+</body>
+</html>

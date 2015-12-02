@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>boot-info</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-12-04T01:40:27+0100"/>
+<meta name="keywords" content="precise,trusty,utopic,systeme"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../boot-info?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="boot-info"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/boot-info"/>
+<link rel="canonical" href="../../boot-info"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"boot-info","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="boot-info#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="boot-info#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="boot-info#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="boot-info#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="http://doc.ubuntu-fr.org/trusty" class="wikilink1" title="trusty" rel="tag">Trusty</a>,
+	<a href="../../utopic" class="wikilink1" title="utopic" rel="tag">Utopic</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="boot-info">Boot-Info</h1>
+<div class="level1">
+
+<p>
+<strong>Boot-Info</strong> est un petit utilitaire qui créée un rapport contenant les principales caractéristiques système de votre PC liées au démarrage.
+Ce rapport permet de diagnostiquer d’éventuels problèmes, notamment ceux liés au démarrage.
+</p>
+
+<p>
+<em>Boot-Info</em> est un logiciel libre (<abbr title="GNU&#039;s Not Unix">GNU</abbr>-<abbr title="GNU General Public License">GPL</abbr>).
+</p>
+
+<p>
+<a href="../../lib/exe/fetch.php?tok=a1ab53&amp;media=http%253A%252F%252Fpix.toile-libre.org%252Fupload%252Foriginal%252F1417653221.png" class="media" title="http://pix.toile-libre.org/upload/original/1417653221.png"><img src="../../lib/exe/fetch.php?tok=a1ab53&amp;media=http%253A%252F%252Fpix.toile-libre.org%252Fupload%252Foriginal%252F1417653221.png" class="media" alt="" /></a>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Boot-Info" [46-428] -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> connecter internet;</div>
+</li>
+<li class="level1"><div class="li">  <a href="../../ppa#ajout_d_un_ppa_a_vos_sources_logicielles" class="wikilink1" title="ppa">Ajouter à vos sources de logiciels le PPA</a> <strong>ppa:yannubuntu/boot-repair</strong><sup><a href="boot-info#fn__1" id="fnt__1" class="fn_top">1)</a></sup>: </div>
+</li>
+</ol>
+<pre class="code">sudo add-apt-repository ppa:yannubuntu/boot-repair</pre>
+
+<p>
+6.  <a href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj#recharger_la_liste_des_paquets" class="wikilink1" title="tutoriel:comment_modifier_sources_maj">Recharger la liste des paquets</a><br/>
+
+</p>
+<pre class="code">sudo apt-get update</pre>
+
+<p>
+ 7. <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installer les paquets</a> <strong><a href="apt://boot-repair" class="interwiki iw_apt" title="apt://boot-repair">boot-repair</a></strong> et <strong><a href="apt://boot-info" class="interwiki iw_apt" title="apt://boot-info">boot-info</a></strong><br/>
+
+</p>
+<pre class="code">sudo apt-get install boot-repair boot-info</pre>
+
+</div>
+<!-- EDIT2 SECTION "Installation" [429-1063] -->
+<h2 class="sectionedit3" id="utilisation">Utilisation</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> lancez Boot-Info via le tableau de bord (si vous utilisez <a href="../../unity" class="wikilink1" title="unity">Unity</a>), ou via la commande <em>boot-info</em>.</div>
+</li>
+<li class="level1"><div class="li"> choisissez les options de rapport qui vous conviennent:</div>
+<ul>
+<li class="level2"><div class="li"> &quot;Rapport en ligne&quot; envoie le rapport sur un site <a href="http://fr.wikipedia.org/wiki/pastebin" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/pastebin">pastebin</a>, puis vous indique l&#039;url où se situe le rapport)</div>
+</li>
+<li class="level2"><div class="li"> &quot;Rapport local&quot; enregistre le rapport dans votre espace utilisateur et l&#039;ouvre dans votre éditeur de texte</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Utilisation" [1064-1493] -->
+<h2 class="sectionedit4" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="../../tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer les paquets</a> <strong>boot-repair</strong> et <strong>boot-info</strong>. Selon la méthode choisie, la configuration globale de l&#039;application est conservée ou supprimée. Les journaux du système, et les fichiers de préférence des utilisateurs dans leurs dossiers personnels sont toujours conservés.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Désinstallation" [1494-1902] -->
+<h2 class="sectionedit5" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <a href="https://sourceforge.net/p/boot-info/home/fr" class="urlextern" title="https://sourceforge.net/p/boot-info/home/fr"  rel="nofollow">Site officiel</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <a href="../../tutoriel/boot-info" class="wikilink1" title="tutoriel:boot-info">Tutoriel décrivant les différentes façons de créer un rapport Boot-Info</a></div>
+</li>
+</ul>
+
+<p>
+—-
+</p>
+
+<p>
+<em>Contributeurs principaux : <a href="http://doc.ubuntu-fr.org/utilisateurs/yannubuntu" class="wikilink1" title="utilisateurs:yannubuntu">YannUbuntu</a></em>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Voir aussi" [1903-] --><div class="footnotes">
+<div class="fn"><sup><a href="boot-info#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<a href="https://launchpad.net/~yannubuntu/+archive/ubuntu/boot-repair" class="urlextern" title="https://launchpad.net/~yannubuntu/+archive/ubuntu/boot-repair"  rel="nofollow">https://launchpad.net/~yannubuntu/+archive/ubuntu/boot-repair</a></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/8/85a51106d00d9a2f3d059620ef2df8b9.xhtml used -->
+</div>
+</body>
+</html>

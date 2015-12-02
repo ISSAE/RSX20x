@@ -1,0 +1,722 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>amarok - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-11-06T21:55:19+0100"/>
+<meta name="keywords" content="lucid,lecteur audio,kde"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/amarok?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/amarok?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/amarok"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/amarok"/>
+<link rel="canonical" href="amarok"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"amarok","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="amarok#main" tabindex="1">Contenu</a> | <a href="amarok#qsearch__in" tabindex="2">Rechercher</a> | <a href="amarok#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="amarok" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="amarok" >amarok</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, les informations qu'elle contient  n'ont pas été vérifiées depuis <a href="lucid">Ubuntu 10.04 LTS.</a><br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="amarok#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="amarok#via_les_depots_officiels">via les dépôts officiels</a></div></li>
+<li class="level2"><div class="li"><a href="amarok#via_le_ppa">via le PPA</a></div></li>
+<li class="level2"><div class="li"><a href="amarok#revenir_a_la_version_14">Revenir à la version 1.4</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="amarok#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="amarok#amarok_en_francais">Amarok en français</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="amarok#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="amarok#la_liste_de_lecture">La liste de lecture</a></div></li>
+<li class="level2"><div class="li"><a href="amarok#la_collection">La collection</a></div></li>
+<li class="level2"><div class="li"><a href="amarok#la_vue_contextuelle">La vue contextuelle</a></div></li>
+<li class="level2"><div class="li"><a href="amarok#lastfm">Last.fm</a></div></li>
+<li class="level2"><div class="li"><a href="amarok#l_icone">L&#039;icône</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="amarok#autres_fonctionnalites_scripts_etc">Autres fonctionnalités, scripts, etc.</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="amarok#replaygain">ReplayGain</a></div></li>
+<li class="level2"><div class="li"><a href="amarok#exporter_une_collection_vers_un_autre_ordinateur">Exporter une collection vers un autre ordinateur</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="amarok#problemes_connus">Problèmes connus</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="amarok#conflit_flash_et_peripherique_de_sortie_de_son">Conflit Flash et Périphérique de sortie de Son</a></div></li>
+<li class="level2"><div class="li"><a href="amarok#id_tag">ID tag</a></div></li>
+<li class="level2"><div class="li"><a href="amarok#infobulles_noires_sous_gnome">InfoBulles Noires sous Gnome</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="amarok#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="http://doc.ubuntu-fr.org/lecteur_audio" class="wikilink1" title="lecteur_audio" rel="tag">lecteur audio</a>,
+	<a href="kde" class="wikilink1" title="kde" rel="tag">kde</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="lecteur_amarok_2">Lecteur Amarok 2</h1>
+<div class="level1">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/amarok-icon.png?id=amarok" class="media" title="amarok-icon.png"><img src="http://doc.ubuntu-fr.org/_media/amarok-icon.png" class="mediaright" title="Amarok - Rediscover Your Music !" alt="Amarok - Rediscover Your Music !" /></a>
+</p>
+
+<p>
+<strong>Amarok</strong> est un puissant <a href="http://doc.ubuntu-fr.org/lecteur_audio" class="wikilink1" title="lecteur_audio">lecteur de musique</a> présent par défaut sous <strong>Kubuntu</strong>.
+</p>
+
+<p>
+Sous <strong>Ubuntu</strong> (avec l&#039;environnement Gnome), l&#039;équivalent d&#039;Amarok est <a href="rhythmbox" class="wikilink1" title="rhythmbox">Rhythmbox</a> (ou aussi <a href="http://doc.ubuntu-fr.org/exaile" class="wikilink1" title="exaile">Exaile</a>).
+Amarok2 est également disponible pour Mac <abbr title="Operating System">OS</abbr> X et Windows.
+</p>
+
+<p>
+<p><div class="noteclassic">
+Cette page concerne la nouvelle version d&#039;Amarok (2.x.x), installée par défaut depuis <a href="jaunty" class="wikilink1" title="jaunty">Ubuntu 9.04</a>. Pour l&#039;ancienne version (1.4.x), consultez <a href="http://doc.ubuntu-fr.org/amarok_v1" class="wikilink1" title="amarok_v1">cette page</a>. Si vous aimiez l&#039;ancienne version d&#039;Amarok, vous pouvez utiliser <a href="http://doc.ubuntu-fr.org/clementine" class="wikilink1" title="clementine">Clementine</a>, qui est un fork d&#039;Amarok 1.4.
+
+</div></p>
+</p>
+
+</div>
+
+<h4 id="presentation_d_amarok">Présentation d&#039;Amarok</h4>
+<div class="level4">
+
+<p>
+Amarok est un lecteur de contenu audio qui a franchi une nouvelle étape avec sa version 2. Les concepteurs du programme sont complètement repartis de zéro, et les fonctionnalités de l&#039;ancienne version ne sont pas (encore ?) toutes présentes. Néanmoins, après des débuts instables, le lecteur est enfin efficace et affiche de nombreuses possibilités. Vous qui rejoignez Kubuntu, ce lecteur devrait vous séduire !
+</p>
+
+<p>
+Voici donc à quoi peut ressembler Amarok :
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/amarok/amarok_karmic_02.png?id=amarok" class="media" title="applications:amarok:amarok_karmic_02.png"><img src="http://doc.ubuntu-fr.org/_media/applications/amarok/amarok_karmic_02.png" class="mediacenter" title="Amarok 2.2" alt="Amarok 2.2" /></a>
+</p>
+
+<p>
+Parmi les fonctionnalités les plus intéressantes, on peut citer :
+</p>
+<ul>
+<li class="level1"><div class="li"> une interface entièrement configurable! Les volets de navigation, de contexte (contenu apportant des informations supplémentaires sur le morceau en cours de lecture) et la liste de lecture sont à présent des widgets ancrables que l&#039;on peut placer où et comme on le souhaite. On peut les redimensionner, les empiler ou les supprimer.</div>
+</li>
+<li class="level1"><div class="li"> de nombreux services web dont :</div>
+<ul>
+<li class="level2"><div class="li"> une intégration complète avec <a href="http://doc.ubuntu-fr.org/lastfm" class="wikilink1" title="lastfm">last.fm</a> ;</div>
+</li>
+<li class="level2"><div class="li"> accès à <a href="http://www.jamendo.com/fr/" class="urlextern" title="http://www.jamendo.com/fr/"  rel="nofollow">Jamendo</a> et ses artistes indépendants ;</div>
+</li>
+<li class="level2"><div class="li"> accès à de nombreuses radios Internet gratuites (Shoutcast) ;</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> liste de lecture dynamique (en fonction de vos goûts !) ; </div>
+</li>
+<li class="level1"><div class="li"> importation de l&#039;ancienne collection d&#039;Amarok 1.4 et gestion de collection avec MySQL (Sous Amarok 2, la collection est gérée par défaut par MySQL. Une option existe dans les paramètres pour configurer une base de données MySQL externe, par exemple afin de lire une collection musicale sur un serveur commun à partir de plusieurs ordinateurs)</div>
+</li>
+<li class="level1"><div class="li"> et enfin, comme dans l&#039;ancienne version, une multitude de petits scripts ajoutent des fonctionnalités supplémentaires.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="notehelp">Note : N&#039;ayez pas peur d&#039;Amarok 2 ; il faut un peu de temps pour se familiariser avec la nouvelle interface, mais en lui-même, il est génial ! Le mieux est d&#039;utiliser la version 2.2 qui apporte les fonctionnalités élémentaires manquantes (dont la lecture de CD), mais elle n&#039;est disponible pour l&#039;instant que sous Karmic. La version mise à jour sous Jaunty (2.1.1) est néanmoins parfaitement utilisable (voir ci-dessous).
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[Lecteur Amarok 2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="40-2926" /><input type="submit" value="Modifier" class="button" title="Lecteur Amarok 2" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2927-2952" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit3" id="via_les_depots_officiels">via les dépôts officiels</h3>
+<div class="level3">
+
+<p>
+Amarok est le lecteur audio installé par défaut sur Kubuntu. 
+</p>
+
+<p>
+Pour les autres <a href="variantes" class="wikilink1" title="variantes">variantes</a> d&#039;Ubuntu, il suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://amarok" class="interwiki iw_apt" title="apt://amarok">amarok</a></strong>.
+</p>
+
+<p>
+<a href="http://packages.ubuntu.com/search?suite=default&amp;section=all&amp;arch=any&amp;searchon=names&amp;keywords=amarok" class="urlextern" title="http://packages.ubuntu.com/search?suite=default&amp;section=all&amp;arch=any&amp;searchon=names&amp;keywords=amarok"  rel="nofollow">http://packages.ubuntu.com/search?suite=default&amp;section=all&amp;arch=any&amp;searchon=names&amp;keywords=amarok</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[via les dépôts officiels] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2953-3289" /><input type="submit" value="Modifier" class="button" title="via les dépôts officiels" /></div></form></div>
+<h3 class="sectionedit4" id="via_le_ppa">via le PPA</h3>
+<div class="level3">
+
+<p>
+Pour <a href="natty" class="wikilink1" title="natty">Ubuntu 11.04</a> uniquement. Pour obtenir la version de développement d&#039;Amarok, il suffit d&#039;<a href="ppa" class="wikilink1" title="ppa">ajouter à vos sources de logiciels le PPA</a> suivant :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>ppa:kubuntu-ppa/backports</strong><sup><a href="amarok#fn__1" id="fnt__1" class="fn_top">1)</a></sup> pour la version 2.4.1. (Attention ce dépôt contient d&#039;autres logiciels, pensez à le désactiver après utilisation)</div>
+</li>
+</ul>
+
+<p>
+Puis <a href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj#recharger_la_liste_des_paquets" class="wikilink1" title="tutoriel:comment_modifier_sources_maj">rechargez la liste des paquets</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[via le PPA] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3290-3806" /><input type="submit" value="Modifier" class="button" title="via le PPA" /></div></form></div>
+<h3 class="sectionedit5" id="revenir_a_la_version_14">Revenir à la version 1.4</h3>
+<div class="level3">
+
+<p>
+<em>Consultez la page <a href="http://doc.ubuntu-fr.org/amarok_v1" class="wikilink1" title="amarok_v1">Amarok_v1</a> !</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[Revenir à la version 1.4] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3807-3882" /><input type="submit" value="Modifier" class="button" title="Revenir à la version 1.4" /></div></form></div>
+<h2 class="sectionedit6" id="configuration">Configuration</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3883-3910" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h3 class="sectionedit7" id="amarok_en_francais">Amarok en français</h3>
+<div class="level3">
+
+<p>
+Pour avoir Amarok en français sous Ubuntu, il suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://kde-l10n-fr" class="urlextern" title="apt://kde-l10n-fr"  rel="nofollow">kde-l10n-fr</a></strong> qui est le pack de langue française de KDE.<p><div class="notewarning">Sous Ubuntu 12.10, ce paquet ne semble plus permettre la traduction en Français
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[Amarok en français] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3911-4244" /><input type="submit" value="Modifier" class="button" title="Amarok en français" /></div></form></div>
+<h2 class="sectionedit8" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/amarok/amarok_karmic_01.png?id=amarok" class="media" title="applications:amarok:amarok_karmic_01.png"><img src="http://doc.ubuntu-fr.org/_media/applications/amarok/amarok_karmic_01.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+
+<h4 id="sous_kubuntu">Sous Kubuntu</h4>
+<div class="level4">
+
+<p>
+Lancez l&#039;application depuis le menu <em>K → Applications → Multimédia → Lecteur audio Amarok</em> ou <em>via</em> la <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">amarok</pre>
+
+</div>
+
+<h4 id="sous_ubuntu">Sous Ubuntu</h4>
+<div class="level4">
+
+<p>
+Lancez l&#039;application depuis le menu <em>Applications → Son et vidéo → Amarok</em> ou <em>via</em> la <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">amarok</pre>
+
+<p>
+L&#039;interface générale d&#039;Amarok se décompose à l&#039;origine en trois zones, que vous pouvez redimensionner, déplacer/empiler et même supprimer :
+</p>
+<ul>
+<li class="level1"><div class="li"> A droite la <strong>liste de lecture</strong></div>
+</li>
+<li class="level1"><div class="li"> A gauche la partie &quot;explorateur/navigateur&quot; affichant votre <strong>Collection</strong></div>
+</li>
+<li class="level1"><div class="li"> Au centre, une zone composée de mini-applications (&quot;applets&quot; en anglais) internes, gérant ce que l&#039;on appelle le <strong>Contexte</strong> (informations sur les titres en cours de lecture, les paroles, affichage de photos, etc). </div>
+</li>
+</ul>
+
+<p>
+Ci-dessous un aperçu des fonctions principales ainsi que quelques astuces pour une utilisation optimale :
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4245-5284" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h3 class="sectionedit9" id="la_liste_de_lecture">La liste de lecture</h3>
+<div class="level3">
+
+<p>
+La liste de lecture a été grandement revisitée, tant dans son aspect que dans son utilisation:
+</p>
+
+<p>
+Amarok propose maintenant un <strong>éditeur</strong> qui vous propose trois manières pré-configurées d&#039;organiser votre liste de lecture et vous permet d&#039;en créer à votre convenance et de les sauvegarder. On peut rapidement modifier un renseignement sur le morceau (&quot;tag&quot;) comme le nom d&#039;artiste ou d&#039;album, en cliquant deux fois sur celui-ci à l&#039;intérieur même de la liste de lecture, sans avoir à ouvrir de fenêtre séparée.
+</p>
+
+<p>
+On peut aussi à présent utiliser des <strong>marque-pages</strong> à l&#039;intérieur d&#039;un fichier, permettant d&#039;accéder directement à un passage favori, ou à un chapitre particulier d&#039;un long fichier (les podcasts, par exemple).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[La liste de lecture] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5285-6061" /><input type="submit" value="Modifier" class="button" title="La liste de lecture" /></div></form></div>
+<h3 class="sectionedit10" id="la_collection">La collection</h3>
+<div class="level3">
+
+<p>
+La bibliothèque a un nouvel aspect, elle affiche le chemin de dossier sur une ligne - comme dans <a href="dolphin" class="wikilink1" title="dolphin">Dolphin</a> par exemple, l&#039;explorateur de fichiers de KDE 4 - et c&#039;est avec cela que l&#039;on accède aux différents éléments multimédia.
+</p>
+
+<p>
+A présent, à l&#039;insertion d&#039;un <strong>CD audio</strong>, ce dernier apparaît dans l&#039;explorateur afin de pouvoir être lu directement ou voir son contenu copié dans la collection. Il en est de même pour les lecteurs multimédias externes, tels les lecteurs mp3.
+</p>
+
+<p>
+<p><div class="noteimportant">Sous ubuntu, les fonctionnalités liées aux CD audio ne fonctionnent pas actuellement, telles la lecture ou l&#039;encodage. <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> : est-ce toujours d&#039;actualité ?
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[La collection] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6062-6769" /><input type="submit" value="Modifier" class="button" title="La collection" /></div></form></div>
+<h3 class="sectionedit11" id="la_vue_contextuelle">La vue contextuelle</h3>
+<div class="level3">
+
+<p>
+Dans la version 2.2, les mini-applications de la zone contextuelle se positionnent comme on le veut, et se mettent à la bonne taille automatiquement.
+</p>
+
+</div>
+
+<h4 id="photos_et_videos">Photos et vidéos</h4>
+<div class="level4">
+
+<p>
+Deux nouvelles mini-applications font leur apparition et permettent de trouver des photos et des vidéos de l&#039;artiste en cours de lecture.
+</p>
+
+</div>
+
+<h4 id="wikipedia">Wikipédia</h4>
+<div class="level4">
+
+<p>
+Le lien avec <a href="http://www.wikipedia.fr" class="urlextern" title="http://www.wikipedia.fr"  rel="nofollow">Wikipédia</a> s&#039;améliore et permet l&#039;utilisation en plusieurs langues (selon les langues système installées) et le choix de quelle information s&#039;affiche: à propos de l&#039;artiste, de l&#039;album ou du titre.
+</p>
+
+</div>
+
+<h4 id="paroles">Paroles</h4>
+<div class="level4">
+
+<p>
+Dans le gestionnaire de script, cliquez sur &quot;Obtenir plus de scripts&quot; puis cherchez et installez &quot;Ultimate Lyrics&quot;. Ensuite il faudra redémarrer amarok, puis retourner dans le gestionnaire de scripts pour l&#039;activer. 
+</p>
+
+</div>
+
+<h4 id="paroles_synchronisees_equivalent_a_minilyrics">Paroles synchronisées (équivalent à Minilyrics)</h4>
+<div class="level4">
+
+<p>
+Il existe un programme appellé LrcShow X qui permet d&#039;afficher les paroles en temps réel et synchronisée avec la chanson.
+Il faut cependant lancer ce programme à chaque démarrage du lecteur. Heureusement il existe un plugin qui s&#039;en charge : LrcShow X Starter.
+Pour tout savoir visiter ce site qui explique très bien comment y arriver : <a href="http://pauldbsblog.blogspot.com/2009/09/equivalent-de-minilyrics-sous-ubuntu.html" class="urlextern" title="http://pauldbsblog.blogspot.com/2009/09/equivalent-de-minilyrics-sous-ubuntu.html"  rel="nofollow">http://pauldbsblog.blogspot.com/2009/09/equivalent-de-minilyrics-sous-ubuntu.html</a>.
+</p>
+
+</div>
+
+<h4 id="gestion_des_pochettes">Gestion des pochettes</h4>
+<div class="level4">
+
+<p>
+Amarok peut télécharger automatiquement les pochettes de vos album à partir d&#039;internet (clic droit sur une musique, puis &quot;télécharger la pochette&quot; s&#039;il ne le fait pas tout seul), mais vous pouvez également lui assigner une image personnalisée en cliquant sur &quot;ajouter une pochette personnalisée&quot;.
+Vous pouvez également supprimer la pochette d&#039;un album en cliquant sur &quot;effacer la pochette&quot;.
+</p>
+
+<p>
+Dans l&#039;interface par défaut, la pochette est affichée dans le widget central. Si vous supprimez ou masquez le gestionnaire de widgets, vous pouvez toujours avoir un aperçu de la pochette de votre album dans la liste de lecture et dans la liste de votre collection (si vous avez activé l&#039;option &quot;afficher les pochettes&quot;). Vous pouvez aussi avoir un aperçu de l&#039;image en taille réelle en faisant &quot;afficher la pochette&quot; lorsque vous faites un clic-droit sur une piste.
+</p>
+
+<p>
+Le gestionnaire de pochettes (dans le menu &quot;outils&quot;)vous permet d&#039;avoir une agréable vue d&#039;ensemble de vos jaquettes, de voir lesquelles manquent et de les télécharger, les modifier ou les supprimer.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[La vue contextuelle] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6770-9219" /><input type="submit" value="Modifier" class="button" title="La vue contextuelle" /></div></form></div>
+<h3 class="sectionedit12" id="lastfm">Last.fm</h3>
+<div class="level3">
+
+<p>
+Les fonctionnalités géniales du site <a href="http://doc.ubuntu-fr.org/lastfm" class="wikilink1" title="lastfm">Last.fm</a> sont complètement intégrées dans Amarok2. Last.fm est à la fois une webradio et un site Internet proposant un système de statistiques et de recommandation de musique. En effet, en fonction de ce que vous avez écouté, Last.fm vous propose une musique adaptée à vos goûts musicaux. Last.fm vous propose aussi plusieurs webradios : vous pouvez écouter :
+</p>
+<ul>
+<li class="level1"><div class="li"> de la musique d&#039;artistes similaires à un premier artiste ;</div>
+</li>
+<li class="level1"><div class="li"> de la musique correspondant à un tag (par exemple « Rock », « Jazz », etc.) ;</div>
+</li>
+<li class="level1"><div class="li"> la musique qu&#039;écoutent d&#039;autres membres de Last.fm au profil musical proche du vôtre ;</div>
+</li>
+<li class="level1"><div class="li"> tout ce que vous avez écouté ;</div>
+</li>
+<li class="level1"><div class="li"> tous vos « coups de cœur » ;</div>
+</li>
+</ul>
+
+<p>
+Vous pouvez trouver plus d&#039;informations sur Last.fm sur <a href="http://fr.wikipedia.org/wiki/Last.fm" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Last.fm">l&#039;article correspondant sur Wikipédia en français</a> ou <a href="http://en.wikipedia.org/wiki/Last.fm" class="interwiki iw_wp" title="http://en.wikipedia.org/wiki/Last.fm">en anglais</a> (mieux expliqué).
+</p>
+
+<p>
+<p><div class="noteclassic">
+L&#039;écoute des coups de cœur est réservée aux abonnés de Last.fm et l&#039;abonnement est payant.
+</p>
+
+<p>
+→ <a href="http://www.lastfm.fr/subscribe" class="urlextern" title="http://www.lastfm.fr/subscribe"  rel="nofollow">Pour s&#039;abonner et en savoir plus sur l&#039;abonnement</a>
+
+</div></p>
+</p>
+
+<p>
+Ensuite, allez dans <strong>Configuration → Configurer Amarok → Extensions → Last.fm</strong>, et cliquez sur la clé à molette: vous pouvez maintenant rentrer vos identifiants.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[Last.fm] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9220-10527" /><input type="submit" value="Modifier" class="button" title="Last.fm" /></div></form></div>
+<h3 class="sectionedit13" id="l_icone">L&#039;icône</h3>
+<div class="level3">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/amarok-icon.png?id=amarok" class="media" title="amarok-icon.png"><img src="http://doc.ubuntu-fr.org/_media/amarok-icon.png?w=100&amp;tok=1eefcd" class="mediaright" title="Icône d&#039;Amarok" alt="Icône d&#039;Amarok" width="100" /></a>
+L&#039;icône d&#039;Amarok dans la zone de notification possède plusieurs fonctionnalités bien pratiques :
+</p>
+<ul>
+<li class="level1"><div class="li"> CLIC GAUCHE : ouvre/iconifie l&#039;interface</div>
+</li>
+<li class="level1"><div class="li"> CLIC MILIEU : met Amarok en Pause ou au contraire relance la lecture.</div>
+</li>
+<li class="level1"><div class="li"> CLIC DROIT : ouverture d&#039;un menu (pause, morceau suivant/précédent)</div>
+</li>
+<li class="level1"><div class="li"> ROULETTE VERS LE HAUT/BAS sans bouton : gestion du volume</div>
+</li>
+<li class="level1"><div class="li"> SHIFT + ROULETTE VERS LE HAUT/BAS : permet d&#039;avancer/reculer dans la chanson</div>
+</li>
+<li class="level1"><div class="li"> CTRL + ROULETTE VERS LE HAUT/BAS : permet d&#039;avancer/reculer dans la liste de lecture</div>
+</li>
+</ul>
+
+<p>
+Vous pouvez également, à partir d&#039;un explorateur de fichiers, sélectionner des fichiers et les placer directement sur l&#039;icône, Amarok vous proposera alors ce que vous voulez faire :
+</p>
+<ul>
+<li class="level1"><div class="li"> ajouter à la liste de lecture et jouer</div>
+</li>
+<li class="level1"><div class="li"> ajouter à la suite de la liste de lecture en cours</div>
+</li>
+<li class="level1"><div class="li"> etc. </div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[L'icône] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10528-11412" /><input type="submit" value="Modifier" class="button" title="L'icône" /></div></form></div>
+<h2 class="sectionedit14" id="autres_fonctionnalites_scripts_etc">Autres fonctionnalités, scripts, etc.</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[Autres fonctionnalités, scripts, etc.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11413-11464" /><input type="submit" value="Modifier" class="button" title="Autres fonctionnalités, scripts, etc." /></div></form></div>
+<h3 class="sectionedit15" id="replaygain">ReplayGain</h3>
+<div class="level3">
+
+<p>
+À partir de la version 2.1, Amarok supporte nativement ReplayGain. ReplayGain est un algorithme qui permet de normaliser le volume sans perte, en ajoutant un tag à vos fichiers. Amarok ajuste ensuite le volume de lecture en fonction de ce tag, ce qui vous donne une écoute… sans sursauts !
+</p>
+
+<p>
+→ <a href="http://doc.ubuntu-fr.org/replaygain_amarok" class="wikilink1" title="replaygain_amarok">Plus d&#039;informations sur ReplayGain et Amarok</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[ReplayGain] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11465-11853" /><input type="submit" value="Modifier" class="button" title="ReplayGain" /></div></form></div>
+<h3 class="sectionedit16" id="exporter_une_collection_vers_un_autre_ordinateur">Exporter une collection vers un autre ordinateur</h3>
+<div class="level3">
+
+<p>
+<p><div class="notewarning">Cette manipulation n&#039;est pas à faire si jamais vous avez déjà des tags sur la nouvelle collection (ils seront alors supprimés). Si c&#039;est le cas, il vous faudra passer par l&#039;importation/exportation de pistes de lectures correspondant à chaque tag.
+</div></p>
+Si vous voulez exporter une collection ainsi que les étiquettes (label) des pistes (qui ne sont pas incorporés dans les fichiers), et certaines pochettes et paroles, il vous suffit de copier vos musiques <strong>dans le même emplacement relatif que sur votre ancien ordinateur</strong>, puis de remplacer le dossier : <em>~/.kde/share/apps/amarok</em> de l&#039;ordinateur sur lequel vous importez la bibliothèque par le même dossier que celui de l&#039;ordinateur qui exporte. 
+<p><div class="noteclassic">Vous pouvez créer une sauvegarde en renommant l&#039;ancien dossier.
+</div></p>
+</p>
+
+<p>
+ <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Je n&#039;ai pas encore trouvé de moyen plus simple pour importer/exporter des tags.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[Exporter une collection vers un autre ordinateur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11854-12814" /><input type="submit" value="Modifier" class="button" title="Exporter une collection vers un autre ordinateur" /></div></form></div>
+<h2 class="sectionedit17" id="problemes_connus">Problèmes connus</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[Problèmes connus] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12815-12845" /><input type="submit" value="Modifier" class="button" title="Problèmes connus" /></div></form></div>
+<h3 class="sectionedit18" id="conflit_flash_et_peripherique_de_sortie_de_son">Conflit Flash et Périphérique de sortie de Son</h3>
+<div class="level3">
+
+<p>
+On remarque sur Amarok2 plusieurs soucis, de lenteur ou de conflits. (Ubuntu Jaunty - 9.04)
+</p>
+
+<p>
+Un problème de conflit avec Flash 9 (par exemple, par de son sur Deezer ou d&#039;autre applications flash) si Amarok est lancé. Pour cela, il est intéressant de Vérifier dans Amarok &gt; Options &gt; Configurer Amarok &gt; Lecture &gt; Configuration <em>Sound System Configuration</em> &gt;
+Vous avez deux serveur son disponibles probablement, dont Pulse Audio.
+Mettez PulseAudio en haut de la liste.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[Conflit Flash et Périphérique de sortie de Son] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12846-13380" /><input type="submit" value="Modifier" class="button" title="Conflit Flash et Périphérique de sortie de Son" /></div></form></div>
+<h3 class="sectionedit19" id="id_tag">ID tag</h3>
+<div class="level3">
+
+<p>
+Si vous avez un problème lorsque vous essayez de construire votre bibliothèque, ou que toutes vos musiques ne sont pas présentes
+<br/>
+Si en saisissant dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> :
+<br/>
+
+</p>
+<pre class="code">amarok --debug</pre>
+
+<p>
+vous avez ceci
+<br/>
+
+</p>
+<pre class="code">TagLib: ID3v2.4 no longer supports the frame type TDAT.  It will be discarded from the tag.</pre>
+
+<p>
+il suffit de mettre à jour tous les ID tag de vos musiques en 2,4 grâce à <a href="http://doc.ubuntu-fr.org/easytag" class="wikilink1" title="easytag">easytag</a>. Bon courage si vous en avez des milliers ….
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[ID tag] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13381-13866" /><input type="submit" value="Modifier" class="button" title="ID tag" /></div></form></div>
+<h3 class="sectionedit20" id="infobulles_noires_sous_gnome">InfoBulles Noires sous Gnome</h3>
+<div class="level3">
+
+<p>
+Pour régler le problème des infobulles sous gnome qui s&#039;affichent uniquement en noire, il suffit de faire la manipulation suivante <strong>«Mais cette solution n&#039;est PAS forcément permanente! Le problème pourra encore se produire en redémarrant le PC ou même l&#039;application!»</strong> : 
+</p>
+
+<p>
+<strong>Préférences</strong> ⇒ <strong>Apparence</strong> ⇒ Dans l&#039;onglet &#039;<strong>Thème</strong>&#039; ⇒ <strong>Personnaliser</strong> ⇒ <strong>Couleurs</strong> ⇒ Cliquer sur l&#039;arrière-plan d&#039;Infobulles et re-sélectionner noir (ou #000000). 
+</p>
+
+<p>
+Et le problème et résolu ! Source : <a href="http://ubuntuforums.org/showpost.php?p=9879613&amp;postcount=3" class="urlextern" title="http://ubuntuforums.org/showpost.php?p=9879613&amp;postcount=3"  rel="nofollow">http://ubuntuforums.org/showpost.php?p=9879613&amp;postcount=3</a>
+</p>
+
+</div>
+
+<h4 id="amarok_ne_lit_pas_les_cd">Amarok ne lit pas les cd</h4>
+<div class="level4">
+
+<p>
+<p><div class="noteimportant">Ce problème est réglé avec la version <a href="http://amarok.kde.org/fr/node/874" class="urlextern" title="http://amarok.kde.org/fr/node/874"  rel="nofollow">2.7</a> sauf si vous utilisez phonon-vlc.
+</div></p>
+</p>
+
+<p>
+Il peut y avoir des soucis avec le support cd audio. Des références sur les forums font état du chemin du lecteur CD qu&#039;il faut paramétrer.
+</p>
+
+<p>
+<p><div class="noteclassic">Si quelqu&#039;un veut bien expliquer cette manipulation ici, car avec Amarok 4.2, des onglets de configurations ne semblent plus disponibles
+</div></p>
+</p>
+
+<p>
+Solution alternative :
+</p>
+<ul>
+<li class="level1"><div class="li"> installer kscd. Qui est un lecteur cd très léger avec une interface sympa type platine de salon.</div>
+</li>
+<li class="level1"><div class="li"> installer juk, lecteur de musique léger pour KDE.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[InfoBulles Noires sous Gnome] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13867-15130" /><input type="submit" value="Modifier" class="button" title="InfoBulles Noires sous Gnome" /></div></form></div>
+<h2 class="sectionedit21" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://amarok.kde.org/fr" class="urlextern" title="http://amarok.kde.org/fr"  rel="nofollow">Site officiel</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://community.kde.org/Amarok" class="urlextern" title="http://community.kde.org/Amarok"  rel="nofollow">Documentation officielle</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <a href="https://docs.kde.org/development/fr/extragear-multimedia/amarok/" class="urlextern" title="https://docs.kde.org/development/fr/extragear-multimedia/amarok/"  rel="nofollow">Manuel français</a>  </div>
+</li>
+<li class="level1"><div class="li"> <a href="http://kde-apps.org/index.php?xcontentmode=57" class="urlextern" title="http://kde-apps.org/index.php?xcontentmode=57"  rel="nofollow">Scripts et thèmes</a></div>
+</li>
+<li class="level1"><div class="li"> Le groupe <a href="http://www.last.fm/group/amaroK%2Busers" class="urlextern" title="http://www.last.fm/group/amaroK%2Busers"  rel="nofollow">Amarok Users</a> sur le site Last.fm </div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="http://doc.ubuntu-fr.org/utilisateurs/redgolum" class="wikilink2" title="utilisateurs:redgolum" rel="nofollow">Redgolum</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/theozzfancometh" class="wikilink2" title="utilisateurs:theozzfancometh" rel="nofollow">Theozzfancometh</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/tachitsu" class="wikilink1" title="utilisateurs:tachitsu">TaChiTsu</a>, Romain Fluttaz.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="amarok"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1415307319" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15131-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="amarok#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<a href="https://launchpad.net/~kubuntu-ppa/+archive/backports" class="urlextern" title="https://launchpad.net/~kubuntu-ppa/+archive/backports"  rel="nofollow">https://launchpad.net/~kubuntu-ppa/+archive/backports</a></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/22f3d14bf8865d715850c2202410103c.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/amarok?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/amarok?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/amarok?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/amarok?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/amarok?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

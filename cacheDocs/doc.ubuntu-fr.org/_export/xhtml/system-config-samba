@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>system-config-samba</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-10-22T23:58:23+0200"/>
+<meta name="keywords" content="samba,partage,administration,reseau"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../system-config-samba?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="system-config-samba"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/system-config-samba"/>
+<link rel="canonical" href="../../system-config-samba"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"system-config-samba","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="system-config-samba#installation_et_execution">Installation et exécution</a></div></li>
+<li class="level1"><div class="li"><a href="system-config-samba#liste_des_partages">Liste des partages</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="system-config-samba#ajouter_ou_modifier_un_partage">Ajouter ou modifier un partage</a></div></li>
+<li class="level2"><div class="li"><a href="system-config-samba#supprimer_un_partage">Supprimer un partage</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="system-config-samba#parametres_du_serveur">Paramètres du serveur</a></div></li>
+<li class="level1"><div class="li"><a href="system-config-samba#liste_des_utilisateurs_du_serveur_samba">Liste des utilisateurs du serveur Samba</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../samba" class="wikilink1" title="samba" rel="tag">samba</a>,
+	<a href="../../partage" class="wikilink1" title="partage" rel="tag">partage</a>,
+	<a href="../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="outil_de_configuration_du_serveur_samba_system-config-samba">Outil de configuration du serveur Samba (system-config-samba)</h1>
+<div class="level1">
+
+<p>
+L&#039;<strong>outil de configuration du serveur Samba</strong>, ou <em>system-config-samba</em>, est un utilitaire graphique utilisé pour configurer les paramètres du serveur de partage de fichiers et d&#039;imprimantes <a href="../../samba" class="wikilink1" title="samba">Samba</a>.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Outil de configuration du serveur Samba (system-config-samba)" [52-334] -->
+<h2 class="sectionedit2" id="installation_et_execution">Installation et exécution</h2>
+<div class="level2">
+
+<p>
+<a href="../../_detail/system-config-samba-menu.png?id=system-config-samba" class="media" title="system-config-samba-menu.png"><img src="../../_media/system-config-samba-menu.png" class="mediaright" title="Une fois installé, repérez l&#039;entrée de menu &quot;Samba&quot;, dans le menu &quot;Système -&gt; Administration&quot;" alt="Une fois installé, repérez l&#039;entrée de menu &quot;Samba&quot;, dans le menu &quot;Système -&gt; Administration&quot;" /></a>
+</p>
+
+<p>
+À l&#039;aide de votre <a href="../../gestionnaire_de_paquets" class="wikilink1" title="gestionnaire_de_paquets">gestionnaire de paquets</a> préféré, téléchargez et installez le paquet <strong><a href="apt://system-config-samba" class="interwiki iw_apt" title="apt://system-config-samba">system-config-samba</a></strong>.
+Une fois installé, <em>system-config-samba</em> est accessible à l&#039;aide de l&#039;entrée de menu <em><strong>Samba</strong></em>, dans le menu <em>Système → Administration</em>. Toutes les tâches de gestion du serveur Samba ne sont exécutables que par <a href="../../sudo" class="wikilink1" title="sudo">un administrateur du système</a>. Ce programme ne peut qu&#039;être exécuté par des administrateurs.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Installation et exécution" [335-990] -->
+<h2 class="sectionedit3" id="liste_des_partages">Liste des partages</h2>
+<div class="level2">
+
+<p>
+<a href="../../_detail/system-config-samba-ecranprincipal.png?id=system-config-samba" class="media" title="system-config-samba-ecranprincipal.png"><img src="../../_media/system-config-samba-ecranprincipal.png?w=300&amp;tok=90d4a2" class="mediaright" title="Liste des dossiers partagés de Samba" alt="Liste des dossiers partagés de Samba" width="300" /></a>
+</p>
+
+<p>
+La fenêtre principale de <em>system-config-samba</em> est constituée de la liste des dossiers partagés par Samba. La liste des dossiers partagés est constituée :
+</p>
+<ul>
+<li class="level1"><div class="li"> Du chemin vers <strong>répertoire</strong>, dans l&#039;arborescence du système Ubuntu, qui doit être accessible dans le réseau local pour les autres ordinateurs ;</div>
+</li>
+<li class="level1"><div class="li"> Du <strong>nom de partage</strong> de chacun des répertoires partagés dans le réseau local. C&#039;est sous ce nom-là qu&#039;un dossier est vu et accessible par les autres ordinateurs du réseau local ;</div>
+</li>
+<li class="level1"><div class="li"> Des <strong>permissions</strong> accordées sur chacun des dossiers partagés du réseau local. Ceci indique si un dossier partagé est disponible en <em>lecture seule</em> ou s&#039;il est accessible en <em>lecture et écriture</em> ;</div>
+</li>
+<li class="level1"><div class="li"> De la <strong>visibilité</strong> du dossier partagé aux autres ordinateurs du réseau local. Un dossier <em>visible</em> apparaît dans la liste des dossiers partagés d&#039;un serveur de fichiers, lorsqu&#039;un client demande la liste des dossiers partagés. Un dossier <em>caché</em> ne sera pas affiché dans cette liste ; pour accéder à ce dossier, le client devra entrer le chemin complet de partage du dossier partagé (ex : <code>smb://MACHINE/Partage</code> ou <code><a href="file://///MACHINE/Partage" class="windows" title="\\MACHINE\Partage">\\MACHINE\Partage</a></code>) ;</div>
+</li>
+<li class="level1"><div class="li"> De la <strong>description</strong> du dossier partagé. Ce champ optionnel donne de l&#039;information sur le contenu du dossier partagé dans le réseau local.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="notehelp"><strong>Certains dossiers partagés n&#039;apparaissent pas dans cette liste ! Comment cela se fait-il ?</strong> <br/>
+L&#039;outil <em>system-config-samba</em> ne liste que les partages administratifs (<em>shares</em>), c&#039;est-à-dire les dossiers partagés qui sont inscrits dans le fichier de configuration <em>/etc/samba/<strong>smb.conf</strong></em>. Ici ne sont pas listés les partages utilisateurs (<em>usershares</em>), ceux que peuvent créer chaque utilisateur lui-même.
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>Plus d&#039;informations à propos des <strong><a href="../../samba#partager_un_dossier_personnel_usershares" class="wikilink1" title="samba">partages utilisateurs</a></strong> et des <strong><a href="../../samba#partager_un_dossier_du_systeme_de_fichiers_shares" class="wikilink1" title="samba">partages administratifs</a></strong></em></div>
+</li>
+</ul>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Liste des partages" [991-3108] -->
+<h3 class="sectionedit4" id="ajouter_ou_modifier_un_partage">Ajouter ou modifier un partage</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Pour ajouter un dossier partagé dans le serveur Samba, rendez-vous dans le menu <em>Fichier</em> et sélectionnez l&#039;entrée de menu <strong>Ajouter un partage</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Pour modifier les propriétés d&#039;un dossier partagé, sélectionnez le dossier partagé à modifier dans la liste, puis rendez-vous dans le menu <em>Fichier</em> et sélectionnez <strong>Propriétés</strong>.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../_detail/system-config-samba-ajouterpartage.png?id=system-config-samba" class="media" title="system-config-samba-ajouterpartage.png"><img src="../../_media/system-config-samba-ajouterpartage.png?w=300&amp;tok=a5517f" class="mediaright" title="Inscrivez les informations requises pour paramétrer le partage" alt="Inscrivez les informations requises pour paramétrer le partage" width="300" /></a>
+</p>
+<ol>
+<li class="level1"><div class="li"> Dans la fenêtre &quot;Créer un partage Samba&quot; proposée, dans l&#039;onglet <em>Basique</em> :</div>
+<ul>
+<li class="level2"><div class="li"> inscrivez le chemin complet vers le dossier à partager dans le champ <strong>Répertoire</strong>. Utilisez le bouton <em>Naviguer…</em> pour explorer de manière graphique l&#039;arborescence du système de fichiers d&#039;Ubuntu pour sélectionner le bon dossier à partager ;</div>
+</li>
+<li class="level2"><div class="li"> inscrivez le <strong>nom du partage</strong> à la ligne correspondante. C&#039;est sous ce nom que sera accessible le dossier partagé dans votre réseau local ;</div>
+</li>
+<li class="level2"><div class="li"> <em>(optionnel)</em> inscrivez une <strong>description</strong> du contenu du dossier partagé dans le champ correspondant ;</div>
+</li>
+<li class="level2"><div class="li"> <strong>Inscriptible :</strong> cochez cette case si vous désirez que le dossier partagé soir accessible en lecture et écriture. Laissez la case décochée pour ne rendre accessible le dossier partagé qu&#039;en lecture seule ;</div>
+</li>
+<li class="level2"><div class="li"> <strong>Visible :</strong> cochez cette case si vous désirez que le dossier partagé soit visible dans la liste des dossiers partagés par votre serveur Samba. Laissez cette case décochée pour qu&#039;il soit caché, qu&#039;il ne puisse être accessible qu&#039;en saisissant manuellement l&#039;adresse complète vers le dossier partagé dans un navigateur de fichiers ;</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <a href="../../_detail/system-config-samba-ajouterpartage2.png?id=system-config-samba" class="media" title="system-config-samba-ajouterpartage2.png"><img src="../../_media/system-config-samba-ajouterpartage2.png?w=300&amp;tok=1d0ece" class="mediaright" title="Sélectionnez les utilisateurs pouvant accéder au dossier partagé." alt="Sélectionnez les utilisateurs pouvant accéder au dossier partagé." width="300" /></a>Dans l&#039;onglet <em>Accès</em>, sélectionnez un ou des comptes d&#039;utilisateurs Samba qui peuvent accéder au dossier partagé :</div>
+<ul>
+<li class="level2"><div class="li"> cochez la case <strong>Autoriser l&#039;accès seulement à des utilisateurs spécifiques</strong> pour n&#039;autoriser l&#039;accès qu&#039;à certains utilisateurs. Une authentification des utilisateurs est alors nécessaire pour qu&#039;ils accèdent au contenu du dossier partagé. Cochez le ou les comptes d&#039;utilisateurs qui doivent avoir accès au dossier partagé dans la liste proposée. Vous n&#039;oublierez pas de ressaisir ultérieurement tous les mots de passe comme indiqué au paragraphe 4 ci-dessous sinon ça ne fonctionnera pour personne (accès impossible)  ;</div>
+</li>
+<li class="level2"><div class="li"> cochez la case <strong>Autoriser l&#039;accès à tous les utilisateurs</strong> pour permettre à tous les utilisateurs d&#039;accéder au contenu du dossier partagé. Aucune authentification des utilisateurs n&#039;est alors requise sur ce partage-ci.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Appuyez sur le bouton <strong>Valider</strong> pour prendre en compte le nouveau partage administratif. Patientez quelques secondes, le temps que les modifications soient enregistrées dans le fichier de configuration de Samba et que le service Samba soit redémarré. Le nouveau dossier partagé apparaît désormais dans la liste des partages.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT4 SECTION "Ajouter ou modifier un partage" [3109-6157] -->
+<h3 class="sectionedit5" id="supprimer_un_partage">Supprimer un partage</h3>
+<div class="level3">
+
+<p>
+Pour arrêter le partage d&#039;un dossier, sélectionnez le dossier actuellement partagé dans la liste des partages administratifs, puis rendez-vous dans le menu <em>Fichier</em> et sélectionnez <strong>Supprimer</strong>. L&#039;arrêt du partage du dossier se produit immédiatement, sans aucune confirmation supplémentaire. Patientez quelques secondes pendant que les changements sont appliqués dans le fichier de configuration de Samba et que le service Samba est redémarré.
+</p>
+
+<p>
+Notez que la suppression d&#039;un dossier partagé ne fait qu&#039;arrêter le partage du dossier avec les autres ordinateurs du réseau local. Dans l&#039;ordinateur serveur, le dossier reste inchangé. Si vous désirez aussi supprimer complètement le dossier du serveur Samba, vous devrez procéder manuellement à sa suppression à l&#039;aide de votre navigateur de fichiers.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Supprimer un partage" [6158-7010] -->
+<h2 class="sectionedit6" id="parametres_du_serveur">Paramètres du serveur</h2>
+<div class="level2">
+
+<p>
+<a href="../../_detail/system-config-samba-parametresserveur.png?id=system-config-samba" class="media" title="system-config-samba-parametresserveur.png"><img src="../../_media/system-config-samba-parametresserveur.png?w=300&amp;tok=be781c" class="mediaright" title="Certains paramètres basiques du serveur Samba sont modifiables." alt="Certains paramètres basiques du serveur Samba sont modifiables." width="300" /></a>
+</p>
+
+<p>
+Certains paramètres basiques du service Samba peuvent être modifiés à l&#039;aide de <em>system-config-samba</em>. Pour ce faire, rendez-vous dans le menu <em>Préférences</em> et sélectionnez l&#039;entrée de menu <strong>Paramètres du serveur…</strong>.
+</p>
+
+<p>
+Dans l&#039;onglet <em>Basique</em> :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Groupe de travail :</strong> inscrivez le groupe de travail dans lequel doit s&#039;insérer ce serveur Samba. Par défaut, le groupe de travail est <code>workgroup</code>, qui correspond au groupe de travail par défaut des ordinateurs sous Microsoft® Windows®. Modifiez ce groupe de travail si vous l&#039;avez modifié dans vos autres ordinateurs du réseau local ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Description :</strong> inscrivez la description de ce serveur Samba. Certaines variables de Samba sont utilisables dans ce champ. Rapportez-vous <a href="http://samba.org/samba/docs/using_samba/ch06.html#samba2-CHP-6-TABLE-2" class="urlextern" title="http://samba.org/samba/docs/using_samba/ch06.html#samba2-CHP-6-TABLE-2"  rel="nofollow">à l&#039;aide en ligne de Samba</a> pour en connaître la liste.</div>
+</li>
+</ul>
+
+<p>
+Dans l&#039;onglet <em>Sécurité</em> :
+<a href="../../_detail/system-config-samba-parametresserveur2.png?id=system-config-samba" class="media" title="system-config-samba-parametresserveur2.png"><img src="../../_media/system-config-samba-parametresserveur2.png?w=300&amp;tok=3b7b52" class="mediaright" title="Configurez la méthode d&#039;authentiication du serveur Samba" alt="Configurez la méthode d&#039;authentiication du serveur Samba" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Mode d&#039;authentification :</strong> sélectionnez le mode d&#039;authentification utilisé par le serveur Samba pour autoriser ou non les connexions entrantes au serveur. Rapportez-vous <a href="http://samba.org/samba/docs/using_samba/ch09.html#INDEX-49" class="urlextern" title="http://samba.org/samba/docs/using_samba/ch09.html#INDEX-49"  rel="nofollow">à l&#039;aide en ligne de Samba</a> pour plus d&#039;informations sur les différents modes. Dans Ubuntu, le mode d&#039;authentification est paramétré par défaut sur <em>Utilisateur</em>, ce qui signifie que toute connexion au serveur Samba nécessite une authentification pour accéder à la liste des dossiers partagés ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Serveur d&#039;authentification :</strong> pour les modes d&#039;authentification <em>Serveur</em>, <em>Domaine</em> et <em>ADS</em>, précisez le serveur à partir duquel l&#039;authentification des clients doit s&#039;effectuer ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Domaine Kerberos :</strong> pour le mode <em>ADS</em>, précisez le domaine Kerberos auquel fait partie le serveur Samba ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Crypter les mots de passe :</strong> pour les modes <em>Utilisateur</em>, <em>Partage</em>, <em>Serveur</em> et <em>ADS</em>, indiquez s&#039;il faut accepter les mots de passe cryptés ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Compte invité :</strong> indiquez le compte d&#039;utilisateur Samba à utiliser en tant que compte d&#039;invité. Les utilisateurs non authentifiés utilisent ce compte par défault.</div>
+</li>
+</ul>
+
+<p>
+Appuyez sur le bouton <strong>Valider</strong> pour prendre en compte les changements apportés à la configuration du serveur Samba. Patientez quelques secondes pendant que les changements sont inscrits dans le fichier de configuration de Samba et que le service Samba redémarre.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Paramètres du serveur" [7011-9667] -->
+<h2 class="sectionedit7" id="liste_des_utilisateurs_du_serveur_samba">Liste des utilisateurs du serveur Samba</h2>
+<div class="level2">
+
+<p>
+<a href="../../_detail/system-config-samba-utilisateurssamba.png?id=system-config-samba" class="media" title="system-config-samba-utilisateurssamba.png"><img src="../../_media/system-config-samba-utilisateurssamba.png?w=300&amp;tok=77b478" class="mediaright" title="Configurez les utilisateurs de la base de données de Samba" alt="Configurez les utilisateurs de la base de données de Samba" width="300" /></a>
+</p>
+
+<p>
+Samba n&#039;utilise pas la même liste de comptes d&#039;utilisateurs et de mots de passe que le système Ubuntu. L&#039;outil de configuration du serveur Samba ( system-config-samba) fonctionne mal pour la récupération des mots de passe des utilisateurs de Ubuntu, aussi il est indispensable de ressaisir les mots de passe de tous les utilisateurs, y compris l&#039;administrateur, dans les préférences de system-config-samba. Pour administrer les utilisateurs de la base de données de Samba, rendez-vous dans le menu <em>Préférences</em> et sélectionnez l&#039;entrée de menu <strong>Utilisateurs Samba…</strong>. À travers cette interface, vous pouvez ajouter des comptes d&#039;utilisateurs ou en retirer dans la base de données de Samba.
+</p>
+
+<p>
+<p><div class="notetip">Dans Ubuntu 14.04, il semble que chaque compte ajouté dans la liste des comptes d&#039;utilisateurs de la fenêtre ci-contre doive appartenir au groupe <em>plugdev</em> sous peine que ces comptes ne puissent se connecter au partage.
+</p>
+
+<p>
+Pour ce faire, taper dans un terminal :
+</p>
+<pre class="code">sudo adduser nom_du_compte_a_ajouter_au_groupe plugdev</pre>
+
+<p>
+ou alors utiliser une interface graphique : <a href="../../users-admin#modifier_les_proprietes_d_un_groupe_et_ajouter_ou_retirer_des_comptes_d_utilisateurs_d_un_groupe_administrateurs_seulement" class="urlextern" title="http://doc.ubuntu-fr.org/users-admin#modifier_les_proprietes_d_un_groupe_et_ajouter_ou_retirer_des_comptes_d_utilisateurs_d_un_groupe_administrateurs_seulement"  rel="nofollow">ajouter des comptes à un groupe</a>
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Liste des utilisateurs du serveur Samba" [9668-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/7/7fbbecc36cc494ba446ff8554706d291.xhtml used -->
+</div>
+</body>
+</html>

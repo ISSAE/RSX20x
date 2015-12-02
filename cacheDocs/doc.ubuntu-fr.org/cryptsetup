@@ -1,0 +1,613 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>cryptsetup - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-04-27T10:25:25+0200"/>
+<meta name="keywords" content="lucid,precise,chiffrement,securite"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/cryptsetup?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/cryptsetup?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/cryptsetup"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/cryptsetup"/>
+<link rel="canonical" href="cryptsetup"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"cryptsetup","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="cryptsetup#main" tabindex="1">Contenu</a> | <a href="cryptsetup#qsearch__in" tabindex="2">Rechercher</a> | <a href="cryptsetup#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="cryptsetup" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="cryptsetup" >cryptsetup</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, les informations qu'elle contient n'ont pas été vérifiées depuis <a href="precise">Ubuntu 12.04 LTS.</a><br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="cryptsetup#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="cryptsetup#applications">Applications</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="cryptsetup#chiffrer_une_partition">Chiffrer une partition</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="cryptsetup#chiffrer_votre_systeme_avec_le_swap_aleatoirement">Chiffrer votre système avec le swap aléatoirement</a></div></li>
+<li class="level1"><div class="li"><a href="cryptsetup#conclusion">Conclusion</a></div></li>
+<li class="level1"><div class="li"><a href="cryptsetup#sous_windows">Sous Windows</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="cryptsetup#notes_importantes">Notes importantes</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="cryptsetup#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="precise" class="wikilink1" title="precise" rel="tag">precise</a>,
+	<a href="http://doc.ubuntu-fr.org/chiffrement?do=showtag&amp;tag=chiffrement" class="wikilink1" title="chiffrement" rel="tag">chiffrement</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="partition_chiffree_avec_cryptsetup">Partition chiffrée avec Cryptsetup</h1>
+<div class="level1">
+
+<p>
+Afin de protéger au mieux vos données personnelles, il peut être nécessaire de chiffrer vos partitions utilisateur. En effet, si via le système il est impossible d’accéder aux fichiers qui ne vous appartiennent pas, un simple passage sur un livecd permet d’accéder à n’importe quel fichier de votre système. Le chiffrement de partition permet d’éviter ça.
+Ubuntu intègre en standard les outils nécessaires à une gestion simple de votre sécurité. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="cryptsetup"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430123125" /><input type="hidden" name="summary" value="[Partition chiffrée avec Cryptsetup] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="55-587" /><input type="submit" value="Modifier" class="button" title="Partition chiffrée avec Cryptsetup" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Installer <strong><a href="apt://cryptsetup" class="interwiki iw_apt" title="apt://cryptsetup">cryptsetup</a></strong>
+</p>
+
+<p>
+ou
+</p>
+
+<p>
+Pour l&#039;installation, lancez <a href="synaptic" class="wikilink1" title="synaptic">Synaptic</a>. Recherchez «cryptsetup», cochez la case correspondante et validez le tout (bouton « Appliquer ») pour l&#039;installer. 
+</p>
+
+<p>
+Si nécessaire charger les modules « aes-i586 », « dm_mod » et « dm_crypt ». Au besoin, les ajouter à la liste de <em>/etc/modules</em> (cf. infra Référence).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="cryptsetup"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430123125" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="588-988" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit3" id="applications">Applications</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="cryptsetup"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430123125" /><input type="hidden" name="summary" value="[Applications] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="989-1014" /><input type="submit" value="Modifier" class="button" title="Applications" /></div></form></div>
+<h3 class="sectionedit4" id="chiffrer_une_partition">Chiffrer une partition</h3>
+<div class="level3">
+
+<p>
+Créer un conteneur pour vos données : une partition ou un fichier contenant votre système de fichier.
+</p>
+
+<p>
+Les données sont chiffrées à la volée, tout est transparent pour l&#039;utilisateur, mais cependant il y a un coût machine pour le chiffrement qui est négligeable, tant que la fonction première de votre machine n&#039;est pas serveur de fichiers.
+</p>
+
+</div>
+
+<h4 id="initialiser_la_partition">Initialiser la partition</h4>
+<div class="level4">
+
+<p>
+Exemple sur une partition libre /dev/hda7 :
+</p>
+<pre class="code"> sudo cryptsetup luksFormat -c aes -h sha256 /dev/hda7 </pre>
+
+<p>
+ou avec un chiffrement plus fort :
+</p>
+<pre class="code"> sudo cryptsetup luksFormat -c aes-xts-plain -s 512 /dev/hda7 </pre>
+
+<p>
+encore plus fort selon moi :
+</p>
+<pre class="code">sudo cryptsetup luksFormat -c aes-xts-plain64 -s 512 -h sha512 /dev/sdaXX</pre>
+
+<p>
+Remplacez les XX par la partition concernée.
+</p>
+
+<p>
+On invoque cette commande pour formater la partition au type LUKS (initialiser la partition LUKS et définir la clé initiale). Le chiffrement sera de type AES avec un algorithme de hachage SHA256. Vous allez taper votre phrase de déchiffrement qui va permettre de créer un conteneur standard chiffré à l&#039;aide de votre phrase.
+</p>
+
+<p>
+Le conteneur chiffré de manière standard va stocker la clé de chiffrement maître qui servira à ouvrir votre volume chiffré. Il est possible d&#039;ajouter jusqu&#039;à 8 clefs supplémentaires dans des &quot;slots&quot;, qui déverrouillent l&#039;accès à la clef maître. Vous pouvez ainsi avec cette méthode avoir plusieurs utilisateurs qui vont chacun ouvrir le conteneur chiffré avec leur clef, et il vous sera possible de révoquer les clés éventuellement compromises.
+</p>
+
+<p>
+Pour ajouter une clé d&#039;accès au conteneur chiffré précédent :
+</p>
+<pre class="code">sudo cryptsetup luksAddKey /dev/hda7</pre>
+
+<p>
+Pour voir l&#039;état du conteneur chiffré et les &quot;slots&quot; utilisés :
+</p>
+<pre class="code">sudo cryptsetup luksDump /dev/hda7</pre>
+
+<p>
+Pour révoquer une clé contenue dans un &quot;slot&quot; :
+</p>
+<pre class="code">sudo cryptsetup luksKillSlot /dev/hda7 &lt;numero_de_slot&gt;</pre>
+
+</div>
+
+<h4 id="montage_manuel_et_formatage">Montage manuel et formatage</h4>
+<div class="level4">
+
+<p>
+Ouverture et formatage en ext3 de la partition chiffrée. L&#039;appellation du volume est ici <strong>home</strong>.
+</p>
+<pre class="code"> sudo cryptsetup luksOpen /dev/hda7 home
+ sudo mkfs.ext3 /dev/mapper/home </pre>
+
+<p>
+puis montage de la partition :
+</p>
+<pre class="code"> sudo mount -t ext3 /dev/mapper/home /mnt/ </pre>
+
+<p>
+puis démontage et fermeture du volume chiffré :
+</p>
+<pre class="code"> sudo umount /mnt
+ sudo cryptsetup luksClose home </pre>
+
+</div>
+
+<h4 id="aparte_sur_la_transformation_de_fichiers_en_volumes">Aparté sur la transformation de fichiers en volumes</h4>
+<div class="level4">
+
+<p>
+Pour générer un fichier de nom <strong>big</strong> de 10 Mo :
+</p>
+<pre class="code">dd if=/dev/urandom bs=1M count=10 of=big</pre>
+
+<p>
+Pour éviter de dévoiler des informations, cette commande remplit le fichier avec du contenu aléatoire (/dev/urandom/). Cette opération est horriblement lente (quelque MiB/s). Utilisez Truecrypt pour générer un volume dans un fichier, la génération du fichier est beaucoup plus rapide et continuez ensuite normalement ce tutoriel.
+</p>
+
+<p>
+Pour transformer le fichier en volume (sur Dapper, remplacer /dev/loop0 par <strong>/dev/loop/0</strong>) :
+</p>
+<pre class="code">sudo losetup /dev/loop0  big</pre>
+
+<p>
+Pour déconnecter le volume du fichier (sur Dapper, remplacer /dev/loop0 par <strong>/dev/loop/0</strong>) :
+</p>
+<pre class="code">sudo losetup -d /dev/loop0</pre>
+
+<p>
+Ces informations vous permettront d&#039;utiliser <strong>dm-crypt</strong> sur des systèmes de fichiers embarqués dans des fichiers.
+</p>
+
+</div>
+
+<h4 id="montage_automatique">Montage automatique</h4>
+<div class="level4">
+
+<p>
+Depuis <strong>Dapper</strong>, Ubuntu intègre la gestion des volumes chiffrée LUKS en standard, ce qui permet de gérer de manière automatique le montage et le démontage de vos volumes (partitions) sécurisées. La configuration des paramètres du volume chiffré est dans le fichier <strong>/etc/crypttab</strong> et le montage du volume est de manière classique dans <strong>/etc/fstab</strong>.
+</p>
+
+<p>
+Un exemple de chiffrement du dossier <strong>/home</strong>:
+</p>
+
+<p>
+Modifier le fichier <strong>/etc/crypttab</strong> :
+</p>
+<pre class="code"> # &lt;target name&gt; &lt;source device&gt;         &lt;key file&gt;      &lt;options&gt;
+home /dev/hda7  none    luks </pre>
+
+<p>
+Modifier <strong>/etc/fstab</strong> pour le volume qui nous intéresse :
+</p>
+<pre class="code"># /etc/fstab: static file system information.
+#
+# &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;
+/dev/mapper/home        /home   ext3    defaults        0       1 </pre>
+
+<p>
+La clé d&#039;ouverture du volume chiffré vous sera demandée au démarrage de la machine si votre partition est montée automatiquement (voir <a href="mount_fstab" class="wikilink1" title="mount_fstab">fstab</a>).
+</p>
+
+<p>
+Attention, si une ligne est déjà présente pour le montage de la partition qui héberge le système de fichier chiffré (/dev/hda7 dans l&#039;exemple ci-dessus), il faut la commenter (en ajoutant un # comme premier caractère) pour éviter un message d&#039;erreur au démarrage. 
+</p>
+
+</div>
+
+<h4 id="ouverture_automatique_du_conteneur_chiffre_au_demarrage_a_l_aide_d_un_support_amovible">Ouverture automatique du conteneur chiffré au démarrage à l&#039;aide d&#039;un support amovible</h4>
+<div class="level4">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/tutoriel/securiser_ubuntu_avec_peripherique_externe" class="wikilink1" title="tutoriel:securiser_ubuntu_avec_peripherique_externe">securiser_ubuntu_avec_peripherique_externe</a>
+</p>
+
+<p>
+On peut grâce à LUKS monter automatiquement les partitions chiffrées au démarrage sans mot de passe à taper. Ceci est possible par l&#039;intermédiaire d&#039;une clé <abbr title="Universal Serial Bus">USB</abbr> ou d&#039;une carte SD ou MS : <a href="http://web.archive.org/web/20100110234521/http://petaramesh.org/post/2007/11/29/Une-cle-de-contact-pour-votre-portable-chiffre" class="urlextern" title="http://web.archive.org/web/20100110234521/http://petaramesh.org/post/2007/11/29/Une-cle-de-contact-pour-votre-portable-chiffre"  rel="nofollow">http://web.archive.org/web/20100110234521/http://petaramesh.org/post/2007/11/29/Une-cle-de-contact-pour-votre-portable-chiffre</a> <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+<p>
+Suivre la procédure indiquée plus haut, mais modifier le fichier <strong>/etc/crypttab</strong> :
+</p>
+<pre class="code"># &lt;target name&gt; &lt;source device&gt; &lt;key file&gt;          &lt;options&gt;
+  home          /dev/hda7       /dev/sda:/keyfile:1 luks,keyscript=/lib/cryptsetup/scripts/passdev
+  home          /dev/hda7       none                luks</pre>
+
+<p>
+De cette manière, le système va tenter de déchiffrer la partition /dev/hda7 au moyen du fichier clé &quot;keyfile&quot; se trouvant sur le périphérique /dev/sda (en FAT par exemple). Le &quot;1&quot; représente le temps d&#039;attente avant de demander le mot de passe si le fichier clé n&#039;est pas trouvé.
+</p>
+
+<p>
+ou
+</p>
+
+<p>
+Pour les versions plus récentes d&#039;Ubuntu (10.04 et plus) : <a href="http://wejn.org/how-to-make-passwordless-cryptsetup.html#28bd9ec7b2f9ea74ea0499586bde727c" class="urlextern" title="http://wejn.org/how-to-make-passwordless-cryptsetup.html#28bd9ec7b2f9ea74ea0499586bde727c"  rel="nofollow">http://wejn.org/how-to-make-passwordless-cryptsetup.html#28bd9ec7b2f9ea74ea0499586bde727c</a> <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+
+<h4 id="ouverture_et_montage_automatique_de_la_partition_chiffree_a_l_ouverture_de_session_sans_support_amovible_ni_pass-phrase">Ouverture et montage automatique de la partition chiffrée à l&#039;ouverture de session, sans support amovible ni pass-phrase</h4>
+<div class="level4">
+
+<p>
+Les techniques exposées plus haut offrent un haut niveau de sécurité pour peu que la pass-phrase de LUKS ait été bien choisie. Cependant, elles sont également assez lourdes, dans la mesure où elles nécessitent que l&#039;utilisateur rentre à chaque démarrage sa pass-phrase (ou qu&#039;il porte sur lui en permanence le support amovible permettant l&#039;ouverture du conteneur chiffré).
+La méthode proposée ici va permettre d&#039;ouvrir automatiquement le conteneur chiffré et de monter la partition chiffrée au démarrage de la session, sans que la pass-phrase ne soit saisie. La partition chiffrée n&#039;est donc plus protégée que par le mot de passe d&#039;ouverture de session.
+</p>
+
+<p>
+<em class="u">La pass-phrase de la partition chiffrée et le mot de passe associé au compte doivent être les mêmes</em> (PAM ne fait que &quot;passer&quot; le mot de passe de session pour le montage de la partition), cela a donc des implications lorsque le mot de passe de l&#039;utilisateur doit être changé : il faut au préalable rajouter une pass-phrase (identique au nouveau mot de passe) dans un nouveau &quot;slot&quot; et une fois que cela est validé, supprimer l&#039;ancienne pass-phrase.
+</p>
+
+<p>
+Le niveau de sécurité est donc plus bas, mais le chiffrement devient parfaitement transparent pour l&#039;utilisateur. Cette solution convient donc bien si vous souhaitez simplement protéger vos données personnelles en cas de vol de votre machine par un quidam quelconque, mais peut-être pas si vous avez des documents vraiment confidentiels à protéger.
+</p>
+
+<p>
+Nous allons utiliser PAM, utilitaire habituellement utilisé pour le montage automatique de partitions sur des postes multi-utilisateurs.
+</p>
+
+<p>
+La situation est la suivante : la partition /dev/sda2 est notre partition chiffrée. Elle doit être montée automatiquement au point /mnt/cryptodisk.
+Les opérations suivantes ont donc été effectuées au préalable :
+</p>
+<pre class="code">#Création du containeur chiffré. Attention, la partition ne doit pas être montée. De plus, toute donnée présente sur cette partition sera perdue :
+sudo cryptsetup luksFormat /dev/sda2
+
+#Ouverture du containeur nouvellement créé, à qui on donne le nom de &quot;cryptodisk&quot;:
+sudo cryptsetup luksOpen /dev/sda2 cryptodisk
+
+#Création du système de fichier ext3 sur cette partition chiffrée :
+sudo mkfs.ext3 /dev/mapper/cryptodisk
+
+#Création du point de montage :
+sudo mkdir /mnt/cryptodisk
+
+#Définition du point de montage: Dans le fichier /etc/fstab, notez l&#039;option
+#&quot;noauto&quot; qui permet de faire apparaître la partition dans le fichier fstab
+#sans pour autant la monter automatiquement au démarrage
+/dev/mapper/cryptodisk /mnt/cryptodisk           ext3    defaults,noauto        0       0
+
+#Et on s&#039;arrête là. Ne RIEN ajouter dans le fichier /etc/cryptab</pre>
+
+<p>
+Notre partition chiffrée est à présent créée, formatée, et un point de montage a été défini. Il ne reste plus qu&#039;à indiquer à PAM de la monter automatiquement à chaque ouverture de session (sans demande de la pass-phrase donc).
+</p>
+<pre class="code">#Installation de la librairie :
+sudo apt-get install libpam-mount</pre>
+
+<p>
+Indication à PAM de la partition à monter : Editer le fichier /etc/security/pam_mount.conf.xml. Au début du fichier, après la première balise &lt;pam-mount&gt;, ajouter la ligne suivante :
+</p>
+<pre class="code">&lt;volume user=&quot;*&quot; mountpoint=&quot;/mnt/cryptodisk&quot; path=&quot;/dev/sda2&quot; fstype=&quot;crypt&quot; /&gt;</pre>
+
+<p>
+La partition /dev/sda2 de type &quot;crypt&quot; (partition chiffrée) sera montée à l&#039;ouverture de session sans demande de la phrase-pass sur le point de montage /mnt/cryptodisk, et ce quel que soit l&#039;utilisateur qui se connecte (et dont le mot de passe de session correspond à une pass-phrase de la partition).
+</p>
+
+<p>
+Et pour finir, il suffit d&#039;indiquer à gdm (dans le cas de Gnome) ou kdm (pour KDE) d&#039;appeler PAM.
+Ouvrir ainsi dans le cas de Gnome le fichier /etc/pam.d/gdm, et ajouter à la fin de ce fichier la ligne
+</p>
+<pre class="code">@include common-pammount</pre>
+
+<p>
+<strong>Remarque : ceci n&#039;est plus utile depuis Jaunty.</strong>
+</p>
+
+<p>
+Et voilà ! Il ne vous reste plus qu&#039;à redémarrer votre machine, et à l&#039;ouverture de session la partition chiffrée sera ouverte et montée automatiquement, sans que la pass-phrase ne vous soit demandée. Bien entendu, si vous avez au préalable désactivé l&#039;authentification pour l&#039;ouverture de la session, cela ne sert pas à grand chose d&#039;avoir une partition chiffrée (car alors l&#039;authentification étant désactivée, la session est ouverte automatiquement à chaque démarrage et la partition chiffrée est également ouverte et montée automatiquement et sans pass-phrase à chaque démarrage).
+</p>
+
+<p>
+Remarque: méthode testée et approuvée sous Ubuntu 10.04
+</p>
+
+</div>
+
+<h4 id="reglage_de_la_priorite_d_execution">Réglage de la priorité d&#039;exécution</h4>
+<div class="level4">
+
+<p>
+Par défaut le niveau de priorité du démon de chiffrage est trop élevé et peut induire des ralentissements gênants. Vous pouvez modifier cette priorité à l&#039;aide de la commande <strong>renice</strong> :
+</p>
+<pre class="code"> sudo renice 10 `pgrep kcryptd` </pre>
+
+<p>
+Pour exécuter cette commande à chaque démarrage, il faut la placer dans le fichier <strong>/etc/rc.local</strong> avant la ligne <strong>exit 0</strong> sans sudo car c&#039;est le système avec les droits administrateur qui l&#039;exécutera.
+</p>
+<pre class="code">#!/bin/sh -e
+#
+renice 10 `pgrep kcryptd`
+exit 0</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="cryptsetup"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430123125" /><input type="hidden" name="summary" value="[Chiffrer une partition] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1015-12165" /><input type="submit" value="Modifier" class="button" title="Chiffrer une partition" /></div></form></div>
+<h2 class="sectionedit5" id="chiffrer_votre_systeme_avec_le_swap_aleatoirement">Chiffrer votre système avec le swap aléatoirement</h2>
+<div class="level2">
+
+<p>
+Allez voir ce tutoriel pour plus d&#039;information sur le sujet : <a href="http://doc.ubuntu-fr.org/chiffrement_manuel" class="wikilink1" title="chiffrement_manuel">chiffrement_manuel</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="cryptsetup"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430123125" /><input type="hidden" name="summary" value="[Chiffrer votre système avec le swap aléatoirement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12166-12315" /><input type="submit" value="Modifier" class="button" title="Chiffrer votre système avec le swap aléatoirement" /></div></form></div>
+<h2 class="sectionedit6" id="conclusion">Conclusion</h2>
+<div class="level2">
+
+<p>
+Le nouveau système de gestion des volumes chiffrés est très bien implémenté dans Dapper. Il permet notamment de sécuriser votre /home sans manipulation complexe autre que de renseigner la pass-phrase lors du démarrage.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="cryptsetup"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430123125" /><input type="hidden" name="summary" value="[Conclusion] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12316-12568" /><input type="submit" value="Modifier" class="button" title="Conclusion" /></div></form></div>
+<h2 class="sectionedit7" id="sous_windows">Sous Windows</h2>
+<div class="level2">
+
+<p>
+Grâce au logiciel <a href="http://sourceforge.net/projects/freeotfe.mirror/" class="urlextern" title="http://sourceforge.net/projects/freeotfe.mirror/"  rel="nofollow">FreeOTFE</a>, il est possible de monter de façon non permanente une partition LUKS chiffrée par Cryptsetup sous Linux à partir de votre système Windows.
+</p>
+
+<p>
+Pour monter et utiliser le même type de partition que celle décrite dans ce wiki, voici les étapes :
+</p>
+
+<p>
+1. Télécharger FreeOTFE <a href="http://www.freeotfe.org/download.html" class="urlextern" title="http://www.freeotfe.org/download.html"  rel="nofollow">ici</a>
+</p>
+
+<p>
+2. Extraire les fichiers de l&#039;archive dans un dossier et ouvrir FreeOTFE.exe
+</p>
+
+<p>
+3. Lorsqu&#039;on vous demande si vous voulez démarrer FreeOTFE en portable mode, dites oui. Si vous voulez utiliser FreeOTFE régulièrement afin de monter des volumes chiffrés sous Windows, vous pouvez cliquer sur non et activer de façon permanente tous les pilotes de cryptage un par un.
+</p>
+
+<p>
+4. Cliquez ensuite sur File / Linux volume / Mount partition
+</p>
+
+<p>
+5. Choisissez la partition qui est chiffrée sur votre disque dur
+</p>
+
+<p>
+6. Dans la grande case, entrez votre clé secrète, puis cliquez sur Ok
+</p>
+
+<p>
+7. Si vous avez choisi la bonne partition et la bonne clé, le programme détectera le chiffrage correspondant et vous offrira une liste des pilotes pouvant monter le volume. Faites votre choix.
+</p>
+
+<p>
+8. Si tout s&#039;est bien passé, vous avez un nouveau lecteur dans votre poste de travail !
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="cryptsetup"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430123125" /><input type="hidden" name="summary" value="[Sous Windows] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12569-13856" /><input type="submit" value="Modifier" class="button" title="Sous Windows" /></div></form></div>
+<h3 class="sectionedit8" id="notes_importantes">Notes importantes</h3>
+<div class="level3">
+
+<p>
+Ce volume ne survivra pas à un redémarrage, il faudra tout reprendre de zéro à chaque fois.
+</p>
+
+<p>
+Si vous fermez FreeOTFE alors qu&#039;il est en mode portable, vous devez lui spécifier de ne pas désactiver les pilotes d&#039;encryptage afin de ne pas perdre l&#039;usage de votre partition. 
+</p>
+
+<p>
+Avant de fermer votre ordinateur, il est recommandé de démonter la partition à l&#039;aide de FreeOTFE et de lui permettre de désactiver tous les pilotes à sa fermeture.
+</p>
+
+<p>
+Si votre système de fichier est ext2 ou ext3, Windows ne sera pas capable de lire le contenu de votre partition, sauf si vous installez le <a href="http://www.fs-driver.org/" class="urlextern" title="http://www.fs-driver.org/"  rel="nofollow">Ext2 IFS For Windows</a>. Attention toutefois, ce pilote pour Windows ne prend pas en charge les droits d&#039;accès et la journalisation. Pour du partage entre Windows et Linux, le Fat32 est plus conseillée.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="cryptsetup"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430123125" /><input type="hidden" name="summary" value="[Notes importantes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13857-14711" /><input type="submit" value="Modifier" class="button" title="Notes importantes" /></div></form></div>
+<h2 class="sectionedit9" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Une bonne référence : <a href="https://wiki.ubuntu.com/EncryptedFilesystemHowto" class="urlextern" title="https://wiki.ubuntu.com/EncryptedFilesystemHowto"  rel="nofollow">https://wiki.ubuntu.com/EncryptedFilesystemHowto</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Un &#039;howto&#039; expliquant étape par étape comment mettre en œuvre LUKS pour construire un système sûr: <a href="http://xberger.free.fr/en-US/A_startup_key_to_protect_my_data/1.0/html/How_to_have_a_fully_secure_laptop/index.html" class="urlextern" title="http://xberger.free.fr/en-US/A_startup_key_to_protect_my_data/1.0/html/How_to_have_a_fully_secure_laptop/index.html"  rel="nofollow"> A startup key to protect my data</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/tutoriel/chiffrer_son_disque" class="wikilink1" title="tutoriel:chiffrer_son_disque">Tutoriel d&#039;installation d&#039;une Ubuntu utilisant cryptsetup</a></div>
+</li>
+</ul>
+
+<p>
+—-
+</p>
+
+<p>
+<em>Contributeur : ??? </em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="cryptsetup"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1430123125" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14712-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/b/bf2f63983ac9cbfc64868600fd2e8f9f.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/cryptsetup?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/cryptsetup?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/cryptsetup?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/cryptsetup?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/cryptsetup?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

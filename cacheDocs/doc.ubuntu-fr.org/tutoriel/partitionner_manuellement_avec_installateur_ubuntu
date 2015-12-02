@@ -1,0 +1,691 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:partitionner_manuellement_avec_installateur_ubuntu - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-28T08:39:21+0100"/>
+<meta name="keywords" content="lucid,oneiric,precise,quantal,installation,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/partitionner_manuellement_avec_installateur_ubuntu?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/partitionner_manuellement_avec_installateur_ubuntu?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/partitionner_manuellement_avec_installateur_ubuntu"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/partitionner_manuellement_avec_installateur_ubuntu"/>
+<link rel="canonical" href="partitionner_manuellement_avec_installateur_ubuntu"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:partitionner_manuellement_avec_installateur_ubuntu","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="partitionner_manuellement_avec_installateur_ubuntu#main" tabindex="1">Contenu</a> | <a href="partitionner_manuellement_avec_installateur_ubuntu#qsearch__in" tabindex="2">Rechercher</a> | <a href="partitionner_manuellement_avec_installateur_ubuntu#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="partitionner_manuellement_avec_installateur_ubuntu" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="partitionner_manuellement_avec_installateur_ubuntu" >tutoriel:partitionner_manuellement_avec_installateur_ubuntu</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#apercu_de_l_interface">Aperçu de l&#039;interface</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#apercu_des_outils_de_manipulation_des_partitions">Aperçu des outils de manipulation des partitions</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#partitions_indispensables">Partitions indispensables</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#partition_racine">Partition racine</a></div></li>
+<li class="level2"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#partition_swap">Partition swap</a></div></li>
+<li class="level2"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#partition_efi_ou_bios-boot_si_disque_gpt">Partition EFI ou BIOS-boot (si disque GPT)</a></div></li>
+<li class="level2"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#partition_boot_parfois_necessaire">Partition boot (parfois nécessaire)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#partitions_optionnelles">Partitions optionnelles</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#partition_de_partage_de_donnees_avec_windows_macos_ou_d_autres_gnu-linux">Partition de partage de données avec Windows, MacOS ou d&#039;autres GNU-Linux</a></div></li>
+<li class="level2"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#partition_de_donnees_personnelles">Partition de données personnelles</a></div></li>
+<li class="level2"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#partition_pour_les_fichiers_temporaires">Partition pour les fichiers temporaires</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#chargeur_d_amorcage">Chargeur d’amorçage</a></div></li>
+<li class="level1"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#exemple_pratique">Exemple pratique</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#situation_initiale">Situation initiale</a></div></li>
+<li class="level2"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#creer_une_nouvelle_partition_dans_un_espace_libre">Créer une nouvelle partition dans un espace libre</a></div></li>
+<li class="level2"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#attribuer_un_point_de_montage_a_une_partition_sans_la_formater">Attribuer un point de montage à une partition SANS la formater</a></div></li>
+<li class="level2"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#applicationannulation_des_modifications">Application/annulation des modifications</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="partitionner_manuellement_avec_installateur_ubuntu#en_cas_de_probleme">En cas de problème</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="../oneiric" class="wikilink1" title="oneiric" rel="tag">Oneiric</a>,
+	<a href="../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="../quantal" class="wikilink1" title="quantal" rel="tag">Quantal</a>,
+	<a href="../installation.1" class="wikilink1" title="installation" rel="tag">installation</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+<p>
+<p><div class="noteclassic"><em class="u"><strong>Installation standard d&#039;Ubuntu</strong></em>
+</p>
+<ol>
+<li class="level1"><div class="li"> <a href="obtenir_cd_ubuntu" class="wikilink1" title="tutoriel:obtenir_cd_ubuntu">Obtention du CD-ROM d&#039;installation d&#039;Ubuntu</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/tutoriel/amorcer_sur_cd_ubuntu" class="wikilink1" title="tutoriel:amorcer_sur_cd_ubuntu">Amorçage de l&#039;ordinateur sur le CD-ROM d&#039;installation d&#039;Ubuntu</a></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="installer_ubuntu_avec_le_live_cd" class="wikilink1" title="tutoriel:installer_ubuntu_avec_le_live_cd">Test et installation d&#039;Ubuntu</a></strong></div>
+<ul>
+<li class="level2"><div class="li"> <strong>Partitionnement manuel</strong></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <a href="completer_installation_ubuntu" class="wikilink1" title="tutoriel:completer_installation_ubuntu">Compléter l&#039;installation d&#039;Ubuntu</a></div>
+</li>
+</ol>
+
+<p>
+
+</div></p>
+</p>
+
+<h1 class="sectionedit1" id="installation_d_ubuntupartitionnement_manuel">Installation d&#039;Ubuntu : partitionnement manuel</h1>
+<div class="level1">
+
+<p>
+L&#039;étape 4 de l&#039;installation d&#039;Ubuntu (le partitionnement de votre disque dur) peut être réalisé de deux façons :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="installer_ubuntu_avec_le_live_cd#etape_3allouer_de_l_espace_disque" class="wikilink1" title="tutoriel:installer_ubuntu_avec_le_live_cd">de manière assistée</a>, où des présélections par défaut vous sont proposées. Le partitionnement assisté est automatique et globalement peu flexible. Néanmoins, les options proposées conviennent généralement à la plupart des usages pour les environnements d&#039;informatique personnelle ;</div>
+</li>
+<li class="level1"><div class="li"> de manière <em>manuelle</em>, où des options avancées vous permettent de régler votre installation d&#039;Ubuntu de manière poussée. Qui dit &quot;options avancées&quot; dit aussi que des connaissances supplémentaires doivent être acquises.</div>
+</li>
+</ul>
+
+<p>
+Ce document ne s&#039;attarde pas aux présélections de partitionnement assisté. Celles-ci sont décrites dans <a href="installer_ubuntu_avec_le_live_cd#etape_4_partitionnement" class="wikilink1" title="tutoriel:installer_ubuntu_avec_le_live_cd">la procédure d&#039;installation</a>. <br/>
+
+Dans ce document, il sera indiqué quelques bases de compréhension de l&#039;arborescence du système Ubuntu et la manière d&#039;utiliser l&#039;outil de partitionnement manuel de l&#039;installateur d&#039;Ubuntu.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Installation d'Ubuntu : partitionnement manuel] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="509-1710" /><input type="submit" value="Modifier" class="button" title="Installation d'Ubuntu : partitionnement manuel" /></div></form></div>
+<h2 class="sectionedit2" id="apercu_de_l_interface">Aperçu de l&#039;interface</h2>
+<div class="level2">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_3.png?id=tutoriel%3Apartitionner_manuellement_avec_installateur_ubuntu" class="media" title="installation_graphique:partitionner_manuellement_avec_installateur_ubuntu_3.png"><img src="http://doc.ubuntu-fr.org/_media/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_3.png?w=500&amp;tok=0905c2" class="mediaright" title="Interface de partitionnement manuel" alt="Interface de partitionnement manuel" width="500" /></a>
+</p>
+
+<p>
+Voici à quoi ressemble l&#039;interface de partitionnement manuel.<sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fn__1" id="fnt__1" class="fn_top">1)</a></sup> Remarquons ceci :
+</p>
+<ul>
+<li class="level1"><div class="li"> La jauge en-haut de l&#039;interface représente l&#039;allure actuelle du disque dur que vous modifiez. Au fur et à mesure que vous apporterez des modifications au partitionnement de ce disque dur, cette jauge se modifiera, présentant un aperçu de l&#039;allure qu&#039;aurait le disque dur si les modifications apportées étaient appliquées. Notez que la jauge représente le disque dur sur lequel vous êtes en train de travailler ; si vous sélectionnez un autre disque dur dans la liste des périphériques, la jauge se mettra à jour afin de représenter l&#039;état de cet autre disque ;</div>
+</li>
+<li class="level1"><div class="li"> Au-dessous de cette jauge se trouve la liste des périphériques. Cette liste affiche l&#039;ensemble des disques durs et de leurs partitions :</div>
+<ul>
+<li class="level2"><div class="li"> Les disques durs apparaissent sous la forme <code>/dev/sd<strong>X</strong></code> (&quot;X&quot; étant une lettre, par exemple &quot;/dev/sd<strong>a</strong>&quot; ou &quot;/dev/sd<strong>b</strong>&quot;) dans la liste des périphériques. Si vous possédez plus d&#039;un disque dur, vous pouvez naviguer entre eux en sélectionnant leur identifiant <code>/dev/sd<strong>X</strong></code> dans la liste des périphériques ; vous verrez alors l&#039;allure de la jauge changer complètement, afin de refléter l&#039;allure de cet autre disque dur. Dans la capture d&#039;écran ci-contre, vous pouvez apercevoir deux disques (<code>/dev/sd<strong>a</strong></code> et <code>/dev/sd<strong>c</strong></code>).  ;</div>
+</li>
+<li class="level2"><div class="li"> Les partitions apparaissent sous la forme <code>/dev/sd<strong>XY</strong></code> (&quot;Y&quot; étant un chiffre) dans la liste des périphériques. Leur identifiant est légèrement décalé sous chacun de leur disque dur respectif. À la droite de leur identifiant, vous pouvez voir chacune de leurs caractéristiques (type, point de montage, taille et espace déjà utilisé). Les partitions du disque en cours de modification apparaissent en couleur dans la jauge au-dessus de la liste. Dans l&#039;exemple ci-contre, vous pouvez apercevoir une partition (<code>/dev/sd<strong>a1</strong></code>) ;</div>
+</li>
+<li class="level2"><div class="li"> Apparaît aussi l&#039;espace libre non partitionné, c&#039;est-à-dire qui n&#039;est attribué à aucune partition. Cet espace est affiché sous le nom <code>Espace libre</code> dans la liste des périphériques et de couleur grise dans la jauge représentant notre disque dur. Des nouvelles partitions ne peuvent être créées que dans un espace libre</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Aperçu de l'interface] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1711-4234" /><input type="submit" value="Modifier" class="button" title="Aperçu de l'interface" /></div></form></div>
+<h3 class="sectionedit3" id="apercu_des_outils_de_manipulation_des_partitions">Aperçu des outils de manipulation des partitions</h3>
+<div class="level3">
+
+<p>
+Sous la liste des périphériques se trouvent cinq boutons d&#039;outils qui vous permettront de modeler vos disques durs selon vos besoins :
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu7.png?id=tutoriel%3Apartitionner_manuellement_avec_installateur_ubuntu" class="media" title="installation_graphique:partitionner_manuellement_avec_installateur_ubuntu7.png"><img src="http://doc.ubuntu-fr.org/_media/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu7.png" class="mediacenter" title="Outils de manipulation de partitions" alt="Outils de manipulation de partitions" /></a>
+</p>
+<ol>
+<li class="level1"><div class="li"> <strong>Nouvelle table de partition… :</strong> Ce bouton ne peut être utilisé que lorsqu&#039;un disque dur (<code>/dev/sd<strong>X</strong></code>) est sélectionné dans la liste des périphériques. Cette option supprime l&#039;ensemble des partitions présentes dans le disque dur sélectionné, le rendant vierge, et crée une table de partitions vide, prête à recevoir des nouvelles partitions. Ne sélectionnez cette option que si vous désirez effacer totalement le contenu d&#039;un disque dur ou si vous installez Ubuntu dans un disque dur neuf, dans lequel aucune table de partition n&#039;existe.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Ajouter… :</strong> Cet outil permet de créer une nouvelle partition dans un espace libre non alloué. Ce bouton n&#039;est accessible que si vous sélectionnez un <code>Espace libre</code> dans la liste des périphériques. Les nouvelles partitions apparaissent en aperçu seulement dans la liste des périphériques ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Modifier… :</strong> Ce bouton n&#039;est accessible que si vous sélectionnez une partition (<code>/dev/sd<strong>X0</strong></code>) dans la liste des périphériques. Cet outil vous permet d&#039;agrandir ou réduire une partition, de la formater ou de lui attribuer un point de montage. Dans les cas de formatage et d&#039;attribution de points de montage, les modifications sont proposées en aperçu seulement.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Supprimer :</strong> Ce bouton n&#039;est accessible que si vous sélectionnez une partition (<code>/dev/sd<strong>X0</strong></code>) dans la liste des périphériques. Cet outil vous permet de supprimer complètement une partition. Une fois la partition supprimée, toutes les données contenues dans cette partition ne seront plus accessibles. L&#039;espace occupé précédemment par la partition apparaîtra ensuite sous <code>Espace libre</code> dans la liste des périphériques.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Rétablir :</strong> Ce bouton remet l&#039;aperçu des modifications à l&#039;état d&#039;origine, c&#039;est-à-dire l&#039;état actuel des disques durs.</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Aperçu des outils de manipulation des partitions] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4235-6392" /><input type="submit" value="Modifier" class="button" title="Aperçu des outils de manipulation des partitions" /></div></form></div>
+<h2 class="sectionedit4" id="partitions_indispensables">Partitions indispensables</h2>
+<div class="level2">
+
+<p>
+Par défaut, Ubuntu a besoin d&#039;au moins deux partitions : un espace d&#039;échange (<strong>swap</strong>) et une partition <strong>racine</strong> (<code>/</code>). Si vous débutez, le plus simple est de créer la partition SWAP, puis la partition racine avec le reste de l&#039;espace disponible.
+Dans certains cas des partitions de démarrage peuvent aussi se révéler indispensables. Voir paragraphes ci-dessous.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Partitions indispensables] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6393-6807" /><input type="submit" value="Modifier" class="button" title="Partitions indispensables" /></div></form></div>
+<h3 class="sectionedit5" id="partition_racine">Partition racine</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <em>Point de montage :</em> <code>/</code></div>
+</li>
+<li class="level1"><div class="li"> <em>Utilité :</em> La partition racine est la base de l&#039;arborescence de votre système Ubuntu. Par défaut, si aucun réglage n&#039;est changé, c&#039;est dans celle-ci que <strong>tous</strong> les fichiers vont être placés : fichiers de configuration, programmes, documents personnels, etc.</div>
+</li>
+<li class="level1"><div class="li"> <em> Taille : </em> Le minimum est 8 Go. Cependant, pour une question de confort, sa taille devrait être d&#039;au moins 15 Go <sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fn__2" id="fnt__2" class="fn_top">2)</a></sup>. Attention: si cette partition est pleine, votre Ubuntu ne pourra plus démarrer.</div>
+</li>
+<li class="level1"><div class="li"> <em> Type : </em> on choisira généralement EXT4 pour une installation sur disque dur, ou bien EXT2 pour une installation sur clef <abbr title="Universal Serial Bus">USB</abbr><sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fn__3" id="fnt__3" class="fn_top">3)</a></sup>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Partition racine] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6808-7736" /><input type="submit" value="Modifier" class="button" title="Partition racine" /></div></form></div>
+<h3 class="sectionedit6" id="partition_swap">Partition swap</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <em>Point de montage :</em> swap ( ne se voit pas à la racine )</div>
+</li>
+<li class="level1"><div class="li"> <em>Utilité :</em> L&#039;espace d&#039;échange (en anglais, <em>swap space</em>) est une extension de la mémoire vive (RAM) de votre ordinateur. Afin d&#039;éviter un blocage de votre ordinateur lorsque sa RAM est pleine, Ubuntu se sert de cette partition pour décharger temporairement la RAM. Son utilisation à cet effet est plutôt rare dans les ordinateurs modernes, disposant d&#039;au moins 1 Go de RAM. Cependant, elle sert aussi de décharge de la RAM lors de la mise en hibernation, c&#039;est pour cette raison que la taille de la partition swap doit être d&#039;au moins la taille de votre RAM si vous souhaitez utiliser cette fonction. </div>
+</li>
+<li class="level1"><div class="li"> <em>Taille : </em> Si vous avez moins de 1 Go de RAM, entre 1,5× et 2× la taille de votre RAM. Si vous avez plus de 1 Go de RAM, de 1× à 1,5× la taille de votre RAM. Si la fonction Hibernation ne vous intéresse pas, consultez <a href="http://doc.ubuntu-fr.org/swap#taille_d_une_partition_de_swap" class="wikilink1" title="swap">cette page</a>.</div>
+</li>
+<li class="level1"><div class="li"> <em> Type : </em> SWAP</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Partition swap] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7737-8753" /><input type="submit" value="Modifier" class="button" title="Partition swap" /></div></form></div>
+<h3 class="sectionedit7" id="partition_efi_ou_bios-boot_si_disque_gpt">Partition EFI ou BIOS-boot (si disque GPT)</h3>
+<div class="level3">
+
+<p>
+Si votre disque dur est partitionné en <a href="../gpt" class="wikilink1" title="gpt">GPT</a>, il faudra y créer soit une <strong>partition EFI</strong>, soit une <strong>partition <abbr title="Basic Input-Output System">BIOS</abbr>-Boot</strong>. Il n&#039;y a pas besoin de leur attribuer un point de montage, car l&#039;installateur s&#039;en charge automatiquement<sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fn__4" id="fnt__4" class="fn_top">4)</a></sup>. Voir <a href="../gpt" class="wikilink1" title="gpt">cette page</a> pour plus d&#039;informations.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Partition EFI ou BIOS-boot (si disque GPT)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8754-9188" /><input type="submit" value="Modifier" class="button" title="Partition EFI ou BIOS-boot (si disque GPT)" /></div></form></div>
+<h3 class="sectionedit8" id="partition_boot_parfois_necessaire">Partition boot (parfois nécessaire)</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <em>Point de montage :</em> /boot</div>
+</li>
+<li class="level1"><div class="li"> <em>Utilité :</em> Certains ordinateurs n&#039;arrivent pas à lire les fichiers de démarrage s&#039;ils sont situés trop loin (&gt;100Go) du début du disque. Dans ce cas, il est généralement nécessaire de créer une partition /boot en début de disque<sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fn__5" id="fnt__5" class="fn_top">5)</a></sup>. Mais cette partition /boot séparée n&#039;est généralement pas utile sur un ordi récent (achat après 2007) et elle peut même générer des <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=13576521#p13576521" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=13576521#p13576521"  rel="nofollow">problèmes</a>, aussi il vaut mieux ne créer cette partition /boot que sur avis des experts du forum en cas où elle est réellement indispensable.</div>
+</li>
+<li class="level1"><div class="li"> <em>Taille : </em> 250Mo~1Go</div>
+</li>
+<li class="level1"><div class="li"> <em> Type : </em> Linux (généralement EXT4)</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Partition boot (parfois nécessaire)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9189-10031" /><input type="submit" value="Modifier" class="button" title="Partition boot (parfois nécessaire)" /></div></form></div>
+<h2 class="sectionedit9" id="partitions_optionnelles">Partitions optionnelles</h2>
+<div class="level2">
+
+<p>
+Accessoirement d&#039;autres partitions peuvent être créées pour des usages spécifiques. Attention, ces partitions supplémentaires réduisent la flexibilité d&#039;utilisation de votre espace disque ; elles ne sont donc à considérer que si vous êtes certain de ne pas remplir votre partition racine. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Partitions optionnelles] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10032-10368" /><input type="submit" value="Modifier" class="button" title="Partitions optionnelles" /></div></form></div>
+<h3 class="sectionedit10" id="partition_de_partage_de_donnees_avec_windows_macos_ou_d_autres_gnu-linux">Partition de partage de données avec Windows, MacOS ou d&#039;autres GNU-Linux</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <em>Point de montage :</em> <code>/le_nom_que_vous_voulez</code> (oui, directement sous la racine. Un nom sans espace ni accent est <strong>très</strong> préférable).<br/>
+</div>
+</li>
+</ul>
+
+<p>
+  Pour un montage automatique au démarrage, on rajoutera donc cette partition dans /etc/fstab.
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>Utilité : </em> Si vous conservez un système d&#039;exploitation déjà installé dans votre ordinateur (Microsoft Windows® ou Apple MacOS®), sachez que ceux-ci sont incapables de lire et d&#039;écrire dans les partitions d&#039;Ubuntu. Mais l&#039;inverse est vrai : Ubuntu sait lire et écrire dans leurs partitions. Pour échanger des fichiers entre les deux systèmes d&#039;exploitation, il est conseillé de créer une partition de partage entre Ubuntu et votre autre système, ce qui est beaucoup plus sûr que de stocker des données directement sur la partition système de Windows<sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fn__6" id="fnt__6" class="fn_top">6)</a></sup> (ou MacOS) ou que dans un /home si on a plusieurs Linux.</div>
+</li>
+<li class="level1"><div class="li"> <em>Taille : </em> Selon votre usage.</div>
+</li>
+<li class="level1"><div class="li"> <em>Type : </em> pour partager des données avec Windows choisissez une partition de partage de type NTFS. Avec Apple MacOS, choisissez HFS+. Avec un autre système Linux, choisissez EXT4.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Partition de partage de données avec Windows, MacOS ou d'autres GNU-Linux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10369-11617" /><input type="submit" value="Modifier" class="button" title="Partition de partage de données avec Windows, MacOS ou d'autres GNU-Linux" /></div></form></div>
+<h3 class="sectionedit11" id="partition_de_donnees_personnelles">Partition de données personnelles</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <em>Point de montage :</em> <code>/home</code></div>
+</li>
+<li class="level1"><div class="li"> <em>Utilité : </em> Lorsque vous disposez d&#039;un disque dur suffisamment grand, un dossier home séparé permet d&#039;isoler les paramètres personnels et les dossiers personnels des utilisateurs du reste du système. Par défaut, ce dossier fait partie de la partition racine. Un /home séparé est généralement superflu, voire gênant (notamment sur de petits disques) si vous débutez avec Ubuntu. Consulter <a href="http://doc.ubuntu-fr.org/tutoriel/deplacer_home#public" class="wikilink1" title="tutoriel:deplacer_home">ce comparatif</a> pour savoir si un home séparé peut vous être utile. Important: un /home séparé ne sert pas à partager des données avec Windows ou MacOS (voir le paragraphe précédent).</div>
+</li>
+<li class="level1"><div class="li"> <em>Taille : </em> Selon votre usage.</div>
+</li>
+<li class="level1"><div class="li"> <em> Type : </em> on choisira généralement EXT4 pour une installation sur disque dur, ou bien EXT2 pour une installation sur clef <abbr title="Universal Serial Bus">USB</abbr><sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fn__7" id="fnt__7" class="fn_top">7)</a></sup>. Remarque : d&#039;autres systèmes de fichiers sont disponibles.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Partition de données personnelles] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11618-12786" /><input type="submit" value="Modifier" class="button" title="Partition de données personnelles" /></div></form></div>
+<h3 class="sectionedit12" id="partition_pour_les_fichiers_temporaires">Partition pour les fichiers temporaires</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <em>Point de montage : </em> <code>/tmp</code></div>
+</li>
+<li class="level1"><div class="li"> <em>Utilité : </em> Ceci est recommandé particulièrement pour les serveurs ou les ordinateurs dans lesquels il y a une modification fréquente de fichiers volumineux dont la taille peut augmenter drastiquement (comme en retouche photographique ou en montage de vidéos). Ce dossier contient les fichiers qui ne sont nécessaires que temporairement. Cela comprend, par exemple, des pages web au moment de leur visionnement, des documents en cours de modifications ou des fichiers en cours de téléchargement. Séparer le dossier des fichiers temporaire du reste de la partition racine garantit que les transactions en cours peuvent continuer même si la partition racine devient pleine ou, au contraire, que les transactions s&#039;arrêteront par manque d&#039;espace sans bloquer inopinément le système d&#039;exploitation, ce qui est essentiel dans le cas d&#039;un serveur de données.</div>
+</li>
+<li class="level1"><div class="li"> <em>Taille : </em> Selon votre usage. De 2 à 4 Go est une suggestion.</div>
+</li>
+<li class="level1"><div class="li"> <em> Type : </em> on choisira généralement EXT4 pour une installation sur disque dur, ou bien EXT2 pour une installation sur clef <abbr title="Universal Serial Bus">USB</abbr><sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fn__8" id="fnt__8" class="fn_top">8)</a></sup>. Remarque : d&#039;autres systèmes de fichiers sont disponibles.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Partition pour les fichiers temporaires] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12787-14234" /><input type="submit" value="Modifier" class="button" title="Partition pour les fichiers temporaires" /></div></form></div>
+<h2 class="sectionedit13" id="chargeur_d_amorcage">Chargeur d’amorçage</h2>
+<div class="level2">
+
+<p>
+Ce menu permet de choisir l&#039;emplacement sur lequel sera installé le chargeur d&#039;amorçage <a href="../grub-pc" class="wikilink1" title="grub-pc">GRUB</a>. Généralement :
+</p>
+<ul>
+<li class="level1"><div class="li"> Si vous n&#039;avez qu&#039;un seul disque dur, laissez le choix sélectionné par défaut (<code>/dev/sda</code>) ;</div>
+</li>
+<li class="level1"><div class="li"> Si vous installez Ubuntu dans un périphérique amovible, sélectionnez ce périphérique amovible.</div>
+</li>
+<li class="level1"><div class="li"> Si Windows 8 est préinstallé, il convient d&#039;installer <a href="../uefi#installer_ubuntu_en_mode_efi" class="urlextern" title="http://doc.ubuntu-fr.org/uefi#installer_ubuntu_en_mode_efi"  rel="nofollow">Ubuntu en mode EFI</a>. Dans ce cas, on peut laisser ce qui est sélectionné par défaut dans ce champ chargeur d&#039;amorçage parce que ce choix n&#039;est pas utilisé : l&#039;installateur de Ubuntu ne s&#039;occupe que de la partition dont le type est &quot;efi&quot; et va créer automatiquement dans cette partition EFI ce qui est nécessaire pour le démarrage de Ubuntu. Cette partition existe déjà dans le cas de Windows 8 préinstallé aussi il n&#039;y a rien à faire, rien à créer ni à sélectionner s&#039;agissant du chargeur d&#039;amorçage.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteimportant">Ne choisissez pas une partition (/dev/sda1 par exemple) mais choisissez le disque dans lequel est installé Ubuntu (/dev/sda par exemple). C&#039;est seulement si vous êtes expert et que vous savez ce que vous faites que vous pouvez choisir une partition.
+</div></p>
+Pour plus d&#039;informations, demandez de l&#039;aide dans <a href="http://forum.ubuntu-fr.org/viewforum.php?id=10" class="urlextern" title="http://forum.ubuntu-fr.org/viewforum.php?id=10"  rel="nofollow">la section &quot;Installation&quot; du forum Ubuntu-FR</a>.
+</p>
+
+<p>
+<p><div class="noteimportant">Avant de cliquer sur <em>Installer</em>,  vérifiez que la boite affiche bien le disque (ex: /dev/sd<strong>a</strong>) et non une partition (ex: /dev/sda<strong>2</strong>)
+</p>
+
+<p>
+L&#039;interface fait qu&#039;il est facile de modifier par erreur ce menu, en modifiant ceux du haut
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Chargeur d’amorçage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14235-15927" /><input type="submit" value="Modifier" class="button" title="Chargeur d’amorçage" /></div></form></div>
+<h2 class="sectionedit14" id="exemple_pratique">Exemple pratique</h2>
+<div class="level2">
+
+<p>
+<p><div class="notewarning">A partir de Ubuntu 13.04, la fenêtre est un peu différente que dans les vues ci-après : les actions possibles sont +, - , change correspondant respectivement à Ajouter, Supprimer, Modifier. En principe, on ne doit pas utiliser le &quot;-&quot; au risque de supprimer une partition importante (voir <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=15807991#p15807991" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=15807991#p15807991"  rel="nofollow">ici</a>).  
+</div></p>
+Afin de bien comprendre le fonctionnement de ces outils, prenons l&#039;exemple d&#039;un ordinateur contenant déjà Windows®, sur lequel on veut ajouter Ubuntu en cohabitation.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_3.png?id=tutoriel%3Apartitionner_manuellement_avec_installateur_ubuntu" class="media" title="installation_graphique:partitionner_manuellement_avec_installateur_ubuntu_3.png"><img src="http://doc.ubuntu-fr.org/_media/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_3.png?w=500&amp;tok=0905c2" class="mediaright" title="Partitionnement initial" alt="Partitionnement initial" width="500" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Exemple pratique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15928-16634" /><input type="submit" value="Modifier" class="button" title="Exemple pratique" /></div></form></div>
+<h3 class="sectionedit15" id="situation_initiale">Situation initiale</h3>
+<div class="level3">
+
+<p>
+Reprenons l&#039;exemple de configuration que nous avions plus haut :
+</p>
+<ul>
+<li class="level1"><div class="li"> Nous disposons d&#039;un disque dur : <code>/dev/sd<strong>a</strong></code></div>
+</li>
+<li class="level1"><div class="li"> Le disque dur <code>/dev/sd<strong>a</strong></code> est partitionné ainsi :</div>
+<ul>
+<li class="level2"><div class="li"> une première partition, <code>/dev/sd<strong>a1</strong></code> de type NTFS, contient un système Microsoft Windows, livré d&#039;origine avec l&#039;ordinateur. <strong>Ce système Windows a été défragmenté, puis réduit via les outils Windows</strong> (comme recommandé sur <a href="http://doc.ubuntu-fr.org/cohabitation_ubuntu_windows" class="wikilink1" title="cohabitation_ubuntu_windows">ce tutoriel</a>)</div>
+</li>
+<li class="level2"><div class="li"> de l&#039;espace libre suit cette partition.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+Considérons ceci :
+</p>
+<ol>
+<li class="level1"><div class="li"> Nous voulons installer Ubuntu dans l&#039;espace libre ;</div>
+</li>
+<li class="level1"><div class="li"> Nous voulons être en mesure d&#039;accéder depuis Ubuntu aux données contenues dans la partition du système Windows.</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Situation initiale] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="16635-17381" /><input type="submit" value="Modifier" class="button" title="Situation initiale" /></div></form></div>
+<h3 class="sectionedit16" id="creer_une_nouvelle_partition_dans_un_espace_libre">Créer une nouvelle partition dans un espace libre</h3>
+<div class="level3">
+
+<p>
+Dans l&#039;espace libre du disque pour installer Ubuntu, créons les partitions swap et racine (<code>/</code>) nécessaires à Ubuntu. 
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_1.png?id=tutoriel%3Apartitionner_manuellement_avec_installateur_ubuntu" class="media" title="installation_graphique:partitionner_manuellement_avec_installateur_ubuntu_1.png"><img src="http://doc.ubuntu-fr.org/_media/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_1.png?w=500&amp;tok=e36654" class="mediaright" title="Création d&#039;une partition swap" alt="Création d&#039;une partition swap" width="500" /></a>
+</p>
+<ol>
+<li class="level1"><div class="li"> Sélectionnons l&#039;espace libre de 79056 Mo dans la liste des partitions ;</div>
+</li>
+<li class="level1"><div class="li"> Appuyons sur le bouton <strong>Ajouter…</strong> pour démarrer l&#039;outil de création de partition ;</div>
+</li>
+<li class="level1"><div class="li"> Dans la boîte de dialogue qui s&#039;ouvre :</div>
+<ul>
+<li class="level2"><div class="li"> au choix <em>Type de partition</em>, sélectionnons <strong>Logique</strong>. Sélectionner un type <strong>Logique</strong> est moins bloquant pour des développements futurs de nos disques durs<sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fn__9" id="fnt__9" class="fn_top">9)</a></sup> ;</div>
+</li>
+<li class="level2"><div class="li"> dans la case <em>Taille de la nouvelle partition en Mo</em>, indiquer une taille légèrement supérieure à la quantité de RAM<sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fn__10" id="fnt__10" class="fn_top">10)</a></sup> dont dispose votre ordinateur. Dans cet exemple, l&#039;ordinateur dispose d&#039;environ 1500Mo (1,5Go) de RAM, nous choisissons 2000 Mo (2Go) de SWAP ;</div>
+</li>
+<li class="level2"><div class="li"> au choix <em>Emplacement de la nouvelle partition</em>, indiquons <strong>Début</strong>. Ce choix permet de positionner la nouvelle partition au début ou à la fin de l&#039;espace libre ;</div>
+</li>
+<li class="level2"><div class="li"> dans la liste <em>Utiliser comme</em>, sélectionnons <strong>espace d&#039;échange (« swap »)</strong>. Il s&#039;agit du seul choix possible pour une partition swap ;</div>
+</li>
+<li class="level2"><div class="li"> dans la case <em>Point de montage</em>, nous ne pouvons rien indiquer, car une partition swap ne se monte pas ;</div>
+</li>
+<li class="level2"><div class="li"> validons ensuite la modification, en appuyant sur le bouton <strong>Valider</strong>.</div>
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+Au terme de ces étapes, voici l’écran que nous observons :
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_8.png?id=tutoriel%3Apartitionner_manuellement_avec_installateur_ubuntu" class="media" title="installation_graphique:partitionner_manuellement_avec_installateur_ubuntu_8.png"><img src="http://doc.ubuntu-fr.org/_media/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_8.png?w=500&amp;tok=f41fca" class="media" title="Après avoir créé une partition swap" alt="Après avoir créé une partition swap" width="500" /></a>
+</p>
+
+<p>
+Répétons la même procédure pour créer une partition racine :
+<a href="http://doc.ubuntu-fr.org/_detail/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_4.png?id=tutoriel%3Apartitionner_manuellement_avec_installateur_ubuntu" class="media" title="installation_graphique:partitionner_manuellement_avec_installateur_ubuntu_4.png"><img src="http://doc.ubuntu-fr.org/_media/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_4.png?w=500&amp;tok=84c2d3" class="mediaright" title="Création d&#039;une partition racine" alt="Création d&#039;une partition racine" width="500" /></a>
+</p>
+<ol>
+<li class="level1"><div class="li"> Sélectionnons l&#039;espace libre de 77054 Mo dans la liste des partitions ;</div>
+</li>
+<li class="level1"><div class="li"> Appuyons sur le bouton <strong>Ajouter…</strong> pour démarrer l&#039;outil de création de partition ;</div>
+</li>
+<li class="level1"><div class="li"> Dans la boîte de dialogue qui s&#039;ouvre :</div>
+<ul>
+<li class="level2"><div class="li"> dans la case <em>Taille de la nouvelle partition en Mo</em>, laissons la taille maximale indiquée (77054 Mo) ;</div>
+</li>
+<li class="level2"><div class="li"> au choix <em>Emplacement de la nouvelle partition</em>, indiquons <strong>Début</strong> ;</div>
+</li>
+<li class="level2"><div class="li"> dans la liste <em>Utiliser comme</em>, sélectionnons <strong>système de fichiers journalisé ext4</strong>. Il s&#039;agit du choix par défaut de système de fichiers pour Ubuntu.</div>
+</li>
+<li class="level2"><div class="li"> dans la case <em>Point de montage</em>, indiquons <code><strong>/</strong></code>. Ce symbole représente la racine du système Ubuntu, le commencement de l&#039;emplacement de tout fichier dans les disques durs ;</div>
+</li>
+<li class="level2"><div class="li"> validons ensuite la modification, en appuyant sur le bouton <strong>Valider</strong>.</div>
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+Au terme de ces étapes, voici l’écran que nous observons :
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_9.png?id=tutoriel%3Apartitionner_manuellement_avec_installateur_ubuntu" class="media" title="installation_graphique:partitionner_manuellement_avec_installateur_ubuntu_9.png"><img src="http://doc.ubuntu-fr.org/_media/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_9.png?w=500&amp;tok=913b67" class="media" title="Après avoir créé une partition swap et une partition racine" alt="Après avoir créé une partition swap et une partition racine" width="500" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Créer une nouvelle partition dans un espace libre] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17382-20414" /><input type="submit" value="Modifier" class="button" title="Créer une nouvelle partition dans un espace libre" /></div></form></div>
+<h3 class="sectionedit17" id="attribuer_un_point_de_montage_a_une_partition_sans_la_formater">Attribuer un point de montage à une partition SANS la formater</h3>
+<div class="level3">
+
+<p>
+Dans l&#039;exemple, cette étape va nous servir à pouvoir accéder depuis Ubuntu aux données contenues dans la partition du système Windows.
+</p>
+
+<p>
+Toutes les partitions de disques durs avec lesquelles vous souhaitez interagir doivent disposer d&#039;un point de montage. Un <strong>point de montage</strong> est un emplacement dans l&#039;arborescence de votre ordinateur à partir duquel vous pourrez accéder au contenu de cette partition ; dans Ubuntu, vous verrez ce point de montage comme un simple dossier. Chaque point de montage doit être unique : deux partitions ne peuvent pas être accessibles depuis un même emplacement.
+</p>
+
+<p>
+Nous voulons rendre accessible la partition Windows (<code>/dev/sd<strong>a1</strong></code>) depuis Ubuntu, une fois que celui-ci aura été installé. Cette partition contient des données importantes et le système Windows. Nous souhaitons conserver le tout ; nous ne devons donc <strong>pas</strong> formater cette partition.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu4.png?id=tutoriel%3Apartitionner_manuellement_avec_installateur_ubuntu" class="media" title="installation_graphique:partitionner_manuellement_avec_installateur_ubuntu4.png"><img src="http://doc.ubuntu-fr.org/_media/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu4.png?w=500&amp;tok=6a3aa3" class="mediaright" title="Attribution d&#039;un point de montage à une partition SANS formatage" alt="Attribution d&#039;un point de montage à une partition SANS formatage" width="500" /></a>
+</p>
+<ol>
+<li class="level1"><div class="li"> Dans la liste des périphériques, sélectionnons la partition <code>/dev/sd<strong>a1</strong></code>. Regardons quel est son <a href="../systeme_de_fichiers" class="wikilink1" title="systeme_de_fichiers">type</a>, dans la colonne <strong>Type</strong>. Dans cet exemple, c&#039;est une partition de type NTFS. Notons cette information, car elle nous servira ci-après.</div>
+</li>
+<li class="level1"><div class="li"> Appuyons sur le bouton <strong>Modifier la partition</strong> pour démarrer l&#039;outil de modification des partitions ;</div>
+</li>
+<li class="level1"><div class="li"> Dans la boîte de dialogue qui s&#039;ouvre :</div>
+<ul>
+<li class="level2"><div class="li"> dans la case <em>Taille de la nouvelle partition en Mo</em>, laissons l&#039;information telle quelle. Nous voulons utiliser la partition sans la réduire ni la formater, donc <strong>ne pas changer la taille</strong> ;</div>
+</li>
+<li class="level2"><div class="li"> dans la liste <em>Utiliser comme</em>, sélectionnons le même type que nous avions noté précédemment : ntfs. <strong>Il est important de faire correspondre cette option avec l&#039;information de type que nous avons noté précédemment</strong>, puisque nous allons utiliser  la partition telle quelle. Sélectionner un type différent forcera automatiquement son formatage. Faites attention, donc, au type que vous choisissez ;</div>
+</li>
+<li class="level2"><div class="li"> assurons-nous de laisser la case <em>Formater la partition</em> <strong>décochée</strong> ;</div>
+</li>
+<li class="level2"><div class="li"> dans la case <em>Point de montage</em>, nous devons indiquer un point de montage (emplacement) depuis lequel nous pourrons accéder au contenu de notre partition. Vous pouvez rendre accessible votre partition depuis n&#039;importe quel dossier vide de votre arborescence. Idéalement, choisissez un point de montage simple à se souvenir, qui reflète l&#039;utilité de la partition. Dans notre exemple, cette partition contient un système Windows ; indiquons-lui un point de montage <code><strong>/media/windows</strong></code> ;</div>
+</li>
+<li class="level2"><div class="li"> validons ensuite la modification, en appuyant sur le bouton <strong>Valider</strong>.</div>
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+Au terme de ces étapes, nous constatons que de nouvelles informations accompagnent notre partition, <code>/dev/sd<strong>a1</strong></code> dans la liste des périphériques. Son type est toujours <strong>ntfs</strong>, son point de montage est <strong><code>/media/windows</code></strong> et elle ne sera pas formatée.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_5.png?id=tutoriel%3Apartitionner_manuellement_avec_installateur_ubuntu" class="media" title="installation_graphique:partitionner_manuellement_avec_installateur_ubuntu_5.png"><img src="http://doc.ubuntu-fr.org/_media/installation_graphique/partitionner_manuellement_avec_installateur_ubuntu_5.png?w=500&amp;tok=7e99fe" class="media" title="Création d&#039;une partition racine" alt="Création d&#039;une partition racine" width="500" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Attribuer un point de montage à une partition SANS la formater] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="20415-23655" /><input type="submit" value="Modifier" class="button" title="Attribuer un point de montage à une partition SANS la formater" /></div></form></div>
+<h3 class="sectionedit18" id="applicationannulation_des_modifications">Application/annulation des modifications</h3>
+<div class="level3">
+
+<p>
+La capture ci-dessus présente l&#039;aperçu du partitionnement proposé par le partitionneur de l&#039;installateur d&#039;Ubuntu. La jauge et la liste des périphériques présentent l&#039;allure qu&#039;auront les disques durs lorsque nous confirmerons notre intention d&#039;installer Ubuntu.
+</p>
+
+<p>
+Les modifications ne seront pas appliquées tant que vous n&#039;avez pas appuyé sur le bouton <strong>Installer maintenant</strong>. Vous pouvez annuler ces modifications en cliquant sur le bouton &quot;Rétablir&quot;<sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fn__11" id="fnt__11" class="fn_top">11)</a></sup> par exemple.
+</p>
+
+<p>
+Pour valider les modifications et continuer la procédure d&#039;installation, appuyez sur le bouton <strong>Installer maintenant</strong>, et <a href="installer_ubuntu_avec_le_live_cd#etape_4_emplacement_geographique" class="wikilink1" title="tutoriel:installer_ubuntu_avec_le_live_cd">passez à l&#039;étape 4 (&quot;Emplacement géographique&quot;)</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[Application/annulation des modifications] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="23656-24544" /><input type="submit" value="Modifier" class="button" title="Application/annulation des modifications" /></div></form></div>
+<h2 class="sectionedit19" id="en_cas_de_probleme">En cas de problème</h2>
+<div class="level2">
+
+<p>
+Il existe dans le menu Système→Administration du live-CD un autre utilitaire de partitionnement : <a href="../gparted" class="wikilink1" title="gparted">GParted</a>.
+</p>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../utilisateurs/alexandrep" class="wikilink1" title="utilisateurs:alexandrep">AlexandreP</a>, eleon, <a href="http://doc.ubuntu-fr.org/utilisateurs/yannubuntu" class="wikilink1" title="utilisateurs:yannubuntu">YannUbuntu</a>, moko138 (doc anglophone tirée de ce document: <a href="https://help.ubuntu.com/community/DiskSpace" class="urlextern" title="https://help.ubuntu.com/community/DiskSpace"  rel="nofollow">DiskSpace</a>)</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="partitionner_manuellement_avec_installateur_ubuntu"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427528361" /><input type="hidden" name="summary" value="[En cas de problème] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="24545-" /><input type="submit" value="Modifier" class="button" title="En cas de problème" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Vous pouvez cliquer sur chacune des captures d&#039;écran de ce tutoriel pour les voir en plein écran.</div>
+<div class="fn"><sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+voir <a href="../exigences_minimales" class="wikilink1" title="exigences_minimales">exigences minimales</a></div>
+<div class="fn"><sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+, <sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fnt__7" id="fn__7" class="fn_bot">7)</a></sup> 
+, <sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fnt__8" id="fn__8" class="fn_bot">8)</a></sup> 
+afin de réduire l&#039;usure de la mémoire flash, usure qui est fonction du nombre d’écritures sur ce type de mémoire. Revers de la médaille : le système de fichiers EXT2 est non journalisé, donc moins résistant</div>
+<div class="fn"><sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+cf <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=10719471#p10719471" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=10719471#p10719471"  rel="nofollow">cette discussion</a></div>
+<div class="fn"><sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fnt__5" id="fn__5" class="fn_bot">5)</a></sup> 
+= n&#039;importe quel emplacement entièrement inclus dans les 100 premiers Go du disque</div>
+<div class="fn"><sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fnt__6" id="fn__6" class="fn_bot">6)</a></sup> 
+<a href="http://forum.ubuntu-fr.org/viewtopic.php?id=845401&amp;p=1" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=845401&amp;p=1"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=845401&amp;p=1</a></div>
+<div class="fn"><sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fnt__9" id="fn__9" class="fn_bot">9)</a></sup> 
+car il n&#039;est pas possible d&#039;avoir plus de 4 partitions primaires sur un disque</div>
+<div class="fn"><sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fnt__10" id="fn__10" class="fn_bot">10)</a></sup> 
+mémoire vive</div>
+<div class="fn"><sup><a href="partitionner_manuellement_avec_installateur_ubuntu#fnt__11" id="fn__11" class="fn_bot">11)</a></sup> 
+ou en cliquant sur &quot;Quitter&quot; ou &quot;Précédent&quot; ou même en fermant la fenêtre de l&#039;installateur</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/a/a3d7d536021812f288229090a7e1ac93.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/partitionner_manuellement_avec_installateur_ubuntu?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/partitionner_manuellement_avec_installateur_ubuntu?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/partitionner_manuellement_avec_installateur_ubuntu?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/partitionner_manuellement_avec_installateur_ubuntu?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/partitionner_manuellement_avec_installateur_ubuntu?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

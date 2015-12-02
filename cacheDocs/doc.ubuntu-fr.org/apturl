@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>apturl - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-11-24T15:03:21+0100"/>
+<meta name="keywords" content="apt,paquet,gestionnaire de paquets,logiciels,installation logiciel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/apturl?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/apturl?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/apturl"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/apturl"/>
+<link rel="canonical" href="apturl"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"apturl","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="apturl#main" tabindex="1">Contenu</a> | <a href="apturl#qsearch__in" tabindex="2">Rechercher</a> | <a href="apturl#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="apturl" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="apturl" >apturl</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="apturl#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="apturl#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="apturl#choisir_apturl_comme_gestionnaire_de_paquet_lors_d_un_clic_sur_un_lien_apt">Choisir apturl comme « gestionnaire de paquet » lors d&#039;un clic sur un lien apt</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="apturl#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="apturl#firefox_et_epiphany">Firefox et Epiphany</a></div></li>
+<li class="level2"><div class="li"><a href="apturl#konqueror">Konqueror</a></div></li>
+<li class="level2"><div class="li"><a href="apturl#opera">Opera</a></div></li>
+<li class="level2"><div class="li"><a href="apturl#swiftfox">Swiftfox</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="apturl#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="apturl#installer_un_seul_paquet">Installer un seul paquet</a></div></li>
+<li class="level2"><div class="li"><a href="apturl#installer_plusieurs_paquets_d_un_coup">Installer plusieurs paquets d&#039;un coup</a></div></li>
+<li class="level2"><div class="li"><a href="apturl#utiliser_un_depot_alternatif">Utiliser un dépôt alternatif</a></div></li>
+<li class="level2"><div class="li"><a href="apturl#utiliser_un_ppa">Utiliser un PPA</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="apturl#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="apt" class="wikilink1" title="apt" rel="tag">apt</a>,
+	<a href="paquet" class="wikilink1" title="paquet" rel="tag">paquet</a>,
+	<a href="gestionnaire_de_paquets" class="wikilink1" title="gestionnaire_de_paquets" rel="tag">gestionnaire de paquets</a>,
+	<a href="http://doc.ubuntu-fr.org/logiciels" class="wikilink1" title="logiciels" rel="tag">logiciels</a>,
+	<a href="http://doc.ubuntu-fr.org/installation_logiciel" class="wikilink1" title="installation_logiciel" rel="tag">installation logiciel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="apturlgestion_du_protocole_aptpour_l_installation_en_un_clic_d_un_paquet_depuis_une_page_web">Apturl : gestion du protocole apt:// pour l&#039;installation en un clic d&#039;un paquet depuis une page web</h1>
+<div class="level1">
+
+<p>
+<em>Le <strong>protocole APT</strong>, ou <strong>apturl</strong>, est une façon extrêmement facile d&#039;installer un paquet logiciel, et est avantageux pour les utilisateurs et les distributeurs de contenu.</em>
+</p>
+
+<p>
+Dans les ordinateurs dans lesquels <em>apturl</em> est installé et configuré, le clic dans une page web sur un lien spécial démarre l&#039;installation d&#039;un ou de plusieurs paquets donnés présents dans les dépôts de paquets accessibles à cet ordinateur.
+</p>
+
+<p>
+<p><div class="notetip">Cette page est une sous-partie de la page <strong>&quot;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Comment installer un paquet</a>&quot;</strong>.
+</div></p>
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/apturl_lucid2.png?id=apturl" class="media" title="applications:apturl_lucid2.png"><img src="http://doc.ubuntu-fr.org/_media/applications/apturl_lucid2.png" class="mediaright" title="Apt-url" alt="Apt-url" /></a>
+Par exemple, dans une page web, lorsqu&#039;un utilisateur d&#039;Ubuntu clique sur le lien <code><a href="apt://gimp" class="urlextern" title="apt://gimp"  rel="nofollow">apt://gimp</a></code>, <em>apturl</em> intercepte l&#039;action et exécute le <a href="gestionnaire_de_paquets" class="wikilink1" title="gestionnaire_de_paquets">gestionnaire de paquets</a> pour proposer l&#039;installation du paquet <code>gimp</code> depuis <a href="depots" class="wikilink1" title="depots">les sources de paquets accessibles</a>. Pour l&#039;utilisateur, il n&#039;y a pas besoin de lire une marche à suivre fastidieuse pour installer un paquet ; pour le diffuseur de contenu, il n&#039;y a pas besoin d&#039;écrire une marche à suivre fastidieuse.
+</p>
+
+<p>
+Notez que <em>apturl</em> n&#039;a pas pour but de remplacer le système de dépôts ni les gestionnaires de paquets actuels. C&#039;est une méthode complémentaire qui s&#039;inscrit par-dessus ceux-ci, qui exploite les ressources des dépôts et des gestionnaires existants.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Apturl : gestion du protocole apt:// pour l'installation en un clic d'un paquet depuis une page web] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="84-1556" /><input type="submit" value="Modifier" class="button" title="Apturl : gestion du protocole apt:// pour l'installation en un clic d'un paquet depuis une page web" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+Pour que votre système puisse utiliser cette méthode d&#039;installation de paquets, il vous faut :
+</p>
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée.</div>
+</li>
+<li class="level1"><div class="li"> disposer d&#039;un navigateur compatible <em>(voir la liste ci-dessous)</em>.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1557-1868" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Sur Ubuntu apturl est installé par défaut, toutefois si il ne l&#039;est pas , il suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://apturl" class="interwiki iw_apt" title="apt://apturl">apturl</a></strong>.
+</p>
+<pre class="code">sudo apt-get install apturl</pre>
+
+<p>
+Note : une interface existe pour <a href="kde" class="wikilink1" title="kde">KDE</a>, elle se nomme <strong><a href="apt://apturl-kde" class="interwiki iw_apt" title="apt://apturl-kde">apturl-kde</a></strong>.
+</p>
+<pre class="code">sudo apt-get install apturl-kde</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1869-2252" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit4" id="choisir_apturl_comme_gestionnaire_de_paquet_lors_d_un_clic_sur_un_lien_apt">Choisir apturl comme « gestionnaire de paquet » lors d&#039;un clic sur un lien apt</h3>
+<div class="level3">
+
+<p>
+Apturl peut se substituer au gestionnaire de paquet habituel et installer des paquets sur le système lors du clic sur un lien apt.
+</p>
+
+<p>
+Pour utiliser apturl comme gestionnaire de lien apt, entrer dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> la commande suivante :
+</p>
+<pre class="code">xdg-mime default apturl.desktop x-scheme-handler/apt</pre>
+
+<p>
+Pour plus d&#039;informations sur le choix des gestionnaires associé au protocole apt consulter la section : <a href="gestionnaire_de_paquets#choisir_quel_gestionnaire_de_paquet_se_lance_avec_les_liens_apt" class="wikilink1" title="gestionnaire_de_paquets">choisir quel gestionnaire de paquet se lance avec les liens apt</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Choisir apturl comme « gestionnaire de paquet » lors d'un clic sur un lien apt] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2253-2898" /><input type="submit" value="Modifier" class="button" title="Choisir apturl comme « gestionnaire de paquet » lors d'un clic sur un lien apt" /></div></form></div>
+<h2 class="sectionedit5" id="configuration">Configuration</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2899-2922" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h3 class="sectionedit6" id="firefox_et_epiphany">Firefox et Epiphany</h3>
+<div class="level3">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/applications/apturl_firefox_lucid2.png?id=apturl" class="media" title="applications:apturl_firefox_lucid2.png"><img src="http://doc.ubuntu-fr.org/_media/applications/apturl_firefox_lucid2.png?w=300&amp;tok=dd5468" class="mediaright" title="Besoin d&#039;activer les liens apturl ?" alt="Besoin d&#039;activer les liens apturl ?" width="300" /></a>
+</p>
+
+<p>
+Cliquer sur ce lien : <a href="apt://gimp" class="urlextern" title="apt://gimp"  rel="nofollow">apt://gimp</a>. La fenêtre &quot;lancement de l&#039;application&quot; (ci-contre) apparait. (Dans l&#039;exemple ci-contre &quot;apturl&quot; est déjà sélectionné; si dans votre cas &quot;apturl&quot; n&#039;est pas visible, cliquez sur le bouton &quot;choisir&quot;, puis &quot;système de fichiers&quot;, puis le répertoire /usr/bin puis le fichier &quot;apturl&quot;.)
+</p>
+
+<p>
+Ne pas oublier de cocher &quot;se souvenir de mon choix&quot; et validez.
+</p>
+
+<p>
+Si ca ne fonctionne toujours pas, saisissez <em>about:config</em> (sans espace) dans la barre de navigation et rajoutez :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>network.protocol-handler.app.apt</strong> en chaîne de caractères avec pour valeur <strong>/usr/bin/apturl</strong>,</div>
+</li>
+<li class="level1"><div class="li"> <strong>network.protocol-handler.app.apt+http</strong> en chaîne de caractère avec pour valeur <strong>/usr/bin/apturl</strong>,</div>
+</li>
+<li class="level1"><div class="li"> <strong>network.protocol-handler.warn-external.apt</strong> en valeur booléenne et mettez <strong>false</strong> comme valeur,</div>
+</li>
+<li class="level1"><div class="li"> <strong>network.protocol-handler.warn-external.apt+http</strong> en valeur booléenne et mettez <strong>false</strong> comme valeur.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic">
+Si sous KDE (testé avec firefox 8), lorsque l&#039;on clique sur le lien <a href="apt://vlc" class="urlextern" title="apt://vlc"  rel="nofollow">apt://vlc</a>, il apparaît un erreur qui indique que le protocole apt n&#039;est relié à aucun logiciel, il suffit d&#039;aller dans les préférences (édition/préférence)→applications→apt et changer &quot;toujours demander&quot; par le fichier /usr/bin/apturl.
+
+</div></p>
+</p>
+
+</div>
+
+<h4 id="configurer_firefox_230_sur_ubuntu_1304_64_bits_et_sous_kde">Configurer Firefox 23.0 sur Ubuntu 13.04 64 bits et sous KDE</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="installer_en_un_clic_les_paquets_apt_depuis_le_navigateur_firefox_teste_sous_kubuntu_1304_64bits">Installer en un clic les paquets apt depuis le navigateur firefox (Testé sous Kubuntu 13.04 64Bits)</h5>
+<div class="level5">
+
+<p>
+Après s&#039;être assuré d&#039;avoir les paquets  <em>apturl</em> et <em>apturl-kde</em> installés (commandes <strong><em>sudo apt-get install apturl</em></strong> et <strong><em>sudo apt-get install apturl-kde</em></strong>),
+</p>
+
+<p>
+saisissez  <em>about:config</em> (sans espace) dans la barre de navigation et rajoutez en faisant clic-droit puis <em>nouvelle</em>:
+</p>
+<ul>
+<li class="level1"><div class="li">  Une entrée <em>chaîne de caractères</em> en saisissant (le nom de l&#039;option) <strong>network.protocol-handler.app.apt</strong> puis validez et saisissez <strong>/usr/bin/apturl</strong>  pour valeur (chaine).</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  Une entrée <em>chaîne de caractère</em> en saisissant (le nom de l&#039;option) <strong>network.protocol-handler.app.apt+http</strong> puis validez et saisissez <strong>/usr/bin/apturl</strong>  pour valeur (chaine).</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  Une entrée <em>valeur booléenne</em> en saisissant (le nom de l&#039;option) <strong>network.protocol-handler.warn-external.apt</strong> puis validez et sélectionnez <strong>false</strong> comme valeur.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  Une entrée <em>valeur booléenne</em> en saisissant (le nom de l&#039;option) <strong>network.protocol-handler.warn-external.apt+http</strong> puis validez et et sélectionnez <strong>false</strong> comme valeur.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">  Une entrée <em>valeur booléenne</em> en saisissant (le nom de l&#039;option) <strong>network.protocol-handler.expose.apt</strong> puis validez et et sélectionnez <strong>false</strong> comme valeur.</div>
+</li>
+</ul>
+
+<p>
+Cliquez ensuite sur le lien apt d&#039;une application que vous voulez installer, choisissez l&#039;application pour l&#039;ouvrir <strong>apturl</strong> dont le chemin est <strong><em>/usr/bin/apturl</em></strong> et cochez &quot;se souvenir de mon choix&quot; puis validez.
+</p>
+
+<p>
+-
+-
+</p>
+
+</div>
+
+<h5 id="sous_ubuntu_1310_ajout_par_malain">Sous UBUNTU 13.10  ajout par malain</h5>
+<div class="level5">
+
+<p>
+Aprés toutes les manips décrites ici , sous ubuntu 13.10 ( et firefox 26 ) , il me restait impossible d&#039;utiliser les liens apt dans firefox. Rien ne se passait , et un rapport de bug s&#039;ouvrait. En cliquant sur &quot;détails&quot; le gestionnaire de bugs donnait l&#039; erreur suivante :
+</p>
+
+<p>
+&quot;apturl-gtk crashed …. icone deb pas presente dans le theme&quot;
+</p>
+
+<p>
+J&#039;ai résolu ce probléme par une manip pas super pro mais qui marche :
+</p>
+
+<p>
+-lancer le gestionnaire de fichier en tant qu&#039; administrateur en tapant dans un terminal: sudo nautilus   ( attention à ne rien faire que vous ne compreniez pas , vous avez ici le pouvoir de détruire ou déplacer des fichiers vitaux )
+</p>
+
+<p>
+puis
+</p>
+
+<p>
+-copier une icone en 16x16 ( par ex depuis usr/share/icons/gnome) et la renommer en deb.png
+</p>
+
+<p>
+-coller cette icone deb.png dans usr/share/icons/unity-icon-theme
+</p>
+
+<p>
+-et aussi dans usr/share/icons/gnome
+</p>
+
+<p>
+( je ne sais grace à quel dossier cela marche …). Pardon si le conseil est donné au mauvais endroit , merci aux auteurs de me le signaler, je suis inscrit sur le forum . malain
+</p>
+
+<p>
+-
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Firefox et Epiphany] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2923-7015" /><input type="submit" value="Modifier" class="button" title="Firefox et Epiphany" /></div></form></div>
+<h3 class="sectionedit7" id="konqueror">Konqueror</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Exécutez l&#039;éditeur de texte <a href="kate" class="wikilink1" title="kate">Kate</a> en mode <a href="sudo" class="wikilink1" title="sudo">administrateur</a> en saisissant dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> la <a href="commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante: <pre class="code">kdesudo kate</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Créez un nouveau fichier texte contenant ces informations : <dl class="file">
+<dt><a href="http://doc.ubuntu-fr.org/_export/code/apturl?codeblock=3" title="Télécharger un extrait" class="mediafile mf_protocol">apt.protocol</a></dt>
+<dd><pre class="file">[Protocol]
+exec=apturl &quot;%u&quot;
+protocol=apt
+input=none
+output=none
+helper=true
+reading=true
+writing=true</pre>
+</dd></dl>
+
+<p>
+Enregistrez ce fichier sous le nom <strong><code>apt.protocol</code></strong> dans le dossier <em>/usr/share/services</em>
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Créez un second fichier texte contenant ces informations : <dl class="file">
+<dt><a href="http://doc.ubuntu-fr.org/_export/code/apturl?codeblock=4" title="Télécharger un extrait" class="mediafile mf_protocol">apt+http.protocol</a></dt>
+<dd><pre class="file">[Protocol]
+exec=apturl &quot;%u&quot;
+protocol=apt+http
+input=none
+output=none
+helper=true
+reading=true
+writing=true</pre>
+</dd></dl>
+
+<p>
+Enregistrez ce fichier sous le nom <strong><code>apt+http.protocol</code></strong> dans le dossier <em>/usr/share/services</em>
+</p>
+</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Konqueror] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7016-7810" /><input type="submit" value="Modifier" class="button" title="Konqueror" /></div></form></div>
+<h3 class="sectionedit8" id="opera">Opera</h3>
+<div class="level3">
+
+<p>
+Si vous utilisez <a href="http://doc.ubuntu-fr.org/opera" class="wikilink1" title="opera">Opera</a>, il suffit d&#039;aller dans le <em>menu principal</em> puis <em>Réglages</em> puis <em>Préférences</em>. Cliquez sur l&#039;onglet <em>Avancés</em> puis <em>Programmes</em>, et choisissez <em>Ajouter</em>. Dans <em>Protocole</em>, entrez <strong>apt</strong> et dans <em>Ouvrir avec une autre application</em>, entrez <strong>/apturl</strong>. Appuyez sur le bouton OK.
+</p>
+
+<p>
+Si vous utilisez une version d&#039;Opera antérieure à la 10.5, allez dans le menu <em>Outils</em> puis <em>Préférences</em> puis suivez la même procédure que ci-dessus.
+</p>
+
+<p>
+Si les modifications ne prennent pas effet immédiatement, redémarrez Opera.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Opera] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7811-8395" /><input type="submit" value="Modifier" class="button" title="Opera" /></div></form></div>
+<h3 class="sectionedit9" id="swiftfox">Swiftfox</h3>
+<div class="level3">
+
+<p>
+Pour profiter du protocole APT avec <a href="swiftfox" class="wikilink1" title="swiftfox">Swiftfox</a>, saisissez <strong>about:config</strong> dans la barre d&#039;adresse et modifiez les clés suivantes (ou créez-les si elles n&#039;existent pas) afin qu&#039;elles aient les valeurs suivantes :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>network.protocol-handler.app.apt</strong> en chaîne de caractères avec pour valeur <strong>/usr/bin/apturl</strong>,</div>
+</li>
+<li class="level1"><div class="li"> <strong>network.protocol-handler.app.apt+http</strong> en chaîne de caractère avec pour valeur <strong>/usr/bin/apturl</strong>,</div>
+</li>
+<li class="level1"><div class="li"> <strong>network.protocol-handler.warn-external.apt</strong> en valeur booléenne et mettez <strong>false</strong> comme valeur,</div>
+</li>
+<li class="level1"><div class="li"> <strong>network.protocol-handler.warn-external.apt+http</strong> en valeur booléenne et mettez <strong>false</strong> comme valeur.</div>
+</li>
+</ul>
+
+<p>
+Fermez et redémarrez Swiftfox pour prendre en compte ce changement.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Swiftfox] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8396-9139" /><input type="submit" value="Modifier" class="button" title="Swiftfox" /></div></form></div>
+<h2 class="sectionedit10" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Une fois le protocole pris en charge par votre système, vous trouverez parfois sur internet des liens du style <strong><a href="apt://nom_du_paquet" class="interwiki iw_apt" title="apt://nom_du_paquet">nom_du_paquet</a></strong> qui vous permettront d&#039;installer le paquet en question.
+</p>
+
+<p>
+Sur cette documentation, vous trouverez une icône sur lequel vous pourrez cliquer pour installer divers logiciels ou paquets, se présentant sous cette forme :<a href="http://doc.ubuntu-fr.org/_detail/apt.png?id=apturl" class="media" title="apt.png"><img src="_media/apt.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Si vous voulez aider un ami ou un utilisateur d&#039;ubuntu sur les <a href="http://forum.ubuntu-fr.org/" class="urlextern" title="http://forum.ubuntu-fr.org/"  rel="nofollow">forums d&#039;Ubuntu-fr</a>, vous pourrez lui donner de simples liens à cliquer. On peut alors construire ces liens de plusieurs façons détaillées si dessous.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9140-9782" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h3 class="sectionedit11" id="installer_un_seul_paquet">Installer un seul paquet</h3>
+<div class="level3">
+
+<p>
+Pour installer, par exemple, le paquet <strong>unrar</strong> : <a href="apt://unrar" class="urlextern" title="apt://unrar"  rel="nofollow">apt://unrar</a> (tout simplement)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Installer un seul paquet] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9783-9907" /><input type="submit" value="Modifier" class="button" title="Installer un seul paquet" /></div></form></div>
+<h3 class="sectionedit12" id="installer_plusieurs_paquets_d_un_coup">Installer plusieurs paquets d&#039;un coup</h3>
+<div class="level3">
+
+<p>
+Il suffit de séparer les paquets par une virgule : <a href="apt://unrar,vlc,vim" class="urlextern" title="apt://unrar,vlc,vim"  rel="nofollow">apt://unrar,vlc,vim</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Installer plusieurs paquets d'un coup] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9908-10033" /><input type="submit" value="Modifier" class="button" title="Installer plusieurs paquets d'un coup" /></div></form></div>
+<h3 class="sectionedit13" id="utiliser_un_depot_alternatif">Utiliser un dépôt alternatif</h3>
+<div class="level3">
+
+<p>
+On peut spécifier un dépôt à utiliser pour installer le paquet en question avec un lien du style :
+<a href="apt://archive.canonical.com?package=acroread?dist=feisty?section=commercial" class="urlextern" title="apt://archive.canonical.com?package=acroread?dist=feisty?section=commercial"  rel="nofollow">apt://archive.canonical.com?package=acroread?dist=feisty?section=commercial</a>
+</p>
+
+<p>
+Ici, on installera le paquet <strong>acroread</strong> disponible sur le dépôt Feisty Commercial de Canonical.
+</p>
+
+<p>
+Tous les dépôts conformes à la norme Debian pourront être utilisés avec cette méthode
+</p>
+
+<p>
+<p><div class="noteimportant">Attention : en utilisant des liens pointant sur des dépôts tiers, vous devez être sûr de la qualité du dépôt en question et personne ne pourra vous aider en cas de problèmes avec un dépôt non supporté.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Utiliser un dépôt alternatif] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10034-10690" /><input type="submit" value="Modifier" class="button" title="Utiliser un dépôt alternatif" /></div></form></div>
+<h3 class="sectionedit14" id="utiliser_un_ppa">Utiliser un PPA</h3>
+<div class="level3">
+
+<p>
+Il existe un projet de fork d&#039;apturl permettant d&#039;ajouter des ppa via un lien :
+voir le forum dédié : <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=1441781" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=1441781"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=1441781</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Utiliser un PPA] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10691-10873" /><input type="submit" value="Modifier" class="button" title="Utiliser un PPA" /></div></form></div>
+<h2 class="sectionedit15" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.cedynamix.fr/2007/09/30/le-protocole-apt-quest-ce-que-cest/" class="urlextern" title="http://www.cedynamix.fr/2007/09/30/le-protocole-apt-quest-ce-que-cest/"  rel="nofollow">Billet de Cedynamix présentant le protocole apt</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://forum.ubuntu-fr.org/viewtopic.php?id=157707" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=157707"  rel="nofollow">Procédure pour Opéra</a></div>
+</li>
+<li class="level1"><div class="li"> (en) <a href="http://blog.appnr.com/help/#howto-install-packages" class="urlextern" title="http://blog.appnr.com/help/#howto-install-packages"  rel="nofollow">Enable the AptURL protocol (Appnr blog)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://appnr.com/" class="urlextern" title="http://appnr.com/"  rel="nofollow">Site proposant tous les paquets Ubuntu installables par AptUrl</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/enchained" class="wikilink1" title="utilisateurs:enchained">Enchained</a>,<a href="utilisateurs/jewome_62" class="wikilink1" title="utilisateurs:jewome_62">jewome_62</a>,<a href="utilisateurs/poupoul2" class="wikilink1" title="utilisateurs:poupoul2">poupoul2</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/salle" class="wikilink1" title="utilisateurs:salle">Sallé</a>, <a href="utilisateurs/mydjey" class="wikilink1" title="utilisateurs:mydjey">mydjey</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="apturl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1416837801" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10874-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/d616e82a5295bdcd9e2f959167ae0f73.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/apturl?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/apturl?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/apturl?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/apturl?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/apturl?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

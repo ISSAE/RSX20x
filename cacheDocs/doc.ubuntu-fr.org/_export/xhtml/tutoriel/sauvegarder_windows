@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>tutoriel:sauvegarder_windows</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-02-26T10:00:56+0100"/>
+<meta name="keywords" content="lucid,oneiric,precise,quantal,windows,administration,installation,sauvegarde,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="../../../tutoriel/sauvegarder_windows?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="sauvegarder_windows"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../raw/tutoriel/sauvegarder_windows"/>
+<link rel="canonical" href="../../../tutoriel/sauvegarder_windows"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:sauvegarder_windows","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="sauvegarder_windows#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="sauvegarder_windows#le_cd_ou_dvd_de_restauration">Le CD ou DVD de restauration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="sauvegarder_windows#graver_un_cd_de_sauvegarde_et_en_prendre_soin">Graver un CD de sauvegarde et en prendre soin</a></div></li>
+<li class="level2"><div class="li"><a href="sauvegarder_windows#graver_un_live_cd_de_reparation_bartpe">Graver un live CD de réparation BartPE</a></div></li>
+<li class="level2"><div class="li"><a href="sauvegarder_windows#creer_un_cd_bootable_comprenant_une_console_de_recuperation">Créer un CD bootable comprenant une Console de Récupération</a></div></li>
+<li class="level2"><div class="li"><a href="sauvegarder_windows#creer_soi-meme_son_cd_de_reinstallation_de_windows">Créer soi-même son CD de réinstallation de Windows</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="sauvegarder_windows#les_outils_indispensables_de_l_administrateur">Les outils indispensables de l&#039;administrateur</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="sauvegarder_windows#le_livecd_linux-secure-remix">Le liveCD Linux-Secure-Remix</a></div></li>
+<li class="level2"><div class="li"><a href="sauvegarder_windows#l_ultimate_boot_cd">L&#039;ultimate boot CD</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="sauvegarder_windows#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../../lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="../../../oneiric" class="wikilink1" title="oneiric" rel="tag">Oneiric</a>,
+	<a href="../../../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="../../../quantal" class="wikilink1" title="quantal" rel="tag">Quantal</a>,
+	<a href="http://doc.ubuntu-fr.org/windows" class="wikilink1" title="windows" rel="tag">windows</a>,
+	<a href="../../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../../../installation.1" class="wikilink1" title="installation" rel="tag">installation</a>,
+	<a href="../../../sauvegarde" class="wikilink1" title="sauvegarde" rel="tag">sauvegarde</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="sauvegarder_windows">Sauvegarder Windows</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Sauvegarder Windows" [102-137] -->
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+Vous possédez un ordinateur avec Windows installé dessus. Mais disposez-vous de tous les outils qui vous permettront de le réparer/réinstaller si, suite à une erreur de manipulation (en installant Ubuntu par exemple), ou une erreur système, une faiblesse d&#039;un disque dur bas de gamme ou toute autre cause, vous veniez à avoir un gros problème ? Le but de cette page est de détailler toutes les choses à faire pour être à même de vraiment pouvoir réparer Windows en cas de gros problème.
+<p><div class="notewarning">Les méthodes détaillées sur cette page sont parfaitement légales. Cependant reportez-vous toujours à votre contrat d&#039;utilisateur final avec Microsoft pour connaître vos droits. Dans la plupart des cas, la licence qui vous a été consentie ne concerne qu&#039;un seul et unique ordinateur, en conséquence tous les CD gravés à partir de cette unique installation ne doivent servir à dépanner/réparer que cet ordinateur précis.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Introduction" [138-1122] -->
+<h2 class="sectionedit3" id="le_cd_ou_dvd_de_restauration">Le CD ou DVD de restauration</h2>
+<div class="level2">
+
+<p>
+La plupart des gens ont une confiance excessive dans le CD de restauration livré avec leur ordinateur. Malheureusement beaucoup s&#039;aperçoivent un peu tard qu&#039;ils sont confrontés à l&#039;un des problèmes suivants :
+</p>
+<ul>
+<li class="level1"><div class="li"> Ils ont perdu le CD.</div>
+</li>
+<li class="level1"><div class="li"> Le CD ne marche pas.</div>
+</li>
+<li class="level1"><div class="li"> Le CD ne contient pas les outils dont ils ont besoin.</div>
+</li>
+<li class="level1"><div class="li"> Le CD n&#039;a pas été fourni avec l&#039;ordinateur.</div>
+</li>
+</ul>
+
+<p>
+Nous allons maintenant détailler ce qu&#039;un utilisateur prévoyant va devoir faire pour se prémunir de chaque problème
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Le CD ou DVD de restauration" [1123-1657] -->
+<h3 class="sectionedit4" id="graver_un_cd_de_sauvegarde_et_en_prendre_soin">Graver un CD de sauvegarde et en prendre soin</h3>
+<div class="level3">
+
+<p>
+Dans le premier cas comme dans le deuxième, la solution est simple : il faut graver une copie de sauvegarde dès réception de l&#039;ordinateur. Bien noter où sont rangés ces CDs. Une solution évidente est de mettre l&#039;un des deux dans le carton de l&#039;ordinateur. Dans ce cas attention si vous rangez votre carton dans une cave ou dans un grenier : les conditions de température et d&#039;humidité ne sont vraiment pas favorables à la conservation du CD. Prenez bien garde de ranger le deuxième CD dans un endroit à température ambiante sans exposition à la chaleur, le froid ou l&#039;humidité (éviter le plein soleil et les radiateurs notamment), et faites en sorte de vous souvenir de l&#039;endroit où vous l&#039;avez rangé. 
+<p><div class="noteimportant">Dans le cas où votre ordinateur a été livré sans disque de restauration, il vous appartient de graver ce CD ou DVD dès réception de votre ordinateur, se reporter à ce sujet à la documentation fournie par le fabricant. Prenez cependant garde que dans la plupart des cas le disque obtenu ne sera pas tout à fait équivalent à un CD de restauration classique avec notamment des options en moins.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Graver un CD de sauvegarde et en prendre soin" [1658-2862] -->
+<h3 class="sectionedit5" id="graver_un_live_cd_de_reparation_bartpe">Graver un live CD de réparation BartPE</h3>
+<div class="level3">
+
+<p>
+PE Builder est un logiciel utilisable gratuitement pour un usage non commercial. Il permet de créer un live CD de Windows doté d&#039;une interface graphique utilisateur et comprenant la plupart des outils d&#039;administration dont l&#039;indispensable checkdisk. Il est très utile pour dépanner son ordinateur sans passer par le DOS, et remplace avantageusement la console de récupération. Un excellent tutoriel de création de ce CD est disponible sur <a href="http://severinterrier.free.fr/Boot/PE-Builder/" class="urlextern" title="http://severinterrier.free.fr/Boot/PE-Builder/"  rel="nofollow">le site de M Séverin TERRIER</a>.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Graver un live CD de réparation BartPE" [2863-3443] -->
+<h3 class="sectionedit6" id="creer_un_cd_bootable_comprenant_une_console_de_recuperation">Créer un CD bootable comprenant une Console de Récupération</h3>
+<div class="level3">
+
+<p>
+Cette méthode alternative de BartPE vous permet de créer un live CD comprenant une console de récupération. Si elle est plus rapide à mettre en œuvre, le CD créé par contre sera moins fonctionnel et ne disposera pas d&#039;un interface graphique. Le processus de création de ce CD (ainsi qu&#039;une image générique déjà créée pour gens pressés et de nombreuses autres astuces utiles) est accessible <a href="http://fspsa.free.fr/cdr.htm" class="urlextern" title="http://fspsa.free.fr/cdr.htm"  rel="nofollow">sur le site de JF</a>.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Créer un CD bootable comprenant une Console de Récupération" [3444-3977] -->
+<h3 class="sectionedit7" id="creer_soi-meme_son_cd_de_reinstallation_de_windows">Créer soi-même son CD de réinstallation de Windows</h3>
+<div class="level3">
+
+<p>
+Dans le cas où le site du fabricant est obscur, vous ne trouvez pas le logiciel Windows de création de votre CD de restauration (inclus seulement sur les ordinateurs livrés sans CD d&#039;installation), vous avez perdu votre CD de restauration ou celui-ci est inutilisable, il reste possible dans de nombreux cas de recréer soi-même son propre CD de réinstallation de Windows à partir des fichiers présents sur votre disque dur. Pour connaître la procédure, se reporter à <a href="http://forum.telecharger.01net.com/microhebdo/windows_linux_mac_et_les_autres/windows_xp/un-cd-de-xp-sur-machines-livrees-sans-cd-nlite-145--sp3-326096/messages-1.html" class="urlextern" title="http://forum.telecharger.01net.com/microhebdo/windows_linux_mac_et_les_autres/windows_xp/un-cd-de-xp-sur-machines-livrees-sans-cd-nlite-145--sp3-326096/messages-1.html"  rel="nofollow">l&#039;excellent tutoriel de th48 sur les forums 01net</a> pour les détenteurs de Windows XP, où encore aux tutoriaux de protuts.net, respectivement: <a href="http://protuts.net/creer-un-dvd-d%E2%80%99installation-personnalise-de-vista-integrant-le-sp1/" class="urlextern" title="http://protuts.net/creer-un-dvd-d%E2%80%99installation-personnalise-de-vista-integrant-le-sp1/"  rel="nofollow">celui-ci</a> pour les détenteurs de Windows Vista, et <a href="http://protuts.net/alleger-windows-seven-avec-vlite/" class="urlextern" title="http://protuts.net/alleger-windows-seven-avec-vlite/"  rel="nofollow">celui-ci</a> pour les détenteurs de Windows Seven.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Créer soi-même son CD de réinstallation de Windows" [3978-5092] -->
+<h2 class="sectionedit8" id="les_outils_indispensables_de_l_administrateur">Les outils indispensables de l&#039;administrateur</h2>
+<div class="level2">
+
+<p>
+Il existe de nombreux outils pour administrer/dépanner un ordinateur Windows (ou Linux d&#039;ailleurs), mais le but ici n&#039;est pas d&#039;en donner une liste exhaustive. Alors voici les deux live CD les plus essentiels à graver absolument et à conserver précieusement.
+</p>
+<ul>
+<li class="level1"><div class="li"> Linux-Secure-Remix</div>
+</li>
+<li class="level1"><div class="li"> L&#039;ultimate boot CD</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT8 SECTION "Les outils indispensables de l'administrateur" [5093-5462] -->
+<h3 class="sectionedit9" id="le_livecd_linux-secure-remix">Le liveCD Linux-Secure-Remix</h3>
+<div class="level3">
+
+<p>
+<a href="../../../linux_secure_remix" class="wikilink1" title="linux_secure_remix">Linux Secure</a> est un liveCD basé sur Ubuntu incluant notamment :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../boot-repair" class="wikilink1" title="boot-repair">Boot-Repair</a> : programme permettant de réparer le démarrage du PC en 1 clic</div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../gparted" class="wikilink1" title="gparted">Gparted</a> : programme de gestion des partitions d&#039;un ordinateur</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT9 SECTION "Le liveCD Linux-Secure-Remix" [5463-5750] -->
+<h3 class="sectionedit10" id="l_ultimate_boot_cd">L&#039;ultimate boot CD</h3>
+<div class="level3">
+
+<p>
+<a href="http://www.gihem.info/spip.php?article440" class="urlextern" title="http://www.gihem.info/spip.php?article440"  rel="nofollow">L&#039;ultimate boot CD</a> est un liveCD fonctionnnant sous DOS et contenant énormément de logiciels d&#039;administration et de dépannage du système. On appréciera entre autres la présence du logiciel <a href="../../../testdisk" class="wikilink1" title="testdisk">Testdisk</a> permettant de retrouver les partitions effacées. Il est possible de le télécharger depuis <a href="http://www.ultimatebootcd.com/download.html" class="urlextern" title="http://www.ultimatebootcd.com/download.html"  rel="nofollow">son site officiel</a>.
+</p>
+
+</div>
+<!-- EDIT10 SECTION "L'ultimate boot CD" [5751-6199] -->
+<h2 class="sectionedit11" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="../../../tutoriel/comment_sauvegarder_partition_avec_partimage" class="wikilink1" title="tutoriel:comment_sauvegarder_partition_avec_partimage">Comment faire une image d&#039;une partition</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/windows" class="wikilink1" title="windows">Ubuntu et &quot;le monde&quot; Windows</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.livecdlist.com/?pick=All&amp;showonly=rescue" class="urlextern" title="http://www.livecdlist.com/?pick=All&amp;showonly=rescue"  rel="nofollow">la liste des liveCD de sauvetage</a>.</div>
+</li>
+<li class="level1"><div class="li"> Si votre partition Windows est en NTFS : <a href="../../../image_partition_disque-usb_ntfs_live-cd" class="wikilink1" title="image_partition_disque-usb_ntfs_live-cd">Faire l’image d’une partition sur un DD en NTFS avec un Live CD</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../reparer_ubuntu" class="wikilink1" title="reparer_ubuntu">Page de réparation d&#039;Ubuntu</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../dd" class="wikilink1" title="dd">Utiliser la commande dd</a> pour faire une copie à l&#039;identique d&#039;un disque ou d&#039;une partition. </div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs: <a href="../../../utilisateurs/aldian" class="wikilink1" title="utilisateurs:aldian">Aldian</a></em>
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Voir aussi" [6200-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/4/4374a50a58be48a62743ffdcc6838409.xhtml used -->
+</div>
+</body>
+</html>

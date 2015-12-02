@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:creer_un_meta_paquet - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-01-26T18:26:44+0100"/>
+<meta name="keywords" content="administration,paquet"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/creer_un_meta_paquet?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="creer_un_meta_paquet?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/creer_un_meta_paquet"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/creer_un_meta_paquet"/>
+<link rel="canonical" href="creer_un_meta_paquet"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:creer_un_meta_paquet","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="creer_un_meta_paquet#main" tabindex="1">Contenu</a> | <a href="creer_un_meta_paquet#qsearch__in" tabindex="2">Rechercher</a> | <a href="creer_un_meta_paquet#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="creer_un_meta_paquet" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="creer_un_meta_paquet" >tutoriel:creer_un_meta_paquet</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="creer_un_meta_paquet#l_interet_d_un_meta-paquet">L&#039;intérêt d&#039;un méta-paquet</a></div></li>
+<li class="level1"><div class="li"><a href="creer_un_meta_paquet#creation_d_un_meta-paquet_dummy_package">Création d&#039;un méta-paquet (dummy package)</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="creer_un_meta_paquet#installer_equivs">Installer « equivs »</a></div></li>
+<li class="level2"><div class="li"><a href="creer_un_meta_paquet#creer_le_modele">Créer le modèle</a></div></li>
+<li class="level2"><div class="li"><a href="creer_un_meta_paquet#les_elements_du_fichier_de_controle">Les éléments du fichier de contrôle</a></div></li>
+<li class="level2"><div class="li"><a href="creer_un_meta_paquet#creation_du_paquet">Création du paquet</a></div></li>
+<li class="level2"><div class="li"><a href="creer_un_meta_paquet#pour_conclure">Pour conclure</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../paquet" class="wikilink1" title="paquet" rel="tag">paquet</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="creer_un_meta-paquet">Créer un méta-paquet</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="creer_un_meta_paquet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1327598804" /><input type="hidden" name="summary" value="[Créer un méta-paquet] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="38-76" /><input type="submit" value="Modifier" class="button" title="Créer un méta-paquet" /></div></form></div>
+<h2 class="sectionedit2" id="l_interet_d_un_meta-paquet">L&#039;intérêt d&#039;un méta-paquet</h2>
+<div class="level2">
+
+<p>
+L&#039;utilisation d&#039;un méta-paquet se révèle intéressante dans (au moins) deux cas :
+</p>
+<ul>
+<li class="level1"><div class="li"> pour résoudre un problème de nom de paquets. Par exemple, « paquet_A » nécessite l&#039;installation de « paquet_B », mais ce dernier a été renommé en « paquet_B2 ». Un méta-paquet « paquet_B » (vide) installera « paquet_B2 » (contenant le logiciel) et résoudra l&#039;absence de dépendance pour « paquet_A » ;</div>
+</li>
+<li class="level1"><div class="li"> pour installer <em>via</em> un unique paquet plusieurs autres paquets.</div>
+</li>
+</ul>
+
+<p>
+C&#039;est le second cas que nous aborderons ici.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="creer_un_meta_paquet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1327598804" /><input type="hidden" name="summary" value="[L'intérêt d'un méta-paquet] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="77-647" /><input type="submit" value="Modifier" class="button" title="L'intérêt d'un méta-paquet" /></div></form></div>
+<h2 class="sectionedit3" id="creation_d_un_meta-paquet_dummy_package">Création d&#039;un méta-paquet (dummy package)</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="creer_un_meta_paquet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1327598804" /><input type="hidden" name="summary" value="[Création d'un méta-paquet (dummy package)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="648-703" /><input type="submit" value="Modifier" class="button" title="Création d'un méta-paquet (dummy package)" /></div></form></div>
+<h3 class="sectionedit4" id="installer_equivs">Installer « equivs »</h3>
+<div class="level3">
+
+<p>
+<a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez</a> le paquet <strong><a href="apt://equivs" class="interwiki iw_apt" title="apt://equivs">equivs</a>.</strong>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="creer_un_meta_paquet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1327598804" /><input type="hidden" name="summary" value="[Installer « equivs »] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="704-827" /><input type="submit" value="Modifier" class="button" title="Installer « equivs »" /></div></form></div>
+<h3 class="sectionedit5" id="creer_le_modele">Créer le modèle</h3>
+<div class="level3">
+
+<p>
+<img src="../lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /> Il faut se placer dans un répertoire dont le nom ne contient pas d&#039;espace. <img src="../lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" />
+</p>
+
+<p>
+Nous vous proposons de créer un méta-paquet « musicedit » permettant d&#039;installer quelques logiciels d&#039;édition de partitions.
+</p>
+
+<p>
+Pour générer un fichier modèle (fichier de contrôle), qui servira de base à la construction du paquet, exécutez :
+</p>
+<pre class="code">equivs-control musicedit</pre>
+
+<p>
+Un fichier « musicedit » a été créé dans le répertoire courant. <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Ouvrez-le</a> avec votre éditeur de texte favori. Il doit ressembler à ça :
+</p>
+<pre class="file">Section: misc
+Priority: optional
+Standards-Version: 3.5.10
+
+Package: &lt;enter package name; defaults to equivs-dummy&gt;
+Version: &lt;enter version here; defaults to 1.0&gt;
+Maintainer: Your Name &lt;yourname@foo.com&gt;
+Pre-Depends: &lt;packages&gt;
+Depends: &lt;packages&gt;
+Recommends: &lt;packages&gt;
+Suggests: &lt;package&gt;
+Provides: &lt;(virtual)package&gt;
+Architecture: all
+Copyright: &lt;copyright file; defaults to GPL2&gt;
+Changelog: &lt;changelog file; defaults to a generic changelog&gt;
+Readme: &lt;README.Debian file; defaults to a generic one&gt;
+Extra-Files: &lt;additional files for the doc directory, commaseperated&gt;
+Description: &lt;short description; defaults to some wise words&gt; 
+ long description and info
+ .
+ second paragraph</pre>
+
+<p>
+Il ne reste plus qu&#039;à remplir tout ça correctement…
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="creer_un_meta_paquet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1327598804" /><input type="hidden" name="summary" value="[Créer le modèle] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="828-2162" /><input type="submit" value="Modifier" class="button" title="Créer le modèle" /></div></form></div>
+<h3 class="sectionedit6" id="les_elements_du_fichier_de_controle">Les éléments du fichier de contrôle</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="les_elements_essentiels">Les éléments essentiels</h4>
+<div class="level4">
+
+<p>
+Tous les éléments ne sont pas essentiels, et certains peuvent être supprimés. Mais veillez à renseigner ceux-ci :
+</p>
+<div class="table sectionedit7"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Section </th><td class="col1"> Décrit la section dans laquelle se trouvera le paquet (« tex », « gnome », « kde », etc.). La section <em>editors</em> sera utilisée pour notre exemple.</td>
+	</tr>
+	<tr class="row1">
+		<th class="col0">Priority </th><td class="col1"> Détermine à quel point vous voulez faire entrer votre paquet dans les dépôts officiels. Nous laisserons tel quel pour notre exemple.</td>
+	</tr>
+	<tr class="row2">
+		<th class="col0">Standards-Version </th><td class="col1"> Correspond à la version la plus récente de la <a href="http://www.debian.org/doc/debian-policy/" class="urlextern" title="http://www.debian.org/doc/debian-policy/"  rel="nofollow">politique debian</a> d&#039;empaquetage. Sa version actuelle est la 3.6.2.</td>
+	</tr>
+	<tr class="row3">
+		<th class="col0">Package </th><td class="col1"> Le nom de votre paquet (« musicedit » dans notre cas).</td>
+	</tr>
+	<tr class="row4">
+		<th class="col0">Version </th><td class="col1"> La version de votre paquet. Il existe une norme pour Ubuntu, relative à Debian. Si votre paquet n&#039;est pas présent dans les dépôts Debian (ce qui est à priori le cas puisque votre paquet n&#039;est pas créé…), la version est du type « x-0ubuntu1 ». Elle deviendra « x-0ubuntu2 » si vous refaites votre paquet. Notre paquet aura la version « 1-0ubuntu1 ».</td>
+	</tr>
+	<tr class="row5">
+		<th class="col0">Maintainer</th><td class="col1"> C&#039;est vous. Mettez votre identité sous la forme <em>Prénom Nom &lt;adresse@bidule.truc&gt;</em>.</td>
+	</tr>
+	<tr class="row6">
+		<th class="col0">Architecture</th><td class="col1"> L&#039;architecture pour laquelle est fait votre paquet. Puisqu&#039;il s&#039;agit d&#039;un méta-paquet (qui ne contient rien), vous pouvez laisser « all » (le même paquet fonctionnera sur toutes les architectures).</td>
+	</tr>
+	<tr class="row7">
+		<th class="col0">Description</th><td class="col1"> Contient la description de votre paquet. À la suite de « Description », ajoutez une courte phrase. La description complète vient en dessous. Attention, chaque ligne de la description complète doit commencer par une espace. Les sauts de lignes sont matérialisés par une espace, puis un point.</td>
+	</tr>
+</table></div>
+
+<p>
+Arrivé à cette étape, le paquet est constructible mais sans grand intérêt, puisqu&#039;il ne définit aucune dépendance. Voyons comment utiliser les autres éléments du fichier.
+</p>
+
+</div>
+
+<h4 id="les_elements_optionnels">Les éléments optionnels</h4>
+<div class="level4">
+<div class="table sectionedit8"><table class="inline">
+	<tr class="row0">
+		<th class="col0">Pre-Depends</th><td class="col1"> Liste les paquets devant être présents <strong>avant</strong> que votre méta-paquet soit installé.</td>
+	</tr>
+	<tr class="row1">
+		<th class="col0">Depends</th><td class="col1"> Liste des paquets dont votre méta-paquet dépend. C&#039;est cet élément qui fait tout l&#039;intérêt d&#039;un méta-paquet.</td>
+	</tr>
+	<tr class="row2">
+		<th class="col0">Recommends</th><td class="col1"> Liste des paquets vivement conseillés (mais qui ne seront pas installés).</td>
+	</tr>
+	<tr class="row3">
+		<th class="col0">Suggests</th><td class="col1"> Liste des paquets pouvant être utiles (notez la subtile différence avec « Recommends » <img src="../lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />).</td>
+	</tr>
+</table></div>
+
+<p>
+Les listes de paquets ont une syntaxe à respecter. Les noms de paquets doivent être séparés par des virgules. On peut offrir le choix entre deux paquets en les séparant par une barre verticale :
+</p>
+<pre class="file">Suggests: paquet1, paquet2a | paquet2b, paquet3</pre>
+
+<p>
+Si vous ne souhaitez pas utiliser un de ces éléments, supprimez sa ligne du fichier.
+</p>
+
+<p>
+<strong>Copyright</strong>, <strong>Changelog</strong>, <strong>Readme</strong> et <strong>Extra-Files</strong> font appel à d&#039;autres fichiers, à placer dans le même dossier que le fichier de contrôle. Des fichiers par défaut seront installés si vous supprimez les lignes.
+</p>
+
+<p>
+Ces éléments sont loin d&#039;être importants pour un usage personnel du méta-paquet.
+</p>
+
+</div>
+
+<h4 id="retour_a_notre_exemple">Retour à notre exemple</h4>
+<div class="level4">
+
+<p>
+Voici le fichier de contrôle que nous vous proposons pour créer le paquet « musicedit » :
+</p>
+<pre class="file">Section: editors
+Priority: optional
+Standards-Version: 3.6.2
+
+Package: musicedit
+Version: 1-0ubuntu1
+Maintainer: Gloubiboulga &lt;adresse@mail.org&gt;
+Depends: lilypond, noteedit, denemo, rosegarden4
+Recommends: gv | gnome-gv
+Suggests: lilypond-doc
+Architecture: all
+Copyright: GPL_copyright
+Changelog: changelog
+Description: dummy-package providing music edition tools
+ This package provides essential tools for music engraving on GNU/Linux.
+ .
+ And it&#039;s my first dummy package.</pre>
+
+<p>
+Deux fichiers sont appelés, « GPL_copyright » (qui annonce que le paquet est sous licence <abbr title="GNU General Public License">GPL</abbr>) et « changelog », dont la syntaxe est assez particulière pour être montrée :
+</p>
+<pre class="file">musicedit (1-0ubuntu1) dapper; urgency=low
+
+  * New upstream release
+
+ -- Gloubiboulga &lt;adresse@mail.org&gt;  Tue, 06 Dec 2005 20:44:33 +0100</pre>
+
+<p>
+Il ne reste plus qu&#039;à construire le paquet.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="creer_un_meta_paquet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1327598804" /><input type="hidden" name="summary" value="[Les éléments du fichier de contrôle] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2163-6266" /><input type="submit" value="Modifier" class="button" title="Les éléments du fichier de contrôle" /></div></form></div>
+<h3 class="sectionedit9" id="creation_du_paquet">Création du paquet</h3>
+<div class="level3">
+
+<p>
+Il suffit d&#039;exécuter la commande « <code>equivs-build</code> » avec le nom du fichier de contrôle en argument :
+</p>
+<pre class="code">equivs-build musicedit</pre>
+
+<p>
+Si vous n&#039;avez pas fait d&#039;erreur (de syntaxe par exemple), vous vous retrouverez avec un joli paquet Debian tout neuf !
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="creer_un_meta_paquet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1327598804" /><input type="hidden" name="summary" value="[Création du paquet] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6267-6552" /><input type="submit" value="Modifier" class="button" title="Création du paquet" /></div></form></div>
+<h3 class="sectionedit10" id="pour_conclure">Pour conclure</h3>
+<div class="level3">
+
+<p>
+Si vous disposez d&#039;un serveur <abbr title="File Transfer Protocol">FTP</abbr>, placer votre nouveau paquet sur un dépôt (voir <a href="../installation/gestion_des_paquets_avance" class="wikilink1" title="installation:gestion_des_paquets_avance">gestion des paquets (avancé)</a> pour savoir comment faire) peut s&#039;avérer très pratique lors d&#039;une réinstallation. Vous pouvez d&#039;ailleurs en faire profiter d&#039;autres utilisateurs autour de vous par ce biais…
+</p>
+
+<p>
+ Ça c&#039;est cadeau.
+</p>
+<hr />
+
+<p>
+<em>Contributeur : <a href="http://doc.ubuntu-fr.org/utilisateurs/gloubiboulga" class="wikilink2" title="utilisateurs:gloubiboulga" rel="nofollow">Gloubiboulga</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="creer_un_meta_paquet"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1327598804" /><input type="hidden" name="summary" value="[Pour conclure] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6553-" /><input type="submit" value="Modifier" class="button" title="Pour conclure" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/d2437e9b8a7894575f28e7271c10b72f.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_un_meta_paquet?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_un_meta_paquet?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/creer_un_meta_paquet?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="creer_un_meta_paquet?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="creer_un_meta_paquet?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

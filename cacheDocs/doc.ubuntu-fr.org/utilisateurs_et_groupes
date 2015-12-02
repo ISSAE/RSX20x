@@ -1,0 +1,719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>users-admin - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-01-05T14:45:02+0100"/>
+<meta name="keywords" content="precise,quantal,raring,saucy,utilisateurs,administration"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/users-admin?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/users-admin?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/users-admin"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/users-admin"/>
+<link rel="canonical" href="users-admin"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"users-admin","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="utilisateurs_et_groupes#main" tabindex="1">Contenu</a> | <a href="utilisateurs_et_groupes#qsearch__in" tabindex="2">Rechercher</a> | <a href="utilisateurs_et_groupes#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="utilisateurs_et_groupes" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="users-admin" >users-admin</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="versions">versions supportées d'Ubuntu</a>.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="utilisateurs_et_groupes#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#trouver_utilisateurs_et_groupes_par_la_recherche_contextuelle">Trouver &quot;Utilisateurs et groupes&quot; par la recherche contextuelle</a></div></li>
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#trouver_utilisateurs_et_groupes_dans_un_menu_d_applications">Trouver &quot;Utilisateurs et groupes&quot; dans un menu d&#039;applications</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="utilisateurs_et_groupes#gerer_son_compte_d_utilisateur">Gérer son compte d&#039;utilisateur</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#modifier_son_mot_de_passe">Modifier son mot de passe</a></div></li>
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#modifier_son_nom_affiche_administrateurs_seulement">Modifier son nom affiché (administrateurs seulement)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="utilisateurs_et_groupes#gerer_le_compte_d_un_autre_utilisateur_et_les_options_avancees_administrateurs_seulement">Gérer le compte d&#039;un autre utilisateur et les options avancées (administrateurs seulement)</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#changer_le_type_de_compte_d_utilisateur">Changer le type de compte d&#039;utilisateur</a></div></li>
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#voir_et_modifier_les_parametres_avancees">Voir et modifier les paramètres avancées</a></div></li>
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#ajouter_un_nouveau_compte_d_utilisateur">Ajouter un nouveau compte d&#039;utilisateur</a></div></li>
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#supprimer_un_compte_d_utilisateur">Supprimer un compte d&#039;utilisateur</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="utilisateurs_et_groupes#gerer_les_groupes_d_utilisateurs">Gérer les groupes d&#039;utilisateurs</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#lister_les_groupes_d_utilisateurs">Lister les groupes d&#039;utilisateurs</a></div></li>
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#modifier_les_proprietes_d_un_groupe_et_ajouter_ou_retirer_des_comptes_d_utilisateurs_d_un_groupe_administrateurs_seulement">Modifier les propriétés d&#039;un groupe, et ajouter ou retirer des comptes d&#039;utilisateurs d&#039;un groupe (administrateurs seulement)</a></div></li>
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#ajouter_un_nouveau_groupe_administrateurs_seulement">Ajouter un nouveau groupe (administrateurs seulement)</a></div></li>
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#supprimer_un_groupe_administrateurs_seulement">Supprimer un groupe (administrateurs seulement)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="utilisateurs_et_groupes#aller_plus_loin">Aller plus loin...</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#note_relative_aux_droits_d_acces">Note relative aux droits d&#039;accès</a></div></li>
+<li class="level2"><div class="li"><a href="utilisateurs_et_groupes#modifier_un_identifiant_login_name_de_compte">Modifier un identifiant (login name) de compte</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="quantal" class="wikilink1" title="quantal" rel="tag">Quantal</a>,
+	<a href="raring" class="wikilink1" title="raring" rel="tag">Raring</a>,
+	<a href="saucy" class="wikilink1" title="saucy" rel="tag">Saucy</a>,
+	<a href="http://doc.ubuntu-fr.org/utilisateurs?do=showtag&amp;tag=utilisateurs" class="wikilink1" title="utilisateurs" rel="tag">utilisateurs</a>,
+	<a href="administration" class="wikilink1" title="administration" rel="tag">administration</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="outil_de_gestion_des_comptes_et_groupes_d_utilisateurs_users-admin">Outil de gestion des comptes et groupes d&#039;utilisateurs (users-admin)</h1>
+<div class="level1">
+
+<p>
+Ubuntu, comme tous les autres systèmes d&#039;exploitation de la famille <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux, est un système foncièrement multi-utilisateurs. Cela signifie que vous n&#039;êtes pas limité à un seul compte d&#039;utilisateur dans le fonctionnement de votre ordinateur. Vous pouvez créer plusieurs comptes d&#039;utilisateurs pour chaque usager de votre ordinateur, de même que pour divers usages.
+</p>
+
+<p>
+Qu&#039;est-ce qu&#039;un compte d&#039;utilisateur ? il s&#039;agit ici d&#039;une collection de paramètres relatif à un profil particulier. Ces paramètres incluent les détails d&#039;identité d&#039;un usager (nom, prénom, photo de profil, etc.), la liste du ou des groupes d&#039;utilisateurs dont son compte fait partie et de nombreuses données personnelles (boîtes de courriels, trousseaux de mots de passe, préférences des logiciels utilisés, choix de thème de l&#039;environnement de bureau, etc.)
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><em><a href="utilisateur" class="wikilink1" title="utilisateur">En savoir plus sur les comptes d&#039;utilisateurs</a></em></strong></div>
+</li>
+</ul>
+
+<p>
+L&#039;outil <strong>Utilisateurs et groupes</strong> (ou <strong>users-admin</strong>) est un utilitaire graphique permettant de gérer les comptes d&#039;utilisateurs et les groupes d&#039;utilisateurs. Il dispose de fonctionnalités pour :
+</p>
+<ul>
+<li class="level1"><div class="li"> créer ou supprimer des comptes d&#039;utilisateurs ;</div>
+</li>
+<li class="level1"><div class="li"> modifier les paramètres des comptes des utilisateurs, y compris leur mot de passe ;</div>
+</li>
+<li class="level1"><div class="li"> créer ou supprimer des groupes d&#039;utilisateurs et modifier les propriétés des groupes existants.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic"><strong>&quot;Comptes utilisateur&quot; et &quot;Utilisateurs et groupes&quot; : deux outils différents</strong> <br/>
+À partir d&#039;Ubuntu 12.04 LTS, l&#039;outil de gestion des comptes d&#039;utilisateurs livré par défaut est <em>Comptes utilisateur</em>. Cet utilitaire, tiré de la suite de logiciels GNOME 3, permet uniquement de gérer les propriétés de base des comptes d&#039;utilisateurs. Il ne donne pas accès aux propriétés des groupes d&#039;utilisateurs. <br/>
+<br/>
+L&#039;outil <em>Utilisateurs et groupes</em>, qui est l&#039;objet du présent document, offre des fonctionnalités plus avancées, dont la gestion des groupes d&#039;utilisateurs. Il peut être installé côte-à-côte avec l&#039;utilitaire <em>Comptes utilisateur</em> présent de base dans Ubuntu, sans causer de conflit.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Outil de gestion des comptes et groupes d'utilisateurs (users-admin)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="74-2262" /><input type="submit" value="Modifier" class="button" title="Outil de gestion des comptes et groupes d'utilisateurs (users-admin)" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+N&#039;étant pas présent de base dans Ubuntu, vous devez tout d&#039;abord installer <strong>Utilisateurs et groupes</strong>. L&#039;utilitaire se trouve dans le paquet d&#039;installation <code><a href="apt://gnome-system-tools" class="interwiki iw_apt" title="apt://gnome-system-tools">gnome-system-tools</a></code>, que vous pouvez installer à l&#039;aide de votre gestionnaire de paquets préféré ou en appuyant sur le lien d&#039;installation en un-clic ci-dessous :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><a href="apt://gnome-system-tools" class="interwiki iw_apt" title="apt://gnome-system-tools">Installer gnome-system-tools</a></strong></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2263-2709" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit3" id="trouver_utilisateurs_et_groupes_par_la_recherche_contextuelle">Trouver &quot;Utilisateurs et groupes&quot; par la recherche contextuelle</h3>
+<div class="level3">
+
+<p>
+Une fois le logiciel installé, retrouvez <strong>Utilisateurs et groupes</strong> par la recherche contextuelle (tableau de bord de <a href="unity" class="wikilink1" title="unity">Unity</a> ou vue <em>Activités</em> de <a href="http://doc.ubuntu-fr.org/gnome-shell" class="wikilink1" title="gnome-shell">GNOME Shell</a>).
+</p>
+<ul>
+<li class="level1"><div class="li"> Ouvrez le panneau de recherche contextuelle en cliquant sur le bouton Ubuntu (Unity) ou sur le bouton Activités (GNOME Shell) ;</div>
+</li>
+<li class="level1"><div class="li"> Rechercher l&#039;application <em>Utilisateurs et groupes</em></div>
+</li>
+<li class="level1"><div class="li"> Appuyer sur le lanceur <strong>Utilisateurs et groupes</strong> pour exécuter ce logiciel.</div>
+</li>
+</ul>
+
+<p>
+<a href="lib/exe/fetch.php?tok=6e41f4&amp;media=http%253A%252F%252Fpix.toile-libre.org%252Fupload%252Foriginal%252F1312508160.png" class="media" title="http://pix.toile-libre.org/upload/original/1312508160.png"><img src="lib/exe/fetch.php?tok=6e41f4&amp;media=http%253A%252F%252Fpix.toile-libre.org%252Fupload%252Foriginal%252F1312508160.png" class="mediacenter" title="Rechercher &quot;Utilisateurs et groupes&quot; dans le Tableau de bord." alt="Rechercher &quot;Utilisateurs et groupes&quot; dans le Tableau de bord." /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Trouver Utilisateurs et groupes par la recherche contextuelle] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2710-3374" /><input type="submit" value="Modifier" class="button" title="Trouver Utilisateurs et groupes par la recherche contextuelle" /></div></form></div>
+<h3 class="sectionedit4" id="trouver_utilisateurs_et_groupes_dans_un_menu_d_applications">Trouver &quot;Utilisateurs et groupes&quot; dans un menu d&#039;applications</h3>
+<div class="level3">
+
+<p>
+Lorsque votre environnement de travail vous présente plutôt un menu d&#039;applications (GNOME Classic, Xubuntu, Lubuntu), retrouvez l&#039;outil <code>Utilisateurs et groupes</code> dans la catégorie <em>Outils Système</em>.
+</p>
+
+<p>
+<a href="_detail/usersadmin-lucid-menu.png?id=users-admin" class="media" title="usersadmin-lucid-menu.png"><img src="_media/usersadmin-lucid-menu.png" class="mediacenter" title="Pour exécuter users-admin, sélectionnez l&#039;entrée de menu Système -&gt; Administration -&gt; Utilisateurs et groupes" alt="Pour exécuter users-admin, sélectionnez l&#039;entrée de menu Système -&gt; Administration -&gt; Utilisateurs et groupes" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Trouver Utilisateurs et groupes dans un menu d'applications] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3375-3805" /><input type="submit" value="Modifier" class="button" title="Trouver Utilisateurs et groupes dans un menu d'applications" /></div></form></div>
+<h2 class="sectionedit5" id="gerer_son_compte_d_utilisateur">Gérer son compte d&#039;utilisateur</h2>
+<div class="level2">
+
+<p>
+<a href="_detail/usersadmin-lucid-menuprincipal.png?id=users-admin" class="media" title="usersadmin-lucid-menuprincipal.png"><img src="_media/usersadmin-lucid-menuprincipal.png?w=300&amp;tok=e577dc" class="mediaright" title="Interface principale : liste des comptes d&#039;utilisateurs" alt="Interface principale : liste des comptes d&#039;utilisateurs" width="300" /></a>
+</p>
+
+<p>
+Une fois le programme exécuté, l&#039;interface s&#039;ouvre sur une liste des comptes d&#039;utilisateurs.<sup><a href="utilisateurs_et_groupes#fn__1" id="fnt__1" class="fn_top">1)</a></sup> Par défaut, tous les comptes d&#039;utilisateurs ne sont pas modifiables, excepté le compte courant ; depuis sa session active, un utilisateur peut modifier les paramètres liés à son compte uniquement.
+</p>
+
+<p>
+Sélectionnez votre propre compte d&#039;utilisateur dans la liste, puis appuyez sur le bouton <strong>Propriétés</strong> pour accéder aux informations avancées. Les tâches de modifications que vous pouvez appliquer à votre propre compte sont limitées : vous ne pouvez modifier que votre mot de passe. Les autres tâches d&#039;administration de votre compte ne peuvent être effectuées que par des administrateurs.
+</p>
+
+<p>
+<br/>
+<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Gérer son compte d'utilisateur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3806-5216" /><input type="submit" value="Modifier" class="button" title="Gérer son compte d'utilisateur" /></div></form></div>
+<h3 class="sectionedit6" id="modifier_son_mot_de_passe">Modifier son mot de passe</h3>
+<div class="level3">
+
+<p>
+<a href="_detail/usersadmin-lucid-password.png?id=users-admin" class="media" title="usersadmin-lucid-password.png"><img src="_media/usersadmin-lucid-password.png?w=300&amp;tok=de9ecc" class="mediaright" title="Changer son mot de passe" alt="Changer son mot de passe" width="300" /></a>
+</p>
+
+<p>
+L&#039;utilitaire <code>users-admin</code> permet à un utilisateur de changer son mot de passe de session. C&#039;est celui-ci qui est utilisé pour l&#039;ouverture de sa session utilisateur.
+</p>
+
+<p>
+Pour modifier ce mot de passe :
+</p>
+<ol>
+<li class="level1"><div class="li"> Appuyez sur le bouton <strong>[Modifier]</strong> qui se trouve à la droite de l&#039;intitulé <strong>Mot de passe</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Dans la nouvelle fenêtre qui s&#039;ouvre, entrez votre mot de passe actuel dans le champ <strong>Mot de passe actuel</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Puis :</div>
+<ul>
+<li class="level2"><div class="li"> Cochez la case <strong>Entrez un mot de passe manuellement</strong> et saisissez manuellement un mot de passe de votre choix dans la case <strong>Nouveau mot de passe</strong>. Répétez ce même mot de passe dans la case <strong>Confirmation</strong> <br/>
+ou</div>
+</li>
+<li class="level2"><div class="li"> Cochez la case <strong>Générer un mot de passe aléatoire</strong>. Un mot de passe est généré aléatoirement. Mémorisez-le ;</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <em>(Optionnel - Administrateur seulement)</em> Cochez la case <strong>Ne pas demander de mot de passe à la connexion</strong> pour autoriser ce compte à ouvrir une session sans saisir de mot de passe. Seul un administrateur peut activer ou désactiver cette fonctionnalité sur n&#039;importe quel compte ;</div>
+</li>
+<li class="level1"><div class="li"> Appuyez sur le bouton <strong>[Valider]</strong> pour sauvegarder vos modifications.</div>
+</li>
+</ol>
+
+<p>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Modifier son mot de passe] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5217-6477" /><input type="submit" value="Modifier" class="button" title="Modifier son mot de passe" /></div></form></div>
+<h3 class="sectionedit7" id="modifier_son_nom_affiche_administrateurs_seulement">Modifier son nom affiché (administrateurs seulement)</h3>
+<div class="level3">
+
+<p>
+<a href="_detail/usersadmin-lucid-nomaffiche.png?id=users-admin" class="media" title="usersadmin-lucid-nomaffiche.png"><img src="_media/usersadmin-lucid-nomaffiche.png?w=300&amp;tok=a4efc8" class="mediaright" title="Modifier son nom affiché" alt="Modifier son nom affiché" width="300" /></a>
+</p>
+
+<p>
+Le nom affiché est votre nom complet. Il apparaît à l&#039;écran d&#039;ouverture de session (<a href="lightdm" class="wikilink1" title="lightdm">LightDM</a>), dans l&#039;outil <em>Compte utilisateur</em> et en tant qu&#039;item d&#039;entête du menu <em>Paramètres système</em>.
+</p>
+
+<p>
+Normalement, un utilisateur devrait être capable de modifier lui-même son nom affiché. Cependant, un problème empêche l&#039;enregistrement du nouveau nom lorsque la session utilisateur est actuellement ouverte. Pour modifier votre nom affiché, vous devrez clore votre session actuelle et demander à un administrateur (ou un autre administrateur, si vous l&#039;êtes vous-même) de modifier votre nom affiché.
+</p>
+
+<p>
+Pour modifier votre nom affiché :
+</p>
+<ol>
+<li class="level1"><div class="li"> Appuyez sur le bouton <strong>[Modifier]</strong> qui se trouve à la droite de votre nom affiché actuel ;</div>
+</li>
+<li class="level1"><div class="li"> Dans la nouvelle fenêtre qui s&#039;ouvre, entrez votre nouveau nom affiché ;</div>
+</li>
+<li class="level1"><div class="li"> Appuyez sur le bouton <strong>[Valider]</strong> pour sauvegarder votre choix.</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Modifier son nom affiché (administrateurs seulement)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6478-7509" /><input type="submit" value="Modifier" class="button" title="Modifier son nom affiché (administrateurs seulement)" /></div></form></div>
+<h2 class="sectionedit8" id="gerer_le_compte_d_un_autre_utilisateur_et_les_options_avancees_administrateurs_seulement">Gérer le compte d&#039;un autre utilisateur et les options avancées (administrateurs seulement)</h2>
+<div class="level2">
+
+<p>
+<a href="_detail/usersadmin-lucid-authentification.png?id=users-admin" class="media" title="usersadmin-lucid-authentification.png"><img src="_media/usersadmin-lucid-authentification.png?w=300&amp;tok=62b662" class="mediaright" title="Vous devez vous authentifier avec un compte d&#039;administrateur pour modifier des options avancées ou le compte d&#039;un autre utilisateur" alt="Vous devez vous authentifier avec un compte d&#039;administrateur pour modifier des options avancées ou le compte d&#039;un autre utilisateur" width="300" /></a>
+</p>
+
+<p>
+L&#039;observation et la modification des options avancées d&#039;un compte d&#039;utilisateur ne peut être réalisée que par un administrateur du système. Lorsque vous tentez d&#039;accéder à l&#039;une de ces options demandant un privilège avancé, une boîte de dialogue vous oblige à saisir votre identification d&#039;administrateur pour en débloquer l&#039;accès.
+</p>
+
+<p>
+Les options avancées qui requièrent l&#039;intervention d&#039;un administrateur sont :
+</p>
+<ul>
+<li class="level1"><div class="li"> la modification du type de compte d&#039;utilisateur ;</div>
+</li>
+<li class="level1"><div class="li"> l&#039;affichage ou la modification des paramètres avancés d&#039;un compte ;</div>
+</li>
+<li class="level1"><div class="li"> la création ou la suppression d&#039;un compte d&#039;utilisateur ;</div>
+</li>
+<li class="level1"><div class="li"> l&#039;affichage, la création, la modification ou la suppression d&#039;un groupe d&#039;utilisateurs.</div>
+</li>
+</ul>
+
+<p>
+Lorsque vous débloquez l&#039;accès aux options d&#039;administration de <code>users-admin</code>, votre accès est garanti pour l&#039;option désirée seulement. Vous devrez vous identifier à nouveau pour accéder à d&#039;autres fonctions.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Gérer le compte d'un autre utilisateur et les options avancées (administrateurs seulement)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7510-8729" /><input type="submit" value="Modifier" class="button" title="Gérer le compte d'un autre utilisateur et les options avancées (administrateurs seulement)" /></div></form></div>
+<h3 class="sectionedit9" id="changer_le_type_de_compte_d_utilisateur">Changer le type de compte d&#039;utilisateur</h3>
+<div class="level3">
+
+<p>
+<a href="_detail/usersadmin-lucid-typecompte.png?id=users-admin" class="media" title="usersadmin-lucid-typecompte.png"><img src="_media/usersadmin-lucid-typecompte.png?w=300&amp;tok=050de3" class="mediaright" title="Ubuntu propose deux types de comptes d&#039;utilisateur et la possibilité de les personnaliser" alt="Ubuntu propose deux types de comptes d&#039;utilisateur et la possibilité de les personnaliser" width="300" /></a>
+</p>
+
+<p>
+Chaque compte d&#039;utilisateur peut être de trois types :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Utilisateur de l&#039;ordinateur :</strong> Ce type de compte est le plus basique. Il permet à un usager d&#039;utiliser l&#039;ordinateur de manière non-privilégiée. L&#039;usager ne peut qu&#039;utiliser les programmes installés, exploiter le matériel déjà installé, et ne peut pas modifier la configuration du système d&#039;exploitation Ubuntu ; </div>
+</li>
+<li class="level1"><div class="li"> <strong>Administrateur :</strong> Ce type de compte est privilégié. Il permet à son usager de modifier la configuration du système d&#039;exploitation, y compris l&#039;installation et la suppression de logiciels, l&#039;ajout et le retrait de matériel, et la personnalisation de tous les comptes d&#039;utilisateurs. Ce type de compte ne devrait être attribué qu&#039;à des administrateurs de l&#039;ordinateur ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Personnalisé :</strong> Ce type de compte ne peut être manuellement sélectionné. Il est attribué automatiquement lorsque des privilèges sont ajoutés ou retirés à un compte d&#039;utilisateur, dans ses paramètres avancés <em>(voir ci-dessous)</em>. Le type &quot;Personnalisé&quot; indique qu&#039;un compte ne suit plus exactement les mêmes critères qui sont habituellement attribués aux types &quot;Utilisateur de l&#039;ordinateur&quot; ou &quot;Administrateur.</div>
+</li>
+</ul>
+
+<p>
+Pour changer le type de compte d&#039;un compte d&#039;utilisateur :
+</p>
+<ol>
+<li class="level1"><div class="li"> Sélectionnez le compte dans l&#039;interface principale de <code>users-admin</code> ;</div>
+</li>
+<li class="level1"><div class="li"> Appuyez sur le bouton <strong>[Modifier]</strong> situé à la droite de l&#039;option <em>Type de compte</em> ;</div>
+</li>
+<li class="level1"><div class="li"> Sélectionnez le type de compte que ce compte d&#039;utilisateur doit se voir attribuer ;</div>
+</li>
+<li class="level1"><div class="li"> Appuyez sur le bouton <strong>[Valider]</strong> pour enregistrer le changement.</div>
+</li>
+</ol>
+
+<p>
+<p><div class="noteimportant"><strong>Les changements ne sont pas appliqués immédiatement</strong> <br/>
+Notez que les changements de type de compte ne sont pas appliqués dès leur enregistrement. Ils ne sont appliqués que lorsque toutes les sessions en cours sont closes pour ce compte-là. À l&#039;ouverture de session suivante pour ce compte, les nouveaux privilèges sont pris en compte. <br/>
+<br/>
+<strong>Ne supprimez pas tous les administrateurs !</strong> <br/>
+Veillez à toujours conserver au moins un compte d&#039;administrateur de l&#039;ordinateur. Sans administrateur, vous ne pourrez administrer votre système ni modifier les comptes d&#039;utilisateur. Si votre compte est l&#039;unique administrateur du système, ne vous retirez pas ce privilège sans l&#039;avoir attribué à un autre compte !
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Changer le type de compte d'utilisateur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8730-11259" /><input type="submit" value="Modifier" class="button" title="Changer le type de compte d'utilisateur" /></div></form></div>
+<h3 class="sectionedit10" id="voir_et_modifier_les_parametres_avancees">Voir et modifier les paramètres avancées</h3>
+<div class="level3">
+
+<p>
+Dans l&#039;interface principale de <code>users-admin</code>, sélectionnez le compte d&#039;utilisateur à modifier, puis appuyez sur le bouton <strong>[Paramètres avancés]</strong> pour en afficher les propriétés supplémentaires. Une nouvelle fenêtre s&#039;ouvre, proposant trois onglets :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Informations de contact :</strong> Dans cet onglet, un utilisateur peut saisir des informations de contact, tels son adresse de lieu de travail, son numéro de téléphone professionnel et son numéro de téléphone personnel. Ces informations sont optionnelles et s&#039;intègrent dans certains programmes, comme <a href="evolution" class="wikilink1" title="evolution">le carnet d&#039;adresses de Evolution</a> :</div>
+</li>
+<li class="level1"><div class="li"> <strong>Privilèges utilisateur :</strong> Dans cet onglet, un utilisateur observe les privilèges utilisateur qui lui ont été octroyés par l&#039;administrateur. Ceux-ci ont été déterminés automatiquement à partir du type de compte choisi dans la fenêtre <em>Type de compte</em>. Vous pouvez ajouter ou retirer manuellement d&#039;autres privilèges pour accorder plus ou moins de droits à un compte d&#039;utilisateur. Lorsque des privilèges sont accordés ou retirés, le type de compte de ce compte d&#039;utilisateur devient &quot;Personnalisé&quot; ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Avancé :</strong> Dans cet onglet, des paramètres avancés sont indiqués. Vous pouvez personnaliser l&#039;emplacement du dossier personnel du compte d&#039;utilisateur, préciser l&#039;interpréteur de commandes (<em>shell</em>) pour ce compte, sélectionner un nouveau groupe principal pour ce compte et lui attribuer un ID utilisateur (UID) différent. Une nouvelle option est <em>Désactiver ce compte</em>, qui empêche qu&#039;une session utilisateur soit ouverte avec ce compte.</div>
+</li>
+</ul>
+
+<p>
+<a href="_detail/usersadmin-lucid-contact.png?id=users-admin" class="media" title="usersadmin-lucid-contact.png"><img src="_media/usersadmin-lucid-contact.png?w=250&amp;tok=6edf27" class="media" title="Onglet &quot;Informations de contacts&quot;" alt="Onglet &quot;Informations de contacts&quot;" width="250" /></a>          <a href="_detail/usersadmin-lucid-privileges.png?id=users-admin" class="media" title="usersadmin-lucid-privileges.png"><img src="_media/usersadmin-lucid-privileges.png?w=250&amp;tok=ed6807" class="media" title="Onglet &quot;Privilèges utilisateur&quot;" alt="Onglet &quot;Privilèges utilisateur&quot;" width="250" /></a>          <a href="_detail/usersadmin-lucid-avance.png?id=users-admin" class="media" title="usersadmin-lucid-avance.png"><img src="_media/usersadmin-lucid-avance.png?w=250&amp;tok=f4b3e2" class="media" title="Onglet &quot;Avancé&quot;" alt="Onglet &quot;Avancé&quot;" width="250" /></a>
+</p>
+
+<p>
+Pour valider les changements apportés à un compte d&#039;utilisateur, appuyez sur le bouton <strong>Valider</strong>, au bas de l&#039;interface. Pour qu&#039;aucun changement soit pris en compte, appuyez plutôt sur le bouton <strong>Annuler</strong>. Rappelons que toutes les modifications ne sont pas appliquées immédiatement ; elles ne sont prises en compte qu&#039;après une fermeture de session, puis une ouverture d&#039;une nouvelle session.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Voir et modifier les paramètres avancées] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11260-13545" /><input type="submit" value="Modifier" class="button" title="Voir et modifier les paramètres avancées" /></div></form></div>
+<h3 class="sectionedit11" id="ajouter_un_nouveau_compte_d_utilisateur">Ajouter un nouveau compte d&#039;utilisateur</h3>
+<div class="level3">
+
+<p>
+<a href="_detail/usersadmin-lucid-ajout1.png?id=users-admin" class="media" title="usersadmin-lucid-ajout1.png"><img src="_media/usersadmin-lucid-ajout1.png?w=300&amp;tok=c6042f" class="mediaright" title="Pour créer un nouveau compte d&#039;utilisateur, renseignez les champs requis." alt="Pour créer un nouveau compte d&#039;utilisateur, renseignez les champs requis." width="300" /></a>
+</p>
+
+<p>
+Pour ajouter un nouveau compte d&#039;utilisateur :
+</p>
+<ol>
+<li class="level1"><div class="li"> Appuyez sur le bouton <strong>Ajouter</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> L&#039;interface ci-contre apparaît :</div>
+<ul>
+<li class="level2"><div class="li"> <em>Nom :</em> Saisissez le nom affiché que doit avoir le nouveau compte d&#039;utilisateur. Le nom affiché, par exemple, pourrait être le nom complet de cet utilisateur. Tous les caractères alphanumériques sont autorisés dans le nom affiché ;</div>
+</li>
+<li class="level2"><div class="li"> <em>Nom court :</em> Entrez un identifiant utilisateur pour ce compte. L&#039;identifiant ne peut contenir que des caractères minuscules non accentués, des chiffres, des points, des traits d&#039;union et des barres de soulignement (<em>underscores</em>). Par défaut, <code>users-admin</code> convertit le nom affiché en nom court en prenant le premier mot du nom affiché et la première lettre de tous les mots suivants. Si ce schéma ne vous convient pas, un menu déroulant vous propose d&#039;autres idées. Vous pouvez aussi saisir manuellement un identifiant de votre cru ;</div>
+</li>
+<li class="level2"><div class="li">Appuyez sur le bouton <strong>[Valider]</strong> pour passer à l&#039;étape suivante ;</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> La fenêtre suivante vous propose des paramètres de mot de passe pour le nouveau compte d&#039;utilisateur :</div>
+<ul>
+<li class="level2"><div class="li"> Cochez la case <strong>Entrez un mot de passe manuellement</strong> et saisissez manuellement un mot de passe de votre choix dans la case <strong>Nouveau mot de passe</strong>. Répétez ce même mot de passe dans la case <strong>Confirmation</strong> <br/>
+<a href="_detail/usersadmin-lucid-ajout2.png?id=users-admin" class="media" title="usersadmin-lucid-ajout2.png"><img src="_media/usersadmin-lucid-ajout2.png?w=300&amp;tok=32e441" class="mediaright" alt="" width="300" /></a> ou</div>
+</li>
+<li class="level2"><div class="li"> Cochez la case <strong>Générer un mot de passe aléatoire</strong>. Un mot de passe est généré aléatoirement. Mémorisez-le ;</div>
+</li>
+<li class="level2"><div class="li"> <em>(Optionnel)</em> Cochez la case <strong>Ne pas demander de mot de passe à la connexion</strong> pour autoriser ce compte à ouvrir une session sans saisir de mot de passe ;</div>
+</li>
+<li class="level2"><div class="li"> Appuyez sur le bouton <strong>[Valider]</strong> pour sauvegarder vos modifications.</div>
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+Le nouveau compte d&#039;utilisateur est créé. Par défaut, il est de type &quot;Utilisateur de l&#039;ordinateur&quot;. Pour configurer davantage de paramètres pour ce compte, procéder à sa modification, comme vous le feriez avec vos précédents comptes.
+</p>
+
+<p>
+<a href="_detail/usersadmin-lucid-ajout3.png?id=users-admin" class="media" title="usersadmin-lucid-ajout3.png"><img src="_media/usersadmin-lucid-ajout3.png?w=400&amp;tok=b9228c" class="mediacenter" title="Votre nouveau compte apparaît dans la liste des comptes d&#039;utilisateurs" alt="Votre nouveau compte apparaît dans la liste des comptes d&#039;utilisateurs" width="400" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Ajouter un nouveau compte d'utilisateur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13546-15817" /><input type="submit" value="Modifier" class="button" title="Ajouter un nouveau compte d'utilisateur" /></div></form></div>
+<h3 class="sectionedit12" id="supprimer_un_compte_d_utilisateur">Supprimer un compte d&#039;utilisateur</h3>
+<div class="level3">
+
+<p>
+<a href="_detail/usersadmin-lucid-suppression.png?id=users-admin" class="media" title="usersadmin-lucid-suppression.png"><img src="_media/usersadmin-lucid-suppression.png?w=350&amp;tok=b4b9ca" class="mediaright" title="Pour supprimer un compte, il faut en confirmer l&#039;action." alt="Pour supprimer un compte, il faut en confirmer l&#039;action." width="350" /></a>
+</p>
+
+<p>
+Seuls les administrateurs peuvent supprimer un compte d&#039;utilisateur. Un utilisateur (administrateur ou non) ne peut pas supprimer son propre compte ; il faut absolument que ce soit un autre administrateur qui procède à la tâche.
+</p>
+
+<p>
+Pour procéder à la suppression d&#039;un compte, sélectionnez le compte en question dans la liste des comptes, dans l&#039;interface principale de <code>users-admin</code>. Puis, appuyez sur le bouton <strong>Supprimer</strong>, situé au-dessous de la liste des comptes. Une fenêtre de dialogue s&#039;ouvre pour confirmer l&#039;action :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Conserver les fichiers</strong> : appuyez sur ce bouton pour supprimer le compte d&#039;utilisateur, tout en conservant intactes ses données personnelles. Il peut être utile de conserver temporairement ces fichiers, dans le but d&#039;en faire une copie de sauvegarde ou récupérer un fichier après la suppression du compte ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Ne pas supprimer le compte</strong> : appuyez sur ce bouton pour ne pas supprimer le compte d&#039;utilisateur ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Supprimer les fichiers</strong> : appuyez sur ce bouton pour supprimer le compte d&#039;utilisateur en question ainsi que toutes ses données personnelles.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Supprimer un compte d'utilisateur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15818-17077" /><input type="submit" value="Modifier" class="button" title="Supprimer un compte d'utilisateur" /></div></form></div>
+<h2 class="sectionedit13" id="gerer_les_groupes_d_utilisateurs">Gérer les groupes d&#039;utilisateurs</h2>
+<div class="level2">
+
+<p>
+Les groupes d&#039;utilisateurs servent à regrouper des comptes d&#039;utilisateurs de manière à autoriser certaines actions ou tâches selon leur appartenance. Chaque compte d&#039;utilisateur a un groupe principal, mais il peut aussi faire partie d&#039;un ou plusieurs autres groupes. L&#039;outil <code>users-admin</code> permet de gérer ces groupes et d&#039;attribuer les appartenances.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Gérer les groupes d'utilisateurs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17078-17482" /><input type="submit" value="Modifier" class="button" title="Gérer les groupes d'utilisateurs" /></div></form></div>
+<h3 class="sectionedit14" id="lister_les_groupes_d_utilisateurs">Lister les groupes d&#039;utilisateurs</h3>
+<div class="level3">
+
+<p>
+<a href="_detail/usersadmin-lucid-groupes.png?id=users-admin" class="media" title="usersadmin-lucid-groupes.png"><img src="_media/usersadmin-lucid-groupes.png?w=300&amp;tok=1ad1b6" class="mediaright" title="Liste des groupes d&#039;utilisateurs" alt="Liste des groupes d&#039;utilisateurs" width="300" /></a>
+</p>
+
+<p>
+Dans l&#039;interface principale de <code>users-admin</code>, appuyez sur le bouton <strong>Gérer les groupes</strong>. Une nouvelle fenêtre s&#039;ouvre, listant l&#039;ensemble des groupes d&#039;utilisateurs existants dans votre système Ubuntu.
+</p>
+
+<p>
+Sont listés autant les groupes créés au moment de la création de nouveaux comptes d&#039;utilisateurs que les groupes créés par des logiciels et des services.
+</p>
+
+<p>
+Pour chacun de ces groupes d&#039;utilisateurs, leurs propriétés de base peuvent être listées. Celles-ci incluent le nom du groupe, son identifiant numérique unique (GID) ainsi que les comptes d&#039;utilisateurs faisant partie du groupe. Pour ce faire, sélectionnez le groupe à afficher, puis appuyez sur le bouton <strong>[Propriétés]</strong>. Tous les usagers peuvent lister ces propriétés ; pour les modifier, vous devez vous identifier en tant qu&#039;administrateur.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Lister les groupes d'utilisateurs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17483-18430" /><input type="submit" value="Modifier" class="button" title="Lister les groupes d'utilisateurs" /></div></form></div>
+<h3 class="sectionedit15" id="modifier_les_proprietes_d_un_groupe_et_ajouter_ou_retirer_des_comptes_d_utilisateurs_d_un_groupe_administrateurs_seulement">Modifier les propriétés d&#039;un groupe, et ajouter ou retirer des comptes d&#039;utilisateurs d&#039;un groupe (administrateurs seulement)</h3>
+<div class="level3">
+
+<p>
+Pour afficher les propriétés d&#039;un groupe d&#039;utilisateurs ou les modifier, ou si vous désirez ajouter ou retirer un compte d&#039;utilisateur d&#039;un groupe d&#039;utilisateurs :
+</p>
+<ol>
+<li class="level1"><div class="li"> Sélectionnez le groupe en question dans la liste, puis appuyez sur le bouton <strong>Propriétés</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Observez les paramètres de base :</div>
+<ul>
+<li class="level2"><div class="li"> <em>Nom du groupe :</em> C&#039;est le nom du groupe d&#039;utilisateurs tel que reconnu par Ubuntu. Le nom d&#039;un groupe ne peut pas être modifié ;</div>
+</li>
+<li class="level2"><div class="li"> <a href="_detail/usersadmin-lucid-groupesproprietes.png?id=users-admin" class="media" title="usersadmin-lucid-groupesproprietes.png"><img src="_media/usersadmin-lucid-groupesproprietes.png?w=300&amp;tok=8ae566" class="mediaright" title="Propriétés d&#039;un groupe" alt="Propriétés d&#039;un groupe" width="300" /></a><em>ID du groupe :</em> C&#039;est l&#039;identifiant numérique unique du groupe d&#039;utilisateurs. Celui-ci peut être modifié pour, par exemple, correspondre au GID d&#039;un groupe précédemment modifié. Attention de sélectionner un GID unique, non encore utilisé par aucun autre groupe d&#039;utilisateurs. Par convention, les unités supérieures à 1000 sont dédiées aux groupes personnels ;</div>
+</li>
+<li class="level2"><div class="li"> <em>Membres du groupe :</em> Cette liste recense l&#039;ensemble des utilisateurs non-système actuellement enregistrés dans votre système Ubuntu. Les comptes cochés sont ceux faisant partie du groupe. Cochez ou décochez un compte pour l&#039;ajouter ou le retirer du groupe.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Appuyez sur le bouton <strong>[Valider]</strong> pour prendre en compte une modification ou sur le bouton <strong>[Annuler]</strong> pour qu&#039;elles ne soient pas prises en compte. Au moment de l&#039;enregistrement des informations, vous devez vous authentifier en tant qu&#039;administrateur.</div>
+</li>
+</ol>
+
+<p>
+<p><div class="notetip">Notez que tout ajout ou retrait d&#039;un compte à un groupe d&#039;utilisateur n&#039;est pris en compte qu&#039;à la prochaine ouverture de session. Ainsi, si un utilisateur a présentement une session ouverte avec son compte, celui-ci doit d&#039;abord clore sa session, puis en démarrer une nouvelle pour que les nouveaux paramètres de groupes soient pris en compte.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Modifier les propriétés d'un groupe, et ajouter ou retirer des comptes d'utilisateurs d'un groupe (administrateurs seulement)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18431-20375" /><input type="submit" value="Modifier" class="button" title="Modifier les propriétés d'un groupe, et ajouter ou retirer des comptes d'utilisateurs d'un groupe (administrateurs seulement)" /></div></form></div>
+<h3 class="sectionedit16" id="ajouter_un_nouveau_groupe_administrateurs_seulement">Ajouter un nouveau groupe (administrateurs seulement)</h3>
+<div class="level3">
+
+<p>
+<a href="_detail/usersadmin-lucid-nouveaugroupe.png?id=users-admin" class="media" title="usersadmin-lucid-nouveaugroupe.png"><img src="_media/usersadmin-lucid-nouveaugroupe.png?w=300&amp;tok=e1e940" class="mediaright" title="Propriétés d&#039;un groupe" alt="Propriétés d&#039;un groupe" width="300" /></a>
+</p>
+
+<p>
+Pour créer un nouveau groupe d&#039;utilisateurs :
+</p>
+<ol>
+<li class="level1"><div class="li"> Dans la fenêtre des gestion des groupes d&#039;utilisateurs, appuyez sur le bouton <strong>[Ajouter]</strong>. Vous devez vous authentifier en tant qu&#039;administrateur avant de poursuivre ;</div>
+</li>
+<li class="level1"><div class="li"> Une fenêtre identique à celle affichant les propriétés d&#039;un groupe apparaît. Renseignez les informations de base :</div>
+<ul>
+<li class="level2"><div class="li"> <em>Nom du groupe :</em> C&#039;est le nom du groupe d&#039;utilisateurs tel qu&#039;il sera reconnu par Ubuntu. Le nom d&#039;un groupe ne pourra pas être modifié une fois que le groupe sera créé ;</div>
+</li>
+<li class="level2"><div class="li"> <em>ID du groupe :</em> C&#039;est l&#039;identifiant numérique unique du groupe d&#039;utilisateurs. Celui-ci peut être modifié pour, par exemple, correspondre au GID d&#039;un groupe précédemment modifié. Attention de sélectionner un GID unique, non encore utilisé par aucun autre groupe d&#039;utilisateurs. Par défaut, le premier GID supérieur à 1000 disponible sera sélectionné ;</div>
+</li>
+<li class="level2"><div class="li"> <em>Membres du groupe :</em> Cette liste recense l&#039;ensemble des utilisateurs non-système actuellement enregistrés dans votre système Ubuntu. Les comptes cochés seront ceux qui seront ajoutés au groupe. Cochez ou décochez un compte pour l&#039;ajouter ou le retirer du groupe ;</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Appuyez sur le bouton <strong>[Valider]</strong> pour créer le nouveau groupe.</div>
+</li>
+</ol>
+
+<p>
+Notez que tout ajout ou retrait d&#039;un compte à un groupe d&#039;utilisateur n&#039;est pris en compte qu&#039;à la prochaine ouverture de session. Ainsi, si un utilisateur a présentement une session ouverte avec son compte, celui-ci doit d&#039;abord clore sa session, puis en démarrer une nouvelle pour que les nouveaux paramètres de groupes soient pris en compte.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Ajouter un nouveau groupe (administrateurs seulement)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="20376-22118" /><input type="submit" value="Modifier" class="button" title="Ajouter un nouveau groupe (administrateurs seulement)" /></div></form></div>
+<h3 class="sectionedit17" id="supprimer_un_groupe_administrateurs_seulement">Supprimer un groupe (administrateurs seulement)</h3>
+<div class="level3">
+
+<p>
+<a href="_detail/usersadmin-lucid-supprimergroupe.png?id=users-admin" class="media" title="usersadmin-lucid-supprimergroupe.png"><img src="_media/usersadmin-lucid-supprimergroupe.png?w=300&amp;tok=3caf1f" class="mediaright" title="Suppression d&#039;un groupe" alt="Suppression d&#039;un groupe" width="300" /></a>
+</p>
+
+<p>
+Pour procéder à la suppression d&#039;un compte, sélectionnez le groupe en question dans la liste des groupes. Puis, appuyez sur le bouton <strong>[Supprimer]</strong>, situé à la droite de la liste des groupes. Vous devez vous authentifier en tant qu&#039;administrateur avant de poursuivre.
+</p>
+
+<p>
+Une fenêtre de dialogue s&#039;ouvre pour confirmer l&#039;action. Appuyez sur le bouton <strong>[Supprimer]</strong> pour procéder à la suppression.
+</p>
+
+<p>
+<p><div class="noteimportant">Un administrateur doit faire preuve de prudence lorsqu&#039;il modifie les groupes d&#039;utilisateurs existants. La modification ou la suppression de certains groupes peut déstabiliser complètement le système d&#039;exploitation ou rendre inopérants certains logiciels et services. Avant de procéder, un administrateur devrait se renseigner davantage sur le rôle d&#039;un groupe et les conséquences liées à une modification ou suppression.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Supprimer un groupe (administrateurs seulement)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="22119-23112" /><input type="submit" value="Modifier" class="button" title="Supprimer un groupe (administrateurs seulement)" /></div></form></div>
+<h2 class="sectionedit18" id="aller_plus_loin">Aller plus loin...</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Aller plus loin...] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="23113-23144" /><input type="submit" value="Modifier" class="button" title="Aller plus loin..." /></div></form></div>
+<h3 class="sectionedit19" id="note_relative_aux_droits_d_acces">Note relative aux droits d&#039;accès</h3>
+<div class="level3">
+
+<p>
+Par défaut, lors de la création d&#039;un nouveau compte d&#039;utilisateur, les permissions accordées à son dossier personnel permettent à tous les utilisateurs de l&#039;ordinateur d&#039;en lire le contenu. Ainsi, toute personne peut entrer dans le dossier personnel de tout utilisateur et lire les divers fichiers qui y sont contenus. Pour plus d&#039;intimité, il est possible de bloquer l&#039;accès aux dossiers personnels en exécutant la commande suivante, dans un terminal : 
+</p>
+<pre class="code">administrateur@machine:~$ sudo chmod o-x /home/&lt;identifiant&gt;</pre>
+
+<p>
+Remplacez <code>&lt;identifiant&gt;</code> par l&#039;identifiant du compte en question ou tout autre emplacement du dossier personnel, si vous en aviez modifié manuellement l&#039;emplacement.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Note relative aux droits d'accès] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="23145-23895" /><input type="submit" value="Modifier" class="button" title="Note relative aux droits d'accès" /></div></form></div>
+<h3 class="sectionedit20" id="modifier_un_identifiant_login_name_de_compte">Modifier un identifiant (login name) de compte</h3>
+<div class="level3">
+
+<p>
+Une fois un compte d&#039;utilisateur créé, son identifiant (le <em>nom court</em> attribué lors de l&#039;inscription d&#039;un nouveau compte d&#039;utilisateur) ne peut pas être modifié à l&#039;aide des outils graphiques. Le recours à l&#039;outil en ligne de commande <code><a href="tutoriel/changer_un_identifiant_de_compte" class="wikilink1" title="tutoriel:changer_un_identifiant_de_compte">usermod</a></code> est nécessaire. 
+</p>
+<hr />
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="users-admin"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1388929502" /><input type="hidden" name="summary" value="[Modifier un identifiant (login name) de compte] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="23896-" /><input type="submit" value="Modifier" class="button" title="Modifier un identifiant (login name) de compte" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="utilisateurs_et_groupes#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Les plus avertis auront remarqué que seuls les comptes d&#039;utilisateurs non-système sont listés. Les comptes créés et utilisés par des logiciels et des services ne sont pas listés par défaut. Pour obtenir la liste complète de tous les comptes système et non-système, fermez <code>users-admin</code>, exécutez les deux commandes suivantes puis rouvrez <code>users-admin</code> : <pre class="code">utilisateur@ordinateur:~$ gsettings set org.gnome.system-tools.users showall true
+utilisateur@ordinateur:~$ gsettings set org.gnome.system-tools.users showroot true</pre>
+</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/da73c6469fc7c47a8098cb50410f84b3.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/users-admin?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="users-admin?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="users-admin?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="users-admin?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="users-admin?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

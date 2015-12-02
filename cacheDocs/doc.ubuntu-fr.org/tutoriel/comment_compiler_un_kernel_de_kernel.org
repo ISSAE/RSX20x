@@ -1,0 +1,738 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:comment_compiler_un_kernel_de_kernel.org - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-24T22:45:28+0100"/>
+<meta name="keywords" content="kernel,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_un_kernel_de_kernel.org?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_un_kernel_de_kernel.org?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/comment_compiler_un_kernel_de_kernel.org"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/comment_compiler_un_kernel_de_kernel.org"/>
+<link rel="canonical" href="comment_compiler_un_kernel_de_kernel.org"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_compiler_un_kernel_de_kernel.org","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="comment_compiler_un_kernel_de_kernel.org#main" tabindex="1">Contenu</a> | <a href="comment_compiler_un_kernel_de_kernel.org#qsearch__in" tabindex="2">Rechercher</a> | <a href="comment_compiler_un_kernel_de_kernel.org#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="comment_compiler_un_kernel_de_kernel.org" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="comment_compiler_un_kernel_de_kernel.org" >tutoriel:comment_compiler_un_kernel_de_kernel.org</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#pre-requis">Pré-requis :</a></div></li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#dependances">Dépendances</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#paquets_basiques">Paquets basiques</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#paquets_pour_creer_le_config">Paquets pour créer le &quot;.config&quot;</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#telechargement_des_sources">Téléchargement des sources</a></div></li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#configuration_particuliere">Configuration particulière</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#nvidia">NVIDIA</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#ati">ATI</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#configuration_du_noyau">Configuration du noyau</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#interface_de_configuration_qt_-_recommande">Interface de configuration QT - Recommandé</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#interface_de_configuration_en_mode_console">Interface de configuration en Mode console</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#interface_de_configuration_en_mode_semi-graphique_menu_bleu">Interface de configuration en Mode semi-graphique (menu bleu)</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#interface_de_configuration_en_gtk_interface_gnome_-elle_n_est_pas_bien_finie">Interface de configuration en GTK+ (interface GNOME -elle n&#039;est pas bien finie...)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#compilation">Compilation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#les_arguments_de_compilation">Les arguments de compilation</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#les_cibles_de_compilation">Les cibles de compilation</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#compilation_basique">Compilation basique</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_de_kernel.org#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../kernel" class="wikilink1" title="kernel" rel="tag">kernel</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_compiler_un_noyau_de_kernelorg">Comment compiler un noyau de Kernel.org</h1>
+<div class="level1">
+
+<p>
+Il peut être utile de compiler une certaine version du Noyau Linux pour, par exemple, pallier une incompatibilité avec un module spécifique ou encore activer/modifier un paramètre qui ne serait pas dans la version du noyau distribuée avec Ubuntu.<br/>
+
+Cette page propose de détailler comment faire et invite tous ceux qui le veulent à ajouter des précisions …
+</p>
+
+<p>
+<p><div class="notetip">Si vous souhaitez faire de la compilation croisée, comme compiler un noyau pour PowerPC sur un x86, rendez-vous <a href="http://doc.ubuntu-fr.org/tutoriel/compilation_croisee" class="wikilink1" title="tutoriel:compilation_croisee">ici</a>.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Comment compiler un noyau de Kernel.org] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="32-614" /><input type="submit" value="Modifier" class="button" title="Comment compiler un noyau de Kernel.org" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis :</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Savoir utiliser le <a href="../terminal" class="wikilink1" title="terminal">terminal</a> / la <a href="../console" class="wikilink1" title="console">console</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Savoir ce que sont &quot;<a href="http://doc.ubuntu-fr.org/linux" class="wikilink1" title="linux">linux</a>&quot;, &quot;<a href="tout_savoir_sur_les_modules_linux" class="wikilink1" title="tutoriel:tout_savoir_sur_les_modules_linux">module</a>&quot;, etc… ;</div>
+</li>
+<li class="level1"><div class="li"> Une bonne heure pour configurer (seulement si vous souhaitez optimiser le noyau pour votre utilisation) ;</div>
+</li>
+<li class="level1"><div class="li"> Deux bonnes heures ou plus pour la compilation suivant la puissance de votre ordinateur.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Pré-requis :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="615-1006" /><input type="submit" value="Modifier" class="button" title="Pré-requis :" /></div></form></div>
+<h2 class="sectionedit3" id="dependances">Dépendances</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Dépendances] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1007-1032" /><input type="submit" value="Modifier" class="button" title="Dépendances" /></div></form></div>
+<h3 class="sectionedit4" id="paquets_basiques">Paquets basiques</h3>
+<div class="level3">
+
+<p>
+Tout d&#039;abord il faut installer le strict minimum pour la compilation :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong><a href="apt://build-essential,initramfs-tools,fakeroot" class="interwiki iw_apt" title="apt://build-essential,initramfs-tools,fakeroot">build-essential initramfs-tools fakeroot</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong><a href="apt://debconf-utils,dpkg-dev,debhelper,bin86" class="interwiki iw_apt" title="apt://debconf-utils,dpkg-dev,debhelper,bin86">debconf-utils dpkg-dev debhelper bin86</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong><a href="apt://kernel-package" class="interwiki iw_apt" title="apt://kernel-package">kernel-package</a></strong></div>
+</li>
+</ul>
+
+<p>
+Ou la ligne de commande pour tout installer d&#039;un coup avec l&#039;outil <a href="../apt-get" class="wikilink1" title="apt-get">apt-get</a>:
+</p>
+<pre class="code">sudo apt-get install build-essential initramfs-tools fakeroot debconf-utils dpkg-dev debhelper bin86 kernel-package</pre>
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+EDIT : afin de pouvoir compiler les derniers noyaux provenant de kernel.org (version &gt; 3.14), il faut installer la dernière version de &quot;kernel-package&quot; et non celle ci-dessus issue des dépôts, car elle crée des bugs pendant la compilation, et ne produit pas au final les paquets .deb)
+</p>
+
+<p>
+<a href="https://launchpad.net/ubuntu/+source/kernel-package/13.003/+build/5980712/+files/kernel-package_13.003_all.deb" class="urlextern" title="https://launchpad.net/ubuntu/+source/kernel-package/13.003/+build/5980712/+files/kernel-package_13.003_all.deb"  rel="nofollow">https://launchpad.net/ubuntu/+source/kernel-package/13.003/+build/5980712/+files/kernel-package_13.003_all.deb</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Paquets basiques] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1033-2185" /><input type="submit" value="Modifier" class="button" title="Paquets basiques" /></div></form></div>
+<h3 class="sectionedit5" id="paquets_pour_creer_le_config">Paquets pour créer le &quot;.config&quot;</h3>
+<div class="level3">
+
+<p>
+&quot;.config&quot;, c&#039;est le fichier de configuration contenant les instructions de compilation qui peut être créé au choix via:
+</p>
+<ul>
+<li class="level1"><div class="li"> une interface en <strong>console</strong> (bleue) ⇒ <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt://libncurses5-dev" class="interwiki iw_apt" title="apt://libncurses5-dev">libncurses5-dev</a></strong></div>
+</li>
+<li class="level1"><div class="li"> une interface en <strong>GTK+</strong> (noyau 2.6 seulement) ⇒ <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez les paquets</a> <strong><a href="apt://libglib2.0-dev,libgtk2.0-dev,libglade2-dev" class="interwiki iw_apt" title="apt://libglib2.0-dev,libgtk2.0-dev,libglade2-dev">libglib2.0-dev libgtk2.0-dev libglade2-dev</a></strong></div>
+</li>
+<li class="level1"><div class="li"> une interface en <strong>QT4</strong> (Fonctionne du noyau 2.6 au noyau 4.0 - sûrement l&#039;interface la plus simple et complète - conseillée) ⇒ <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez les paquets</a> <strong><a href="apt://libqt4-dev,pkg-config" class="interwiki iw_apt" title="apt://libqt4-dev,pkg-config">libqt4-dev pkg-config</a></strong></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Paquets pour créer le .config] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2186-2977" /><input type="submit" value="Modifier" class="button" title="Paquets pour créer le .config" /></div></form></div>
+<h2 class="sectionedit6" id="telechargement_des_sources">Téléchargement des sources</h2>
+<div class="level2">
+
+<p>
+Tout d&#039;abord téléchargez les sources du noyau depuis Kernel.org:<br/>
+
+<a href="http://www.kernel.org/pub/linux/kernel/" class="urlextern" title="http://www.kernel.org/pub/linux/kernel/"  rel="nofollow">Lien vers le ftp de kernel.org</a>
+</p>
+
+<p>
+Téléchargez l&#039;archive dans le dossier que vous voulez, puis <a href="../archivage#graphiquement" class="wikilink1" title="archivage">décompressez-la</a> par exemple avec la <a href="../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante:
+</p>
+<pre class="code">tar xvf linux-*</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Téléchargement des sources] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2978-3363" /><input type="submit" value="Modifier" class="button" title="Téléchargement des sources" /></div></form></div>
+<h2 class="sectionedit7" id="configuration_particuliere">Configuration particulière</h2>
+<div class="level2">
+
+<p>
+Dans certains cas, certains pilotes propriétaires notamment, il faut préparer un peu plus le terrain pour compiler soi-même un Noyau personnalisé. Autant vous dire qu&#039;il est bien plus simple de compiler son noyau pour quelqu&#039;un qui n&#039;utilise que des pilotes libres.
+</p>
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> cette partie est totalement dépassée, peut être n&#039;est-elle plus nécessaire, en tout cas aucune de ces infos ne sont encore garanties de fonctionner.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Configuration particulière] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3364-3835" /><input type="submit" value="Modifier" class="button" title="Configuration particulière" /></div></form></div>
+<h3 class="sectionedit8" id="nvidia">NVIDIA</h3>
+<div class="level3">
+
+<p>
+Pour les cartes <a href="../nvidia" class="wikilink1" title="nvidia">Nvidia</a>, vous pouvez décider de ne plus utiliser le pilote propriétaire, mais bien entendu si vous en avez vraiment besoin voici des pistes pour le faire fonctionner avec votre noyau personnalisé.
+</p>
+
+</div>
+
+<h4 id="avec_la_technique_des_liens_symboliques">Avec la technique des liens symboliques</h4>
+<div class="level4">
+
+<p>
+Voir <a href="http://ubuntuforums.org/showthread.php?t=441013" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=441013"  rel="nofollow">ce How-To</a> (en).
+</p>
+
+</div>
+
+<h4 id="avec_le_module">Avec le module</h4>
+<div class="level4">
+
+<p>
+Il faut installer le paquet de sources à inclure au noyau :
+</p>
+<ol>
+<li class="level1"><div class="li"> Si vous utilisez le paquet nvidia-glx-new, <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt://nvidia-new-kernel-source" class="interwiki iw_apt" title="apt://nvidia-new-kernel-source">nvidia-new-kernel-source</a></strong></div>
+</li>
+<li class="level1"><div class="li"> Si vous utilisez le paquet nvidia-glx, <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt://nvidia-kernel-source" class="interwiki iw_apt" title="apt://nvidia-kernel-source">nvidia-kernel-source</a></strong></div>
+</li>
+<li class="level1"><div class="li"> Si vous utilisez le paquet nvidia-glx-legacy, <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt://nvidia-legacy-kernel-source" class="interwiki iw_apt" title="apt://nvidia-legacy-kernel-source">nvidia-legacy-kernel-source</a></strong></div>
+</li>
+</ol>
+
+<p>
+Une fois le paquet installé, il se trouve dans le dossier <strong>/usr/src/</strong>,alors décompressez <sup><a href="comment_compiler_un_kernel_de_kernel.org#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.:
+</p>
+<pre class="code">tar xvfz nvidia&lt;TAB&gt;.tar.gz</pre>
+
+<p>
+Vous devriez avoir un dossier <strong>/modules/nvidia-kernel</strong> (ou nvidia-kernel-legacy ou nvidia-kernel-new selon le paquet installé).
+</p>
+
+<p>
+Lors de la compilation, n&#039;oubliez pas d&#039;ajouter en paramètre (selon le paquet installé) :
+</p>
+<pre class="code">--added-modules=nvidia-kernel
+--added-modules=nvidia-kernel-legacy
+--added-modules=nvidia-kernel-new</pre>
+
+</div>
+
+<h4 id="avec_le_run_du_site">Avec le .run du site</h4>
+<div class="level4">
+
+<p>
+Ne faites rien pour l&#039;instant, puis une fois votre noyau compilé, téléchargez le <em>.run</em> sur le site officiel. Tutoriel <a href="http://doc.ubuntu-fr.org/nvidia.run" class="wikilink2" title="nvidia.run" rel="nofollow">ici</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[NVIDIA] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3836-5586" /><input type="submit" value="Modifier" class="button" title="NVIDIA" /></div></form></div>
+<h3 class="sectionedit9" id="ati">ATI</h3>
+<div class="level3">
+
+<p>
+Si vous utilisez une carte <a href="http://doc.ubuntu-fr.org/amd-ati" class="wikilink1" title="amd-ati">amd-ati</a>, vous n&#039;utilisez peut être pas le pilote propriétaire (ou celui ci n&#039;est peut être pas indispensable). Il est conseillé, <em class="u">avant</em> d&#039;entreprendre la compilation du noyau, de voir si les performances du pilote libre sont à votre goût celui-ci (le pilote libre est parfois même plus performant que le propriétaire).
+</p>
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> (Méthodes non-testée)
+</p>
+
+</div>
+
+<h4 id="avec_la_technique_des_liens_symboliques1">Avec la technique des liens symboliques</h4>
+<div class="level4">
+
+<p>
+Voir <a href="http://ubuntuforums.org/showthread.php?t=441013" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=441013"  rel="nofollow">ce How-To</a> (en).
+</p>
+
+</div>
+
+<h4 id="avec_le_module1">Avec le module</h4>
+<div class="level4">
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> J&#039;imagine que ça doit être comme pour NVidia avec le paquet <strong>fglrx-kernel-source</strong> ?
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[ATI] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5587-6237" /><input type="submit" value="Modifier" class="button" title="ATI" /></div></form></div>
+<h2 class="sectionedit10" id="configuration_du_noyau">Configuration du noyau</h2>
+<div class="level2">
+
+<p>
+La configuration du noyau est l&#039;étape où vous choisissez les options. Vous pouvez enlever l&#039;ABS, ajouter des airbags, changer la transmission, etc.
+</p>
+
+<p>
+Tout d&#039;abord ouvrez un <strong><a href="../terminal" class="wikilink1" title="terminal">terminal</a></strong> puis rendez vous dans le dossier où vous avez décompressé <a href="comment_compiler_un_kernel_de_kernel.org#telechargement_des_sources" title="tutoriel:comment_compiler_un_kernel_de_kernel.org ↵" class="wikilink1">les sources téléchargées</a> grâce à la commande:
+</p>
+<pre class="code">cd /le/chemin/vers/le/dossier/qui/contient/linux</pre>
+
+<p>
+Puis lancez cette commande qui permet de récupérer la configuration du noyau que vous utilisez actuellement et qui vous demande automatiquement de gérer les conflits si l&#039;ancienne configuration n&#039;est pas compatible avec le nouveau noyau:
+</p>
+<pre class="code">make oldconfig</pre>
+
+<p>
+Vous pouvez garder toutes les réponses proposées par défaut et juste appuyer sur <em>Entrer</em> lorsqu&#039;il vous pose une question. Mais, si vous comprenez ce qui est dit, cela permettra d&#039;ajouter ou non de nouvelles fonctions à votre Noyau, options qui n&#039;existait peut-être pas encore lorsque les développeurs d&#039;Ubuntu ont choisi le noyau intégré à la <a href="../versions" class="wikilink1" title="versions">version</a> que vous utilisez actuellement.
+</p>
+
+<p>
+Maintenant vous devez choisir l&#039;une des différentes interfaces de configuration du noyau si vous voulez faire quelques modifications par rapport aux paramètres par défaut. Même si vous ne modifiez rien, il est conseillé d&#039;y jeter un œil par curiosité.<br/>
+
+Vous pouvez au choix utiliser:
+</p>
+<ul>
+<li class="level1"><div class="li"> une <a href="comment_compiler_un_kernel_de_kernel.org#interface_de_configuration_qt_-_recommande" title="tutoriel:comment_compiler_un_kernel_de_kernel.org ↵" class="wikilink1">Interface de configuration QT - Recommandé</a></div>
+</li>
+<li class="level1"><div class="li"> une <a href="comment_compiler_un_kernel_de_kernel.org#interface_de_configuration_en_mode_console" title="tutoriel:comment_compiler_un_kernel_de_kernel.org ↵" class="wikilink1">Interface de configuration en Mode console</a></div>
+</li>
+<li class="level1"><div class="li"> une <a href="comment_compiler_un_kernel_de_kernel.org#interface_de_configuration_en_mode_semi-graphique_menu_bleu" title="tutoriel:comment_compiler_un_kernel_de_kernel.org ↵" class="wikilink1">Interface de configuration en Mode semi-graphique (menu bleu)</a></div>
+</li>
+<li class="level1"><div class="li"> une <a href="comment_compiler_un_kernel_de_kernel.org#interface_de_configuration_en_gtk_interface_gnome_-elle_n_est_pas_bien_finie" title="tutoriel:comment_compiler_un_kernel_de_kernel.org ↵" class="wikilink1">Interface de configuration en GTK+ (interface GNOME -elle n&#039;est pas bien finie...)</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Configuration du noyau] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6238-7937" /><input type="submit" value="Modifier" class="button" title="Configuration du noyau" /></div></form></div>
+<h3 class="sectionedit11" id="interface_de_configuration_qt_-_recommande">Interface de configuration QT - Recommandé</h3>
+<div class="level3">
+<pre class="code">make xconfig</pre>
+
+<p>
+<strong>Si la commande précédente retourne une erreur du type &quot;qconf: cannot connect to X server&quot;, essayez :</strong>
+</p>
+<pre class="code"> #exit
+ $sudo xhost +
+ $su
+ #cd /usr/src/linux-*
+ #make xconfig</pre>
+
+<p>
+<p><div class="notetip">Ne saisissez pas les <strong>#</strong> et <strong>$</strong> qui sont là à titre d&#039;information et correspondent respectivement aux prompts <a href="http://doc.ubuntu-fr.org/root" class="wikilink1" title="root">root</a> et utilisateur standard
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Interface de configuration QT - Recommandé] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7938-8376" /><input type="submit" value="Modifier" class="button" title="Interface de configuration QT - Recommandé" /></div></form></div>
+<h3 class="sectionedit12" id="interface_de_configuration_en_mode_console">Interface de configuration en Mode console</h3>
+<div class="level3">
+
+<p>
+Déconseillé pour les débutants tout comme les autres.
+</p>
+<pre class="code">make config</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Interface de configuration en Mode console] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8377-8516" /><input type="submit" value="Modifier" class="button" title="Interface de configuration en Mode console" /></div></form></div>
+<h3 class="sectionedit13" id="interface_de_configuration_en_mode_semi-graphique_menu_bleu">Interface de configuration en Mode semi-graphique (menu bleu)</h3>
+<div class="level3">
+<pre class="code">make menuconfig</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Interface de configuration en Mode semi-graphique (menu bleu)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8517-8621" /><input type="submit" value="Modifier" class="button" title="Interface de configuration en Mode semi-graphique (menu bleu)" /></div></form></div>
+<h3 class="sectionedit14" id="interface_de_configuration_en_gtk_interface_gnome_-elle_n_est_pas_bien_finie">Interface de configuration en GTK+ (interface GNOME -elle n&#039;est pas bien finie...)</h3>
+<div class="level3">
+<pre class="code">make gconfig</pre>
+<hr />
+
+<p>
+<strong>Si vous n&#039;avez rien à configurer, cliquez simplement sur <em>Enregistrer</em> dans l&#039;interface graphique qui apparaît</strong>.<br/>
+
+Si vous avez envie de configurer au mieux votre noyau, aidez-vous de la page « <a href="http://doc.ubuntu-fr.org/tutoriel/kernel_options" class="wikilink1" title="tutoriel:kernel_options">Choisir les options lors de la compilation du noyau</a> » mais le mieux reste de lire les options et de bien vous amuser <img src="../lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />
+</p>
+
+<p>
+<p><div class="notetip">Vous ne risquez rien à compiler un Noyau inutilisable car les anciens restent tout de même installés sur le système, il vous suffira simplement d&#039;en choisir un autre dans le menu <a href="../amorcage#chargeurs_d_amorcage" class="wikilink1" title="amorcage">d&#039;amorçage</a> au démarrage de votre ordinateur.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Interface de configuration en GTK+ (interface GNOME -elle n'est pas bien finie...)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8622-9387" /><input type="submit" value="Modifier" class="button" title="Interface de configuration en GTK+ (interface GNOME -elle n'est pas bien finie...)" /></div></form></div>
+<h2 class="sectionedit15" id="compilation">Compilation</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteimportant">Cette partie décrit la plupart des options possibles pour <strong>make-kpkg</strong>, et il y en a plein, les connaître ne vous servira pas à grand chose, <strong>si vous voulez simplement créer un noyau classique rapidement, allez directement à la partie <a href="comment_compiler_un_kernel_de_kernel.org#compilation_basique" title="tutoriel:comment_compiler_un_kernel_de_kernel.org ↵" class="wikilink1">Compilation basique</a>.</strong>
+</div></p>
+</p>
+
+<p>
+La compilation se fait avec <strong>make-kpkg</strong> qui automatise en fait plusieurs commandes :
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>make dep</em> - établit les dépendances entre fichiers constitutifs du code noyau</div>
+</li>
+<li class="level1"><div class="li"> <em>make clean</em> - supprime les objets résultant d&#039;une compilation antérieure du noyau (si elle a eu lieu)</div>
+</li>
+<li class="level1"><div class="li"> <em>make bzImage</em> - produit l&#039;image compressée qui servira à l&#039;amorçage</div>
+</li>
+<li class="level1"><div class="li"> <em>make modules</em> - compile les modules</div>
+</li>
+</ul>
+
+<p>
+En résulte alors un <a href="../paquet" class="wikilink1" title="paquet">paquet</a> <em>*.deb</em> (si vous utilisez la cible buildpackage) qu&#039;il faudra installer avec <a href="http://doc.ubuntu-fr.org/dpkg" class="wikilink1" title="dpkg">dpkg</a> :
+</p>
+<pre class="code">sudo dpkg -i linux*.deb</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Compilation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9388-10279" /><input type="submit" value="Modifier" class="button" title="Compilation" /></div></form></div>
+<h3 class="sectionedit16" id="les_arguments_de_compilation">Les arguments de compilation</h3>
+<div class="level3">
+
+<p>
+Il existe différents arguments à <em>make-kpkg</em>:
+</p>
+
+</div>
+
+<h4 id="j">-j</h4>
+<div class="level4">
+
+<p>
+Cet argument <strong>totalement facultatif</strong> permet de choisir le nombre de Threads, c&#039;est à dire le nombre de processus simultané, que le CPU traitera pendant la compilation. En résumé ça ne sert qu&#039;à augmenter la vitesse à laquelle votre ordinateur va créer votre nouveau noyau, si votre CPU à plusieurs cœurs.
+</p>
+<pre class="code">-j 8</pre>
+
+<p>
+Permettra d&#039;utiliser les 8 cœurs d&#039;un CPU en ayant 8 par exemple.
+</p>
+
+</div>
+
+<h4 id="initrd">--initrd</h4>
+<div class="level4">
+
+<p>
+Le plus important: crée un fichier <strong>initrd</strong> qui permet d&#039;utiliser des modules directement à l&#039;amorçage du noyau.
+</p>
+
+</div>
+
+<h4 id="rootcmd_fakeroot_sudo">--rootcmd=fakeroot|sudo</h4>
+<div class="level4">
+
+<p>
+Vous propose de choisir avec quelle méthode vous permettez à <em>make-kpkg</em> d&#039;utiliser les ressources de root.
+</p>
+
+</div>
+
+<h4 id="added_modules">--added_modules</h4>
+<div class="level4">
+
+<p>
+Pour ajouter des modules (alsa, nvidia/ATI, etc…). Pour en mettre plusieurs, séparez avec une virgule :
+</p>
+<pre class="code">--added-modules=alsa-driver,nvidia-kernel-legacy</pre>
+
+</div>
+
+<h4 id="append-to-version_--revision">--append-to-version &amp; --revision</h4>
+<div class="level4">
+
+<p>
+<strong>FACULTATIF</strong>
+</p>
+
+<p>
+Pour ajouter une version à votre noyau. Plus d&#039;informations à ce sujet sur <a href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_un_kernel_sur_mesure_old?rev=1253631464#make-kpkg" class="wikilink2" title="tutoriel:comment_compiler_un_kernel_sur_mesure_old" rel="nofollow">cette ancienne version</a> de « <a href="comment_compiler_un_kernel_sur_mesure" class="wikilink1" title="tutoriel:comment_compiler_un_kernel_sur_mesure">Comment compiler un noyau sur mesure</a> ».
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Les arguments de compilation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10280-11609" /><input type="submit" value="Modifier" class="button" title="Les arguments de compilation" /></div></form></div>
+<h3 class="sectionedit17" id="les_cibles_de_compilation">Les cibles de compilation</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="buildpackage">buildpackage</h4>
+<div class="level4">
+
+<p>
+Cela a pour conséquence d&#039;utiliser la cible &quot;clean&quot;et &quot;binary&quot; décrite ci-dessous. 
+</p>
+
+</div>
+
+<h4 id="clean">clean</h4>
+<div class="level4">
+
+<p>
+Permet de « nettoyer le répertoire des sources du noyau de tous les fichiers créés par l&#039;invocation de l&#039;une des cibles données ci dessous, et effectue un make distclean » <sup><a href="comment_compiler_un_kernel_de_kernel.org#fn__2" id="fnt__2" class="fn_top">2)</a></sup>.
+</p>
+
+</div>
+
+<h4 id="binary">binary</h4>
+<div class="level4">
+
+<p>
+Cette cible « construit les quatre paquets Debian du noyau en utilisant les cibles kernel_source, kernel_headers, kernel_doc et kernel_image <sup><a href="comment_compiler_un_kernel_de_kernel.org#fn__3" id="fnt__3" class="fn_top">3)</a></sup>.
+</p>
+
+</div>
+
+<h4 id="kernel_doc">kernel_doc</h4>
+<div class="level4">
+
+<p>
+Cet autre cible compile et crée pour vous un paquet Debian contenant les documentations fournis avec le noyau.
+</p>
+
+</div>
+
+<h4 id="kernel_image">kernel_image</h4>
+<div class="level4">
+
+<p>
+Cela permet de créer un paquet qui contient l&#039;image du noyau, ses modules et permet aussi la configuration automatique du <a href="../amorcage#chargeurs_d_amorcage" class="wikilink1" title="amorcage">chargeur d&#039;amorçage</a> comme <a href="../grub" class="wikilink1" title="grub">Grub</a> ou <a href="../lilo" class="wikilink1" title="lilo">Lilo</a>.
+</p>
+
+</div>
+
+<h4 id="kernel_source">kernel_source</h4>
+<div class="level4">
+
+<p>
+Cette cible construit un paquet Debian des sources du noyau Linux que vous compilez. Cela est particulièrement utile si vous souhaitez réutiliser ultérieurement les sources du noyau que vous souhaiteriez conserver.
+</p>
+
+</div>
+
+<h4 id="kernel_headers">kernel_headers</h4>
+<div class="level4">
+
+<p>
+Celle-ci a pour but de produire un paquet Debian contenant les entêtes du noyau Linux. Les entêtes peuvent être nécessaires pour compiler certains programmes.
+</p>
+
+</div>
+
+<h4 id="modules_image">modules_image</h4>
+<div class="level4">
+
+<p>
+Cette cible a pour but de produire un paquet Debian pour chaque module supplémentaire que vous avez installé et qui se trouve dans le répertoire /usr/src/modules/.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Les cibles de compilation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11610-13313" /><input type="submit" value="Modifier" class="button" title="Les cibles de compilation" /></div></form></div>
+<h3 class="sectionedit18" id="compilation_basique">Compilation basique</h3>
+<div class="level3">
+
+<p>
+Avant de procéder à la compilation il faut savoir que une compilation basique peut durer entre 2 heures et trois heures. Mais si vous possédez un ordinateur qui à plusieurs cœur (Core) vous pouvez augmenter la vitesse de compilation en spécifiant le nombre de cœur à utiliser pour la compilation.
+</p>
+
+<p>
+Voici un exemple pour un ordinateur à 5 cœurs (A changer en fonction de votre ordinateur)
+</p>
+<pre class="code">echo &quot;CONCURRENCY_LEVEL= 5&quot; &gt;&gt; /etc/kernel-pkg.conf</pre>
+
+<p>
+Et maintenant voici la commande la plus basique pour compiler :
+</p>
+<pre class="code">make-kpkg --initrd --append-to-version=-monnoyau --revision=1.0 --rootcmd=fakeroot kernel_image kernel_headers</pre>
+
+<p>
+Retournez dans le dossier précédent avec:
+</p>
+<pre class="code">cd ..</pre>
+
+<p>
+Et installer les <em>*.deb</em> :
+</p>
+<ul>
+<li class="level1"><div class="li"> <em class="u">Sous <strong>Ubuntu</strong></em>:<pre class="code">sudo dpkg -i linux*.deb</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <em class="u">Sous <strong>Debian</strong></em>:<pre class="code">su -c &#039;dpkg -i linux*.deb&#039;</pre>
+</div>
+</li>
+</ul>
+
+<p>
+Voilà c&#039;est fait <img src="../lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Compilation basique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13314-14247" /><input type="submit" value="Modifier" class="button" title="Compilation basique" /></div></form></div>
+<h2 class="sectionedit19" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://ubuntuforums.org/showthread.php?t=441013" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=441013"  rel="nofollow">HOW-TO : Utiliser le linux-restricted-module pour un noyau compilé</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.andesi.org/index.php?node=77" class="urlextern" title="http://www.andesi.org/index.php?node=77"  rel="nofollow">Un bon guide pour Debian plein d&#039;infos sympa</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=1108685#p1108685" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=1108685#p1108685"  rel="nofollow">Un guide pour installer la carte wifi **Intel PRO/Wireless 2200BG**</a> </div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs: <a href="../utilisateurs/fabien26" class="wikilink1" title="utilisateurs:fabien26">Fabien26</a>, <a href="../utilisateurs/adam0509" class="wikilink1" title="utilisateurs:adam0509">adam0509</a>, <a href="../utilisateurs/beaver" class="wikilink1" title="utilisateurs:beaver">BeAvEr.</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/fleroi91" class="wikilink2" title="utilisateurs:fleroi91" rel="nofollow">fleroi91</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_de_kernel.org"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1427233528" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14248-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="comment_compiler_un_kernel_de_kernel.org#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<em>&lt;TAB&gt;</em> correspond ici à la touche <a href="http://fr.wikipedia.org/wiki/Touche_tabulation" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Touche_tabulation">tabulation</a> utilisant ainsi l&#039;<a href="http://fr.wikipedia.org/wiki/Complètement" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Complètement">autocomplétion</a></div>
+<div class="fn"><sup><a href="comment_compiler_un_kernel_de_kernel.org#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+, <sup><a href="comment_compiler_un_kernel_de_kernel.org#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+traduction de la partie du manuel consacré à cette cible et accessible en saisissant <code>man make-kpkg</code></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/f3942f7a699e59ab85d5b2fc582d38fe.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_un_kernel_de_kernel.org?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_un_kernel_de_kernel.org?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_un_kernel_de_kernel.org?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_un_kernel_de_kernel.org?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_un_kernel_de_kernel.org?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

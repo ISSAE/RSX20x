@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>ntp - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-07-19T17:29:59+0200"/>
+<meta name="keywords" content="lucid,precise,serveur,reseau,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/ntp?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/ntp?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/ntp"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/ntp"/>
+<link rel="canonical" href="ntp"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"ntp","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="ntp#main" tabindex="1">Contenu</a> | <a href="ntp#qsearch__in" tabindex="2">Rechercher</a> | <a href="ntp#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="ntp" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="ntp" >ntp</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, les informations qu'elle contient n'ont pas été vérifiées depuis <a href="precise">Ubuntu 12.04 LTS.</a><br />
+Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="ntp#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="ntp#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="ntp#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="ntp#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="ntp#serveurs_ntp">Serveurs NTP</a></div></li>
+<li class="level2"><div class="li"><a href="ntp#le_pool_ntp">le pool NTP</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="ntp#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+
+<h1 class="sectionedit1" id="ntp">NTP</h1>
+<div class="level1">
+
+<p>
+<abbr title="Network Time Protocol">NTP</abbr> (Network Time Protocol) est un protocole permettant de distribuer l&#039;heure sur un réseau informatique. Il se décline en deux faces : le client, <a href="ntpdate" class="wikilink1" title="ntpdate">ntpdate</a>, et le serveur, ntpd. 
+</p>
+
+<p>
+Chaque machine peut être à la fois serveur <em>et</em> client.
+</p>
+
+<p>
+Chaque machine qui souhaite mettre à jour son horloge va sélectionner dans sa configuration un serveur de temps. En même temps que l&#039;heure, elle récupère un numéro de strate, n, et se déclare elle-même de strate n+1.
+</p>
+
+<p>
+Un certains nombre de sources (horloges atomiques d&#039;universités, récepteurs GPS…) sont de strate 0 et connectées à des serveurs (strate 1) qui diffusent donc l&#039;heure. Ces mêmes serveurs fournissent l&#039;heure à des serveurs de strate 2, qui sont eux, généralement accessibles au public (serveurs d&#039;administrations, d&#039;universités ou de centres de recherches dont l&#039;accès est ouvert au public).
+</p>
+
+<p>
+Ce fonctionnement pyramidal a pour but de fournir une heure de qualité (déviant peu par rapport aux différentes mesures du temps, temps légal, universel et autre. Ces mesures sont fonction des lois de la physique.) tout en ne surchargeant pas les machines critiques que sont les serveurs de strates 0 et 1. Plus la strate de votre serveur est haute, plus votre signal de temps peut dévier par rapport à l&#039;heure &quot;moyenne&quot;, &quot;légale&quot; ou autre. Toutefois, globalement le protocole fournit un signal de temps précis à la seconde, voire encore plus précis.
+</p>
+
+<p>
+<strong>Cet article traite  l&#039;installation et de l&#039;utilisation d&#039;un serveur <abbr title="Network Time Protocol">NTP</abbr>.</strong>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="ntp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1405783799" /><input type="hidden" name="summary" value="[NTP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="52-1585" /><input type="submit" value="Modifier" class="button" title="NTP" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+<abbr title="Network Time Protocol">NTP</abbr> étant un protocole réseau, il vous faut une interface réseau active. Vous pouvez tout à fait diffuser un signal de temps sur un réseau <em>hors internet</em>. L&#039;horloge de référence sera celle du serveur ntp, celui-ci sera alors la strate 1 et sera uniquement serveur.
+</p>
+
+<p>
+Si toutefois vous voulez disposer d&#039;une heure synchrone avec le reste du monde, votre serveur ntp devra être à la fois serveur (pour diffuser l&#039;heure) <em>et</em> client (pour mettre sa propre horloge à jour auprès de serveurs de confiance). Pour ce faire, il doit disposer d&#039;une connexion internet sortante.
+</p>
+
+<p>
+De plus il faut que cette connexion sortante supporte UDP et le port 123. Ceci est rarement le cas derrière les hotspots wifi publiques par exemple. Dans une telle situation ntpdate donnera uniquement un message comme &quot;no server suitable for synchronization found&quot;.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="ntp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1405783799" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1586-2462" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Il vous suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">intaller le paquet</a> <strong><a href="apt://ntp" class="urlextern" title="apt://ntp"  rel="nofollow">ntp</a></strong>.
+</p>
+
+<p>
+Il existe aussi une implémentation <abbr title="Berkeley Software Distribution">BSD</abbr> du protocole qui est disponible sur Ubuntu via le paquet <a href="apt://openntpd" class="urlextern" title="apt://openntpd"  rel="nofollow">openntpd</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="ntp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1405783799" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2463-2717" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Toute la configuration du serveur se fait sur le fichier /etc/ntp.conf
+</p>
+<pre class="file">logfile /var/log/ntpstats/ntpd
+statsdir /var/log/ntpstats/
+statistics loopstats peerstats clockstats
+filegen loopstats file loopstats type day enable
+filegen peerstats file peerstats type day enable
+filegen clockstats file clockstats type day enable
+
+# Addresses to listen on (ntpd does not listen by default)
+listen on *
+#listen on 127.0.0.1
+#listen on ::1
+
+# sync to a single server
+#server ntp.example.org
+
+# use a random selection of 4 public stratum 2 servers
+# see http://twiki.ntp.org/bin/view/Servers/NTPPoolServers
+# and http://www.pool.ntp.org/
+server ntp.metas.ch
+server ntp.obspm.fr
+server ntp2.jussieu.fr
+server ntp.uvsq.fr
+server ntp.u-psud.fr
+server ntp1.belbone.be</pre>
+
+<p>
+Les premières lignes concernent les logs. N&#039;oubliez pas qu&#039;une des lignes <em>listen</em> doit être non-commentées ! Sinon il n&#039;attendra pas de requêtes !
+Les directives réellement importantes sont les <em>server</em>. Chacun de ces serveurs est une source de temps considérée comme fiable. Il n&#039;existe pas vraiment de règle sur le nombre de serveurs à utiliser, mais globalement, plus vous en mettez, plus votre signal sera stable car en cas de défaillance ou de chute d&#039;une des sources, votre serveur aura d&#039;autres serveurs à consulter.
+</p>
+
+<p>
+<p><div class="notetip">L&#039;auteur utilise deux types de sources : des serveurs proches de son domicile (Paris) pour battre la mesure et fournir l&#039;heure courante, et des serveurs étrangers qui permettent &quot;de s&#039;assurer que votre horloge ne s&#039;écarte pas trop du temps mondial&quot;. L&#039;auteur tient à dire que cette idée est hautement spéculative et qu&#039;il a d&#039;ailleurs du mal à la formuler. D&#039;autre part, il faut prendre gare à ce que les serveurs soient dans des pays ou des réseaux différents de façon que la chute d&#039;un réseau n&#039;affecte pas votre propre serveur, indépendamment de l&#039;état du serveur source.
+</div></p>
+</p>
+
+<p>
+Vous pouvez ajouter votre propre horloge système comme source de temps par le paramètre fudge :
+</p>
+<pre class="file">server 127.127.1.0
+fudge 127.127.1.0 stratum 10</pre>
+
+<p>
+Vous pouvez restreindre les clients (les ordinateurs autorisés à synchroniser leur horloge sur le serveur) :
+</p>
+<pre class="file">restrict default kod notrap nomodify nopeer noquery
+restrict 127.0.0.1 nomodify
+restrict 10.8.0.0 mask 255.255.255.0 nomodify notrap
+restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap</pre>
+
+<p>
+Le démon ntpd va de plus utiliser des algorithmes pour déterminer quelle source est la meilleure.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="ntp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1405783799" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2718-5241" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h2 class="sectionedit5" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+On va lister ici les commandes qui permettent un bon diagnostic de l&#039;état de votre serveur et qui sont fournies dans son paquet (ntp).
+</p>
+
+<p>
+La commande <strong>ntpq -p</strong> (ntp query) va permettre d&#039;interroger votre serveur.
+</p>
+<pre class="code">stephane@einstein:~$ ntpq -p
+     remote           refid      st t when poll reach   delay   offset  jitter
+==============================================================================
+ metasweb01.admi 162.23.3.170     2 u   60   64    7   50.108    3.427   3.519
+ syrte8.obspm.fr 195.220.94.163   2 u   58   64    7   28.572   -6.305   4.326
+ horlogegps.rese 10.3.128.189     2 u   56   64    7   28.010  -10.532   4.192
+ soleil.uvsq.fr  .INIT.          16 u    -   64    0    0.000    0.000   0.000
+ ntp.u-psud.fr   145.238.203.14   2 u   54   64    7   27.994   -7.168   4.741
+ ntp1.belbone.be 195.13.23.6      2 u   52   64    7   52.644   -4.681   4.627
+ web1.euromise.c 195.113.144.201  2 u   52   64    7   52.944   -3.416  24.792
+ 4504ds1-vo.1.fu .INIT.          16 u    -   64    0    0.000    0.000   0.000</pre>
+
+<p>
+Dans ce tableau, chaque ligne concerne un serveur. La première colonne indique le nom du serveur en question. La deuxième indique l&#039;adresse (ou le nom) de sa source de temps (un autre serveur de temps en général). La deuxième indique sa strate. Les colonnes suivantes concernent l&#039;algorithme d&#039;équilibrage du serveur (prise en compte de la distance de votre serveur à la source indiquée en première colonne…).
+Si vous avez que des 0 au niveau des colonnes delay offset jitter alors il y a un problème , vérifiez votre configuration.
+</p>
+
+<p>
+<p><div class="noteclassic">Il est important que les serveurs que vous sélectionnez comme sources utilisent eux même des sources différentes !
+</div></p>
+</p>
+
+<p>
+La commande ntptrace permet notamment de vous indiquer de façon certaine à quelle strate vous vous situez, ainsi que d&#039;autres, sont fournies dans le paquet. Vous êtes encouragés à décrire ici leur fonctionnement.
+</p>
+
+<p>
+Pour lancer, arrêter ou redémarrer votre serveur ntp, utilisez la commande service :
+</p>
+
+<p>
+lancement
+</p>
+<pre class="code">sudo service ntp start</pre>
+
+<p>
+arrêt
+</p>
+<pre class="code">sudo service ntp stop</pre>
+
+<p>
+redémarrage
+</p>
+<pre class="code">sudo service ntp restart</pre>
+
+<p>
+Pour utiliser votre serveur en tant que source pour les ordinateurs de votre réseau, reportez vous à l&#039;article <a href="ntpdate" class="wikilink1" title="ntpdate">ntpdate</a> et mettez son adresse en source dans le paramètre NTPSERVERS.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="ntp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1405783799" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5242-7633" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h3 class="sectionedit6" id="serveurs_ntp">Serveurs NTP</h3>
+<div class="level3">
+
+<p>
+Le Comité Réseau des Universités maintient une liste des grands serveurs ntp français <a href="http://www.cru.fr/services/ntp/serveurs_francais" class="urlextern" title="http://www.cru.fr/services/ntp/serveurs_francais"  rel="nofollow">ici</a>.<br/>
+
+Des serveurs de strate 2 sont aussi listés ici : <a href="http://support.ntp.org/bin/view/Servers/StratumTwoTimeServers" class="urlextern" title="http://support.ntp.org/bin/view/Servers/StratumTwoTimeServers"  rel="nofollow">serveurs ntp</a>.<br/>
+
+</p>
+
+<p>
+Ajoutez ici les serveurs que vous connaissez ou que vous rendez publics :
+</p>
+<ul>
+<li class="level1"><div class="li"> ntp.22decembre.eu</div>
+</li>
+<li class="level1"><div class="li"> pool.ntp.org</div>
+</li>
+<li class="level1"><div class="li"> ntp.ubuntu.com</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="ntp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1405783799" /><input type="hidden" name="summary" value="[Serveurs NTP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7634-8075" /><input type="submit" value="Modifier" class="button" title="Serveurs NTP" /></div></form></div>
+<h3 class="sectionedit7" id="le_pool_ntp">le pool NTP</h3>
+<div class="level3">
+
+<p>
+Le pool de serveurs ntp est un projet global qui vise à fournir un service ntp fiable tout en répartissant la charge du service sur de nombreux serveurs.
+</p>
+
+</div>
+
+<h4 id="utiliser_le_pool">Utiliser le pool</h4>
+<div class="level4">
+
+<p>
+Si vous le souhaitez, vous pouvez l&#039;utiliser dans votre liste de sources :
+</p>
+<dl class="file">
+<dt><a href="http://doc.ubuntu-fr.org/_export/code/ntp?codeblock=7" title="Télécharger un extrait" class="mediafile mf_conf">/etc/ntp.conf</a></dt>
+<dd><pre class="code file bash">server <span class="nu0">0</span>.fr.pool.ntp.org
+server <span class="nu0">1</span>.fr.pool.ntp.org</pre>
+</dd></dl>
+
+<p>
+Le service est décomposé en zones par pays : ch, de, fr … et par continent : asia, africa, europe. Enfin, vous ajoutez (ou non) les préfixes 0, 1 et 2.
+En général vous pouvez utiliser <strong>pool.ntp.org</strong>
+Le pool va vous renvoyer une adresse de serveur au hasard pris dans la zone considéré. Vous aurez ainsi souvent des sources près de chez vous et fiables.
+</p>
+
+</div>
+
+<h4 id="rejoindre_le_pool">Rejoindre le pool</h4>
+<div class="level4">
+
+<p>
+Si vous avez une IP fixe (et pas un client dyndns ou une ip dhcp par exemple), on vous encourage à rejoindre vous aussi le pool de serveurs ntp. La charge sur le serveur (bande passante et cpu) est très faible. Il vous suffit d&#039;avoir un serveur stable. Vous pouvez ainsi rendre un grand service à la communauté à peu de frais, y compris en tant que simple particulier.
+</p>
+
+<p>
+<a href="http://www.pool.ntp.org/fr/join.html" class="urlextern" title="http://www.pool.ntp.org/fr/join.html"  rel="nofollow">Rejoindre le pool</a>
+</p>
+
+<p>
+Il vous faut dans ce cas rendre votre serveur public. Si vous êtes derrière un pare-feu, il vous faut ouvrir le port ntp (normalement le 123).
+exemple pour <a href="http://doc.ubuntu-fr.org/ufw" class="wikilink1" title="ufw">ufw</a> :<br/>
+
+</p>
+<pre class="code">sudo ufw allow ntp</pre>
+
+<p>
+<br/>
+
+Si vous êtes derrière un routeur type box, il vous faut rediriger le port 123 de votre box vers le port 123 de votre serveur.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="ntp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1405783799" /><input type="hidden" name="summary" value="[le pool NTP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8076-9602" /><input type="submit" value="Modifier" class="button" title="le pool NTP" /></div></form></div>
+<h2 class="sectionedit8" id="liens">Liens</h2>
+<div class="level2">
+
+<p>
+* <a href="http://fr.wikipedia.org/wiki/Network_Time_Protocol" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Network_Time_Protocol">le protocole ntp sur wikipedia</a><br/>
+
+</p>
+
+<p>
+* <a href="http://www.pool.ntp.org/zone/fr" class="urlextern" title="http://www.pool.ntp.org/zone/fr"  rel="nofollow">le pool ntp fr</a>
+</p>
+
+<p>
+* <a href="http://www.it-connect.fr/configurer-un-client-ntp-sous-linux/" class="urlextern" title="http://www.it-connect.fr/configurer-un-client-ntp-sous-linux/"  rel="nofollow">Configurer un client NTP sous Linux</a>
+</p>
+<hr />
+
+<p>
+Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/stephaneguedon" class="wikilink1" title="utilisateurs:stephaneguedon">stephaneguedon</a> , <a href="http://doc.ubuntu-fr.org/utilisateurs/wido" class="wikilink1" title="utilisateurs:wido">wido</a>, M4T
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="ntp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1405783799" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9603-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/2e11197e53b4564205565a12c52435bb.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/ntp?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/ntp?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/ntp?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/ntp?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/ntp?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

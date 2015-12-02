@@ -1,0 +1,47 @@
+{{tag>réseau administration vétuste}}
+
+----
+
+
+PPTP (Point-to-point tunneling protocol) est un protocole d'encapsulation PPP sur IP conçu par Microsoft, permettant la mise en place de réseaux privés virtuels (VPN) au-dessus d'un réseau public. Layer 2 Tunneling Protocol (L2TP) et IPsec sont des protocoles inspirés de PPTP et chargés de le remplacer.
+
+En français, PPTP signifie protocole de tunnel point-à-point.
+
+====== Installation du support de PPTP dans le Network Manager sous Feisty Fawn ======
+
+[[:tutoriel:comment_installer_un_paquet|Installez le paquet]] **[[apt://network-manager-pptp]]**.
+
+  sudo apt-get install network-manager-pptp
+
+Une fois le paquet installé via la ligne de commande, nous allons redémarrer uniquement les deux services réseaux ci-dessous afin d'éviter un redémarrage intégral de la machine. Sans cette opération, la prise en compte du paquet installé ci-dessous ne sera effectuée qu'au prochain redémarrage de la machine.
+
+  sudo /etc/dbus-1/event.d/25NetworkManager restart
+  sudo /etc/dbus-1/event.d/26NetworkManagerDispatcher restart
+
+Une fois l'installation réalisée, il suffit de cliquer sur l'applet du //Network Manager// qui se trouve sur la barre de menu (systray) en haut à droite avec le bouton gauche de la souris((FIXME il n'y a pas un cheminement du genre Systeme => Préférences...etc ?)) :
+
+Système -> Administration -> Réseau
+
+Choisir l'option Connexion VPN puis Configurer le réseau VPN pour créer la connexion VPN en cliquant sur le bouton Ajouter et en répondant au question de l'assistant.((FIXME Un peu d'explication ne ferait pas de mal non plus ici.))
+
+Pour un complément (et troubleshooting) voir le site en anglais :
+[[https://help.ubuntu.com/community/VPNClient]]
+
+
+
+Pour une installation d'un serveur PPTP sous 12.04 LTS il suffit d'installer le paquet pptpd.
+
+[[:tutoriel:comment_installer_un_paquet|Installez le paquet]] **[[apt://pptpd]]**.
+
+  sudo apt-get install pptpd
+
+Le daemon sera automatiquement lancé après l'installation.
+
+Pour afficher toutes commandes et les configuration possible :
+
+  pptpd --help
+
+<note tip>Un pulgin Webmin est installé mais désactive par défaut, qui permet de configurer PPTPD.</note>
+----
+
+//Contributeur : [[:utilisateurs:nicolebot]], [[:utilisateurs:apokalypse]], [[:utilisateurs:fullme]]//

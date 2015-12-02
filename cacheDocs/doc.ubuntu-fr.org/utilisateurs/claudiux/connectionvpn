@@ -1,0 +1,825 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>utilisateurs:claudiux:connectionvpn - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2011-05-01T02:40:24+0200"/>
+<meta name="keywords" content="karmic,reseau,internet,vpn,openvpn,tutoriel,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="connectionvpn?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns=utilisateurs:claudiux"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="../../_export/xhtml/utilisateurs/claudiux/connectionvpn"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../_export/raw/utilisateurs/claudiux/connectionvpn"/>
+<link rel="canonical" href="connectionvpn"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='utilisateurs:claudiux';var JSINFO = {"id":"utilisateurs:claudiux:connectionvpn","namespace":"utilisateurs:claudiux"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="connectionvpn#main" tabindex="1">Contenu</a> | <a href="connectionvpn#qsearch__in" tabindex="2">Rechercher</a> | <a href="connectionvpn#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="connectionvpn" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="connectionvpn" >utilisateurs:claudiux:connectionvpn</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="connectionvpn#pre-requis">Pré-requis</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="connectionvpn#paquets_necessaires">Paquets nécessaires</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#inscription_a_un_service">Inscription à un service</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#ouverture_du_firewall">Ouverture du firewall</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#redirection_natage_de_port_sur_votre_routeur_ou_votre_box">Redirection (NATage) de port sur votre routeur (ou votre Box)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="connectionvpn#le_fichier_clientovpn_de_depart">Le fichier client.ovpn de départ</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="connectionvpn#exemple_de_fichier_clientovpn">Exemple de fichier client.ovpn</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#utilisation_directe">Utilisation directe</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#test_de_la_connexion_vpn">Test de la connexion VPN</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#cloture_de_la_connexion_vpn">Clôture de la connexion VPN</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="connectionvpn#les_fichiers_a_creer">Les fichiers à créer</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="connectionvpn#le_fichier_clientconf">Le fichier client.conf</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#le_fichier_cacrt">Le fichier ca.crt</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#le_fichier_clientcrt">Le fichier client.crt</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#le_fichier_clientkey">Le fichier client.key</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#le_fichier_takey">Le fichier ta.key</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#le_fichier_authconf_optionnel">Le fichier auth.conf (optionnel)</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#test_de_votre_configuration">Test de votre configuration</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="connectionvpn#protection_des_fichiers">Protection des fichiers</a></div></li>
+<li class="level1"><div class="li"><a href="connectionvpn#utilisation_avec_le_network_manager">Utilisation avec le Network Manager</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="connectionvpn#importation_de_clientconf">Importation de client.conf</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#parametres_avances">Paramètres avancés</a></div></li>
+<li class="level2"><div class="li"><a href="connectionvpn#connexion_par_le_network_manager">Connexion par le Network Manager</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="connectionvpn#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">Karmic</a>,
+	<a href="../../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../../internet" class="wikilink1" title="internet" rel="tag">internet</a>,
+	<a href="http://doc.ubuntu-fr.org/vpn" class="wikilink1" title="vpn" rel="tag">vpn</a>,
+	<a href="http://doc.ubuntu-fr.org/openvpn" class="wikilink1" title="openvpn" rel="tag">openvpn</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+
+<h1 class="sectionedit1" id="connection_vpn">Connection VPN</h1>
+<div class="level1">
+
+<p>
+Ce tutoriel décrit comment utiliser le <em>Network Manager</em> de Gnome pour paramétrer correctement une connexion <abbr title="Virtual Private Network">VPN</abbr>, de type OpenVPN, en utilisant un service généralement payant (environ 5€/mois), comme <a href="https://connectionvpn.com/fr" class="urlextern" title="https://connectionvpn.com/fr"  rel="nofollow">connectionvpn.com</a>. 
+</p>
+
+<p>
+<p><div class="noteclassic">Je n&#039;ai pas d&#039;actions dans cette boîte, mais j&#039;ai tellement galéré pour paramétrer ce <abbr title="Virtual Private Network">VPN</abbr> que j&#039;ai pensé que cela méritait un tutoriel.
+</div></p>
+</p>
+
+<p>
+<p><div class="noteclassic">Merci beaucoup <em>claudiux</em> d&#039;avoir pris le temps de créer ce guide très détaillé! Nous allons le mettre en lien sur notre site, et nous pensons également fournir sous peu une technique plus simple pour accomplir cela.  - L&#039;équipe de <a href="https://connectionvpn.com/fr" class="urlextern" title="https://connectionvpn.com/fr"  rel="nofollow">ConnexionVPN.com</a>
+</div></p>
+</p>
+
+</div>
+
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit3" id="paquets_necessaires">Paquets nécessaires</h3>
+<div class="level3">
+
+<p>
+Vous devez <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer les paquets</a> <strong><a href="apt://openvpn" class="urlextern" title="apt://openvpn"  rel="nofollow">openvpn</a></strong> et <strong><a href="apt://network-manager-openvpn" class="urlextern" title="apt://network-manager-openvpn"  rel="nofollow">network-manager-openvpn</a></strong> disponibles dans les dépôts officiels.
+</p>
+
+</div>
+
+<h3 class="sectionedit4" id="inscription_a_un_service">Inscription à un service</h3>
+<div class="level3">
+
+<p>
+Vous devez vous inscrire chez un prestataire de service proposant un <abbr title="Virtual Private Network">VPN</abbr> de type <strong>OpenVPN</strong>. Vous trouverez une liste de prestataires, gratuits ou payants, sur <a href="http://free.korben.info/index.php/VPN#Liste_de_VPN" class="urlextern" title="http://free.korben.info/index.php/VPN#Liste_de_VPN"  rel="nofollow">Free.Korben</a>.
+</p>
+
+<p>
+Attention, certains prestataires refusent le P2P, ou le rendent impossible par des déconnexions toutes les 20 minutes ! D&#039;autres refusent de fournir une assistance pour les <abbr title="Operating System">OS</abbr> de type Linux (j&#039;ai eu une mauvaise expérience avec <del><a href="http://www.hidemynet.com/" class="urlextern" title="http://www.hidemynet.com/"  rel="nofollow">HideMyNet.com</a></del>). Renseignez-vous avant de faire votre choix.
+</p>
+
+</div>
+
+<h3 class="sectionedit5" id="ouverture_du_firewall">Ouverture du firewall</h3>
+<div class="level3">
+
+<p>
+Vous devrez pour les tests :
+</p>
+<ul>
+<li class="level1"><div class="li"> soit désactiver complètement votre pare-feu (dangereux !),</div>
+</li>
+<li class="level1"><div class="li"> soit autoriser tout ce qui passe par la connexion <abbr title="Virtual Private Network">VPN</abbr> ; vous pourrez affiner cela plus tard.</div>
+</li>
+</ul>
+
+<p>
+Si vous utilisez FireStarter pour gérer votre pare-feu, il vous faut alors inscrire les lignes suivantes dans le fichier <code>/etc/firestarter/user-pre</code>:
+</p>
+<pre class="code"># Autoriser tout traffic sur l&#039;interface OpenVPN
+$IPT -A INPUT -i tun+ -j ACCEPT
+$IPT -A OUTPUT -o tun+ -j ACCEPT</pre>
+
+</div>
+
+<h3 class="sectionedit6" id="redirection_natage_de_port_sur_votre_routeur_ou_votre_box">Redirection (NATage) de port sur votre routeur (ou votre Box)</h3>
+<div class="level3">
+
+<p>
+Pour le service connectionVPN.com, vous devrez rediriger le port 443 (UDP) vers votre ordinateur. 
+</p>
+
+<p>
+Pour les autres services, consultez leur F.A.Q.
+</p>
+
+<p>
+Consultez la documentation de votre routeur ou de votre Box.
+</p>
+
+</div>
+
+<h2 class="sectionedit7" id="le_fichier_clientovpn_de_depart">Le fichier client.ovpn de départ</h2>
+<div class="level2">
+
+<p>
+Une fois inscrit auprès d&#039;un prestataire de service <abbr title="Virtual Private Network">VPN</abbr>, vous recevrez par e-mail, ou vous téléchargerez, un fichier <code>client.ovpn</code> personnalisé, <strong>que vous enregistrerez dans un dossier qui ne contiendra que lui</strong>, du moins au départ.
+</p>
+
+<p>
+<p><div class="noteimportant">Ne communiquez jamais ce fichier à personne ! Ne le modifiez jamais ! Enregistrez-le dans un endroit sûr, et donnez-lui les <a href="http://doc.ubuntu-fr.org/droits#les_permissions" class="urlextern" title="http://doc.ubuntu-fr.org/droits#les_permissions"  rel="nofollow">permissions</a> d&#039;accès suivantes : lecture seule pour vous, aucun accès ni pour votre groupe ni pour les autres.
+</div></p>
+</p>
+
+</div>
+
+<h3 class="sectionedit8" id="exemple_de_fichier_clientovpn">Exemple de fichier client.ovpn</h3>
+<div class="level3">
+
+<p>
+Votre fichier <em>client.ovpn</em> ressemble à cela : 
+</p>
+<pre class="code"># Automatically generated OpenVPN client config file
+# Generated on &lt;la_date&gt; by &lt;un_serveur_du_prestataire_vpn&gt;
+# Note: this config file contains inline private keys
+#       and therefore should be kept confidential!
+# Note: this configuration is user-locked to the username below
+# OVPN_ACCESS_SERVER_USERNAME=&lt;votre_identifiant_vpn&gt;
+# Define the profile name of this particular configuration file
+# OVPN_ACCESS_SERVER_PROFILE=&lt;votre_identifiant_vpn&gt;@&lt;serveur_vpn&gt;
+# OVPN_ACCESS_SERVER_WSHOST=&lt;serveur_vpn&gt;:&lt;port&gt;
+# OVPN_ACCESS_SERVER_WEB_CA_BUNDLE_START
+# -----BEGIN CERTIFICATE-----
+# &lt;ici un certificat&gt;
+# -----END CERTIFICATE-----
+# OVPN_ACCESS_SERVER_WEB_CA_BUNDLE_STOP
+# OVPN_ACCESS_SERVER_IS_OPENVPN_WEB_CA=1
+client
+proto udp
+nobind
+remote &lt;serveur_vpn&gt;
+port &lt;port&gt;
+dev tun
+dev-type tun
+ns-cert-type server
+reneg-sec 86400
+auth-user-pass
+auth-retry interact
+comp-lzo no
+verb 3
+
+&lt;ca&gt;
+-----BEGIN CERTIFICATE-----
+ &lt;ici le certificat ca&gt;
+-----END CERTIFICATE-----
+&lt;/ca&gt;
+
+&lt;cert&gt;
+-----BEGIN CERTIFICATE-----
+ &lt;ici le certificat cert&gt;
+-----END CERTIFICATE-----
+&lt;/cert&gt;
+
+&lt;key&gt;
+-----BEGIN RSA PRIVATE KEY-----
+ &lt;ici la clé privée key&gt;
+-----END RSA PRIVATE KEY-----
+&lt;/key&gt;
+
+key-direction 1
+&lt;tls-auth&gt;
+#
+# 2048 bit OpenVPN static key (Server Agent)
+#
+-----BEGIN OpenVPN Static key V1-----
+ &lt;ici la clé ta&gt;
+-----END OpenVPN Static key V1-----
+&lt;/tls-auth&gt;
+
+# -----BEGIN RSA SIGNATURE-----
+ &lt;ici la signature de ce fichier&gt;
+# -----END RSA SIGNATURE-----</pre>
+
+</div>
+
+<h3 class="sectionedit9" id="utilisation_directe">Utilisation directe</h3>
+<div class="level3">
+
+<p>
+Vous pouvez utiliser directement ce fichier pour établir votre connexion, afin de la tester. Pour ce faire, entrez dans un terminal :
+</p>
+<pre class="code">sudo openvpn --config /chemin/vers/client.ovpn</pre>
+
+<p>
+Il vous sera demandé votre mot de passe local (pour <code>sudo</code>, sauf si vous avez &quot;sudoé&quot; il y a moins de 5 minutes), puis votre identifiant auprès du serveur, et enfin votre mot de passe auprès du serveur (ceux avec lesquels vous vous êtes inscrit auprès du prestataire de service <abbr title="Virtual Private Network">VPN</abbr>).
+</p>
+
+</div>
+
+<h3 class="sectionedit10" id="test_de_la_connexion_vpn">Test de la connexion VPN</h3>
+<div class="level3">
+
+<p>
+Ouvrez votre navigateur favori sur <a href="http://www.hostip.fr/" class="urlextern" title="http://www.hostip.fr/"  rel="nofollow">www.hostip.fr</a>. Ne hurlez pas de joie, vous allez réveiller les voisins !
+</p>
+
+</div>
+
+<h3 class="sectionedit11" id="cloture_de_la_connexion_vpn">Clôture de la connexion VPN</h3>
+<div class="level3">
+
+<p>
+Tapez Ctrl-C dans le terminal, ou fermez ce dernier. Rechargez la page <a href="http://www.hostip.fr/" class="urlextern" title="http://www.hostip.fr/"  rel="nofollow">www.hostip.fr</a>, vous voici à nouveau dans le giron de votre fournisseur d&#039;accès.
+</p>
+
+</div>
+
+<h2 class="sectionedit12" id="les_fichiers_a_creer">Les fichiers à créer</h2>
+<div class="level2">
+
+<p>
+Nous devons transformer le fichier <code>client.ovpn</code> en une série de fichiers lisibles par le <em>Network Manager</em>.
+</p>
+
+</div>
+
+<h3 class="sectionedit13" id="le_fichier_clientconf">Le fichier client.conf</h3>
+<div class="level3">
+
+<p>
+Copiez le fichier <code>/usr/share/doc/openvpn/examples/sample-config-files/client.conf</code> dans le dossier contenant le fichier <code>client.ovpn</code>. Ouvrez ces deux fichiers, <code>client.conf</code> et <code>client.ovpn</code>, dans <em>gedit</em>.
+</p>
+
+<p>
+Il vous faut adapter le contenu de <code>client.conf</code> en tenant compte des données de <code>client.ovpn</code>, <strong>mais sans jamais y copier un certificat ou une clé</strong>.
+</p>
+
+<p>
+Vous devez obtenir un fichier <code>client.conf</code> analogue à ceci (vous avez certainement modifié les données marquées par &lt; et &gt;) :
+</p>
+<pre class="code">###################################################################
+# Exemple de fichier de configuration d&#039;un client OpenVPN 2.0     #
+# pour se connecter à un serveur multi-client.                    #
+#                                                                 #
+# Cette configuration peut être utilisée par plusieurs clients,   #
+# chaque client devant posséder ses propres fichiers de clé (key) #
+# et de certificat (cert).                                        #
+#                                                                 #
+# Sous Windows, vous pourriez avoir à renommer ce fichier pour    #
+# qu&#039;il ait une extension .ovpn                                   #
+###################################################################
+
+# Préciser que nous sommes un client et que nous allons accepter
+# certaines directives de configuration de la part du serveur.
+client
+
+# Nous connectons-nous à un serveur utilisant le protocole 
+# TCP ou UDP ?
+;proto tcp
+proto udp
+
+# La plupart des clients n&#039;ont pas besoin de lier (bind) leur 
+# connection à un numéro de port spécifique.
+nobind
+
+# Le nom complet (ou l&#039;IP) et le port du serveur.
+# Vous pouvez indiquer plusieurs serveurs (s&#039;ils existent) pour
+# une répartition de charge.
+remote &lt;serveur_vpn&gt; &lt;port&gt;
+;remote my-server-2 1194
+
+# Choisir un serveur au hasard dans la liste ci-dessus.
+# Sinon, essayer les serveurs dans l&#039;ordre de la liste.
+;remote-random
+
+# Type d&#039;interface utilisée (tap/tun, idem que sur le serveur).
+# Remarque : sur la plupart des systèmes, le VPN ne fonctionnera
+# pas si vous ne désactivez pas partiellement ou complètement
+# le pare-feu pour cette interface tun/tap.
+;dev tap
+dev tun
+dev-type tun
+
+# keepalive 10 60 et ping-timer-rem, servent à tester régulierement
+# la connexion pour la relancer si elle semble coupée. 
+;keepalive 10 60
+;ping-timer-rem
+    
+# Vérifier que le certificat du serveur a bien son champ nsCertType
+# mis à &quot;server&quot;. C&#039;est une protection nécessaire contre des
+# attaques potentielles, dont il est question sur :
+#  http://openvpn.net/howto.html#mitm
+#
+# Pour que cette protection soit effective, le serveur doit avoir
+# généré son certificat avec un champ nsCertType mis à &quot;server&quot;.
+# (Le script build-key-server du dossier easy-rsa permet de le faire.)
+ns-cert-type server
+
+# Temps entre chaque régénération de clé (en sec. ; 86400 sec = 24 h)
+reneg-sec 86400
+
+# L&#039;utilisateur doit s&#039;authentifier par identifiant/mot de passe.
+# Si on ajoute un nom de fichier (auth.conf) contenant 2 lignes,
+# la première l&#039;identifiant, la seconde le mot de passe, l&#039;utilisateur
+# n&#039;aura plus à les indiquer à chaque démarrage.
+# Attention le fichier auth.conf doit avoir les droits 400 (lecture
+# pour le propriétaire, aucun droit pour tous les autres).
+;auth-user-pass auth.conf
+auth-user-pass
+
+# En cas d&#039;échec de l&#039;authentification :
+# - nouvel essai interactif (interact) : l&#039;utilisateur doit entrer 
+# lui-même son identifiant et son mot de passe ;
+# - nouvel essai non-interactif (nointeract) : avec les données du
+# fichier auth.conf ;
+# - pas de nouvel essai (none).
+;auth-retry none
+;auth-retry nointeract
+auth-retry interact
+
+# Active la compression des données sur le lien VPN.
+# Ne pas activer sauf si ça l&#039;est dans la configuration du serveur.
+;comp-lzo
+comp-lzo no
+
+# Essayer indéfiniment de résoudre le nom d&#039;hôte du serveur OpenVPN.
+# Très utile sur les ordinateurs qui ne sont pas connectés en permanence
+# à internet, comme les portables.
+resolv-retry infinite
+
+# Abaisser le niveau de privilège du démon après l&#039;initialisation de
+# la connexion (pas pour Windows).
+;user nobody
+;group nogroup
+
+# En cas de redémarrage de la connexion, on tente de préserver les états
+# de la clé (ne pas la relire) et de l&#039;interface tun (ne pas la désactiver
+# pour la réactiver ensuite).
+persist-key
+persist-tun
+
+# Si votre connexion passe par un proxy HTTP, pour joindre le serveur OpenVPN,
+# indiquer ici son nom (ou son IP) et son numéro de port.
+# Cf. la man-page si votre proxy requiert une authentification.
+;http-proxy-retry # ré-essayer en cas d&#039;erreur de connexion.
+;http-proxy [proxy server] [proxy port #]
+
+# Paramètres SSL/TLS.
+# Cf. la configuration du serveur OpenVPN.
+# Il est préférable d&#039;utiliser une paire de fichiers .crt/.key particulière à
+# chaque client. Un seul et même fichier ca peut être distribué à tous les les
+# clients.
+ca ca.crt
+cert client.crt
+key client.key
+
+# Si une clé tls-auth est requise par le serveur, chaque client doit posséder
+# cette clé. Le numéro qui suit le nom du fichier (ta.key) est en général 0
+# sur le serveur et 1 sur le client.
+tls-auth ta.key 1
+
+# Fichier de log
+log /var/log/openvpn.log
+
+# Verbosité du fichier de log.
+# Niveau 3 pour le debugging.
+# Niveau 1 suffisant lorsque tout fonctionne.
+verb 3
+
+# Au plus 20 messages identiques à la suite dans le fichier de log.
+;mute 20
+
+# Les connexions WiFi (si vous en utilisez une) produisent souvent de nombreux
+# doublons de paquets. Activer cette option pour ne pas signaler ces doublons.
+;mute-replay-warnings
+
+# C&#039;est pour Windows, on s&#039;en TAPe ! ;-)
+# Windows needs the TAP-Win32 adapter name
+# from the Network Connections panel
+# if you have more than one.  On XP SP2,
+# you may need to disable the firewall
+# for the TAP adapter.
+;dev-node MyTap</pre>
+
+</div>
+
+<h3 class="sectionedit14" id="le_fichier_cacrt">Le fichier ca.crt</h3>
+<div class="level3">
+
+<p>
+Copiez les lignes du fichier <code>client.ovpn</code> comprises entre les lignes <code>&lt;ca&gt;</code> et <code>&lt;/ca&gt;</code> dans un fichier que vous nommerez <code>ca.crt</code>.
+</p>
+
+<p>
+Exemple de fichier <code>ca.crt</code> : 
+</p>
+<pre class="code">-----BEGIN CERTIFICATE-----
+ici le certificat, sur plusieurs lignes
+-----END CERTIFICATE-----</pre>
+
+</div>
+
+<h3 class="sectionedit15" id="le_fichier_clientcrt">Le fichier client.crt</h3>
+<div class="level3">
+
+<p>
+Copiez les lignes du fichier <code>client.ovpn</code> comprises entre les lignes <code>&lt;cert&gt;</code> et <code>&lt;/cert&gt;</code> dans un fichier que vous nommerez <code>client.crt</code>.
+</p>
+
+<p>
+Exemple de fichier <code>client.crt</code> : 
+</p>
+<pre class="code">-----BEGIN CERTIFICATE-----
+ici le certificat, sur plusieurs lignes
+-----END CERTIFICATE-----</pre>
+
+</div>
+
+<h3 class="sectionedit16" id="le_fichier_clientkey">Le fichier client.key</h3>
+<div class="level3">
+
+<p>
+Copiez les lignes du fichier <code>client.ovpn</code> comprises entre les lignes <code>&lt;key&gt;</code> et <code>&lt;/key&gt;</code> dans un fichier que vous nommerez <code>client.key</code>.
+</p>
+
+<p>
+Exemple de fichier <code>client.key</code> : 
+</p>
+<pre class="code">-----BEGIN RSA PRIVATE KEY-----
+ici la clé privée RSA, sur plusieurs lignes
+-----END RSA PRIVATE KEY-----</pre>
+
+</div>
+
+<h3 class="sectionedit17" id="le_fichier_takey">Le fichier ta.key</h3>
+<div class="level3">
+
+<p>
+Copiez les lignes du fichier <code>client.ovpn</code> comprises entre les lignes <code>&lt;tls-auth&gt;</code> et <code>&lt;/tls-auth&gt;</code> dans un fichier que vous nommerez <code>ta.key</code>.
+</p>
+
+<p>
+Exemple de fichier <code>ta.key</code> : 
+</p>
+<pre class="code">#
+# 2048 bit OpenVPN static key (Server Agent)
+#
+-----BEGIN OpenVPN Static key V1-----
+ici la clé TLS-AUTH, sur plusieurs lignes
+-----END OpenVPN Static key V1-----</pre>
+
+</div>
+
+<h3 class="sectionedit18" id="le_fichier_authconf_optionnel">Le fichier auth.conf (optionnel)</h3>
+<div class="level3">
+
+<p>
+Vous pouvez créer, si vous êtes certain de la sécurité de votre poste, un fichier <code>auth.conf</code> ne contenant que 2 lignes. La première ligne contient votre identifiant auprès du serveur <abbr title="Virtual Private Network">VPN</abbr>, la seconde ligne contient le mot de passe (en clair).
+</p>
+
+<p>
+Pensez alors à transformer, dans votre fichier <strong><code>client.conf</code></strong> (pas <code>client.ovpn</code>!), l&#039;option 
+</p>
+<pre class="code">auth-user-pass</pre>
+
+<p>
+en :
+</p>
+<pre class="code">auth-user-pass auth.conf</pre>
+
+</div>
+
+<h3 class="sectionedit19" id="test_de_votre_configuration">Test de votre configuration</h3>
+<div class="level3">
+
+<p>
+Faites le même test que précédemment, mais avec votre fichier <code>client.conf</code> :
+</p>
+<pre class="code">sudo openvpn --config /chemin/vers/client.conf</pre>
+
+<p>
+Si cela ne fonctionne pas, consultez le fichier <code>/var/log/syslog</code> ou <code>/var/log/openvpn.log</code>.
+</p>
+
+</div>
+
+<h2 class="sectionedit20" id="protection_des_fichiers">Protection des fichiers</h2>
+<div class="level2">
+
+<p>
+Les fichiers que vous avez créés, et le fichier <code>client.ovpn</code>, contiennent tous des données sensibles ! Vous devez les protéger en interdisant aux autres de les lire ou de les modifier. Pour ce faire, soit vous utilisez le navigateur de fichiers Nautilus (sélection des fichiers, clic-droit, Propriétés, onglet Permissions), soit vous utilisez la commande :
+</p>
+<pre class="code">chmod 600 client.* *.key *.crt</pre>
+
+<p>
+Voire, une fois les fichiers définitivement mis au point, vous pouvez les mettre en lecture seule :
+</p>
+<pre class="code">chmod 400 client.* *.key *.crt</pre>
+
+</div>
+
+<h2 class="sectionedit21" id="utilisation_avec_le_network_manager">Utilisation avec le Network Manager</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit22" id="importation_de_clientconf">Importation de client.conf</h3>
+<div class="level3">
+
+<p>
+Ouvrez l&#039;application <strong>Connexions Réseau</strong> (menu <em>Système / Préférences</em>), et placez-vous dans l&#039;onglet <strong><abbr title="Virtual Private Network">VPN</abbr></strong>. Importez alors votre fichier <code>client.conf</code>.
+</p>
+
+<p>
+<a href="../../lib/exe/fetch.php?tok=60a85a&amp;media=http%253A%252F%252Fimg13.imageshack.us%252Fimg13%252F9320%252Fcaptureconnexionsrseau.png" class="media" title="http://img13.imageshack.us/img13/9320/captureconnexionsrseau.png"><img src="../../lib/exe/fetch.php?tok=60a85a&amp;media=http%253A%252F%252Fimg13.imageshack.us%252Fimg13%252F9320%252Fcaptureconnexionsrseau.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Une fenêtre s&#039;ouvre comme celle ci-dessous. Renseignez correctement les champs textuels, et sélectionnez les fichiers Certificat de l&#039;utilisateur (client.crt), Certificat du CA (ca.crt), Clé privée (client.key). <strong>Décochez</strong> <em>Connecter automatiquement</em> et <em>Disponible pour tous les utilisateurs</em>.
+</p>
+
+<p>
+<a href="../../lib/exe/fetch.php?tok=ec2ec7&amp;media=http%253A%252F%252Fimg88.imageshack.us%252Fimg88%252F9710%252Fcapturemodificationdeco.png" class="media" title="http://img88.imageshack.us/img88/9710/capturemodificationdeco.png"><img src="../../lib/exe/fetch.php?tok=ec2ec7&amp;media=http%253A%252F%252Fimg88.imageshack.us%252Fimg88%252F9710%252Fcapturemodificationdeco.png" class="media" alt="" /></a>
+</p>
+
+</div>
+
+<h3 class="sectionedit23" id="parametres_avances">Paramètres avancés</h3>
+<div class="level3">
+
+<p>
+Cliquez sur Avancé… : 
+</p>
+
+</div>
+
+<h4 id="onglet_general">Onglet Général</h4>
+<div class="level4">
+
+<p>
+<a href="../../lib/exe/fetch.php?tok=e046b5&amp;media=http%253A%252F%252Fimg683.imageshack.us%252Fimg683%252F5323%252Fcaptureoptionsavanceeso.png" class="media" title="http://img683.imageshack.us/img683/5323/captureoptionsavanceeso.png"><img src="../../lib/exe/fetch.php?tok=e046b5&amp;media=http%253A%252F%252Fimg683.imageshack.us%252Fimg683%252F5323%252Fcaptureoptionsavanceeso.png" class="media" alt="" /></a>
+</p>
+
+</div>
+
+<h4 id="onglet_securite">Onglet Sécurité</h4>
+<div class="level4">
+
+<p>
+Scrutez ce que vous a raconté openvpn, lors de vos tests, pour renseigner les champs <em>Chiffrement</em> et <em>Authentification HMAC</em>.
+</p>
+
+<p>
+<a href="../../lib/exe/fetch.php?tok=ead5e2&amp;media=http%253A%252F%252Fimg684.imageshack.us%252Fimg684%252F5323%252Fcaptureoptionsavanceeso.png" class="media" title="http://img684.imageshack.us/img684/5323/captureoptionsavanceeso.png"><img src="../../lib/exe/fetch.php?tok=ead5e2&amp;media=http%253A%252F%252Fimg684.imageshack.us%252Fimg684%252F5323%252Fcaptureoptionsavanceeso.png" class="media" alt="" /></a>
+</p>
+
+</div>
+
+<h4 id="onglet_authentification_tls">Onglet Authentification TLS</h4>
+<div class="level4">
+
+<p>
+Sélectionnez votre fichier <code>ta.key</code>. Direction de la clé : 1, en général.
+</p>
+
+<p>
+<a href="../../lib/exe/fetch.php?tok=c12a11&amp;media=http%253A%252F%252Fimg210.imageshack.us%252Fimg210%252F5323%252Fcaptureoptionsavanceeso.png" class="media" title="http://img210.imageshack.us/img210/5323/captureoptionsavanceeso.png"><img src="../../lib/exe/fetch.php?tok=c12a11&amp;media=http%253A%252F%252Fimg210.imageshack.us%252Fimg210%252F5323%252Fcaptureoptionsavanceeso.png" class="media" alt="" /></a>
+</p>
+
+</div>
+
+<h3 class="sectionedit24" id="connexion_par_le_network_manager">Connexion par le Network Manager</h3>
+<div class="level3">
+
+<p>
+Assurez-vous de ne pas être connecté à votre <abbr title="Virtual Private Network">VPN</abbr> (fermez votre terminal de test).
+</p>
+
+<p>
+En cliquant sur le Network Manager de votre tableau de bord, vous voyez apparaître le menu <em>Connexions <abbr title="Virtual Private Network">VPN</abbr></em>. Sélectionnez votre connexion. L&#039;icone de connexion s&#039;anime ; lorsqu&#039;un cadenas fixe (non-animé) y est aposé, cela signifie que votre connexion <abbr title="Virtual Private Network">VPN</abbr> est active.
+</p>
+
+<p>
+<a href="../../lib/exe/fetch.php?tok=7eef19&amp;media=http%253A%252F%252Fimg40.imageshack.us%252Fimg40%252F6532%252Fcapturenetworkmanager.png" class="media" title="http://img40.imageshack.us/img40/6532/capturenetworkmanager.png"><img src="../../lib/exe/fetch.php?tok=7eef19&amp;media=http%253A%252F%252Fimg40.imageshack.us%252Fimg40%252F6532%252Fcapturenetworkmanager.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Vous pouvez également vous déconnecter par le Network Manager : <em>Connexions <abbr title="Virtual Private Network">VPN</abbr> / Déconnecter le <abbr title="Virtual Private Network">VPN</abbr></em>.
+</p>
+
+<p>
+<p><div class="notetip">Si vous ne voyez pas l&#039;icône du Network Manager apparaître sur votre tableau de bord, clic-droit sur ce dernier, et ajoutez-y une <strong>zone de notification</strong> (dernier choix de la liste).
+</div></p>
+</p>
+
+</div>
+
+<h2 class="sectionedit25" id="liens">Liens</h2>
+<div class="level2">
+
+<p>
+Liens internes
+</p>
+<ul>
+<li class="level1"><div class="li"> Tout ce qui concerne <a href="../../index.html?do=search&amp;id=openvpn" class="urlextern" title="http://doc.ubuntu-fr.org/?do=search&amp;id=openvpn"  rel="nofollow">OpenVPN sur doc.ubuntu-fr.org</a>.</div>
+</li>
+</ul>
+
+<p>
+Liens externes
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.deimos.fr/blocnotesinfo/index.php?title=OpenVPN_:_Mise_en_place_d%27OpenVPN_sur_diff%C3%A9rentes_plateformes" class="urlextern" title="http://www.deimos.fr/blocnotesinfo/index.php?title=OpenVPN_:_Mise_en_place_d%27OpenVPN_sur_diff%C3%A9rentes_plateformes"  rel="nofollow">Mise en place d&#039;OpenVPN sur différentes plateformes</a></div>
+</li>
+</ul>
+
+<p>
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+<hr />
+
+<p>
+<em>Contributeur principal : <a href="../claudiux" class="wikilink1" title="utilisateurs:claudiux">Claudiux</a>
+</p>
+
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/4/4922ab448ba76bda04d9bf5c0b142800.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="connectionvpn?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="connectionvpn?do=edit&amp;rev=0"  class="action source" accesskey="v" rel="nofollow" title="Afficher le texte source [V]">Afficher le texte source</a></li>
+                  <li><a href="connectionvpn?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="connectionvpn?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="connectionvpn?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

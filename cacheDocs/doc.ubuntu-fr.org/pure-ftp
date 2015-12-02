@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>pure-ftp - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-05-30T17:04:34+0200"/>
+<meta name="keywords" content="dapper,karmic,serveur,reseau,ftp"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/pure-ftp?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/pure-ftp?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/pure-ftp"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/pure-ftp"/>
+<link rel="canonical" href="pure-ftp"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"pure-ftp","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="pure-ftp#main" tabindex="1">Contenu</a> | <a href="pure-ftp#qsearch__in" tabindex="2">Rechercher</a> | <a href="pure-ftp#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="pure-ftp" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="pure-ftp" >pure-ftp</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="versions">versions supportées d'Ubuntu</a>.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="pure-ftp#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="pure-ftp#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="pure-ftp#creation_d_un_utilisateur_virtuel">Création d&#039;un utilisateur virtuel</a></div></li>
+<li class="level2"><div class="li"><a href="pure-ftp#autoriser_les_utilisateurs_virtuels_a_suivre_les_liens_symboliques_symlinks">Autoriser les utilisateurs virtuels à suivre les liens symboliques (symlinks)</a></div></li>
+<li class="level2"><div class="li"><a href="pure-ftp#ajouter_un_message_d_accueil">Ajouter un message d&#039;accueil</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="pure-ftp#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="pure-ftp#lister_les_utilisateurs_virtuels">Lister les utilisateurs virtuels</a></div></li>
+<li class="level2"><div class="li"><a href="pure-ftp#pour_relancer_le_serveur_pure-ftpd">Pour relancer le serveur pure-ftpd</a></div></li>
+<li class="level2"><div class="li"><a href="pure-ftp#lister_les_utilisateurs_connectes_et_leurs_etats">Lister les utilisateurs connectés et leurs états</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="pure-ftp#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="dapper" class="wikilink1" title="dapper" rel="tag">Dapper</a>,
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">Karmic</a>,
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="ftp" class="wikilink1" title="ftp" rel="tag">ftp</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="serveur_ftp_pure-ftpd">Serveur FTP Pure-FTPd</h1>
+<div class="level1">
+
+<p>
+Pure-FTPd est un serveur <abbr title="File Transfer Protocol">FTP</abbr> sécurisé et fiable pour les systèmes dérivés d&#039;UNIX. Il est sous licence <abbr title="Berkeley Software Distribution">BSD</abbr>.
+</p>
+
+<p>
+Pure-FTPd propose comme fonctionnalités le contrôle de la bande passante, l&#039;établissement de quotas de téléchargement, les alias de répertoires, la création d&#039;hôtes virtuels. On peut également afficher des messages personnalisés (bannières et fortunes) lors de la connexion des utilisateurs.
+</p>
+
+<p>
+Pure-FTPd peut exécuter un script à la suite d&#039;une upload. Il peut également refuser des utilisateurs si la charge système devient trop importante.
+</p>
+
+<p>
+Il supporte l&#039;identification par Pluggable Authentication Modules (PAM), mais aussi à partir d&#039;une base de données MySQL, PostgreSQL ou dans un annuaire <abbr title="Lightweight Directory Access Protocol">LDAP</abbr>. Il supporte également la création d&#039;utilisateurs virtuels n&#039;ayant pas de compte sur le système. Une option anti-warez permet de réagir face à un répertoire accessible en écriture.
+</p>
+
+<p>
+Les utilisateurs peuvent utiliser les protocoles SSL/<abbr title="Transport Layer Security">TLS</abbr> afin de chiffrer l&#039;envoi de leur identifiant et mot de passe vers le serveur (nécessite un client <abbr title="File Transfer Protocol">FTP</abbr> compatible).
+</p>
+
+<p>
+Plusieurs serveurs <abbr title="File Transfer Protocol">FTP</abbr> Pure-FTPd indépendants peuvent s&#039;exécuter de façon concurrente sur la même machine.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="pure-ftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401462274" /><input type="hidden" name="summary" value="[Serveur FTP Pure-FTPd] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="50-1292" /><input type="submit" value="Modifier" class="button" title="Serveur FTP Pure-FTPd" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://pure-ftpd" class="urlextern" title="apt://pure-ftpd"  rel="nofollow">apt://pure-ftpd</a></strong>.
+</p>
+
+<p>
+Création du groupe ftpgroup :
+</p>
+<pre class="code">sudo groupadd ftpgroup</pre>
+
+<p>
+Création de l&#039;utilisateur ftpuser :
+</p>
+<pre class="code">sudo useradd -g ftpgroup -d /dev/null -s /usr/sbin/nologin ftpuser
+ou
+sudo useradd -g ftpgroup --system ftpuser</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="pure-ftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401462274" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1293-1621" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+La configuration se fait à l&#039;aide de fichiers présents dans le dossier /etc/pure-ftpd/conf/
+</p>
+
+<p>
+Ces fichiers sont documentés dans le ReadMe officiel de PureFtpd (voir <a href="http://download.pureftpd.org/pub/pure-ftpd/doc/README" class="urlextern" title="http://download.pureftpd.org/pub/pure-ftpd/doc/README"  rel="nofollow">README Pure-ftpd</a>). Ils prennent des valeurs de type: yes/no, chemin, valeur…
+</p>
+
+<p>
+Par exemple, Pure-ftp ne montre pas plus de 2000 fichiers lorsque vous vous connectez à votre serveur pure-ftp, et n&#039;autorise pas plus de 5 répertoires
+Pour dépasser cette limite, vous devez créer un fichier dans le répertoire /etc/pure-ftpd/conf/ et créer le fichier dont le nom est relatif à l&#039;option.
+</p>
+
+<p>
+Pour l&#039;exemple LimitRecursion
+(note : il faut respecter la casse)
+</p>
+
+<p>
+ensuite vous renseignez ce fichier, pour 10000 fichiers et 50 répertoires
+10000 50
+</p>
+
+<p>
+puis vous relancez le serveur Pure-ftp.
+</p>
+
+<p>
+Vous faites de façon identique pour toutes les autres options.
+</p>
+<div class="table sectionedit4"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> -0 </td><td class="col1"> NoTruncate </td><td class="col2"> Cette option permet de renommer automatiquement un fichier si un autre du même nom existe déjà sur le serveur.Cette option est incompatible avec les &quot;Quotas virtuels&quot;</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> -1 </td><td class="col1"> LogPid </td><td class="col2"> Log le PID de chaque session dans Syslog </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> -4 </td><td class="col1"> ipv4only </td><td class="col2"> Écoute uniquement les connections IP V4 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> -6 </td><td class="col1"> ipv6only </td><td class="col2"> Écoute uniquement les connections IP V6 </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> -a </td><td class="col1"> TrustedGid </td><td class="col2"> Seulement les membre du groupe peuvent se connecter </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> -A </td><td class="col1"> ChrootEveryone </td><td class="col2"> Chroot tous les utilisateurs </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> -B </td><td class="col1"> Daemonize </td><td class="col2"> Démarrer le serveur en mode Standalone (en daémon) </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> -c </td><td class="col1"> MaxClientsNumber </td><td class="col2"> Autorise au maximum clients à se connecter simultanément au serveur (Défaut = 50) </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> -C </td><td class="col1"> MaxClientsPerIP </td><td class="col2"> Nombre maximum de connexions simultanées par client (adresse IP) </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> -d </td><td class="col1"> VerboseLog </td><td class="col2"> Envoie des messages de débugage dans Syslog (A utiliser seulement en cas de problème)Pour avoir également les log de réponses, il faut doubler ce paramètre. </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"> -D </td><td class="col1"> DisplayDotFiles </td><td class="col2"> Affiche les fichiers commençant par un point (Paramètre à activer pour les puristes et à désactiver pour les simples utilisateurs) </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"> -e </td><td class="col1"> AnonymousOnly </td><td class="col2"> Autorise uniquement les utilisateurs anonymes. A utiliser uniquement pour les sites <abbr title="File Transfer Protocol">FTP</abbr> publiques. </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"> -E </td><td class="col1"> NoAnonymous </td><td class="col2"> Autorise uniquement les utilisateurs authentifiés. Les utilisateurs anonymes sont interdits. </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"> -f </td><td class="col1"> SyslogFacility </td><td class="col2"> Indique la « facility » à utiliser pour syslog (Défaut = local2). « -f none » permet de désactiver les logs. </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"> -F </td><td class="col1"> FortunesFile </td><td class="col2"> Affiche une ligne de texte aléatoire à la connexion en provenance du fichier « fortune file » (ex : Astuce du jour). Pour afficher un texte à la connexion, il faut également utiliser cette option. </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"> -g </td><td class="col1"> PidFile </td><td class="col2"> Change l&#039;adresse du fichier pid quand l serveur est exécuté en mode standalone. (Défaut = /var/run/pure-ftpd.pid) </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"> -H </td><td class="col1"> DontResolve </td><td class="col2"> Par défaut, les noms pleinement qualifiés sont logués en faisant une requête <abbr title="Domain Name System">DNS</abbr> inverse sur l&#039;adresse IP. Cette option permet d&#039;éviter de rechercher le nom pleinement qualifié dans le but d&#039;accélérer le temps de connexion. Cette option est donc conseillée pour les sites publiques très chargés. </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"> -i </td><td class="col1"> AnonymousCantUpload </td><td class="col2"> Interdit l&#039;accès en écriture sur le serveur (upload) pour les utilisateurs anonymes. </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"> -I </td><td class="col1"> MaxIdleTime </td><td class="col2"> Change la durée de connexion maximum en minutes (Défaut = 15) </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"> -j </td><td class="col1"> CreateHomeDir </td><td class="col2"> Crée automatiquement le home de l&#039;utilisateur s&#039;il n&#039;existe pas. </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"> -k </td><td class="col1"> MaxDiskUsage </td><td class="col2"> Interdit les chargements sur le serveur (upload) si la partition utilisée est chargée à plus de </td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"> -K </td><td class="col1"> KeepAllFiles </td><td class="col2"> Autorise les utilisateurs à charger des fichiers sur le serveur, mais les interdit de les renommer ou les supprimer. </td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"> -l </td><td class="col1"> login </td><td class="col2"> Ajoute une nouvelle règle d&#039;authentification. </td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"> -L </td><td class="col1"> LimitRecursion </td><td class="col2"> Cette option permet d&#039;éviter le nombre de fichiers listes et le nombre de niveau de recherches pour éviter les déni de services.(Défaut = 2000 fichiers et 5 niveaux de répertoire) </td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"> -m </td><td class="col1"> MaxLoad </td><td class="col2"> Interdit les téléchargements anonymes si la charge du CPU atteint </td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"> -M </td><td class="col1"> AnonymousCanCreateDirs </td><td class="col2"> Autorise les utilisateurs anonymes à créer des répertoires. </td>
+	</tr>
+	<tr class="row26">
+		<td class="col0"> -n </td><td class="col1"> </td><td class="col2"> Si le serveur supporte les quotas virtuels, cette option permet de les configurer </td>
+	</tr>
+	<tr class="row27">
+		<td class="col0"> -N </td><td class="col1"> NatMode </td><td class="col2"> Mode <abbr title="Network Address Translation">NAT</abbr> </td>
+	</tr>
+	<tr class="row28">
+		<td class="col0"> -O </td><td class="col1"> AltLog </td><td class="col2 leftalign"> Enregistre les logs des fichiers transférés dans un fichier spécifique. Plusieurs formats sont supportés : CLF (Apache-like), Stats, <abbr title="World Wide Web Consortium">W3C</abbr> and xferlog.Par exemple le format &quot;Stats&quot; ressemble à  </td>
+	</tr>
+	<tr class="row29">
+		<td class="col0"> -p </td><td class="col1"> PassivePortRange </td><td class="col2"> Permet de modifier les ports sur lesquels le serveur Écoute </td>
+	</tr>
+	<tr class="row30">
+		<td class="col0"> -P </td><td class="col1"> ForcePassiveIP </td><td class="col2"> Force l&#039;adresse IP ou le nom de la machine pour le retour </td>
+	</tr>
+	<tr class="row31">
+		<td class="col0"> -q </td><td class="col1"> AnonymousRatio </td><td class="col2"> Active les ratios pour les utilisateurs anonymes </td>
+	</tr>
+	<tr class="row32">
+		<td class="col0"> -Q </td><td class="col1"> UserRatio </td><td class="col2"> Active les ratios pour tous les utilisateurs </td>
+	</tr>
+	<tr class="row33">
+		<td class="col0"> -r </td><td class="col1"> AutoRename </td><td class="col2"> Ne jamais écraser un fichier existant. Le fichier est automatiquement renommé si c&#039;est nécessaire. </td>
+	</tr>
+	<tr class="row34">
+		<td class="col0"> -R </td><td class="col1"> NoChmod </td><td class="col2"> Interdit aux utilisateurs d&#039;utiliser les commandes CHMOD </td>
+	</tr>
+	<tr class="row35">
+		<td class="col0"> -s </td><td class="col1"> AntiWarez </td><td class="col2"> Interdit aux utilisateur anonymes de télécharger des fichiers </td>
+	</tr>
+	<tr class="row36">
+		<td class="col0"> -T </td><td class="col1"> UserBandwidth or [] :[] </td><td class="col2"> Active la limitation de la bande passante en kilobytes/seconds. Il est possible d&#039;avoir une bande passante différente avec la syntaxe &quot;-t [] :[]&quot; </td>
+	</tr>
+	<tr class="row37">
+		<td class="col0"> -t </td><td class="col1"> AnonymousBandwidth </td><td class="col2"> Active la limitation de la bande passante en kbps pour les utilisateurs anonymes. Il est possible d&#039;avoir une bande passante différente avec la syntaxe &quot;-t [] :[]&quot; </td>
+	</tr>
+	<tr class="row38">
+		<td class="col0"> -u </td><td class="col1"> MinUID </td><td class="col2"> Interdit les accès pour les utilisateurs ayant un uid inférieur à celui indiqué. </td>
+	</tr>
+	<tr class="row39">
+		<td class="col0"> -U </td><td class="col1"> Umask </td><td class="col2"> Change le mask de création des dossiers et des fichiers. (Défaut = 133 022) </td>
+	</tr>
+	<tr class="row40">
+		<td class="col0"> -V </td><td class="col1"> TrustedIP </td><td class="col2"> Autorise les accès non anonymes seulement pour l&#039;adresse IP spécifiée. Les autres adresses IP auront un accès anonyme. </td>
+	</tr>
+	<tr class="row41">
+		<td class="col0"> -x </td><td class="col1"> ProhibitDotFilesWrite </td><td class="col2"> Interdit les utilisateurs anonymes à écrire des fichiers commençant par un point. </td>
+	</tr>
+	<tr class="row42">
+		<td class="col0"> -X </td><td class="col1"> ProhibitDotFilesRead </td><td class="col2"> Interdit les utilisateurs anonymes à lire et écrire des fichiers commençant par un point. </td>
+	</tr>
+	<tr class="row43">
+		<td class="col0"> -y </td><td class="col1"> PerUserLimits </td><td class="col2"> Permet de limiter le nombre de sessiond simultanées qu&#039;un utilisateur peut ouvrir (Défaut = 0 = illimités) </td>
+	</tr>
+	<tr class="row44">
+		<td class="col0"> -z </td><td class="col1"> AllowDotFiles </td><td class="col2"> Autorise les utilisateurs anonymes à lire les fichiers et les dossiers commençant par un point. </td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="pure-ftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401462274" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1622-7905" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h3 class="sectionedit5" id="creation_d_un_utilisateur_virtuel">Création d&#039;un utilisateur virtuel</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteimportant">Ne pas utiliser <a href="http://doc.ubuntu-fr.org/pureadmin" class="wikilink2" title="pureadmin" rel="nofollow">PUREADMIN</a> pour gérer les utilisateurs virtuels.
+</div></p>
+</p>
+<pre class="code">sudo pure-pw useradd test -u ftpuser -g ftpgroup -d /home/www/test</pre>
+
+</div>
+
+<h4 id="syntaxe_et_options_pour_vos_utilisateurs">Syntaxe et options pour vos utilisateurs</h4>
+<div class="level4">
+<pre class="code">pure-pw useradd &lt;login&gt; [-f &lt;passwd file&gt;] -u &lt;uid&gt; [-g &lt;gid&gt;]
+        -D/-d &lt;home directory&gt; [-c &lt;gecos&gt;]
+        [-t &lt;download bandwidth&gt;] [-T &lt;upload bandwidth&gt;]
+        [-n &lt;max number of files&gt;] [-N &lt;max Mbytes&gt;]
+        [-q &lt;upload ratio&gt;] [-Q &lt;download ratio&gt;]
+        [-r &lt;allow client host&gt;[/&lt;mask&gt;][,&lt;allow client host&gt;[/&lt;mask&gt;]]...]
+        [-R &lt;deny client host&gt;[/&lt;mask&gt;][,&lt;deny client host&gt;[/&lt;mask&gt;]]...]
+        [-i &lt;allow local host&gt;[/&lt;mask&gt;][,&lt;allow client host&gt;[/&lt;mask&gt;]]...]
+        [-I &lt;deny local host&gt;[/&lt;mask&gt;][,&lt;deny local host&gt;[/&lt;mask&gt;]]...]
+        [-y &lt;max number of concurrent sessions&gt;]
+        [-z &lt;hhmm&gt;-&lt;hhmm&gt;] [-m]</pre>
+
+<p>
+Il faut maintenant générer le fichier des utilisateurs
+</p>
+<pre class="code">sudo pure-pw mkdb</pre>
+
+<p>
+Après chaque modification ou rajout d&#039;utilisateur il faut régénérer le fichier des utilisateurs avec cette commande.
+</p>
+
+<p>
+Pour activer l&#039;authentification liée à Pure-<abbr title="File Transfer Protocol">FTP</abbr> :
+</p>
+<pre class="code">sudo ln -s /etc/pure-ftpd/conf/PureDB /etc/pure-ftpd/auth/50pure</pre>
+
+</div>
+
+<h4 id="changer_le_mot_de_passe_d_un_utilisateur">Changer le mot de passe d&#039;un utilisateur</h4>
+<div class="level4">
+
+<p>
+Si un mot de passe a été oublié ou doit être changé, utiliser cette commande :
+</p>
+<pre class="code">sudo pure-pw passwd UTILISATEUR</pre>
+
+<p>
+Regénérer le fichier des utilisateurs
+</p>
+<pre class="code">sudo pure-pw mkdb</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="pure-ftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401462274" /><input type="hidden" name="summary" value="[Création d'un utilisateur virtuel] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7906-9376" /><input type="submit" value="Modifier" class="button" title="Création d'un utilisateur virtuel" /></div></form></div>
+<h3 class="sectionedit6" id="autoriser_les_utilisateurs_virtuels_a_suivre_les_liens_symboliques_symlinks">Autoriser les utilisateurs virtuels à suivre les liens symboliques (symlinks)</h3>
+<div class="level3">
+
+<p>
+Pour cela, il faut activer le &quot;virtualchroot&quot; dans le fichier /etc/default/pure-ftpd-common
+</p>
+<pre class="file">VIRTUALCHROOT=true</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="pure-ftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401462274" /><input type="hidden" name="summary" value="[Autoriser les utilisateurs virtuels à suivre les liens symboliques (symlinks)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9377-9594" /><input type="submit" value="Modifier" class="button" title="Autoriser les utilisateurs virtuels à suivre les liens symboliques (symlinks)" /></div></form></div>
+<h3 class="sectionedit7" id="ajouter_un_message_d_accueil">Ajouter un message d&#039;accueil</h3>
+<div class="level3">
+
+<p>
+On crée notre fichier contenant le ou les messages :
+</p>
+<pre class="code">nano /home/user/nomfichier</pre>
+
+<p>
+On insère directement notre texte.
+</p>
+
+<p>
+Pour générer plusieurs messages aléatoirement, il suffit de séparer les messages par le caractère &quot;%&quot;.
+</p>
+
+<p>
+On donne les droits nécessaires :
+</p>
+<pre class="code">sudo chmod 644 /home/user/nomfichier</pre>
+
+<p>
+Une fois le fichier crée, on ajoute à la config de Pureftpd l&#039;option -F (fortunesfile) :
+</p>
+<pre class="code">nano /etc/pure-ftpd/conf/FortunesFile</pre>
+
+<p>
+Et on y ajoute le chemin de notre message :
+</p>
+<pre class="file">/home/user/nomfichier</pre>
+
+<p>
+Il suffit ensuite de redémarrer le serveur:
+</p>
+<pre class="code">sudo /etc/init.d/pure-ftpd restart</pre>
+
+<p>
+On retrouve alors notre option -F :
+</p>
+<pre class="code">-F /home/user/nomfichier</pre>
+
+<p>
+<p><div class="notetip">
+Pour afficher l&#039;espace disque on peut exécuter un script à intervalles régulières de type :
+</p>
+<pre class="code">df -H /dossierdepartage &gt; /home/user/nomfichier</pre>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="pure-ftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401462274" /><input type="hidden" name="summary" value="[Ajouter un message d'accueil] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9595-10483" /><input type="submit" value="Modifier" class="button" title="Ajouter un message d'accueil" /></div></form></div>
+<h2 class="sectionedit8" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="pure-ftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401462274" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10484-10507" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h3 class="sectionedit9" id="lister_les_utilisateurs_virtuels">Lister les utilisateurs virtuels</h3>
+<div class="level3">
+<pre class="code">sudo pure-pw list</pre>
+
+<p>
+D&#039;autres fonctions sont disponibles.
+</p>
+
+<p>
+Pour ne pas avoir une erreur 530 (connexion refusée) à la connexion du client <abbr title="File Transfer Protocol">FTP</abbr> il faut créer le lien symbolique:
+</p>
+<pre class="code">sudo ln -s /etc/pure-ftpd/conf/PureDB /etc/pure-ftpd/auth/75puredb</pre>
+
+<p>
+Il faut peut être redémarrer pour rendre la modification effective…
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="pure-ftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401462274" /><input type="hidden" name="summary" value="[Lister les utilisateurs virtuels] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10508-10875" /><input type="submit" value="Modifier" class="button" title="Lister les utilisateurs virtuels" /></div></form></div>
+<h3 class="sectionedit10" id="pour_relancer_le_serveur_pure-ftpd">Pour relancer le serveur pure-ftpd</h3>
+<div class="level3">
+<pre class="code">sudo /etc/init.d/pure-ftpd restart</pre>
+
+<p>
+<p><div class="notehelp">Avec <a href="http://doc.ubuntu-fr.org/pureadmin" class="wikilink2" title="pureadmin" rel="nofollow">Pureadmin</a>, il est agréable de voir les connexions actives, suivre le journal sous interface graphique, mais ne pas l&#039;utiliser pour la gestion des comptes.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="pure-ftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401462274" /><input type="hidden" name="summary" value="[Pour relancer le serveur pure-ftpd] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10876-11143" /><input type="submit" value="Modifier" class="button" title="Pour relancer le serveur pure-ftpd" /></div></form></div>
+<h3 class="sectionedit11" id="lister_les_utilisateurs_connectes_et_leurs_etats">Lister les utilisateurs connectés et leurs états</h3>
+<div class="level3">
+<pre class="code">sudo pure-ftpwho</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="pure-ftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401462274" /><input type="hidden" name="summary" value="[Lister les utilisateurs connectés et leurs états] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11144-11226" /><input type="submit" value="Modifier" class="button" title="Lister les utilisateurs connectés et leurs états" /></div></form></div>
+<h2 class="sectionedit12" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.pureftpd.org/project/pure-ftpd" class="urlextern" title="http://www.pureftpd.org/project/pure-ftpd"  rel="nofollow">Pureftpd.org</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.pureftpd.org/project/pure-ftpd/doc" class="urlextern" title="http://www.pureftpd.org/project/pure-ftpd/doc"  rel="nofollow">Pureftpd.org - Documentations</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.webmin.com/cgi-bin/search_third.cgi?search=ftpd" class="urlextern" title="http://www.webmin.com/cgi-bin/search_third.cgi?search=ftpd"  rel="nofollow">webmin.com - Module</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="utilisateurs/zoph" class="wikilink1" title="utilisateurs:zoph">zoph</a>,<a href="http://doc.ubuntu-fr.org/utilisateurs/snoopyp" class="wikilink1" title="utilisateurs:snoopyp">snoopyp</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="pure-ftp"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401462274" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11227-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/0/0a10262d0c02bc6cdd256e1c7bf08def.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/pure-ftp?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pure-ftp?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pure-ftp?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pure-ftp?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pure-ftp?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

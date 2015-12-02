@@ -1,0 +1,810 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>gconf - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="gconf?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/gconf"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/gconf"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"gconf","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="gconf?do=revisions#main" tabindex="1">Contenu</a> | <a href="gconf?do=revisions#qsearch__in" tabindex="2">Rechercher</a> | <a href="gconf?do=revisions#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="gconf?do=revisions" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="gconf" >gconf</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<h1 class="sectionedit1" id="anciennes_revisions">Anciennes révisions</h1>
+<div class="level1">
+
+<p>
+Voici les anciennes révisions de la page en cours. Pour revenir à une ancienne révision, sélectionnez-la ci-dessous, cliquez sur le bouton « Modifier cette page » et enregistrez-la.
+</p>
+
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c094095a2fd85a3488cba30c5d00321e.xhtml used -->
+<form id="page__revisions" class="changes" method="post" action="gconf?do=revisions" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><ul >
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="current"/>
+<span class="date">
+Le 25/03/2015, 17:40</span>
+<img src="http://doc.ubuntu-fr.org/lib/images/blank.gif" width="15" height="11" alt="" /><a class="wikilink1" href="gconf">
+gconf</a>
+<span class="sum">
+ – [Utilisation] Lanceur créé par défaut, Modification du lancement</span>
+<span class="user">
+cafecho</span>
+(Version actuelle)</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1427301338"/>
+<span class="date">
+Le 25/03/2015, 17:35</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1427301338&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1427301338" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Installation] gconf2 est installé avec gconf-editor (n'est plus installé par défaut)</bdi></span>
+<span class="user">
+<bdi>cafecho</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1425633230"/>
+<span class="date">
+Le 06/03/2015, 10:13</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1425633230&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1425633230" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Les clés Importantes] </bdi></span>
+<span class="user">
+<bdi>L&#039;Africain</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1390161447"/>
+<span class="date">
+Le 19/01/2014, 20:57</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1390161447&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1390161447" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Installation] </bdi></span>
+<span class="user">
+<bdo dir="ltr">82.238.103.231</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1375372853"/>
+<span class="date">
+Le 01/08/2013, 18:00</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1375372853&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1375372853" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Retrouver le tableau de bord d'origine] </bdi></span>
+<span class="user">
+<bdo dir="ltr">92.148.32.202</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1374482365"/>
+<span class="date">
+Le 22/07/2013, 10:39</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1374482365&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1374482365" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Les clés Importantes] </bdi></span>
+<span class="user">
+<bdo dir="ltr">92.148.49.116</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1364068585"/>
+<span class="date">
+Le 23/03/2013, 20:56</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1364068585&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1364068585" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Retrouver le tableau de bord d'origine] </bdi></span>
+<span class="user">
+<bdo dir="ltr">86.75.10.146</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1364066588"/>
+<span class="date">
+Le 23/03/2013, 20:23</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1364066588&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1364066588" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>ajout de gconf-editor indispensable pour avoir une interface graphique</bdi></span>
+<span class="user">
+<bdi>logut</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1324795399"/>
+<span class="date">
+Le 25/12/2011, 07:43</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1324795399&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1324795399" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Éditeur de configuration GConf] </bdi></span>
+<span class="user">
+<bdi>HawkFest</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1324723899"/>
+<span class="date">
+Le 24/12/2011, 11:51</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1324723899&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1324723899" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Les clés GDM2] </bdi></span>
+<span class="user">
+<bdo dir="ltr">93.7.184.73</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1323958636"/>
+<span class="date">
+Le 15/12/2011, 15:17</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1323958636&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1323958636" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>modification externe</bdi></span>
+<span class="user">
+<bdo dir="ltr">127.0.0.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1322869803"/>
+<span class="date">
+Le 03/12/2011, 00:50</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1322869803&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1322869803" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Éditeur de configuration GConf] </bdi></span>
+<span class="user">
+<bdo dir="ltr">88.180.228.29</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1316961077"/>
+<span class="date">
+Le 25/09/2011, 16:31</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1316961077&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1316961077" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Les clés Importantes] </bdi></span>
+<span class="user">
+<bdo dir="ltr">83.156.105.42</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1314196778"/>
+<span class="date">
+Le 24/08/2011, 16:39</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1314196778&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1314196778" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>ancienne révision restaurée / c'est quoi fdp  ???</bdi></span>
+<span class="user">
+<bdi>fabux</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1314050496"/>
+<span class="date">
+Le 23/08/2011, 00:01</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1314050496&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1314050496" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Installation] </bdi></span>
+<span class="user">
+<bdo dir="ltr">89.159.57.212</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1312929297"/>
+<span class="date">
+Le 10/08/2011, 00:34</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1312929297&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1312929297" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>ajout section clés nautilus et gdm2</bdi></span>
+<span class="user">
+<bdi>J5012</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1312157321"/>
+<span class="date">
+Le 01/08/2011, 02:08</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1312157321&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1312157321" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>le lien n'etait pas brisé, juste il y a une nouvelle version :)</bdi></span>
+<span class="user">
+<bdi>0ol</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1312147136"/>
+<span class="date">
+Le 31/07/2011, 23:18</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1312147136&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1312147136" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>lien brisé dans &quot;voir aussi&quot;</bdi></span>
+<span class="user">
+<bdo dir="ltr">82.122.0.123</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1311639148"/>
+<span class="date">
+Le 26/07/2011, 02:12</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1311639148&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1311639148" class="wikilink1">
+gconf</a>
+<span class="user">
+<bdi>0ol</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1311639103"/>
+<span class="date">
+Le 26/07/2011, 02:11</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1311639103&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1311639103" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Les clés Importantes] confusion guillemets simples, doubles</bdi></span>
+<span class="user">
+<bdi>J5012</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1311638847"/>
+<span class="date">
+Le 26/07/2011, 02:07</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1311638847&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1311638847" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Les clés Importantes] cle mode spatial</bdi></span>
+<span class="user">
+<bdi>J5012</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1311636155"/>
+<span class="date">
+Le 26/07/2011, 01:22</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1311636155&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1311636155" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>ajout param gconf barre adresse nautilus</bdi></span>
+<span class="user">
+<bdi>J5012</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1310236686"/>
+<span class="date">
+Le 09/07/2011, 20:38</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1310236686&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1310236686" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>desactivant &gt; désactivant</bdi></span>
+<span class="user">
+<bdi>Canigou 66</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1299774936"/>
+<span class="date">
+Le 10/03/2011, 17:35</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1299774936&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1299774936" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Retrouver le tableau de bord d'origine] </bdi></span>
+<span class="user">
+<bdo dir="ltr">24.203.200.239</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1299774811"/>
+<span class="date">
+Le 10/03/2011, 17:33</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1299774811&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1299774811" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Retrouver le tableau de bord d'origine] </bdi></span>
+<span class="user">
+<bdo dir="ltr">24.203.200.239</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1299773808"/>
+<span class="date">
+Le 10/03/2011, 17:16</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1299773808&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1299773808" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>[Retrouver le tableau de bord d'origine] </bdi></span>
+<span class="user">
+<bdo dir="ltr">24.203.200.239</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1296470176"/>
+<span class="date">
+Le 31/01/2011, 11:36</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1296470176&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1296470176" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>corrections mineures</bdi></span>
+<span class="user">
+<bdi>YannUbuntu</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1290199985"/>
+<span class="date">
+Le 19/11/2010, 21:53</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1290199985&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1290199985" class="wikilink1">
+gconf</a>
+<span class="user">
+<bdo dir="ltr">82.225.58.114</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1289814388"/>
+<span class="date">
+Le 15/11/2010, 10:46</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1289814388&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1289814388" class="wikilink1">
+gconf</a>
+<span class="user">
+<bdo dir="ltr">84.97.115.60</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1288567315"/>
+<span class="date">
+Le 01/11/2010, 00:21</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1288567315&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1288567315" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>Corr. de l'installation</bdi></span>
+<span class="user">
+<bdi>Gemnoc</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1288171150"/>
+<span class="date">
+Le 27/10/2010, 11:19</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1288171150&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1288171150" class="wikilink1">
+gconf</a>
+<span class="user">
+<bdo dir="ltr">77.246.88.248</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1283414321"/>
+<span class="date">
+Le 02/09/2010, 09:58</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1283414321&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1283414321" class="wikilink1">
+gconf</a>
+<span class="user">
+<bdo dir="ltr">78.114.91.27</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1282772255"/>
+<span class="date">
+Le 25/08/2010, 23:37</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1282772255&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1282772255" class="wikilink1">
+gconf</a>
+<span class="user">
+<bdi>pseudomino</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1278148417"/>
+<span class="date">
+Le 03/07/2010, 11:13</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1278148417&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1278148417" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>suppression tag &quot;Brouillon&quot;/ ajout tag &quot;Personnalisation&quot; | </bdi></span>
+<span class="user">
+<bdi>fabux</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1278142149"/>
+<span class="date">
+Le 03/07/2010, 09:29</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1278142149&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1278142149" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>Fusion des deux méthodes de suppression des dossiers</bdi></span>
+<span class="user">
+<bdi>percherie</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1277700729"/>
+<span class="date">
+Le 28/06/2010, 06:52</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1277700729&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1277700729" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>ajouts des points (fichiers cachés) dans la commande pour récupérer tableau + note FIXME | </bdi></span>
+<span class="user">
+<bdi>fabux</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1277671336"/>
+<span class="date">
+Le 27/06/2010, 22:42</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1277671336&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1277671336" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>Mise à jour de la restauration des paramètres par défaut. L'utilisation de xterm est recommandée car ne demandant pas la création d'un nouveau compte administrateur</bdi></span>
+<span class="user">
+<bdi>percherie</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1274896467"/>
+<span class="date">
+Le 26/05/2010, 19:54</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1274896467&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1274896467" class="wikilink1">
+gconf</a>
+<span class="user">
+<bdo dir="ltr">81.248.212.111</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1273842304"/>
+<span class="date">
+Le 14/05/2010, 15:05</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1273842304&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1273842304" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>lien tuto comment_deplacer_boutons_minimiser_maximiser_fermer</bdi></span>
+<span class="user">
+<bdi>draco31.fr</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1273794195"/>
+<span class="date">
+Le 14/05/2010, 01:43</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1273794195&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1273794195" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>lanceur alacarte</bdi></span>
+<span class="user">
+<bdi>YannUbuntu</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1273793979"/>
+<span class="date">
+Le 14/05/2010, 01:39</span>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1273793979&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gconf?rev=1273793979" class="wikilink1">
+gconf</a>
+<span class="sum">
+ – <bdi>lien tuto boutons</bdi></span>
+<span class="user">
+<bdi>YannUbuntu</bdi></span>
+</div>
+</li>
+</ul>
+<input name="do[diff]" type="submit" value="Différences entre les versions sélectionnées" class="button" />
+</div></form>
+<div class="pagenav"><div class="pagenav-next"><form class="button btn_older" method="get" action="gconf"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="first" value="40" /><input type="submit" value="Moins récent &gt;&gt;" class="button" accesskey="n" title="Moins récent &gt;&gt; [N]" /></div></form></div></div>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="gconf?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gconf?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="gconf?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="gconf?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gconf?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>gpsman - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-05-25T19:44:25+0200"/>
+<meta name="keywords" content="gps,cartographie,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/gpsman?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/gpsman?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/gpsman"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/gpsman"/>
+<link rel="canonical" href="gpsman"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"gpsman","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="gpsman#main" tabindex="1">Contenu</a> | <a href="gpsman#qsearch__in" tabindex="2">Rechercher</a> | <a href="gpsman#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="gpsman" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="gpsman" >gpsman</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="gpsman#presentation">Présentation</a></div></li>
+<li class="level1"><div class="li"><a href="gpsman#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="gpsman#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="gpsman#calibrer_une_carte">calibrer une carte</a></div></li>
+<li class="level2"><div class="li"><a href="gpsman#charger_une_carte_prealablement_calibree">charger une carte préalablement calibrée</a></div></li>
+<li class="level2"><div class="li"><a href="gpsman#assembler_plusieurs_cartes">assembler plusieurs cartes</a></div></li>
+<li class="level2"><div class="li"><a href="gpsman#connecter_un_gps">connecter un gps</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="gpsman#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="gpsman#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/gps" class="wikilink1" title="gps" rel="tag">gps</a>,
+	<a href="cartographie" class="wikilink1" title="cartographie" rel="tag">cartographie</a>,
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">brouillon</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="gpsman">Gpsman</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="gpsman"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337967865" /><input type="hidden" name="summary" value="[Gpsman] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="42-64" /><input type="submit" value="Modifier" class="button" title="Gpsman" /></div></form></div>
+<h2 class="sectionedit2" id="presentation">Présentation</h2>
+<div class="level2">
+
+<p>
+GPSMAN est un logiciel de cartographie type &quot;carte sur table&quot; ou &quot;gpstrack&quot;.
+</p>
+
+<p>
+Il se distingue de &quot;cartoexplorer&quot; ou &quot;géorando&quot; dans le sens ou vous devez vous même fournir les cartes, le logiciel n&#039;en contenant aucune.
+</p>
+
+<p>
+GPSMAN sait dialoguer avec certains gps, ce qui permet d&#039;afficher sur une carte, les parcours que vous avez réalisés sur le terrain.
+</p>
+
+<p>
+Il permet également le tracé d&#039;un circuit sur la carte qui pourra être transféré dans le gps pour guider la personne sur le terrain.
+Il permet la convertion au format gpx ou kml (entre autre) de vos traces
+</p>
+
+<p>
+il affiche les caractéristiques de vos traces (longueur, vitesse, dénivelé…. sous forme de texte et de graph….)
+</p>
+
+<p>
+Ce soft est le complément indispensable à tous gps de randonnée sous linux
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/gpsman2.jpg?id=gpsman" class="media" title="gpsman2.jpg"><img src="http://doc.ubuntu-fr.org/_media/gpsman2.jpg" class="media" alt="" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="gpsman"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337967865" /><input type="hidden" name="summary" value="[Présentation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="65-882" /><input type="submit" value="Modifier" class="button" title="Présentation" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Vous pouvez utiliser les dépots officiels de votre distribution préférée pour installer <strong>gpsman</strong>.
+</p>
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong><a href="apt://gpsman" class="urlextern" title="apt://gpsman"  rel="nofollow">gpsman</a></strong> et &quot;Img Tcl/Tk library&quot; (<strong><a href="apt://libtk-img" class="urlextern" title="apt://libtk-img"  rel="nofollow">libtk-img</a></strong>) 
+</p>
+
+<p>
+<p><div class="noteclassic">Si vous n&#039;installez pas  Img Tcl/Tk, gpsman tournera correctement, mais vos cartes devront être au format GIF ou PNG.
+une fois la librairie installée, vos cartes pourront être au format jpg ou tiff
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="gpsman"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337967865" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="883-1385" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit4" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="gpsman"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337967865" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1386-1417" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h3 class="sectionedit5" id="calibrer_une_carte">calibrer une carte</h3>
+<div class="level3">
+
+<p>
+Gpsman ne contient aucune carte. Il faut donc posséder ses propres cartes et les scanner pour pouvoir les utiliser avec GPSMAN.
+</p>
+
+<p>
+<p><div class="notetip">le mieux est de faire scanner ses cartes par un professionnel, ce n&#039;est pas très cher et ca permet de scanner les cartes en une seule fois et un seul fichier 
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">les cartes IGN françaises sont visibles sur le site <a href="http://www.geoportail.fr/" class="urlextern" title="http://www.geoportail.fr/"  rel="nofollow">http://www.geoportail.fr/</a>, avec des &quot;imprim écran&quot; et des assemblages sous gimp, on arrive a reconstituer des cartes facilements 
+</div></p>
+</p>
+
+<p>
+Pour que le soft puisse placer un point gps sur la carte scannée, cette dernière doit être calibrée.
+</p>
+
+<p>
+Sur le terrain, relever les coordonnées gps de trois points remarquable (les intersections de routes sont très pratiques).
+</p>
+
+<p>
+Pour plus de précision, ces points :
+</p>
+<ul>
+<li class="level1"><div class="li"> Ne doivent pas être alignés</div>
+</li>
+<li class="level1"><div class="li"> Doivent être répartis vers les bords de ta carte (ex : haut-gauche, haut - droite, bas - droite)</div>
+</li>
+<li class="level1"><div class="li"> Doivent être relevés au format <em>&quot;degré minute seconde&quot;</em> (ça évite des conversion fastidieuse)</div>
+</li>
+</ul>
+
+<p>
+<p><div class="notetip">Si il fait trop froid pour sortir avec votre gps, vous pouvez utiliser Google earth ou geoportail pour récupérer les coordonnées GPS des points de calibration
+</div></p>
+</p>
+
+<p>
+menu <em>cartes →fond→chargement→depuis un fichier</em>
+</p>
+
+<p>
+Sélectionner alors le fichier correspondant à la carte.
+</p>
+
+<p>
+Choix de la méthode permettant de référencer la carte =⇒ choisir &quot;affine&quot;
+</p>
+
+<p>
+Cliquer sur la carte pour placer le premier point dont on connais les coordonnées gps.
+</p>
+
+<p>
+Dans la fenêtre qui s&#039;ouvre:
+</p>
+<ul>
+<li class="level1"><div class="li"> Donner un nom quelconque au premier point (ex:p1) </div>
+</li>
+<li class="level1"><div class="li"> Renseigner la latitude et la longitude (format d&#039;écriture N ° &#039; &#039;&#039; : <strong>N47 35 27</strong> et E4 28 36). Je prends les coordonnées sur Géoportail le site de l&#039;IGN.</div>
+</li>
+<li class="level1"><div class="li"> Valider et recommencer cette opération 3 x pour inscrire les 3 points de géo réferencements.</div>
+</li>
+</ul>
+
+<p>
+La carte est maintenant calibrée. l&#039;échelle affichée sous la carte doit être correcte.
+</p>
+
+<p>
+En traçant un parcours connu, GPSMAN doit indiquer le bon nombre de km
+(shift-click droit pour tracer sur la carte)
+(ctrl pour déplacer la carte à l&#039;écran)
+</p>
+
+<p>
+Si tout est bon, il reste à sauvegarder la calibration :
+</p>
+
+<p>
+Menu :<em>carte/fond/sauvegarde des informations de geo-réfèrencement</em>
+</p>
+
+<p>
+Deux fenêtres vont s&#039;ouvrir successivement :
+</p>
+<ol>
+<li class="level1"><div class="li"> Dans la première fenêtre choisir le nom du fichier de calibration de la carte (pas très important)</div>
+</li>
+<li class="level1"><div class="li"> Dans la seconde,renseigner le champ &quot;<em>nom</em>&quot; avec  une dénomination qui permettra de reconnaitre la carte</div>
+</li>
+<li class="level1"><div class="li"> Valider pour terminer</div>
+</li>
+</ol>
+
+<p>
+<p><div class="notetip">Si tu possèdes déjà des carte calibrées au format map (une carte toto.jpg est associée à un fichier de calibration toto.map), il suffit que le fichier map soit dans le même répertoire que le fichier carte et gpsman l&#039;utilisera pour calibrer la carte
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="gpsman"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337967865" /><input type="hidden" name="summary" value="[calibrer une carte] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1418-4242" /><input type="submit" value="Modifier" class="button" title="calibrer une carte" /></div></form></div>
+<h3 class="sectionedit6" id="charger_une_carte_prealablement_calibree">charger une carte préalablement calibrée</h3>
+<div class="level3">
+
+<p>
+Là c&#039;est tout simple :
+<em>carte→fond→chargement→depuis une définition→toto</em>
+Où toto représente le nom donné à la calibration lors de son enregistrement
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="gpsman"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337967865" /><input type="hidden" name="summary" value="[charger une carte préalablement calibrée] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4243-4460" /><input type="submit" value="Modifier" class="button" title="charger une carte préalablement calibrée" /></div></form></div>
+<h3 class="sectionedit7" id="assembler_plusieurs_cartes">assembler plusieurs cartes</h3>
+<div class="level3">
+
+<p>
+Si vous possédez plusieurs cartes scannées rigoureusement à la même échelle et s&#039;alignant parfaitement sans se superposer, elles peuvent êtres assemblées, et apparaitront alors à l&#039;écran comme une seule carte. 
+</p>
+
+<p>
+Dans ce cas seule la première carte doit être calibrée (et préalablement chargée via le menu <em>carte→fond→chargement→depuis un fichier</em>)
+</p>
+
+<p>
+Pour assembler d&#039;autre carte à ce premier fichier :
+</p>
+
+<p>
+<em>Carte → fond → modification</em> Une fenêtre s&#039;ouvre avec à gauche une grille de 9 cases.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/gpsman1.jpg?id=gpsman" class="media" title="gpsman1.jpg"><img src="http://doc.ubuntu-fr.org/_media/gpsman1.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+La case centrale, bleue, représente la carte actuellement chargée.
+</p>
+<ol>
+<li class="level1"><div class="li"> Sélectionner la case où doit se placer la prochaine carte,</div>
+</li>
+<li class="level1"><div class="li"> &quot;<em>Chargement</em>&quot; pour sélectionner le fichier image correspondant à cette carte</div>
+</li>
+</ol>
+
+<p>
+<p><div class="noteimportant">L&#039;assemblage de fichiers trop volumineux peut rapidement amener le système à saturation
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="gpsman"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337967865" /><input type="hidden" name="summary" value="[assembler plusieurs cartes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4461-5372" /><input type="submit" value="Modifier" class="button" title="assembler plusieurs cartes" /></div></form></div>
+<h3 class="sectionedit8" id="connecter_un_gps">connecter un gps</h3>
+<div class="level3">
+
+<p>
+Gpsman semble supporter les gps
+</p>
+<ul>
+<li class="level1"><div class="li"> Garmin (forerunner 201 testé ok, avec l&#039;adaptateur <abbr title="Universal Serial Bus">USB</abbr>-série je dois changer le nom du port ttyS0 par ttyUSB0)</div>
+</li>
+<li class="level1"><div class="li"> Garmin (foretrex 101 testé OK) mais sur port série, sur <abbr title="Universal Serial Bus">USB</abbr> même avec l&#039;adaptateur il ne se passe rien. J&#039;ai testé chez moi et au vieux campeur (qui ont windob). Le technicien pense à un problème de pilote.</div>
+</li>
+<li class="level1"><div class="li"> Garmin GPSMap 60 (testé: OK)</div>
+</li>
+<li class="level1"><div class="li"> Les GPS Garmin gps 12 et Garmin geko 301 peuvent se connecter avec l&#039;adaptateur <abbr title="Universal Serial Bus">USB</abbr>-série sur le port ttyUSB0 et avec le protocole Garmin.</div>
+</li>
+<li class="level1"><div class="li"> Lowrence (non testé)<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /></div>
+</li>
+<li class="level1"><div class="li"> Magellan (non testé)<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /></div>
+</li>
+</ul>
+<ol>
+<li class="level1"><div class="li"> &quot;<em>Option</em>&quot; permet de choisir la marque du gps</div>
+</li>
+<li class="level1"><div class="li"> &quot;<em>Récepteur gps→fenetre du récepteur</em>&quot; permet d&#039;ouvrir la fenêtre ci dessous</div>
+</li>
+</ol>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/gpsman3.jpg?id=gpsman" class="media" title="gpsman3.jpg"><img src="http://doc.ubuntu-fr.org/_media/gpsman3.jpg" class="media" alt="" /></a>
+</p>
+<ol>
+<li class="level1"><div class="li"> &quot;<em>Choix du protocole</em>&quot; (pour un gps garmin dans ce cas:)</div>
+<ul>
+<li class="level2"><div class="li"> <em>protocole→garmin </em> permet de dialoguer via le port série (pour le 201)</div>
+</li>
+<li class="level2"><div class="li"> <em>protocole→garmin usb </em> permet de dialoguer via le port usb <img src="lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> connection physique du gps à l&#039;ordinateur</div>
+</li>
+<li class="level1"><div class="li"> &quot;un clique sur <em>offline</em>&quot; permet vérifier si le gps est reconnu →si ok, &quot;<em>offline</em>&quot; rouge  bascule vers &quot;<em>online</em>&quot; vert</div>
+</li>
+<li class="level1"><div class="li"> &quot;<em>prendre</em>&quot; récupère les données stockées dans le gps et les mets dans la fenetre &quot;liste/gps manager&quot; (gps→pc)</div>
+</li>
+<li class="level1"><div class="li"> &quot;<em>mettre</em>&quot; fait le contraire (pc→gps) <img src="lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /></div>
+</li>
+</ol>
+
+<p>
+<p><div class="notetip">
+pour le foreruner 205:
+Sous Ubuntu 10.10 (<strong>pb résolu sous 11.10</strong>) un bug pose problème avec les gps qui communique par port série via un adaptateur série-<abbr title="Universal Serial Bus">USB</abbr>.
+</p>
+
+<p>
+Taper les commandes suivantes afin de désactiver le pilote <strong>pl2303</strong> et de le réactiver, ce qui a pour effet de contourner ce problème.
+</p>
+<pre class="code">sudo modprobe -r pl2303
+sudo modprobe pl2303</pre>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">
+pour le foreruner 205:
+sous ubuntu 12.04, encore une petite régression : il faut ajouter l&#039;utilisateur au groupe &quot;dialout&quot; à l&#039;aide de la commande :
+</p>
+
+<p>
+sudo adduser user_name dialout
+</p>
+
+<p>
+ps: remplacer user_name par votre nom d&#039;utilisateur <img src="lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="gpsman"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337967865" /><input type="hidden" name="summary" value="[connecter un gps] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5373-7370" /><input type="submit" value="Modifier" class="button" title="connecter un gps" /></div></form></div>
+<h2 class="sectionedit9" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer son paquet</a>. La configuration de l&#039;application sera conservée ou supprimée selon la méthode de désinstallation que vous choisirez. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="gpsman"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337967865" /><input type="hidden" name="summary" value="[Désinstallation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7371-7635" /><input type="submit" value="Modifier" class="button" title="Désinstallation" /></div></form></div>
+<h2 class="sectionedit10" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://gpsman.sourceforge.net/" class="urlextern" title="http://gpsman.sourceforge.net/"  rel="nofollow">Site officiel de gpsman</a> [en]</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/benoit747" class="wikilink2" title="utilisateurs:benoit747" rel="nofollow">benoit747</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="gpsman"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337967865" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7636-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c9cf974a3c303ee6ac543bb54b70f2ac.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/gpsman?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gpsman?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gpsman?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gpsman?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gpsman?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

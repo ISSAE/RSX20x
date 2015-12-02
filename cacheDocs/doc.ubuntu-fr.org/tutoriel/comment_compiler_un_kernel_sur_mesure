@@ -1,0 +1,610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:comment_compiler_un_kernel_sur_mesure - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2011-05-06T19:35:17+0200"/>
+<meta name="keywords" content="dapper,edgy,kernel,systeme,programmation,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="comment_compiler_un_kernel_sur_mesure?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="comment_compiler_un_kernel_sur_mesure?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="../_export/xhtml/tutoriel/comment_compiler_un_kernel_sur_mesure"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../_export/raw/tutoriel/comment_compiler_un_kernel_sur_mesure"/>
+<link rel="canonical" href="comment_compiler_un_kernel_sur_mesure"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_compiler_un_kernel_sur_mesure","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="comment_compiler_un_kernel_sur_mesure#main" tabindex="1">Contenu</a> | <a href="comment_compiler_un_kernel_sur_mesure#qsearch__in" tabindex="2">Rechercher</a> | <a href="comment_compiler_un_kernel_sur_mesure#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="comment_compiler_un_kernel_sur_mesure" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="comment_compiler_un_kernel_sur_mesure" >tutoriel:comment_compiler_un_kernel_sur_mesure</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#versions_concernees">Versions concernées</a></div></li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#introduction">Introduction</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#avertissement">Avertissement</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#bonnes_raisons_de_compiler_un_noyau_personnalise">Bonnes raisons de compiler un noyau personnalisé</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#mauvaises_raisons_de_compiler_un_noyau_personnalise">Mauvaises raisons de compiler un noyau personnalisé</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#pre-requis">Pré-requis</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#edgy_a_gutsy">Edgy à Gutsy</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#hardy">Hardy</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#intrepid_et_superieur">Intrepid et supérieur</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#telechargement_des_sources">Téléchargement des sources</a></div></li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#adaptation_des_sources_a_vos_besoins">Adaptation des sources à vos besoins</a></div></li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#methode_alternative">Méthode alternative</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#pre-requis1">Pré-requis</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#telechargement_et_preparation_du_noyau">Téléchargement et préparation du noyau</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#importation_des_parametres_du_noyau_actuel_et_configuration">Importation des paramètres du noyau actuel et configuration</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#compilation">Compilation</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#installation_du_nouveau_noyau">Installation du nouveau noyau</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_compiler_un_kernel_sur_mesure#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../dapper" class="wikilink1" title="dapper" rel="tag">Dapper</a>,
+	<a href="http://doc.ubuntu-fr.org/edgy" class="wikilink1" title="edgy" rel="tag">Edgy</a>,
+	<a href="../kernel" class="wikilink1" title="kernel" rel="tag">kernel</a>,
+	<a href="../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../programmation" class="wikilink1" title="programmation" rel="tag">programmation</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_compiler_un_noyau_sur_mesure">Comment compiler un noyau sur mesure ?</h1>
+<div class="level1">
+
+<p>
+<strong>ou <em>Comment personnaliser son noyau ?</em></strong> (On entend aussi souvent le mot anglais « kernel », qui signifie « noyau » en français)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Comment compiler un noyau sur mesure ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="67-258" /><input type="submit" value="Modifier" class="button" title="Comment compiler un noyau sur mesure ?" /></div></form></div>
+<h2 class="sectionedit2" id="versions_concernees">Versions concernées</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Ubuntu 6.06, 6.10, 7.10.</div>
+</li>
+<li class="level1"><div class="li"> <img src="../lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /> pour la 7.04, utilisez la méthode alternative <img src="../lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Versions concernées] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="259-381" /><input type="submit" value="Modifier" class="button" title="Versions concernées" /></div></form></div>
+<h2 class="sectionedit3" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+Dans la suite de ce didacticiel, le mot kernel est parfois utilisé car beaucoup d&#039;entre vous l&#039;ont entendu, ou l&#039;entendront sûrement au milieu d&#039;une conversation en français.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Introduction] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="382-586" /><input type="submit" value="Modifier" class="button" title="Introduction" /></div></form></div>
+<h3 class="sectionedit4" id="avertissement">Avertissement</h3>
+<div class="level3">
+
+<p>
+Compiler et utiliser un noyau personnalisé va rendre compliqué le support pour votre système. Vous ne serez pas autorisé à rapporter des bogues pour votre noyau personnalisé (ils seront rejetés sans explication).
+</p>
+
+<p>
+Si vous avez un contrat de support commercial avec Ubuntu/Canonical, ceci rendra ce support caduc.
+</p>
+
+<p>
+Notez par ailleurs que cette page décrit comment procéder pour le noyau d&#039;Ubuntu 6.10 (2.6.17) ou ultérieur ! Les versions précédentes ne comprenaient pas, intentionnellement, un tel mécanisme permettant de compiler aisément son propre noyau.
+</p>
+
+<p>
+Cette page <strong>ne</strong> décrit <strong>pas</strong> comment compiler les noyaux provenant de kernel.org. Elle est destinée aux sources du noyau Ubuntu.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Avertissement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="587-1317" /><input type="submit" value="Modifier" class="button" title="Avertissement" /></div></form></div>
+<h3 class="sectionedit5" id="bonnes_raisons_de_compiler_un_noyau_personnalise">Bonnes raisons de compiler un noyau personnalisé</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Vous êtes un développeur du noyau.</div>
+</li>
+<li class="level1"><div class="li"> Vous avez besoin de compiler d&#039;une façon spéciale, que le noyau officiel n&#039;offre pas (par exemple, pour activer des fonctionnalités expérimentales).</div>
+</li>
+<li class="level1"><div class="li"> Vous essayez de déboguer un problème (pour lequel il serait peut-être judicieux de remplir un rapport de bogue à propos du noyau officiel Ubuntu).</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Bonnes raisons de compiler un noyau personnalisé] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1318-1733" /><input type="submit" value="Modifier" class="button" title="Bonnes raisons de compiler un noyau personnalisé" /></div></form></div>
+<h3 class="sectionedit6" id="mauvaises_raisons_de_compiler_un_noyau_personnalise">Mauvaises raisons de compiler un noyau personnalisé</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Vous avez à tout prix besoin de compiler un pilote spécial. Pour cela, il vous faut seulement installer les paquets linux-headers.</div>
+</li>
+<li class="level1"><div class="li"> Vous n&#039;avez pas la moindre idée de ce que vous faites et, si vous cassez quelque chose, vous aurez besoin d&#039;aide pour réparer. Si vous  détruisez votre système, réinstallez-le. Ne demandez de l&#039;aide que si vous ne pouvez plus faire autrement.</div>
+</li>
+<li class="level1"><div class="li"> Vous avez atterri sur cette page par erreur, mais vous la lisez car elle semble intéressante. Cela peut être intéressant, mais si vous ne savez pas ce que signifie le mot « processeur », alors laissez tomber tout de suite.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Mauvaises raisons de compiler un noyau personnalisé] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1734-2420" /><input type="submit" value="Modifier" class="button" title="Mauvaises raisons de compiler un noyau personnalisé" /></div></form></div>
+<h2 class="sectionedit7" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+Pour commencer, il faut <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer certains paquets</a> selon la version d&#039;Ubuntu que vous utilisez
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2421-2580" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h3 class="sectionedit8" id="edgy_a_gutsy">Edgy à Gutsy</h3>
+<div class="level3">
+<pre class="code">sudo apt-get install linux-kernel-devel fakeroot kernel-wedge build-essential makedumpfile</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Edgy à Gutsy] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2581-2711" /><input type="submit" value="Modifier" class="button" title="Edgy à Gutsy" /></div></form></div>
+<h3 class="sectionedit9" id="hardy">Hardy</h3>
+<div class="level3">
+<pre class="code">sudo apt-get install linux-kernel-devel fakeroot kernel-wedge build-essential</pre>
+
+<p>
+Note : le paquet &quot;makedumpfile&quot; n&#039;est plus disponible sous Hardy.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Hardy] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2712-2887" /><input type="submit" value="Modifier" class="button" title="Hardy" /></div></form></div>
+<h3 class="sectionedit10" id="intrepid_et_superieur">Intrepid et supérieur</h3>
+<div class="level3">
+<pre class="code">sudo apt-get install fakeroot kernel-wedge build-essential makedumpfile kernel-package</pre>
+
+<p>
+Cela va installer les outils relatifs à la compilation et l&#039;empaquetage du noyau. Le paquet <strong>git-core</strong>, qui est le meilleur moyen pour interagir avec les sources du noyau Ubuntu, sera aussi installé.
+</p>
+
+<p>
+Note : Le paquet linux-kernel-devel n&#039;existe plus depuis Intrepid. Ainsi vous devez aussi lancer la commande suivante :
+</p>
+<pre class="code">sudo apt-get build-dep linux</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Intrepid et supérieur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2888-3393" /><input type="submit" value="Modifier" class="button" title="Intrepid et supérieur" /></div></form></div>
+<h2 class="sectionedit11" id="telechargement_des_sources">Téléchargement des sources</h2>
+<div class="level2">
+
+<p>
+Il y a deux moyens pour obtenir les sources du noyau Ubuntu. Idéalement, il faudrait utiliser <strong>git</strong>. Les instructions détaillées pour l&#039;utiliser sont disponibles sur <a href="https://wiki.ubuntu.com/KernelTeam/KernelGitGuide" class="urlextern" title="https://wiki.ubuntu.com/KernelTeam/KernelGitGuide"  rel="nofollow">https://wiki.ubuntu.com/KernelTeam/KernelGitGuide</a>.
+</p>
+
+<p>
+La seconde méthode est plus simple : <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong>linux-source</strong>
+</p>
+
+<p>
+Cependant, ce ne sera pas toujours à jour. L&#039;utilisation de <strong>git</strong> vous permet de toujours rester à jour avec la dernière version des sources du noyau Ubuntu.
+</p>
+
+<p>
+Il faut maintenant décompacter le fichier que vous venez de télécharger
+</p>
+<pre class="code">cd /usr/src
+
+sudo tar --bzip2 -xvf linux-source</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Téléchargement des sources] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3394-4081" /><input type="submit" value="Modifier" class="button" title="Téléchargement des sources" /></div></form></div>
+<h2 class="sectionedit12" id="adaptation_des_sources_a_vos_besoins">Adaptation des sources à vos besoins</h2>
+<div class="level2">
+
+<p>
+Pour la majorité des gens, modifier seulement les fichiers de configuration suffira. Si vous devez appliquer un correctif, lisez les instructions données par le fournisseur du correctif.
+</p>
+
+<p>
+Les configurations &quot;officielles&quot; Ubuntu se trouvent dans <em>debian/config/ARCH</em>/, où <em>ARCH</em> désigne l&#039;architecture pour laquelle vous compilez. Plusieurs fichiers sont présents dans ce répertoire. Le fichier <em>config</em> est la base pour toutes les cibles de cette architecture. Ensuite, les nombreux fichiers <em>config.FLAVOUR</em> contiennent des options spécifiques à chaque cible. Par exemple, voici les fichiers pour le noyau 2.6.17, et l&#039;architecture i386 :
+</p>
+<pre class="code">$ ls -l debian/config/i386/
+total 88
+-rw-r--r-- 1 me me 62737 Jun 14 18:31 config
+-rw-r--r-- 1 me me 1859 Jun 12 14:59 config.386
+-rw-r--r-- 1 me me 1394 Jun 12 14:59 config.686
+-rw-r--r-- 1 me me 1420 Jun 12 14:59 config.k7
+-rw-r--r-- 1 me me 1519 Jun 12 14:59 config.server
+-rw-r--r-- 1 me me 1867 Jun 12 14:59 config.server-bigiron</pre>
+
+<p>
+Si vous devez changer une option de configuration, modifiez simplement le fichier contenant l&#039;option. Si vous éditez le fichier <em>config</em>, les changements affecteront toutes les architectures. Si vous modifiez un des fichiers cible, seule la cible sera affectée.
+</p>
+
+<p>
+<strong>Note</strong> :  Si aucun fichier n&#039;est présent, vous pouvez en trouver dans le répertoire <em>/boot</em>. Par exemple :
+</p>
+<pre class="code">$ ls -l /boot | grep config
+-rw-r--r-- 1 root root   69733 2006-08-03 05:10 config-2.6.15-26-686
+-rw-r--r-- 1 root root   69759 2006-08-03 05:36 config-2.6.15-26-k7</pre>
+
+<p>
+Suite à l&#039;application d&#039;un patch ou l&#039;ajout d&#039;une option, il est préférable de régénérer les fichiers de configuration. Il y a un &quot;assistant&quot; pour cela. Pour régénérer toutes les architectures, exécutez :
+</p>
+<pre class="code">debian/rules updateconfigs</pre>
+
+<p>
+Si vous voulez mettre à jour une architecture seulement, exécutez :
+</p>
+<pre class="code">debian/bin/oldconfig ARCH</pre>
+
+<p>
+=
+</p>
+
+</div>
+
+<h4 id="compilation_du_noyau">Compilation du noyau</h4>
+<div class="level4">
+
+<p>
+La compilation du noyau est une étape très simple. Selon vos besoins, vous pouvez vouloir compiler toutes les cibles, ou seulement celle spécifique à votre système. Cependant, vous désirez aussi vous assurer que ce que vous faites n&#039;entre pas en conflit avec le noyau officiel.
+</p>
+
+<p>
+Utilisez la commande suivante pour construire toutes les cibles de l&#039;architecture pour laquelle vous compilez :
+</p>
+<pre class="code">AUTOBUILD=1 fakeroot debian/rules binary-debs</pre>
+
+<p>
+La variable d&#039;environnement <em>AUTOBUILD</em> déclenche des fonctionnalités spéciales pendant la compilation du noyau. Premièrement, cela n&#039;effectue pas les vérifications normales d&#039;ABI (l&#039;ABI est la compatibilité binaire). Cela est rendu possible par le fait qu&#039;un unique identifiant d&#039;ABI (ABI ID) est créé. Si vous utilisez le depôt <strong>git</strong>, cet identifiant est généré depuis le <em>git HEAD <abbr title="Secure Hash Algorithm">SHA</abbr></em>. Sinon, il est généré à l&#039;aide du programme <em>uuidgen</em> (ce qui signifie qu&#039;à chaque exécution de la construction avec <em>debian/rules</em>, l&#039;identifiant sera différent !). Le paquet créé sera nommé à l&#039;aide de cet identifiant.
+</p>
+
+<p>
+Pour construire une cible spécifique, utilisez la commande suivante :
+</p>
+<pre class="code">AUTOBUILD=1 fakeroot debian/rules binary-debs flavours=k7</pre>
+
+<p>
+Ceci aura pour effet de ne compiler que la variante AMD k7 de l&#039;architecture i386.
+</p>
+
+<p>
+Sur certaine installation, le message suivant peut survenir :
+</p>
+<pre class="code">debian/rules:1637: *** Error. I do not know where the kernel image goes to [kimagedest undefined] The usual case for this is that I could not determine which arch or subarch tihs machine belongs to. Please specify a subarch, and try again.. Arrêt.</pre>
+
+<p>
+Dans ce cas, utilisez la commande suivante :
+</p>
+<pre class="code">KPKG_ARCH=i386 AUTOBUILD=1 fakeroot debian/rules binary-debs flavours=k7</pre>
+
+<p>
+avec i386 ou tout autre architecture.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Adaptation des sources à vos besoins] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4082-7928" /><input type="submit" value="Modifier" class="button" title="Adaptation des sources à vos besoins" /></div></form></div>
+<h2 class="sectionedit13" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Les paquets ainsi générés sont placés dans <em>ubuntu-2.6/debian/build</em>.
+Maintenant que la construction a réussi, vous pouvez installer les paquets à l&#039;aide de dpkg :
+</p>
+<pre class="code">sudo dpkg -i linux-image-2.6.17-2-ef427c-k7_2.6.17-2.2_i386.deb
+sudo dpkg -i linux-headers-2.6.17-2-ef427c-k7_2.6.17-2.2_i386.deb</pre>
+
+<p>
+<strong>Note</strong> : Si vous utilisez les modules du paquet <em>linux-restricted-modules</em>, il sera nécessaire de les recompiler en utilisant votre nouveau paquet <em>linux-headers</em>. Des détails sur cette manipulation seront ajoutés ultérieurement
+</p>
+<hr />
+
+<p>
+<em> Contributeurs : <a href="../utilisateurs/mr_pouit" class="wikilink1" title="utilisateurs:mr_pouit">mr_pouit</a></em>
+</p>
+
+<p>
+<em> Basé sur <a href="https://wiki.ubuntu.com/KernelCustomBuild" class="urlextern" title="https://wiki.ubuntu.com/KernelCustomBuild"  rel="nofollow">https://wiki.ubuntu.com/KernelCustomBuild</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7929-8625" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit14" id="methode_alternative">Méthode alternative</h2>
+<div class="level2">
+<blockquote><div class="no">
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> : à déplacer sur une autre page non ?</div></blockquote>
+
+<p>
+Cette méthode a été testée avec succès sur une Ubuntu 7.04 (Feisty Fawn) et 10.04 (Lucid Lynx)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Méthode alternative] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8626-8808" /><input type="submit" value="Modifier" class="button" title="Méthode alternative" /></div></form></div>
+<h3 class="sectionedit15" id="pre-requis1">Pré-requis</h3>
+<div class="level3">
+
+<p>
+Afin de permettre la compilation du noyau, il vous faut certains paquets,
+ouvrez un terminal et tapez : 
+</p>
+<pre class="code">sudo apt-get install build-essential bin86 kernel-package libqt3-headers libqt3-mt-dev bzip2</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8809-9045" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h3 class="sectionedit16" id="telechargement_et_preparation_du_noyau">Téléchargement et préparation du noyau</h3>
+<div class="level3">
+
+<p>
+Nous allons maintenant télécharger le nouveau noyau dans le dossier /usr/src/ et le décompresser et continuer le travail dans /usr/src/linux
+dans le terminal, tapez ceci :
+</p>
+<pre class="code">cd /usr/src &amp;&amp; sudo wget http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.34.tar.bz2 &amp;&amp; sudo tar -xvjf linux-2.6.34.tar.bz2 &amp;&amp; sudo rm -rf /usr/src/linux &amp;&amp; sudo ln -s /usr/src/linux-2.6.34 /usr/src/linux &amp;&amp; cd /usr/src/linux</pre>
+
+<p>
+(au besoin, adaptez la 2.6.27 pour avoir la version du noyau désirée)
+(attention, cette manipulation a été testée avec le noyau 2.6.34 donc, si vous modifiez la version du noyau, ce manuel peut être dangereux pour votre système)
+</p>
+
+<p>
+Nous allons ensuite continuer en appliquant les derniers correctifs sur le noyau :
+</p>
+<pre class="code">sudo wget http://www.kernel.org/pub/linux/kernel/v2.6/patch-2.6.34.bz2 &amp;&amp; sudo -s -H &amp;&amp; bzcat patch-2.6.34.bz2| patch -p1</pre>
+
+<p>
+(à l&#039;heure où j&#039;écris ce manuel, la dernière version du patch est la 34, pour vérifier que c&#039;est toujours votre cas, rendez-vous sur <a href="http://www.kernel.org/pub/linux/kernel/v2.6/" class="urlextern" title="http://www.kernel.org/pub/linux/kernel/v2.6/"  rel="nofollow">http://www.kernel.org/pub/linux/kernel/v2.6/</a> et cherchez patch-2.6.20.X si X est plus grand que 34 alors, remplacez les 34 dans la commande ci-dessus par la nouvelle valeur)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Téléchargement et préparation du noyau] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9046-10294" /><input type="submit" value="Modifier" class="button" title="Téléchargement et préparation du noyau" /></div></form></div>
+<h3 class="sectionedit17" id="importation_des_parametres_du_noyau_actuel_et_configuration">Importation des paramètres du noyau actuel et configuration</h3>
+<div class="level3">
+
+<p>
+Nous allons maintenant procéder à la partie intéressante du sujet :
+la configuration du noyau
+</p>
+
+<p>
+La commande suivante aura pour effet de copier vos paramètres actuels dans le nouveau noyau et de lancer l&#039;utilitaire de configuration qui vous permettra de personnaliser votre noyau : 
+</p>
+<pre class="code">sudo cp /boot/config-`uname -r` .config &amp;&amp; sudo make oldconfig &amp;&amp; sudo make xconfig</pre>
+
+<p>
+(NB : le terminal va vous demander des choses, notamment le paramétrage de nouvelles fonctions du noyau inexistantes dans l&#039;ancien, appuyez juste sur &quot;entrée&quot; à moins de savoir exactement ce que vous faites)
+</p>
+
+<p>
+Après un petit moment, vous allez voir la fenêtre de configuration apparaître à l&#039;écran. Je vous laisse le choix des choses que vous voulez dans votre noyau mais je vous conseille juste dans &quot;kernel hacking&quot; de désactiver l&#039;option &quot;kernel debugging&quot; (sinon la compilation va prendre un espace disque monstrueux !)
+</p>
+
+<p>
+Une fois que vous avez choisi vos options, n&#039;oubliez pas de les sauvegarder ;) (la petite disquette en haut à gauche :D), ensuite, fermez la fenêtre de configuration.
+</p>
+
+<p>
+Si vous utilisez la version serveur, c&#039;est-à-dire sans interface graphique, il vaut mieux utiliser menuconfig (qui est l&#039;équivalent de xconfig mais en mode console) que xconfig (qui cherche à se connecter à un serveur X). Pour utiliser menuconfig, il faut installer la librairie de développement ncurses. Ce qui donne :
+</p>
+<pre class="code"> sudo apt-get install libncurses5-dev</pre>
+
+<p>
+Puis :
+</p>
+<pre class="code">sudo cp /boot/config-`uname -r` .config &amp;&amp; sudo make oldconfig &amp;&amp; sudo make menuconfig</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Importation des paramètres du noyau actuel et configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10295-11938" /><input type="submit" value="Modifier" class="button" title="Importation des paramètres du noyau actuel et configuration" /></div></form></div>
+<h3 class="sectionedit18" id="compilation">Compilation</h3>
+<div class="level3">
+
+<p>
+Pour cette partie-ci, j&#039;espère que vous n&#039;êtes pas pressés car une compilation de noyau prend quand même du temps (de 1-3 heures en fonction de votre machine)
+</p>
+
+<p>
+Pour lancer la compilation, dans le terminal, il vous suffit d&#039;avoir la permission root et de taper :
+</p>
+<pre class="code">sudo make-kpkg clean &amp;&amp; sudo make-kpkg --initrd --revision=386monNoyau kernel_image kernel_headers modules_image</pre>
+
+<p>
+(NB : vous pouvez remplacer revision=386monNoyau par ce que vous voulez, ça ne change rien)
+</p>
+
+<p>
+Et voila, vous devriez en avoir pour un bon bout de temps, c&#039;est le moment d&#039;aller promener le chien.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Compilation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11939-12551" /><input type="submit" value="Modifier" class="button" title="Compilation" /></div></form></div>
+<h3 class="sectionedit19" id="installation_du_nouveau_noyau">Installation du nouveau noyau</h3>
+<div class="level3">
+
+<p>
+Voilà, la compilation est terminée, il vous reste juste à installer le nouveau noyau toujours dans le même terminal :
+</p>
+<pre class="code">cd .. &amp;&amp; dpkg -i linux*.deb</pre>
+
+<p>
+Ensuite, vous redémarrez l&#039;ordinateur ;)
+</p>
+
+<p>
+Ce document est une traduction d&#039;un article créé par master_kernel, vous pouvez consulter le document original à cette adresse : <a href="http://ubuntuforums.org/showthread.php?t=311158&amp;highlight=master+kernel" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=311158&amp;highlight=master+kernel"  rel="nofollow">http://ubuntuforums.org/showthread.php?t=311158&amp;highlight=master+kernel</a>
+merci à lui pour cet excellent tutoriel.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Installation du nouveau noyau] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12552-13051" /><input type="submit" value="Modifier" class="button" title="Installation du nouveau noyau" /></div></form></div>
+<h2 class="sectionedit20" id="liens">Liens</h2>
+<div class="level2">
+
+<p>
+Tutoriel sympa : <a href="http://ubuntuforums.org/showthread.php?t=441013" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=441013"  rel="nofollow">http://ubuntuforums.org/showthread.php?t=441013</a>
+</p>
+
+<p>
+Turoriel Comment compiler le dernier noyau pour Ubuntu 7.10 via GIT:<a href="http://liaudetgael.free.fr/spip.php?article21" class="urlextern" title="http://liaudetgael.free.fr/spip.php?article21"  rel="nofollow">http://liaudetgael.free.fr/spip.php?article21</a>
+</p>
+
+<p>
+Tutoriel Comment changer l&#039;image de chargement du noyau:<a href="http://liaudetgael.free.fr/spip.php?article22" class="urlextern" title="http://liaudetgael.free.fr/spip.php?article22"  rel="nofollow">http://liaudetgael.free.fr/spip.php?article22</a>
+</p>
+<hr />
+
+<p>
+<em> Contributeurs : <a href="../utilisateurs/doyen" class="wikilink1" title="utilisateurs:doyen">Doyen</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="comment_compiler_un_kernel_sur_mesure"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1304703317" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13052-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fc195f732b6e9e3ff1959000dbde0e6d.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="comment_compiler_un_kernel_sur_mesure?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="comment_compiler_un_kernel_sur_mesure?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="comment_compiler_un_kernel_sur_mesure?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="comment_compiler_un_kernel_sur_mesure?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="comment_compiler_un_kernel_sur_mesure?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

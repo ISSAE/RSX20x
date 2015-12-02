@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>roundcube - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-05-03T12:48:51+0200"/>
+<meta name="keywords" content="lucid,precise,courriel,serveur,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/roundcube?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/roundcube?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/roundcube"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/roundcube"/>
+<link rel="canonical" href="roundcube"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"roundcube","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="roundcube#main" tabindex="1">Contenu</a> | <a href="roundcube#qsearch__in" tabindex="2">Rechercher</a> | <a href="roundcube#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="roundcube" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="roundcube" >roundcube</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, les informations qu'elle contient n'ont pas été vérifiées depuis <a href="precise">Ubuntu 12.04 LTS.</a><br />
+Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="roundcube#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="roundcube#installation_a_partir_des_depots">Installation à partir des dépôts</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="roundcube#installation">Installation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="roundcube#installation_manuelle">Installation Manuelle</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="roundcube#preparation">Préparation</a></div></li>
+<li class="level2"><div class="li"><a href="roundcube#installation1">Installation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="roundcube#plugiciels">Plugiciels</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="roundcube#changer_le_mot_de_passe">Changer le mot de passe</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="courriel" class="wikilink1" title="courriel" rel="tag">courriel</a>,
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="roundcube_avec_apachemysql">RoundCube avec Apache/Mysql</h1>
+<div class="level1">
+
+<p>
+RoundCube est un courrielleur Web multilingue.
+</p>
+
+<p>
+Pour une description plus complète : <a href="http://www.roundcube.net/about" class="urlextern" title="http://www.roundcube.net/about"  rel="nofollow">http://www.roundcube.net/about</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="roundcube"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1399114131" /><input type="hidden" name="summary" value="[RoundCube avec Apache/Mysql] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="55-218" /><input type="submit" value="Modifier" class="button" title="RoundCube avec Apache/Mysql" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Avoir un serveur <a href="mysql" class="wikilink1" title="mysql">Mysql</a> fonctionnel ou alors utiliser une base SQLite (inclue dans PHP 5)</div>
+</li>
+<li class="level1"><div class="li"> Avoir un serveur <a href="apache2" class="wikilink1" title="apache2">Serveur HTTP Apache 2</a> fonctionnel ou bien un serveur Lighttpd</div>
+</li>
+<li class="level1"><div class="li"> Avoir un serveur SMTP et IMAP fonctionnel par exemple : <a href="dbmail" class="wikilink1" title="dbmail">Installation et configuration dbmail avec postfix</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="roundcube"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1399114131" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="219-563" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation_a_partir_des_depots">Installation à partir des dépôts</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="roundcube"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1399114131" /><input type="hidden" name="summary" value="[Installation à partir des dépôts] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="564-612" /><input type="submit" value="Modifier" class="button" title="Installation à partir des dépôts" /></div></form></div>
+<h3 class="sectionedit4" id="installation">Installation</h3>
+<div class="level3">
+
+<p>
+Il suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer les paquets</a> <strong><a href="apt://roundcube-mysql,roundcube" class="urlextern" title="apt://roundcube-mysql,roundcube"  rel="nofollow">roundcube-mysql et roundcube</a></strong>.
+</p>
+
+</div>
+
+<h4 id="configuration">Configuration</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="base">Base</h5>
+<div class="level5">
+
+<p>
+Éditer /etc/roundcube/apache.conf
+</p>
+<pre class="code">vim /etc/roundcube/apache.conf</pre>
+
+<p>
+Décommenter les deux lignes suivantes :
+</p>
+<pre class="code">Alias /roundcube/program/js/tiny_mce/ /usr/share/tinymce/www/
+Alias /roundcube /var/lib/roundcube</pre>
+
+<p>
+Redémarrer apache 
+</p>
+<pre class="code">sudo service apache2 restart</pre>
+
+<p>
+RoundCube est désormais accessible sur <a href="http://mon-serveur/roundcube" class="urlextern" title="http://mon-serveur/roundcube"  rel="nofollow">http://mon-serveur/roundcube</a>
+</p>
+
+<p>
+Si lors de la connexion vous avez le message : 
+</p>
+
+<p>
+SERVICE CURRENTLY NOT AVAILABLE!
+Error No. [500]
+</p>
+
+<p>
+Il se peut que mcrypt ne soit pas installé ou activé dans PHP.
+</p>
+
+<p>
+Pour l&#039;installer : 
+</p>
+<pre class="code">sudo apt-get install php5-mcrypt</pre>
+
+<p>
+Pour l&#039;activer : 
+</p>
+<pre class="code">sudo php5enmod mcrypt
+sudo service apache2 restart</pre>
+
+</div>
+
+<h5 id="complementaire">Complémentaire</h5>
+<div class="level5">
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="roundcube"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1399114131" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="613-1471" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit5" id="installation_manuelle">Installation Manuelle</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="roundcube"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1399114131" /><input type="hidden" name="summary" value="[Installation Manuelle] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1472-1507" /><input type="submit" value="Modifier" class="button" title="Installation Manuelle" /></div></form></div>
+<h3 class="sectionedit6" id="preparation">Préparation</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="mysql">Mysql</h4>
+<div class="level4">
+
+<p>
+RoundCube a besoin d&#039;une base de données pour fonctionner.
+</p>
+
+</div>
+
+<h5 id="creation_de_la_base">Création de la base</h5>
+<div class="level5">
+<pre class="code">mysql -uroot -p
+mysql&gt; CREATE schema roundcube;</pre>
+
+</div>
+
+<h5 id="creation_de_l_utilisateur_de_la_base">Création de l&#039;utilisateur de la base</h5>
+<div class="level5">
+<pre class="code">mysql -uroot -p
+GRANT ALL ON roundcube.* to roundcube@localhost identified by &#039;password&#039;;</pre>
+
+</div>
+
+<h4 id="apache">Apache</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="mise_en_place_d_un_hote_virtuel">Mise en place d&#039;un hôte virtuel</h5>
+<div class="level5">
+
+<p>
+<strong>Création du répertoire</strong>
+</p>
+<pre class="code">sudo mkdir -p /chemin/vers/mon-hôte-virtuel
+sudo chown www-data\: -R /chemin/vers/mon-hôte-virtuel</pre>
+
+<p>
+<strong>Création de la configuration</strong>
+</p>
+<pre class="code">sudo vim /etc/apache2/sites-available/mon-hôte-virtuel
+&lt;VirtualHost *:80&gt;
+        ServerAdmin webmaster@mon-domaine.com
+      	ServerName mon-host.mon-domaine.com
+        LimitInternalRecursion 100
+        DocumentRoot /chemin/vers/mon-hôte-virtuel
+      	&lt;Directory /chemin/vers/mon-hôte-virtuel&gt;
+              	Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+              	Order allow,deny
+      	        allow from all
+        &lt;/Directory&gt;
+        ErrorLog /var/log/apache2/mon-host.error.log
+        LogLevel warn
+        CustomLog /var/log/apache2/mon-host.access.log combined
+&lt;/VirtualHost&gt;</pre>
+
+</div>
+
+<h5 id="activation_de_l_hote_virtuel">Activation de l&#039;hôte virtuel</h5>
+<div class="level5">
+<pre class="code">sudo a2ensite mon-hôte-virtuel
+sudo /etc/init.d/apache2 reload</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="roundcube"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1399114131" /><input type="hidden" name="summary" value="[Préparation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1508-2798" /><input type="submit" value="Modifier" class="button" title="Préparation" /></div></form></div>
+<h3 class="sectionedit7" id="installation1">Installation</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="recuperation_de_roundcube">Récupération de RoundCube</h4>
+<div class="level4">
+
+<p>
+Téléchargez la dernière version de <a href="http://www.roundcube.net/download" class="urlextern" title="http://www.roundcube.net/download"  rel="nofollow">RoundCube</a> et la décompressez dans le répertoire créé pour l&#039;hôte virtuel
+</p>
+
+</div>
+
+<h4 id="lancement_de_l_installation">Lancement de l&#039;installation</h4>
+<div class="level4">
+
+<p>
+Ouvrez avec votre navigateur <a href="http://mon-h" class="urlextern" title="http://mon-h"  rel="nofollow">http://mon-h</a>ôte-virtuel/installer et suivre les instructions.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="roundcube"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1399114131" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2799-3143" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit8" id="plugiciels">Plugiciels</h2>
+<div class="level2">
+
+<p>
+Des plugiciels existent pour Roundcube permettant d&#039;ajouter des fonctionnalités. Une liste se trouve sur la page suivante :
+</p>
+
+<p>
+<a href="http://trac.roundcube.net/wiki/Plugin_Repository" class="urlextern" title="http://trac.roundcube.net/wiki/Plugin_Repository"  rel="nofollow">http://trac.roundcube.net/wiki/Plugin_Repository</a>
+</p>
+
+<p>
+Une partie de ces derniers sont présents dans les dépôts. Il suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <a href="apt://roundcube-plugins" class="urlextern" title="apt://roundcube-plugins"  rel="nofollow">apt://roundcube-plugins</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="roundcube"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1399114131" /><input type="hidden" name="summary" value="[Plugiciels] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3144-3512" /><input type="submit" value="Modifier" class="button" title="Plugiciels" /></div></form></div>
+<h3 class="sectionedit9" id="changer_le_mot_de_passe">Changer le mot de passe</h3>
+<div class="level3">
+
+<p>
+Le plugiciel change password, ou simplement password, permet de changer le mot de passe via le bouton préférences de l&#039;interface web en ajoutant un onglet <em>mot de passe</em> pour une grande variété de méthodes d&#039;authentification, voir le fichier <strong>/var/lib/roundcube/plugins/password/README</strong> pour plus de détails.
+</p>
+<hr />
+
+<p>
+<em>Contributeur principal : <a href="http://www.flavea.fr" class="urlextern" title="http://www.flavea.fr"  rel="nofollow">Flavea </a></em>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="roundcube"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1399114131" /><input type="hidden" name="summary" value="[Changer le mot de passe] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3513-" /><input type="submit" value="Modifier" class="button" title="Changer le mot de passe" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/b/b1fbb335cf2f525f21bb8fa03fc1a16a.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/roundcube?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/roundcube?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/roundcube?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/roundcube?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/roundcube?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

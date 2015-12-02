@@ -1,0 +1,44 @@
+{{tag>Precise Trusty Utopic système}}
+----
+
+====== Boot-Info ======
+
+**Boot-Info** est un petit utilitaire qui créée un rapport contenant les principales caractéristiques système de votre PC liées au démarrage.
+Ce rapport permet de diagnostiquer d’éventuels problèmes, notamment ceux liés au démarrage.
+
+//Boot-Info// est un logiciel libre (GNU-GPL).
+
+{{http://pix.toile-libre.org/upload/original/1417653221.png}}
+
+===== Installation =====
+
+  - connecter internet;
+  -  [[:ppa#ajout_d_un_ppa_a_vos_sources_logicielles|Ajouter à vos sources de logiciels le PPA]] **ppa:yannubuntu/boot-repair**((https://launchpad.net/~yannubuntu/+archive/ubuntu/boot-repair)): 
+<code>sudo add-apt-repository ppa:yannubuntu/boot-repair</code> 
+
+6.  [[:tutoriel:comment_modifier_sources_maj#recharger_la_liste_des_paquets|Recharger la liste des paquets]]\\
+
+<code>sudo apt-get update</code>
+
+ 7. [[:tutoriel:comment_installer_un_paquet|Installer les paquets]] **[[apt>boot-repair]]** et **[[apt>boot-info]]**\\
+
+<code>sudo apt-get install boot-repair boot-info</code>
+
+===== Utilisation=====
+
+  * lancez Boot-Info via le tableau de bord (si vous utilisez [[Unity]]), ou via la commande //boot-info//.
+  * choisissez les options de rapport qui vous conviennent:
+    * "Rapport en ligne" envoie le rapport sur un site [[wpfr>pastebin]], puis vous indique l'url où se situe le rapport)
+    * "Rapport local" enregistre le rapport dans votre espace utilisateur et l'ouvre dans votre éditeur de texte
+
+===== Désinstallation =====
+ 
+Pour supprimer cette application, il suffit de [[:tutoriel:comment_supprimer_un_paquet|supprimer les paquets]] **boot-repair** et **boot-info**. Selon la méthode choisie, la configuration globale de l'application est conservée ou supprimée. Les journaux du système, et les fichiers de préférence des utilisateurs dans leurs dossiers personnels sont toujours conservés.
+ 
+===== Voir aussi =====
+
+  * **(fr)** [[https://sourceforge.net/p/boot-info/home/fr|Site officiel]]
+  * **(fr)** [[:tutoriel:boot-info|Tutoriel décrivant les différentes façons de créer un rapport Boot-Info]]
+----
+
+//Contributeurs principaux : [[:utilisateurs:YannUbuntu]]//

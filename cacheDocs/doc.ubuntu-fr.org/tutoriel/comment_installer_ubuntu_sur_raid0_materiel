@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:comment_installer_ubuntu_sur_raid0_materiel - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-10-09T17:55:34+0200"/>
+<meta name="keywords" content="raid,installation,tutoriel,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/comment_installer_ubuntu_sur_raid0_materiel?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/comment_installer_ubuntu_sur_raid0_materiel?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/comment_installer_ubuntu_sur_raid0_materiel"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/comment_installer_ubuntu_sur_raid0_materiel"/>
+<link rel="canonical" href="comment_installer_ubuntu_sur_raid0_materiel"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_installer_ubuntu_sur_raid0_materiel","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="comment_installer_ubuntu_sur_raid0_materiel#main" tabindex="1">Contenu</a> | <a href="comment_installer_ubuntu_sur_raid0_materiel#qsearch__in" tabindex="2">Rechercher</a> | <a href="comment_installer_ubuntu_sur_raid0_materiel#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="comment_installer_ubuntu_sur_raid0_materiel" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="comment_installer_ubuntu_sur_raid0_materiel" >tutoriel:comment_installer_ubuntu_sur_raid0_materiel</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_installer_ubuntu_sur_raid0_materiel#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_installer_ubuntu_sur_raid0_materiel#trouver_le_nom_de_son_disque_dur_raid-0">Trouver le nom de son disque dur RAID-0</a></div></li>
+<li class="level2"><div class="li"><a href="comment_installer_ubuntu_sur_raid0_materiel#creer_les_partitions_manuellement">Créer les partitions manuellement</a></div></li>
+<li class="level2"><div class="li"><a href="comment_installer_ubuntu_sur_raid0_materiel#creation_manuelle_des_systemes_de_fichier">Création manuelle des systèmes de fichier</a></div></li>
+<li class="level2"><div class="li"><a href="comment_installer_ubuntu_sur_raid0_materiel#installation_de_linux">Installation de Linux</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_installer_ubuntu_sur_raid0_materiel#derniers_details_avant_de_lancer_l_installation">Derniers détails avant de lancer l&#039;installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_installer_ubuntu_sur_raid0_materiel#installation_manuelle_de_grub">Installation manuelle de GRUB</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_installer_ubuntu_sur_raid0_materiel#verifiez_que_tout_est_bien_configure_dans_grub">Vérifiez que tout est bien configuré dans GRUB</a></div></li>
+<li class="level1"><div class="li"><a href="comment_installer_ubuntu_sur_raid0_materiel#sources">Sources</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../raid" class="wikilink1" title="raid" rel="tag">raid</a>,
+	<a href="../installation.1" class="wikilink1" title="installation" rel="tag">installation</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">brouillon</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_installer_ubuntu_sur_un_montage_raid-0_semi-materiel">Comment installer Ubuntu sur un montage RAID-0 semi-matériel ?</h1>
+<div class="level1">
+
+<p>
+<p><div class="noteimportant"><strong>Attention</strong> si vous possédez un montage RAID semi-logiciel ou semi-matériel, notez que ceux-ci fonctionnent de manière semblable aux montages RAID logiciel. Vous n&#039;obtiendrez donc pas nécessairement de meilleures performances en utilisant un montage RAID semi-matériel plutôt qu&#039;un totalement logiciel !
+</p>
+
+<p>
+Le seul intérêt du RAID semi-logiciel est de pouvoir installer sur le même montage RAID une distribution Linux et un système d&#039;exploitation Windows. Cependant, le risque majeur de cette technique est le fait que vous ne puissiez lire votre montage RAID sur un autre ordinateur si votre carte mère venait à rendre l&#039;âme.
+</p>
+
+<p>
+C&#039;est pourquoi, nous ne pouvons que vous conseiller de vous diriger vers des montages RAID totalement logiciel, si vous en avez la possibilité.
+</p>
+
+<p>
+<strong>Le RAID purement matériel restant totalement transparent de votre système</strong>, le disque dur sera reconnu comme n&#039;importe quel autre disque non monté en RAID. Cette technologie de montage RAID intégralement matérielle, recourant à une carte d&#039;extention dédiée, peut malheureusement s&#039;avérer encore assez chère.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="comment_installer_ubuntu_sur_raid0_materiel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1349798134" /><input type="hidden" name="summary" value="[Comment installer Ubuntu sur un montage RAID-0 semi-matériel ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="52-1262" /><input type="submit" value="Modifier" class="button" title="Comment installer Ubuntu sur un montage RAID-0 semi-matériel ?" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="comment_installer_ubuntu_sur_raid0_materiel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1349798134" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1263-1287" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit3" id="trouver_le_nom_de_son_disque_dur_raid-0">Trouver le nom de son disque dur RAID-0</h3>
+<div class="level3">
+
+<p>
+Dans un terminal, exécutez la commande suivante :
+</p>
+<pre class="code">ls /dev/mapper</pre>
+
+<p>
+Celle-ci devrait retourner une liste de fichier un peu particulière :
+</p>
+<pre class="code">control
+sil_ahajdebhcbag
+sil_ahajdebhcbag1
+sil_ahajdebhcbag2
+sil_ahajdebhcbag3</pre>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/tutoriel/mapper.png?id=tutoriel%3Acomment_installer_ubuntu_sur_raid0_materiel" class="media" title="tutoriel:mapper.png"><img src="http://doc.ubuntu-fr.org/_media/tutoriel/mapper.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Notez bien la toute première ligne; celle-ci correspond au nom de votre montage RAID et sera utile pour la suite des opérations (<strong>isw_cfefgeebci_NOM_MONTAGE_RAID</strong> dans notre exemple). Les autres lignes correspondent aux partitions présentes sur ce montage RAID.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="comment_installer_ubuntu_sur_raid0_materiel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1349798134" /><input type="hidden" name="summary" value="[Trouver le nom de son disque dur RAID-0] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1288-1881" /><input type="submit" value="Modifier" class="button" title="Trouver le nom de son disque dur RAID-0" /></div></form></div>
+<h3 class="sectionedit4" id="creer_les_partitions_manuellement">Créer les partitions manuellement</h3>
+<div class="level3">
+
+<p>
+Tapez la commande suivante pour lancer le programme de partitionnement <strong>cfdisk</strong> qui prend en charge le RAID0 matériel.
+</p>
+<pre class="code">sudo cfdisk /dev/mapper/&lt;nom_de_votre_disque&gt;</pre>
+
+<p>
+Attention, de nos jours la taille de nos disques durs et montages RAID pouvant dépasser la taille adressable de 2.2To par le MBR, il est conseillé d&#039;utiliser plutôt l&#039;utilitaire de partitionnement parted (ou gparted pour sa version en interface graphique) gérant les tables de partitions GPT qui permettent de s&#039;affranchir de cette limite de 2.2To (privilégiez une version supérieure ou égale à la version 3, les versions inférieures comportant de nombreux bogues).
+</p>
+
+<p>
+Créez ensuite vos partitions afin d&#039;obtenir un résultat semblable à celui-ci :
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/tutoriel/cfdisk.png?id=tutoriel%3Acomment_installer_ubuntu_sur_raid0_materiel" class="media" title="tutoriel:cfdisk.png"><img src="http://doc.ubuntu-fr.org/_media/tutoriel/cfdisk.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Redémarrez enfin dmraid afin de prendre en compte les partitions que vous venez de créer :
+</p>
+<pre class="code">sudo /etc/init.d/dmraid restart</pre>
+
+<p>
+<p><div class="noteimportant"><strong>cfdisk</strong> crée uniquement la table des partitions sur votre disque, sans formater celles-ci. Nous allons donc maintenant les formatter en leur appliquant un système de fichier.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="comment_installer_ubuntu_sur_raid0_materiel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1349798134" /><input type="hidden" name="summary" value="[Créer les partitions manuellement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1882-3043" /><input type="submit" value="Modifier" class="button" title="Créer les partitions manuellement" /></div></form></div>
+<h3 class="sectionedit5" id="creation_manuelle_des_systemes_de_fichier">Création manuelle des systèmes de fichier</h3>
+<div class="level3">
+
+<p>
+Les partions nouvellements créées ne contiennent pas de système de fichiers (ext2, ext3, reiserfs, fat32, …).
+</p>
+
+<p>
+Tapez la commande <strong>mkfs</strong> pour créer les systèmes de fichiers
+</p>
+<pre class="code">mkfs [-t type-système-de-fichiers] /dev/mapper/&lt;nom_de_votre_disque&gt;&lt;numéro_de_partition&gt;</pre>
+
+<p>
+<p><div class="notetip">
+Suivant le type de système de fichier à créer, la commande plus spécifique au système de fichier choisi peut être utilisée.
+</p>
+<pre class="code">mkfs           mkfs.cramfs    mkfs.ext3      mkfs.minix     mkfs.ntfs      mkfs.vfat      
+mkfs.bfs       mkfs.ext2      mkfs.jfs       mkfs.msdos     mkfs.reiserfs  mkfs.xfs 
+mkswap</pre>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+Ainsi, dans l&#039;exemple, deux systèmes de fichiers ont été créés :
+</p>
+<ul>
+<li class="level1"><div class="li"> Le SWAP sur isw_lafadafjge_ARRAY2</div>
+</li>
+</ul>
+<pre class="code">sudo mkswap /dev/mapper/isw_lafadafjge_ARRAY2</pre>
+<ul>
+<li class="level1"><div class="li"> Une ext3 sur isw_lafadafjge_ARRAY3</div>
+</li>
+</ul>
+<pre class="code">sudo mkfs.ext3 /dev/mapper/isw_lafadafjge_ARRAY3</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="comment_installer_ubuntu_sur_raid0_materiel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1349798134" /><input type="hidden" name="summary" value="[Création manuelle des systèmes de fichier] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3044-4011" /><input type="submit" value="Modifier" class="button" title="Création manuelle des systèmes de fichier" /></div></form></div>
+<h3 class="sectionedit6" id="installation_de_linux">Installation de Linux</h3>
+<div class="level3">
+
+<p>
+Lancez l&#039;installation normalement en suivant les instructions mais à l&#039;étape du partitionnement, choisissez le partitionnement manuel.
+</p>
+
+<p>
+La série des premières partitions que vous verrez sont toutes invalides, il s&#039;agit d&#039;un bug. Double-cliquez sur chacune d&#039;elle et sélectionnez <strong>&quot;dontuse&quot;</strong>.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/tutoriel/dontuse.png?id=tutoriel%3Acomment_installer_ubuntu_sur_raid0_materiel" class="media" title="tutoriel:dontuse.png"><img src="http://doc.ubuntu-fr.org/_media/tutoriel/dontuse.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Pour la partition où sera installé Linux, sélectionnez <strong>ext3</strong> ou un format compatible de votre choix et le point de montage <strong>&quot;/&quot;</strong>. Puis cochez la case pour formater cette partition (obligatoire même si elle est déjà formatée).
+</p>
+
+<p>
+Vous devriez avoir quelque chose de similaire à la fin :
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/tutoriel/preparer-les-partitions.png?id=tutoriel%3Acomment_installer_ubuntu_sur_raid0_materiel" class="media" title="tutoriel:preparer-les-partitions.png"><img src="http://doc.ubuntu-fr.org/_media/tutoriel/preparer-les-partitions.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Pas de panique, si vous n&#039;avez pas fait comme il fallait, vous ne pourrez pas passer à l&#039;étape suivante (message d&#039;erreur).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="comment_installer_ubuntu_sur_raid0_materiel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1349798134" /><input type="hidden" name="summary" value="[Installation de Linux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4012-4844" /><input type="submit" value="Modifier" class="button" title="Installation de Linux" /></div></form></div>
+<h2 class="sectionedit7" id="derniers_details_avant_de_lancer_l_installation">Derniers détails avant de lancer l&#039;installation</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteimportant">Pour Ubuntu 8.04 : à partir d&#039;ici, suivre la méthode donnée sur <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=1738308#p1738308" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=1738308#p1738308"  rel="nofollow">le forum</a> 
+</div></p>
+</p>
+
+<p>
+A la dernière étape avant de lancer l&#039;installation, cliquez sur le bouton <strong>&quot;Advanced options&quot;</strong> ou <strong>&quot;Options avancées&quot;</strong> et effacez la ligne <strong>(hd0)</strong> avant de valider.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/tutoriel/advanced-options.png?id=tutoriel%3Acomment_installer_ubuntu_sur_raid0_materiel" class="media" title="tutoriel:advanced-options.png"><img src="http://doc.ubuntu-fr.org/_media/tutoriel/advanced-options.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Puis lancez enfin l&#039;installation.
+</p>
+
+<p>
+Vers la fin de l&#039;installation, vous devriez avoir un message d&#039;erreur indiquant qu&#039;il y a eu un problème dans l&#039;installation de <strong>GRUB</strong>. Ignorez ce message et attendez que l&#039;installation soit terminée.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/tutoriel/bug-grub.png?id=tutoriel%3Acomment_installer_ubuntu_sur_raid0_materiel" class="media" title="tutoriel:bug-grub.png"><img src="http://doc.ubuntu-fr.org/_media/tutoriel/bug-grub.png" class="media" alt="" /></a>
+</p>
+
+<p>
+<p><div class="noteimportant">
+Ne redémarrez surtout pas à la fin de l&#039;installation !
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="comment_installer_ubuntu_sur_raid0_materiel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1349798134" /><input type="hidden" name="summary" value="[Derniers détails avant de lancer l'installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4845-5637" /><input type="submit" value="Modifier" class="button" title="Derniers détails avant de lancer l'installation" /></div></form></div>
+<h3 class="sectionedit8" id="installation_manuelle_de_grub">Installation manuelle de GRUB</h3>
+<div class="level3">
+
+<p>
+Puisque <strong>GRUB</strong> n&#039;a pas pu s&#039;installer correctement, suivez ces étapes pour l&#039;installer manuellement avant de pouvoir enfin redémarrer et utiliser votre système nouvellement installé.
+</p>
+
+<p>
+Votre nouveau système est donc installé sur <strong>&quot;/target&quot;</strong> mais il n&#039;a pas été monté puisque vous êtes toujours sur le live CD.
+</p>
+
+<p>
+Donc pour monter le système, dans un terminal tapez la commande suivante :
+</p>
+<pre class="code">sudo mount -t ext3 /dev/mapper/nom_de_partition_linux_ext3 /target    # Exemple, chez moi : &quot;sudo mount -t ext3 /dev/mapper/nvidia_fbabhaeb2 /target&quot;
+sudo mount --bind /dev /target/dev
+sudo mount -t proc proc /target/proc
+sudo mount -t sysfs sysfs /target/sys</pre>
+
+<p>
+<p><div class="notetip">Pour moi, après l&#039;installation toutes les partitions étaient correctement montées dans /target/
+</div></p>
+</p>
+
+<p>
+Copiez ensuite quelques fichiers :
+</p>
+<pre class="code">sudo cp /etc/apt/sources.list /target/etc/apt
+sudo cp /etc/resolv.conf /target/etc</pre>
+
+<p>
+Puis changez de racine :
+</p>
+<pre class="code">sudo chroot /target</pre>
+
+<p>
+Ensuite il faut copier certains fichiers de <strong>GRUB</strong> :
+</p>
+<pre class="code">sudo cp /usr/lib/grub/i386-pc/* /boot/grub</pre>
+
+<p>
+Si vous installez un système 64 bit, il faut remplacer <strong>&quot;i386-pc&quot;</strong> par <strong>&quot;x86_64-pc&quot;</strong> donc :
+</p>
+<pre class="code">sudo cp /usr/lib/grub/x86_64-pc/* /boot/grub</pre>
+
+<p>
+Ensuite on peu lancer <strong>GRUB</strong> afin de commencer sa configuration :
+</p>
+<pre class="code">grub
+device (hd0) /dev/mapper/&lt;nom_de_votre_disque&gt;</pre>
+
+<p>
+Ensuite il faut indiquer sur quel partition est installé Linux. Sachant que la première partition est <strong>(hd0,0)</strong>, la deuxième est <strong>(hd0,1)</strong> etc… Dans notre exemple, Linux est installé sur la 3ème partition donc on tape :
+</p>
+<pre class="code">root (hd0,2)</pre>
+
+<p>
+Sauvegardez les changements et quittez <strong>GRUB</strong> avec les commandes suivantes :
+</p>
+<pre class="code">setup (hd0)
+quit</pre>
+
+<p>
+Au message suivant, tapez <strong>&quot;y&quot;</strong> (sans les guillemets) et sur <strong>entrée</strong> :
+</p>
+<pre class="code">Could not find /boot/grub/menu.lst file. Would you like /boot/grub/menu.lst generated for you? (y/N)</pre>
+
+<p>
+Mettez à jour votre version de <strong>GRUB</strong> et quittez :
+</p>
+<pre class="code">update-grub
+exit</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="comment_installer_ubuntu_sur_raid0_materiel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1349798134" /><input type="hidden" name="summary" value="[Installation manuelle de GRUB] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5638-7720" /><input type="submit" value="Modifier" class="button" title="Installation manuelle de GRUB" /></div></form></div>
+<h2 class="sectionedit9" id="verifiez_que_tout_est_bien_configure_dans_grub">Vérifiez que tout est bien configuré dans GRUB</h2>
+<div class="level2">
+
+<p>
+Voilà, maintenant il ne reste plus qu&#039;à vérifier que tout est bien installé et configuré, sans quoi vous ne pourrez pas lancer Linux ni Windows s&#039;il était sur le même disque dur :
+</p>
+<pre class="code">gksudo gedit /target/boot/grub/menu.lst</pre>
+
+<p>
+Commentez la ligne <strong>hiddenmenu</strong> en mettant un <strong>#</strong> devant pour voir le menu de démarrage au lancement du système.
+</p>
+
+<p>
+Changez le <strong>timeout</strong> en 5 ou 10 secondes pour avoir le temps de changer de système sans paniquer si vous ne voulez pas démarrer sur celui par défaut à chaque fois.
+</p>
+
+<p>
+Effacez la ligne <strong>savedefault</strong> sans quoi <strong>GRUB</strong> plantera à chaque fois !
+</p>
+
+<p>
+Après la ligne <strong>## ## End Default Options ##</strong> :
+</p>
+
+<p>
+Si vous avez installé le <strong>boot</strong> sur une autre partition que celle de Linux, vérifiez que GRUB pointe bien sur celle-ci. Sinon, vérifiez que c&#039;est bien la partition où Linux est installé qui est sélectionnée.
+</p>
+
+<p>
+<strong>Exemple :</strong>
+</p>
+
+<p>
+Dans mon fichier j&#039;ai ça :
+</p>
+<pre class="code">title		Ubuntu 7.10, kernel 2.6.22-14-generic
+root		(hd0,0)
+kernel		/boot/vmlinuz-2.6.22-14-generic root=/dev/mapper/sil_ahajdebhcbag3 ro quiet splash
+initrd		/boot/initrd.img-2.6.22-14-generic</pre>
+
+<p>
+La ligne :
+</p>
+<pre class="code">root		(hd0,0)</pre>
+
+<p>
+Est à modifier pour mettre :
+</p>
+<pre class="code">root		(hd0,2)</pre>
+
+<p>
+Puisque j&#039;ai installé Linux sur la 3ème partition.
+</p>
+
+<p>
+Si vous avez Windows installé sur le même ordinateur, vous pouvez ajouter :
+</p>
+<pre class="code">title		Windows XP
+rootnoverify	(hd0,0)
+chainloader	+1</pre>
+
+<p>
+(hd0,0) étant la partition où Windows est installé. Ce qui est écrit sur la même ligne après <strong>title</strong> peut être changé pour <strong>&quot;Windows Vista&quot;</strong> ou autre, comme vous voulez.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="comment_installer_ubuntu_sur_raid0_materiel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1349798134" /><input type="hidden" name="summary" value="[Vérifiez que tout est bien configuré dans GRUB] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7721-9417" /><input type="submit" value="Modifier" class="button" title="Vérifiez que tout est bien configuré dans GRUB" /></div></form></div>
+<h2 class="sectionedit10" id="sources">Sources</h2>
+<div class="level2">
+
+<p>
+<a href="http://forum.ubuntu-fr.org/viewtopic.php?id=142645&amp;p=1" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=142645&amp;p=1"  rel="nofollow">Forum Ubuntu</a>
+</p>
+
+<p>
+<a href="http://blog.donax.ch/2007/05/14/raid-sur-ubuntu-feisty-nouvelle-installation/" class="urlextern" title="http://blog.donax.ch/2007/05/14/raid-sur-ubuntu-feisty-nouvelle-installation/"  rel="nofollow">blog.donax.ch</a>
+</p>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/pip99" class="wikilink1" title="utilisateurs:pip99">pip99</a> </em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="comment_installer_ubuntu_sur_raid0_materiel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1349798134" /><input type="hidden" name="summary" value="[Sources] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9418-" /><input type="submit" value="Modifier" class="button" title="Sources" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/2417ad60ff340a381b944d4fed9bee82.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_installer_ubuntu_sur_raid0_materiel?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_installer_ubuntu_sur_raid0_materiel?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_installer_ubuntu_sur_raid0_materiel?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_installer_ubuntu_sur_raid0_materiel?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_installer_ubuntu_sur_raid0_materiel?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

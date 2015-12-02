@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:triage_des_bugs - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2011-12-15T15:17:41+0100"/>
+<meta name="keywords" content="tutoriel,bug,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/triage_des_bugs?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/triage_des_bugs?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/triage_des_bugs"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/triage_des_bugs"/>
+<link rel="canonical" href="triage_des_bugs"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:triage_des_bugs","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="triage_des_bugs#main" tabindex="1">Contenu</a> | <a href="triage_des_bugs#qsearch__in" tabindex="2">Rechercher</a> | <a href="triage_des_bugs#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="triage_des_bugs" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="triage_des_bugs" >tutoriel:triage_des_bugs</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="triage_des_bugs#ou_trouver_ces_bogues">Où trouver ces bogues</a></div></li>
+<li class="level1"><div class="li"><a href="triage_des_bugs#identifier_les_paquets">Identifier les paquets</a></div></li>
+<li class="level1"><div class="li"><a href="triage_des_bugs#identifier_les_doublons">Identifier les doublons</a></div></li>
+<li class="level1"><div class="li"><a href="triage_des_bugs#ameliorer_les_informations">Améliorer les informations</a></div></li>
+<li class="level1"><div class="li"><a href="triage_des_bugs#confirmation_statut_et_importance">Confirmation, statut et importance</a></div></li>
+<li class="level1"><div class="li"><a href="triage_des_bugs#rapporter_le_bogue_en_amont">Rapporter le bogue en amont</a></div></li>
+<li class="level1"><div class="li"><a href="triage_des_bugs#bogues_non_valides_demande_d_amelioration">Bogues non valides, Demande d&#039;amélioration</a></div></li>
+<li class="level1"><div class="li"><a href="triage_des_bugs#bogues_specifiques">Bogues spécifiques</a></div></li>
+<li class="level1"><div class="li"><a href="triage_des_bugs#surveillez_vos_contributions">Surveillez vos contributions</a></div></li>
+<li class="level1"><div class="li"><a href="triage_des_bugs#liens_utiles">Liens utiles</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../bug" class="wikilink1" title="bug" rel="tag">bug</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_participer_au_triage_des_bogues">Comment participer au triage des bogues</h1>
+<div class="level1">
+
+<p>
+<p><div class="noteimportant">Le projet <a href="http://doc.ubuntu-fr.org/ubuntu" class="wikilink1" title="ubuntu">Ubuntu</a> utilise la plate-forme <a href="../launchpad" class="wikilink1" title="launchpad">Launchpad</a> pour la gestion de ses bogues.
+</p>
+
+<p>
+Une bonne connaissance de l&#039;anglais est requise pour pouvoir travailler sur les bogues d&#039;Ubuntu.
+</div></p>
+</p>
+
+<p>
+Une des particularités du monde du logiciel libre est que l&#039;on peut facilement entrer en contact avec les développeurs pour leur signaler un problème, une fonctionnalité manquante, un souhait… Ceci se fait via un rapport de bogue où l&#039;utilisateur s&#039;exprime de manière plus ou moins compréhensible et n&#039;apporte pas forcément toutes les informations nécessaires.
+</p>
+
+<p>
+Dans les grands projets, plusieurs centaines de rapports sont envoyés par jour et les développeurs n&#039;ont pas le temps de tous les lire, demander des précisions et continuer à développer en même temps. C&#039;est là que les trieurs de bogues interviennent. Il s&#039;agit de vérifier si les problèmes signalés ne sont pas déjà connus, de vérifier la véracité de l&#039;information, compléter la description et le rapport s&#039;il le faut, puis de passer le tout à la personne qui pourra résoudre le problème (les développeurs).
+</p>
+
+<p>
+Chaque rapport de bogue est le début d&#039;une discussion avec le rapporteur. Vous serez éventuellement le premier contact qu&#039;il aura avec la communauté Ubuntu par votre action de triage. Il est donc très important que vous donniez une bonne impression dans vos réponses, en étant polie et en utilisant votre meilleur anglais.
+</p>
+
+<p>
+<p><div class="notetip">Pour vous aider, la communauté a mis à votre disposition des <a href="https://wiki.ubuntu.com/Bugs/Responses" class="urlextern" title="https://wiki.ubuntu.com/Bugs/Responses"  rel="nofollow">formulations classiques pour vos réponses</a>.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="triage_des_bugs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958661" /><input type="hidden" name="summary" value="[Comment participer au triage des bogues] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="37-1707" /><input type="submit" value="Modifier" class="button" title="Comment participer au triage des bogues" /></div></form></div>
+<h2 class="sectionedit2" id="ou_trouver_ces_bogues">Où trouver ces bogues</h2>
+<div class="level2">
+
+<p>
+Pour débuter il est recommandé de se concentrer sur les paquets de programmes que vous connaissez et utilisez, vous trouverez les bogues concernant un paquet en construisant une adresse du type : <strong>https://bugs.launchpad.net/ubuntu/+source/nom_du_paquet</strong> et en effectuant une recherche avancée pour identifier les bogues à trier.
+</p>
+
+<p>
+Les <a href="https://launchpad.net/ubuntu/+bugs?field.searchtext=&amp;orderby=-datecreated&amp;field.status%3Alist=New&amp;field.importance%3Alist=Undecided&amp;assignee_option=none&amp;field.assignee=&amp;field.owner=&amp;field.component=1&amp;field.component=2&amp;field.component-empty-marker=1&amp;field.omit_dupes.used=&amp;field.omit_dupes=on&amp;field.has_patch.used=&amp;field.has_no_package.used=&amp;search=Search" class="urlextern" title="https://launchpad.net/ubuntu/+bugs?field.searchtext=&amp;orderby=-datecreated&amp;field.status%3Alist=New&amp;field.importance%3Alist=Undecided&amp;assignee_option=none&amp;field.assignee=&amp;field.owner=&amp;field.component=1&amp;field.component=2&amp;field.component-empty-marker=1&amp;field.omit_dupes.used=&amp;field.omit_dupes=on&amp;field.has_patch.used=&amp;field.has_no_package.used=&amp;search=Search"  rel="nofollow">bogues non triés</a> sont les bogues:
+</p>
+<ul>
+<li class="level1"><div class="li"> dont le statut est : <strong>New</strong> (nouveau)</div>
+</li>
+<li class="level1"><div class="li"> dont l&#039;importance est : <strong>Undecided</strong> (non définie)</div>
+</li>
+<li class="level1"><div class="li"> qui sont assigné à : <strong>Nobody</strong> (personne)</div>
+</li>
+</ul>
+
+<p>
+Vous pouvez aussi utiliser un des moyens ci-dessous pour être averti des nouveaux bogues au fur et à mesure de leur soumissions :
+</p>
+<ul>
+<li class="level1"><div class="li"> Par le fil RSS des <a href="http://feeds.launchpad.net/ubuntu/latest-bugs.atom" class="urlextern" title="http://feeds.launchpad.net/ubuntu/latest-bugs.atom"  rel="nofollow">nouveaux bogues Ubuntu sur Launchpad</a></div>
+</li>
+<li class="level1"><div class="li"> Sur le <a href="https://wiki.ubuntu.com/InternetRelayChat" class="urlextern" title="https://wiki.ubuntu.com/InternetRelayChat"  rel="nofollow">salon IRC #ubuntu-bugs-announce</a> sur le serveur irc.freenode.net</div>
+</li>
+<li class="level1"><div class="li"> En s&#039;inscrivant sur la <a href="https://lists.ubuntu.com/mailman/listinfo/ubuntu-bugs" class="urlextern" title="https://lists.ubuntu.com/mailman/listinfo/ubuntu-bugs"  rel="nofollow">liste de diffusion Ubuntu-bugs</a></div>
+</li>
+</ul>
+
+<p>
+Le nombre de nouveaux bogues peut être assez conséquent, choisissez le moyen que vous préférez pour traiter un grand nombre de messages.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="triage_des_bugs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958661" /><input type="hidden" name="summary" value="[Où trouver ces bogues] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1708-3258" /><input type="submit" value="Modifier" class="button" title="Où trouver ces bogues" /></div></form></div>
+<h2 class="sectionedit3" id="identifier_les_paquets">Identifier les paquets</h2>
+<div class="level2">
+
+<p>
+Beaucoup de bogues sont rapportés sans indication du paquet à la source du problème ou associé à un paquet inadéquat, soit parce que le rapporteur n&#039;a pas réussi à l&#039;identifier, soit parce qu&#039;il ne sait pas comment l&#039;indiquer. Identifier le bon paquet est essentiel pour que la bonne équipe puisse traiter le bogue par la suite. Commencer par cette action d&#039;identification de paquets est simple et vous permettra de vous familiariser rapidement avec Launchpad et ses communautés.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="https://bugs.launchpad.net/ubuntu/+bugs?field.status%3Alist=NEW&amp;field.importance%3Alist=UNDECIDED&amp;assignee_option=none&amp;field.has_no_package=on" class="urlextern" title="https://bugs.launchpad.net/ubuntu/+bugs?field.status%3Alist=NEW&amp;field.importance%3Alist=UNDECIDED&amp;assignee_option=none&amp;field.has_no_package=on"  rel="nofollow">Les bogues sans paquets</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://wiki.ubuntu.com/Bugs/FindRightPackage" class="urlextern" title="https://wiki.ubuntu.com/Bugs/FindRightPackage"  rel="nofollow">Identifier le bon paquet</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="triage_des_bugs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958661" /><input type="hidden" name="summary" value="[Identifier les paquets] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3259-4039" /><input type="submit" value="Modifier" class="button" title="Identifier les paquets" /></div></form></div>
+<h2 class="sectionedit4" id="identifier_les_doublons">Identifier les doublons</h2>
+<div class="level2">
+
+<p>
+Beaucoup des nouveaux bogues sont des doublons de bogues existants. Ceci se produit lors de l&#039;introduction d&#039;un bogue dans une fonction principale ce qui entraîne un accroissement du nombre de personnes qui le signalent. Ceci se produit également lorsque la personne ne sait pas comment rechercher, ou n&#039;a pas identifié son bogue parmi ceux existants. C&#039;est pour cela que l&#039;identification des doublons est une contribution très appréciée.
+</p>
+
+<p>
+Un bogue est le duplicata d&#039;un autre si ils ont la même origine. Plus vous connaîtrez un paquet ou un système, plus vous parviendrez à identifier ces doublons rapidement. Si vous avez un doute, n&#039;hésitez pas à demander une seconde opinion.
+</p>
+
+<p>
+Quand vous analyser un nouveau bogue, voici une méthodologie que vous pouvez employer pour identifier un éventuel doublon:
+</p>
+<ul>
+<li class="level1"><div class="li"> Afficher une liste des bogues concernant le paquet</div>
+<ul>
+<li class="level2"><div class="li"> en cliquant sur <strong>&quot;List open bugs&quot;</strong> (liste des bogues ouverts) en bas de page.</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> en cliquant sur l&#039;onglet <strong>&quot;bug&quot;</strong> en haut de la page du bogue.</div>
+</li>
+<li class="level2"><div class="li"> Rechercher les bogues qui ont un titre ou une description similaire</div>
+</li>
+<li class="level2"><div class="li"> Si ils décrivent une cause commune, choisir quel bogue est à privilégier. Ce n&#039;est pas forcément le plus ancien, mais plutôt le mieux décrit, ayant le plus d&#039;informations.</div>
+</li>
+<li class="level2"><div class="li"> Pour l&#039;autre rapport, ajouter un commentaire comme la réponse standard ci-dessous (en anglais), permettant de signaler au rapporteur que son bogue est un duplicata et que toutes les discussions prennent donc place dans le rapport de bogue principal.</div>
+</li>
+</ul>
+<blockquote><div class="no">
+ Thank you for taking the time to report this bug and helping to make Ubuntu better. This particular bug has already been reported and is a duplicate of bug NUMBER, so it is being marked as such. Please look at the other bug report to see if there is any missing information that you can provide, or to see if there is a workaround for the bug. Additionally, any further discussion regarding the bug should occur in the other report. Feel free to continue to report any other bugs you may find.</div></blockquote>
+<ul>
+<li class="level1"><div class="li"> Cliquer enfin sur le lien <strong>&quot;Mark as Duplicate&quot;</strong> en haut à gauche en indiquant le numéro du bogue principal.</div>
+</li>
+</ul>
+
+<p>
+Un dernier détail, vous pouvez aussi rechercher les doublons parmi les bogues marqués <strong>&quot;invalid&quot;</strong> ou <strong>&quot;Won&#039;t fix&quot;</strong> à l&#039;aide de la recherche avancée.
+</p>
+
+<p>
+Vérifiez également si le bogue principal n&#039;est pas privé et donc non accessible par le rapporteur qui risque de ne pas comprendre. Renseignez-vous sur la raison de ce statut privé, ou trouvez éventuellement un autre bogue principal accessible.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="triage_des_bugs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958661" /><input type="hidden" name="summary" value="[Identifier les doublons] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4040-6638" /><input type="submit" value="Modifier" class="button" title="Identifier les doublons" /></div></form></div>
+<h2 class="sectionedit5" id="ameliorer_les_informations">Améliorer les informations</h2>
+<div class="level2">
+
+<p>
+Une partie du triage consiste également à vérifier que le bogue est valide, bien décrit, et contient suffisamment d&#039;informations pour qu&#039;un développeur puisse commencer à travailler sur sa résolution.
+</p>
+
+<p>
+Pour être considéré comme complet, la plupart des bogues doivent indiquer au minimum:
+</p>
+<ul>
+<li class="level1"><div class="li"> La version d&#039;Ubuntu utilisée par le rapporteur</div>
+</li>
+<li class="level1"><div class="li"> La version du paquet utilisée par le rapporteur</div>
+</li>
+<li class="level1"><div class="li"> Les étapes qui ont conduit au problème permettant de le reproduire</div>
+</li>
+<li class="level1"><div class="li"> Les effets attendus en effectuant ces étapes</div>
+</li>
+<li class="level1"><div class="li"> Les effets constatés en effectuant ces étapes</div>
+</li>
+<li class="level1"><div class="li"> Si le rapporteur a réussi à reproduire le problème ou pas.</div>
+</li>
+</ul>
+
+<p>
+Le trieur doit donc vérifier si ces informations sont présentes, ou les demander au rapporteur afin de compléter le rapport de bogue.
+</p>
+
+<p>
+Certains bogues nécessitent des informations plus détaillées comme les fichiers de configuration, ou les logs suivant le type de bogue ou le paquet concerné. Lisez la page <a href="https://wiki.ubuntu.com/DebuggingProcedures" class="urlextern" title="https://wiki.ubuntu.com/DebuggingProcedures"  rel="nofollow">Debuging Procedures</a> pour en apprendre plus sur les informations nécessaires au traitement de ces bogues.
+</p>
+
+<p>
+Le traitement des bogues que vous estimerez incomplets devra donc commencer par un dialogue avec le rapporteur pour lui demander un complément d&#039;information. Cette action est très simple:
+</p>
+<ul>
+<li class="level1"><div class="li"> Cliquer sur le statut actuel du bogue</div>
+</li>
+<li class="level1"><div class="li"> Changer le statut pour le passer à <strong>&quot;Incomplete&quot;</strong> (incomplet)</div>
+</li>
+<li class="level1"><div class="li"> Demander les informations complémentaires dans le champ <strong>&quot;Comment on this change&quot;</strong> (Commentaire sur ce changement)</div>
+</li>
+<li class="level1"><div class="li"> Cocher la case <strong>&quot;E-mail me about changes to this bug report&quot;</strong> afin d&#039;être averti lorsque le rapporteur aura répondu</div>
+</li>
+<li class="level1"><div class="li"> Cliquer sur <strong>&quot;Save changes&quot;</strong> pour enregistrer vos modifications.</div>
+</li>
+</ul>
+
+<p>
+Même si le bogue est complet, vous pouvez quand même modifier sa description afin de la rendre plus détaillée et compréhensible.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="triage_des_bugs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958661" /><input type="hidden" name="summary" value="[Améliorer les informations] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6639-8548" /><input type="submit" value="Modifier" class="button" title="Améliorer les informations" /></div></form></div>
+<h2 class="sectionedit6" id="confirmation_statut_et_importance">Confirmation, statut et importance</h2>
+<div class="level2">
+
+<p>
+Quand un rapport de bogue est complet, et que vous avez assez d&#039;information permettant aux développeurs de travailler dessus, vous pouvez confirmer le rapport. Voici quelques critères permettant de conclure qu&#039;un bogue est confirmé si un de ces critères est vérifié:
+</p>
+<ul>
+<li class="level1"><div class="li"> Existe-t-il un patch corrigeant ce bogue?</div>
+</li>
+<li class="level1"><div class="li"> Y-a-t-il suffisamment d&#039;informations comme celles requises dans la page <a href="https://wiki.ubuntu.com/DebuggingProcedures" class="urlextern" title="https://wiki.ubuntu.com/DebuggingProcedures"  rel="nofollow">Debuging Procedures</a></div>
+</li>
+<li class="level1"><div class="li"> Pouvez-vous reproduire le bogue?</div>
+</li>
+<li class="level1"><div class="li"> Le bogue est-il confirmé et détaillé dans une autre distribution?</div>
+</li>
+<li class="level1"><div class="li"> Les auteurs du code source ont-il confirmé et détaillé ce bogue dans leur gestionnaire en amont?</div>
+</li>
+</ul>
+
+<p>
+Si une de ces conditions est vérifiée vous pouvez confirmer le bogue en procédant comme suit:
+</p>
+<ul>
+<li class="level1"><div class="li"> Cliquer sur le statut actuel du bogue</div>
+</li>
+<li class="level1"><div class="li"> Changer le statut pour le passer à <strong>&quot;Confirmed&quot;</strong> (Confirmé)</div>
+</li>
+<li class="level1"><div class="li"> Assigner la bonne importance (si vous le pouvez) conformément à <a href="https://wiki.ubuntu.com/Bugs/Importance" class="urlextern" title="https://wiki.ubuntu.com/Bugs/Importance"  rel="nofollow">cette page</a></div>
+</li>
+<li class="level1"><div class="li"> Assigner le bogue à <strong>&quot;Nobody&quot;</strong> (&quot;libère&quot; le bogue, plus personne ne travaille dessus, les développeurs savent qu&#039;ils peuvent le prendre en charge)</div>
+</li>
+<li class="level1"><div class="li"> Cliquer sur <strong>&quot;Save changes&quot;</strong> pour enregistrer vos modifications.</div>
+</li>
+</ul>
+
+<p>
+Dans un cas général, la personne qui travaille sur un bogue changera le statut et l&#039;importance du bogue de façon à refléter son avancement dans le traitement ou l&#039;importance accordée par rapport à son impact sur les utilisateurs.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="triage_des_bugs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958661" /><input type="hidden" name="summary" value="[Confirmation, statut et importance] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8549-10071" /><input type="submit" value="Modifier" class="button" title="Confirmation, statut et importance" /></div></form></div>
+<h2 class="sectionedit7" id="rapporter_le_bogue_en_amont">Rapporter le bogue en amont</h2>
+<div class="level2">
+
+<p>
+Ubuntu étant une <a href="http://doc.ubuntu-fr.org/ubuntu_distribution" class="wikilink1" title="ubuntu_distribution">distribution GNU/Linux</a>, le projet regroupe un ensemble d&#039;applications qui sont elles même des projets indépendants et qui ne sont pas développés, corrigés et améliorés par les développeurs d&#039;Ubuntu. Les bogues rapportés sur Ubuntu affectant ces applications doivent donc être retransmis vers leurs plates-formes de traitement de bogues respectives afin que les développeurs de ces projets travaillent dessus, et qu&#039;ensuite ces corrections soient intégrée dans Ubuntu.
+</p>
+
+<p>
+Launchpad intègre des outils pour lier ses bogues avec les bogues existants dans les plates-formes des autres projets. La démarche sera sensiblement la même que pour toutes les plates-formes.
+</p>
+<ul>
+<li class="level1"><div class="li"> Recherche de doublons éventuels</div>
+</li>
+<li class="level1"><div class="li"> Créer un rapport de bogue (en précisant le lien vers le bogue sur Ubuntu)</div>
+</li>
+<li class="level1"><div class="li"> Compléter les informations (éventuellement sur les deux plates-formes)</div>
+</li>
+<li class="level1"><div class="li"> Lier le bogue dans le projet Ubuntu sur Launchpad avec le bogue extérieur.</div>
+</li>
+</ul>
+
+<p>
+Vous pouvez aussi laisser le soin à quelqu&#039;un d&#039;autre de faire cette démarche, en marquant le bogue comme ayant besoin d&#039;être rapporter en amont.
+</p>
+
+<p>
+Voici quelques projets indépendant importants dans Ubuntu:
+</p>
+<div class="table sectionedit8"><table class="inline">
+	<tr class="row0">
+		<td class="col0 centeralign">  <a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=41117c&amp;media=http%3A%2F%2Fwww.gnome.org%2Fcss%2Fgnome.png" class="media" title="http://www.gnome.org/css/gnome.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?w=64&amp;tok=76ec7e&amp;media=http%3A%2F%2Fwww.gnome.org%2Fcss%2Fgnome.png" class="media" alt="" width="64" /></a><br/>
+<a href="../gnome" class="wikilink1" title="gnome">Gnome</a><br/>
+<a href="http://bugzilla.gnome.org/" class="urlextern" title="http://bugzilla.gnome.org/"  rel="nofollow">Bogues</a>  </td><td class="col1 centeralign">  <a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=d56843&amp;media=http%3A%2F%2Fwww.kde.org%2Fstuff%2Fclipart%2Fklogo-official-oxygen-128x128.png" class="media" title="http://www.kde.org/stuff/clipart/klogo-official-oxygen-128x128.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?w=64&amp;tok=183a29&amp;media=http%3A%2F%2Fwww.kde.org%2Fstuff%2Fclipart%2Fklogo-official-oxygen-128x128.png" class="media" alt="" width="64" /></a><br/>
+<a href="../kde" class="wikilink1" title="kde">KDE</a><br/>
+<a href="http://bugs.kde.org/" class="urlextern" title="http://bugs.kde.org/"  rel="nofollow">Bogues</a>  </td><td class="col2 centeralign">  <a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=ad19a0&amp;media=http%3A%2F%2Fwww.mozilla-europe.org%2Fimg%2Fimage-library%2Ffirefox-logo_small.png" class="media" title="http://www.mozilla-europe.org/img/image-library/firefox-logo_small.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?w=64&amp;tok=aa8c1c&amp;media=http%3A%2F%2Fwww.mozilla-europe.org%2Fimg%2Fimage-library%2Ffirefox-logo_small.png" class="media" alt="" width="64" /></a><br/>
+<a href="../firefox" class="wikilink1" title="firefox">Firefox</a><br/>
+<a href="http://bugzilla.mozilla.org/" class="urlextern" title="http://bugzilla.mozilla.org/"  rel="nofollow">Bogues</a>  </td><td class="col3 centeralign">  <a href="../openoffice.org" class="wikilink1" title="openoffice.org">openoffice.org</a><br/>
+<a href="http://qa.openoffice.org/ooQAReloaded/ooQA-ReportBugs.html" class="urlextern" title="http://qa.openoffice.org/ooQAReloaded/ooQA-ReportBugs.html"  rel="nofollow">Bogues</a>  </td><td class="col4 centeralign">  <a href="../kernel" class="wikilink1" title="kernel">Kernel</a><br/>
+<a href="http://bugzilla.kernel.org/" class="urlextern" title="http://bugzilla.kernel.org/"  rel="nofollow">Bogues</a>  </td><td class="col5 centeralign">  <a href="http://www.freedesktop.org" class="urlextern" title="http://www.freedesktop.org"  rel="nofollow">FreeDesktop</a><br/>
+<a href="https://bugs.freedesktop.org/" class="urlextern" title="https://bugs.freedesktop.org/"  rel="nofollow">Bogues</a>  </td><td class="col6 centeralign">  <a href="../debian" class="wikilink2" title="debian" rel="nofollow">Debian</a><br/>
+<a href="https://wiki.ubuntu.com/Bugs/Upstream/Debian" class="urlextern" title="https://wiki.ubuntu.com/Bugs/Upstream/Debian"  rel="nofollow">Explications</a>  </td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="triage_des_bugs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958661" /><input type="hidden" name="summary" value="[Rapporter le bogue en amont] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10072-12006" /><input type="submit" value="Modifier" class="button" title="Rapporter le bogue en amont" /></div></form></div>
+<h2 class="sectionedit9" id="bogues_non_valides_demande_d_amelioration">Bogues non valides, Demande d&#039;amélioration</h2>
+<div class="level2">
+
+<p>
+De temps en temps, il vous faudra invalider un rapport de bogue, soit parce qu&#039;il est non reproductible, soit parce qu&#039;il manque d&#039;informations et que vous ne parvenez pas à en obtenir d&#039;autres, soit parce que ce n&#039;est pas un bogue mais un comportement normal du programme.
+</p>
+
+<p>
+Restez courtois dans votre réponse et remerciez le rapporteur pour sa participation en expliquant si possible la raison. Référez-vous aux <a href="https://wiki.ubuntu.com/Bugs/Responses" class="urlextern" title="https://wiki.ubuntu.com/Bugs/Responses"  rel="nofollow">formulations classiques pour vos réponses</a>.
+</p>
+
+<p>
+Vous pouvez aussi être en face d&#039;une demande d&#039;amélioration du programme, et non d&#039;un bogue. Dans ce cas, il vous faut coller le numéro du bogue sur le canal <strong>#ubuntu-bugs</strong> sur les serveurs <abbr title="Internet Relay Chat">IRC</abbr> de freenode.net afin de leur signaler d&#039;aller voir le rapport pour qu&#039;ils le classent en <strong>&quot;wishlist&quot;</strong>.
+</p>
+
+<p>
+Vous pourrez laisser au rapport une réponse type comme celle-ci:
+</p>
+<blockquote><div class="no">
+ Thank you for taking the time to make Ubuntu better. Since what you submitted is a Feature Request to improve Ubuntu, you are invited to post your idea in Ubuntu Brainstorm at <a href="https://brainstorm.ubuntu.com/" class="urlextern" title="https://brainstorm.ubuntu.com/"  rel="nofollow">https://brainstorm.ubuntu.com/</a> where it can be discussed, voted by the community and reviewed by developers. Thanks for taking the time to share your opinion!</div></blockquote>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="triage_des_bugs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958661" /><input type="hidden" name="summary" value="[Bogues non valides, Demande d'amélioration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12007-13278" /><input type="submit" value="Modifier" class="button" title="Bogues non valides, Demande d'amélioration" /></div></form></div>
+<h2 class="sectionedit10" id="bogues_specifiques">Bogues spécifiques</h2>
+<div class="level2">
+
+<p>
+Tous les bogues ne sont pas des rapports d&#039;utilisateurs. Une partie entre également dans le processus de développement des différents projets pour que les développeurs discutent de certains points entre eux. Chaque équipe pouvant travailler différemment, intervenir sur ces bogues sans connaître les méthodes de travail des développeurs n&#039;est pas souhaitable.
+</p>
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> écrire cette partie (éventuellement) basé sur <a href="https://wiki.ubuntu.com/Bugs/HowToTriage#Special%20types%20of%20bugs" class="urlextern" title="https://wiki.ubuntu.com/Bugs/HowToTriage#Special%20types%20of%20bugs"  rel="nofollow">Special Types of bugs</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="triage_des_bugs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958661" /><input type="hidden" name="summary" value="[Bogues spécifiques] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13279-13831" /><input type="submit" value="Modifier" class="button" title="Bogues spécifiques" /></div></form></div>
+<h2 class="sectionedit11" id="surveillez_vos_contributions">Surveillez vos contributions</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://bugs.launchpad.net/people/+me/" class="urlextern" title="https://bugs.launchpad.net/people/+me/"  rel="nofollow">Les bogues où vous avez participé</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://bugs.launchpad.net/people/+me/+commentedbugs" class="urlextern" title="https://bugs.launchpad.net/people/+me/+commentedbugs"  rel="nofollow">Les bogues que vous avez commenté</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://bugs.launchpad.net/people/+me/+commentedbugs" class="urlextern" title="https://bugs.launchpad.net/people/+me/+commentedbugs"  rel="nofollow">Les bogues que vous suivez</a></div>
+</li>
+</ul>
+
+<p>
+Ou plus simplement, rendez-vous sur votre compte Launchpad dans la catégorie <strong>Bugs</strong>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="triage_des_bugs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958661" /><input type="hidden" name="summary" value="[Surveillez vos contributions] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13832-14229" /><input type="submit" value="Modifier" class="button" title="Surveillez vos contributions" /></div></form></div>
+<h2 class="sectionedit12" id="liens_utiles">Liens utiles</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://wiki.ubuntu.com/BugSquad/KnowledgeBase" class="urlextern" title="https://wiki.ubuntu.com/BugSquad/KnowledgeBase"  rel="nofollow">Tutoriels</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://wiki.ubuntu.com/Bugs/Responses" class="urlextern" title="https://wiki.ubuntu.com/Bugs/Responses"  rel="nofollow">Formulations classiques pour vos réponses</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://wiki.ubuntu.com/Bugs/HowToTriage" class="urlextern" title="https://wiki.ubuntu.com/Bugs/HowToTriage"  rel="nofollow">How to Triage</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://wiki.ubuntu.com/DebuggingProcedures" class="urlextern" title="https://wiki.ubuntu.com/DebuggingProcedures"  rel="nofollow">Debuging Procedures</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://wiki.ubuntu.com/Bugs/Importance" class="urlextern" title="https://wiki.ubuntu.com/Bugs/Importance"  rel="nofollow">Importance d&#039;un bogue</a> (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://wiki.ubuntu.com/Bugs/Status" class="urlextern" title="https://wiki.ubuntu.com/Bugs/Status"  rel="nofollow">Statut d&#039;un bogue</a> (en)</div>
+</li>
+</ul>
+<hr />
+
+<p>
+— <em><a href="http://doc.ubuntu-fr.org/utilisateurs/yoboy" class="wikilink1" title="utilisateurs:yoboy">YoBoY</a> 2008/12/29 10:26</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="triage_des_bugs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1323958661" /><input type="hidden" name="summary" value="[Liens utiles] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14230-" /><input type="submit" value="Modifier" class="button" title="Liens utiles" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/3/39819e1ab4bd0e91439197820cc239c5.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/triage_des_bugs?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/triage_des_bugs?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/triage_des_bugs?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/triage_des_bugs?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/triage_des_bugs?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,157 @@
+{{tag>Dapper Gutsy personnalisation système console écran tutoriel}}
+----
+
+====== Comment activer le « framebuffer » ? ======
+
+Le //framebuffer// est un système qui va permettre à Linux de passer dans une résolution supérieure au classique VGA en mode texte. \\
+Il envoie alors directement les images en haute résolution à la carte graphique.
+
+L'intérêt est d'avoir les consoles ''tty1'' à ''tty6'' (accessibles avec Ctrl+Alt+F1 à F6, avec Ctrl+Alt+F7 pour revenir en mode graphique) en une résolution supérieure à 640x480 (c'est appréciable quand on les utilise).
+
+===== Choix de la résolution =====
+
+Pour activer le //framebuffer//, il faut passer en paramètre au noyau un paramètre ''vga=7??'' (ou ''vga=0x3??'') à l'amorçage de Linux.
+
+Le 7?? est une valeur spécifique dépendant de la résolution de l'écran et du nombre de couleurs demandés. Quelques exemples parmi les plus courants :
+
+^ Couleurs ^ 640×480 ^ 800×600 ^ 1024×768 ^ 1280×1024 ^
+| 8 bits  | 769 | 771 | 773 | 775 |
+| 15 bits | 784 | 787 | 790 | 793 |
+| 16 bits | 785 | 788 | 791 | 794 |
+| 32 bits | 786 | 789 | 792 | 795 |
+
+Vous pouvez également trouver d'autres exemples de modes [[:installation:definition_demarrage|ici]].
+
+Vous pouvez identifier les modes supportés par votre carte graphique avec l'utilitaire hwinfo ; [[apt://hwinfo|installez le paquet hwinfo]] puis :
+
+  sudo hwinfo --framebuffer
+
+Les codes hexadécimaux peuvent être utilisés à la place des codes décimaux (''0x318'' pour ''792'' par exemple).
+
+===== Activation du « framebuffer » =====
+
+==== Ubuntu 10.10 ====
+<note important>La majorité des écrans possède une résolution dite native, il est grandement recommandé de l'utiliser !</note>
+
+Par défaut, à l'installation, Ubuntu n'a pas mis à jour **GRUB2** et le **FRAMEBUFFER** avec les caractéristiques spécifiques de votre matériel. Ceci n'est pas critique en soi, d'autant que tout a été fait pour que cela puisse être facilement réalisé manuellement.
+
+=== Changer la résolution du FRAMEBUFFER ====
+Depuis Lucid Lynx, pour configurer le frame buffer, on utilise **GFXPAYLOAD** plutôt que **vga=xxx**.
+
+[[:tutoriel:comment_modifier_un_fichier|Editez le fichier]]  ''/etc/default/grub'' afin d'ajouter les deux lignes suivantes en précisant bien la résolution désirée au paramètre **GRUB_GFXPAYLOAD_LINUX**:
+<code>
+GRUB_GFXPAYLOAD=keep
+GRUB_GFXPAYLOAD_LINUX=1680x1050
+</code>
+=== Mise à jour de GRUB2 ====
+<code> 
+user@ubuntu:# sudo update-grub
+</code>
+=== Conclusion ====
+Cela devrait fonctionner sans AUCUNE autre modification !
+==== Ubuntu 10.04 ====
+
+Il suffit [[:tutoriel:comment_modifier_un_fichier|d'éditer le fichier]]  **/etc/default/grub** 
+
+Repérez la ligne suivante:
+
+  GRUB_CMDLINE_LINUX_DEFAULT="quiet "
+  
+Modifiez la en:
+
+  GRUB_CMDLINE_LINUX_DEFAULT="quiet vga=788"
+ 
+Bien sûr cette ligne est à adapter selon la résolution voulue. Ensuite, il faudra mettre à jour grub en tapant dans un [[:terminal]]:
+
+  sudo update-grub
+
+==== Ubuntu 9.10 et précédents ====
+
+=== Live CD ===
+
+Pour la version Live ou le CD d'installation, sur la ligne « ''boot :'' », au lieu d'appuyer directement sur « Entrée », entrer le nom du noyau à utiliser (accessible par F3) suivi du paramètre.
+
+Par exemple pour la version Live : 
+
+<file>
+Boot : live vga=791
+</file>
+
+Attention au clavier alors configuré en QWERTY, pour taper un « A » il faut alors appuyer sur la touche « Q ».
+
+
+=== Et sur la version installée ? ===
+
+== Avec Grub 1 ==
+
+Grub (le sélecteur de système d'exploitation) vous proposera un mode d'édition à l'amorçage (touche « E »), qui vous permettra de tester ponctuellement un réglage (pratique pour voir si ça fonctionne).
+
+Sinon il vous faudra [[:tutoriel:comment_editer_un_fichier|éditer]] le fichier **/boot/grub/menu.lst** avec les droits d'administration.
+
+Il faut alors rajouter le paramètre à la fin de la ligne « ''kernel'' ».
+
+On passe alors de :
+<file>
+kernel          /boot/vmlinuz-2.6.12-10-386 root=/dev/hda8 ro quiet splash
+</file>
+
+à :
+
+<file>
+kernel          /boot/vmlinuz-2.6.12-10-386 root=/dev/hda8 ro quiet splash vga=791
+</file>
+
+Une bonne idée supplémentaire est de laisser les sections contenant dans leur titre « Recovery mode » tel quel (donc ne pas y ajouter l'option). Ces entrées étant à utiliser en cas de problème, il serait dommage de les bloquer en cas de problème avec le //framebuffer//.
+
+Éventuellement, les mettre directement dans « ''defoptions'' » :
+
+<file>
+# defoptions=quiet splash vga=792
+</file>
+
+Il est possible d'avoir un amorçage graphique affichant la console en supprimant l'entrée **splash** dans les options de boot.
+
+Il faudra recharger grub :
+
+  sudo update-grub
+
+Ainsi, même à l'installation d'un nouveau noyau, le paramètre sera gardé, et même mieux : appliqué au nouveau noyau !
+
+En espérant avoir été assez complet.
+
+== Avec Grub 2 ==
+
+Il est possible, depuis Jaunty, d'installer Grub 2. La configuration est légèrement différente.
+
+Il faut éditer le fichier /etc/default/grub dans lequel il faut ajouter l'option à la ligne (pour une resolution de 800x600 par exemple)
+
+
+<file>
+GRUB_CMDLINE_LINUX_DEFAULT=800x600
+</file>
+
+
+Et ensuite il faudra recharger grub :
+
+  sudo update-grub
+
+===== Écran noir =====
+
+==== Modules blacklistés ====
+
+Étant donné que les modules //FrameBuffer// sont blacklistés par défaut sous Gutsy/Hardy/Intrepid, il y a de fortes chances que vous vous retrouviez avec un écran noir si vous n'utilisez pas le mode par défaut. Voici un moyen de résoudre le problème :
+
+Il faut d'abord [[:tutoriel:comment_editer_un_fichier|éditer le fichier]] **/etc/modprobe.d/blacklist-framebuffer.conf** et commenter (en rajoutant un **#** au début) la ligne :
+<file>
+blacklist vesafb
+</file>
+
+Puis rajouter les modules **vesafb** et **fbcon** (un par ligne) dans le fichier **/etc/initramfs-tools/modules**. Et on met à jour avec la commande :
+
+  sudo update-initramfs -k all -u
+
+Enfin, il faut rajouter le module **vesafb** dans le fichier /etc/modules. Et voilà (merci à ksso0s pour cette [[http://forum.ubuntu-fr.org/viewtopic.php?pid=1284991#p1284991|solution]] !)
+
+-----
+
+//Contributeurs : [[:utilisateurs:adam0509]], [[:utilisateurs:k-o-x]].//

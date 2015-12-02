@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>ldap_client - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-12-05T12:57:16+0100"/>
+<meta name="keywords" content="brouillon,pam"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/ldap_client?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/ldap_client?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/ldap_client"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/ldap_client"/>
+<link rel="canonical" href="ldap_client"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"ldap_client","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="ldap_client#main" tabindex="1">Contenu</a> | <a href="ldap_client#qsearch__in" tabindex="2">Rechercher</a> | <a href="ldap_client#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="ldap_client" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="ldap_client" >ldap_client</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="ldap_client#a_qui_cela_s_adresse">À qui cela s&#039;adresse</a></div></li>
+<li class="level1"><div class="li"><a href="ldap_client#note_pour_gutsy">Note pour Gutsy</a></div></li>
+<li class="level1"><div class="li"><a href="ldap_client#l_installation_et_la_configuration_de_ldap">L’installation et la configuration de LDAP</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="ldap_client#la_configuration_de_nsswitchconf">La configuration de nsswitch.conf</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="ldap_client#tester_la_configuration_de_nsswitchconf_avec_getent">Tester la configuration de nsswitch.conf avec getent</a></div></li>
+<li class="level1"><div class="li"><a href="ldap_client#configuration_de_pam">Configuration de PAM</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="ldap_client#etcpamdcommon-account">/etc/pam.d/common-account</a></div></li>
+<li class="level2"><div class="li"><a href="ldap_client#etcpamdcommon-auth">/etc/pam.d/common-auth</a></div></li>
+<li class="level2"><div class="li"><a href="ldap_client#etcpamdcommon-password">/etc/pam.d/common-password</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="ldap_client#utilisez_des_mots_de_passe_plus_complexes">Utilisez des mots de passe plus complexes</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="ldap_client#etcpamdcommon-session">/etc/pam.d/common-session</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="ldap_client#creation_automatique_du_repertoire_home_a_la_premiere_connexion">Création automatique du répertoire home à la première connexion</a></div></li>
+<li class="level1"><div class="li"><a href="ldap_client#notes">Notes</a></div></li>
+<li class="level1"><div class="li"><a href="ldap_client#alternative">Alternative</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="ldap_client#installation_d_un_client_ldap_sur_ubuntu_1404linux_mint_17">Installation d&#039;un client LDAP sur ubuntu 14.04 / Linux Mint 17</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="ldap_client#credits">Crédits</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>,
+	<a href="http://doc.ubuntu-fr.org/pam?do=showtag&amp;tag=pam" class="wikilink1" title="pam" rel="tag">pam</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="ldap_client">LDAP client</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[LDAP client] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="30-56" /><input type="submit" value="Modifier" class="button" title="LDAP client" /></div></form></div>
+<h2 class="sectionedit2" id="a_qui_cela_s_adresse">À qui cela s&#039;adresse</h2>
+<div class="level2">
+
+<p>
+Cette page est pour n&#039;importe qui voulant rendre son Ubuntu capable de s&#039;authentifier auprès d&#039;un serveur <a href="http://fr.wikipedia.org/wiki/OpenLDAP" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/OpenLDAP">OpenLDAP</a>.
+</p>
+
+<p>
+L&#039;utilisateur qui désire s&#039;authentifier avec Sun Java Enterprise System Directory Server doit regarder la <a href="https://wiki.ubuntu.com/SunLDAPClientAuthentication" class="urlextern" title="https://wiki.ubuntu.com/SunLDAPClientAuthentication"  rel="nofollow">page sur la documentation en anglais</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[À qui cela s'adresse] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="57-420" /><input type="submit" value="Modifier" class="button" title="À qui cela s'adresse" /></div></form></div>
+<h2 class="sectionedit3" id="note_pour_gutsy">Note pour Gutsy</h2>
+<div class="level2">
+
+<p>
+Il y a un nouvel outil dans Gutsy pour modifier les outils de pam et de nsswitch en même temps : 
+</p>
+<pre class="code"> sudo auth-client-config -a -p lac_ldap </pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[Note pour Gutsy] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="421-592" /><input type="submit" value="Modifier" class="button" title="Note pour Gutsy" /></div></form></div>
+<h2 class="sectionedit4" id="l_installation_et_la_configuration_de_ldap">L’installation et la configuration de LDAP</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[L’installation et la configuration de LDAP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="593-650" /><input type="submit" value="Modifier" class="button" title="L’installation et la configuration de LDAP" /></div></form></div>
+<h3 class="sectionedit5" id="la_configuration_de_nsswitchconf">La configuration de nsswitch.conf</h3>
+<div class="level3">
+
+<p>
+Malheureusement nous ne pouvons tester la configuration des paquets plus haut sans la modification de  /etc/nsswitch.conf :
+</p>
+<pre class="code">sudo vi /etc/nsswitch.conf</pre>
+
+<p>
+et remplacer <strong>compat</strong> par <strong>ldap files</strong> ou par cette commande dans vi :
+</p>
+<pre class="code">:g/compat/s//files ldap/g</pre>
+
+<p>
+Votre fichier /etc/nsswitch.conf doit alors contenir les lignes suivantes :
+</p>
+<pre class="code">passwd:         files ldap
+group:          files ldap
+shadow:         files ldap</pre>
+
+<p>
+Pensez à <strong>redémarrer le démon nscd</strong>, qui garde en cache les résultats :
+</p>
+
+<p>
+ /etc/init.d/nscd restart
+ou  
+</p>
+
+<p>
+service nscd restart
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[La configuration de nsswitch.conf] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="651-1262" /><input type="submit" value="Modifier" class="button" title="La configuration de nsswitch.conf" /></div></form></div>
+<h2 class="sectionedit6" id="tester_la_configuration_de_nsswitchconf_avec_getent">Tester la configuration de nsswitch.conf avec getent</h2>
+<div class="level2">
+
+<p>
+Maintenant vous pouvez tester la configuration avec
+</p>
+
+<p>
+les commandes plus bas (remplacer <strong>&lt;someldapuser&gt;</strong> par un nom d&#039;utilisateur et <strong>&lt;someldapgroup&gt;</strong> par un nom de groupe présent dans votre serveur <abbr title="Lightweight Directory Access Protocol">LDAP</abbr>) :
+</p>
+<pre class="code">getent passwd &lt;someldapuser&gt;
+getent group &lt;someldapgroup&gt;</pre>
+
+<p>
+Si vous avez une réponse dans les deux cas <strong>nsswitch.conf</strong> est correctement configuré la seule chose qui reste à faire est 
+de configurer PAM.
+</p>
+
+<p>
+Il est aussi possible de taper directement : getent passwd vous devez alors voir tous les utilisateurs de votre serveur ldap. Si ce n&#039;est pas le cas, éditez et vérifiez le contenu des fichiers <strong>/etc/ldap/ldap.conf</strong> et <strong>/etc/libnss-ldap.conf</strong>. Pour modifier ce dernier utilsez la commande :
+</p>
+<pre class="code"> dpkg-reconfigure libnss-ldap</pre>
+
+<p>
+<p><div class="noteimportant">Sans réponses, quels sont les points à vérifier pour trouver l&#039;origine du problème ?
+</div></p>
+<p><div class="noteclassic"> Sans réponses voir si le nom de la base de recherche (ici  Par exemple dc=example,dc=com) est bon; Vérifier si l&#039;adresse IP du serveur <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> est le bon (la majeur parti des problèmes proviennent d&#039;ici) ou alors oublie du restart du deamon nscd 
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[Tester la configuration de nsswitch.conf avec getent] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1263-2470" /><input type="submit" value="Modifier" class="button" title="Tester la configuration de nsswitch.conf avec getent" /></div></form></div>
+<h2 class="sectionedit7" id="configuration_de_pam">Configuration de PAM</h2>
+<div class="level2">
+
+<p>
+La configuration de PAM est divisée en 4 fichiers : common-account, common-auth, common-password and common-session
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[Configuration de PAM] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2471-2622" /><input type="submit" value="Modifier" class="button" title="Configuration de PAM" /></div></form></div>
+<h3 class="sectionedit8" id="etcpamdcommon-account">/etc/pam.d/common-account</h3>
+<div class="level3">
+<pre class="code">sudo vi /etc/pam.d/common-account</pre>
+
+<p>
+Changez la configuration par ces lignes :
+</p>
+<pre class="code">account	sufficient	pam_ldap.so
+account	required	pam_unix.so</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[/etc/pam.d/common-account] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2623-2806" /><input type="submit" value="Modifier" class="button" title="/etc/pam.d/common-account" /></div></form></div>
+<h3 class="sectionedit9" id="etcpamdcommon-auth">/etc/pam.d/common-auth</h3>
+<div class="level3">
+<pre class="code">sudo vi /etc/pam.d/common-auth</pre>
+
+<p>
+Changez la configuration par ces lignes :
+</p>
+<pre class="code">auth	sufficient	pam_ldap.so
+auth	required	pam_unix.so nullok_secure use_first_pass</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[/etc/pam.d/common-auth] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2807-3006" /><input type="submit" value="Modifier" class="button" title="/etc/pam.d/common-auth" /></div></form></div>
+<h3 class="sectionedit10" id="etcpamdcommon-password">/etc/pam.d/common-password</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="configuration_standard">Configuration standard</h4>
+<div class="level4">
+<pre class="code">sudo vi /etc/pam.d/common-password</pre>
+
+<p>
+Changez la configuration par ces lignes :
+</p>
+<pre class="code">password	sufficient	pam_ldap.so
+password	required	pam_unix.so nullok obscure min=4 max=8 md5</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[/etc/pam.d/common-password] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3007-3257" /><input type="submit" value="Modifier" class="button" title="/etc/pam.d/common-password" /></div></form></div>
+<h2 class="sectionedit11" id="utilisez_des_mots_de_passe_plus_complexes">Utilisez des mots de passe plus complexes</h2>
+<div class="level2">
+
+<p>
+Pour l&#039;utilisation de mots de passe plus difficiles à casser, il vous suffit d&#039;installer le paquet <code>libpam-cracklib</code> :
+</p>
+<pre class="code">sudo apt-get install libpam-cracklib</pre>
+
+<p>
+Vous avez besoin de modifier la configuration du fichier <strong>/etc/pam.d/common-password</strong> :
+</p>
+<pre class="code">sudo vi /etc/pam.d/common-password</pre>
+
+<p>
+Changez la configuration par ces lignes :
+</p>
+<pre class="code">password        required        pam_cracklib.so retry=3 minlen=6 difok=3
+password        sufficient      pam_ldap.so use_authtok nullok md5
+password        required        pam_unix.so use_authtok use_first_pass</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[Utilisez des mots de passe plus complexes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3258-3868" /><input type="submit" value="Modifier" class="button" title="Utilisez des mots de passe plus complexes" /></div></form></div>
+<h3 class="sectionedit12" id="etcpamdcommon-session">/etc/pam.d/common-session</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="standard_configuration">standard configuration</h4>
+<div class="level4">
+<pre class="code">sudo vi /etc/pam.d/common-session</pre>
+
+<p>
+Changez la configuration par ces lignes :
+</p>
+<pre class="code">session	sufficient	pam_ldap.so
+session	required	pam_unix.so</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[/etc/pam.d/common-session] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3869-4084" /><input type="submit" value="Modifier" class="button" title="/etc/pam.d/common-session" /></div></form></div>
+<h2 class="sectionedit13" id="creation_automatique_du_repertoire_home_a_la_premiere_connexion">Création automatique du répertoire home à la première connexion</h2>
+<div class="level2">
+
+<p>
+Si vous voulez que la création automatique du répertoire home soit faite à la première connexion vous allez devoir éditer <strong>common-session</strong> encore une fois :
+</p>
+<pre class="code">sudo vi /etc/pam.d/common-session</pre>
+
+<p>
+Changez la configuration par ces lignes :
+</p>
+<pre class="code">session required        pam_unix.so
+session required        pam_mkhomedir.so skel=/etc/skel/
+session optional        pam_ldap.so</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[Création automatique du répertoire home à la première connexion] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4085-4548" /><input type="submit" value="Modifier" class="button" title="Création automatique du répertoire home à la première connexion" /></div></form></div>
+<h2 class="sectionedit14" id="notes">Notes</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Je ne peux promettre que ce document soit sans erreur mais je l&#039;ai testé et il fonctionne.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[Notes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4549-4664" /><input type="submit" value="Modifier" class="button" title="Notes" /></div></form></div>
+<h2 class="sectionedit15" id="alternative">Alternative</h2>
+<div class="level2">
+
+<p>
+Vous pouvez aussi voir cette procédure réécrite en phase de validation à <a href="http://doc.ubuntu-fr.org/utilisateurs/fr.laugier/brouillon" class="urlextern" title="http://doc.ubuntu-fr.org/utilisateurs/fr.laugier/brouillon"  rel="nofollow">http://doc.ubuntu-fr.org/utilisateurs/fr.laugier/brouillon</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[Alternative] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4665-4825" /><input type="submit" value="Modifier" class="button" title="Alternative" /></div></form></div>
+<h3 class="sectionedit16" id="installation_d_un_client_ldap_sur_ubuntu_1404linux_mint_17">Installation d&#039;un client LDAP sur ubuntu 14.04 / Linux Mint 17</h3>
+<div class="level3">
+
+<p>
+Je me permets d&#039;avancer une autre méthode que j&#039;ai suivi, celle énoncée ici n&#039;ayant pas fonctionné.
+</p>
+
+<p>
+Tout d&#039;abord pour installer le client sur une ubuntu/mint 14.04, j&#039;ai suivi ce tuto pour activer l&#039;authentification lorsque le serveur <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> est accessible
+</p>
+
+</div>
+
+<h4 id="online_mode_serveur_ldap_accessible">Online Mode (Serveur LDAP Accessible)</h4>
+<div class="level4">
+
+<p>
+Pour configurer le client ldap sur ma distrib ubuntu, j&#039;ai suivi ce tuto qui a fonctionné comme un charme :
+</p>
+
+<p>
+<a href="https://www.digitalocean.com/community/tutorials/how-to-authenticate-client-computers-using-ldap-on-an-ubuntu-12-04-vps" class="urlextern" title="https://www.digitalocean.com/community/tutorials/how-to-authenticate-client-computers-using-ldap-on-an-ubuntu-12-04-vps"  rel="nofollow">https://www.digitalocean.com/community/tutorials/how-to-authenticate-client-computers-using-ldap-on-an-ubuntu-12-04-vps</a>
+</p>
+
+<p>
+et pour la conf de mes laptop, j&#039;ai ajouté ceci
+</p>
+
+</div>
+
+<h4 id="offline_mode_serveur_ldap_inaccessible_-_laptop_itinerants">Offline mode (Serveur LDAP inaccessible - Laptop itinérants)</h4>
+<div class="level4">
+<pre class="code">sudo apt-get install nss-updatedb libnss-db libpam-ccreds nslcd
+sudo nss_updatedb ldap</pre>
+
+<p>
+Editer le fichier /etc/nsswitch.conf tel que:
+</p>
+<pre class="file">passwd:         files ldap [NOTFOUND=return] db
+group:          files ldap [NOTFOUND=return] db</pre>
+
+<p>
+ensuite éditer etc/pam.d/common-account pour remplacer la ligne 
+</p>
+<pre class="file">account	[success=1 default=ignore]	pam_ldap.so </pre>
+
+<p>
+par
+</p>
+<pre class="file">account    [success=1 authinfo_unavail=1 default=ignore]    pam_ldap.so</pre>
+
+<p>
+il suffira maintenant d&#039;un :
+</p>
+<pre class="code">sudo nss_updatedb ldap</pre>
+
+<p>
+pour mettre à jour la copie locale des users <abbr title="Lightweight Directory Access Protocol">LDAP</abbr>
+<p><div class="notehelp">a noter que pour qu&#039;un utilisateur puisse se connecter hors ligne, il aura du préalablement se logguer sur cette machine alors qu&#039;elle pouvait contacter le serveur <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> pour un premier check du mot de passe
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[Installation d'un client LDAP sur ubuntu 14.04 / Linux Mint 17] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4826-6379" /><input type="submit" value="Modifier" class="button" title="Installation d'un client LDAP sur ubuntu 14.04 / Linux Mint 17" /></div></form></div>
+<h2 class="sectionedit17" id="credits">Crédits</h2>
+<div class="level2">
+
+<p>
+Source : traduction de <a href="https://wiki.ubuntu.com/LDAPClientAuthentication" class="urlextern" title="https://wiki.ubuntu.com/LDAPClientAuthentication"  rel="nofollow">https://wiki.ubuntu.com/LDAPClientAuthentication</a>
+</p>
+<ul>
+<li class="level1"><div class="li"> La plupart des informations viennent de cette page : </div>
+</li>
+</ul>
+
+<p>
+<a href="http://mcwhirter.com.au/craige/blog/2006/Making-a-Debian-or-Ubuntu-Machine-an-LDAP-Authentication-Client" class="urlextern" title="http://mcwhirter.com.au/craige/blog/2006/Making-a-Debian-or-Ubuntu-Machine-an-LDAP-Authentication-Client"  rel="nofollow">http://mcwhirter.com.au/craige/blog/2006/Making-a-Debian-or-Ubuntu-Machine-an-LDAP-Authentication-Client</a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Des informations additionnelles peuvent être trouvées ici :</div>
+<ul>
+<li class="level2"><div class="li"> <a href="http://www.gentoo.org/doc/en/ldap-howto.xml" class="urlextern" title="http://www.gentoo.org/doc/en/ldap-howto.xml"  rel="nofollow">http://www.gentoo.org/doc/en/ldap-howto.xml</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www.gesnel.fr/ubuntu/2007/05/30/integration-de-clients-ubuntu-dans-un-reseau-avec-ldap/" class="urlextern" title="http://www.gesnel.fr/ubuntu/2007/05/30/integration-de-clients-ubuntu-dans-un-reseau-avec-ldap/"  rel="nofollow">http://www.gesnel.fr/ubuntu/2007/05/30/integration-de-clients-ubuntu-dans-un-reseau-avec-ldap/</a></div>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeur principal : <a href="utilisateurs/phetu" class="wikilink1" title="utilisateurs:phetu">phetu</a> (traduction).</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="ldap_client"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1417780636" /><input type="hidden" name="summary" value="[Crédits] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6380-" /><input type="submit" value="Modifier" class="button" title="Crédits" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c0df6594f93cd4fb93a7f30a1956889d.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/ldap_client?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/ldap_client?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/ldap_client?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/ldap_client?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/ldap_client?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

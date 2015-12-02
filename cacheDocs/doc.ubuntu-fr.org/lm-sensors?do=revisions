@@ -1,0 +1,820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>lm-sensors - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="lm-sensors?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/lm-sensors"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/lm-sensors"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"lm-sensors","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="lm-sensors?do=revisions#main" tabindex="1">Contenu</a> | <a href="lm-sensors?do=revisions#qsearch__in" tabindex="2">Rechercher</a> | <a href="lm-sensors?do=revisions#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="lm-sensors?do=revisions" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="lm-sensors" >lm-sensors</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<h1 class="sectionedit1" id="anciennes_revisions">Anciennes révisions</h1>
+<div class="level1">
+
+<p>
+Voici les anciennes révisions de la page en cours. Pour revenir à une ancienne révision, sélectionnez-la ci-dessous, cliquez sur le bouton « Modifier cette page » et enregistrez-la.
+</p>
+
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c094095a2fd85a3488cba30c5d00321e.xhtml used -->
+<form id="page__revisions" class="changes" method="post" action="lm-sensors?do=revisions" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><ul >
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="current"/>
+<span class="date">
+Le 17/04/2015, 19:59</span>
+<img src="http://doc.ubuntu-fr.org/lib/images/blank.gif" width="15" height="11" alt="" /><a class="wikilink1" href="lm-sensors">
+lm-sensors</a>
+<span class="sum">
+ – [Configuration automatique] </span>
+<span class="user">
+uboops</span>
+(Version actuelle)</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1425558406"/>
+<span class="date">
+Le 05/03/2015, 13:26</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1425558406&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1425558406" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>Maj de la page</bdi></span>
+<span class="user">
+<bdi>L&#039;Africain</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1424628852"/>
+<span class="date">
+Le 22/02/2015, 19:14</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1424628852&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1424628852" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[KSensors] </bdi></span>
+<span class="user">
+<bdo dir="ltr">88.219.22.26</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1417969449"/>
+<span class="date">
+Le 07/12/2014, 17:24</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1417969449&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1417969449" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Gnome sensors Applet] </bdi></span>
+<span class="user">
+<bdo dir="ltr">94.242.200.189</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1416316099"/>
+<span class="date">
+Le 18/11/2014, 14:08</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1416316099&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1416316099" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Configuration] </bdi></span>
+<span class="user">
+<bdo dir="ltr">109.237.254.11</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1410592034"/>
+<span class="date">
+Le 13/09/2014, 09:07</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1410592034&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1410592034" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Configuration Manuelle] </bdi></span>
+<span class="user">
+<bdo dir="ltr">81.14.1.187</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1410446771"/>
+<span class="date">
+Le 11/09/2014, 16:46</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1410446771&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1410446771" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Configuration Manuelle] </bdi></span>
+<span class="user">
+<bdo dir="ltr">81.14.1.187</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1409074218"/>
+<span class="date">
+Le 26/08/2014, 19:30</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1409074218&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1409074218" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Afficher les informations des capteurs sur le bureau] </bdi></span>
+<span class="user">
+<bdi>sudokde</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1409074076"/>
+<span class="date">
+Le 26/08/2014, 19:27</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1409074076&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1409074076" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Afficher les informations des capteurs sur le bureau] </bdi></span>
+<span class="user">
+<bdi>sudokde</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1409073943"/>
+<span class="date">
+Le 26/08/2014, 19:25</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1409073943&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1409073943" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Afficher les informations des capteurs sur le bureau] </bdi></span>
+<span class="user">
+<bdi>sudokde</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1409073639"/>
+<span class="date">
+Le 26/08/2014, 19:20</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1409073639&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1409073639" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Afficher les informations des capteurs sur le bureau] </bdi></span>
+<span class="user">
+<bdi>sudokde</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1409073609"/>
+<span class="date">
+Le 26/08/2014, 19:20</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1409073609&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1409073609" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Afficher les informations des capteurs sur le bureau] </bdi></span>
+<span class="user">
+<bdi>sudokde</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1409073285"/>
+<span class="date">
+Le 26/08/2014, 19:14</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1409073285&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1409073285" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Afficher les informations des capteurs sur le bureau] </bdi></span>
+<span class="user">
+<bdo dir="ltr">86.218.126.90</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1408565883"/>
+<span class="date">
+Le 20/08/2014, 22:18</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1408565883&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1408565883" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Installation et configuration de lm-sensors] </bdi></span>
+<span class="user">
+<bdo dir="ltr">83.199.174.81</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1406453946"/>
+<span class="date">
+Le 27/07/2014, 11:39</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1406453946&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1406453946" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Configuration automatique] </bdi></span>
+<span class="user">
+<bdo dir="ltr">82.235.123.237</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1404830866"/>
+<span class="date">
+Le 08/07/2014, 16:47</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1404830866&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1404830866" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Computer Temperature Monitor] </bdi></span>
+<span class="user">
+<bdi>TravellingFroggy</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1404830735"/>
+<span class="date">
+Le 08/07/2014, 16:45</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1404830735&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1404830735" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Computer Temperature Monitor] </bdi></span>
+<span class="user">
+<bdi>TravellingFroggy</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1404830562"/>
+<span class="date">
+Le 08/07/2014, 16:42</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1404830562&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1404830562" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Gnome sensors Applet] </bdi></span>
+<span class="user">
+<bdi>TravellingFroggy</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1404828105"/>
+<span class="date">
+Le 08/07/2014, 16:01</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1404828105&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1404828105" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Gnome sensors Applet] ajout de l'ex section 5.7 et ajout de la note sur la 14.04</bdi></span>
+<span class="user">
+<bdi>TravellingFroggy</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1404827976"/>
+<span class="date">
+Le 08/07/2014, 15:59</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1404827976&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1404827976" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Température Sensors Indicator] doublon avec 5.1 (.2)</bdi></span>
+<span class="user">
+<bdi>TravellingFroggy</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1392078522"/>
+<span class="date">
+Le 11/02/2014, 01:28</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1392078522&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1392078522" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Pour plus d'informations] </bdi></span>
+<span class="user">
+<bdo dir="ltr">83.152.97.158</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1384086117"/>
+<span class="date">
+Le 10/11/2013, 13:21</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1384086117&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1384086117" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Capteur de valeurs de XFCE] </bdi></span>
+<span class="user">
+<bdo dir="ltr">83.200.203.137</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1373644900"/>
+<span class="date">
+Le 12/07/2013, 18:01</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1373644900&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1373644900" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Gnome sensors Applet] </bdi></span>
+<span class="user">
+<bdo dir="ltr">109.190.66.97</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1372714922"/>
+<span class="date">
+Le 01/07/2013, 23:42</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1372714922&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1372714922" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Test des capteurs] </bdi></span>
+<span class="user">
+<bdi>alf12</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1367741951"/>
+<span class="date">
+Le 05/05/2013, 10:19</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1367741951&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1367741951" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Pour plus d'informations] </bdi></span>
+<span class="user">
+<bdo dir="ltr">86.204.188.75</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1345402388"/>
+<span class="date">
+Le 19/08/2012, 20:53</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1345402388&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1345402388" class="wikilink1">
+lm-sensors</a>
+<span class="user">
+<bdo dir="ltr">83.152.209.122</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1343366841"/>
+<span class="date">
+Le 27/07/2012, 07:27</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1343366841&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1343366841" class="wikilink1">
+lm-sensors</a>
+<span class="user">
+<bdo dir="ltr">82.242.9.138</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1336164699"/>
+<span class="date">
+Le 04/05/2012, 22:51</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1336164699&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1336164699" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[PSensor] </bdi></span>
+<span class="user">
+<bdo dir="ltr">83.159.85.127</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1332749747"/>
+<span class="date">
+Le 26/03/2012, 10:15</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1332749747&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1332749747" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>Raffraichissement des informations et recyclage des références pointant vers Karmic</bdi></span>
+<span class="user">
+<bdi>percherie</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1325726659"/>
+<span class="date">
+Le 05/01/2012, 02:24</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1325726659&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1325726659" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[PSensor] </bdi></span>
+<span class="user">
+<bdi>mohican</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1323958647"/>
+<span class="date">
+Le 15/12/2011, 15:17</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1323958647&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1323958647" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>modification externe</bdi></span>
+<span class="user">
+<bdo dir="ltr">127.0.0.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1321797491"/>
+<span class="date">
+Le 20/11/2011, 14:58</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1321797491&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1321797491" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Gnome sensors Applet] </bdi></span>
+<span class="user">
+<bdo dir="ltr">89.92.166.145</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1316518184"/>
+<span class="date">
+Le 20/09/2011, 13:29</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1316518184&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1316518184" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Munin] rajoutde &quot;plugins&quot; dans &quot;/usr/share/munin/plugins/sensors_&quot;</bdi></span>
+<span class="user">
+<bdo dir="ltr">80.67.176.80</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1311524355"/>
+<span class="date">
+Le 24/07/2011, 18:19</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1311524355&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1311524355" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Capteur de valeurs de XFCE] </bdi></span>
+<span class="user">
+<bdo dir="ltr">90.60.80.11</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1306159444"/>
+<span class="date">
+Le 23/05/2011, 16:04</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1306159444&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1306159444" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>PSensor</bdi></span>
+<span class="user">
+<bdi>Id2ndR</bdi></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1303852309"/>
+<span class="date">
+Le 26/04/2011, 23:11</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1303852309&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1303852309" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Contrôle des ventilateurs] Mauvais lien apt:</bdi></span>
+<span class="user">
+<bdi>mercier133</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1303522634"/>
+<span class="date">
+Le 23/04/2011, 03:37</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1303522634&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1303522634" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Contrôle des ventilateurs] </bdi></span>
+<span class="user">
+<bdo dir="ltr">90.2.17.253</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1301729797"/>
+<span class="date">
+Le 02/04/2011, 09:36</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1301729797&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1301729797" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Configuration Manuelle] </bdi></span>
+<span class="user">
+<bdo dir="ltr">83.195.42.244</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1301729637"/>
+<span class="date">
+Le 02/04/2011, 09:33</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1301729637&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1301729637" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Configuration automatique] Merci d'utiliser IRC ou le forum et arrêter de pourrir la doc.</bdi></span>
+<span class="user">
+<bdo dir="ltr">83.195.42.244</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1301701162"/>
+<span class="date">
+Le 02/04/2011, 01:39</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1301701162&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1301701162" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Configuration Manuelle] </bdi></span>
+<span class="user">
+<bdo dir="ltr">88.170.180.139</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1301693541"/>
+<span class="date">
+Le 01/04/2011, 23:32</span>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1301693541&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/lm-sensors?rev=1301693541" class="wikilink1">
+lm-sensors</a>
+<span class="sum">
+ – <bdi>[Configuration automatique] </bdi></span>
+<span class="user">
+<bdo dir="ltr">88.170.180.139</bdo></span>
+</div>
+</li>
+</ul>
+<input name="do[diff]" type="submit" value="Différences entre les versions sélectionnées" class="button" />
+</div></form>
+<div class="pagenav"><div class="pagenav-next"><form class="button btn_older" method="get" action="lm-sensors"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="first" value="40" /><input type="submit" value="Moins récent &gt;&gt;" class="button" accesskey="n" title="Moins récent &gt;&gt; [N]" /></div></form></div></div>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="lm-sensors?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/lm-sensors?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="lm-sensors?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="lm-sensors?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="lm-sensors?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

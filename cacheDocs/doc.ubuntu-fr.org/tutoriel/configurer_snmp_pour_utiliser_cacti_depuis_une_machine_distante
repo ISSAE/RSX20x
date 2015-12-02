@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-11-08T16:43:04+0100"/>
+<meta name="keywords" content="snmp,supervision"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante"/>
+<link rel="canonical" href="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante#main" tabindex="1">Contenu</a> | <a href="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante#qsearch__in" tabindex="2">Rechercher</a> | <a href="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante" >tutoriel:configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante#test">Test</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/snmp" class="wikilink1" title="snmp" rel="tag">snmp</a>,
+	<a href="http://doc.ubuntu-fr.org/supervision" class="wikilink1" title="supervision" rel="tag">supervision</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="configurer_snmp_sur_un_serveur_pour_le_rendre_accessible_a_distance_par_cacti">Configurer SNMP sur un serveur pour le rendre accessible à distance par Cacti</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383925384" /><input type="hidden" name="summary" value="[Configurer SNMP sur un serveur pour le rendre accessible à distance par Cacti] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="33-125" /><input type="submit" value="Modifier" class="button" title="Configurer SNMP sur un serveur pour le rendre accessible à distance par Cacti" /></div></form></div>
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+L&#039;objectif de ce tutoriel est de configurer snmpd sur une machine A dont on souhaite récupérer les informations de fonctionnement pour les exploiter sur une autre machine B, avec Cacti par exemple.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383925384" /><input type="hidden" name="summary" value="[Introduction] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="126-349" /><input type="submit" value="Modifier" class="button" title="Introduction" /></div></form></div>
+<h2 class="sectionedit3" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+L&#039;on suppose que vous avez déjà installé et configuré Cacti sur la machine B en « local ». 
+</p>
+
+<p>
+<a href="apt://snmp,snmpd" class="media" title="apt://snmp,snmpd"  rel="nofollow"><img src="../_media/apt.png" class="mediaright" title="Cliquez pour installer." alt="Cliquez pour installer." /></a>
+</p>
+
+<p>
+Sur la machine A il vous faut <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer les paquets</a> <strong><a href="apt://snmp" class="urlextern" title="apt://snmp"  rel="nofollow">snmp</a></strong> et <strong><a href="apt://snmpd" class="urlextern" title="apt://snmpd"  rel="nofollow">snmpd</a></strong>.
+</p>
+
+<p>
+D&#039;autres paquets seront installés automatiquement par la même occasion si nécessaire (<a href="apt://libsensors3" class="urlextern" title="apt://libsensors3"  rel="nofollow">libsensors3</a> <a href="apt://libsnmp15" class="urlextern" title="apt://libsnmp15"  rel="nofollow">libsnmp15</a> <a href="apt://libperl5.8" class="urlextern" title="apt://libperl5.8"  rel="nofollow">libperl5.8</a> <a href="apt://libsnmp-base" class="urlextern" title="apt://libsnmp-base"  rel="nofollow">libsnmp-base</a> avec Hardy Heron 8.04).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383925384" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="350-931" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteclassic">
+les modifications sont à faire sur la machine A
+
+</div></p>
+Pour rendre l&#039;accès à snmp possible depuis la machine B il faut <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditer le fichier</a> <strong>/etc/snmp/snmpd.conf</strong>  :
+</p>
+<pre class="file">#com2sec paranoid  default         public
+ com2sec readonly  default         public
+#com2sec readwrite default         private</pre>
+
+<p>
+On a commenté la ligne « paranoid » et décommenté la ligne « readonly ».
+</p>
+
+<p>
+Ensuite <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditez le fichier</a> <strong>/etc/default/snmpd</strong> :
+</p>
+<pre class="file">SNMPDOPTS=&#039;-Lsd -Lf /dev/null -u snmp -I -smux -p /var/run/snmpd.pid 127.0.0.1&#039;</pre>
+
+<p>
+et remplacez 127.0.0.1 par l&#039;adresse IP de l&#039;interface réseau utilisée pour communiquer avec la machine B.
+</p>
+
+</div>
+
+<h5 id="activation_des_partitions_disque">Activation des Partitions Disque</h5>
+<div class="level5">
+
+<p>
+Pour pouvoir surveiller l&#039;occupation de l&#039;espace disque de votre machine, il faut également modifier la partie <strong>disk checks</strong>. Il faut y rajouter une ligne pour chacune de vos partitions. Par exemple, si la commande <strong>df</strong> vous donne le résultat suivant :
+</p>
+<pre class="code">    # df
+    Filesystem            Size  Used Avail Use% Mounted on
+    /dev/hda1             289M   56M  218M  21% /
+    /dev/hda2             1.7G  1.2G  429M  74% /etc
+    /dev/hda3              19G  6.7G   11G  37% /home</pre>
+
+<p>
+Vous devez <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">rajouter les lignes suivantes</a> dans <strong>/etc/snmp/snmpd.conf</strong> :
+</p>
+<pre class="file">    disk	/	100000
+    disk	/etc	100000
+    disk	/home	100000</pre>
+
+<p>
+Il ne vous reste plus qu&#039;à redémarrer snmpd :
+</p>
+<pre class="code">/etc/init.d/snmpd restart</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383925384" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="932-2523" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h2 class="sectionedit5" id="test">Test</h2>
+<div class="level2">
+
+<p>
+Vous pouvez taper la commande :
+</p>
+<pre class="code">snmpwalk -v 1 -c public x.x.x.x .1.3.6.1.2.1.1.1.0</pre>
+
+<p>
+où x.x.x.x est l&#039;adresse IP que vous avez utilisée plus haut pour tester si le service fonctionne depuis la machine A et la machine B. Si vous obtenez autre chose que la réponse ci-dessous, c&#039;est que c&#039;est bon.
+</p>
+<pre class="code">Timeout: No Response from x.x.x.x</pre>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/stadrum" class="wikilink1" title="utilisateurs:stadrum">stadrum</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383925384" /><input type="hidden" name="summary" value="[Test] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2524-" /><input type="submit" value="Modifier" class="button" title="Test" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/5/51c47671646ae1ea2b581f4febd479c6.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/configurer_snmp_pour_utiliser_cacti_depuis_une_machine_distante?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,338 @@
+{{tag>Precise Quantal Raring Saucy amorçage}}
+----
+<note>Cette page ne concerne qu'une des utilisations possibles de Grub2 dont la documentation détaillée est disponible [[:grub-pc|ici]].</note>
+
+====== Lancer des images iso directement depuis GRUB 2 ======
+
+Pour **lancer une distribution linux sans avoir à graver sur Cd**, les solutions existantes ont le plus souvent le recours à une clé USB :
+  * **[[http://forum.ubuntu-fr.org/viewtopic.php?id=427605|via le MultiSystem pour clé USB de Frafa]]**,
+  * **[[http://crunchbanglinux-fr.org/wiki/crunchbang:installer:usb_live|ou avec l'instruction "dd"]]** (fonctionne avec Debian squeeze et dérivés mais pas toujours avec Ubuntu : la clé ne boote pas),
+  * **[[:usb-creator|ou via le créateur de disque de démarrage USB]]** présent en standard dans Ubuntu,
+  * **[[:unetbootin|ou via le logiciel Unetbootin]]**,
+  * ou encore **[[:virtualbox| avec Virtualbox]]** qui ne nécessite pas de clé USB mais dont l'inconvénient est qu'il ne teste pas votre configuration mais un matériel émulé.
+**Voici la procédure à suivre pour lancer vos isos présents sur le disque dur directement avec [[:grub-pc|Grub 2]]**.
+**Ce type de lancement ne fonctionne pas dans toutes les distributions Linux.** Le fonctionnement est aussi très différent d'une distribution à l'autre.
+
+===== Objectifs de ce tutoriel =====
+  * vous donner la possibilité de **tester** toutes les versions Ubuntu concernées par la documentation du site doc.ubuntu-fr.org sur un matériel non émulé,
+  * vous donner nos expériences d'**installation d'Ubuntu sans gravure** sur CD,
+  * vous donner la possibilité d'utiliser des isos de **maintenance** (Parted Magic, SytemRescueCD,..) depuis un menu Grub2,
+  * vous donner les menus pour d'autres distributions que l'on peut lancer de la même façon (à titre d'**exemples**),..
+
+===== Pré-requis / Notice d'utilisation =====
+  * Vérifier que la version de Grub (**grub-install -v**) est une version 1.97 ou supérieure.
+  * Dans les exemples cités, la partition **(hd0,7)** soit /dev/sda7 **est à adapter à votre propre configuration** ([[:grub-pc#numerotation_des_disques|voir notice ici]]).
+  * **les isos sont stockés à la racine de cette partition** plutôt que dans un sous-dossier car plus facile à trouver pour grub. 
+  * Les menus sont à **[[:tutoriel:comment_modifier_un_fichier|ajouter au fichier]] /etc/grub.d/40_custom**. Ensuite, pour qu'ils soient activés dans grub : <code>sudo update-grub</code>
+  * On peut spécifier **[[:tutoriel:comment_modifier_un_fichier|ajouter au fichier]] /etc/grub.d/50_isofile  /etc/grub.d/666_windows** et ainsi de suite, grub-mkconfig et update-grub les passe en revue dans l'ordre les exécutables <code>chmod +x 50* 66* </code>pour les désactiver 55_test : <code>chmod -x 55_test </code>
+  *  Ensuite, pour qu'ils soient activés dans grub : <code>sudo update-grub</code>
+  * Les menus peuvent également être insérés dans le fichier /boot/grub/custom.cfg. Ils sont alors pris en compte sans avoir à mettre à jour le fichier /boot/grub/grub.cfg par la commande update-grub
+**Note:** le fichier /boot/grub/grub.cfg ne peut pas être édité pour insérer des menus!
+==== Ubuntu ou ses dérivés ====
+Cette configuration fonctionne aussi pour Linux Mint.
+
+=== Menu de base ===
+Voici le menu de base pour le lancement du CD Live avec prise en charge du français :
+<file txt /etc/grub.d/40_custom_(extrait)>menuentry ".. Ubuntu 14.04 Trusty i386" {
+    insmod loopback
+    insmod iso9660
+    set isofile="/ubuntu-14.04-desktop-i386.iso"
+    #recherche de la partition dans laquelle se trouve le fichier ISO et montage de celle ci dans "/"
+    search -sf $isofile
+    #Montage du fichier ISO dans (loop)/
+    loopback loop $isofile
+    echo	'Chargement du noyau Linux ...'
+    linux (loop)/casper/vmlinuz.efi locale=fr_FR bootkbd=fr console-setup/layoutcode=fr iso-scan/filename=$isofile boot=casper file=/cdrom/preseed/ubuntu.seed quiet splash --
+    echo	'Chargement du disque mémoire initial ...'
+    initrd (loop)/casper/initrd.lz
+}</file>
+
+=== Adaptations pour Ubuntu ===
+[[:ubuntu|Article détaillé sur cette variante]].
+**CD :** [[http://releases.ubuntu.com/precise/|Precise]], [[http://releases.ubuntu.com/quantal/|Quantal]], [[http://releases.ubuntu.com/raring/|Raring]], [[http://releases.ubuntu.com/saucy/|Saucy]]. **DVD :** [[http://cdimage.ubuntu.com/releases/precise/release/|Precise]]. **Versions de développement :** <del>Alpha, Beta,..</del>((//Raring/Ubuntu : les versions Alpha, Beta,.. ne sont plus proposées au téléchargement. Seules les "Daily Build" sont dispo.//)), [[http://cdimage.ubuntu.com/daily-live/current/|Daily builds]].\\ 
+Selon votre configuration, il faudra adapter "(hd0,7)" en mettant le numéro de partition sur laquelle est votre iso.
+
+**NB**: À partir d'Ubuntu 13.10, pour les versions AMD64 __exclusivement__, il faut modifier le début de la ligne la ligne //linux (loop)/casper/vmlinuz// en **linux (loop)/casper/vmlinuz.efi**
+
+En fonction de la version à lancer, vous devrez aussi adapter "//set isofile=//" (nom et emplacement du fichier à lancer) ainsi :
+  * **Ubuntu Amd64** (français partiellement fonctionnel) : 
+    * Precise ([[http://releases.ubuntu.com/precise/ubuntu-12.04.2-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/ubuntu-12.04.2-desktop-amd64.iso"//
+    * Quantal ([[http://releases.ubuntu.com/quantal/ubuntu-12.10-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/ubuntu-12.10-desktop-amd64.iso"//
+    * Raring ([[http://releases.ubuntu.com/raring/ubuntu-13.04-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/ubuntu-13.04-desktop-amd64.iso"//
+    * Saucy ([[http://releases.ubuntu.com/saucy/ubuntu-13.10-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/ubuntu-13.10-desktop-amd64.iso"//
+  * **Ubuntu** i**386** :
+    * Precise ([[http://releases.ubuntu.com/precise//ubuntu-12.04.2-desktop-i386.iso.torrent|torrent]]) : //set isofile="/ubuntu-12.04.2-desktop-i386.iso"//
+    * Quantal ([[http://releases.ubuntu.com/quantal/ubuntu-12.10-desktop-i386.iso.torrent|torrent]]) : //set isofile="/ubuntu-12.10-desktop-i386.iso"//
+    * Raring ([[http://releases.ubuntu.com/raring/ubuntu-13.04-desktop-i386.iso.torrent|torrent]]) : //set isofile="/ubuntu-13.04-desktop-i386.iso"//
+    * Saucy ([[http://releases.ubuntu.com/saucy/ubuntu-13.10-desktop-i386.iso.torrent|torrent]]) : //set isofile="/ubuntu-13.10-desktop-i386.iso"//
+  * **Ubuntu Amd64 DVD** (le français y est fonctionnel) :
+    * Precise ([[http://cdimage.ubuntu.com/releases/precise/release/ubuntu-12.04.2-dvd-amd64.iso.torrent|torrent]]) : //set isofile="/ubuntu-12.04.2-dvd-amd64.iso"//
+    * au delà (plus de version spécifique)
+
+=== Pour Ubuntu Gnome ===
+[[:ubuntu_gnome|Article détaillé sur cette variante]] basé sur l'environnement de bureau [[:gnome-shell|GNOME Shell]].
+**CD :** [[http://cdimage.ubuntu.com/ubuntu-gnome/releases/raring/release/|Raring]], [[http://cdimage.ubuntu.com/ubuntu-gnome/releases/saucy/release/|Saucy]]. **Versions de développement :** [[http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04/|Alpha, Beta,..]], [[http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/|Daily builds]].\\ 
+Comme pour la version d'Ubuntu standard, il faudra adapter "(hd0,7)" en fonction de la partition sur laquelle se trouve l'iso à lancer.
+  * **Ubuntu Gnome Amd64** :
+    * Raring ([[http://cdimage.ubuntu.com/ubuntu-gnome/releases/raring/release/ubuntu-gnome-13.04-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/ubuntu-gnome-13.04-desktop-amd64.iso"//
+    * Saucy ([[http://cdimage.ubuntu.com/ubuntu-gnome/releases/saucy/release/ubuntu-gnome-13.10-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/ubuntu-gnome-13.10-desktop-amd64.iso"//
+  * **Ubuntu Gnome **i**386** :
+    * Raring ([[http://cdimage.ubuntu.com/ubuntu-gnome/releases/raring/release/ubuntu-gnome-13.04-desktop-i386.iso.torrent|torrent]]) : //set isofile="/ubuntu-gnome-13.04-desktop-i386.iso"//
+    * Saucy ([[http://cdimage.ubuntu.com/ubuntu-gnome/releases/saucy/release/ubuntu-gnome-13.10-desktop-i386.iso.torrent|torrent]]) : //set isofile="/ubuntu-gnome-13.10-desktop-i386.iso"//
+
+=== Pour Kubuntu ===
+[[:kubuntu|Article détaillé sur cette variante]].
+**CD :** [[http://cdimage.ubuntu.com/kubuntu/releases/precise/release/|Precise]], [[http://cdimage.ubuntu.com/kubuntu/releases/quantal/release/|Quantal]], [[http://cdimage.ubuntu.com/kubuntu/releases/raring/release/|Raring]], [[http://cdimage.ubuntu.com/kubuntu/releases/saucy/release/|Saucy]]. **Versions de développement :** [[http://cdimage.ubuntu.com/kubuntu/releases/14.04/|Alpha, Beta,..]], [[http://cdimage.ubuntu.com/kubuntu/daily-live/current/|Daily builds]].\\ 
+Comme pour les versions Ubuntu, il faudra adapter "(hd0,7)" en fonction de la partition sur laquelle se trouve l'iso à lancer. Mais en plus, il faudra modifier "file=/cdrom/preseed/ubuntu.seed" en mettant kubuntu.seed au lieu de ubuntu.seed.
+  * **Kubuntu Amd64** :
+    * Precise ([[http://cdimage.ubuntu.com/kubuntu/releases/precise/release/kubuntu-12.04.2-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/kubuntu-12.04.2-desktop-amd64.iso"//
+    * Quantal ([[http://cdimage.ubuntu.com/kubuntu/releases/quantal/release/kubuntu-12.10-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/kubuntu-12.10-desktop-amd64.iso"//
+    * Raring ([[http://cdimage.ubuntu.com/kubuntu/releases/raring/release/kubuntu-13.04-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/kubuntu-13.04-desktop-amd64.iso"//
+    * Saucy ([[http://cdimage.ubuntu.com/kubuntu/releases/saucy/release/kubuntu-13.10-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/kubuntu-13.10-desktop-amd64.iso"//
+  * **Kubuntu **i**386** :
+    * Precise ([[http://cdimage.ubuntu.com/kubuntu/releases/precise/release/kubuntu-12.04.2-desktop-i386.iso.torrent|torrent]]) : //set isofile="/kubuntu-12.04.2-desktop-i386.iso"// 
+    * Quantal ([[http://cdimage.ubuntu.com/kubuntu/releases/quantal/release/kubuntu-12.10-desktop-i386.iso.torrent|torrent]]) : //set isofile="/kubuntu-12.10-desktop-i386.iso"//
+    * Raring ([[http://cdimage.ubuntu.com/kubuntu/releases/raring/release/kubuntu-13.04-desktop-i386.iso.torrent|torrent]]) : //set isofile="/kubuntu-13.04-desktop-i386.iso"//
+    * Saucy ([[http://cdimage.ubuntu.com/kubuntu/releases/saucy/release/kubuntu-13.10-desktop-i386.iso.torrent|torrent]]) : //set isofile="/kubuntu-13.10-desktop-i386.iso"//
+
+=== Pour Xubuntu ===
+[[:xubuntu|Article détaillé sur cette variante]].
+**CD :** [[http://cdimage.ubuntu.com/xubuntu/releases/precise/release/|Precise]], [[http://cdimage.ubuntu.com/xubuntu/releases/quantal/release/|Quantal]], [[http://cdimage.ubuntu.com/xubuntu/releases/raring/release/|Raring]], [[http://cdimage.ubuntu.com/xubuntu/releases/saucy/release/|Saucy]]. **Versions de développement :** [[http://cdimage.ubuntu.com/xubuntu/releases/14.04/|Alpha, Beta,..]], [[http://cdimage.ubuntu.com/xubuntu/daily-live/current/|Daily builds]].\\ 
+Idem que pour version Kubuntu pour le "(hd0,7)" à adapter ou le "file=/cdrom/preseed/ubuntu.seed" à mettre en xubuntu.seed.
+  * **Xubuntu Amd64** :
+    * Precise ([[http://cdimage.ubuntu.com/xubuntu/releases/precise/release/xubuntu-12.04.2-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/xubuntu-12.04.2-desktop-amd64.iso"//
+    * Quantal ([[http://cdimage.ubuntu.com/xubuntu/releases/quantal/release/xubuntu-12.10-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/xubuntu-12.10-desktop-amd64.iso"//
+    * Raring ([[http://cdimage.ubuntu.com/xubuntu/releases/raring/release/xubuntu-13.04-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/xubuntu-13.04-desktop-amd64.iso"//
+    * Saucy ([[http://cdimage.ubuntu.com/xubuntu/releases/saucy/release/xubuntu-13.10-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/xubuntu-13.10-desktop-amd64.iso"//
+  * **Xubuntu **i**386** :
+    * Precise ([[http://cdimage.ubuntu.com/xubuntu/releases/precise/release/xubuntu-12.04.2-desktop-i386.iso.torrent|torrent]]) : //set isofile="/xubuntu-12.04.2-desktop-i386.iso"//
+    * Quantal ([[http://cdimage.ubuntu.com/xubuntu/releases/quantal/release/xubuntu-12.10-desktop-i386.iso.torrent|torrent]]) : //set isofile="/xubuntu-12.10-desktop-i386.iso"//
+    * Raring ([[http://cdimage.ubuntu.com/xubuntu/releases/raring/release/xubuntu-13.04-desktop-i386.iso.torrent|torrent]]) : //set isofile="/xubuntu-13.04-desktop-i386.iso"//
+    * Saucy ([[http://cdimage.ubuntu.com/xubuntu/releases/saucy/release/xubuntu-13.10-desktop-i386.iso.torrent|torrent]]) : //set isofile="/xubuntu-13.10-desktop-i386.iso"//
+
+=== Pour Lubuntu ===
+[[:lubuntu|Article détaillé sur cette variante]] sous environnement [[:LXDE]].
+**CD :** [[http://cdimage.ubuntu.com/lubuntu/releases/precise/release/|Precise]], [[http://cdimage.ubuntu.com/lubuntu/releases/quantal/release/|Quantal]], [[http://cdimage.ubuntu.com/lubuntu/releases/raring/release/|Raring]], [[http://cdimage.ubuntu.com/lubuntu/releases/saucy/release/|Saucy]]. **Versions de développement :** [[http://cdimage.ubuntu.com/lubuntu/releases/14.04/|Alpha, Beta,..]], [[http://cdimage.ubuntu.com/lubuntu/daily-live/current/|Daily builds]].\\ 
+Idem que pour version Kubuntu pour le "(hd0,7)" à adapter ou le "file=/cdrom/preseed/ubuntu.seed" à mettre en lubuntu.seed.
+  * **Lubuntu Amd64** :
+    * Precise ([[http://cdimage.ubuntu.com/lubuntu/releases/precise/release/lubuntu-12.04-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/lubuntu-12.04-desktop-amd64.iso"//
+    * Quantal ([[http://cdimage.ubuntu.com/lubuntu/releases/quantal/release/lubuntu-12.10-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/lubuntu-12.10-desktop-amd64.iso"//
+    * Raring ([[http://cdimage.ubuntu.com/lubuntu/releases/raring/release/lubuntu-13.04-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/lubuntu-13.04-desktop-amd64.iso"//
+    * Saucy ([[http://cdimage.ubuntu.com/lubuntu/releases/saucy/release/lubuntu-13.10-desktop-amd64.iso.torrent|torrent]]) : //set isofile="/lubuntu-13.10-desktop-amd64.iso"//
+  * **Lubuntu **i**386** :
+    * Precise ([[http://cdimage.ubuntu.com/lubuntu/releases/precise/release/lubuntu-12.04-desktop-i386.iso.torrent|torrent]]) : //set isofile="/lubuntu-12.04-desktop-i386.iso"//
+    * Quantal ([[http://cdimage.ubuntu.com/lubuntu/releases/quantal/release/lubuntu-12.10-desktop-i386.iso.torrent|torrent]]) : //set isofile="/lubuntu-12.10-desktop-i386.iso"//
+    * Raring ([[http://cdimage.ubuntu.com/lubuntu/releases/raring/release/lubuntu-13.04-desktop-i386.iso.torrent|torrent]]) : //set isofile="/lubuntu-13.04-desktop-i386.iso"//
+    * Saucy ([[http://cdimage.ubuntu.com/lubuntu/releases/saucy/release/lubuntu-13.10-desktop-i386.iso.torrent|torrent]]) : //set isofile="/lubuntu-13.10-desktop-i386.iso"//
+
+===== Installer à partir d'un iso "desktop" =====
+Lorsqu'on lance la procédure d'installation depuis un iso desktop, on est bloqué souvent par un message nous demandant de démonter certaines partitions et notamment : /isodevice.
+
+Il suffit de forcer maintenant le démontage de /isodevice avec cette commande :
+  sudo umount -l -r -f /isodevice
+
+Si cela ne fonctionne pas, le recours sera une installation "net-install".
+
+Le lancement peut également planter si les modules acpi et/ou apm sont inadéquats au matériel. Ajouter acpi=off apm=off noacpi noapm. Concrètement : '' linux (loop)/casper/vmlinuz locale=fr_FR'' ... devient '' linux (loop)/casper/vmlinuz locale=fr_FR  acpi=off apm=off noacpi noapm'' ...
+
+===== net-install =====
+=== Télécharger un 'mini.iso' ===
+  * **[[:tutoriel/installer_ubuntu_par_internet#pre-requis|Sélectionnez et téléchargez votre version sur cette page]]**
+
+=== Menu grub ===
+<file>menuentry "...       Install d'Ubuntu via une connexion internet" {
+	insmod loopback
+	insmod iso9660
+	search --set -f /mini.iso
+	loopback loop /mini.iso
+	linux (loop)/linux locale=fr_FR bootkbd=fr console-setup/layoutcode=fr -- quiet
+	initrd (loop)/initrd.gz
+}</file>
+
+===== Maintenance =====
+==== Parted Magic ====
+Très complet //([[http://partedmagic.com/doku.php?id=programs|liste des programmes]], **[[http://partedmagic.com/downloads/]]**)// :<note>produit payant</note>
+  * [[:Gparted]] (et autres manipulateurs de partitions), 
+  * [[:Clonezilla]], [[:Partimage]],
+  * [[http://partclone.org/index.php|Partclone]], Ghost,
+  * MyRescue [[:PhotoRec]], [[:Testdisk]],
+  * [[:ClamAV]], [[:Unetbootin]],
+  * des gestionnaires de fichiers, éditeurs de texte, navigateurs internet,..
+
+<file>menuentry "Parted Magic" {
+	insmod loopback
+	insmod iso9660
+	set isofile="/pmagic_2013_06_15.iso"
+	loopback loop (hd0,7)$isofile
+        echo	'Chargement du noyau Linux ...'
+	linux (loop)/pmagic/bzImage keymap=fr-latin1 fr_FR
+        echo	'Chargement du disque mémoire initial ...'
+	initrd (loop)/pmagic/initrd.img
+}</file>
+//**Rappel**: la ligne "set isofile" (emplacement du fichier iso) et l'indication de disque "(hd0,7)" sont à adapter en fonction de la version du fichier que vous avez téléchargée et du disque sur lequel vous l'avez mise.//
+
+Ou
+<file>menuentry "Parted Magic" {
+	set root=(hd0,2)
+	loopback loop /pmagic_2013_06_15.iso
+	linux (loop)/pmagic/bzImage keymap=fr
+	initrd (loop)/pmagic/initrd.img
+}</file>
+//(hd0,2) et pmagic_2013_06_15.iso sont à adapter selon le disque dur et la partition sur lesquels se trouve la version de l'ISO de Parted Magic.//
+
+==== SystemRescueCd ====
+[[http://sourceforge.net/projects/systemrescuecd/files/sysresccd-x86/|Site de téléchargement]]
+[[http://www.sysresccd.org/Online-Manual-FR|Manuel d'utilisation]]
+[[http://www.sysresccd.org/Sysresccd-manual-en_Easy_install_SystemRescueCd_on_harddisk#Boot_the_ISO_image_from_the_disk_using_Grub2 | Documentation Officielle SystemRescue ISO et grub2]]
+<file>menuentry "SytemRescueCD" {
+insmod ext2
+insmod loopback
+insmod iso9660
+
+#Si  emplacement ISO ≠ emplacement partition démarrage GRUB2 
+#adapter et dé-commenter la ligne suivante :
+#set root='(hd2,1)'
+
+#l'emplacement peut s'écrire aussi:
+#set root='(hd2,msdos1)'
+
+#Si emplacement à la racine de la partition en question:
+set isofile="/systemrescuecd-x86-x.y.z.iso"
+#Sinon exemple
+set isofile="/opt/systemrescuecd-x86-x.y.z.iso"
+
+loopback loop $isofile
+
+#Si 32 bit et claviers français
+linux (loop)/isolinux/rescue32 isoloop=$isofile setkmap=fr
+#si 64 bit,claviers français et startX supporté décommenté la ligne suivante:
+#linux (loop)/isolinux/rescue64 isoloop=$isofile setkmap=fr dostartx
+
+#Pour pouvoir écrire sur l'emplacement disque de l'ISO 
+ #en mode 64 bit, claviers français et startX supporté
+#Dé-commenté ligne suivante :
+#linux (loop)/isolinux/rescue64 isoloop=$isofile setkmap=fr docache dostartx
+
+initrd (loop)/isolinux/initram.igz
+}</file>
+<note>
+Pour disposer des outils CD SystemRescue supplémentaires (Aida, gag, grub4dos etc.) il faut créer de nouvelles entrées menu spécifiques dans le 40_custom. En fin taper:
+
+  sudo update-grub
+
+dans le Terminal pour enregistrer les entrées.  </note>
+
+===== GRUB 2 sur une clef USB =====
+==== Installation ====
+Il vous faut pour cela une distribution Linux avec GRUB installé. 
+
+Pour configurer GRUB sur la clé, nous n'utiliserons pas la méthode traditionnelle, mais nous modifierons directement le fichier de configuration. Attention; cette méthode est à réserver à ce cas spécifique. Pour configurer GRUB pour votre partition de disque dur, se référer à [[:grub-pc|GRUB 2 : Le nouveau Grub]]
+
+Lancez cette commande pour installer GRUB sur votre clé (elle doit être montée)
+<code>sudo grub-install --root-directory=<point_montage_part1_clef_usb> <peripherique_clef_usb></code>
+où :
+  * <point_montage_part1_clef_usb> est le point de montage de la partition Fat de la clef usb (exemple : /media/clef_4Go)
+  * <peripherique_clef_usb> est le périphérique correspondant à la clef usb (exemple : /dev/sdb)
+
+==== Configuration du chargeur d'amorçage de la clé ====
+Vous avez maintenant une clé bootable avec un dossier ''boot'' à la racine, contenant un sous-dossier ''grub''. Il faut créer un fichier de configuration nommé ''grub.cfg'' dans le dossier ''grub''. Insérez-y les blocs de texte correspondant à la distribution que vous souhaitez tester, parmi la liste de configurations détaillées ci-dessous :
+
+<note warning>Attention à bien adapter le chemin de l'image ISO selon l'endroit où vous la placez sur votre clé. Les exemples suivants sont faits en considérant que l'image est placée à la racine de la clé. Si vous souhaitez les ranger dans le dossier /boot ou dans un sous-dossier, ajoutez simplement /boot devant le nom de l'image ISO</note>
+**Voir au tout début de la page d'autres possibilités avec clé USB telles que [[:Unetbootin]], [[http://forum.ubuntu-fr.org/viewtopic.php?id=427605|MultiSystem]], etc.**
+
+===== Autres distributions testées =====
+==== Aptosid (anciennement Sidux) ====
+**Fonctionnelle** : exemple ici pour AMD64 et tout en français. Pour installer, forcer l'installation évite d'avoir à copier sur USB. S'installe en 3 minutes environ. [[ftp://ftp.spline.de/mirrors/aptosid/release/|site de téléchargement]], [[http://manual.aptosid.com/fr/welcome-fr.htm|Manuel d'utilisation]]
+<file>menuentry "Live - Aptosid" {
+insmod loopback
+insmod iso9660
+set isofile="/aptosid-2011-03-ponos-kde-lite-amd64-201112312100.iso"
+search --set -f $isofile
+loopback loop $isofile
+linux (loop)/boot/vmlinuz0.amd boot=fll lang=fr_FR quiet fromiso=$isofile
+initrd (loop)/boot/initrd0.amd
+}</file>
+
+==== Elive ====
+**Fonctionnelle** : tout paraît être en français après quelques questions au démarrage. [[http://elive.enlightenment.fr/isos/stable/|site de téléchargement]]
+<file>menuentry "Elive" {
+insmod loopback
+insmod iso9660
+set isofile="/elive_2.0_Topaz_new-kernel_up003.iso"
+search --set -f $isofile
+loopback loop (hd0,7)$isofile
+set gfxpayload=800x600x16, 800x600
+linux (loop)/boot/vmlinuz-2.6.30.9-elive-686 boot=eli quiet resolution fromiso=$isofile
+initrd (loop)/boot/initrd.img-2.6.30.9-elive-686
+}</file>
+
+==== Gentoo ====
+Impossible de mettre le clavier français par défaut (pour du 32 bits : remplacer /boot/gentoo64 par /boot/gentoo et /boot/gentoo64.igz par /boot/gentoo.igz). 
+[[http://distfiles.gentoo.org/releases/amd64/12.1//|site de téléchargement]]
+<file>menuentry "...   2 - Gentoo 12 Live DVD" {
+	set isofile="/livedvd-x86-amd64-32ul-2012.1.iso"
+	search --set -f $isofile
+	loopback loop $isofile
+	echo	'Chargement du noyau Linux ...'
+	linux (loop)/boot/gentoo64 root=/dev/ram0 looptype=squashfs loop=/image.squashfs cdroot isoboot=$isofile splash=silent,theme:livecd-10
+	echo	'Chargement du disque mémoire initial ...'
+	initrd (loop)/boot/gentoo64.igz
+}</file>
+
+==== Slitaz ====
+**Fonctionnelle** : tout paraît être en français après quelques questions au démarrage. [[http://www.slitaz.org/fr/get/|site de téléchargement]]
+<file>menuentry "Slitaz-3.0" {
+insmod loopback
+insmod iso9660
+set isofile="/slitaz-3.0.iso"
+search --set -f $isofile
+loopback loop $isofile
+linux (loop)/boot/vmlinuz-2.6.30.6-slitaz kmap=fr-latin1
+initrd (loop)/boot/rootfs.gz
+}</file>
+
+==== Vector Linux ====
+**Fonctionnelle** : français absent **[[http://vectorlinux.com/downloads/|site de téléchargement]]**
+<file>menuentry "ISO Live - Vector Linux Live" {
+insmod loopback
+insmod iso9660
+loopback loop (hd0,7)'/VL6.0-Light-LIVE-Final.iso'
+set gfxpayload=1024x768x16, 1024x768
+linux (loop)/boot/vmlinuz slax from=/VL6.0-Light-LIVE-Final.iso auto2 splash=silent ramdisk_size=6666 root=/dev/ram0 rw
+initrd (loop)/boot/initrd.gz
+}</file>
+
+==== ZevenOS ====
+**Fonctionnelle** : en français et partiellement en allemand **[[http://www.zevenos.com/download|site de téléchargement]]**
+<file>menuentry "ISO Live - ZevenOS-20" {
+insmod loopback
+insmod iso9660
+loopback loop (hd0,7)'/ZevenOS-20.iso'
+linux (loop)/casper/vmlinuz persistent locale=fr_FR bootkbd=fr iso-scan/filename=/ZevenOS-20.iso boot=casper file=/cdrom/preseed/xubuntu.seed noprompt quiet splash --
+initrd (loop)/casper/initrd.lz
+}</file>
+
+==== CloneZilla ====
+**Fonctionnelle** : en anglais **[[http://clonezilla.org/downloads/alternative/iso-zip-files.php|site de téléchargement]]**
+<file>menuentry "CloneZilla amd64 (800x600)" {
+set isofile="/boot/clonezilla-live-1.2.6-24-amd64.iso"
+loopback loop $isofile
+linux (loop)/live/vmlinuz boot=live live-config noswap nolocales edd=on nomodeset ocs_live_run="ocs-live-general" ocs_live_extra_param="" ocs_live_keymap="" ocs_live_batch="no" ocs_lang="" gfxpayload=800x600x16,800x600 ip=frommedia nosplash toram=filesystem.squashfs findiso=$isofile
+initrd (loop)/live/initrd.img
+}</file>
+
+==== Fedora ====
+Fedora 15 ([[http://doc.fedora-fr.org/wiki/T%C3%A9l%C3%A9charger_Fedora#3.C3.A8me_.C3.A9tape_:_T.C3.A9l.C3.A9charger_Fedora|Téléchargement]]) ne peut être bootée directement depuis une iso ([[https://bugzilla.redhat.com/show_bug.cgi?id=650672|bug]]). Il faut donc extraire l'iso dans un dossier, ici boot/iso/LiveCD-FC15 sur une clef usb.
+<file>menuentry ".. Fedora 15 Desktop AMD64 (extracted)" {
+	linux /boot/iso/LiveCD-FC15/isolinux/vmlinuz0 root=UUID=8816-2C13 live_dir=/boot/iso/LiveCD-FC15/LiveOS/ rootfstype=auto ro liveimg quiet  rhgb rd.luks=0 rd.md=0 rd.dm=0 locale=fr_FR bootkbd=fr console-setup/layoutcode=fr 
+	initrd /boot/iso/LiveCD-FC15/isolinux/initrd0.img
+}
+</file>
+Remplacez :
+  * /boot/iso/LiveCD-FC15 par le répertoire où l'iso est extraite
+  * 8816-2C13 par l'[[:uuid_et_label|UUID]] de la partition où l'iso est extraite
+
+Inspiré du [[http://forums.fedoraforum.org/showthread.php?t=263654|forum anglohpone Fedora]].
+
+----
+//Contributeurs principaux : [[:utilisateurs:Frombenny]] ...//

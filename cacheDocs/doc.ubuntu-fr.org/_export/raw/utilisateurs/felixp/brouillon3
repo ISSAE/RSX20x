@@ -1,0 +1,209 @@
+{{tag>administration système}}
+
+----
+
+====== Espace d'échange (swap) ======
+
+L'**espace d'échange**, plus généralement appelée ou simplement **swap**, est une zone d'un disque dur faisant partie de la //mémoire virtuelle//((La mémoire virtuelle est composée de la mémoire vive physique (RAM) et de l'espace d'échange.)) de votre ordinateur. Il est utilisé pour décharger la mémoire vive physique (RAM) si elle se remplit trop. \\
+
+L'espace d'échange, dans Ubuntu, se trouve généralement sous une forme de partition de disque dur -- on parle alors de //partition d'échange//. \\
+Il peut aussi se présenter sous forme de fichier -- on parle alors de //fichier d'échange//.
+
+Par défaut, Ubuntu calcule et s'attribue automatiquement un espace d'échange suffisant ou recommandé lors de son installation. Il n'est pas nécessaire d'effectuer des tâches supplémentaires pour assigner un espace d'échange minimum à Ubuntu. Cependant, évaluer ses besoins en espace d'échange peut mieux rationaliser vos ressources.
+
+Le présent document se veut être une présentation succincte de ce qu'est l'espace d'échange dans Ubuntu et des méthodes pour créer, modifier et supprimer de l'espace d'échange.
+
+
+
+===== Qu'est-ce qu'un espace d'échange ? =====
+
+La mémoire vive physique (RAM) de l'ordinateur est utilisée pour stocker des données en cours de traitement. \\ 
+Si celle-ci se remplit presque entièrement mais que votre ordinateur a tout de même besoin de ressources pour procéder à des traitements, Linux décidera de déplacer des fichiers de la RAM dans la Swap. \\
+L'espace d'échange agit ainsi en tant qu'extension de votre RAM, et contiendra les données peu utilisées.\\
+
+Notez cependant deux inconvénients de la Swap :
+  * L'accès à la Swap est plus lent que pour la RAM. De plus, l'utilisation de l'espace d'échange ralentit significativement le système 
+  * L'utilisation du disque dur pour la Swap entraîne une activité permanente du disque dur (bruits de "grattements"), et une usure prématurée du matériel, notamment pour les disques SSD.
+
+De ce fait, l'espace d'échange ne doit pas être considéré comme un remplacement de votre mémoire vive physique, mais plutôt comme un mécanisme d'appoint.
+
+===== Taille d'un espace d'échange =====
+Il n'y a pas à proprement parler qu'une seule règle définissant la quantité d'espace à allouer à la zone d'échange, qu'elle soit sous forme de partitions ou de fichiers. Beaucoup de conditions entrent dans les facteurs influençant ce choix. Cependant, compte tenu des capacités des ordinateurs modernes, on peut relever [[:tutoriel:partitionner_manuellement_avec_installateur_ubuntu#partitions_indispensables|des recommandations généralement acceptées]] : 
+  * **Votre ordinateur dispose de 1 Gio de RAM ou plus ?** Allouez un espace d'échange de 1× à 1,5× la taille de votre RAM ;
+  * **Votre ordinateur dispose de moins de 1 Gio de RAM ?** Allouez un espace d'échange de 1,5× à 2× la taille de votre RAM.
+
+==== Pourquoi ai-je besoin d'un espace d'échange ? ====
+  * L'utilisation de programmes gourmands en ressources ([[LibreOffice]], des jeux tels [[AlienArena]], ou des logiciels de montage vidéo tels [[Cinelerra]]). La Swap libérera la Ram des ressources non réellement exploitées.
+  * L'Hibernation (mise en veille prolongée) : elle permet de copier l'intégralité de la Ram sur le disque, pour sauvegarder l'état actuel de votre ordinateur et l'éteindre complètement. \\ Une partition d'échange au moins aussi grande que la quantité de votre mémoire vive est requise pour profiter de cette fonctionnalité. ((Les fichiers d'échange ne permettent pas l'hibernation))
+  * **Circonstances imprévues :** Des évènements imprévisibles peuvent survenir lors de l'utilisation de votre système (un programme ayant une fuite de mémoire, une action qui a besoin davantage de mémoire pour un court laps de temps ou une combinaison de ces événements). Disposer d'un espace d'échange vous offre un sursis pour localiser le problème ou, à tout le moins, terminer votre travail en cours.
+
+
+<note>**Cette section s'adresse aux utilisateurs avertis.** \\ Les manipulations avancées ci-dessous permettent de mieux analyser et gérer les ressources système concernant l'espace d'échange. Une mauvaise utilisation des outils et des commandes ci-dessous peut corrompre votre système ou en diminuer les performances.</note>
+
+===== Partager une partition SWAP entre plusieurs systèmes =====
+
+Il est possible d'utiliser la même partition SWAP pour plusieurs distributions Linux installées en multi-boot sur le même PC.
+Cependant dans ce cas, il ne sera pas possible d'hiberner (L'utilisation de la Swap supprimera les informations d'hibernation).
+
+===== Vérifier les espaces d'échange activés et leur niveau utilisation =====
+
+Plus d'un espace d'échange peuvent être affectés à votre système Ubuntu. De plus, chacun de ces espaces peut être utilisé de manière inégale. Pour connaître les espaces d'échange actuellement activés dans votre système Ubuntu et leur niveau d'utilisation, utilisez la commande ''swapon'' de la façon suivante :
+<code>swapon -s</code>
+Elle vous ressortira quelque chose comme :
+<code>
+Filename				Type		Size	Used	Priority
+/dev/sda3                               partition	5241852	0	-1
+/file.swap                              file		524284	0	-2</code>
+
+Ce tableau retourne les informations suivantes :
+  * //Filename// : le nom du fichier ou de la partition utilisée en tant qu'espace d'échange ;
+  * //Type// : le type d'espace d'échange (un fichier [//file//] ou une partition de disque dur [//partition//]) ;
+  * //Size// : la taille réservée à cet espace d'échange, en octets ;
+  * //Used// : la quantité d'espace utilisée dans cet espace d'échange, en octets ;
+  * //Priority// : la priorité d'utilisation de cet espace d'échange. Un espace ayant une plus haute priorité sera utilisé en premier.
+
+===== Activer/Désactiver l'utilisation du swap =====
+
+Les commandes **swapon/swapoff** permettent respectivement d'activer ou désactiver le swap sans redémarrage du système.
+  * Pour désactiver toutes les Swaps :<code bash>sudo swapoff -a</code>
+  * Pour toutes les activer :<code bash>sudo swapon -a</code>
+
+  * Pour activer uniquement la partition de Swap présente sur /dev/sda6 :<code bash>sudo swapon /dev/sda6</code>
+  * Pour la désactiver :<code bash>sudo swapoff /dev/sda6</code>
+
+Vous pouvez alors vider la Swap en lançant successivement :
+<code bash>
+sudo swapoff -a
+sudo swapon -a
+</code>
+
+===== Régler le déclenchement du swap =====
+
+Le déclenchement de la Swap est réglée sur la quantité de Ram libre. (En pourcentages)
+
+<note tip>Personnellement, pour ma vieille tour (1,4Ghz pour 512 Mio de RAM), j'ai réglé le déclenchement de la swap à 5% de RAM libre. Le vidage de la RAM consomme des ressources. Plus le vidage se déclenchera tard moins les ressources seront utilisées.</note>
+
+Par défaut, Ubuntu est réglé de cette façon : 
+
+À partir de 40% d'utilisation de la RAM (**donc 60% de libre**), le noyau peut se délester sur la swap.
+
+On peut le vérifier grâce à la commande :
+<code bash>cat /proc/sys/vm/swappiness</code>
+qui vous ressortira la valeur ''60''.
+
+Pour régler l'utilisation de la Swap à 20% de RAM libre, il suffit de lancer :
+<code bash>sudo sysctl vm.swappiness=20</code>
+
+Il faut désactiver puis réactiver la Swap pour appliquer les changements :
+<code bash>sudo swapoff -av</code>
+(Le ''a'' sélectionne toutes les Swaps, le ''v'' affiche plus de détails) ce qui donne par exemple :
+<code bash>
+swapoff sur /dev/ramzswap0
+swapoff sur /dev/sda6
+</code>
+Puis
+<code bash>sudo swapon -av</code>
+
+
+Pour que ces changements deviennent permanents (à chaque démarrage), vous devez [[:tutoriel:comment_editer_un_fichier|éditer le fichier]] ''/etc/sysctl.conf'' et y ajouter la ligne suivante :
+
+<code bash>vm.swappiness=20</code>
+
+<note tip>
+  * 2 à 3 Gio de RAM = 5 à 10
+  * PC avec SSD rapides = 15 à 20
+  * Anciennes machines, disques et SSD lents = 0 à 5
+
+Les SSD sont sensibles aux fréquentes lectures/écritures sur de la Swap, il est donc conseillé de ne pas y mettre de Swap, ou de régler la swappiness à 0 (la Swap n'est alors jamais utilisée, et vous pouvez la conserver pour l'hibernation.)
+</note>
+===== Créer un fichier d'échange =====
+Afin d'ajouter davantage d'espace d'échange utilisable par votre système Ubuntu, nous vous recommandons la création de fichiers d'échange.
+
+Les fichiers d'échange ont quelques avantages par rapport aux partitions d'échange. D'abord, leur ajout ou suppression n'a pas d'impact sur la table des partitions du disque dur, ce qui limite les possibles pertes de données liées au repartitionnement d'un disque dur. De cette facilité, il est aisé d'attribuer à la volée plus ou moins d'espace d'échange selon les besoins, qu'ils soient temporaires ou non. Enfin, même s'ils sont stockés dans un système de fichiers, les fichiers d'échange sont exploités directement par le noyau Linux; l'utilisation d'un espace d'échange, sous forme de partition ou de fichier, devrait être identique quant aux performances.
+
+Cependant, un fichier d'échange __ne__ peut __pas__ être utilisé dans le cadre d'une mise en veille prolongée (hibernation). Pour cette utilisation, il vous faudra attribuer l'espace d'échange sous forme de partitions.
+
+**Pour créer un fichier d'échange :**
+  - Depuis un compte d'administrateur, ouvrez un [[terminal]] ;
+  - Utilisez ''fallocate'' pour réserver un bloc d'espace disque à attribuer à votre espace d'échange : <code>sudo fallocate -l <taille du fichier en octets> <nom du fichier></code>
+    * Le paramètre **-l** indique la taille (//length//) en octets qui doit être réservée pour l'espace d'échange. ''fallocate'' reconnaît aussi quelques suffixes, tels ''m'' et ''g'', pour préciser des tailles en mibi-octets ou gibioctets. Par exemple, pour réserver 512 Mio, indiquez ''512m'' ; pour réservez 1 Gio, indiquer ''1g'' ;
+    * Le nom du fichier doit contenir le chemin absolu vers l'emplacement de celui-ci. Sinon, il sera créé dans le répertoire courant ;
+    * //Exemple :// pour créer un fichier de 512 Mio nommé ''file.swap'' et situé à la racine d'Ubuntu, on utilisera la commande suivante : <code>sudo fallocate -l 512m /file.swap</code>Consultez le manuel de ''fallocate'' (''[[http://manpages.ubuntu.com/manpages/precise/fr/man1/fallocate.1.html|man fallocate]]'') pour plus d'informations. 
+  - Modifiez les permissions sur cet espace afin qu'il ne soit directement lisible que par le système. Utilisez la commande ''chmod'' : <code>sudo chmod 600 <nom du fichier></code>
+    * Encore une fois, ''<nom du fichier>'' représente le nom du fichier qui vient d'être créé, avec son chemin absolu si nécessaire ;
+    * Par exemple, pour changer les permissions sur le fichier ''file.swap'' situé à la racine d'Ubuntu, on utilisera la commande suivante : <code>sudo chmod 600 /file.swap</code>
+  - Définissez ce fichier en tant qu'espace d'échange. Pour ce faire, utilisez la commande ''mkswap'' : <code>sudo mkswap <nom du fichier></code>
+    * Par exemple, pour définir un espace d'échange sur le fichier ''file.swap'' situé à la racine d'Ubuntu, on utilisera la commande suivante : <code>sudo mkswap /file.swap</code>
+  - Activez la prise en charge de ce nouvel espace d'échange. Utilisez la commande ''swapon'' : <code>sudo swapon <nom du fichier></code>
+    * Par exemple, pour activer la prise en charge de l'espace d'échange sur le fichier ''file.swap'' situé à la racine d'Ubuntu, on utilisera la commande suivante : <code>sudo swapon /file.swap</code>
+
+\\ 
+
+===== Modifier la ou les partitions d'échange =====
+
+<note important>Modifier les partitions après l'installation est toujours une opération risquée. Assurez-vous d'avoir sauvegardé toutes vos données sur un autre support au préalable.</note>
+
+<note idée>Si vous avez besoin d'augmenter la taille de votre swap après avoir installé le système, vous prendrez beaucoup moins de risque en créant un fichier de swap plutôt qu'en modifiant le partitionnement de vos disques. LVM est aussi une alternative très souple.</note>
+
+<note idée>Vous pouvez aussi installer **[[zRam]]** pour augmenter virtuellement la taille de votre swap en compressant la ram non utilisée. (Ne marche pas si vous voulez augmenter la taille du Swap pour permettre l'hibernation)</note>
+=== Outils avec interface graphique ===
+
+Vous pouvez utiliser les outils de partitionnement en mode graphique fournis avec Ubuntu : **Gparted** (**Qtparted** pour Kubuntu) pour créer/modifier/redimensionner vos partitions, à condition que celles-ci ne soient pas en cours d'utilisation par le système.
+
+Si vous avez besoin de modifier une partition utilisée par le système en permanence, utilisez un [[live_cd|live-cd]].
+
+Le  [[live_cd|live-cd]] utilise la partition swap du système (si elle existe). Pour pouvoir la modifier (ou modifier la partition étendue parente), il vous faudra désactiver le swap (dans gparted : Menu Partition > désactiver le swap).
+
+==== Outils en ligne de commande ====
+
+Il existe plusieurs outils en ligne de commande pour gérer vos partitions, les plus connus étant **fdisk** et **cfdisk**. Ces outils s'utilisent avec les mêmes précautions et restrictions que celles indiquées ci-dessus pour gparted.
+
+
+===== Définir une partition comme partition d'échange =====
+
+La commande ''mkswap'' permet de définir une partition ou un fichier comme espace d'échange. Exemple pour définir la partition /dev/sda6 comme partition d'échange :
+
+<code bash>sudo mkswap /dev/sda6</code>
+Conservez pour la suite l'UUID retourné par cette commande.
+
+Vous pouvez ensuite activer la partition d'échange avec : 
+<code bash>sudo swapon /dev/sda6</code>
+
+Pour utiliser de façon permanente cette partition, vous devez modifier votre fichier ''[[:mount_fstab|/etc/fstab]]'' pour y modifier ou ajouter une ligne du type :
+<code bash>
+# Partition de Swap sur /dev/sda6
+UUID=db245df9-851d-695b-a3f7-d40f039a6cc6        none            swap    sw      0      0
+</code>
+En précisant votre UUID précédemment obtenu.
+
+==== Utiliser cette partition pour l'hibernation ====
+
+Il reste quelques manipulations à faire pour pouvoir utiliser votre partition de Swap pour l'hibernation :
+  * Modifier le fichier ''/etc/initramfs-tools/conf.d/resume'' pour y renseigner le bon UUID : <code bash>
+RESUME=UUID=db245df9-851d-695b-a3f7-d40f039a6cc6
+</code>
+  * Faire prendre en compte le changement par le système :<code bash>sudo update-initramfs -u -k $(uname -r)</code>
+
+FIXME
+  * Modifier le fichier de configuration de GRUB, le chargeur de démarrage :
+    * Dans le fichier ''/etc/default/grub'', rajoutez la ligne : <code bash>GRUB_CMDLINE_LINUX="resume=UUID=<votre_uuid>"</code>
+    * Mettre à jour Grub par : <code bash>sudo update-grub</code>
+
+Il vaut mieux, après cela, redémarrer la machine avant d'essayer d'hiberner.
+
+<note>L'UUID de la partition a dû être affiché par la commande **mkswap**, sinon vous pouvez l'obtenir avec la commande <code>sudo blkid /dev/sda6</code></note>
+
+[[https://help.ubuntu.com/community/SwapFaq#How_do_I_add_more_swap.3F]]
+
+
+===== Voir aussi =====
+
+  * [[https://help.ubuntu.com/community/SwapFaq|Ubuntu Forum SwapFaq]] (en)
+  * [[http://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/|Linux add a swap file howto]] (en)
+
+----
+
+//Contributeurs : foustala, laurentb, krop, huit_six, claudiux, SeTtHe, [[utilisateurs:fnx]], [[https://help.ubuntu.com/community/SwapFaq|les contributeurs de la documentation d'Ubuntu]]
+//
+
+----

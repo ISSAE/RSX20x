@@ -1,0 +1,756 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-05-28T11:18:30+0200"/>
+<meta name="keywords" content="dapper,reseau,tutoriel,proxy"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="../_export/xhtml/tutoriel/comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../_export/raw/tutoriel/comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"/>
+<link rel="canonical" href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#main" tabindex="1">Contenu</a> | <a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#qsearch__in" tabindex="2">Rechercher</a> | <a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory" >tutoriel:comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#mise_en_place_d_un_proxy_squid_avec_authentification_active_directory">Mise en place d&#039;un proxy Squid avec authentification Active Directory</a></div></li>
+<li class="level1"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#integration_de_la_machine_au_domaine">Intégration de la machine au domaine</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#installation_des_paquets_necessaires">Installation des paquets nécessaires</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#synchronisation_de_l_heure_locale">Synchronisation de l&#039;heure locale</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#configuration_de_kerberos">Configuration de Kerberos</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#configuration_de_samba">Configuration de Samba</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#rejoindre_le_domaine">Rejoindre le domaine</a></div></li>
+<li class="level1"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#installation_et_configuration_de_squid">Installation et configuration de Squid</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#installation_de_squid">Installation de Squid</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#configuration_de_squid">Configuration de Squid</a></div></li>
+<li class="level2"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#droits_de_l_utilisateur_de_squid">Droits de l&#039;utilisateur de Squid</a></div></li>
+<li class="level1"><div class="li"><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory#webmin">Webmin</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../dapper" class="wikilink1" title="dapper" rel="tag">Dapper</a>,
+	<a href="../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../proxy" class="wikilink1" title="proxy" rel="tag">proxy</a>
+</span></div>
+<hr />
+
+<h3 class="sectionedit1" id="mise_en_place_d_un_proxy_squid_avec_authentification_active_directory">Mise en place d&#039;un proxy Squid avec authentification Active Directory</h3>
+<div class="level3">
+
+<p>
+Ce tutoriel présente l&#039;installation du proxy Squid avec authentification transparente des utilisateurs d&#039;Active Directory.
+L&#039;intérêt premier est que les utilisateurs d&#039;Active Directory seront authentifiés directement depuis leurs sessions Windows en cours et n&#039;auront donc plus à saisir d&#039;identifiants et mots de passe pour accéder à Internet.
+</p>
+
+<p>
+Ce tutoriel montrera dans un premier temps comment rejoindre le domaine Active Directory, puis l&#039;installation et la configuration de Squid. Il présentera ensuite Webmin, un outil permettant d&#039;administrer Squid (à distance ou non) et de visionner les logs.
+</p>
+
+<p>
+<p><div class="noteclassic">
+Testé et approuvé sur :
+</p>
+<ul>
+<li class="level1"><div class="li"> Ubuntu 6.06 LTS Server (Dapper Drake)</div>
+</li>
+<li class="level1"><div class="li"> Ubuntu 8.04 LTS server (Hardy) avec SQUID 3</div>
+</li>
+<li class="level1"><div class="li"> Ubuntu 9.10 Server 64bit (2.6.31-20-server)</div>
+</li>
+</ul>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+<p><div class="noteclassic">
+</p>
+<ul>
+<li class="level1"><div class="li"> Veillez à respecter la casse lors de la configuration des fichiers.</div>
+</li>
+<li class="level1"><div class="li"> Sauvegarder chaque fichier avant modification : <code>sudo cp fichier fichier.bak</code> (pour restaurer <code>sudo cp fichier.bak fichier</code>).</div>
+</li>
+</ul>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Mise en place d'un proxy Squid avec authentification Active Directory] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="45-1141" /><input type="submit" value="Modifier" class="button" title="Mise en place d'un proxy Squid avec authentification Active Directory" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Un réseau Windows ;</div>
+</li>
+<li class="level1"><div class="li"> un contrôleur de domaine sous Windows 2003 Server ;</div>
+</li>
+<li class="level1"><div class="li"> un domaine Active Directory ;</div>
+</li>
+<li class="level1"><div class="li"> une machine (ici sous Ubuntu 6.06 Server) pour Squid.</div>
+</li>
+<li class="level1"><div class="li"> avoir le dépôt universe activé (pour kerberos).</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1142-1396" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="integration_de_la_machine_au_domaine">Intégration de la machine au domaine</h2>
+<div class="level2">
+
+<p>
+Pour cela, nous donnerons des noms à certains éléments comme suit :
+</p>
+<ul>
+<li class="level1"><div class="li"> Le nom du domaine, s&#039;appelera ici <strong>domainead.local</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Le nom du DC (Contrôleur de domaine), s&#039;appelera ici <strong>dcad</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Le compte administrateur du DC, s&#039;appelera ici <strong>Administrateur</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Le nom de la machine Squid s&#039;appelera ici <strong>nom_machine</strong> ;</div>
+</li>
+</ul>
+
+<p>
+qui devront évidement être remplacés par les valeurs exactes.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Intégration de la machine au domaine] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1397-1850" /><input type="submit" value="Modifier" class="button" title="Intégration de la machine au domaine" /></div></form></div>
+<h3 class="sectionedit4" id="installation_des_paquets_necessaires">Installation des paquets nécessaires</h3>
+<div class="level3">
+
+<p>
+Pour rejoindre le domaine, il va falloir <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer les paquets</a> <strong>samba krb5-user libpam-krb5 ntpdate winbind</strong>.
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>samba</code> servira à faire le lien entre des machines Linux et Windows ;</div>
+</li>
+<li class="level1"><div class="li"> <code>krb5-user</code> et <code>libpam-krb5</code> sont les bibliothèques liées à Kerberos, le protocole d&#039;authentification utilisé par Active Directory ;</div>
+</li>
+<li class="level1"><div class="li"> <code>ntpdate</code> permet de synchroniser les horloges machines pour Kerberos ;</div>
+</li>
+<li class="level1"><div class="li"> <code>winbind</code> est le composant de samba communiquant avec Active Directory.</div>
+</li>
+</ul>
+
+<p>
+Lors de l&#039;installation, il se peut que Kerberos demande le  nom des KDC <em>(Kerberos Domain Controler)</em>, qui est généralement le nom du DC :
+</p>
+
+<p>
+<code>Serveurs kerberos du domaine : dcad</code>
+</p>
+
+<p>
+<code>Serveur administratif: dcad</code>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Installation des paquets nécessaires] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1851-2650" /><input type="submit" value="Modifier" class="button" title="Installation des paquets nécessaires" /></div></form></div>
+<h3 class="sectionedit5" id="synchronisation_de_l_heure_locale">Synchronisation de l&#039;heure locale</h3>
+<div class="level3">
+
+<p>
+Kerberos nécessite que l’heure locale soit synchronisée avec celle de votre DC (ip_DC = @ du serveur) :
+</p>
+<pre class="code">sudo ntpdate ip_DC</pre>
+
+<p>
+Pour vérifier l&#039;heure :
+</p>
+<pre class="code">date</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Synchronisation de l'heure locale] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2651-2862" /><input type="submit" value="Modifier" class="button" title="Synchronisation de l'heure locale" /></div></form></div>
+<h3 class="sectionedit6" id="configuration_de_kerberos">Configuration de Kerberos</h3>
+<div class="level3">
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditer le fichier</a> <strong>/etc/krb5.conf</strong> et n&#039;y mettre <strong>que</strong> le contenu suivant :
+</p>
+<pre class="file">[libdefaults]
+        default_realm = DOMAINEAD.LOCAL
+        clock_skew = 300
+        ticket_lifetime = 24000
+        default_tkt_enctypes = des3-hmac-sha1 des-cbc-crc
+        default_tgs_enctypes = des3-hmac-sha1 des-cbc-crc
+        dns_lookup_realm = false
+        dns_lookup_kdc = true
+[realms]
+        DOMAINEAD.LOCAL = {
+                kdc = dcad
+                admin_server = dcad
+                default_domain = DOMAINEAD.LOCAL
+                }
+[domain_realm]
+        .domainead = DOMAINEAD
+        domainead = DOMAINEAD</pre>
+
+<p>
+Puis tester vos paramètres Kerberos en lançant la commande :
+</p>
+<pre class="code">sudo kinit Administrateur</pre>
+
+<p>
+et entrer le mot de passe du compte administrateur du DC.
+</p>
+
+<p>
+Si cela ne fonctionne pas, réessayer avec le nom complet <code>Administrateur@DOMAINEAD.LOCAL</code>. 
+</p>
+
+<p>
+Si cela ne fonctionne toujours pas, redémarrer votre machine et reprener la ligne.
+</p>
+
+<p>
+Pour voir les tickets Kerberos en cache :
+</p>
+<pre class="code">sudo klist</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Configuration de Kerberos] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2863-3961" /><input type="submit" value="Modifier" class="button" title="Configuration de Kerberos" /></div></form></div>
+<h3 class="sectionedit7" id="configuration_de_samba">Configuration de Samba</h3>
+<div class="level3">
+
+<p>
+Avant de procéder à cette étape, arrêter temporairement les services Winbind et Samba :
+</p>
+<pre class="code">sudo /etc/init.d/winbind stop
+sudo /etc/init.d/samba stop</pre>
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditer le fichier</a> <strong>/etc/samba/smb.conf</strong>, et n&#039;y mettre <strong>que</strong> le contenu suivant :
+</p>
+<pre class="file">[global]
+   workgroup = domainead
+   realm = DOMAINEAD.LOCAL
+   security = ads
+   encrypt passwords = yes
+
+   password server = dcad.domainead.local
+
+   idmap uid = 10000-20000
+   idmap gid = 10000-20000
+   winbind enum groups = yes
+   winbind enum users = yes
+   winbind use default domain = yes</pre>
+
+<p>
+Ensuite, redémarrez les services Samba et Winbind :
+</p>
+<pre class="code">sudo /etc/init.d/samba start
+sudo /etc/init.d/winbind start</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Configuration de Samba] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3962-4710" /><input type="submit" value="Modifier" class="button" title="Configuration de Samba" /></div></form></div>
+<h3 class="sectionedit8" id="rejoindre_le_domaine">Rejoindre le domaine</h3>
+<div class="level3">
+
+<p>
+Rejoindre le domaine avec la commande suivante :
+</p>
+<pre class="code">sudo net join -U Administrateur</pre>
+
+</div>
+
+<h5 id="erreurs_eventuelles">Erreurs éventuelles</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> Sur les nouvelles versions d&#039;Ubuntu (notamment 9.10), il vous faudra sûrement utiliser la commande :</div>
+</li>
+</ul>
+<pre class="code">sudo net ads join -U Administrateur</pre>
+<ul>
+<li class="level1"><div class="li"> Si vous obtenez le message suivant :</div>
+</li>
+</ul>
+<blockquote><div class="no">
+ The workgroup in smb.conf does not match the short domain name obtained from the server.<br/>
+ Using the name [AUTRE_DOMAINE] from the server.<br/>
+ You should set &quot;workgroup = AUTRE_DOMAINE&quot; in smb.conf</div></blockquote>
+
+<p>
+Alors <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">modifier</a> votre <strong>/etc/samba/smb.conf</strong> comme dit, puis redémarrer les services Samba et Winbind et recommencer.
+</p>
+<ul>
+<li class="level1"><div class="li"> Si vous récupérez l’erreur suivante :</div>
+</li>
+</ul>
+<blockquote><div class="no">
+ ads_connect: No logon servers</div></blockquote>
+
+<p>
+C’est que vous n’avez pas installé ou démarré Winbind.
+</p>
+
+</div>
+
+<h5 id="tests">Tests</h5>
+<div class="level5">
+
+<p>
+Effectuer des tests afin de voir si tout s’est déroulé correctement :
+</p>
+<pre class="code">sudo net ads testjoin</pre>
+
+<p>
+devrait retourner <code>Join is OK</code>.
+</p>
+
+<p>
+Afficher la liste des groupes d&#039;Active Directory :
+</p>
+<pre class="code">sudo wbinfo -g</pre>
+
+<p>
+Afficher la liste des utilisateurs d&#039;Active Directory :
+</p>
+<pre class="code">sudo wbinfo -u</pre>
+
+<p>
+Si cela ne fonctionne pas, vérifier votre <code>smb.conf</code> et redémarrer vos services Samba et Winbind.
+Vous devrez redémarrer winbind à chaque modification du <code>smb.conf</code>.
+</p>
+
+<p>
+<p><div class="notetip">
+À ce stade, <strong>votre machine a rejoint le domaine Active Directory</strong>.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Rejoindre le domaine] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4711-6104" /><input type="submit" value="Modifier" class="button" title="Rejoindre le domaine" /></div></form></div>
+<h2 class="sectionedit9" id="installation_et_configuration_de_squid">Installation et configuration de Squid</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Installation et configuration de Squid] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6105-6157" /><input type="submit" value="Modifier" class="button" title="Installation et configuration de Squid" /></div></form></div>
+<h3 class="sectionedit10" id="installation_de_squid">Installation de Squid</h3>
+<div class="level3">
+
+<p>
+<a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong>squid</strong>.
+</p>
+
+<p>
+Si après l&#039;installation vous obtenez <code>[fail]</code> lors du démarrage de Squid, ceci sera réglé plus tard.
+</p>
+
+<p>
+Tester la connexion au DC, qui devrait être fonctionnelle avec ce que nous avons fait avant :
+</p>
+<pre class="code">sudo /usr/bin/ntlm_auth --helper-protocol=squid-2.5-basic</pre>
+
+<p>
+Et rentrer un login/mdp d&#039;un utilisateur d&#039;Active Directory comme ceci :
+</p>
+<pre class="code">utilisateur mot_de_passe</pre>
+
+<p>
+Cela devrait retourner <code>OK</code> (Ctrl–C pour quitter).
+</p>
+
+<p>
+Dans le cas contraire (retour <code>ERR</code>), essayer :
+</p>
+<pre class="code">DOMAIN\utilisateur mot_de_passe</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Installation de Squid] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6158-6775" /><input type="submit" value="Modifier" class="button" title="Installation de Squid" /></div></form></div>
+<h3 class="sectionedit11" id="configuration_de_squid">Configuration de Squid</h3>
+<div class="level3">
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">
+Éditez le fichier</a> <strong>/etc/squid/squid.conf</strong> de configuration de Squid,
+</p>
+<ul>
+<li class="level1"><div class="li"> dans la partie <strong><code>TAG: auth_param</code></strong>, commenter tout (si ce n&#039;est pas déjà fait) et n&#039;ajouter <strong>que</strong> les lignes suivantes :<pre class="file">auth_param ntlm program /usr/bin/ntlm_auth --helper-protocol=squid-2.5-ntlmssp
+auth_param ntlm children 5
+
+auth_param basic program /usr/bin/ntlm_auth --helper-protocol=squid-2.5-basic
+auth_param basic children 5
+auth_param basic realm Squid AD
+auth_param basic credentialsttl 2 hours</pre>
+</div>
+</li>
+</ul>
+
+<p>
+<p><div class="notehelp"><strong>N.B. :</strong> <code>Squid AD</code> représente juste la désignation du domaine utilisé par l&#039;explorateur.
+</div></p>
+</p>
+
+<p>
+Pour n&#039;autoriser le surf qu&#039;à un groupe d&#039;Active Directory spécifique, rajouter le paramètre <code>require-membership-of</code> au programme <em>ntlm_auth</em> comme ceci :
+</p>
+<pre class="file">auth_param ntlm program /usr/bin/ntlm_auth --helper-protocol=squid-2.5-ntlmssp --require-membership-of=DOMAINEAD\\groupead
+
+auth_param basic program /usr/bin/ntlm_auth --helper-protocol=squid-2.5-basic --require-membership-of=DOMAINEAD\\groupead</pre>
+
+<p>
+Éventuellement, <code>DOMAINEAD</code> devra être remplacé par la valeur de <code>workgroup</code> du <code>smb.conf</code>.
+<code>groupead</code> étant le groupe d&#039;Active Directory pouvant surfer.
+Vous pouvez aussi remplacer <code>groupead</code> directement par son SID.
+</p>
+<ul>
+<li class="level1"><div class="li"> Dans la partie <strong><code>TAG: acl</code></strong>, rajouter la ligne suivante :</div>
+</li>
+</ul>
+<pre class="code">acl ntlm proxy_auth REQUIRED</pre>
+<ul>
+<li class="level1"><div class="li"> Puis dans la partie <strong><code>TAG: http_access</code></strong>, ne mettre <strong>que</strong> :</div>
+</li>
+</ul>
+<pre class="code">http_access allow ntlm</pre>
+<ul>
+<li class="level1"><div class="li"> Enfin, puisque nous sommes sur un domaine Microsoft, nous avons besoin que les noms NETBIOS courts soient reconnus : en effet, Squid n’utilise pas le champ <code>search</code> du fichier <code>/etc/resolv.conf</code>.</div>
+</li>
+</ul>
+
+<p>
+Pour cela, utiliser le champ <code>append_domain</code> de la partie <strong><code>TAG: append_domain</code></strong> :
+</p>
+<pre class="code">append_domain .domainead.local</pre>
+<ul>
+<li class="level1"><div class="li"> Pour ne pas inclure l&#039;adresse IP ou le nom du système dans les requêtes HTTP, dans la partie <strong><code>TAG: forwarded_for</code></strong>, décommenter et modifier la ligne comme suit :</div>
+</li>
+</ul>
+<pre class="code">forwarded_for off</pre>
+
+<p>
+Enfin, relancer Squid :
+</p>
+<pre class="code">sudo /etc/init.d/squid restart</pre>
+
+<p>
+Si vous récupérez <code>[fail]</code> lors du redémarrage de Squid, alors il faut spécifier le nom de la machine dans <code>squid.conf</code>, dans la partie <strong><code>TAG: visible_hostname</code></strong> :
+</p>
+<pre class="code">visible_hostname nom_machine</pre>
+
+<p>
+Redémarrer à nouveau Squid.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Configuration de Squid] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6776-9150" /><input type="submit" value="Modifier" class="button" title="Configuration de Squid" /></div></form></div>
+<h3 class="sectionedit12" id="droits_de_l_utilisateur_de_squid">Droits de l&#039;utilisateur de Squid</h3>
+<div class="level3">
+
+<p>
+L&#039;utilisateur <em>proxy</em> de Squid nécessite d&#039;appartenir au groupe <em>root</em> pour bénéficier des droits nécessaires sur les fichiers de log de Squid, afin de rendre l&#039;authentification fonctionnelle :
+</p>
+
+<p>
+Changer le propriétaire des fichiers log de Squid :
+</p>
+<pre class="code">sudo chown -R proxy:root /var/log/squid</pre>
+<pre class="code">sudo chown -R proxy:root /var/run/samba/winbindd_privileged</pre>
+
+<p>
+Changer le groupe du cache de Squid :
+</p>
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditer le fichier</a> /etc/squid/squid.conf,
+</p>
+
+<p>
+Dans la partie <strong><code>TAG: cache_effective_group</code></strong>, décommenter la ligne et y mettre le groupe <em>root</em> :
+</p>
+<pre class="code">cache_effective_group root</pre>
+
+<p>
+Redémarrer Squid :
+</p>
+<pre class="code">sudo /etc/init.d/squid restart</pre>
+
+<p>
+Si vous obtenez une erreur :
+</p>
+<blockquote><div class="no">
+ authenticateNTLMHandleReply: Error validating user via NTLM. Error returned &#039;BH NT_STATUS_ACCESS_DENIED&#039;<br/>
+ utils/ntlm_auth.c:832(manage_squid_ntlmssp_request) NTLMSSP BH: NT_STATUS_ACCESS_DENIED</div></blockquote>
+
+<p>
+qui est sûrement due à une nouvelle version d&#039;Ubuntu, alors remplacez la ligne :
+</p>
+<pre class="code">cache_effective_group root</pre>
+
+<p>
+par :
+</p>
+<pre class="code">cache_effective_group winbindd_priv</pre>
+
+<p>
+<p><div class="notetip">
+Votre proxy est désormais fonctionnel, vous pouvez tester l&#039;authentification transparente depuis une machine du domaine après réglage du navigateur (Squid écoute sur le port 3128).
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Droits de l'utilisateur de Squid] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9151-10467" /><input type="submit" value="Modifier" class="button" title="Droits de l'utilisateur de Squid" /></div></form></div>
+<h2 class="sectionedit13" id="webmin">Webmin</h2>
+<div class="level2">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/webmin" class="wikilink1" title="webmin">Webmin</a> est un panel d&#039;administration web pour votre serveur ou machine Linux. Il permet de gérer le système, administrer les serveurs installés, etc.
+</p>
+
+</div>
+
+<h4 id="installation">Installation</h4>
+<div class="level4">
+
+<p>
+Webmin n&#039;étant pas dans les dépôts, il faut télécharger le fichier « .deb » d&#039;installation de Webmin depuis leur site :
+</p>
+<pre class="code">cd /tmp
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.400_all.deb</pre>
+
+<p>
+<a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installer</a> les dépendances de webmin : <strong>libauthen-pam-perl</strong> <strong>libio-pty-perl</strong> <strong>libmd5-perl</strong>.
+</p>
+
+<p>
+Puis <a href="comment_installer_un_paquet#paquet_.deb_telecharge" class="urlextern" title="http://doc.ubuntu-fr.org/tutoriel/comment_installer_un_paquet#paquet_.deb_telecharge"  rel="nofollow">installer</a> le paquet téléchargé :
+</p>
+<pre class="code">sudo dpkg -i ~/webmin_1.400_all.deb</pre>
+
+</div>
+
+<h4 id="connexion">Connexion</h4>
+<div class="level4">
+
+<p>
+Pour administrer sa machine depuis Webmin, ouvrir un navigateur <strong>qui ne passe pas par ce proxy</strong> et y taper l&#039;adresse :
+</p>
+<pre class="code">https://nom_machine:10000/</pre>
+
+<p>
+(<code>nom_machine</code> peut être remplacé par l&#039;IP de la machine)
+</p>
+
+<p>
+Vous pouvez vous y connecter avec vos identifiants/mots de passe habituels.
+</p>
+
+</div>
+
+<h4 id="administration_de_squid">Administration de Squid</h4>
+<div class="level4">
+
+<p>
+Pour administrer Squid, dérouler le menu <em>servers</em> puis <em>Squid Proxy Server</em>. Pour plus d&#039;informations sur le module d&#039;administration de Squid, regarder directement la <a href="http://doxfer.com/Webmin/SquidProxyServer" class="urlextern" title="http://doxfer.com/Webmin/SquidProxyServer"  rel="nofollow">doc du site de Webmin</a> (en).
+</p>
+
+</div>
+
+<h4 id="visionnement_des_logs">Visionnement des logs</h4>
+<div class="level4">
+
+<p>
+Trois principaux <em>log viewers</em> sont diponibles et consultables depuis Webmin : <em>SARG</em>, <em>Calamaris</em> et <em>Webalizer</em>.
+</p>
+
+<p>
+Au choix, <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer l&#039;un des paquets</a> <strong>sarg</strong> <strong>calamaris</strong> <strong>webalizer</strong>.
+</p>
+
+<p>
+Dans l&#039;interface Webmin, vous pouvez configurer et générer des rapports Squid <em>via</em> :
+</p>
+<ul>
+<li class="level1"><div class="li"> Calamaris : <em>Servers → Squid Proxy Server → Calamaris Log Analysis</em>.</div>
+</li>
+<li class="level1"><div class="li"> SARG : <em>Servers → Squid Analysis Report Generator</em>.</div>
+</li>
+<li class="level1"><div class="li"> Webalizer : <em>Servers → Webalizer Logfile Analysis</em>.</div>
+</li>
+</ul>
+
+<p>
+Webalizer nécessite un dossier, à indiquer dans Webmin, dans lequel il enregistrera les rapports générés. Créer donc un dossier <code>webalizer</code> dans le dossier personnel :
+</p>
+<pre class="code">mkdir ~/webalizer</pre>
+
+<p>
+<p><div class="noteclassic">
+Il est déconseillé d&#039;utiliser plusieurs log viewers, cela entraine des manipulations supplémentaires sur les fichiers de log.
+
+</div></p>
+</p>
+<hr />
+
+<p>
+<em>Auteur : <a href="../utilisateurs/v0n" class="wikilink1" title="utilisateurs:v0n">v0n</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1401268710" /><input type="hidden" name="summary" value="[Webmin] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10468-" /><input type="submit" value="Modifier" class="button" title="Webmin" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/cafc7e3fa2b9cd2beaeed747ad470077.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

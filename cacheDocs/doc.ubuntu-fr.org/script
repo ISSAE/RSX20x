@@ -1,0 +1,1473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:script_shell - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-05-12T21:51:44+0200"/>
+<meta name="keywords" content="programmation,script,shell,console,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/script_shell?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/script_shell?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/script_shell"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/script_shell"/>
+<link rel="canonical" href="tutoriel/script_shell"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:script_shell","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="script#main" tabindex="1">Contenu</a> | <a href="script#qsearch__in" tabindex="2">Rechercher</a> | <a href="script#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="script" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="tutoriel/script_shell" >tutoriel:script_shell</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="script#executer_un_script">Exécuter un script</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="script#methode_graphique">Méthode graphique</a></div></li>
+<li class="level2"><div class="li"><a href="script#methode_dans_un_terminal">Méthode dans un terminal</a></div></li>
+<li class="level2"><div class="li"><a href="script#modifier_le_path">Modifier le PATH</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="script#les_differents_types_de_shells">Les différents types de shells</a></div></li>
+<li class="level1"><div class="li"><a href="script#les_variables">Les variables</a></div></li>
+<li class="level1"><div class="li"><a href="script#les_tableaux">Les tableaux</a></div></li>
+<li class="level1"><div class="li"><a href="script#les_arguments_en_ligne_de_commande">Les arguments en ligne de commande</a></div></li>
+<li class="level1"><div class="li"><a href="script#les_structures_de_controle">Les structures de contrôle</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="script#la_commande_test">La commande test</a></div></li>
+<li class="level2"><div class="li"><a href="script#la_structureif">La structure : `if`</a></div></li>
+<li class="level2"><div class="li"><a href="script#les_structures_while_et_until">Les structures while et until</a></div></li>
+<li class="level2"><div class="li"><a href="script#la_structure_case">La structure case</a></div></li>
+<li class="level2"><div class="li"><a href="script#la_structure_for">La structure for</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="script#les_fonctions">Les fonctions</a></div></li>
+<li class="level1"><div class="li"><a href="script#la_couleur">La couleur</a></div></li>
+<li class="level1"><div class="li"><a href="script#exemples_et_exercices">Exemples et exercices</a></div></li>
+<li class="level1"><div class="li"><a href="script#l_art_d_ecrire_un_script">L&#039;art d&#039;écrire un script</a></div></li>
+<li class="level1"><div class="li"><a href="script#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="programmation" class="wikilink1" title="programmation" rel="tag">programmation</a>,
+	<a href="script" class="wikilink1" title="script" rel="tag">script</a>,
+	<a href="http://doc.ubuntu-fr.org/shell" class="wikilink1" title="shell" rel="tag">shell</a>,
+	<a href="console" class="wikilink1" title="console" rel="tag">console</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="introduction_aux_scripts_shell">Introduction aux scripts shell</h1>
+<div class="level1">
+
+<p>
+Un script shell permet d&#039;automatiser une série d&#039;opérations. Il se présente sous la forme d&#039;un fichier contenant une ou plusieurs commandes qui seront exécutées de manière séquentielle. 
+</p>
+
+</div>
+
+<h5 id="ecrire_un_script">Écrire un script</h5>
+<div class="level5">
+
+<p>
+Si vous voulez écrire un programme sh, vous avez deux possibilités :
+</p>
+<ul>
+<li class="level1"><div class="li"> soit vous tapez dans un shell toutes les commandes</div>
+</li>
+<li class="level1"><div class="li"> ou alors vous rassemblez toutes les instructions copiées par ci par là dans un fichier sh. </div>
+</li>
+</ul>
+
+<p>
+À titre d&#039;exemple, saisissez ces quelques lignes dans votre éditeur préféré :
+</p>
+<pre class="code file bash"><span class="co0">#!/bin/bash</span>
+<span class="co0"># Indique au système que l'argument qui suit est le programme utilisé pour exécuter ce fichier</span>
+<span class="co0"># En règle générale, les &quot;#&quot; servent à mettre en commentaire le texte qui suit comme ici</span>
+<span class="kw3">echo</span> Mon premier script
+<span class="kw3">echo</span> Liste des fichiers :
+<span class="kw2">ls</span> <span class="re5">-la</span>
+&nbsp;
+<span class="kw3">exit</span> <span class="nu0">0</span></pre>
+
+<p>
+Le résultat de ce script est d&#039;écrire à l&#039;écran « Mon premier script », puis
+en dessous « Liste des fichiers : », et enfin la liste des fichiers avec la
+commande <code>`ls -l`</code>. 
+</p>
+
+<p>
+Comme vous l&#039;avez compris, la commande <code>`echo`</code> sert à écrire
+quelque chose à l&#039;écran.
+</p>
+
+<p>
+<p><div class="notewarning">Cependant il vous faudra faire extrêmement attention à tous ces morceaux de code. Leur utilisation sans connaissance de votre part pourrait vous faire perdre de précieuses données.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Introduction aux scripts shell] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="60-1417" /><input type="submit" value="Modifier" class="button" title="Introduction aux scripts shell" /></div></form></div>
+<h2 class="sectionedit2" id="executer_un_script">Exécuter un script</h2>
+<div class="level2">
+
+<p>
+« Mais comment on exécute ce script ? »
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Exécuter un script] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1418-1494" /><input type="submit" value="Modifier" class="button" title="Exécuter un script" /></div></form></div>
+<h3 class="sectionedit3" id="methode_graphique">Méthode graphique</h3>
+<div class="level3">
+
+<p>
+Votre script est un simple fichier texte, par défaut il s&#039;ouvre donc avec l&#039;éditeur de texte défini par défaut (ex : <a href="gedit" class="wikilink1" title="gedit">Gedit</a> dans une session Unity ou Gnome).<br/>
+
+Pour qu&#039;il soit autorisé à se lancer en tant que programme, il faut modifier ses propriétés.<br/>
+
+Pour cela faites un clic droit sur son icône, et dans l&#039;onglet &quot;Permissions&quot; des &quot;Propriétés&quot;, cocher la case <em>&quot;autoriser l&#039;exécution du fichier comme un programme&quot;</em>.
+</p>
+
+<p>
+Par la suite, un double-clic sur l’icône vous laissera le choix entre afficher le fichier (dans un éditeur de texte) et le lancer (directement ou dans un terminal pour voir d&#039;éventuels messages d&#039;erreurs)
+</p>
+
+<p>
+Par ailleurs depuis 13.10, <a href="nautilus" class="wikilink1" title="nautilus">Nautilus</a> ne propose pas de lancer le script par simple clic avec les réglages de bases. Il faut aller dans Nautilus Menu édition → préférences → onglet comportement → fichier texte et exécutable et cocher pour fichiers exécutables &quot;demander à chaque fois&quot;
+</p>
+
+</div>
+
+<h4 id="probleme_connu">Problème connu</h4>
+<div class="level4">
+
+<p>
+Sous <a href="lubuntu" class="wikilink1" title="lubuntu">Lubuntu</a>, si cette méthode ne fonctionne pas, vous devez d&#039;abord effectuer l&#039;opération suivante :<br/>
+
+</p>
+<ol>
+<li class="level1"><div class="li"> Dans le menu principal, allez sur <em>Accessoires</em> et faites un <em>clic droit → Propriétés</em> sur le raccourci vers le terminal. Notez le contenu du champs <em>Commande</em> et annulez.</div>
+</li>
+<li class="level1"><div class="li"> Ouvrez votre gestionnaire de fichier <a href="http://doc.ubuntu-fr.org/pcmanfm" class="wikilink1" title="pcmanfm">PCManFM</a> et allez dans le menu supérieur sur <em>éditer → Préférences</em> puis dans la fenêtre qui s&#039;ouvre sélectionnez <em>Avancé</em>.</div>
+</li>
+<li class="level1"><div class="li"> Remplacez le contenu du champs <em>Terminal emulator</em> par le contenu du champs <em>Commande</em> que vous avez pris soin de noter à la première étape.</div>
+</li>
+<li class="level1"><div class="li"> Vous pouvez ensuite suivre la méthode graphique indiquée ci-dessus pour exécuter vos scripts shell.</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Méthode graphique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1495-3270" /><input type="submit" value="Modifier" class="button" title="Méthode graphique" /></div></form></div>
+<h3 class="sectionedit4" id="methode_dans_un_terminal">Méthode dans un terminal</h3>
+<div class="level3">
+
+<p>
+Il suffit de se placer dans le dossier où est le script, et de lancer
+</p>
+<pre class="code">bash nom_du_script</pre>
+
+<p>
+Si vous voulez l&#039;exécuter grâce au raccourci « <strong>./</strong> », il faut le rendre exécutable avec <code>chmod</code>. Pour ceci tapez la commande qui suit :
+</p>
+<pre class="code">chmod +x nom_du_script</pre>
+
+<p>
+Puis vous pouvez exécuter le script en faisant :
+</p>
+<pre class="code">./nom_du_script</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Méthode dans un terminal] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3271-3646" /><input type="submit" value="Modifier" class="button" title="Méthode dans un terminal" /></div></form></div>
+<h3 class="sectionedit5" id="modifier_le_path">Modifier le PATH</h3>
+<div class="level3">
+
+<p>
+Il peut être intéressant d&#039;ajouter un répertoire au &quot;PATH&quot; pour pouvoir exécuter ses scripts sans avoir à se placer dans le bon dossier.
+Je m&#039;explique, quand vous tapez une commande (&quot;ls&quot; par exemple), le shell regarde dans le PATH qui lui indique où chercher le code de la commande.
+</p>
+
+<p>
+Pour voir à quoi ressemble votre PATH, tapez dans votre console:
+</p>
+<pre class="code">echo $PATH</pre>
+
+<p>
+Cette commande chez moi donnait initialement :
+</p>
+<pre class="code">/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games</pre>
+
+<p>
+C&#039;est à dire que le shell va aller voir si la définition de la commande tapée (&quot;ls&quot; pour continuer sur le même exemple) se trouve dans <strong>/usr/local/bin</strong> puis dans <strong>/usr/bin</strong>… jusqu&#039;à ce qu&#039;il la trouve.
+</p>
+
+<p>
+Ajouter un répertoire au PATH peut donc être très pratique. Par convention, ce répertoire s&#039;appelle <strong>bin</strong> et se place dans votre répertoire personnel. Si votre répertoire personnel est /home/toto, ce répertoire sera donc <strong>/home/toto/bin</strong>.
+Pour pouvoir utiliser mes scripts en tapant directement leur nom (sans le &quot;./&quot;) depuis n&#039;importe quel répertoire de mon ordinateur, il me suffit d&#039;indiquer au shell de chercher aussi dans ce nouveau dossier en l&#039;ajoutant au PATH.
+Pour ceci, il suffit de faire :
+</p>
+<pre class="code">export PATH=$PATH:$HOME/bin</pre>
+
+<p>
+La commande
+</p>
+<pre class="code">echo $PATH</pre>
+
+<p>
+retourne maintenant
+</p>
+<pre class="code">/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/home/toto/bin</pre>
+
+<p>
+et je peux lancer le script appelé &quot;monScript&quot; situé dans &quot;/home/toto/bin&quot; en tapant directement
+</p>
+<pre class="code">monScript</pre>
+
+<p>
+<p><div class="notetip">Cette procédure est pour une modification temporaire du PATH et qui sera donc effacée à la fin de la session. Pour rendre la modification permanente, ajouter la commande dans le fichier texte caché .bashrc se trouvant dans votre dossier personnel ainsi que dans le dossier /root.
+</div></p>
+</p>
+
+<p>
+<p><div class="noteimportant">Dans les dernières versions de ubuntu (12.04 +) si le dossier $HOME/bin existe il est automatiquement ajouté au PATH. La commande est inclue dans le fichier ~/.profile lancé lors de toutes sessions (graphique ou console).
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Modifier le PATH] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3647-5685" /><input type="submit" value="Modifier" class="button" title="Modifier le PATH" /></div></form></div>
+<h2 class="sectionedit6" id="les_differents_types_de_shells">Les différents types de shells</h2>
+<div class="level2">
+
+<p>
+Comme vous avez sûrement dû l&#039;entendre, il existe différents types de shells ou en bon français, interpréteurs de commandes :
+</p>
+<ul>
+<li class="level1"><div class="li"> dash : shell par défaut utilisé pour exécuter les scripts sur Ubuntu ;</div>
+</li>
+<li class="level1"><div class="li"> bash (<em>Bourne Again SHell</em>) : conçu par le projet <abbr title="GNU&#039;s Not Unix">GNU</abbr>, shell linux ; le shell par défaut sur Ubuntu ;</div>
+</li>
+<li class="level1"><div class="li"> rbash : un shell restreint basé sur bash. Il existe de nombreuses variantes de bash ;</div>
+</li>
+<li class="level1"><div class="li"> csh, tcsh : shells C, créés par Bill Joy de Berkeley ;</div>
+</li>
+<li class="level1"><div class="li"> zsh, shell C écrit par Paul Falstad ;</div>
+</li>
+<li class="level1"><div class="li"> ksh (⇔ ksh88 sur Solaris et equivaut a ksh93 sur les autres UNIX/Linux cf.<a href="http://en.wikipedia.org/wiki/Korn_shell#History" class="urlextern" title="http://en.wikipedia.org/wiki/Korn_shell#History"  rel="nofollow">Korn shell History</a>): shells korn écrits par David Korn, pdksh (Public Domain Korn Shell ⇔ ksh88) ;</div>
+</li>
+<li class="level1"><div class="li"> rc : shell C, lui aussi conçu par le projet <abbr title="GNU&#039;s Not Unix">GNU</abbr> ;</div>
+</li>
+<li class="level1"><div class="li"> tclsh : shell utilisant Tcl ;                        </div>
+</li>
+<li class="level1"><div class="li"> wish : shell utilisant Tk ;      </div>
+</li>
+</ul>
+
+<p>
+Il existe bien entendu beaucoup d&#039;autres types de shells.
+</p>
+
+<p>
+La commande <strong>sh</strong> est en fait un lien symbolique vers l&#039;interpréteur de commandes par défaut : <strong>/bin/bash</strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Les différents types de shells] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5686-6804" /><input type="submit" value="Modifier" class="button" title="Les différents types de shells" /></div></form></div>
+<h2 class="sectionedit7" id="les_variables">Les variables</h2>
+<div class="level2">
+
+<p>
+Pour appeler une variable, par exemple HOME, il suffit de mettre un $ devant, par exemple :
+</p>
+<pre class="code bash"><span class="kw3">echo</span> <span class="re1">$HOME</span></pre>
+
+<p>
+Ce petit code va afficher la variable HOME à l&#039;écran.
+</p>
+
+<p>
+Pour affecter une valeur à une variable c&#039;est très simple.
+</p>
+<pre class="code bash"><span class="re2">MSG</span>=salut
+<span class="kw3">echo</span> <span class="re1">$MSG</span></pre>
+
+<p>
+Il existe des variables un peu spéciales
+</p>
+<div class="table sectionedit8"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Nom</th><th class="col1">fonction</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">$*</td><td class="col1"> contient tous les arguments passés à la fonction</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">$#</td><td class="col1"> contient le nombre d&#039;argument</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">$?</td><td class="col1"> contient le code de retour de la dernière opération</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">$0</td><td class="col1"> contient le nom du script</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">$n</td><td class="col1"> contient l&#039;argument n, n étant un nombre</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">$!</td><td class="col1"> contient le PID de la dernière commande lancée</td>
+	</tr>
+</table></div>
+
+<p>
+Exemple : créer le fichier arg.sh avec le contenu qui suit
+</p>
+<pre class="code bash"><span class="co0">#!/bin/bash</span>
+<span class="kw3">echo</span> <span class="st0">&quot;Nombre d'argument &quot;</span><span class="re4">$#</span>
+<span class="kw3">echo</span> <span class="st0">&quot;Les arguments sont &quot;</span><span class="re4">$*</span>
+<span class="kw3">echo</span> <span class="st0">&quot;Le second argument est &quot;</span><span class="re4">$2</span>
+&nbsp;
+<span class="kw3">echo</span> <span class="st0">&quot;Et le code de retour du dernier echo est &quot;</span><span class="re4">$?</span></pre>
+
+<p>
+Lancez ce script avec un ou plusieurs arguments et vous aurez
+</p>
+<pre class="code bash">.<span class="sy0">/</span>arg.sh <span class="nu0">1</span> <span class="nu0">2</span> <span class="nu0">3</span>
+Nombre d<span class="st_h">'argument 3
+Les arguments sont 1 2 3
+Le second argument est 2
+Et le code de retour du dernier echo est 0</span></pre>
+
+<p>
+Exemple : Un sleep interactif pour illustrer $! (Cf. <span class="curid"><a href="tutoriel/script_shell#les_fonctions" class="wikilink1" title="tutoriel:script_shell">les fonctions</a></span>)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Les variables] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6805-8013" /><input type="submit" value="Modifier" class="button" title="Les variables" /></div></form></div>
+<h2 class="sectionedit9" id="les_tableaux">Les tableaux</h2>
+<div class="level2">
+
+<p>
+Pour déclarer un tableau, plusieurs méthodes :
+</p>
+
+<p>
+Premiere méthode (compatible bash, zsh, et ksh93 mais pas ksh88, ni avec dash, qui est lancé par &quot;sh&quot;)
+</p>
+<pre class="code bash"><span class="re2">tab</span>=<span class="br0">&#40;</span><span class="st0">&quot;John Smith&quot;</span> <span class="st0">&quot;Jane Doe&quot;</span><span class="br0">&#41;</span></pre>
+
+<p>
+ou bien
+</p>
+<pre class="code bash">tab<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>=John Smith
+tab<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>=Jane Doe</pre>
+
+<p>
+Pour compter le nombre d&#039;éléments du tableau :
+</p>
+<pre class="code bash"><span class="re2">len</span>=<span class="co1">${#tab[*]}</span></pre>
+
+<p>
+Pour afficher un élément :
+</p>
+<pre class="code bash"><span class="kw3">echo</span> <span class="co1">${tab[1]}</span></pre>
+
+<p>
+Pour afficher tous les éléments :
+</p>
+<pre class="code bash"><span class="kw3">echo</span> <span class="co1">${tab[@]}</span></pre>
+
+<p>
+ou bien (en bash ou en ksh93 mais pas en ksh88):
+</p>
+<pre class="code bash"><span class="kw1">for</span> i <span class="kw1">in</span> <span class="co1">${!tab[@]}</span>; <span class="kw1">do</span> <span class="kw3">echo</span> <span class="co1">${tab[i]}</span>; <span class="kw1">done</span></pre>
+
+<p>
+ou encore ( C style )
+</p>
+<pre class="code bash"><span class="kw1">for</span> <span class="br0">&#40;</span><span class="br0">&#40;</span> <span class="re2">i</span>=<span class="nu0">0</span>; i <span class="sy0">&lt;</span> <span class="co1">${#tab[@]}</span>; i++ <span class="br0">&#41;</span><span class="br0">&#41;</span>; <span class="kw1">do</span> <span class="kw3">echo</span> <span class="co1">${tab[i]}</span>; <span class="kw1">done</span></pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Les tableaux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8014-8739" /><input type="submit" value="Modifier" class="button" title="Les tableaux" /></div></form></div>
+<h2 class="sectionedit10" id="les_arguments_en_ligne_de_commande">Les arguments en ligne de commande</h2>
+<div class="level2">
+
+<p>
+Pour passer des arguments en ligne de commande c&#039;est encore une fois très simple. Chaque argument est numéroté et ensuite on l&#039;appelle par son numéro :
+</p>
+<pre class="code"> ./test.sh powa noplay</pre>
+
+<p>
+Voici notre test.sh
+</p>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+<span class="kw3">echo</span> <span class="re4">$2</span> <span class="kw3">echo</span> <span class="re4">$1</span></pre>
+
+<p>
+Notez que $0 est le nom du fichier.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Les arguments en ligne de commande] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8740-9074" /><input type="submit" value="Modifier" class="button" title="Les arguments en ligne de commande" /></div></form></div>
+<h2 class="sectionedit11" id="les_structures_de_controle">Les structures de contrôle</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Les structures de contrôle] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9075-9114" /><input type="submit" value="Modifier" class="button" title="Les structures de contrôle" /></div></form></div>
+<h3 class="sectionedit12" id="la_commande_test">La commande test</h3>
+<div class="level3">
+
+<p>
+La commande test existe sous tous les Unix, elle permet de faire un test et de renvoyer 0 si tout s&#039;est bien passé ou 1 en cas d&#039;erreur.
+</p>
+
+<p>
+En mode console, faites <a href="http://www.bash-linux.com/unix-man-test-francais.html" class="urlextern" title="http://www.bash-linux.com/unix-man-test-francais.html"  rel="nofollow"> man test </a> pour connaître tous les opérateurs, en voici quelques-uns :
+</p>
+
+</div>
+
+<h4 id="operateurs_de_test">Opérateurs de test</h4>
+<div class="level4">
+<div class="table sectionedit13"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Syntaxe </th><th class="col1"> Fonction réalisée </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> -e fichier      </td><td class="col1 leftalign"> renvoie 0 si fichier existe.                           </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> -d fichier      </td><td class="col1 leftalign"> renvoie 0 si fichier existe et est un répertoire.      </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> -f fichier      </td><td class="col1"> renvoie 0 si fichier existe et est un fichier &#039;normal&#039;.</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> -w fichier      </td><td class="col1 leftalign"> renvoie 0 si fichier existe et est en écriture.        </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> -x fichier      </td><td class="col1 leftalign"> renvoie 0 si fichier existe et est exécutable.         </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> f1 -nt f2       </td><td class="col1 leftalign"> renvoie 0 si f1 est plus récent que f2.                </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> f1 -ot f2       </td><td class="col1 leftalign"> renvoie  0 si f1 est plus vieux que f2.                 </td>
+	</tr>
+</table></div>
+
+</div>
+
+<h4 id="operateurs_de_comparaison_numeriques">Opérateurs de comparaison numériques</h4>
+<div class="level4">
+<div class="table sectionedit14"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Syntaxe </th><th class="col1"> Fonction réalisée </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> $A -lt 5         </td><td class="col1"> renvoie  0 si $A est strictement inférieur à 5 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> $A -le 5         </td><td class="col1"> renvoie 0 si $A est inférieur ou égal à 5 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> $A -gt 5         </td><td class="col1"> renvoie  0 si $A est strictement supérieur à 5 </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> $A -ge 5         </td><td class="col1"> renvoie 0 si $A est supérieur ou égal à 5 </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> $A -eq 5         </td><td class="col1"> renvoie  0 si $A est égal à 5 </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> $A -ne 5         </td><td class="col1"> renvoie 0 si $A est différent de 5 </td>
+	</tr>
+</table></div>
+
+</div>
+
+<h4 id="les_crochets">Les crochets</h4>
+<div class="level4">
+
+<p>
+On peut raccourcir la commande test par des crochets. Exemple :
+</p>
+<pre class="code bash"><span class="kw3">test</span> <span class="re5">-f</span> <span class="sy0">/</span>etc<span class="sy0">/</span><span class="kw2">passwd</span>
+<span class="kw3">echo</span> <span class="re4">$?</span>
+<span class="nu0">0</span>
+<span class="br0">&#91;</span> <span class="re5">-f</span> <span class="sy0">/</span>etc<span class="sy0">/</span><span class="kw2">passwd</span> <span class="br0">&#93;</span> 
+<span class="kw3">echo</span> <span class="re4">$?</span>
+<span class="nu0">0</span></pre>
+
+<p>
+Affichera la valeur 0 : ce fichier existe, 1 dans le cas où le fichier /etc/passwd n&#039;existe pas. Sous unix, le code de retour est par convention et en général 0 s&#039;il n&#039;y a aucune erreur et différent de 0 dans les autres cas
+</p>
+
+<p>
+La syntaxe la plus appropriée dans de la programmation shell moderne est le double crochet :
+</p>
+<pre class="code bash"><span class="br0">&#91;</span><span class="br0">&#91;</span> <span class="re5">-f</span> <span class="sy0">/</span>etc<span class="sy0">/</span><span class="kw2">passwd</span> <span class="br0">&#93;</span><span class="br0">&#93;</span></pre>
+
+<p>
+Cela gère bien mieux les problèmes d&#039;espace dans les noms de fichiers, les erreurs etc… C&#039;est une structure <del>propre à</del> bash (ksh, ?) qui est le shell par défaut dans la plupart des distributions Linux, et de Ubuntu en particulier. On garde en général des simples crochets pour les scripts shell qui doivent être à tout prix POSIX. ( Utilisation sur des Unix sans installation préalables de bash, comme <abbr title="Berkeley Software Distribution">BSD</abbr>, Solaris… )
+</p>
+
+</div>
+
+<h4 id="les_operateurs_logiques">Les opérateurs logiques</h4>
+<div class="level4">
+
+<p>
+Il y a en 3 :
+</p>
+<ul>
+<li class="level1"><div class="li"> le <strong>et</strong> logique : -a</div>
+</li>
+<li class="level1"><div class="li"> le <strong>ou</strong> logique : -o</div>
+</li>
+<li class="level1"><div class="li"> le <strong>non</strong> logique : !</div>
+</li>
+</ul>
+
+<p>
+Exemple :
+</p>
+<pre class="code bash"><span class="kw3">echo</span> <span class="st0">&quot;renverra 0 si les deux expressions sont vraies&quot;</span>
+<span class="kw3">test</span> <span class="kw2">expr</span> <span class="nu0">1</span> <span class="re5">-a</span> expr2  
+<span class="br0">&#91;</span> expr1 <span class="re5">-a</span> expr2 <span class="br0">&#93;</span></pre>
+
+</div>
+
+<h5 id="table_de_verite_de_-o">Table de vérité de « -o »</h5>
+<div class="level5">
+<div class="table sectionedit15"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Comparaison </th><th class="col1"> Résultat </th><th class="col2"> Calcul </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> 0 ou 0 </td><td class="col1"> 0 </td><td class="col2"> 0 + 0 = 0 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 0 ou 1 </td><td class="col1"> 1 </td><td class="col2"> 0 + 1 = 1 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> 1 ou 0 </td><td class="col1"> 1 </td><td class="col2"> 1 + 0 = 1 </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> 1 ou 1 </td><td class="col1"> 1 </td><td class="col2"> 1 + 1 = 1 </td>
+	</tr>
+</table></div>
+
+<p>
+Dès que l&#039;une des deux assertions est vérifiée, la condition globale l&#039;est aussi.
+</p>
+
+</div>
+
+<h5 id="table_de_verite_de_-a">Table de vérité de « -a »</h5>
+<div class="level5">
+<div class="table sectionedit16"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Comparaison </th><th class="col1"> Résultat </th><th class="col2"> Calcul </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> 0 et 0 </td><td class="col1"> 0 </td><td class="col2"> 0 × 0 = 0 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 0 et 1 </td><td class="col1"> 0 </td><td class="col2"> 0 × 1 = 0 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> 1 et 0 </td><td class="col1"> 0 </td><td class="col2"> 1 × 0 = 0 </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> 1 et 1 </td><td class="col1"> 1 </td><td class="col2"> 1 × 1 = 1 </td>
+	</tr>
+</table></div>
+
+<p>
+Les deux assertions doivent être vérifiées pour que la condition le soit aussi.
+</p>
+
+<p>
+Exemple plus complet :
+</p>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+&nbsp;
+<span class="kw3">echo</span> <span class="re5">-n</span> <span class="st0">&quot;Entrez un nom de fichier: &quot;</span>
+<span class="kw2">read</span> <span class="kw2">file</span>
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="re5">-e</span> <span class="st0">&quot;<span class="es2">$file</span>&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+        <span class="kw3">echo</span> <span class="st0">&quot;Le fichier existe!&quot;</span>
+<span class="kw1">else</span>
+        <span class="kw3">echo</span> <span class="st0">&quot;Le fichier n'existe pas, du moins n'est pas dans le répertoire d'exécution du script&quot;</span>
+<span class="kw1">fi</span>
+<span class="kw3">exit</span> <span class="nu0">0</span></pre>
+
+<p>
+La seule chose qui prête à confusion est que l&#039;on vérifie seulement si le fichier « file » est dans le répertoire où le script a été exécuté.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[La commande test] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9115-12719" /><input type="submit" value="Modifier" class="button" title="La commande test" /></div></form></div>
+<h3 class="sectionedit17" id="la_structureif">La structure : `if`</h3>
+<div class="level3">
+
+<p>
+Avant de commencer à faire des scripts de 1000 lignes, il serait intéressant
+de voir comment se servir des variables, et des instructions <code>if</code>, <code>then</code>, <code>elif</code>, <code>else</code>, <code>fi</code>. Cela permet par exemple de faire réagir le script de manière différente, selon la réponse de l&#039;utilisateur à une question.
+</p>
+
+<p>
+En bash, les variables ne se déclarent généralement pas avant leur utilisation, on les utilise directement et elles sont créées lors de sa première mise en œuvre.
+</p>
+
+<p>
+Pour pouvoir voir la valeur d&#039;une variable il faut faire précéder son nom du caractère « $ ».
+</p>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+<span class="kw3">echo</span> <span class="re5">-n</span> <span class="st0">&quot;Voulez-vous voir la liste des fichiers Y/N : &quot;</span>
+<span class="kw2">read</span> ouinon
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="st0">&quot;<span class="es2">$ouinon</span>&quot;</span> = <span class="st0">&quot;y&quot;</span> <span class="br0">&#93;</span> <span class="sy0">||</span> <span class="br0">&#91;</span> <span class="st0">&quot;<span class="es2">$ouinon</span>&quot;</span> = <span class="st0">&quot;Y&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+    <span class="kw3">echo</span> <span class="st0">&quot;Liste des fichiers :&quot;</span>
+    <span class="kw2">ls</span> <span class="re5">-la</span>
+<span class="kw1">elif</span> <span class="br0">&#91;</span> <span class="st0">&quot;<span class="es2">$ouinon</span>&quot;</span> = <span class="st0">&quot;n&quot;</span> <span class="br0">&#93;</span> <span class="sy0">||</span> <span class="br0">&#91;</span> <span class="st0">&quot;<span class="es2">$ouinon</span>&quot;</span> = <span class="st0">&quot;N&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+    <span class="kw3">echo</span> <span class="st0">&quot;Ok, bye! &quot;</span>
+<span class="kw1">else</span>
+    <span class="kw3">echo</span> <span class="st0">&quot;Il faut taper Y ou N!! Pas <span class="es2">$ouinon</span>&quot;</span>
+<span class="kw1">fi</span></pre>
+
+</div>
+
+<h4 id="explication">Explication</h4>
+<div class="level4">
+
+<p>
+Ce script peut paraître simple à première vue mais certaines
+choses prêtent à confusion et ont besoin d&#039;être expliquées en détail.
+</p>
+
+<p>
+Tout abord, le <code>`echo -n`</code> permet de laisser le curseur sur la même ligne, ce
+qui permet à l&#039;utilisateur de taper la réponse après la question (question
+d&#039;esthétique).
+</p>
+
+<p>
+L&#039;instruction <code>`read`</code> permet d&#039;affecter une valeur ou un caractère à une variable quelconque, en la demandant à l&#039;utilisateur.
+</p>
+
+<p>
+<p><div class="noteclassic">En bash, la variable est considérée comme une chaîne même si celle-ci contient une valeur numérique, et les majuscules sont considérées différentes des minuscules, $M ≠ $m.
+</div></p>
+</p>
+
+<p>
+Ensuite vient l&#039;instruction conditionnelle `if`. Elle est suivie d&#039;un « [ »
+pour délimiter la condition. La condition doit bien être séparée des crochets par un espace ! Attention, la variable est mise entre guillemets
+car dans le cas où la variable est vide, le shell ne retourne pas d&#039;erreur, mais en cas contraire, l&#039;erreur produite ressemble à :
+</p>
+<pre class="code">[: =: unaryoperator expected</pre>
+
+<p>
+L&#039;opérateur <code>`||`</code> signifie exécute la commande suivante si la commande précédente n&#039;a pas renvoyé 0. Il existe aussi l&#039;opérateur <code>&amp;&amp;</code> qui exécute la commande suivante si commande précédente a renvoyé 0, et enfin <code>;</code> qui exécute l&#039;opération suivante dans tous les cas.
+</p>
+
+<p>
+Exemple 
+si le répertoire toto n&#039; existe pas , le créer
+</p>
+<pre class="code bash"><span class="br0">&#91;</span> <span class="sy0">!</span> <span class="re5">-d</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>toto <span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> <span class="kw2">mkdir</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>toto
+<span class="br0">&#91;</span> <span class="re5">-d</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>toto <span class="br0">&#93;</span> <span class="sy0">||</span> <span class="kw2">mkdir</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>toto
+<span class="kw3">test</span> <span class="sy0">!</span> <span class="re5">-d</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>toto <span class="sy0">&amp;&amp;</span> <span class="kw2">mkdir</span>  <span class="sy0">/</span>tmp<span class="sy0">/</span>toto
+<span class="kw2">rm</span> <span class="re5">-rf</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>toto;<span class="kw2">mkdir</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>toto</pre>
+
+<p>
+Les « { » servent à bien délimiter le bloc d&#039;instructions suivant le <code>`then`</code>, est une commande et donc si elle est sur la même ligne que le <code>`if`</code> les deux commandes doivent être séparées par un <code>`;`</code>
+</p>
+
+<p>
+Ensuite, <code>`elif`</code> sert à exécuter une autre série d&#039;instructions, si la condition décrite par `if` n&#039;est pas respectée, et si celle fournie après ce <code>`elif`</code> l&#039;est.
+</p>
+
+<p>
+Enfin, <code>`else`</code> sert à exécuter un bloc si les deux conditions précédentes ne sont pas respectées (ah les jeunes, ils respectent plus rien de nos jours <img src="lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />).
+</p>
+
+<p>
+<code>`fi`</code> indique la fin de notre bloc d&#039;instructions <code>`if`</code>, ce qui permet de voir où se termine toute notre portion de code soumise à une condition.
+</p>
+
+<p>
+Quelques petites commandes pratiques :
+</p>
+<pre class="code">sh -n nom_du_fichier</pre>
+
+<p>
+ou
+</p>
+<pre class="code">bash -x chemin_du_fichier</pre>
+
+<p>
+Cette commande vérifie la syntaxe de toutes les commandes du script, pratique quand on débute et pour les codes volumineux.
+</p>
+<pre class="code">sh -u nom_du_fichier</pre>
+
+<p>
+Celle-ci sert à montrer les variables qui n&#039;ont pas été utilisées pendant l&#039;exécution du programme.
+</p>
+
+<p>
+Voici le tableau des opérateurs de comparaison, ceux-ci peuvent s&#039;avérer utiles pour diverses raisons, nous verrons un peu plus loin un exemple.
+</p>
+<pre class="code bash"><span class="re1">$A</span> = <span class="re1">$B</span> <span class="co0"># Vérifie si les deux chaînes sont égale.</span>
+&nbsp;
+<span class="re1">$A</span> <span class="sy0">!</span>= <span class="re1">$B</span> <span class="co0"># Vérifie si les deux chaînes sont différentes.</span>
+&nbsp;
+<span class="re5">-z</span> <span class="re1">$A</span> <span class="co0"># Vérifie si A n'existe pas (ne contient pas de chaîne).</span>
+&nbsp;
+<span class="re5">-n</span> <span class="re1">$A</span> <span class="co0"># Vérifie si A existe (contient une chaîne).</span></pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[La structure : `if`] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12720-16702" /><input type="submit" value="Modifier" class="button" title="La structure : `if`" /></div></form></div>
+<h3 class="sectionedit18" id="les_structures_while_et_until">Les structures while et until</h3>
+<div class="level3">
+
+<p>
+La commande <code>while</code> exécute ce qu&#039;il y a dans son bloc tant que la condition
+est respectée :
+</p>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+&nbsp;
+<span class="re2">cmpt</span>=<span class="nu0">1</span>
+<span class="re2">cm</span>=<span class="nu0">3</span>
+<span class="kw3">echo</span> <span class="re5">-n</span> <span class="st0">&quot;Mot de passe : &quot;</span>
+<span class="kw2">read</span> mdp
+&nbsp;
+<span class="kw1">while</span> <span class="br0">&#91;</span> <span class="st0">&quot;<span class="es2">$mdp</span>&quot;</span> <span class="sy0">!</span>= <span class="st0">&quot;ubuntu&quot;</span> <span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> <span class="br0">&#91;</span> <span class="st0">&quot;<span class="es2">$cmpt</span>&quot;</span> <span class="sy0">!</span>= <span class="nu0">4</span> <span class="br0">&#93;</span>
+<span class="kw1">do</span>
+     <span class="kw3">echo</span> <span class="re5">-n</span> <span class="st0">&quot;Mauvais mot de passe, plus que &quot;</span><span class="re1">$cm</span><span class="st0">&quot; chance(s): &quot;</span>
+     <span class="kw2">read</span> mdp
+     <span class="re2">cmpt</span>=$<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="re1">$cmpt</span>+<span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+     <span class="re2">cm</span>=$<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="re1">$cm</span>-<span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="kw1">done</span>
+<span class="kw3">echo</span> <span class="st0">&quot;Non mais, le brute-force est interdit en France !!&quot;</span>
+<span class="kw3">exit</span> <span class="nu0">0</span></pre>
+
+<p>
+On retrouve des choses déjà abordées avec `if`.
+Le `&amp;&amp;` sert à symboliser un &quot;et&quot;, cela implique que deux conditions sont
+à respecter. Le `do` sert à exécuter ce qui suit si la condition est respectée.
+Si elle ne l&#039;est pas, cela saute tout le bloc (jusqu&#039;à `done`).
+Vous allez dire :
+<p><div class="notehelp">Mais qu&#039;est-ce que c&#039;est ce truc avec cette syntaxe bizarre au milieu ?
+</div></p>
+Cette partie du code sert tout simplement à réaliser
+une opération arithmétique. A chaque passage,
+&#039;cmpt = cmpt+1&#039; et &#039;cm = cm-1&#039;.
+</p>
+
+<p>
+`while` permet de faire exécuter la portion de code un nombre indéterminé de fois.
+La commande `until` fait la même chose que la commande `while` mais en inversant.
+C&#039;est-à-dire qu&#039;elle exécute le bloc jusqu&#039;à ce que la condition soit vraie, donc elle
+s&#039;emploie exactement comme la commande `while`.
+</p>
+
+<p>
+Par exemple, si on a besoin d&#039;attendre le démarrage de notre window manager pour exécuter des commandes dans notre Xsession il sera plus intéressant d&#039;utiliser le `until`:
+</p>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+<span class="kw1">until</span> <span class="kw2">pidof</span> wmaker 
+<span class="kw1">do</span>
+  <span class="kw2">sleep</span> <span class="nu0">1</span>
+<span class="kw1">done</span>
+xmessage <span class="st0">&quot;Session loaded&quot;</span> <span class="re5">-buttons</span> <span class="st0">&quot;Continue&quot;</span>:<span class="nu0">0</span>,<span class="st0">&quot;That all&quot;</span>:<span class="nu0">1</span>;
+<span class="br0">&#91;</span> <span class="re4">$?</span> <span class="re5">-eq</span> <span class="nu0">0</span> <span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> xmessage <span class="st0">&quot;Load more...&quot;</span></pre>
+
+<p>
+Mais on aurait pu aussi faire:
+</p>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+<span class="kw1">while</span> <span class="br0">&#91;</span> <span class="re5">-z</span> $<span class="br0">&#40;</span><span class="kw2">pidof</span> wmaker<span class="br0">&#41;</span> <span class="br0">&#93;</span>
+<span class="kw1">do</span>
+ <span class="kw2">sleep</span> <span class="nu0">1</span>
+<span class="kw1">done</span> 
+<span class="co0">#(...)</span></pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Les structures while et until] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="16703-18454" /><input type="submit" value="Modifier" class="button" title="Les structures while et until" /></div></form></div>
+<h3 class="sectionedit19" id="la_structure_case">La structure case</h3>
+<div class="level3">
+
+<p>
+Regardons la syntaxe de cette commande, qui n&#039;est pas une des plus simples :
+</p>
+<pre class="code bash"><span class="kw1">case</span> variable <span class="kw1">in</span>
+    modèle <span class="br0">&#91;</span> <span class="sy0">|</span> modèle<span class="br0">&#93;</span> ...<span class="br0">&#41;</span> instructions<span class="sy0">;;</span>
+    modèle <span class="br0">&#91;</span> <span class="sy0">|</span> modèle<span class="br0">&#93;</span> ...<span class="br0">&#41;</span> instructions<span class="sy0">;;</span>
+      ...
+<span class="kw1">esac</span></pre>
+
+<p>
+Cela peut paraître complexe mais on s&#039;y habitue quand on l&#039;utilise.
+</p>
+<blockquote><div class="no">
+Mais à quoi sert cette commande ?</div></blockquote>
+
+<p>
+Elle sert à comparer le contenu d&#039;une variable à des modèles différents. Les ;; sont indipensables car il est possible de placer plusieurs instructions entre un modèle et le
+suivant. Les ;; servent donc à identifier clairement la fin d&#039;une instruction et
+le début du modèle suivant.
+</p>
+
+<p>
+Exemple :
+</p>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+&nbsp;
+<span class="kw3">echo</span> <span class="re5">-n</span> <span class="st0">&quot;Etes-vous fatigué ? &quot;</span>
+<span class="kw2">read</span> on
+&nbsp;
+<span class="kw1">case</span> <span class="st0">&quot;<span class="es2">$on</span>&quot;</span> <span class="kw1">in</span>
+    oui <span class="sy0">|</span> o <span class="sy0">|</span> O <span class="sy0">|</span> Oui <span class="sy0">|</span> OUI <span class="br0">&#41;</span> <span class="kw3">echo</span> <span class="st0">&quot;Allez faire du café !&quot;</span><span class="sy0">;;</span>
+    non <span class="sy0">|</span> n <span class="sy0">|</span> N <span class="sy0">|</span> Non <span class="sy0">|</span> NON <span class="br0">&#41;</span> <span class="kw3">echo</span> <span class="st0">&quot;Programmez !&quot;</span><span class="sy0">;;</span>
+    <span class="sy0">*</span> <span class="br0">&#41;</span> <span class="kw3">echo</span> <span class="st0">&quot;Ah bon ?&quot;</span><span class="sy0">;;</span>
+<span class="kw1">esac</span>
+<span class="kw3">exit</span> <span class="nu0">0</span></pre>
+
+<p>
+La seule chose qui mérite vraiment d&#039;être expliquée est sans doute `* )`.
+Cela indique tout simplement l&#039;action à exécuter si la réponse donnée n&#039;est aucune de celles données précédemment.
+</p>
+
+<p>
+Il existe aussi plusieurs structures pour les modèles, telles que :
+</p>
+<pre class="code bash"><span class="kw1">case</span> <span class="st0">&quot;<span class="es2">$truc</span>.....&quot;</span> <span class="kw1">in</span>
+    <span class="br0">&#91;</span>nN<span class="br0">&#93;</span> <span class="sy0">*</span><span class="br0">&#41;</span> <span class="kw3">echo</span> <span class="st0">&quot;Blablabla...&quot;</span><span class="sy0">;;</span>
+    n<span class="sy0">*</span> <span class="sy0">|</span> N<span class="sy0">*</span> <span class="br0">&#41;</span> <span class="kw3">echo</span> <span class="st0">&quot;Bla....&quot;</span><span class="sy0">;;</span></pre>
+
+<p>
+Et plein d&#039;autres encore…
+</p>
+
+</div>
+
+<h5 id="on_melange_tout_ca">On mélange tout ça</h5>
+<div class="level5">
+
+<p>
+Pour vous donner une idée précise de ce que peuvent réaliser toutes ces instructions,
+voici un petit script censé refaire un prompt avec quelques commandes basiques :
+</p>
+<pre class="code bash"><span class="co0">#!/bin/bash</span>
+&nbsp;
+<span class="kw2">clear</span>
+<span class="kw3">echo</span> 
+<span class="kw3">echo</span> <span class="st0">&quot;#################### Script ############################&quot;</span>
+<span class="kw3">echo</span> 
+<span class="kw3">echo</span> <span class="st0">&quot;#############################&quot;</span>
+<span class="kw3">echo</span> <span class="re5">-n</span> <span class="st0">&quot;LOGIN: &quot;</span>
+<span class="kw2">read</span> <span class="kw2">login</span>
+<span class="kw3">echo</span> <span class="re5">-n</span> <span class="st0">&quot;Hôte: &quot;</span>
+<span class="kw2">read</span> hote
+<span class="kw3">echo</span> <span class="st0">&quot;#############################&quot;</span>
+<span class="kw3">echo</span>
+<span class="kw3">echo</span> <span class="st0">&quot;### Pour l'aide tapez help ###&quot;</span>
+<span class="kw3">echo</span> 
+<span class="kw1">while</span> <span class="br0">&#91;</span> <span class="nu0">1</span> <span class="br0">&#93;</span>; <span class="kw1">do</span>                                 <span class="co0"># permet une boucle infinie</span>
+<span class="kw3">echo</span> <span class="re5">-n</span> <span class="st0">&quot;&quot;</span><span class="re1">$login</span><span class="st0">&quot;@&quot;</span><span class="re1">$hote</span><span class="st0">&quot;$ &quot;</span>                    <span class="co0"># qui s'arrête avec break</span>
+<span class="kw2">read</span> reps
+&nbsp;
+<span class="kw1">case</span> <span class="re1">$reps</span> <span class="kw1">in</span>
+  <span class="kw3">help</span> <span class="sy0">|</span> hlp <span class="br0">&#41;</span>
+     <span class="kw3">echo</span> <span class="st0">&quot;A propos de TS --&gt; about&quot;</span>
+     <span class="kw3">echo</span> <span class="st0">&quot;ls --&gt; liste les fichiers&quot;</span>
+     <span class="kw3">echo</span> <span class="st0">&quot;rm --&gt; détruit un fichier (guidé)&quot;</span>
+     <span class="kw3">echo</span> <span class="st0">&quot;rmd --&gt; efface un dossier (guidé)&quot;</span>
+     <span class="kw3">echo</span> <span class="st0">&quot;noyau --&gt; version du noyau Linux&quot;</span>
+     <span class="kw3">echo</span> <span class="st0">&quot;connect --&gt; savoir qui s'est connecté dernièrement&quot;</span><span class="sy0">;;</span>
+  <span class="kw2">ls</span> <span class="br0">&#41;</span>
+     <span class="kw2">ls</span> <span class="re5">-la</span><span class="sy0">;;</span>
+  <span class="kw2">rm</span> <span class="br0">&#41;</span>
+     <span class="kw3">echo</span> <span class="re5">-n</span> <span class="st0">&quot;Quel fichier voulez-vous effacer : &quot;</span>
+     <span class="kw2">read</span> eff
+     <span class="kw2">rm</span> <span class="re5">-f</span> <span class="re1">$eff</span><span class="sy0">;;</span>
+  rmd <span class="sy0">|</span> <span class="kw2">rmdir</span> <span class="br0">&#41;</span>
+     <span class="kw3">echo</span> <span class="re5">-n</span> <span class="st0">&quot;Quel répertoire voulez-vous effacer : &quot;</span>
+     <span class="kw2">read</span> eff
+     <span class="kw2">rm</span> <span class="re5">-r</span> <span class="re1">$eff</span><span class="sy0">;;</span>
+  noyau <span class="sy0">|</span> <span class="st0">&quot;uname -r&quot;</span> <span class="br0">&#41;</span>
+     <span class="kw2">uname</span> <span class="re5">-r</span><span class="sy0">;;</span>
+  connect <span class="br0">&#41;</span>
+     <span class="kw2">last</span><span class="sy0">;;</span>
+  about <span class="sy0">|</span> <span class="re5">--v</span> <span class="sy0">|</span> vers <span class="br0">&#41;</span>
+     <span class="kw3">echo</span> <span class="st0">&quot;Script simple pour l'initiation aux scripts shell&quot;</span><span class="sy0">;;</span>
+  quit <span class="sy0">|</span> <span class="st0">&quot;exit&quot;</span> <span class="br0">&#41;</span>
+     <span class="kw3">echo</span> Au revoir<span class="sy0">!!</span>
+     <span class="kw3">break</span><span class="sy0">;;</span>
+  <span class="sy0">*</span> <span class="br0">&#41;</span>
+    <span class="kw3">echo</span> <span class="st0">&quot;Commande inconnue&quot;</span><span class="sy0">;;</span>
+<span class="kw1">esac</span>
+<span class="kw1">done</span>
+<span class="kw3">exit</span> <span class="nu0">0</span></pre>
+
+</div>
+
+<h5 id="remarque">Remarque</h5>
+<div class="level5">
+
+<p>
+Comme vous l&#039;avez remarqué, l&#039;indentation a une place importante dans
+ce programme. En effet, celui-ci est plus lisible et cela évite aussi de faire
+des erreurs. C&#039;est pourquoi il est préférable de bien structurer le code que vous
+écrivez.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[La structure case] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18455-21462" /><input type="submit" value="Modifier" class="button" title="La structure case" /></div></form></div>
+<h3 class="sectionedit20" id="la_structure_for">La structure for</h3>
+<div class="level3">
+
+<p>
+L&#039;instruction `for` exécute ce qui est dans son bloc un nombre de fois prédéfini. Sa syntaxe est la suivante :
+</p>
+<pre class="code bash"><span class="kw1">for</span> variable <span class="kw1">in</span> valeurs; <span class="kw1">do</span>
+    instructions
+<span class="kw1">done</span></pre>
+
+<p>
+Comme vous l&#039;aurez sans doute remarqué, on assigne une valeur différente à <em>variable</em> à chaque itération. On peut aussi très facilement utiliser des fichiers comme &quot;valeur&quot;. Rien ne vaut un exemple :
+</p>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+<span class="kw1">for</span> var <span class="kw1">in</span> <span class="sy0">*</span>.txt; <span class="kw1">do</span>
+    <span class="kw3">echo</span> <span class="st0">&quot;<span class="es2">$var</span>&quot;</span>
+<span class="kw1">done</span> 
+<span class="kw3">exit</span> <span class="nu0">0</span></pre>
+
+<p>
+On peut voir une syntaxe un peu particulière : 
+</p>
+<pre class="code bash"><span class="co4">$</span><span class="br0">&#40;</span><span class="kw2">sort</span> <span class="sy0">*</span>.txt<span class="br0">&#41;</span></pre>
+
+<p>
+. Ceci sert à
+indiquer que ce qui est entre les parenthèses est une commande à exécuter.
+</p>
+
+<p>
+On peut aussi utiliser 
+cette instruction simplement avec des nombres, cela permet de connaître le nombre d&#039;itérations :
+</p>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+<span class="kw1">for</span> var <span class="kw1">in</span> <span class="nu0">1</span> <span class="nu0">2</span> <span class="nu0">3</span> <span class="nu0">4</span> <span class="nu0">5</span> <span class="nu0">6</span> <span class="nu0">7</span> <span class="nu0">8</span> <span class="nu0">9</span>; <span class="kw1">do</span>
+    <span class="kw3">echo</span> <span class="re1">$var</span>
+<span class="kw1">done</span> 
+<span class="kw3">exit</span> <span class="nu0">0</span></pre>
+
+<p>
+On peut très bien aussi utiliser d&#039;autres types de variables, comme par exemple des chaînes de 
+caractères :
+</p>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+<span class="kw1">for</span> var <span class="kw1">in</span> Ubuntu Breezy <span class="nu0">5.10</span>; <span class="kw1">do</span>
+    <span class="kw3">echo</span> <span class="re1">$var</span>
+<span class="kw1">done</span> 
+<span class="kw3">exit</span> <span class="nu0">0</span></pre>
+
+<p>
+Il faut quand même faire attention au fait que <em>Ubuntu Breezy 5.10</em> est différent de <em>&quot;Ubuntu Breezy 5.10&quot;</em> dans ce cas. En effet, tous les mots placés entre &quot;&quot; sont considérés comme faisant partie de la même chaîne de caractères. Sans les &quot;&quot;, sh considèrera qu&#039;il y a une liste de trois chaînes de caractères.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[La structure for] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21463-22884" /><input type="submit" value="Modifier" class="button" title="La structure for" /></div></form></div>
+<h2 class="sectionedit21" id="les_fonctions">Les fonctions</h2>
+<div class="level2">
+
+<p>
+Les fonctions sont indispensables pour bien structurer un programme mais aussi pouvoir le simplifier, créer une tâche, la rappeler… Voici la syntaxe générale de &#039;déclaration&#039; d&#039;une fonction :
+</p>
+<pre class="code bash">nom_fonction<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+  instructions
+<span class="br0">&#125;</span></pre>
+
+<p>
+Cette partie ne fait rien en elle même, elle dit juste que quand on appellera nom_fonction, elle fera instruction. Pour appeler une fonction (qui ne possède pas d&#039;argument, voir plus loin) rien de plus simple :
+</p>
+<pre class="code">nom_fonction</pre>
+
+<p>
+Rien ne vaut un petit exemple :
+</p>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+&nbsp;
+<span class="co0">#Definition de ma fonction</span>
+mafonction<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+  <span class="kw3">echo</span> <span class="st_h">'La liste des fichiers de ce répertoire'</span>
+  <span class="kw2">ls</span> <span class="re5">-l</span>
+<span class="br0">&#125;</span>
+<span class="co0">#fin de la définition de ma fonction</span>
+&nbsp;
+<span class="kw3">echo</span> <span class="st_h">'Vous allez voir la liste des fichiers de ce répertoire:'</span>
+mafonction       <span class="co0">#appel de ma fonction</span>
+<span class="kw3">exit</span> <span class="nu0">0</span></pre>
+
+<p>
+Comme vous l&#039;avez sans doute remarqué, quand on appelle la fonction, on exécute simplement ce qu&#039;on lui a défini au début, dans notre exemple, echo… et ls -l, on peut donc faire exécuter n&#039;importe quoi à une fonction. 
+</p>
+
+<p>
+Les fonctions peuvent être définies n&#039;importe ou dans le code du moment qu&#039;elle sont définies avant d&#039;être utilisées. Même si en bash les variables sont globales, il est possible de les déclarer comme locales au sein d&#039;un fonction en la précédant du mot clé local: local ma_fonction
+</p>
+
+<p>
+Exemple: Un sleep interactif.
+</p>
+<pre class="code bash"><span class="co0">#!/bin/bash</span>
+<span class="kw1">function</span> info<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+        <span class="kw3">echo</span> <span class="re5">-e</span> <span class="st0">&quot;$1<span class="es1">\n</span>Bye&quot;</span>
+        <span class="kw3">exit</span>
+<span class="br0">&#125;</span>
+<span class="kw3">test</span> <span class="re5">-z</span> <span class="st0">&quot;$1&quot;</span> <span class="sy0">&amp;&amp;</span> info <span class="st0">&quot;requiert 1 argument pour le temps d'attente...&quot;</span> <span class="sy0">||</span> <span class="re2">PRINT</span>=$<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="re4">$1</span><span class="sy0">*</span><span class="nu0">500</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="kw3">test</span> <span class="re5">-z</span> $<span class="br0">&#40;</span><span class="kw3">echo</span> <span class="st0">&quot;$1&quot;</span> <span class="sy0">|</span> <span class="kw2">grep</span> <span class="re5">-e</span> <span class="st0">&quot;^[0-9]*$&quot;</span><span class="br0">&#41;</span> <span class="sy0">&amp;&amp;</span> info <span class="st0">&quot;'$1' est un mauvais argument&quot;</span>
+<span class="kw3">test</span> <span class="re4">$1</span> <span class="re5">-gt</span> <span class="nu0">0</span> <span class="sy0">||</span> info <span class="st0">&quot;Je ne prends que les entiers &gt; 0&quot;</span>
+<span class="kw1">function</span> print_until_sleep<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+         <span class="kw3">local</span> <span class="re2">COUNT</span>=<span class="nu0">0</span>
+         <span class="kw1">while</span> <span class="br0">&#91;</span> <span class="re5">-d</span> <span class="sy0">/</span>proc<span class="sy0">/</span><span class="re4">$1</span> <span class="br0">&#93;</span>; <span class="kw1">do</span>
+                  <span class="kw3">test</span> $<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="re1">$COUNT</span><span class="sy0">%</span><span class="re4">$2</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="re5">-eq</span> <span class="nu0">0</span> <span class="sy0">&amp;&amp;</span> <span class="kw3">echo</span> <span class="re5">-n</span> <span class="st0">&quot;*&quot;</span>
+                  <span class="re2">COUNT</span>=$<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="re1">$COUNT</span>+<span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+         <span class="kw1">done</span>
+<span class="br0">&#125;</span>
+<span class="kw2">sleep</span> <span class="re4">$1</span> <span class="sy0">&amp;</span> print_until_sleep <span class="re4">$!</span> <span class="re1">$PRINT</span>
+<span class="kw3">echo</span> <span class="re5">-e</span> <span class="st0">&quot;<span class="es1">\n</span>Bye&quot;</span></pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Les fonctions] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="22885-24837" /><input type="submit" value="Modifier" class="button" title="Les fonctions" /></div></form></div>
+<h2 class="sectionedit22" id="la_couleur">La couleur</h2>
+<div class="level2">
+
+<p>
+Qui n’a jamais voulu faire un script avec des couleurs pour pouvoir différencier les titres des paramètres et les paramètres de leur valeur par exemple…
+</p>
+
+</div>
+
+<h4 id="presentation_de_la_syntaxe">Présentation de la syntaxe</h4>
+<div class="level4">
+
+<p>
+Comme toute commande sous Linux, il faut utiliser une syntaxe par défaut et y passer quelques paramètres. Pour les couleurs au sein de scripts shell, c’est le même principe.
+</p>
+<pre class="code bash"><span class="kw3">echo</span> <span class="re5">-e</span> <span class="st_h">'\033[A;B;Cm toto \033[0m'</span></pre>
+
+<p>
+Dans la commande passée ci-dessus, nous pouvons constater qu’il y a 3 paramètres présents, A, B et C.
+A : correspond à un effet affecté au texte affiché
+B : correspond à la couleur du texte
+C : identifie la couleur du fond du texte affiché
+</p>
+
+<p>
+Et enfin on termine notre affichage avec « \033[0m », qui spécifie au terminal de revenir aux couleurs définies par défaut.
+</p>
+
+</div>
+
+<h4 id="presentation_des_differentes_valeurs_effet">Présentation des différentes valeurs Effet</h4>
+<div class="level4">
+
+<p>
+Nous allons commencer par les différents effets possible :
+</p>
+<div class="table sectionedit23"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Code</th><th class="col1">Effet</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">0</td><td class="col1">Normal</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">1</td><td class="col1"><strong>Gras</strong></td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">21</td><td class="col1">Non-gras</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">4</td><td class="col1"><em class="u">Souligné</em></td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">24</td><td class="col1">Non souligné</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">5</td><td class="col1">Clignotant</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">25</td><td class="col1">Non-clignotant</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">7</td><td class="col1">Inversé</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0">27</td><td class="col1">Non-inversé</td>
+	</tr>
+</table></div>
+
+</div>
+
+<h4 id="presentation_des_differentes_valeurs_des_couleurs">Présentation des différentes valeurs des couleurs</h4>
+<div class="level4">
+
+<p>
+Maintenant que nous avons présenté les différents effets possibles d’attribuer à du texte, nous allons nous attaquer aux couleurs. Chaque couleur à 2 valeurs,la première utilisée pour la couleur du texte, et la seconde pour la couleur du fond.
+</p>
+<div class="table sectionedit24"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Couleur</th><th class="col1">Couleur texte</th><th class="col2">Couleur fond</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">Noir</td><td class="col1">30</td><td class="col2">40</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">Rouge</td><td class="col1">31</td><td class="col2">41</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">Vert</td><td class="col1">32</td><td class="col2">42</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">Jaune</td><td class="col1">33</td><td class="col2">43</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">Bleu</td><td class="col1">34</td><td class="col2">44</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">Magenta</td><td class="col1">35</td><td class="col2">45</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">Cyan</td><td class="col1">36</td><td class="col2">46</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">Blanc</td><td class="col1">37</td><td class="col2">47</td>
+	</tr>
+</table></div>
+
+</div>
+
+<h4 id="exemple">Exemple</h4>
+<div class="level4">
+<pre class="code bash"><span class="kw3">echo</span> <span class="re5">-e</span> <span class="st_h">'\033[1;30;47m toto \033[0;32m est sur \033[1;33m un bateau \033[0m'</span></pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[La couleur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="24838-26521" /><input type="submit" value="Modifier" class="button" title="La couleur" /></div></form></div>
+<h2 class="sectionedit25" id="exemples_et_exercices">Exemples et exercices</h2>
+<div class="level2">
+
+<p>
+Comme indiqué dans la <span class="curid"><a href="tutoriel/script_shell#liens" class="wikilink1" title="tutoriel:script_shell">section liens</a></span> de cette page, de très bon exemples et exercices illustrent le cours disponible sur cette page :<br/>
+
+<a href="http://abs.traduc.org/abs-5.3-fr/apm.html" class="urlextern" title="http://abs.traduc.org/abs-5.3-fr/apm.html"  rel="nofollow">Guide avancé d&#039;écriture des scripts Bash - Une exploration en profondeur de l&#039;art de la programmation shell</a>
+</p>
+
+<p>
+Aux structures décrites ci-dessus, il est nécessaire, pour réaliser des scripts poussés, de connaître les commandes shell les plus usitées.<br/>
+Vous en trouverez une présentation sur cette autre page du wiki : <a href="projets/ecole/scripting/initiation_au_shell" class="wikilink1" title="projets:ecole:scripting:initiation_au_shell">initiation_au_shell</a>
+</p>
+
+<p>
+La programmation de script shell étant ouverte à tous, cela permet de bénéficier de nombreux scripts pour des applications très variées ; cependant, <strong>la plupart sont proposés sans aucune garantie</strong>.<br/>
+
+Vous pourrez trouver une liste de scripts pouvant servir d&#039;exemple sur la page <a href="scripts_utiles" class="wikilink1" title="scripts_utiles">scripts utiles</a> du wiki.
+</p>
+
+<p>
+Une fois vos armes faites, proposez vos contributions sur le topic du forum <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=204074" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=204074"  rel="nofollow">[VOS SCRIPTS UTILES]</a> et rajoutez un lien dans la page du wiki ci-dessus.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Exemples et exercices] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="26522-27677" /><input type="submit" value="Modifier" class="button" title="Exemples et exercices" /></div></form></div>
+<h2 class="sectionedit26" id="l_art_d_ecrire_un_script">L&#039;art d&#039;écrire un script</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Des vérifications approfondies doivent être effectuées sur TOUTES les commandes utilisées.</div>
+</li>
+<li class="level1"><div class="li"> Des commentaires détaillés doivent apparaître lors de chaque étape. De même, chaque étape doit être suivie d&#039;un &quot;echo &lt;voici ce que je fais&gt;&quot; (particulièrement utile notamment lors du débogage).</div>
+</li>
+<li class="level1"><div class="li"> Lors d&#039;une mise à jour, un fil de discussion doit être précisé pour tracer les bugs éventuels.</div>
+</li>
+<li class="level1"><div class="li"> Avertir les utilisateurs des dégâts que peuvent causer les commandes utilisées. (Ces deux dernières remarques ne concernent bien sûr que les scripts que l&#039;on souhaite diffuser.)</div>
+</li>
+<li class="level1"><div class="li"> Commencer par : <pre class="code bash"><span class="co0">#!/bin/bash</span>
+<span class="co0"># Version du script</span></pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Écrire les variables en majuscule et NE PAS choisir des noms de commandes (ping , ls, …) de même pour les noms de fonctions</div>
+</li>
+<li class="level1"><div class="li"> À la fin de vos scripts, ajouter impérativement : <pre class="code bash"><span class="kw3">exit</span> <span class="nu0">0</span>;</pre>
+
+<p>
+ Ce qui indique que votre script s&#039;est exécuté correctement.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Créer des fonctions pour des actions précises :</div>
+</li>
+</ul>
+<pre class="code bash">nom_de_la_fonction<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+...
+&nbsp;
+<span class="br0">&#125;</span></pre>
+<ul>
+<li class="level1"><div class="li"> Utiliser des chemins absolu pour les dossiers et des chemins relatif pour les nom de fichiers <pre class="code bash"><span class="co4">$</span>CHEMIN_DU_DOSSIER<span class="sy0">/</span><span class="re1">$NOM_DU_FICHIER</span></pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Utiliser les entrées de commandes pour les fonctions :<pre class="code bash">nom_de_la_fonction <span class="re4">$1</span> <span class="re4">$2</span> <span class="re4">$3</span> ....</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Si votre script doit s&#039;arrêter à cause d&#039;une erreur, d&#039;une variable qui ne correspond pas a vos attentes utiliser des numéros exit différents : <pre class="code bash"><span class="kw3">exit</span> <span class="nu0">100</span>;
+<span class="kw3">exit</span> <span class="nu0">101</span>;
+<span class="kw3">exit</span> <span class="nu0">102</span>;
+....</pre>
+
+<p>
+Ça permettra d&#039;identifier d&#039;où vient l&#039;erreur.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Utiliser le tableau ${PIPESTATUS[@]} pour récupérer les états des autres commandes.</div>
+</li>
+<li class="level1"><div class="li"> On peut écrire une fonction d&#039;erreur du type : <pre class="code bash">erreur<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="re2">tab</span>=<span class="br0">&#40;</span> <span class="co1">${PIPESTATUS[@]}</span> <span class="br0">&#41;</span>
+&nbsp;
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="br0">&#40;</span> <span class="re2">i</span>=<span class="nu0">0</span>; i <span class="sy0">&lt;</span> <span class="co1">${#tab[@]}</span>; i++ <span class="br0">&#41;</span><span class="br0">&#41;</span>; <span class="kw1">do</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>i+=i<span class="br0">&#41;</span><span class="br0">&#41;</span>; <span class="kw1">done</span>
+&nbsp;
+    <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>i <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span>; <span class="kw1">then</span>
+        zenity <span class="re5">--error</span> <span class="re5">--title</span>=<span class="st0">&quot;Une erreur est survenue&quot;</span> <span class="re5">--text</span>=<span class="st0">&quot;Une erreur est survenue &quot;</span>
+        <span class="kw3">exit</span> <span class="nu0">100</span>
+    <span class="kw1">fi</span>
+<span class="br0">&#125;</span></pre>
+
+<p>
+ainsi après chaque commande vous pouvez donner des codes d&#039;exécutions différents.
+</p>
+</div>
+</li>
+</ul>
+
+<p>
+Évidemment ces conseils sont utiles au débutant…
+<p><div class="notetip">Astuce : Le plus important dans tout programme est l&#039;algorithme utilisé
+</div></p>
+Exemple :
+Supposons que vous ayez une base de données, avec 3 catégories d&#039;enregistrements possibles :
+éléphant bleu, éléphant blanc, éléphant rose ayant chacun 30 individus.
+Votre script doit compter le nombre d&#039;éléphants bleus et blancs.
+Deux possibilités s&#039;offrent à vous :
+</p>
+<ul>
+<li class="level1"><div class="li"> calculer le nombre d&#039;éléphants bleus + éléphants blancs</div>
+</li>
+</ul>
+
+<p>
+ou
+</p>
+<ul>
+<li class="level1"><div class="li"> calculer le nombre total d&#039;éléphants - nombre d&#039;éléphants roses</div>
+</li>
+</ul>
+
+<p>
+Quel algorithme choisissez-vous ?
+</p>
+
+<p>
+Résultat : Le premier car dans le deuxième il faut d&#039;abord calculer le nombre total d&#039;éléphants, donc un calcul en plus.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[L'art d'écrire un script] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="27678-30498" /><input type="submit" value="Modifier" class="button" title="L'art d'écrire un script" /></div></form></div>
+<h2 class="sectionedit27" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> (fr) <a href="http://marcg.developpez.com/ksh/" class="urlextern" title="http://marcg.developpez.com/ksh/"  rel="nofollow">http://marcg.developpez.com/ksh/</a> : Pour ceux qui souhaitent aller plus loin dans la conception de script shell.</div>
+</li>
+<li class="level1"><div class="li"> (fr) <a href="http://abs.traduc.org/abs-fr/" class="urlextern" title="http://abs.traduc.org/abs-fr/"  rel="nofollow">Guide avancé d&#039;écriture des scripts Bash</a> : Un très bon tutoriel concernant la réalisation du script shell. C&#039;est l&#039;un des plus complets et les mieux détaillés disponibles en français. Il contient également <a href="http://abs.traduc.org/abs-5.3-fr/apa.html" class="urlextern" title="http://abs.traduc.org/abs-5.3-fr/apa.html"  rel="nofollow">des exemples de script complets</a>, une <a href="http://abs.traduc.org/abs-5.3-fr/apb.html" class="urlextern" title="http://abs.traduc.org/abs-5.3-fr/apb.html"  rel="nofollow">carte de référence</a> (variables, tests…). Ce site est un site qui vaut réellement le détour pour tous ceux qui cherchent à créer des scripts complets en utilisant au mieux les performances du shell.</div>
+</li>
+<li class="level1"><div class="li"> (fr) <a href="http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-avec-linux.html" class="urlextern" title="http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-avec-linux.html"  rel="nofollow">http://www.siteduzero.com/tutoriel-3-12827-reprenez-le-controle-avec-linux.html</a> : Un tutoriel très complet pour linux qui comporte quelques parties sur la réalisation de scripts bash.</div>
+</li>
+<li class="level1"><div class="li"> (en) <a href="http://www.ibm.com/developerworks/library/l-bash-parameters.html" class="urlextern" title="http://www.ibm.com/developerworks/library/l-bash-parameters.html"  rel="nofollow">Bash parameters and parameter expansions</a>. En anglais mais contient de nombreux exemples concernant la gestion et l&#039;analyse des paramètres.</div>
+</li>
+<li class="level1"><div class="li"> (fr ) <a href="http://www.bash-linux.com" class="urlextern" title="http://www.bash-linux.com"  rel="nofollow">Bash pour les nuls</a>. Contient les man pages et d&#039;autres informations intéressantes</div>
+</li>
+<li class="level1"><div class="li"> (fr ) <a href="ftp://ftp-developpez.com/eric-sanchis/IntroProgBash.pdf" class="urlextern" title="ftp://ftp-developpez.com/eric-sanchis/IntroProgBash.pdf"  rel="nofollow">Introduction à Bash</a></div>
+</li>
+<li class="level1"><div class="li"> (fr ) <a href="http://kidrek.fr/blog/?p=638" class="urlextern" title="http://kidrek.fr/blog/?p=638"  rel="nofollow">Blog de K1DRUX pour la couleur</a></div>
+</li>
+<li class="level1"><div class="li"> (fr ) <a href="http://www.scotchlinux.tuxfamily.org/" class="urlextern" title="http://www.scotchlinux.tuxfamily.org/"  rel="nofollow">http://www.scotchlinux.tuxfamily.org/</a> exemples de scripts bash, quelques trucs utiles ( fonctions, fonctions comme paramètres… ) </div>
+</li>
+</ul>
+
+<p>
+—-
+<em>Contributeurs: <a href="http://doc.ubuntu-fr.org/utilisateurs/gapz" class="wikilink2" title="utilisateurs:gapz" rel="nofollow">Gapz</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/gloubiboulga" class="wikilink2" title="utilisateurs:gloubiboulga" rel="nofollow">Gloubiboulga</a> ,<a href="http://doc.ubuntu-fr.org/utilisateurs/sparky" class="wikilink1" title="utilisateurs:sparky">sparky</a> et <a href="http://doc.ubuntu-fr.org/utilisateurs/deax_one" class="wikilink2" title="utilisateurs:deax_one" rel="nofollow">deax_one</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="tutoriel/script_shell"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1431460304" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="30499-" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/9/9735418003551e98a319eaf18f03d352.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/script_shell?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/script_shell?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/script_shell?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/script_shell?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/script_shell?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

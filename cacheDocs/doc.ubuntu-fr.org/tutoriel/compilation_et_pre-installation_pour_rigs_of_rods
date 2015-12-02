@@ -1,0 +1,1624 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:compilation_et_pre-installation_pour_rigs_of_rods - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-05-21T02:31:46+0200"/>
+<meta name="keywords" content="natty,oneiric,tutoriel,jeu,simulation,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/compilation_et_pre-installation_pour_rigs_of_rods?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/compilation_et_pre-installation_pour_rigs_of_rods?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/compilation_et_pre-installation_pour_rigs_of_rods"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/compilation_et_pre-installation_pour_rigs_of_rods"/>
+<link rel="canonical" href="compilation_et_pre-installation_pour_rigs_of_rods"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:compilation_et_pre-installation_pour_rigs_of_rods","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="compilation_et_pre-installation_pour_rigs_of_rods#main" tabindex="1">Contenu</a> | <a href="compilation_et_pre-installation_pour_rigs_of_rods#qsearch__in" tabindex="2">Rechercher</a> | <a href="compilation_et_pre-installation_pour_rigs_of_rods#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="compilation_et_pre-installation_pour_rigs_of_rods" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="compilation_et_pre-installation_pour_rigs_of_rods" >tutoriel:compilation_et_pre-installation_pour_rigs_of_rods</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#explication_du_processus">Explication du processus</a></div></li>
+<li class="level1"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#installation_compilation_des_libraires">Installation &amp; compilation des libraires</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#preambule">Préambule</a></div></li>
+<li class="level2"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#telechargement_et_compilation_des_librairies">Téléchargement et compilation des librairies</a></div></li>
+<li class="level2"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#voila_c_est_termine">Voilà c&#039;est terminé…</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#installation_de_ror">Installation de RoR</a></div></li>
+<li class="level1"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#conclusion">Conclusion</a></div></li>
+<li class="level1"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#desinstallation">Désinstallation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#desinstaller_les_librairies_installees_pour_une_desinstallation_complete_des_librairies_dont_a_besoin_ror">Désinstaller les librairies installées (pour une désinstallation complète des librairies dont a besoin RoR)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#problemes_rencontres">Problèmes rencontrés</a></div></li>
+<li class="level1"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#voir_aussi">Voir aussi</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#liens_officiels">Liens officiels</a></div></li>
+<li class="level2"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#liens_en_relation_avev_ror_sur_ubuntu-frorg_wiki_et_forum">Liens en relation avev RoR sur ubuntu-fr.org (Wiki et forum)</a></div></li>
+<li class="level2"><div class="li"><a href="compilation_et_pre-installation_pour_rigs_of_rods#autres_liens_externes">Autres liens externes</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../natty" class="wikilink1" title="natty" rel="tag">Natty</a>,
+	<a href="../oneiric" class="wikilink1" title="oneiric" rel="tag">Oneiric</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../jeu" class="wikilink1" title="jeu" rel="tag">jeu</a>,
+	<a href="http://doc.ubuntu-fr.org/simulation" class="wikilink1" title="simulation" rel="tag">simulation</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="compiler_les_bibliotheques_permettant_l_installation_de_rigs_of_rods_sur_xubuntu_1104_et_1110_et">Compiler les bibliothèques permettant l&#039;installation de Rigs of Rods sur Xubuntu 11.04 et 11.10 (et +)</h1>
+<div class="level1">
+
+<p>
+Ce tutoriel décrit les logiciels à installer et la démarche à suivre pour faire …<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Compiler les bibliothèques permettant l'installation de Rigs of Rods sur Xubuntu 11.04 et 11.10 (et +)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="63-275" /><input type="submit" value="Modifier" class="button" title="Compiler les bibliothèques permettant l'installation de Rigs of Rods sur Xubuntu 11.04 et 11.10 (et +)" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>,</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée,</div>
+</li>
+<li class="level1"><div class="li"> Disposer et savoir utiliser la console et ligne de commande (indiquées dans ce tutoriel),</div>
+</li>
+<li class="level1"><div class="li"> Avoir <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installé les paquets</a> <strong><a href="apt://wget" class="interwiki iw_apt" title="apt://wget">wget</a></strong>, <strong><a href="apt://subversion" class="interwiki iw_apt" title="apt://subversion">subversion</a></strong>, <strong><a href="apt://mercurial" class="interwiki iw_apt" title="apt://mercurial">mercurial</a></strong>, <strong><a href="apt://cmake" class="interwiki iw_apt" title="apt://cmake">cmake</a></strong>, <strong><a href="apt://automake" class="interwiki iw_apt" title="apt://automake">automake</a></strong>, <strong><a href="apt://libtool" class="interwiki iw_apt" title="apt://libtool">libtool</a></strong>, <strong><a href="apt://libtool-dev" class="interwiki iw_apt" title="apt://libtool-dev">libtool-dev</a></strong>, <strong><a href="apt://libssl-dev" class="interwiki iw_apt" title="apt://libssl-dev">libssl-dev (OpenSSL (dev))</a></strong>, <strong><a href="apt://libcurl4-openssl-dev" class="interwiki iw_apt" title="apt://libcurl4-openssl-dev">libcurl4-openssl-dev (Curl)</a></strong> et <strong><a href="apt://cmake-qt-gui" class="interwiki iw_apt" title="apt://cmake-qt-gui">cmake-gui (Qt)</a></strong> (<a href="apt://wget,subversion,mercurial,cmake,automake,libtool,libtool-dev,libssl-dev,libcurl4-openssl-dev,cmake-qt-gui" class="interwiki iw_apt" title="apt://wget,subversion,mercurial,cmake,automake,libtool,libtool-dev,libssl-dev,libcurl4-openssl-dev,cmake-qt-gui">tout installer en 1 clic</a>).</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic">Lors de ce tutoriel, vous verrez plusieurs fois la commande <em>&quot;cmake -j2&quot;</em>.
+Cette commande permet à &quot;<em>cmake</em>&quot; de fonctionner, en utilisant toute la puissance de votre microprocesseur.
+Il vous suffira de remplacer le <em>&quot;-j2&quot;</em> selon le nombre de core que possède votre microprocesseur (CPU) :
+</p>
+
+<p>
+Exemples : &quot;-j2&quot; sous vous avez un &quot;<em>duo core</em>&quot;, ou &quot;-j4&quot; pour &quot;<em>quad core</em>&quot; etc.
+</p>
+
+<p>
+Dans le cadre de ce tutoriel, il est utilisé &quot;-j2&quot;, car je (auteur) possède un &quot;Core 2 duo&quot; (duo core / deux coeurs).
+N&#039;oubliez pas d&#039;y faire attention, car cela peut vraiment accélérer la compilation des librairies, et ce serait dommage de s&#039;en priver.
+Mais pas d&#039;inquiétude, si vous oubliez de paramétrer cette option, cela ne causera aucune erreur. La compilation sera juste plus longue.
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> De plus, vous aurez plusieurs temps d&#039;attente pendant les compilation, il est donc recommandé de profiter de ce temps pour lancer (uniquement) le téléchargement (l&#039;installation est expliquée en fin de tutoriel) du <a href="http://sourceforge.net/projects/rigsofrods/files/rigsofrods/0.37/content-pack-0.37.zip/download" class="urlextern" title="http://sourceforge.net/projects/rigsofrods/files/rigsofrods/0.37/content-pack-0.37.zip/download"  rel="nofollow">Contenu (cartes, véhicules, terrains...) sur le forge de Rigs of Rods (Sourceforge)</a> (400 Mio),</div>
+</li>
+<li class="level1"><div class="li"> Et, (mais pas obligatoire, utile seulement pour les petites connexions) de télécharger (et uniquement, car l&#039;installation sera abordée dans le tutoriel) les sources de RoR (200 Mio) via la console (et après avoir installé &lt;<em>subversion</em>&gt;) ces deux lignes :<pre class="code">cd /home/VOTRE_NOM_de_SESSION/ror-trunk
+svn co https://rigsofrods.svn.sourceforge.net/svnroot/rigsofrods/trunk ror-trunk</pre>
+</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="276-2660" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="explication_du_processus">Explication du processus</h2>
+<div class="level2">
+
+<p>
+Les pré-requis cités ci-dessus vont donc nous permettre d&#039;installer tous les librairies requises (ci-dessous) pour RoR :
+</p>
+<ul>
+<li class="level1"><div class="li"> AngelScript : SDK 2.22.1 (dernière version stable),</div>
+</li>
+<li class="level1"><div class="li"> Caelum : version 0.6.1 (au moins),</div>
+</li>
+<li class="level1"><div class="li"> mygui : svn revision 4141 (Version SVN spécifique),</div>
+</li>
+<li class="level1"><div class="li"> mysocketw : dernière version, patché, (voir instructions de construction dans ce tuto),</div>
+</li>
+<li class="level1"><div class="li"> ogre : 1.7.x ou 1.8.x,</div>
+</li>
+<li class="level1"><div class="li"> OIS : 1.3 (toutes versions &gt;= 1.2 doivent fonctionner),</div>
+</li>
+<li class="level1"><div class="li"> openal-soft-1.8.466 (les anciennes versions doivent aussi fonctionner),</div>
+</li>
+<li class="level1"><div class="li"> paged geometry-1.1.3 (dernière version stable)</div>
+</li>
+<li class="level1"><div class="li"> wxWidgets &gt;= 2.6 (les anciennes versions doivent aussi fonctionner).</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic">
+Il est recommandé et plus simple d&#039;installer RoR dans la partition &quot;home&quot; (dossier personnel&gt;session utilisateur&gt;).
+Dans le cas présent de ce tutoriel, nous partons du principe que RoR sera installé dans la partition &quot;home&quot;, à l&#039;adresse <code>/home/VOTRE_NOM_de_SESSION/ror-trunk/</code>. RoR possède deux dossiers : celui de son installation (indiqué ci-dessus), et celui où sont stockés les fichiers de configuration du jeu, ainsi que les « packs » de cartes, textures, véhicules, mods etc… à l&#039;adresse : <code>/home/VOTRE_NOM_de_SESSION/.rigsofrods/</code>.
+</p>
+
+<p>
+Dans le cas d&#039;une partition &quot;Home&quot; de faible taille, l&#039;installation dans le dossier &quot;/usr/share/games/ror-trunk/&quot; ou &quot;/usr/games/ror-trunk/&quot; est envisageable et fonctionnel à terme (testé). Mais dans ce cas, vous devrez ouvrir la console et suivre ce tutoriel en tant que &quot;root&quot; (dans ce cas, le dossier utilisateur, sera le dossier &quot;/root/.rigsofrods/&quot; à la racine de votre installation Xubuntu).
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Explication du processus] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2661-4340" /><input type="submit" value="Modifier" class="button" title="Explication du processus" /></div></form></div>
+<h2 class="sectionedit4" id="installation_compilation_des_libraires">Installation &amp; compilation des libraires</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Installation &amp; compilation des libraires] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4341-4394" /><input type="submit" value="Modifier" class="button" title="Installation &amp; compilation des libraires" /></div></form></div>
+<h3 class="sectionedit5" id="preambule">Préambule</h3>
+<div class="level3">
+
+<p>
+Comme dit précédemment en info, notre dossier d&#039;installation de RoR se situe alors dans :<br/>
+
+<em>/home/VOTRE_NOM_de_SESSION/ror-trunk</em>/ probablement vide ou inexistant pour le moment, si vous n&#039;avez pas encore téléchargé RoR (rien ne presse, cela sera abordé dans ce tutoriel).
+</p>
+
+<p>
+Pour cette (longue) phase, comprenant un grand nombre de libraires, il est alors recommandé de créer un dossier spécifique, que l&#039;on nommera <em>&quot;/home/VOTRE_NOM_de_SESSION/ror-deps&quot;</em>.
+</p>
+
+<p>
+Ceci étant dit : <em>Lancez la console !</em>
+</p>
+
+</div>
+
+<h4 id="creation_du_dossier_de_travail">Création du dossier de travail</h4>
+<div class="level4">
+<pre class="code">mkdir ror-deps</pre>
+
+<p>
+Et nous nous positionnons dans ce dossier :
+</p>
+<pre class="code">cd ror-deps</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Préambule] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4395-5073" /><input type="submit" value="Modifier" class="button" title="Préambule" /></div></form></div>
+<h3 class="sectionedit6" id="telechargement_et_compilation_des_librairies">Téléchargement et compilation des librairies</h3>
+<div class="level3">
+
+<p>
+Nous sommes fin prêt pour débuter le travail !
+</p>
+
+</div>
+
+<h4 id="freeimage">FreeImage</h4>
+<div class="level4">
+<ol>
+<li class="level1"><div class="li"> Téléchargement de l&#039;archive via la commande &quot;wget&quot; : <pre class="code">wget http://sourceforge.net/projects/freeimage/files/Source%20Distribution/3.15.0/FreeImage3150.zip/download -O FreeImage3150.zip</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Décompression de l&#039;archive : <pre class="code">unzip FreeImage3150.zip </pre>
+</div>
+</li>
+<li class="level1"><div class="li"> On se positionne dans le dossier nouvellement créée lors de la décompression : <pre class="code">cd FreeImage</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Compilation : <pre class="code">make -j2</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Installation : <pre class="code">sudo make install</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> terminé, on sort du dossier pour la suite… : <pre class="code">cd ..</pre>
+</div>
+</li>
+</ol>
+
+<p>
+<p><div class="noteclassic">
+Les autres étapes seront dans la même logique, les commandes pour les prochaines librairies ne seront plus expliquées (sauf si besoin est), pour ne pas surcharger ce tutoriel.
+</p>
+
+<p>
+Toutes les lignes de commandes seront alors affichées dans un même conteneur, mais comme dans ce cas précédent, il vous faudra faire ligne par ligne.
+
+</div></p>
+</p>
+
+</div>
+
+<h4 id="ogre">Ogre</h4>
+<div class="level4">
+<pre class="code">wget http://sourceforge.net/projects/ogre/files/ogre/1.7/ogre_src_v1-7-3.tar.bz2/download -O ogre_src_v1-7-3.tar.bz2
+tar xjf ogre_src_v1-7-3.tar.bz2
+cd ogre_src_v1-7-3</pre>
+<ol>
+<li class="level1"><div class="li"> Préparation de la compilation via la commande <em>cmake</em> <em>(il y a un point &quot;. &quot; à la fin de la commande, ne l&#039;oubliez pas !)</em>: <pre class="code">cmake -DCMAKE_BUILD_TYPE:STRING=Release -DOGRE_BUILD_SAMPLES:BOOL=OFF .</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> On continue (compilation + installation) : <pre class="code">make -j2
+sudo make install
+cd ..</pre>
+</div>
+</li>
+</ol>
+
+</div>
+
+<h4 id="ois">OIS</h4>
+<div class="level4">
+
+<p>
+Ici, nous choisirons la dernière version stable (mais vous pouvez utiliser une version &quot;svn&quot; si vous le souhaitez, tant qu&#039;elle est supérieure à la version 1.2).
+</p>
+<pre class="code">wget http://sourceforge.net/projects/wgois/files/Source%20Release/1.3/ois_v1-3.tar.gz/download -O ois_v1-3.tar.gz
+tar xvfz ois_v1-3.tar.gz
+cd ois-v1-3/</pre>
+
+</div>
+
+<h5 id="modification_du_fichier_bootstrap">Modification du fichier bootstrap</h5>
+<div class="level5">
+
+<p>
+Vous pouvez modifier (non obligé mais recommandé, car cela peut provoquer une erreur lors de la compilation), le fichier &quot;<em>bootstrap</em>&quot; qui se trouve dans le dossier &quot;<em>ois-v1-3</em>&quot;.
+</p>
+
+<p>
+Ce fichier comprend 2 lignes utiles pour les distributions <em>Gentoo</em>. Dans notre cas, les distros xUbuntu n&#039;ont pas besoin des ces lignes.
+</p>
+<ol>
+<li class="level1"><div class="li"> On ouvre ici un éditeur de type Kate ou Gedit, mais vous pouvez choisir une autre méthode (remplacez &quot;<em>Kate</em>&quot; par &quot;<em>Gedit</em>&quot; (si vous êtes sous gnome/unity)) : <pre class="code">kate bootstrap</pre>
+</div>
+<ul>
+<li class="level2"><div class="li"> Remplacez les lignes : <pre class="code">export WANT_AUTOMAKE=&#039;1.7&#039;
+export WANT_AUTOCONF=&#039;2.5&#039;</pre>
+
+<p>
+ par (on ne fait que &quot;commenter&quot; les lignes, pour qu&#039;elles ne soient pas pris en compte lors de l&#039;exécution du fichier &quot;<em>Bootstrap</em>&quot;) : 
+</p>
+<pre class="code">#export WANT_AUTOMAKE=&#039;1.7&#039;
+#export WANT_AUTOCONF=&#039;2.5&#039;</pre>
+
+<p>
+ Vous enregistrez le fichier, et vous pouvez refermer <em>Kate</em> ou <em>Gedit</em> (ou autre).
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> On continue, en exécutant (lançant) le fichier Boostrap, et en lançant la configuration dans un second temps : <pre class="code">bash bootstrap
+./configure</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Compiler, Installer et sortir du dossier : <pre class="code">make -j2
+sudo make install
+cd ..</pre>
+</div>
+</li>
+</ol>
+
+<p>
+<p><div class="noteclassic">
+Pour ceux souhaitant utiliser une version plus récente de OIS mais pas forcement stable (à vos risques et périls), vous pouvez la télécharger directement sur le SVN.
+</p>
+
+<p>
+C&#039;est exactement la même procédure que ci-dessus, mais à la place de la commande &quot;<em>wget ….</em>&quot;, faites :
+</p>
+<pre class="code">svn co https://wgois.svn.sourceforge.net/svnroot/wgois/ois/trunk/ ois-trunk</pre>
+
+<p>
+Vous n&#039;aurez pas besoin de décompresser non plus, et dans votre cas, le dossier de travail sera : <em>ois-trunk</em>).
+
+</div></p>
+</p>
+
+</div>
+
+<h4 id="mygui">MyGui</h4>
+<div class="level4">
+
+<p>
+On télécharge ici MyGui directement dans le SVN, qui nous permet de récupérer la version (révision 4141) qui correspond le mieux à RoR :
+</p>
+<pre class="code">svn co https://my-gui.svn.sourceforge.net/svnroot/my-gui/trunk my-gui -r 4141</pre>
+
+<p>
+Ensuite, positionnement dans le dossier nouvellement créé, préparation de la compilation avec <em>cmake</em> (attention de ne pas oublier le point &quot; .&quot; à la fin de la ligne ici aussi !) , compilation, installation et quitter le dossier :
+</p>
+<pre class="code">cd my-gui
+cmake -DCMAKE_BUILD_TYPE:STRING=Release -DMYGUI_BUILD_SAMPLES:BOOL=OFF -DMYGUI_INSTALL_SAMPLES:BOOL=OFF -DMYGUI_BUILD_TOOLS:BOOL=OFF -DMYGUI_BUILD_PLUGINS:BOOL=OFF .
+make -j2
+sudo make install
+cd ..</pre>
+
+</div>
+
+<h4 id="paged_geometry">Paged Geometry</h4>
+<div class="level4">
+<pre class="code">wget http://ogre-paged.googlecode.com/files/ogre-paged-1.1.3.tar.gz
+tar xvfz ogre-paged-1.1.3.tar.gz
+cd ogre-paged-1.1.3</pre>
+
+<p>
+Préparation de compilation (n&#039;oubliez pas le &quot; . &quot; à la fin de la commande de nouveau!), compilation, installation et quitter :
+</p>
+<pre class="code">cmake -DCMAKE_BUILD_TYPE:STRING=Release -DPAGEDGEOMETRY_BUILD_SAMPLES:BOOL=OFF .
+make -j2 --silent
+sudo make install
+cd ..</pre>
+
+</div>
+
+<h4 id="caelum">Caelum</h4>
+<div class="level4">
+
+<p>
+Téléchargement de Caelum via la commande <em>hg</em> (Il s&#039;agit de Mercurial, que vous avez installés lors des pré-requis de ce tutoriel) :
+</p>
+<pre class="code">hg clone https://caelum.googlecode.com/hg/ caelum</pre>
+
+<p>
+Positionnement, préparation de compilation (attention au point à la fin de la commande &quot;<em>cmake .</em>&quot;), installation et sortir du dossier :
+</p>
+<pre class="code">cd caelum
+cmake .
+make -j2
+sudo make install
+cd ..</pre>
+
+</div>
+
+<h4 id="mysocketw">MySocketW</h4>
+<div class="level4">
+
+<p>
+MySocketW a besoin de OpenSSL, que vous devez déjà avoir installé normalement <em>(puisque indiqué dans les pré-requis du tutoriel : <strong><a href="apt://libssl-dev" class="interwiki iw_apt" title="apt://libssl-dev">libssl-dev</a></strong>)</em>.
+</p>
+
+<p>
+Ensuite installation de MySocketW de la même manière (devenue) routinière dans ce tutoriel :
+</p>
+<pre class="code">wget http://www.digitalfanatics.org/cal/socketw/files/SocketW031026.tar.gz -O SocketW031026.tar.gz
+tar xzf SocketW031026.tar.gz
+cd SocketW031026/</pre>
+
+<p>
+Hey ben non ! <img src="../lib/images/smileys/facepalm.gif" class="icon" alt="m(" /> … nous allons casser un peu cette routine avec une nouvelle chose à faire. (l&#039;avantage est qu&#039;avec ce tuto, nous apprenons à utiliser énormément de commande de &quot;bases&quot;<img src="../lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />)
+</p>
+
+<p>
+Nous allons appliquer une rustine (patch), car MySocketW a besoin d&#039;être &quot;patché&quot; pour être compilé.
+</p>
+
+<p>
+Téléchargement et application de la rustine :
+</p>
+<pre class="code">wget http://wiki.rigsofrods.com/images/c/c0/Socketw.patch -O Socketw.patch
+patch -p0 -d src &lt; Socketw.patch</pre>
+
+<p>
+Suppression de la rustine (ben oui!… un pansement une fois usagé ce met à la poubelle <img src="http://doc.ubuntu-fr.org/lib/images/smileys/icon_silenced.gif" class="icon" alt=":-x" /> ) :
+</p>
+<pre class="code">rm Socketw.patch</pre>
+
+<p>
+Et…. compilation, installation et sortie du dossier…. Vous l&#039;avez compris, retour à la routine donc <img src="http://doc.ubuntu-fr.org/lib/images/smileys/icon_fun.gif" class="icon" alt="^_^" /> :
+</p>
+<pre class="code">make -j2 --silent shared
+sudo make install
+cd ..</pre>
+
+</div>
+
+<h4 id="angelscript">AngelScript</h4>
+<div class="level4">
+
+<p>
+Création du dossier de travail :
+</p>
+<pre class="code">mkdir angelscript</pre>
+
+<p>
+Positionnement, téléchargement, décompression et positionnement :
+</p>
+<pre class="code">cd angelscript
+wget http://www.angelcode.com/angelscript/sdk/files/angelscript_2.22.1.zip
+unzip angelscript_2.22.1.zip
+cd sdk/angelscript/projects/gnuc</pre>
+
+</div>
+
+<h5 id="compilation">Compilation</h5>
+<div class="level5">
+
+<p>
+Ne me demandez pas à quoi servent les commande avant &quot;make&quot;, je n&#039;en ai pas la moindre idée mais c&#039;est important (si j&#039;vous l&#039;dis!) :
+</p>
+<pre class="code">SHARED=1 VERSION=2.22.1 make -j2 --silent</pre>
+
+<p>
+Il semblerait que l&#039;installation par &quot;make install&quot;, provoque un échec d&#039;installation lorsqu&#039;il crée le lien symbolique en supprimant ceux (liens symb. + fichier) déjà existant dans notre dossier de travail &quot;lib&quot;.
+</p>
+
+<p>
+Nous allons donc faire un tour de passe-passe (on va dire ça hein?!?… vu que je n&#039;ai pas trop compris le &quot;truc&quot;).
+</p>
+
+<p>
+De manière certaine, après avoir contrôler de visu le dossier &quot;lib&quot;, les 2 manip. suivantes vont supprimer le lien + fichier, puis lancer l&#039;installation, qui les recréera :
+</p>
+<pre class="code">rm -f ../../lib/*
+sudo SHARED=1 VERSION=2.22.1 make install</pre>
+
+</div>
+
+<h4 id="openal">OpenAL</h4>
+<div class="level4">
+
+<p>
+Ici, en théorie, nul besoin d&#039;installer OpenAL, puisque déjà installé et intégré dans nos distribution Xubuntu (9.04 à 11.10 et probable 12.xx).
+</p>
+
+<p>
+Mais si vous ne savez pas, ou que vous en doutez, il faut <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer les paquets</a> <strong><a href="apt://libopenal1" class="interwiki iw_apt" title="apt://libopenal1">libopenal1</a></strong> et <strong><a href="apt://libopenal-dev" class="interwiki iw_apt" title="apt://libopenal-dev">libopenal-dev</a></strong> (aucun risque si OpenAL est déjà installé, <em>apt-get</em> le signalera).
+</p>
+
+</div>
+
+<h4 id="wxwidgets">wxWidgets</h4>
+<div class="level4">
+
+<p>
+Idem pour wxWidgets, qui est déjà installé, intégré et utilisé par la plupart des distributions <abbr title="GNU&#039;s Not Unix">GNU</abbr>-Linux (dont Xubuntu).
+</p>
+
+<p>
+RoR a besoin de la version 2.6 au minimum. Et il est compatible avec les versions 2.8 et 2.9.
+</p>
+
+<p>
+Pour ma part (Kubuntu 11.10), wxWidgets était (comme prévu) déjà installé dans sa version 2.8.0 (sous le nom : <em>libwxgtk</em>).
+</p>
+
+<p>
+Vous pouvez vérifier directement dans votre gestionnaire de paquet (Muon, Synaptic ou autre).
+</p>
+
+<p>
+Sinon vous pouvez toujours tenter une installation manuelle, via la commande suivante (je ne suis pas certain qu&#039;elle soit &quot;bonne&quot; mais cela devrait fonctionner je pense, sinon encore une fois, n&#039;hésitez pas à passer par votre gestionnaire de paquets, qui lui, ne se trompera pas) :
+</p>
+<pre class="code">sudo apt-get install libwxgtk</pre>
+
+<p>
+Et enfin, le petit dernier mais nous n&#039;avons pas encore fait le plus gros…. sans vouloir vous décourager <img src="../lib/images/smileys/icon_lol.gif" class="icon" alt="LOL" />
+</p>
+
+</div>
+
+<h4 id="hydrax">Hydrax</h4>
+<div class="level4">
+
+<p>
+Téléchargement,  Décompression, sortie du dossier :
+</p>
+<pre class="code">wget http://modclub.rigsofrods.com/xavi/hydrax-0.5.2-ogre-17-patched.tar.bz2
+tar xvfj hydrax-0.5.2-ogre-17-patched.tar.bz2
+cd hydrax-0.5.2-ogre-17-patched</pre>
+
+<p>
+Pour les utilisateurs de Xubuntu que nous sommes, nous allons devoir modifier un petit peu la procédure habituelle, car un problème de préfixe provoque une erreur pendant la compilation.
+</p>
+
+<p>
+Pas de panique, il suffit alors de sauvegarder/renommer le &quot;<em>makefile</em>&quot; déjà présent en <em>makefile.orig</em>(ine) :
+</p>
+<pre class="code">cp makefile makefile.orig</pre>
+
+<p>
+Nous changeons alors manuellement via la commande &quot;<em>sed</em>&quot;, les préfixes du fichier <em>makefile.orig</em> pour ensuite l&#039;enregistrer dans &quot;notre&quot; (nouveau) <em>makefile</em> :
+</p>
+<pre class="code">sed &#039;s|PREFIX =/usr|PREFIX =/usr/local|g&#039; makefile.orig &gt; makefile</pre>
+
+<p>
+Et ensuite…. compilation, installation et sortie du dossier…. Vous l&#039;avez compris, retour à la routine de nouveau <img src="http://doc.ubuntu-fr.org/lib/images/smileys/icon_fun.gif" class="icon" alt="^_^" /> :
+</p>
+<pre class="code">make -j2
+sudo make install
+cd ..</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Téléchargement et compilation des librairies] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5074-14891" /><input type="submit" value="Modifier" class="button" title="Téléchargement et compilation des librairies" /></div></form></div>
+<h3 class="sectionedit7" id="voila_c_est_termine">Voilà c&#039;est terminé…</h3>
+<div class="level3">
+
+<p>
+…. enfin presque !
+</p>
+
+<p>
+Je vous fait marcher !
+</p>
+
+<p>
+Ne fermez pas la console… nous allons encore en avoir besoin.
+Maintenant il va falloir faire preuve de patience et d&#039;un peu de &quot;savoir-faire&quot;.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Voilà c'est terminé…] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14892-15119" /><input type="submit" value="Modifier" class="button" title="Voilà c'est terminé…" /></div></form></div>
+<h2 class="sectionedit8" id="installation_de_ror">Installation de RoR</h2>
+<div class="level2">
+
+<p>
+En théorie cette partie concerne l&#039;installation (et la compilation) pure et simple (le mot est peut-être mal choisi) de RoR.
+Mais pour un soucis de clarté avec la <a href="../rigsofrods" class="wikilink1" title="rigsofrods">doc déjà existante</a>, je préfère donc, mettre le reste de la procédure d&#039;installation ici (qui pourra être transvaser sur l&#039;autre doc qui concerne Karmic prochainement).
+</p>
+
+</div>
+
+<h4 id="installation_des_paquets_et_dependances_pre-requis">Installation des paquets et dépendances &quot;pré-requis&quot;</h4>
+<div class="level4">
+
+<p>
+Pour la plupart d&#039;entre-eux, ils devraient déjà être installés puisque déjà utilisé au cours de ce tuto (mais je préfère les laisser dans la ligne de commande suivante au cas où) .
+</p>
+
+<p>
+Vous avez encore la console sous les yeux, vous pouvez donc &quot;rester&quot; dans le dossier &quot;ror-deps&quot;, ou revenir à la racine de votre dossier personnel (cela n&#039;a aucune importance pour le moment).
+</p>
+
+</div>
+
+<h5 id="installation_des_pre-requis">Installation des pré-requis</h5>
+<div class="level5">
+
+<p>
+Envoyez la commande :
+</p>
+<pre class="code">sudo apt-get install automake subversion cmake build-essential libfreetype6-dev libzzip-dev nvidia-cg-toolkit \
+ libwxgtk2.8-dev libfreeimage-dev libgl1-mesa-dev libxrandr-dev libx11-dev libxt-dev libxaw7-dev \
+ libglu1-mesa-dev libxxf86vm-dev libboost-dev pkg-config uuid-dev libuuid1 libgtk2.0-dev liblua5.1-0-dev \
+ libopenal-dev scons cmake-qt-gui libboost-all-dev libcurl4-openssl-dev doxygen mercurial</pre>
+
+<p>
+Ou <strong><a href="apt://automake,subversion,cmake,build-essential,libfreetype6-dev,libzzip-dev,nvidia-cg-toolkit,libwxgtk2.8-dev,libfreeimage-dev,libgl1-mesa-dev,libxrandr-dev,libx11-dev,libxt-dev,libxaw7-dev,libglu1-mesa-dev,libxxf86vm-dev,libboost-dev,pkg-config,uuid-dev,libuuid1,libgtk2.0-dev,liblua5.1-0-dev,libopenal-dev,scons,cmake-qt-gui,libboost-all-dev,libcurl4-openssl-dev,doxygen,mercurial" class="interwiki iw_apt" title="apt://automake,subversion,cmake,build-essential,libfreetype6-dev,libzzip-dev,nvidia-cg-toolkit,libwxgtk2.8-dev,libfreeimage-dev,libgl1-mesa-dev,libxrandr-dev,libx11-dev,libxt-dev,libxaw7-dev,libglu1-mesa-dev,libxxf86vm-dev,libboost-dev,pkg-config,uuid-dev,libuuid1,libgtk2.0-dev,liblua5.1-0-dev,libopenal-dev,scons,cmake-qt-gui,libboost-all-dev,libcurl4-openssl-dev,doxygen,mercurial">cliquez ici pour tout installer en 1 clic</a></strong>.
+</p>
+
+<p>
+<p><div class="noteclassic">
+Comme vous le voyez, bon nombre de paquets sont déjà installés (pas de soucis, <em>apt-get</em> va le voir et passer aux suivants).
+Cela concerne entres autres mercurial, subversion, cmake, automake (et d&#039;autres).
+Vous voyez aussi par exemple : &quot;libfreeimage-dev&quot; que l&#039;on a déjà installé en premier au début de ce tutoriel.
+En clair, c&#039;est le début pour préparer la phase de compilation/installation de RoR. Mais malheureusement, pour les versions 11.04 et 11.10 (et suivantes ?), cela n&#039;était pas suffisant, et nous devions passer par les compilations &quot;manuelles&quot;.
+
+</div></p>
+</p>
+
+<p>
+Pour ma part cette ligne de commande m&#039;a fait télécharger 400 Mo de paquets pour 750Mo une fois installés, je ne sais pas si cela sera identique dans votre cas.
+</p>
+
+</div>
+
+<h5 id="conseils_a_lire_ou_non_pendant_le_telechargement_et_installation">Conseils à lire (ou non) pendant le téléchargement et installation</h5>
+<div class="level5">
+
+<p>
+Tout ce que je peux vous dire, si vous êtes dans mon cas (de 400-750 Mio à télécharger), vous avez le temps d&#039;aller sur le  <a href="http://www.rigsofrods.com/" class="urlextern" title="http://www.rigsofrods.com/"  rel="nofollow">site officiel de RoR</a> et de regarder les vidéos en page d&#039;accueil, histoire de regagner en motivation <img src="http://doc.ubuntu-fr.org/lib/images/smileys/icon_fun.gif" class="icon" alt="^_^" /> , ou de lire leur wiki pour déjà commencer à mieux connaitre l&#039;utilisation de RoR en lisant la page : <a href="http://www.rigsofrods.com/wiki/pages/Beginner's_Guide/fr" class="urlextern" title="http://www.rigsofrods.com/wiki/pages/Beginner&#039;s_Guide/fr"  rel="nofollow">Guide des débutants (Fr)</a>.
+</p>
+
+<p>
+Petite précision au passage, le guide est rédigé en Français mais expliqué selon les touches du clavier par défauts (configuré donc en <code>qwerty</code>).
+</p>
+
+<p>
+Pensez alors (pour les Français), que le mieux une fois installé, sera d&#039;aller modifier le fichier de configuration des &quot;contrôles&quot; de RoR et d&#039;y remplacer tous les &quot;Q&quot; par &quot;A&quot; (et vice-versa), ainsi que les &quot;W&quot; par &quot;Z&quot; (et vice-versa). Cela sera plus logique et plus ergonomique par exemple de monter ou descendre les vitesses (si vous choisissez &quot;boite manuelle&quot; par exemple) en utilisant &quot;Q&quot; et &quot;W&quot; plutôt que &quot;A&quot; et &quot;Z&quot; ou même de diriger le &quot;dérive&quot; de l&#039;avion (droite-gauche) avec les touches &quot;A&quot; et &quot;Z&quot; plutôt que &quot;Q&quot; et &quot;W&quot;.
+</p>
+
+</div>
+
+<h4 id="telechargement_de_ror_sources">Téléchargement de RoR (sources)</h4>
+<div class="level4">
+
+<p>
+Voilà, vous avez fini la lecture et/ou l&#039;installation des dépendances.
+</p>
+
+<p>
+Si ce n&#039;est pas déjà fait (comme conseillé pour les &quot;petites connexions&quot;), passons alors maintenant au téléchargement de RoR qui doit représenter environ 200Mo (si mes souvenirs sont bons).<br/>
+
+</p>
+
+<p>
+Dans la console, vous devriez maintenant être positionné dans le dossier : /home/VOTRE_NOM_de_SESSION/
+Téléchargeons les sources de RoR via le SVN (à l&#039;heure actuelle, c&#039;est la version 0.39) :
+</p>
+<pre class="code">svn co https://rigsofrods.svn.sourceforge.net/svnroot/rigsofrods/trunk ror-trunk</pre>
+
+<p>
+Et vous vous positionnez dans le dossier nouvellement créé :
+</p>
+<pre class="code">cd ror-trunk</pre>
+
+</div>
+
+<h4 id="preparation_de_compilation">Préparation de compilation</h4>
+<div class="level4">
+
+<p>
+Cette étape va vous faire utiliser un nouvel outil (si vous n&#039;êtes pas développeur ni bidouilleur du dimanche) : &quot;cmake-gui&quot;.
+</p>
+
+<p>
+Il y a deux méthodes pour préparer le compil. Soit en utilisant &quot;CLI&quot; soit &quot;cmake-gui&quot;.
+Comme déjà dit, j&#039;ai choisi par cmake-gui car plus &quot;sympa&quot; et surtout permet de mieux contrôler la compilation. CLI permet de faire une compilation dite &quot;standard&quot; (et qui n&#039;a pas fonctionné chez moi, puisqu&#039;il n&#039;a pas été capable de trouver les chemins des libraires et exécutables (de toute ce qu&#039;on a fait jusque là).
+Cmake-gui va jsutement nous permettre de mettre les bons chemins et donc, d&#039;avoir une compilation complètement réussie ! <img src="../lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />
+</p>
+
+<p>
+Vous avez normalement déjà installé cmake-gui dès les pré-requis de ce tutoriel.
+Si ce n&#039;est pas le cas, vous pouvez le faire soit en passant par votre gestionnaire de paquets favoris (Synaptic par exemple) et d&#039;y installer : cmake-qt-gui
+Ou en tapant (à vérifier) :
+</p>
+<pre class="code">sudo apt-get cmake-qt-gui</pre>
+
+<p>
+C&#039;est fait ?
+</p>
+
+<p>
+Vérifier que vous êtes bien dans le dossier <em>ror-trunk</em>, et si oui, alors tapez simplement dans la console (attention au point &quot;.&quot; à la fin de la commande!) :
+</p>
+<pre class="code">cmake-gui .</pre>
+
+</div>
+
+<h4 id="manipuler_cmake-gui_et_preparer_la_compilation">Manipuler Cmake-Gui et préparer la compilation</h4>
+<div class="level4">
+
+<p>
+Vous devriez voir une nouvelle fenêtre s&#039;ouvrir sur votre écran : Il s&#039;agit de cmake-gui.
+</p>
+
+<p>
+Vous y voyez une grande zone centrale, qui doit être &quot;vide&quot;, et deux lignes (en haut) &quot;Where…..&quot;.
+</p>
+
+<p>
+<strong>Remplissez les 2 lignes</strong> de la même façon (si ce n&#039;est pas fait, indiquez le chemin tel que /home/VOTRE_NOM_de_SESSION/ror-trunk), comme ci-dessous et sur l&#039;image :
+</p>
+<ul>
+<li class="level1"><div class="li"> Where is the source code : /home/thalyn/ror-trunk</div>
+</li>
+<li class="level1"><div class="li"> Where to build binaries : /home/thalyn/ror-trunk</div>
+</li>
+</ul>
+
+<p>
+<img src="http://doc.ubuntu-fr.org/_media/tutoriel/cmake-gui/cmake-gui4.png?w=800&amp;tok=33c887" class="mediacenter" title="Lignes du chemin de la source et de la compilation" alt="Lignes du chemin de la source et de la compilation" width="800" />
+</p>
+
+<p>
+Vous l&#039;avez compris, &quot;thalyn&quot; est le nom de ma session, remplacez-le par le votre
+</p>
+
+<p>
+Cliquer sur &quot;<strong>Configure</strong>&quot; (en bas à gauche), une fenêtre s&#039;ouvre vous demandant de sélectionner un format de compilation :
+</p>
+
+<p>
+Choisissez &quot;<em>Unix Makefiles</em>&quot; et &quot;<em>Use default native compilers</em>&quot; (Ce sont les options par défaut normalement) et cliquez sur &quot;Finish&quot;.
+</p>
+
+<p>
+La grande zone centrale doit être maintenant remplie de &quot;données&quot;, et doit avoir le &quot;fond&quot; de couleur rouge (à moins que cela soit lié à mon thème (lol))
+</p>
+
+<p>
+<img src="http://doc.ubuntu-fr.org/_media/tutoriel/cmake-gui/cmake-gui1.png?w=600&amp;tok=35fcee" class="mediacenter" title="Fenêtre complète de cmake-gui" alt="Fenêtre complète de cmake-gui" width="600" />
+</p>
+
+<p>
+Cliquer alors de nouveau sur &quot;<strong>Configure</strong>&quot;, le fond devrait devenir blanc (<em>ou de la couleur normale de votre fond de fenêtres suivant votre thème de xUbuntu</em>), avec en plus (en bas) des &quot;Yes&quot; suivi de lignes des chemins pour chaque librairies/exécutables &quot;activés&quot; pour la compilation (voir l&#039;image ci-jointe) :
+</p>
+
+<p>
+<img src="http://doc.ubuntu-fr.org/_media/tutoriel/cmake-gui/cmake-gui2.png?w=600&amp;tok=3c8a3b" class="mediacenter" title="Fenêtre complète de cmake-gui avec données remplies : il peut néanmoins y avoir des erreurs" alt="Fenêtre complète de cmake-gui avec données remplies : il peut néanmoins y avoir des erreurs" width="600" />
+</p>
+
+<p>
+Veillez à ce que les deux cases &quot;Advanced&quot; et  &quot;Grouped&quot; ne soient <strong>PAS</strong> cochées (vous pourrez regarder après par curiosité si vous le souhaitez). Vous voyez donc une colonne &quot;Name&quot; et &quot;Value&quot;. Certaines des cases en &quot;Value&quot; contiennent des chemins d&#039;accès et d&#039;autres des cases à cocher. Toutes les cases que vous voyez, doivent être cochées. Certains chemins seront déjà indiqués et vous verrez sur d&#039;autres des messages du type &quot;ERROR_XXXXXX_YYYYY&quot; …(normalement seule la dernière ligne est en &quot;erreur&quot; car cmake-gui ne trouve pas le chemin de l&#039;exécutable de <em>wxWidgets</em>). Il va donc falloir vérifier que les liens indiqués sont corrects, et trouver le chemin de l&#039;exec <em>wxWidgets</em>.
+</p>
+
+<p>
+Pas d&#039;inquiétude, j&#039;ai passé des heures à chercher ces liens (j&#039;exagère <img src="../lib/images/smileys/icon_razz.gif" class="icon" alt=":-P" />), et si vous avez bien suivi le tutoriel, vos &quot;chemins&quot; seront les mêmes que les miens.
+</p>
+
+<p>
+Il vous suffit donc de &quot;copier&quot; ce que vous voyez sur l&#039;image suivante (cliquer sur l&#039;image pour la voir dans sa taille originale en 1200x690) :
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_media/tutoriel/cmake-gui/cmake-gui3.png" class="media" title="tutoriel:cmake-gui:cmake-gui3.png"><img src="http://doc.ubuntu-fr.org/_media/tutoriel/cmake-gui/cmake-gui3.png?w=600&amp;tok=6ff07a" class="mediacenter" title="|Fenêtre complète de cmake-gui après la configuration réussie (pas d&#039;erreur détectée)" alt="|Fenêtre complète de cmake-gui après la configuration réussie (pas d&#039;erreur détectée)" width="600" /></a>
+</p>
+
+<p>
+Je rajoute ici en &quot;textuellement&quot; ces chemins, au cas où l&#039;image ne s&#039;afficherait pas ou qu&#039;elle ne soit pas assez lisible :
+</p>
+
+<p>
+<p><div class="noteimportant">
+Ne vous contentez pas de faire bêtement des copié/collé, cliquez sur la ligne du chemin désiré et sur le &quot;carré&quot; (…) pour chercher les fichiers, qui doivent se situer aux mêmes endroits indiqués sur l&#039;image (ci-dessus) et textuellement (ci-dessous).<br/>
+
+Cela permettra de garantir que les fichiers figurent bien sur votre installation, et que vous avez donc bien suivi le tutoriel.<br/>
+
+Il ne suffit pas de mettre le même chemin que moi, si le fichier n&#039;existe pas (après une erreur ou oubli de votre part) cela provoquera une erreur de compilation.
+
+</div></p>
+</p>
+
+<p>
+<p><div class="noteclassic">
+Fiez-vous plutôt à l&#039;image, elle est plus fidèle à la réalité car j&#039;ai peut-être fait des erreurs en retapant manuellement.
+
+</div></p>
+</p>
+<div class="table sectionedit9"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign">    Name (Nom)   </th><th class="col1 centeralign">     Value (Valeur)       </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">Angelscript_Include_dirs </td><td class="col1 rightalign">   /usr/local/include</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign">Angelscript_Libraries  </td><td class="col1 rightalign">   /usr/local/lib/libangelscript.so</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">Caelum_Include_dirs </td><td class="col1 rightalign">   /usr/local/include</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">Caleum_Libraries </td><td class="col1 rightalign">   /usr/local/lib/libCaelum.so</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign">CMAKE_Build_type  </td><td class="col1 leftalign">  </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">CMAKe_Install_prefix </td><td class="col1 rightalign">   /usr/local</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">MYGUI_OGRE_PLATFORM </td><td class="col1 rightalign">   /usr/local/lib/libMyGUI.OgrePlatform.a</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">Paged_Include_dirs </td><td class="col1 rightalign">  /usr/local/include</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0">Paged_Libraries </td><td class="col1 rightalign">  /usr/local/lib/libPagedGeometry.a</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0 leftalign">ROR_Build_Configurator  </td><td class="col1 rightalign">  <img src="http://doc.ubuntu-fr.org/_media/wiki/modeles/laptop_ok.png?w=10&amp;tok=2db85a" class="medialeft" alt="" width="10" /></td>
+	</tr>
+	<tr class="row11">
+		<td class="col0 leftalign">ROR_Use_Angelscript  </td><td class="col1 rightalign">  <img src="http://doc.ubuntu-fr.org/_media/wiki/modeles/laptop_ok.png?w=10&amp;tok=2db85a" class="medialeft" alt="" width="10" /></td>
+	</tr>
+	<tr class="row12">
+		<td class="col0 leftalign">ROR_Use_Caelum  </td><td class="col1 rightalign">  <img src="http://doc.ubuntu-fr.org/_media/wiki/modeles/laptop_ok.png?w=10&amp;tok=2db85a" class="medialeft" alt="" width="10" /></td>
+	</tr>
+	<tr class="row13">
+		<td class="col0 leftalign">ROR_Use_Curl  </td><td class="col1 rightalign">  <img src="http://doc.ubuntu-fr.org/_media/wiki/modeles/laptop_ok.png?w=10&amp;tok=2db85a" class="medialeft" alt="" width="10" /></td>
+	</tr>
+	<tr class="row14">
+		<td class="col0 leftalign">ROR_Use_MyGui  </td><td class="col1 rightalign">  <img src="http://doc.ubuntu-fr.org/_media/wiki/modeles/laptop_ok.png?w=10&amp;tok=2db85a" class="medialeft" alt="" width="10" /></td>
+	</tr>
+	<tr class="row15">
+		<td class="col0">ROR_Use_OpenAl</td><td class="col1 rightalign">  <img src="http://doc.ubuntu-fr.org/_media/wiki/modeles/laptop_ok.png?w=10&amp;tok=2db85a" class="medialeft" alt="" width="10" /></td>
+	</tr>
+	<tr class="row16">
+		<td class="col0">ROR_Use_Paged </td><td class="col1 rightalign">  <img src="http://doc.ubuntu-fr.org/_media/wiki/modeles/laptop_ok.png?w=10&amp;tok=2db85a" class="medialeft" alt="" width="10" /></td>
+	</tr>
+	<tr class="row17">
+		<td class="col0">ROR_Use_SOCKETW </td><td class="col1 rightalign">  <img src="http://doc.ubuntu-fr.org/_media/wiki/modeles/laptop_ok.png?w=10&amp;tok=2db85a" class="medialeft" alt="" width="10" /></td>
+	</tr>
+	<tr class="row18">
+		<td class="col0">SOCKETW_Include_dirs </td><td class="col1 rightalign">    /usr/local/include</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0">SOCKETW_Libraries </td><td class="col1 rightalign">  /usr/local/lib/libSocketW.so</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0">wxWidgets_Config_Executable </td><td class="col1 rightalign">  /usr/bin/wx-config</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0">wxWidgets_Use_Unicode </td><td class="col1 rightalign">  <img src="http://doc.ubuntu-fr.org/_media/wiki/modeles/laptop_ok.png?w=10&amp;tok=2db85a" class="medialeft" alt="" width="10" /></td>
+	</tr>
+	<tr class="row22">
+		<td class="col0">wxWidgets_wxrc_Executable </td><td class="col1 rightalign">   /usr/include/wx-2.8/wx/wx.h</td>
+	</tr>
+</table></div>
+
+<p>
+Vous avez retrouvé les mêmes chemins sans problèmes ?
+</p>
+
+<p>
+<p><div class="noteclassic">
+La compilation fonctionne parfaitement sans aucune erreur avec ces chemins et exécutables, mais si vous êtes connaisseurs et que vous voyez que j&#039;ai fait une ânerie, n&#039;hésitez pas à corriger (après avoir vérifié que tout (RoR) fonctionne parfaitement après!) et à le signaler sur le forum sur un sujet dédié que vous aurez créé et indiqué (lien) dans la partie 8.2 de ce tutoriel).<br/>
+
+Merci par avance.
+
+</div></p>
+</p>
+
+<p>
+Alors continuons :
+</p>
+<ul>
+<li class="level1"><div class="li"> Cliquez de nouveau sur « Configure » (cela va vérifier qu&#039;il n&#039;y a pas d&#039;erreur : il ne doit pas y en avoir),</div>
+</li>
+<li class="level1"><div class="li"> Tout va bien, alors cliquez sur « Generate » (Générer)</div>
+</li>
+<li class="level1"><div class="li"> Et voilà, la « préparation » est terminée.</div>
+</li>
+<li class="level1"><div class="li"> Fermer Cmake-gui : <em>File → Exit</em></div>
+</li>
+<li class="level1"><div class="li"> et.. retournez sur la console….</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="compilation1">Compilation</h4>
+<div class="level4">
+
+<p>
+Il ne reste plus qu&#039;à compiler.
+</p>
+<ul>
+<li class="level1"><div class="li"> Vérifier que vous êtes toujours dans le dossier <em>/home/…../ror-trunk</em>/ dans votre console,</div>
+</li>
+<li class="level1"><div class="li"> Taper la commande sans oubliez le -jx car la compilation est longue, avec je le rappel, &quot;x&quot; qui est le nombre de &quot;core&quot; de votre microprocesseur (&quot;duo Core&quot;= &quot;2&quot; dans mon cas) : <pre class="code">make -j2</pre>
+</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="c_est_fini">C&#039;est fini ?</h4>
+<div class="level4">
+
+<p>
+Dans l&#039;état, c&#039;est fonctionnel en théorie, mais il faut encore faire 3 choses :
+</p>
+<ul>
+<li class="level1"><div class="li"> Télécharger l&#039;archive des langues (pour avoir le Français ou autres),</div>
+</li>
+<li class="level1"><div class="li"> Configurer RoR (sinon cela ne fonctionnera pas),</div>
+</li>
+<li class="level1"><div class="li"> et, télécharger le &quot;contenu&quot;, sinon à votre premier lancement, RoR va planter en signalant : <em>&quot;pas de contenu&quot;</em>.</div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="telechargement_et_installation_des_langues">Téléchargement et installation des langues</h5>
+<div class="level5">
+
+<p>
+Vous pouvez télécharger l&#039;archive complète des langues (Fr traduit à 100%, même s&#039;il subsiste quelques erreurs, il est largement suffisant dans l&#039;état pour s&#039;en sortir et je ne peux pas y participer pour le moment, vu que mon accès au site est encore bloqué (problème de validation de compte visiblement)) :
+</p>
+<ul>
+<li class="level1"><div class="li"> Soit manuellement à ces adresses : <a href="http://www.rigsofrods.com/translate/files/translations/1/result/languages.zip" class="urlextern" title="http://www.rigsofrods.com/translate/files/translations/1/result/languages.zip"  rel="nofollow">Languages.zip (lien direct)</a> ou en cliquant sur le bouton <a href="http://www.rigsofrods.com/translate/view/1" class="urlextern" title="http://www.rigsofrods.com/translate/view/1"  rel="nofollow"> Downloads languages.zip sur la page des traductions</a>(en haut de la page),</div>
+</li>
+<li class="level1"><div class="li"> Soit via mes &quot;wget I Unzip&quot; académiques : <pre class="code">cd bin
+wget http://www.rigsofrods.com/translate/files/translations/1/result/languages.zip
+unzip languages.zip</pre>
+</div>
+</li>
+</ul>
+
+<p>
+Pour ceux ayant choisi la première manière, le dossier &quot;<em>languages</em>&quot; (comprenant lui même les dossiers de langues) sera à mettre dans le dossier /home/…./ror-trunk/bin/
+</p>
+
+<p>
+Pour les autres, normalement, le dossier &quot;<em>languages</em>&quot; devrait être bien en place suite à sa décompression (merci de corriger ce tutoriel si les lignes de commandes que j&#039;ai donné ne fonctionnent pas).
+</p>
+
+</div>
+
+<h5 id="telecharger_le_contenu_cartes_terrains_vehicules_etc">Télécharger le &quot;contenu&quot; (cartes, terrains, véhicules etc...)</h5>
+<div class="level5">
+
+<p>
+Si vous ne l&#039;avez pas fait parallèlement comme conseillé, dès de le début de ce tutoriel vous allez regretter.<br/>
+
+Regretter, d&#039;être quasiment à la fin de l&#039;installation, à 5 minutes de jouer donc … alors qu&#039;il vous reste encore tout le contenu (cartes, terrains, véhicules…) à télécharger <img src="../lib/images/smileys/facepalm.gif" class="icon" alt="m(" /> : 400 Mio  <img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour ce faire, (on va le faire manuellement cette fois), rendez-vous sur cette page <a href="http://sourceforge.net/projects/rigsofrods/files/rigsofrods/0.37/content-pack-0.37.zip/download" class="urlextern" title="http://sourceforge.net/projects/rigsofrods/files/rigsofrods/0.37/content-pack-0.37.zip/download"  rel="nofollow">Forge de Rigs of Rods (Sourceforge)</a>. Le téléchargement débutera automatiquement (ou cliquer sur <em>direct link</em> ou <em>mirror</em> si le téléchargement ne démarre pas).</div>
+</li>
+<li class="level1"><div class="li"> Enregistrer le fichier <em>&lt;content-pack-0.37.zip&gt;</em> dans votre dossier <em>/home/VOTRE_NOM_de_SESSION/.rigsofrods/packs</em>/ et décompressez-y l&#039;archive nouvellement téléchargée.<br/>
+</div>
+</li>
+</ul>
+
+<p>
+Vous verrez ici, que tous les dossiers/fichiers(zip) du contenu sont dans un dossier &quot;<em>streams</em>&quot;.
+</p>
+<ul>
+<li class="level1"><div class="li"> Dans notre cas, (version 0.39 et pour toutes versions supérieures à là 0.37 de RoR), ces dossiers (aircraft, buses, cars etc..) doivent être directement dans le dossier &quot;packs&quot;.<br/>
+</div>
+</li>
+</ul>
+
+<p>
+Utilisez donc la commande &quot;move&quot; (console) ou déplacez les manuellement (graphiquement) par Couper/Coller, ou par glisser/déposer, ou encore en sélectionnant les dossiers et de choisir &quot;déplacer vers&quot; (/home/votre_nom_de_session/.rigsofrods/packs/)<br/>
+<strong>Les archives &quot;<em>zip</em>&quot; des dossiers</strong> aircraft, buses, cars etc… ne <strong><em class="u">doivent pas être décompressées</em></strong> !
+</p>
+<ul>
+<li class="level1"><div class="li"> Après le déplacement des données, vous aurez alors votre dossier <em>&lt;streams&gt;</em> vide, que vous pourrez alors supprimer.</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic">
+Pour ma part, la première fois, j&#039;avais mal lu les explications du forum officiel, et je les avais tous laissés tels quels, dans le dossier &lt;<em>streams</em>&gt;, RoR a tout de même réussi à les &quot;lire&quot; et mettre en cache lors du démarrage. Mais cela me provoquait bon nombre de plantages avec pour causes : &quot;abandon&quot; ou &quot;erreur de segmentation&quot;.
+</p>
+
+<p>
+Dès lors que j&#039;ai mis tous ces dossiers en dehors de &lt;<em>streams</em>&gt;, je n&#039;ai plus eu ces erreur de segmentation ni d&#039;abandon pendant le lancement du jeu.
+
+</div></p>
+</p>
+
+<p>
+Il est souvent dit qu&#039;une image vaut bien mieux que 1000 mots, voici alors, à quoi doit ressembler votre dossier après le déplacement du contenu du dossier &lt;<em>streams</em>&gt; : /home/…../.rigsofrods/packs/ (cliquer sur l&#039;image pour la voir dans sa taille originale : 1232x757)
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_media/tutoriel/rigsofrods/dossier_rigsofrods_packs.png" class="media" title="tutoriel:rigsofrods:dossier_rigsofrods_packs.png"><img src="http://doc.ubuntu-fr.org/_media/tutoriel/rigsofrods/dossier_rigsofrods_packs.png?w=600&amp;tok=840504" class="mediacenter" title="Détail du contenu du dossier &lt;//packs//&gt;" alt="Détail du contenu du dossier &lt;//packs//&gt;" width="600" /></a>
+</p>
+
+<p>
+Comme vous le voyez le dossier &lt;<em>streams</em>&gt; n&#039;est plus présent, mais les dossiers qui le composait sont maintenant directement dans le dossier &lt;<em>packs</em>&gt;.
+</p>
+
+<p>
+<p><div class="noteclassic">
+Petite précision : Si vous avez quelques différences concernant le fichier &lt;<em>nhelens.zip</em>&gt; et le nombre &quot;d&#039;éléments&quot; dans les dossiers, c&#039;est normal.
+</p>
+
+<p>
+&lt;<em>nhelens.zip</em>&gt; s&#039;est retrouvé ici après une erreur de manip. de ma part, il n&#039;a rien à faire ici (je n&#039;avais pas pensé à le virer avant de prendre cette capture).
+</p>
+
+<p>
+Et pour les autres dossiers (et éléments en moins) suite à quelques &quot;<em>erreur de segmentation</em>&quot; lors de la mise en cache pendant le lancement de RoR, j&#039;ai alors déplacé les plus gros pour les mettre progressivement après chaque lancement (une fois mis en cache, les fichiers &quot;<em>zip</em>&quot; ne sont plus traités au lancement).
+</p>
+
+<p>
+Vous pourrez faire de même si vous rencontriez les mêmes problèmes que moi, mais normalement, ça devrait aller si vous avez bien suivi ce tutoriel (puis il est possible que ces erreurs de segmentation ne soit liées qu&#039;à mon installation de Kubuntu et non systématique pour tous les utilisateurs de xUbuntu).
+
+</div></p>
+</p>
+
+</div>
+
+<h4 id="configuration">Configuration</h4>
+<div class="level4">
+
+<p>
+Si vous venez de télécharger et &quot;installer&quot; le dossier &quot;<em>languages</em>&quot; par ligne de commandes, vous devriez alors être bien positionnés.
+Sinon, si vous êtes toujours dans le dossier /home/…./ror-trunk/
+</p>
+<pre class="code">cd bin</pre>
+
+<p>
+Vous devez donc être maintenant dans le dossier /home/…../ror-trunk/bin/
+</p>
+<ul>
+<li class="level1"><div class="li"> Lancer : <pre class="code">./rorconfig</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> La fenêtre de configuration de RoR <em>(voir image ci-dessous)</em> devrait s&#039;ouvrir sur votre bureau et en Français (pour la majeure partie) si vous avez réussi l&#039;intégration du dossier &lt;<em>languages</em>&gt; vu précédemment.</div>
+</li>
+<li class="level1"><div class="li"> Dès le lancement de le fenêtre de configuration, vous devriez vous retrouver sur les onglets <em>Paramètres → Jeu</em>.</div>
+</li>
+<li class="level1"><div class="li"> Vous pouvez y choisir la langue : Normalement si votre système xUbuntu est bien configuré, et que l&#039;intégration des langues est bien faite, alors cette ligne devrait être sur &quot;French&quot; (sinon vous pouvez le faire maintenant).</div>
+</li>
+<li class="level1"><div class="li"> Boite de vitesses : Choisissez le mode que vous préférez (pour débuter le jeu, je pense que le mode automatique reste le plus sympa, et nous permet ainsi de découvrir tout les raccourcis clavier à connaitre pour jouer).</div>
+</li>
+<li class="level1"><div class="li"> FOV (Focale/Champ de vision) : Permet de régler le champ de vision de votre écran. Celle par défaut (actuelle sur l&#039;image), est peut-être une peu juste, je pense qu&#039;on peut l&#039;agrandir davantage, mais ça, c&#039;est au bon vouloir de chacun.</div>
+</li>
+<li class="level1"><div class="li"> Case &quot;Désactiver les mouvements Caméra&quot;, ce mode est intéressant lorsqu&#039;on est à l&#039;intérieur du véhicule (très &quot;simulation&quot;), sinon en vue extérieure, ce n&#039;est clairement pas l&#039;idéal, il vaut alors mieux coché cette case (dans ce dernier cas).</div>
+</li>
+<li class="level1"><div class="li"> &quot;Arcade controls&quot; : Semble permettre de changer automatiquement entre &quot;marche avant&quot; et &quot;marche arrière&quot; lorsqu&#039;on appui sur &quot;freiner/bas&quot; (pas testé non-décoché).</div>
+</li>
+<li class="level1"><div class="li"> Disable creak sound : Je n&#039;ai pas bien compris à quoi cela peut servir…. (et de toute façon je n&#039;ai pas encore réussi ni vraiment cherché à avoir du son pour le moment, ce tuto + installation m&#039;a pris déjà beaucoup de temps…. Je ferai une MàJ de ce tutoriel dans la partie &quot;<em>problèmes rencontrés</em>&quot;, si je trouve la solution pour les (mes) problèmes de sons).</div>
+</li>
+<li class="level1"><div class="li"> Jeton d&#039;utilisateur (Token) : Ici j&#039;ai troublée cette zone, car le &quot;code&quot; est confidentiel. Il vous suffit de cliquer sur &quot;<em>obtenez token</em>&quot; (un jeton/crédit), pour que la page du site officiel de RoR s&#039;ouvre dans votre navigateur web par défaut. Il vous suffira de vous inscrire sur le site (gratuit), de valider votre compte en cliquant sur le lien de validation reçus. Et d&#039;inscrire pour finir, le code dans cette case. Je n&#039;ai pas encore cherché à comprendre ce que cela peut nous apporter en finalité, mais il semble (mais je me plante peut-être complètement) que cela puisse nous donner accès au contenu multijoueurs (cela doit avoir une relation avec la possibilité d&#039;ajouter ses propres cartes, véhicules scénarios et &quot;courses&quot; etc…) et au réseau social RoR (le site officiel comprend la partie projet, présentation de RoR, la zone traduction et développement, le wiki, le forum, ainsi que la possibilité d&#039;interagir entre utilisateurs/membres tel un réseau social).</div>
+</li>
+</ul>
+
+<p>
+<img src="http://doc.ubuntu-fr.org/_media/tutoriel/rigsofrods/config1-3.png?w=300&amp;tok=cb9c9a" class="mediacenter" title="Visuel de l&#039;onglet : Paramètres → Jeu" alt="Visuel de l&#039;onglet : Paramètres → Jeu" width="300" />
+</p>
+<ul>
+<li class="level1"><div class="li"> Maintenant, cliquez sur l&#039;onglet <em>Paramètres → Système de rendu</em> :</div>
+<ul>
+<li class="level2"><div class="li"> Si vous avez réussi la compilation et l&#039;intégration de la gestion d&#039;Ogre, alors la première ligne sera indiquée : &lt;<em>OpenGL Renderign Subsystem</em>&gt; (si vous n&#039;avez pas cette ligne, ce n&#039;est pas la peine de continuer, car le jeu ne pourra pas &quot;s&#039;afficher&quot;, et cela montrera que vous avez raté plusieurs étapes cruciales de ce tutoriel (soit lors des compilations, soit  lors de la compilation de RoR sous cmake-gui)).<br/>
+Le seul conseil &quot;intelligent&quot;(mais pas très motivant) que je peux vous donner si vous êtes dans ce cas est de recommencer le tutoriel (compilation des libraires et compilation de RoR) !</div>
+</li>
+<li class="level2"><div class="li"> Les autres paramètres de l&#039;image, seront à régler selon votre propre configuration graphique.</div>
+</li>
+<li class="level2"><div class="li"> Sur la documentation actuelle de RoR, l&#039;auteur dit que <em>FBO</em> ne fonctionne pas dans la ligne &lt;<em>RTT preferred mode</em>&gt;.<br/>
+Dans mon cas c&#039;est l&#039;inverse, seul FBO donne des résultats concluant. <em>PBuffer</em> et <em>Copy</em> fonctionnent mais il y amène de gros problème d&#039;affichage : écran divisé en plusieurs zone, avec (par exemple) le véhicule en haut à gauche, les compteurs (compte tour et compteur de vitesse) en bas à droite et le reste &quot;tout noir&quot;… c&#039;est totalement injouable.<br/>
+Sans parler que l&#039;un de ces 2 derniers modes, affichent les écrans à l&#039;envers/retournés.<br/>
+Je vous conseille donc de conserver <em>FBO</em> pour commencer et de changer si cela ne va pas pour vous.</div>
+</li>
+<li class="level2"><div class="li"> Par défaut, FSAA était à 0 (sur mon installation), il s&#039;agit de &quot;<em>l&#039;anti-aliasing</em>&quot;, si votre carte graphique le permet, alors n&#039;hésitez pas à changer ce paramètre.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<img src="http://doc.ubuntu-fr.org/_media/tutoriel/rigsofrods/config1-1.png?w=300&amp;tok=698c67" class="mediacenter" title="Visuel de l&#039;onglet : Paramètres → Système de rendu" alt="Visuel de l&#039;onglet : Paramètres → Système de rendu" width="300" />
+</p>
+<ul>
+<li class="level1"><div class="li"> Dans le second onglet (voir image ci-dessous), j&#039;ai changé pas mal de paramètre par défaut. Telle que vous la voyez ici, c&#039;est pour le moment (je n&#039;ai pas encore essayé toutes les combinaisons), c&#039;est la meilleure config qui m&#039;a permise de faire tourner le jeu, et de manière déjà très acceptable.</div>
+</li>
+<li class="level1"><div class="li"> Par défaut, <em>&quot;Filtrage de texture&quot;</em> était configuré sur &quot;<em>Anisotropic (meilleur apparence)</em>&quot; qui ne fonctionne pas chez moi, d&#039;où mon choix final en &quot;<em>Bilinéaire</em>&quot; (non testé encore en &quot;<em>Trilinéaire</em>&quot;).<br/>
+Dans mon cas cela ne fonctionne pas du tout, j&#039;ai des soucis de <em>&quot;Texture not found. Texture can&#039;t to be Load&quot;</em> (dans la console lorsque je joue), et l&#039;écran est bien souvent complètement blanc/gris, ou blanc/bleu ou marron ….. (injouable donc), mais je vous recommande d&#039;essayer, il s&#039;agit peut-être encore une fois de mon ordinateur et de ma propre config matérielle.</div>
+<ul>
+<li class="level2"><div class="li"> <em>&quot;Type de ciel&quot;</em>, ne fonctionne pas non plus &quot;chez moi&quot; avec la sélection par défaut <em>Caelum</em> (mais je vous l&#039;ai fait l&#039;installer tout de même pour les mêmes raisons que précédemment). Sandstorm a déjà de bon résultat selon mes besoins (la qualité du ciel à plus d&#039;importance pour ceux souhaitant faire de l&#039;aviation j&#039;imagine, dans mon cas, je fais surtout dans le &quot;véhicule terrestre&quot;)</div>
+</li>
+<li class="level2"><div class="li"> Le reste de la config dépend de votre bon vouloir et de votre config matérielle. Je vous conseille de démarrer &quot;modestement&quot; en terme de qualité d&#039;apparence, et de privilégié d&#039;abord les performances. Vous devriez déjà être satisfait de la qualité graphique. Puis si ça tourne bien, rien ne vous empêche de &quot;durcir&quot; votre configuration de RoR plus tard (puis de re-descendre si cela plante).</div>
+</li>
+<li class="level2"><div class="li"> Pour ma part, HDR est désactivé car il semble me provoquer également des erreurs de textures (mais peut-être est-ce juste encore un problème de config matérielle personnelle).</div>
+</li>
+<li class="level2"><div class="li"> &quot;Profondeur de champs&quot; est plutôt sympa (image trouble au fond, et nette au premier plan comme sur une photo), seul soucis, je trouve l&#039;effet trop exagéré, je l&#039;ai donc désactivé.</div>
+</li>
+<li class="level2"><div class="li"> Bref, amusez-vous à trouver la configuration en &quot;or&quot; pour vous. Celle-ci telle que présentée en image, doit être fonctionnelle sur 80 % des ordinateurs selon moi).</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<img src="http://doc.ubuntu-fr.org/_media/tutoriel/rigsofrods/config1-2.png?w=300&amp;tok=024bb3" class="mediacenter" title="Visuel de l&#039;onglet : Paramètres → Graphiques" alt="Visuel de l&#039;onglet : Paramètres → Graphiques" width="300" />
+</p>
+
+<p>
+ * Ensuite dans l&#039;onglet <em>&quot;Avancé&quot;</em> (voir image ci-dessous), vous pouvez y régler le &quot;son&quot;, mais aussi le nombre (et non pas &quot;numéro&quot; selon la traduction) de cœurs sur votre microprocesseur (avec &quot;2&quot; pour un &quot;<em>duo core</em>&quot; par exemple), l&#039;éclairage (pas testé pour le moment), la mise en cache (soit en régénérant le cache ou en le vidant pour provoquer de nouveau la mise-en cache lors du prochain lancement de RoR (cela peut-être long))… Et d&#039;autres paramètres que vous jugerez bon ou non à paramétrer selon vos souhaits.
+</p>
+
+<p>
+<img src="http://doc.ubuntu-fr.org/_media/tutoriel/rigsofrods/config1-4.png?w=300&amp;tok=7752c3" class="mediacenter" title="Visuel de l&#039;onglet : Paramètres → Avancé" alt="Visuel de l&#039;onglet : Paramètres → Avancé" width="300" />
+</p>
+
+<p>
+* Il y a l&#039;onglet &quot;Contrôles &gt; Info&quot;, qui vous permettra de régler vos contrôles (raccourcis clavier et autres).<br/>
+
+Cette possibilité n&#039;est pas encore implémentée dans ce gestionnaire de configuration, et comme vous le voyez, il est demandé de modifier manuellement un fichier.<br/>
+
+Ce n&#039;est pas très &quot;confortable&quot;, mais je vous recommande de le faire. Car comme expliqué plus haut, utiliser &quot;Q&quot; et &quot;W&quot; pour aller à droite et à gauche ou &quot;W&quot; pour avancer (au lieu de &quot;A&quot;) n&#039;est franchement pas… confortable pour les Français ayant un clavier &quot;AZERTY&quot;, vous devrez alors modifier dans ce fichier :
+</p>
+<ul>
+<li class="level1"><div class="li"> Tous les &quot;A&quot; (par défaut) et y mettre à la place &quot;Q&quot;, </div>
+</li>
+<li class="level3"><div class="li"> Tous les &quot;Q&quot; (par défaut) et y mettre à la place &quot;A&quot; (sauf ceux que vous avez modifié juste avant évidemment),</div>
+</li>
+<li class="level3"><div class="li"> mais aussi, tous les &quot;Z&quot; (par défaut) pour y mettre à la place &quot;W&quot;,</div>
+</li>
+<li class="level3"><div class="li"> Et tous les &quot;W&quot; (par défaut) et y mettre à la place &quot;Z&quot; (sauf ceux que vous avez modifié juste avant évidemment),</div>
+</li>
+<li class="level3"><div class="li"> Mais aussi peut-être des touches comme &quot;M&quot; à la place de &quot;,&quot; et vice-versa …. à vous de voir cela et surtout en finalité, de paramétrer tout cela selon votre convenance et vos &quot;habitudes&quot;.</div>
+</li>
+</ul>
+
+<p>
+Si vous êtes &quot;perdus&quot; en lisant ceci, sachez juste donc (les habitués vont comprendre) que sur un clavier AZERTY:
+</p>
+<ul>
+<li class="level1"><div class="li"> &quot;Z&quot; (et/ou flèche haut) permet d&#039;avancer,</div>
+</li>
+<li class="level3"><div class="li"> &quot;S&quot; (et/ou flèche bas) permet de reculer,</div>
+</li>
+<li class="level3"><div class="li"> &quot;Q&quot; (et/ou gauche) permet d&#039;aller à gauche (de coté),</div>
+</li>
+<li class="level3"><div class="li"> &quot;D&quot; (et/ou droite) permet d&#039;aller à droite (de coté),</div>
+</li>
+<li class="level3"><div class="li"> &quot;A&quot; (suivant les jeux) permet d&#039;incliner le tête (FPS par exemple) ou de pivoter vers la gauche,</div>
+</li>
+<li class="level3"><div class="li"> &quot;E&quot; (suivant les jeux) permet d&#039;incliner la tête (FPS) ou de pivoter vers la droite,</div>
+</li>
+<li class="level3"><div class="li"> Etc…. et encore ceux-ci ne sont que des exemples (et non des standards)…… (dans RoR &quot;Q&quot; et &quot;W&quot; (par défaut) permettent aussi de faire pivoter la dérive d&#039;un avion (et peut-être d&#039;un bateau) de droite à gauche (ce qui n&#039;est pas très ergonomique ni logique sur un clavier A(Q)- Z(W)-E-R-T-Y).</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Cela étant dit, vous y voyez qu&#039;il est indiqué : &quot;Les entrées sont stockées dans le fichier suivant : My Documents/Rigs of Rods/config/input.map&quot;.</div>
+</li>
+<li class="level1"><div class="li"> Il s&#039;agit évidemment, du chemin pour <em>Microsoft Windows</em> en anglais, nous devons donc pour notre part, aller dans et ouvrir le fichier (n&#039;oubliez pas d&#039;afficher les fichiers cachés puisque &lt;<em>rigsofrods</em>&gt; et précédé d&#039;un point) : <pre class="code">/home/ ..... /.rigsofrods/config/input.map</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Modifier ce fichier</a> via ligne de commande ou votre éditeur préféré (recommandé) <em>gedit</em>, <em>kate</em> (ou autre, bien entendu).</div>
+</li>
+<li class="level1"><div class="li"> Le fichier est long, mais pour le moment et dans 90% des cas, contentez-vous juste de modifier les &quot;Q&quot;, &quot;W&quot; (par défauts) en &quot;A&quot;,&quot;Z&quot;.</div>
+</li>
+<li class="level1"><div class="li"> Une fois terminé, enregistrez-le, fermez votre éditeur et retournez sur le gestionnaire de configuration de RoR.</div>
+</li>
+</ul>
+
+<p>
+<img src="http://doc.ubuntu-fr.org/_media/tutoriel/rigsofrods/config2-1.png?w=300&amp;tok=c0f1d0" class="mediacenter" title="Visuel de l&#039;onglet : Paramètres → Info" alt="Visuel de l&#039;onglet : Paramètres → Info" width="300" />
+</p>
+
+<p>
+Voilà, ensuite n&#039;hésitez pas à regarder les autres onglets, voir à les paramétrer comme &quot;débogage&quot; si vous êtes &quot;développeur/testeur&quot; confirmés.
+</p>
+<ul>
+<li class="level1"><div class="li"> Une fois tout cela configuré selon vos désirs, il vous suffit de cliquer sur : &quot;Sauvegarder et jouer&quot; ou &quot;Sauvegarder et quitter&quot;.</div>
+</li>
+</ul>
+
+<p>
+    En sachant que dans mon cas, les deux n&#039;ont aucune différence, puisque RoR ne se lance pas automatiquement dans le premier cas.
+</p>
+
+</div>
+
+<h4 id="jouer">Jouer</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Ouvrir la console</div>
+</li>
+<li class="level1"><div class="li"> Se mettre dans le dossier (si vous n&#039;y êtes plus) : /home/…./ror-trunk/bin/</div>
+</li>
+<li class="level1"><div class="li"> Lancer RoR :<pre class="code">./RoR</pre>
+</div>
+</li>
+</ul>
+
+<p>
+Et … amusez-vous !
+</p>
+
+<p>
+En espérant que tout fonctionne dès le premier coup pour vous, puisque vous l&#039;avez bien mérité après avoir suivi ce loooong tutoriel.
+</p>
+
+<p>
+Il doit être possible (pas testé encore) de <a href="../raccourci-lanceur" class="wikilink1" title="raccourci-lanceur">créer un lanceur</a> dans le menu.
+</p>
+
+<p>
+Pour le moment, lorsque je clic sur le RoR (dans le dossier &quot;bin&quot;) le jeu ne se lance pas à tous les coups, et/ou provoque des erreurs de segmentation. Mais cela est peut-être causé uniquement par mon installation personnelle (dossier &quot;home&quot;), puisque je ne rencontrais pas ce soucis, après l&#039;avoir installé de la même manière mais sous &quot;root&quot; (voir ci-dessous, si vous êtes dans ce cas).
+</p>
+
+<p>
+Si vous avez donc décidé de suivre l&#039;intégralité de ce tutoriel mais de l&#039;installer en tant que root dans le dossier &quot;<em>usr/games</em>&quot; ou &quot;<em>usr/share/games</em>&quot;, après l&#039;avoir testé moi-même, il s&#039;avère que je n&#039;ai rencontré aucun soucis pour le lancer par &quot;commande&quot; ou par &quot;clic&quot; (menu).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Installation de RoR] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15120-45290" /><input type="submit" value="Modifier" class="button" title="Installation de RoR" /></div></form></div>
+<h2 class="sectionedit10" id="conclusion">Conclusion</h2>
+<div class="level2">
+
+<p>
+Merci pour votre lecture et surtout d&#039;avoir pris de votre temps pour tester cette longue installation.
+</p>
+
+<p>
+N&#039;hésitez pas à apporter des modifications sur ce tutoriel si vous y voyez des erreurs (commandes et/ou explications) ou même des fautes (Vu que c&#039;est long et que je sature un peu à ce niveau, j&#039;ai forcement fait des coquilles et/ou fautes que j&#039;ai encore oublié de corriger, veuillez m&#039;en excuser).
+</p>
+
+<p>
+Je vous invite à remonter vos erreurs et problèmes rencontrés sur le forum.
+</p>
+
+<p>
+Il n&#039;y a pas de sujet dédié créé sur le forum, en relation directe avec ce tutoriel, mis à part ici : <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=886211" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=886211"  rel="nofollow">Question globale : &quot;organisation du Wiki : Doc/Tuto&quot; + Doc du jeu RoR.</a>(mais ce n&#039;est pas vraiment l&#039;idéal pour parler des erreurs rencontrées !).
+</p>
+
+<p>
+Préférez alors créer un nouveau sujet sur le forum avec un titre explicite (et un lien dans le premier message vers ce tutoriel), et d&#039;ajouter le lien du sujet que vous aurez créé, à la fin de ce tutoriel dans la partie &quot;voir aussi&quot; (8.2), merci par avance.
+</p>
+
+<p>
+Et contactez moi sur le forum (même pseudo) pour que je puisse peut-être vous aider à résoudre votre soucis.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Conclusion] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="45291-46494" /><input type="submit" value="Modifier" class="button" title="Conclusion" /></div></form></div>
+<h2 class="sectionedit11" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour désinstaller le jeu, supprimez simplement les dossiers :
+</p>
+<ul>
+<li class="level1"><div class="li">  /home/ … /ror-trunk</div>
+</li>
+<li class="level1"><div class="li"> /home/ … /.rigsofrods</div>
+</li>
+</ul>
+
+<p>
+Vous pourrez également supprimer le dossier  : /home/ … /ror-deps<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Désinstallation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="46495-46715" /><input type="submit" value="Modifier" class="button" title="Désinstallation" /></div></form></div>
+<h3 class="sectionedit12" id="desinstaller_les_librairies_installees_pour_une_desinstallation_complete_des_librairies_dont_a_besoin_ror">Désinstaller les librairies installées (pour une désinstallation complète des librairies dont a besoin RoR)</h3>
+<div class="level3">
+
+<p>
+Si vous souhaitez également supprimer certaines librairies installés (celle provenant de ror-deps une fois compilées et installées), suivez ce mini-tuto :
+</p>
+<ul>
+<li class="level1"><div class="li"> De manière générale, il n&#039;y a que très peu d&#039;intérêt à désinstaller des librairies, ça ne prend que très peu de place.</div>
+</li>
+<li class="level1"><div class="li"> Idem pour les paquets tels que subversion, cmake, mercurial etc…. ce sont des logiciels qui vous seront utiles un jour où l&#039;autre et ne sont pas gourmands, mais si vous souhaitez les désinstaller, vu qu&#039;ils ont été installés &quot;proprement&quot; via &lt;<em>apt-get</em>&gt;, le mieux est alors de le faire à partir de votre gestionnaire de paquets (comme Synaptic par exemple).<br/>
+</div>
+</li>
+<li class="level1"><div class="li"> Sinon…. Munissez-vous de la console.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="paged_geometry1">Paged Geometry</h4>
+<div class="level4">
+<pre class="code">sudo rm /usr/local/lib/libPagedGeometry.so
+sudo rm -rf /usr/local/include/Paged</pre>
+
+</div>
+
+<h4 id="caelum1">Caelum</h4>
+<div class="level4">
+<pre class="code">sudo rm /usr/local/lib/libCaelum.a
+sudo rm -rf /usr/local/include/Caelum</pre>
+
+</div>
+
+<h4 id="mysocketw1">MySocketW</h4>
+<div class="level4">
+<pre class="code">sudo rm /usr/local/lib/libSocketW*
+sudo rm /usr/local/include/SocketW.h
+sudo rm /usr/local/include/sw_*.h</pre>
+
+</div>
+
+<h4 id="pour_les_autres_paquets">Pour les autres paquets</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Comme OpenAL, wxWidgets, MyGUI, Ogre, Freeimage, OIS, il vous suffit d&#039;utiliser votre gestionnaire de paquets et de supprimer (désinstaller) le paquet correspondant.<br/>
+</div>
+</li>
+</ul>
+
+<p>
+Mais attention, certains (comme wxWidgets par exemple) sont déjà installés dans xUbuntu, les désinstaller pourrait provoquer des dysfonctionnement dans votre distribution.<br/>
+
+Sous bénéfice du doute, préférez conserver ces librairies, et ne supprimez manuellement que celles dans la partie précédente.<br/>
+
+Pour celles-ci, l&#039;idéal est d&#039;utiliser un gestionnaire de paquet tel que Synaptic, qui saura trouver les librairies et autres paquets devenus obsolètes et/ou inutilisés pour envisager leur désinstallation (veuillez voir la doc pour <a href="../synaptic" class="wikilink1" title="synaptic">Synaptic</a> sur le wiki pour cela).<br/>
+
+</p>
+
+<p>
+Pour vous faciliter les recherches dans Synaptic, je vous donne ci-dessous le nom des librairies et paquets correspondant (mais vérifiez dans <a href="../synaptic" class="wikilink1" title="synaptic">Synaptic</a> si aucun autre logiciel n&#039;en est dépendant!)
+</p>
+
+</div>
+
+<h4 id="ogre1">Ogre</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> libogre-1.7.3</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="mysocketwopenssl_libssl-dev">MySocketW / OpenSSL (libssl-dev)</h4>
+<div class="level4">
+
+<p>
+Si MySocketW est déjà supprimé (voir partie précédente), il semble ne plus rien avoir à faire, pourtant, nous avions installé un pré-requis pour le compiler : OpenSSL (vérifiez qu&#039;aucun autre logiciel ne l&#039;utilise : cette librairie est très &quot;utilisée&quot; dans le monde linux, faites donc très attention avant de la désinstaller!) :
+</p>
+<ul>
+<li class="level1"><div class="li"> libssl-dev</div>
+</li>
+</ul>
+
+<p>
+En clair, si &lt;<em>libssl-dev</em>&gt; était déjà installé avant de suivre ce tutoriel, ne le supprimez pas.
+</p>
+
+</div>
+
+<h4 id="openal1">OpenAL</h4>
+<div class="level4">
+
+<p>
+Idem que pour OpenSSL ci-dessus, si OpenAL était déjà installé (très probablement) avant de suivre ce tutoriel, ne le désinstallez donc pas.
+</p>
+<ul>
+<li class="level1"><div class="li"> libopenal1 </div>
+</li>
+<li class="level1"><div class="li"> libopenal-dev</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="wxwidgets1">wxWidgets</h4>
+<div class="level4">
+
+<p>
+Ne le supprimez pas, il est utilisé par vote distribution Xubuntu.
+</p>
+
+<p>
+Regardez par exemple sous <a href="../synaptic" class="wikilink1" title="synaptic">Synaptic</a>, en tapant uniquement &lt;<em>wxWidgets</em>&gt;, pour voir toutes les librairies et paquets en relations directes. Le désinstaller est alors une très mauvaise idée.
+</p>
+
+</div>
+
+<h4 id="mygui_angelscript_ois_et_hydrax">MyGUI, AngelScript, OIS et Hydrax</h4>
+<div class="level4">
+
+<p>
+Ils devraient être totalement désinstallés (à vérifier) en supprimant simplement le dossier &lt;<em>ror-deps</em>&gt;.
+</p>
+
+</div>
+
+<h4 id="freeimage1">Freeimage</h4>
+<div class="level4">
+
+<p>
+Idem, il était déjà probablement installé avant de suivre ce tutoriel, vérifier sur <a href="../synaptic" class="wikilink1" title="synaptic">Synaptic</a>. Ne le désinstallez qu&#039;en connaissance de cause.
+</p>
+<ul>
+<li class="level1"><div class="li"> libfreeimage-dev</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Désinstaller les librairies installées (pour une désinstallation complète des librairies dont a besoin RoR)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="46716-50322" /><input type="submit" value="Modifier" class="button" title="Désinstaller les librairies installées (pour une désinstallation complète des librairies dont a besoin RoR)" /></div></form></div>
+<h2 class="sectionedit13" id="problemes_rencontres">Problèmes rencontrés</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Problème lors du lancement de RoR (console) de &quot;Texture not found&quot; : Veuillez revoir votre configuration de RoR à la &quot;baisse&quot;, c&#039;est le seul moyen que j&#039;ai trouvé pour ne plus avoir ce type de soucis.</div>
+</li>
+<li class="level1"><div class="li"> Problème de son (Pas de son) : Pour le moment il n&#039;y a aucune explication ni de piste de résolution de ce soucis. Le son est géré par OpenAL, il faut sans doute voir de ce coté là (au moment où je rédige ce tutoriel, je n&#039;ai pas eu le temps de me pencher sur la question).</div>
+</li>
+<li class="level1"><div class="li"> Problèmes lors de compilation/installation rencontrés lors de ce tutoriel, veuillez d&#039;abord vérifier que : </div>
+<ul>
+<li class="level9"><div class="li"> vous ne vous êtes pas trompés dans la ligne de commande et/ou que vous avez bien entré l&#039;intégralité de la ligne (le &quot;.&quot; à la fin de la commande &quot;<em>cmake</em>&quot; par exemple), </div>
+</li>
+<li class="level9"><div class="li"> vous n&#039;avez oublié aucune dépendance (subversion, mercurial, wget, cmake, automake etc…), </div>
+</li>
+<li class="level9"><div class="li"> le téléchargement des archives n&#039;ont pas été compromise (recommencez alors le téléchargement),</div>
+</li>
+<li class="level9"><div class="li"> Il peut aussi s&#039;agir d&#039;une erreur sur le tutoriel, veuillez alors comparer avec les lignes de commandes similaires pour les autres librairies, afin de déterminer s&#039;il n&#039;y a pas eu de coquilles/fautes qui se seraient glissées dans la ligne de commande lors de la rédaction de ce tutoriel (si c&#039;est la cas, merci de corriger par vous-même le tutoriel).<br/>
+</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Autres problèmes, ou problèmes irrésolus, veuillez alors créer un sujet dans le forum (et me le signaler pour que je puisse peut-être vous aider).</div>
+</li>
+<li class="level1"><div class="li"> Si vous la solution à l&#039;un des problèmes rencontrés, n&#039;hésitez pas non plus à  partager la solution sur le forum mais surtout de l&#039;ajouter ici.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Problèmes rencontrés] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="50323-52088" /><input type="submit" value="Modifier" class="button" title="Problèmes rencontrés" /></div></form></div>
+<h2 class="sectionedit14" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="52089-52112" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<h3 class="sectionedit15" id="liens_officiels">Liens officiels</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">  <a href="http://www.rigsofrods.com/" class="urlextern" title="http://www.rigsofrods.com/"  rel="nofollow">Site de RoR</a></div>
+</li>
+<li class="level1"><div class="li">  <a href="http://www.rigsofrods.com/forum.php" class="urlextern" title="http://www.rigsofrods.com/forum.php"  rel="nofollow">Forum officiel de RoR</a></div>
+</li>
+<li class="level1"><div class="li">  <a href="http://www.rigsofrods.com/forums/133-French" class="urlextern" title="http://www.rigsofrods.com/forums/133-French"  rel="nofollow">Forum officiel de RoR - Partie Francophone</a></div>
+</li>
+<li class="level1"><div class="li">  <a href="http://www.rigsofrods.com/profile.php?do=usertoken" class="urlextern" title="http://www.rigsofrods.com/profile.php?do=usertoken"  rel="nofollow">Pour avoir accès à votre code &quot;Jeton (Token)&quot; après vous êtes inscrit sur le site officiel (et de s&#039;être authentifié pour y avoir accès)</a></div>
+</li>
+<li class="level1"><div class="li">  <a href="http://sourceforge.net/projects/rigsofrods/files/rigsofrods/" class="urlextern" title="http://sourceforge.net/projects/rigsofrods/files/rigsofrods/"  rel="nofollow">Forge de RoR (sourceforge)</a></div>
+</li>
+<li class="level1"><div class="li">  <a href="http://www.rigsofrods.com/translate/view/1" class="urlextern" title="http://www.rigsofrods.com/translate/view/1"  rel="nofollow">Zone traduction et langages</a></div>
+</li>
+<li class="level1"><div class="li">  <a href="http://www.rigsofrods.com/wiki/pages/Compiling_Sources_under_Linux" class="urlextern" title="http://www.rigsofrods.com/wiki/pages/Compiling_Sources_under_Linux"  rel="nofollow">&quot;Compiler les sources sous Linux&quot; sur le wiki officiel de RoR Compiling Sources under Linux (en) d&#039;où est tiré et adapté ce tutoriel</a></div>
+</li>
+<li class="level1"><div class="li">  <a href="http://www.rigsofrods.com/wiki/pages/Compiling_3rd_party_libraries" class="urlextern" title="http://www.rigsofrods.com/wiki/pages/Compiling_3rd_party_libraries"  rel="nofollow">&quot;Compilation des librairies tiers&quot; sur le wiki officiel &quot;Compiling 3rd party libraries&quot; (en) d&#039;où est tiré et adapté ce tutoriel</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Liens officiels] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="52113-53152" /><input type="submit" value="Modifier" class="button" title="Liens officiels" /></div></form></div>
+<h3 class="sectionedit16" id="liens_en_relation_avev_ror_sur_ubuntu-frorg_wiki_et_forum">Liens en relation avev RoR sur ubuntu-fr.org (Wiki et forum)</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="../rigsofrods" class="wikilink1" title="rigsofrods">Documentation de RoR sur le wiki</a></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="compilation_et_pre-installation_pour_rigs_of_rods" class="wikilink1" title="tutoriel:compilation_et_pre-installation_pour_rigs_of_rods">Lien de ce tutoriel : Compilation et pré-installation de Rigs of Rods</a></span></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Liens en relation avev RoR sur ubuntu-fr.org (Wiki et forum)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="53153-53417" /><input type="submit" value="Modifier" class="button" title="Liens en relation avev RoR sur ubuntu-fr.org (Wiki et forum)" /></div></form></div>
+<h3 class="sectionedit17" id="autres_liens_externes">Autres liens externes</h3>
+<div class="level3">
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="http://doc.ubuntu-fr.org/utilisateurs/thalyn" class="wikilink1" title="utilisateurs:thalyn">Thalyn</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="compilation_et_pre-installation_pour_rigs_of_rods"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1337560306" /><input type="hidden" name="summary" value="[Autres liens externes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="53418-" /><input type="submit" value="Modifier" class="button" title="Autres liens externes" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/cbcf77f5a463f0b33a13e24fc06fd815.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/compilation_et_pre-installation_pour_rigs_of_rods?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/compilation_et_pre-installation_pour_rigs_of_rods?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/compilation_et_pre-installation_pour_rigs_of_rods?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/compilation_et_pre-installation_pour_rigs_of_rods?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/compilation_et_pre-installation_pour_rigs_of_rods?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

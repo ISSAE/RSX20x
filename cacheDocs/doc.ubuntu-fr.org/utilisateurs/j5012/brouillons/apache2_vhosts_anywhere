@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>utilisateurs:j5012:brouillons:apache2_vhosts_anywhere - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-06-26T13:45:39+0200"/>
+<meta name="keywords" content="precise,trusty,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/utilisateurs/j5012/brouillons/apache2_vhosts_anywhere?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="http://doc.ubuntu-fr.org/feed.php?mode=list&amp;ns=utilisateurs:j5012:brouillons"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/utilisateurs/j5012/brouillons/apache2_vhosts_anywhere"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/utilisateurs/j5012/brouillons/apache2_vhosts_anywhere"/>
+<link rel="canonical" href="apache2_vhosts_anywhere"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='utilisateurs:j5012:brouillons';var JSINFO = {"id":"utilisateurs:j5012:brouillons:apache2_vhosts_anywhere","namespace":"utilisateurs:j5012:brouillons"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="apache2_vhosts_anywhere#main" tabindex="1">Contenu</a> | <a href="apache2_vhosts_anywhere#qsearch__in" tabindex="2">Rechercher</a> | <a href="apache2_vhosts_anywhere#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../../../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="apache2_vhosts_anywhere" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="apache2_vhosts_anywhere" >utilisateurs:j5012:brouillons:apache2_vhosts_anywhere</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="apache2_vhosts_anywhere#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="apache2_vhosts_anywhere#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="apache2_vhosts_anywhere#hote_virtuel_installe_dans_la_partie_root_methode_fortement_deconseillee">Hôte virtuel installé dans la partie root (Méthode fortement déconseillée)</a></div></li>
+<li class="level2"><div class="li"><a href="apache2_vhosts_anywhere#hote_virtuel_installe_dans_la_partiehomevotre-login">Hôte virtuel installé dans la partie /home/votre-login</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="apache2_vhosts_anywhere#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="apache2_vhosts_anywhere#exemple_rapide_easyphpalbum_lite_version_232un_album_photo_simple">Exemple rapide, EasyPhpAlbum Lite Version 2.3.2 : un album photo simple</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="http://doc.ubuntu-fr.org/trusty" class="wikilink1" title="trusty" rel="tag">Trusty</a>,
+	<a href="../../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="des_hotes_virtuels_avec_apache2_installes_n_importe_ou">Des hôtes virtuels avec Apache2 installés n&#039;importe où</h1>
+<div class="level1">
+
+<p>
+Ceci est une astuce voire un tuto destiné soit à rejoindre la doc officielle <a href="../../../apache2" class="wikilink1" title="apache2">Apache2</a>, soit à fusionner avec le tuto sur les <a href="../../../tutoriel/virtualhosts_avec_apache2" class="wikilink1" title="tutoriel:virtualhosts_avec_apache2">hôtes virtuels</a>.
+</p>
+
+<p>
+Ce tuto est le resultat d&#039;un approfondissement du fonctionnement de Apache2 suite aux problemes d&#039;usagers du forum ubuntu-fr pour creer des hotes virtuels.
+</p>
+
+<p>
+Ce tuto n&#039;abordera pas le contexte des vhosts par ip destiné à un environnement de production.
+</p>
+
+</div>
+
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée.</div>
+</li>
+<li class="level1"><div class="li"> Avoir installé au préalable <a href="../../../apache2" class="wikilink1" title="apache2">Apache2</a>.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit3" id="configuration">Configuration</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Associez vos noms d&#039;hôtes à l&#039;IP localhost 127.0.0.1 dans le fichier /etc/hosts</div>
+</li>
+<li class="level1"><div class="li"> Utilisez le fichier /etc/apache2/sites-available/default comme modèle de configuration</div>
+</li>
+<li class="level1"><div class="li"> Installez les fichiers ressources de vos sites (cms, atelier php, html statique, etc)</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit4" id="hote_virtuel_installe_dans_la_partie_root_methode_fortement_deconseillee">Hôte virtuel installé dans la partie root (Méthode fortement déconseillée)</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> créer un lien symbolique de /var/www/&lt;nomdemonsite&gt; vers le répertoire réel dans un dossier utilisateur:</div>
+</li>
+</ul>
+<pre class="code">sudo ln -s &lt;répertoire réel&gt; /var/www/&lt;nomdemonsite&gt;</pre>
+<ul>
+<li class="level1"><div class="li"> donner suffisamment de droits pour que le lien symbolique soit accessible par l&#039;utilisateur en acces non admin</div>
+</li>
+<li class="level1"><div class="li"> modifier le modèle default selon les paramètres du vhost, créer autant de fichiers que de vhosts</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit5" id="hote_virtuel_installe_dans_la_partiehomevotre-login">Hôte virtuel installé dans la partie /home/votre-login</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> installer les données du site du vhost n&#039;importe où dans votre zone utilisateur : /home/votre-login</div>
+</li>
+<li class="level1"><div class="li"> modifier le modele default sur le paramètre document_root selon le chemin du vhost dans la zone utilisateur, créer autant de fichiers que de vhosts</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit6" id="utilisation">Utilisation</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Naviguez à l&#039;adresse indiquée dans le /etc/hosts</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit7" id="exemple_rapide_easyphpalbum_lite_version_232un_album_photo_simple">Exemple rapide, EasyPhpAlbum Lite Version 2.3.2 : un album photo simple</h3>
+<div class="level3">
+
+<p>
+EasyPhpAlbum Lite se constitue d&#039;un fichier unique programmé en php (compatible v5), utilisant des fichiers textes comme fichiers de base de données. Son objectif est d&#039;indexer et de présenter sous forme de vignettes cliquables les images se trouvant dans le même dossier que lui.
+</p>
+
+</div>
+
+<h4 id="etchosts">/etc/hosts</h4>
+<div class="level4">
+<pre class="code">127.0.0.1	localhost
+127.0.1.1	name-of-your-computer
+127.0.0.1	homepics
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters</pre>
+
+</div>
+
+<h4 id="etcapache2sites-availablehomepics">/etc/apache2/sites-available/homepics</h4>
+<div class="level4">
+<pre class="code">&lt;VirtualHost *:80&gt;
+	ServerAdmin webmaster@homepics
+	ServerName homepics
+
+	DocumentRoot /home3/Images
+	&lt;Directory /&gt;
+		Options FollowSymLinks
+		AllowOverride None
+	&lt;/Directory&gt;
+	&lt;Directory /home3/Images&gt;
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	&lt;/Directory&gt;
+
+	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+	&lt;Directory &quot;/usr/lib/cgi-bin&quot;&gt;
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+		AddHandler cgi-script cgi php phtml
+	&lt;/Directory&gt;
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+Alias /doc/ &quot;/usr/share/doc/&quot;
+    &lt;Directory &quot;/usr/share/doc/&quot;&gt;
+        Options Indexes MultiViews FollowSymLinks
+        AllowOverride None
+        Order deny,allow
+        Deny from all
+        Allow from 127.0.0.0/255.0.0.0 ::1/128
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</pre>
+
+</div>
+
+<h4 id="installation_du_script_php">Installation du script php</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> copie du fichier EasyPhpAlbum Lite dans /home3/Images</div>
+</li>
+<li class="level1"><div class="li"> renommer le script en index.php</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="activation_du_site_homepics_avec_la_commande_apache2a2ensite">Activation du site homepics avec la commande Apache2 : a2ensite</h4>
+<div class="level4">
+<pre class="code">sudo a2ensite homepics</pre>
+
+<p>
+ou manuellement en créant un lien symbolique
+</p>
+<pre class="code">sudo ln -s /etc/apache2/sites-enabled /etc/apache2/sites-available/homepics</pre>
+
+<p>
+<strong>homepics</strong> peut-être utilisée comme adresse url dans votre navigateur
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/utilisateurs/j5012/brouillons/easyphpalbumlite_test_vhost_apache2.jpg?id=utilisateurs%3Aj5012%3Abrouillons%3Aapache2_vhosts_anywhere" class="media" title="utilisateurs:j5012:brouillons:easyphpalbumlite_test_vhost_apache2.jpg"><img src="http://doc.ubuntu-fr.org/_media/utilisateurs/j5012/brouillons/easyphpalbumlite_test_vhost_apache2.jpg?w=300&amp;tok=a7b662" class="media" title="easyphpalbumlite_test_vhost_apache2.jpg" alt="easyphpalbumlite_test_vhost_apache2.jpg" width="300" /></a>
+</p>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="http://doc.ubuntu-fr.org/utilisateurs/j5012" class="wikilink1" title="utilisateurs:j5012">J5012</a>.</em>
+</p>
+
+</div>
+
+<!-- no cachefile used, but created /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/f19f08ff615875ba6ac482364c7f4b56.xhtml -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../../../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/utilisateurs/j5012/brouillons/apache2_vhosts_anywhere?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/utilisateurs/j5012/brouillons/apache2_vhosts_anywhere?do=edit&amp;rev=0"  class="action source" accesskey="v" rel="nofollow" title="Afficher le texte source [V]">Afficher le texte source</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/utilisateurs/j5012/brouillons/apache2_vhosts_anywhere?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/utilisateurs/j5012/brouillons/apache2_vhosts_anywhere?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/utilisateurs/j5012/brouillons/apache2_vhosts_anywhere?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../../../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../../../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

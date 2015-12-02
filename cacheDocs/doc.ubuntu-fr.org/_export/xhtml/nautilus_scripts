@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>nautilus_scripts</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-02-27T11:42:58+0100"/>
+<meta name="keywords" content="precise,trusty,nautilus"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/nautilus_scripts?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="nautilus_scripts"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/nautilus_scripts"/>
+<link rel="canonical" href="../../nautilus_scripts"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"nautilus_scripts","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="nautilus_scripts#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="nautilus_scripts#selection_de_scripts">Sélection de scripts</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="nautilus_scripts#les_scripts_dans_les_depots_canonical">Les scripts dans les dépôts Canonical</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#plusieurs_scripts_selectionnes_par_un_tiers">Plusieurs scripts sélectionnés par un tiers</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#web">Web</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#conversion_de_fichier">Conversion de fichier</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#image">Image</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#audio">Audio</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#gestion_des_fichiers">Gestion des fichiers</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#administration">Administration</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#developpement">Développement</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#internet">Internet</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#divers">Divers</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="nautilus_scripts#les_pieges_a_eviter">Les pièges à éviter</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="nautilus_scripts#ne_pas_utiliser_les_arguments_passes_aux_scripts">Ne pas utiliser les arguments passés aux scripts</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#iterer_sur_les_fichiers">Itérer sur les fichiers</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="nautilus_scripts#exemples">Exemples</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="nautilus_scripts#supprimer_les_fichiers_de_sauvegarde_de_gedit">Supprimer les fichiers de sauvegarde de Gedit</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#ouvrir_en_tant_qu_administrateur">Ouvrir en tant qu&#039;administrateur</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#ouvrir_un_terminal_ici">Ouvrir un terminal ici</a></div></li>
+<li class="level2"><div class="li"><a href="nautilus_scripts#lire_les_fichiers_du_repertoire_avec_rhythmbox">Lire les fichiers du répertoire avec Rhythmbox</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="nautilus_scripts#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="http://doc.ubuntu-fr.org/trusty" class="wikilink1" title="trusty" rel="tag">Trusty</a>,
+	<a href="../../nautilus" class="wikilink1" title="nautilus" rel="tag">nautilus</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="les_scripts_pour_nautilus">Les scripts pour Nautilus</h1>
+<div class="level1">
+
+<p>
+Le gestionnaire de fichiers Nautilus permet d&#039;exécuter des <a href="../../tutoriel/script_shell" class="wikilink1" title="tutoriel:script_shell">scripts</a>, sous la forme de fichiers textes.
+Les scripts sont de &quot;petits&quot; programmes permettant une multitude de fonctionnalités.
+</p>
+
+<p>
+Les scripts suivants et d&#039;autres trouvés sur le Web peuvent être copiés dans le répertoire de scripts de Nautilus. Certains s&#039;exécutent avec les <a href="../../sudo" class="wikilink1" title="sudo">privilèges utilisateur</a> ce qui signifie que vous pouvez endommager gravement votre système. Agissez donc avec beaucoup de prudence quand le script vous demande le mot de passe pour modifier le système.
+Beaucoup de scripts sont déjà présents dans les <a href="../../depots" class="wikilink1" title="depots">dépôts</a> et peuvent être facilement installés par votre <a href="../../gestionnaire_de_paquets" class="wikilink1" title="gestionnaire_de_paquets">gestionnaire de paquets</a>. Reportez-vous à la page de l&#039;<a href="../../nautilus_utilisation_avancee" class="wikilink1" title="nautilus_utilisation_avancee">utilisation avancée de nautilus</a> pour voir la liste complète de ces scripts.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Les scripts pour Nautilus" [40-978] -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Pour commencer, il vous faudra <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://nautilus-scripts-manager" class="interwiki iw_apt" title="apt://nautilus-scripts-manager">nautilus-scripts-manager</a></strong>. Ce pauqet gère le dossier de scripts de Nautilus qui se trouve dans <strong>~/.gnome2/nautilus-scripts</strong> pour <a href="../../precise" class="wikilink1" title="precise">Precise</a> et également pour l&#039;environnement de bureau <a href="../../mate" class="wikilink1" title="mate">MATE</a>. Et pour les autres versions il se trouve dans <strong>~/.local/share/nautilus/scripts/</strong>. Vous pouvez également mettre des scripts valables pour tous les utilisateurs dans <strong>/usr/share/nautilus-script</strong>. <br/>
+
+(Le répertoire <strong>.local</strong> est caché dans votre dossier personnel. Pour y accéder il faut préalablement afficher les fichiers cachés. Dans la barre des menus → Affichage → Afficher les fichiers cachés ou faites Ctrl + h).
+Quand des scripts sont présents dans le dossier de scripts, il s&#039;ouvre par clic-droit → Scripts → Ouvrir le dossier de scripts.
+Tant qu&#039;il n&#039;y a pas de scripts dedans le raccourci n&#039;est pas disponible.
+</p>
+
+<p>
+Placez-y vos scripts et <a href="../../permissions" class="wikilink1" title="permissions">rendez-les exécutables</a> en faisant un clic droit sur le script en question → Propriétés → onglet Permissions → et cocher la case &quot;Autoriser l’exécution du fichier comme un programme&quot;. Vous devriez nommer ces fichiers de façon à ce qu&#039;ils évoquent quelque chose pour vous car c&#039;est sous leurs noms qu&#039;ils apparaîtront dans vos menus Nautilus. De plus vous n&#039;avez pas besoin de rajouter l&#039;extension <strong>.sh</strong> de scripts shell. Il est également possible de créer des dossiers pour mieux organiser les scripts.
+ Vos scripts seront alors disponibles dans toutes les fenêtres Nautilus dans <em>Fichier </em> → Scripts, ainsi que dans le menu contextuel (clic droit). Vous ne verrez pas le menu <em>Fichier </em> tant que vous n&#039;aurez pas ajouté votre premier script dans <strong>~/.gnome2/nautilus-scripts</strong> ou dans <strong>~/.local/share/nautilus/scripts/</strong>.
+</p>
+
+<p>
+Voir aussi:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="nautilus_scripts#les_pieges_a_eviter" title="nautilus_scripts ↵" class="wikilink1">Les pièges à éviter</a>,</div>
+</li>
+<li class="level1"><div class="li"> <a href="nautilus_scripts#exemples" title="nautilus_scripts ↵" class="wikilink1">Exemples</a>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Installation" [979-2901] -->
+<h2 class="sectionedit3" id="selection_de_scripts">Sélection de scripts</h2>
+<div class="level2">
+
+<p>
+Vous avez déjà des scripts Nautilus présents dans <a href="../../ubuntu_tweak#les_scripts_nautilus" class="wikilink1" title="ubuntu_tweak">Ubuntu Tweak</a>, ainsi que les sur la page <a href="../../scripts_utiles" class="wikilink1" title="scripts_utiles">scripts utiles</a>.
+</p>
+
+<p>
+Le script <a href="http://www.gtk-apps.org/content/show.php/Script+Installer?content=67612" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Script+Installer?content=67612"  rel="nofollow">Script Installer</a> permet d&#039;installer automatiquement les scripts Nautilus.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Sélection de scripts" [2902-3251] -->
+<h3 class="sectionedit4" id="les_scripts_dans_les_depots_canonical">Les scripts dans les dépôts Canonical</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="apt://nautilus-script-collection-svn" class="interwiki iw_apt" title="apt://nautilus-script-collection-svn">Collection de scripts pour Subversion</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="apt://nautilus-script-audio-convert" class="interwiki iw_apt" title="apt://nautilus-script-audio-convert">Conversion audio</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT4 SECTION "Les scripts dans les dépôts Canonical" [3252-3445] -->
+<h3 class="sectionedit5" id="plusieurs_scripts_selectionnes_par_un_tiers">Plusieurs scripts sélectionnés par un tiers</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <strong><a href="http://www.gtk-apps.org/content/show.php/Nautilus+Scripts+Pack+Mini?content=85788" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Nautilus+Scripts+Pack+Mini?content=85788"  rel="nofollow">Nautilus Scripts Pack Mini</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Nautilus+Scripts+Pack?content=90330" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Nautilus+Scripts+Pack?content=90330"  rel="nofollow">Nautilus Scripts Pack</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/NScripts?content=67655" class="urlextern" title="http://www.gtk-apps.org/content/show.php/NScripts?content=67655"  rel="nofollow">NScripts</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/NScripts+Ultimate?content=68599" class="urlextern" title="http://www.gtk-apps.org/content/show.php/NScripts+Ultimate?content=68599"  rel="nofollow">NScripts Ultimate</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Ultimate+Edition+Nautilus+Scripts+Pack?content=104451" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Ultimate+Edition+Nautilus+Scripts+Pack?content=104451"  rel="nofollow">Ultimate Edition Nautilus Scripts Pack</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT5 SECTION "Plusieurs scripts sélectionnés par un tiers" [3446-4053] -->
+<h3 class="sectionedit6" id="web">Web</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://translate.google.com/translate?js=n&amp;prev=_t&amp;hl=fr&amp;ie=UTF-8&amp;layout=2&amp;eotf=1&amp;sl=en&amp;tl=fr&amp;u=http%3A%2F%2Fwww.omgubuntu.co.uk%2F2010%2F12%2Fshare-any-folder-on-the-web-in-10-seconds-using-ubuntu-and-one-script%2F" class="urlextern" title="http://translate.google.com/translate?js=n&amp;prev=_t&amp;hl=fr&amp;ie=UTF-8&amp;layout=2&amp;eotf=1&amp;sl=en&amp;tl=fr&amp;u=http%3A%2F%2Fwww.omgubuntu.co.uk%2F2010%2F12%2Fshare-any-folder-on-the-web-in-10-seconds-using-ubuntu-and-one-script%2F"  rel="nofollow">Script pour créer un serveur web a partir d&#039;un répertoire</a>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT6 SECTION "Web" [4054-4354] -->
+<h3 class="sectionedit7" id="conversion_de_fichier">Conversion de fichier</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Audio%2BVideo%2BImage%2BText%2BISO+Convert?content=92533" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Audio%2BVideo%2BImage%2BText%2BISO+Convert?content=92533"  rel="nofollow">Audio/Video/Image/Text/ISO Convert</a> (nécessite au <a href="apt://xterm,zenity,ffmpeg,imagemagick,amrwb,faac,faad2,ffmpeg-libs,gpac,gstreamer-ffmpeg,gstreamer-plugins-*,xmms2-avcodec,xmms2-,wma" class="interwiki iw_apt" title="apt://xterm,zenity,ffmpeg,imagemagick,amrwb,faac,faad2,ffmpeg-libs,gpac,gstreamer-ffmpeg,gstreamer-plugins-*,xmms2-avcodec,xmms2-,wma">moins ça</a>, ou <a href="apt://xterm,zenity,ffmpeg,imagemagick,amrwb,faac,faad2,ffmpeg-libs,gpac,gstreamer-ffmpeg,gstreamer-plugins-*,xmms2-avcodec,xmms2-,wma,curl,links,kdegraphics,espeak,faac,faad2,antiword,unrtf,odt2txt,txt2tags,libavcodec-unstripped-52,AcetoneISO,nrg2iso,daa2iso,cdd2iso,uif" class="interwiki iw_apt" title="apt://xterm,zenity,ffmpeg,imagemagick,amrwb,faac,faad2,ffmpeg-libs,gpac,gstreamer-ffmpeg,gstreamer-plugins-*,xmms2-avcodec,xmms2-,wma,curl,links,kdegraphics,espeak,faac,faad2,antiword,unrtf,odt2txt,txt2tags,libavcodec-unstripped-52,AcetoneISO,nrg2iso,daa2iso,cdd2iso,uif">tout ça</a>).</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/avi+%26+mp4+converter?content=64899" class="urlextern" title="http://www.gtk-apps.org/content/show.php/avi+%26+mp4+converter?content=64899"  rel="nofollow">avi &amp; mp4 convertisseur.</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/PDF+to+PNG?content=83110" class="urlextern" title="http://www.gtk-apps.org/content/show.php/PDF+to+PNG?content=83110"  rel="nofollow">PDF to PNG</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../pdftohtml" class="wikilink1" title="pdftohtml">pdf to html</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT7 SECTION "Conversion de fichier" [4355-5207] -->
+<h3 class="sectionedit8" id="image">Image</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Resize+Image?content=110541" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Resize+Image?content=110541"  rel="nofollow">Changer la taille des images.</a> Resize Image</div>
+</li>
+<li class="level1"><div class="li"> Ajouter &quot;Redimensionner les images…&quot; dans le menu contextuel des images. <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://nautilus-image-converter" class="interwiki iw_apt" title="apt://nautilus-image-converter">nautilus-image-converter</a></strong> puis redémarrer la session.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT8 SECTION "Image" [5208-5552] -->
+<h3 class="sectionedit9" id="audio">Audio</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Enqueue+in+Audacious?content=80429" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Enqueue+in+Audacious?content=80429"  rel="nofollow">Enqueue in Audacious</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Extract+Audio?content=83072" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Extract+Audio?content=83072"  rel="nofollow">Extraire l&#039;audio de tout fichier multimedia</a>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT9 SECTION "Audio" [5553-5797] -->
+<h3 class="sectionedit10" id="gestion_des_fichiers">Gestion des fichiers</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Send+to...?content=67627" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Send+to...?content=67627"  rel="nofollow">Envoyer vers - Send to...</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Encrypt%2BDecrypt+Files?content=74653" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Encrypt%2BDecrypt+Files?content=74653"  rel="nofollow">Encrypter/Decrypter les fichiers</a> (nécessite gpg)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Remove+Spaces?content=76200" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Remove+Spaces?content=76200"  rel="nofollow">Retirer les espaces des fichiers et dossiers (et les remplacer par underscore).Remove Spaces.</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://g-scripts.sourceforge.net/nautilus-scripts/File%20System%20Management/envoiftp" class="urlextern" title="http://g-scripts.sourceforge.net/nautilus-scripts/File%20System%20Management/envoiftp"  rel="nofollow">Envoie de fichier par ftp</a>.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://g-scripts.sourceforge.net/nautilus-scripts/File%20Processing/Misc/send_file_%20as_email_attachment_-_Thunderbird" class="urlextern" title="http://g-scripts.sourceforge.net/nautilus-scripts/File%20Processing/Misc/send_file_%20as_email_attachment_-_Thunderbird"  rel="nofollow">Envoyer les fichiers en pièce-jointe de thunderbird</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://soft.freem2.fr/2010/05/21/envoyer-des-fichiers-avec-thunderbird/" class="urlextern" title="http://soft.freem2.fr/2010/05/21/envoyer-des-fichiers-avec-thunderbird/"  rel="nofollow">Envoyer les fichiers en pièce-jointe de thunderbird(amélioré)</a> -lien mort-</div>
+</li>
+<li class="level1"><div class="li"> <a href="../../dossiers_et_fichiers_caches#script_automatique" class="wikilink1" title="dossiers_et_fichiers_caches">Masquer/afficher des fichiers</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT10 SECTION "Gestion des fichiers" [5798-6783] -->
+<h3 class="sectionedit11" id="administration">Administration</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Open+As+Root%28Working%29?content=76932" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Open+As+Root%28Working%29?content=76932"  rel="nofollow">Ouvrir en tant que Root</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Make+MD5+sums?content=69749" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Make+MD5+sums?content=69749"  rel="nofollow">Vérifier le MD5</a>.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Make%2BCheck+SFV?content=68362" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Make%2BCheck+SFV?content=68362"  rel="nofollow">Vérifier avec le SFV</a>.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Renamer?content=87601" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Renamer?content=87601"  rel="nofollow">Renommer les fichiers.</a> Renamer.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Terminal+Here?content=73250" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Terminal+Here?content=73250"  rel="nofollow">Ouvrir un Terminal ici (répertoire actuel).Terminal Here.</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Open+Nautilus+as+Root?content=73610" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Open+Nautilus+as+Root?content=73610"  rel="nofollow">Ouvrir Nautilus en root.</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Remove+~.~%2C.bak.old.OLD.BAK_curr_directo?content=73733" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Remove+~.~%2C.bak.old.OLD.BAK_curr_directo?content=73733"  rel="nofollow">Nettoyer les ~.~,.bak.old.OLD.BAK_curr_directo</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT11 SECTION "Administration" [6784-7623] -->
+<h3 class="sectionedit12" id="developpement">Développement</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Make+DEB+Package?content=79785" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Make+DEB+Package?content=79785"  rel="nofollow">Faire un fichier deb</a> ( plus facilement ).</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/dot-tree?content=105395" class="urlextern" title="http://www.gtk-apps.org/content/show.php/dot-tree?content=105395"  rel="nofollow">Visualisation des dossiers en arbre.</a> dot-tree</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.schnuckelig.eu/story/resurection-nautilus-cvs-scripts" class="urlextern" title="http://www.schnuckelig.eu/story/resurection-nautilus-cvs-scripts"  rel="nofollow">Le CVS depuis Nautilus - Nautilus CVS scripts</a> </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT12 SECTION "Développement" [7624-8011] -->
+<h3 class="sectionedit13" id="internet">Internet</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/sendToImageshack?content=100952" class="urlextern" title="http://www.gtk-apps.org/content/show.php/sendToImageshack?content=100952"  rel="nofollow">Envoyer sur imageshack</a>.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=1424293#33" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=1424293#33"  rel="nofollow">Envoyer sur dl.free.fr</a> </div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.xorax.info/blog/news/200-script-dl-free-fr-automatique.html" class="urlextern" title="http://www.xorax.info/blog/news/200-script-dl-free-fr-automatique.html"  rel="nofollow">script automatique pour télécharger sur dl.free.fr</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://blog.anandkapre.com/2009/ubuntu/08-19-ubuntu-linux-rapidshare-right-click-uploader/" class="urlextern" title="http://blog.anandkapre.com/2009/ubuntu/08-19-ubuntu-linux-rapidshare-right-click-uploader/"  rel="nofollow">Rapidshare Multiple Uploader.</a> ( <a href="http://www.ubuntu-inside.me/2009/08/one-click-multi-rapidshare-uploader.html" class="urlextern" title="http://www.ubuntu-inside.me/2009/08/one-click-multi-rapidshare-uploader.html"  rel="nofollow">mirroir 1</a>, <a href="http://ubuntuforums.org/archive/index.php/t-974303.html" class="urlextern" title="http://ubuntuforums.org/archive/index.php/t-974303.html"  rel="nofollow">miroir 2</a>)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/del_http/forum.ubuntu-fr.org/viewtopic.php?id=384599" class="wikilink2" title="del_http:forum.ubuntu-fr.org:viewtopic.php" rel="nofollow">Upload sur Megaupload (site fermé)</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT13 SECTION "Internet" [8012-8750] -->
+<h3 class="sectionedit14" id="divers">Divers</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Simple+alarm?content=111811" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Simple+alarm?content=111811"  rel="nofollow">Lancer une Alarme à une heure donnée</a> aussi <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=6755501#p6755501" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=6755501#p6755501"  rel="nofollow">ici</a>,</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://gnome-look.org/content/show.php/Nautilus+Extension+Kill+Thumbs?content=92143" class="urlextern" title="http://gnome-look.org/content/show.php/Nautilus+Extension+Kill+Thumbs?content=92143"  rel="nofollow">Supprimer automatiquement les fichiers Thumbs.db de vos répertoires</a>,</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/Automated+Font+Installer?content=67610" class="urlextern" title="http://www.gtk-apps.org/content/show.php/Automated+Font+Installer?content=67610"  rel="nofollow">Installation de police</a>,</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/TTF+Font+Manager?content=82473" class="urlextern" title="http://www.gtk-apps.org/content/show.php/TTF+Font+Manager?content=82473"  rel="nofollow">TTF Font Manager</a>,</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gtk-apps.org/content/show.php/download_opensubtitle?content=68085" class="urlextern" title="http://www.gtk-apps.org/content/show.php/download_opensubtitle?content=68085"  rel="nofollow">Télécharger les sous-titres sur download_opensubtitle</a>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT14 SECTION "Divers" [8751-9477] -->
+<h2 class="sectionedit15" id="les_pieges_a_eviter">Les pièges à éviter</h2>
+<div class="level2">
+
+<p>
+La première chose qu&#039;un <strong>script Nautilus</strong> doit récupérer, c&#039;est la liste des fichiers sur lesquels il doit opérer (les fichiers qui étaient sélectionnés par l&#039;utilisateur lorsqu&#039;il a lancé le script). Malheureusement, c&#039;est loin d&#039;être quelque chose de trivial.
+En effet, à cause soit de bugs, soit d&#039;interprétation du shell, plusieurs choses sont à ne pas utiliser.
+</p>
+
+</div>
+<!-- EDIT15 SECTION "Les pièges à éviter" [9478-9895] -->
+<h3 class="sectionedit16" id="ne_pas_utiliser_les_arguments_passes_aux_scripts">Ne pas utiliser les arguments passés aux scripts</h3>
+<div class="level3">
+
+<p>
+<strong>Nautilus</strong> passe en argument les noms des fichiers sélectionnés. Par exemple, si vous êtes dans <strong>/home/user</strong>, et que vous appliquez le script sur <strong>toto</strong> et <strong>titi</strong>, $PWD et $NAUTILUS_SCRIPT_CURRENT_<abbr title="Uniform Resource Identifier">URI</abbr> vaudront &#039;/home/user&#039;, $1 vaudra &#039;toto&#039; et $2 vaudra &#039;titi&#039;.
+</p>
+
+<p>
+Premier problème, <strong>Nautilus</strong> offre une vue liste (qui pourrait d&#039;ailleurs se nommer &quot;arborescente&quot;), on peut donc sélectionner des fichiers qui sont dans des sous-répertoires du répertoire courant. Dans ce cas &quot;$PWD/$1&quot; ne sera pas le bon chemin : <a href="http://bugzilla.gnome.org/show_bug.cgi?id=549816" class="urlextern" title="http://bugzilla.gnome.org/show_bug.cgi?id=549816"  rel="nofollow">bug 549816</a>.
+</p>
+
+<p>
+Second problème, sur le Bureau par exemple, <strong>Nautilus</strong> ne passe aucun argument au script : <a href="http://bugzilla.gnome.org/show_bug.cgi?id=549910" class="urlextern" title="http://bugzilla.gnome.org/show_bug.cgi?id=549910"  rel="nofollow">bug 549910</a>.
+</p>
+
+<p>
+Il <strong>ne faut donc pas</strong> utiliser des scripts du genre :
+</p>
+<pre class="code bash"><span class="kw1">for</span> arg
+<span class="kw1">do</span>
+  do_something <span class="st0">&quot;<span class="es2">$arg</span>&quot;</span>
+<span class="kw1">done</span></pre>
+
+<p>
+ou
+</p>
+<pre class="code bash"><span class="kw1">for</span> arg <span class="kw1">in</span> <span class="st0">&quot;$@&quot;</span>
+<span class="kw1">do</span>
+  do_something <span class="st0">&quot;<span class="es2">$arg</span>&quot;</span>
+<span class="kw1">done</span></pre>
+
+<p>
+Ces scripts ne marcheraient pas dans tous les cas. Normalement, ce problème est corrigé dans Gnome 2.23 (Ubuntu ≥ 8.10).
+</p>
+
+<p>
+Mais, même une fois corrigé, la méthode suivante devrait poser moins de problèmes (car on obtient directement la liste des chemins complets des fichiers).
+</p>
+
+<p>
+Heureusement, <strong>Nautilus</strong> fournit une variable $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS, qui contient la liste des chemins complets des fichiers sélectionnés, séparés par &#039;\n&#039; (retour à la ligne).
+C&#039;est donc cette variable qu&#039;il faut utiliser.
+</p>
+
+<p>
+<p><div class="notehelp">
+Dans certains cas, les chemins peuvent être séparés par une espace et pas par un retour à la ligne.
+Si un lecteur a des précisions, merci de contacter la <a href="../../wiki/liste_discussion" class="wikilink1" title="wiki:liste_discussion">liste de discussion de la documentation</a>.
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT16 SECTION "Ne pas utiliser les arguments passés aux scripts" [9896-11678] -->
+<h3 class="sectionedit17" id="iterer_sur_les_fichiers">Itérer sur les fichiers</h3>
+<div class="level3">
+
+<p>
+Le problème, c&#039;est que des fichiers peuvent contenir des espaces, et aussi des \n (un &#039;\&#039; suivi d&#039;un &#039;n&#039;), et que certaines solutions ne sont pas correctes à cause de ces cas particuliers.
+</p>
+
+<p>
+Par exemple :
+</p>
+<pre class="code bash"><span class="kw1">for</span> arg <span class="kw1">in</span> <span class="re1">$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS</span>
+<span class="kw1">do</span>
+  do_something <span class="st0">&quot;<span class="es2">$arg</span>&quot;</span>
+<span class="kw1">done</span></pre>
+
+<p>
+<strong>n&#039;est pas correct</strong>, car si les chemins sont &#039;/tmp/a b/c&#039; et &#039;/tmp/d e&#039;, la boucle fera 4 itérations : &#039;/tmp/a&#039;, &#039;b/c&#039;, &#039;/tmp/d&#039; et &#039;e&#039;.
+</p>
+
+<p>
+Une première solution est de faire :
+</p>
+<pre class="code bash"><span class="kw3">printf</span> <span class="sy0">%</span>s <span class="st0">&quot;<span class="es2">$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS</span>&quot;</span> <span class="sy0">|</span>
+<span class="kw1">while</span> <span class="kw2">read</span> <span class="re5">-r</span> arg
+<span class="kw1">do</span>
+  do_something <span class="st0">&quot;<span class="es2">$arg</span>&quot;</span>
+<span class="kw1">done</span></pre>
+
+<p>
+Il ne faut pas utiliser <strong>echo</strong> (en <strong>sh</strong>, il ne fonctionnerait pas sur un fichier contenant un &#039;\&#039; suivi d&#039;un &#039;n&#039;), et il faut bien passer l&#039;argument <strong>-r</strong> à <strong>read</strong> (même raison).
+</p>
+
+<p>
+Une seconde solution est de changer l&#039;<a href="http://www.livefirelabs.com/unix_tip_trick_shell_script/oct_2003/10132003.htm" class="urlextern" title="http://www.livefirelabs.com/unix_tip_trick_shell_script/oct_2003/10132003.htm"  rel="nofollow">IFS</a> :
+</p>
+<pre class="code bash"><span class="re2">IFS</span>=<span class="st_h">'
+'</span>
+<span class="kw1">for</span> arg <span class="kw1">in</span> <span class="re1">$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS</span>
+<span class="kw1">do</span>
+  do_something <span class="st0">&quot;<span class="es2">$arg</span>&quot;</span>
+<span class="kw1">done</span></pre>
+
+<p>
+Ainsi, chaque argument sera une ligne de $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS.
+</p>
+
+<p>
+On peut aussi vouloir passer tous les arguments à un autre script (sans itérer) :
+</p>
+<pre class="code bash"><span class="re2">IFS</span>=<span class="st_h">'
+'</span>
+do_something <span class="re1">$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS</span></pre>
+
+<p>
+Si vous respectez ceci, votre script fonctionnera aussi bien en <strong>/bin/bash</strong> qu&#039;en <strong>/bin/sh</strong> (du moins pour cette partie) et pour tous les fichiers, mêmes les cas particuliers.
+</p>
+
+<p>
+Après divers test voici une solution qui fonctionne même si le nom de fichier ou dossier contient des espaces, virgules ou autres caractères spéciaux :
+utiliser la commande <strong>find</strong> !
+par exemple pour une opération sur des fichiers mp3 :
+</p>
+<pre class="code bash"><span class="co0">#!/bin/bash</span>
+<span class="re2">IFS</span>=<span class="st_h">'
+'</span>
+<span class="kw3">printf</span> <span class="sy0">%</span>s <span class="st0">&quot;<span class="es2">$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS</span>&quot;</span> <span class="sy0">|</span>
+<span class="kw1">while</span> <span class="kw2">read</span> <span class="re5">-r</span> arg
+<span class="kw1">do</span>
+	<span class="kw2">find</span> <span class="st0">&quot;<span class="es2">$arg</span>&quot;</span> <span class="re5">-depth</span> <span class="re5">-iname</span> <span class="st0">&quot;*.mp3&quot;</span> <span class="re5">-exec</span> votre_commande <span class="br0">&#123;</span><span class="br0">&#125;</span> \;
+<span class="kw1">done</span></pre>
+
+<p>
+Le *.mp3 va prendre en compte les fichier mp3 contenus dans votre sélection et le {} remplace le nom de fichier dans votre commande à appliquer sur les mp3.
+</p>
+
+</div>
+<!-- EDIT17 SECTION "Itérer sur les fichiers" [11679-13753] -->
+<h2 class="sectionedit18" id="exemples">Exemples</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT18 SECTION "Exemples" [13754-13775] -->
+<h3 class="sectionedit19" id="supprimer_les_fichiers_de_sauvegarde_de_gedit">Supprimer les fichiers de sauvegarde de Gedit</h3>
+<div class="level3">
+
+<p>
+Gedit copie chaque fichier avant la sauvegarde sous le nom « $fichier~ ». Il suffira d&#039;appliquer le script d&#039;un <em>clic droit → Scripts → rm-backups.sh</em> :
+</p>
+<pre class="code bash"><span class="co0">#! /bin/bash</span>
+&nbsp;
+<span class="kw2">rm</span> .<span class="sy0">/*</span>~
+zenity <span class="re5">--info</span> <span class="re5">--text</span>=<span class="st0">&quot;Fichiers de backup *~ supprimés :)&quot;</span></pre>
+
+</div>
+<!-- EDIT19 SECTION "Supprimer les fichiers de sauvegarde de Gedit" [13776-14097] -->
+<h3 class="sectionedit20" id="ouvrir_en_tant_qu_administrateur">Ouvrir en tant qu&#039;administrateur</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="editer_un_fichier_avec_gedit_avec_les_privileges_root">Éditer un fichier avec Gedit avec les privilèges ROOT</h4>
+<div class="level4">
+<pre class="code bash"><span class="co0">#!/bin/bash</span>
+gksudo <span class="re5">-u</span> root <span class="re5">-k</span> <span class="re5">-D</span> <span class="st0">&quot;Éditer les fichiers sous root&quot;</span> gedit <span class="st0">&quot;$@&quot;</span></pre>
+
+</div>
+
+<h4 id="ouvrir_nautilus_dans_le_repertoire_choisi_avec_les_privileges_root">Ouvrir Nautilus dans le répertoire choisi avec les privilèges « root »</h4>
+<div class="level4">
+<pre class="code bash"><span class="co0">#!/bin/bash</span>
+    <span class="co0"># root-nautilus-here</span>
+    <span class="co0"># Ouvrir Nautilus dans le répertoire choisi avec les privilèges ROOT</span>
+    <span class="co0"># nécessite des privilèges sudo et gksudo, ce qui peut entrainer des risques de sécurités        </span>
+    <span class="co0">#Installez le dans votre répertoire ~/Nautilus/scripts.</span>
+    <span class="co0">#</span>
+    <span class="co0"># Placé dans le domaine public par Shane T. Mueller 2001</span>
+    <span class="co0"># correctifs fournis par Doug Nordwall</span>
+    <span class="co0">#</span>
+    <span class="co0"># 2004.04.18 -- keith@penguingurus.com - Ajout de l'utilisation de gksudo</span>
+    <span class="co0">#               afin de lancer une fenetre de mot de passe si sudo a expire.</span>
+    <span class="co0">#               Les echos sont renvoyés</span>
+    <span class="co0">#               vers la sortie standard de root. Mais gksudo </span>
+    <span class="co0">#               met à jour votre acces sudo</span>
+    <span class="co0">#               donc le lancement de Nautilus avec sudo fonctionnera sans</span>
+    <span class="co0">#               demander de mot de passe        </span>
+&nbsp;
+&nbsp;
+    <span class="re2">foo</span>=<span class="sy0">`</span>gksudo <span class="re5">-u</span> root <span class="re5">-k</span> -m\
+ <span class="st0">&quot;entrez votre mot de passe afin de lancer Nautilus en tant que root&quot;</span>\
+ <span class="sy0">/</span>bin<span class="sy0">/</span><span class="kw3">echo</span> <span class="st0">&quot;got r00t?&quot;</span><span class="sy0">`</span>
+    <span class="kw2">sudo</span> nautilus <span class="re5">--no-desktop</span> <span class="re1">$NAUTILUS_SCRIPT_CURRENT_URI</span></pre>
+
+</div>
+
+<h4 id="executer_les_fichiers_en_tant_que_root">Exécuter les fichiers en tant que ROOT</h4>
+<div class="level4">
+<pre class="code bash"><span class="co0">#!/bin/bash</span>
+<span class="kw1">for</span> i
+<span class="kw1">do</span>
+	gksudo <span class="re5">-u</span> root <span class="re5">-k</span> <span class="st0">&quot;<span class="es2">$i</span>&quot;</span>
+<span class="kw1">done</span></pre>
+
+</div>
+<!-- EDIT20 SECTION "Ouvrir en tant qu'administrateur" [14098-15576] -->
+<h3 class="sectionedit21" id="ouvrir_un_terminal_ici">Ouvrir un terminal ici</h3>
+<div class="level3">
+
+<p>
+<strong>Nautilus Open Terminal</strong> permet d&#039;ouvrir un terminal directement dans le répertoire courant de Nautilus <em>via</em> un clic droit → <em>Ouvrir dans un terminal</em>.
+</p>
+
+<p>
+Pour l&#039;utiliser, il suffit d&#039;<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://nautilus-open-terminal" class="interwiki iw_apt" title="apt://nautilus-open-terminal">nautilus-open-terminal</a></strong> et ensuite de redémarrer la session.
+</p>
+
+</div>
+<!-- EDIT21 SECTION "Ouvrir un terminal ici" [15577-15938] -->
+<h3 class="sectionedit22" id="lire_les_fichiers_du_repertoire_avec_rhythmbox">Lire les fichiers du répertoire avec Rhythmbox</h3>
+<div class="level3">
+
+<p>
+Permet d&#039;envoyer tous les fichiers du répertoire dans la liste de lecture de <a href="../../rhythmbox" class="wikilink1" title="rhythmbox">Rhythmbox</a> :
+</p>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+<span class="re2">base</span>=<span class="st0">&quot;<span class="es5">`echo $NAUTILUS_SCRIPT_CURRENT_URI | cut -d'/' -f3- | sed 's/%20/ /g'`</span>&quot;</span>
+&nbsp;
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="re5">-z</span> <span class="st0">&quot;<span class="es2">$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS</span>&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+   <span class="re2">dir</span>=<span class="st0">&quot;<span class="es2">$base</span>&quot;</span>
+<span class="kw1">else</span>
+   <span class="kw1">while</span> <span class="br0">&#91;</span> <span class="sy0">!</span> <span class="re5">-z</span> <span class="st0">&quot;$1&quot;</span> <span class="re5">-a</span> <span class="sy0">!</span> <span class="re5">-d</span> <span class="st0">&quot;<span class="es2">$base</span>/$1&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">do</span> <span class="kw3">shift</span>; <span class="kw1">done</span>
+   <span class="re2">dir</span>=<span class="st0">&quot;<span class="es2">$base</span>/$1&quot;</span>
+<span class="kw1">fi</span>
+&nbsp;
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="st0">&quot;<span class="es2">$NAUTILUS_SCRIPT_CURRENT_URI</span>&quot;</span> == <span class="st0">&quot;x-nautilus-desktop:///&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+<span class="re2">dir</span>=<span class="st0">&quot;Desktop&quot;</span>
+<span class="kw1">fi</span>
+&nbsp;
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="st0">&quot;<span class="es2">$NAUTILUS_SCRIPT_CURRENT_URI</span>&quot;</span> == <span class="st0">&quot;trash:&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+<span class="re2">dir</span>=<span class="st0">&quot;<span class="es2">$HOME</span>/.Trash&quot;</span>
+<span class="kw1">fi</span>
+&nbsp;
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="st0">&quot;<span class="es2">$NAUTILUS_SCRIPT_CURRENT_URI</span>&quot;</span> == <span class="st0">&quot;file:///&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+<span class="re2">dir</span>=<span class="st0">&quot;/&quot;</span>
+<span class="kw1">fi</span>
+&nbsp;
+<span class="re2">FIRST_URI</span>=<span class="st0">&quot;<span class="es5">`echo -n $NAUTILUS_SCRIPT_SELECTED_URIS`</span>&quot;</span>
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="st0">&quot;<span class="es2">$FIRST_URI</span>&quot;</span> == <span class="st0">&quot;x-nautilus-desktop:///home&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+<span class="re2">dir</span>=<span class="st0">&quot;<span class="es2">$HOME</span>&quot;</span>
+<span class="kw1">fi</span>
+&nbsp;
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="st0">&quot;<span class="es2">$FIRST_URI</span>&quot;</span> == <span class="st0">&quot;x-nautilus-desktop:///computer&quot;</span> <span class="br0">&#93;</span>; <span class="kw1">then</span>
+<span class="re2">dir</span>=<span class="st0">&quot;/&quot;</span>
+<span class="kw1">fi</span>
+rhythmbox <span class="st0">&quot;<span class="es2">$dir</span>&quot;</span></pre>
+
+</div>
+<!-- EDIT22 SECTION "Lire les fichiers du répertoire avec Rhythmbox" [15939-16815] -->
+<h2 class="sectionedit23" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://askubuntu.com/questions/281062/how-to-get-nautilus-scripts-working-on-ubuntu-13-04" class="urlextern" title="http://askubuntu.com/questions/281062/how-to-get-nautilus-scripts-working-on-ubuntu-13-04"  rel="nofollow">Question concernant les scripts Nautilus</a>,</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://wiki.ubuntu.com/NautilusScriptsHowto" class="urlextern" title="https://wiki.ubuntu.com/NautilusScriptsHowto"  rel="nofollow">traduction</a></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://www.gtk-apps.org/index.php?xcontentmode=188&amp;PHPSESSID=9e0f49b3a15f120a1ed0ad1919a29f99" class="urlextern" title="http://www.gtk-apps.org/index.php?xcontentmode=188&amp;PHPSESSID=9e0f49b3a15f120a1ed0ad1919a29f99"  rel="nofollow">Scripts pour Nautilus sur gtk-apps.org</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://g-scripts.sourceforge.net/" class="urlextern" title="http://g-scripts.sourceforge.net/"  rel="nofollow">Site officiel de nautilus script, avec quelques scripts</a> </div>
+</li>
+</ul>
+
+<p>
+—-
+</p>
+
+<p>
+<em>Contributeurs : <a href="../../utilisateurs/fredb" class="wikilink2" title="utilisateurs:fredb" rel="nofollow">FredB</a>, <a href="../../utilisateurs/l_africain" class="wikilink1" title="utilisateurs:l_africain">L&#039;Africain</a>  <a href="../../utilisateurs/fabien26" class="wikilink1" title="utilisateurs:fabien26">Fabien26</a> (1<sup>re</sup> actualisation), <a href="../../utilisateurs/ner0lph" class="wikilink1" title="utilisateurs:ner0lph">Floriang</a> (2<sup>e</sup> actualisation).</em>
+</p>
+
+</div>
+<!-- EDIT23 SECTION "Voir aussi" [16816-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/b/b152c18a7a25e34015277db41a7f1529.xhtml used -->
+</div>
+</body>
+</html>

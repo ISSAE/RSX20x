@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>lm-sensors</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-04-17T19:59:32+0200"/>
+<meta name="keywords" content="energie,materiel,systeme,personnalisation"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../lm-sensors?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="lm-sensors"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/lm-sensors"/>
+<link rel="canonical" href="../../lm-sensors"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"lm-sensors","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="lm-sensors#installation_et_configuration_de_lm-sensors">Installation et configuration de lm-sensors</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="lm-sensors#configuration_automatique">Configuration automatique</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="lm-sensors#test_et_configuration_des_capteurs">Test et configuration des capteurs</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="lm-sensors#test">Test</a></div></li>
+<li class="level2"><div class="li"><a href="lm-sensors#configuration">Configuration</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="lm-sensors#controle_des_ventilateurs">Contrôle des ventilateurs</a></div></li>
+<li class="level1"><div class="li"><a href="lm-sensors#munin">Munin</a></div></li>
+<li class="level1"><div class="li"><a href="lm-sensors#afficher_les_informations_des_capteurs_sur_le_bureau_ou_le_tableau_de_bord">Afficher les informations des capteurs sur le bureau ou le tableau de bord</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="lm-sensors#par_environnement">Par environnement</a></div></li>
+<li class="level2"><div class="li"><a href="lm-sensors#pour_tous_les_environnements">Pour tous les environnements</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="lm-sensors#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../energie" class="wikilink1" title="energie" rel="tag">énergie</a>,
+	<a href="../../materiel" class="wikilink1" title="materiel" rel="tag">matériel</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../personnalisation" class="wikilink1" title="personnalisation" rel="tag">personnalisation</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="lm-sensorsutiliser_les_capteurs_materiels">lm-sensors : Utiliser les capteurs matériels</h1>
+<div class="level1">
+
+<p>
+Ubuntu peut suivre la température de votre processeur ou d&#039;autres composants de votre ordinateur, la vitesse des ventilateurs, et d&#039;autres données systèmes, en utilisant un programme nommé <strong>lm-sensors</strong> et une autre application permettant de visualiser les données fournies par ce dernier sur votre bureau.
+</p>
+
+<p>
+Si vous êtes pressé ou si vous n&#039;aimez pas utiliser le <a href="../../terminal" class="wikilink1" title="terminal">terminal</a>, reportez vous à la rubrique <span class="curid"><a href="../../lm-sensors#afficher_les_informations_des_capteurs_sur_le_bureau" class="wikilink1" title="lm-sensors">afficher les informations des capteurs sur le bureau</a></span>. Idéalement, installez et configurez lm-sensors pour obtenir plus d&#039;informations sur votre matériel.
+</p>
+
+<p>
+<p><div class="notetip">Pour connaître simplement la température du CPU, il est aussi possible d&#039;utiliser la commande dans un <a href="../../terminal" class="wikilink1" title="terminal">terminal</a>: 
+</p>
+<pre class="code">cat /sys/class/thermal/thermal_zone0/temp</pre>
+
+<p>
+ 
+</div></p>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "lm-sensors : Utiliser les capteurs matériels" [61-954] -->
+<h2 class="sectionedit2" id="installation_et_configuration_de_lm-sensors">Installation et configuration de lm-sensors</h2>
+<div class="level2">
+
+<p>
+Il vous suffit d&#039;<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://lm-sensors" class="interwiki iw_apt" title="apt://lm-sensors">lm-sensors</a></strong>.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Installation et configuration de lm-sensors" [955-1116] -->
+<h3 class="sectionedit3" id="configuration_automatique">Configuration automatique</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Tapez la commande suivante dans un <strong><a href="../../terminal" class="wikilink1" title="terminal">terminal</a></strong>, ceci permet de détecter les sondes : <pre class="code">sudo sensors-detect</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Répondez positivement à toutes les questions ; (Lorsque vous avez ceci &quot;YES/no&quot;, ce qui est en majuscule correspond à la réponse par défaut, choisis automatiquement en tapant sur &quot;entrer&quot;. Tapez donc <strong>yes</strong> avant de faire &quot;entrer&quot; à ces questions.)</div>
+</li>
+<li class="level1"><div class="li"> À un certain moment <em>sensors-detect</em> vous demande s&#039;il doit ajouter lui même la configuration des capteurs au lancement d&#039;Ubuntu en affichant ceci: <pre class="code">To load everything that is needed, add this to /etc/modules:
+#----cut here----
+# Chip drivers
+lm90
+#----cut here----
+If you have some drivers built into your kernel, the list above will
+contain too many modules. Skip the appropriate ones!
+
+Do you want to add these lines automatically to /etc/modules? (yes/NO)</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Tapez <strong>yes</strong>, puis faites Entrée. Ou bien  <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditez le fichier</a>  <em>/etc/modules</em> pour y ajouter vous-même les modules.</div>
+</li>
+<li class="level1"><div class="li"> Redémarrez l&#039;ordinateur afin de charger les modules que lm-sensors a rajoutés si vous ne voulez pas les charger à la main. Ou bien lancer la commande <pre class="code">sudo service kmod start</pre>
+
+<p>
+ pour les charger.
+</p>
+</div>
+</li>
+</ul>
+
+<p>
+PS: … Si certaines sondes ne sont pas encore, ou pas correctement, reconnues (matériel récent), il est possible d&#039;exécuter la dernière version du script de sensors-detect ici &quot;latest version of sensors-detect&quot;: <a href="http://www.lm-sensors.org/wiki/Devices" class="urlextern" title="http://www.lm-sensors.org/wiki/Devices"  rel="nofollow">http://www.lm-sensors.org/wiki/Devices</a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Configuration automatique" [1117-2661] -->
+<h2 class="sectionedit4" id="test_et_configuration_des_capteurs">Test et configuration des capteurs</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT4 SECTION "Test et configuration des capteurs" [2662-2709] -->
+<h3 class="sectionedit5" id="test">Test</h3>
+<div class="level3">
+
+<p>
+Maintenant, testez les capteurs avec la commande « sensors » :
+</p>
+<pre class="code">sensors</pre>
+
+<p>
+Ce qui devrait afficher :
+</p>
+<pre class="code">************************************************** *****************
+it87-isa-0290
+Adapter: ISA adapter
+VCore 1: +1.57 V (min = +1.42 V, max = +1.57 V) ALARM
+VCore 2: +2.66 V (min = +2.40 V, max = +2.61 V) ALARM
++3.3V: +6.59 V (min = +3.14 V, max = +3.46 V) ALARM
++5V: +5.11 V (min = +4.76 V, max = +5.24 V)
++12V: +11.78 V (min = +11.39 V, max = +12.61 V)
+-12V: -19.14 V (min = -12.63 V, max = -11.41 V) ALARM
+-5V: +0.77 V (min = -5.26 V, max = -4.77 V) ALARM
+Stdby: +5.00 V (min = +4.76 V, max = +5.24 V)
+VBat: +3.12 V
+fan1: 3668 RPM (min = 0 RPM, div = 
+fan2: 0 RPM (min = 664 RPM, div =  ALARM
+fan3: 0 RPM (min = 2657 RPM, div = 2) ALARM
+M/B Temp: +39°C (low = +15°C, high = +40°C) sensor = thermistor
+CPU Temp: +36°C (low = +15°C, high = +45°C) sensor = thermistor
+Temp3: +96°C (low = +15°C, high = +45°C) sensor = diode
+************************************************** ********************</pre>
+
+<p>
+Les données ci-dessus ne sont qu&#039;à titre indicatif, ces dernières changeant selon la température des différents composants et d&#039;autres paramètres propres à votre ordinateur.
+</p>
+
+<p>
+Redémarrez Ubuntu et les capteurs devraient maintenant être détectés pendant la phase de démarrage.
+</p>
+
+<p>
+Pour des détails à propos de la configurations des capteurs, consultez la documentation spécifique au fichier <strong>sensors.conf</strong> :
+</p>
+<pre class="code">man sensors.conf</pre>
+
+</div>
+<!-- EDIT5 SECTION "Test" [2710-4212] -->
+<h3 class="sectionedit6" id="configuration">Configuration</h3>
+<div class="level3">
+
+<p>
+Un peu de configuration est nécessaire si vous voulez afficher des noms compréhensibles pour vos capteurs à la place de &quot;temp1&quot;, &quot;fan3&quot;, etc… ou corriger les informations données par les capteurs. En effet les fichiers de configuration sont génériques pour les modules et ne correspondent pas à toutes les cartes mère ou configurations.
+</p>
+
+<p>
+Le fichier <em>/etc/sensors3.conf</em> est le fichier de configuration de Sensor. Mais comme il est possible d&#039;ajouter des fichiers de configuration spécifiques à votre matériel dans le dossier <em>/etc/sensors.d</em> il est préférable de ne pas modifier le fichier <em>/etc/sensors3.conf</em>.
+</p>
+
+<p>
+Il faut d&#039;abord vérifier s&#039;il n&#039;existe pas un fichier de configuration pour votre carte mère <a href="http://lm-sensors.org/wiki/Configurations" class="urlextern" title="http://lm-sensors.org/wiki/Configurations"  rel="nofollow">ici</a> et le placer dans le dossier <em>etc/sensors.d</em>.
+</p>
+
+<p>
+S&#039;il n&#039;y a pas de fichier, à vous de deviner à quoi correspondent les indications (allez faire un tour dans le <abbr title="Basic Input-Output System">BIOS</abbr> et notez les valeurs indiquées pour retrouver celles indiquées par <strong>sensors</strong>) et créez un fichier dans le répertoire <em>/etc/sensors.d</em>, donnez-lui le nom de votre carte mère par exemple.
+</p>
+
+<p>
+Le fichier de configuration est assez simple. Il faut d&#039;abord définir le module auquel s&#039;appliquent les modifications avec <strong>chip</strong>, puis modifier la configuration des capteurs, par exemple <strong>label</strong> pour changer le nom, <strong>ignore</strong> pour ignorer un capteur qui n&#039;est pas connecté sur votre système (et bien plus, la doc complète dans le man de <strong>sensors.conf</strong>). 
+</p>
+
+<p>
+Un petit exemple ci-dessous (ou inspirez vous des fichiers existants dans le lien précédent) :
+</p>
+<pre class="file">chip &quot;it87-isa-0290&quot;
+   label fan1 &quot;CPU fan&quot;
+   ignore fan2
+   ignore fan3</pre>
+
+</div>
+<!-- EDIT6 SECTION "Configuration" [4213-5935] -->
+<h2 class="sectionedit7" id="controle_des_ventilateurs">Contrôle des ventilateurs</h2>
+<div class="level2">
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://fancontrol" class="interwiki iw_apt" title="apt://fancontrol">fancontrol</a></strong>.
+Voici comment contrôler le &quot;fan speed&quot;, <strong>après avoir préalablement installé et configuré lm-sensors comme indiqué dans la section précédente</strong>:
+</p>
+<ul>
+<li class="level1"><div class="li"> Effectuez la configuration de la vitesse de vos ventilateurs avec cette commande:<pre class="code">sudo pwmconfig</pre>
+</div>
+</li>
+</ul>
+
+<p>
+Si la liste de quelques ventilateurs apparaît sans erreur, c&#039;est que c&#039;est bien parti. 
+Le script teste vos ventilateurs (&quot;fans&quot;) et vous donne plusieurs éléments d&#039;informations sur la vitesse maximum et minimum de vos ventilateurs, puis vous demande de valider chaque choix (seuil de température minimum, maximum, etc.)
+</p>
+<ul>
+<li class="level1"><div class="li"> Maintenant pour lancer fancontrol au démarrage, <a href="../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">créez le fichier</a> <strong>/etc/init.d/fancontrol</strong> et copiez-collez le contenu suivant: </div>
+</li>
+</ul>
+<pre class="code bash"><span class="co0">#!/bin/sh</span>
+<span class="co0">#</span>
+<span class="co0"># Fancontrol start script.</span>
+<span class="co0">#</span>
+&nbsp;
+<span class="kw1">set</span> <span class="re5">-e</span>
+&nbsp;
+<span class="co0"># Defaults</span>
+<span class="re2">DAEMON</span>=<span class="sy0">/</span>usr<span class="sy0">/</span>sbin<span class="sy0">/</span>fancontrol
+<span class="re2">CONF</span>=<span class="sy0">/</span>etc<span class="sy0">/</span>fancontrol
+<span class="re2">PIDFILE</span>=<span class="sy0">/</span>run<span class="sy0">/</span>fancontrol.pid
+<span class="re2">PATH</span>=<span class="sy0">/</span>sbin:<span class="sy0">/</span>bin:<span class="sy0">/</span>usr<span class="sy0">/</span>sbin:<span class="sy0">/</span>usr<span class="sy0">/</span>bin
+&nbsp;
+<span class="kw3">test</span> <span class="re5">-f</span> <span class="re1">$DAEMON</span> <span class="sy0">||</span> <span class="kw3">exit</span> <span class="nu0">0</span>
+&nbsp;
+. <span class="sy0">/</span>lib<span class="sy0">/</span>lsb<span class="sy0">/</span>init-functions
+&nbsp;
+<span class="kw1">case</span> <span class="st0">&quot;$1&quot;</span> <span class="kw1">in</span>
+       start<span class="br0">&#41;</span>
+               log_begin_msg <span class="st0">&quot;Starting fancontrol daemon...&quot;</span>
+               start-stop-daemon <span class="re5">--start</span> <span class="re5">-o</span> <span class="re5">-q</span> <span class="re5">-m</span> <span class="re5">-b</span> <span class="re5">-p</span> <span class="re1">$PIDFILE</span> <span class="re5">-x</span> <span class="re1">$DAEMON</span> <span class="re1">$CONF</span>
+               log_end_msg <span class="re4">$?</span>
+               <span class="sy0">;;</span>
+       stop<span class="br0">&#41;</span>
+               log_begin_msg <span class="st0">&quot;Stopping fancontrol daemon...&quot;</span>
+               start-stop-daemon <span class="re5">--stop</span> <span class="re5">-o</span> <span class="re5">-q</span> <span class="re5">-p</span> <span class="re1">$PIDFILE</span>
+               log_end_msg <span class="re4">$?</span>
+               <span class="kw2">rm</span> <span class="re5">-f</span> <span class="re1">$PIDFILE</span>
+               <span class="sy0">;;</span>
+       force-reload<span class="sy0">|</span>restart<span class="br0">&#41;</span>
+               <span class="kw2">sh</span> <span class="re4">$0</span> stop
+               <span class="kw2">sh</span> <span class="re4">$0</span> start
+               <span class="sy0">;;</span>
+       <span class="sy0">*</span><span class="br0">&#41;</span>
+               log_success_msg <span class="st0">&quot;Usage: /etc/init.d/fancontrol {start|stop|restart|force-reload}&quot;</span>
+               log_success_msg <span class="st0">&quot;  start - starts system-wide fancontrol service&quot;</span>
+               log_success_msg <span class="st0">&quot;  stop  - stops system-wide fancontrol service&quot;</span>
+               log_success_msg <span class="st0">&quot;  restart, force-reload - starts a new system-wide fancontrol service&quot;</span>
+               <span class="kw3">exit</span> <span class="nu0">1</span>
+               <span class="sy0">;;</span>
+<span class="kw1">esac</span>
+&nbsp;
+<span class="kw3">exit</span> <span class="nu0">0</span></pre>
+<ul>
+<li class="level1"><div class="li"> Rendez le script exécutable grâce à cette commande:<pre class="code">sudo chmod +x /etc/init.d/fancontrol</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Puis testez le script : <pre class="code">sudo service fancontrol start</pre>
+
+<p>
+ puis:
+</p>
+<pre class="code">sudo service fancontrol stop</pre>
+</div>
+</li>
+</ul>
+
+<p>
+Si tout marche bien, le script de démarrage du service sera automatiquement lancé au prochain démarrage d&#039;Ubuntu. 
+</p>
+
+<p>
+Sinon, il ne reste plus qu&#039;à <a href="../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditer</a> avec les <a href="../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> le fichier <em>/etc/rc.local</em> pour que le script se lance au démarrage, insérez la ligne suivante avant la ligne &quot;exit 0&quot; :
+</p>
+<pre class="file">sudo service fancontrol start</pre>
+
+</div>
+<!-- EDIT7 SECTION "Contrôle des ventilateurs" [5936-8667] -->
+<h2 class="sectionedit8" id="munin">Munin</h2>
+<div class="level2">
+
+<p>
+Si vous utilisez <a href="http://doc.ubuntu-fr.org/munin" class="wikilink1" title="munin">Munin</a>, vous pouvez inclure un graphe des capteurs dans votre page de surveillance munin.
+Il vous faut créer un lien de /usr/share/munin/sensors_ (plugin générique sensors) vers /etc/munin/plugins/sensors_fan sensors_temp:
+</p>
+<pre class="code">sudo ln -s /usr/share/munin/plugins/sensors_   /etc/munin/plugins/sensors_temp</pre>
+
+<p>
+ou sensors_volt (plugin spécifique à la fonction). Vous devrez bien sûr vérifier que le capteur peut récupérer une valeur de vitesse de ventilateur (fan), de voltage (volt) ou de température.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Munin" [8668-9223] -->
+<h2 class="sectionedit9" id="afficher_les_informations_des_capteurs_sur_le_bureau_ou_le_tableau_de_bord">Afficher les informations des capteurs sur le bureau ou le tableau de bord</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT9 SECTION "Afficher les informations des capteurs sur le bureau ou le tableau de bord" [9224-9311] -->
+<h3 class="sectionedit10" id="par_environnement">Par environnement</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="unity">Unity</h4>
+<div class="level4">
+
+<p>
+Pour afficher graphiquement les données des capteurs sous Unity vous pouvez <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://indicator-multiload" class="interwiki iw_apt" title="apt://indicator-multiload">indicator-multiload</a></strong>.
+</p>
+
+</div>
+
+<h4 id="gnome_classique_et_mate">Gnome classique et Mate</h4>
+<div class="level4">
+
+<p>
+<a href="http://linux.softpedia.com/get/Desktop-Environment/Gnome/GNOME-Sensors-Applet-5463.shtml" class="urlextern" title="http://linux.softpedia.com/get/Desktop-Environment/Gnome/GNOME-Sensors-Applet-5463.shtml"  rel="nofollow">Gnome Sensors Applet</a> est un applet du tableau de bord de <a href="../../gnome" class="wikilink1" title="gnome">Gnome</a>. <a href="../../_detail/sensors-applet.png?id=lm-sensors" class="media" title="sensors-applet.png"><img src="../../_media/sensors-applet.png" class="mediacenter" alt="" /></a>
+Pour l&#039;utiliser <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt://sensors-applet" class="interwiki iw_apt" title="apt://sensors-applet">sensors-applet</a></strong>.
+</p>
+
+<p>
+Après installation, sous Mate (pour Gnome Classique voir <a href="../../gnome-session-fallback" class="wikilink1" title="gnome-session-fallback">ici</a> ajoutez un nouvel élément au tableau de bord (clic droit dans une zone non utilisée sur le tableau de bord → Ajouter au tableau de bord → Ajouter Moniteur Matériel). Vous verrez maintenant le nouveau <em>Moniteur matériel</em> dans la catégorie <em>Système et matériel</em>. 
+</p>
+
+<p>
+Vous pouvez aussi <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer</a> <strong><a href="apt://hddtemp" class="interwiki iw_apt" title="apt://hddtemp">hddtemp</a></strong> pour ajouter le contrôle de la température des disques durs (Il faut activer le daemon, soit à l&#039;installation du package, soit en tapant sudo dpkg-reconfigure hddtemp).<br/>
+
+Hddtemp n&#039;est pas indispensable à <strong>sensors-applet</strong>, mais il est préférable de l&#039;installer pour avoir un support plus étendu des capteurs.
+</p>
+
+</div>
+
+<h4 id="kde">KDE</h4>
+<div class="level4">
+
+<p>
+Sous KUbuntu, pour obtenir l&#039;affichage graphique des capteurs ajoutez le composant &quot;Température du matériel&quot; dans votre tableau de bord.<br/>
+
+Cette application est recommandée pour les environnement <a href="../../bureau_kde" class="wikilink1" title="bureau_kde">KDE</a>.
+</p>
+
+</div>
+
+<h4 id="xfce">XFCE</h4>
+<div class="level4">
+
+<p>
+XFCE dispose d&#039;un logiciel permettant de voir les températures de son ordinateur. Pour cela, <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt://xfce4-sensors-plugin" class="interwiki iw_apt" title="apt://xfce4-sensors-plugin">xfce4-sensors-plugin</a></strong> présent dans le dépôt universe. Ensuite, on peut l&#039;utiliser en ajoutant un élément à un panneau XFCE. Il faut alors choisir l&#039;élément appelé « <em>Sensor plugin</em> ». Pour le configurer, effectuez un clic droit sur l&#039;élément du panneau puis aller dans le menu « Propriétés ».
+</p>
+
+<p>
+Si vous préférez faire fonctionner <strong><a href="apt://sensors-applet" class="interwiki iw_apt" title="apt://sensors-applet">sensors-applet</a></strong> sous Xubuntu il faut au préalable installer <strong><a href="apt://xfce4-xfapplet-plugin" class="interwiki iw_apt" title="apt://xfce4-xfapplet-plugin">xfce4-xfapplet-plugin</a></strong>.
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Par environnement" [9312-11498] -->
+<h3 class="sectionedit11" id="pour_tous_les_environnements">Pour tous les environnements</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="indicator-sensors">Indicator-sensors</h4>
+<div class="level4">
+
+<p>
+Une autre possibilité est d&#039;utiliser le paquet <strong>indicator-sensors</strong>. Ce logiciel n&#039;est pas disponible dans les dépôts officiels. Il peut être installé depuis un dépôt <a href="../../ppa" class="wikilink1" title="ppa">PPA</a>:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../ppa" class="wikilink1" title="ppa">Ajoutez le PPA</a> <strong>ppa:alexmurray/indicator-sensors</strong><sup><a href="lm-sensors#fn__1" id="fnt__1" class="fn_top">1)</a></sup> dans vos sources de logiciels.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj#recharger_la_liste_des_paquets" class="wikilink1" title="tutoriel:comment_modifier_sources_maj">Rechargez la liste des paquets</a>.</div>
+</li>
+<li class="level1"><div class="li"> <a href="../../tutoriel/comment_installer_un_paquet#paquet_present_dans_les_depots" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://indicator-sensors" class="interwiki iw_apt" title="apt://indicator-sensors">indicator-sensors</a></strong>.</div>
+</li>
+</ul>
+
+<p>
+Pour l&#039;activer:
+</p>
+<ul>
+<li class="level1"><div class="li"> Faites une recherche dans <a href="../../unity#tableau_de_bord_dash" class="wikilink1" title="unity">le tableau de bord Unity</a> avec les mots clé &quot;indicateur de capteurs matériel&quot;, il apparaît dans la zone de notification, </div>
+</li>
+<li class="level1"><div class="li"> Faites un clic droit dessus, dans la fenêtre qui s&#039;ouvre vous pouvez renommer les capteurs en cliquant sur l&#039;étiquette et l&#039;activer en cochant la case &quot;Activé&quot; pour afficher les capteurs désirés.</div>
+</li>
+</ul>
+
+<p>
+Voir <a href="https://launchpad.net/~alexmurray" class="urlextern" title="https://launchpad.net/~alexmurray"  rel="nofollow">ici</a> et <a href="http://www.noobslab.com/2012/06/install-hardware-sensors-indicators-in.html" class="urlextern" title="http://www.noobslab.com/2012/06/install-hardware-sensors-indicators-in.html"  rel="nofollow">là</a>.
+</p>
+
+</div>
+
+<h4 id="psensor">PSensor</h4>
+<div class="level4">
+
+<p>
+PSensor ressemble à ceci en indicateur pour <a href="../../unity" class="wikilink1" title="unity">Unity</a>: <a href="../../_detail/administration/psensor1_trusty.png?id=lm-sensors" class="media" title="administration:psensor1_trusty.png"><img src="../../_media/administration/psensor1_trusty.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Il offre aussi une interface séparée qu&#039;on peut lancer à la demande :
+<a href="../../_detail/administration/psensor2_trusty.png?id=lm-sensors" class="media" title="administration:psensor2_trusty.png"><img src="../../_media/administration/psensor2_trusty.png" class="mediacenter" alt="" /></a>
+<strong>PSensor</strong> est inclus dans la logithèque il vous faut simplement <a href="../../tutoriel/comment_installer_un_paquet#paquet_present_dans_les_depots" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://psensor" class="interwiki iw_apt" title="apt://psensor">psensor</a></strong>.
+Vous trouverez une présentation plus complète sur <a href="http://www.omgubuntu.co.uk/2011/05/psensor-a-graphical-temperature-monitor-for-ubuntu/" class="urlextern" title="http://www.omgubuntu.co.uk/2011/05/psensor-a-graphical-temperature-monitor-for-ubuntu/"  rel="nofollow">OMG Ubuntu</a> <strong>(en)</strong>.
+</p>
+
+</div>
+
+<h4 id="screenlets">Screenlets</h4>
+<div class="level4">
+
+<p>
+<a href="../../screenlets" class="wikilink1" title="screenlets">Screenlets</a> peut aussi afficher les données des capteurs thermiques.
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Pour tous les environnements" [11499-13359] -->
+<h2 class="sectionedit12" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://help.ubuntu.com/community/SensorInstallHowto" class="urlextern" title="https://help.ubuntu.com/community/SensorInstallHowto"  rel="nofollow">Page en anglais</a></div>
+</li>
+</ul>
+
+<p>
+—-
+</p>
+
+<p>
+<em>Contributeurs: <a href="../../utilisateurs/kmeleon" class="wikilink2" title="utilisateurs:kmeleon" rel="nofollow">Kmeleon</a> et <a href="../../utilisateurs/ronan" class="wikilink2" title="utilisateurs:ronan" rel="nofollow">Ronan</a>, Modifié par <a href="../../utilisateurs/fabien26" class="wikilink1" title="utilisateurs:fabien26">Fabien26</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/stephaneguedon" class="wikilink1" title="utilisateurs:stephaneguedon">stephaneguedon</a>, <a href="../../utilisateurs/mcpeter" class="wikilink1" title="utilisateurs:mcpeter">McPeter</a>, <a href="../../utilisateurs/l_africain" class="wikilink1" title="utilisateurs:l_africain">L&#039;Africain</a> </em>
+</p>
+
+</div>
+<!-- EDIT12 SECTION "Voir aussi" [13360-] --><div class="footnotes">
+<div class="fn"><sup><a href="lm-sensors#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<a href="https://launchpad.net/~alexmurray/+archive/indicator-sensors" class="urlextern" title="https://launchpad.net/~alexmurray/+archive/indicator-sensors"  rel="nofollow">https://launchpad.net/~alexmurray/+archive/indicator-sensors</a></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/29d97128d5facdcf861b99710765507f.xhtml used -->
+</div>
+</body>
+</html>

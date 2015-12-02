@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>pare-feu - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="pare-feu?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/pare-feu"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/pare-feu"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"pare-feu","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="pare-feu?do=edit#main" tabindex="1">Contenu</a> | <a href="pare-feu?do=edit#qsearch__in" tabindex="2">Rechercher</a> | <a href="pare-feu?do=edit#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="pare-feu?do=edit" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="pare-feu" >pare-feu</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<p>
+<strong>Quelques recommandations avant de créer ou de modifier cette page :</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Lisez le <a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">guide du contributeur</a> et la <a href="wiki/ligne_editoriale" class="wikilink1" title="wiki:ligne_editoriale">ligne éditoriale</a>.</div>
+</li>
+<li class="level1"><div class="li"> Découvrez la <a href="http://doc.ubuntu-fr.org/wiki/syntaxe" class="wikilink1" title="wiki:syntaxe">syntaxe</a> et entraînez-vous dans le <a href="playground/playground" class="wikilink1" title="playground:playground">bac à sable</a>.</div>
+</li>
+<li class="level1"><div class="li"> Utilisez les modèles (<a href="wiki/modeles/application" class="wikilink1" title="wiki:modeles:application">application</a>, <a href="wiki/modeles/materiel" class="wikilink1" title="wiki:modeles:materiel">matériel</a>, <a href="wiki/modeles/portable" class="wikilink1" title="wiki:modeles:portable">ordinateur portable</a>, <a href="wiki/modeles/tutoriel" class="wikilink1" title="wiki:modeles:tutoriel">tutoriel</a>, <a href="wiki/modeles/utilisateur" class="wikilink1" title="wiki:modeles:utilisateur">utilisateur</a>, <a href="wiki/modeles/portail" class="wikilink1" title="wiki:modeles:portail">portail</a>) et les <a href="wiki/mini-tutoriels" class="wikilink1" title="wiki:mini-tutoriels">mini-tutoriels</a>.</div>
+</li>
+<li class="level1"><div class="li"> Rapportez toutes créations ou modifications importantes sur <a href="wiki/liste_discussion#coordination_de_la_documentation" class="wikilink1" title="wiki:liste_discussion">la liste de discussion</a>.</div>
+</li>
+</ol>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fcdb5fe1d67011f56447459483d05597.xhtml used -->
+<script type="text/javascript">/*<![CDATA[*/
+textChanged = false/*!]]>*/</script>
+    <div class="editBox" role="application">
+
+    <div class="toolbar group">
+        <div id="draft__status"></div>
+        <div id="tool__bar"><a href="http://doc.ubuntu-fr.org/lib/exe/mediamanager.php?ns="
+            target="_blank">Sélection de fichiers</a></div>
+    </div>
+    <form id="dw__editform" method="post" action="pare-feu?do=edit" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><input type="hidden" name="id" value="pare-feu" /><input type="hidden" name="rev" value="0" /><input type="hidden" name="date" value="1427873140" /><input type="hidden" name="prefix" value="." /><input type="hidden" name="suffix" value="" /><input type="hidden" name="changecheck" value="584ee21783f1e6e86286938693331259" /><input type="hidden" name="target" value="section" /><textarea name="wikitext" id="wiki__text" dir="auto" class="edit" cols="80" rows="10" tabindex="1">
+{{tag&gt;réseau sécurité }}
+----
+
+
+====== Pare-feu informatique ======
+
+ Un pare-feu (ou coupe-feu, barrière de sécurité ou firewall), dans le contexte d'un réseau informatique, est un composant essentiel de la sécurité des réseaux informatiques. Son but est de protéger un réseau informatique des intrusions indésirables en filtrant les communications autorisées ou non entre deux réseaux informatiques (généralement dans un contexte domestique : votre réseau privé domestique et le réseau Internet).
+
+[[wpfr&gt;​Pare-feu_%28informatique%29|{{ ​ http://​upload.wikimedia.org/​wikipedia/​commons/​3/​38/​Firewall_%28networking%29.png?​300|La métaphore du pare-feu : ce composant sert à isoler les réseaux privés et publics. (Source de l'​image : Wikipedia)}}]] 
+
+Le pare-feu pourrait être comparé à un agent de sécurité à l'aéroport. Pour entrer dans votre pays, un visiteur étranger doit passer par un poste-frontière et être contrôlé par un douanier qui, selon des instructions qu'il doit suivre, le laissera passer ou lui fera rebrousser chemin. Pareillement, un habitant de votre pays doit passer un contrôle avant de monter dans un avion vers une destination extérieure ; suite à son contrôle, le voyageur pourra continuer ou non sa route. Le pare-feu joue ce rôle, au niveau informatique : il filtre les connexions qui arrivent dans votre ordinateur et celles qui sortent de votre ordinateur, et bloque celles qui sont indésirables selon ce que vous lui avez paramétré comme politique de sécurité.
+
+Un pare-feu se présente essentiellement sous deux formes :
+  * //Logicielle :// un programme qui fonctionne dans votre ordinateur personnel ou de bureau et assure le rôle de filtrage des connexions. Un pare-feu logiciel doit être installé dans chaque ordinateur ;
+  * //Matérielle :// un composant physique de votre réseau domestique qui inclut un logiciel de pare-feu. Un pare-feu matériel doit être présent une seule fois dans un réseau informatique -- au passage entre un réseau privé et un réseau public.
+
+
+===== Ai-je besoin d'un pare-feu logiciel ? =====
+Le pare-feu est un composant essentiel de la sécurité de votre réseau domestique ou d'entreprise. Sans celui-ci, vous exposez votre ou vos ordinateurs à des risques de sécurité importants. Cependant, avez-vous réellement besoin d'un pare-feu //logiciel// dans votre système d'exploitation Ubuntu ?
+
+=== À la maison ===
+Les deux cas dépeignent les configurations des utilisateurs. Dans ces deux cas, avoir un pare-feu reste conseillé.
+== Derrière un routeur domestique ou un *box ==
+La majorité des réseaux domestiques sont aujourd'hui reliés à travers un routeur ou une *box. Or, la plupart des routeurs et *box incluent de base un module de pare-feu. Il est parfois activé d'office ; pour d'autres, vous devez le mettre en route. Dans le cas où votre routeur inclut un module de pare-feu et que celui-ci est activé. Vous n'avez donc pas réellement besoin d'activer un pare-feu logiciel dans votre système Ubuntu.
+
+De plus, même si votre *box ou votre routeur ne dispose pas d'un module de pare-feu, la manière selon laquelle fonctionne un routeur ou une *box rend techniquement vos ordinateurs inaccessibles directement depuis Internet.((Cette technique, nécessaire pour créer des réseaux privés, s'appelle la //transposition d'adresses réseau et de port//, ou //network address port translation// (NAPT), par abus de langage on parle de NAT. Les réseaux privés situés derrière un mécanisme de transposition d'adresses ne peuvent être contactés directement par d'autres serveurs dans Internet, à moins que votre propre ordinateur ait initié la communication. Donc, un ordinateur situé derrière un routeur ou une *box est techniquement protégé grâce à un mécanisme NAT.)) Une intrusion devient difficile, mais pas totalement impossible. Ce niveau de sécurité suffit généralement à empêcher les intrusions, mais elle ne dispense pas d'avoir un pare-feu activé localement sur l'ordinateur de l'utilisateur.
+
+== Sans routeur domestique ou sans *box ==
+Vous êtes dans cette situation lorsque votre ordinateur est relié directement au modem -- connexion par modem téléphonique bas débit, par modem ADSL ou câble branché directement à l'ordinateur (par fil USB ou Ethernet), par une clé d'Internet mobile, par votre téléphone cellulaire (//tethering//)... Dans ce cas, votre ordinateur est directement visible depuis Internet et tout ordinateur distant aura accès à tous vos services réseau s'ils ne sont pas protégés. Par exemple, si vous activez le partage de bureau à distance sans le protéger, quiconque dans Internet peut charger une session de bureau à distance et voir votre bureau ! Ne pas protéger un ordinateur relié directement à Internet est un risque non négligeable.
+
+Dans cette situation, il est **indispensable** que vous activiez un pare-feu logiciel dans chacun de vos ordinateurs à la maison.
+
+=== Au bureau ===
+Dans le cas de réseau d'entreprise, même si le réseau privé est protégé par un pare-feu matériel ou un mécanisme NAT, on souhaitera protéger chacun des postes de travail des possibles bévues des autres postes de l'entreprise. On souhaitera sécuriser les postes contre les possibles intrusions indésirables provenant de l'intérieur-même de l'entreprise, des autres ordinateurs connectés au même réseau privé -- ceci est encore plus vrai dans le cas de sous-réseaux sans fil.((Dans un environnement public ou semi-privé tel une entreprise, il est plus ou moins facile de contrôler qui accède au réseau et comment il accède aux ressources du réseau (locales et distantes). En plus de protéger l'accès au réseau privé depuis un réseau public extérieur, il vaut mieux protéger aussi chacun des postes d'utilisateur finaux offrant un accès à des ressources et services -- ce pour quoi est réellement conçu un pare-feu logiciel.))
+
+=== Sur un réseau public ===
+Dans un poste de travail mobile (netbook, ordinateur portable, périphérique mobile...) qui se connecte à des réseaux publics, comme celui d'une bibliothèque ou d'une université, même si le réseau privé est protégé par un pare-feu, on souhaitera se prémunir contre les possibles intrusions des autres postes publics.((Tout comme le réseau d'entreprises, il est difficile -- voire impossible -- de contrôler efficacement qui se connecte au même sous-réseau privé (derrière un mécanisme NAT) que vous. Les possibles attaques proviennent donc de la part des possibles pirates qui se connectent dans le même sous-réseau privé que vous.)) Dans ce cas, installer et configurer un pare-feu logiciel dans son système d'exploitation Ubuntu est une bonne idée.
+
+
+===== Pare-feu par défaut dans Ubuntu =====
+Ubuntu, comme tous les systèmes GNU/Linux, dispose de base d'un pare-feu logiciel. Celui-ci n'est toutefois pas activé par défaut après l'installation du système. Ubuntu inclut aussi de nombreuses interfaces pour gérer ce pare-feu logiciel. Il s'agit d'un empilement plus ou moins complexe pour lequel l'utilisateur final n'interagit réellement qu'avec les dernières couches:
+
+  * Le [[wpfr&gt;Pare-feu_(informatique)|pare-feu logiciel]] sous Ubuntu se nomme [[wpfr&gt;Netfilter]]. À la différence de certains pare-feu logiciels que l'on peut rencontrer sous d'autres [[wpfr&gt;Système_d'exploitation|système d'exploitation]], Netfilter agit directement au niveau du noyau Linux, ce qui permet une [[http://www.ssi.gouv.fr/fr/menu/actualites/certification-au-titre-de-la-cspn-du-logiciel-netfilter.html|bonne sécurité]]. Netfilter prend en charge l'IPV6 ainsi que le [[wpfr&gt;Netfilter#Connection_Tracking|suivi de connections]].
+  * [[:Iptables]] est l'interface de configuration par défaut de Netfilter depuis le noyau Linux 2.6. Son utilisation est néanmoins complexe, fonctionnant uniquement en ligne de commande et requérant des commandes aux structures bien précises.
+  * Ubuntu introduit donc une interface de configuration plus simple, [[:ufw|Uncomplicated FireWall (UFW)]]. Ce logiciel en ligne de commande propose des options moins avancées que Iptables, mais convient aux configurations simples et générales d'un pare-feu logiciel.
+  * UFW peut aussi être contrôlé par une interface graphique, [[:gufw|Graphical UFW (GUFW)]] (ou **[[apt&gt;ufw-kde]]** pour kubuntu). Celle-ci doit être installée séparément.
+
+=====Voir aussi =====
+  * [[http://forum.ubuntu-fr.org/viewtopic.php?id=399418|Une discussion sur l'intérêt d'un pare-feu dans Ubuntu]] dans le forum d'Ubuntu-FR
+  * [[http://www.zebulon.fr/outils/scanports/test-securite.php|Tester la sécurité de votre pare-feu]] [fr] (Site très efficace).
+
+----------
+=== Notes ===</textarea>
+<div id="wiki__editbar" class="editBar">
+<div id="size__ctl">
+</div>
+<div class="editButtons">
+<div id="plugin__captcha_wrapper"><input type="hidden" name="997f72163ff9bf8ecfdc04a2667fb2e4" value="Zcvf1Iu/7H7tODmHGsRTxUE2/kwETRu/puRAxcIN0vw=" /><label for="plugin__captcha">Merci de recopier le code ci-contre pour prouver que vous êtes humain :</label> <span id="plugin__captcha_code">WB M​
+K Q</span> <input type="text" size="5" name="fb67e59a3fd0c4a8f74c0419a1a17a78" class="edit" /> <label class="no">Merci de laisser ce champ vide : <input type="text" name="022c49659697cba3a0529a8f925b5487" /></label></div><input name="do[save]" type="submit" value="Enregistrer" class="button" id="edbtn__save" accesskey="s" tabindex="4" title="Enregistrer [S]" />
+<input name="do[preview]" type="submit" value="Aperçu" class="button" id="edbtn__preview" accesskey="p" tabindex="5" title="Aperçu [P]" />
+<input name="do[draftdel]" type="submit" value="Annuler" class="button" tabindex="6" />
+</div>
+<div class="summary">
+<label class="nowrap" for="edit__summary"><span>Résumé</span> <input type="text" id="edit__summary" name="summary" class="edit" size="50" tabindex="2" /></label>
+</div>
+</div>
+<div class="license">
+Note : En modifiant cette page, vous acceptez que le contenu soit placé sous les termes de la licence suivante : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" class="urlextern">CC Paternité-Partage des Conditions Initiales à l'Identique 3.0 Unported</a></div>
+</div></form>
+</div>
+<script type="text/javascript">
+   var saveBtn = document.getElementById('edbtn__save');
+   saveBtn.disabled = true;
+   saveBtn.style.color = 'gray';
+   saveBtn.style.backgroundColor = '#EEEEEE';
+   saveBtn.value = 'Enregistrer (Click \'Aperçu\' first)';
+</script>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="pare-feu?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pare-feu?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="pare-feu?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pare-feu?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="pare-feu?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

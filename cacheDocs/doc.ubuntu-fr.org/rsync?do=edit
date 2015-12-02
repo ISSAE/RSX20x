@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>rsync - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/rsync?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/rsync"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/rsync"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"rsync","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="rsync?do=edit#main" tabindex="1">Contenu</a> | <a href="rsync?do=edit#qsearch__in" tabindex="2">Rechercher</a> | <a href="rsync?do=edit#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="rsync?do=edit" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="rsync" >rsync</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<p>
+<strong>Quelques recommandations avant de créer ou de modifier cette page :</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Lisez le <a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">guide du contributeur</a> et la <a href="wiki/ligne_editoriale" class="wikilink1" title="wiki:ligne_editoriale">ligne éditoriale</a>.</div>
+</li>
+<li class="level1"><div class="li"> Découvrez la <a href="http://doc.ubuntu-fr.org/wiki/syntaxe" class="wikilink1" title="wiki:syntaxe">syntaxe</a> et entraînez-vous dans le <a href="playground/playground" class="wikilink1" title="playground:playground">bac à sable</a>.</div>
+</li>
+<li class="level1"><div class="li"> Utilisez les modèles (<a href="wiki/modeles/application" class="wikilink1" title="wiki:modeles:application">application</a>, <a href="wiki/modeles/materiel" class="wikilink1" title="wiki:modeles:materiel">matériel</a>, <a href="wiki/modeles/portable" class="wikilink1" title="wiki:modeles:portable">ordinateur portable</a>, <a href="wiki/modeles/tutoriel" class="wikilink1" title="wiki:modeles:tutoriel">tutoriel</a>, <a href="wiki/modeles/utilisateur" class="wikilink1" title="wiki:modeles:utilisateur">utilisateur</a>, <a href="wiki/modeles/portail" class="wikilink1" title="wiki:modeles:portail">portail</a>) et les <a href="wiki/mini-tutoriels" class="wikilink1" title="wiki:mini-tutoriels">mini-tutoriels</a>.</div>
+</li>
+<li class="level1"><div class="li"> Rapportez toutes créations ou modifications importantes sur <a href="wiki/liste_discussion#coordination_de_la_documentation" class="wikilink1" title="wiki:liste_discussion">la liste de discussion</a>.</div>
+</li>
+</ol>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fcdb5fe1d67011f56447459483d05597.xhtml used -->
+<script type="text/javascript">/*<![CDATA[*/
+textChanged = false/*!]]>*/</script>
+    <div class="editBox" role="application">
+
+    <div class="toolbar group">
+        <div id="draft__status"></div>
+        <div id="tool__bar"><a href="http://doc.ubuntu-fr.org/lib/exe/mediamanager.php?ns="
+            target="_blank">Sélection de fichiers</a></div>
+    </div>
+    <form id="dw__editform" method="post" action="rsync?do=edit" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><input type="hidden" name="id" value="rsync" /><input type="hidden" name="rev" value="0" /><input type="hidden" name="date" value="1413226383" /><input type="hidden" name="prefix" value="." /><input type="hidden" name="suffix" value="" /><input type="hidden" name="changecheck" value="dfd6e2d8176ed31fa41cf2b2c16a008a" /><input type="hidden" name="target" value="section" /><textarea name="wikitext" id="wiki__text" dir="auto" class="edit" cols="80" rows="10" tabindex="1">
+{{tag&gt;sauvegarde synchronisation}}
+
+----
+
+====== rsync ======
+
+===== Présentation =====
+**rsync** (pour **r**emote **sync**hronization ou synchronisation à distance), est un logiciel ((sous licence **[[wpfr&gt;Licence_publique_générale_GNU|GNU GPL]]**)) de synchronisation de fichiers. Il est fréquemment utilisé pour mettre en place des systèmes de [[:sauvegarde]] distante.\\
+rsync travaille de manière unidirectionnelle c'est-à-dire qu'il synchronise, copie ou actualise les données d'une source (locale ou distante) vers une destination (locale ou distante) en ne transférant que les octets des fichiers qui ont été modifiés. 
+&lt;note help&gt;La notion d'unidirectionalité semble souvent mal comprise : elle signifie qu'en une commande, la synchronisation ne peut se faire que dans un sens. Rien n'empêche ensuite de relancer la commande une seconde fois dans l'autre sens !&lt;/note&gt;
+
+D'un point de vue de l'entreprise, un [[:tutoriel:serveur_de_synchronisation_avec_rsync|serveur de synchronisation]] est utile pour centraliser les sauvegardes sur une même machine équipée accessoirement d'un enregistreur de bande.
+
+Pour le particulier, il est intéressant (si vous avez plusieurs machines), d'avoir une sauvegarde simple et rapide de son //Dossier Personnel//. \\
+
+Ici nous verrons son utilisation basique. Pour plus de détails, allez voir ce [[tutoriel:sauvegarder_home_avec_rsync|tutoriel : &quot;Sauvegarder &quot;/home&quot; avec rsync&quot;]].
+
+===== Utilisation =====
+Comme l'indique le manuel :
+
+&quot;rsync est un programme très similaire à rcp, mais possède bien plus d'options et utilise le protocole de mise à jour à distance rsync afin d'accélérer significativement le transfert de fichiers lorsque le fichier de destination existe déjà.&quot;
+
+L'appel de base :
+&lt;code&gt;rsync source/ destination/&lt;/code&gt;
+
+L'intérêt est une utilisation à travers le réseau. **rsync** utilise [[SSH]] par défaut. Un exemple :
+&lt;code&gt;rsync -az source/ login@serveur.org:/destination/&lt;/code&gt;
+où: 
+  * //-a// ou //%%--%%archive// : est un moyen rapide de dire que vous voulez la récursivité et préserver pratiquement tout. La seule exception est que si //%%--%%files-from// a été spécifiée alors //-r// n'est pas utilisée. Ceci est équivalent à //-rlptgoD//.
+  * //-z// ou //%%--%%compress// : compresse les données lors du transfert.
+
+&lt;note important&gt;
+Attention, il convient d'être vigilant dans l'utilisation ou non du slash (« / ») dans le chemin de la source. Ainsi, les deux commandes suivantes **ne sont pas** équivalentes :
+&lt;code&gt;rsync source destination/
+rsync source/ destination/&lt;/code&gt;
+
+En effet, la première commande copie le dossier source et ajoute donc un niveau dans l'arborescence. La deuxième commande ne copie que le contenu du dossier source. Autrement dit, les deux commandes suivantes sont, elles, équivalentes* :
+&lt;code&gt;rsync source destination/
+rsync source/ destination/source/&lt;/code&gt; 
+
+Enfin, il faut noter que l'utilisation ou non d'un slash final dans le chemin de la destination n'a aucune incidence. Les deux commandes suivantes sont donc équivalentes :
+
+&lt;code&gt;rsync source destination/
+rsync source destination&lt;/code&gt; 
+
+* Sauf dans le cas ou source est un lien symbolique vers un répertoire, la première commande ne copie alors que le lien tandis que la seconde travaille bien à l'intérieur du répertoire
+&lt;/note&gt;
+==== Créer un dossier miroir ====
+Voici un exemple d'une commande, utilisant le protocole [[SSH]], qui copie à l'identique le dossier &lt;source&gt; vers le dossier &lt;destination&gt;.
+
+Copie du dossier source vers le serveur:
+
+&lt;code&gt;rsync -e ssh -avz --delete-after /home/source user@ip_du_serveur:/dossier/destination/&lt;/code&gt;
+où :
+  * //&lt;nowiki&gt;--&lt;/nowiki&gt;delete-after// : à la fin du transfert, supprime les fichiers dans le dossier de destination ne se trouvant pas dans le dossier source.
+  * //-z// : compresse les fichiers
+  * //-v// : verbeux
+  * //-e ssh// : utilise le protocole [[SSH]]
+
+Avec l'option //-n// la commande liste ce qu'elle va faire sans l'exécuter:
+
+&lt;code&gt;rsync -e ssh -avzn --delete-after /home/mondossier_source user@ip_du_serveur:/dossier/destination/&lt;/code&gt;
+
+==== Exclure des fichiers ====
+On peut exclure des fichiers/dossiers selon beaucoup de schémas. C'est utile pour ne pas sauvegarder le cache, les fichiers temporaires, la corbeille, etc…
+
+  * Liste dans la commande : &lt;code bash&gt;rsync --exclude=&quot;nom_de_dossier&quot; --exclude=&quot;- autre_nom_de_dossier&quot; source/ destination/&lt;/code&gt;
+  * Un fichier de règles d'exclusion &lt;code bash&gt;rsync --exclude-from=ExclusionRSync source/ destination/ &lt;/code&gt;\\ Et le fichier ExclusionRSync dans le dossier courant sera de cette forme : &lt;code bash&gt;tmp
+.Trash
+.cache
+.PlayOnLinux
+&lt;/code&gt;Vous pouvez consulter cette [[http://programmersnotebook.wordpress.com/2010/03/20/rsync-and-exclude-from|page très intéressante sur le sujet]] de l'exclusion par fichier de règles.
+==== Interface graphique : Grsync (Gnome) ====
+Dans les [[:dépôts]] vous trouverez notamment le logiciel [[Grsync]] qui offre une interface graphique pour rsync: [[:tutoriel:sauvegarder_home_avec_grsync|voir ce tutoriel sur Grsync]].\\
+Voir aussi la page [[:sauvegarde]] pour trouver d'autres interfaces graphiques.
+
+===== Tutoriel =====
+  * [[:tutoriel:sauvegarder_home_avec_rsync|Sauvegarde de &quot;/home&quot; avec rsync]] ou avec l'interface graphique [[:tutoriel:sauvegarder_home_avec_grsync|Grsync]]
+  * [[:tutoriel:serveur_de_synchronisation_avec_rsync|Serveur de synchronisation avec rsync]]
+
+==== Sauvegarde distante du serveur web ====
+
+Cas présenté :
+  * un serveur distant s'exécutant sous le compte système www-data.
+    * ce serveur est accessible via ssh
+    * on a un compte utilisateur pour se connecter sur ce serveur
+    * ce compte (ou un autre) a les droits d'administration de la machine
+  * une machine sur laquelle sauvegarder les données
+    * on a un compte utilisateur avec le droit sudo
+
+Pour l'exemple qui suit :
+  - sur la machine locale, on devient //www-data// pour travailler avec les droits de ce dernier
+  - www-data exécute la commande rsync qui va établir une connexion via ssh au serveur distant avec le compte //utilisateur// (on peut avoir besoin de saisir le mot de passe de l'utilisateur distant si on n'a pas déposé de clef publique)
+  - sur le serveur distant, via ssh, //utilisateur// va lancer sudo pour devenir //www-data//
+  - //www-data// exécute la commande rsync qui échange les informations avec la machine locale
+
+Sur le serveur distant :
+  * Autoriser l'utilisateur à lancer la commande rsync sous le compte système www-data grace à [[sudo]], __sans mot de passe__: &lt;code&gt;sudo visudo&lt;/code&gt;&lt;file&gt;utilisateurssh ALL=(www-data) NOPASSWD: /usr/bin/rsync&lt;/file&gt;
+  * Optionnel : déposer une clef publique ssh au besoin pour l'utilisateur
+
+Sur la machine local :
+  * Lancer une synchronisation en tant qu'utilisateur www-data grace à [[sudo]]&lt;code&gt;sudo -u www-data rsync -a --progress -e ssh --rsync-path &quot;sudo -u www-data rsync&quot; utilisateur@serveur_distant:/var/www/ /var/www/&lt;/code&gt;
+
+[[https://crashingdaily.wordpress.com/2007/06/29/rsync-and-sudo-over-ssh/|Source de ce tutoriel]], adaptée pour le cas présenté
+===== Liens =====
+  * **(en)** [[http://rsync.samba.org/|Site officiel]]
+  * **(fr)** [[http://man.developpez.com/man1/rsync/|Le man de rsync en français]], « traduction de Denis Mertz, 2002. Mise à jour par Éric Piel &lt;eric POINT piel AT tremplin-utc POINT net&gt;, 2005. Relecture par Frédéric Delanoy et Julien Soula. » (extrait de développez.com, 2005) (Lien mort? [[http://www.delafond.org/traducmanfr/man/man1/rsync.1.html|autre solution]], même contenu).
+  *  **(fr)** [[http://www.it-connect.fr/synchronisation-rsync-entre-windows-et-linux/|Synchronisation Rsync entre Windows et Linux]] sur IT-Connect.fr
+
+----
+
+// Contributeur : [[utilisateurs:ostaquet]], [[utilisateurs:jahwork]]//</textarea>
+<div id="wiki__editbar" class="editBar">
+<div id="size__ctl">
+</div>
+<div class="editButtons">
+<div id="plugin__captcha_wrapper"><input type="hidden" name="e1c5c720b40acfd7555eee7f79db753f" value="XyeoNnz+kG2H7UdQgtuldJBvNTY41oqQXxB1aGLh7wM=" /><label for="plugin__captcha">Merci de recopier le code ci-contre pour prouver que vous êtes humain :</label> <span id="plugin__captcha_code">J O I Z W</span> <input type="text" size="5" name="81e3a1fe9c93dac59e8d529bf04f342d" class="edit" /> <label class="no">Merci de laisser ce champ vide : <input type="text" name="c24a55f1cb6c65102fbab7ed3d61f44d" /></label></div><input name="do[save]" type="submit" value="Enregistrer" class="button" id="edbtn__save" accesskey="s" tabindex="4" title="Enregistrer [S]" />
+<input name="do[preview]" type="submit" value="Aperçu" class="button" id="edbtn__preview" accesskey="p" tabindex="5" title="Aperçu [P]" />
+<input name="do[draftdel]" type="submit" value="Annuler" class="button" tabindex="6" />
+</div>
+<div class="summary">
+<label class="nowrap" for="edit__summary"><span>Résumé</span> <input type="text" id="edit__summary" name="summary" class="edit" size="50" tabindex="2" /></label>
+</div>
+</div>
+<div class="license">
+Note : En modifiant cette page, vous acceptez que le contenu soit placé sous les termes de la licence suivante : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" class="urlextern">CC Paternité-Partage des Conditions Initiales à l'Identique 3.0 Unported</a></div>
+</div></form>
+</div>
+<script type="text/javascript">
+   var saveBtn = document.getElementById('edbtn__save');
+   saveBtn.disabled = true;
+   saveBtn.style.color = 'gray';
+   saveBtn.style.backgroundColor = '#EEEEEE';
+   saveBtn.value = 'Enregistrer (Click \'Aperçu\' first)';
+</script>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/rsync?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rsync?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rsync?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rsync?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/rsync?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

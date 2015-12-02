@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>iptables_logiciels_ports - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-08-20T17:37:56+0200"/>
+<meta name="keywords" content="brouillon,pare-feu"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/iptables_logiciels_ports?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/iptables_logiciels_ports?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/iptables_logiciels_ports"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/iptables_logiciels_ports"/>
+<link rel="canonical" href="iptables_logiciels_ports"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"iptables_logiciels_ports","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="iptables_logiciels_ports#main" tabindex="1">Contenu</a> | <a href="iptables_logiciels_ports#qsearch__in" tabindex="2">Rechercher</a> | <a href="iptables_logiciels_ports#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="iptables_logiciels_ports" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="iptables_logiciels_ports" >iptables_logiciels_ports</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="iptables_logiciels_ports#clients">Clients</a></div></li>
+<li class="level2"><div class="li"><a href="iptables_logiciels_ports#serveur">Serveur</a></div></li>
+<li class="level2"><div class="li"><a href="iptables_logiciels_ports#comment_trouver_le_port_utilise_par_un_programme">Comment trouver le port utilisé par un programme ?</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>,
+	<a href="pare-feu" class="wikilink1" title="pare-feu" rel="tag">pare-feu</a>
+</span></div>
+
+<h1 class="sectionedit1" id="programmes_et_leurs_ports">Programmes et leurs ports</h1>
+<div class="level1">
+
+<p>
+Cette page vise à répertorier les ports de communication (<abbr title="Transmission Control Protocol">TCP</abbr>/UDP) des programmes pour éviter de chercher sur les différents sites. En vue d&#039;être inclus dans un script pour <a href="iptables" class="wikilink1" title="iptables">iptables</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="iptables_logiciels_ports"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408549076" /><input type="hidden" name="summary" value="[Programmes et leurs ports] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="30-263" /><input type="submit" value="Modifier" class="button" title="Programmes et leurs ports" /></div></form></div>
+<h3 class="sectionedit2" id="clients">Clients</h3>
+<div class="level3">
+<div class="table sectionedit3"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Nom </th><th class="col1"> <abbr title="Transmission Control Protocol">TCP</abbr> </th><th class="col2"> UDP </th><th class="col3"> Autre </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/wesnoth" class="wikilink1" title="wesnoth">Battle for wesnoth</a> </td><td class="col1"> 14999 à 15002 </td><td class="col2 leftalign">  </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/doom3" class="wikilink1" title="doom3">Doom3</a> </td><td class="col1"> 27666 </td><td class="col2"> 27666 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/quake_wars" class="wikilink1" title="quake_wars">Ennemy territory</a> </td><td class="col1"> 27960 </td><td class="col2 leftalign">  </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> Monopd </td><td class="col1"> 1234 </td><td class="col2 leftalign">  </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/neverwinter_nights" class="wikilink1" title="neverwinter_nights">Neverwinter Nights</a> </td><td class="col1 leftalign">  </td><td class="col2"> 5121 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> Quake3 </td><td class="col1"> 26000 </td><td class="col2"> 26000 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> <a href="teamspeak" class="wikilink1" title="teamspeak">Teamspeak</a> </td><td class="col1 leftalign">  </td><td class="col2"> 8767 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="http://doc.ubuntu-fr.org/the_mana_world" class="wikilink1" title="the_mana_world">The mana World</a> </td><td class="col1">6901, 6122, 5122 </td><td class="col2"> </td><td class="col3"> Serveur : server.themanaworld.org </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/tremulous" class="wikilink1" title="tremulous">Tremulous</a> </td><td class="col1"> 30720 </td><td class="col2"> 30720 </td><td class="col3 leftalign">  </td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="iptables_logiciels_ports"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408549076" /><input type="hidden" name="summary" value="[Clients] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="264-734" /><input type="submit" value="Modifier" class="button" title="Clients" /></div></form></div>
+<h3 class="sectionedit4" id="serveur">Serveur</h3>
+<div class="level3">
+<div class="table sectionedit5"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Nom </th><th class="col1"> <abbr title="Transmission Control Protocol">TCP</abbr> </th><th class="col2"> UDP </th><th class="col3"> Autre </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"><a href="http://doc.ubuntu-fr.org/the_mana_world" class="wikilink1" title="the_mana_world">The mana World</a> </td><td class="col1">6901, 6122, 5122 </td><td class="col2"> </td><td class="col3"> Serveur : server.themanaworld.org </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/wesnoth" class="wikilink1" title="wesnoth">Battle for wesnoth</a> </td><td class="col1 rightalign"> 	14999 à 15002 </td><td class="col2 leftalign">  </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/bittorrent" class="wikilink1" title="bittorrent">Bittorrent</a> </td><td class="col1 rightalign"> 	6880 à 6999 </td><td class="col2"> 6880 à 6999 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/doom3" class="wikilink1" title="doom3">Doom3</a> </td><td class="col1"> 27666 </td><td class="col2"> 27666 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/quake_wars" class="wikilink1" title="quake_wars">Ennemy territory</a> </td><td class="col1"> 27950 à 27951 &amp; 27960 </td><td class="col2"> 27950 à 27951 &amp; 27960 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> Monopd </td><td class="col1"> 1234 </td><td class="col2 leftalign">  </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/mumble" class="wikilink1" title="mumble">Mumble</a> </td><td class="col1"> 64738 </td><td class="col2 leftalign">  </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> NetPanzer </td><td class="col1"> 3030 </td><td class="col2"> 3030 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/neverwinter_nights" class="wikilink1" title="neverwinter_nights">Neverwinter Nights</a> </td><td class="col1 leftalign">  </td><td class="col2"> 5120 à 5129 &amp; 6667 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"> Quake2 </td><td class="col1"> 27910 </td><td class="col2"> 27910 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/quake3" class="wikilink1" title="quake3">Quake3</a> </td><td class="col1"> 27960 </td><td class="col2"> 27960 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"> Serious Sam TSE </td><td class="col1"> 25600 à 25616 </td><td class="col2"> 25600 à 25616 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/taspring" class="wikilink1" title="taspring">Taspring</a> </td><td class="col1 leftalign">  </td><td class="col2"> 8452 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"> <a href="teamspeak" class="wikilink1" title="teamspeak">Teamspeak</a> </td><td class="col1 leftalign">  </td><td class="col2"> 8767 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/tremulous" class="wikilink1" title="tremulous">Tremulous</a> </td><td class="col1"> 30720 </td><td class="col2"> 30720 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"> Tribes 2 </td><td class="col1"> 28000 </td><td class="col2"> 28000 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/ut" class="wikilink1" title="ut">Unreal Tournament</a> </td><td class="col1"> 7777,8777,9777,27900 </td><td class="col2"> 7777,8777,9777,27900 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/ut" class="wikilink1" title="ut">Unreal Tournament 2004</a> </td><td class="col1"> 7777 à 7788 &amp; 6112 </td><td class="col2"> 7777 à 7788 &amp; 6112 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/warsow" class="wikilink1" title="warsow">Warsow</a> </td><td class="col1"> 27950 &amp; 44400 </td><td class="col2"> 27950 &amp; 44400 </td><td class="col3 leftalign">  </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"> <a href="http://doc.ubuntu-fr.org/warzone2100" class="wikilink1" title="warzone2100">Warzone 2100</a> </td><td class="col1"> 9999 </td><td class="col2"> 9999 </td><td class="col3 leftalign">  </td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="iptables_logiciels_ports"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408549076" /><input type="hidden" name="summary" value="[Serveur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="735-1802" /><input type="submit" value="Modifier" class="button" title="Serveur" /></div></form></div>
+<h3 class="sectionedit6" id="comment_trouver_le_port_utilise_par_un_programme">Comment trouver le port utilisé par un programme ?</h3>
+<div class="level3">
+
+<p>
+Tout d&#039;abord lancer 2 <a href="terminal" class="wikilink1" title="terminal">terminal</a> puis :
+</p>
+<ul>
+<li class="level1"><div class="li"> Lancez le jeu via le terminal, par exemple <a href="http://doc.ubuntu-fr.org/the_mana_world" class="wikilink1" title="the_mana_world">the mana world</a> :</div>
+</li>
+</ul>
+<pre class="code">tmw</pre>
+<ul>
+<li class="level1"><div class="li"> Et tapez cette commande :</div>
+</li>
+</ul>
+<pre class="code">netstat -ntaupe | grep tmw</pre>
+
+<p>
+résultat :
+</p>
+<pre class="code">[wido@desktop ~]$ netstat -ntaupe | grep tmw
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp        0      0 192.168.0.2:40572       81.161.192.4:5122       ESTABLISHED 1000       161984     26023/tmw  </pre>
+
+<p>
+Le jeu passe par le port 5122 par tcp.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="iptables_logiciels_ports"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408549076" /><input type="hidden" name="summary" value="[Comment trouver le port utilisé par un programme ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1803-" /><input type="submit" value="Modifier" class="button" title="Comment trouver le port utilisé par un programme ?" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/6/69beddd76ced052dd909b36eaf5657ad.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/iptables_logiciels_ports?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/iptables_logiciels_ports?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/iptables_logiciels_ports?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/iptables_logiciels_ports?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/iptables_logiciels_ports?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

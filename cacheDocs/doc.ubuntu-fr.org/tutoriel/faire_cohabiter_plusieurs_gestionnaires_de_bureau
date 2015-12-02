@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:faire_cohabiter_plusieurs_gestionnaires_de_bureau - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-11-26T18:14:54+0100"/>
+<meta name="keywords" content="environnements,gnome,kde,xfce,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/faire_cohabiter_plusieurs_gestionnaires_de_bureau?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/faire_cohabiter_plusieurs_gestionnaires_de_bureau?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/faire_cohabiter_plusieurs_gestionnaires_de_bureau"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/faire_cohabiter_plusieurs_gestionnaires_de_bureau"/>
+<link rel="canonical" href="faire_cohabiter_plusieurs_gestionnaires_de_bureau"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:faire_cohabiter_plusieurs_gestionnaires_de_bureau","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau#main" tabindex="1">Contenu</a> | <a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau#qsearch__in" tabindex="2">Rechercher</a> | <a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="faire_cohabiter_plusieurs_gestionnaires_de_bureau" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau" >tutoriel:faire_cohabiter_plusieurs_gestionnaires_de_bureau</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau#presentation">Présentation</a></div></li>
+<li class="level1"><div class="li"><a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau#installation_minimale">Installation minimale</a></div></li>
+<li class="level2"><div class="li"><a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau#installation_complete">Installation complète</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau#fenetre_de_connexion_et_choix_du_bureau">Fenêtre de connexion et choix du bureau</a></div></li>
+<li class="level2"><div class="li"><a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau#configuration_des_menus">Configuration des menus</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="faire_cohabiter_plusieurs_gestionnaires_de_bureau#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../environnements" class="wikilink1" title="environnements" rel="tag">environnements</a>,
+	<a href="../gnome" class="wikilink1" title="gnome" rel="tag">gnome</a>,
+	<a href="../kde" class="wikilink1" title="kde" rel="tag">kde</a>,
+	<a href="../xfce" class="wikilink1" title="xfce" rel="tag">xfce</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_faire_cohabiter_plusieurs_gestionnaires_de_bureau">Comment faire cohabiter plusieurs gestionnaires de bureau</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="faire_cohabiter_plusieurs_gestionnaires_de_bureau"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1353950094" /><input type="hidden" name="summary" value="[Comment faire cohabiter plusieurs gestionnaires de bureau] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="56-130" /><input type="submit" value="Modifier" class="button" title="Comment faire cohabiter plusieurs gestionnaires de bureau" /></div></form></div>
+<h2 class="sectionedit2" id="presentation">Présentation</h2>
+<div class="level2">
+
+<p>
+Comme vous le savez sans doute, il existe plusieurs variantes d&#039;Ubuntu : Ubuntu, Kubuntu, Xubuntu, Lubuntu et Edubuntu, intégrant respectivement les <a href="../environnements" class="wikilink1" title="environnements">environnements</a> Gnome, KDE, Xfce et LXDE. Cette page définit et présente leurs caractéristiques. Bien qu&#039;un seul environnement soit installé par défaut, il est possible d&#039;en faire cohabiter plusieurs sur toute variante d&#039;Ubuntu. L&#039;objectif de ce tutoriel est de vous montrer comment faire cohabiter proprement plusieurs environnements de bureau.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="faire_cohabiter_plusieurs_gestionnaires_de_bureau"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1353950094" /><input type="hidden" name="summary" value="[Présentation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="131-668" /><input type="submit" value="Modifier" class="button" title="Présentation" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Il est possible d&#039;installer n&#039;importe quel environnement (Gnome, KDE, Xfce ou LXDE) sous n&#039;importe quelle variante d&#039;Ubuntu (Ubuntu, Kubuntu, Xubuntu ou Lubuntu). Pour l&#039;exemple, on supposera que la variante Ubuntu (environnement Gnome) est installée et que l&#039;on souhaite y ajouter KDE ; il suffira de remplacer le nom des paquets par ceux qui conviennent.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="faire_cohabiter_plusieurs_gestionnaires_de_bureau"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1353950094" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="669-1058" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit4" id="installation_minimale">Installation minimale</h3>
+<div class="level3">
+
+<p>
+Nous allons d&#039;abord voir comment effectuer une installation minimale, c&#039;est-à-dire installer uniquement le gestionnaire de bureau sans les programmes liés. Cela peut être utile si vous souhaitez tester rapidement un environnement sans vous décider vraiment à l&#039;adopter.
+</p>
+
+<p>
+Pour ce faire, il suffit d&#039;<a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> de l&#039;environnement que vous souhaitez :
+</p>
+<ul>
+<li class="level1"><div class="li"> pour Gnome : <a href="apt://gnome-core" class="urlextern" title="apt://gnome-core"  rel="nofollow">gnome-core</a> ;</div>
+</li>
+<li class="level1"><div class="li"> <img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> pour KDE : <a href="apt://kde-minimal" class="urlextern" title="apt://kde-minimal"  rel="nofollow">kde-minimal</a> et depuis Ubuntu 11.10 <a href="apt://kde-plasma-desktop" class="urlextern" title="apt://kde-plasma-desktop"  rel="nofollow">kde-plasma-desktop</a> ou <a href="apt://kde-plasma-netbook" class="urlextern" title="apt://kde-plasma-netbook"  rel="nofollow">kde-plasma-netbook</a> (selon votre configuration) ;</div>
+</li>
+<li class="level1"><div class="li"> pour Xfce : <a href="apt://xfce4" class="urlextern" title="apt://xfce4"  rel="nofollow">xfce4</a> ;</div>
+</li>
+<li class="level1"><div class="li"> pour LXDE : <a href="apt://lubuntu-core" class="urlextern" title="apt://lubuntu-core"  rel="nofollow">lubuntu-core</a>.</div>
+</li>
+</ul>
+<pre class="code">sudo apt-get install kde-minimal</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="faire_cohabiter_plusieurs_gestionnaires_de_bureau"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1353950094" /><input type="hidden" name="summary" value="[Installation minimale] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1059-1909" /><input type="submit" value="Modifier" class="button" title="Installation minimale" /></div></form></div>
+<h3 class="sectionedit5" id="installation_complete">Installation complète</h3>
+<div class="level3">
+
+<p>
+Nous allons maintenant voir comment installer l&#039;environnement entier, c&#039;est-à-dire le gestionnaire de bureau et ses logiciels (par exemple pour KDE : amarok, konqueror, kopete, dolphin, etc.).
+</p>
+
+<p>
+<p><div class="notetip">Si vous avez déjà effectué l&#039;installation minimale, inutile de désinstaller le paquet.
+</div></p>
+</p>
+
+<p>
+Suivant ce que vous voulez, installez le paquet :
+</p>
+<ul>
+<li class="level1"><div class="li"> pour Gnome : <a href="apt://ubuntu-desktop" class="urlextern" title="apt://ubuntu-desktop"  rel="nofollow">ubuntu-desktop</a> ;</div>
+</li>
+<li class="level1"><div class="li"> pour KDE : <a href="apt://kubuntu-desktop" class="urlextern" title="apt://kubuntu-desktop"  rel="nofollow">kubuntu-desktop</a> ;</div>
+</li>
+<li class="level1"><div class="li"> pour Xfce : <a href="apt://xubuntu-desktop" class="urlextern" title="apt://xubuntu-desktop"  rel="nofollow">xubuntu-desktop</a> ;</div>
+</li>
+<li class="level1"><div class="li"> pour LXDE : <a href="apt://lubuntu-desktop" class="urlextern" title="apt://lubuntu-desktop"  rel="nofollow">lubuntu-desktop</a>.</div>
+</li>
+</ul>
+<pre class="code">sudo apt-get install kubuntu-desktop</pre>
+
+<p>
+Il vous est ensuite demandé de choisir le gestionnaire graphique de session que vous souhaitez utiliser, c&#039;est-à-dire l&#039;écran à partir duquel vous vous connecterez. LightDM est celui de Xubuntu, Gdm celui de Gnome, kdm celui de Kubuntu. Choisissez celui que vous voulez, les fonctionnalités sont les mêmes. Si vous ne savez pas lequel choisir, gardez celui que vous aviez avant. 
+</p>
+
+<p>
+Étant donné le nombre de paquets à installer, l&#039;installation peut être un peu longue. Une fois qu&#039;elle est terminée, redémarrez votre ordinateur. Pensez à imprimer ce tutoriel ou assurez vous de pouvoir le consulter sur un autre poste.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="faire_cohabiter_plusieurs_gestionnaires_de_bureau"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1353950094" /><input type="hidden" name="summary" value="[Installation complète] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1910-3237" /><input type="submit" value="Modifier" class="button" title="Installation complète" /></div></form></div>
+<h2 class="sectionedit6" id="configuration">Configuration</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="faire_cohabiter_plusieurs_gestionnaires_de_bureau"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1353950094" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3238-3266" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h3 class="sectionedit7" id="fenetre_de_connexion_et_choix_du_bureau">Fenêtre de connexion et choix du bureau</h3>
+<div class="level3">
+
+<p>
+Une fois votre ordinateur redémarré, vous vous trouvez face à l&#039;écran de connexion. Sélectionnez votre compte et choisissez dans le menu session le gestionnaire de bureau que vous voulez utiliser puis connectez vous.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="faire_cohabiter_plusieurs_gestionnaires_de_bureau"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1353950094" /><input type="hidden" name="summary" value="[Fenêtre de connexion et choix du bureau] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3267-3545" /><input type="submit" value="Modifier" class="button" title="Fenêtre de connexion et choix du bureau" /></div></form></div>
+<h3 class="sectionedit8" id="configuration_des_menus">Configuration des menus</h3>
+<div class="level3">
+
+<p>
+Vous avez maintenant gnome et KDE installés sur votre ordinateur, ainsi que tous leurs logiciels. Cependant, les logiciels de chaque environnement apparaissent dans les menus des autres, créant un joli capharnaüm. Pour ce faire, il existe une méthode très simple mais longue et répétitive : sélectionner quelles applications afficher dans les menus de chaque environnement. 
+</p>
+
+<p>
+Faites un clique droit sur le menu application ou sur le menu K et sélectionnez « Éditer les menus ».
+</p>
+
+<p>
+Sous Gnome, sélectionnez la catégorie que vous souhaitez éditer et décochez les applications pour qu&#039;elles ne s&#039;affichent plus dans le menu.
+</p>
+
+<p>
+Sous KDE, sélectionnez de même la catégorie puis l&#039;application et cliquez sur l&#039;icône supprimer.
+</p>
+
+<p>
+Les applications ne sont pas désinstallées, le lanceur n&#039;est juste plus affiché dans le menu. En procédant ainsi, on peut masquer les applications de KDE sous gnome et vice-versa. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="faire_cohabiter_plusieurs_gestionnaires_de_bureau"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1353950094" /><input type="hidden" name="summary" value="[Configuration des menus] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3546-4518" /><input type="submit" value="Modifier" class="button" title="Configuration des menus" /></div></form></div>
+<h2 class="sectionedit9" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://doc.ubuntu-fr.org/tutoriel/faire_cohabiter_gnome_et_kde" class="wikilink1" title="tutoriel:faire_cohabiter_gnome_et_kde">Faire cohabiter Gnome et KDE</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="http://doc.ubuntu-fr.org/utilisateurs/arzhurbzh" class="wikilink1" title="utilisateurs:arzhurbzh">ArzhurBZH</a> Le 20/05/2010, 00:08</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="faire_cohabiter_plusieurs_gestionnaires_de_bureau"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1353950094" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4519-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/d4c2917782ab599d5793c057cfb211af.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/faire_cohabiter_plusieurs_gestionnaires_de_bureau?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/faire_cohabiter_plusieurs_gestionnaires_de_bureau?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/faire_cohabiter_plusieurs_gestionnaires_de_bureau?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/faire_cohabiter_plusieurs_gestionnaires_de_bureau?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/faire_cohabiter_plusieurs_gestionnaires_de_bureau?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

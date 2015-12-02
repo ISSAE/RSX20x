@@ -1,0 +1,646 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>evdev - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-02-20T09:51:13+0100"/>
+<meta name="keywords" content="oneiric,precise,systeme,materiel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="evdev?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="evdev?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/evdev"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/evdev"/>
+<link rel="canonical" href="evdev"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"evdev","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="evdev#main" tabindex="1">Contenu</a> | <a href="evdev#qsearch__in" tabindex="2">Rechercher</a> | <a href="evdev#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="evdev" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="evdev" >evdev</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, les informations qu'elle contient n'ont pas été vérifiées depuis <a href="precise">Ubuntu 12.04 LTS.</a><br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="evdev#compatibilite">Compatibilité</a></div></li>
+<li class="level1"><div class="li"><a href="evdev#prerequis">Prérequis</a></div></li>
+<li class="level1"><div class="li"><a href="evdev#generalites">Généralités</a></div></li>
+<li class="level1"><div class="li"><a href="evdev#verifier_votre_ecran_tactile">Vérifier votre écran tactile</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="evdev#activer_ou_desactiver_un_peripherique">Activer ou désactiver un périphérique</a></div></li>
+<li class="level2"><div class="li"><a href="evdev#comportement_de_l_ecran_tactile_axes_x_et_y">Comportement de l&#039;écran tactile (axes X et Y)</a></div></li>
+<li class="level2"><div class="li"><a href="evdev#calibration_de_l_ecran_tactile">Calibration de l&#039;écran tactile</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="evdev#configurer_le_pilote_evdev">Configurer le pilote evdev</a></div></li>
+<li class="level1"><div class="li"><a href="evdev#liens">Liens</a></div></li>
+<li class="level1"><div class="li"><a href="evdev#faq">FAQ</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="oneiric" class="wikilink1" title="oneiric" rel="tag">Oneiric</a>,
+	<a href="precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="materiel" class="wikilink1" title="materiel" rel="tag">matériel</a>
+</span></div>
+
+<h1 class="sectionedit1" id="configurer_un_ecran_tactile">Configurer un écran tactile</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="evdev"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1392886273" /><input type="hidden" name="summary" value="[Configurer un écran tactile] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="45-88" /><input type="submit" value="Modifier" class="button" title="Configurer un écran tactile" /></div></form></div>
+<h2 class="sectionedit2" id="compatibilite">Compatibilité</h2>
+<div class="level2">
+
+<p>
+Ce tutoriel a été testé avec le matériel et logiciels suivants :
+</p>
+<ul>
+<li class="level1"><div class="li"> contrôleur d&#039;écran tactile eGalax</div>
+</li>
+<li class="level1"><div class="li"> eeepc asus 1000</div>
+</li>
+<li class="level1"><div class="li"> tous périphériques de saisie connecté et détecté par le noyau et le pilote evdev (ce pilote est installé par défaut sur les principales distributions linux).</div>
+</li>
+<li class="level1"><div class="li"> les distribution Ubuntu oneiric 11.10 et precise 12.04 LTS</div>
+</li>
+<li class="level1"><div class="li"> la distribution redhat Fedora 16</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="evdev"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1392886273" /><input type="hidden" name="summary" value="[Compatibilité] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="89-515" /><input type="submit" value="Modifier" class="button" title="Compatibilité" /></div></form></div>
+<h2 class="sectionedit3" id="prerequis">Prérequis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> les droits administrateurs</div>
+</li>
+<li class="level1"><div class="li"> aucun prérequis pour le pilote de périphériques d&#039;entrés <a href="http://manpages.ubuntu.com/manpages/precise/man4/evdev.4.html" class="urlextern" title="http://manpages.ubuntu.com/manpages/precise/man4/evdev.4.html"  rel="nofollow">evdev</a>. Il s&#039;agit du pilote par défaut pour les périphériques de saisie sur ​​les principales distributions Linux et il est normalement déjà installé.</div>
+</li>
+<li class="level1"><div class="li">  <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt:////xinput" class="interwiki iw_apt" title="apt:////xinput">xinput</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt://xinput-calibrator" class="interwiki iw_apt" title="apt://xinput-calibrator">Calibrate Touchscreen</a></strong></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="evdev"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1392886273" /><input type="hidden" name="summary" value="[Prérequis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="516-1084" /><input type="submit" value="Modifier" class="button" title="Prérequis" /></div></form></div>
+<h2 class="sectionedit4" id="generalites">Généralités</h2>
+<div class="level2">
+
+<p>
+evdev est un pilote générique Xorg installé par défaut pour les interfaces d&#039;entrée de Linux. Il supporte donc tous les périphériques d&#039;entrée pour que le noyau les reconnaissent, y compris la plupart des souris, claviers, tablettes et écrans tactiles. La plus grande difficulté sera de le configurer pour qu&#039;il gère adéquatement votre écran tactile.
+</p>
+
+<p>
+Il vous suffit donc de brancher votre écran tactile, le plus souvent à un port usb (ce port peut-être interne comme dans le cas d&#039;un ordinateur portable ou externe) si ce n&#039;est pas déjà fait.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="evdev"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1392886273" /><input type="hidden" name="summary" value="[Généralités] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1085-1676" /><input type="submit" value="Modifier" class="button" title="Généralités" /></div></form></div>
+<h2 class="sectionedit5" id="verifier_votre_ecran_tactile">Vérifier votre écran tactile</h2>
+<div class="level2">
+
+<p>
+La deuxième étape, une fois le périphérique branché, est de vérifier qu&#039;il est bien détecté par le système. Ouvrez une fenêtre du terminal et en ligne de commande :
+</p>
+<pre class="code">xinput list</pre>
+
+<p>
+Vous aurez la liste des périphériques détectés par evdev :
+</p>
+<pre class="code">⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
+⎜   ↳ Microsoft Microsoft® Nano Transceiver v2.0	id=11	[slave  pointer  (2)]
+⎜   ↳ Microsoft Microsoft® Nano Transceiver v2.0	id=12	[slave  pointer  (2)]
+⎜   ↳ eGalax Inc. Touch                       	id=13	[slave  pointer  (2)]
+⎜   ↳ eGalax Inc. Touch                       	id=14	[slave  pointer  (2)]
+⎜   ↳ ETPS/2 Elantech Touchpad                	id=18	[slave  pointer  (2)]
+⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
+    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
+    ↳ Power Button                            	id=6	[slave  keyboard (3)]
+    ↳ Video Bus                               	id=7	[slave  keyboard (3)]
+    ↳ Power Button                            	id=8	[slave  keyboard (3)]
+    ↳ Sleep Button                            	id=9	[slave  keyboard (3)]
+    ↳ Microsoft Microsoft® Nano Transceiver v2.0	id=10	[slave  keyboard (3)]
+    ↳ CNF7129                                 	id=15	[slave  keyboard (3)]
+    ↳ Asus EeePC extra buttons                	id=16	[slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard            	id=17	[slave  keyboard (3)]</pre>
+
+<p>
+Dans cet exemple, je sais que le contrôleur pour mon écran tactile est eGalax. Il figure deux fois sous l&#039;identification ID 13 et ID 14 dans ce cas. Cela ne créera pas de problème, mais il faudra en tenir compte lorsque nous ferons des essaies de configuration.
+</p>
+
+<p>
+Comme vous le constatez, ce pilote gère un bon nombre de périphérique. C&#039;est pour cette raison que dès qu&#039;un périphérique est mal configurer, il peut entrer en conflit avec un autre et créer des comportements aberrants du curseur ou bien de votre souris à titre d&#039;exemple. Je vous suggère donc de toucher le moins possible à votre écran tactile pour le moment. Vous devrez peut-être fermer et ré-ouvrir votre session pour retrouver un usage normal de vos périphériques. Vous pouvez au besoin débrancher un périphérique temporairement ou même le désactiver en ligne de commande.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="evdev"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1392886273" /><input type="hidden" name="summary" value="[Vérifier votre écran tactile] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1677-4182" /><input type="submit" value="Modifier" class="button" title="Vérifier votre écran tactile" /></div></form></div>
+<h3 class="sectionedit6" id="activer_ou_desactiver_un_peripherique">Activer ou désactiver un périphérique</h3>
+<div class="level3">
+
+<p>
+Prenons l&#039;exemple que nous désirons désactiver l&#039;écran tactile. Normalement il suffit d&#039;exécuter la commande xinput dans une fenêtre de terminal. <strong>La commande xinput a des effets temporaires. Vous retrouverez l&#039;état original de votre système en redémarrant votre ordinateur.</strong>
+</p>
+<pre class="code">xinput -set-prop &quot;eGalax Inc. Touch&quot; &quot;Device Enabled&quot; 0</pre>
+
+<p>
+Mais lorsqu&#039;un périphérique possède deux ID, vous devez remplacer le nom  par le numéro d&#039;identification pour spécifier le bon périphérique (en cas de doute, faites les commandes avec les deux numéro d&#039;identification, soit ID 13 et le ID 14 pour notre exemple) :
+</p>
+<pre class="code">xinput -set-prop 14 &quot;Device Enabled&quot; 0</pre>
+
+<p>
+Lorsque vous désirez réactiver votre périphérique, utiliser la même commande et remplacez simplement le 0 par un 1.
+</p>
+<pre class="code">xinput -set-prop 14 &quot;Device Enabled&quot; 1</pre>
+
+<p>
+Maintenant que nous savons que notre écran tactile est bien détecté et actif, nous pouvons essayer notre écran tactile.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="evdev"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1392886273" /><input type="hidden" name="summary" value="[Activer ou désactiver un périphérique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4183-5213" /><input type="submit" value="Modifier" class="button" title="Activer ou désactiver un périphérique" /></div></form></div>
+<h3 class="sectionedit7" id="comportement_de_l_ecran_tactile_axes_x_et_y">Comportement de l&#039;écran tactile (axes X et Y)</h3>
+<div class="level3">
+
+<p>
+Il est très fréquent que le pointeur de la souris ne suivent pas immédiatement la direction du mouvement de votre doigt et que l&#039;axes des X et/ou des Y soient inversés. Il faut donc vérifier le déplacement du pointeur de la souris selon l&#039;axe des X et des Y. Voici les commandes que vous devrez utiliser pour vos essais :
+</p>
+
+<p>
+Si l&#039;axe des X est inversé :
+</p>
+<pre class="code">xinput set-int-prop 14 &quot;Evdev Axis Inversion&quot; 8 1 0</pre>
+
+<p>
+et le retour à la valeur par défaut :
+</p>
+<pre class="code">xinput set-int-prop 14 &quot;Evdev Axis Inversion&quot; 8 0 0</pre>
+
+<p>
+pour inverser l&#039;axe des Y
+</p>
+<pre class="code">xinput set-int-prop 14 &quot;Evdev Axis Inversion&quot; 8 0 1</pre>
+
+<p>
+Si les deux axes sont inversés :
+</p>
+<pre class="code">xinput set-int-prop 14 &quot;Evdev Axis Inversion&quot; 8 1 1</pre>
+
+<p>
+À présent, vous êtes en mesure de vous assurer que la direction du pointeur suivent plus ou moins la bonne direction. Nous passerons donc à l&#039;étape de la calibration.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="evdev"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1392886273" /><input type="hidden" name="summary" value="[Comportement de l'écran tactile (axes X et Y)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5214-6166" /><input type="submit" value="Modifier" class="button" title="Comportement de l'écran tactile (axes X et Y)" /></div></form></div>
+<h3 class="sectionedit8" id="calibration_de_l_ecran_tactile">Calibration de l&#039;écran tactile</h3>
+<div class="level3">
+
+<p>
+Cette étape consiste à définir les coordonnées de 4 points précis de l&#039;écran pour permettre au système de bien gérer le pointeur de la souris. Ces coordonnées peuvent varier grandement d&#039;un système à un autre, en fonction de vos configurations matérielles et logiciels.
+</p>
+
+<p>
+Pour lancer cet outil en ligne de commande, il faut lancer l&#039;outil &#039;ts_calibrate&#039;. Si il ne trouve pas le périphérique à configurer, vous pouvez le lui spécifier en passant par la variable d&#039;environnement TSLIB_TSDEVICE :
+</p>
+<pre class="code">export TSLIB_TSDEVICE=/dev/input/eventX
+ts_calibrate</pre>
+
+<p>
+Il est même possible que deviez estimer temporairement les premières valeurs pour pouvoir utiliser l&#039;écran tactile durant le processus de configuration. De mauvaises données provoque souvent des comportements aberrants du curseur de la souris et même de d&#039;autres périphériques.
+</p>
+
+</div>
+
+<h4 id="utilisation_de_calibrate_touchscreen">Utilisation de Calibrate Touchscreen</h4>
+<div class="level4">
+
+<p>
+Il s&#039;agit d&#039;une étape plutôt délicate car malheureusement, l&#039;outil Calibrate Touchscreen n&#039;est pas toujours parfaitement efficaces. Vous devrez peut-être recalibrer votre écran plusieurs fois de suite pour arriver à obtenir les valeurs optimales. De plus, cet outils ne configure pas votre écran tactile, il ne fait que générer un rapport dans une fenêtre de terminal. Ce sera à vous de trouver vos coordonnés dans ce rapport et de les utiliser comme dans l&#039;exemple ci-dessous :
+</p>
+<pre class="code">Warning: multiple calibratable devices found, calibrating last one (eGalax Inc. Touch)
+	use --device to select another one.
+Calibrating EVDEV driver for &quot;eGalax Inc. Touch&quot; id=14
+	current calibration values (from XInput): min_x=1969, max_x=49 and min_y=169, max_y=1874
+
+Doing dynamic recalibration:
+	Setting new calibration data: 1982 21 165 1874
+
+
+--&gt; Making the calibration permanent &lt;--
+  copy the snippet below into &#039;/etc/X11/xorg.conf.d/99-calibration.conf&#039;
+Section &quot;InputClass&quot;
+	Identifier	&quot;calibration&quot;
+	MatchProduct	&quot;eGalax Inc. Touch&quot;
+	Option	&quot;Calibration&quot;	&quot;1982 21 165 1874&quot;
+EndSection</pre>
+
+<p>
+Encore une fois, la commande xinput vous sera utile pour essayer les valeurs que vous aurez trouvé. 
+le format de la commande xinput est le suivante : 
+</p>
+<pre class="code">xinput set-prop --type=int --format=32 VOTRE_ID &quot;Evdev Axis Calibration&quot; X_min X_max Y_min Y_max</pre>
+
+<p>
+dans notre exemple :
+</p>
+<ul>
+<li class="level1"><div class="li"> 14 est le ID du l&#039;écran tactile</div>
+</li>
+<li class="level1"><div class="li"> 21 est le minimum de l&#039;axe des X</div>
+</li>
+<li class="level1"><div class="li"> 1982 est le maximum de l&#039;axe des X</div>
+</li>
+<li class="level1"><div class="li"> 165 est le minimum de l&#039;axe des Y</div>
+</li>
+<li class="level1"><div class="li"> 1874 est le maximum de l&#039;axes des Y</div>
+</li>
+</ul>
+<pre class="code">xinput set-prop --type=int --format=32 14 &quot;Evdev Axis Calibration&quot; 21 1982 165 1874</pre>
+
+<p>
+Mais si nous exécutons la commande précédente tel quel, nous pourrions avoir un problème puisque dans notre exemple l&#039;axe des X est inversé. En effet si l&#039;axe des X est inversé, nous devons inverser les coordonnées au besoin. Calibrate inverse correctement les coordonnées dans son rapport à la condition que vous ayez bien configurer votre axe des X et des Y, ce qui n&#039;est pas toujours le cas durant les essais. Il faut donc être vigilant, sinon vous pourriez chercher longtemps la cause du problème. Voici donc la bonne commande pour notre exemple qui inverse uniquement l&#039;axe des X :
+</p>
+<pre class="code">xinput set-prop --type=int --format=32 14 &quot;Evdev Axis Calibration&quot; 1982 21 165 1874</pre>
+
+<p>
+Normalement, à cette étape, vous avez réussie à configurer les fonctions de bases de votre écran tactile et vous êtes enfin récompensé pour votre effort et votre patience. Malheureusement il reste encore une étape, il faut configurer le fichier du pilote evdev afin de rendre vos configurations permanentes. Vous pourriez également choisir de créer un script qui sera lancé lors du démarrage de votre ordinateur. Les deux méthodes sont abordés ci-dessous. Pour notre part, la méthode alternative utilisant un script s&#039;est avérée plus satisfaisante.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="evdev"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1392886273" /><input type="hidden" name="summary" value="[Calibration de l'écran tactile] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6167-10063" /><input type="submit" value="Modifier" class="button" title="Calibration de l'écran tactile" /></div></form></div>
+<h2 class="sectionedit9" id="configurer_le_pilote_evdev">Configurer le pilote evdev</h2>
+<div class="level2">
+
+<p>
+La troisième et dernière étape vise à rendre permanent toutes les configurations que vous avez validés grâce à vos essais avec la commande xinput. Il faut donc <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">modifier (avec les droits administrateur) le fichier</a> <strong>/usr/share/X11/xorg.conf.d/10-evdev.conf</strong>
+</p>
+
+<p>
+Vous devez rechercher la section spécifique à votre écran tactile :
+</p>
+<pre class="code">Section &quot;InputClass&quot;
+        Identifier &quot;evdev touchscreen catchall&quot;
+        MatchIsTouchscreen &quot;on&quot;
+        MatchDevicePath &quot;/dev/input/event*&quot;
+        Driver &quot;evdev&quot;
+EndSection</pre>
+
+<p>
+Vous devez ensuite spécifier les options qui correspondent à vos besoins (n&#039;oubliez pas d&#039;inverser les coordonnées si vous avez inversé l&#039;axe des X et/ou des Y).
+</p>
+
+<p>
+Les options pouvant vous être utiles sont :
+</p>
+<ul>
+<li class="level1"><div class="li"> Option SwaptAxes &quot;0 ou 1&quot;</div>
+</li>
+<li class="level1"><div class="li"> Option InvertX &quot;0 ou 1&quot;</div>
+</li>
+<li class="level1"><div class="li"> Option InvertY &quot;0 ou 1&quot;</div>
+</li>
+</ul>
+
+<p>
+Cette option est naturellement obligatoire :
+</p>
+<ul>
+<li class="level1"><div class="li"> Option Calibration &quot;minX maxX minY maxY&quot;</div>
+</li>
+</ul>
+
+<p>
+ Leur valeur peut-être 0 pour false et 1 pour true. Le symbole # au début d&#039;une ligne met en commentaire la ligne dont vous n&#039;avez pas besoin, mais il semble préférable d&#039;effacer les lignes inutiles à moins d&#039;être certain qu&#039;elles n&#039;affectent pas le comportement de evdev.
+</p>
+
+<p>
+<p><div class="noteimportant"> Dans la version 11.10, il semble subsister un problème, l&#039;option InvertX ne semble pas supporté ou pris adéquatement en charge par le pilote evdev malgré la documentation officielle. Nous devons utiliser xinput pour inverser manuellement l&#039;axe des X à chaque redémarrage et pour chaque session utilisateur. Au lieu de configurer 10-evdev.conf, nous vous suggérons de créer un script qui sera lancé durant le démarrage de chaque session utilisateur (voir la méthode alternative ci-dessous).  Ce fichier contiendra les commandes xinput décrite ci-dessus et qui correspondent à vos configuration
+</div></p>
+</p>
+<pre class="code">Section &quot;InputClass&quot;
+        Identifier &quot;evdev touchscreen catchall&quot;
+        MatchIsTouchscreen &quot;on&quot;
+        MatchDevicePath &quot;/dev/input/event*&quot;
+        Driver &quot;evdev&quot;
+	Option &quot;InvertX&quot; &quot;1&quot;
+	Option &quot;Calibration&quot; &quot;1982 41 165 1874&quot;
+EndSection</pre>
+
+<p>
+<strong>Méthode alternative</strong>
+</p>
+
+<p>
+Cette méthode consiste à créer un fichier script qui sera lancer au démarrage de chaque session utilisateur et idéalement, au démarrage de l&#039;ordinateur. Avec cette méthode, vous n&#039;avez pas besoin de configurer le fichier 10-evdev.conf tel que décris précédemment.
+</p>
+
+<p>
+Pour créer le script qui configurera votre écran tactile lors de l&#039;ouverture de session :
+</p>
+
+<p>
+Créez le fichier <strong>touchscreen.sh</strong> en ligne de commande :
+</p>
+<pre class="code">sudo gedit /etc/profile.d/touchscreen.sh</pre>
+
+<p>
+Dans ce fichier, copier les lignes de commandes xinput qui vous ont servit précédemment à tester les configurations de votre écran tactile. À titre d&#039;exemple, sur un eeePc utilisant un contrôleur eGalax, le fichier ressemble à ceci :
+</p>
+<pre class="code">#!/bin/bash
+xinput set-int-prop 14 &quot;Evdev Axis Inversion&quot; 8 1 0
+xinput set-int-prop 14 &quot;Evdev Axis Calibration&quot; 32 66 1979 147 1869</pre>
+
+<p>
+Sauvegarder le fichier et fermer gedit.
+</p>
+
+<p>
+En fonction des périphériques <abbr title="Universal Serial Bus">USB</abbr> connectés, l&#039;écran tactile n&#039;est pas toujours énuméré avec le même identifiant. Voici comment rendre permanente la configuration avec un contrôleur d&#039;écran Microchip AR1100.
+</p>
+<pre class="code">#!/bin/bash
+
+# script : /etc/profile.d/touchscreen.sh
+
+# Find the device ID. The typical line returned by &#039;xinput --list&#039; looks like :
+# |   &gt; Microchip Technology Inc. AR1100 HID-MOUSE	id=8	[slave  pointer   (2)]
+# we want the number after the &#039;=&#039; sign.
+ID=`xinput --list | grep &quot;AR1100&quot; | sed -e &#039;s/.*id=\([0-9]*\).*/\1/&#039;`
+
+xinput --set-prop --type=int --format=32 $ID &quot;Evdev Axis Calibration&quot; 69 3998 131 3971</pre>
+
+<p>
+Remplacez la chaîne de la commande grep par la chaîne obtenue avec :
+</p>
+<pre class="code">xinput --list</pre>
+
+<p>
+Il sera utile de le rendre exécutable :
+</p>
+<pre class="code">sudo chmod +x touchscreen.sh</pre>
+
+<p>
+Sauvegardez votre fichier et redémarrez votre session. Normalement, votre écran tactile fonctionne parfaitement une fois la session lancé.
+</p>
+
+<p>
+Mais vous vous en rendrez compte rapidement, l&#039;écran tactile ne sera pas configuré lorsque vous changez d&#039;utilisateur ou que vous n&#039;êtes pas dans une session active. Une solution consiste à appeler le fichier de script que nous venons de créer au démarrage de gnome ou de votre interface préféré. 
+</p>
+
+<p>
+La solution proposé ci-dessous a été élaboré pour lancer le script de configuration de votre écran tactile sous gnome 3. Pour Unity, un sous-répertoire similaire existe mais nous ne l&#039;avons pas testé.
+</p>
+
+<p>
+Toujours en mode superutilisateurs, vous devez modifier le fichier d&#039;initialisation de l&#039;interface Gnome comme suit : 
+</p>
+
+<p>
+Éditez le fichier de configuration
+</p>
+<pre class="code">sudo gedit /etc/gdm/Init/Default </pre>
+
+<p>
+Ajouter le code suivant à la fin du fichier, mais juste avant la commande Exit 0.
+Le code à ajouter vérifie si xinput est présent sur votre ordinateur et si oui, il exécute votre script de configuration pour votre écran tactile.
+</p>
+<pre class="code"># Calibre l&#039;écran tactile au démarrage
+if [ -x /usr/bin/xinput ]; then
+        /etc/profile.d/touchscreen.sh
+fi
+
+Exit 0</pre>
+
+<p>
+Sauvegardez et redémarrez votre ordinateur. Vous devriez pouvoir utiliser l&#039;écran tactile sitôt que le pointeur de la souris apparaitra à l&#039;écran. 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="evdev"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1392886273" /><input type="hidden" name="summary" value="[Configurer le pilote evdev] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10064-15404" /><input type="submit" value="Modifier" class="button" title="Configurer le pilote evdev" /></div></form></div>
+<h2 class="sectionedit10" id="liens">Liens</h2>
+<div class="level2">
+
+<p>
+Après avoir lu la documentation appropriée pour votre matériel, si vous souhaitez plus de détails sur le fonctionnement de la section « Configurer votre pilote evdev  » de evdev.conf (notamment des explications sur les différentes options), allez voir les pages suivantes de la documentation de X.org  :
+</p>
+
+<p>
+ <a href="http://manpages.ubuntu.com/manpages/precise/man4/evdev.4.html" class="urlextern" title="http://manpages.ubuntu.com/manpages/precise/man4/evdev.4.html"  rel="nofollow">evdev</a> (en anglais seulement)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="evdev"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1392886273" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15405-15832" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<h2 class="sectionedit11" id="faq">FAQ</h2>
+<div class="level2">
+
+<p>
+Q : Après modification du fichier edev.conf, l&#039;ordinateur ne redémarre pas normalement en mode graphique.
+</p>
+
+<p>
+R : Une erreur dans le libellé d&#039;une option tel qu&#039;une faute de frappe peut suffire à créer ce problème. La solution la plus simple est de démarrer l&#039;ordinateur avec le cd d&#039;installation et de corriger le fichier. Si la partition de votre système n&#039;est pas visible au démarrage, vous pouvez utiliser l&#039;application GParted pour la monter car il faut se faciliter la vie ;0)
+</p>
+
+<p>
+Q : Axes des X ou des Y est inversés. 
+</p>
+
+<p>
+R : Voir les commandes ci-haut concernant l&#039;axes des X et Y.
+</p>
+
+<p>
+Q : L&#039;écran tactile apparaît en double dans la liste des périphériques. 
+</p>
+
+<p>
+R : Tenez en compte lors de vos essais, mais il est généralement inutile et même nuisible d&#039;essayer d&#039;en éliminer un sur un système propre.
+</p>
+
+<p>
+Q : Le pilote du fabriquant ne fonctionne pas.
+</p>
+
+<p>
+R : Vous en n&#039;avez pas besoin et ce pilote risque d&#039;interférer avec le pilote evdev. Au besoin, il vous faudra refaire une installation propre de Ubuntu si evdev ne détecte pas votre écran tactile.
+</p>
+
+<p>
+Q : L&#039;écran ne réagit pas au touché. 
+</p>
+
+<p>
+R : Il est possible que les coordonnées actuelles soient trop éloignées des valeurs optimale. Il est possible que l&#039;écran tactile soit désactivé. Il est possible qu&#039;un autre périphérique soit temporairement en conflit (essayé tout les périphérique pour trouver lequel est en conflit et le désactiver temporairement).
+</p>
+
+<p>
+Q : Un bouton de la souris ou le pavé tactile ne fonctionne plus normalement après avoir touché l&#039;écran. 
+</p>
+
+<p>
+R : Essayez la touche échap et les différents boutons de votre souris. Si l&#039;ordinateur ne revient pas à la normale, le plus simple est de redémarrer votre session. La cause peut-être des coordonnées pour les axes x et y trop éloignées de leur valeur optimale. Vous pouvez aussi désactiver temporairement un périphérique.
+</p>
+
+<p>
+Q : Existe-t-il un outil capable de configurer et calibrer mon écran tactile en une seule opération?
+</p>
+
+<p>
+R : L&#039;abandon de l&#039;ancien fichier xconf.conf  et les récentes évolutions de gnome et unity ont rendu la plupart des outils propriétaires inopérant. Si toutefois vous en connaissez un qui fonctionne mieux que xinput-calibrator (Calibrate Touchscreen), je serai heureux de mettre à jour ce tutoriel.
+</p>
+<hr />
+
+<p>
+<em>Auteurs : <a href="utilisateurs/eeeluc" class="wikilink2" title="utilisateurs:eeeluc" rel="nofollow">eeeLuc</a>, 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="evdev"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1392886273" /><input type="hidden" name="summary" value="[FAQ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15833-" /><input type="submit" value="Modifier" class="button" title="FAQ" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/cba0e6ca9c07564446f75185a96ce61a.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="evdev?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="evdev?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="evdev?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="evdev?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="evdev?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

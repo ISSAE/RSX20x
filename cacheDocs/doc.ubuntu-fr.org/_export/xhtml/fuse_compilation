@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>fuse_compilation</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-01-20T09:32:21+0100"/>
+<meta name="keywords" content="dapper,edgy,feisty,fichier,systeme,fuse"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../fuse_compilation?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="fuse_compilation"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/fuse_compilation"/>
+<link rel="canonical" href="../../fuse_compilation"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"fuse_compilation","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="fuse_compilation#de_quoi_s_agit-il">De quoi s&#039;agit-il ?</a></div></li>
+<li class="level1"><div class="li"><a href="fuse_compilation#pourquoi_compiler">Pourquoi compiler ?</a></div></li>
+<li class="level1"><div class="li"><a href="fuse_compilation#installation_et_compilation">Installation et compilation</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../dapper" class="wikilink1" title="dapper" rel="tag">Dapper</a>,
+	<a href="http://doc.ubuntu-fr.org/edgy" class="wikilink1" title="edgy" rel="tag">Edgy</a>,
+	<a href="../../feisty" class="wikilink1" title="feisty" rel="tag">Feisty</a>,
+	<a href="../../fichier?do=showtag&amp;tag=fichier" class="wikilink1" title="fichier" rel="tag">fichier</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="http://doc.ubuntu-fr.org/fuse" class="wikilink1" title="fuse" rel="tag">fuse</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="compilation_et_installation_d_un_module_fuse_pour_le_noyau">Compilation et installation d&#039;un module fuse pour le noyau</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Compilation et installation d'un module fuse pour le noyau" [58-136] -->
+<h2 class="sectionedit2" id="de_quoi_s_agit-il">De quoi s&#039;agit-il ?</h2>
+<div class="level2">
+
+<p>
+Apprendre à installer un module Fuse  en le compilant.
+</p>
+
+<p>
+Pré-requis : Ubuntu (Debian et dérivés).
+</p>
+
+<p>
+Vous disposez à ce titre d&#039;un noyau Linux précompilé et les « kernel-headers » sont disponibles sous la forme d&#039;un paquet « .deb » sous le nom de « linux-headers ».
+</p>
+
+<p>
+Cette page est une annexe de la page <a href="http://doc.ubuntu-fr.org/fuse" class="wikilink1" title="fuse">Fuse</a>.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "De quoi s'agit-il ?" [137-511] -->
+<h2 class="sectionedit3" id="pourquoi_compiler">Pourquoi compiler ?</h2>
+<div class="level2">
+
+<p>
+Le programme Fuse est un bijou (parce que petit et précieux) qui sert de base à de très nombreux programmes (cf. sur ce wiki la page sur <a href="../../encfs" class="wikilink1" title="encfs">EncFS</a>).
+L&#039;un des plus connus est <a href="http://doc.ubuntu-fr.org/tutoriel/ntfs" class="wikilink1" title="tutoriel:ntfs">ntfs-3g</a> qui permet d&#039;écrire sur des partitions NTFS.
+</p>
+
+<p>
+Le support du module fuse est inclu en standard depuis le noyau Linux 2.6.14.
+Feisty est livré avec fuse-utils (version 2.6.3.). Cette version devrait a priori être conservée pour la durée de vie de Feisty.
+</p>
+
+<p>
+La version stable actuelle du module fuse est la 2.6.5 et la 2.7 est en cours de test.  
+Voici comment le compiler pour installer la dernière version au cas où l&#039;un des nombreux programmes utilisant fuse la réclamerait. L&#039;opération dure presque cinq minutes. <img src="../../lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />
+</p>
+
+<p>
+L&#039;exemple choisi est donc la 2.6.5. Vous adapterez éventuellement pour le numéro de version ultérieur souhaité.
+Remarque : veillez à ne pas confondre le noyau Linux et le module Fuse. Les numéros de version sont aujourd&#039;hui dangereusement proches. <img src="../../lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Pourquoi compiler ?" [512-1547] -->
+<h2 class="sectionedit4" id="installation_et_compilation">Installation et compilation</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Téléchargez la dernière version de Fuse (aujourd&#039;hui la 2.6.5) sur le site   ou l&#039;un de ses nombreux miroirs : </div>
+</li>
+</ul>
+
+<p>
+<a href="http://sourceforge.net/project/showfiles.php?group_id=121684&amp;package_id=132802" class="urlextern" title="http://sourceforge.net/project/showfiles.php?group_id=121684&amp;package_id=132802"  rel="nofollow">http://sourceforge.net/project/showfiles.php?group_id=121684&amp;package_id=132802</a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Créez, par exemple, le dossier « /home/VotreNom/.fuse » et placez-y le dossier décompressé fuse-2.6.5.</div>
+</li>
+<li class="level1"><div class="li"> Vérifiez la version de votre noyau Linux.<pre class="code">    xxx@xxx-laptop:~$ uname -r
+    2.6.20-16-generic</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Vérifiez avec Synaptic que les « linux-headers » correspondants <strong>exactement</strong> à votre noyau sont bien installés. À défaut, installez-les. Ici donc : <code>linux-headers 2.6.20-16-generic</code></div>
+</li>
+</ul>
+
+<p>
+Nota: vous avez un module fuse en fonctionnement. Ne vous souciez pas de le désactiver ou désinstaller et appliquez la procédure suivante: 
+</p>
+<ul>
+<li class="level1"><div class="li"> Installez le module Fuse :<pre class="code">  cd /home/VotreNom/.fuse/fuse-2.6.5
+  ./configure &amp;&amp; make &amp;&amp; sudo make install</pre>
+
+<p>
+Cela devrait suffire pour installer directement car le script d&#039;installation va détecter lui-même le répertoire où sont stockés les <em>headers</em>. 
+</p>
+</div>
+</li>
+</ul>
+
+<p>
+puis 
+</p>
+<pre class="code"> modprobe fuse</pre>
+<ul>
+<li class="level1"><div class="li"> Vérifiez :</div>
+</li>
+</ul>
+<pre class="code">  xxxxx@xxxxx-laptop:~$ fusermount -V
+  fusermount version: 2.6.5</pre>
+
+<p>
+Terminé <img src="../../lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />
+</p>
+
+<p>
+Remarque : si votre système ne trouve pas les headers, il faudra alors recourir aux sources.
+</p>
+<pre class="code">  ./configure --with-kernel /usr/src/linux-headers-X.Y.Z &amp;&amp; make &amp;&amp; sudo make install</pre>
+<hr />
+
+<p>
+<em>Contributeurs : </em><a href="../../utilisateurs/roger64" class="wikilink1" title="utilisateurs:roger64">roger64</a>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Installation et compilation" [1548-] -->
+<!-- no cachefile used, but created /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/3/3ed3731b6acc9a5165b6b499bd3be6cc.xhtml -->
+</div>
+</body>
+</html>

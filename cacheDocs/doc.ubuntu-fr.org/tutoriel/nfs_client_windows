@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:nfs_client_windows - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-03-27T19:48:20+0100"/>
+<meta name="keywords" content="tutoriel,nfs,partage,reseau"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/nfs_client_windows?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/nfs_client_windows?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/nfs_client_windows"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/nfs_client_windows"/>
+<link rel="canonical" href="nfs_client_windows"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:nfs_client_windows","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="nfs_client_windows#main" tabindex="1">Contenu</a> | <a href="nfs_client_windows#qsearch__in" tabindex="2">Rechercher</a> | <a href="nfs_client_windows#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="nfs_client_windows" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="nfs_client_windows" >tutoriel:nfs_client_windows</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="nfs_client_windows#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="nfs_client_windows#obtention_de_windows_services_for_unix">Obtention de Windows Services for Unix</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="nfs_client_windows#windows_vista_et_seven">Windows Vista et Seven</a></div></li>
+<li class="level2"><div class="li"><a href="nfs_client_windows#windows_xp_ou_si_vous_ne_le_trouvez_pas_dans_les_composants">Windows XP ou si vous ne le trouvez pas dans les Composants</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="nfs_client_windows#configuration_de_windows_services_for_unix">Configuration de Windows Services for Unix</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="nfs_client_windows#windows_seven">Windows Seven</a></div></li>
+<li class="level2"><div class="li"><a href="nfs_client_windows#windows_xp_et_vista">Windows XP et Vista</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="nfs_client_windows#utilisation_de_windows_services_for_unix">Utilisation de Windows Services for Unix</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="nfs_client_windows#windows_seven1">Windows Seven</a></div></li>
+<li class="level2"><div class="li"><a href="nfs_client_windows#windows_xp_et_vista1">Windows XP et Vista</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../nfs" class="wikilink1" title="nfs" rel="tag">nfs</a>,
+	<a href="../partage" class="wikilink1" title="partage" rel="tag">partage</a>,
+	<a href="../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_configurer_un_pc_client_windows_pour_acceder_a_un_partage_nfs">Comment configurer un PC client Windows pour accéder à un partage NFS</h1>
+<div class="level1">
+
+<p>
+Imaginons le cas où vous disposez d&#039;un réseau de PC en grande partie <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux, et que vous voulez donner accès à des fichiers partagés via <a href="../nfs" class="wikilink1" title="nfs">NFS</a> à un pauvre petit ordi que vous auriez laissé tourner sous Windows™ ? Pas possible ? Si !
+</p>
+
+<p>
+Pour cela, il va falloir suivre scrupuleusement l&#039;astuce, en effet, même si Microsoft™ fournit un outil permettant d&#039;accéder ou de partager en <a href="../nfs" class="wikilink1" title="nfs">NFS</a>, cet outil est capricieux.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="nfs_client_windows"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364410100" /><input type="hidden" name="summary" value="[Comment configurer un PC client Windows pour accéder à un partage NFS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="45-564" /><input type="submit" value="Modifier" class="button" title="Comment configurer un PC client Windows pour accéder à un partage NFS" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Un PC sous Windows™ (de 2000 jusqu&#039;à Vista (professionnel et ultimate seulement))</div>
+</li>
+<li class="level1"><div class="li"> Ou un PC sous Seven 32 bits (peut être aussi 64 bits, je ne peux pas vérifier)</div>
+</li>
+<li class="level1"><div class="li"> Un réseau local sur lequel existent des partages <a href="../nfs" class="wikilink1" title="nfs">NFS</a></div>
+</li>
+<li class="level1"><div class="li"> Et le Windows <strong>S</strong>ervices <strong>F</strong>or <strong>U</strong>nix (ci-dessous nommé SFU)klhlk</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="nfs_client_windows"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364410100" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="565-905" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="obtention_de_windows_services_for_unix">Obtention de Windows Services for Unix</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="nfs_client_windows"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364410100" /><input type="hidden" name="summary" value="[Obtention de Windows Services for Unix] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="906-957" /><input type="submit" value="Modifier" class="button" title="Obtention de Windows Services for Unix" /></div></form></div>
+<h3 class="sectionedit4" id="windows_vista_et_seven">Windows Vista et Seven</h3>
+<div class="level3">
+
+<p>
+<del>Les Windows Services For Unix sont normalement intégrés</del>
+Les services pour Unix ne sont disponibles que dans les éditions Intégrales (Ultimate) et Entreprises (Corporate). Il faut les installer via le panneau de configuration → ajout/suppression de programmes → composants Windows. (Sous Seven sous le nom de Services pour <abbr title="Network File System">NFS</abbr>)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="nfs_client_windows"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364410100" /><input type="hidden" name="summary" value="[Windows Vista et Seven] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="958-1336" /><input type="submit" value="Modifier" class="button" title="Windows Vista et Seven" /></div></form></div>
+<h3 class="sectionedit5" id="windows_xp_ou_si_vous_ne_le_trouvez_pas_dans_les_composants">Windows XP ou si vous ne le trouvez pas dans les Composants</h3>
+<div class="level3">
+
+<p>
+Cela se fait directement sur le site de Microsoft : <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=896c9688-601b-44f1-81a4-02878ff11778&amp;DisplayLang=en" class="urlextern" title="http://www.microsoft.com/downloads/details.aspx?FamilyID=896c9688-601b-44f1-81a4-02878ff11778&amp;DisplayLang=en"  rel="nofollow">suivez le guide.</a>
+Il ne faut pas avoir peur, le SFU fait 217 Mo, c&#039;est parfaitement normal.
+</p>
+
+<p>
+Ceci fait, exécutez <strong><code>SFUxxxx_LN.exe</code></strong> (où <em>xxxx</em> représente sa version<sup><a href="nfs_client_windows#fn__1" id="fnt__1" class="fn_top">1)</a></sup> ; et <em>LN</em> la langue choisie, pour notre cas EN fait l&#039;affaire (jap ne vous intéressera pas je pense… ).
+L&#039;exécutable est une archive auto-extractible, qui va donc vous demander où se décompresser, un emplacement facile d&#039;accès comme le bureau sera le bienvenu.
+<p><div class="notetip">Lors de l&#039;extraction, SFU ne crée pas de sous-dossier pour s&#039;y décompresser, pensez donc à le décompresser dans un sous-dossier du bureau.
+</div></p>
+</p>
+
+<p>
+Une fois décompressé, lancez le <strong><code>setup.exe</code></strong> comme pour toute installation sur Windows. Faites « <em>Next</em> », et acceptez le EULA (CLUF en français). Choisissez « <em>custom</em> », et gardez dans les cas <abbr title="Network File System">NFS</abbr> (et toutes ses sous-fonctionnalités) et « <em>Authentication Tools for <abbr title="Network File System">NFS</abbr></em> » (idem). Le reste est à installer à votre guise.
+</p>
+
+<p>
+Pour la suite de l&#039;installation, faites « <em>next</em> » sans vous soucier de quoi que ce soit !
+</p>
+
+<p>
+<p><div class="noteimportant"> Pour Windows XP Home Édition, l&#039;installation nécessite de corriger l&#039;installeur en hexadécimal. Faites une sauvegarde du fichier <code>SfuSetup.msi</code>, puis ouvrez-le avec un <a href="http://fr.wikipedia.org/wiki/%C3%89diteur_hexad%C3%A9cimal" class="urlextern" title="http://fr.wikipedia.org/wiki/%C3%89diteur_hexad%C3%A9cimal"  rel="nofollow">éditeur hexadécimal</a>. Cherchez la chaîne : 
+</p>
+<pre class="file">NOT (VersionNT = 501 AND MsiNTSuitePersonal)</pre>
+
+<p>
+ et remplacez <strong><code>501</code></strong> par <strong><code>510</code></strong>.
+</p>
+
+<p>
+Autre solution qui permet de se passer d&#039;éditeur :
+</p>
+
+<p>
+cat SfuSetup.msi | sed &#039;s/VersionNT \= 501 AND MsiNTSuitePersonal/VersionNT \= 510 AND MsiNTSuitePersonal/&#039; &gt; SfuSetup_xphome.msi
+</p>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="nfs_client_windows"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364410100" /><input type="hidden" name="summary" value="[Windows XP ou si vous ne le trouvez pas dans les Composants] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1337-3255" /><input type="submit" value="Modifier" class="button" title="Windows XP ou si vous ne le trouvez pas dans les Composants" /></div></form></div>
+<h2 class="sectionedit6" id="configuration_de_windows_services_for_unix">Configuration de Windows Services for Unix</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="nfs_client_windows"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364410100" /><input type="hidden" name="summary" value="[Configuration de Windows Services for Unix] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3256-3311" /><input type="submit" value="Modifier" class="button" title="Configuration de Windows Services for Unix" /></div></form></div>
+<h3 class="sectionedit7" id="windows_seven">Windows Seven</h3>
+<div class="level3">
+
+<p>
+<del>Rien à faire, tout devrait marcher.</del>
+</p>
+
+<p>
+Il faut malheureusement batailler. Windows 7 n&#039;intègre pas le User Name Mapping contrairement à Windows XP. De fait, il est impossible de monter un répertoire <abbr title="Network File System">NFS</abbr> sans un windows capable de faire du routage de nom d&#039;utilisateur. (Win XP ou 2008 Serveur)
+</p>
+
+<p>
+<del>Vous pouvez trouver une aide en ligne sous Windows dans votre Panneau de configuration dans les &quot;Administrative Tools&quot; (désolé j&#039;ai accès qu&#039;à une version américaine de Windows en ce moment). Vous trouverez une aide pour régler certains problèmes que vous pourrez rencontrer.</del>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="nfs_client_windows"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364410100" /><input type="hidden" name="summary" value="[Windows Seven] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3312-3938" /><input type="submit" value="Modifier" class="button" title="Windows Seven" /></div></form></div>
+<h3 class="sectionedit8" id="windows_xp_et_vista">Windows XP et Vista</h3>
+<div class="level3">
+
+<p>
+Maintenant que c&#039;est installé, il faut le configurer. Rien de bien compliqué, quand on sait ce qu&#039;il faut faire.
+</p>
+
+<p>
+Munissez-vous d&#039;une copie des fichiers <strong><code>/etc/group</code></strong> et <strong><code>/etc/passwd</code></strong> d&#039;un de vos postes <abbr title="GNU&#039;s Not Unix">GNU</abbr>/linux, et transférez-les vers le disque dur de votre poste Windows, peu importe l&#039;emplacement, tant que vous puissiez les retrouver.
+</p>
+
+<p>
+Pour l&#039;exemple, nous les copions dans le répertoire d&#039;installation de SFU, (par défaut : &quot;<code>C:\SFU\</code>&quot; ).
+</p>
+
+<p>
+Ceci fait, direction <em><strong>menu démarrer ⇒ programmes</strong> (ou tous les programmes selon la version) <strong>⇒ Windows Services for Unix ⇒ Services for Unix Administration</strong></em>.
+</p>
+
+<p>
+Le programme se lance. Une fenêtre scindée en 2 parties apparaît.
+(Nous ferons référence ainsi à la partie gauche quand nous dirons <em>Gauche</em>, et la partie droite quand nous dirons <em>Droite</em>).
+</p>
+<ul>
+<li class="level1"><div class="li"> A gauche, cliquez sur « <em>Services for Unix (Local)</em> », puis à droite sur « <em>Settings</em> ». Dans l&#039;invité de texte vérifiez que soit écrit <strong><code>localhost</code></strong>, puis cliquez sur « <em>Apply</em> » (en haut).</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> A gauche, cliquez sur « <em>User Name Mapping</em> ». A droite, préférez « <em>Use Password and Group files</em> », et renseignez les champs &quot;<code>path</code>&quot; pour les fichiers <em>password</em> et <em>group</em>.</div>
+</li>
+</ul>
+
+<p>
+Dans l&#039;exemple, il s&#039;agit des fichiers <strong><code>passwrd</code></strong> et <strong><code>group</code></strong> copiés sur le disque, donc nous renseignons ainsi : &quot;<code>C:\SFU\passwd</code>&quot; et &quot;<code>C:\SFU\group</code>&quot; .
+</p>
+
+<p>
+Ceci fait, cliquez « <em>Apply</em> » puis « <em>Reload</em> ».
+</p>
+<ul>
+<li class="level1"><div class="li"> A droite toujours, cliquez sur « <em>Maps</em> ».</div>
+</li>
+</ul>
+
+<p>
+Le but est de faire correspondre un utilisateur Windows à un utilisateur Linux, avec plus ou moins de droits d&#039;accès. Évitez de faire correspondre les comptes administrateurs de Windows ou de Linux avec d&#039;autre comptes, ceci pour des raisons de sécurité, bien évidemment.
+</p>
+
+<p>
+Cliquez sur « <em>Show User Maps</em> ». Puis successivement « <em>list Windows User</em> » et « <em>list Unix Users</em> ». Si tout se passe bien, vous avez normalement les 2 listes, une correspondant à Windows, l&#039;autre à <abbr title="GNU&#039;s Not Unix">GNU</abbr>/linux.
+</p>
+
+<p>
+Si (comme moi), vous avez une erreur disant que windows ne peut contacter le serveur &quot;User Name Mapping&quot;, c&#039;est qu&#039;il n&#039;a pas été activé à l&#039;installation. Il faut aller alelr dans les services pour activée et démarrer le service &quot;User Name Mapping&quot; (cf <a href="http://www.suacommunity.com/forum/fb.ashx?m=7086" class="urlextern" title="http://www.suacommunity.com/forum/fb.ashx?m=7086"  rel="nofollow">http://www.suacommunity.com/forum/fb.ashx?m=7086</a>).
+</p>
+
+<p>
+Choisissez votre nom d&#039;utilisateur Windows, et l&#039;équivalent qui correspond le mieux pour Linux (le compte d&#039;un autre utilisateur par exemple), puis cliquez sur « <em>Add</em> ». Vous avez <em>mappé</em> un utilisateur et vous pouvez le vérifier dans « <em>Mapped Users</em> » juste en dessous.
+Chaque fois que vous ajoutez des utilisateurs, cliquez « <em>Apply</em> ».
+</p>
+<ul>
+<li class="level1"><div class="li"> Vous pouvez faire de même pour les <em>Group</em> (en cliquant sur « <em>show Group Maps</em> »), et une fois fini, n&#039;oubliez pas : « <em>Apply</em> ».</div>
+</li>
+</ul>
+
+<p>
+Maintenant que c&#039;est fait, vous pouvez parcourir votre réseau local à la recherche de points de montage <abbr title="Network File System">NFS</abbr>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="nfs_client_windows"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364410100" /><input type="hidden" name="summary" value="[Windows XP et Vista] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3939-6941" /><input type="submit" value="Modifier" class="button" title="Windows XP et Vista" /></div></form></div>
+<h2 class="sectionedit9" id="utilisation_de_windows_services_for_unix">Utilisation de Windows Services for Unix</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="nfs_client_windows"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364410100" /><input type="hidden" name="summary" value="[Utilisation de Windows Services for Unix] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6942-6995" /><input type="submit" value="Modifier" class="button" title="Utilisation de Windows Services for Unix" /></div></form></div>
+<h3 class="sectionedit10" id="windows_seven1">Windows Seven</h3>
+<div class="level3">
+
+<p>
+Il suffit de monter un partage <abbr title="Network File System">NFS</abbr> plus ou moins comme on le ferait sous Linux <sup><a href="nfs_client_windows#fn__2" id="fnt__2" class="fn_top">2)</a></sup>. <br/>
+
+Tout d&#039;abord ouvrez l&#039;invité de commande MS-DOS. L&#039;équivalent Windows du <a href="../terminal" class="wikilink1" title="terminal">Terminal</a>, puis tapez :
+</p>
+<pre class="code">mount \\ip du serveur\dossier\partagé Lettre :</pre>
+
+<p>
+Ce qui peut ressembler à ça :
+</p>
+<pre class="code">mount \\192.168.1.10\home\Partage R :</pre>
+
+<p>
+Si après avoir monté votre partage <abbr title="Network File System">NFS</abbr> sous windows, Windows se plaint d&#039;une erreur incohérente comme quoi vous n&#039;avez pas les droits pour accéder au partage <sup><a href="nfs_client_windows#fn__3" id="fnt__3" class="fn_top">3)</a></sup>, faites un clic droit sur le partage problématique dans le <strong>Poste de Travail</strong> puis <strong>Propriétés</strong>. Dans la fenêtre qui s&#039;affiche, allez dans les <strong>Attributs <abbr title="Network File System">NFS</abbr></strong> et cochez tout ! Si certains refusent de se cocher, ce n&#039;est pas grave. Faites appliquer et sortez d&#039;ici, illogiquement ça devrait marcher !
+</p>
+
+<p>
+Attention, veuillez garder à l&#039;esprit que <abbr title="Network File System">NFS</abbr> et Windows ne font pas forcement bon ménage, si vous n&#039;arrivez pas à partager avec Windows via <abbr title="Network File System">NFS</abbr> vous pouvez utiliser <a href="../samba" class="wikilink1" title="samba">Samba</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="nfs_client_windows"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364410100" /><input type="hidden" name="summary" value="[Windows Seven] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6996-8082" /><input type="submit" value="Modifier" class="button" title="Windows Seven" /></div></form></div>
+<h3 class="sectionedit11" id="windows_xp_et_vista1">Windows XP et Vista</h3>
+<div class="level3">
+
+<p>
+Les points de montage <abbr title="Network File System">NFS</abbr> sont reconnus pour des dossiers sur le réseau, ils peuvent donc être associés à un lecteur réseau de la même manière que n&#039;importe quel partage Windows.
+</p>
+
+<p>
+Pour les trouver, allez dans <em><strong>Favoris réseau ⇒ tout le réseau ⇒ <abbr title="Network File System">NFS</abbr> Network ⇒ Default <abbr title="Réseau Local">LAN</abbr></strong></em>.
+</p>
+
+<p>
+Vous trouverez ici les IP des postes Linux connectés, mais aussi les noms de machines des postes Windows utilisant le service <abbr title="Network File System">NFS</abbr>.
+</p>
+
+<p>
+Sous XP home il peut y avoir un message d&#039;erreur avec mount : &quot;Error 67 : le nom réseau introuvable&quot;
+Il faut pour cela installer un FIX (<a href="http://support.microsoft.com/kb/917796/fr" class="urlextern" title="http://support.microsoft.com/kb/917796/fr"  rel="nofollow">http://support.microsoft.com/kb/917796/fr</a>)
+</p>
+
+<p>
+Et maintenant, à vous de vous servir.
+</p>
+
+<p>
+—-
+<em>Créée par </em><a href="http://doc.ubuntu-fr.org/utilisateurs/draco31.fr" class="wikilink1" title="utilisateurs:draco31.fr">draco31.fr</a> le 23/01/2010, 18:18 à partir de l&#039;<a href="../nfs?rev=1258038788" class="urlextern" title="http://doc.ubuntu-fr.org/nfs?rev=1258038788"  rel="nofollow">ancienne page NFS</a>
+<br/>
+Contributeur de la page d&#039;origine :<em> <a href="../utilisateurs/ostaquet" class="wikilink2" title="utilisateurs:ostaquet" rel="nofollow">ostaquet</a>, <a href="../utilisateurs/fabien26" class="wikilink1" title="utilisateurs:fabien26">Fabien26</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/darkhylian" class="wikilink1" title="utilisateurs:darkhylian">DarkHylian</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="nfs_client_windows"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1364410100" /><input type="hidden" name="summary" value="[Windows XP et Vista] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8083-" /><input type="submit" value="Modifier" class="button" title="Windows XP et Vista" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="nfs_client_windows#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+version 3.5SEL à l&#039;heure où j&#039;écris</div>
+<div class="fn"><sup><a href="nfs_client_windows#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+vraiment plus ou moins</div>
+<div class="fn"><sup><a href="nfs_client_windows#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+mais qu&#039;il le monte quand même ce qui est illogique</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/1/185851fdc68d746637dbad45cd100680.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/nfs_client_windows?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/nfs_client_windows?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/nfs_client_windows?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/nfs_client_windows?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/nfs_client_windows?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

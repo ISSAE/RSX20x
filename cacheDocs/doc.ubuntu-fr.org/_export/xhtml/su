@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>su</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-07-21T03:47:44+0200"/>
+<meta name="keywords" content="administration,systeme,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/su?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="su"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/su"/>
+<link rel="canonical" href="../../su"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"su","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="su#lancer_une_session_graphique_avec_une_autre_identite">Lancer une session graphique avec une autre identité</a></div></li>
+<li class="level1"><div class="li"><a href="su#executer_un_programme_graphique_sous_une_autre_identite_dans_la_session_courante">Exécuter un programme graphique sous une autre identité dans la session courante</a></div></li>
+<li class="level1"><div class="li"><a href="su#changer_d_identite_en_console">Changer d&#039;identité en console</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="su#su_root">su root</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="su#changer_de_groupe">Changer de groupe</a></div></li>
+<li class="level1"><div class="li"><a href="su#problemes">Problèmes</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="su#echec_lors_de_la_communication_avec_gksu-run-helper">Échec lors de la communication avec gksu-run-helper</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="changer_d_identite">Changer d&#039;identité</h1>
+<div class="level1">
+
+<p>
+Pour quelque raison que ce soit, il peut parfois être utile de lancer une application, voire même une session complète, en tant qu&#039;un autre utilisateur sans nécessairement se déconnecter de sa session graphique courante. Ceci peut être accompli à l&#039;aide de quelques programmes inclus dans Ubuntu : <strong>Nouvelle connexion</strong> pour lancer un nouvel environnement de travail complet, <strong>Lancer avec un utilisateur différent</strong> pour exécuter un programme sous une autre identité dans la même session de travail courante, ou <strong><code>su</code></strong> en console.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Changer d'identité" [51-633] -->
+<h2 class="sectionedit2" id="lancer_une_session_graphique_avec_une_autre_identite">Lancer une session graphique avec une autre identité</h2>
+<div class="level2">
+
+<p>
+Pour lancer une nouvelle session graphique en tant qu&#039;un autre utilisateur, sans clore la session graphique courante, utilisez l&#039;outil <strong>Nouvelle connexion</strong>, disponible dans le menu <em>Applications → Outils système</em>.  Ceci aura pour effet de lancer une nouvelle session graphique.
+</p>
+
+<p>
+Pour naviguer entre les différentes sessions graphiques lancées , utilisez la combinaison de touches [CTRL]+[ALT]+[Fn], où <em>Fn</em> correspond aux touches fonction de votre clavier (F7 à F12).
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Lancer une session graphique avec une autre identité" [634-1180] -->
+<h2 class="sectionedit3" id="executer_un_programme_graphique_sous_une_autre_identite_dans_la_session_courante">Exécuter un programme graphique sous une autre identité dans la session courante</h2>
+<div class="level2">
+
+<p>
+<a href="../../_detail/applications/su-gksu2.png?id=su" class="media" title="applications:su-gksu2.png"><img src="../../_media/applications/su-gksu2.png" class="mediaright" alt="" /></a>
+</p>
+
+<p>
+L&#039;utilitaire <code>gksu</code> permet d&#039;exécuter une application graphique avec l&#039;identité d&#039;un autre utilisateur dans la session graphique courante.  Cet outil est disponible à partir du raccourci <strong>Lancer avec un utilisateur différent</strong>, dans le menu <em>Applications → Outils système</em>.
+</p>
+
+<p>
+ La boîte <em>Lancer</em> doit contenir le nom de l&#039;application graphique à démarrer.  Au-dessous, le menu déroulant <em>En tant qu&#039;utilisateur</em> vous permet de choisir avec quelle identité lancer le programme.  Ainsi, dans l&#039;exemple ci-contre, l&#039;éditeur de texte gEdit serait exécuté avec l&#039;identité du compte nommé <em>nobody</em>.
+</p>
+
+<p>
+Une boîte de dialogue graphique s&#039;ouvre ensuite, afin de confirmer le mot de passe de l&#039;utilisateur avec lequel exécuter l&#039;application graphique.
+</p>
+
+<p>
+<a href="../../_detail/applications/su-gksupasswd.jpg?id=su" class="media" title="applications:su-gksupasswd.jpg"><img src="../../_media/applications/su-gksupasswd.jpg" class="mediacenter" title="su-gksupasswd.jpg" alt="su-gksupasswd.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Exécuter un programme graphique sous une autre identité dans la session courante" [1181-2117] -->
+<h2 class="sectionedit4" id="changer_d_identite_en_console">Changer d&#039;identité en console</h2>
+<div class="level2">
+
+<p>
+Dans un terminal, l&#039;utilitaire <code>su</code> <em>(pour &quot;<strong>s</strong>witch <strong>u</strong>ser&quot; ou &quot;<strong>s</strong>ubstitute <strong>u</strong>ser&quot;)</em><sup><a href="su#fn__1" id="fnt__1" class="fn_top">1)</a></sup> permet de prendre l&#039;identité d&#039;un autre utilisateur.  Elle s&#039;utilise de la façon suivante:
+</p>
+<pre class="code">~$ su identifiant</pre>
+
+<p>
+(où <em>identifiant</em> est remplacé par le nom de l&#039;utilisateur à qui prendre l&#039;identité)
+</p>
+
+<p>
+<a href="../../_detail/applications/su-console.png?id=su" class="media" title="applications:su-console.png"><img src="../../_media/applications/su-console.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Le mot de passe demandé est celui de l&#039;utilisateur à prendre l&#039;identité.  Vous ne prendrez son identité que lorsque le mot de passe est valide.  Vous pourrez alors exécuter, dans la console lancée, toutes les actions voulues, comme si vous étiez l&#039;utilisateur auquel vous venez de prendre l&#039;identité.  Vous aurez son identité tout au long de cette session en console.  Pour mettre fin à cette session, saisissez la commande :
+</p>
+<pre class="code">­~$ exit</pre>
+
+<p>
+ou appuyer sur CTRL-D
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Changer d'identité en console" [2118-3247] -->
+<h3 class="sectionedit5" id="su_root">su root</h3>
+<div class="level3">
+
+<p>
+Sous Ubuntu, le compte système (<em>root</em>) est bloqué.  Vous ne pourrez pas vous y connecter à l&#039;aide de la commande <code>su root</code> (ou <code>su</code> seule).  Pour effectuer des tâches administratives, utilisez plutôt <code><a href="../../sudo" class="wikilink1" title="sudo">sudo</a></code>. Néanmoins, vous pouvez <a href="../../sudo#pseudo-root_une_console_superutilisateur" class="wikilink1" title="sudo">avoir accès à un terminal superutilisateur</a> en utilisant <code>sudo</code> sans que vous activiez le compte <code>root</code>.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "su root" [3248-3679] -->
+<h2 class="sectionedit6" id="changer_de_groupe">Changer de groupe</h2>
+<div class="level2">
+
+<p>
+Il est parfois nécessaire de changer de groupe. L&#039;équivalent de la commande <strong>su</strong> pour les groupes est la commande <strong>newgrp</strong> :
+</p>
+<pre class="code">newgrp autre_groupe</pre>
+
+</div>
+<!-- EDIT6 SECTION "Changer de groupe" [3680-3865] -->
+<h2 class="sectionedit7" id="problemes">Problèmes</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT7 SECTION "Problèmes" [3866-3888] -->
+<h3 class="sectionedit8" id="echec_lors_de_la_communication_avec_gksu-run-helper">Échec lors de la communication avec gksu-run-helper</h3>
+<div class="level3">
+
+<p>
+Il arrive parfois que <strong>gksu</strong> se dérègle (après une fausse manipulation), donnant une erreur :
+</p>
+<pre class="code">Échec lors de la communication avec gksu-run-helper.
+
+Reçu :
+ su : Échec d&#039;authentification
+Ce qui était attendu :
+ gksu: waiting</pre>
+
+<p>
+<strong>Solution</strong> : Sous Ubuntu 13.04 (à vérifier pour les autres versions) :
+</p>
+
+<p>
+Pour corriger ce problème, il faut utiliser l’éditeur de configuration <strong>gconf-editor</strong> et s&#039;y situer en <code>/apps/gksu/sudo-mode</code> et cocher la valeur &quot;vrai&quot;.
+</p>
+
+<p>
+<em class="u"></em><em class="u"></em><em class="u"></em><em class="u"></em><em class="u"></em><em class="u"></em><em class="u"></em><em class="u"></em><em class="u"></em><em class="u"></em><em class="u"></em><em class="u"></em><em class="u"></em><em class="u"></em><em class="u"></em>__
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Échec lors de la communication avec gksu-run-helper" [3889-] --><div class="footnotes">
+<div class="fn"><sup><a href="su#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Souvent, à tort, les utilisateurs de <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux diront que la commande <code>su</code> signifie <em>&quot;<strong>s</strong>uper <strong>u</strong>ser&quot;</em> et permet de prendre l&#039;identité du super-utilisateur.  La commandre <code>su</code> permet de prendre l&#039;identité de <em>n&#039;importe quel</em> utilisateur.</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/9/90b9a868313457868fccaf7c36fbc3fa.xhtml used -->
+</div>
+</body>
+</html>

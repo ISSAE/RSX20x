@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>pbuilder - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2010-03-28T01:42:34+0100"/>
+<meta name="keywords" content="feisty,edgy,dapper,paquet"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/pbuilder?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/pbuilder?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/pbuilder"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/pbuilder"/>
+<link rel="canonical" href="pbuilder"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"pbuilder","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="pbuilder#main" tabindex="1">Contenu</a> | <a href="pbuilder#qsearch__in" tabindex="2">Rechercher</a> | <a href="pbuilder#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="pbuilder" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="pbuilder" >pbuilder</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="versions">versions supportées d'Ubuntu</a>.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="pbuilder#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="pbuilder#re_construction_d_un_paquet">(Re)Construction d&#039;un paquet</a></div></li>
+<li class="level1"><div class="li"><a href="pbuilder#mise_a_jour_du_chroot">Mise à jour du chroot</a></div></li>
+<li class="level1"><div class="li"><a href="pbuilder#support_des_depots_universe_et_multiverse">Support des dépôts Universe et Multiverse</a></div></li>
+<li class="level1"><div class="li"><a href="pbuilder#mise_a_niveau_vers_la_derniere_version_en_developpement">Mise à niveau vers la dernière version en développement</a></div></li>
+<li class="level1"><div class="li"><a href="pbuilder#pbuilders_multiples">Pbuilders multiples</a></div></li>
+<li class="level1"><div class="li"><a href="pbuilder#ressources">Ressources</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="feisty" class="wikilink1" title="feisty" rel="tag">Feisty</a>,
+	<a href="http://doc.ubuntu-fr.org/edgy" class="wikilink1" title="edgy" rel="tag">Edgy</a>,
+	<a href="dapper" class="wikilink1" title="dapper" rel="tag">Dapper</a>,
+	<a href="paquet" class="wikilink1" title="paquet" rel="tag">paquet</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="p-builder_ou_comment_bien_construire_des_paquets">P-Builder, ou comment bien construire des paquets</h1>
+<div class="level1">
+
+<p>
+Ce document décrit les étapes nécessaires pour mettre en place un environnement de construction sain pour construire des paquets Ubuntu. Cet outil est recommandé pour les mainteneurs Ubuntu comme pour toute personne utilisant Ubuntu et intéressée par la construction des paquets.
+</p>
+
+<p>
+Il est possible de construire les paquets sans utiliser P-Builder, mais cela nécessite d&#039;avoir installé au préalable sur votre système toutes les dépendances pour le compiler.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="pbuilder"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1269736954" /><input type="hidden" name="summary" value="[P-Builder, ou comment bien construire des paquets] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="42-575" /><input type="submit" value="Modifier" class="button" title="P-Builder, ou comment bien construire des paquets" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez</a> le paquet <strong>pbuilder</strong> puis générez l&#039;environnement pbuilder avec la commande :
+</p>
+<pre class="code">sudo pbuilder --create</pre>
+
+<p>
+<p><div class="notehelp">
+Cette commande aura pour effet de créer un environnement isolé de votre système, appelé « chroot ». Cet environnement est en fait l&#039;image du système tout frais après installation. En utilisant pbuilder pour construire vos paquets, vous serez alors sûr que le paquet s&#039;installe bien sur tous les systèmes, même une Ubuntu venant d&#039;être installée et sur laquelle l&#039;utilisateur n&#039;a installé aucun paquet supplémentaire.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="pbuilder"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1269736954" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="576-1212" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit3" id="re_construction_d_un_paquet">(Re)Construction d&#039;un paquet</h2>
+<div class="level2">
+
+<p>
+Construire le paquet « mon-paquet » se fait avec la commande suivante :
+</p>
+<pre class="code">sudo pbuilder --build mon-paquet_1.0.dsc</pre>
+
+<p>
+<p><div class="notehelp">
+Le fichier .dsc est une partie du paquet source - que pbuilder va utiliser pour construire le paquet binaire - est généré avec la commande <strong>debuild</strong>. Ceci est expliqué en détails dans la page de tutoriel traitant de la <a href="tutoriel/creer_un_paquet" class="wikilink1" title="tutoriel:creer_un_paquet">création de paquets</a>
+
+</div></p>
+</p>
+
+<p>
+Le ou les paquets seront disponibles dans le dossier <strong>/var/cache/pbuilder/result/</strong>
+</p>
+
+<p>
+<p><div class="notetip">
+Si vous obtenez l&#039;erreur <em>&quot;debootstrap does not exist&quot;</em>, installez <strong>debootstrap</strong> ou exécutez pbuilder avec l&#039;option <em>–debootstrap cdebootstrap</em> (vous avez probablement cdebootstrap installé).
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="pbuilder"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1269736954" /><input type="hidden" name="summary" value="[(Re)Construction d'un paquet] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1213-1974" /><input type="submit" value="Modifier" class="button" title="(Re)Construction d'un paquet" /></div></form></div>
+<h2 class="sectionedit4" id="mise_a_jour_du_chroot">Mise à jour du chroot</h2>
+<div class="level2">
+
+<p>
+Il est recommandé de mettre à jour votre chroot avant chaque construction. Pour ce faire, utilisez la commande :
+</p>
+<pre class="code">sudo pbuilder update</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="pbuilder"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1269736954" /><input type="hidden" name="summary" value="[Mise à jour du chroot] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1975-2147" /><input type="submit" value="Modifier" class="button" title="Mise à jour du chroot" /></div></form></div>
+<h2 class="sectionedit5" id="support_des_depots_universe_et_multiverse">Support des dépôts Universe et Multiverse</h2>
+<div class="level2">
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditez le fichier</a> <strong>/etc/pbuilderrc</strong> et décommentez la ligne
+</p>
+<pre class="file">COMPONENTS=&quot;main restricted universe multiverse&quot;</pre>
+
+<p>
+À chaque modification de votre pbuilder, il faut le mettre à jour en prenant en compte la nouvelle configuration :
+</p>
+<pre class="code">sudo pbuilder update --override-config</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="pbuilder"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1269736954" /><input type="hidden" name="summary" value="[Support des dépôts Universe et Multiverse] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2148-2531" /><input type="submit" value="Modifier" class="button" title="Support des dépôts Universe et Multiverse" /></div></form></div>
+<h2 class="sectionedit6" id="mise_a_niveau_vers_la_derniere_version_en_developpement">Mise à niveau vers la dernière version en développement</h2>
+<div class="level2">
+
+<p>
+Si vous êtes désireux de participer au cycle actuel de développement, vous allez vouloir un chroot <strong>gutsy</strong>. Quelquefois, il se peut que la version en développement ne soit pas installable directement. Dans ce cas, il vous faut d&#039;abord installer la dernière version stable, puis mettre à niveau vers la version en développement.
+</p>
+
+<p>
+C&#039;est le cas (actuellement pour Gutsy Gibbon). Voici donc la procédure :
+</p>
+<ul>
+<li class="level1"><div class="li"> Créez un pbuilder Feisty : <em>sudo pbuilder create</em></div>
+</li>
+<li class="level1"><div class="li"> Changez toutes les occurrences de <strong>feisty</strong> en <strong>gutsy</strong> dans <strong>/etc/pbuilderrc</strong></div>
+</li>
+<li class="level1"><div class="li"> Mettez à jour le chroot : <em>sudo pbuilder update –override-config</em></div>
+</li>
+<li class="level1"><div class="li"> Utilisez l&#039;option <em>–override-config</em> à chaque mise à jour (tant que la version n&#039;est pas prise en compte par pbuilder)</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="pbuilder"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1269736954" /><input type="hidden" name="summary" value="[Mise à niveau vers la dernière version en développement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2532-3360" /><input type="submit" value="Modifier" class="button" title="Mise à niveau vers la dernière version en développement" /></div></form></div>
+<h2 class="sectionedit7" id="pbuilders_multiples">Pbuilders multiples</h2>
+<div class="level2">
+
+<p>
+Quand on travaille sur des paquets, il est souvent nécessaire de disposer de plusieurs pbuilders sur sa machine. Par exemple pour rétro-porter vers Dapper et Edgy alors que l&#039;on développe sous Feisty, ou encore pour tester les paquets sur Debian Sid à la recherche de bogues.
+</p>
+
+<p>
+Pour ce faire, le fichier <strong>/usr/share/doc/pbuilder/examples/pbuilder-distribution.sh</strong> va vous aider. Il contient par défaut :
+</p>
+<pre class="file">#!/bin/sh
+# script from Jamin W. Collins  BTS: #255165
+# name this script &#039;pbuilder-woody&#039;, &#039;pbuilder-sid&#039;, &#039;pbuilder-sarge&#039;, &#039;pbuilder-experimental&#039; etc.
+
+OPERATION=$1
+DISTRIBUTION=`basename $0 | cut -f2 -d &#039;-&#039;`
+PROCEED=false
+BASE_DIR=&quot;$HOME/pbuilder&quot;
+case $OPERATION in
+   create|update|build|clean|login|execute )
+      PROCEED=true
+      ;;
+esac
+if ( $PROCEED == true ) then
+   shift 
+   sudo pbuilder $OPERATION \
+      --basetgz $BASE_DIR/$DISTRIBUTION-base.tgz \
+      --distribution $DISTRIBUTION \
+      --buildresult $BASE_DIR/result $@
+else
+   echo &quot;Invalid command...&quot;
+   echo &quot;Valid commands are:&quot;
+   echo &quot;   create&quot;
+   echo &quot;   update&quot;
+   echo &quot;   build&quot;
+   echo &quot;   clean&quot;
+   echo &quot;   login&quot;
+   echo &quot;   execute&quot;
+   exit 1
+fi</pre>
+
+<p>
+Copiez ce fichier dans <strong>/usr/local/bin</strong> en remplaçant <em>distribution</em> par le nom de la version d&#039;Ubuntu voulue.<br/>
+
+Par exemple pour créer un pbuilder Dapper, vous le nommerez <strong>pbuilder-dapper</strong> :
+</p>
+<pre class="code">sudo cp /usr/share/doc/pbuilder/examples/pbuilder-distribution.sh /usr/local/bin/pbuilder-dapper</pre>
+
+<p>
+<p><div class="notetip">
+Ce même script renommé en pbuilder-edgy par exemple, créerai un pbuilder edgy. En effet, le script récupère le nom de distribution que vous avez mis après le tiret dans le nom de fichier.
+
+</div></p>
+</p>
+
+<p>
+<strong>Répertoire de base des pbuilders</strong>
+</p>
+
+<p>
+Le dossier utilisé par défaut pour les pbuilders est <strong>/var/cache/pbuilder/</strong>. Nous allons donc modifier le script et remplacer la ligne
+</p>
+<pre class="file">BASE_DIR=&quot;$HOME/pbuilder&quot;</pre>
+
+<p>
+par
+</p>
+<pre class="file">BASE_DIR=&quot;/var/cache/pbuilder&quot;</pre>
+
+<p>
+Enfin, n&#039;oubliez pas de rendre votre script exécutable :
+</p>
+<pre class="code">sudo chmod +x /usr/local/bin/pbuilder-dapper</pre>
+
+<p>
+Enfin créez le chroot du pbuilder :
+</p>
+<pre class="code">sudo pbuilder-dapper create</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="pbuilder"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1269736954" /><input type="hidden" name="summary" value="[Pbuilders multiples] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3361-5514" /><input type="submit" value="Modifier" class="button" title="Pbuilders multiples" /></div></form></div>
+<h2 class="sectionedit8" id="ressources">Ressources</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.netfort.gr.jp/~dancer/software/pbuilder-doc/pbuilder-doc.html" class="urlextern" title="http://www.netfort.gr.jp/~dancer/software/pbuilder-doc/pbuilder-doc.html"  rel="nofollow">Le manuel de l&#039;utilisateur de pbuilder</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://wiki.ubuntu.com/PbuilderHowto" class="urlextern" title="https://wiki.ubuntu.com/PbuilderHowto"  rel="nofollow">Wiki officiel ubuntu sur pbuilder</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+inspirée de <a href="https://wiki.ubuntu.com/PbuilderHowto" class="urlextern" title="https://wiki.ubuntu.com/PbuilderHowto"  rel="nofollow">https://wiki.ubuntu.com/PbuilderHowto</a>
+</p>
+
+<p>
+<em>Contributeurs :  <a href="utilisateurs/mr_pouit" class="wikilink1" title="utilisateurs:mr_pouit">mr_pouit</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/enchained" class="wikilink1" title="utilisateurs:enchained">_Enchained</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="pbuilder"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1269736954" /><input type="hidden" name="summary" value="[Ressources] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5515-" /><input type="submit" value="Modifier" class="button" title="Ressources" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/1/1f5b9786b31fd61446771a037b07dacc.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/pbuilder?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pbuilder?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pbuilder?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pbuilder?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pbuilder?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,790 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>gproftpd - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/gproftpd?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/gproftpd"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/gproftpd"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"gproftpd","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="gproftpd?do=revisions#main" tabindex="1">Contenu</a> | <a href="gproftpd?do=revisions#qsearch__in" tabindex="2">Rechercher</a> | <a href="gproftpd?do=revisions#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="gproftpd?do=revisions" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="gproftpd" >gproftpd</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<h1 class="sectionedit1" id="anciennes_revisions">Anciennes révisions</h1>
+<div class="level1">
+
+<p>
+Voici les anciennes révisions de la page en cours. Pour revenir à une ancienne révision, sélectionnez-la ci-dessous, cliquez sur le bouton « Modifier cette page » et enregistrez-la.
+</p>
+
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c094095a2fd85a3488cba30c5d00321e.xhtml used -->
+<form id="page__revisions" class="changes" method="post" action="gproftpd?do=revisions" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><ul >
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="current"/>
+<span class="date">
+Le 30/12/2013, 22:58</span>
+<img src="http://doc.ubuntu-fr.org/lib/images/blank.gif" width="15" height="11" alt="" /><a class="wikilink1" href="gproftpd">
+gproftpd</a>
+<span class="sum">
+ – [Bugs fréquents] </span>
+<span class="user">
+82.254.89.73</span>
+(Version actuelle)</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1377949025"/>
+<span class="date">
+Le 31/08/2013, 13:37</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1377949025&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1377949025" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[Premier lancement] </bdi></span>
+<span class="user">
+<bdo dir="ltr">86.194.223.75</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1377949009"/>
+<span class="date">
+Le 31/08/2013, 13:36</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1377949009&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1377949009" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[Premier lancement] </bdi></span>
+<span class="user">
+<bdo dir="ltr">86.194.223.75</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1358425431"/>
+<span class="date">
+Le 17/01/2013, 13:23</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1358425431&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1358425431" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[Liens] </bdi></span>
+<span class="user">
+<bdo dir="ltr">81.252.184.188</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1351528082"/>
+<span class="date">
+Le 29/10/2012, 17:28</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1351528082&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1351528082" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>Créer =&gt; Créé</bdi></span>
+<span class="user">
+<bdo dir="ltr">88.169.55.204</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1334495071"/>
+<span class="date">
+Le 15/04/2012, 15:04</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1334495071&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1334495071" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[Utilisation] </bdi></span>
+<span class="user">
+<bdi>jcdc</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1323958638"/>
+<span class="date">
+Le 15/12/2011, 15:17</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1323958638&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1323958638" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>modification externe</bdi></span>
+<span class="user">
+<bdo dir="ltr">127.0.0.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1321193742"/>
+<span class="date">
+Le 13/11/2011, 15:15</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1321193742&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1321193742" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>suppression d'informations obsolète + ajout d'informations sur le premier lancement</bdi></span>
+<span class="user">
+<bdi>fabien26</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1315311895"/>
+<span class="date">
+Le 06/09/2011, 14:24</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1315311895&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1315311895" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>ez -&gt; er</bdi></span>
+<span class="user">
+<bdo dir="ltr">82.120.175.15</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1314624633"/>
+<span class="date">
+Le 29/08/2011, 15:30</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1314624633&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1314624633" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[Serveur FTP Gadmin ProFTPD] </bdi></span>
+<span class="user">
+<bdi>rustyBSD</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1314280372"/>
+<span class="date">
+Le 25/08/2011, 15:52</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1314280372&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1314280372" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[Serveur FTP Gadmin ProFTPD] </bdi></span>
+<span class="user">
+<bdo dir="ltr">69.196.24.34</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1301516366"/>
+<span class="date">
+Le 30/03/2011, 22:19</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1301516366&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1301516366" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[Premier lancement] </bdi></span>
+<span class="user">
+<bdo dir="ltr">129.104.247.2</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1301516319"/>
+<span class="date">
+Le 30/03/2011, 22:18</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1301516319&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1301516319" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[Utilisation] </bdi></span>
+<span class="user">
+<bdo dir="ltr">129.104.247.2</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1299148091"/>
+<span class="date">
+Le 03/03/2011, 11:28</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1299148091&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1299148091" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[L'interface] </bdi></span>
+<span class="user">
+<bdo dir="ltr">89.84.147.8</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1298232516"/>
+<span class="date">
+Le 20/02/2011, 21:08</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1298232516&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1298232516" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[L'interface] </bdi></span>
+<span class="user">
+<bdo dir="ltr">82.252.205.67</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1298232299"/>
+<span class="date">
+Le 20/02/2011, 21:04</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1298232299&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1298232299" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[Liens] </bdi></span>
+<span class="user">
+<bdo dir="ltr">82.252.205.67</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1298232275"/>
+<span class="date">
+Le 20/02/2011, 21:04</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1298232275&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1298232275" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[Les boutons principaux] </bdi></span>
+<span class="user">
+<bdo dir="ltr">82.252.205.67</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1298232240"/>
+<span class="date">
+Le 20/02/2011, 21:04</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1298232240&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1298232240" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[L'interface] </bdi></span>
+<span class="user">
+<bdo dir="ltr">82.252.205.67</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1298232220"/>
+<span class="date">
+Le 20/02/2011, 21:03</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1298232220&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1298232220" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>[L'interface] </bdi></span>
+<span class="user">
+<bdo dir="ltr">82.252.205.67</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1296492177"/>
+<span class="date">
+Le 31/01/2011, 17:42</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1296492177&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1296492177" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">81.164.202.163</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1296492134"/>
+<span class="date">
+Le 31/01/2011, 17:42</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1296492134&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1296492134" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">81.164.202.163</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1296492099"/>
+<span class="date">
+Le 31/01/2011, 17:41</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1296492099&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1296492099" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">81.164.202.163</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1293309255"/>
+<span class="date">
+Le 25/12/2010, 21:34</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1293309255&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1293309255" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>petite erreur (&lt;/code&gt;)</bdi></span>
+<span class="user">
+<bdo dir="ltr">144.85.116.141</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1289204913"/>
+<span class="date">
+Le 08/11/2010, 09:28</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1289204913&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1289204913" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>Suppression de note concernant Dapper et Intrepid, mise en forme générale</bdi></span>
+<span class="user">
+<bdi>percherie</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1281819749"/>
+<span class="date">
+Le 14/08/2010, 23:02</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1281819749&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1281819749" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">82.125.182.73</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1277592192"/>
+<span class="date">
+Le 27/06/2010, 00:43</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1277592192&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1277592192" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>reformulation</bdi></span>
+<span class="user">
+<bdi>draco31.fr</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1276718942"/>
+<span class="date">
+Le 16/06/2010, 22:09</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1276718942&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1276718942" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">89.226.206.180</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1272724837"/>
+<span class="date">
+Le 01/05/2010, 16:40</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1272724837&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1272724837" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>correction du l'erreur commance en commande</bdi></span>
+<span class="user">
+<bdi>gimdz</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1268213316"/>
+<span class="date">
+Le 10/03/2010, 10:28</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1268213316&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1268213316" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1268213279"/>
+<span class="date">
+Le 10/03/2010, 10:27</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1268213279&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1268213279" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1256915269"/>
+<span class="date">
+Le 30/10/2009, 16:07</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1256915269&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1256915269" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1256629690"/>
+<span class="date">
+Le 27/10/2009, 08:48</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1256629690&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1256629690" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1255142199"/>
+<span class="date">
+Le 10/10/2009, 04:36</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1255142199&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1255142199" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdi>YannUbuntu</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1254924724"/>
+<span class="date">
+Le 07/10/2009, 16:12</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1254924724&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1254924724" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1254924668"/>
+<span class="date">
+Le 07/10/2009, 16:11</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1254924668&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1254924668" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1254924631"/>
+<span class="date">
+Le 07/10/2009, 16:10</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1254924631&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1254924631" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1246700464"/>
+<span class="date">
+Le 04/07/2009, 11:41</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1246700464&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1246700464" class="wikilink1">
+gproftpd</a>
+<span class="sum">
+ – <bdi>maj tags</bdi></span>
+<span class="user">
+<bdi>draco31.fr</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1240144427"/>
+<span class="date">
+Le 19/04/2009, 14:33</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1240144427&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1240144427" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1239727786"/>
+<span class="date">
+Le 14/04/2009, 18:49</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1239727786&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1239727786" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1239727750"/>
+<span class="date">
+Le 14/04/2009, 18:49</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1239727750&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1239727750" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1239727564"/>
+<span class="date">
+Le 14/04/2009, 18:46</span>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1239727564&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/gproftpd?rev=1239727564" class="wikilink1">
+gproftpd</a>
+<span class="user">
+<bdo dir="ltr">213.95.41.13</bdo></span>
+</div>
+</li>
+</ul>
+<input name="do[diff]" type="submit" value="Différences entre les versions sélectionnées" class="button" />
+</div></form>
+<div class="pagenav"><div class="pagenav-next"><form class="button btn_older" method="get" action="gproftpd"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="first" value="40" /><input type="submit" value="Moins récent &gt;&gt;" class="button" accesskey="n" title="Moins récent &gt;&gt; [N]" /></div></form></div></div>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/gproftpd?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gproftpd?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="gproftpd?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gproftpd?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gproftpd?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

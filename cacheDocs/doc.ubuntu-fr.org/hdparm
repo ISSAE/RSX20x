@@ -1,0 +1,1090 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>hdparm - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-08-08T14:15:08+0200"/>
+<meta name="keywords" content="disque dur,personnalisation,systeme"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="hdparm?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="hdparm?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/hdparm"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/hdparm"/>
+<link rel="canonical" href="hdparm"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"hdparm","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="hdparm#main" tabindex="1">Contenu</a> | <a href="hdparm#qsearch__in" tabindex="2">Rechercher</a> | <a href="hdparm#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="hdparm" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="hdparm" >hdparm</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="hdparm#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="hdparm#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="hdparm#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="hdparm#fichier_de_configuration">Fichier de configuration</a></div></li>
+<li class="level2"><div class="li"><a href="hdparm#console">Console</a></div></li>
+<li class="level2"><div class="li"><a href="hdparm#liste_des_options_commande_et_fichier_de_configuration">Liste des options (commande et fichier de configuration)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="hdparm#cas_d_usage">Cas d&#039;usage</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="hdparm#gestion_d_energie">Gestion d&#039;énergie</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="hdparm#references">Références</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="disque_dur" class="wikilink1" title="disque_dur" rel="tag">disque dur</a>,
+	<a href="personnalisation" class="wikilink1" title="personnalisation" rel="tag">personnalisation</a>,
+	<a href="systeme" class="wikilink1" title="systeme" rel="tag">système</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="hdparm">HDPARM</h1>
+<div class="level1">
+
+<p>
+<strong>hdparm</strong> est un utilitaire logiciel pour obtenir ou positionner les paramètres de disque dur.
+Il s&#039;utilise en mode console ou par le biais d&#039;un fichier de configuration.
+</p>
+
+<p>
+Il fournit une interface en ligne de commande sur les contrôles d&#039;entrée et sortie de disque dur, supporté par le pilote de périphérique Linux ATA/<abbr title="Integrated Drive Electronics">IDE</abbr>. 
+</p>
+
+<p>
+<p><div class="noteclassic">
+Quelques options ne fonctionnent correctement qu&#039;avec des noyaux Linux récents. De meilleurs résultats sont obtenus en compilant <code>hdparm</code> avec le code source des derniers noyaux.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="hdparm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407500108" /><input type="hidden" name="summary" value="[HDPARM] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="54-608" /><input type="submit" value="Modifier" class="button" title="HDPARM" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+</ul>
+
+<p>
+etc/hdparm.conf
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="hdparm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407500108" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="609-702" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installer le paquet</a> : <a href="apt://hdparm" class="urlextern" title="apt://hdparm"  rel="nofollow">hdparm</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="hdparm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407500108" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="703-817" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="hdparm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407500108" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="818-845" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h3 class="sectionedit5" id="fichier_de_configuration">Fichier de configuration</h3>
+<div class="level3">
+
+<p>
+Pour utiliser <code>hdparm</code>, vous pouvez <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditer le fichier</a> <strong>/etc/hdparm.conf</strong>. 
+</p>
+
+<p>
+Les options à préciser sont les mêmes qu&#039;en mode <a href="hdparm#console" title="hdparm ↵" class="wikilink1">console</a>.
+</p>
+
+</div>
+
+<h4 id="exemples">Exemples</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="exemple_1">Exemple 1</h5>
+<div class="level5">
+<pre class="file">/dev/hda {
+    io32_support = 1
+    dma = on
+    write_cache = on
+}</pre>
+
+<p>
+Ici, on active le support en 32 bits, la gestion DMA, et le mode de cache pour l&#039;écriture.
+</p>
+
+</div>
+
+<h5 id="exemple_2">Exemple 2</h5>
+<div class="level5">
+<pre class="file">command_line {
+       hdparm -q -m16 -q -W0 -q -d1 /dev/hda
+}</pre>
+
+<p>
+Ici, on paramètre le nombre de secteur à 16 pour les entrées-sorties des secteurs multiples, on désactive la fonction d&#039;écriture-cache, et on active la gestion DMA sur le premier disque dur.
+</p>
+
+</div>
+
+<h5 id="exemple_3">Exemple 3</h5>
+<div class="level5">
+
+<p>
+Pour visualiser et tester les vitesses de lecture (vitesses moyennes):
+</p>
+<pre class="file">sudo hdparm -tT /dev/sda5</pre>
+
+<p>
+/dev/sda5:
+</p>
+
+<p>
+ Timing cached reads:   13958 <abbr title="Megabyte">MB</abbr> in  2.00 seconds = 6989.03 <abbr title="Megabyte">MB</abbr>/sec - débit en lecture de la mémoire cache RAM (DDR3) + éventuellement swap si la ram est saturée.
+</p>
+
+<p>
+ Timing buffered disk reads:  272 <abbr title="Megabyte">MB</abbr> in  3.02 seconds =  90.19 <abbr title="Megabyte">MB</abbr>/sec - débit en lecture du disque dur dans la partition /dev/sda5 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="hdparm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407500108" /><input type="hidden" name="summary" value="[Fichier de configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="846-2026" /><input type="submit" value="Modifier" class="button" title="Fichier de configuration" /></div></form></div>
+<h3 class="sectionedit6" id="console">Console</h3>
+<div class="level3">
+
+<p>
+Il est possible d&#039;utiliser <code>hdparm</code> en mode console en spécifiant des options.
+ <em>ou en utilisant le <a href="hdparm#fichier_de_config" title="hdparm ↵" class="wikilink1">fichier de config</a></em>.
+</p>
+
+</div>
+
+<h4 id="utilisation">Utilisation</h4>
+<div class="level4">
+<pre class="code">hdparm [ drapeau ] [ périphérique ]</pre>
+
+<p>
+Où [ périphérique ] peut être une liste de disques ex : /dev/sd[a-e]
+</p>
+
+<p>
+Si aucune option, ou drapeau, n&#039;est donnée en paramètre, ce sont les options <em class="u">-acdgkmur</em> qui sont validées par défaut.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="hdparm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407500108" /><input type="hidden" name="summary" value="[Console] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2027-2454" /><input type="submit" value="Modifier" class="button" title="Console" /></div></form></div>
+<h3 class="sectionedit7" id="liste_des_options_commande_et_fichier_de_configuration">Liste des options (commande et fichier de configuration)</h3>
+<div class="level3">
+
+<p>
+<strong>-a</strong><br/>
+
+Obtenir ou paramétrer le nombre de secteurs lisibles pour le système de fichiers par tête de lecture.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>read_ahead_sect = 12</code>
+</p>
+
+<p>
+<strong>-A</strong><br/>
+
+Activer ou non les fonctionnalités du lecteur <abbr title="Integrated Drive Electronics">IDE</abbr>. Par défaut, activé.
+</p>
+
+<p>
+Usage :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>-A0</strong> : désactive</div>
+</li>
+<li class="level1"><div class="li"> <strong>-A1</strong> : active</div>
+</li>
+</ul>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>lookahead = on</code>
+</p>
+
+<p>
+<strong>-b</strong><br/>
+
+Obtenir ou paramétrer l&#039;état du bus.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>bus = on</code>
+</p>
+
+<p>
+<strong>-B</strong><br/>
+
+Paramétrer les fonctions d&#039;APM, si le lecteur le supporte. 
+</p>
+
+<p>
+Usage :
+</p>
+<ul>
+<li class="level1"><div class="li"> Une valeur basse sera agressive au niveau de la gestion </div>
+</li>
+<li class="level1"><div class="li"> Une valeur haute donnera les meilleures performances</div>
+</li>
+<li class="level1"><div class="li"> Une valeur égale à 255 désactivera l<code>&#039;apm</code> sur le disque.</div>
+</li>
+</ul>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>apm = 255</code>
+</p>
+
+<p>
+<strong>-c</strong><br/>
+
+Activer et/ou interroger le support IO 32 bits (E)<abbr title="Integrated Drive Electronics">IDE</abbr>.
+</p>
+
+<p>
+Usage :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>0</strong> : désactive</div>
+</li>
+<li class="level1"><div class="li"> <strong>1</strong> : active</div>
+</li>
+<li class="level1"><div class="li"> <strong>3</strong> : active les transferts de données par une séquence de synchronisation spécifique à certains chipsets.</div>
+</li>
+</ul>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>io32_support = 1</code>
+</p>
+
+<p>
+<p><div class="noteclassic">
+Ne fonctionne qu&#039;avec des interfaces à bus VLB ou PCI seulement. 
+
+</div></p>
+</p>
+
+<p>
+<strong>-C</strong><br/>
+
+Interroge l&#039;état du mode du périphérique courant.
+</p>
+
+<p>
+Les états peuvent être :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>unknown</strong> - inconnu - : dans ce cas, le périphérique ne supporte pas cette fonctionnalité</div>
+</li>
+<li class="level1"><div class="li"> <strong>active/idle</strong> - actif -</div>
+</li>
+<li class="level1"><div class="li"> <strong>standby</strong> : mode économie d&#039;énergie</div>
+</li>
+<li class="level1"><div class="li"> <strong>sleeping</strong> : mode où le périphérique est &quot;endormi&quot;.</div>
+</li>
+</ul>
+
+<p>
+<strong>-d</strong><br/>
+
+Active ou non le drapeau pour utiliser le <code>dma</code>.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em><code>dma = off</code>
+</p>
+
+<p>
+<p><div class="notehelp">
+C&#039;est une bonne idée de l&#039;activer avec l&#039;option <em class="u">-X</em> approprié, afin de paramétrer le mode DMA correct selon votre périphérique.
+
+</div></p>
+</p>
+
+<p>
+<strong>-D</strong><br/>
+
+Active ou non la fonctionnalité de gestion de défectuosité.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>defect_mana = off</code>
+</p>
+
+<p>
+<strong>-E</strong><br/>
+
+Paramètre la vitesse du lecteur cdrom.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>cd_speed = 16</code>
+</p>
+
+<p>
+<p><div class="noteclassic">
+Cela n&#039;est <strong>ABSOLUMENT PAS</strong> nécessaire, dans le cadre d&#039;un usage normal.
+
+</div></p>
+</p>
+
+<p>
+<strong>-f</strong><br/>
+
+Synchronise et vide la mémoire tampon allouée au périphérique à l&#039;extinction.
+</p>
+
+<p>
+<p><div class="notehelp">
+S&#039;utilise très bien, conjointement à l&#039;option de timing <em class="u">-t</em> ou <em class="u">-T</em>
+
+</div></p>
+</p>
+
+<p>
+<strong>-g</strong><br/>
+
+Affiche la géométrie du disque - cylindres, têtes, secteurs - la taille en nombre de secteur du périphérique, l&#039;offset de démarrage.
+</p>
+
+<p>
+<strong>-h</strong><br/>
+
+Affiche les informations d&#039;aide.
+</p>
+
+<p>
+<strong>-H</strong><br/>
+
+Lit la température de certains périphériques (plus communément Hitachi).
+</p>
+
+<p>
+<strong>-i</strong><br/>
+
+Affiche les informations d&#039;identification qui sont obtenus au démarrage par le périphérique, si elles sont disponibles. C&#039;est une fonctionnalité propre aux périphériques modernes, et peut ne pas être supportée par de vieux disques.
+</p>
+
+<p>
+<strong>-I</strong><br/>
+
+Interroge les informations d&#039;identification au format étendu, restituant plus de détails.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>–Istdin</strong> : C&#039;est une variation spéciale de l&#039;option <em class="u">-I</em>, qui accepte un bloc d&#039;identification de périphérique comme entrée standard par l&#039;usage des paramètres /dev/hd*</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic">
+Le format de ce bloc d&#039;informations doit être <em class="u">exactement</em> le même format que ce qui est trouvé dans les fichiers /proc/ide/*/hd*/identify
+
+</div></p>
+<p><div class="notewarning">
+Quand cette option est utilisée, elle doit être le seul paramètre donné !
+
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>–Istdout</strong> : Cette option envoie les données d&#039;identification du périphérique en hexadécimal vers la sortie standard, dans le même format que les fichiers /proc/ide/*/hd*/identify</div>
+</li>
+</ul>
+
+<p>
+<strong>-k</strong><br/>
+
+Obtenir ou paramétrer le drapeau &quot;keep_setings_over_reset&quot; pour le périphérique.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>keep_settings_over_reset = off</code>
+</p>
+
+<p>
+<p><div class="noteclassic">
+Quand cette option est spécifiée, le périphérique préserve les options <em class="u">-dmu</em> d&#039;un redémarrage logiciel.
+
+</div></p>
+</p>
+
+<p>
+<strong>-K</strong><br/>
+
+Paramétrer le drapeau &quot;keep_features_over_reset&quot; pour le périphérique.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>keep_features_over_reset = on</code>
+</p>
+
+<p>
+<p><div class="noteclassic">
+Quand cette option est spécifiée, le périphérique préserve les options <em class="u">-APSWXZ</em> d&#039;un redémarrage logiciel.
+
+</div></p>
+</p>
+
+<p>
+<strong>-L</strong><br/>
+
+Paramétrer le drapeau de verrouillage du périphérique. 
+</p>
+
+<p>
+<strong>-m</strong><br/>
+
+Obtenir ou paramétrer le nombre de secteur pour les secteurs multiples d&#039;entrées/sorties du périphérique.
+</p>
+
+<p>
+Usage :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>0</strong> : désactive</div>
+</li>
+<li class="level1"><div class="li"> <strong>2</strong>, <strong>4</strong>, <strong>8</strong>, <strong>16</strong> ou <strong>32</strong></div>
+</li>
+</ul>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>mult_sect_io = 32</code>
+</p>
+
+<p>
+<p><div class="notehelp">
+Utiliser l&#039;option <em class="u">-i</em> pour connaître la valeur maximale supportée. Regardez la valeur donnée pour MaxMultSect.
+
+</div></p>
+<p><div class="noteclassic">
+<strong>16</strong> ou <strong>32</strong> semble être des paramètres optimum.
+Western Digital recommande pour ses disques une valeur de <strong>4</strong> ou <strong>8</strong>.
+
+</div></p>
+<p><div class="notewarning">
+Quelques disques annoncent être capable de supporter ce mode, mais il peut arriver qu&#039;ils perdent des données. Dans de rares circonstances, cela peut mener à une <strong>corruption complète du système de fichier</strong> !
+
+</div></p>
+</p>
+
+<p>
+<strong>-M</strong><br/>
+
+Obtenir ou paramétrer la gestion AMM - <em>Automatic Acoustic Management</em>. Les disques ont aujourd&#039;hui la capacité de réduire la vitesse de déplacement des têtes afin de réduire le bruit de fonctionnement.
+</p>
+
+<p>
+Usage :
+</p>
+<ul>
+<li class="level1"><div class="li"> De <strong>0</strong> à <strong>254</strong></div>
+</li>
+<li class="level1"><div class="li"> <strong>128</strong> est le plus silencieux, <strong>254</strong> est le plus rapide</div>
+</li>
+</ul>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>acoustic_management</code>
+</p>
+
+<p>
+<p><div class="noteclassic">
+Certains disques n&#039;ont que deux niveaux ( 128 ou 254 ). Beaucoup de disques ne supportent que trois options ( 0, 128 ou 254).
+
+</div></p>
+</p>
+
+<p>
+<strong>-n</strong><br/>
+
+Obtenir ou paramétrer le drapeau &quot;<em>ignore write errors</em>&quot;. 
+</p>
+
+<p>
+<p><div class="notewarning">
+Évitez de jouer avec, à moins de savoir…
+
+</div></p>
+</p>
+
+<p>
+<strong>-p</strong><br/>
+
+Essaye de reprogrammer la puce de l&#039;interface <abbr title="Integrated Drive Electronics">IDE</abbr>, ou d&#039;auto-programmer le meilleur mode PIO supporté.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>chipset_pio_mode</code>
+</p>
+
+<p>
+<p><div class="notewarning">
+<em class="u">À utiliser avec une extrême précaution</em> ! Cette fonctionnalité n&#039;inclue aucune protection, ce qui peut résulter à une <em class="u">corruption totale du système de fichier</em> !
+
+</div></p>
+</p>
+
+<p>
+<strong>-P</strong><br/>
+
+Paramétrer le nombre maximal de secteur pour le mécanisme interne du périphérique. 
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>prefetch_sect = 12</code>
+</p>
+
+<p>
+<p><div class="noteclassic">
+Tous les disques durs ne supportent pas cette option ; de plus, elle a été annulée par les spécifications officielles de la norme ATA-4.
+
+</div></p>
+</p>
+
+<p>
+<strong>-q</strong><br/>
+
+Supprime tous les messages, sauf les messages d&#039;erreur.
+</p>
+
+<p>
+<p><div class="noteclassic">
+Ne s&#039;applique pas aux drapeaux <em class="u">-i</em>, <em class="u">-v</em>, <em class="u">-t</em> ou <em class="u">-T</em>
+
+</div></p>
+</p>
+
+<p>
+<strong>-Q</strong><br/>
+
+Paramétrer la profondeur de la queue.
+</p>
+
+<p>
+Usage :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>0</strong> : désactive</div>
+</li>
+<li class="level1"><div class="li"> <strong>1</strong> : active</div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteclassic">
+Ne fonctionne qu&#039;avec les noyaux 2.5.x ou plus récents, et qu&#039;avec les quelques rares disques qui le supporte.
+
+</div></p>
+</p>
+
+<p>
+<strong>-r</strong><br/>
+
+Obtenir ou paramétrer en lecture seule.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>read_only = off</code>
+</p>
+
+<p>
+<strong>-R</strong><br/>
+
+Enregistrer l&#039;interface <abbr title="Integrated Drive Electronics">IDE</abbr>. <strong>DANGEREUX.</strong>
+</p>
+
+<p>
+<p><div class="notewarning">
+Veuillez voir l&#039;option <em class="u">-U</em> pour plus d&#039;informations !
+
+</div></p>
+</p>
+
+<p>
+<strong>-s</strong><br/>
+
+Active ou non la fonctionnalité de <em>stand-by</em> de l&#039;alimentation, si le périphérique le supporte. <strong>TRÈS DANGEREUX</strong>.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>poweron_standby = off</code>
+</p>
+
+<p>
+<p><div class="notewarning">
+Ne pas l&#039;utiliser à moins que vous soyez absolument certain que le <abbr title="Basic Input-Output System">BIOS</abbr>, le <em>firmware</em>, et le noyau (&gt;= 2.6.22) supporte et soit capable d&#039;utiliser cette fonctionnalité.
+<strong>Lire plus profondément le manuel - <em>manpage</em> - !</strong>
+
+</div></p>
+</p>
+
+<p>
+<strong>-S</strong><br/>
+
+Paramétrer le temps mort du stand-by de périphérique. 
+</p>
+
+<p>
+Usage :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>0</strong> : désactive ; le périphérique ne rentrera pas en mode <em>stand-by</em>.</div>
+</li>
+<li class="level1"><div class="li"> De <strong>1</strong> à <strong>240</strong> : spécifie des multiples de 5 secondes, avec des temps morts de 5 secondes à 20 minutes.</div>
+</li>
+<li class="level1"><div class="li"> De <strong>241</strong> à <strong>251</strong> : spécifie de 1 à 11 unités de temps de 30 minutes chacune, avec des temps morts de 30 minutes à 5 h 30.</div>
+</li>
+<li class="level1"><div class="li"> <strong>252</strong> : spécifie un temps mort de 21 minutes.</div>
+</li>
+<li class="level1"><div class="li"> <strong>253</strong> : est une période de temps mort définie par le fabriquant, entre 8 à 12 heures.</div>
+</li>
+<li class="level1"><div class="li"> <strong>254</strong> : réservée !</div>
+</li>
+<li class="level1"><div class="li"> <strong>255</strong> : est interprétée comme 21 minutes plus 15 secondes.</div>
+</li>
+</ul>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>spindown_time = 24</code>
+</p>
+
+<p>
+<p><div class="noteclassic">
+Quelques vieux disques peuvent interpréter très différemment ces valeurs !
+
+</div></p>
+</p>
+
+<p>
+<strong>-t</strong><br/>
+
+<em>Benchmark</em> des temps de lecture du disque et propose un comparatif. Opération effectuée durant 2-3 secondes. 
+</p>
+
+<p>
+<p><div class="noteclassic">
+Cela affiche la vitesse de lecture du disque dur.
+
+</div></p>
+</p>
+
+<p>
+<strong>-T</strong><br/>
+
+<em>Benchmark</em> des temps de lecture du cache et propose un comparatif. Opération effectuée durant 2-3 secondes.
+</p>
+
+<p>
+<p><div class="noteclassic">
+Cela affiche la vitesse de lecture directement depuis la mémoire cache de Linux, sans aucun accès au disque.
+
+</div></p>
+</p>
+
+<p>
+<strong>-u</strong><br/>
+
+Obtenir ou paramétrer le drapeau &quot;interruption non masquée&quot; du périphérique.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>interrupt_unmask = on</code>
+</p>
+
+<p>
+<p><div class="notewarning">
+<strong>Utiliser cette fonctionnalité avec précaution</strong> ; peut causer une <strong>corruption massive du système de fichier !</strong>
+<strong>Lire plus profondément le manuel - <em>manpage</em> - !</strong>
+
+</div></p>
+</p>
+
+<p>
+<strong>-U</strong><br/>
+
+Supprimer une interface <abbr title="Integrated Drive Electronics">IDE</abbr>. <strong>DANGEREUX</strong>. <em>Compagnon de l&#039;option <em class="u">-R</em></em>
+</p>
+
+<p>
+<p><div class="notewarning">
+Utiliser cette option en toute connaissance, avec une <strong>extrême précaution</strong>.
+<strong>Lire plus profondément le manuel - <em>manpage</em> - !</strong>
+
+</div></p>
+</p>
+
+<p>
+<strong>-v</strong><br/>
+
+Affiche les paramètres basiques, tel que <em class="u">-acdgkmur</em> pour <abbr title="Integrated Drive Electronics">IDE</abbr>. C&#039;est le comportement par défaut quand aucune option ou drapeau n&#039;est spécifiée.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>–verbose</strong> : affiche des informations plus complètes, à propos de certaines commandes.</div>
+</li>
+</ul>
+
+<p>
+<strong>-w</strong><br/>
+
+Exécute un <code>reset</code> matériel. <strong>DANGEREUX</strong>. 
+</p>
+
+<p>
+<p><div class="notewarning">
+Ne PAS utiliser cette option. À moins de savoir pourquoi…
+<strong>Lire plus profondément le manuel - <em>manpage</em> - !</strong>
+
+</div></p>
+</p>
+
+<p>
+<strong>-W</strong><br/>
+
+Obtenir ou paramétrer la fonctionnalité d&#039;écriture-cache des disques <abbr title="Integrated Drive Electronics">IDE</abbr>/<abbr title="Serial Advanced Technology Attachment">SATA</abbr>.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>write_cache = off</code>
+</p>
+
+<p>
+<strong>-x</strong><br/>
+
+Dispositif <em>Tristate</em> pour <em>HotSwap</em>.
+</p>
+
+<p>
+<strong>-X</strong><br/>
+
+Paramètre le mode de transfert <abbr title="Integrated Drive Electronics">IDE</abbr> pour les récents disques dur (E)<abbr title="Integrated Drive Electronics">IDE</abbr>/ATA.
+</p>
+
+<p>
+Usage :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>-X mdma2</strong> : sélectionne le mode 2 DMA <em>multiwords</em>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>-X sdma1</strong> : sélectionne le mode 1 DMA simple.</div>
+</li>
+<li class="level1"><div class="li"> <strong>-X udma2</strong> : sélectionne le mode 2 UltraDMA.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Pour utiliser les modes de transfert PIO et paramétrer la valeur, ajoutez 8 au mode PIO désiré.</div>
+<ul>
+<li class="level2"><div class="li"> PIO mode 1 : <strong>09</strong></div>
+</li>
+<li class="level2"><div class="li"> PIO mode 2 : <strong>10</strong></div>
+</li>
+<li class="level2"><div class="li"> PIO mode 3 : <strong>11</strong></div>
+</li>
+<li class="level2"><div class="li"> <strong>00</strong> : restaure les paramètres par défaut.</div>
+</li>
+<li class="level2"><div class="li"> <strong>01</strong> : désactive</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Pour utiliser les modes de transfert <em>multiwords</em> DMA, ajoutez 32 au mode DMA désiré.</div>
+</li>
+<li class="level1"><div class="li"> Pour utiliser les modes de transfert UltraDMA, ajoutez 64 …</div>
+</li>
+</ul>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>transfer_mode = 34</code>
+</p>
+
+<p>
+<p><div class="notehelp">
+Typiquement à utiliser avec l&#039;option <em class="u">-d1</em>.
+
+</div></p>
+<p><div class="notewarning">
+<em class="u">À utiliser avec une extrême précaution.</em>
+
+</div></p>
+</p>
+
+<p>
+<strong>-y</strong><br/>
+
+Force le périphérique <abbr title="Integrated Drive Electronics">IDE</abbr> à entrer immédiatement en mode de basse consommation.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>standby</code>
+</p>
+
+<p>
+<p><div class="noteclassic">
+L&#039;état peut être donné en utilisant le drapeau <em class="u">-C</em>.
+
+</div></p>
+</p>
+
+<p>
+<strong>-Y</strong><br/>
+
+Force le périphérique <abbr title="Integrated Drive Electronics">IDE</abbr> à entrer immédiatement en mode de sommeil. Seul un <code><em>reset</em></code> matériel ou logiciel peut réveiller le périphérique.
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>sleep</code>
+</p>
+
+<p>
+<p><div class="noteclassic">
+L&#039;état peut être donné en utilisant le drapeau <em class="u">-C</em>.
+
+</div></p>
+</p>
+
+<p>
+<strong>-z</strong><br/>
+
+Force le noyau à lire à nouveau la table de partition d&#039;un périphérique spécifié.
+</p>
+
+<p>
+<strong>-Z</strong><br/>
+
+Désactive les fonctionnalités automatiques d&#039;économie d&#039;énergie, pour certains périphériques de marque Seagate (modèle ST3xxx ?) .
+</p>
+
+<p>
+⇒ <em>Paramètre fichier config :</em> <code>disable_seagate</code>
+</p>
+
+<p>
+<strong>Sécurités ATA</strong><br/>
+
+Ces sécurités sont expérimentales, <strong>DANGEREUSES</strong>.
+</p>
+
+<p>
+<p><div class="notewarning">
+<strong>Utilisez à vos propres risques !</strong>
+<strong>Lire plus profondément le manuel - <em>manpage</em> - !</strong>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="hdparm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407500108" /><input type="hidden" name="summary" value="[Liste des options (commande et fichier de configuration)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2455-14266" /><input type="submit" value="Modifier" class="button" title="Liste des options (commande et fichier de configuration)" /></div></form></div>
+<h2 class="sectionedit8" id="cas_d_usage">Cas d&#039;usage</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="hdparm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407500108" /><input type="hidden" name="summary" value="[Cas d'usage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14267-14291" /><input type="submit" value="Modifier" class="button" title="Cas d'usage" /></div></form></div>
+<h3 class="sectionedit9" id="gestion_d_energie">Gestion d&#039;énergie</h3>
+<div class="level3">
+
+<p>
+<p><div class="notetip">Pour une utilisation plus conviviale, utiliser l&#039;outil <em><a href="gnome-disk-utility" class="wikilink1" title="gnome-disk-utility">disques</a></em> d&#039;Ubuntu.
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> Vérifier que le disque supporte la fonctionnalité de gestion d&#039;énergie (APM pour <em>Advanced power management</em>) : <pre class="code">sudo hdparm -I /dev/sd[X] | grep level</pre>
+
+<p>
+ (où [X] est une lettre (entre a et z) représentant votre disque dur).
+</p>
+</div>
+<ul>
+<li class="level2"><div class="li"> S&#039;il le disque le supporte, vous obtiendrez un nombre (254 par défaut), et vous pouvez continuer.</div>
+</li>
+<li class="level2"><div class="li"> Sinon, il est seulement possible de le mettre en veille (arrêt de la rotation des plateaux : spin down) une fois et il se relancera dès qu&#039;il sera sollicité : <pre class="code">sudo hdparm -y /dev/sd[X]</pre>
+</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Si supporté, essayer la mise en veille au bout de 5 secondes : <pre class="code">sudo hdparm -S 1 /dev/sd[X]</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Consulter l&#039;état courant : <pre class="code">sudo hdparm -C /dev/sd[X]</pre>
+</div>
+</li>
+</ul>
+
+<p>
+Remarque : il n&#039;est pas possible de connaître les durées courantes de mise en veille du disque (<a href="http://sourceforge.net/p/hdparm/feature-requests/12/" class="urlextern" title="http://sourceforge.net/p/hdparm/feature-requests/12/"  rel="nofollow">évolution demandée</a>)
+</p>
+
+<p>
+Pour les disques qui ne le supporterait pas, comme les WesternDigital série Green, une solution de contournement est proposée <a href="http://askubuntu.com/questions/137577/put-hdds-in-standby-after-x-minutes-using-hdparm-doesnt-work" class="urlextern" title="http://askubuntu.com/questions/137577/put-hdds-in-standby-after-x-minutes-using-hdparm-doesnt-work"  rel="nofollow">ici</a>, et <a href="http://www.ubuntuask.com/q/answers-setting-sata-hdd-spindown-time-196473.html" class="urlextern" title="http://www.ubuntuask.com/q/answers-setting-sata-hdd-spindown-time-196473.html"  rel="nofollow">une autre</a> utilise <a href="http://hd-idle.sourceforge.net/" class="urlextern" title="http://hd-idle.sourceforge.net/"  rel="nofollow">hd-idle</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="hdparm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407500108" /><input type="hidden" name="summary" value="[Gestion d'énergie] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14292-15739" /><input type="submit" value="Modifier" class="button" title="Gestion d'énergie" /></div></form></div>
+<h2 class="sectionedit10" id="references">Références</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Extrait de la page de manuel de hdparm.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="utilisateurs/ste" class="wikilink1" title="utilisateurs:ste">ste</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="hdparm"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1407500108" /><input type="hidden" name="summary" value="[Références] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15740-" /><input type="submit" value="Modifier" class="button" title="Références" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/a/aebf09c4eef56428516ece0dd618e9d7.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="hdparm?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="hdparm?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="hdparm?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="hdparm?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="hdparm?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

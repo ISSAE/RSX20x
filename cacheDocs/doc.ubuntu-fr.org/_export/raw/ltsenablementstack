@@ -1,0 +1,107 @@
+{{tag> Precise Trusty système kernel}}
+----
+====== LTS Enablement Stack ======
+<note warning>
+La plupart des utilisateurs n'ont sûrement pas besoin de se soucier de la version du kernel utilisé par leur système.
+
+Cette page s'adresse donc plutôt à des utilisateurs avertis.
+</note>
+
+<note tips>
+Le LTS Enablement Stack a commencé avec [[precise|Ubuntu 12.04]]. C'est, au départ, pour cette version que cette page a été rédigée.
+
+Il est prévu d'utiliser le même système pour les versions LTS suivantes. La nouvelle LTS [[trusty|Ubuntu 14.04]] bénéficie donc elle aussi du même système. 
+
+Voici leurs tableaux respectifs:
+</note>
+
+{{https://wiki.ubuntu.com/Kernel/Support?action=AttachFile&do=get&target=12.04.x+Ubuntu+Kernel+Support+Schedule.png?640|precise kernel support schedule}}{{https://wiki.ubuntu.com/Kernel/Support?action=AttachFile&do=get&target=14.04.x+Ubuntu+Kernel+Support+Schedule.png?640|trusty kernel support schedule}}
+
+
+===== Introduction =====
+
+Avec le ** LTS Enablement Stack ** (([[https://wiki.ubuntu.com/Kernel/LTSEnablementStack| LTSEnablementStack sur wiki.ubuntu.com]])), [[:precise|Ubuntu 12.04 LTS]] n'est plus limité à la version du [[:kernel|kernel]] linux fourni à sa sortie.\\
+Suivant la date à laquelle on a installé Precise (12.04 LTS), on va se retrouver avec un noyau différent et une gestion de l'affichage différente ( comme le montre le schéma précédent) \\ 
+Ainsi, les nouvelles iso d'[[:precise|Ubuntu 12.04]], ** 12.04.5 **, intègrent un kernel 3.13.0-x de  [[:trusty]] plutôt qu'un kernel 3.2.0-x fourni à la sortie de Precise \\
+Ceci permettant d'installer une Ubuntu 12.04 LTS en bénéficiant de la prise en charge de nouveaux matériels intégré dans un kernel plus récent, celui de la version non LTS en cours (ou même LTS).
+
+Sur du matériel déjà reconnu le passage au ** HWE ** (Hardware Enablement Stack) de la LTS a peu d’intérêt, et est même déconseillé pour des machines virtuelles.
+
+===== Installation =====
+
+Pour connaître toutes les versions supérieures qu'il est possible de mettre sur votre version LTS courante : <code>apt-cache search linux-generic lts</code>.
+Exemple sur la 12.04 : **quantal**, **raring**, **saucy** et **trusty** (de la plus ancienne à la plus récente, car il s'agit de l'ordre du dictionnaire). Choisissez en une et adaptez la suite en conséquence.
+==== Passer au dernier HWE stack =====
+
+**- POUR TRUSTY :** \\
+Passage de 14.04.1 (équipé du kernel 3.13.0-x) à 14.04.2 (équipé du kernel 3.16.0-x) réalisé par la commande suivante dans un terminal ([[https://wiki.ubuntu.com/Kernel/LTSEnablementStack#Desktop|source]]): 
+<code bash> sudo apt-get install --install-recommends linux-generic-lts-utopic xserver-xorg-lts-utopic libgl1-mesa-glx-lts-utopic libegl1-mesa-drivers-lts-utopic </code>
+**- POUR PRECISE :** \\
+Le HWE stack de Trusty comprend :  le kernel [[apt>linux-generic-lts-trusty]] et le paquet pour Xorg [[apt>xserver-xorg-lts-trusty]]
+
+<code bash> sudo apt-get install linux-generic-lts-trusty xserver-xorg-lts-trusty </code>
+  
+<note warning>
+Ne pas installer //linux-generic-lts-trusty// sans //xserver-xorg-lts-trusty// ou l'inverse. Ce n'est pas que cela ne peut pas fonctionner mais les développeurs ont décidé de ne pas tester toutes les combinaisons possibles (par exemple linux-generic-lts-trusty avec xserver-xorg-lts-raring). Le panachage est donc déconseillé parce que non-testé. 
+</note>
+
+A partir du 7 Août 2014, le gestionnaire de mise à jour propose ce passage au HWE stack de Trusty par un message " New hardware support is available " et si on clique sur le bouton "install", ce message apparaît dans une fenêtre : 
+<code>Your current Hardware Enablement Stack (HWE) is going out of support
+on 2014-08-07.  After this date security updates for critical parts (kernel
+and graphics stack) of your system will no longer be available.
+For more information, please see:
+http://wiki.ubuntu.com/1204_HWE_EOL</code>    
+Il y a un bouton "Annuler" et un bouton "Mettre à niveau" en bas de la fenêtre.  
+==== Installer sans le HWE stack ====
+
+**- POUR TRUSTY :** \\ 
+ Si vous souhaitez [[:installation|installer]] [[:trusty|Ubuntu 14.04 LTS]] sans HWE, avec un kernel 3.13.0-x, vous pouvez faire au choix:
+  * une installation via le réseau(([[tutoriel:installer_ubuntu_par_internet|netinstall]])) à l'aide d'une mini-iso (([[https://help.ubuntu.com/community/Installation/MinimalCD|mini-iso]]))
+  * utiliser une ancienne iso 14.04.1 LTS (([[http://old-releases.ubuntu.com/releases/14.04.1/|trusty 14.04.1]])).
+
+Après avoir installé à partir d'une iso plus ancienne, vous pourrez mettre à jour votre système en 14.04.x mais en conservant un kernel 3.13.0.x .
+
+**- POUR PRECISE :** \\ 
+Si vous souhaitez [[:installation|installer]] [[:precise|Ubuntu 12.04 LTS]] sans HWE, avec un kernel 3.2.0-x, vous pouvez faire au choix:
+  * une installation via le réseau(([[tutoriel:installer_ubuntu_par_internet|netinstall]])) ((http://cdimage.ubuntu.com/netboot/)) à l'aide d'une mini-iso (([[https://help.ubuntu.com/community/Installation/MinimalCD|mini-iso]]))
+  * utiliser une ancienne iso 12.04.1 LTS (([[http://old-releases.ubuntu.com/releases/12.04.1/|Precise 12.04.1]])).
+
+Après avoir installé à partir d'une iso plus ancienne, vous pourrez mettre à jour votre système en 12.04.x mais en conservant un kernel 3.2.0.x .
+
+
+===== Désinstallation =====
+
+<note> Si vous avez installé la LTS Enablement Stack de raring  il faut remplacer dans toute les commandes qui suivent quantal par raring 
+Puis supprimer les noyaux 3.8 au lieu des 3.5
+Pour saucy supprimer les noyaux 3.11 et remplacez bien sur quantal par saucy
+</note>
+
+
+  - Désinstallez //linux-generic-lts-quantal// et //xserver-xorg-lts-quantal//, <code bash>
+sudo apt-get remove linux-generic-lts-quantal xserver-xorg-lts-quantal</code>
+  - Installez les paquets **[[apt>linux-generic,linux-headers-generic,linux-image,linux-image-generic,linux-libc-dev,linux-tools|linux-generic linux-headers-generic linux-image linux-image-generic linux-libc-dev linux-tools]]** <code bash>
+sudo apt-get install linux-generic linux-headers-generic linux-image linux-image-generic linux-libc-dev linux-tools </code>
+  - Rebooter sur un kernel 3.2.0-x que vous choisirez dans le menu de [[:grub-pc|grub]].
+  - Supprimer les kernel 3.5 (remplacez 3.5.0-x par la version correspondante. // ie: 3.5.0-36 //) <code bash>
+sudo apt-get remove linux-headers-3.5.0-x linux-headers-3.5.0-x-generic linux-image-3.5.0-x-generic linux-image-generic-lts-quantal linux-headers-generic-lts-quantal</code>
+  
+
+//plus d'info: [[http://askubuntu.com/questions/265999/how-to-remove-kernel-lts-enablement-stack|ici]]//
+
+===== Problèmes =====
+
+==== Plus d'affichage graphique après une montée de version (quantal=>saucy par exemple) ====
+
+  * Symptôme : si l'écran affiche seulement un tiret en haut à gauche, l'affichage X ne démarre pas. Cela peut être vérifié dans /var/log/ligthdm/x-0.log où il est indiqué que /etc/X11/X n'existe pas.
+  * Résolution : 
+    * Réinstaller le paquet xorg s'il n'est pas déjà présent <code>sudo apt-get install xorg</code>
+    * Recréer le lien symbolique manquant /etc/X11/X (remplacer saucy par la version adaptée chez vous)<code>sudo dpkg-reconfigure xserver-xorg-core-lts-saucy</code>
+
+===== Liens =====
+  * [[https://wiki.ubuntu.com/Kernel/LTSEnablementStack|LTSEnablementStack sur le wiki ubuntu.com]]
+  * [[https://wiki.ubuntu.com/PrecisePangolin/ReleaseNotes/UbuntuDesktop#LTS_Hardware_Enablement_Stack|Note de publication sur le LTS Hardware Enablement Stack]]
+  * [[https://wiki.ubuntu.com/Kernel/Release/Rolling|Politique sur les noyaux LTS]]
+  * [[http://www.jorgecastro.org/2013/02/19/what-the-lts-enablement-stack-means-for-sysadmins/|Principe du LTS Enablement Stack]] (en)
+
+----
+// Contributeurs :[[utilisateurs:Ool]], Oreste Visari //

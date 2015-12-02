@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>pare-feu</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-04-01T09:25:40+0200"/>
+<meta name="keywords" content="reseau,securite"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../pare-feu?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="pare-feu"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/pare-feu"/>
+<link rel="canonical" href="../../pare-feu"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"pare-feu","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="pare-feu#ai-je_besoin_d_un_pare-feu_logiciel">Ai-je besoin d&#039;un pare-feu logiciel ?</a></div></li>
+<li class="level1"><div class="li"><a href="pare-feu#pare-feu_par_defaut_dans_ubuntu">Pare-feu par défaut dans Ubuntu</a></div></li>
+<li class="level1"><div class="li"><a href="pare-feu#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="pare-feu_informatique">Pare-feu informatique</h1>
+<div class="level1">
+
+<p>
+ Un pare-feu (ou coupe-feu, barrière de sécurité ou firewall), dans le contexte d&#039;un réseau informatique, est un composant essentiel de la sécurité des réseaux informatiques. Son but est de protéger un réseau informatique des intrusions indésirables en filtrant les communications autorisées ou non entre deux réseaux informatiques (généralement dans un contexte domestique : votre réseau privé domestique et le réseau Internet).
+</p>
+
+<p>
+<a href="http://fr.wikipedia.org/wiki/​Pare-feu_%28informatique%29" class="media" title="http://fr.wikipedia.org/wiki/​Pare-feu_%28informatique%29"><img src="http://doc.ubuntu-fr.org/_media/%E2%80%8B_http/%E2%80%8Bupload.wikimedia.org/%E2%80%8Bwikipedia/%E2%80%8Bcommons/%E2%80%8B3/%E2%80%8B38/%E2%80%8Bfirewall_28networking_29.png?w=300&amp;tok=d83078" class="mediaright" title="La métaphore du pare-feu : ce composant sert à isoler les réseaux privés et publics. (Source de l&#039;​image : Wikipedia)" alt="La métaphore du pare-feu : ce composant sert à isoler les réseaux privés et publics. (Source de l&#039;​image : Wikipedia)" width="300" /></a>
+</p>
+
+<p>
+Le pare-feu pourrait être comparé à un agent de sécurité à l&#039;aéroport. Pour entrer dans votre pays, un visiteur étranger doit passer par un poste-frontière et être contrôlé par un douanier qui, selon des instructions qu&#039;il doit suivre, le laissera passer ou lui fera rebrousser chemin. Pareillement, un habitant de votre pays doit passer un contrôle avant de monter dans un avion vers une destination extérieure ; suite à son contrôle, le voyageur pourra continuer ou non sa route. Le pare-feu joue ce rôle, au niveau informatique : il filtre les connexions qui arrivent dans votre ordinateur et celles qui sortent de votre ordinateur, et bloque celles qui sont indésirables selon ce que vous lui avez paramétré comme politique de sécurité.
+</p>
+
+<p>
+Un pare-feu se présente essentiellement sous deux formes :
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>Logicielle :</em> un programme qui fonctionne dans votre ordinateur personnel ou de bureau et assure le rôle de filtrage des connexions. Un pare-feu logiciel doit être installé dans chaque ordinateur ;</div>
+</li>
+<li class="level1"><div class="li"> <em>Matérielle :</em> un composant physique de votre réseau domestique qui inclut un logiciel de pare-feu. Un pare-feu matériel doit être présent une seule fois dans un réseau informatique – au passage entre un réseau privé et un réseau public.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT1 SECTION "Pare-feu informatique" [36-2089] -->
+<h2 class="sectionedit2" id="ai-je_besoin_d_un_pare-feu_logiciel">Ai-je besoin d&#039;un pare-feu logiciel ?</h2>
+<div class="level2">
+
+<p>
+Le pare-feu est un composant essentiel de la sécurité de votre réseau domestique ou d&#039;entreprise. Sans celui-ci, vous exposez votre ou vos ordinateurs à des risques de sécurité importants. Cependant, avez-vous réellement besoin d&#039;un pare-feu <em>logiciel</em> dans votre système d&#039;exploitation Ubuntu ?
+</p>
+
+</div>
+
+<h4 id="a_la_maison">À la maison</h4>
+<div class="level4">
+
+<p>
+Les deux cas dépeignent les configurations des utilisateurs. Dans ces deux cas, avoir un pare-feu reste conseillé.
+</p>
+
+</div>
+
+<h5 id="derriere_un_routeur_domestique_ou_un_box">Derrière un routeur domestique ou un *box</h5>
+<div class="level5">
+
+<p>
+La majorité des réseaux domestiques sont aujourd&#039;hui reliés à travers un routeur ou une *box. Or, la plupart des routeurs et *box incluent de base un module de pare-feu. Il est parfois activé d&#039;office ; pour d&#039;autres, vous devez le mettre en route. Dans le cas où votre routeur inclut un module de pare-feu et que celui-ci est activé. Vous n&#039;avez donc pas réellement besoin d&#039;activer un pare-feu logiciel dans votre système Ubuntu.
+</p>
+
+<p>
+De plus, même si votre *box ou votre routeur ne dispose pas d&#039;un module de pare-feu, la manière selon laquelle fonctionne un routeur ou une *box rend techniquement vos ordinateurs inaccessibles directement depuis Internet.<sup><a href="pare-feu#fn__1" id="fnt__1" class="fn_top">1)</a></sup> Une intrusion devient difficile, mais pas totalement impossible. Ce niveau de sécurité suffit généralement à empêcher les intrusions, mais elle ne dispense pas d&#039;avoir un pare-feu activé localement sur l&#039;ordinateur de l&#039;utilisateur.
+</p>
+
+</div>
+
+<h5 id="sans_routeur_domestique_ou_sans_box">Sans routeur domestique ou sans *box</h5>
+<div class="level5">
+
+<p>
+Vous êtes dans cette situation lorsque votre ordinateur est relié directement au modem – connexion par modem téléphonique bas débit, par modem <abbr title="Asymetric Digital Subscriber Line">ADSL</abbr> ou câble branché directement à l&#039;ordinateur (par fil <abbr title="Universal Serial Bus">USB</abbr> ou Ethernet), par une clé d&#039;Internet mobile, par votre téléphone cellulaire (<em>tethering</em>)… Dans ce cas, votre ordinateur est directement visible depuis Internet et tout ordinateur distant aura accès à tous vos services réseau s&#039;ils ne sont pas protégés. Par exemple, si vous activez le partage de bureau à distance sans le protéger, quiconque dans Internet peut charger une session de bureau à distance et voir votre bureau ! Ne pas protéger un ordinateur relié directement à Internet est un risque non négligeable.
+</p>
+
+<p>
+Dans cette situation, il est <strong>indispensable</strong> que vous activiez un pare-feu logiciel dans chacun de vos ordinateurs à la maison.
+</p>
+
+</div>
+
+<h4 id="au_bureau">Au bureau</h4>
+<div class="level4">
+
+<p>
+Dans le cas de réseau d&#039;entreprise, même si le réseau privé est protégé par un pare-feu matériel ou un mécanisme <abbr title="Network Address Translation">NAT</abbr>, on souhaitera protéger chacun des postes de travail des possibles bévues des autres postes de l&#039;entreprise. On souhaitera sécuriser les postes contre les possibles intrusions indésirables provenant de l&#039;intérieur-même de l&#039;entreprise, des autres ordinateurs connectés au même réseau privé – ceci est encore plus vrai dans le cas de sous-réseaux sans fil.<sup><a href="pare-feu#fn__2" id="fnt__2" class="fn_top">2)</a></sup>
+</p>
+
+</div>
+
+<h4 id="sur_un_reseau_public">Sur un réseau public</h4>
+<div class="level4">
+
+<p>
+Dans un poste de travail mobile (netbook, ordinateur portable, périphérique mobile…) qui se connecte à des réseaux publics, comme celui d&#039;une bibliothèque ou d&#039;une université, même si le réseau privé est protégé par un pare-feu, on souhaitera se prémunir contre les possibles intrusions des autres postes publics.<sup><a href="pare-feu#fn__3" id="fnt__3" class="fn_top">3)</a></sup> Dans ce cas, installer et configurer un pare-feu logiciel dans son système d&#039;exploitation Ubuntu est une bonne idée.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Ai-je besoin d'un pare-feu logiciel ?" [2090-6806] -->
+<h2 class="sectionedit3" id="pare-feu_par_defaut_dans_ubuntu">Pare-feu par défaut dans Ubuntu</h2>
+<div class="level2">
+
+<p>
+Ubuntu, comme tous les systèmes <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux, dispose de base d&#039;un pare-feu logiciel. Celui-ci n&#039;est toutefois pas activé par défaut après l&#039;installation du système. Ubuntu inclut aussi de nombreuses interfaces pour gérer ce pare-feu logiciel. Il s&#039;agit d&#039;un empilement plus ou moins complexe pour lequel l&#039;utilisateur final n&#039;interagit réellement qu&#039;avec les dernières couches:
+</p>
+<ul>
+<li class="level1"><div class="li"> Le <a href="http://fr.wikipedia.org/wiki/Pare-feu_(informatique)" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Pare-feu_(informatique)">pare-feu logiciel</a> sous Ubuntu se nomme <a href="http://fr.wikipedia.org/wiki/Netfilter" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Netfilter">Netfilter</a>. À la différence de certains pare-feu logiciels que l&#039;on peut rencontrer sous d&#039;autres <a href="http://fr.wikipedia.org/wiki/Système_d'exploitation" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Système_d'exploitation">système d&#039;exploitation</a>, Netfilter agit directement au niveau du noyau Linux, ce qui permet une <a href="http://www.ssi.gouv.fr/fr/menu/actualites/certification-au-titre-de-la-cspn-du-logiciel-netfilter.html" class="urlextern" title="http://www.ssi.gouv.fr/fr/menu/actualites/certification-au-titre-de-la-cspn-du-logiciel-netfilter.html"  rel="nofollow">bonne sécurité</a>. Netfilter prend en charge l&#039;<abbr title="Internet Protocol Version 6">IPV6</abbr> ainsi que le <a href="http://fr.wikipedia.org/wiki/Netfilter#Connection_Tracking" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Netfilter#Connection_Tracking">suivi de connections</a>.</div>
+</li>
+<li class="level1"><div class="li"> <a href="../../iptables" class="wikilink1" title="iptables">Iptables</a> est l&#039;interface de configuration par défaut de Netfilter depuis le noyau Linux 2.6. Son utilisation est néanmoins complexe, fonctionnant uniquement en ligne de commande et requérant des commandes aux structures bien précises.</div>
+</li>
+<li class="level1"><div class="li"> Ubuntu introduit donc une interface de configuration plus simple, <a href="http://doc.ubuntu-fr.org/ufw" class="wikilink1" title="ufw">Uncomplicated FireWall (UFW)</a>. Ce logiciel en ligne de commande propose des options moins avancées que Iptables, mais convient aux configurations simples et générales d&#039;un pare-feu logiciel.</div>
+</li>
+<li class="level1"><div class="li"> UFW peut aussi être contrôlé par une interface graphique, <a href="../../gufw" class="wikilink1" title="gufw">Graphical UFW (GUFW)</a> (ou <strong><a href="apt://ufw-kde" class="interwiki iw_apt" title="apt://ufw-kde">ufw-kde</a></strong> pour kubuntu). Celle-ci doit être installée séparément.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Pare-feu par défaut dans Ubuntu" [6807-8485] -->
+<h2 class="sectionedit4" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=399418" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=399418"  rel="nofollow">Une discussion sur l&#039;intérêt d&#039;un pare-feu dans Ubuntu</a> dans le forum d&#039;Ubuntu-FR</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.zebulon.fr/outils/scanports/test-securite.php" class="urlextern" title="http://www.zebulon.fr/outils/scanports/test-securite.php"  rel="nofollow">Tester la sécurité de votre pare-feu</a> [fr] (Site très efficace).</div>
+</li>
+</ul>
+<hr />
+
+</div>
+
+<h4 id="notes">Notes</h4>
+<div class="level4">
+
+</div>
+<!-- EDIT4 SECTION "Voir aussi" [8486-] --><div class="footnotes">
+<div class="fn"><sup><a href="pare-feu#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Cette technique, nécessaire pour créer des réseaux privés, s&#039;appelle la <em>transposition d&#039;adresses réseau et de port</em>, ou <em>network address port translation</em> (NAPT), par abus de langage on parle de <abbr title="Network Address Translation">NAT</abbr>. Les réseaux privés situés derrière un mécanisme de transposition d&#039;adresses ne peuvent être contactés directement par d&#039;autres serveurs dans Internet, à moins que votre propre ordinateur ait initié la communication. Donc, un ordinateur situé derrière un routeur ou une *box est techniquement protégé grâce à un mécanisme <abbr title="Network Address Translation">NAT</abbr>.</div>
+<div class="fn"><sup><a href="pare-feu#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+Dans un environnement public ou semi-privé tel une entreprise, il est plus ou moins facile de contrôler qui accède au réseau et comment il accède aux ressources du réseau (locales et distantes). En plus de protéger l&#039;accès au réseau privé depuis un réseau public extérieur, il vaut mieux protéger aussi chacun des postes d&#039;utilisateur finaux offrant un accès à des ressources et services – ce pour quoi est réellement conçu un pare-feu logiciel.</div>
+<div class="fn"><sup><a href="pare-feu#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+Tout comme le réseau d&#039;entreprises, il est difficile – voire impossible – de contrôler efficacement qui se connecte au même sous-réseau privé (derrière un mécanisme <abbr title="Network Address Translation">NAT</abbr>) que vous. Les possibles attaques proviennent donc de la part des possibles pirates qui se connectent dans le même sous-réseau privé que vous.</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/27a641fabbb7e19cc8ae555aea444249.xhtml used -->
+</div>
+</body>
+</html>

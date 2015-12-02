@@ -1,0 +1,687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>vim - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-04-23T12:20:04+0200"/>
+<meta name="keywords" content="editeur de texte,console,programmation,ide,gvim"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/vim?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/vim?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/vim"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/vim"/>
+<link rel="canonical" href="vim"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"vim","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="vim#main" tabindex="1">Contenu</a> | <a href="vim#qsearch__in" tabindex="2">Rechercher</a> | <a href="vim#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="vim" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="vim" >vim</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="vim#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="vim#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="vim#mettre_en_francais_la_doc_vim">Mettre en français la doc vim</a></div></li>
+<li class="level2"><div class="li"><a href="vim#tutoriel">Tutoriel</a></div></li>
+<li class="level2"><div class="li"><a href="vim#principe_de_base">Principe de base</a></div></li>
+<li class="level2"><div class="li"><a href="vim#utilisation_avancees">Utilisation avancées</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="vim#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="vim#vim_supporte_les_souris">Vim supporte les souris</a></div></li>
+<li class="level2"><div class="li"><a href="vim#theme_de_coloration_syntaxique">Thème de coloration syntaxique</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="vim#pour_aller_plus_loin">Pour aller plus loin</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/editeur_de_texte" class="wikilink1" title="editeur_de_texte" rel="tag">éditeur de texte</a>,
+	<a href="console" class="wikilink1" title="console" rel="tag">console</a>,
+	<a href="programmation" class="wikilink1" title="programmation" rel="tag">programmation</a>,
+	<a href="ide" class="wikilink1" title="ide" rel="tag">IDE</a>,
+	<a href="http://doc.ubuntu-fr.org/gvim" class="wikilink1" title="gvim" rel="tag">gvim</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="vi_improved">Vi IMproved</h1>
+<div class="level1">
+
+<p>
+Vim est un <a href="http://doc.ubuntu-fr.org/editeur_de_texte" class="wikilink1" title="editeur_de_texte">éditeur de texte</a> pour le <a href="terminal" class="wikilink1" title="terminal">terminal</a> sous <a href="http://doc.ubuntu-fr.org/gnu" class="wikilink1" title="gnu">GNU</a>/<a href="http://doc.ubuntu-fr.org/linux" class="wikilink1" title="linux">Linux</a>. Il a une stabilité exemplaire et ne cesse d&#039;être amélioré. Malgré son austérité, c&#039;est un outil très puissant qui n&#039;a rien à envier aux éditeurs graphiques comme <a href="gedit" class="wikilink1" title="gedit">GEdit</a>, <a href="kate" class="wikilink1" title="kate">Kate</a> ou <a href="mousepad" class="wikilink1" title="mousepad">Mousepad</a>. Il est très apprécié des développeurs pour toutes ses fonctions qui en font un très bon <abbr title="Integrated Drive Electronics">IDE</abbr> (coloration syntaxique de 200 langages, complétion automatique, comparaison de fichiers, recherche évoluée, …) et est extensible par des scripts.
+</p>
+
+<p>
+Contrairement à la plupart des éditeurs, Vim est un éditeur modal<sup><a href="vim#fn__1" id="fnt__1" class="fn_top">1)</a></sup>. Selon le mode où vous vous trouvez, les touches auront des actions différentes.
+</p>
+
+<p>
+<p><div class="notetip">Vim est un &quot;charity-ware&quot; : vous êtes encouragés à faire une donation aux
+orphelins d&#039;Ouganda (voyez : &quot;:help uganda&quot;).
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="vim"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1429784404" /><input type="hidden" name="summary" value="[Vi IMproved] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="65-1033" /><input type="submit" value="Modifier" class="button" title="Vi IMproved" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Par défaut, votre système a une version basique de vim, procurée par le paquet <strong>vim-tiny</strong>, mais n&#039;offrant pas toutes les possibilités de cet éditeur.
+</p>
+
+<p>
+Commencez par <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://vim" class="interwiki iw_apt" title="apt://vim">vim</a></strong>.<br/>
+
+Si vous souhaitez  une interface graphique pour utiliser Vim, reportez-vous à la page <strong><a href="http://doc.ubuntu-fr.org/gvim" class="wikilink1" title="gvim">gvim</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="vim"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1429784404" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1034-1419" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit3" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="vim"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1429784404" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1420-1445" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h3 class="sectionedit4" id="mettre_en_francais_la_doc_vim">Mettre en français la doc vim</h3>
+<div class="level3">
+
+<p>
+Sur Ubuntu 12.04. Tout d&#039;abord, télécharger la traduction de la doc de vim sur le site : <a href="http://cfennajoui.net/vim/" class="urlextern" title="http://cfennajoui.net/vim/"  rel="nofollow">http://cfennajoui.net/vim/</a> <em>(miroir)</em>
+</p>
+
+<p>
+Ensuite, dans un terminal root, sauvegarder la doc vim actuelle (en anglais) dans un répertoire à créer /usr/share/vim/vimcurrent/old_vim_doc/doc/ (mieux vaut être prudent…)
+</p>
+
+<p>
+Puis recopier le contenu décompressé de archive_traduit.tar.gz (de Téléchargements) dans /usr/share/vim/vimcurrent/doc/
+</p>
+
+<p>
+Vérifier en ouvrant un fichier d&#039;essai avec vim que l&#039;aide est bien en français. Tout va bien !
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="vim"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1429784404" /><input type="hidden" name="summary" value="[Mettre en français la doc vim] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1446-2025" /><input type="submit" value="Modifier" class="button" title="Mettre en français la doc vim" /></div></form></div>
+<h3 class="sectionedit5" id="tutoriel">Tutoriel</h3>
+<div class="level3">
+
+<p>
+L&#039;installation de vim fournit un programme spécifique pour l&#039;apprentissage de vim. Il faut compter environ 30 minutes pour faire le tour de ce tutoriel, mais cela est très utile pour vous familiariser avec les commandes les plus courantes de <strong>vim</strong>.
+</p>
+
+<p>
+Pour le lancer il vous suffit d&#039;aller dans un <a href="terminal" class="wikilink1" title="terminal">terminal</a> et de taper :
+</p>
+<pre class="code">vimtutor</pre>
+
+<p>
+(ou pour la version graphique, lancez l&#039;application <strong>gvimtutor</strong> avec la combinaison de touches <strong>ALT + F2</strong> ou dans le terminal)
+</p>
+
+<p>
+Vim dispose aussi d&#039;un tutoriel francophone non-officiel en ligne : <a href="http://vim-fr.org/" class="urlextern" title="http://vim-fr.org/"  rel="nofollow">http://vim-fr.org/</a>
+</p>
+
+<p>
+Si vimtutor s&#039;avère être vide, c&#039;est que seule une version minimale de Vim est installée. C&#039;est le cas par défaut sur certaines versions d&#039;Ubuntu. Afin d&#039;installer la version complète : <strong><a href="apt://vim" class="interwiki iw_apt" title="apt://vim">vim</a></strong> ou <code>sudo apt-get install vim</code>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="vim"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1429784404" /><input type="hidden" name="summary" value="[Tutoriel] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2026-2859" /><input type="submit" value="Modifier" class="button" title="Tutoriel" /></div></form></div>
+<h3 class="sectionedit6" id="principe_de_base">Principe de base</h3>
+<div class="level3">
+
+<p>
+Pour <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">créer ou modifier un fichier</a> avec vim il suffit de taper :
+</p>
+<pre class="code">vim /chemin/texte</pre>
+
+<p>
+Si le fichier n&#039;existe pas il sera créé à l&#039;enregistrement.
+</p>
+
+<p>
+Le fichier s&#039;affiche. Vous êtes dans le <strong>mode commande</strong><sup><a href="vim#fn__2" id="fnt__2" class="fn_top">2)</a></sup>, c&#039;est à dire que vous pouvez déplacer le curseur comme vous le souhaitez avec les touches h,j,k,l ou avec les flèches ←↓↑→ et entrer des commandes pour agir sur le texte. Si vous tapez un nombre avant une commande, elle se répétera d&#039;autant.
+</p>
+
+<p>
+Pour accéder au <strong>mode insertion</strong><sup><a href="vim#fn__3" id="fnt__3" class="fn_top">3)</a></sup> afin de modifier ou d&#039;insérer du texte, il suffit d&#039;appuyer sur « <strong>i</strong> » dans le mode commande. Appuyer sur la touche « <strong>Échap</strong> » pour en sortir et repasser en mode commande.
+</p>
+
+</div>
+
+<h4 id="commandes_de_base">Commandes de base:</h4>
+<div class="level4">
+<div class="table sectionedit7"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign">  Exemples  </th><th class="col1 leftalign"> Action  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">  <strong>i</strong>  </td><td class="col1 leftalign"> Passer dans le <strong>mode insertion</strong>  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  <strong>A</strong>  </td><td class="col1"> Ajouter en fin de ligne </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  <strong>:q</strong>  </td><td class="col1"> Quitter</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">  <strong>:q!</strong>  </td><td class="col1"> Quitter sans enregistrer </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">  <strong>:w</strong>  </td><td class="col1"> Enregistrer le fichier </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 centeralign">  <strong>:wq</strong>  </td><td class="col1"> Enregistrer et quitter </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 centeralign">  <strong>:x</strong>  </td><td class="col1"> Enregistrer (seulement en cas de modification) et quitter </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 centeralign">  <strong>:set paste</strong>  </td><td class="col1"> Passer en mode &quot;collage&quot; </td>
+	</tr>
+</table></div>
+
+</div>
+
+<h4 id="commandes_d_edition">Commandes d&#039;édition:</h4>
+<div class="level4">
+<div class="table sectionedit8"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign">  Exemples  </th><th class="col1 leftalign"> Action  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">  <strong>u</strong>  </td><td class="col1"> Annuler la dernière opération </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  <strong>&lt;control&gt;-r</strong>  </td><td class="col1"> Rétablir la dernière opération annulée </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  <strong>.</strong>  </td><td class="col1"> Répéter la dernière opération d&#039;édition </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">  <strong>yy</strong>  </td><td class="col1"> Copier la ligne (4<strong>yy</strong> = 4 lignes) </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">  <strong>dd</strong>  </td><td class="col1"> Couper la ligne (4<strong>dd</strong> = 4 lignes) </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 centeralign">  <strong>p</strong>  </td><td class="col1"> Coller après (<strong>P</strong> = insérer avant) </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 centeralign">  <strong>x</strong>  </td><td class="col1"> Effacer le caractère </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 centeralign">  <strong>dw</strong>  </td><td class="col1"> Effacer le texte jusqu&#039;à la fin du mot </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0 centeralign">  <strong>diw</strong>  </td><td class="col1"> Effacer le mot sous le curseur </td>
+	</tr>
+</table></div>
+
+</div>
+
+<h4 id="rechercheremplacement">Recherche / remplacement:</h4>
+<div class="level4">
+<div class="table sectionedit9"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign">  Exemples  </th><th class="col1 leftalign"> Action  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">  <strong>/</strong>  </td><td class="col1"> Rechercher du texte </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  <strong>n</strong>  </td><td class="col1"> Rechercher l&#039;occurence suivante </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  <strong>N</strong>  </td><td class="col1"> Rechercher l&#039;occurence précédente </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">  <strong>cw</strong>  </td><td class="col1"> Remplacer le texte jusqu&#039;à la fin du mot </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">  <strong>ciw</strong>  </td><td class="col1"> Remplacer le mot </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 centeralign">  <strong>C</strong>  </td><td class="col1"> Remplacer jusqu&#039;en fin de ligne </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 centeralign">  <strong>.</strong>  </td><td class="col1"> Répéter la dernière opération d&#039;édition </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 centeralign">  <strong>:%s/A/B/g</strong>  </td><td class="col1"> Remplacer tous (g) les A par des B </td>
+	</tr>
+</table></div>
+
+</div>
+
+<h4 id="fenetrage">Fenêtrage:</h4>
+<div class="level4">
+<div class="table sectionedit10"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign">  Exemples  </th><th class="col1 leftalign"> Action  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">  <strong>&lt;control-w&gt;-s</strong>  </td><td class="col1"> Diviser horizontalement </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  <strong>&lt;control-w&gt;-v</strong>  </td><td class="col1"> Diviser verticalement </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  <strong>&lt;control-w&gt;-w</strong>  </td><td class="col1"> Passer à la fenêtre suivante </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">  <strong>&lt;control-w&gt;-n</strong>  </td><td class="col1"> Ouvrir un fichier vierge dans une nouvelle fenêtre </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">  <strong>&lt;control-w&gt;-q</strong>  </td><td class="col1"> Fermer la fenêtre </td>
+	</tr>
+</table></div>
+
+</div>
+
+<h4 id="programmation_en_c">Programmation en C</h4>
+<div class="level4">
+
+<p>
+Vim est interfaçable avec CScope, ce qui permet à l&#039;aide d&#039;une simple touche
+lors de l&#039;édition d&#039;un fichier source écrit en C:
+</p>
+<ul>
+<li class="level1"><div class="li"> d&#039;afficher la définition d&#039;une fonction,</div>
+</li>
+<li class="level1"><div class="li"> de trouver les fonction appelées par cette fonction,</div>
+</li>
+<li class="level1"><div class="li"> de trouver les fonctions appelant cette fonction</div>
+</li>
+<li class="level1"><div class="li"> de trouver/remplacer une chaine de caractères ou un expression régulière</div>
+</li>
+<li class="level1"><div class="li"> de trouver les fichiers incluant le header file indiqué sous le curseur</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="vim"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1429784404" /><input type="hidden" name="summary" value="[Principe de base] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2860-5991" /><input type="submit" value="Modifier" class="button" title="Principe de base" /></div></form></div>
+<h3 class="sectionedit11" id="utilisation_avancees">Utilisation avancées</h3>
+<div class="level3">
+
+<p>
+vim peut servir <a href="http://fr.wikipedia.org/wiki//%C3%89diteur_hexad%C3%A9cimal" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki//%C3%89diteur_hexad%C3%A9cimal">d&#039;éditeur héxadécimal</a> (voir aussi hexedit) : après avoir ouvert votre fichier, tapez 
+</p>
+<pre class="code">:%!xxd</pre>
+
+<p>
+pour revenir en édition normale 
+</p>
+<pre class="code">:%!xxd -r</pre>
+
+<p>
+comme pour les autres utilisations (recherche, remplace…), vous pouvez remplacer % par un n° de ligne ou un intervalle
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="vim"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1429784404" /><input type="hidden" name="summary" value="[Utilisation avancées] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5992-6369" /><input type="submit" value="Modifier" class="button" title="Utilisation avancées" /></div></form></div>
+<h2 class="sectionedit12" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Pour modifier le comportement de vim, il faut agir sur son fichier de configuration (chaque utilisateur peut avoir le sien). Pour cela <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">créez ou éditez le fichier</a> <strong>~/.vimrc</strong> (le fichier vimrc global peut se trouver dans /usr/share/vim/vimrc ).
+</p>
+
+<p>
+<p><div class="notetip">S&#039;il n&#039;existe pas de fichier .vimrc dans le dossier de l&#039;utilisateur, vim se lance en « compatibilité » avec vi. C&#039;est-à-dire qu&#039;il va charger les options par défaut de vi, et non pas celles de vim. La simple existence de ce fichier suffit normalement à charger les options par défaut de vim, mais, par précaution, forcez la désactivation de cette compatibilité (en tout début de fichier, car ça change les options).
+</div></p>
+</p>
+
+<p>
+Voici quelques paramètres utiles à ajouter dans ce fichier :
+</p>
+<div class="table sectionedit13"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Paramètre </th><th class="col1"> Action </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> <pre class="code">set nocompatible</pre>
+</td><td class="col1"> Désactive la compatibilité avec vi </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> <pre class="code">set background=dark </pre>
+</td><td class="col1"> adapte les couleurs pour un fond noir </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> <pre class="code">syntax on</pre>
+</td><td class="col1"> Active la coloration syntaxique </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> <pre class="code">set number</pre>
+</td><td class="col1"> Affiche les numéros de lignes </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> <pre class="code">set tabstop=4</pre>
+</td><td class="col1"> Indentation toutes les quatre colonnes </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> <pre class="code">set expandtab</pre>
+</td><td class="col1"> Conversion des tabulations en espaces </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> <pre class="code">set shiftwidth=4</pre>
+</td><td class="col1"> Indentation de quatre colonnes </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> <pre class="code">set smartindent</pre>
+</td><td class="col1"> Indentation &quot;intelligents&quot; </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> <pre class="code">set autoindent</pre>
+</td><td class="col1"> Conserve l&#039;indentation courante sur les nouvelles lignes </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"> <pre class="code">set backspace=indent,eol,start</pre>
+</td><td class="col1"> retours arrières intelligents </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"> <pre class="code">set shiftround</pre>
+</td><td class="col1"> Indentation à la marque de Tab la plus proche </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"> <pre class="code">set ignorecase</pre>
+</td><td class="col1"> Ignore la casse lors de recherche </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"> <pre class="code">set showmode</pre>
+</td><td class="col1"> affiche le mode d&#039;édition </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"> <pre class="code">set ruler</pre>
+</td><td class="col1"> affiche la position du curseur </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"> <pre class="code">set showcmd</pre>
+</td><td class="col1"> affiche les commandes incomplète </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><pre class="code">map &lt;C-m&gt; :resize&lt;CR&gt; </pre>
+</td><td class="col1"> Ctrl-m maximize la fenetre courrante (:help map)</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><pre class="code">map &lt;C-b&gt; :bNext&lt;CR&gt;</pre>
+</td><td class="col1"> Ctrl-b aller au tampon suivant (:help map)</td>
+	</tr>
+</table></div>
+
+<p>
+Si vim ne se souvient pas de la position précédente du curseur lorsque vous réouvrez un fichier, il faut ajouter la ligne suivante dans le fichier ~/.vimrc:
+</p>
+<pre class="code">au BufReadPost * if line(&quot;&#039;\&quot;&quot;) &gt; 1 &amp;&amp; line(&quot;&#039;\&quot;&quot;) &lt;= line(&quot;$&quot;) | exe &quot;normal! g&#039;\&quot;&quot; | endif</pre>
+
+<p>
+confère commande vim <strong>:help last-position-jump</strong> ou bien en tapant:
+</p>
+<pre class="code">grep -A4 last-position-jump /usr/local/share/vim/vim72/doc/eval.txt</pre>
+
+<p>
+Il est également possible de faire ces modifications dans le fichier <strong>/etc/vim/vimrc</strong> avec les <a href="sudo" class="wikilink1" title="sudo"> droit administrateur</a> pour qu&#039;elles s&#039;appliquent à tous les utilisateurs du système.
+</p>
+
+<p>
+Un fichier exemple est disponible également <strong>/usr/share/vim/vimcurrent/vimrc_example.vim</strong>
+</p>
+
+<p>
+<p><div class="noteclassic"> Si vous avez l&#039;erreur &quot;Sorry, the command is not available in this version: syntax on&quot;, vous utilisez surement vim-tiny et non vim &quot;complet&quot;. Pour y remédier, <a href="tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet"> supprimez le paquet</a> <strong>vim-tiny</strong> et <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">ré-installez le paquet</a> <strong>vim</strong>
+</p>
+
+<p>
+Vous pouvez aussi utiliser la commande suivante et choisir vim.gnome : 
+</p>
+<pre class="code">sudo update-alternatives --config vim</pre>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="vim"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1429784404" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6370-9597" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h3 class="sectionedit14" id="vim_supporte_les_souris">Vim supporte les souris</h3>
+<div class="level3">
+
+<p>
+Le service <strong>gpm</strong><sup><a href="vim#fn__4" id="fnt__4" class="fn_top">4)</a></sup> permet l&#039;utilisation de la souris dans le terminal pour sélectionner, copier et coller. Vérifiez que le paquet <a href="apt://gpm" class="urlextern" title="apt://gpm"  rel="nofollow">gpm</a> est <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installé</a> et <a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">modifiez votre fichier</a>  ~/.vimrc comme expliqué plus haut pour y insérer :
+</p>
+<pre class="code">set mouse=a</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="vim"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1429784404" /><input type="hidden" name="summary" value="[Vim supporte les souris] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9598-10077" /><input type="submit" value="Modifier" class="button" title="Vim supporte les souris" /></div></form></div>
+<h3 class="sectionedit15" id="theme_de_coloration_syntaxique">Thème de coloration syntaxique</h3>
+<div class="level3">
+
+<p>
+Placez le thème dans ~/.vim/colors et activez le thème dans le .vimrc avec la ligne :
+</p>
+<pre class="code">colorscheme nom_du_theme</pre>
+
+<p>
+Si vous utilisez vim dans un terminal, il est possible que votre thème ne soit pas utilisé, et qu&#039;il n&#039;y ait pas de coloration syntaxique. Il faut donc forcer les couleurs en ajoutant dans le .vimrc la ligne suivante :
+</p>
+<pre class="code">set t_Co=256</pre>
+
+<p>
+Si votre terminal ne supporte que 88 couleurs :
+</p>
+<pre class="code">set t_Co=88</pre>
+
+<p>
+Il est cependant nécessaire que le thème ait été pensé à la fois pour la <abbr title="Graphical User Interface">GUI</abbr> et le terminal. Si ce n&#039;est pas le cas du thème que vous avez choisi, le plus simple est d&#039;utiliser le plugin <a href="http://www.vim.org/scripts/script.php?script_id=1809" class="urlextern" title="http://www.vim.org/scripts/script.php?script_id=1809"  rel="nofollow">guicolorscheme</a>.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://phollow.fr/2010/11/5-themes-vim-pour-frimer-devant-les-filles/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=5-themes-vim-pour-frimer-devant-les-filles" class="urlextern" title="http://phollow.fr/2010/11/5-themes-vim-pour-frimer-devant-les-filles/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=5-themes-vim-pour-frimer-devant-les-filles"  rel="nofollow">5 thèmes VIM pour frimer devant les filles</a></div>
+</li>
+</ul>
+
+<p>
+Nota : les thèmes installés par défaut se trouvent dans le répertoire /usr/share/vim/vim<strong>xx</strong>/colors ou xx correspond à la version en cours, 73 à ce jour
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="vim"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1429784404" /><input type="hidden" name="summary" value="[Thème de coloration syntaxique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10078-11208" /><input type="submit" value="Modifier" class="button" title="Thème de coloration syntaxique" /></div></form></div>
+<h2 class="sectionedit16" id="pour_aller_plus_loin">Pour aller plus loin</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.vim.org/" class="urlextern" title="http://www.vim.org/"  rel="nofollow">http://www.vim.org/</a> – Site officiel (en)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.gentoo.org/doc/fr/vi-guide.xml" class="urlextern" title="http://www.gentoo.org/doc/fr/vi-guide.xml"  rel="nofollow">Apprendre vi, la technique de &quot;la feuille de triche&quot;</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://cfennajoui.net/vim/" class="urlextern" title="http://cfennajoui.net/vim/"  rel="nofollow">Traduction de la documentation de Vim (miroir)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="ftp://ftp.vim.org/pub/vim/doc/book/vimbook-OPL.pdf" class="urlextern" title="ftp://ftp.vim.org/pub/vim/doc/book/vimbook-OPL.pdf"  rel="nofollow">Vim book (fichier PDF, anglais)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.swaroopch.com/notes/Vim_fr:Table_des_Mati%C3%A8res" class="urlextern" title="http://www.swaroopch.com/notes/Vim_fr:Table_des_Mati%C3%A8res"  rel="nofollow">Traduction française du livre: A byte of Vim</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://openclassrooms.com/courses/reprenez-le-controle-a-l-aide-de-linux/vim-l-editeur-de-texte-du-programmeur" class="urlextern" title="http://openclassrooms.com/courses/reprenez-le-controle-a-l-aide-de-linux/vim-l-editeur-de-texte-du-programmeur"  rel="nofollow">Tuto sur openclassroom (ex site du zéro)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://vim-fr.org/index.php/Accueil" class="urlextern" title="http://vim-fr.org/index.php/Accueil"  rel="nofollow">Wiki Francophone de Vim</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+— <em>refonte <a href="http://doc.ubuntu-fr.org/utilisateurs/yoboy" class="wikilink1" title="utilisateurs:yoboy">YoBoY</a></em>
+</p>
+
+<p>
+— <em>Ajouts à la section &quot;Configuration&quot; <a href="utilisateurs/mr_djez" class="wikilink1" title="utilisateurs:mr_djez">Mr_Djez</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="vim"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1429784404" /><input type="hidden" name="summary" value="[Pour aller plus loin] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11209-" /><input type="submit" value="Modifier" class="button" title="Pour aller plus loin" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="vim#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+, <sup><a href="vim#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+, <sup><a href="vim#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<strong>éditeur modal</strong>: possède différents modes de fonctionnement <strong>commande</strong>, <strong>insertion</strong></div>
+<div class="fn"><sup><a href="vim#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+<strong>gpm</strong> : General Purpose Mouse interface <a href="http://www.nico.schottelius.org/software/gpm/" class="urlextern" title="http://www.nico.schottelius.org/software/gpm/"  rel="nofollow">http://www.nico.schottelius.org/software/gpm/</a></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/3/3f04a9e5992b2ce365968a029d5e5466.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/vim?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/vim?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/vim?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/vim?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/vim?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

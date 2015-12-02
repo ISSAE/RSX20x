@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>httptunnel - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-10-30T15:12:07+0100"/>
+<meta name="keywords" content="brouillon,gutsy,hardy,proxy"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/httptunnel?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/httptunnel?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/httptunnel"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/httptunnel"/>
+<link rel="canonical" href="httptunnel"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"httptunnel","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="httptunnel#main" tabindex="1">Contenu</a> | <a href="httptunnel#qsearch__in" tabindex="2">Rechercher</a> | <a href="httptunnel#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="httptunnel" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="httptunnel" >httptunnel</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="versions">versions supportées d'Ubuntu</a>.<br />
+Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="httptunnel#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="httptunnel#fonctionnement">Fonctionnement</a></div></li>
+<li class="level1"><div class="li"><a href="httptunnel#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="httptunnel#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="httptunnel#script_de_demarrage">Script de démarrage</a></div></li>
+<li class="level1"><div class="li"><a href="httptunnel#en_cas_de_soucis">En cas de soucis</a></div></li>
+<li class="level1"><div class="li"><a href="httptunnel#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>,
+	<a href="gutsy" class="wikilink1" title="gutsy" rel="tag">Gutsy</a>,
+	<a href="hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="proxy" class="wikilink1" title="proxy" rel="tag">Proxy</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="http-tunnel_ou_comment_encapsuler_dans_des_paquets_http">HTTP-Tunnel, ou comment encapsuler dans des paquets HTTP</h1>
+<div class="level1">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/http-tunnel.png?id=httptunnel" class="media" title="http-tunnel.png"><img src="http://doc.ubuntu-fr.org/_media/http-tunnel.png" class="media" alt="" /></a><br/>
+
+HTTP-Tunnel sert à encapsuler des paquets d&#039;un autre protocole (<abbr title="File Transfer Protocol">FTP</abbr>, SSH, etc) dans des paquets HTTP. Ceci permet de passer à travers de certains pare-feux ou proxys qui bloquent les paquets, notamment sur des réseaux sécurisés d&#039;entreprise.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="httptunnel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383142327" /><input type="hidden" name="summary" value="[HTTP-Tunnel, ou comment encapsuler dans des paquets HTTP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="43-385" /><input type="submit" value="Modifier" class="button" title="HTTP-Tunnel, ou comment encapsuler dans des paquets HTTP" /></div></form></div>
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installer le paquet</a> <strong><a href="apt://httptunnel" class="urlextern" title="apt://httptunnel"  rel="nofollow">httptunnel</a></strong>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="httptunnel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383142327" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="386-509" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit3" id="fonctionnement">Fonctionnement</h2>
+<div class="level2">
+
+<p>
+Le paquet <strong>http-tunnel</strong> doit être installé sur le client et sur le serveur. Ce paquet est composé du serveur http-tunnel qu&#039;on appelle par la commande <strong>hts</strong> et du client http-tunnel qu&#039;on appelle par la commande <strong>htc</strong>. Le principe est que le serveur http-tunnel écoute sur un port <abbr title="Transmission Control Protocol">TCP</abbr> donné (toujours au dessus de 1024) et que le client se connecte sur ce port afin de créer un tunnel. Ensuite le client <abbr title="File Transfer Protocol">FTP</abbr> ou SSH désiré se connecte sur le client <strong>htc</strong> (en local la plupart du temps, nous allons y revenir), et le serveur <strong>hts</strong> redirige le flux vers le serveur SSH (en local aussi).
+</p>
+<pre class="code">______________                                  _______________
+|  PC Client |                                  | PC Serveur  |
+|------------|                                  |-------------|
+| Client SSH |                                  | Serveur SSH |
+|     |      |                                  |     ^       |
+|     |      |                                  |     |       |
+|     V      |                                  |     |       |
+| Client HTC ===================================&gt; Serveur HTS |
+|__[23000]___|                                  |___[10000]___|
+
+192.168.0.10                                     monsite.com</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="httptunnel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383142327" /><input type="hidden" name="summary" value="[Fonctionnement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="510-1796" /><input type="submit" value="Modifier" class="button" title="Fonctionnement" /></div></form></div>
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Dans cet exemple le serveur <strong>hts</strong> écoute sur le port <abbr title="Transmission Control Protocol">TCP</abbr> 10000 de l&#039;adresse <strong>monsite.com</strong>, et redirige
+tout ce qui arrive vers le port 22 de la même machine (localhost) pour le lancer on utilise la ligne de commande suivante :
+</p>
+<pre class="code">hts -F localhost:22 10000</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="httptunnel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383142327" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1797-2101" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h2 class="sectionedit5" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Sur le client on transfère le port de connexion SSH (23000) vers le serveur HTTP-Tunnel (monsite.com:10000) et il faut paramétrer le proxy si vous en utilisez un (voir options de connexion).
+</p>
+<pre class="code">htc -F 23000 -P le_proxy:8080 monsite.com:10000</pre>
+
+<p>
+<p><div class="notewarning">
+Il faut impérativement lancer le serveur HTTP-Tunnel avant le client, sinon la connexion qui passe au travers ne s&#039;établit pas.
+
+</div></p>
+Ensuite il suffit de lancer la commande suivante sur le client pour se connecter au serveur.
+</p>
+<pre class="code">ssh utilisateur@localhost -p 23000</pre>
+
+<p>
+<p><div class="noteclassic">
+Il est possible de faire touner simultanément plusieurs serveurs HTTP-Tunnel pour rediriger différents flux (SSH, <abbr title="File Transfer Protocol">FTP</abbr>). Il faut qu&#039;ils écoutent sur des ports différents mais toujours au dessus de 1024.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="httptunnel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383142327" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2102-2904" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h2 class="sectionedit6" id="script_de_demarrage">Script de démarrage</h2>
+<div class="level2">
+
+<p>
+Ci dessous un script de démarrage pour <strong>/etc/init.d/</strong> pour ajouter au démarrage du système le serveur HTTP-Tunnel.
+</p>
+
+<p>
+Créez un fichier appelé <strong>/etc/init.d/httptunnel </strong> et rendez-le exécutable :
+</p>
+<pre class="code">sudo touch /etc/init.d/httptunnel &amp;&amp; sudo chmod 755 /etc/init.d/httptunnel</pre>
+
+<p>
+Pensez aussi à créer le fichier de log (<strong>/var/log/hts_server.log</strong>) avant de lancer ce script.
+</p>
+<pre class="code">sudo touch /var/log/hts_server.log &amp;&amp; sudo chmod 644 /var/log/hts_server.log</pre>
+
+<p>
+Ajouter httptunnel aux applications à démarrer au lancement du système.<br/>
+
+</p>
+<pre class="code">sudo update-rc.d httptunnel defaults
+
+Adding system startup for /etc/init.d/httptunnel ...
+  /etc/rc0.d/K20httptunnel -&gt; ../init.d/httptunnel
+  /etc/rc1.d/K20httptunnel -&gt; ../init.d/httptunnel
+  /etc/rc6.d/K20httptunnel -&gt; ../init.d/httptunnel
+  /etc/rc2.d/S20httptunnel -&gt; ../init.d/httptunnel
+  /etc/rc3.d/S20httptunnel -&gt; ../init.d/httptunnel
+  /etc/rc4.d/S20httptunnel -&gt; ../init.d/httptunnel
+  /etc/rc5.d/S20httptunnel -&gt; ../init.d/httptunnel
+</pre>
+
+<p>
+<br/>
+
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/init.d/httptunnel</strong> en tant que root (sinon vous n&#039;aurez pas les droits en écriture), et copier/coller le script ci-dessous dedans.
+</p>
+<pre class="file">#!/bin/sh
+#
+### BEGIN INIT INFO
+# Provides:          httptunnel
+# Required-Start:    $syslog $remote_fs $network
+# Required-Stop:     $syslog $remote_fs $network
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start httptunnel as daemon at boot time
+### END INIT INFO
+#
+# Declaration des variables
+#
+NO_PROCESS=`ps -ef | grep &quot;hts -F&quot; | grep -v grep | awk {&#039;print $2&#039;}`
+NB_PROCESS=`ps -ef | grep &quot;hts -F&quot; | grep -v grep | wc -l`
+LOGFILE=&quot;/var/log/hts_server.log&quot;
+DATE=`date +%d/%m/%Y-%Hh%Mm%Ss`
+#
+# Debut du script
+#
+case &quot;$1&quot; in
+    start)
+    if [ $NB_PROCESS = &quot;0&quot; ]
+        then
+        echo &quot;$DATE : Demarrage du Serveur HTTP-Tunnel&quot;
+        echo &quot;$0 $1 : $DATE : Demarrage du Serveur HTTP-Tunnel&quot; &gt;&gt; $LOGFILE
+        hts -F localhost:22 10000
+        exit 0
+        else
+        echo &quot;$DATE : Serveur HTTP-Tunnel deja demarre, process N° : $NO_PROCESS&quot;
+        echo &quot;$0 $1 : $DATE : Serveur HTTP-Tunnel deja demarre, process N° : $NO_PROCESS&quot; &gt;&gt; $LOGFILE
+        exit 0
+    fi
+    ;;
+    stop)
+
+    if [ $NB_PROCESS = &quot;1&quot; ]
+        then
+        echo &quot;$DATE : Arret du Serveur HTTP-Tunnel&quot;
+        echo &quot;$0 $1 : $DATE : Arret du Serveur HTTP-Tunnel&quot; &gt;&gt; $LOGFILE
+        echo &quot;$0 $1 : $DATE : Kill du N° de process : $NO_PROCESS&quot; &gt;&gt; $LOGFILE
+        kill -9 $NO_PROCESS
+        else
+        echo &quot;$DATE : Serveur HTTP non demarre, pas besoin de l&#039;arreter&quot;
+        echo &quot;$0 $1 : $DATE : Serveur HTTP non demarre, pas besoin de l&#039;arreter&quot; &gt;&gt; $LOGFILE
+    fi
+    ;;
+    restart)
+    $0 stop
+    $0 start
+    ;;
+    status)
+    if [ $NB_PROCESS = &quot;0&quot; ]
+        then
+        echo &quot;$DATE : Aucun serveur HTTP-Tunnel en cours&quot;
+        echo &quot;$0 $1 : $DATE : Aucun serveur HTTP-Tunnel en cours&quot; &gt;&gt; $LOGFILE
+        else
+        echo &quot;$DATE : Serveur HTTP-Tunnel en cours : $NO_PROCESS&quot;
+        echo &quot;$0 $1 : $DATE : Serveur HTTP-Tunnel en cours : $NO_PROCESS&quot; &gt;&gt; $LOGFILE
+    fi
+    ;;
+    view_log)
+    cat $LOGFILE
+    ;;
+    *)
+    echo
+    echo &quot;Utilisation : $0 { start | stop | restart | status | view_log }&quot;
+    echo
+    ;;
+esac
+exit 0</pre>
+
+<p>
+Ce script peut donc être appelé par la commande <strong>/etc/init.d/httptunnel</strong> et accepte 4 arguments différents :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>start</strong> pour lancer le service ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>stop</strong> pour l&#039;arrêter ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>status</strong> pour afficher un état des lieux ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>view_log</strong> pour afficher le journal.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="httptunnel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383142327" /><input type="hidden" name="summary" value="[Script de démarrage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2905-6528" /><input type="submit" value="Modifier" class="button" title="Script de démarrage" /></div></form></div>
+<h2 class="sectionedit7" id="en_cas_de_soucis">En cas de soucis</h2>
+<div class="level2">
+
+<p>
+Si votre tunnel ne se crée pas coté serveur ou coté client, pensez à vérifier si le port demandé en écoute pour <strong>hts</strong> ou <strong>htc</strong> est bien libre.
+</p>
+<pre class="code">sudo netstat -a | grep le_n°_de_port</pre>
+
+<p>
+Si le port est déja occupé cette commande affichera quelque chose dans le résultat, autrement elle n&#039;affichera rien. Bon courage
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="httptunnel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383142327" /><input type="hidden" name="summary" value="[En cas de soucis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6529-6901" /><input type="submit" value="Modifier" class="button" title="En cas de soucis" /></div></form></div>
+<h2 class="sectionedit8" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+
+<p>
+<br/>
+
+<a href="http://www.commentcamarche.net/forum/affich-59147-tunnelling-ip-over-http" class="urlextern" title="http://www.commentcamarche.net/forum/affich-59147-tunnelling-ip-over-http"  rel="nofollow">Documentation commentcamarche</a><br/>
+
+<a href="http://en.wikipedia.org/wiki/HTTP_tunnel_(software)" class="urlextern" title="http://en.wikipedia.org/wiki/HTTP_tunnel_(software)"  rel="nofollow">Documentation Wikipedia</a> en anglais<br/>
+
+<a href="http://www.nocrew.org/software/httptunnel.html" class="urlextern" title="http://www.nocrew.org/software/httptunnel.html"  rel="nofollow">Site Officiel</a>
+</p>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/maclane45" class="wikilink1" title="utilisateurs:maclane45">maclane45</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="httptunnel"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1383142327" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6902-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/278a3fc63ea3263bae3f4383e1cdfe6a.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/httptunnel?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/httptunnel?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/httptunnel?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/httptunnel?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/httptunnel?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

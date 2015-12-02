@@ -1,0 +1,1320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:mirroring_sur_deux_serveurs - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-03-15T11:59:19+0100"/>
+<meta name="keywords" content="hardy,intrepid,serveur,haute disponibilite,reseau,samba,raid,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="mirroring_sur_deux_serveurs?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="mirroring_sur_deux_serveurs?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="../_export/xhtml/tutoriel/mirroring_sur_deux_serveurs"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../_export/raw/tutoriel/mirroring_sur_deux_serveurs"/>
+<link rel="canonical" href="mirroring_sur_deux_serveurs"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:mirroring_sur_deux_serveurs","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="mirroring_sur_deux_serveurs#main" tabindex="1">Contenu</a> | <a href="mirroring_sur_deux_serveurs#qsearch__in" tabindex="2">Rechercher</a> | <a href="mirroring_sur_deux_serveurs#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="mirroring_sur_deux_serveurs" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="mirroring_sur_deux_serveurs" >tutoriel:mirroring_sur_deux_serveurs</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="mirroring_sur_deux_serveurs#presentation_des_outils_utilises">Présentation des outils utilisés</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#samba">Samba</a></div></li>
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#heartbeat">Heartbeat</a></div></li>
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#drbd">DrBD</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mirroring_sur_deux_serveurs#postulat_de_depart">Postulat de départ</a></div></li>
+<li class="level1"><div class="li"><a href="mirroring_sur_deux_serveurs#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#samba1">Samba</a></div></li>
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#heartbeat1">Heartbeat</a></div></li>
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#drbd1">DrBD</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mirroring_sur_deux_serveurs#configuration_et_mise_en_place_de_drbd">Configuration et mise en place de drbd</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#a_faire_sur_chaque_serveur_en_meme_temps">À faire sur chaque serveur en même temps</a></div></li>
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#a_ne_faire_que_sur_le_serveur_primaire">À ne faire que sur le serveur primaire</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mirroring_sur_deux_serveurs#samba2">samba</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#gestion_des_utilisateurs">Gestion des utilisateurs</a></div></li>
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#configuration">Configuration</a></div></li>
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#droits_sur_les_repertoires_partages">Droits sur les répertoires partagés</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mirroring_sur_deux_serveurs#heartbeat2">heartbeat</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#configuration1">Configuration</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mirroring_sur_deux_serveurs#finalisation">Finalisation</a></div></li>
+<li class="level1"><div class="li"><a href="mirroring_sur_deux_serveurs#au_sujet_de_la_gestion_de_la_bande_passante">Au sujet de la gestion de la bande passante</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#separation_physique_des_flux">Séparation physique des flux</a></div></li>
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#sous-reseau_gigabit_dedie">Sous-réseau Gigabit dédié</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mirroring_sur_deux_serveurs#fichiers_importants">Fichiers importants</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#fichiers_a_synchroniser_entre_les_deux_serveurs">Fichiers à synchroniser entre les deux serveurs</a></div></li>
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#fichiers_a_personnaliser_sur_les_deux_serveurs">Fichiers à personnaliser sur les deux serveurs</a></div></li>
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#fichiers_a_personnaliser_apres_un_clonage">Fichiers à personnaliser après un clonage</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="mirroring_sur_deux_serveurs#en_cas_de_pepin">En cas de pépin...</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#problemes_lors_de_la_mise_en_place_de_drbd">Problèmes lors de la mise en place de drbd</a></div></li>
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#drbdstandalone">drbd : Standalone</a></div></li>
+<li class="level2"><div class="li"><a href="mirroring_sur_deux_serveurs#configuration_du_pare-feu_firewall">Configuration du pare-feu (Firewall)</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="../intrepid" class="wikilink1" title="intrepid" rel="tag">Intrepid</a>,
+	<a href="../serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="../haute_disponibilite" class="wikilink1" title="haute_disponibilite" rel="tag">haute disponibilité</a>,
+	<a href="../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../samba" class="wikilink1" title="samba" rel="tag">samba</a>,
+	<a href="../raid" class="wikilink1" title="raid" rel="tag">RAID</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="mirroring_sur_deux_serveurs">Mirroring sur deux serveurs</h1>
+<div class="level1">
+
+<p>
+<p><div class="noteimportant">
+Ce tutoriel est destiné à un <strong>public averti</strong>, certains détails <em>triviaux</em> ne sont pas détaillés…
+</p>
+
+<p>
+Toutes les commandes sont lancées avec l&#039;utilisateur « <strong>root</strong> ».
+
+</div></p>
+</p>
+
+<p>
+À l&#039;heure où les serveurs d&#039;entreprises doivent stocker un volume croissant de données et assurer une haute disponibilité, il est nécessaire d&#039;imaginer des   systèmes de <em>mirroring</em> (miroir) autres que simplement sur des disques durs.
+</p>
+
+<p>
+La redondance de disques durs (RAID-1, RAID-5) permet déjà d&#039;avoir une bonne résistance aux pannes d&#039;un disque (ou plusieurs si on est en RAID-5). Cependant, si c&#039;est la machine qui <em>tombe</em> (le processeur, l&#039;alimentation, le contrôleur de disque, etc.), on n&#039;a aucun moyen pour relancer le tout rapidement sans perte de données.
+</p>
+
+<p>
+<code>drbd</code> permet de mettre en œuvre une solution de RAID-1 au travers du réseau. C&#039;est-à-dire que sur deux serveurs, on a une partition<sup><a href="mirroring_sur_deux_serveurs#fn__1" id="fnt__1" class="fn_top">1)</a></sup> par serveur qui est à tout moment une copie exacte d&#039;une partition de l&#039;autre serveur. C&#039;est un <em>mirroring</em> (miroir) de partitions à travers une interface réseau.
+</p>
+
+<p>
+C&#039;est une solution qui permet également d&#039;utiliser deux PC au lieu d&#039;un serveur afin de <strong>faire des économies</strong>, aussi bien pour l&#039;achat initial que pour l&#039;achat de disques supplémentaires (en remplacement ou en ajout) par la suite. Dans la mesure où ce <em>cluster</em> est utilisé pour un partage <code>samba</code>, ce type de matériel est tout à fait convenable et peut supporter jusqu&#039;à une vingtaine de clients.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Mirroring sur deux serveurs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="88-1708" /><input type="submit" value="Modifier" class="button" title="Mirroring sur deux serveurs" /></div></form></div>
+<h2 class="sectionedit2" id="presentation_des_outils_utilises">Présentation des outils utilisés</h2>
+<div class="level2">
+
+<p>
+Ce tutoriel met en œuvre certains outils qu&#039;il faut rapidement présenter. Des termes importants sont utilisés :
+</p>
+<ul>
+<li class="level1"><div class="li"> serveur</div>
+</li>
+<li class="level1"><div class="li"> service</div>
+</li>
+<li class="level1"><div class="li"> haute disponibilité</div>
+</li>
+<li class="level1"><div class="li"> client</div>
+</li>
+</ul>
+
+<p>
+Ces termes ne sont pas détaillés dans ce tutoriel, je fais appel à votre curiosité pour trouver leur définition.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Présentation des outils utilisés] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1709-2049" /><input type="submit" value="Modifier" class="button" title="Présentation des outils utilisés" /></div></form></div>
+<h3 class="sectionedit3" id="samba">Samba</h3>
+<div class="level3">
+
+<p>
+Samba est l&#039;outil qui permet à un ordinateur sur lequel une distribution <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux ou Unix est installée <em>d&#039;apparaître</em> sur le réseau et de partager des fichiers et des imprimantes comme le ferait un ordinateur avec Windows©.<br/>
+
+C&#039;est LA solution logicielle pour faire d&#039;un serveur <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux un serveur de fichiers (et d&#039;imprimantes) pour des clients sous Windows©, puisqu&#039;elle est simple d&#039;utilisation pour les clients.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Samba] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2050-2495" /><input type="submit" value="Modifier" class="button" title="Samba" /></div></form></div>
+<h3 class="sectionedit4" id="heartbeat">Heartbeat</h3>
+<div class="level3">
+
+<p>
+Heartbeat gère la haute disponibilité de services qui peuvent être fournis par plusieurs serveurs (2 au minimum). Pour ce faire, chacun des serveurs est surveillé <em>via</em> un <em>battement de cœur</em> (heartbeat) diffusé sur le réseau. Au départ les services sont démarrés sur l&#039;un des serveurs, et si celui-ci n&#039;émet plus de battement de cœur<sup><a href="mirroring_sur_deux_serveurs#fn__2" id="fnt__2" class="fn_top">2)</a></sup>, un autre serveur prend la relève.
+</p>
+
+<p>
+Le cas qui est certainement le plus répandu est la mise en place de Heartbeat sur deux serveurs, ce qui est le cas dans ce tutoriel.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Heartbeat] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2496-3065" /><input type="submit" value="Modifier" class="button" title="Heartbeat" /></div></form></div>
+<h3 class="sectionedit5" id="drbd">DrBD</h3>
+<div class="level3">
+
+<p>
+DrBD permet de synchroniser <em>en temps réel</em><sup><a href="mirroring_sur_deux_serveurs#fn__3" id="fnt__3" class="fn_top">3)</a></sup> des données entre deux ordinateurs.
+</p>
+
+<p>
+DrBD est constitué d&#039;un module du noyau et d&#039;outils de gestion.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[DrBD] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3066-3328" /><input type="submit" value="Modifier" class="button" title="DrBD" /></div></form></div>
+<h2 class="sectionedit6" id="postulat_de_depart">Postulat de départ</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Les deux serveurs :</div>
+<ul>
+<li class="level2"><div class="li"> <code>serv1</code> avec adresse IP 192.168.214.10 : serveur primaire</div>
+</li>
+<li class="level2"><div class="li"> <code>serv2</code> avec adresse IP 192.168.214.11 : serveur secondaire</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> sur chacun des deux serveurs, la partition <strong>/dev/sda6</strong> est celle que <code>drbd</code> duplique. Il s&#039;agit d&#039;une partition <strong>non-formatée</strong><sup><a href="mirroring_sur_deux_serveurs#fn__4" id="fnt__4" class="fn_top">4)</a></sup>. Toutes les données de cette partition seront perdues.</div>
+</li>
+<li class="level1"><div class="li"> l&#039;adresse mail de l&#039;administrateur à contacter<sup><a href="mirroring_sur_deux_serveurs#fn__5" id="fnt__5" class="fn_top">5)</a></sup> est <code>admin@domain.fr</code><sup><a href="mirroring_sur_deux_serveurs#fn__6" id="fnt__6" class="fn_top">6)</a></sup>.</div>
+</li>
+</ul>
+
+<p>
+Pour que la reprise de service soit <em>transparente</em> pour les clients, nous utiliserons une fonctionnalité de <code>heartbeat</code>, celle de la gestion d&#039;une adresse flottante. Cette adresse est définie à 192.168.214.20.<br/>
+
+De plus <code>samba</code> sera configuré pour <em>passer</em> par cette adresse flottante et pour donner un nom NetBios indépendant du nom du serveur sur lequel il est exécuté. Ce nom est &quot;serveur&quot;.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Postulat de départ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3329-4687" /><input type="submit" value="Modifier" class="button" title="Postulat de départ" /></div></form></div>
+<h2 class="sectionedit7" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+L&#039;ordre d&#039;installation à respecter concerne surtout DrBD qui doit être installé après Heartbeat.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4688-4815" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit8" id="samba1">Samba</h3>
+<div class="level3">
+
+<p>
+<a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://samba" class="urlextern" title="apt://samba"  rel="nofollow">samba</a></strong>.
+</p>
+
+<p>
+Dans l&#039;optique d&#039;une gestion de Samba avec Heartbeat, il faut laisser le soin à ce dernier de démarrer Samba, il faut donc faire en sorte que Samba ne soit pas lancé au démarrage :
+</p>
+<pre class="code">update-rc.d -f samba remove</pre>
+
+<p>
+Il faut ensuite arrêter le service <code>samba</code> :
+</p>
+<pre class="code">/etc/init.d/samba stop</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Samba] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4816-5214" /><input type="submit" value="Modifier" class="button" title="Samba" /></div></form></div>
+<h3 class="sectionedit9" id="heartbeat1">Heartbeat</h3>
+<div class="level3">
+
+<p>
+<a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://heartbeat" class="urlextern" title="apt://heartbeat"  rel="nofollow">heartbeat</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Heartbeat] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5215-5333" /><input type="submit" value="Modifier" class="button" title="Heartbeat" /></div></form></div>
+<h3 class="sectionedit10" id="drbd1">DrBD</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteclassic">Le module <code>drbd</code> est disponible avec le noyau <code>server</code> « de base » depuis au moins Hardy Heron<sup><a href="mirroring_sur_deux_serveurs#fn__7" id="fnt__7" class="fn_top">7)</a></sup>. Cependant, afin d&#039;avoir un système récent avec un minimum de bug et de faille de sécurité, on passera au noyau <code>server</code> le plus récent.
+</div></p>
+</p>
+
+<p>
+Mise à jour du système :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../apt-get#mise_a_jour_depots" class="wikilink1" title="apt-get">Mise à jour des dépôts</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../apt-get#mise_a_jour_paquets" class="wikilink1" title="apt-get">Mise à jour des paquets</a> (dist-upgrade)</div>
+</li>
+</ul>
+
+<p>
+Passer à la version du noyau la plus récente. Redémarrer.
+</p>
+
+<p>
+Vérification de la présence du module <code>drbd</code> :
+</p>
+<pre class="code">cat /proc/drbd</pre>
+<pre class="file">cat: /proc/drbd: Aucun fichier ou répertoire de ce type</pre>
+<pre class="code">modprobe drbd
+cat /proc/drbd</pre>
+<pre class="file">version: 8.2.6 (api:88/proto:86-88)
+GIT-hash: 3e69822d3bb4920a8c1bfdf7d647169eba7d2eb4 build by phil@fat-tyre, 2008-05-30 12:59:17</pre>
+
+<p>
+Sous Hardy Heron, la version du module et des outils est la 8.0.11.
+</p>
+
+<p>
+<a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installation</a> de <code>drbd8-utils</code> version <strong>idem à la version du module</strong> sans quoi le fonctionnement correct n&#039;est pas garanti.<br/>
+
+Un paquet suggéré : <code>heartbeat</code> : tout le monde est sur la même longueur d&#039;onde…
+</p>
+
+<p>
+<p><div class="noteimportant">Il faut que le service <code>drbd</code> démarre, sinon le script de démarrage de <code>drbd</code> lancé par <code>heartbeat</code> ne fonctionne pas. Il faut donc lancer la commande :
+</p>
+<pre class="code">update-rc.d drbd defaults 70</pre>
+
+<p>
+ou simplement copier le lien qui se trouve dans <strong>/etc/rc3.d</strong> vers <strong>/etc/rc2.d</strong> si ça ne fonctionne pas.
+</div></p>
+</p>
+
+<p>
+Finalisation pour faire en sorte que les outils <code>heartbeat</code> fonctionnent :
+</p>
+<pre class="code">chgrp haclient /sbin/drbdsetup
+chmod o-x /sbin/drbdsetup
+chmod u+s /sbin/drbdsetup
+
+chgrp haclient /sbin/drbdmeta
+chmod o-x /sbin/drbdmeta
+chmod u+s /sbin/drbdmeta</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[DrBD] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5334-7186" /><input type="submit" value="Modifier" class="button" title="DrBD" /></div></form></div>
+<h2 class="sectionedit11" id="configuration_et_mise_en_place_de_drbd">Configuration et mise en place de drbd</h2>
+<div class="level2">
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditer le fichier</a> <strong>/etc/drbd.conf</strong> :
+</p>
+<pre class="file">global {
+  usage-count no;
+}
+
+common {
+  protocol C;
+  
+  syncer {
+    rate 3M;
+    verify-alg sha1;
+  }
+  
+  handlers {
+    pri-lost-after-sb &quot;reboot -f&quot;;
+    pri-lost &quot;echo Déconnexion des serveurs, vérifier les logs | mail -s &#039;SERVEUR: Alerte DRBD&#039; admin@domain.fr&quot;;
+    out-of-sync &quot;echo Désynchronisation des serveurs, vérifier les logs | mail -s &#039;SERVEUR: Alerte DRBD&#039; admin@domain.fr&quot;;
+    pri-on-incon-degr &quot;reboot -f&quot;;
+    outdate-peer &quot;/usr/lib/heartbeat/drbd-peer-outdater -t 5&quot;;
+    local-io-error &quot;echo o &gt; /proc/sysrq-trigger ; halt -f&quot;;
+  }
+}
+
+resource r0 {
+  device    /dev/drbd0;
+  disk      /dev/sda6;
+  meta-disk internal;
+  
+  disk {
+    on-io-error   detach;
+  }
+  
+  startup {
+    wfc-timeout  60;
+    degr-wfc-timeout 30;
+    become-primary-on serv1;
+  }
+  
+  net {
+    after-sb-0pri discard-older-primary;
+    after-sb-1pri call-pri-lost-after-sb;
+    after-sb-2pri call-pri-lost-after-sb;
+  }
+  on serv1 {
+    address   192.168.214.10:7788;
+  }
+  on serv2 {
+    address   192.168.214.11:7788;
+  }
+}</pre>
+
+<p>
+<p><div class="noteclassic">Ce fichier de configuration doit être scrupuleusement identique sur les deux serveurs.<br/>
+
+Lire le chapitre <a href="mirroring_sur_deux_serveurs#au_sujet_de_la_gestion_de_la_bande_passante" title="tutoriel:mirroring_sur_deux_serveurs ↵" class="wikilink1">Au sujet de la gestion de la bande passante</a>.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Configuration et mise en place de drbd] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7187-8573" /><input type="submit" value="Modifier" class="button" title="Configuration et mise en place de drbd" /></div></form></div>
+<h3 class="sectionedit12" id="a_faire_sur_chaque_serveur_en_meme_temps">À faire sur chaque serveur en même temps</h3>
+<div class="level3">
+
+<p>
+<p><div class="notetip">Si vous vous êtes dit que vous alliez tout installer sur un serveur puis <a href="comment_sauvegarder_partition_avec_partimage" class="wikilink1" title="tutoriel:comment_sauvegarder_partition_avec_partimage">cloner</a> le premier serveur pour en obtenir un second identique (ce qui peut engendrer <a href="mirroring_sur_deux_serveurs#fichiers_a_personnaliser_apres_un_clonage" title="tutoriel:mirroring_sur_deux_serveurs ↵" class="wikilink1">d&#039;autres problèmes</a>), c&#039;est là qu&#039;il faut que vous sachiez que les instructions qui suivent doivent être lancées sur chacun des 2 serveurs, à moins de n&#039;utiliser <code>dd</code> pour l&#039;ensemble du/des disque(s) dur(s). Ce qui peut prendre <em>pas mal de temps</em>…<br/>
+
+<strong>Sinon, il faut répéter tout ce qui vient d&#039;être fait sur le second serveur avant d&#039;aller plus loin.</strong>
+</div></p>
+</p>
+
+<p>
+<p><div class="noteclassic"><em>En même temps</em> signifie simplement que la commande doit être lancée sur les 2 serveurs et que la suivante ne peut être lancée sur quelque serveur que ce soit que si la précédente a terminé sans erreur sur les 2 serveurs.
+</div></p>
+</p>
+
+<p>
+Lancer :
+</p>
+<pre class="code">drbdadm create-md r0</pre>
+<pre class="file">v08 Magic number not found
+md_offset 1093922816
+al_offset 1093890048
+bm_offset 1093853184
+
+Found some data
+ ==&gt; This might destroy existing data! &lt;==
+
+Do you want to proceed?
+[need to type &#039;yes&#039; to confirm] </pre>
+
+<p>
+Taper <code>yes</code>. Il est possible qu&#039;une autre question demandant confirmation de destruction des données de la partition soit posée, répondez <code>yes</code> si vous êtes sûr de ce que vous faites.
+</p>
+<pre class="file">v07 Magic number not found
+v07 Magic number not found
+v08 Magic number not found
+Writing meta data...
+initialising activity log
+NOT initialized bitmap
+New drbd meta data block sucessfully created.
+success</pre>
+
+<p>
+<p><div class="noteclassic">Il se peut qu&#039;un message disant que cette partition contient des données vous empêche de continuer, il faut alors lancer la commande
+</p>
+<pre class="code">shred -zvf -n 1 /dev/sda6</pre>
+
+<p>
+afin de remplir la partition avec des zéros, puis de relancer la commande.
+</div></p>
+</p>
+
+<p>
+Si le module <code>drbd</code> n&#039;est pas chargé :
+</p>
+<pre class="code">modprobe drbd</pre>
+
+<p>
+Puis :
+</p>
+<pre class="code">drbdadm up r0</pre>
+
+<p>
+La commande suivante doit donner quelque chose du genre :
+</p>
+<pre class="code"># cat /proc/drbd</pre>
+<pre class="file">version: 8.2.6 (api:88/proto:86-88)
+GIT-hash: 3e69822d3bb4920a8c1bfdf7d647169eba7d2eb4 build by phil@fat-tyre, 2008-05-30 12:59:17
+ 0: cs:Connected st:Secondary/Secondary ds:Inconsistent/Inconsistent C r---
+    ns:0 nr:0 dw:0 dr:0 al:0 bm:0 lo:0 pe:0 ua:0 ap:0 oos:149134808</pre>
+
+<p>
+Puisque <code>drbd</code> est lancé mais aucun serveur <em>primaire</em> n&#039;est déclaré. On le voit car après <code>st:</code>, il est indiqué <code>Secondary/Secondary</code> ce qui signifie que le nœud sur lequel la commande est exécuté est <em>secondaire</em> (le premier avant le <code>/</code>) et que l&#039;autre l&#039;est aussi (le second après le <code>/</code>).<br/>
+
+Pour ne connaître que l&#039;état de la grappe <code>drbd</code>, la commande suivante suffit :
+</p>
+<pre class="code">drbdadm role all</pre>
+<pre class="file">Secondary/Secondary</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[À faire sur chaque serveur en même temps] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8574-11407" /><input type="submit" value="Modifier" class="button" title="À faire sur chaque serveur en même temps" /></div></form></div>
+<h3 class="sectionedit13" id="a_ne_faire_que_sur_le_serveur_primaire">À ne faire que sur le serveur primaire</h3>
+<div class="level3">
+
+<p>
+Il s&#039;agit maintenant de déclarer un des 2 serveurs comme
+ <em>primaire</em> : Le serveur <em>secondaire</em> se synchronisera <em>automagiquement</em><sup><a href="mirroring_sur_deux_serveurs#fn__8" id="fnt__8" class="fn_top">8)</a></sup>.<br/>
+
+Lancer la commande :
+</p>
+<pre class="code">drbdadm -- --overwrite-data-of-peer primary r0
+
+cat /proc/drbd</pre>
+<pre class="file">version: 8.2.6 (api:88/proto:86-88)
+GIT-hash: 3e69822d3bb4920a8c1bfdf7d647169eba7d2eb4 build by phil@fat-tyre, 2008-05-30 12:59:17
+ 0: cs:SyncSource st:Primary/Secondary ds:UpToDate/Inconsistent C r---
+    ns:2240 nr:0 dw:0 dr:2240 al:0 bm:0 lo:0 pe:0 ua:0 ap:0 oos:149132568
+        [&gt;....................] sync&#039;ed:  0.1% (145637/145639)M
+        finish: 17:15:38 speed: 2,240 (2,240) K/sec</pre>
+
+<p>
+On voit que le serveur secondaire se synchronise avec une superbe barre de progression.<br/>
+
+Le temps indiqué après <code>finish:</code> est le temps indicatif restant avant la fin de la première synchronisation. Pour diminuer ce temps, il est vivement conseillé de <em>débrider</em> le taux de transfert de la synchronisation en tapant sur les deux serveurs :
+</p>
+<pre class="code">drbdsetup /dev/drbd0 syncer -r 100M</pre>
+
+<p>
+Le débit ira donc jusqu&#039;à la vitesse autorisée. Lire le <a href="mirroring_sur_deux_serveurs#au_sujet_de_la_gestion_de_la_bande_passante" title="tutoriel:mirroring_sur_deux_serveurs ↵" class="wikilink1">chapitre</a> concernant les débits à la fin de ce document.
+</p>
+
+<p>
+et pour revenir à la configuration courante:
+</p>
+<pre class="code">drbdadm adjust r0</pre>
+
+<p>
+Une fois les serveurs synchronisés,
+</p>
+<pre class="code">cat /proc/drbd</pre>
+<pre class="file">version: 8.2.6 (api:88/proto:86-88)
+GIT-hash: 3e69822d3bb4920a8c1bfdf7d647169eba7d2eb4 build by phil@fat-tyre, 2008-05-30 12:59:17
+ 0: cs:Connected st:Primary/Secondary ds:UpToDate/UpToDate C r---
+    ns:2240 nr:0 dw:0 dr:2240 al:0 bm:0 lo:0 pe:0 ua:0 ap:0 oos:149132568</pre>
+
+<p>
+il est temps de formater la partition <code>drbd</code> uniquement sur le serveur primaire (vous avez, bien évidemment pensé à revenir à un débit de synchronisation normal.) :
+</p>
+<pre class="code">mkfs.ext3 /dev/drbd0</pre>
+
+<p>
+et de monter votre partition pour vérifier que tout va bien. Le montage de la partition doit utiliser <strong>/dev/drbd0</strong> et ne doit se faire <strong>que sur le serveur primaire</strong>.
+</p>
+<pre class="code">mkdir /data
+mount /dev/drbd0 /data</pre>
+
+<p>
+<p><div class="noteimportant">Dans le cas de l&#039;utilisation de <code>drbd</code> avec <code>heartbeat</code> et <code>samba</code>, le montage du disque est géré par <code>heartbeat</code>.<br/>
+
+<strong>Il ne faut pas ajouter de point de montage avec /dev/drbd0 dans le fichier /etc/fstab.</strong>
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[À ne faire que sur le serveur primaire] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11408-13896" /><input type="submit" value="Modifier" class="button" title="À ne faire que sur le serveur primaire" /></div></form></div>
+<h2 class="sectionedit14" id="samba2">samba</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[samba] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13897-13914" /><input type="submit" value="Modifier" class="button" title="samba" /></div></form></div>
+<h3 class="sectionedit15" id="gestion_des_utilisateurs">Gestion des utilisateurs</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteclassic">Une solution de gestion des utilisateurs est proposée ici : Libre à vous de choisir de la suivre.
+</div></p>
+Les serveurs redondants ne sont utilisés que pour le partage de fichiers avec <code>samba</code>. Sachant cela, il n&#039;est pas forcément nécessaire, dans une configuration simple, de faire en sorte que tous les utilisateurs système soient créés dans des groupes d&#039;utilisateurs différents.<br/>
+
+Ce qui est proposé ici est de gérer les droits uniquement via <code>samba</code>. C&#039;est une solution applicable la plupart du temps.
+</p>
+
+<p>
+Dans cette optique, un seul groupe d&#039;utilisateurs est créé :
+</p>
+<pre class="code">groupadd sambausers</pre>
+
+<p>
+Et les utilisateurs sont créés de sorte qu&#039;ils ne puissent pas utiliser le système (shell par défaut sur /bin/false et répertoire personnel (home) sur /dev/null) :
+</p>
+<pre class="code">useradd -s /bin/false -d /dev/null -g sambausers nom_utilisateur
+smbpasswd -a nom_utilisateur</pre>
+
+<p>
+Puis rentrer deux fois le mot de passe de cet utilisateur (ou le faire taper par l&#039;utilisateur lui-même).<br/>
+
+Un utilisateur nommé <code>samba</code> et faisant partie du groupe <code>sambausers</code> peut être créé pour qu&#039;il soit propriétaire des répertoires partagés.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Gestion des utilisateurs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13915-15109" /><input type="submit" value="Modifier" class="button" title="Gestion des utilisateurs" /></div></form></div>
+<h3 class="sectionedit16" id="configuration">Configuration</h3>
+<div class="level3">
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/samba/smb.conf</strong> :
+</p>
+<pre class="file">#======================= Global Settings =======================
+
+[global]
+
+## Browsing/Identification ###
+workgroup = Arcade
+server string = Samba server (%h)
+netbios name = Serveur
+dns proxy = no
+
+#### Networking ####
+interfaces = 192.168.214.20
+bind interfaces only = yes
+
+### Access rights ###
+create mask = 0664
+directory mask = 0775
+
+#### Debugging/Accounting ####
+log file = /var/log/samba/log.%m
+max log size = 1000
+syslog = 0
+panic action = /usr/share/samba/panic-action %d
+
+####### Authentication #######
+security = user
+valid users = @sambausers
+encrypt passwords = true
+passdb backend = tdbsam
+obey pam restrictions = yes
+unix password sync = no
+map to guest = bad user
+
+############ Misc ############
+socket options = IPTOS_LOWDELAY TCP_NODELAY
+usershare allow guests = no
+local master = yes
+os level = 65</pre>
+
+<p>
+Si samba partage des imprimantes, ajouter les lignes suivantes :
+</p>
+<pre class="file">########## Printing ########## 
+   load printers = yes 
+   printing = bsd 
+   printcap name = /etc/printcap 
+   printing = cups 
+   printcap name = cups 
+
+[printers] 
+   comment = All Printers 
+   browseable = no 
+   path = /var/spool/samba 
+   printable = yes 
+   guest ok = no 
+   read only = yes 
+   create mask = 0700 
+
+[print$] 
+   comment = Printer Drivers 
+   path = /var/lib/samba/printers 
+   browseable = yes 
+   read only = yes 
+   guest ok = no 
+# Uncomment to allow remote administration of Windows print drivers. 
+# Replace &#039;ntadmin&#039; with the name of the group your admin users are 
+# members of.
+######### !!!!!!!!!! Attention à cette ligne !!!!!!!!!!!!! ########
+   write list = root @ntadmin</pre>
+
+<p>
+<img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> : Quels sont les fichiers à synchroniser entre les 2 serveurs pour la configuration de <code>cups</code> ?
+</p>
+
+<p>
+<p><div class="noteclassic">En ce qui concerne les partages, il est bien évidemment conseillé d&#039;utiliser un répertoire contenu dans le répertoire synchronisé par <code>drbd</code>.
+</div></p>
+</p>
+
+</div>
+
+<h4 id="configuration_d_un_partage_en_lectureecriture_pour_certains_utilisateurs">Configuration d&#039;un partage en lecture/écriture pour certains utilisateurs</h4>
+<div class="level4">
+
+<p>
+Ajouter les lignes suivantes pour chacun des partages de ce type :
+</p>
+<pre class="file">[Nom_du_partage]
+   path = /data/répertoire/partagé
+   read only = no
+   valid users = liste des utilisateurs séparés par des espaces</pre>
+
+</div>
+
+<h4 id="configuration_d_un_partage_en_lectureecriture_pour_certains_utilisateurs_et_en_lecture_seule_pour_d_autres">Configuration d&#039;un partage en lecture/écriture pour certains utilisateurs et en lecture seule pour d&#039;autres</h4>
+<div class="level4">
+
+<p>
+Ajouter les lignes suivantes pour chacun des partages de ce type :
+</p>
+<pre class="file">[Nom_du_partage]
+   path = /data/répertoire/partagé
+   read only = yes
+   valid users = liste des utilisateurs n&#039;ayant que le droit de lire séparés par des espaces
+   write list = liste des utilisateurs ayant le droit de lire et d&#039;écrire séparés par des espaces</pre>
+
+<p>
+Pour tester votre configuration de <code>samba</code>, lancer la commande suivante sur le serveur primaire (celui sur lequel /dev/drbd0 est monté) :
+</p>
+<pre class="code">/etc/init.d/samba start</pre>
+
+<p>
+Une fois votre configuration éprouvée par quelques tests, vous pourrez stopper le service <code>samba</code> :
+</p>
+<pre class="code">/etc/init.d/samba stop</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15110-18196" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h3 class="sectionedit17" id="droits_sur_les_repertoires_partages">Droits sur les répertoires partagés</h3>
+<div class="level3">
+
+<p>
+Il faut que les utilisateurs puissent accéder aux répertoires partagés et à leur contenu, c&#039;est là qu&#039;intervient notre utilisateur <code>samba</code> créé à cet effet :
+</p>
+<pre class="code">chown -R samba:sambausers /data
+chmod -R 775 /data</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Droits sur les répertoires partagés] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18197-18477" /><input type="submit" value="Modifier" class="button" title="Droits sur les répertoires partagés" /></div></form></div>
+<h2 class="sectionedit18" id="heartbeat2">heartbeat</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[heartbeat] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18478-18499" /><input type="submit" value="Modifier" class="button" title="heartbeat" /></div></form></div>
+<h3 class="sectionedit19" id="configuration1">Configuration</h3>
+<div class="level3">
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/ha.d/ha.cf</strong> :
+</p>
+<pre class="file">mcast eth0 239.0.0.10 694 1 0 
+
+warntime 4 
+deadtime 5 
+initdead 15 
+keepalive 2 
+
+auto_failback off 
+
+node serv1 serv2</pre>
+
+<p>
+<p><div class="noteclassic">
+</p>
+<ol>
+<li class="level1"><div class="li"> On remarque que le <a href="http://doc.ubuntu-fr.org/multicast" class="wikilink1" title="multicast">multicast</a> est utilisé, ceci afin de faire en sorte que ce fichier puisse être identique sur les deux serveurs.</div>
+</li>
+<li class="level1"><div class="li"> Les noms <code>serv1</code> et <code>serv2</code> sont définis dans le fichier <strong>/etc/hosts</strong>.</div>
+</li>
+</ol>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+Pour générer le fichier <strong>/etc/ha.d/authkeys</strong> :
+</p>
+<pre class="code">( echo -ne &quot;auth 1\n1 sha1 &quot;; dd if=/dev/urandom bs=512 count=1 | openssl md5 ) &gt; /etc/ha.d/authkeys
+chmod 0600 /etc/ha.d/authkeys</pre>
+
+<p>
+<p><div class="noteimportant">Il faut que ce fichier soit identique sur les deux serveurs.<br/>
+
+Les droits sur ce fichiers doivent être modifiés comme indiqué, le propriétaire doit être <code>root</code>.
+</div></p>
+</p>
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/ha.d/haresources</strong> :
+</p>
+<pre class="file">serv1 IPaddr::192.168.214.20 drbddisk::r0 Filesystem::/dev/drbd0::/data::ext3 samba MailTo::admin@domain.fr::Changement_d_etat_serveur</pre>
+
+<p>
+<p><div class="noteclassic">Un mail sera envoyé à l&#039;administrateur chaque fois que le rôle des serveurs changera.
+</div></p>
+Dans ce fichier, les champs sont séparés par des espaces, le premier champ est le nom du serveur primaire.<br/>
+
+Chaque champs suivant est constitué du nom d&#039;un script, se trouvant dans /etc/init.d/ ou dans /etc/ha.d/resource.d, suivi des paramètres nécessaires à ce script séparés par des &quot;::&quot;.<br/>
+
+<code>heartbeat</code> rajoute <code>start</code>, <code>stop</code> ou <code>status</code> à la fin de la ligne de commande selon que la commande est lancée lorsque le serveur passe primaire ou secondaire ou pour vérifier l&#039;état du service. C&#039;est ce qui explique qu&#039;il ne faut pas démarrer <code>samba</code> automatiquement, c&#039;est <code>heartbeat</code> qui s&#039;en charge.
+</p>
+
+<p>
+<em class="u">Par exemple</em> : <code>Filesystem::/dev/drbd0::/data::ext3</code> :
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>Filesystem</code> est un script se trouvant dans le répertoire /etc/ha.d/resource.d</div>
+</li>
+<li class="level1"><div class="li"> la commande lancée sur le serveur primaire lors du démarrage du serveur est :</div>
+</li>
+</ul>
+<pre class="code">/etc/ha.d/resource.d/Filesystem /dev/drbd0 /data ext3 start</pre>
+
+<p>
+Ce script permet de monter le périphérique <strong>/dev/drbd0</strong> sous <strong>/data</strong> en ext3fs.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18500-20727" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h2 class="sectionedit20" id="finalisation">Finalisation</h2>
+<div class="level2">
+
+<p>
+Il faudrait maintenant démarrer le service <code>drbd</code> et relancer <code>heartbeat</code>, mais pour éviter de lister ici toutes les pistes en cas de problème, je préfère conseiller de faire comme ceci :
+</p>
+<ul>
+<li class="level1"><div class="li"> Synchroniser <a href="mirroring_sur_deux_serveurs#fichiers_a_synchroniser_entre_les_deux_serveurs" title="tutoriel:mirroring_sur_deux_serveurs ↵" class="wikilink1">tous les fichiers de configuration</a></div>
+</li>
+<li class="level1"><div class="li"> Redémarrer les deux serveurs<sup><a href="mirroring_sur_deux_serveurs#fn__9" id="fnt__9" class="fn_top">9)</a></sup></div>
+</li>
+</ul>
+
+<p>
+Si tout s&#039;est bien passé, lors du redémarrage, <code>heartbeat</code> devrait :
+</p>
+<ul>
+<li class="level1"><div class="li"> Créer l&#039;adresse IP 192.168.214.20 sur l&#039;alias d&#039;interface Ethernet <strong>eth0:0</strong><sup><a href="mirroring_sur_deux_serveurs#fn__10" id="fnt__10" class="fn_top">10)</a></sup></div>
+</li>
+<li class="level1"><div class="li"> Monter /dev/drbd0 sur /data</div>
+</li>
+<li class="level1"><div class="li"> Démarrer <code>samba</code></div>
+</li>
+<li class="level1"><div class="li"> Envoyer un mail pour prévenir que <code>serv1</code> est le serveur sur lequel tous ces services sont disponibles</div>
+</li>
+</ul>
+
+<p>
+Sinon, le message d&#039;erreur est visible via la commande <code>dmesg</code> ou dans les log.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Finalisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="20728-21733" /><input type="submit" value="Modifier" class="button" title="Finalisation" /></div></form></div>
+<h2 class="sectionedit21" id="au_sujet_de_la_gestion_de_la_bande_passante">Au sujet de la gestion de la bande passante</h2>
+<div class="level2">
+
+<p>
+La valeur du paramètre <code>rate</code> est exprimée en Mo/sec (d&#039;où le <code>M</code>), si vous êtes en réseau 100Mbit/s, n&#039;allez pas au dessus de <code>9M</code>, puisqu&#039;il s&#039;agit (environ) de la valeur maximale de débit. La valeur <code>3M</code> correspond au tiers de ce débit afin de laisser de la bande passante aux utilisateurs. Le tiers de la bande passante est une valeur  conseillée sur le site de <code>drbd</code>.
+</p>
+
+<p>
+Si vos serveurs ont une carte réseau Gigabit, vous pouvez optimiser les débits de deux manières :
+</p>
+<ul>
+<li class="level1"><div class="li"> Séparation physique des flux</div>
+</li>
+<li class="level1"><div class="li"> Sous-réseau Gigabit dédié</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Au sujet de la gestion de la bande passante] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21734-22351" /><input type="submit" value="Modifier" class="button" title="Au sujet de la gestion de la bande passante" /></div></form></div>
+<h3 class="sectionedit22" id="separation_physique_des_flux">Séparation physique des flux</h3>
+<div class="level3">
+
+<p>
+Il est tout à fait possible (et conseillé) d&#039;avoir 2 cartes réseau sur les serveurs :
+</p>
+<ul>
+<li class="level1"><div class="li"> eth0 : pour la connexion au réseau : cette connexion sert aux utilisateurs pour accéder aux données,</div>
+</li>
+<li class="level1"><div class="li"> eth1 : pour une connexion directe (via câble croisé) entre les serveurs : celle-ci pour la synchronisation des données <strong>uniquement</strong><sup><a href="mirroring_sur_deux_serveurs#fn__11" id="fnt__11" class="fn_top">11)</a></sup>.</div>
+</li>
+</ul>
+
+<p>
+<a href="../_detail/tutoriel/mirroring_schema_reseau.png?id=tutoriel%253Amirroring_sur_deux_serveurs" class="media" title="tutoriel:mirroring_schema_reseau.png"><img src="../_media/tutoriel/mirroring_schema_reseau.png" class="media" alt="" /></a>
+</p>
+
+</div>
+
+<h4 id="modification_de_configuration">Modification de configuration</h4>
+<div class="level4">
+
+<p>
+Le fichier <strong>/etc/drbd.conf</strong> doit être modifié, le débit ajusté ou supprimé (comme ici) et les adresses IP modifiées :
+</p>
+<pre class="file">...
+
+  syncer {
+    verify-alg sha1;
+  }
+
+...
+
+  on serv1 {
+    address   192.168.24.10:7788;
+  }
+  on serv2 {
+    address   192.168.24.11:7788;
+  }
+}</pre>
+
+<p>
+Ainsi que les éventuels partages (<abbr title="Network File System">NFS</abbr>) permettant la synchronisation des fichiers de configuration.
+<p><div class="noteimportant">Attention de ne pas modifier le fichier <strong>/etc/hosts</strong>, sauf en rajoutant éventuellement des nouveaux noms de machine, <code>serv1_eth1</code> par exemple, puisque <code>heartbeat</code> utilise les noms de machine associés à eth0.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Séparation physique des flux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="22352-23644" /><input type="submit" value="Modifier" class="button" title="Séparation physique des flux" /></div></form></div>
+<h3 class="sectionedit23" id="sous-reseau_gigabit_dedie">Sous-réseau Gigabit dédié</h3>
+<div class="level3">
+
+<p>
+Dans le cas où le réseau utilisateur est en 100Mbit/s, il est possible d&#039;utiliser un <em>petit</em> switch Gigabit (de 3 ports minimum) :
+</p>
+<ul>
+<li class="level1"><div class="li"> Port 1 : liaison avec le switch du réseau utilisateur (lien 100Mbit/s)</div>
+</li>
+<li class="level1"><div class="li"> Port 2 : liaison avec un serveur (lien Gigabit)</div>
+</li>
+<li class="level1"><div class="li"> Port 3 : liaison avec l&#039;autre serveur (lien Gigabit)</div>
+</li>
+</ul>
+
+<p>
+De cette manière, la synchronisation entre les deux serveurs se fait via un lien Gigabit, et les utilisateurs ne sont pas pénalisés. La valeur du débit peut alors être fixée à <code>10M</code>.
+</p>
+
+</div>
+
+<h4 id="modification_de_la_configuration">Modification de la configuration</h4>
+<div class="level4">
+
+<p>
+Seul le fichier <strong>/etc/drbd.conf</strong> doit être modifié, plus particulièrement le débit alloué à <code>drbd</code> :
+</p>
+<pre class="file">...
+  
+  syncer {
+    rate 10M;
+    verify-alg sha1;
+  }
+
+...</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Sous-réseau Gigabit dédié] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="23645-24424" /><input type="submit" value="Modifier" class="button" title="Sous-réseau Gigabit dédié" /></div></form></div>
+<h2 class="sectionedit24" id="fichiers_importants">Fichiers importants</h2>
+<div class="level2">
+
+<p>
+Il est vivement conseillé de créer des partages <abbr title="Network File System">NFS</abbr> entre les deux serveurs afin de synchroniser les fichiers de configuration via un script.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Fichiers importants] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="24425-24601" /><input type="submit" value="Modifier" class="button" title="Fichiers importants" /></div></form></div>
+<h3 class="sectionedit25" id="fichiers_a_synchroniser_entre_les_deux_serveurs">Fichiers à synchroniser entre les deux serveurs</h3>
+<div class="level3">
+
+<p>
+Système :
+</p>
+<ul>
+<li class="level1"><div class="li"> /etc/resolv.conf</div>
+</li>
+<li class="level1"><div class="li"> /etc/group</div>
+</li>
+<li class="level1"><div class="li"> /etc/passwd</div>
+</li>
+<li class="level1"><div class="li"> /etc/shadow</div>
+</li>
+<li class="level1"><div class="li"> /etc/gshadow</div>
+</li>
+</ul>
+
+<p>
+Pour <code>drbd</code> :
+</p>
+<ul>
+<li class="level1"><div class="li"> /etc/drbd.conf</div>
+</li>
+</ul>
+
+<p>
+Pour <code>samba</code> :
+</p>
+<ul>
+<li class="level1"><div class="li"> /etc/samba/smb.conf</div>
+</li>
+<li class="level1"><div class="li"> /var/lib/samba/account_policy.tdb</div>
+</li>
+<li class="level1"><div class="li"> /var/lib/samba/group_mapping.ldb</div>
+</li>
+<li class="level1"><div class="li"> /var/lib/samba/ntdrivers.tdb</div>
+</li>
+<li class="level1"><div class="li"> /var/lib/samba/ntforms.tdb</div>
+</li>
+<li class="level1"><div class="li"> /var/lib/samba/passdb.tdb</div>
+</li>
+<li class="level1"><div class="li"> /var/lib/samba/secrets.tdb</div>
+</li>
+</ul>
+
+<p>
+Pour <code>heartbeat</code> :
+</p>
+<ul>
+<li class="level1"><div class="li"> /etc/ha.d/ha.cf</div>
+</li>
+<li class="level1"><div class="li"> /etc/ha.d/authkeys</div>
+</li>
+<li class="level1"><div class="li"> /etc/ha.d/haresources</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="et_eventuellement_aussi">Et éventuellement aussi...</h4>
+<div class="level4">
+
+<p>
+Si vous utilisez les mêmes outils que moi pour la gestion des serveurs…
+</p>
+
+<p>
+Pour <code>mail</code> (ssmtp) :
+</p>
+<ul>
+<li class="level1"><div class="li"> /etc/ssmtp/revaliases</div>
+</li>
+<li class="level1"><div class="li"> /etc/ssmtp/ssmtp.conf</div>
+</li>
+</ul>
+
+<p>
+Pour <code>smcroute</code> :
+</p>
+<ul>
+<li class="level1"><div class="li"> /etc/smcroute/startup.sh</div>
+</li>
+</ul>
+
+<p>
+Pour <code><abbr title="Network File System">NFS</abbr></code> :
+</p>
+<ul>
+<li class="level1"><div class="li"> /etc/exports</div>
+</li>
+<li class="level1"><div class="li"> /etc/hosts.deny</div>
+</li>
+<li class="level1"><div class="li"> /etc/hosts.allow</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Fichiers à synchroniser entre les deux serveurs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="24602-25439" /><input type="submit" value="Modifier" class="button" title="Fichiers à synchroniser entre les deux serveurs" /></div></form></div>
+<h3 class="sectionedit26" id="fichiers_a_personnaliser_sur_les_deux_serveurs">Fichiers à personnaliser sur les deux serveurs</h3>
+<div class="level3">
+
+<p>
+Système :
+</p>
+<ul>
+<li class="level1"><div class="li"> /etc/hostname</div>
+</li>
+<li class="level1"><div class="li"> /etc/hosts</div>
+</li>
+<li class="level1"><div class="li"> /etc/netwok/interfaces</div>
+</li>
+<li class="level1"><div class="li"> /etc/fstab</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Fichiers à personnaliser sur les deux serveurs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="25440-25584" /><input type="submit" value="Modifier" class="button" title="Fichiers à personnaliser sur les deux serveurs" /></div></form></div>
+<h3 class="sectionedit27" id="fichiers_a_personnaliser_apres_un_clonage">Fichiers à personnaliser après un clonage</h3>
+<div class="level3">
+
+<p>
+Si vous avez opté pour le clonage d&#039;un serveur vers l&#039;autre (attention à <code>drbd</code>), vous devrez personnaliser ces fichiers sur chaque serveur :
+</p>
+<ul>
+<li class="level1"><div class="li"> /var/lib/heartbeat/hb_uuid (supprimer ce fichier sur l&#039;un des 2 serveurs après clonage, il sera généré au prochain démarrage de heartbeat)</div>
+</li>
+<li class="level1"><div class="li"> /etc/udev/rules.d/70-persistent-net.rules (pour faire en sorte que l&#039;interface Ethernet eth0 soit utilisable)</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Fichiers à personnaliser après un clonage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="25585-26047" /><input type="submit" value="Modifier" class="button" title="Fichiers à personnaliser après un clonage" /></div></form></div>
+<h2 class="sectionedit28" id="en_cas_de_pepin">En cas de pépin...</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[En cas de pépin...] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="26048-26079" /><input type="submit" value="Modifier" class="button" title="En cas de pépin..." /></div></form></div>
+<h3 class="sectionedit29" id="problemes_lors_de_la_mise_en_place_de_drbd">Problèmes lors de la mise en place de drbd</h3>
+<div class="level3">
+
+<p>
+En cas d&#039;erreur :
+</p>
+<pre class="file">/dev/drbd0: Failure: (124) Device is attached to a disk (use detach first)
+Command &#039;drbdsetup /dev/drbd0 disk /dev/sda6 /dev/sda6 internal --set-defaults --create-device --on-io-error=detach&#039; terminated with exit code 10</pre>
+
+<p>
+faire :
+</p>
+<pre class="code">drbdadm detach r0
+drbdadm up r0</pre>
+
+<p>
+En cas d&#039;erreur :
+</p>
+<pre class="file">/dev/drbd0: Failure: (125) Device has a net-config (use disconnect first)
+Command &#039;drbdsetup /dev/drbd0 net 192.168.214.10:7788 192.168.214.11:7788 C --set-defaults --create-device&#039; terminated with exit code 10</pre>
+
+<p>
+faire :
+</p>
+<pre class="code">drbdadm disconnect r0
+drbdadm up r0</pre>
+
+<p>
+En cas d&#039;erreur :
+</p>
+<pre class="file">/dev/drbd0: Failure: (114) Lower device is already claimed. This usually means it is mounted.
+Command &#039;drbdsetup /dev/drbd0 disk /dev/sad6 /dev/sad6 internal --set-defaults --create-device --on-io-error=detach&#039; terminated with exit code 10</pre>
+
+<p>
+c&#039;est que la partition est encore montée, il faut d&#039;abord la démonter avec la commande :
+</p>
+<pre class="code">umount /dev/sda6</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Problèmes lors de la mise en place de drbd] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="26080-27132" /><input type="submit" value="Modifier" class="button" title="Problèmes lors de la mise en place de drbd" /></div></form></div>
+<h3 class="sectionedit30" id="drbdstandalone">drbd : Standalone</h3>
+<div class="level3">
+
+<p>
+Il est possible qu&#039;après une coupure sur le réseau ou à cause d&#039;un firewall bloquant mal configuré les deux serveurs ne se voient plus. Lancer la commande :
+</p>
+<pre class="code">cat /proc/drbd</pre>
+
+<p>
+Si ils apparaissent comme étant en &quot;Standalone&quot; c&#039;est qu&#039;ils ne se voient plus.
+</p>
+
+<p>
+Sur un des deux nœuds, lancer la commande :
+</p>
+<pre class="code">drbdadm -- --discard-my-data connect all</pre>
+
+<p>
+et sur l&#039;autre la commande :
+</p>
+<pre class="code">drbdadm connect all</pre>
+
+<p>
+Là les deux nœuds se voient à nouveau en secondaire/secondaire. Sur l&#039;un des 2, lancer la commande :
+</p>
+<pre class="code">drbdadm primary r0</pre>
+
+<p>
+Et le problème devrait être résolu.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_30'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[drbd : Standalone] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="27133-27768" /><input type="submit" value="Modifier" class="button" title="drbd : Standalone" /></div></form></div>
+<h3 class="sectionedit31" id="configuration_du_pare-feu_firewall">Configuration du pare-feu (Firewall)</h3>
+<div class="level3">
+
+<p>
+Voici les ports à ouvrir: 694 (udp) pour heartbeat  et 7788 (tcp) pour drbd
+</p>
+<hr />
+
+<p>
+<em>Contributeur principal : <a href="../utilisateurs/mrwaloo" class="wikilink1" title="utilisateurs:mrwaloo">MrWaloo</a>.</em> <br/>
+
+Merci à <a href="http://forum.ubuntu-fr.org/profile.php?id=123930" class="urlextern" title="http://forum.ubuntu-fr.org/profile.php?id=123930"  rel="nofollow">tempus1984</a> pour le dernier chapitre et pour avoir validé ce tutoriel.
+</p>
+<hr />
+
+</div>
+<div class='secedit editbutton_section editbutton_31'><form class="button btn_secedit" method="post" action="mirroring_sur_deux_serveurs"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1363345159" /><input type="hidden" name="summary" value="[Configuration du pare-feu (Firewall)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="27769-" /><input type="submit" value="Modifier" class="button" title="Configuration du pare-feu (Firewall)" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="mirroring_sur_deux_serveurs#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+qui peut être sur un <code>lvm</code> ou sur un raid physique ou logiciel</div>
+<div class="fn"><sup><a href="mirroring_sur_deux_serveurs#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+c&#039;est qu&#039;il est mort !</div>
+<div class="fn"><sup><a href="mirroring_sur_deux_serveurs#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+allez voir les <a href="http://www.drbd.org/users-guide-emb/users-guide.html" class="urlextern" title="http://www.drbd.org/users-guide-emb/users-guide.html"  rel="nofollow">détails sur le site</a></div>
+<div class="fn"><sup><a href="mirroring_sur_deux_serveurs#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+si vous ne pouvez pas faire autrement que de réutiliser une partition ayant été formatée et ayant contenu des données, il faudra utiliser la commande <em class="u"><code>shred -zvf -n 1 /dev/sda6</code></em> afin de <em>vider</em> (remplir avec des zéros) la partition. Attention, l&#039;opération peut prendre du temps, mais elle peut être stoppée après les 10 premiers pourcents ([CTRL]+[C]).</div>
+<div class="fn"><sup><a href="mirroring_sur_deux_serveurs#fnt__5" id="fn__5" class="fn_bot">5)</a></sup> 
+en supposant que les deux serveurs sachent envoyer un mail (avec <code>ssmtp</code> par exemple) </div>
+<div class="fn"><sup><a href="mirroring_sur_deux_serveurs#fnt__6" id="fn__6" class="fn_bot">6)</a></sup> 
+à personnaliser</div>
+<div class="fn"><sup><a href="mirroring_sur_deux_serveurs#fnt__7" id="fn__7" class="fn_bot">7)</a></sup> 
+à vrai dire, je ne sais pas si c&#039;était déjà le cas pour les versions précédentes</div>
+<div class="fn"><sup><a href="mirroring_sur_deux_serveurs#fnt__8" id="fn__8" class="fn_bot">8)</a></sup> 
+oui je sais, ce terme n&#039;est pas de moi, il est souvent utilisé dans les documentations Debian et dérivés, d&#039;où sa place ici.</div>
+<div class="fn"><sup><a href="mirroring_sur_deux_serveurs#fnt__9" id="fn__9" class="fn_bot">9)</a></sup> 
+je sais que ça ne fait pas pro, mais bon…</div>
+<div class="fn"><sup><a href="mirroring_sur_deux_serveurs#fnt__10" id="fn__10" class="fn_bot">10)</a></sup> 
+il est possible de personnaliser l&#039;interface Ethernet à utiliser : <code>IPaddr::ip-address[/netmask[/interface][/broadcast]]</code> par exemple <code>IPaddr::192.168.214.20/24/eth0/192.168.214.255</code></div>
+<div class="fn"><sup><a href="mirroring_sur_deux_serveurs#fnt__11" id="fn__11" class="fn_bot">11)</a></sup> 
+il ne faut pas faire passer le signe de vie <code>heartbeat</code> par cette connexion, car le signe de vie <strong>doit</strong> passer par le lien que les utilisateurs utilisent pour vérifier son bon fonctionnement.</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/d3ed382771eb7f196b1757acc254481b.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="mirroring_sur_deux_serveurs?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="mirroring_sur_deux_serveurs?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="mirroring_sur_deux_serveurs?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="mirroring_sur_deux_serveurs?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="mirroring_sur_deux_serveurs?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

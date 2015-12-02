@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:virtualhosts_avec_apache2 - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-02-15T15:20:14+0100"/>
+<meta name="keywords" content="feisty,serveur,tutoriel,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/virtualhosts_avec_apache2?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/virtualhosts_avec_apache2?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/virtualhosts_avec_apache2"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/virtualhosts_avec_apache2"/>
+<link rel="canonical" href="virtualhosts_avec_apache2"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:virtualhosts_avec_apache2","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="virtualhosts_avec_apache2#main" tabindex="1">Contenu</a> | <a href="virtualhosts_avec_apache2#qsearch__in" tabindex="2">Rechercher</a> | <a href="virtualhosts_avec_apache2#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="virtualhosts_avec_apache2" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="virtualhosts_avec_apache2" >tutoriel:virtualhosts_avec_apache2</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="../tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="../versions">versions supportées d'Ubuntu</a>.<br />
+Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="virtualhosts_avec_apache2#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="virtualhosts_avec_apache2#hotes_virtuels_bases_sur_le_nom">Hôtes virtuels basés sur le nom</a></div></li>
+<li class="level1"><div class="li"><a href="virtualhosts_avec_apache2#astuceempecher_l_acces_au_serveur_via_son_adresse_ip">Astuce: empêcher l&#039;accès au serveur via son adresse IP</a></div></li>
+<li class="level1"><div class="li"><a href="virtualhosts_avec_apache2#hotes_virtuels_bases_sur_le_port">Hôtes virtuels basés sur le port</a></div></li>
+<li class="level1"><div class="li"><a href="virtualhosts_avec_apache2#hotes_virtuels_bases_sur_l_adresse_ip">Hôtes virtuels basés sur l&#039;adresse IP</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="virtualhosts_avec_apache2#association_d_une_2nd_adresse_ip_a_une_interface_reseau_ip_aliasing">Association d&#039;une 2nd adresse IP à une interface réseau (IP aliasing)</a></div></li>
+<li class="level2"><div class="li"><a href="virtualhosts_avec_apache2#configuration_des_hotes_virtuels">Configuration des hôtes virtuels</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="virtualhosts_avec_apache2#ressources_externes">Ressources externes</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../feisty" class="wikilink1" title="feisty" rel="tag">feisty</a>,
+	<a href="../serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">brouillon</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="les_hotes_virtuels_virtual_hosts_avec_apache2">Les hôtes virtuels (virtual hosts) avec Apache2</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="virtualhosts_avec_apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424010014" /><input type="hidden" name="summary" value="[Les hôtes virtuels (virtual hosts) avec Apache2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="50-114" /><input type="submit" value="Modifier" class="button" title="Les hôtes virtuels (virtual hosts) avec Apache2" /></div></form></div>
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+<strong>Le Serveur Web Apache2 est capable de gérer simultanément plusieurs arborescences Web grâce à la notion d&#039;hôtes Virtuels (Virtual Hosts). Nous allons voir les différentes méthodes pour les mettre en place.</strong>
+</p>
+
+<p>
+Il est important de savoir que si vous avez déjà un serveur en activité, ce serveur doit lui aussi être configuré dans les hôtes virtuels ! Dans ce cas, vous voudrez sûrement le mettre en serveur &quot;par défaut&quot;, répondant à toutes les requêtes, SAUF celles qui correspondront à vos autres serveurs virtuels.
+</p>
+
+<p>
+Nous renseignons le fichier <strong>/etc/hosts</strong> afin d&#039;assurer la résolution de nom (Nom –&gt; Adresse Ip) des <strong>hôtes Virtuels</strong> que nous allons créer. Ceci n&#039;est nécessaire que si votre serveur <abbr title="Domain Name System">DNS</abbr> (Serveur Bind) n&#039;est pas installé et/ou configuré pour vos domaines ou encore, que les noms <abbr title="Domain Name System">DNS</abbr> attribués aux <strong>hôtes Virtuels</strong> sont purement fictifs ou ne vous appartiennent pas.
+</p>
+
+<p>
+Si vous désirez tester toutes les méthodes proposées, pensez à effacer la configuration précédente pour ne pas créer des conflits entre les hôtes Virtuels. Il en va de même pour le fichier <strong>/etc/hosts</strong>.
+</p>
+
+<p>
+<p><div class="noteclassic">Dans les 3 méthodes présentées sur ce tutoriel, on souhaite créer 2 hôtes virtuels : <strong>virtual1.fr</strong> et <strong>virtual2.fr</strong> ayant pour fichiers de configuration les fichiers <strong>virtual1.conf</strong> et <strong>virtual2.conf</strong>
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="virtualhosts_avec_apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424010014" /><input type="hidden" name="summary" value="[Introduction] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="115-1503" /><input type="submit" value="Modifier" class="button" title="Introduction" /></div></form></div>
+<h2 class="sectionedit3" id="hotes_virtuels_bases_sur_le_nom">Hôtes virtuels basés sur le nom</h2>
+<div class="level2">
+
+<p>
+Cette méthode est la plus utilisée et la plus conseillée. Elle tend même à devenir un standard. Il s&#039;agit simplement d&#039;associer plusieurs <strong>noms <abbr title="Domain Name System">DNS</abbr></strong> à une seule adresse IP.
+</p>
+
+<p>
+<p><div class="noteimportant">Attention, il faut également déclarer ces 2 sites dans le fichier <strong>/etc/hosts</strong>
+</div></p>
+</p>
+
+<p>
+Dans un premier temps nous allons définir des <strong>noms <abbr title="Domain Name System">DNS</abbr></strong> pour nos sites : monsite1.fr et monsite2.fr
+Il faut ajouter ces informations au fichier /etc/hosts pour que la résolution <abbr title="Domain Name System">DNS</abbr> pointe sur la machine locale (127.0.0.1) :
+</p>
+<pre class="file">gksudo gedit /etc/hosts</pre>
+
+<p>
+et rajouter les deux lignes suivantes :
+</p>
+<pre class="file">127.0.0.1 monsite1.fr
+127.0.0.1 monsite2.fr</pre>
+
+<p>
+Puis nous allons créer deux dossiers dans le dossier <strong>/var/www</strong> qui est par défaut la racine d&#039;apache. Vous pouvez les créer en interface graphique ou en ligne de commande via ces deux commandes : 
+</p>
+<pre class="file">sudo mkdir /var/www/monsite1
+sudo mkdir /var/www/monsite2</pre>
+
+<p>
+<p><div class="noteimportant">Il n&#039;est pas recommandé de travailler directement dans des répertoires du serveur. Un lien symbolique depuis le répertoire principal du serveur vers un répertoire dans votre dossier personnel (par exemple: www-dev/monsite1) est mieux. Pour travailler ainsi, il faut ignorer les deux commandes &quot;sudo&quot; ci-dessus (Le mot &quot;UTILISATEUR&quot; dans les commandes ci-dessous doit être remplacé par votre identifiant) :
+</p>
+<pre class="file">sudo mkdir /home/UTILISATEUR/www-dev/monsite1
+sudo mkdir /home/UTILISATEUR/www-dev/monsite2
+
+sudo ln -s /home/UTILISATEUR/www-dev/monsite1 /var/www/monsite1
+sudo ln -s /home/UTILISATEUR/www-dev/monsite2 /var/www/monsite2
+
+sudo chown -hR $USER:users /home/UTILISATEUR/www-dev/monsite1
+sudo chown -hR $USER:users /home/UTILISATEUR/www-dev/monsite2
+
+sudo chmod -R 755 /home/UTILISATEUR/www-dev/monsite1
+sudo chmod -R 755 /home/UTILISATEUR/www-dev/monsite2</pre>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+Ces dossiers faits, nous allons créer les fichiers de configurations pour apache. Dans <strong>/etc/apache2/sites-available</strong> se trouve un fichier nommé <em>default</em>, <a href="comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">ouvrez-le avec votre éditeur de texte</a> favori (ne pas utiliser OpenOffice.org) puis modifiez de cette façon le fichier : 
+</p>
+<pre class="file">&lt;VirtualHost *:80&gt;
+	ServerAdmin votre-mail@monsite1.fr
+	ServerName monsite1.fr
+	ServerAlias www.monsite1.fr
+	
+	DocumentRoot /var/www/monsite1
+	&lt;Directory /&gt;
+		Options FollowSymLinks
+		AllowOverride None
+	&lt;/Directory&gt;
+	&lt;Directory /var/www/monsite1&gt;
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	&lt;/Directory&gt;
+
+	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+	&lt;Directory &quot;/usr/lib/cgi-bin&quot;&gt;
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	&lt;/Directory&gt;
+
+	ErrorLog /var/log/apache2/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog /var/log/apache2/access.log combined
+
+    Alias /doc/ &quot;/usr/share/doc/&quot;
+    &lt;Directory &quot;/usr/share/doc/&quot;&gt;
+        Options Indexes MultiViews FollowSymLinks
+        AllowOverride None
+        Order deny,allow
+        Deny from all
+        Allow from 127.0.0.0/255.0.0.0 ::1/128
+    &lt;/Directory&gt;
+
+&lt;/VirtualHost&gt;</pre>
+
+<p>
+Ceci fait, enregistrez le fichier sous le nom <strong>monsite1.conf</strong> puis modifiez-le en mettant cette fois <strong>monsite2</strong> à la place de <strong>monsite1</strong>, puis ré-enregistrez sous le nom de <strong>monsite2.conf</strong>.
+</p>
+
+<p>
+<p><div class="noteimportant">
+Si vous utilisez Drupal et le module apache mod_rewrite, vous devez corriger le fichier <em>default</em> dans <strong>/etc/apache2/sites-available</strong> qui est mentionné ci-dessus, et remplacer toutes les occurences  
+</p>
+<pre class="file">AllowOverride None</pre>
+
+<p>
+ par 
+</p>
+<pre class="file">AllowOverride All</pre>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+Pour terminer, il vous suffit de créer des liens des deux fichiers nouvellement créés dans le dossier <strong>/etc/apache2/sites-enabled</strong>. Pour ce faire, une commande a été faite spécialement : 
+</p>
+<pre class="file">sudo a2ensite monsite1.conf
+sudo a2ensite monsite2.conf</pre>
+
+<p>
+Puis, afin de recharger la configuration d&#039;Apache :
+</p>
+<pre class="file">sudo /etc/init.d/apache2 reload</pre>
+
+<p>
+Vous pouvez alors accéder aux deux sites ! <a href="http://monsite1.fr" class="urlextern" title="http://monsite1.fr"  rel="nofollow">http://monsite1.fr</a> affichera le contenu du dossier site1 et <a href="http://monsite2.fr" class="urlextern" title="http://monsite2.fr"  rel="nofollow">http://monsite2.fr</a> affichera le contenu du dossier site2.
+</p>
+
+<p>
+<p><div class="notewarning">
+Si l&#039;url <a href="http://monsite1.fr" class="urlextern" title="http://monsite1.fr"  rel="nofollow">http://monsite1.fr</a> affiche seulement un index avec le dossier &quot;/home/www/monsite1&quot;, et que le contenu du site lui-même est dans <a href="http://monsite1.fr/monsite1" class="urlextern" title="http://monsite1.fr/monsite1"  rel="nofollow">http://monsite1.fr/monsite1</a>, c&#039;est peut-être que votre lien vers /home/www/monsite1 qui devrait se trouver dans /var/www se trouve en fait dans /var/www/monsite1 (le répertoire qu&#039;il n&#039;aurait pas fallu créer avant la mise en place du lien symbolique).
+
+</div></p>
+</p>
+
+<p>
+<p><div class="noteclassic">
+Voici la commande pour désactiver le site &quot;monsite1&quot; :
+</p>
+<pre class="file">sudo a2dissite monsite1
+sudo /etc/init.d/apache2 reload</pre>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="virtualhosts_avec_apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424010014" /><input type="hidden" name="summary" value="[Hôtes virtuels basés sur le nom] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1504-6346" /><input type="submit" value="Modifier" class="button" title="Hôtes virtuels basés sur le nom" /></div></form></div>
+<h2 class="sectionedit4" id="astuceempecher_l_acces_au_serveur_via_son_adresse_ip">Astuce: empêcher l&#039;accès au serveur via son adresse IP</h2>
+<div class="level2">
+
+<p>
+Pour des raisons diverses, on peut souhaiter empêcher les utilisateurs ne découvrant que l&#039;adresse IP du serveur, de consulter son contenu.
+</p>
+
+<p>
+La syntaxe est la suivante: il suffit de modifier le fichier /etc/apache2/sites-enabled/000-default, et d&#039;y ajouter au début un VirtualHost répondant à l&#039;adresse IP:
+</p>
+<pre class="code">&lt;VirtualHost *:80&gt;
+ServerName www.xxx.yyy.zzz
+&lt;Directory /&gt;
+Deny from all
+&lt;/Directory&gt;
+&lt;/VirtualHost&gt;</pre>
+
+<p>
+Où &quot;<a href="http://www.xxx.yyy.zzz" class="urlextern" title="http://www.xxx.yyy.zzz"  rel="nofollow">www.xxx.yyy.zzz</a>&quot; est l&#039;adresse IP publique du serveur.
+</p>
+
+<p>
+Le <em>Deny from all</em> bloque l&#039;accès à tout client qui appelle le site via l&#039;adresse IP du serveur.
+</p>
+
+<p>
+On garde ensuite, dans le même fichier, la configuration habituelle, avec une petite modification:
+</p>
+<pre class="code">&lt;VirtualHost *:80&gt;
+        ServerAdmin webmaster@localhost
+        ServerName mon_joli_domaine
+[...]blah blah
+&lt;/VirtualHost&gt;</pre>
+
+<p>
+Il faut ajouter la directive <em>ServerName</em> et y placer le nom de domaine du serveur. Cela peut-être un nom dynamique (fourni par des services comme no-ip ou Dyndns).
+</p>
+
+<p>
+Attention: cette technique n&#039;est pas, à proprement parler, une &quot;sécurisation&quot;. Elle évite juste de recevoir du trafic inutile de la part de bots, ou de se faire fouiller son serveur par des gens pratiquant le scan de port. Bien évidemment, si vous rendez publique le nom de domaine menant à votre serveur, ça ne change pas grand chose.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="virtualhosts_avec_apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424010014" /><input type="hidden" name="summary" value="[Astuce: empêcher l'accès au serveur via son adresse IP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6347-7759" /><input type="submit" value="Modifier" class="button" title="Astuce: empêcher l'accès au serveur via son adresse IP" /></div></form></div>
+<h2 class="sectionedit5" id="hotes_virtuels_bases_sur_le_port">Hôtes virtuels basés sur le port</h2>
+<div class="level2">
+
+<p>
+Par défaut, le Serveur Web Apache2 est configuré pour écouter sur le <strong>port 80</strong>. Il est possible d&#039;utiliser des ports différents pour chaque hôte virtuel.
+</p>
+
+<p>
+Dans cet exemple, les deux Sites Virtuels <strong>virtual1.com</strong> et <strong>virtual2.com</strong> se partagent la même adresse IP : <strong>192.168.0.2</strong>. Seul le port d&#039;écoute est différent.
+</p>
+
+<p>
+Dans un premier temps, nous allons éditer le fichier <strong>/etc/hosts</strong> afin de déclarer les 2 noms de domaine associés à la seule et unique adresse IP de notre interface réseau. Ceci permettra la résolution de nom (Nom ⇒ Adresse Ip).
+</p>
+
+<p>
+<strong>Exemple de fichier hosts :</strong>
+</p>
+<pre class="file">127.0.0.1 	localhost
+192.168.0.2	virtual1.com
+192.168.0.2	virtual2.com</pre>
+
+<p>
+Ensuite, nous créons 2 fichiers de configuration <strong>virtual1.conf</strong> et <strong>virtual2.conf</strong> de la même manière qu&#039;avec la méthode précédente, mais contenant :
+</p>
+
+<p>
+<strong>virtual1.conf :</strong>
+</p>
+<pre class="file">&lt;VirtualHost 192.168.0.2:80&gt;
+	DocumentRoot	/var/www/virtual1.com
+	ServerName	virtual1.com
+&lt;/VirtualHost&gt;
+</pre>
+
+<p>
+<strong>virtual2.conf :</strong>
+</p>
+<pre class="file">&lt;VirtualHost 192.168.0.2:8080&gt;
+	DocumentRoot	/var/www/virtual2.com
+	ServerName	virtual2.com
+&lt;/VirtualHost&gt;
+</pre>
+
+<p>
+Activez alors les hôtes virtuels de la même manière qu&#039;avec la première méthode.
+</p>
+
+<p>
+Précisez au serveur Apache2 d&#039;écouter sur le port 8080 en ajoutant la ligne suivante dans le fichier <strong>/etc/apache2/ports.conf</strong>
+</p>
+<pre class="file"># If you just change the port or add more ports here, you will likely also
+# have to change the VirtualHost statement in
+# /etc/apache2/sites-enabled/000-default
+# This is also true if you have upgraded from before 2.2.9-3 (i.e. from
+# Debian etch). See /usr/share/doc/apache2.2-common/NEWS.Debian.gz and
+# README.Debian.gz
+
+NameVirtualHost *:80
+Listen 80
+Listen 8080
+&lt;IfModule mod_ssl.c&gt;
+    # SSL name based virtual hosts are not yet supported, therefore no
+    # NameVirtualHost statement here
+    Listen 443
+&lt;/IfModule&gt;</pre>
+
+<p>
+Enfin, rechargez la configuration du serveur Apache2.
+</p>
+
+<p>
+Le site <strong>virtual1.com</strong> sera accessible via l&#039;url : <a href="http://virtual1.com" class="urlextern" title="http://virtual1.com"  rel="nofollow">http://virtual1.com</a> et le site <strong>virtual2.com</strong> via l&#039;url : <a href="http://virtual2.com:8080" class="urlextern" title="http://virtual2.com:8080"  rel="nofollow">http://virtual2.com:8080</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="virtualhosts_avec_apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424010014" /><input type="hidden" name="summary" value="[Hôtes virtuels basés sur le port] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7760-9897" /><input type="submit" value="Modifier" class="button" title="Hôtes virtuels basés sur le port" /></div></form></div>
+<h2 class="sectionedit6" id="hotes_virtuels_bases_sur_l_adresse_ip">Hôtes virtuels basés sur l&#039;adresse IP</h2>
+<div class="level2">
+
+<p>
+Dans le cadre de cette méthode, le Serveur est soit doté de plusieurs interfaces réseau , soit de plusieurs adresses IP associées à une seule interface réseau.
+Dans ce dernier cas, on parlera d&#039;<strong>IP aliasing</strong>. Les systèmes <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux, notamment les distributions Ubuntu et Debian, permettent de mettre facilement en oeuvre cette fonctionnalité.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="virtualhosts_avec_apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424010014" /><input type="hidden" name="summary" value="[Hôtes virtuels basés sur l'adresse IP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9898-10304" /><input type="submit" value="Modifier" class="button" title="Hôtes virtuels basés sur l'adresse IP" /></div></form></div>
+<h3 class="sectionedit7" id="association_d_une_2nd_adresse_ip_a_une_interface_reseau_ip_aliasing">Association d&#039;une 2nd adresse IP à une interface réseau (IP aliasing)</h3>
+<div class="level3">
+
+<p>
+Dans cet exemple, nous partirons du principe que nous possédons une seule interface réseau à laquelle nous voulons associer une seconde adresses IP.
+</p>
+
+<p>
+Consultons la configuration réseau de la machine :
+</p>
+<pre class="code">ifconfig</pre>
+
+<p>
+Nous obtenons quelque chose comme
+</p>
+<pre class="file">eth0      Lien encap:Ethernet  HWaddr 00:13:D3:3C:58:84
+          inet adr:192.168.0.2  Bcast:192.168.0.255  Masque:255.255.255.0
+          adr inet6: fe80::213:d3ff:fe3c:5884/64 Scope:Lien
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Packets reçus:1257 erreurs:0 :0 overruns:0 frame:0
+          TX packets:1247 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 lg file transmission:1000
+          Octets reçus:1037747 (1013.4 KiB) Octets transmis:423117 (413.2 KiB)
+          Interruption:209 Adresse de base:0x8000
+
+lo        Lien encap:Boucle locale
+          inet adr:127.0.0.1  Masque:255.0.0.0
+          adr inet6: ::1/128 Scope:Hôte
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          Packets reçus:429 erreurs:0 :0 overruns:0 frame:0
+          TX packets:429 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 lg file transmission:0
+          Octets reçus:117583 (114.8 KiB) Octets transmis:117583 (114.8 KiB)</pre>
+
+<p>
+Ce qui nous intéresse ici est la première série d&#039;informations. Elle nous indique que nous disposons d&#039;une interface réseau (<strong>eth0</strong>) de type <strong>Ethernet</strong> à laquelle est associée l&#039;adresse IP <strong>192.168.0.2</strong>.
+</p>
+
+<p>
+Nous devons donc associer une seconde adresse IP à notre interface réseau avec la commande :
+</p>
+<pre class="code">sudo ifconfig eth0:0 192.168.0.100</pre>
+
+<p>
+Notre interface réseau dispose maintenant de 2 adresses IP bien distinctes : <strong>192.168.0.2</strong> (Adresse IP) et <strong>192.168.0.100</strong> (Alias IP)
+</p>
+
+<p>
+Ceci est vérifiable avec la commande :
+</p>
+<pre class="code">ifconfig -a</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="virtualhosts_avec_apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424010014" /><input type="hidden" name="summary" value="[Association d'une 2nd adresse IP à une interface réseau (IP aliasing)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10305-12179" /><input type="submit" value="Modifier" class="button" title="Association d'une 2nd adresse IP à une interface réseau (IP aliasing)" /></div></form></div>
+<h3 class="sectionedit8" id="configuration_des_hotes_virtuels">Configuration des hôtes virtuels</h3>
+<div class="level3">
+
+<p>
+Ayant associé une nouvelle adresse IP à notre unique carte réseau, nous pouvons désormais créer nos deux <strong>Hôtes Virtuels</strong> utilisant chacun une adresse IP.
+</p>
+
+<p>
+Dans un premier temps, nous renseignons le fichier <strong>/etc/hosts</strong> avec deux noms de sites (ceux de nos hôtes Virtuels) associés respectivement aux deux adresses IP disponibles afin de permettre la résolution de nom (Nom ⇒ Adresse Ip). 
+</p>
+
+<p>
+<strong>Exemple de fichier hosts :</strong>
+</p>
+<pre class="file">127.0.0.1 	localhost
+192.168.0.2	virtual1.com
+192.168.0.100	virtual2.com</pre>
+
+<p>
+Une fois notre fichier <code>/etc/hosts</code> correctement renseigné, il ne nous reste plus qu&#039;à configurer nos hôtes virtuels en créant deux nouveaux fichiers dans le répertoire <strong>/etc/apache2/sites-available</strong> :
+</p>
+
+<p>
+<strong>virtual1.conf :</strong>
+</p>
+<pre class="file">&lt;VirtualHost 192.168.0.2:80&gt;
+	DocumentRoot	/var/www/virtual1.com
+	ServerName	virtual1.com
+&lt;/VirtualHost&gt;</pre>
+
+<p>
+<strong>virtual2.conf :</strong>
+</p>
+<pre class="file">&lt;VirtualHost 192.168.0.100:80&gt;
+	DocumentRoot /var/www/virtual2.com
+	ServerName virtual2.com
+&lt;/VirtualHost&gt;</pre>
+
+<p>
+<strong>Explication :</strong>
+</p>
+
+<p>
+Dans chacun des fichiers de configuration, on retrouve pour l&#039;hôte virtuel, l&#039;adresse IP choisie, ainsi que le port (80). Les 2 directives minimales sont <strong>DocumentRoot</strong> et <strong>ServerName</strong>.
+</p>
+
+<p>
+<strong>DocumentRoot</strong> permet de déclarer l&#039;emplacement de l&#039;arborescence Web de l&#039;hôte virtuel (l&#039;emplacement des fichiers sur votre système). Le nom du répertoire ne doit pas comporter le caractère <strong>/</strong> final.
+</p>
+
+<p>
+<strong>ServerName</strong> permet de définir le <strong>nom de domaine</strong> du Serveur Virtuel.
+</p>
+
+<p>
+<p><div class="noteclassic">Les répertoires <code>/var/www/virtual1.com</code> et <code>/var/www/virtual2.com</code> doivent exister et bénéficier des bonnes permissions.<br/>
+
+Pour les tests vous pouvez utiliser le chmod 755 sur ces répertoires.
+</div></p>
+</p>
+
+<p>
+Nos deux hôtes virtuels étant configurés, nous allons les activer avec les commandes :
+</p>
+<pre class="code">sudo a2ensite virtual1.conf
+sudo a2ensite virtual2.conf</pre>
+
+<p>
+N&#039;oubliez pas de recharger la configuration du serveur :
+</p>
+<pre class="code">sudo /etc/init.d/apache2 reload</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="virtualhosts_avec_apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424010014" /><input type="hidden" name="summary" value="[Configuration des hôtes virtuels] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12180-14204" /><input type="submit" value="Modifier" class="button" title="Configuration des hôtes virtuels" /></div></form></div>
+<h2 class="sectionedit9" id="ressources_externes">Ressources externes</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">  Exemples de la documentation officielle : <a href="http://httpd.apache.org/docs/2.0/vhosts/examples.html" class="urlextern" title="http://httpd.apache.org/docs/2.0/vhosts/examples.html"  rel="nofollow">http://httpd.apache.org/docs/2.0/vhosts/examples.html</a> (en)</div>
+</li>
+</ul>
+<hr />
+
+<p>
+ <em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/m._declercq" class="wikilink1" title="utilisateurs:m._declercq">M. DECLERCQ</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/enchained" class="wikilink1" title="utilisateurs:enchained">_Enchained</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/dolmen" class="wikilink1" title="utilisateurs:dolmen">dolmen</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/stephaneguedon" class="wikilink1" title="utilisateurs:stephaneguedon">stephaneguedon</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/monsar01" class="wikilink1" title="utilisateurs:monsar01">monsar01</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="virtualhosts_avec_apache2"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1424010014" /><input type="hidden" name="summary" value="[Ressources externes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14205-" /><input type="submit" value="Modifier" class="button" title="Ressources externes" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/0/0f4ed5fd9c47bc7c316423286ff62f31.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/virtualhosts_avec_apache2?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/virtualhosts_avec_apache2?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/virtualhosts_avec_apache2?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/virtualhosts_avec_apache2?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/virtualhosts_avec_apache2?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

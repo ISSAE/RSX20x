@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>energie</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-04-08T19:25:36+0200"/>
+<meta name="keywords" content="systeme,optimisation,energie"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../energie?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="energie"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/energie"/>
+<link rel="canonical" href="../../energie"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"energie","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="energie#reglages_de_base">Réglages de base</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="energie#sous_kde_kubuntu">Sous KDE (Kubuntu)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="energie#personnaliser_l_extinction">Personnaliser l&#039;extinction</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="energie#supprimer_la_boite_de_dialogue_de_confirmation">supprimer la  boite de dialogue de confirmation</a></div></li>
+<li class="level2"><div class="li"><a href="energie#forcer_l_extinction_par_appui_du_bouton_power">Forcer l&#039;extinction par appui du bouton power</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="energie#outils">Outils</a></div></li>
+<li class="level1"><div class="li"><a href="energie#processeur_et_ventilateur">Processeur et ventilateur</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="energie#frequence_du_processeur_en_fonction_de_l_etat_batteriesecteur">Fréquence du processeur en fonction de l&#039;état batterie/secteur</a></div></li>
+<li class="level2"><div class="li"><a href="energie#frequence_du_processeur">Fréquence du processeur</a></div></li>
+<li class="level2"><div class="li"><a href="energie#baisser_la_tension_du_processeur">Baisser la tension du processeur</a></div></li>
+<li class="level2"><div class="li"><a href="energie#controler_le_ventilateur">Contrôler le Ventilateur</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="energie#carte_wi-fi">Carte Wi-Fi</a></div></li>
+<li class="level1"><div class="li"><a href="energie#logiciel">Logiciel</a></div></li>
+<li class="level1"><div class="li"><a href="energie#carte_graphique">Carte Graphique</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="energie#atiamd">ATI/AMD</a></div></li>
+<li class="level2"><div class="li"><a href="energie#nvidia">nVidia</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="energie#ecran">Écran</a></div></li>
+<li class="level1"><div class="li"><a href="energie#peripheriques_usb_pcmcia">Périphériques USB, PCMCIA</a></div></li>
+<li class="level1"><div class="li"><a href="energie#disque_dur">Disque Dur</a></div></li>
+<li class="level1"><div class="li"><a href="energie#batterie">Batterie</a></div></li>
+<li class="level1"><div class="li"><a href="energie#onduleurs">Onduleurs</a></div></li>
+<li class="level1"><div class="li"><a href="energie#voir_aussi">Voir aussi</a></div></li>
+<li class="level1"><div class="li"><a href="energie#pages_en_rapport">Pages en rapport</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../optimisation" class="wikilink1" title="optimisation" rel="tag">optimisation</a>,
+	<a href="../../energie" class="wikilink1" title="energie" rel="tag">énergie</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="la_gestion_de_l_energie_sous_ubuntu">La gestion de l&#039;énergie sous Ubuntu</h1>
+<div class="level1">
+
+<p>
+Vous trouverez sur cette page un maximum d&#039;astuces pour faire diminuer la consommation de votre ordinateur, que ce soit un serveur, un ordinateur de bureau ou un <a href="../../portable" class="wikilink1" title="portable">portable</a>.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "La gestion de l'énergie sous Ubuntu" [47-277] -->
+<h2 class="sectionedit2" id="reglages_de_base">Réglages de base</h2>
+<div class="level2">
+
+<p>
+On peut diminuer la consommation d&#039;énergie en :
+</p>
+<ul>
+<li class="level1"><div class="li"> Modifiant les préférences du gestionnaire d&#039;énergie via le menu <em>Système → Préférences → Gestionnaire d&#039;énergie</em></div>
+</li>
+<li class="level1"><div class="li"> Exploitant le(s) bon(s) pilote(s) pour sa(ses) <a href="../../carte_graphique" class="wikilink1" title="carte_graphique">carte(s) graphique(s)</a> (en particulier pour les PC portables avec graphique hybride).</div>
+</li>
+<li class="level1"><div class="li"> Désinstallant les paquetages correspondant à des <a href="../../services" class="wikilink1" title="services">services</a> inutiles (on évite de rechercher le fichier de configuration et éventuellement d&#039;en lire le contenu)</div>
+</li>
+<li class="level1"><div class="li"> Désactivant des <a href="../../services" class="wikilink1" title="services">services</a> inutiles (dont les paquetages ne peuvent être désinstallés)</div>
+</li>
+<li class="level1"><div class="li"> <del>Forçant l&#039;activation du mode <a href="http://en.wikipedia.org/wiki/ASPM" class="urlextern" title="http://en.wikipedia.org/wiki/ASPM"  rel="nofollow">ASPM</a> (en) pour les cartes et bus PCI-E depuis Ubuntu 11.04. Voir <a href="https://bugs.launchpad.net/ubuntu/+source/linux/+bug/760131" class="urlextern" title="https://bugs.launchpad.net/ubuntu/+source/linux/+bug/760131"  rel="nofollow">ce bug</a> (en) : ajouter le paramètre <strong>pcie_aspm=force</strong> au paramètre <a href="../../grub-pc#etcdefaultgrub_options_par_defaut" class="urlextern" title="http://doc.ubuntu-fr.org/grub-pc#etcdefaultgrub_options_par_defaut"  rel="nofollow">GRUB_CMDLINE_LINUX_DEFAULT de grub</a>. Par exemple si vous avez GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”, ajoutez <strong>pcie_aspm=force</strong> à la fin de la ligne (précédé d’un espace) soit: <strong>GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash pcie_aspm=force”</strong>. A tester sur les configurations récentes, peut faire gagner plus de 20% d&#039;autonomie!</del></div>
+</li>
+<li class="level1"><div class="li"> Désactivant la compression lors de la rotation des fichiers journaux réalisée par <a href="../../logrotate" class="wikilink1" title="logrotate">logrotate</a></div>
+</li>
+<li class="level1"><div class="li"> Configurant un format de date plus court dans /etc/<a href="../../rsyslog.conf" class="wikilink1" title="rsyslog.conf">rsyslog.conf</a></div>
+</li>
+<li class="level1"><div class="li"> Utilisant l&#039;écran vide comme économiseur d&#039;écran</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Réglages de base" [278-1840] -->
+<h3 class="sectionedit3" id="sous_kde_kubuntu">Sous KDE (Kubuntu)</h3>
+<div class="level3">
+
+<p>
+Kde propose des services assez gourmands en ressources qui peuvent être facilement désactivés, voir ici: <a href="../../tutoriel/accelerer_kde" class="wikilink1" title="tutoriel:accelerer_kde">Optimiser KDE pour les ordinateurs portables</a>.
+</p>
+
+</div>
+
+<h4 id="corriger_certains_bugs_concernant_l_indicateur_de_batterie_teste_sous_kde_et_ubuntu_1304">Corriger certains bugs concernant l&#039;indicateur de batterie (Testé sous KDE et Ubuntu 13.04)</h4>
+<div class="level4">
+
+<p>
+SI l&#039;indicateur de batterie ne fonctionne pas ou mal, la barre de status n&#039;affiche pas le pourcentage de la batterie, ou celui-ci ne change jamais de taux, restant comme figé,
+si la recharge ne semble pas fonctionner, n&#039;est pas prise en compte:
+</p>
+
+<p>
+Assurez-vous que votre ordinateur est bien éteint et la prise d&#039;alimentation débranchée.
+</p>
+
+<p>
+<p><div class="noteimportant"> Problème: il est déconseillé de bouger un ordinateur en fonctionnement notamment pour ne pas abîmer le disque dur qui est en fonctionnement.
+Les disques durs de type SSD utilisant de la mémoire flash ne sont pas concernés par ce problème.
+</p>
+
+<p>
+Pour le résoudre s&#039;assurer de positionner l&#039;ordinateur de telle façon qu&#039;on puisse reclipser la batterie 
+sans avoir à bouger énormément l&#039;ordinateur et en le maintenant toujours droit à l&#039;aide d&#039;une surface plane.
+Par exemple en déconnectant légèrement la batterie sans l&#039;enlever complètement pour n&#039;avoir ensuite qu&#039;à pousser légèrement (et donc clipser la batterie).
+</p>
+
+<p>
+Agissez avec précautions en veillant à maintenir l&#039;ordinateur portable bien droit posé sur une surface plane en se servant par exemple du rebord d&#039;une table pour accéder à la batterie en positionnant l&#039;ordinateur dans le sens contraire et en tirant légèrement vers soi pour accéder facilement à la batterie.
+</div></p>
+</p>
+
+<p>
+L&#039;astuce va consister à déconnecter la batterie et redémarrer l&#039;ordinateur sur secteur puis
+une fois que la session est ouverte et que l&#039;indicateur de batterie affiche une croix rouge (batterie absente),
+rebrancher la batterie (en laissant toujours l&#039;alimentation sur secteur) et attendre quelques instants.
+L&#039;indicateur de batterie devrait se réinitialiser et ainsi aux prochains redémarrages le problème aura disparu.
+</p>
+
+<p>
+Pour le vérifier il suffit alors de noter le taux affiché (par exemple 10%) , puis un peu plus tard (5 minutes par exemple), noter à nouveau le taux affiché (par exemple 25%),
+indiquant que le problème a disparu.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Sous KDE (Kubuntu)" [1841-4117] -->
+<h2 class="sectionedit4" id="personnaliser_l_extinction">Personnaliser l&#039;extinction</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT4 SECTION "Personnaliser l'extinction" [4118-4154] -->
+<h3 class="sectionedit5" id="supprimer_la_boite_de_dialogue_de_confirmation">supprimer la  boite de dialogue de confirmation</h3>
+<div class="level3">
+
+<p>
+Par défaut Ubuntu propose une boite de dialogue de confirmation lorsque l&#039;on choisit éteindre dans le menu.
+Pour la supprimer, installer <strong><a href="apt://dconf-tools" class="interwiki iw_apt" title="apt://dconf-tools">dconf-tools</a></strong>
+Puis lancer dconf Editor
+Aller dans apps&gt;indicator-session et cocher la clé  suppress-logout-restart-shutdown 
+</p>
+
+</div>
+<!-- EDIT5 SECTION "supprimer la  boite de dialogue de confirmation" [4155-4485] -->
+<h3 class="sectionedit6" id="forcer_l_extinction_par_appui_du_bouton_power">Forcer l&#039;extinction par appui du bouton power</h3>
+<div class="level3">
+
+<p>
+Par défaut, une boîte de dialogue demande l&#039;action à effectuer lorsque l&#039;on appuie sur le bouton power de l&#039;ordinateur. On peut toutefois modifier cette action, mais cela est moins trivial sous Unity que sous Gnome 2 : 
+On va modifier l&#039;action déclenchée par l&#039;appui du bouton dans la procédure qui est appelée.
+Dans un terminal, taper :
+</p>
+<pre class="code">sudo gedit /etc/acpi/events/powerbtn</pre>
+
+<p>
+Le fichier s&#039;ouvre et on va ajouter # pour commenter (rendre inactive) la ligne : #action=/etc/acpi/powerbtn.sh
+</p>
+
+<p>
+Ajouter une nouvelle ligne : action=/sbin/poweroff
+</p>
+
+<p>
+Sauver le fichier et quitter.
+</p>
+
+<p>
+Toujours dans le terminal taper :  
+</p>
+<pre class="code">sudo acpid restart</pre>
+
+<p>
+<p><div class="notehelp"> Cette manipulation seule fonctionne sur la plupart des ordinateurs. Mais pour certains ordinateurs, comme le portable HP Pavillon dm1 cela provoque un freeze ; précisement lors de l&#039;affichage du logo Ubuntu au premier point rouge.
+Pour cela il suffit de rallumer le swap par la commande : 
+</p>
+<pre class="code">sudo swapon -a</pre>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Forcer l'extinction par appui du bouton power" [4486-5515] -->
+<h2 class="sectionedit7" id="outils">Outils</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong><a href="../../eee-control" class="wikilink1" title="eee-control">Eee-control</a></strong>, recommandé pour <a href="../../asus_eee_pc" class="wikilink1" title="asus_eee_pc">Eee PC</a> ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://sourceforge.net/projects/eeepc-acpi-util/files/" class="urlextern" title="http://sourceforge.net/projects/eeepc-acpi-util/files/"  rel="nofollow">EeePC ACPI Utilies</a></strong> ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://sourceforge.net/projects/eee-applet/" class="urlextern" title="http://sourceforge.net/projects/eee-applet/"  rel="nofollow">Eee-applet</a></strong> (disponible dans les dépôts) ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Eee PC ACPI script</strong> (disponible dans les dépôts) ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../acer_acpi" class="wikilink1" title="acer_acpi">Acer ACPI</a></strong>, pour les <a href="../../liste_portables_acer" class="wikilink1" title="liste_portables_acer">portables Acer</a> ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://www.buzzard.me.uk/toshiba/" class="urlextern" title="http://www.buzzard.me.uk/toshiba/"  rel="nofollow">Toshutils</a></strong>, pour les <a href="../../liste_portables_toshiba" class="wikilink1" title="liste_portables_toshiba">portables Toshiba</a>, (disponible dans les dépôts) ; pas de mise à jour depuis 2002 ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Toshset</strong>, recommandé pour les <a href="../../liste_portables_toshiba" class="wikilink1" title="liste_portables_toshiba">portables Toshiba</a> (disponible dans les dépôts) ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>FNFXD</strong>, recommandé pour les <a href="../../liste_portables_toshiba" class="wikilink1" title="liste_portables_toshiba">portables Toshiba</a> (disponible dans les dépôts) ;</div>
+</li>
+</ul>
+
+<p>
+Il existe d&#039;autres outils et d&#039;autres solutions plus générales :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><a href="../../powertop" class="wikilink1" title="powertop">PowerTOP</a></strong> pour la gestion des processeurs Intel ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../athcool" class="wikilink1" title="athcool">ATHcool</a></strong> pour la gestion des processeurs AMD ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Cpufreqd</strong>, pour la modification de fréquence de processeur (disponible dans les dépôts) ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>Powernowd</strong>, pour la modification de fréquence de processeur (disponible dans les dépôts) ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://doc.ubuntu-fr.org/cpu-frequtils" class="wikilink1" title="cpu-frequtils">CPU-frequtils</a></strong>, pour la modification de fréquence de processeur (disponible dans les dépôts) ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../laptop-mode-tools" class="wikilink1" title="laptop-mode-tools">Laptop mode tools</a></strong>, gestion de l&#039;énergie ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../battery-status" class="wikilink1" title="battery-status">Battery Status</a></strong>, ajoute l&#039;affichage du pourcentage d&#039;énergie (qui n&#039;est plus affiché sous Lucid) et la <span class="curid"><a href="../../energie#processeur_et_ventilateur" class="wikilink1" title="energie">manipulation des fréquences du processeur</a></span>.</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../jupiter" class="wikilink1" title="jupiter">Jupiter</a></strong> pour la gestion d&#039;énergie sur ordinateur portable en général, et plus particulièrement les <a href="../../asus_eee_pc" class="wikilink1" title="asus_eee_pc">Eee PC</a> ;</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://sourceforge.net/projects/undervolt/" class="urlextern" title="http://sourceforge.net/projects/undervolt/"  rel="nofollow">undervolt</a></strong>, pour la modification des tensions d&#039;alimentation des CPU de type AMD Brazos.</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html" class="urlextern" title="http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html"  rel="nofollow">TLP</a></strong> <a href="../../tlp" class="wikilink1" title="tlp">TLP</a> vous apporte les bénéfices de la gestion avancée de l&#039;alimentation sans avoir besoin de connaître tous les détails techniques.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT7 SECTION "Outils" [5516-7649] -->
+<h2 class="sectionedit8" id="processeur_et_ventilateur">Processeur et ventilateur</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT8 SECTION "Processeur et ventilateur" [7650-7687] -->
+<h3 class="sectionedit9" id="frequence_du_processeur_en_fonction_de_l_etat_batteriesecteur">Fréquence du processeur en fonction de l&#039;état batterie/secteur</h3>
+<div class="level3">
+
+<p>
+Pour étendre l&#039;autonomie de la batterie, le gestionnaire de fréquence peut être choisi en fonction du branchement ou non de la batterie sur le secteur.
+D&#039;abord, il faut installer le paquet qui contient les modules &quot;conservative&quot; et &quot;powersave&quot; :
+</p>
+<pre class="code">sudo apt-get install cpufrequtils</pre>
+
+<p>
+Ensuite, il faut créer une règle qui réagit au changement de mode d&#039;alimentation dans /etc/pm/power.d/cpufreq_governor :
+</p>
+<pre class="code">#!/bin/sh
+case $1 in
+    true) # mode batterie
+        cpufreq-set -g conservative -d 1
+        # or more agressive :
+        # cpufreq-set -g powersave
+	;;
+    false) # mode secteur
+        cpufreq-set -g ondemand
+	;;
+    *) exit $NA ;;
+esac
+exit 0</pre>
+
+</div>
+<!-- EDIT9 SECTION "Fréquence du processeur en fonction de l'état batterie/secteur" [7688-8449] -->
+<h3 class="sectionedit10" id="frequence_du_processeur">Fréquence du processeur</h3>
+<div class="level3">
+
+<p>
+Pour cela, il suffit d&#039;autoriser un utilisateur normal à changer la fréquence du processeur :
+</p>
+<pre class="code"> sudo dpkg-reconfigure gnome-applets</pre>
+
+<p>
+On peut ajouter l&#039;applet au tableau de bord en effectuant un clic droit sur le tableau de bord, puis :
+</p>
+<ol>
+<li class="level1"><div class="li"> Ajouter au tableau de bord</div>
+</li>
+<li class="level1"><div class="li"> Système et matériel</div>
+</li>
+<li class="level1"><div class="li"> Moniteur de fréquence du processeur</div>
+</li>
+<li class="level1"><div class="li"> Ajouter</div>
+</li>
+</ol>
+
+<p>
+L&#039;avantage des gouverneurs est que vous pouvez fixer par exemple :
+</p>
+<ul>
+<li class="level1"><div class="li"> ondemand : fréquence variable (par défaut), selon l&#039;utilisation de la machine</div>
+</li>
+<li class="level1"><div class="li"> performance : fréquence CPU au maximum (jeux, gros calculs, compilations)</div>
+</li>
+<li class="level1"><div class="li"> powersave : fréquence CPU au minimum (économie d&#039;énergie)</div>
+</li>
+</ul>
+
+<p>
+Pour plus d&#039;informations : <a href="http://doc.ubuntu-fr.org/cpu-frequtils" class="wikilink1" title="cpu-frequtils">cpu-frequtils</a>
+</p>
+
+<p>
+Si vous avez un ordinateur sur lequel cette manipulation ne fonctionne pas (par exemple plus ancien), vous pouvez essayer ce qui est indiqué sur cette page :
+ <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=39565" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=39565"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=39565</a>
+Mais cela est une manipulation peu recommandable car sans intérêt notable pour la température ou l&#039;autonomie.
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Fréquence du processeur" [8450-9504] -->
+<h3 class="sectionedit11" id="baisser_la_tension_du_processeur">Baisser la tension du processeur</h3>
+<div class="level3">
+
+<p>
+Voir la page : <a href="../../undervolting" class="wikilink1" title="undervolting">undervolting</a>
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Baisser la tension du processeur" [9505-9581] -->
+<h3 class="sectionedit12" id="controler_le_ventilateur">Contrôler le Ventilateur</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteimportant"><strong>En réduisant la vitesse du ventilateur, vous favorisez la surchauffe du micro-processeur, ce qui risque fortement de le détruire!! Vous utilisez ce logiciel a vos risques et périls!</strong>
+</div></p>
+</p>
+
+<p>
+Voir la page : <a href="../../lm-sensors" class="wikilink1" title="lm-sensors">lm-sensors</a>
+</p>
+
+</div>
+<!-- EDIT12 SECTION "Contrôler le Ventilateur" [9582-9864] -->
+<h2 class="sectionedit13" id="carte_wi-fi">Carte Wi-Fi</h2>
+<div class="level2">
+
+<p>
+Pour activer le mode &#039;gestion d&#039;énergie automatique&#039; (moyen), <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditez le fichier</a> <strong><code>/etc/network/interfaces</code></strong>, et  rajoutez, sous la ligne de votre carte Wifi (généralement eth1 ou wlan0), la ligne suivante :
+</p>
+<pre class="code"> wireless-power on </pre>
+
+<p>
+Redémarrez ou faites :
+</p>
+<pre class="code">sudo /etc/init.d/networking restart  </pre>
+
+<p>
+Vérifiez à l&#039;aide de la commande iwconfig eth1 (ou wlan0) ⇒ &#039;Power management&#039; doit être à &#039;on&#039;.
+</p>
+
+<p>
+<p><div class="noteclassic">Ne fonctionne pas avec toutes les cartes Wi-Fi
+Pour les cartes Atheros (ainsi que toutes les autres en principe) il faut désactiver le module qui gère la carte (ath_pci pourra être remplacé par un autre module): 
+</p>
+<pre class="code">sudo rmmod ath_pci</pre>
+
+<p>
+
+</div></p>
+<p><div class="noteclassic">Comment fait-on avec Network Manager ? (le fichier interfaces n&#039;est plus utilisé) 
+</div></p>
+</p>
+
+<p>
+Il faut taper :
+</p>
+<pre class="code">sudo iwconfig interface power on </pre>
+
+<p>
+pour activer la gestion d&#039;énergie :
+</p>
+
+<p>
+(ou  &quot;sudo iwconfig wlan0 power on&quot;)
+</p>
+
+</div>
+<!-- EDIT13 SECTION "Carte Wi-Fi" [9865-10829] -->
+<h2 class="sectionedit14" id="logiciel">Logiciel</h2>
+<div class="level2">
+
+<p>
+Pour que Firefox place son cache dans le répertoire /tmp (mémoire vive). Taper about:config dans Firefox et créer une nouvelle chaîne de caractères que vous nommerez browser.cache.disk.parent_directory et entrez dans la case /tmp. 
+Moins d&#039;accès disque donc moins de consommation.
+</p>
+
+</div>
+<!-- EDIT14 SECTION "Logiciel" [10830-11138] -->
+<h2 class="sectionedit15" id="carte_graphique">Carte Graphique</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT15 SECTION "Carte Graphique" [11139-11167] -->
+<h3 class="sectionedit16" id="atiamd">ATI/AMD</h3>
+<div class="level3">
+
+<p>
+Avec le pilote libre propriétaire fglrx : voir <a href="../../aticonfig" class="wikilink1" title="aticonfig">les options pour bien configurer votre ATI</a> (Catégorie Powerplay options)
+</p>
+
+<p>
+Avec le pilote libre radeon :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Dynamic Power Management (DPM)</strong> pour Linux 3.11 et supérieur, avec les cartes AMD série HD2000 et supérieur <a href="http://www.botchco.com/agd5f/?p=57" class="urlextern" title="http://www.botchco.com/agd5f/?p=57"  rel="nofollow">infos ici (en)</a> : activé par défaut dès Linux 3.12.</div>
+</li>
+<li class="level1"><div class="li"> <strong>dynamic clock switching</strong> pour le reste : <a href="http://www.overclock.net/t/731469/how-to-power-saving-with-the-radeon-driver" class="urlextern" title="http://www.overclock.net/t/731469/how-to-power-saving-with-the-radeon-driver"  rel="nofollow">infos ici (en)</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT16 SECTION "ATI/AMD" [11168-11710] -->
+<h3 class="sectionedit17" id="nvidia">nVidia</h3>
+<div class="level3">
+
+<p>
+Changer fréquence horloge, gérer les ventilateurs … : <a href="../../nvclock" class="wikilink1" title="nvclock">nvclock</a>
+Pour les gpu plus recent voir <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=1589261" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=1589261"  rel="nofollow">Nvidiux</a>
+</p>
+
+</div>
+<!-- EDIT17 SECTION "nVidia" [11711-11893] -->
+<h2 class="sectionedit18" id="ecran">Écran</h2>
+<div class="level2">
+
+<p>
+Dans certains cas, le rétro-éclairage de l&#039;écran n&#039;est pas coupé alors qu&#039;il n&#039;y a plus aucune image envoyée (écran noir). Cela est gênant par exemple lorsqu&#039;on utilise un ordinateur portable en temps que serveur.
+</p>
+
+<p>
+Pour couper le rétro éclairage :
+</p>
+<ul>
+<li class="level1"><div class="li"> si aucune session graphique n&#039;est démarrée, utiliser une des commandes suivantes (la second si la première ne fonctionne pas) : <pre class="code">sudo vbetool dpms off
+sudo vbetool dpms standby</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> si une session graphique est démarrée, préférer xset qui rallumera l&#039;écran lorsque vous bougerez la souris : <pre class="code">xset dpms force off
+xset dpms standby</pre>
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT18 SECTION "Écran" [11894-12539] -->
+<h2 class="sectionedit19" id="peripheriques_usb_pcmcia">Périphériques USB, PCMCIA</h2>
+<div class="level2">
+
+<p>
+Couper alimentation du lecteur PCMCIA (A tester) : 
+</p>
+<pre class="code">  cardctl suspend</pre>
+
+<p>
+Pour le réalimenter :
+</p>
+<pre class="code">  cardctl resume</pre>
+
+<p>
+Plus généralement, je pense que si on décharge le module correspondant au périphérique ça suffit :
+</p>
+<pre class="code">  modprobe -r nom_du_module</pre>
+
+</div>
+<!-- EDIT19 SECTION "Périphériques USB, PCMCIA" [12540-12834] -->
+<h2 class="sectionedit20" id="disque_dur">Disque Dur</h2>
+<div class="level2">
+
+<p>
+Voir <a href="../../gnome-disk-utility#gestion_d_energie" class="wikilink1" title="gnome-disk-utility">Disques</a>.
+</p>
+
+</div>
+<!-- EDIT20 SECTION "Disque Dur" [12835-12913] -->
+<h2 class="sectionedit21" id="batterie">Batterie</h2>
+<div class="level2">
+
+<p>
+Par défaut, Ubuntu lance une hibernation de l&#039;ordinateur portable quand la batterie est à un niveau de charge exprimé en minutes. Cela peut correspondre à un niveau très différent suivant les ordinateurs. 
+On peut souhaiter changer ce niveau, le voir exprimé en pourcentage, changer l&#039;action à effectuer. Ces modifications se font sur <a href="../../gconf" class="wikilink1" title="gconf">gconf</a>.
+pour cela : alt-f2 et gconf-editor (et pour Xubuntu?)
+</p>
+<ul>
+<li class="level1"><div class="li"> pour expression en pourcentage : désactiver use_time_for_policy dans apps/gnome-power-manager/general</div>
+</li>
+<li class="level1"><div class="li"> mettre le % et l&#039;action (suspend par exemple) dans apps/gnome-power-manager/thresholds</div>
+</li>
+</ul>
+
+<p>
+À partir de <strong>Ubuntu 12.04</strong> (et probablement 11.10 mais c&#039;est à tester) ces options sont à gérer non plus avec gconf mais avec <a href="../../dconf-tools" class="wikilink1" title="dconf-tools">dconf</a>. Pour les faire il faut installer le paquet dconf-editor puis le lancer en faisant Alt+F2 puis dconf-editor. la clef à modifier est toujous use_time_for_policy mais se situe dans : org.gnome.settings-daemon.plugins.power.
+</p>
+
+<p>
+<p><div class="notetip">
+Ce paramétrage est notamment très utile pour éviter de passer en hibernation lorsqu&#039;on débranche le câble d&#039;alimentation secteur et que la batterie est pourtant à 100%. Gnome Power Manager calcule mal le temps restant (1 minute) et prend la décision d&#039;hiberner la machine. En utilisant l&#039;expression en pourcentage, le temps restant (affiché lors de la déconnexion du câble d&#039;alimentation) reste faux mais la machine ne s&#039;éteint pas !
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">Pas valable avec Ubuntu 11.10
+</div></p>
+</p>
+
+</div>
+<!-- EDIT21 SECTION "Batterie" [12914-14438] -->
+<h2 class="sectionedit22" id="onduleurs">Onduleurs</h2>
+<div class="level2">
+
+<p>
+Si votre ordinateur est connecté à un onduleur (ou alimentation sans interruption<sup><a href="energie#fn__1" id="fnt__1" class="fn_top">1)</a></sup> ) il est intéressant de le superviser.
+Cela permet, entre autre chose, d&#039;éteindre proprement l&#039;ordinateur si le courant ne revient pas et que la batterie de l&#039;onduleur atteint un seuil critique.
+</p>
+<ul>
+<li class="level1"><div class="li"> La plupart des onduleurs sont reconnus par le logiciel <a href="../../nut" class="wikilink1" title="nut">NUT (Network UPS Tool)</a>.</div>
+</li>
+<li class="level1"><div class="li"> Les onduleurs de marque EATON ou MGE peuvent être supervisés par le logiciel <a href="../../onduleur_mge_ups_systems_psp" class="wikilink1" title="onduleur_mge_ups_systems_psp">MGE Office Protection System : Personal Solution Pack</a>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT22 SECTION "Onduleurs" [14439-15026] -->
+<h2 class="sectionedit23" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Moins de Watts consommé par le PC portable : <a href="http://www.lesswatts.org/" class="urlextern" title="http://www.lesswatts.org/"  rel="nofollow">http://www.lesswatts.org/</a> (en) : site dédié aux plateformes Intel.</div>
+</li>
+<li class="level1"><div class="li"> Discussion sur le forum ubuntu-fr: <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=43463" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=43463"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=43463</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT23 SECTION "Voir aussi" [15027-15260] -->
+<h2 class="sectionedit24" id="pages_en_rapport">Pages en rapport</h2>
+<div class="level2">
+<div class="table">
+<table class="inline">
+	<tr>
+		<th class="page">Page</th>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../athcool" class="wikilink1" title="athcool">athcool : Activer le powersaving sur AMD Athlon et Duron</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../laptop-mode-tools" class="wikilink1" title="laptop-mode-tools">Augmentez l&#039;autonomie de votre batterie grâce à laptop-mode-tools !</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../tutoriel/comment_afficher_statut_batterie_acpi" class="wikilink1" title="tutoriel:comment_afficher_statut_batterie_acpi">Batteries ACPI</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../battery-status" class="wikilink1" title="battery-status">Battery Status</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../rsyslog.conf" class="wikilink1" title="rsyslog.conf">Changer le format de date par défaut</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../tutoriel/reactver_hibernation" class="wikilink1" title="tutoriel:reactver_hibernation">Comment réactiver l&#039;hibernation</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="http://doc.ubuntu-fr.org/cpu-frequtils" class="wikilink1" title="cpu-frequtils">CPU-Frequtils : Processeur - Gouverneur</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../eee-control" class="wikilink1" title="eee-control">Eee Control</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../retro-eclairage" class="wikilink1" title="retro-eclairage">Gestion du rétro éclairage</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../jupiter" class="wikilink1" title="jupiter">Jupiter : un gestionnaire d&#039;énergie</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../energie" class="wikilink1" title="energie">La gestion de l&#039;énergie sous Ubuntu</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../lm-sensors" class="wikilink1" title="lm-sensors">lm-sensors : Utiliser les capteurs matériels</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../logrotate" class="wikilink1" title="logrotate">Logrotate</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../veille_et_hibernation" class="wikilink1" title="veille_et_hibernation">Mise en veille / Hibernation</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../swiftfox" class="wikilink1" title="swiftfox">Navigateur Web Swiftfox</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../swiftweasel" class="wikilink1" title="swiftweasel">Navigateur Web Swiftweasel</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../nut" class="wikilink1" title="nut">Network UPS Tools (NUT)</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../nvidia_optimus" class="wikilink1" title="nvidia_optimus">nVidia Optimus : la vidéo hybride</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../onduleur_belkin_ups" class="wikilink1" title="onduleur_belkin_ups">Onduleur Belkin UPS</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../onduleur_mge_ups_systems_psp" class="wikilink1" title="onduleur_mge_ups_systems_psp">Onduleur Eaton | MGE Office Protection Systems : Personal Solution Pac</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../powertop" class="wikilink1" title="powertop">PowerTOP</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../tlp" class="wikilink1" title="tlp">TLP : un gestionnaire d&#039;énergie</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../tuxonice" class="wikilink1" title="tuxonice">TuxOnIce</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../undervolting" class="wikilink1" title="undervolting">Undervolting</a></td>
+	</tr>
+	<tr>
+		<td class="page"><a href="../../vga_switcheroo" class="wikilink1" title="vga_switcheroo">vga_switcheroo</a></td>
+	</tr>
+</table>
+</div>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a>, <a href="../../utilisateurs/percherie" class="wikilink1" title="utilisateurs:percherie">Percherie</a></em>
+</p>
+
+</div>
+<!-- EDIT24 SECTION "Pages en rapport" [15261-] --><div class="footnotes">
+<div class="fn"><sup><a href="energie#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+en anglais UPS</div>
+</div>
+
+<!-- no cachefile used, caching forbidden -->
+</div>
+</body>
+</html>

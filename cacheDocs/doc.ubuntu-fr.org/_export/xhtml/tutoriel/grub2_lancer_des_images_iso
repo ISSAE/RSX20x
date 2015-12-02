@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>tutoriel:grub2_lancer_des_images_iso</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-04-13T09:14:43+0200"/>
+<meta name="keywords" content="precise,quantal,raring,saucy,amorcage"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="../../../tutoriel/grub2_lancer_des_images_iso?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="grub2_lancer_des_images_iso"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../raw/tutoriel/grub2_lancer_des_images_iso"/>
+<link rel="canonical" href="../../../tutoriel/grub2_lancer_des_images_iso"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:grub2_lancer_des_images_iso","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="grub2_lancer_des_images_iso#objectifs_de_ce_tutoriel">Objectifs de ce tutoriel</a></div></li>
+<li class="level1"><div class="li"><a href="grub2_lancer_des_images_iso#pre-requisnotice_d_utilisation">Pré-requis / Notice d&#039;utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#ubuntu_ou_ses_derives">Ubuntu ou ses dérivés</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="grub2_lancer_des_images_iso#installer_a_partir_d_un_iso_desktop">Installer à partir d&#039;un iso &quot;desktop&quot;</a></div></li>
+<li class="level1"><div class="li"><a href="grub2_lancer_des_images_iso#net-install">net-install</a></div></li>
+<li class="level1"><div class="li"><a href="grub2_lancer_des_images_iso#maintenance">Maintenance</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#parted_magic">Parted Magic</a></div></li>
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#systemrescuecd">SystemRescueCd</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="grub2_lancer_des_images_iso#grub_2_sur_une_clef_usb">GRUB 2 sur une clef USB</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#installation">Installation</a></div></li>
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#configuration_du_chargeur_d_amorcage_de_la_cle">Configuration du chargeur d&#039;amorçage de la clé</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="grub2_lancer_des_images_iso#autres_distributions_testees">Autres distributions testées</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#aptosid_anciennement_sidux">Aptosid (anciennement Sidux)</a></div></li>
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#elive">Elive</a></div></li>
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#gentoo">Gentoo</a></div></li>
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#slitaz">Slitaz</a></div></li>
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#vector_linux">Vector Linux</a></div></li>
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#zevenos">ZevenOS</a></div></li>
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#clonezilla">CloneZilla</a></div></li>
+<li class="level2"><div class="li"><a href="grub2_lancer_des_images_iso#fedora">Fedora</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="../../../quantal" class="wikilink1" title="quantal" rel="tag">Quantal</a>,
+	<a href="../../../raring" class="wikilink1" title="raring" rel="tag">Raring</a>,
+	<a href="../../../saucy" class="wikilink1" title="saucy" rel="tag">Saucy</a>,
+	<a href="../../../amorcage" class="wikilink1" title="amorcage" rel="tag">amorçage</a>
+</span></div>
+<hr />
+
+<p>
+<p><div class="noteclassic">Cette page ne concerne qu&#039;une des utilisations possibles de Grub2 dont la documentation détaillée est disponible <a href="../../../grub-pc" class="wikilink1" title="grub-pc">ici</a>.
+</div></p>
+</p>
+
+<h1 class="sectionedit1" id="lancer_des_images_iso_directement_depuis_grub_2">Lancer des images iso directement depuis GRUB 2</h1>
+<div class="level1">
+
+<p>
+Pour <strong>lancer une distribution linux sans avoir à graver sur Cd</strong>, les solutions existantes ont le plus souvent le recours à une clé <abbr title="Universal Serial Bus">USB</abbr> :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong><a href="http://forum.ubuntu-fr.org/viewtopic.php?id=427605" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=427605"  rel="nofollow">via le MultiSystem pour clé USB de Frafa</a></strong>,</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="http://crunchbanglinux-fr.org/wiki/crunchbang:installer:usb_live" class="urlextern" title="http://crunchbanglinux-fr.org/wiki/crunchbang:installer:usb_live"  rel="nofollow">ou avec l&#039;instruction &quot;dd&quot;</a></strong> (fonctionne avec Debian squeeze et dérivés mais pas toujours avec Ubuntu : la clé ne boote pas),</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../../usb-creator" class="wikilink1" title="usb-creator">ou via le créateur de disque de démarrage USB</a></strong> présent en standard dans Ubuntu,</div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../../../unetbootin" class="wikilink1" title="unetbootin">ou via le logiciel Unetbootin</a></strong>,</div>
+</li>
+<li class="level1"><div class="li"> ou encore <strong><a href="../../../virtualbox" class="wikilink1" title="virtualbox"> avec Virtualbox</a></strong> qui ne nécessite pas de clé <abbr title="Universal Serial Bus">USB</abbr> mais dont l&#039;inconvénient est qu&#039;il ne teste pas votre configuration mais un matériel émulé.</div>
+</li>
+</ul>
+
+<p>
+<strong>Voici la procédure à suivre pour lancer vos isos présents sur le disque dur directement avec <a href="../../../grub-pc" class="wikilink1" title="grub-pc">Grub 2</a></strong>.
+<strong>Ce type de lancement ne fonctionne pas dans toutes les distributions Linux.</strong> Le fonctionnement est aussi très différent d&#039;une distribution à l&#039;autre.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Lancer des images iso directement depuis GRUB 2" [200-1335] -->
+<h2 class="sectionedit2" id="objectifs_de_ce_tutoriel">Objectifs de ce tutoriel</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> vous donner la possibilité de <strong>tester</strong> toutes les versions Ubuntu concernées par la documentation du site doc.ubuntu-fr.org sur un matériel non émulé,</div>
+</li>
+<li class="level1"><div class="li"> vous donner nos expériences d&#039;<strong>installation d&#039;Ubuntu sans gravure</strong> sur CD,</div>
+</li>
+<li class="level1"><div class="li"> vous donner la possibilité d&#039;utiliser des isos de <strong>maintenance</strong> (Parted Magic, SytemRescueCD,..) depuis un menu Grub2,</div>
+</li>
+<li class="level1"><div class="li"> vous donner les menus pour d&#039;autres distributions que l&#039;on peut lancer de la même façon (à titre d&#039;<strong>exemples</strong>),..</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Objectifs de ce tutoriel" [1336-1866] -->
+<h2 class="sectionedit3" id="pre-requisnotice_d_utilisation">Pré-requis / Notice d&#039;utilisation</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Vérifier que la version de Grub (<strong>grub-install -v</strong>) est une version 1.97 ou supérieure.</div>
+</li>
+<li class="level1"><div class="li"> Dans les exemples cités, la partition <strong>(hd0,7)</strong> soit /dev/sda7 <strong>est à adapter à votre propre configuration</strong> (<a href="../../../grub-pc#numerotation_des_disques" class="wikilink1" title="grub-pc">voir notice ici</a>).</div>
+</li>
+<li class="level1"><div class="li"> <strong>les isos sont stockés à la racine de cette partition</strong> plutôt que dans un sous-dossier car plus facile à trouver pour grub. </div>
+</li>
+<li class="level1"><div class="li"> Les menus sont à <strong><a href="../../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">ajouter au fichier</a> /etc/grub.d/40_custom</strong>. Ensuite, pour qu&#039;ils soient activés dans grub : <pre class="code">sudo update-grub</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> On peut spécifier <strong><a href="../../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">ajouter au fichier</a> /etc/grub.d/50_isofile  /etc/grub.d/666_windows</strong> et ainsi de suite, grub-mkconfig et update-grub les passe en revue dans l&#039;ordre les exécutables <pre class="code">chmod +x 50* 66* </pre>
+
+<p>
+pour les désactiver 55_test : 
+</p>
+<pre class="code">chmod -x 55_test </pre>
+</div>
+</li>
+<li class="level1"><div class="li">  Ensuite, pour qu&#039;ils soient activés dans grub : <pre class="code">sudo update-grub</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Les menus peuvent également être insérés dans le fichier /boot/grub/custom.cfg. Ils sont alors pris en compte sans avoir à mettre à jour le fichier /boot/grub/grub.cfg par la commande update-grub</div>
+</li>
+</ul>
+
+<p>
+<strong>Note:</strong> le fichier /boot/grub/grub.cfg ne peut pas être édité pour insérer des menus!
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Pré-requis / Notice d'utilisation" [1867-3216] -->
+<h3 class="sectionedit4" id="ubuntu_ou_ses_derives">Ubuntu ou ses dérivés</h3>
+<div class="level3">
+
+<p>
+Cette configuration fonctionne aussi pour Linux Mint.
+</p>
+
+</div>
+
+<h4 id="menu_de_base">Menu de base</h4>
+<div class="level4">
+
+<p>
+Voici le menu de base pour le lancement du CD Live avec prise en charge du français :
+</p>
+<dl class="file">
+<dt><a href="../../code/tutoriel/grub2_lancer_des_images_iso?codeblock=4" title="Télécharger un extrait" class="mediafile mf_d_40_custom__extrait_">/etc/grub.d/40_custom_(extrait)</a></dt>
+<dd><pre class="code file txt">menuentry &quot;.. Ubuntu 14.04 Trusty i386&quot; {
+    insmod loopback
+    insmod iso9660
+    set isofile=&quot;/ubuntu-14.04-desktop-i386.iso&quot;
+    #recherche de la partition dans laquelle se trouve le fichier ISO et montage de celle ci dans &quot;/&quot;
+    search -sf $isofile
+    #Montage du fichier ISO dans (loop)/
+    loopback loop $isofile
+    echo	'Chargement du noyau Linux ...'
+    linux (loop)/casper/vmlinuz.efi locale=fr_FR bootkbd=fr console-setup/layoutcode=fr iso-scan/filename=$isofile boot=casper file=/cdrom/preseed/ubuntu.seed quiet splash --
+    echo	'Chargement du disque mémoire initial ...'
+    initrd (loop)/casper/initrd.lz
+}</pre>
+</dd></dl>
+
+</div>
+
+<h4 id="adaptations_pour_ubuntu">Adaptations pour Ubuntu</h4>
+<div class="level4">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/ubuntu" class="wikilink1" title="ubuntu">Article détaillé sur cette variante</a>.
+<strong>CD :</strong> <a href="http://releases.ubuntu.com/precise/" class="urlextern" title="http://releases.ubuntu.com/precise/"  rel="nofollow">Precise</a>, <a href="http://releases.ubuntu.com/quantal/" class="urlextern" title="http://releases.ubuntu.com/quantal/"  rel="nofollow">Quantal</a>, <a href="http://releases.ubuntu.com/raring/" class="urlextern" title="http://releases.ubuntu.com/raring/"  rel="nofollow">Raring</a>, <a href="http://releases.ubuntu.com/saucy/" class="urlextern" title="http://releases.ubuntu.com/saucy/"  rel="nofollow">Saucy</a>. <strong>DVD :</strong> <a href="http://cdimage.ubuntu.com/releases/precise/release/" class="urlextern" title="http://cdimage.ubuntu.com/releases/precise/release/"  rel="nofollow">Precise</a>. <strong>Versions de développement :</strong> <del>Alpha, Beta,..</del><sup><a href="grub2_lancer_des_images_iso#fn__1" id="fnt__1" class="fn_top">1)</a></sup>, <a href="http://cdimage.ubuntu.com/daily-live/current/" class="urlextern" title="http://cdimage.ubuntu.com/daily-live/current/"  rel="nofollow">Daily builds</a>.<br/>
+
+Selon votre configuration, il faudra adapter &quot;(hd0,7)&quot; en mettant le numéro de partition sur laquelle est votre iso.
+</p>
+
+<p>
+<strong>NB</strong>: À partir d&#039;Ubuntu 13.10, pour les versions AMD64 <em class="u">exclusivement</em>, il faut modifier le début de la ligne la ligne <em>linux (loop)/casper/vmlinuz</em> en <strong>linux (loop)/casper/vmlinuz.efi</strong>
+</p>
+
+<p>
+En fonction de la version à lancer, vous devrez aussi adapter &quot;<em>set isofile=</em>&quot; (nom et emplacement du fichier à lancer) ainsi :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Ubuntu Amd64</strong> (français partiellement fonctionnel) : </div>
+<ul>
+<li class="level2"><div class="li"> Precise (<a href="http://releases.ubuntu.com/precise/ubuntu-12.04.2-desktop-amd64.iso.torrent" class="urlextern" title="http://releases.ubuntu.com/precise/ubuntu-12.04.2-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-12.04.2-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Quantal (<a href="http://releases.ubuntu.com/quantal/ubuntu-12.10-desktop-amd64.iso.torrent" class="urlextern" title="http://releases.ubuntu.com/quantal/ubuntu-12.10-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-12.10-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Raring (<a href="http://releases.ubuntu.com/raring/ubuntu-13.04-desktop-amd64.iso.torrent" class="urlextern" title="http://releases.ubuntu.com/raring/ubuntu-13.04-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-13.04-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Saucy (<a href="http://releases.ubuntu.com/saucy/ubuntu-13.10-desktop-amd64.iso.torrent" class="urlextern" title="http://releases.ubuntu.com/saucy/ubuntu-13.10-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-13.10-desktop-amd64.iso&quot;</em></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Ubuntu</strong> i<strong>386</strong> :</div>
+<ul>
+<li class="level2"><div class="li"> Precise (<a href="http://releases.ubuntu.com/precise//ubuntu-12.04.2-desktop-i386.iso.torrent" class="urlextern" title="http://releases.ubuntu.com/precise//ubuntu-12.04.2-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-12.04.2-desktop-i386.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Quantal (<a href="http://releases.ubuntu.com/quantal/ubuntu-12.10-desktop-i386.iso.torrent" class="urlextern" title="http://releases.ubuntu.com/quantal/ubuntu-12.10-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-12.10-desktop-i386.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Raring (<a href="http://releases.ubuntu.com/raring/ubuntu-13.04-desktop-i386.iso.torrent" class="urlextern" title="http://releases.ubuntu.com/raring/ubuntu-13.04-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-13.04-desktop-i386.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Saucy (<a href="http://releases.ubuntu.com/saucy/ubuntu-13.10-desktop-i386.iso.torrent" class="urlextern" title="http://releases.ubuntu.com/saucy/ubuntu-13.10-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-13.10-desktop-i386.iso&quot;</em></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Ubuntu Amd64 DVD</strong> (le français y est fonctionnel) :</div>
+<ul>
+<li class="level2"><div class="li"> Precise (<a href="http://cdimage.ubuntu.com/releases/precise/release/ubuntu-12.04.2-dvd-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/releases/precise/release/ubuntu-12.04.2-dvd-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-12.04.2-dvd-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> au delà (plus de version spécifique)</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h4 id="pour_ubuntu_gnome">Pour Ubuntu Gnome</h4>
+<div class="level4">
+
+<p>
+<a href="../../../ubuntu_gnome" class="wikilink1" title="ubuntu_gnome">Article détaillé sur cette variante</a> basé sur l&#039;environnement de bureau <a href="http://doc.ubuntu-fr.org/gnome-shell" class="wikilink1" title="gnome-shell">GNOME Shell</a>.
+<strong>CD :</strong> <a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/raring/release/" class="urlextern" title="http://cdimage.ubuntu.com/ubuntu-gnome/releases/raring/release/"  rel="nofollow">Raring</a>, <a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/saucy/release/" class="urlextern" title="http://cdimage.ubuntu.com/ubuntu-gnome/releases/saucy/release/"  rel="nofollow">Saucy</a>. <strong>Versions de développement :</strong> <a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04/" class="urlextern" title="http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04/"  rel="nofollow">Alpha, Beta,..</a>, <a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/" class="urlextern" title="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/"  rel="nofollow">Daily builds</a>.<br/>
+
+Comme pour la version d&#039;Ubuntu standard, il faudra adapter &quot;(hd0,7)&quot; en fonction de la partition sur laquelle se trouve l&#039;iso à lancer.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Ubuntu Gnome Amd64</strong> :</div>
+<ul>
+<li class="level2"><div class="li"> Raring (<a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/raring/release/ubuntu-gnome-13.04-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/ubuntu-gnome/releases/raring/release/ubuntu-gnome-13.04-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-gnome-13.04-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Saucy (<a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/saucy/release/ubuntu-gnome-13.10-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/ubuntu-gnome/releases/saucy/release/ubuntu-gnome-13.10-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-gnome-13.10-desktop-amd64.iso&quot;</em></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Ubuntu Gnome </strong>i<strong>386</strong> :</div>
+<ul>
+<li class="level2"><div class="li"> Raring (<a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/raring/release/ubuntu-gnome-13.04-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/ubuntu-gnome/releases/raring/release/ubuntu-gnome-13.04-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-gnome-13.04-desktop-i386.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Saucy (<a href="http://cdimage.ubuntu.com/ubuntu-gnome/releases/saucy/release/ubuntu-gnome-13.10-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/ubuntu-gnome/releases/saucy/release/ubuntu-gnome-13.10-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/ubuntu-gnome-13.10-desktop-i386.iso&quot;</em></div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h4 id="pour_kubuntu">Pour Kubuntu</h4>
+<div class="level4">
+
+<p>
+<a href="../../../kubuntu" class="wikilink1" title="kubuntu">Article détaillé sur cette variante</a>.
+<strong>CD :</strong> <a href="http://cdimage.ubuntu.com/kubuntu/releases/precise/release/" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/precise/release/"  rel="nofollow">Precise</a>, <a href="http://cdimage.ubuntu.com/kubuntu/releases/quantal/release/" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/quantal/release/"  rel="nofollow">Quantal</a>, <a href="http://cdimage.ubuntu.com/kubuntu/releases/raring/release/" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/raring/release/"  rel="nofollow">Raring</a>, <a href="http://cdimage.ubuntu.com/kubuntu/releases/saucy/release/" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/saucy/release/"  rel="nofollow">Saucy</a>. <strong>Versions de développement :</strong> <a href="http://cdimage.ubuntu.com/kubuntu/releases/14.04/" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/14.04/"  rel="nofollow">Alpha, Beta,..</a>, <a href="http://cdimage.ubuntu.com/kubuntu/daily-live/current/" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/daily-live/current/"  rel="nofollow">Daily builds</a>.<br/>
+
+Comme pour les versions Ubuntu, il faudra adapter &quot;(hd0,7)&quot; en fonction de la partition sur laquelle se trouve l&#039;iso à lancer. Mais en plus, il faudra modifier &quot;file=/cdrom/preseed/ubuntu.seed&quot; en mettant kubuntu.seed au lieu de ubuntu.seed.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Kubuntu Amd64</strong> :</div>
+<ul>
+<li class="level2"><div class="li"> Precise (<a href="http://cdimage.ubuntu.com/kubuntu/releases/precise/release/kubuntu-12.04.2-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/precise/release/kubuntu-12.04.2-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/kubuntu-12.04.2-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Quantal (<a href="http://cdimage.ubuntu.com/kubuntu/releases/quantal/release/kubuntu-12.10-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/quantal/release/kubuntu-12.10-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/kubuntu-12.10-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Raring (<a href="http://cdimage.ubuntu.com/kubuntu/releases/raring/release/kubuntu-13.04-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/raring/release/kubuntu-13.04-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/kubuntu-13.04-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Saucy (<a href="http://cdimage.ubuntu.com/kubuntu/releases/saucy/release/kubuntu-13.10-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/saucy/release/kubuntu-13.10-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/kubuntu-13.10-desktop-amd64.iso&quot;</em></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Kubuntu </strong>i<strong>386</strong> :</div>
+<ul>
+<li class="level2"><div class="li"> Precise (<a href="http://cdimage.ubuntu.com/kubuntu/releases/precise/release/kubuntu-12.04.2-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/precise/release/kubuntu-12.04.2-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/kubuntu-12.04.2-desktop-i386.iso&quot;</em> </div>
+</li>
+<li class="level2"><div class="li"> Quantal (<a href="http://cdimage.ubuntu.com/kubuntu/releases/quantal/release/kubuntu-12.10-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/quantal/release/kubuntu-12.10-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/kubuntu-12.10-desktop-i386.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Raring (<a href="http://cdimage.ubuntu.com/kubuntu/releases/raring/release/kubuntu-13.04-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/raring/release/kubuntu-13.04-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/kubuntu-13.04-desktop-i386.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Saucy (<a href="http://cdimage.ubuntu.com/kubuntu/releases/saucy/release/kubuntu-13.10-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/kubuntu/releases/saucy/release/kubuntu-13.10-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/kubuntu-13.10-desktop-i386.iso&quot;</em></div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h4 id="pour_xubuntu">Pour Xubuntu</h4>
+<div class="level4">
+
+<p>
+<a href="../../../xubuntu" class="wikilink1" title="xubuntu">Article détaillé sur cette variante</a>.
+<strong>CD :</strong> <a href="http://cdimage.ubuntu.com/xubuntu/releases/precise/release/" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/precise/release/"  rel="nofollow">Precise</a>, <a href="http://cdimage.ubuntu.com/xubuntu/releases/quantal/release/" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/quantal/release/"  rel="nofollow">Quantal</a>, <a href="http://cdimage.ubuntu.com/xubuntu/releases/raring/release/" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/raring/release/"  rel="nofollow">Raring</a>, <a href="http://cdimage.ubuntu.com/xubuntu/releases/saucy/release/" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/saucy/release/"  rel="nofollow">Saucy</a>. <strong>Versions de développement :</strong> <a href="http://cdimage.ubuntu.com/xubuntu/releases/14.04/" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/14.04/"  rel="nofollow">Alpha, Beta,..</a>, <a href="http://cdimage.ubuntu.com/xubuntu/daily-live/current/" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/daily-live/current/"  rel="nofollow">Daily builds</a>.<br/>
+
+Idem que pour version Kubuntu pour le &quot;(hd0,7)&quot; à adapter ou le &quot;file=/cdrom/preseed/ubuntu.seed&quot; à mettre en xubuntu.seed.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Xubuntu Amd64</strong> :</div>
+<ul>
+<li class="level2"><div class="li"> Precise (<a href="http://cdimage.ubuntu.com/xubuntu/releases/precise/release/xubuntu-12.04.2-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/precise/release/xubuntu-12.04.2-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/xubuntu-12.04.2-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Quantal (<a href="http://cdimage.ubuntu.com/xubuntu/releases/quantal/release/xubuntu-12.10-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/quantal/release/xubuntu-12.10-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/xubuntu-12.10-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Raring (<a href="http://cdimage.ubuntu.com/xubuntu/releases/raring/release/xubuntu-13.04-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/raring/release/xubuntu-13.04-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/xubuntu-13.04-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Saucy (<a href="http://cdimage.ubuntu.com/xubuntu/releases/saucy/release/xubuntu-13.10-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/saucy/release/xubuntu-13.10-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/xubuntu-13.10-desktop-amd64.iso&quot;</em></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Xubuntu </strong>i<strong>386</strong> :</div>
+<ul>
+<li class="level2"><div class="li"> Precise (<a href="http://cdimage.ubuntu.com/xubuntu/releases/precise/release/xubuntu-12.04.2-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/precise/release/xubuntu-12.04.2-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/xubuntu-12.04.2-desktop-i386.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Quantal (<a href="http://cdimage.ubuntu.com/xubuntu/releases/quantal/release/xubuntu-12.10-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/quantal/release/xubuntu-12.10-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/xubuntu-12.10-desktop-i386.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Raring (<a href="http://cdimage.ubuntu.com/xubuntu/releases/raring/release/xubuntu-13.04-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/raring/release/xubuntu-13.04-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/xubuntu-13.04-desktop-i386.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Saucy (<a href="http://cdimage.ubuntu.com/xubuntu/releases/saucy/release/xubuntu-13.10-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/xubuntu/releases/saucy/release/xubuntu-13.10-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/xubuntu-13.10-desktop-i386.iso&quot;</em></div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h4 id="pour_lubuntu">Pour Lubuntu</h4>
+<div class="level4">
+
+<p>
+<a href="../../../lubuntu" class="wikilink1" title="lubuntu">Article détaillé sur cette variante</a> sous environnement <a href="../../../lxde" class="wikilink1" title="lxde">LXDE</a>.
+<strong>CD :</strong> <a href="http://cdimage.ubuntu.com/lubuntu/releases/precise/release/" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/precise/release/"  rel="nofollow">Precise</a>, <a href="http://cdimage.ubuntu.com/lubuntu/releases/quantal/release/" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/quantal/release/"  rel="nofollow">Quantal</a>, <a href="http://cdimage.ubuntu.com/lubuntu/releases/raring/release/" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/raring/release/"  rel="nofollow">Raring</a>, <a href="http://cdimage.ubuntu.com/lubuntu/releases/saucy/release/" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/saucy/release/"  rel="nofollow">Saucy</a>. <strong>Versions de développement :</strong> <a href="http://cdimage.ubuntu.com/lubuntu/releases/14.04/" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/14.04/"  rel="nofollow">Alpha, Beta,..</a>, <a href="http://cdimage.ubuntu.com/lubuntu/daily-live/current/" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/daily-live/current/"  rel="nofollow">Daily builds</a>.<br/>
+
+Idem que pour version Kubuntu pour le &quot;(hd0,7)&quot; à adapter ou le &quot;file=/cdrom/preseed/ubuntu.seed&quot; à mettre en lubuntu.seed.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Lubuntu Amd64</strong> :</div>
+<ul>
+<li class="level2"><div class="li"> Precise (<a href="http://cdimage.ubuntu.com/lubuntu/releases/precise/release/lubuntu-12.04-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/precise/release/lubuntu-12.04-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/lubuntu-12.04-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Quantal (<a href="http://cdimage.ubuntu.com/lubuntu/releases/quantal/release/lubuntu-12.10-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/quantal/release/lubuntu-12.10-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/lubuntu-12.10-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Raring (<a href="http://cdimage.ubuntu.com/lubuntu/releases/raring/release/lubuntu-13.04-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/raring/release/lubuntu-13.04-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/lubuntu-13.04-desktop-amd64.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Saucy (<a href="http://cdimage.ubuntu.com/lubuntu/releases/saucy/release/lubuntu-13.10-desktop-amd64.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/saucy/release/lubuntu-13.10-desktop-amd64.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/lubuntu-13.10-desktop-amd64.iso&quot;</em></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Lubuntu </strong>i<strong>386</strong> :</div>
+<ul>
+<li class="level2"><div class="li"> Precise (<a href="http://cdimage.ubuntu.com/lubuntu/releases/precise/release/lubuntu-12.04-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/precise/release/lubuntu-12.04-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/lubuntu-12.04-desktop-i386.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Quantal (<a href="http://cdimage.ubuntu.com/lubuntu/releases/quantal/release/lubuntu-12.10-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/quantal/release/lubuntu-12.10-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/lubuntu-12.10-desktop-i386.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Raring (<a href="http://cdimage.ubuntu.com/lubuntu/releases/raring/release/lubuntu-13.04-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/raring/release/lubuntu-13.04-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/lubuntu-13.04-desktop-i386.iso&quot;</em></div>
+</li>
+<li class="level2"><div class="li"> Saucy (<a href="http://cdimage.ubuntu.com/lubuntu/releases/saucy/release/lubuntu-13.10-desktop-i386.iso.torrent" class="urlextern" title="http://cdimage.ubuntu.com/lubuntu/releases/saucy/release/lubuntu-13.10-desktop-i386.iso.torrent"  rel="nofollow">torrent</a>) : <em>set isofile=&quot;/lubuntu-13.10-desktop-i386.iso&quot;</em></div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT4 SECTION "Ubuntu ou ses dérivés" [3217-14792] -->
+<h2 class="sectionedit5" id="installer_a_partir_d_un_iso_desktop">Installer à partir d&#039;un iso &quot;desktop&quot;</h2>
+<div class="level2">
+
+<p>
+Lorsqu&#039;on lance la procédure d&#039;installation depuis un iso desktop, on est bloqué souvent par un message nous demandant de démonter certaines partitions et notamment : /isodevice.
+</p>
+
+<p>
+Il suffit de forcer maintenant le démontage de /isodevice avec cette commande :
+</p>
+<pre class="code">sudo umount -l -r -f /isodevice</pre>
+
+<p>
+Si cela ne fonctionne pas, le recours sera une installation &quot;net-install&quot;.
+</p>
+
+<p>
+Le lancement peut également planter si les modules acpi et/ou apm sont inadéquats au matériel. Ajouter acpi=off apm=off noacpi noapm. Concrètement : <code> linux (loop)/casper/vmlinuz locale=fr_FR</code> … devient <code> linux (loop)/casper/vmlinuz locale=fr_FR  acpi=off apm=off noacpi noapm</code> …
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Installer à partir d'un iso desktop" [14793-15511] -->
+<h2 class="sectionedit6" id="net-install">net-install</h2>
+<div class="level2">
+
+</div>
+
+<h4 id="telecharger_un_miniiso">Télécharger un &#039;mini.iso&#039;</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <strong><a href="../../../tutoriel/installer_ubuntu_par_internet#pre-requis" class="wikilink1" title="tutoriel:installer_ubuntu_par_internet">Sélectionnez et téléchargez votre version sur cette page</a></strong></div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="menu_grub">Menu grub</h4>
+<div class="level4">
+<pre class="file">menuentry &quot;...       Install d&#039;Ubuntu via une connexion internet&quot; {
+	insmod loopback
+	insmod iso9660
+	search --set -f /mini.iso
+	loopback loop /mini.iso
+	linux (loop)/linux locale=fr_FR bootkbd=fr console-setup/layoutcode=fr -- quiet
+	initrd (loop)/initrd.gz
+}</pre>
+
+</div>
+<!-- EDIT6 SECTION "net-install" [15512-15988] -->
+<h2 class="sectionedit7" id="maintenance">Maintenance</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT7 SECTION "Maintenance" [15989-16012] -->
+<h3 class="sectionedit8" id="parted_magic">Parted Magic</h3>
+<div class="level3">
+
+<p>
+Très complet <em>(<a href="http://partedmagic.com/doku.php?id=programs" class="urlextern" title="http://partedmagic.com/doku.php?id=programs"  rel="nofollow">liste des programmes</a>, <strong><a href="http://partedmagic.com/downloads/" class="urlextern" title="http://partedmagic.com/downloads/"  rel="nofollow">http://partedmagic.com/downloads/</a></strong>)</em> :<p><div class="noteclassic">produit payant
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../gparted" class="wikilink1" title="gparted">Gparted</a> (et autres manipulateurs de partitions), </div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../clonezilla" class="wikilink1" title="clonezilla">Clonezilla</a>, <a href="../../../partimage" class="wikilink1" title="partimage">Partimage</a>,</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://partclone.org/index.php" class="urlextern" title="http://partclone.org/index.php"  rel="nofollow">Partclone</a>, Ghost,</div>
+</li>
+<li class="level1"><div class="li"> MyRescue <a href="../../../photorec" class="wikilink1" title="photorec">PhotoRec</a>, <a href="../../../testdisk" class="wikilink1" title="testdisk">Testdisk</a>,</div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../clamav" class="wikilink1" title="clamav">ClamAV</a>, <a href="../../../unetbootin" class="wikilink1" title="unetbootin">Unetbootin</a>,</div>
+</li>
+<li class="level1"><div class="li"> des gestionnaires de fichiers, éditeurs de texte, navigateurs internet,..</div>
+</li>
+</ul>
+<pre class="file">menuentry &quot;Parted Magic&quot; {
+	insmod loopback
+	insmod iso9660
+	set isofile=&quot;/pmagic_2013_06_15.iso&quot;
+	loopback loop (hd0,7)$isofile
+        echo	&#039;Chargement du noyau Linux ...&#039;
+	linux (loop)/pmagic/bzImage keymap=fr-latin1 fr_FR
+        echo	&#039;Chargement du disque mémoire initial ...&#039;
+	initrd (loop)/pmagic/initrd.img
+}</pre>
+
+<p>
+<em><strong>Rappel</strong>: la ligne &quot;set isofile&quot; (emplacement du fichier iso) et l&#039;indication de disque &quot;(hd0,7)&quot; sont à adapter en fonction de la version du fichier que vous avez téléchargée et du disque sur lequel vous l&#039;avez mise.</em>
+</p>
+
+<p>
+Ou
+</p>
+<pre class="file">menuentry &quot;Parted Magic&quot; {
+	set root=(hd0,2)
+	loopback loop /pmagic_2013_06_15.iso
+	linux (loop)/pmagic/bzImage keymap=fr
+	initrd (loop)/pmagic/initrd.img
+}</pre>
+
+<p>
+<em>(hd0,2) et pmagic_2013_06_15.iso sont à adapter selon le disque dur et la partition sur lesquels se trouve la version de l&#039;ISO de Parted Magic.</em>
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Parted Magic" [16013-17389] -->
+<h3 class="sectionedit9" id="systemrescuecd">SystemRescueCd</h3>
+<div class="level3">
+
+<p>
+<a href="http://sourceforge.net/projects/systemrescuecd/files/sysresccd-x86/" class="urlextern" title="http://sourceforge.net/projects/systemrescuecd/files/sysresccd-x86/"  rel="nofollow">Site de téléchargement</a>
+<a href="http://www.sysresccd.org/Online-Manual-FR" class="urlextern" title="http://www.sysresccd.org/Online-Manual-FR"  rel="nofollow">Manuel d&#039;utilisation</a>
+<a href="http://www.sysresccd.org/Sysresccd-manual-en_Easy_install_SystemRescueCd_on_harddisk#Boot_the_ISO_image_from_the_disk_using_Grub2" class="urlextern" title="http://www.sysresccd.org/Sysresccd-manual-en_Easy_install_SystemRescueCd_on_harddisk#Boot_the_ISO_image_from_the_disk_using_Grub2"  rel="nofollow"> Documentation Officielle SystemRescue ISO et grub2</a>
+</p>
+<pre class="file">menuentry &quot;SytemRescueCD&quot; {
+insmod ext2
+insmod loopback
+insmod iso9660
+
+#Si  emplacement ISO ≠ emplacement partition démarrage GRUB2 
+#adapter et dé-commenter la ligne suivante :
+#set root=&#039;(hd2,1)&#039;
+
+#l&#039;emplacement peut s&#039;écrire aussi:
+#set root=&#039;(hd2,msdos1)&#039;
+
+#Si emplacement à la racine de la partition en question:
+set isofile=&quot;/systemrescuecd-x86-x.y.z.iso&quot;
+#Sinon exemple
+set isofile=&quot;/opt/systemrescuecd-x86-x.y.z.iso&quot;
+
+loopback loop $isofile
+
+#Si 32 bit et claviers français
+linux (loop)/isolinux/rescue32 isoloop=$isofile setkmap=fr
+#si 64 bit,claviers français et startX supporté décommenté la ligne suivante:
+#linux (loop)/isolinux/rescue64 isoloop=$isofile setkmap=fr dostartx
+
+#Pour pouvoir écrire sur l&#039;emplacement disque de l&#039;ISO 
+ #en mode 64 bit, claviers français et startX supporté
+#Dé-commenté ligne suivante :
+#linux (loop)/isolinux/rescue64 isoloop=$isofile setkmap=fr docache dostartx
+
+initrd (loop)/isolinux/initram.igz
+}</pre>
+
+<p>
+<p><div class="noteclassic">
+Pour disposer des outils CD SystemRescue supplémentaires (Aida, gag, grub4dos etc.) il faut créer de nouvelles entrées menu spécifiques dans le 40_custom. En fin taper:
+</p>
+<pre class="code">sudo update-grub</pre>
+
+<p>
+dans le Terminal pour enregistrer les entrées.  
+</div></p>
+</p>
+
+</div>
+<!-- EDIT9 SECTION "SystemRescueCd" [17390-18999] -->
+<h2 class="sectionedit10" id="grub_2_sur_une_clef_usb">GRUB 2 sur une clef USB</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT10 SECTION "GRUB 2 sur une clef USB" [19000-19035] -->
+<h3 class="sectionedit11" id="installation">Installation</h3>
+<div class="level3">
+
+<p>
+Il vous faut pour cela une distribution Linux avec GRUB installé. 
+</p>
+
+<p>
+Pour configurer GRUB sur la clé, nous n&#039;utiliserons pas la méthode traditionnelle, mais nous modifierons directement le fichier de configuration. Attention; cette méthode est à réserver à ce cas spécifique. Pour configurer GRUB pour votre partition de disque dur, se référer à <a href="../../../grub-pc" class="wikilink1" title="grub-pc">GRUB 2 : Le nouveau Grub</a>
+</p>
+
+<p>
+Lancez cette commande pour installer GRUB sur votre clé (elle doit être montée)
+</p>
+<pre class="code">sudo grub-install --root-directory=&lt;point_montage_part1_clef_usb&gt; &lt;peripherique_clef_usb&gt;</pre>
+
+<p>
+où :
+</p>
+<ul>
+<li class="level1"><div class="li"> &lt;point_montage_part1_clef_usb&gt; est le point de montage de la partition Fat de la clef usb (exemple : /media/clef_4Go)</div>
+</li>
+<li class="level1"><div class="li"> &lt;peripherique_clef_usb&gt; est le périphérique correspondant à la clef usb (exemple : /dev/sdb)</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT11 SECTION "Installation" [19036-19868] -->
+<h3 class="sectionedit12" id="configuration_du_chargeur_d_amorcage_de_la_cle">Configuration du chargeur d&#039;amorçage de la clé</h3>
+<div class="level3">
+
+<p>
+Vous avez maintenant une clé bootable avec un dossier <code>boot</code> à la racine, contenant un sous-dossier <code>grub</code>. Il faut créer un fichier de configuration nommé <code>grub.cfg</code> dans le dossier <code>grub</code>. Insérez-y les blocs de texte correspondant à la distribution que vous souhaitez tester, parmi la liste de configurations détaillées ci-dessous :
+</p>
+
+<p>
+<p><div class="notewarning">Attention à bien adapter le chemin de l&#039;image ISO selon l&#039;endroit où vous la placez sur votre clé. Les exemples suivants sont faits en considérant que l&#039;image est placée à la racine de la clé. Si vous souhaitez les ranger dans le dossier /boot ou dans un sous-dossier, ajoutez simplement /boot devant le nom de l&#039;image ISO
+</div></p>
+<strong>Voir au tout début de la page d&#039;autres possibilités avec clé <abbr title="Universal Serial Bus">USB</abbr> telles que <a href="../../../unetbootin" class="wikilink1" title="unetbootin">Unetbootin</a>, <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=427605" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=427605"  rel="nofollow">MultiSystem</a>, etc.</strong>
+</p>
+
+</div>
+<!-- EDIT12 SECTION "Configuration du chargeur d'amorçage de la clé" [19869-20805] -->
+<h2 class="sectionedit13" id="autres_distributions_testees">Autres distributions testées</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT13 SECTION "Autres distributions testées" [20806-20847] -->
+<h3 class="sectionedit14" id="aptosid_anciennement_sidux">Aptosid (anciennement Sidux)</h3>
+<div class="level3">
+
+<p>
+<strong>Fonctionnelle</strong> : exemple ici pour AMD64 et tout en français. Pour installer, forcer l&#039;installation évite d&#039;avoir à copier sur <abbr title="Universal Serial Bus">USB</abbr>. S&#039;installe en 3 minutes environ. <a href="ftp://ftp.spline.de/mirrors/aptosid/release/" class="urlextern" title="ftp://ftp.spline.de/mirrors/aptosid/release/"  rel="nofollow">site de téléchargement</a>, <a href="http://manual.aptosid.com/fr/welcome-fr.htm" class="urlextern" title="http://manual.aptosid.com/fr/welcome-fr.htm"  rel="nofollow">Manuel d&#039;utilisation</a>
+</p>
+<pre class="file">menuentry &quot;Live - Aptosid&quot; {
+insmod loopback
+insmod iso9660
+set isofile=&quot;/aptosid-2011-03-ponos-kde-lite-amd64-201112312100.iso&quot;
+search --set -f $isofile
+loopback loop $isofile
+linux (loop)/boot/vmlinuz0.amd boot=fll lang=fr_FR quiet fromiso=$isofile
+initrd (loop)/boot/initrd0.amd
+}</pre>
+
+</div>
+<!-- EDIT14 SECTION "Aptosid (anciennement Sidux)" [20848-21498] -->
+<h3 class="sectionedit15" id="elive">Elive</h3>
+<div class="level3">
+
+<p>
+<strong>Fonctionnelle</strong> : tout paraît être en français après quelques questions au démarrage. <a href="http://elive.enlightenment.fr/isos/stable/" class="urlextern" title="http://elive.enlightenment.fr/isos/stable/"  rel="nofollow">site de téléchargement</a>
+</p>
+<pre class="file">menuentry &quot;Elive&quot; {
+insmod loopback
+insmod iso9660
+set isofile=&quot;/elive_2.0_Topaz_new-kernel_up003.iso&quot;
+search --set -f $isofile
+loopback loop (hd0,7)$isofile
+set gfxpayload=800x600x16, 800x600
+linux (loop)/boot/vmlinuz-2.6.30.9-elive-686 boot=eli quiet resolution fromiso=$isofile
+initrd (loop)/boot/initrd.img-2.6.30.9-elive-686
+}</pre>
+
+</div>
+<!-- EDIT15 SECTION "Elive" [21499-22025] -->
+<h3 class="sectionedit16" id="gentoo">Gentoo</h3>
+<div class="level3">
+
+<p>
+Impossible de mettre le clavier français par défaut (pour du 32 bits : remplacer /boot/gentoo64 par /boot/gentoo et /boot/gentoo64.igz par /boot/gentoo.igz). 
+<a href="http://distfiles.gentoo.org/releases/amd64/12.1//" class="urlextern" title="http://distfiles.gentoo.org/releases/amd64/12.1//"  rel="nofollow">site de téléchargement</a>
+</p>
+<pre class="file">menuentry &quot;...   2 - Gentoo 12 Live DVD&quot; {
+	set isofile=&quot;/livedvd-x86-amd64-32ul-2012.1.iso&quot;
+	search --set -f $isofile
+	loopback loop $isofile
+	echo	&#039;Chargement du noyau Linux ...&#039;
+	linux (loop)/boot/gentoo64 root=/dev/ram0 looptype=squashfs loop=/image.squashfs cdroot isoboot=$isofile splash=silent,theme:livecd-10
+	echo	&#039;Chargement du disque mémoire initial ...&#039;
+	initrd (loop)/boot/gentoo64.igz
+}</pre>
+
+</div>
+<!-- EDIT16 SECTION "Gentoo" [22026-22698] -->
+<h3 class="sectionedit17" id="slitaz">Slitaz</h3>
+<div class="level3">
+
+<p>
+<strong>Fonctionnelle</strong> : tout paraît être en français après quelques questions au démarrage. <a href="http://www.slitaz.org/fr/get/" class="urlextern" title="http://www.slitaz.org/fr/get/"  rel="nofollow">site de téléchargement</a>
+</p>
+<pre class="file">menuentry &quot;Slitaz-3.0&quot; {
+insmod loopback
+insmod iso9660
+set isofile=&quot;/slitaz-3.0.iso&quot;
+search --set -f $isofile
+loopback loop $isofile
+linux (loop)/boot/vmlinuz-2.6.30.6-slitaz kmap=fr-latin1
+initrd (loop)/boot/rootfs.gz
+}</pre>
+
+</div>
+<!-- EDIT17 SECTION "Slitaz" [22699-23103] -->
+<h3 class="sectionedit18" id="vector_linux">Vector Linux</h3>
+<div class="level3">
+
+<p>
+<strong>Fonctionnelle</strong> : français absent <strong><a href="http://vectorlinux.com/downloads/" class="urlextern" title="http://vectorlinux.com/downloads/"  rel="nofollow">site de téléchargement</a></strong>
+</p>
+<pre class="file">menuentry &quot;ISO Live - Vector Linux Live&quot; {
+insmod loopback
+insmod iso9660
+loopback loop (hd0,7)&#039;/VL6.0-Light-LIVE-Final.iso&#039;
+set gfxpayload=1024x768x16, 1024x768
+linux (loop)/boot/vmlinuz slax from=/VL6.0-Light-LIVE-Final.iso auto2 splash=silent ramdisk_size=6666 root=/dev/ram0 rw
+initrd (loop)/boot/initrd.gz
+}</pre>
+
+</div>
+<!-- EDIT18 SECTION "Vector Linux" [23104-23557] -->
+<h3 class="sectionedit19" id="zevenos">ZevenOS</h3>
+<div class="level3">
+
+<p>
+<strong>Fonctionnelle</strong> : en français et partiellement en allemand <strong><a href="http://www.zevenos.com/download" class="urlextern" title="http://www.zevenos.com/download"  rel="nofollow">site de téléchargement</a></strong>
+</p>
+<pre class="file">menuentry &quot;ISO Live - ZevenOS-20&quot; {
+insmod loopback
+insmod iso9660
+loopback loop (hd0,7)&#039;/ZevenOS-20.iso&#039;
+linux (loop)/casper/vmlinuz persistent locale=fr_FR bootkbd=fr iso-scan/filename=/ZevenOS-20.iso boot=casper file=/cdrom/preseed/xubuntu.seed noprompt quiet splash --
+initrd (loop)/casper/initrd.lz
+}</pre>
+
+</div>
+<!-- EDIT19 SECTION "ZevenOS" [23558-24022] -->
+<h3 class="sectionedit20" id="clonezilla">CloneZilla</h3>
+<div class="level3">
+
+<p>
+<strong>Fonctionnelle</strong> : en anglais <strong><a href="http://clonezilla.org/downloads/alternative/iso-zip-files.php" class="urlextern" title="http://clonezilla.org/downloads/alternative/iso-zip-files.php"  rel="nofollow">site de téléchargement</a></strong>
+</p>
+<pre class="file">menuentry &quot;CloneZilla amd64 (800x600)&quot; {
+set isofile=&quot;/boot/clonezilla-live-1.2.6-24-amd64.iso&quot;
+loopback loop $isofile
+linux (loop)/live/vmlinuz boot=live live-config noswap nolocales edd=on nomodeset ocs_live_run=&quot;ocs-live-general&quot; ocs_live_extra_param=&quot;&quot; ocs_live_keymap=&quot;&quot; ocs_live_batch=&quot;no&quot; ocs_lang=&quot;&quot; gfxpayload=800x600x16,800x600 ip=frommedia nosplash toram=filesystem.squashfs findiso=$isofile
+initrd (loop)/live/initrd.img
+}</pre>
+
+</div>
+<!-- EDIT20 SECTION "CloneZilla" [24023-24618] -->
+<h3 class="sectionedit21" id="fedora">Fedora</h3>
+<div class="level3">
+
+<p>
+Fedora 15 (<a href="http://doc.fedora-fr.org/wiki/T%C3%A9l%C3%A9charger_Fedora#3.C3.A8me_.C3.A9tape_:_T.C3.A9l.C3.A9charger_Fedora" class="urlextern" title="http://doc.fedora-fr.org/wiki/T%C3%A9l%C3%A9charger_Fedora#3.C3.A8me_.C3.A9tape_:_T.C3.A9l.C3.A9charger_Fedora"  rel="nofollow">Téléchargement</a>) ne peut être bootée directement depuis une iso (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=650672" class="urlextern" title="https://bugzilla.redhat.com/show_bug.cgi?id=650672"  rel="nofollow">bug</a>). Il faut donc extraire l&#039;iso dans un dossier, ici boot/iso/LiveCD-FC15 sur une clef usb.
+</p>
+<pre class="file">menuentry &quot;.. Fedora 15 Desktop AMD64 (extracted)&quot; {
+	linux /boot/iso/LiveCD-FC15/isolinux/vmlinuz0 root=UUID=8816-2C13 live_dir=/boot/iso/LiveCD-FC15/LiveOS/ rootfstype=auto ro liveimg quiet  rhgb rd.luks=0 rd.md=0 rd.dm=0 locale=fr_FR bootkbd=fr console-setup/layoutcode=fr 
+	initrd /boot/iso/LiveCD-FC15/isolinux/initrd0.img
+}</pre>
+
+<p>
+Remplacez :
+</p>
+<ul>
+<li class="level1"><div class="li"> /boot/iso/LiveCD-FC15 par le répertoire où l&#039;iso est extraite</div>
+</li>
+<li class="level1"><div class="li"> 8816-2C13 par l&#039;<a href="../../../uuid_et_label" class="wikilink1" title="uuid_et_label">UUID</a> de la partition où l&#039;iso est extraite</div>
+</li>
+</ul>
+
+<p>
+Inspiré du <a href="http://forums.fedoraforum.org/showthread.php?t=263654" class="urlextern" title="http://forums.fedoraforum.org/showthread.php?t=263654"  rel="nofollow">forum anglohpone Fedora</a>.
+</p>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="../../../utilisateurs/frombenny" class="wikilink1" title="utilisateurs:frombenny">Frombenny</a> …</em>
+</p>
+
+</div>
+<!-- EDIT21 SECTION "Fedora" [24619-] --><div class="footnotes">
+<div class="fn"><sup><a href="grub2_lancer_des_images_iso#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<em>Raring/Ubuntu : les versions Alpha, Beta,.. ne sont plus proposées au téléchargement. Seules les &quot;Daily Build&quot; sont dispo.</em></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/2bbf8d60acfa553d6eeff36457e999e3.xhtml used -->
+</div>
+</body>
+</html>

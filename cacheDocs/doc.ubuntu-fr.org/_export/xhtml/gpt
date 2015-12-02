@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>gpt</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-08-17T18:15:31+0200"/>
+<meta name="keywords" content="systeme,installation"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../gpt?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="gpt"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/gpt"/>
+<link rel="canonical" href="../../gpt"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"gpt","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="gpt#avantages_du_gpt">Avantages du GPT</a></div></li>
+<li class="level1"><div class="li"><a href="gpt#identifier_si_un_disque_est_partitionne_en_gpt">Identifier si un disque est partitionné en GPT</a></div></li>
+<li class="level1"><div class="li"><a href="gpt#installer_ubuntu_sur_un_disque_gpt">Installer Ubuntu sur un disque GPT</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="gpt#creer_une_partition_efi">Créer une partition EFI</a></div></li>
+<li class="level2"><div class="li"><a href="gpt#creer_une_partition_bios-boot">Créer une partition BIOS-Boot</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="gpt#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../installation.1" class="wikilink1" title="installation" rel="tag">installation</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="le_partitionnement_gpt">Le partitionnement GPT</h1>
+<div class="level1">
+
+<p>
+Cette page regroupe toutes les informations concernant le partitionnement <a href="http://fr.wikipedia.org/wiki/GPT" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/GPT">GPT</a> sous Ubuntu.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Le partitionnement GPT" [37-179] -->
+<h2 class="sectionedit2" id="avantages_du_gpt">Avantages du GPT</h2>
+<div class="level2">
+
+<p>
+Par rapport au partitionnement classique (MsDos), le GPT a 2 avantages:
+</p>
+<ul>
+<li class="level1"><div class="li"> il prend en charge des disques de taille &gt; 2.2 To</div>
+</li>
+<li class="level1"><div class="li"> il n&#039;a pas de limite de partitions primaires</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Avantages du GPT" [180-385] -->
+<h2 class="sectionedit3" id="identifier_si_un_disque_est_partitionne_en_gpt">Identifier si un disque est partitionné en GPT</h2>
+<div class="level2">
+
+<p>
+Il suffit d&#039;ouvrir un terminal (Ctrl+Alt+T), et saisir la commande suivante:
+</p>
+<pre class="code">sudo parted -l</pre>
+
+<p>
+Pour chaque disque, vous verrez soit &quot;Table de partitions : <strong>msdos</strong>&quot; (partitionnement classique) ou &quot;Table de partitions : <strong>gpt</strong>&quot; (partitionnement GPT).
+</p>
+
+<p>
+Voir aussi <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=735491" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=735491"  rel="nofollow">cette discussion</a>.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Identifier si un disque est partitionné en GPT" [386-786] -->
+<h2 class="sectionedit4" id="installer_ubuntu_sur_un_disque_gpt">Installer Ubuntu sur un disque GPT</h2>
+<div class="level2">
+
+<p>
+Pour installer Ubuntu sur un disque dur partitionné en GPT:
+</p>
+<ul>
+<li class="level1"><div class="li"> si vous utilisez l&#039;installateur automatique, il n&#039;y a rien de spécial à faire.</div>
+</li>
+<li class="level1"><div class="li"> si vous utilisez le <a href="../../tutoriel/partitionner_manuellement_avec_installateur_ubuntu" class="wikilink1" title="tutoriel:partitionner_manuellement_avec_installateur_ubuntu">partitionnement manuel</a>, il vous faudra créer:</div>
+<ul>
+<li class="level2"><div class="li">  soit une <a href="../../uefi" class="wikilink1" title="uefi">partition UEFI</a> (si votre <abbr title="Basic Input-Output System">BIOS</abbr> est en <a href="../../uefi" class="wikilink1" title="uefi">mode UEFI</a>)</div>
+</li>
+<li class="level2"><div class="li">  soit une partition <abbr title="Basic Input-Output System">BIOS</abbr>-Boot (si votre <abbr title="Basic Input-Output System">BIOS</abbr> est en mode classique).</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT4 SECTION "Installer Ubuntu sur un disque GPT" [787-1276] -->
+<h3 class="sectionedit5" id="creer_une_partition_efi">Créer une partition EFI</h3>
+<div class="level3">
+
+<p>
+Voir <a href="../../uefi#creer_une_partition_efi" class="wikilink1" title="uefi">ce paragraphe</a>.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Créer une partition EFI" [1277-1367] -->
+<h3 class="sectionedit6" id="creer_une_partition_bios-boot">Créer une partition BIOS-Boot</h3>
+<div class="level3">
+
+<p>
+Une partition <abbr title="Basic Input-Output System">BIOS</abbr>-Boot peut être créée via une version récente de <a href="../../gparted" class="wikilink1" title="gparted">gParted</a>, et doit posséder les caractéristiques suivantes:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>Point de montage :</em> aucun</div>
+</li>
+<li class="level2"><div class="li"> <em> Taille : </em> 1Mo</div>
+</li>
+<li class="level2"><div class="li"> <em> Type : </em> non formaté</div>
+</li>
+<li class="level2"><div class="li"> <em> Autre : </em> doit être située en début<sup><a href="gpt#fn__1" id="fnt__1" class="fn_top">1)</a></sup> d&#039;un disque partitionné en <span class="curid"><a href="../../gpt" class="wikilink1" title="gpt">GPT</a></span>, et doit posséder un drapeau <em>bios_grub</em></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT6 SECTION "Créer une partition BIOS-Boot" [1368-1855] -->
+<h2 class="sectionedit7" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=986671" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=986671"  rel="nofollow">Discussion &quot;Installer Ubuntu en mode EFI ou en mode Bios&quot;</a> sur le forum ubuntu-fr</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="http://doc.ubuntu-fr.org/utilisateurs/yannubuntu" class="wikilink1" title="utilisateurs:yannubuntu">YannUbuntu</a>.</em>
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Voir aussi" [1856-] --><div class="footnotes">
+<div class="fn"><sup><a href="gpt#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+= n&#039;importe quel emplacement entièrement inclus dans les 100 premiers Go du disque</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/0/0a7c45314361693ec8cb78039c8541e1.xhtml used -->
+</div>
+</body>
+</html>

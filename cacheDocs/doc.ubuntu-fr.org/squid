@@ -1,0 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>squid - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-09T22:07:38+0100"/>
+<meta name="keywords" content="reseau,proxy,securite"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="squid?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="squid?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/squid"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/squid"/>
+<link rel="canonical" href="squid"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"squid","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="squid#main" tabindex="1">Contenu</a> | <a href="squid#qsearch__in" tabindex="2">Rechercher</a> | <a href="squid#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="squid" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="squid" >squid</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="squid#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="squid#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="squid#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="squid#autoriser_les_utilisateurs_a_utiliser_le_serveur_mandataire">Autoriser les utilisateurs à utiliser le serveur mandataire</a></div></li>
+<li class="level2"><div class="li"><a href="squid#indiquer_le_nom_de_la_machine">Indiquer le nom de la machine</a></div></li>
+<li class="level2"><div class="li"><a href="squid#ne_pas_inclure_l_adresse_ip_dans_les_requetes_http">Ne pas inclure l&#039;adresse IP dans les requêtes HTTP</a></div></li>
+<li class="level2"><div class="li"><a href="squid#messages_d_erreur_en_francais">Messages d&#039;erreur en français</a></div></li>
+<li class="level2"><div class="li"><a href="squid#droits_de_l_utilisateur_de_squid">Droits de l&#039;utilisateur de Squid</a></div></li>
+<li class="level2"><div class="li"><a href="squid#modification_de_la_mise_en_tampon_de_squid">Modification de la mise en tampon de Squid</a></div></li>
+<li class="level2"><div class="li"><a href="squid#rendre_squid_transparent">Rendre Squid transparent</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="squid#webmin_administration_via_une_interface_web_de_squid">Webmin (administration via une interface web de Squid)</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="squid#installation1">Installation</a></div></li>
+<li class="level2"><div class="li"><a href="squid#connexion">Connexion</a></div></li>
+<li class="level2"><div class="li"><a href="squid#administration_de_squid">Administration de Squid</a></div></li>
+<li class="level2"><div class="li"><a href="squid#visionnement_des_logs">Visionnement des logs</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="squid#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="squid#applications_associees">Applications associées</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="squid#dansguardian">DansGuardian</a></div></li>
+<li class="level2"><div class="li"><a href="squid#prostat">Prostat</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="squid#liens">Liens</a></div></li>
+<li class="level1"><div class="li"><a href="squid#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="proxy" class="wikilink1" title="proxy" rel="tag">proxy</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="squidserveur_mandataire_proxy">Squid : serveur mandataire (proxy)</h1>
+<div class="level1">
+
+<p>
+<a href="lib/exe/fetch.php?tok=6edf1f&amp;media=http%253A%252F%252Fupload.wikimedia.org%252Fwikipedia%252Ffr%252Fb%252Fb7%252FSquid-cache_logo.jpg" class="media" title="http://upload.wikimedia.org/wikipedia/fr/b/b7/Squid-cache_logo.jpg"><img src="lib/exe/fetch.php?tok=6edf1f&amp;media=http%253A%252F%252Fupload.wikimedia.org%252Fwikipedia%252Ffr%252Fb%252Fb7%252FSquid-cache_logo.jpg" class="mediaright" title="Logo Squid" alt="Logo Squid" /></a>
+Squid est un serveur mandataire, en anglais un proxy, entièrement libre et très performant. Squid est capable de gérer les protocoles <abbr title="File Transfer Protocol">FTP</abbr>, HTTP, <abbr title="Hypertext Transfert Protocol Secured">HTTPS</abbr> et Gopher. Il est généralement utilisé dans certaines entreprises et universités pour des fonctions de filtrage d&#039;<abbr title="Uniform Resource Locator">URL</abbr> ou en tant que tampon. Les pages Internet sont stockées localement ce qui évite d&#039;aller les recharger plusieurs fois et permet d&#039;économiser la bande passante Internet..
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Squid : serveur mandataire (proxy)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="41-622" /><input type="submit" value="Modifier" class="button" title="Squid : serveur mandataire (proxy)" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="623-769" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installer le paquet</a> <strong><a href="apt://squid" class="urlextern" title="apt://squid"  rel="nofollow">squid</a></strong>.
+</p>
+
+<p>
+Si après l&#039;installation vous obtenez <code>[fail]</code> lors du démarrage de Squid, alors il faut simplement spécifier le nom de la machine dans la configuration de Squid. Voir plus loin <span class="curid"><a href="squid#indiquer_le_nom_de_la_machine" class="wikilink1" title="squid">le chapitre Configuration</a></span>.
+</p>
+
+<p>
+Pour mettre en pratique Squid, il suffit simplement de configurer les navigateurs web client afin d&#039;utiliser un proxy, ayant pour adresse celle de la machine squid. Squid écoute par défaut sur le port 3128. 
+</p>
+
+<p>
+Il est également possible d&#039;appliquer le serveur mandataire à l&#039;ensemble des utilisateurs et logiciels des stations clientes.
+Pour ce faire, configurez les propriétés de serveur mandataire d&#039;Ubuntu afin que toutes les connexions à Internet passent par le proxy :
+</p>
+<ol>
+<li class="level1"><div class="li"> Ouvrez l&#039;outil de gestion des serveurs mandataires d&#039;Ubuntu (<em>Système → Préférences → <strong>Serveur mandataire</strong></em>) ;</div>
+</li>
+<li class="level1"><div class="li"> Dans l&#039;onglet <em>Configuration du serveur mandataire</em>, cochez la case <strong>Configuration manuelle du serveur mandataire</strong>. Puis :</div>
+<ul>
+<li class="level2"><div class="li"> cochez éventuellement la case <strong>Utiliser le même serveur mandataire pour tous les protocoles</strong> ;</div>
+</li>
+<li class="level2"><div class="li"> dans le champ <em>Serveur mandataire HTTP</em>, indiquez l&#039;adresse <strong>localhost</strong> et le port <strong>3128</strong> ;</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Appuyez sur le bouton <strong>Appliquer à l&#039;ensemble du système…</strong> pour que cette configuration soit appliquée à tous les utilisateurs de votre système Ubuntu.</div>
+</li>
+</ol>
+
+<p>
+Il est aussi possible d&#039;effectuer une redirection de port via le pare-feu pour que toutes les demandes au port 80 passent par le port défini pour le serveur mandataire, ex: 3128.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="770-2426" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Par défaut Squid est configuré et fonctionnel. Cependant, on peut apporter quelques modifications afin de l&#039;optimiser ou mieux l&#039;adapter à certains environnements.
+</p>
+
+<p>
+Le fichier de configuration de Squid est <code>/etc/squid/squid.conf</code> ou <code>/etc/squid3/squid.conf</code> (selon les versions).
+Pour toute configuration, <a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditer donc ce fichier</a>.
+</p>
+
+<p>
+<p><div class="noteimportant">
+</p>
+<ul>
+<li class="level1"><div class="li"> Penser à effectuer une sauvegarde de ce fichier avant toute modification : <code>sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.bak</code>. Effectuer l&#039;opération inverse pour restaurer le fichier.</div>
+</li>
+<li class="level1"><div class="li"> Après toute modification du <code>squid.conf</code>, redémarrer Squid :</div>
+</li>
+</ul>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+
+<h5 id="ubuntu_910_et_anterieur">Ubuntu 9.10 et antérieur</h5>
+<div class="level5">
+
+<p>
+Pour l&#039;activer après une fausse manipulation :
+</p>
+<pre class="code">sudo /etc/init.d/squid start</pre>
+
+<p>
+Pour l&#039;arrêter :
+</p>
+<pre class="code">sudo /etc/init.d/squid stop</pre>
+
+</div>
+
+<h5 id="ubuntu_1004_et_ulterieur">Ubuntu 10.04 et ultérieur</h5>
+<div class="level5">
+
+<p>
+Pour l&#039;activer après une fausse manipulation :
+</p>
+<pre class="code">sudo service squid start ou sudo service squid3 start</pre>
+
+<p>
+Pour l&#039;arrêter :
+</p>
+<pre class="code">sudo service squid stop ou sudo service squid3 stop</pre>
+
+<p>
+<p><div class="noteclassic">Pour le reconfigurer (à la place de stop et start ou restart qui prend du temps):
+ sudo squid -k reconfigure  ou sudo squid3 -k reconfigure
+</div></p>
+</p>
+
+<p>
+Voici quelques modifications utiles :
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2427-3699" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h3 class="sectionedit5" id="autoriser_les_utilisateurs_a_utiliser_le_serveur_mandataire">Autoriser les utilisateurs à utiliser le serveur mandataire</h3>
+<div class="level3">
+
+<p>
+Rechercher la ligne commencant par &quot;acl localhost src&quot;, et rajouter, après cette ligne, la ligne suivante : 
+</p>
+<pre class="code">acl allowedips src X.Y.Z.T/N</pre>
+
+<p>
+(où X.Y.Z.T/N représente le sous-réseau des IPs autorisées à accéder au serveur mandataire, par exemple : 192.168.0.1/255.255.255.0 pour un réseau local allant des IPs 192.168.0.1 à 192.168.0.254)
+</p>
+
+<p>
+Rechercher ensuite la ligne &quot;http_access allow localhost&quot; et rajouter, après cette ligne, la ligne suivante : 
+</p>
+<pre class="code">http_access allow allowedips</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Autoriser les utilisateurs à utiliser le serveur mandataire] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3700-4264" /><input type="submit" value="Modifier" class="button" title="Autoriser les utilisateurs à utiliser le serveur mandataire" /></div></form></div>
+<h3 class="sectionedit6" id="indiquer_le_nom_de_la_machine">Indiquer le nom de la machine</h3>
+<div class="level3">
+
+<p>
+dans la partie <strong><code>TAG: visible_hostname</code></strong>, indiquer le nom de la machine comme suit :
+</p>
+<pre class="code">visible_hostname nom_machine</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Indiquer le nom de la machine] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4265-4427" /><input type="submit" value="Modifier" class="button" title="Indiquer le nom de la machine" /></div></form></div>
+<h3 class="sectionedit7" id="ne_pas_inclure_l_adresse_ip_dans_les_requetes_http">Ne pas inclure l&#039;adresse IP dans les requêtes HTTP</h3>
+<div class="level3">
+
+<p>
+Pour ne pas inclure l&#039;adresse IP ou le nom du système dans les requêtes HTTP, dans la partie <strong><code>TAG: forwarded_for</code></strong>, décommenter et modifier la ligne comme suit :
+</p>
+<pre class="code">forwarded_for off</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Ne pas inclure l'adresse IP dans les requêtes HTTP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4428-4683" /><input type="submit" value="Modifier" class="button" title="Ne pas inclure l'adresse IP dans les requêtes HTTP" /></div></form></div>
+<h3 class="sectionedit8" id="messages_d_erreur_en_francais">Messages d&#039;erreur en français</h3>
+<div class="level3">
+
+<p>
+Dans la partie <strong><code>TAG: error_directory</code></strong>, décommenter et modifier la ligne comme suit :
+</p>
+<pre class="code">error_directory /usr/share/squid/errors/French</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Messages d'erreur en français] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4684-4870" /><input type="submit" value="Modifier" class="button" title="Messages d'erreur en français" /></div></form></div>
+<h3 class="sectionedit9" id="droits_de_l_utilisateur_de_squid">Droits de l&#039;utilisateur de Squid</h3>
+<div class="level3">
+
+<p>
+L&#039;utilisateur <em>proxy</em> de Squid doit appartenir au groupe <em>root</em> pour bénéficier des droits nécessaires sur les fichiers de journalisation de Squid, afin de rendre l&#039;authentification fonctionnelle :
+</p>
+
+<p>
+Changer le propriétaire des fichiers de journalisation de Squid :
+</p>
+<pre class="code">sudo chown -R proxy:root /var/log/squid</pre>
+<pre class="code">sudo chown -R proxy:root /var/run/samba/winbindd_privileged</pre>
+
+<p>
+Changer le groupe du tampon de Squid :
+</p>
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditer le fichier</a> /etc/squid/squid.conf,
+</p>
+
+<p>
+Dans la partie <strong><code>TAG: cache_effective_group</code></strong>, décommenter la ligne et y mettre le groupe <em>root</em> :
+</p>
+<pre class="code">cache_effective_group root</pre>
+
+<p>
+Redémarrer Squid :
+</p>
+<pre class="code">sudo /etc/init.d/squid restart</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Droits de l'utilisateur de Squid] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4871-5609" /><input type="submit" value="Modifier" class="button" title="Droits de l'utilisateur de Squid" /></div></form></div>
+<h3 class="sectionedit10" id="modification_de_la_mise_en_tampon_de_squid">Modification de la mise en tampon de Squid</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="mise_en_tampon_de_page_web">Mise en tampon de page web</h4>
+<div class="level4">
+
+<p>
+Par défaut, le tampon de Squid est activé, ce qui permet d&#039;accélérer le chargement de certaines pages.
+La taille par défaut est de 100 Mo (situé dans /var/spool/squid).
+</p>
+
+<p>
+Pour changer sa taille, modifiez le fichier /etc/squid/squid.conf
+Trouvez la ligne:
+</p>
+<pre class="code"># cache_dir ufs /var/spool/squid 100 16 256</pre>
+
+<p>
+Et décommentez-la. Vous pouvez changer la valeur 100 par ce que vous voulez (par exemple 200 pour 200 Mo) :
+cache_dir ufs /var/spool/squid 200 16 256
+</p>
+
+<p>
+Taille maximum de mémoire vive utilisée pour stocker le tampon :
+</p>
+<pre class="code">cache_mem 16 MB</pre>
+
+<p>
+# Taille maximum des objets stockés dans le tampon :
+</p>
+<pre class="code">maximum_object_size 15 MB</pre>
+
+</div>
+
+<h4 id="tampon_dns">Tampon DNS</h4>
+<div class="level4">
+
+<p>
+<p><div class="noteclassic">Par defaut, Squid est configuré pour garder 6 heures le tampon <abbr title="Domain Name System">DNS</abbr> dont il a pu résoudre le nom et 5 minutes celui dont il n&#039;a pas pu résoudre le nom <abbr title="Domain Name System">DNS</abbr>.
+</div></p>
+</p>
+
+<p>
+Modification du temps de tampon pour la résolution de nom &quot;positive&quot;; ex :
+</p>
+<pre class="code">positive_dns_ttl 8 hours</pre>
+
+<p>
+Modification du temps de tampon pour la résolution de nom &quot;négative&quot;; ex :
+</p>
+<pre class="code">negative_ttl 4 minutes</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Modification de la mise en tampon de Squid] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5610-6782" /><input type="submit" value="Modifier" class="button" title="Modification de la mise en tampon de Squid" /></div></form></div>
+<h3 class="sectionedit11" id="rendre_squid_transparent">Rendre Squid transparent</h3>
+<div class="level3">
+
+<p>
+Pour que Squid fonctionne comme un serveur mandataire transparent, il faut ajouter à la fin du port de Squid :
+</p>
+<pre class="code">http_port 3128 transparent</pre>
+
+<p>
+Puis exécuter la commande suivante pour indiquer à <strong>iptables</strong> qu&#039;il doit rediriger les requêtes provenant du port 80 sur celui de Squid, le 3128 :
+<p><div class="noteimportant">
+Pensez à bien modifier l&#039;interface réseau <strong>eth0</strong> par celle que vous utilisez !
+</p>
+
+<p>
+L&#039;option <strong>-s 192.168.0.0/24</strong> est facultative si vous souhaitez que tous vos réseaux passent par le proxy, mais si vous voulez l&#039;utiliser pensez à changer l&#039;adresse par la vôtre !
+
+</div></p>
+</p>
+<pre class="code">sudo iptables -t nat -A PREROUTING -i eth0 -s 192.168.0.0/24 -p tcp --dport 80 -j REDIRECT --to-port 3128</pre>
+
+<p>
+Relancer Squid avec la nouvelle configuration :
+</p>
+<pre class="code">sudo squid -k reconfigure  # ou sudo squid3 -k reconfigure</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Rendre Squid transparent] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6783-7662" /><input type="submit" value="Modifier" class="button" title="Rendre Squid transparent" /></div></form></div>
+<h2 class="sectionedit12" id="webmin_administration_via_une_interface_web_de_squid">Webmin (administration via une interface web de Squid)</h2>
+<div class="level2">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/webmin" class="wikilink1" title="webmin">Webmin</a> est un outil d&#039;administration web pour votre serveur ou machine Linux. Il permet de gérer le système, administrer les serveurs installés, etc.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Webmin (administration via une interface web de Squid)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7663-7889" /><input type="submit" value="Modifier" class="button" title="Webmin (administration via une interface web de Squid)" /></div></form></div>
+<h3 class="sectionedit13" id="installation1">Installation</h3>
+<div class="level3">
+
+<p>
+Webmin n&#039;étant pas dans les dépôts, il faut télécharger le fichier « .deb » d&#039;installation de Webmin depuis leur site :
+</p>
+
+<p>
+<a href="http://sourceforge.net/projects/webadmin/files/webmin/" class="urlextern" title="http://sourceforge.net/projects/webadmin/files/webmin/"  rel="nofollow">http://sourceforge.net/projects/webadmin/files/webmin/</a>
+</p>
+
+<p>
+Puis <a href="tutoriel/comment_installer_un_paquet#paquet_deb_telecharge" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer</a> le paquet téléchargé.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7890-8203" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit14" id="connexion">Connexion</h3>
+<div class="level3">
+
+<p>
+Pour administrer sa machine depuis Webmin, ouvrir un navigateur <strong>qui ne passe pas par ce serveur mandataire</strong> et y saisir l&#039;adresse :
+</p>
+<pre class="code">https://nom_machine:10000/</pre>
+
+<p>
+(<code>nom_machine</code> doit être remplacé par l&#039;IP ou le hostname de la machine)
+</p>
+
+<p>
+Vous pouvez vous y connecter avec vos identifiants/mots de passe habituels.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Connexion] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8204-8545" /><input type="submit" value="Modifier" class="button" title="Connexion" /></div></form></div>
+<h3 class="sectionedit15" id="administration_de_squid">Administration de Squid</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Pour administrer Squid, dérouler le menu <em>servers</em> puis <em>Squid Proxy Server</em>. Pour plus d&#039;informations sur le module d&#039;administration de Squid, regardez directement la <a href="http://doxfer.com/Webmin/SquidProxyServer" class="urlextern" title="http://doxfer.com/Webmin/SquidProxyServer"  rel="nofollow">doc du site de Webmin</a> (en).</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Depuis Oneiric 11.10 un analyseur de journaux d&#039;événements pour Squid est disponible dans les dépôts.</div>
+</li>
+</ul>
+
+<p>
+Pour l&#039;installer, il suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://lightsquid" class="urlextern" title="apt://lightsquid"  rel="nofollow">lightsquid</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Administration de Squid] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8546-9073" /><input type="submit" value="Modifier" class="button" title="Administration de Squid" /></div></form></div>
+<h3 class="sectionedit16" id="visionnement_des_logs">Visionnement des logs</h3>
+<div class="level3">
+
+<p>
+Trois principaux visualisateurs de journaux d&#039;événements sont disponibles et consultables depuis Webmin : <em>SARG</em>, <em>Calamaris</em> et <em>Webalizer</em>.
+</p>
+
+<p>
+Au choix, <a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer l&#039;un des paquets</a> <strong><a href="apt://sarg" class="urlextern" title="apt://sarg"  rel="nofollow">sarg</a></strong> <strong><a href="apt://calamaris" class="urlextern" title="apt://calamaris"  rel="nofollow">calamaris</a></strong> <strong><a href="apt://webalizer" class="urlextern" title="apt://webalizer"  rel="nofollow">webalizer</a></strong>.
+</p>
+
+<p>
+Dans l&#039;interface Webmin, vous pouvez configurer et générer des rapports Squid <em>via</em> :
+</p>
+<ul>
+<li class="level1"><div class="li"> Calamaris : <em>Servers → Squid Proxy Server → Calamaris Log Analysis</em>.</div>
+</li>
+<li class="level1"><div class="li"> SARG : <em>Servers → Squid Analysis Report Generator</em>.</div>
+</li>
+<li class="level1"><div class="li"> Webalizer : <em>Servers → Webalizer Logfile Analysis</em>.</div>
+</li>
+</ul>
+
+<p>
+Webalizer nécessite un dossier, à indiquer dans Webmin, dans lequel il enregistrera les rapports générés. Créez donc un dossier <code>webalizer</code> dans le dossier personnel :
+</p>
+<pre class="code">mkdir ~/webalizer</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Visionnement des logs] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9074-9914" /><input type="submit" value="Modifier" class="button" title="Visionnement des logs" /></div></form></div>
+<h2 class="sectionedit17" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer son paquet</a>. La configuration de l&#039;application sera conservée ou supprimée selon la méthode de désinstallation que vous choisirez.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Désinstallation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9915-10178" /><input type="submit" value="Modifier" class="button" title="Désinstallation" /></div></form></div>
+<h2 class="sectionedit18" id="applications_associees">Applications associées</h2>
+<div class="level2">
+
+<p>
+Beaucoup de logiciels sont complémentaires à Squid, et permettent de nouvelles fonctionnalités comme le filtrage de contenu, le blacklisting …
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Applications associées] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10179-10363" /><input type="submit" value="Modifier" class="button" title="Applications associées" /></div></form></div>
+<h3 class="sectionedit19" id="dansguardian">DansGuardian</h3>
+<div class="level3">
+
+<p>
+Filtrage de contenu web
+<a href="http://dansguardian.org/" class="urlextern" title="http://dansguardian.org/"  rel="nofollow">http://dansguardian.org/</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[DansGuardian] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10364-10441" /><input type="submit" value="Modifier" class="button" title="DansGuardian" /></div></form></div>
+<h3 class="sectionedit20" id="prostat">Prostat</h3>
+<div class="level3">
+
+<p>
+Outil de statistiques pour Squid
+<a href="http://hany.sk/~hany/software/prostat/index_body.html" class="urlextern" title="http://hany.sk/~hany/software/prostat/index_body.html"  rel="nofollow">http://hany.sk/~hany/software/prostat/index_body.html</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Prostat] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10442-10552" /><input type="submit" value="Modifier" class="button" title="Prostat" /></div></form></div>
+<h2 class="sectionedit21" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.squid-cache.org" class="urlextern" title="http://www.squid-cache.org"  rel="nofollow">Site officiel de Squid</a> [en]</div>
+</li>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory" class="wikilink1" title="tutoriel:comment_mettre_en_place_un_proxy_squid_avec_authentification_active_directory">Squid avec authentification depuis Active Directory</a> [fr]</div>
+</li>
+<li class="level1"><div class="li"> <a href="tutoriel/comment_mettre_en_place_un_proxy_squid_avec_authentification_ncsa" class="wikilink1" title="tutoriel:comment_mettre_en_place_un_proxy_squid_avec_authentification_ncsa">Squid avec authentification de base</a> [fr]</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.opendoc.net/solutions/comment-realiser-solution-filtrage-contenus-squid-squiguard-havp-clamav?s[]=squid" class="urlextern" title="http://www.opendoc.net/solutions/comment-realiser-solution-filtrage-contenus-squid-squiguard-havp-clamav?s[]=squid"  rel="nofollow">Comment réaliser une solution de filtrage de contenu avec Squid, Squiguard, Havp et ClamAV ?</a> [fr] »aucune doc sur site distant«</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10553-11166" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<h2 class="sectionedit22" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(fr)</strong> <a href="http://www.it-connect.fr/tutoriels/unix-linux/squid/" class="urlextern" title="http://www.it-connect.fr/tutoriels/unix-linux/squid/"  rel="nofollow">Plusieurs tutoriels sur l&#039;installation et la configuration de SQUID</a> sur IT-Connect</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="utilisateurs/v0n" class="wikilink1" title="utilisateurs:v0n">v0n</a>, <a href="utilisateurs/k20" class="wikilink1" title="utilisateurs:k20">k20</a>, yakusa77</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="squid"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425935258" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11167-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/6/68f991939d316d2d0758fa4e7a9164a1.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="squid?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="squid?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/squid?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/squid?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/squid?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,864 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>bumblebee - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-14T19:30:59+0100"/>
+<meta name="keywords" content="precise,quantal,raring,saucy,materiel,carte graphique,nvidia,nvidia optimus,bumblebee"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/bumblebee?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/bumblebee?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/bumblebee"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/bumblebee"/>
+<link rel="canonical" href="bumblebee"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"bumblebee","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="bumblebee#main" tabindex="1">Contenu</a> | <a href="bumblebee#qsearch__in" tabindex="2">Rechercher</a> | <a href="bumblebee#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="bumblebee" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="bumblebee" >bumblebee</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="versions">versions supportées d'Ubuntu</a>.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="bumblebee#presentation">Présentation</a></div></li>
+<li class="level1"><div class="li"><a href="bumblebee#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="bumblebee#installations_personnalisees">Installations personnalisées</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="bumblebee#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="bumblebee#questionsreponses">Questions/Réponses</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="bumblebee#comment_verifier_que_la_gestion_d_energie_power-management_a_savoir_eteindreallumer_la_carte_nvidia_est_bien_active">Comment vérifier que la gestion d&#039;énergie (power-management, à savoir éteindre/allumer la carte nVidia) est bien active ?</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#comment_utiliser_une_autre_version_du_pilote_nvidia_-updates_-experimental">Comment utiliser une autre version du pilote nvidia (-updates, -experimental, ...) ?</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#ne_peut-on_pas_utiliser_exclusivement_la_carte_nvidia_et_eteindre_la_carte_intel">Ne peut-on pas utiliser exclusivement la carte NVIDIA, et éteindre la carte Intel ?</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#j_en_n_ai_rien_a_faire_de_l_autonomie_puis-je_faire_en_sorte_que_mon_systeme_tourne_entierement_sur_la_carte_nvidia">J&#039;en n&#039;ai rien à faire de l&#039;autonomie. Puis-je faire en sorte que mon système tourne entièrement sur la carte NVIDIA ?</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#pourrait-on_avoir_un_indicateur_visuel_pour_savoir_si_la_carte_nvidia_est_allumee_ou_pas_et_quel_sont_les_programmes_qui_tournent_dessus">Pourrait-on avoir un indicateur visuel pour savoir si la carte NVIDIA est allumée ou pas, et quel sont les programmes qui tournent dessus?</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#le_systeme_indique_que_le_pilote_nvidia_est_installe_mais_pas_active">Le système indique que le pilote nvidia est installé mais pas activé.</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#je_n_arrive_pas_a_acceder_au_panneau_de_configuration_nvidia_nvidia-settings_ou_il_me_dit_que_je_n_utilise_pas_la_carte_nvidia__que_faire">Je n&#039;arrive pas à accéder au Panneau de Configuration NVIDIA (nvidia-settings) (ou il me dit que je n&#039;utilise pas la carte NVIDIA). Que faire ?</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#j_ai_ce_message_d_erreur_ee_failed_to_load_module_kbd_module_does_not_exist_0_qui_apparait_a_certains_endroit_est-ce_grave">J&#039;ai ce message d&#039;erreur &quot;(EE) Failed to load module &quot;kbd&quot; (module does not exist, 0)&quot; qui apparaît à certains endroit, est-ce grave ?</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#je_n_arrive_pas_a_utiliser_mon_port_dvi_etou_hdmi_est-ce_lie_a_optimus">Je n&#039;arrive pas à utiliser mon port DVI et/ou HDMI. Est-ce lié à Optimus ?</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="bumblebee#guide_de_depannage">Guide de dépannage</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="bumblebee#votre_pc_possede-t-il_bien_optimus_ou_un_equivalent_nvidia">Votre PC possède-t-il bien Optimus ou un équivalent NVIDIA ?</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#utilisez_vous_bien_la_derniere_version_de_bumblebee">Utilisez vous bien la dernière version de Bumblebee ?</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#votre_pilote_nvidia_est-il_suffisamment_recent">Votre pilote nvidia est-il suffisamment récent ?</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#les_headers_du_noyau_sont-ils_bien_installes">Les headers du noyau sont-ils bien installés ?</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#impossible_d_obtenir_la_resolution_d_affichage_correcte_pour_mon_ecran_les_effets_3d_ne_fonctionnent_pas_je_suis_redirige_vers_unity_2d_ou_gnome_classic_au_lieu_d_unity_3d_ou_gnome_shell">Impossible d&#039;obtenir la résolution d&#039;affichage correcte pour mon écran, les effets 3D ne fonctionnent pas, je suis redirigé vers Unity 2D ou Gnome Classic au lieu d&#039;Unity 3D ou Gnome Shell</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#les_effets_3d_ne_fonctionnent_pas_je_suis_redirige_vers_unity_2d_ou_gnome_classic_au_lieu_d_unity_3d_ou_gnome_shell_j_ai_les_messages_d_erreurs_suivants">Les effets 3D ne fonctionnent pas, je suis redirigé vers Unity 2D ou Gnome Classic au lieu d&#039;Unity 3D ou Gnome Shell, j&#039;ai les messages d&#039;erreurs suivants :</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#j_ai_le_message_d_erreur_suivant">J&#039;ai le message d&#039;erreur suivant :</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#j_ai_l_un_des_messages_d_erreurs_suivant">J&#039;ai l&#039;un des messages d&#039;erreurs suivant :</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#j_ai_l_un_des_messages_d_erreurs_suivant1">J&#039;ai l&#039;un des messages d&#039;erreurs suivant :</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#mon_application_ne_se_lance_pas_a_travers_optirun_j_obtiens_le_message_d_erreur_suivant">Mon application ne se lance pas à travers optirun, j&#039;obtiens le message d&#039;erreur suivant :</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#optirun_attend_indefiniment">optirun attend indéfiniment.</a></div></li>
+<li class="level2"><div class="li"><a href="bumblebee#bumblebee_ne_se_lance_pas_sous_linux_mint">Bumblebee ne se lance pas sous Linux Mint</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="bumblebee#lien_divers">Lien divers</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="quantal" class="wikilink1" title="quantal" rel="tag">Quantal</a>,
+	<a href="raring" class="wikilink1" title="raring" rel="tag">Raring</a>,
+	<a href="saucy" class="wikilink1" title="saucy" rel="tag">Saucy</a>,
+	<a href="materiel" class="wikilink1" title="materiel" rel="tag">matériel</a>,
+	<a href="carte_graphique" class="wikilink1" title="carte_graphique" rel="tag">carte graphique</a>,
+	<a href="nvidia" class="wikilink1" title="nvidia" rel="tag">nvidia</a>,
+	<a href="nvidia_optimus" class="wikilink1" title="nvidia_optimus" rel="tag">nvidia optimus</a>,
+	<a href="bumblebee" class="wikilink1" title="bumblebee" rel="tag">bumblebee</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="bumblebeeoptimus_sous_gnulinux">Bumblebee : Optimus sous GNU/Linux</h1>
+<div class="level1">
+
+<p>
+Cette page présente une description du logiciel Bumblebee, dont le but est de supporter la <a href="nvidia_optimus" class="wikilink1" title="nvidia_optimus">technologie Optimus de NVIDIA</a> sous <abbr title="GNU&#039;s Not Unix">GNU</abbr>/Linux.
+</p>
+
+<p>
+Un <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=1230851" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=1230851"  rel="nofollow">topic dédié</a> est également disponible sur le forum, partie <em>Affichage et cartes graphiques</em>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Bumblebee : Optimus sous GNU/Linux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="101-465" /><input type="submit" value="Modifier" class="button" title="Bumblebee : Optimus sous GNU/Linux" /></div></form></div>
+<h2 class="sectionedit2" id="presentation">Présentation</h2>
+<div class="level2">
+
+<p>
+<strong>Bumblebee</strong> est un projet indépendant géré par plusieurs développeurs réunis dans une équipe nommée <strong>The Bumblebee Project</strong>, et dont le but est de supporter la technologie Optimus (le support d&#039;Hybrid SLI est aussi de la partie) sous Linux, que ce soit sous Ubuntu ou une autre distribution. Le support est néanmoins plus présent pour Ubuntu et ArchLinux que les autres distributions.
+</p>
+
+<p>
+<strong>C&#039;est la solution conseillée</strong>. Bumblebee offre la possibilité d&#039;utiliser la carte graphique NVIDIA lorsque nécessaire (via au choix le pilote propriétaire nvidia ou le pilote libre nouveau, le pilote propriétaire nvidia étant cependant fortement recommandé dans le cas de cette technologie, et c&#039;est d&#039;ailleurs le comportement par défaut actuellement), et d&#039;éteindre celle-ci le reste du temps. D&#039;autres solutions existent, mais celle-ci à l&#039;avantage d&#039;être la plus stable, et a comme propriété non négligeable d&#039;être en partie développée par un membre du forum Ubuntu-fr, ArchangeGabriel, qui pourra vous aider dans le <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=1230851" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=1230851"  rel="nofollow">topic dédié</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Présentation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="466-1603" /><input type="submit" value="Modifier" class="button" title="Présentation" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Un prérequis nécessaire est d&#039;utiliser au minimum Ubuntu 12.04 (les versions supportées sont 12.04, 12.10, 13.04 ,13.10 ,14.04). De manière générale, les différents composants matériels présents dans de tels ordinateurs nécessitent de toutes façons l&#039;utilisation d&#039;un kernel (noyau du système) récent, et il est par conséquent conseillé de migrer vers la version 12.04 au minimum. Attention, quelques précautions sont à prendre pour la version 12.04.4, cf. ci-dessous.
+</p>
+
+<p>
+<p><div class="noteimportant"><em class="u"><strong>Instructions spécifiques pour 12.04.4</strong></em>
+</p>
+
+<p>
+Il faut remplacer linux-headers-generic par linux-headers-generic-lts-saucy.
+</div></p>
+</p>
+
+<p>
+Pour vérifier quelle version vous avez :
+</p>
+<pre class="code">lsb_release -a</pre>
+
+<p>
+<p><div class="notetip">
+A noter qu&#039;a partir de la version 12.04.3 LTS <em>nvidia-prime</em> est enfin intégré dans les dépôts par défaut il faut donc soit installer Bumblebee soit PRIME (conflit si les 2 sont installés).<a href="http://mylinuxexplore.blogspot.com/2013/08/ubuntu-12043-lts-review-with-much.html?showComment=1378020261699#c8076224745014488247" class="urlextern" title="http://mylinuxexplore.blogspot.com/2013/08/ubuntu-12043-lts-review-with-much.html?showComment=1378020261699#c8076224745014488247"  rel="nofollow">Commentaire sur le Blog Linuxed (en)</a>
+<a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=14697951#p14697951" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=14697951#p14697951"  rel="nofollow">Tutoriel ici </a>
+</p>
+
+<p>
+<strong><a href="apt://Bumblebee" class="interwiki iw_apt" title="apt://Bumblebee">Bumblebee</a></strong> est dans les dépôts officiels depuis Ubuntu 13.10. Pour l&#039;instant, malgré l’avènement de Nvidia-prime et en attendant la possibilité du noyau linux de gérer l&#039;extinction de la carte graphique - à partir de la version 3.12 -, Bumblebee semble être la solution permettant la meilleure gestion de l&#039;énergie
+</div></p>
+</p>
+
+<p>
+Si tout va bien, vous pouvez maintenant installer bumblebee.
+</p>
+
+<p>
+Pour cela, lancez un terminal, puis entrez les commandes suivantes une par une :
+</p>
+
+<p>
+<strong>Pour Ubuntu 12.04 à 13.04</strong>
+</p>
+
+<p>
+D&#039;abord, l&#039;ajout du PPA nécessaire, les paquets n&#039;étant pas disponibles dans la logithèque Ubuntu :
+</p>
+<pre class="code">sudo apt-add-repository ppa:bumblebee/stable</pre>
+
+<p>
+Puis rafraîchissez les informations sur les paquets :
+</p>
+<pre class="code">sudo apt-get update</pre>
+
+<p>
+Un peu de nettoyage :
+</p>
+<pre class="code">sudo apt-get clean</pre>
+
+<p>
+Mises à jour :
+</p>
+<pre class="code">sudo apt-get dist-upgrade -y</pre>
+
+<p>
+Installer les headers, juste au cas où ils ne le seraient pas déjà…
+</p>
+<pre class="code">sudo apt-get install linux-headers-generic</pre>
+
+<p>
+Enfin, installer bumblebee (avec nvidia, virtualgl et support 32bit par défaut, remplacez virtualgl par primus ou ajoutez celui-ci à la fin si vous voulez activer le support de primus dans bumblebee) :
+</p>
+<pre class="code">sudo apt-get install bumblebee virtualgl</pre>
+
+<p>
+<strong>
+Pour Ubuntu 13.10 et 14.04, installer bumblebee avec la commande suivante :</strong>
+</p>
+<pre class="code">sudo apt-get install bumblebee</pre>
+
+<p>
+ou par la logithèque : <strong><a href="apt://bumblebee" class="interwiki iw_apt" title="apt://bumblebee">bumblebee</a></strong>
+</p>
+
+<p>
+Après l&#039;installation, commencez par redémarrer l&#039;ordinateur pour vérifier qu&#039;aucun problème n&#039;apparaisse et afin que certains composants soient correctement mis à jour.
+</p>
+
+<p>
+Ensuite, pour vérifier que tout fonctionne, dans un terminal, entrez ceci :
+</p>
+<pre class="code">glxspheres</pre>
+
+<p>
+Ci ca marche pas, il vous dit commande introuvable, essayer glxspheres64. 
+Une fenêtre apparaît, avec une animation de sphères colorées. Laisser tourner 30s, puis fermez la fenêtre, et notez le résultat.
+</p>
+
+<p>
+Puis comparez avec la même chose sur la carte NVIDIA :
+</p>
+<pre class="code">optirun glxspheres</pre>
+
+<p>
+Puis fermez la fenêtre, et notez le résultat.
+</p>
+
+<p>
+Normalement, les résultats devraient être supérieurs avec optirun. Cependant, l&#039;utilisation de VirtualGL limite les performances pour le moment, mais les développeurs travaillent sur ce problème, néanmoins il se peut que dans certaines situations la carte NVIDIA n&#039;offre pas de meilleures performances.
+</p>
+
+<p>
+Dans le cas où la commande précédente ne fonctionnerait pas, exécutez 
+</p>
+<pre class="code"> sudo apt-get install bumblebee-nvidia</pre>
+
+<p>
+Puis redémarrez et essayez à nouveau.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1604-5357" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit4" id="installations_personnalisees">Installations personnalisées</h3>
+<div class="level3">
+
+<p>
+Minimum :
+</p>
+<pre class="code">sudo apt-get install --no-install-recommends bumblebee</pre>
+
+<p>
+Puis ajoutez à cette ligne selon vos besoins :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>bumblebee-nvidia</strong> : installation du driver propriétaire nvidia</div>
+</li>
+<li class="level1"><div class="li"> <strong>virtualgl</strong> : VirtualGL comme backend</div>
+</li>
+<li class="level1"><div class="li"> <strong>virtualgl-libs-ia32</strong> : support 32bit pour VirtualGL sur système 64bit</div>
+</li>
+<li class="level1"><div class="li"> <strong>primus</strong> : primus/primusrun comme backend (virtualgl reste le backend par défaut, il faut utiliser optirun -b primus au lieu d&#039;optirun)</div>
+</li>
+<li class="level1"><div class="li"> <strong>primus-libs-ia32</strong> : support 32bit pour primus/primusrun sur système 64bit</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Installations personnalisées] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5358-5944" /><input type="submit" value="Modifier" class="button" title="Installations personnalisées" /></div></form></div>
+<h2 class="sectionedit5" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Pour effectuer le lancement d&#039;une application avec la carte graphique NVIDIA, tapez dans un terminal :
+</p>
+<pre class="code">optirun &lt;application&gt;</pre>
+
+<p>
+Par ailleurs, le gestionnaire de configuration <a href="nvidia" class="wikilink1" title="nvidia">nVidia settings</a> est accessible <strong>seulement</strong> en lançant dans un terminal : 
+</p>
+<pre class="code">optirun -b none nvidia-settings -c :8</pre>
+
+<p>
+Pour lancer des applications avec primus (il faut l&#039;avoir installé d&#039;abord, cf. ci-dessus) :
+</p>
+<pre class="code">optirun -b primus &lt;application&gt;</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5945-6439" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h2 class="sectionedit6" id="questionsreponses">Questions/Réponses</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Questions/Réponses] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6440-6473" /><input type="submit" value="Modifier" class="button" title="Questions/Réponses" /></div></form></div>
+<h3 class="sectionedit7" id="comment_verifier_que_la_gestion_d_energie_power-management_a_savoir_eteindreallumer_la_carte_nvidia_est_bien_active">Comment vérifier que la gestion d&#039;énergie (power-management, à savoir éteindre/allumer la carte nVidia) est bien active ?</h3>
+<div class="level3">
+
+<p>
+Commencez par débrancher l&#039;alimentation de votre portable pour le faire tourner sur batterie afin de pouvoir relever la valeur de sa consommation.
+</p>
+
+<p>
+Ensuite, après un démarrage sans aucune application tournant, ouvrez un terminal et copiez ceci :
+</p>
+<pre class="code">grep rate /proc/acpi/battery/BAT0/state</pre>
+
+<p>
+(A noter que BAT0 peut être à remplacer par BAT1 sur certains modèles, voir même un autre chiffre)
+</p>
+
+<p>
+Sous Quantal et plus récent, il faut utiliser ceci à la place :
+</p>
+<pre class="code">cat /sys/class/power_supply/BAT0/power_now</pre>
+
+<p>
+Notez le résultat.
+</p>
+
+<p>
+Lancez cette commande :
+</p>
+<pre class="code">optirun bash</pre>
+
+<p>
+Il semble a priori ne rien s&#039;être passé, mais en réalité la carte est maintenant allumée. Relancez la commande précédente :
+</p>
+<pre class="code">grep rate /proc/acpi/battery/BAT0/state</pre>
+
+<p>
+(Et toujours sous Quantal et plus récent :
+</p>
+<pre class="code">cat /sys/class/power_supply/BAT0/power_now</pre>
+
+<p>
+)
+</p>
+
+<p>
+Notez le résultat. Entrez exit ou faites Ctrl+D pour éteindre de nouveau la carte.
+</p>
+
+<p>
+Comparez les deux résultat, le premier obtenu devrait être amplement inférieur au second.
+</p>
+
+<p>
+Si ce n&#039;est pas le cas, vérifiez que votre commande de démarrage noyau (fichier /proc/cmdline) ne contient aucune option du style noacpi, pci=noacpi, acpi=off, …
+</p>
+
+<p>
+Si l&#039;une d&#039;entre elle est présente, supprimez-là en éditant les fichiers de configuration de GRUB, n&#039;oubliez pas de mettre à jour celui-ci avec update-grub, redémarrez et refaites la procédure de test. Ces options sont parfois présentes pour palier à certains problèmes, qui sont normalement tous corrigés par Bumblebee sur ce genre de machines.
+</p>
+
+<p>
+Un autre moyen de vérifier la consommation est  d&#039;utiliser l&#039;outil powerstat
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Comment vérifier que la gestion d'énergie (power-management, à savoir éteindre/allumer la carte nVidia) est bien active ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6474-8288" /><input type="submit" value="Modifier" class="button" title="Comment vérifier que la gestion d'énergie (power-management, à savoir éteindre/allumer la carte nVidia) est bien active ?" /></div></form></div>
+<h3 class="sectionedit8" id="comment_utiliser_une_autre_version_du_pilote_nvidia_-updates_-experimental">Comment utiliser une autre version du pilote nvidia (-updates, -experimental, ...) ?</h3>
+<div class="level3">
+
+<p>
+Depuis la version 3.1 de Bumblebee, il suffit d&#039;installer la version de votre choix.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Comment utiliser une autre version du pilote nvidia (-updates, -experimental, ...) ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8289-8470" /><input type="submit" value="Modifier" class="button" title="Comment utiliser une autre version du pilote nvidia (-updates, -experimental, ...) ?" /></div></form></div>
+<h3 class="sectionedit9" id="ne_peut-on_pas_utiliser_exclusivement_la_carte_nvidia_et_eteindre_la_carte_intel">Ne peut-on pas utiliser exclusivement la carte NVIDIA, et éteindre la carte Intel ?</h3>
+<div class="level3">
+
+<p>
+Cela dépend des modèles, mais pour la plupart, c&#039;est matériellement impossible. La carte NVIDIA et la carte Intel sont matériellement connectées entre elles, et seule la carte Intel est connectée à l&#039;écran. Donc l&#039;affichage passe forcément par la carte Intel, il n&#039;est donc pas possible de la désactiver. Au mieux, il sera possible dans un futur lointain de tout faire tourner sur la carte NVIDIA et de n&#039;utiliser la carte Intel que pour l&#039;affichage à l&#039;écran.
+</p>
+
+<p>
+Cependant certaines cartes mères gérent la désactivation des composants matériels video et son depuis le Bios ( carte Gigabyte sous Peripherals/Internal Graphics –&gt; Disable ) et  certains modèles (Lenovo notamment) offrent cette possibilité.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Ne peut-on pas utiliser exclusivement la carte NVIDIA, et éteindre la carte Intel ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8471-9290" /><input type="submit" value="Modifier" class="button" title="Ne peut-on pas utiliser exclusivement la carte NVIDIA, et éteindre la carte Intel ?" /></div></form></div>
+<h3 class="sectionedit10" id="j_en_n_ai_rien_a_faire_de_l_autonomie_puis-je_faire_en_sorte_que_mon_systeme_tourne_entierement_sur_la_carte_nvidia">J&#039;en n&#039;ai rien à faire de l&#039;autonomie. Puis-je faire en sorte que mon système tourne entièrement sur la carte NVIDIA ?</h3>
+<div class="level3">
+
+<p>
+Ce sera possible avec PRIME, mais pas avant (possible désormais avec les pilotes 319.12, Linux 3.9 et X.org 1.14, moyennant un peu de configuration à faire).
+voir <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=14344241#p14344241" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=14344241#p14344241"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?pid=14344241#p14344241</a> pour un tutoriel
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[J'en n'ai rien à faire de l'autonomie. Puis-je faire en sorte que mon système tourne entièrement sur la carte NVIDIA ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9291-9673" /><input type="submit" value="Modifier" class="button" title="J'en n'ai rien à faire de l'autonomie. Puis-je faire en sorte que mon système tourne entièrement sur la carte NVIDIA ?" /></div></form></div>
+<h3 class="sectionedit11" id="pourrait-on_avoir_un_indicateur_visuel_pour_savoir_si_la_carte_nvidia_est_allumee_ou_pas_et_quel_sont_les_programmes_qui_tournent_dessus">Pourrait-on avoir un indicateur visuel pour savoir si la carte NVIDIA est allumée ou pas, et quel sont les programmes qui tournent dessus?</h3>
+<div class="level3">
+
+<p>
+Un projet, aujourd&#039;hui abandonné, visait à fournir cette fonctionnalité entre autres choses. Il s&#039;agissait de bumblebee-ui. <a href="http://youtu.be/4JdJ6tGCH44" class="urlextern" title="http://youtu.be/4JdJ6tGCH44"  rel="nofollow">Une première vidéo de démonstration est disponible.</a> On aura sûrement un outil similaire pour PRIME.
+Si vous utilisez Kubuntu ou autre distribution utilisant KDE, voir <a href="http://kde-apps.org/content/show.php/Bumblebee+Indicatior?content=154575" class="urlextern" title="http://kde-apps.org/content/show.php/Bumblebee+Indicatior?content=154575"  rel="nofollow">Plasma Bumblebee Indicator</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Pourrait-on avoir un indicateur visuel pour savoir si la carte NVIDIA est allumée ou pas, et quel sont les programmes qui tournent dessus?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9674-10258" /><input type="submit" value="Modifier" class="button" title="Pourrait-on avoir un indicateur visuel pour savoir si la carte NVIDIA est allumée ou pas, et quel sont les programmes qui tournent dessus?" /></div></form></div>
+<h3 class="sectionedit12" id="le_systeme_indique_que_le_pilote_nvidia_est_installe_mais_pas_active">Le système indique que le pilote nvidia est installé mais pas activé.</h3>
+<div class="level3">
+
+<p>
+C&#039;est normal, car c&#039;est la réalité. Bumblebee utilise le pilote nvidia et l&#039;a donc installé. Cependant, ce driver n&#039;est chargé que lorsqu&#039;il est utilisé, c&#039;est-à-dire lorsque optirun tourne, car ce n&#039;est pas lui qui est responsable de l&#039;affichage. Rien d&#039;alarmant donc.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Le système indique que le pilote nvidia est installé mais pas activé.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10259-10619" /><input type="submit" value="Modifier" class="button" title="Le système indique que le pilote nvidia est installé mais pas activé." /></div></form></div>
+<h3 class="sectionedit13" id="je_n_arrive_pas_a_acceder_au_panneau_de_configuration_nvidia_nvidia-settings_ou_il_me_dit_que_je_n_utilise_pas_la_carte_nvidia__que_faire">Je n&#039;arrive pas à accéder au Panneau de Configuration NVIDIA (nvidia-settings) (ou il me dit que je n&#039;utilise pas la carte NVIDIA). Que faire ?</h3>
+<div class="level3">
+
+<p>
+Tout d&#039;abord, si on vous conseille d&#039;utiliser nvidia-xconfig, ne le faites pas !
+</p>
+
+<p>
+En fait, le Panneau de Configuration NVIDIA ne détecte votre carte que si le fichier xorg.conf utilisé est celui de celle-ci et que de plus le serveur X.org sur lequel le Panneau tourne est géré par cette carte. Ces conditions font qu&#039;il n&#039;est pas possible d&#039;utiliser le Panneau de Configuration NVIDIA tel quel pour le moment, nous réfléchissons aux différentes options qui s&#039;offrent à nous pour contourner ce problème.
+</p>
+
+<p>
+Voir à la section &quot;Utilisation&quot; ci-dessus, comment lancer nvidia-settings.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Je n'arrive pas à accéder au Panneau de Configuration NVIDIA (nvidia-settings) (ou il me dit que je n'utilise pas la carte NVIDIA). Que faire ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10620-11366" /><input type="submit" value="Modifier" class="button" title="Je n'arrive pas à accéder au Panneau de Configuration NVIDIA (nvidia-settings) (ou il me dit que je n'utilise pas la carte NVIDIA). Que faire ?" /></div></form></div>
+<h3 class="sectionedit14" id="j_ai_ce_message_d_erreur_ee_failed_to_load_module_kbd_module_does_not_exist_0_qui_apparait_a_certains_endroit_est-ce_grave">J&#039;ai ce message d&#039;erreur &quot;(EE) Failed to load module &quot;kbd&quot; (module does not exist, 0)&quot; qui apparaît à certains endroit, est-ce grave ?</h3>
+<div class="level3">
+
+<p>
+Non pas du tout, ce devrait plutôt être un &quot;Warning&quot; (Avertissement) qu&#039;une &quot;Error&quot; (Erreur), mais ça ne pose en aucun cas de problèmes.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[J'ai ce message d'erreur (EE) Failed to load module kbd (module does not exist, 0) qui apparaît à certains endroit, est-ce grave ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11367-11656" /><input type="submit" value="Modifier" class="button" title="J'ai ce message d'erreur (EE) Failed to load module kbd (module does not exist, 0) qui apparaît à certains endroit, est-ce grave ?" /></div></form></div>
+<h3 class="sectionedit15" id="je_n_arrive_pas_a_utiliser_mon_port_dvi_etou_hdmi_est-ce_lie_a_optimus">Je n&#039;arrive pas à utiliser mon port DVI et/ou HDMI. Est-ce lié à Optimus ?</h3>
+<div class="level3">
+
+<p>
+Très certainement. A moins qu&#039;il ne s&#039;agisse d&#039;un problème simple dont les solutions existent déjà, votre port <abbr title="High-Definition Multimedia Interface">HDMI</abbr> est probablement relié à la carte nVidia. Nous avons beaucoup de travaux à faire de ce point de vue là, car pour le moment, il est quasiment impossible d&#039;utiliser un tel port <abbr title="High-Definition Multimedia Interface">HDMI</abbr> sous Linux.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Je n'arrive pas à utiliser mon port DVI et/ou HDMI. Est-ce lié à Optimus ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11657-12062" /><input type="submit" value="Modifier" class="button" title="Je n'arrive pas à utiliser mon port DVI et/ou HDMI. Est-ce lié à Optimus ?" /></div></form></div>
+<h2 class="sectionedit16" id="guide_de_depannage">Guide de dépannage</h2>
+<div class="level2">
+
+<p>
+Vous rencontrez un problème, un message d&#039;erreur, et vous ne savez pas quoi faire ? Commencer par comparer votre problème avec ceux décrits ici (chaque problème comporte plusieurs cas qui sont tous réglés par la solution proposée a priori, vous n&#039;avez pas nécessairement tous les symptômes), et vous trouverez peut-être le (ou les) votre et sa (leur) solution(s).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Guide de dépannage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12063-12470" /><input type="submit" value="Modifier" class="button" title="Guide de dépannage" /></div></form></div>
+<h3 class="sectionedit17" id="votre_pc_possede-t-il_bien_optimus_ou_un_equivalent_nvidia">Votre PC possède-t-il bien Optimus ou un équivalent NVIDIA ?</h3>
+<div class="level3">
+
+<p>
+C&#039;est la première chose à vérifier, lire la page de la doc sur <a href="nvidia_optimus" class="wikilink1" title="nvidia_optimus">Optimus</a> pour le vérifier.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Votre PC possède-t-il bien Optimus ou un équivalent NVIDIA ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12471-12658" /><input type="submit" value="Modifier" class="button" title="Votre PC possède-t-il bien Optimus ou un équivalent NVIDIA ?" /></div></form></div>
+<h3 class="sectionedit18" id="utilisez_vous_bien_la_derniere_version_de_bumblebee">Utilisez vous bien la dernière version de Bumblebee ?</h3>
+<div class="level3">
+
+<p>
+Il est important d&#039;avoir la dernière version disponible, de nombreux problèmes sont corrigés au fur et à mesure de leur découverte. Vérifiez donc qu&#039;il n&#039;y a pas de mises à jour disponibles avec le gestionnaire idoine.
+</p>
+
+<p>
+Au 26/04/2013, les paquets de Bumblebee Project en sont aux versions suivantes (distro est à remplacer par le nom de version de votre système, e.g. oneiric) :
+</p>
+<ul>
+<li class="level1"><div class="li"> bumblebee : 3.2.1-1~distroppa1</div>
+</li>
+<li class="level1"><div class="li"> bbswitch : 0.6-1~distroppa2</div>
+</li>
+<li class="level1"><div class="li"> primus : 20130426-1~distroppa1</div>
+</li>
+<li class="level1"><div class="li"> virtualgl : 2.3.1-2~distroppa2</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Utilisez vous bien la dernière version de Bumblebee ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12659-13250" /><input type="submit" value="Modifier" class="button" title="Utilisez vous bien la dernière version de Bumblebee ?" /></div></form></div>
+<h3 class="sectionedit19" id="votre_pilote_nvidia_est-il_suffisamment_recent">Votre pilote nvidia est-il suffisamment récent ?</h3>
+<div class="level3">
+
+<p>
+Il est conseillé d&#039;utiliser la dernière version stable du pilote nvidia (331 au 04/03/2014), cf. la partie correspondante du guide d&#039;installation.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Votre pilote nvidia est-il suffisamment récent ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13251-13461" /><input type="submit" value="Modifier" class="button" title="Votre pilote nvidia est-il suffisamment récent ?" /></div></form></div>
+<h3 class="sectionedit20" id="les_headers_du_noyau_sont-ils_bien_installes">Les headers du noyau sont-ils bien installés ?</h3>
+<div class="level3">
+
+<p>
+Un problème très fréquent sous Quantal est que les headers ne sont pas installés sur le système, empêchant la compilation du pilote nvidia ainsi que de bbswitch. Le message d&#039;erreur correspondant est généralement celui-ci :
+</p>
+<pre class="code">[ERROR]The Bumblebee daemon has not been started yet or the socket path /var/run/bumblebee.socket was incorrect.
+[ERROR]Could not connect to bumblebee daemon - is it running?</pre>
+
+<p>
+La solution est la suivante (remplacer nvidia-current par la version que vous utilisez) :
+</p>
+<pre class="code">sudo apt-get purge bbswitch-dkms nvidia-current
+sudo apt-get install linux-headers-generic
+sudo apt-get install --reinstall nvidia-current bbswitch-dkms bumblebee</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Les headers du noyau sont-ils bien installés ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13462-14209" /><input type="submit" value="Modifier" class="button" title="Les headers du noyau sont-ils bien installés ?" /></div></form></div>
+<h3 class="sectionedit21" id="impossible_d_obtenir_la_resolution_d_affichage_correcte_pour_mon_ecran_les_effets_3d_ne_fonctionnent_pas_je_suis_redirige_vers_unity_2d_ou_gnome_classic_au_lieu_d_unity_3d_ou_gnome_shell">Impossible d&#039;obtenir la résolution d&#039;affichage correcte pour mon écran, les effets 3D ne fonctionnent pas, je suis redirigé vers Unity 2D ou Gnome Classic au lieu d&#039;Unity 3D ou Gnome Shell</h3>
+<div class="level3">
+
+<p>
+Vérifiez s&#039;il existe un fichier xorg.conf dans le dossier /etc/X11. Si oui, il force très probablement l&#039;utilisation de la carte nVidia ce qui est alors fort certainement à l&#039;origine du problème, donc supprimez-le :
+</p>
+<pre class="code">sudo rm /etc/X11/xorg.conf</pre>
+
+<p>
+Puis redémarrez.
+</p>
+
+<p>
+Si ce n&#039;est pas le cas (i.e. le fichier n&#039;existe pas) où que le problème persiste, regardez le problème suivant.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Impossible d'obtenir la résolution d'affichage correcte pour mon écran, les effets 3D ne fonctionnent pas, je suis redirigé vers Unity 2D ou Gnome Classic au lieu d'Unity 3D ou Gnome Shell] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14210-14810" /><input type="submit" value="Modifier" class="button" title="Impossible d'obtenir la résolution d'affichage correcte pour mon écran, les effets 3D ne fonctionnent pas, je suis redirigé vers Unity 2D ou Gnome Classic au lieu d'Unity 3D ou Gnome Shell" /></div></form></div>
+<h3 class="sectionedit22" id="les_effets_3d_ne_fonctionnent_pas_je_suis_redirige_vers_unity_2d_ou_gnome_classic_au_lieu_d_unity_3d_ou_gnome_shell_j_ai_les_messages_d_erreurs_suivants">Les effets 3D ne fonctionnent pas, je suis redirigé vers Unity 2D ou Gnome Classic au lieu d&#039;Unity 3D ou Gnome Shell, j&#039;ai les messages d&#039;erreurs suivants :</h3>
+<div class="level3">
+<pre class="code">Xlib: extension &quot;GLX&quot; missing on display &quot;:0&quot;</pre>
+<pre class="code">Error: couldn&#039;t find RGB GLX visual or fbconfig</pre>
+<pre class="code">ERROR(596): Could not obtain RGB visual with requested properties</pre>
+
+<p>
+Ce problème vient d&#039;une mauvaise installation du pilote nvidia qui a supplanté les librairies graphiques de la cartes Intel. Pour le corriger, ouvrez un terminal et entrez ceci :
+</p>
+<pre class="code">sudo apt-get install --reinstall libgl1-mesa-glx bumblebee-nvidia</pre>
+
+<p>
+Redémarrez.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Les effets 3D ne fonctionnent pas, je suis redirigé vers Unity 2D ou Gnome Classic au lieu d'Unity 3D ou Gnome Shell, j'ai les messages d'erreurs suivants :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14811-15457" /><input type="submit" value="Modifier" class="button" title="Les effets 3D ne fonctionnent pas, je suis redirigé vers Unity 2D ou Gnome Classic au lieu d'Unity 3D ou Gnome Shell, j'ai les messages d'erreurs suivants :" /></div></form></div>
+<h3 class="sectionedit23" id="j_ai_le_message_d_erreur_suivant">J&#039;ai le message d&#039;erreur suivant :</h3>
+<div class="level3">
+<pre class="code">[ERROR]Cannot access secondary GPU - error: [XORG] (EE) [drm] failed to open device</pre>
+
+<p>
+Premièrement, commencez par vérifier que le pilote nouveau n&#039;est pas charge en mémoire :
+</p>
+<pre class="code">lsmod | grep nouveau</pre>
+
+<p>
+S&#039;il n&#039;y a pas de retour, tout va bien. Sinon, effectuez ceci:
+</p>
+<pre class="code">sudo rmmod nouveau</pre>
+
+<p>
+Ensuite, vérifiez que le pilote nvidia est bien construit dans le noyau en mémoire :
+</p>
+<pre class="code">sudo modprobe nvidia-current</pre>
+
+<p>
+Si vous obtenez ce message d&#039;erreur :
+</p>
+<pre class="code">FATAL: Module nvidia_current not found.</pre>
+
+<p>
+Effectuez ceci :
+</p>
+<pre class="code">sudo apt-get install --reinstall nvidia-current</pre>
+
+<p>
+Redémarrez et vérifiez si cela a résolu votre problème.
+</p>
+
+<p>
+Sinon, essayez de modifier l&#039;option &quot;Driver&quot; dans /etc/bumblebee/bumblebee.conf en remplaçant &quot;Driver=&quot; par &quot;Driver=nvidia&quot;, redémarrer et vérifier si cela a résolu le problème.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[J'ai le message d'erreur suivant :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15458-16375" /><input type="submit" value="Modifier" class="button" title="J'ai le message d'erreur suivant :" /></div></form></div>
+<h3 class="sectionedit24" id="j_ai_l_un_des_messages_d_erreurs_suivant">J&#039;ai l&#039;un des messages d&#039;erreurs suivant :</h3>
+<div class="level3">
+<pre class="code">ERROR: ld.so: object &#039;librrfaker.so&#039; from LD_PRELOAD cannot be preloaded: ignored.</pre>
+<pre class="code">ERROR: ld.so: object &#039;libdlfaker.so&#039; from LD_PRELOAD cannot be preloaded: ignored.</pre>
+
+<p>
+Si vous êtes sur une version 64bits, commencez par vérifier que le paquet virtualgl-libs:i386 est bien installé. Si ce n&#039;est pas le cas, installez-le et regardez si votre problème est réglé.
+</p>
+
+<p>
+Si c&#039;est le cas (paquet installé) ou que votre problème n&#039;est pas réglé, vous êtes dans l&#039;un des cas de figures suivants, et il n&#039;existe aucune solution envisageable actuellement :
+</p>
+<ul>
+<li class="level1"><div class="li"> le programme que vous essayez de lancer est un programme lié statiquement à la compilation (absolument aucune solution possible)</div>
+</li>
+<li class="level1"><div class="li"> le programme que vous essayez de lancer est un programme setuid ou setgid (exemple : chrome, le navigateur de Google), il existe une méthode décrite dans la documentation de VirtualGL, mais celle-ci est fortement déconseillée.</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[J'ai l'un des messages d'erreurs suivant :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="16376-17379" /><input type="submit" value="Modifier" class="button" title="J'ai l'un des messages d'erreurs suivant :" /></div></form></div>
+<h3 class="sectionedit25" id="j_ai_l_un_des_messages_d_erreurs_suivant1">J&#039;ai l&#039;un des messages d&#039;erreurs suivant :</h3>
+<div class="level3">
+<pre class="code">[ERROR]Cannot access secondary GPU - error: [XORG] (EE) NVIDIA(0): Failed to initialize the NVIDIA GPU at PCI:1:0:0.  Please
+[ERROR]Aborting because fallback start is disabled.</pre>
+
+<p>
+Ouvrir le fichier /etc/default/grub  
+</p>
+<pre class="code"> gksudo gedit /etc/default/grub </pre>
+
+<p>
+et ajouter 
+</p>
+<pre class="code"> rcutree.rcu_idle_gp_delay=1 </pre>
+
+<p>
+ à la ligne
+</p>
+<pre class="code"> GRUB_CMDLINE_LINUX_DEFAULT= </pre>
+
+<p>
+exemple : 
+</p>
+<pre class="code"> GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;</pre>
+
+<p>
+devient 
+</p>
+<pre class="code"> GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash rcutree.rcu_idle_gp_delay=1&quot; </pre>
+
+<p>
+Enfin ne pas oublier : 
+</p>
+<pre class="code"> sudo update-grub&quot;</pre>
+
+<p>
+voir <a href="https://bbs.archlinux.org/viewtopic.php?id=169742" class="urlextern" title="https://bbs.archlinux.org/viewtopic.php?id=169742"  rel="nofollow">https://bbs.archlinux.org/viewtopic.php?id=169742</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[J'ai l'un des messages d'erreurs suivant :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17380-18090" /><input type="submit" value="Modifier" class="button" title="J'ai l'un des messages d'erreurs suivant :" /></div></form></div>
+<h3 class="sectionedit26" id="mon_application_ne_se_lance_pas_a_travers_optirun_j_obtiens_le_message_d_erreur_suivant">Mon application ne se lance pas à travers optirun, j&#039;obtiens le message d&#039;erreur suivant :</h3>
+<div class="level3">
+<pre class="code">[VGL] ERROR: Could not open display :8</pre>
+
+<p>
+Certains programmes lancent des processus fils qui ne sont alors pas récupérés pas optirun. C&#039;est un problème sur lequel nous travaillons, une solution temporaire qui peut faire l&#039;affaire dans de nombreux cas est de réaliser la manipulation suivante.
+</p>
+
+<p>
+Ouvrez un terminal, et lancez ceci :
+</p>
+<pre class="code">optirun bash</pre>
+
+<p>
+Une nouvelle interface de terminal tournant sur la carte nVidia est alors disponible, vous pouvez lancer votre programme (sans optirun) via celle-ci.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Mon application ne se lance pas à travers optirun, j'obtiens le message d'erreur suivant :] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18091-18719" /><input type="submit" value="Modifier" class="button" title="Mon application ne se lance pas à travers optirun, j'obtiens le message d'erreur suivant :" /></div></form></div>
+<h3 class="sectionedit27" id="optirun_attend_indefiniment">optirun attend indéfiniment.</h3>
+<div class="level3">
+
+<p>
+Vérifiez les fichiers /var/log/Xorg.8.log et /var/log/kern.log. Si le premier se termine par :
+</p>
+<pre class="code">(EE) NVIDIA(GPU-0): WAIT: (E, 0, 0x857d)</pre>
+
+<p>
+Et/ou que le second contient ces lignes :
+</p>
+<pre class="code">NVRM: Xid (0000:01:00): 16, Head 00000000 Count 00000000
+NVRM: Xid (0000:01:00): 16, Head 00000000 Count 00000001
+NVRM: Xid (0000:01:00): 16, Head 00000000 Count 00000002
+NVRM: Xid (0000:01:00): 16, Head 00000000 Count 00000003
+NVRM: Xid (0000:01:00): 16, Head 00000000 Count 00000004
+NVRM: Xid (0000:01:00): 16, Head 00000000 Count 00000005
+NVRM: Xid (0000:01:00): 16, Head 00000000 Count 00000006
+NVRM: Xid (0000:01:00): 16, Head 00000000 Count 00000007</pre>
+
+<p>
+Il peut s&#039;agir d&#039;un bug présent dans le noyau Linux avec la fonction de virtualisation des processeurs Intel. La solution est d&#039;ajouter &quot;intel_iommu=off&quot; à la ligne de démarrage. Ou alors d&#039;une incompatibilité du driver nvidia (rare).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[optirun attend indéfiniment.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="18720-19665" /><input type="submit" value="Modifier" class="button" title="optirun attend indéfiniment." /></div></form></div>
+<h3 class="sectionedit28" id="bumblebee_ne_se_lance_pas_sous_linux_mint">Bumblebee ne se lance pas sous Linux Mint</h3>
+<div class="level3">
+
+<p>
+Il faut modifier le fichier init de bumblebeed :
+</p>
+<pre class="code">sudo gedit /etc/init/bumblebeed.conf</pre>
+
+<p>
+Rechercher les lignes suivantes :
+</p>
+<pre class="code">start on    (login-session-start or desktop-session-start)
+stop on     (desktop-shutdown)</pre>
+
+<p>
+Et les remplacer par :
+</p>
+<pre class="code">start on    runlevel [2345]
+stop on     runlevel [016]</pre>
+
+<p>
+Sauvegarder puis redémarrer.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Bumblebee ne se lance pas sous Linux Mint] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="19666-20076" /><input type="submit" value="Modifier" class="button" title="Bumblebee ne se lance pas sous Linux Mint" /></div></form></div>
+<h2 class="sectionedit29" id="lien_divers">Lien divers</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(en)</strong><a href="http://bumblebee-project.org/" class="urlextern" title="http://bumblebee-project.org/"  rel="nofollow">Site officiel de l&#039;organisation Bumblebee-Project</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong><a href="https://github.com/Bumblebee-Project/" class="urlextern" title="https://github.com/Bumblebee-Project/"  rel="nofollow">Page GitHub de l&#039;organisation Bumblebee-Project</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong><a href="https://launchpad.net/~bumblebee/" class="urlextern" title="https://launchpad.net/~bumblebee/"  rel="nofollow">Page de l&#039;organisation (et PPAs) sur Launchpad</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong><a href="https://wiki.ubuntu.com/Bumblebee" class="urlextern" title="https://wiki.ubuntu.com/Bumblebee"  rel="nofollow">Bumblebee Project sur le wiki anglophone Ubuntu</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="bumblebee"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1426357859" /><input type="hidden" name="summary" value="[Lien divers] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="20077-" /><input type="submit" value="Modifier" class="button" title="Lien divers" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/5/5cc6562d0186bb84809a648b21eac50b.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/bumblebee?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/bumblebee?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/bumblebee?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/bumblebee?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/bumblebee?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

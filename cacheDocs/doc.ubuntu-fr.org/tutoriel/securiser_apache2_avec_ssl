@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:securiser_apache2_avec_ssl - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-03T14:05:53+0100"/>
+<meta name="keywords" content="serveur,vetuste,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/securiser_apache2_avec_ssl?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/securiser_apache2_avec_ssl?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/securiser_apache2_avec_ssl"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/securiser_apache2_avec_ssl"/>
+<link rel="canonical" href="securiser_apache2_avec_ssl"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:securiser_apache2_avec_ssl","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="securiser_apache2_avec_ssl#main" tabindex="1">Contenu</a> | <a href="securiser_apache2_avec_ssl#qsearch__in" tabindex="2">Rechercher</a> | <a href="securiser_apache2_avec_ssl#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="securiser_apache2_avec_ssl" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="securiser_apache2_avec_ssl" >tutoriel:securiser_apache2_avec_ssl</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est considée comme <a href="../vetuste">vétuste</a> et ne contient plus d'informations utiles.<br />
+Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="securiser_apache2_avec_ssl#introduction">Introduction</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="securiser_apache2_avec_ssl#le_protocole_ssl">Le protocole SSL</a></div></li>
+<li class="level2"><div class="li"><a href="securiser_apache2_avec_ssl#les_certificats">Les Certificats</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="securiser_apache2_avec_ssl#mise_en_application_avec_le_serveur_http_apache2">Mise en application avec le Serveur Http Apache2</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="securiser_apache2_avec_ssl#activation_du_module_ssl">Activation du module SSL</a></div></li>
+<li class="level2"><div class="li"><a href="securiser_apache2_avec_ssl#creation_du_certificat">Création du certificat</a></div></li>
+<li class="level2"><div class="li"><a href="securiser_apache2_avec_ssl#configuration_apache2">Configuration Apache2</a></div></li>
+<li class="level2"><div class="li"><a href="securiser_apache2_avec_ssl#relance_du_serveur_http_apache2">Relance du serveur HTTP Apache2</a></div></li>
+<li class="level2"><div class="li"><a href="securiser_apache2_avec_ssl#voir_aussi">Voir aussi</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="../vetuste" class="wikilink1" title="vetuste" rel="tag">vétuste</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">brouillon</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="securiser_apache2_avec_ssl">Sécuriser Apache2 avec SSL</h1>
+<div class="level1">
+
+<p>
+Ce tutoriel présente une procédure permettant de sécuriser un <a href="virtualhosts_avec_apache2" class="wikilink1" title="tutoriel:virtualhosts_avec_apache2">hôte virtuel</a> grâce au <strong>protocole SSL</strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="securiser_apache2_avec_ssl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425387953" /><input type="hidden" name="summary" value="[Sécuriser Apache2 avec SSL] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="43-233" /><input type="submit" value="Modifier" class="button" title="Sécuriser Apache2 avec SSL" /></div></form></div>
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="securiser_apache2_avec_ssl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425387953" /><input type="hidden" name="summary" value="[Introduction] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="234-259" /><input type="submit" value="Modifier" class="button" title="Introduction" /></div></form></div>
+<h3 class="sectionedit3" id="le_protocole_ssl">Le protocole SSL</h3>
+<div class="level3">
+
+<p>
+SSL est un protocole qui a été développé par la société Netscape. 
+</p>
+
+<p>
+Ce protocole permet à deux machines de communiquer de manière sécurisée. Les informations échangées entre les deux machines sont de ce fait inviolables.
+</p>
+
+<p>
+Le protocole SSL se traduit par la combinaison de deux protocoles bien distincts (<em>Handshake</em> et <em>Record</em>) qui permettent la négociation entre les deux machines et le chiffrement des données échangées.
+</p>
+
+<p>
+<a href="http://sebsauvage.net/comprendre/ssl" class="urlextern" title="http://sebsauvage.net/comprendre/ssl"  rel="nofollow">plus d&#039;informations concernant le fonctionnement du Protocole SSL</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="securiser_apache2_avec_ssl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425387953" /><input type="hidden" name="summary" value="[Le protocole SSL] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="260-840" /><input type="submit" value="Modifier" class="button" title="Le protocole SSL" /></div></form></div>
+<h3 class="sectionedit4" id="les_certificats">Les Certificats</h3>
+<div class="level3">
+
+<p>
+Un certificat permet de fournir diverses informations concernant l&#039;identité de son détenteur (la personne qui publie les données). Ce certificat s&#039;accompagne d&#039;une <strong>clé publique</strong> qui est indispensable pour que la communication entre les machines soit chiffrée. 
+</p>
+
+<p>
+De même, afin de garantir l&#039;authenticité du certificat, ce dernier est signé numériquement par le biais d&#039;une <strong>clé privée</strong> provenant soit d&#039;un organisme officiel (Société spécialisée dans la certification) soit par le détenteur du Certificat lui même. Dans ce dernier cas, on parlera de certificat auto-signé.
+</p>
+
+<p>
+Dans la plupart des cas, l&#039;obtention d&#039;un Certificat certifié par une autorité officielle ayant un prix assez élevé, les webmasters auront tendance a vouloir signer eux-même leur certificat. Ce faisant, il est à noter que dans ce cas, le certificat ne sera pas reconnu par les navigateurs web comme étant certifié. 
+</p>
+
+<p>
+<a href="http://www.cacert.org" class="urlextern" title="http://www.cacert.org"  rel="nofollow">CA Cert</a> permet d&#039;obtenir des certificats gratuits. Il vous faudra néanmoins installer le certificat racine dans votre navigateur.
+</p>
+
+<p>
+<p><div class="noteclassic">Dans ce tutoriel, la procédure présentée explique la marche à suivre pour mettre en place un <strong>Site Web sécurisé via protocole SSL en utilisant un Certificat auto-signé</strong>.
+</div></p>
+</p>
+
+<p>
+Pour ce tutoriel, nous supposons que nous avons déjà mis en place un <a href="virtualhosts_avec_apache2" class="wikilink1" title="tutoriel:virtualhosts_avec_apache2">hôte virtuel</a> basé sur le nom <strong>nuxwin.com</strong>, ce dernier étant accessible sur le <strong>port 80</strong> à l&#039;adresse <a href="http://nuxwin.com" class="urlextern" title="http://nuxwin.com"  rel="nofollow">http://nuxwin.com</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="securiser_apache2_avec_ssl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425387953" /><input type="hidden" name="summary" value="[Les Certificats] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="841-2377" /><input type="submit" value="Modifier" class="button" title="Les Certificats" /></div></form></div>
+<h2 class="sectionedit5" id="mise_en_application_avec_le_serveur_http_apache2">Mise en application avec le Serveur Http Apache2</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="securiser_apache2_avec_ssl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425387953" /><input type="hidden" name="summary" value="[Mise en application avec le Serveur Http Apache2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2378-2439" /><input type="submit" value="Modifier" class="button" title="Mise en application avec le Serveur Http Apache2" /></div></form></div>
+<h3 class="sectionedit6" id="activation_du_module_ssl">Activation du module SSL</h3>
+<div class="level3">
+
+<p>
+Pour que le protocole SSL puisse fonctionner avec le Serveur HTTP Apache2, il faut activer le module <strong>ssl</strong> avec la commande :
+</p>
+<pre class="code">sudo a2enmod ssl</pre>
+
+<p>
+puis recharger la configuration d&#039;Apache2 faites :
+</p>
+<pre class="code">sudo service apache2 force-reload</pre>
+
+<p>
+Ou si vous êtes sur une ancienne version d&#039;Ubuntu :
+</p>
+<pre class="code">sudo /etc/init.d/apache2 force-reload</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="securiser_apache2_avec_ssl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425387953" /><input type="hidden" name="summary" value="[Activation du module SSL] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2440-2803" /><input type="submit" value="Modifier" class="button" title="Activation du module SSL" /></div></form></div>
+<h3 class="sectionedit7" id="creation_du_certificat">Création du certificat</h3>
+<div class="level3">
+
+<p>
+Installer si necessaire le package : apt-get install ssl-cert  (déjà installé sous Lucid)
+</p>
+
+<p>
+Pour générer un certificat auto-signé avec Ubuntu, il nous suffit de taper les commandes suivantes dans un terminal :
+</p>
+<ul>
+<li class="level1"><div class="li"> Créer le certificat ssl :<pre class="code">sudo make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/ssl/private/localhost.pem</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Pour un certificat d&#039;autorité gratuit ⇒ <a href="http://startssl.com" class="urlextern" title="http://startssl.com"  rel="nofollow">StartSSL</a> ( Ne provoque pas d&#039;exception de sécurité sur le navigateur )</div>
+</li>
+<li class="level1"><div class="li"> troisième option : suivre ce <a href="http://doc.ubuntu-fr.org/tutoriel/comment_creer_un_certificat_ssl" class="wikilink1" title="tutoriel:comment_creer_un_certificat_ssl">tutoriel</a></div>
+</li>
+</ul>
+
+<p>
+<p><div class="noteimportant">Suivre ensuite la <em>méthode 1</em> pour la <em>Configuration Apache2</em>.
+</div></p>
+</p>
+
+</div>
+
+<h4 id="hardy_heron">Hardy Heron</h4>
+<div class="level4">
+
+<p>
+On peut créer son certificat SSL auto signé en <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installant le paquet</a> <strong>openssl</strong>. <img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> → Il est aussi possible d&#039;installer <strong>ca-certificates</strong>, mais ça ne semble pas utile dans le cas d&#039;un certificat auto-signé.
+</p>
+
+<p>
+Plutôt que de repartir de l&#039;ancien script, je propose de se baser sur <a href="http://httpd.apache.org/docs/2.0/ssl/ssl_faq.html#selfcert" class="urlextern" title="http://httpd.apache.org/docs/2.0/ssl/ssl_faq.html#selfcert"  rel="nofollow">la documentation de apache</a>.
+</p>
+<pre class="code">sudo openssl req -x509 -nodes -days 365 -newkey rsa:1024 -out /etc/apache2/server.crt -keyout /etc/apache2/server.key</pre>
+
+<p>
+<strong>Explications :</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>-x509 -nodes</strong> donne le type de certificat voulu</div>
+</li>
+<li class="level1"><div class="li"> <strong>-days 365</strong> indique la durée de validité (en jours) de votre certificat</div>
+</li>
+<li class="level1"><div class="li"> <strong>-newkey rsa:1024</strong> demande une clé RSA de 1024 bits - d&#039;après la doc apache, il est déconseillé de créer une clé plus grosse pour des histoires de compatibilité</div>
+</li>
+<li class="level1"><div class="li"> <strong>-out /etc/apache2/server.crt</strong> est le chemin de votre certificat</div>
+</li>
+<li class="level1"><div class="li"> <strong>-keyout /etc/apache2/server.key</strong> est le chemin de la clé privée</div>
+</li>
+</ul>
+
+<p>
+Répondez alors aux questions posées :
+</p>
+<pre class="code">Country Name (2 letter code) [GB]:</pre>
+
+<p>
+Entrez <strong>FR</strong> si vous êtes situé en France et validez par la touche « Entrée »
+</p>
+<pre class="code">State or Province Name (full name) [Some-State]:</pre>
+
+<p>
+Entrez <strong>FRANCE</strong> et validez par la touche « Entrée » 
+</p>
+<pre class="code">Locality Name (eg, city) []:</pre>
+
+<p>
+Indiquez ici le nom de votre ville. (<em>exemple :</em> <strong>CAEN</strong>)  et validez par la touche « Entrée »
+</p>
+<pre class="code">Organization Name (eg, company; recommended) []:</pre>
+
+<p>
+Indiquez le nom de votre organisation, de votre société. (<em>exemple :</em> <strong>france-hosting</strong>) et validez par la touche « Entrée ». Si vous n&#039;avez pas de société, vous pouvez mettre un nom fictif, le nom de notre site Web par exemple.
+</p>
+<pre class="code">Organizational Unit Name (eg, section) []:</pre>
+
+<p>
+Indiquez ici le nom de la section de votre organisation, de votre société. Si vous n&#039;en avez pas, mettez la même chose que pour la question précédente.
+</p>
+<pre class="code">Common Name (eg, YOUR name) []:</pre>
+
+<p>
+Ici, il convient de faire particulièrement attention à ce que vous allez entrer. Vous devez indiquer le <em class="u">nom de domaine</em> que vous désirez sécuriser. En ce qui nous concerne, il s&#039;agit du domaine : <strong>nuxwin.com</strong>. Nous indiquons donc <strong>nuxwin.com</strong> et nous validons par la touche « Entrée ».
+</p>
+<pre class="code">Email Address []:</pre>
+
+<p>
+Ici, il s&#039;agit d&#039;indiquer l&#039;adresse E-mail de l&#039;administrateur. En ce qui nous concerne, il s&#039;agit de : admin@nuxwin.com. Nous terminons bien entendu en validant par la touche « Entrée ».
+</p>
+
+<p>
+Enfin, on empêche les curieux de lire notre clé privée :
+</p>
+<pre class="code">sudo chmod o-rw /etc/apache2/server.key</pre>
+
+<p>
+<p><div class="noteimportant">Suivre ensuite la <em>méthode 2</em> pour la <em>Configuration Apache2</em>.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="securiser_apache2_avec_ssl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425387953" /><input type="hidden" name="summary" value="[Création du certificat] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2804-6174" /><input type="submit" value="Modifier" class="button" title="Création du certificat" /></div></form></div>
+<h3 class="sectionedit8" id="configuration_apache2">Configuration Apache2</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="methode_1en_se_basant_sur_la_configuration_du_site_par_defaut">Méthode 1 : en se basant sur la configuration du site par défaut</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Se placer dans le dossier de configuration des sites apache : <pre class="code">cd /etc/apache2/sites-available/</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Recopier la configuration par défaut pour la nouvelle configuration ssl :<pre class="code">sudo cp default ssl</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Assigner le port ssl :<pre class="code">sudo sed -i &#039;1,2s/\*:80/*:443/&#039; ssl</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Ajouter les directives <code>SSLEngine On</code> et <code>SSLCertificateFile /etc/ssl/private/localhost.pem</code> à la configuration :<pre class="code">sudo sed -i &quot;3a\\\tSSLEngine On\n\tSSLCertificateFile /etc/ssl/private/localhost.pem&quot; ssl</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Activer la configuration du site ssl :<pre class="code">sudo a2ensite ssl</pre>
+</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="methode_2">Méthode 2</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="ajout_de_la_directive_listen_443">Ajout de la directive Listen 443</h5>
+<div class="level5">
+
+<p>
+Par défaut, Apache2 est configuré pour écouter sur le port 80. Il s&#039;agit là de la configuration usuelle d&#039;un Serveur Web. Cependant, le protocole SSL a besoin d&#039;un port spécifique pour pouvoir fonctionner. Il s&#039;agit du <strong>port 443</strong>.
+</p>
+
+<p>
+Nous allons donc rajouter une directive de configuration nommée <strong>Listen</strong> qui permettra d&#039;indiquer à Apache2 qu&#039;il doit aussi écouter sur le port 443.
+</p>
+
+<p>
+Pour ce faire, <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditez le fichier</a> <strong>/etc/apache2/ports.conf</strong> et rajoutez la ligne suivante :
+</p>
+<pre class="code">Listen 443</pre>
+
+</div>
+
+<h5 id="creation_du_fichier_de_configuration">Création du fichier de configuration</h5>
+<div class="level5">
+
+<p>
+Ayant déjà configuré notre hôte virtuel <strong>nuxwin.com</strong>, un fichier de configuration nommé <strong>nuxwin.com.conf</strong> doit exister dans le répertoire <strong>/etc/apache2/sites-available</strong>.
+</p>
+
+<p>
+Voici le contenu de ce fichier : 
+</p>
+<pre class="code">&lt;VirtualHost 192.168.0.2:80&gt;
+	DocumentRoot /var/www/nuxwin.com
+	ServerName nuxwin.com
+&lt;/VirtualHost&gt;</pre>
+
+<p>
+<strong>Note :</strong> Il s&#039;agit ici du contenu minimal d&#039;un virtualhost.
+</p>
+
+<p>
+Pour sécuriser cet Hôte Virtuel, nous allons donc devoir modifier ce fichier en y ajoutant un hôte virtuel accessible sur le <strong>port 443</strong>, ce dernier contenant des directives particulières qui sont les suivantes :
+</p>
+<ol>
+<li class="level1"><div class="li"> Directive <strong>SSLEngine</strong> :<br/>
+Cette directive permet d&#039;activer le moteur SSL au sein d&#039;un hôte virtuel, Elle peut prendre deux arguments –&gt; <strong>on/off</strong></div>
+</li>
+<li class="level1"><div class="li"> Directive <strong>SSLCertificateFile</strong> :<br/>
+Cette directive définit le certificat authentifiant le Serveur auprès des clients. L&#039;argument est le chemin d&#039;accès au certificat. En ce qui nous concerne, le certificat se trouve dans le répertoire <strong>/etc/apache2/</strong></div>
+</li>
+<li class="level1"><div class="li"> Directive <strong>SSLCertificateKeyFile</strong> :<br/>
+Cette directive définit la clé privée du Serveur utilisée pour signer l&#039;échange de clé entre le client et le serveur. Elle prend en argument le chemin d&#039;accès à la clé (fichier). Dans notre cas, la clé se trouve dans le répertoire <strong>/etc/apache2/</strong>.</div>
+</li>
+</ol>
+
+<p>
+Par ailleurs, comme nous l&#039;avons déjà fait pour notre hôte virtuel accessible sur le <strong>port 80</strong>, nous allons devoir rajouter une directive <strong>NameVirtualHost</strong> qui permettra que l&#039;adresse nommée par le nom de notre hôte virtuel accessible sur le <strong>port 443</strong> soit résolue correctement.
+Nous rajouterons donc cette directive (<em>NameVirtualHost 192.168.0.2:443</em>) au début de notre fichier de configuration.
+</p>
+
+<p>
+Enfin, afin que les clients puissent continuer d&#039;accéder au site Web en tapant une url de type <strong>http</strong> et non <strong>https</strong>, nous allons modifier l&#039;hôte virtuel accessible sur le <strong>port 80</strong> en remplaçant la directive <strong>DocumentRoot</strong> par une directive de redirection.
+</p>
+
+<p>
+Voici donc le contenu de notre fichier une fois modifié :
+</p>
+<pre class="file">NameVirtualHost	 192.168.0.2:443
+
+&lt;VirtualHost 192.168.0.2:80&gt;
+    ServerName nuxwin.com/
+    Redirect / https://nuxwin.com/
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost 192.168.0.2:443&gt;
+	ServerName nuxwin.com
+	DocumentRoot /var/www/nuxwin.com
+
+	SSLEngine on
+	SSLCertificateFile /etc/apache2/server.crt
+	SSLCertificateKeyFile /etc/apache2/server.key
+&lt;/VirtualHost&gt;</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="securiser_apache2_avec_ssl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425387953" /><input type="hidden" name="summary" value="[Configuration Apache2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6175-9975" /><input type="submit" value="Modifier" class="button" title="Configuration Apache2" /></div></form></div>
+<h3 class="sectionedit9" id="relance_du_serveur_http_apache2">Relance du serveur HTTP Apache2</h3>
+<div class="level3">
+
+<p>
+Afin que les modifications que nous venons d&#039;effectuer soient prises en compte, nous devons demander au <strong>Serveur Http Apache2</strong> de relire ses fichiers de configuration.
+</p>
+
+<p>
+Pour ce faire, il suffit de taper la commande suivante dans un terminal :
+</p>
+<pre class="code">sudo /etc/init.d/apache2 reload</pre>
+
+<p>
+Normalement, si tout s&#039;est bien passé, vous devriez désormais avoir accès à votre site Web de manière sécurisée.
+</p>
+<hr />
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="securiser_apache2_avec_ssl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425387953" /><input type="hidden" name="summary" value="[Relance du serveur HTTP Apache2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9976-10422" /><input type="submit" value="Modifier" class="button" title="Relance du serveur HTTP Apache2" /></div></form></div>
+<h3 class="sectionedit10" id="voir_aussi">Voir aussi</h3>
+<div class="level3">
+
+<p>
+<strong>(fr)</strong> <a href="https://lafibre.info/cryptographie/tuto-https/" class="urlextern" title="https://lafibre.info/cryptographie/tuto-https/"  rel="nofollow">Ubuntu 14.04 : Tutoriel pour chiffrer un site web gratuitement en 14 étapes simples</a>
+</p>
+
+<p>
+<strong>(fr)</strong> <a href="http://www.it-connect.fr/configurer-le-ssl-avec-apache-2%ef%bb%bf/" class="urlextern" title="http://www.it-connect.fr/configurer-le-ssl-avec-apache-2%ef%bb%bf/"  rel="nofollow">Configurer le SSL avec Apache 2</a> sur IT-Connect
+</p>
+
+<p>
+<strong>(fr)</strong> <a href="http://www.magdiblog.fr/divers/creer-une-passerelle-securisee-avec-un-raspberry-pi/" class="urlextern" title="http://www.magdiblog.fr/divers/creer-une-passerelle-securisee-avec-un-raspberry-pi/"  rel="nofollow">Exemple complet avec authentification client par certificat</a>
+</p>
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/m._declercq" class="wikilink1" title="utilisateurs:m._declercq">M. DECLERCQ</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/enchained" class="wikilink1" title="utilisateurs:enchained">_Enchained</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/anthony43" class="wikilink2" title="utilisateurs:anthony43" rel="nofollow">anthony43</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/davy014" class="wikilink1" title="utilisateurs:davy014">davy014</a>, <a href="../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="securiser_apache2_avec_ssl"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1425387953" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10423-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/6/6ebf216ae886048c98512e227a665e23.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/securiser_apache2_avec_ssl?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/securiser_apache2_avec_ssl?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/securiser_apache2_avec_ssl?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/securiser_apache2_avec_ssl?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/securiser_apache2_avec_ssl?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>mercurial</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-04-14T16:46:25+0200"/>
+<meta name="keywords" content="intrepid,serveur,reseau,systeme,tutoriel,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../mercurial?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="mercurial"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/mercurial"/>
+<link rel="canonical" href="../../mercurial"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"mercurial","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="mercurial#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="mercurial#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="mercurial#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="mercurial#premier_repository">Premier Repository</a></div></li>
+<li class="level1"><div class="li"><a href="mercurial#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="mercurial#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../intrepid" class="wikilink1" title="intrepid" rel="tag">Intrepid</a>,
+	<a href="../../serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="../../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="installation_d_un_serveur_mercurial">Installation d&#039;un serveur mercurial</h1>
+<div class="level1">
+
+<p>
+<p><div class="notehelp">Cette page vous présente comment installer un serveur Mercurial sur un système linux ayant APT ainsi que comment l&#039;utiliser.
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">
+Mercurial est un outil de gestion de versions décentralisés comme git, Bazaar, Darcs, Monotone, SVK ou <abbr title="GNU&#039;s Not Unix">GNU</abbr> Arch.<br/>
+
+Pourquoi mercurial ? Il est très facile à mettre en place et à utiliser.
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Installation d'un serveur mercurial" [69-478] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a>.</div>
+</li>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée.</div>
+</li>
+<li class="level1"><div class="li"> Avoir activé l&#039;accès aux <a href="../../depots#universe_et_multiverse" class="wikilink1" title="depots">dépôts Universe et Multiverse</a>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [479-721] -->
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://mercurial" class="urlextern" title="apt://mercurial"  rel="nofollow">mercurial</a></strong>.
+</p>
+
+<p>
+testez que mercurial est bien installé : 
+</p>
+<pre class="code">hg version</pre>
+
+<p>
+Vous devriez obtenir quelque chose comme ça à la version près.
+</p>
+<pre class="code">Mercurial Distributed SCM (version 1.3.1)</pre>
+<pre class="code">Copyright (C) 2005-2009 Matt Mackall &lt;mpm@selenic.com&gt; and others
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</pre>
+
+</div>
+<!-- EDIT3 SECTION "Installation" [722-1239] -->
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Tout d&#039;abord, créez un dossier où stocker nos repositories
+</p>
+<pre class="code">mkdir /var/hg/</pre>
+
+<p>
+créez les répertoires suivants : 
+</p>
+<pre class="code">mkdir /var/hg/repositories
+mkdir /var/hg/tools</pre>
+
+<p>
+copiez le fichier index.cgi de /var/hg-tools vers /var/hg/tools
+</p>
+<pre class="code">cp /var/hg-tools/index.cgi /var/hg/tools/index.cgi</pre>
+
+<p>
+<p><div class="notehelp">Si vous ne trouvez pas index.cgi faites un 
+</p>
+<pre class="code">updatedb </pre>
+
+<p>
+puis 
+</p>
+<pre class="code">locate index.cgi</pre>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Configuration" [1240-1656] -->
+<h2 class="sectionedit5" id="premier_repository">Premier Repository</h2>
+<div class="level2">
+
+<p>
+Votre premier repository : 
+</p>
+<pre class="code">mkdir /var/hg/repositories/mon_repo
+chown www-data:www-data /var/hg/repositories/mon_repo
+hg init /var/hg/repositories/mon_repo</pre>
+
+<p>
+<p><div class="noteclassic">
+</p>
+<pre class="code">mkdir /var/hg/repositories/mon_repo</pre>
+
+<p>
+Crée le répertoire
+</p>
+<pre class="code">chown www-data:www-data /var/hg/repositories/mon_repo</pre>
+
+<p>
+Attribue le répertoire à l&#039;utilisateur d&#039;apache2
+</p>
+<pre class="code">hg init /var/hg/repositories/mon_repo</pre>
+
+<p>
+Initialise le repository
+
+</div></p>
+<a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">créez le fichier</a> <strong>/var/hg/tools/hgweb.config</strong> puis ajoutez les lignes suivantes : 
+</p>
+<pre class="code">[paths]
+mon_repo = /var/hg/repositories/mon_repo/</pre>
+
+<p>
+si vous créez un deuxième repository, même manipulation que pour le premier : 
+</p>
+<pre class="code">mkdir /var/hg/repositories/mon_repo2
+chown www-data:www-data /var/hg/repositories/mon_repo2
+hg init /var/hg/repositories/mon_repo2</pre>
+
+<p>
+<a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditez le fichier</a> <strong>/var/hg/tools/hgweb.config</strong> pour avoir : 
+</p>
+<pre class="code">[paths]
+mon_repo = /var/hg/repositories/mon_repo/
+mon_repo2 = /var/hg/repositories/mon_repo2/</pre>
+
+</div>
+<!-- EDIT5 SECTION "Premier Repository" [1657-2716] -->
+<h2 class="sectionedit6" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="../../tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer son paquet</a>. La configuration de l&#039;application sera conservée ou supprimée selon la méthode de désinstallation que vous choisirez.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Désinstallation" [2717-2979] -->
+<h2 class="sectionedit7" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(fr, en)</strong> <a href="http://mercurial.selenic.com/wiki/" class="urlextern" title="http://mercurial.selenic.com/wiki/"  rel="nofollow">Site officiel de mercurial</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT7 SECTION "Liens" [2980-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fc3a4ec7de339e293c946b6464f9f41e.xhtml used -->
+</div>
+</body>
+</html>

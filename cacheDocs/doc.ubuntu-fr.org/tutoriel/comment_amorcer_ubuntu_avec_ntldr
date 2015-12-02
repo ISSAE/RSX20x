@@ -1,0 +1,620 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:comment_amorcer_ubuntu_avec_ntldr - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-10-06T16:06:04+0200"/>
+<meta name="keywords" content="amorcage,partitions,installation,tatouage,windows,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/comment_amorcer_ubuntu_avec_ntldr?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/comment_amorcer_ubuntu_avec_ntldr?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/comment_amorcer_ubuntu_avec_ntldr"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/comment_amorcer_ubuntu_avec_ntldr"/>
+<link rel="canonical" href="comment_amorcer_ubuntu_avec_ntldr"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_amorcer_ubuntu_avec_ntldr","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="comment_amorcer_ubuntu_avec_ntldr#main" tabindex="1">Contenu</a> | <a href="comment_amorcer_ubuntu_avec_ntldr#qsearch__in" tabindex="2">Rechercher</a> | <a href="comment_amorcer_ubuntu_avec_ntldr#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="comment_amorcer_ubuntu_avec_ntldr" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="comment_amorcer_ubuntu_avec_ntldr" >tutoriel:comment_amorcer_ubuntu_avec_ntldr</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#ce_que_nous_allons_faire">Ce que nous allons faire</a></div></li>
+<li class="level1"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#allons-y">Allons-y !</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#amorcage_d_une_session_live_d_ubuntu">Amorçage d&#039;une session live d&#039;Ubuntu</a></div></li>
+<li class="level2"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#sauvegarde_du_contenu_d_origine_du_mbr">Sauvegarde du contenu d&#039;origine du MBR</a></div></li>
+<li class="level2"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#installation_d_ubuntu">Installation d&#039;Ubuntu</a></div></li>
+<li class="level2"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#ajout_d_une_entree_de_menu_pour_ubuntu_dans_l_amorceur_de_windows_xp">Ajout d&#039;une entrée de menu pour Ubuntu dans l&#039;amorceur de Windows XP</a></div></li>
+<li class="level2"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#si_apres_toutes_ces_manipulations_un_plantage_se_produit_lorsque_l_on_selectionne_grub_au_demarrage">Si après toutes ces manipulations, un plantage se produit lorsque l&#039;on sélectionne grub au démarrage</a></div></li>
+<li class="level2"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#exempletutoriel_en_images">Exemple: tutoriel en images</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#explications_additionnelles">Explications additionnelles</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#logique_de_demarrage">Logique de démarrage</a></div></li>
+<li class="level2"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#qu_est-ce_que_le_tatouage">Qu&#039;est-ce que le tatouage ?</a></div></li>
+<li class="level2"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#installer_grub_ailleurs_que_dans_le_mbr">Installer GRUB ailleurs que dans le MBR</a></div></li>
+<li class="level2"><div class="li"><a href="comment_amorcer_ubuntu_avec_ntldr#utiliser_ntldr">Utiliser NTLDR</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../amorcage" class="wikilink1" title="amorcage" rel="tag">amorçage</a>,
+	<a href="../partitions" class="wikilink1" title="partitions" rel="tag">partitions</a>,
+	<a href="../installation.1" class="wikilink1" title="installation" rel="tag">installation</a>,
+	<a href="http://doc.ubuntu-fr.org/tatouage?do=showtag&amp;tag=tatouage" class="wikilink1" title="tatouage" rel="tag">tatouage</a>,
+	<a href="http://doc.ubuntu-fr.org/windows" class="wikilink1" title="windows" rel="tag">windows</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="installer_ubuntu_en_dual-boot_avec_windows_xp_sur_le_meme_disque_dur_en_utilisant_l_amorceur_de_windows">Installer Ubuntu en dual-boot avec Windows XP sur le même disque dur en utilisant l&#039;amorçeur de Windows</h1>
+<div class="level1">
+
+<p>
+<em>Ce tutoriel s&#039;adresse aux possesseurs d&#039;un ordinateur probablement <a href="http://doc.ubuntu-fr.org/pc_tatoue" class="wikilink1" title="pc_tatoue">tatoué</a> qui souhaitent installer Ubuntu tout en gardant Microsoft® Windows® NT, 2000 ou XP<sup><a href="comment_amorcer_ubuntu_avec_ntldr#fn__1" id="fnt__1" class="fn_top">1)</a></sup> sur le même disque dur, en utilisant l&#039;amorçeur de Windows, et sans modifier le MBR.  </em>
+</p>
+
+<p>
+<p><div class="notewarning"><strong>Attention, cette procédure spéciale n&#039;est à suivre que si vous avez d&#039;abord suivi <a href="http://doc.ubuntu-fr.org/cohabitation_ubuntu_windows" class="wikilink1" title="cohabitation_ubuntu_windows">cette procédure</a> (beaucoup plus simple)</strong><sup><a href="comment_amorcer_ubuntu_avec_ntldr#fn__2" id="fnt__2" class="fn_top">2)</a></sup>.
+</div></p>
+</p>
+
+<p>
+Il est indispensable d&#039;avoir lu et compris <a href="http://doc.ubuntu-fr.org/cohabitation_ubuntu_windows" class="wikilink1" title="cohabitation_ubuntu_windows">ce document</a> avant de continuer.
+</p>
+
+<p>
+<p><div class="notewarning">
+Même si nous tenterons d&#039;expliquer la procédure le plus simplement possible et de manière la plus accessible, nul n&#039;est à l&#039;abri d&#039;une erreur. Par précaution, <em><strong>effectuez une sauvegarde de tout fichier important</strong></em> sur un périphérique amovible (CD-ROM, DVD-ROM, clé <abbr title="Universal Serial Bus">USB</abbr>, disque dur externe, …), sur un espace de stockage internet (si vous en possédez un) ou sur la partition d&#039;un autre système d&#039;exploitation (s&#039;il y en a une de disponible).
+</p>
+
+<p>
+Nous vous recommandons aussi d&#039;imprimer la totalité de ce document, afin de l&#039;avoir sous la main durant l&#039;installation d&#039;Ubuntu, et de <strong>lire en totalité la procédure</strong> avant de commencer. Vous aurez à utiliser une fenêtre de terminal et à exécuter des commandes. L&#039;article est agrémenté de nombreux compléments d&#039;informations (optionnels), qui se trouvent en bas de page afin de ne pas alourdir le texte lui-même. 
+</p>
+
+<p>
+Pour l&#039;exemple, nous prendrons pour acquis que Ubuntu sera installé à l&#039;emplacement <code>/dev/sda2</code>. Si vous installez Ubuntu dans un autre emplacement, <strong>vous devrez adapter ce document afin qu&#039;il corresponde à votre configuration</strong>. Si vous avez besoin d&#039;assistance afin de découvrir cet emplacement, nous vous invitons à utiliser <a href="http://forum.ubuntu-fr.org" class="urlextern" title="http://forum.ubuntu-fr.org"  rel="nofollow">nos forums de discussions</a> ou <a href="http://www.ubuntu-fr.org/chat/" class="urlextern" title="http://www.ubuntu-fr.org/chat/"  rel="nofollow">notre salon de clavardage</a>.
+
+</div></p>
+</p>
+
+<p>
+<p><div class="notetip">L&#039;utilisation de la méthode grub.bs décrite plus bas fonctionne avec grub2.  (testé avec Oneiric par <a href="../utilisateurs/mohican" class="wikilink1" title="utilisateurs:mohican">mohican</a>)
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Installer Ubuntu en dual-boot avec Windows XP sur le même disque dur en utilisant l'amorçeur de Windows] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="77-2515" /><input type="submit" value="Modifier" class="button" title="Installer Ubuntu en dual-boot avec Windows XP sur le même disque dur en utilisant l'amorçeur de Windows" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+Pour suivre cette procédure, vous devez disposer :
+</p>
+<ul>
+<li class="level1"><div class="li"> d&#039;un <strong><em>Desktop Live CD</em></strong> d&#039;Ubuntu ;</div>
+</li>
+<li class="level1"><div class="li"> d&#039;un <strong>support de stockage externe</strong>, au choix : une disquette, une clé <abbr title="Universal Serial Bus">USB</abbr>, un espace de stockage (compte <abbr title="File Transfer Protocol">FTP</abbr>) ou une adresse de courriel.</div>
+</li>
+</ul>
+
+<p>
+Si vous ne l&#039;avez pas encore fait, préparez votre ordinateur comme décrit sur <a href="http://doc.ubuntu-fr.org/cohabitation_ubuntu_windows" class="wikilink1" title="cohabitation_ubuntu_windows">cette page</a>: sauvegardez vos données, créez le CD de restauration de Windows, faites de la place, défragmentez et repartitionnez votre disque.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2516-3043" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="ce_que_nous_allons_faire">Ce que nous allons faire</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> À l&#039;aide du <em>Desktop Live CD</em> d&#039;Ubuntu, nous chargerons une session d&#039;Ubuntu ;</div>
+</li>
+<li class="level1"><div class="li"> Nous copierons le contenu du MBR (Master Boot Record, «Zone d&#039;amorçage»), contenant éventuellement le tatouage, dans le support de stockage externe. Celui-ci devra être exploitable sous Windows ;</div>
+</li>
+<li class="level1"><div class="li"> Nous allons installer Ubuntu normalement, mais en demandant d&#039;<strong>installer l&#039;amorceur GRUB dans le secteur d&#039;amorçage de la partition racine d&#039;Ubuntu</strong>, et non pas dans le MBR (cas par défaut), support du tatouage ;</div>
+</li>
+<li class="level1"><div class="li"> Sous Windows, nous ajouterons une entrée de menu à sa procédure de démarrage pour Ubuntu.</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Ce que nous allons faire] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3044-3693" /><input type="submit" value="Modifier" class="button" title="Ce que nous allons faire" /></div></form></div>
+<h2 class="sectionedit4" id="allons-y">Allons-y !</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Allons-y !] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3694-3717" /><input type="submit" value="Modifier" class="button" title="Allons-y !" /></div></form></div>
+<h3 class="sectionedit5" id="amorcage_d_une_session_live_d_ubuntu">Amorçage d&#039;une session live d&#039;Ubuntu</h3>
+<div class="level3">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/installation/demarrage.jpg?id=tutoriel%3Acomment_amorcer_ubuntu_avec_ntldr" class="media" title="installation:demarrage.jpg"><img src="http://doc.ubuntu-fr.org/_media/installation/demarrage.jpg?w=350&amp;tok=3cbc0a" class="mediaright" title="Écran d&#039;amorçage du Desktop CD" alt="Écran d&#039;amorçage du Desktop CD" width="350" /></a>
+</p>
+<ol>
+<li class="level1"><div class="li"> Si votre ordinateur est actuellement allumé, insérez le <em>Desktop CD</em> d&#039;Ubuntu dans le lecteur de CD-ROM de votre ordinateur. Si un <a href="http://doc.ubuntu-fr.org/umenu" class="wikilink2" title="umenu" rel="nofollow">menu contextuel</a> s&#039;affiche, n&#039;y portez pas attention ;</div>
+</li>
+<li class="level1"><div class="li"> Fermez tout et réamorcez (redémarrez) votre ordinateur, en prenant soin de laisser le <em>Desktop CD</em> d&#039;Ubuntu dans votre lecteur de CD-ROM ;</div>
+</li>
+<li class="level1"><div class="li"> Vous êtes alors confronté à un écran semblable à celui ci-contre. Si ce n&#039;est pas le cas, votre <abbr title="Basic Input-Output System">BIOS</abbr> n&#039;est pas réglé pour amorcer un système d&#039;exploitation depuis un CD-ROM ; <a href="http://doc.ubuntu-fr.org/tutoriel/modifier_ordre_amorcage_du_bios" class="wikilink1" title="tutoriel:modifier_ordre_amorcage_du_bios">paramétrez votre BIOS afin de pouvoir charger un système d&#039;exploitation depuis un CD-ROM</a> et amorcez de nouveau votre ordinateur ;</div>
+</li>
+<li class="level1"><div class="li"> À cette étape, choisissez :</div>
+<ul>
+<li class="level2"><div class="li"> la langue (« <em>Language</em> ») avec « F2 » ;</div>
+</li>
+<li class="level2"><div class="li"> l&#039;arrangement de votre clavier (« <em>Keymap</em> ») avec « F3 ».</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Enfin, choisissez l&#039;entrée de menu <strong>Démarrer ou installer Ubuntu</strong> (la première option).</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Amorçage d'une session live d'Ubuntu] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3718-4808" /><input type="submit" value="Modifier" class="button" title="Amorçage d'une session live d'Ubuntu" /></div></form></div>
+<h3 class="sectionedit6" id="sauvegarde_du_contenu_d_origine_du_mbr">Sauvegarde du contenu d&#039;origine du MBR</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Ouvrez un <strong><a href="../terminal" class="wikilink1" title="terminal">terminal</a></strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Exécutez la commande suivante <sup><a href="comment_amorcer_ubuntu_avec_ntldr#fn__3" id="fnt__3" class="fn_top">3)</a></sup> <sup><a href="comment_amorcer_ubuntu_avec_ntldr#fn__4" id="fnt__4" class="fn_top">4)</a></sup> : <pre class="code">sudo dd if=/dev/sda of=~/Desktop/mbr446.img bs=446 count=1</pre>
+</div>
+</li>
+</ol>
+
+<p>
+pour la version française du liveCD, tapez : 
+</p>
+<pre class="code">sudo dd if=/dev/sda of=~/Bureau/mbr446.img bs=446 count=1</pre>
+
+<p>
+Un fichier nommé <code>mbr446.img</code> devrait se trouver sur votre bureau ;
+</p>
+<ol>
+<li class="level1"><div class="li"> Copiez ce fichier sur votre support de stockage externe (disquette ou clé <abbr title="Universal Serial Bus">USB</abbr>) ou envoyez-le-vous par courriel. L&#039;important est d&#039;en <strong>avoir une copie de sauvegarde</strong> à laquelle vous pourrez faire appel au besoin. </div>
+</li>
+</ol>
+
+<p>
+<p><div class="notetip">Lors de l&#039;utilisation de la commande dd, il est d&#039;usage pour se tenir au plus près du hardware d&#039;utiliser des tailles de blocs (bs=nnn) qui sont des multiples de 512 (la taille physique d&#039;un secteur) et de fixer le nbre de blocs à transférer avec &#039;count=nnn&#039;.
+</p>
+
+<p>
+Pour des manipulations de tailles en dessous de 512 ou ne tombant pas juste avec un multiple de nombre de secteurs, il faut prendre l&#039;habitude de définir la taille de bloc à 1 (bs=1) et de définir le nbre d&#039;octets à transférer avec &#039;count=nnn&#039;.
+</p>
+
+<p>
+Cela évite beaucoup d&#039;erreurs…
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Sauvegarde du contenu d'origine du MBR] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4809-6912" /><input type="submit" value="Modifier" class="button" title="Sauvegarde du contenu d'origine du MBR" /></div></form></div>
+<h3 class="sectionedit7" id="installation_d_ubuntu">Installation d&#039;Ubuntu</h3>
+<div class="level3">
+
+<p>
+Commencez à installer Ubuntu en suivant le <strong>début</strong> de la procédure d&#039;<a href="installer_ubuntu_avec_le_live_cd" class="wikilink1" title="tutoriel:installer_ubuntu_avec_le_live_cd">installation graphique normale</a>, mais <strong>arrêtez-vous lorsque vous voyez la fenêtre ci-dessous</strong>:
+</p>
+
+<p>
+<p><div class="notewarning"><strong>ATTENTION : Cette fenêtre n&#039;existe plus dans Ubuntu 10.10 (Maverick Meerkat) …</strong>
+</p>
+
+<p>
+Il vous faudra vous arrêtez et faire cette manipulation depuis <a href="partitionner_manuellement_avec_installateur_ubuntu#chargeur_d_amorcage" class="urlextern" title="http://doc.ubuntu-fr.org/tutoriel/partitionner_manuellement_avec_installateur_ubuntu#chargeur_d_amorcage"  rel="nofollow">le menu déroulant se trouvant au bas de l&#039;écran de partitionnement manuel</a>.
+</div></p>
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=9c78dc&amp;media=http%3A%2F%2Fyeknan.free.fr%2Fblog%2Fimages%2Fubuntu7.10%2Finstall%2F19.png" class="media" title="http://yeknan.free.fr/blog/images/ubuntu7.10/install/19.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?w=350&amp;tok=58976a&amp;media=http%3A%2F%2Fyeknan.free.fr%2Fblog%2Fimages%2Fubuntu7.10%2Finstall%2F19.png" class="media" alt="" width="350" /></a>
+</p>
+
+<p>
+A cette étape, <strong>ajoutez la procédure suivante :</strong>
+</p>
+
+<p>
+Lorsque le résumé des opérations à effectuer s&#039;affiche (fenêtre intitulée &quot;Prêt à installer&quot;), au bas de la fenêtre d&#039;installation, cliquez sur le bouton <strong>Avancé…</strong> (voir image ci-dessous). Indiquez qu&#039;il faut installer le chargeur d&#039;amorçage et <em><strong>précisez</strong> que celui-ci doit se trouver dans l&#039;emplacement <code>(hd0,1)</code> ou sélectionnez le périphérique <code>/dev/sda2</code> dans le menu déroulant</em><sup><a href="comment_amorcer_ubuntu_avec_ntldr#fn__5" id="fnt__5" class="fn_top">5)</a></sup>. <strong>Si vous laissez le paramétrage par défaut, le tatouage de votre ordinateur sera effacé</strong>. Veillez donc à entrer les bons paramètres.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=4d146d&amp;media=http%3A%2F%2Fwww.breizh-ardente.fr%2Fdotclear%2Fimages%2Fhardy%2Fhardy25.png" class="media" title="http://www.breizh-ardente.fr/dotclear/images/hardy/hardy25.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?w=350&amp;tok=892c91&amp;media=http%3A%2F%2Fwww.breizh-ardente.fr%2Fdotclear%2Fimages%2Fhardy%2Fhardy25.png" class="media" alt="" width="350" /></a>
+</p>
+
+<p>
+Puis complétez l&#039;installation.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Installation d'Ubuntu] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6913-8666" /><input type="submit" value="Modifier" class="button" title="Installation d'Ubuntu" /></div></form></div>
+<h3 class="sectionedit8" id="ajout_d_une_entree_de_menu_pour_ubuntu_dans_l_amorceur_de_windows_xp">Ajout d&#039;une entrée de menu pour Ubuntu dans l&#039;amorceur de Windows XP</h3>
+<div class="level3">
+
+<p>
+Une fois l&#039;installation d&#039;Ubuntu complétée, choisissez de rester dans le système du live CD. Nous allons maintenant copier le secteur d&#039;amorçage de Grub : 
+Ouvrez un terminal et tapez :
+</p>
+<pre class="code">sudo dd if=/dev/sdxY of=~/grub.bs bs=512 count=1</pre>
+
+<p>
+où sdxY doit être remplacé par la partition sur laquelle vous avez installé Ubuntu (exemple sda2).
+Le fichier grub.bs apparait maintenant dans le dossier utilisateur. Pour un live CD ubuntu, c&#039;est sous &quot;Ubuntu&quot;.
+</p>
+
+<p>
+Possibilité 1 : Copiez le fichier grub.bs sur une clé <abbr title="Universal Serial Bus">USB</abbr> et redémarrez.
+</p>
+
+<p>
+Possibilité 2 : montez la partition contenant Windows et copiez le fichier grub.bs à la racine.
+</p>
+
+<p>
+Redémarrez votre ordinateur.
+</p>
+
+<p>
+Aucun choix ne vous est proposé pour charger Ubuntu. C&#039;est Windows XP qui se lance, pour le moment c&#039;est normal. Nous n&#039;avons pas complété cette section.
+</p>
+
+<p>
+Récupérez le fichier <code>grub.bs</code>, que vous avez précédemment généré durant l&#039;installation d&#039;Ubuntu, et copiez-le dans <code>C:\</code> (sauf si vous avez choisi la seconde possibilité)
+</p>
+<ol>
+<li class="level1"><div class="li">Dans le <em>menu Démarrer</em>, sélectionnez <em>Panneau de configuration → Performances et maintenance → Système</em> ;</div>
+</li>
+<li class="level1"><div class="li"> Rendez-vous sous l&#039;onglet <em>Avancé</em>. Dans la rubrique «Démarrage et récupération», cliquez sur le bouton <strong>Paramètres</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Dans la fenêtre «Démarrage et récupération», sous la rubrique «Démarrage du système», cliquez sur le bouton <strong>Modifier</strong> pour modifier les options du démarrage ;</div>
+</li>
+<li class="level1"><div class="li"> À la toute fin du fichier <code>boot.ini</code> qui vient de s&#039;ouvrir, ajoutez la ligne suivante, et uniquement cette ligne : <pre class="file">C:\grub.bs=&quot;Executer GRUB&quot;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Vérifiez que la ligne commençant par <code>timeout</code> n&#039;assigne pas 0. Cela correspond au temps d&#039;affichage du menu en secondes… sinon, modifiez cela à votre convenance.</div>
+</li>
+<li class="level1"><div class="li"> Sauvegardez le fichier <code>boot.ini</code> modifié.</div>
+</li>
+<li class="level1"><div class="li"> Validez</div>
+</li>
+</ol>
+
+<p>
+<p><div class="notetip">
+Préférez écrire &quot;Executer&quot; que &quot;Exécuter&quot; car le caractère accentué peut être mal affiché.
+
+</div></p>
+<p><div class="noteimportant">
+Le fichier d&#039;amorçage grub.bs peut porter un autre nom. Utile si vous avez plusieurs systèmes Gnu/Linux installés sur votre machine.
+</p>
+
+<p>
+Toutefois <strong>si votre partition windows est de type FAT32</strong>, veillez à ne pas dépasser 8 caractères pour le nom. Sinon vous aurez une erreur liée à HAL.DLL
+</p>
+
+<p>
+Exemple correct : grubsda2.bs (8 caractères). Exemple incorrect : grub_sda2.bs (9 caractères). 
+
+</div></p>
+</p>
+
+<p>
+Pour changer l&#039;ordre de démarrage, redémarrez votre ordinateur. Vous verrez normalement apparaitre &quot;Exécuter Grub&quot; dans le menu. Sélectionnez-le et validez. Désormais, Grub (et donc Ubuntu) sera le choix par défaut lors du démarrage du PC.
+</p>
+
+<p>
+<p><div class="notewarning">N&#039;apportez aucune autre modification au fichier <code>boot.ini</code>, car vous pourriez complètement modifier la routine d&#039;amorçage de votre ordinateur ! Il se pourrait alors que votre ordinateur soit dans l&#039;incapacité de charger un quelconque système d&#039;exploitation installé.
+</div></p>
+</p>
+
+<p>
+<p><div class="notewarning">ATTENTION à ne pas modifier le fichier boot.ini depuis Ubuntu (par gedit par exemple) mais seulement depuis Windows.
+Soit par la méthode ci-dessus de passage par le panneau de configuration, soit directement par Notepad.
+La modification de boot.ini sous Ubuntu, par gedit, rend le fichier boot.ini illisible par le programme de boot et bloque le boot sur un écran noir.
+Cause :
+</p>
+<ul>
+<li class="level1"><div class="li"> le retour à la ligne sous Windows (Notepad par exemple) est représentée par les 2 caractères [CR]+[LF] (0x0D+0x0A)</div>
+</li>
+<li class="level1"><div class="li"> alors que le retour à la ligne sous Ubuntu (gedit) est représenté uniquement par [LF] (0x0A)</div>
+</li>
+</ul>
+
+<p>
+Ce qui apparament ne plait pas au programme de boot qui n&#039;arrive plus à interpréter correctement le boot.ini et se bloque.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Ajout d'une entrée de menu pour Ubuntu dans l'amorceur de Windows XP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8667-12433" /><input type="submit" value="Modifier" class="button" title="Ajout d'une entrée de menu pour Ubuntu dans l'amorceur de Windows XP" /></div></form></div>
+<h3 class="sectionedit9" id="si_apres_toutes_ces_manipulations_un_plantage_se_produit_lorsque_l_on_selectionne_grub_au_demarrage">Si après toutes ces manipulations, un plantage se produit lorsque l&#039;on sélectionne grub au démarrage</h3>
+<div class="level3">
+
+<p>
+<p><div class="notewarning"> <img src="../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Procédure inspirée d&#039;une <a href="http://ubuntuforums.org/showthread.php?t=1304667&amp;page=2" class="urlextern" title="http://ubuntuforums.org/showthread.php?t=1304667&amp;page=2"  rel="nofollow">manip trouvée sur le forum anglophone</a> et en attente d&#039;approbation par la liste de diffusion du wiki. 07/03/2010
+</div></p>
+</p>
+
+<p>
+Cela peut arriver notamment dans le cas où vous utilisez karmic et Grub2 et que vous êtes malchanceux ou si vous l&#039;avez installé sur une partition logique. Il existe une méthode alternative pour arriver quand même à ses fins. En effet, le bug vient du fait que pour une raison inconnue, le premier secteur que vous avez récupéré de votre partition où vous avez installé grub est vide, ce qui fait que votre grub.bs ne contient pas de données exploitables. La solution consiste à :
+</p>
+<ol>
+<li class="level1"><div class="li"> Sauvegarder le contenu de votre MBR</div>
+</li>
+<li class="level1"><div class="li"> Installer grub dans votre MBR</div>
+</li>
+<li class="level1"><div class="li"> Récupérer le nouveau contenu du MBR dans le fichier grub.bs</div>
+</li>
+<li class="level1"><div class="li"> Restaurer votre MBR grâce à la sauvegarde que vous en aviez faite.</div>
+</li>
+</ol>
+
+<p>
+Alors pour commencer, redémarrez sur votre liveCD, et montez la partion où vous aviez installé votre système linux. Ici nous supposerons qu&#039;il s&#039;agit de /dev/sda2, et quelle a été montée dans /media/uuid. Ouvrez un terminal, et entrez les commandes suivantes:
+</p>
+<pre class="code">sudo dd if=/dev/sda of=sauvegarde_mbr_xp bs=512 count=1  # sauvegarde du MBR de Windows
+sudo grub-install --root-directory=/media/uuid /dev/sda  # installation de Grub dans le MBR
+sudo dd if=/dev/sda of=grub.bs bs=512 count=1            # récupération du MBR selon Ubuntu
+sudo dd of=/dev/sda if=sauvegarde_mbr_xp bs=512 count=1  # restauration du MBR depuis la sauvegarde</pre>
+
+<p>
+Récupérez le nouveau fichier grub.bs obtenu après cette manipulation, montez votre partition système de windows et placez le à la racine à la place du précédent défectueux.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Si après toutes ces manipulations, un plantage se produit lorsque l'on sélectionne grub au démarrage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12434-14323" /><input type="submit" value="Modifier" class="button" title="Si après toutes ces manipulations, un plantage se produit lorsque l'on sélectionne grub au démarrage" /></div></form></div>
+<h3 class="sectionedit10" id="exempletutoriel_en_images">Exemple: tutoriel en images</h3>
+<div class="level3">
+
+<p>
+Voici une <a href="http://picasaweb.google.fr/101027216843556196092/LucidParalleleXpManuel?feat=directlink" class="urlextern" title="http://picasaweb.google.fr/101027216843556196092/LucidParalleleXpManuel?feat=directlink"  rel="nofollow">présentation picasa</a> qui montre en 174 slides un exemple de mise en œuvre des méthodes préconisées ici dans le cadre d&#039;une installation fine. Attention, cette présentation s&#039;adresse à un public déjà un peu familier d&#039;Ubuntu et ouvert à une découverte plus profonde de son système. Par ailleurs cette présentation ne saurait être suivie au pied de la lettre. Par exemple vous n&#039;aurez probablement pas besoin de désactiver l&#039;acpi. A vous de comprendre l&#039;esprit de la chose, et de savoir l&#039;adapter à vos besoins propres.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Exemple: tutoriel en images] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14324-14999" /><input type="submit" value="Modifier" class="button" title="Exemple: tutoriel en images" /></div></form></div>
+<h2 class="sectionedit11" id="explications_additionnelles">Explications additionnelles</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Explications additionnelles] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15000-15040" /><input type="submit" value="Modifier" class="button" title="Explications additionnelles" /></div></form></div>
+<h3 class="sectionedit12" id="logique_de_demarrage">Logique de démarrage</h3>
+<div class="level3">
+
+<p>
+Le <a href="http://fr.wikipedia.org/wiki/Basic_Input_Output_System" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Basic_Input_Output_System">BIOS</a>, une fois les vérifications de routine sur l&#039;ordinateur terminées, exécute un petit programme, appelé « amorceur » (en anglais, <em>bootloader</em>), qui permet à son tour de démarrer un système d&#039;exploitation. L&#039;amorceur qu&#039;exécute le <abbr title="Basic Input-Output System">BIOS</abbr> doit se trouver dans une petite partie d&#039;un disque dur ou d&#039;une partition : le MBR <em>(Master Boot Record)</em> dans le cas d&#039;un disque, ou secteur d&#039;amorçage dans le cas d&#039;une partition. Par défaut, si des paramètres n&#039;ont pas été modifiés dans le <abbr title="Basic Input-Output System">BIOS</abbr>, celui-ci va exécuter l&#039;amorceur se situant dans le MBR du disque dur maître ; par défaut, Ubuntu installe son amorceur dans ce MBR.
+</p>
+
+<p>
+Toutefois, ceci est problématique sur certains ordinateurs de constructeurs, tels Hewlett-Packard, Packard Bell, Acer et d&#039;autres marques, quand on désire conserver une copie fonctionnelle de Microsoft® Windows®. Ces ordinateurs possèdent des routines d&#039;amorçage modifiées qui empêcheront la réinstallation de Windows si le MBR est modifié : on appelle ce principe le <strong>tatouage</strong>. Comment faire, alors, pour installer Ubuntu tout en gardant la possibilité de réinstaller Windows plus tard ? La solution est d&#039;utiliser l&#039;amorceur déjà en place dans le MBR : <strong>Bootmgr</strong> pour Vista.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Logique de démarrage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15041-16354" /><input type="submit" value="Modifier" class="button" title="Logique de démarrage" /></div></form></div>
+<h3 class="sectionedit13" id="qu_est-ce_que_le_tatouage">Qu&#039;est-ce que le tatouage ?</h3>
+<div class="level3">
+
+<p>
+Le tatouage est un dispositif, malheureusement de plus en plus commun, que de nombreux constructeurs mettent en place dans leurs ordinateurs. Ce dispositif interdit à la version de Windows livrée avec votre ordinateur d&#039;être installée sur un autre ordinateur. Concrètement, il s&#039;agit de quelques octets placés sur la carte mère, sur le disque dur (en particulier le MBR), sur la partition de restauration de Windows, sur les CD de réinstallation, voire aussi dans le <abbr title="Basic Input-Output System">BIOS</abbr>, et qui communiquent entre eux. Si l&#039;un de ces éléments est changé, votre copie de Windows ne pourra plus être réinstallée, voire même ne plus démarrer. Ce dispositif est utilisé par de grandes marques comme Packard Bell, Hewlett-Packard, Acer, Compaq, Gericom et bien d&#039;autres encore.
+</p>
+
+<p>
+Puisque Ubuntu, par défaut, installe GRUB dans le MBR (et donc modifie, réécrit le contenu du MBR), un ordinateur tatoué perd son tatouage. Conséquence de cette perte : il est impossible de réinstaller Windows si besoin est, voire même de le démarrer. Pour éviter cela, la procédure ci-dessus fait en sorte qu&#039;à l&#039;installation d&#039;Ubuntu, GRUB sera placé ailleurs et on utilisera les capacités actuelles de l&#039;amorçeur contenu dans le MBR au moment du tatouage (BootMgr).
+</p>
+
+<p>
+D&#039;autres raisons (par exemple, si vous réinstallez fréquemment Windows) peuvent aussi vous inciter à préférer la méthode décrite dans ce tutoriel pour créer un multi-amorçage entre Ubuntu et Windows avec BootMgr.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Qu'est-ce que le tatouage ?] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="16355-17878" /><input type="submit" value="Modifier" class="button" title="Qu'est-ce que le tatouage ?" /></div></form></div>
+<h3 class="sectionedit14" id="installer_grub_ailleurs_que_dans_le_mbr">Installer GRUB ailleurs que dans le MBR</h3>
+<div class="level3">
+
+<p>
+<a href="../grub" class="wikilink1" title="grub">GRUB</a> est un amorceur fréquemment utilisé dans le monde linuxien ; c&#039;est celui que la distribution Ubuntu a choisi d&#039;utiliser. GRUB est un programme fonctionnant en deux parties : une première partie s&#039;installe dans le MBR d&#039;un disque ou le secteur d&#039;amorçage d&#039;une partition, et la seconde partie s&#039;installe dans une partition d&#039;Ubuntu. Ceci est dû à la fois à la nécessité de se trouver dans cet emplacement et la trop petite taille du MBR ou secteur d&#039;amorçage (512 octets dont seulement 446 peuvent être utilisés par l&#039;amorceur).
+</p>
+
+<p>
+Lors de l&#039;installation par défaut, avec le <em>Desktop CD</em> d&#039;Ubuntu, la première partie de GRUB (<code>stage1</code>) est installé dans le MBR, ce qui écrase complètement le contenu actuel du MBR et, par le fait-même, le tatouage de l&#039;ordinateur ; ceci n&#039;est pas envisageable si l&#039;on possède un ordinateur tatoué et que l&#039;on souhaite conserver la possibilité d&#039;utiliser ou réinstaller Windows. De même, si l&#039;on réécrit dans le MBR (ce qui se produit si l&#039;on installe ou réinstalle Windows après Ubuntu), <code>stage1</code> est effacé et GRUB ne fonctionne plus.
+</p>
+
+<p>
+Pour éviter ces deux cas de figure, on a la possibilité d&#039;installer <code>stage1</code> ailleurs que dans le MBR. Dans le tutoriel précédent, nous l&#039;avons installé dans le secteur d&#039;amorçage de la partition racine d&#039;Ubuntu ; Windows n&#039;y touchera pas. Ceci évite de corrompre le fonctionnement de GRUB.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Installer GRUB ailleurs que dans le MBR] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17879-19342" /><input type="submit" value="Modifier" class="button" title="Installer GRUB ailleurs que dans le MBR" /></div></form></div>
+<h3 class="sectionedit15" id="utiliser_ntldr">Utiliser NTLDR</h3>
+<div class="level3">
+
+<p>
+NT Loader (ou NTLDR) est l&#039;amorceur de Windows XP. Par défaut, celui-ci est configuré pour démarrer automatiquement Windows, sans offrir de menu pour charger d&#039;autres systèmes d&#039;exploitation, à l&#039;exception d&#039;autres systèmes Windows s&#039;il y en a plus d&#039;un installés dans l&#039;ordinateur. D&#039;ailleurs, NTLDR ne permet pas d&#039;amorcer un <abbr title="Operating System">OS</abbr> Linux. Par contre, il permet d&#039;<em>enchaîner</em> un autre amorceur, qui lui a les capacités d&#039;amorcer un système Linux ; c&#039;est cette capacité que recherche ce tutoriel.	 
+</p>
+
+<p>
+Avec l&#039;astuce que nous avons précédemment décrite, nous pouvons laisser GRUB dans le secteur d&#039;amorçage de la partition racine d&#039;Ubuntu, laisser NTLDR dans le MBR du disque dur. Ce que nous demandons à NTLDR de faire est de passer le relais à GRUB, pour que lui démarre Ubuntu.	 
+</p>
+
+</div>
+
+<h4 id="les_avantages_de_cette_technique">Les avantages de cette technique</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> On ne modifie pas le contenu du MBR, qui contient éventuellement un tatouage ;	 </div>
+</li>
+<li class="level1"><div class="li"> On ne perd jamais l&#039;amorceur GRUB, puisqu&#039;il est installé sur le secteur d&#039;amorçage de la partition racine d&#039;Ubuntu, et non dans le MBR. Si Windows doit être réinstallé, il est facile de récupérer l&#039;accès à GRUB, car on dispose d&#039;une copie du <code>stage1</code> en sauvegarde ;	 </div>
+</li>
+<li class="level1"><div class="li"> Lorsque l&#039;on rajoute un nouvel <abbr title="Operating System">OS</abbr>, il suffit de répéter une procédure similaire à celle que nous venons de décrire, ce qui fait en sorte que chaque amorceur est indépendant.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/boloshon" class="wikilink1" title="utilisateurs:boloshon">Boloshon</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/bilboid" class="wikilink1" title="utilisateurs:bilboid">bilboid</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/junior76" class="wikilink1" title="utilisateurs:junior76">Junior76</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="comment_amorcer_ubuntu_avec_ntldr"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412604364" /><input type="hidden" name="summary" value="[Utiliser NTLDR] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="19343-" /><input type="submit" value="Modifier" class="button" title="Utiliser NTLDR" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="comment_amorcer_ubuntu_avec_ntldr#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Pour alléger le document, nous prendrons pour acquis que vous utilisez Windows XP. La procédure est la même pour Windows NT et 2000.</div>
+<div class="fn"><sup><a href="comment_amorcer_ubuntu_avec_ntldr#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+et vous évitera <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=3368720" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=3368720"  rel="nofollow">ce type de soucis</a></div>
+<div class="fn"><sup><a href="comment_amorcer_ubuntu_avec_ntldr#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+Ceci est le cas avec un disque dur et Ubuntu sur la deuxième partition (par défaut).
+
+N&#039;oubliez pas d&#039;adapter l&#039;emplacement de la partition racine d&#039;Ubuntu si celui-ci diffère de notre exemple ! Si vous avez besoin d&#039;aide, n&#039;hésitez pas à poser vos questions dans le <a href="http://forum.ubuntu-fr.org" class="urlextern" title="http://forum.ubuntu-fr.org"  rel="nofollow">forum</a>.</div>
+<div class="fn"><sup><a href="comment_amorcer_ubuntu_avec_ntldr#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+Cette commande crée une copie exacte du contenu de votre MBR. Le <em><strong>M</strong>aster <strong>B</strong>oot <strong>R</strong>ecord</em>, zone d&#039;amorçage principale, est une zone de 512 octets dont les 66 derniers contiennent l&#039;arrangement de votre disque dur : la <em>table des partitions</em>. La commande utilisée ne copie que les 446 premiers octets (donc, ne sauvegarde pas la table des partitions de votre disque dur). Ceci a pour avantage qu&#039;en cas de restauration, on ne perd pas les partitions qui ont été créées après la sauvegarde du MBR. Si l&#039;on veut aussi sauvegarder la table des partitions, il faut remplacer « 446 » par « 512 ».</div>
+<div class="fn"><sup><a href="comment_amorcer_ubuntu_avec_ntldr#fnt__5" id="fn__5" class="fn_bot">5)</a></sup> 
+Le menu déroulant n&#039;apparaît que depuis Ubuntu 8.04. N&#039;oubliez pas de sélectionner le bon périphérique correspondant à *votre* installation ! Il faut installer le chargeur d&#039;amorçage dans la partition d&#039;Ubuntu et surtout pas dans celle de windows. La notation des périphériques dans GRUB est différente ; rapportez-vous au forum en cas de besoin.</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/4/478eeeeca81d8e2dbc64d7a630439f77.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_amorcer_ubuntu_avec_ntldr?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_amorcer_ubuntu_avec_ntldr?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_amorcer_ubuntu_avec_ntldr?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_amorcer_ubuntu_avec_ntldr?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_amorcer_ubuntu_avec_ntldr?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

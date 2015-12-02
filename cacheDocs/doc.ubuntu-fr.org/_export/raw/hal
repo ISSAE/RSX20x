@@ -1,0 +1,123 @@
+{{tag>Precise Raring Saucy système BROUILLON}}
+
+----
+
+====== HAL : Hardware Abstraction Layer ======
+
+HAL est la couche d'abstraction matérielle, ainsi que l'indique son nom en anglais.
+
+Cette couche d'abstraction est simplement une interface qui rend possible l'ajout du support pour les nouveaux périphériques et les nouvelles manières de les connecter à l'ordinateur, sans modifier chaque application qui les utilise. Il maintient une liste de périphériques qui existent actuellement et peut fournir des informations à leur sujet sur demande. Elle permet de reconnaître et d'identifier les périphériques branchés à l'ordinateur, de leur fournir une adresse système...
+
+Hal est par exemple sollicitée à chaque branchement à chaud d'un périphérique, tel qu'une clé usb ou une imprimante.
+
+<note help>Vous pouvez lire à ce sujet les documentations sur Udev. Udev est une dépendance de Hal</note>
+
+<note important>Hal est maintenant intégré dans udev depuis 2008-2010, cette documentation n'est plus à jour !</note>
+
+
+Hal est aussi un programme : haldaemon, aussi appelé hald, chargé au démarrage du système grace à un script (script de niveau d'execution, logé dans /etc/init.d/).\\
+Comme de nombreux services, démons et programmes vitaux pour le système d'exploitation, hal dispose aussi de son propre compte utilisateur. Cela permet qu'en cas de bug de hal, le bug ne se répande pas ailleurs dans le système (lire à ce sujet les articles sur la gestion des droits lecture/écriture/exécution et la gestion des utilisateurs).
+
+===== Pré-requis =====
+
+  * Disposer des [[:sudo|droits d'administration]] ;
+  * Disposer d'une connexion à Internet configurée et activée ;
+  * Avoir activé l'accès aux [[:depots#main|dépôts Main]].
+
+===== Installation =====
+
+==== Versions inférieures à la 13.10 " Saucy " ====
+
+Il vous suffit, pour cela, d'[[:tutoriel:comment_installer_un_paquet|installer les paquets]] **[[apt://hal|hal]]**.
+
+==== Saucy Salamander ====
+
+<note important>Dans Ubuntu 13.10 "Saucy salamander" le paquet hal n'est plus présent dans les dépots.
+
+Vous pouvez utiliser un ppa à l'adresse suivante : https://launchpad.net/~mjblenner/+archive/ppa-hal</note>
+
+
+
+Vous devez utiliser les debs Raring (13.04) ils ont été effacés des dépôts de la 13.10.
+
+libhal1:
+http://packages.ubuntu.com/raring/libhal1
+
+libhal-storage1:
+http://packages.ubuntu.com/raring/libhal-storage1
+
+hal:
+http://packages.ubuntu.com/raring/hal
+
+
+3) Une fois les paquets installés ils faut appliquer les " patchs " suivants :
+
+<code>sudo mkdir /etc/hal/fdi/preprobe
+sudo mkdir /etc/hal/fdi/information
+/usr/sbin/hald --daemon=yes --verbose=yes</code>
+
+4) Fermez le navigateur et effacer le contenu des dossiers Adobe avec les commandes suivantes :
+<code>cd ~/.adobe/Flash_Player
+rm -rf NativeCache AssetCache APSPrivateData2</code>
+
+5) Faites un reset de licence ( C'est très important !):
+http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager08.html
+
+6) test via:
+http://drmtest2.adobe.com:8080/SVP/SampleVideoPlayer_FP.html
+
+Copier cette adresse dans le champ video url:
+http://drmtest2.adobe.com:8080/Content/anonymous.f4v
+===== Désinstallation =====
+
+Pour supprimer cette application, il suffit de [[:tutoriel:comment_supprimer_un_paquet|supprimer son paquet]]. La configuration de l'application sera conservée ou supprimée selon la méthode de désinstallation que vous choisirez.
+
+===== Fonctionnement =====
+
+Comme dit précédemment, HAL est une surcouche du daemon [[udev]] à qui le noyau délègue la gestion des évènements matériels. ''udev'' transmet l'intégralité des évènements qu'il détecte à HAL par l'intermédiaire d'une règle installée par défaut (Ubuntu 8.10 Intrepid).
+
+Cette règle est définie dans le fichier /etc/udev/rules.d/90-hal.rules
+
+<code>
+ $ cat /etc/udev/rules.d/90-hal.rules
+ # pass all events to the HAL daemon
+ RUN+="socket:/org/freedesktop/hal/udev_event"
+</code>
+
+HAL est destinataire de l'intégralité des évènements matériels qui surviennent sur la machine et réagit en fonction des règles internes définies dans les fichiers de configuration XML du répertoire /etc/hal/.
+
+==== lshal ====
+
+Cette commande permet de lister les périphériques pris en compte par HAL sur l'ordinateur.
+
+Essayez:
+<code>
+ $ lshal
+</code>
+
+=====Problèmes possibles =====
+
+Il peut arriver que vous tombiez, lors d'une mise à jour, sur un message du genre :
+
+''stephane@lug:/etc/bcron$ sudo dpkg --configure hal\\
+Paramétrage de hal (0.5.11~rc2-1ubuntu8.2) ...\\
+ * Reloading system message bus config...                                   [ OK ]
+polkit-read-auth-helper: needs to be setgid polkituser\\
+polkit-auth: NotAuthorizedToReadAuthorizationsForOtherUsers: uid 0 is not authorized to read authorizations for uid 122 (requires org.freedesktop.policykit.read)\\
+polkit-read-auth-helper: needs to be setgid polkituser\\
+polkit-auth: NotAuthorizedToReadAuthorizationsForOtherUsers: uid 0 is not authorized to read authorizations for uid 122 (requires org.freedesktop.policykit.read)\\
+dpkg : erreur de traitement de hal (--configure) :\\
+ le sous-processus post-installation script a retourné une erreur de sortie d'état1\\
+Des erreurs ont été rencontrées pendant l'exécution :\\
+ hal''
+
+On voit bien dans ce cas qu'il s'agit d'un problème avec le compte d'utilisateur polkituser, qui intervient aussi dans la configuration de hal.
+
+Dans ce cas, faites un usermod sur le compte problématique et sur celui de hal, afin d'étendre la validité des comptes en question :
+
+''usermod -e AAAA-MM-JJ //nom-du-compte// '', dans lequel AAAA est l'année, MM le mois, et JJ le jour de la nouvelle date de validité.
+
+----
+
+
+//Contributeurs : [[utilisateurs:stephaneguedon|stephaneguedon]], mimilus.//

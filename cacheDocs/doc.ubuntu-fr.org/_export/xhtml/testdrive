@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>testdrive</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2011-02-04T23:37:52+0100"/>
+<meta name="keywords" content="karmic,lucid,maverick,natty,systeme"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../testdrive?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="testdrive"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/testdrive"/>
+<link rel="canonical" href="../../testdrive"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"testdrive","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="testdrive#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="testdrive#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="testdrive#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="testdrive#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="testdrive#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">Karmic</a>,
+	<a href="../../lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="../../maverick" class="wikilink1" title="maverick" rel="tag">Maverick</a>,
+	<a href="../../natty" class="wikilink1" title="natty" rel="tag">Natty</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>
+</span></div>
+<hr />
+
+<p>
+<a href="../../lib/exe/fetch.php?tok=cac5fe&amp;media=https%253A%252F%252Flaunchpadlibrarian.net%252F43118125%252Ftestdrive_64.png" class="media" title="https://launchpadlibrarian.net/43118125/testdrive_64.png"><img src="../../lib/exe/fetch.php?tok=cac5fe&amp;media=https%253A%252F%252Flaunchpadlibrarian.net%252F43118125%252Ftestdrive_64.png" class="medialeft" title="TestDrive est une solution simple pour tester Ubuntu" alt="TestDrive est une solution simple pour tester Ubuntu" /></a>
+</p>
+
+<h1 class="sectionedit1" id="testdrivetester_des_versions_de_developpement_d_ubuntu">TestDrive : tester des versions de développement d&#039;Ubuntu</h1>
+<div class="level1">
+
+<p>
+Le programme <strong>TestDrive</strong> est une solution simple permettant de tester la dernière version de développement d&#039;Ubuntu. TestDrive propose, à partir d&#039;une seule fenêtre de terminal, de télécharger la dernière compilation d&#039;image disque de la version de test d&#039;Ubuntu, de créer une machine virtuelle et d&#039;y charger cette image, et optionnellement de créer une clé <abbr title="Universal Serial Bus">USB</abbr> amorçable de test.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "TestDrive : tester des versions de développement d'Ubuntu" [171-641] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+Pour que TestDrive fonctionne, vous devez installer au moins un logiciel de virtualisation parmi les choix suivants :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../kvm" class="wikilink1" title="kvm">KVM</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../virtualbox" class="wikilink1" title="virtualbox">VirtualBox</a> (version 3.0 à 3.2, édition OSE ou PUEL. La version 4.0.x de VirtualBox n&#039;est pas prise en charge)</div>
+</li>
+</ul>
+
+<p>
+Si le paquet d&#039;installation détecte que vous disposez de l&#039;un ou l&#039;autre des hyperviseurs précédents, TestDrive l&#039;utilisera. En l&#039;absence d&#039;un hyperviseur pris en charge, TestDrive installe automatiquement KVM. Les autres logiciels de virtualisation, tels VMware Player et Xen, ne sont pas gérés par TestDrive.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [642-1235] -->
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+
+<h4 id="depuis_les_depots">Depuis les dépôts</h4>
+<div class="level4">
+
+<p>
+TestDrive fait partie des dépôts officiels depuis <a href="../../lucid" class="wikilink1" title="lucid">Ubuntu 10.04 LTS</a>. Il suffit d&#039;<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://testdrive" class="urlextern" title="apt://testdrive"  rel="nofollow">testdrive</a></strong>.
+</p>
+
+</div>
+
+<h4 id="depuis_le_ppa">Depuis le PPA</h4>
+<div class="level4">
+
+<p>
+Le dépôt PPA du projet donne accès à une version plus récente que celle des dépôts pour Ubuntu 10.04 LTS et 10.10.
+</p>
+
+<p>
+<a href="../../ppa" class="wikilink1" title="ppa">Ajoutez le dépôt</a> <strong>ppa:testdrive/ppa</strong><sup><a href="testdrive#fn__1" id="fnt__1" class="fn_top">1)</a></sup> dans vos sources de logiciels, puis <a href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj#recharger_la_liste_des_paquets" class="wikilink1" title="tutoriel:comment_modifier_sources_maj">rechargez la liste des paquets</a> et <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt://testdrive" class="urlextern" title="apt://testdrive"  rel="nofollow">testdrive</a></strong>.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Installation" [1236-1963] -->
+<h2 class="sectionedit4" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+Une fois installé, TestDrive est disponible dans le menu <em>Applications → Outils Système → Test Drive an Ubuntu ISO</em>.
+</p>
+
+<p>
+<a href="../../_detail/testdrive.png?id=testdrive" class="media" title="testdrive.png"><img src="../../_media/testdrive.png" class="mediacenter" title="Le raccourci de TestDrive se trouve dans le menu &quot;Applications -&gt; Outils Système&quot;" alt="Le raccourci de TestDrive se trouve dans le menu &quot;Applications -&gt; Outils Système&quot;" /></a>
+</p>
+
+<p>
+<br/>
+<br/>
+
+</p>
+
+<p>
+<a href="../../_detail/testdrive-interface.png?id=testdrive" class="media" title="testdrive-interface.png"><img src="../../_media/testdrive-interface.png?w=300&amp;tok=409245" class="mediaright" title="Inscrivez le numéro d&#039;action à effectuer, puis appuyez sur [Entrée]." alt="Inscrivez le numéro d&#039;action à effectuer, puis appuyez sur [Entrée]." width="300" /></a>
+</p>
+
+<p>
+Appuyez sur ce raccourci pour ouvrir une fenêtre de terminal simple dans laquelle vous est proposé un menu. Ce menu liste diverses images disque de la version de développement d&#039;Ubuntu disponibles actuellement à tester. À l&#039;invite de commande, inscrivez le chiffre correspondant à la version d&#039;Ubuntu que vous souhaitez tester (image pour postes de travail, image alternative, image pour serveurs, image pour Netbooks ; en version 32 bits ou 64 bits) puis appuyez sur la touche [Entrée] de votre clavier. TestDrive se charge du reste !
+</p>
+
+<p>
+Une fois votre action choisie, TestDrive se charge de lui-même de télécharger la plus récente image CD de la version de développement d&#039;Ubuntu depuis les serveurs d&#039;Ubuntu. Puis, il crée une machine virtuelle dans le logiciel de virtualisation que vous avez précédemment installé (KVM ou VirtualBox). Enfin, il démarre la nouvelle machine virtuelle et charge l&#039;image CD téléchargée. Le résultat obtenu est identique à celui que vous auriez obtenu en téléchargeant vous-même l&#039;image CD de votre choix et que vous l&#039;aviez gravé dans un CD-ROM.
+</p>
+
+<p>
+<a href="../../_detail/testdrive-fonction.png?id=testdrive" class="media" title="testdrive-fonction.png"><img src="../../_media/testdrive-fonction.png?w=300&amp;tok=553c4f" class="mediacenter" title="Ubuntu 10.04 en version de développement, exécutée à partir de TestDrive" alt="Ubuntu 10.04 en version de développement, exécutée à partir de TestDrive" width="300" /></a>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Utilisation" [1964-3551] -->
+<h2 class="sectionedit5" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="../../tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer son paquet</a>. Selon la méthode choisie, la configuration globale de l&#039;application est conservée ou supprimée. Les journaux du système, et les fichiers de préférence des utilisateurs dans leurs dossiers personnels sont toujours conservés.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Désinstallation" [3552-3926] -->
+<h2 class="sectionedit6" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="https://launchpad.net/testdrive" class="urlextern" title="https://launchpad.net/testdrive"  rel="nofollow">Page officielle de TestDrive</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : …</em>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Voir aussi" [3927-] --><div class="footnotes">
+<div class="fn"><sup><a href="testdrive#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<a href="https://launchpad.net/~testdrive/+archive/ppa" class="urlextern" title="https://launchpad.net/~testdrive/+archive/ppa"  rel="nofollow">https://launchpad.net/~testdrive/+archive/ppa</a></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/4/42f758f079255eeb9b4c136a42393d1f.xhtml used -->
+</div>
+</body>
+</html>

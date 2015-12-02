@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>gconf - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="gconf?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/gconf"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/gconf"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"gconf","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="gconf?do=edit#main" tabindex="1">Contenu</a> | <a href="gconf?do=edit#qsearch__in" tabindex="2">Rechercher</a> | <a href="gconf?do=edit#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="gconf?do=edit" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="gconf" >gconf</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<p>
+<strong>Quelques recommandations avant de créer ou de modifier cette page :</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Lisez le <a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">guide du contributeur</a> et la <a href="wiki/ligne_editoriale" class="wikilink1" title="wiki:ligne_editoriale">ligne éditoriale</a>.</div>
+</li>
+<li class="level1"><div class="li"> Découvrez la <a href="http://doc.ubuntu-fr.org/wiki/syntaxe" class="wikilink1" title="wiki:syntaxe">syntaxe</a> et entraînez-vous dans le <a href="playground/playground" class="wikilink1" title="playground:playground">bac à sable</a>.</div>
+</li>
+<li class="level1"><div class="li"> Utilisez les modèles (<a href="wiki/modeles/application" class="wikilink1" title="wiki:modeles:application">application</a>, <a href="wiki/modeles/materiel" class="wikilink1" title="wiki:modeles:materiel">matériel</a>, <a href="wiki/modeles/portable" class="wikilink1" title="wiki:modeles:portable">ordinateur portable</a>, <a href="wiki/modeles/tutoriel" class="wikilink1" title="wiki:modeles:tutoriel">tutoriel</a>, <a href="wiki/modeles/utilisateur" class="wikilink1" title="wiki:modeles:utilisateur">utilisateur</a>, <a href="wiki/modeles/portail" class="wikilink1" title="wiki:modeles:portail">portail</a>) et les <a href="wiki/mini-tutoriels" class="wikilink1" title="wiki:mini-tutoriels">mini-tutoriels</a>.</div>
+</li>
+<li class="level1"><div class="li"> Rapportez toutes créations ou modifications importantes sur <a href="wiki/liste_discussion#coordination_de_la_documentation" class="wikilink1" title="wiki:liste_discussion">la liste de discussion</a>.</div>
+</li>
+</ol>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fcdb5fe1d67011f56447459483d05597.xhtml used -->
+<script type="text/javascript">/*<![CDATA[*/
+textChanged = false/*!]]>*/</script>
+    <div class="editBox" role="application">
+
+    <div class="toolbar group">
+        <div id="draft__status"></div>
+        <div id="tool__bar"><a href="http://doc.ubuntu-fr.org/lib/exe/mediamanager.php?ns="
+            target="_blank">Sélection de fichiers</a></div>
+    </div>
+    <form id="dw__editform" method="post" action="gconf?do=edit" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><input type="hidden" name="id" value="gconf" /><input type="hidden" name="rev" value="0" /><input type="hidden" name="date" value="1427301653" /><input type="hidden" name="prefix" value="." /><input type="hidden" name="suffix" value="" /><input type="hidden" name="changecheck" value="deede9777effa3bc7d4cc3d68fa0096f" /><input type="hidden" name="target" value="section" /><textarea name="wikitext" id="wiki__text" dir="auto" class="edit" cols="80" rows="10" tabindex="1">
+{{tag&gt;Maverick gnome personnalisation}}
+
+----
+
+====== Éditeur de configuration GConf ======
+
+L'environnement de bureau [[GNOME]], qui est celui utilisé par défaut dans Ubuntu, stocke la plupart de sa configuration dans un seul emplacement ''~/.gconf'' (chaque utilisateur a donc sa version et peut donc configurer Gnome comme il le souhaite sans interférence).
+
+Même si GNOME intègre de nombreux outils de configuration pour les principales modifications du gestionnaire de fenêtre, il est toujours intéressant d'aller modifier soi-même les paramètres qui restent cachés par ces outils pour contrôler au mieux son environnement de travail.
+
+Vous pouvez aller dans le dossier ''~/.gconf'' pour voir comment il est organisé (affichez les fichiers cachés dans votre [[gestionnaire de fichiers]]).
+
+Nous allons ici détailler les éléments les plus intéressants.
+
+à partir de gnome 3 Gconf est remplacé par [[Dconf-tools]]
+
+
+===== Installation =====
+[[:tutoriel:comment_installer_un_paquet|Installer le paquet]] **[[apt&gt;gconf-editor|gconf-editor]]**
+
+===== Utilisation =====
+
+Lancer l'application depuis le [[:unity#tableau_de_bord_dash|tableau de bord d'Unity]] catégories &quot;Système&quot; ou pour les menus classiques, //Administration - &gt; Éditeur de configuration//. \\
+Ou depuis un [[:terminal]] pour toutes [[:variantes|variantes d'Ubuntu]] en saisissant la [[ :commande_shell|commande]] suivante: &lt;code&gt;gconf-editor&lt;/code&gt;
+==== Sauvegarde et restauration ====
+
+Par mesure de sécurité, faites une sauvegarde de votre configuration avant de faire quoi que ce soit (on ne sait jamais, une erreur est si vite arrivée), ceci afin de pouvoir la restaurer. De même, une fois que vous serez satisfait de toutes vos modifications, une sauvegarde pourra toujours être utile.
+
+Pour cela, il vous faut aller sur //Applications → Lancer une application…// ou ouvrir un terminal (//Applications → Accessoires → Terminal//) et entrer les commandes suivantes :
+
+  * Sauvegarder sa configuration dans le dossier ''/tmp'' par exemple :
+&lt;code&gt;
+$ gconftool-2 --dump / &gt; /tmp/ma_conf.xml
+&lt;/code&gt;
+  * Restaurer sa configuration :
+&lt;code&gt;
+$ gconftool-2 --load=/tmp/ma_conf.xml
+&lt;/code&gt;
+
+Il vous est recommandé de noter ces commandes quelque part, car si suite à des modifications votre Gnome ne parvenait plus à se lancer correctement, vous pourrez toujours démarrer sous la console, ou sous un autre compte en passant par un terminal, et une fois connecté sur votre propre compte, vous pourrez procéder à la restauration.
+
+  * Rappel : Se connecter sur son compte à partir d'un autre compte :
+&lt;code&gt;
+$ su utilisateur
+Password:
+&lt;/code&gt;
+==== Retrouver le tableau de bord d'origine ====
+
+Il peut arriver, suite à une maladresse ou un bricolage hasardeux, qu'un utilisateur &quot;perde&quot; son tableau de bord ou qu'il soit totalement désordonné. \\ Pour le retrouver ou simplement remettre les paramètres d'origine, il est conseillé de fermer la session de l'utilisateur pour lequel on veut restaurer le tableau de bord, puis choisir &quot;xterm&quot; comme type de session sur l'écran de login (au lieu de GNOME ou &quot;par défaut&quot;).
+
+Indiquez dans le terminal qu'on souhaite supprimer les dossiers :
+  * ~/.gconf/apps/panel
+  * ~/.gnome2/panel2.d
+
+&lt;code&gt;rm -rf ~/.gconf/apps/panel ~/.gnome2/panel2.d&lt;/code&gt;
+
+&lt;note&gt;Il est également possible de faire la suppression des dits dossiers dans la session active depuis un [[:terminal]] ou votre [[gestionnaire_de_fichiers|explorateur de fichiers]] (pensez à afficher les fichiers cachés à l'aide des touches &quot;Ctrl&quot; + &quot;H&quot; de votre clavier). &lt;/note&gt;
+
+Une fois fait, il suffit de se déconnecter/reconnecter. Le système ne retrouvera plus de configuration à la prochaine ouverture de session de l'utilisateur et la reconstruira depuis les paramètres système avec les &quot;réglages d'usine&quot;.
+
+Pour un réglage plus fin, vous pouvez utiliser la commande **gconf-editor**, puis parcourir l'arborescence jusqu'à **apps/panel/general** pour modifier la clé **toplevel_id_list**. Là vous pouvez supprimer précisément le tableau de bord qui vous pose problème.
+
+&lt;note tip&gt;Utilisé avec succès sous 10.04 LTS (lucid).&lt;/note&gt;
+
+==== En ligne de commande ====
+
+Il peut être utile (pour un script ou autre) de manipuler les paramètres de gconf en ligne de commande.
+
+Lire le manuel :
+&lt;code&gt;man gconftool-2&lt;/code&gt;
+
+Exemples :
+
+Obtenir le chemin du wallpaper
+&lt;code&gt;gconftool-2 --get /desktop/gnome/background/picture_filename&lt;/code&gt;
+
+Cocher une case : Afficher Rhythmbox par défaut
+&lt;code&gt;gconftool-2 --type bool --set /apps/rhythmbox/plugins/status-icon/window-visible true&lt;/code&gt;
+
+Modifier une chaine de caractère : Afficher les options lors des captures d'écrans
+&lt;code&gt;gconftool-2 --type=string --set /apps/metacity/keybinding_commands/command_screenshot 'gnome-screenshot -i'&lt;/code&gt;
+
+==== Organisation ====
+
+{{ applications:gconf-editor.png?400|Parametrage via gconf-editor}}
+
+|/         |                                              |
+| apps     | pour les applications                        |
+| desktop  | pour le bureau                               |
+| GNOME    | pour les différentes langues de GNOME        |
+| schemas  | pour les différentes valeurs des paramètres  |
+| system   | pour le système                              |
+
+Chacun de ces dossiers principaux contient d'autres dossiers faisant référence à un programme ou à une catégorie de paramètres. Dans ces dossiers on trouve aussi les paramètres de configuration (appelés Clés) associés à une valeur.
+
+Dans la suite, vu que l'on cherche à modifier ces clés, on fera référence à celles-ci par leurs noms complets afin d'avoir le chemin complet pour y accéder.\\
+(Exemple : **''/apps/nautilus/preferences/always_use_browser''**) 
+
+Comme vous pouvez le voir dans l'éditeur de configuration ''gconf'', lorsque vous sélectionnez une clé, une définition de cette clé s'affiche reprenant son nom complet, l'application dont elle dépend, et une description, par chance, dans la plupart des cas en français.
+
+==== Les clés Importantes ====
+
+=== Metacity : le gestionnaire de fenêtres ===
+
+Il est possible de modifier la position des boutons de la barre de titre (menu, minimiser, maximiser, fermer) à gauche ou à droite dans l'ordre que l'on veut.
+
+^ Clé    | ''/apps/metacity/general/button_layout'' |
+^ Valeur | ''menu:minimize,maximize,close''         |
+
+Les boutons de gauche et les boutons de droite sont séparés par le **:** et les boutons d'un même côté sont séparés entre eux par une virgule. On ne peut pas mettre plusieurs fois le même bouton, et pas la peine d'en inventer d'autres, ils seront ignorés.
+
+//Voir aussi **[[tutoriel:comment_deplacer_boutons_minimiser_maximiser_fermer|Comment modifier l'emplacement des boutons « minimiser », « maximiser » et « fermer » des fenêtres ?]]**//
+
+\\
+
+^ Clé    | ''/apps/metacity/general/reduced_resources'' |
+
+Cette option permet de rendre metacity moins gourmand, en désactivant quelques effets graphiques des actions déplacer, minimiser, maximiser.
+
+=== Tableaux de bord ===
+
+Les paramètres de configuration des tableaux de bord sont vous en conviendrez assez limités quand on sait qu'on peut les placer presque n'importe où. (dans les clés, &quot;**panel_0**&quot; représente le tableau de bord que l'on modifie, ce nom dépend donc de ce que vous avez fait de vos tableaux de bord d'origine, si vous en avez rajouté, enlevé, ...)
+
+== Contrôler le masquage automatique ==
+
+^ Paramètres             ^ Clés                                            ^ Valeurs              ^
+| Animation              | /apps/panel/toplevels/panel_0/enable_animations | vrai ou faux         |
+| Épaisseur              | /apps/panel/toplevels/panel_0/auto_hide_size    | un chiffre de 1 à …  |
+| Vitesse                | /apps/panel/toplevels/panel_0/animation_speed   | slow, medium ou fast |
+| Délai avant masquage   | /apps/panel/toplevels/panel_0/hide_delay        | en millisecondes     |
+| Délai avant démasquage | /apps/panel/toplevels/panel_0/unhide_delay      | en millisecondes     |
+
+== Contrôler la position (« Étendre » non coché) ==
+
+^ Paramètres    ^ Clés                                      ^ Valeurs              ^
+| Position X    | /apps/panel/toplevels/panel_0/x           | position en pixels   |
+| Position Y    | /apps/panel/toplevels/panel_0/y           | position en pixels   |
+| Centré sur X  | /apps/panel/toplevels/panel_0/x_centered  | Vrai ou Faux         |
+| Centré sur Y  | /apps/panel/toplevels/panel_0/y_centered  | Vrai ou Faux         |
+
+On peut aussi contrôler certains aspects d'une image d'arrière plan, mais les images sont encore mal gérées par les tableaux de bord (mettez-en une pour tester).
+
+== Ajout impossible d'applet dans le tableau de bord ==
+
+Lorsque vous faites un clic droit sur votre tableau de bord et que vous n'avez plus l'option &quot;Ajouter au tableau de bord&quot; mais uniquement &quot;Aide &quot; et &quot;À propos des tableaux de bord &quot; qui apparaissent, il faut décocher la clé /apps/panel/global/locked_down dans gconf-editor ou dans un [[terminal]]&lt;code&gt;gconftool -s --type bool /apps/panel/global/locked_down false&lt;/code&gt;
+
+=== Extinction-redémarrage ===
+
+Si vous voulez ne pas avoir à confirmer les opérations d'extinction et de redémarrage de l'ordinateur:
+
+^ Clé | ''/apps/indicator-session/suppress_logout_restart_shutdown'' |
+
+==== Les clés Nautilus ====
+
+=== Nautilus - Permanence de la barre d'adresse de navigation ===
+
+^ Clé | ''/apps/nautilus/preferences/always_use_location_entry'' |
+
+  * affiche en permanence la zone éditable du chemin complet des fichiers et dossiers dans Nautilus en place des boutons de navigations
+  * la valeur de type bool (booléen) est **False** par défaut (pas de coche visuelle);
+  * la modification en valeur **True** (coche visuelle présente) recquiert que Nautilus soit relancé : en ligne de commande **nautilus -q**, ou en redémarrant la session.
+
+=== Nautilus - Mode spatial ===
+
+^ Clé | ''/apps/nautilus/preferences/always_use_browser'' |
+
+Pour activer le mode spatial, décochez cette case.
+
+=== Nautilus - Configuration du bureau ===
+
+Pour ceux qui rêvent la nuit d'icônes telles que le **Poste de travail**, les **Documents**, le **Dossier Personnel**, ou la **Corbeille** sur leur Bureau, arrêtez de rêver et passez à l'acte, il suffit de cocher quelques cases.
+
+^ Clé | ''/apps/nautilus/desktop/computer_icon_visible''   |
+^ Clé | ''/apps/nautilus/desktop/documents_icon_visible''  |
+^ Clé | ''/apps/nautilus/desktop/home_icon_visible''       |
+^ Clé | ''/apps/nautilus/desktop/trash_icon_visible''      |
+
+Les noms donnés sont des noms par défaut, mais vous pouvez les changer directement sur le Bureau en cliquant sur les icônes avec le bouton droit et en choisissant &quot;Renommer...&quot;\\
+Autre particularité, l'icône &quot;documents&quot; ne s'affichera que si vous avez un dossier **&quot;Documents&quot;** dans votre dossier personnel.
+
+Au même endroit vous pouvez aussi définir si vous voulez arrêter d'afficher les **Volumes Montés** (CDROM, DVDROM, ...) automatiquement sur le Bureau, en décochant la case.
+
+^ Clé | ''/apps/nautilus/desktop/volumes_visible''  |
+
+Enfin si vous ne voulez vraiment aucune icône sur le bureau, et si vous estimez que les commandes sur le bouton droit en cliquant sur le bureau sont inutiles, vous pouvez désactiver tout ça en décochant une unique case.
+
+^ Clé | ''/apps/nautilus/preferences/show_desktop'' |
+
+=== Nautilus - Graveur de CD ===
+
+Si vous voulez utiliser Nautilus pour graver des CDs, il suffit de cocher ces deux clés :
+
+^ Clé | ''/apps/nautilus-cd-burner/burnproof'' |
+^ Clé | ''/apps/nautilus-cd-burner/overburn''  |
+
+==== Les clés GDM2 ====
+
+&lt;note important&gt;
+Les valeurs par défaut peuvent être surchargées si l'utilisateur « gdm » possède un répertoire $HOME inscriptible pour sauvegarder les paramètres GConf.
+&lt;/note&gt;
+
+^ Clé | ''/apps/gdm/simple-greeter/banner_message_enable'' | visibilité du message de la bannière |
+^ Clé | ''/apps/gdm/simple-greeter/banner_message_text'' | texte du message de la bannière |
+^ Clé | ''/apps/gdm/simple-greeter/disable_restart_buttons'' | visibilité du bouton de redémarrage |
+^ Clé | ''/apps/gdm/simple-greeter/disable_user_list'' | visibilité de la liste des utilisateurs |
+^ Clé | ''/apps/gdm/simple-greeter/logo_icon_name'' | logo affiché dans la bannière |
+^ Clé | ''/apps/gdm/simple-greeter/recent-languages'' | liste de langues disponibles |
+^ Clé | ''/apps/gdm/simple-greeter/recent-layouts'' | liste des claviers disponibles |
+^ Clé | ''/apps/gdm/simple-greeter/wm_use_compiz'' | Compiz remplace Metacity |
+^ Clé | ''/apps/gdm/simple-greeter/settings-manager-plugins/sound/active'' | active/désactive le son |
+
+===== Voir aussi =====
+
+  * [[http://rd.cri74.org/index.php?2005/06/06/13-documentation-sur-gconf-et-les-menus| Documentation sur Gconf et les menu]] (fr) : ma source d'inspiration.
+  * [[http://library.gnome.org/users/user-guide/| Guide d'utilisation du bureau ]] (fr)
+  * [[https://wiki.ubuntu.com/MeetingLogs/devweek0901/UnderstandGNOME|Semaine de développeur, 19 janvier 2009 -- Comprendre les technologies GNOME -- tedg]] (en) Discussion IRC de présentation de l'utilisation de gconf en ligne de commande
+
+----
+
+//Contributeur principal : FIXME.//</textarea>
+<div id="wiki__editbar" class="editBar">
+<div id="size__ctl">
+</div>
+<div class="editButtons">
+<div id="plugin__captcha_wrapper"><input type="hidden" name="4608ee855e26607a329407e4c211e30b" value="x1gh2VkV6aWEBX5hl/bXBiIKyy6u9JP1NNEcVu5T0eY=" /><label for="plugin__captcha">Merci de recopier le code ci-contre pour prouver que vous êtes humain :</label> <span id="plugin__captcha_code">E Z V᠎
+D
+U</span> <input type="text" size="5" name="04fbd074fa0d8bd86f656e2eafc944ca" class="edit" /> <label class="no">Merci de laisser ce champ vide : <input type="text" name="90cfd97ee59e788a5cdd39ca39c642cb" /></label></div><input name="do[save]" type="submit" value="Enregistrer" class="button" id="edbtn__save" accesskey="s" tabindex="4" title="Enregistrer [S]" />
+<input name="do[preview]" type="submit" value="Aperçu" class="button" id="edbtn__preview" accesskey="p" tabindex="5" title="Aperçu [P]" />
+<input name="do[draftdel]" type="submit" value="Annuler" class="button" tabindex="6" />
+</div>
+<div class="summary">
+<label class="nowrap" for="edit__summary"><span>Résumé</span> <input type="text" id="edit__summary" name="summary" class="edit" size="50" tabindex="2" /></label>
+</div>
+</div>
+<div class="license">
+Note : En modifiant cette page, vous acceptez que le contenu soit placé sous les termes de la licence suivante : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" class="urlextern">CC Paternité-Partage des Conditions Initiales à l'Identique 3.0 Unported</a></div>
+</div></form>
+</div>
+<script type="text/javascript">
+   var saveBtn = document.getElementById('edbtn__save');
+   saveBtn.disabled = true;
+   saveBtn.style.color = 'gray';
+   saveBtn.style.backgroundColor = '#EEEEEE';
+   saveBtn.value = 'Enregistrer (Click \'Aperçu\' first)';
+</script>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="gconf?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gconf?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="gconf?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="gconf?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/gconf?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,2032 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:network_tpme - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-08-21T12:21:56+0200"/>
+<meta name="keywords" content="bureau a distance,reseau,serveur,tutoriel,dns,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/network_tpme?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="network_tpme?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="../_export/xhtml/tutoriel/network_tpme"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/network_tpme"/>
+<link rel="canonical" href="network_tpme"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:network_tpme","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="network_tpme#main" tabindex="1">Contenu</a> | <a href="network_tpme#qsearch__in" tabindex="2">Rechercher</a> | <a href="network_tpme#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="network_tpme" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="network_tpme" >tutoriel:network_tpme</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="network_tpme#description_du_projet">Description du projet</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="network_tpme#la_virtualisation">La virtualisation</a></div></li>
+<li class="level2"><div class="li"><a href="network_tpme#primary_server">Primary Server</a></div></li>
+<li class="level2"><div class="li"><a href="network_tpme#secondary_serveur">Secondary Serveur</a></div></li>
+<li class="level2"><div class="li"><a href="network_tpme#les_clients">Les clients</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="network_tpme#l_installation_du_virtualiseur_et_sa_configuration">L&#039;installation du virtualiseur et sa configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="network_tpme#vmware">VMWARE</a></div></li>
+<li class="level2"><div class="li"><a href="network_tpme#virtualbox">VirtualBox</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="network_tpme#installation_d_ubuntu_server_710">Installation d&#039;Ubuntu Server 7.10</a></div></li>
+<li class="level1"><div class="li"><a href="network_tpme#configuration_post_installation">Configuration post installation</a></div></li>
+<li class="level1"><div class="li"><a href="network_tpme#installation_des_vmware_tools">Installation des VMWARE tools</a></div></li>
+<li class="level1"><div class="li"><a href="network_tpme#installation_du_vswitch-1">Installation du VSWITCH-1</a></div></li>
+<li class="level1"><div class="li"><a href="network_tpme#transformez_le_primary_server_en_routeur">Transformez le primary server en routeur</a></div></li>
+<li class="level1"><div class="li"><a href="network_tpme#creation_d_un_serveur_dns">Création d&#039;un serveur DNS</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="network_tpme#verification_de_la_configuration">Vérification de la configuration</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="network_tpme#creation_d_un_serveur_dhcp">Création d&#039;un serveur DHCP</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="network_tpme#verification_de_la_configuration1">Vérification de la configuration</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="network_tpme#inscription_dhcp_et_dns_dynamique">Inscription DHCP et DNS dynamique</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="network_tpme#verification_de_la_configuration2">Vérification de la configuration</a></div></li>
+<li class="level2"><div class="li"><a href="network_tpme#un_client_linux">Un client Linux</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="network_tpme#limiter_le_champ_d_action_du_dns_au_reseau_local">Limiter le champ d&#039;action du DNS au réseau local</a></div></li>
+<li class="level1"><div class="li"><a href="network_tpme#creation_d_un_time_serveur_ntp">Création d&#039;un time serveur NTP</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="network_tpme#configuration_du_serveur_ntp">Configuration du serveur NTP</a></div></li>
+<li class="level2"><div class="li"><a href="network_tpme#client_linux">Client linux</a></div></li>
+<li class="level2"><div class="li"><a href="network_tpme#client_windows">Client Windows</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="network_tpme#creation_du_serveur_ldap">Création du serveur LDAP</a></div></li>
+<li class="level1"><div class="li"><a href="network_tpme#creation_du_serveur_samba">Création du serveur SAMBA</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="network_tpme#creation_des_partages_samba">Création des partages SAMBA</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="network_tpme#liaison_samba_et_ldap">Liaison SAMBA et LDAP</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="network_tpme#verifiez_l_installation">Vérifiez l&#039;installation</a></div></li>
+<li class="level2"><div class="li"><a href="network_tpme#peuplez_le_directory_ldap">Peuplez le directory LDAP</a></div></li>
+<li class="level2"><div class="li"><a href="network_tpme#test_de_ldap">Test de LDAP</a></div></li>
+<li class="level2"><div class="li"><a href="network_tpme#modification_du_systeme_d_authentification_sur_primary">Modification du système d&#039;authentification sur primary</a></div></li>
+<li class="level2"><div class="li"><a href="network_tpme#ajout_du_client_windows">Ajout du client Windows</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="network_tpme#automount_des_repertoires_partages_sur_le_client_linux">Automount des répertoires partagés sur le client linux</a></div></li>
+<li class="level1"><div class="li"><a href="network_tpme#utilisation_de_la_carte_son_usb_lecteur_amovible">Utilisation de la carte son, USB, lecteur amovible, ...</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="network_tpme#les_test_avant_le_grand_saut">Les test avant le grand saut</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="network_tpme#problemes_rencontres_pendant_la_configuration_du_server_et_des_clients">Problèmes rencontrés pendant la configuration du server et des clients</a></div></li>
+<li class="level1"><div class="li"><a href="network_tpme#installation_de_webmin_sur_primary">Installation de Webmin sur primary</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../bureau_a_distance" class="wikilink1" title="bureau_a_distance" rel="tag">bureau à distance</a>,
+	<a href="../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../dns" class="wikilink1" title="dns" rel="tag">dns</a>,
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="creation_d_un_reseau_d_entreprise_pour_une_tpme_ou_une_pme">Création d&#039;un réseau d&#039;entreprise pour une TPME ou une PME</h1>
+<div class="level1">
+
+<p>
+Si vous désirez monter un réseau d&#039;entreprise de taille raisonnable (disons une vingtaine de postes voire plus via quelques aménagements), que vous désirez y incorporer du Windows pour quelques postes clients et que en plus, vous désirez expérimenter cela dans des machines virtuelles, ce tutoriel complet, complexe, pas uniquement réservé pour les gourous mais quand même… est pour vous.
+</p>
+
+<p>
+Bonne lecture et expérimentation.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Création d'un réseau d'entreprise pour une TPME ou une PME] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="76-589" /><input type="submit" value="Modifier" class="button" title="Création d'un réseau d'entreprise pour une TPME ou une PME" /></div></form></div>
+<h2 class="sectionedit2" id="description_du_projet">Description du projet</h2>
+<div class="level2">
+
+<p>
+Ce projet a pour but premier de servir d&#039;aide mémoire et de partager mon expérience avec des gens de tous horizons. Ce tutoriel pourrait devenir une base d&#039;échanges d&#039;idées ou de critiques positives sur la gestion d&#039;un réseau en général.
+</p>
+
+<p>
+Bien, commençons déjà par un schéma (car un dessin vaut mieux qu&#039;un long discours).
+</p>
+
+<p>
+<a href="../_detail/tutoriel/network-03.png?id=tutoriel%253Anetwork_tpme" class="media" title="tutoriel:network-03.png"><img src="../_media/tutoriel/network-03.png?w=480&amp;tok=21f00c" class="media" title="Cliquez pour agrandir." alt="Cliquez pour agrandir." width="480" /></a>
+</p>
+
+<p>
+Comme vous pouvez vous en rendre compte, le réseau est somme toute fort classique. 2 Serveurs (PRIMARY et SECONDARY) ainsi que 2 WKS (CLIENT-1 &quot;Windows&quot; et CLIENT-2 &quot;Ubuntu DESKTOP&quot;) et pour finir 2 switches (VSWITCH1 et VSWITCH2). Vous remarquerez également que tout ce joli petit monde est &quot;émulé&quot; ou &quot;virtualisé&quot;. Nous verrons dans un instant comment réaliser tout cela. Bien entendu libre à vous d&#039;utiliser des machines physiques pour réaliser l&#039;installation.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Description du projet] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="590-1490" /><input type="submit" value="Modifier" class="button" title="Description du projet" /></div></form></div>
+<h3 class="sectionedit3" id="la_virtualisation">La virtualisation</h3>
+<div class="level3">
+
+<p>
+Pour exécuter ce projet, vous pouvez utiliser un virtualiseur comme VMWARE ou VIRTUALBOX. Ceci dit, de grosses différences séparent ces deux virtualiseurs et donc vous obligeront à plus ou moins de manipulations afin d&#039;obtenir le même résultat. Celles-ci seront expliquées au fur et à mesure de l&#039;évolution.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[La virtualisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1491-1839" /><input type="submit" value="Modifier" class="button" title="La virtualisation" /></div></form></div>
+<h3 class="sectionedit4" id="primary_server">Primary Server</h3>
+<div class="level3">
+
+<p>
+Sous cette appellation se trouve campée la clé de voute du système informatique. La plupart des services peuvent être secondés par un Secondary Server ou Backup Server. C&#039;est d&#039;ailleurs préférable, mais celui-ci ne vous permettra que de gagner du temps avant une chute inévitable. C&#039;est pourquoi il est important d&#039;apporter un maximum de soins aux scripts d&#039;activations des services mais également à la structure même du réseau, clients compris.
+</p>
+
+<p>
+Voici les fonctionnalités assumées par le Primary Server :
+</p>
+<ul>
+<li class="level1"><div class="li"> <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> Serveur</div>
+</li>
+<li class="level1"><div class="li"> <abbr title="Domain Name System">DNS</abbr> Serveur</div>
+</li>
+<li class="level1"><div class="li"> Time Serveur</div>
+</li>
+<li class="level1"><div class="li"> SAMBA DOMAIN Controleur Serveur</div>
+</li>
+<li class="level1"><div class="li"> <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> Serveur</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Primary Server] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1840-2490" /><input type="submit" value="Modifier" class="button" title="Primary Server" /></div></form></div>
+<h3 class="sectionedit5" id="secondary_serveur">Secondary Serveur</h3>
+<div class="level3">
+
+<p>
+Le Secondary server sera utilisé pour soulager certaines fonctions du Primary Serveur en jouant le rôle de Backup mais également en proposant des fonctions inédites dans votre réseau d&#039;entreprise.
+</p>
+
+<p>
+Voici les fonctionnalités assumées par le Secondary Serveur:
+</p>
+<ul>
+<li class="level1"><div class="li"> Backup <abbr title="Domain Name System">DNS</abbr> Serveur</div>
+</li>
+<li class="level1"><div class="li"> … (plus de détails à venir)</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Secondary Serveur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2491-2845" /><input type="submit" value="Modifier" class="button" title="Secondary Serveur" /></div></form></div>
+<h3 class="sectionedit6" id="les_clients">Les clients</h3>
+<div class="level3">
+
+<p>
+L&#039;aspect client sera ici traité indépendamment mais allant dans la même direction. Je m&#039;explique, le but ici n&#039;est pas d&#039;offrir des fonctions différentes pour chaque famille d&#039;<abbr title="Operating System">OS</abbr>, mais de démontrer l&#039;hétérogénéité de Linux en tant que serveur offrant des fonctionnalités à des clients de tous horizons (sous certaines conditions).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Les clients] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2846-3213" /><input type="submit" value="Modifier" class="button" title="Les clients" /></div></form></div>
+<h2 class="sectionedit7" id="l_installation_du_virtualiseur_et_sa_configuration">L&#039;installation du virtualiseur et sa configuration</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[L'installation du virtualiseur et sa configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3214-3278" /><input type="submit" value="Modifier" class="button" title="L'installation du virtualiseur et sa configuration" /></div></form></div>
+<h3 class="sectionedit8" id="vmware">VMWARE</h3>
+<div class="level3">
+
+<p>
+VMWARE jouit d&#039;une assez bonne réputation dans le monde professionnel. Longtemps avant les autres, cette entreprise a su occuper une niche dans le monde informatique en offrant la possibilité de réduire les coûts des infrastructures en entreprise dédiées aux tests et à la phase de Quality Acceptance.
+</p>
+
+</div>
+
+<h4 id="installation_de_vmware">Installation de VMWARE</h4>
+<div class="level4">
+
+<p>
+Pour installer VMWARE Server vous pouvez modifier votre fichier /etc/apt/sources.list via l&#039;environnement graphique <em>Système → Administration → Sources logicielles …</em> et sélectionner logiciels de tierces parties dépôt &quot;partner&quot; puis <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong>vmware-server</strong>.
+</p>
+
+<p>
+<a href="http://www.taltan.fr/post/2007/11/01/VMware-Server-104-sur-Ubuntu-710-Gutsy-Gibbon" class="urlextern" title="http://www.taltan.fr/post/2007/11/01/VMware-Server-104-sur-Ubuntu-710-Gutsy-Gibbon"  rel="nofollow">http://www.taltan.fr/post/2007/11/01/VMware-Server-104-sur-Ubuntu-710-Gutsy-Gibbon</a>
+</p>
+
+<p>
+Pour plus d&#039;information sur la création d&#039;une machine virtuel avec vmware, vous pouvez consulter ce lien. 
+</p>
+
+<p>
+<a href="http://www.vmware.com/support/pubs/server_pubs.html" class="urlextern" title="http://www.vmware.com/support/pubs/server_pubs.html"  rel="nofollow">http://www.vmware.com/support/pubs/server_pubs.html</a>.
+</p>
+
+<p>
+Sachez juste qu&#039;à l&#039;heure de l&#039;écriture de ce document une version bêta 2.0 est déjà téléchargeable et installable. Je n&#039;en parlerai pas volontairement ici. Je me contenterai d&#039;utiliser la version 1.4 dite stable.
+</p>
+
+</div>
+
+<h4 id="configuration_des_cartes_virtuelles">Configuration des cartes virtuelles</h4>
+<div class="level4">
+
+<p>
+Voilà une chose intéressante. VMWARE permet la configuration du subnet utilisé par chacune de ces cartes via une application en ligne de commande. Sous Windows cette opération est réalisée via un onglet dans le paramétrage de l&#039;application. Pour quoi VMWARE n&#039;a pas réédité la même logique, … Bon retroussons nos manches et allons-y.
+</p>
+<pre class="code">sudo vmware-config-network.pl</pre>
+
+<p>
+<p><div class="noteimportant">toutes les questions qui vous seront posées peuvent soit être validée par défaut &quot;la valeur entre []&quot; avec la touche ENTER, soit par une nouvelle valeur. Si vous devez répondre spécifiquement à une de ces questions, je vous l&#039;indiquerai
+</div></p>
+</p>
+<pre class="code">Making sure services for VMware Server are stopped.
+
+Stopping VMware services:
+ Virtual machine monitor                                             done
+ Bridged networking on /dev/vmnet0                                   done
+ DHCP server on /dev/vmnet1                                          done
+ Host-only networking on /dev/vmnet1                                 done
+ DHCP server on /dev/vmnet8                                          done
+ NAT service on /dev/vmnet8                                          done
+ Host-only networking on /dev/vmnet8                                 done
+ Virtual ethernet                                                    done
+
+You have already setup networking.
+
+Would you like to skip networking setup and keep your old settings as they are?(yes/no) [yes] no
+
+Do you want networking for your virtual machines? (yes/no/help) [yes] 
+
+Would you prefer to modify your existing networking configuration using the 
+wizard or the editor? (wizard/editor/help) [wizard] 
+
+The following bridged networks have been defined:
+
+. vmnet0 is bridged to eth0
+
+Do you wish to configure another bridged network? (yes/no) [no] no
+
+Do you want to be able to use NAT networking in your virtual machines? (yes/no)[yes] yes
+
+Configuring a NAT network for vmnet8.
+
+The NAT network is currently configured to use the private subnet 172.16.179.0/255.255.255.0.  Do you want to keep these settings? [yes] no  
+
+Do you want this program to probe for an unused private subnet? (yes/no/help) [yes] no
+
+What will be the IP address of your host on the private network? 192.168.254.0
+
+What will be the netmask of your private network? 255.255.255.0
+
+The following NAT networks have been defined:
+
+. vmnet8 is a NAT network on private subnet 192.168.254.0.
+
+Do you wish to configure another NAT network? (yes/no) [no] no
+
+Do you want to be able to use host-only networking in your virtual machines? [yes] yes
+
+Configuring a host-only network for vmnet1.
+
+The host-only network is currently configured to use the private subnet 
+172.16.30.0/255.255.255.0.
+Do you want to keep these settings? [yes] no
+
+Do you want this program to probe for an unused private subnet? (yes/no/help)   [yes] no
+
+What will be the IP address of your host on the private network? 192.168.2.0
+
+What will be the netmask of your private network? 255.255.255.0
+
+The following host-only networks have been defined:
+
+. vmnet1 is a host-only network on private subnet 192.168.2.0.
+
+Do you wish to configure another host-only network? (yes/no) [no] yes
+
+Configuring a host-only network for vmnet2.
+
+Do you want this program to probe for an unused private subnet? (yes/no/help) [yes] no
+
+What will be the IP address of your host on the private network? 192.168.3.0
+
+What will be the netmask of your private network? 255.255.255.0
+
+The following host-only networks have been defined:
+
+. vmnet1 is a host-only network on private subnet 192.168.2.0.
+. vmnet2 is a host-only network on private subnet 192.168.3.0.
+
+Do you wish to configure another host-only network? (yes/no) [no] no
+
+Generating SSL Server Certificate
+
+Starting VMware services:
+ Virtual machine monitor                                             done
+ Virtual ethernet                                                    done
+ Bridged networking on /dev/vmnet0                                   done
+ Host-only networking on /dev/vmnet1 (background)                    done
+ Host-only networking on /dev/vmnet2 (background)                    done
+ Host-only networking on /dev/vmnet8 (background)                    done
+ NAT service on /dev/vmnet8                                          done
+ Starting VMware virtual machines...                                 done</pre>
+
+<p>
+Bien, vous voici en possession de deux nouvelles interfaces réseau virtuelles qui correspondent sur notre schéma d&#039;implantation à VSWITCH-1 et VSWITCH-2.
+A ce stade vous pouvez créer votre machine virtuelle et ne connecter pour le moment qu&#039;une seule carte réseau &quot;eth0&quot; qui sera connectée via un bridge &quot;VMNET8&quot; entre VMWARE et votre réseau local. Cela permettra de voir votre machine directement au travers de votre réseau comme s&#039;il s&#039;agissait d&#039;une machine physique connectée à votre subnet.
+</p>
+
+<p>
+<a href="../_detail/tutoriel/vmware-config-01.png?id=tutoriel%253Anetwork_tpme" class="media" title="tutoriel:vmware-config-01.png"><img src="../_media/tutoriel/vmware-config-01.png?w=640&amp;tok=61f145" class="media" alt="" width="640" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[VMWARE] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3279-9581" /><input type="submit" value="Modifier" class="button" title="VMWARE" /></div></form></div>
+<h3 class="sectionedit9" id="virtualbox">VirtualBox</h3>
+<div class="level3">
+
+<p>
+Suivez ce lien (du même auteur <img src="../lib/images/smileys/icon_smile2.gif" class="icon" alt="=)" />) <a href="network_tpme_virtualbox" class="wikilink2" title="tutoriel:network_tpme_virtualbox" rel="nofollow">network_tpme_virtualbox</a>
+</p>
+
+<p>
+Plusieurs différences majeures sont à signaler entre les virtualiser VirtualBox et VMWare.
+</p>
+<ul>
+<li class="level1"><div class="li"> Virtualbox:</div>
+<ul>
+<li class="level2"><div class="li"> Version OSE et non OSE :</div>
+<ul>
+<li class="level3"><div class="li"> La version non OSE : contient des pilotes pour l&#039;USB2 et la possibilité d&#039;utiliser RDP pour prendre le contrôle à distance de la machine virtuel. Cette version est payante pour une utilisation en entreprise.</div>
+</li>
+<li class="level3"><div class="li"> La version OSE : open source, gratuite et supportée par Ubuntu dans les dépôts offciels. Elle peut-être utilisée en entreprise en toute gratuité.</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> Un gros défaut, il est obligatoire de démarrer les machines virtuels dans un <abbr title="Graphical User Interface">GUI</abbr> alors que VMWARE serveur permet le démarrage des machines virtuels en mode service.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<p><div class="noteimportant">C&#039;est une erreur, VirtualBox n&#039;a pas forcément besoin d&#039;une <abbr title="Graphical User Interface">GUI</abbr> : &quot;VBoxHeadless -startvm toto&quot; lance une vm qui attend une connexion rdesktop …
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> VMWare Serveur :</div>
+<ul>
+<li class="level2"><div class="li"> La version 1.04 : disponible gratuitement, elle intègre une interface web (téléchargeable) l&#039;<abbr title="Universal Serial Bus">USB</abbr>, l&#039;utilisation des cartes physique scsi si çà vous intéresse (vieux scanner …) est gratuite en entreprise. Il est possible de démarrer automatiquement au logon de la machine host une ou plusieurs machines virtuelles et de les éteindres proprement au logoff.</div>
+</li>
+<li class="level2"><div class="li"> La version 2.0 bêta 1 : ne dispose plus d&#039;une interface GTK mais uniquement d&#039;une interface web (très lente), <img src="../lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /> vous oblige à travailler en root <img src="../lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /> et est normalement plus rapide … </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[VirtualBox] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9582-11133" /><input type="submit" value="Modifier" class="button" title="VirtualBox" /></div></form></div>
+<h2 class="sectionedit10" id="installation_d_ubuntu_server_710">Installation d&#039;Ubuntu Server 7.10</h2>
+<div class="level2">
+
+<p>
+Démarrez votre machine virtuelle en ayant prit soins de modifier la configuration du cd-rom afin qu&#039;il utilise soit un disque gravé contenant l&#039;image de Ubuntu Server 7.10, soit de pointer directement sur l&#039;image iso de l&#039;Ubuntu Server 7.10
+</p>
+
+<p>
+<a href="../_detail/tutoriel/vmware-ubuntu-serv-01.png?id=tutoriel%253Anetwork_tpme" class="media" title="tutoriel:vmware-ubuntu-serv-01.png"><img src="../_media/tutoriel/vmware-ubuntu-serv-01.png" class="media" alt="" /></a>
+</p>
+<pre class="code">F2 -&gt; Français
+F3 -&gt; Belgium ou Français en fonction du votre
+F4 -&gt; 1024 * 768</pre>
+
+<p>
+<p><div class="notetip">Vous pouvez à tout moment de l&#039;installation voir la progression détaillée en utilisant la combinaison de touche ALT+F4 et pour revenir à l&#039;écran normal d&#039;installation la combinaison ALT+F1
+</div></p>
+</p>
+<pre class="code">Nom de la machine -&gt; primary
+Méthode de partitionnement -&gt; Assistée - Utiliser le disque entier
+Configurer l&#039;horloge -&gt; UTC
+Nom complet du nouvel utilisateur -&gt; [votre choix]
+Identifiant de votre compte utilisateur -&gt; [votre choix]
+Mot de passe pour le nouvel utilisateur -&gt; [votre choix]
+Confirmation du mot de passe -&gt; [votre choix]
+N&#039;installer aucun des serveurs proposés par l&#039;installateur, nous le ferons plus tard.</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Installation d'Ubuntu Server 7.10] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11134-12215" /><input type="submit" value="Modifier" class="button" title="Installation d'Ubuntu Server 7.10" /></div></form></div>
+<h2 class="sectionedit11" id="configuration_post_installation">Configuration post installation</h2>
+<div class="level2">
+
+<p>
+- Activation du compte root
+</p>
+<pre class="code">sudo passwd root</pre>
+
+<p>
+<p><div class="notewarning"> Activer le compte root est dangereux il est plus prudent d&#039;utiliser &quot;sudo&quot; pour lancer les commandes root, si vous souhaiter activer le compte root pensez a lui interdire le login par ssh ( &quot;sudo nano /etc/ssh/sshd_config&quot;  et modifier la ligne &quot;permitrootlogin yes&quot; en &quot;permitrootlogin no&quot;) comme ca vous pourrez vous connecter en root avec la commande &quot;sudo login root&quot; une fois que vous êtes connecté comme utilisateur 
+</div></p>
+</p>
+
+<p>
+Editez le fichier &quot;/etc/network/interfaces&quot; section [eth0] (laisser la section loopback)
+</p>
+<pre class="code">auto eth0
+iface eth0 inet static
+address 192.168.254.10
+netmask 255.255.255.0
+network 192.168.254.0
+broadcast 192.168.254.255
+gateway 192.168.254.2 </pre>
+
+<p>
+Redémarrez la machine
+</p>
+<pre class="code">sudo reboot</pre>
+
+<p>
+<p><div class="notetip">un sudo /etc/init.d/networking restart suffit
+</div></p>
+</p>
+
+<p>
+<p><div class="noteimportant">Après le redémarrage, utilisez toujours le compte root pour exécuter les différentes marches à suivre, sauf si cela est contre indiqué.
+</div></p>
+</p>
+
+<p>
+<p><div class="notewarning"> Utiliser le compte root est dangereux préférez utiliser &quot;sudo&quot; pour lancer vos commandes root
+</div></p>
+</p>
+
+<p>
+Vérifier la connexion réseau
+</p>
+<pre class="code">ifconfig
+ping 192.168.254.10
+ping www.google.com</pre>
+
+<p>
+- Copie du fichier .bash_logout (Inutile si vous n&#039;avez pas activer le compte root)
+</p>
+<pre class="code">cp /home/[default user]/.bash_logout /root/</pre>
+
+<p>
+- Modification du fichier sources.list (gardez juste la référence au cd-rom d&#039;installation et placez la en commentaire, le reste, vous pouvez le supprimer)
+</p>
+<pre class="code">deb http://archive.ubuntu.com/ubuntu/ gutsy main restricted
+deb http://security.ubuntu.com/ubuntu/ gutsy-security main restricted
+deb http://archive.ubuntu.com/ubuntu/ gutsy-updates main restricted
+
+deb http://archive.ubuntu.com/ubuntu/ gutsy universe multiverse
+deb http://security.ubuntu.com/ubuntu/ gutsy-security universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ gutsy-updates universe multiverse</pre>
+
+<p>
+- Upgrade de la distribution
+</p>
+<pre class="code">apt-get update
+apt-get dist-upgrade</pre>
+
+<p>
+-  Installation de quelques applications supplémentaires pour l&#039;administration
+</p>
+<pre class="code">apt-get install sysvconfig mc build-essential linux-headers-$(uname -r)</pre>
+
+<p>
+- Activation de la couleur dans le terminal
+</p>
+<pre class="code">cd /root/
+Editez le fichier /root/.bashrc, cherchez la ligne &quot;PS1=.....&quot; et dé-commentez la.
+Relancer le script &quot;. .bashrc&quot;</pre>
+
+<p>
+- Configuration de GRUB
+</p>
+<pre class="code">Editez le fichier /boot/grub/menu.lst
+Cherchez la ligne &quot;kernel&quot; du premier module de démarrage et supprimez l&#039;option &quot;quiet&quot;
+Commentez la ligne hiddenmenu
+Redémarrez la machine</pre>
+
+<p>
+<p><div class="notewarning">Pour des raisons de stabilité, les pilotes framebuffer ont été black listé. Donc, n&#039;ajoutez pas de ligne vga=xxx dans votre menu.lst car vous auriez un superbe écran noir au démarrage de votre serveur. Voir le fichier /etc/modprobe.d/blacklist-framebuffer
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Configuration post installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="12216-15095" /><input type="submit" value="Modifier" class="button" title="Configuration post installation" /></div></form></div>
+<h2 class="sectionedit12" id="installation_des_vmware_tools">Installation des VMWARE tools</h2>
+<div class="level2">
+
+<p>
+Activez l&#039;installation des vmware-tools dans le menu VM → Install VMWARE tools du menu de VMWARE Server
+- Monter le cd-rom
+</p>
+<pre class="code">mount /media/cdrom0</pre>
+
+<p>
+- Créez un répertoire d&#039;installation
+</p>
+<pre class="code">mkdir /root/vmware-tools</pre>
+
+<p>
+- Copiez le fichier tar.gz
+</p>
+<pre class="code">cp /media/cdrom/VMwareTools*.tar.gz /root/vmware-tools</pre>
+
+<p>
+- Installation des VMware tools
+</p>
+<pre class="code">cd /root/vmware-tools
+tar xvzf VMwareTools*.tar.gz
+cd vmware-tools-distrib
+./vmware-install.pl
+Répondez aux questions par la valeur par défaut entre []
+reboot</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Installation des VMWARE tools] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15096-15648" /><input type="submit" value="Modifier" class="button" title="Installation des VMWARE tools" /></div></form></div>
+<h2 class="sectionedit13" id="installation_du_vswitch-1">Installation du VSWITCH-1</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Arrêtez le serveur et éditez sa configuration.</div>
+</li>
+<li class="level1"><div class="li"> Ajoutez une nouvelle carte réseau et connectez la sur VMNET2.</div>
+</li>
+<li class="level1"><div class="li"> Démarrez le serveur.</div>
+</li>
+</ul>
+
+<p>
+Editez le fichier &quot;/etc/network/interfaces&quot; section [eth1]
+</p>
+<pre class="code">auto eth1
+iface eth1 inet static
+address 192.168.2.1
+netmask 255.255.255.0
+network 192.168.2.0
+broadcast 192.168.2.255
+gateway 192.168.254.10</pre>
+
+<p>
+Editez le fichier /etc/resolv.conf et ajustez son contenu si nécessaire
+</p>
+<pre class="code">search yourdomain.local
+nameserver 192.168.2.1
+nameserver 192.168.254.2</pre>
+
+<p>
+Relancez le service &quot;networking&quot;
+</p>
+<pre class="code">service networking restart</pre>
+
+<p>
+Vérifiez la connexion réseau
+</p>
+<pre class="code">ifconfig
+ping 192.168.254.10
+ping www.google.be</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Installation du VSWITCH-1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15649-16352" /><input type="submit" value="Modifier" class="button" title="Installation du VSWITCH-1" /></div></form></div>
+<h2 class="sectionedit14" id="transformez_le_primary_server_en_routeur">Transformez le primary server en routeur</h2>
+<div class="level2">
+
+<p>
+Editez le fichier /etc/rc.local et ajoutez ces lignes afin d&#039;activer le <a href="http://fr.wikipedia.org/wiki/Network_address_translation" class="urlextern" title="http://fr.wikipedia.org/wiki/Network_address_translation"  rel="nofollow">NATing</a>
+</p>
+<pre class="code">echo 1 &gt;/proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</pre>
+
+<p>
+Redémarrez le serveur et vérifiez la route
+</p>
+<pre class="code">iptables -t nat -L</pre>
+<pre class="code">Chain PREROUTING (policy ACCEPT)
+target     prot opt source             destination
+
+Chain POSTROUTING (policy ACCEPT)
+target     prot opt source             destination
+MASQUERADE  0    --  anywhere           anywhere
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source             destination</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Transformez le primary server en routeur] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="16353-17033" /><input type="submit" value="Modifier" class="button" title="Transformez le primary server en routeur" /></div></form></div>
+<h2 class="sectionedit15" id="creation_d_un_serveur_dns">Création d&#039;un serveur DNS</h2>
+<div class="level2">
+
+<p>
+Une bonne documentation explicative sur Bind c&#039;est par ici <a href="../bind9" class="wikilink1" title="bind9">bind9</a>
+</p>
+
+<p>
+Installation de bind9
+</p>
+<pre class="code">apt-get install bind9</pre>
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Editez le fichier</a> <strong>/etc/bind/named.conf</strong>.
+</p>
+<pre class="code">zone &quot;.&quot; {
+  type hint;
+  file &quot;/etc/bind/db.root&quot;;
+};
+  
+zone &quot;localhost&quot; IN {
+  type master;
+  file &quot;/etc/bind/db.local&quot;;
+  allow-update { none; };
+};
+
+zone &quot;127.in-addr.arpa&quot; IN {
+  type master;
+  file &quot;/etc/bind/db.127&quot;;
+  allow-update { none; };
+};
+
+zone &quot;0.in-addr.arpa&quot; IN {
+  type master;
+  file &quot;/etc/bind/db.0&quot;;
+  allow-update { none; };
+};
+
+zone &quot;255.in-addr.arpa&quot; IN {
+  type master;
+  file &quot;/etc/bind/db.255&quot;;
+  allow-update { none; };
+};
+
+include &quot;/etc/bind/named.conf.local&quot;;</pre>
+
+<p>
+- Editez le fichier /etc/bind/named.conf.local
+</p>
+<pre class="code">zone &quot;yourdomain.local&quot; IN {
+  type master;
+  file &quot;/var/cache/bind/db.yourdomain.local&quot;;
+  allow-update { none; };
+};
+
+zone &quot;2.168.192.in-addr.arpa&quot; IN {
+  type master;
+  file &quot;/var/cache/bind/rev.yourdomain.local&quot;;
+  allow-update { none; };
+};</pre>
+
+<p>
+- Créez le fichier /var/cache/bind/db.yourdomain.local
+</p>
+<pre class="code">$TTL 86400
+@  IN  SOA primary.yourdomain.local.  root.yourdomain.local. (
+    2008012701
+    1w
+    1d
+    4w
+    1w )
+@  IN  NS  primary.yourdomain.local.
+primary  IN A 192.168.2.1</pre>
+
+<p>
+- Créez le fichier /var/cache/bind/rev.yourdomain.local
+</p>
+<pre class="code">$TTL 86400
+@  IN  SOA primary.yourdomain.local.  root.yourdomain.local. (
+    2008012701
+    1w
+    1d
+    4w
+    1w )
+@  IN  NS  primary.yourdomain.local.
+1  IN  PTR primary.yourdomain.local.</pre>
+
+<p>
+- Changez le group d&#039;appartenance pour les fichiers
+</p>
+<pre class="code">chgrp bind /var/cache/bind/*</pre>
+
+<p>
+- Editez le fichier /etc/hosts
+</p>
+<pre class="code">127.0.0.1 localhost
+192.168.2.1 primary.yourdomain.local
+
+définition loopback IPV6 à garder
+...
+..
+.</pre>
+
+<p>
+- Modifiez le fichier /etc/resolv.conf
+</p>
+<pre class="code">search yourdomain.local
+nameserver 192.168.2.1
+nameserver 192.168.254.10</pre>
+
+<p>
+- Editez le fichier /etc/bind/named.conf.options
+</p>
+<pre class="code">options {
+         directory &quot;/var/cache/bind&quot;;
+         forward only;
+         forwarders { 192.168.254.2; };
+         auth-nxdomain no;
+         allow-recursion { localnets; };
+};</pre>
+
+<p>
+- Editez le fichier /etc/default/bind9
+</p>
+<pre class="code">RESOLVCONF=yes</pre>
+
+<p>
+- Reboot
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Création d'un serveur DNS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="17034-19339" /><input type="submit" value="Modifier" class="button" title="Création d'un serveur DNS" /></div></form></div>
+<h3 class="sectionedit16" id="verification_de_la_configuration">Vérification de la configuration</h3>
+<div class="level3">
+
+<p>
+- Vérifiez les fichiers de configuration
+</p>
+<pre class="code">named-checkconf (si ok rien n&#039;est retourné)
+cd /var/cache/bind/
+named-checkzone -d yourdomain.local db.yourdomain.local
+named-checkzone -d 192.168.2.1 rev.yourdomain.local </pre>
+
+<p>
+- Démarrez une seconde console ALT+F2 et tapez
+</p>
+<pre class="code">tail -f /var/log/syslog</pre>
+
+<p>
+- Revenez sur la première console et redémarrez le service bind9
+</p>
+<pre class="code">service bind9 restart</pre>
+
+<p>
+- Passez sur la seconde console et analysez les messages d&#039;erreur s&#039;il y en a.
+</p>
+
+<p>
+- Si tout est OK passez sur la première console
+</p>
+<pre class="code">ping primary.yourdomain.local
+Cela devrait vous retourner l&#039;adresse 192.168.2.1</pre>
+
+<p>
+- Si il y a une erreur, re-vérifiez les log du système, les scripts, …
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Vérification de la configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="19340-20072" /><input type="submit" value="Modifier" class="button" title="Vérification de la configuration" /></div></form></div>
+<h2 class="sectionedit17" id="creation_d_un_serveur_dhcp">Création d&#039;un serveur DHCP</h2>
+<div class="level2">
+
+<p>
+Une bonne documentation explicative sur dhcp3-server c&#039;est par ici <a href="../dhcp3-server" class="wikilink1" title="dhcp3-server">dhcp3-server</a>
+</p>
+
+<p>
+- Installation de dhcp3-server
+</p>
+<pre class="code">apt-get install dhcp3-server
+Cela installera le paquet et le configurera, mais génèrera également une erreur à l&#039;activation. C&#039;est normal nous allons corriger cela.</pre>
+
+<p>
+- Editez le fichier /etc/dhcp3/dhcpd.conf
+</p>
+<pre class="code">ddns-update-style none;
+option domain-name &quot;yourdomain.local&quot;;
+option domain-name-servers 192.168.2.1;
+default-lease-time 600;
+max-lease-time 7200;
+log-facility local7;
+
+subnet 192.168.2.0 netmask 255.255.255.0 {
+  option routers 192.168.2.1;
+  option subnet-mask 255.255.255.0;
+  range 192.168.2.150 192.168.2.200;
+}</pre>
+
+<p>
+- Editez le fichier /etc/syslog.conf et ajoutez la ligne suivante sous les autres du même type
+</p>
+<pre class="code">local7.*       -/var/log/dhcp.log</pre>
+
+<p>
+- Relancez le service &quot;sysklogd&quot;
+</p>
+<pre class="code">service sysklogd restart
+Cela affichera une erreur d&#039;accès au fichier dhcpd.log. C&#039;est normal</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Création d'un serveur DHCP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="20073-21056" /><input type="submit" value="Modifier" class="button" title="Création d'un serveur DHCP" /></div></form></div>
+<h3 class="sectionedit18" id="verification_de_la_configuration1">Vérification de la configuration</h3>
+<div class="level3">
+
+<p>
+Vous pouvez connecter une machine virtuelle, un Windows 2000 par exemple (plus rapide que XP et moins gourmand). La carte réseau de cette machine virtuelle doit être connectée sur VMNET2. Configurez cette machine virtuelle pour accepter le <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> et dans une console tapez &quot;ipconfig&quot;. Normalement vous devriez recevoir une adresse IP entre 192.168.2.150 et 192.168.2.200
+</p>
+
+<p>
+Vérifiez le <abbr title="Domain Name System">DNS</abbr> par la même occasion en faisant un ping primary.yourdomain.local
+</p>
+
+<p>
+Vérifiez pour finir le routage pour l&#039;extérieur avec un ping <a href="http://www.google.be" class="urlextern" title="http://www.google.be"  rel="nofollow">www.google.be</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Vérification de la configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21057-21636" /><input type="submit" value="Modifier" class="button" title="Vérification de la configuration" /></div></form></div>
+<h2 class="sectionedit19" id="inscription_dhcp_et_dns_dynamique">Inscription DHCP et DNS dynamique</h2>
+<div class="level2">
+
+<p>
+- Editez le fichier /etc/bind/named.conf.local et remplacez les lignes:
+</p>
+<pre class="code">allow-update { none; }; -&gt; allow-update { 127.0.0.1; };</pre>
+
+<p>
+- Editez le fichier /etc/dhcp3/dhcpd.conf et ajoutez ou modifiez ces quelques lignes au début du fichier.
+</p>
+<pre class="code">ddns-update-style interim;
+ddns-updates on;
+ignore client-updates;
+update-static-leases on;
+allow-unknow-clients;</pre>
+
+<p>
+- Ajoutez ces lignes à la fin du même fichier
+</p>
+<pre class="code">zone yourdomain.local. { primary 127.0.0.1; }
+zone 2.168.192.in-addr.arpa. { primary 127.0.0.1; }</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Inscription DHCP et DNS dynamique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="21637-22199" /><input type="submit" value="Modifier" class="button" title="Inscription DHCP et DNS dynamique" /></div></form></div>
+<h3 class="sectionedit20" id="verification_de_la_configuration2">Vérification de la configuration</h3>
+<div class="level3">
+
+<p>
+- Redémarrez les services <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> et <abbr title="Domain Name System">DNS</abbr>
+</p>
+<pre class="code">service bind9 restart
+service dhcp3-server restart</pre>
+
+<p>
+- Sur le client Windows 2000
+</p>
+<pre class="code">ipconfig /release
+ipconfig /renew
+
+ping www.google.be</pre>
+
+<p>
+- Sur primary serveur vérifiez la présence des fichiers:
+</p>
+<pre class="code">/var/cache/bind/db.yourdomain.local.jnl
+/var/cache/bind/rev.yourdomain.local.jnl</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Vérification de la configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="22200-22582" /><input type="submit" value="Modifier" class="button" title="Vérification de la configuration" /></div></form></div>
+<h3 class="sectionedit21" id="un_client_linux">Un client Linux</h3>
+<div class="level3">
+
+<p>
+- Editez le fichier du client linux /etc/dhcp3/dhclient.conf et ajoutez cette ligne.
+</p>
+<pre class="code">send host-name &quot;[client name]&quot;;</pre>
+
+<p>
+<p><div class="notetip">Il est bon de ne pas s&#039;énerver si une résolution de nom avec ping sur primary ou <a href="http://www.google.be" class="urlextern" title="http://www.google.be"  rel="nofollow">www.google.be</a> ne fonctionne pas. La première chose à faire est de connecter une console sur primary et d&#039;utiliser la commande &quot;tail -f /var/log/syslog&quot; afin de voir les messages d&#039;erreurs et les messages d&#039;inscriptions. Il existe également des outils pour vérifier le bon fonctionnement d&#039;un <abbr title="Domain Name System">DNS</abbr> et d&#039;un <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> &quot;host -v primary.yourdomain.local&quot; et &quot;dig SOA yourdomain.local&quot;. Pour plus d&#039;information sur ces commandes, Google est ton ami
+</div></p>
+</p>
+
+<p>
+<p><div class="noteimportant">Le nom du client doit être unique dans votre réseau, sinon vous aurez des conflits <abbr title="Domain Name System">DNS</abbr>
+</div></p>
+</p>
+
+<p>
+<p><div class="notewarning">A ce stade, vous devriez pouvoir accéder au monde extérieur au départ de n&#039;importe quelle machine de votre réseau. Vous devriez pouvoir utiliser la dénomination unique de chacune de vos machine pour résoudre une adresse servie par <abbr title="Domain Name System">DNS</abbr> &quot;ping primary, ping [client name], …&quot; Si tel n&#039;est pas le cas, il y a probablement une explication dans les logs serveur ou client. Bon débugging
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Un client Linux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="22583-23797" /><input type="submit" value="Modifier" class="button" title="Un client Linux" /></div></form></div>
+<h2 class="sectionedit22" id="limiter_le_champ_d_action_du_dns_au_reseau_local">Limiter le champ d&#039;action du DNS au réseau local</h2>
+<div class="level2">
+
+<p>
+Pour que votre <abbr title="Domain Name System">DNS</abbr> ne résolve que les adresses local à yourdomain.local vous devez encore réaliser ces quelques modifications
+</p>
+
+<p>
+Éditez le fichier /etc/resolv.conf et supprimez la ligne de référence à l&#039;adresse menant à l&#039;extérieur. Vous ne devriez plus avoir que deux lignes dans votre fichier.
+</p>
+<pre class="code">search yourdomain.local
+nameserver 192.168.2.1</pre>
+
+<p>
+Editez le fichier /etc/bind/named.conf et commentez toutes les lignes de la zone « . » attention, les commentaires sont précédés de « // » et non de « # ».
+</p>
+
+<p>
+Editez le fichier /etc/bind/named.conf.options et adaptez le en fonction.
+</p>
+<pre class="code">options {
+         directory &quot;var/cache/bind&quot;;
+         forward only;
+         forwarders { 192.168.254.2; };
+         auth-nxdomain no;
+         allow-recursion { localnets; };
+};</pre>
+
+<p>
+Editez enfin le fichier /etc/default/bind9
+</p>
+<pre class="code">RESOLVCONF = no</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Limiter le champ d'action du DNS au réseau local] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="23798-24718" /><input type="submit" value="Modifier" class="button" title="Limiter le champ d'action du DNS au réseau local" /></div></form></div>
+<h2 class="sectionedit23" id="creation_d_un_time_serveur_ntp">Création d&#039;un time serveur NTP</h2>
+<div class="level2">
+
+<p>
+Pour vérifiez l&#039;heure UTC actuelle en Belgique, vous pouvez vous rendre à cette adresse <a href="http://www.pool.ntp.org/zone/be" class="urlextern" title="http://www.pool.ntp.org/zone/be"  rel="nofollow">http://www.pool.ntp.org/zone/be</a> Redémarrez votre serveur et modifiez si nécessaire l&#039;heure incluse dans le bios de votre vmware.
+</p>
+
+<p>
+- Editez le fichier /etc/default/rcS
+</p>
+<pre class="code">UTC=yes</pre>
+
+<p>
+- Installez les applications suivantes
+</p>
+<pre class="code">apt-get install ntp</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Création d'un time serveur NTP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="24719-25099" /><input type="submit" value="Modifier" class="button" title="Création d'un time serveur NTP" /></div></form></div>
+<h3 class="sectionedit24" id="configuration_du_serveur_ntp">Configuration du serveur NTP</h3>
+<div class="level3">
+
+<p>
+- Editez le fichier /etc/ntp.conf
+</p>
+<pre class="code">driftfile /var/lib/ntp/drift
+
+statsdir /var/log/ntpstats/
+statistics loopstats peerstats clockstats
+filegen loopstats file loopstats type day enable
+filegen peerstats file peerstats type day enable
+filegen clockstats file clockstats type day enable
+
+#Pour la Belgique
+server be.pool.ntp.org
+server 3.be.pool.ntp.org
+server 3.europe.pool.ntp.org
+server 0.europe.pool.ntp.org
+server ntp.ubuntu.com
+# Synchronize on local clock
+server 127.127.1.0
+fudge 127.127.0 stratum 10
+
+restrict -4 default kod notrap nomodify nopeer noquery
+restrict -6 default kod notrap nomodify nopeer noquery
+restrict 127.0.0.1
+restrict ::1
+
+restrict 192.168.2.0 mask 255.255.255.0 nomodify notrap</pre>
+
+<p>
+<p><div class="notetip">Vous trouverez plus d&#039;informations à cette adresse <a href="http://www.pool.ntp.org/zone/be" class="urlextern" title="http://www.pool.ntp.org/zone/be"  rel="nofollow">http://www.pool.ntp.org/zone/be</a>
+</div></p>
+</p>
+
+<p>
+- Editer /etc/init.d/ntp et chercher la ligne
+</p>
+<pre class="code">PIDFILE=/var/run/ntpd.pid</pre>
+
+<p>
+- Ajouter à la suite la ligne
+</p>
+<pre class="code">LOGFILE=/var/log/ntp.log</pre>
+
+<p>
+- Chercher la ligne
+</p>
+<pre class="code">start-stop-daemon --start --quiet --oknodo --pidfile $PIDFILE --startas $DAEMON -- -p $PIDFILE $NTPD_OPTS</pre>
+
+<p>
+- Remplacer-la par
+</p>
+<pre class="code">start-stop-daemon --start --quiet --oknodo --pidfile $PIDFILE --startas $DAEMON -- -p $PIDFILE -l $LOGFILE $NTPD_OPTS</pre>
+
+<p>
+- Stoppez le service
+</p>
+<pre class="code">service ntp stop</pre>
+
+<p>
+- Editez le fichier /etc/default/ntpdate et modifiez le
+</p>
+<pre class="code">NTPSERVERS =&quot;3.be.pool.ntp.org&quot;</pre>
+
+<p>
+- Pour vérifier une bonne synchronisation, vous pouvez exécuter cette commande.
+</p>
+<pre class="code">ntpdate -dv 3.be.pool.ntp.org
+La sortie est relativement longue</pre>
+
+<p>
+- Relancez le serveur <abbr title="Network Time Protocol">NTP</abbr>
+</p>
+<pre class="code">service ntp start</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Configuration du serveur NTP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="25100-26731" /><input type="submit" value="Modifier" class="button" title="Configuration du serveur NTP" /></div></form></div>
+<h3 class="sectionedit25" id="client_linux">Client linux</h3>
+<div class="level3">
+
+<p>
+- Editez le fichier /etc/default/ntpdate
+</p>
+<pre class="code">NTPSERVERS=&quot;192.168.2.1&quot;</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Client linux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="26732-26824" /><input type="submit" value="Modifier" class="button" title="Client linux" /></div></form></div>
+<h3 class="sectionedit26" id="client_windows">Client Windows</h3>
+<div class="level3">
+
+<p>
+- Pour WinXP la gestion de l&#039;heure possède un onglet Temps Internet ou vous pouvez renseigner l&#039;adresse 192.168.2.1
+</p>
+
+<p>
+- Pour Win2K, il a le service Windows Time.
+</p>
+<pre class="code">Changez le mode de démarrage du service sur auto
+
+Dans une console:
+net time /setsntp:192.168.2.1
+net stop w32time
+net start w32time</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Client Windows] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="26825-27185" /><input type="submit" value="Modifier" class="button" title="Client Windows" /></div></form></div>
+<h2 class="sectionedit27" id="creation_du_serveur_ldap">Création du serveur LDAP</h2>
+<div class="level2">
+
+<p>
+- Installation du serveur <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> et de quelques outils
+</p>
+<pre class="code">apt-get install slapd db4.2-util ldap-utils</pre>
+
+<p>
+- Répondez aux questions ncursus avec le password de root
+- Reconfigurez slapd avec dpkg-reconfigure
+</p>
+<pre class="code">dpkg-reconfigure slapd</pre>
+<pre class="code">Le nom du domaine : yourdomain.local 
+Nom de votre organisation: yourdomain
+Mot de passe de l&#039;administrateur : [root password]
+Module de base de données à utiliser : BDB
+Faut-il supprimer la base de données à la purge du paquet ? NON
+Faut-il déplacer l&#039;ancienne base de données ? NON
+Faut-il autoriser le protocole LDAPv2 ? NON </pre>
+
+<p>
+- Installez les schema <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> inclus dans un paquet samba
+</p>
+<pre class="code">aptitude install samba-doc</pre>
+
+<p>
+- Décompression et copie dans la bonne directory
+</p>
+<pre class="code">gunzip -c /usr/share/doc/samba-doc/examples/LDAP/samba.schema.gz &gt; /etc/ldap/schema/samba.schema</pre>
+
+<p>
+- Dans une seconde console, cryptez le password de l&#039;administrateur avec la commande slappasswd
+</p>
+<pre class="code">slappasswd
+New password: 
+Re-enter new password: 
+{SSHA} ............</pre>
+
+<p>
+- Éditez le fichier /etc/ldap/slapd.conf 
+</p>
+<pre class="code">ajoutez cette ligne en dessous des autres include:
+include         /etc/ldap/schema/samba.schema
+
+cherchez la ligne rootdn et supprimez le #
+ajoutez juste en dessous de rootdn la ligne suivante
+rootpw          {SSHA} ..........</pre>
+
+<p>
+- Redémarrez le serveur <abbr title="Lightweight Directory Access Protocol">LDAP</abbr>. Normalement cela doit aller très rapidement:
+</p>
+<pre class="code">invoke-rc.d slapd restart</pre>
+
+<p>
+ Si vous trouvez une erreur vous pouvez en connaître les causes en utilisant la commande suivante.
+</p>
+<pre class="code">slapd -d 16383</pre>
+
+</div>
+
+<h4 id="interpid_ibex_804_et_superieur">Interpid Ibex (8.04) et superieur</h4>
+<div class="level4">
+
+<p>
+d&#039;après la doc : <a href="../slapd" class="urlextern" title="http://doc.ubuntu-fr.org/slapd"  rel="nofollow">http://doc.ubuntu-fr.org/slapd</a> ça à un peu changé. on n&#039;utilise plus de fichier /etc/ldap/slapd.conf
+En suivant le document <a href="https://help.ubuntu.com/8.10/serverguide/C/openldap-server.html" class="urlextern" title="https://help.ubuntu.com/8.10/serverguide/C/openldap-server.html"  rel="nofollow">https://help.ubuntu.com/8.10/serverguide/C/openldap-server.html</a>, je propose la methode suivante
+</p>
+
+<p>
+- Installation du serveur <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> et de quelques outils
+</p>
+<pre class="code">apt-get install slapd db4.2-util ldap-utils</pre>
+
+<p>
+- Répondez aux questions ncursus avec le password de root
+- Reconfigurez slapd avec dpkg-reconfigure
+</p>
+<pre class="code">dpkg-reconfigure slapd</pre>
+<pre class="code">Le nom du domaine : yourdomain.local 
+Nom de votre organisation: yourdomain
+Mot de passe de l&#039;administrateur : [root password]
+Module de base de données à utiliser : HDB
+Faut-il supprimer la base de données à la purge du paquet ? NON
+Faut-il déplacer l&#039;ancienne base de données ? NON
+Faut-il autoriser le protocole LDAPv2 ? NON </pre>
+
+<p>
+- Installez les schemas <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> inclus dans un paquet samba
+</p>
+<pre class="code">aptitude install samba-doc</pre>
+
+<p>
+- Décompression et copie dans la bonne directory
+</p>
+<pre class="code">gunzip -c /usr/share/doc/samba-doc/examples/LDAP/samba.schema.gz &gt; /etc/ldap/schema/samba.schema</pre>
+
+<p>
+- Dans une seconde console, cryptez le password de l&#039;administrateur avec la commande slappasswd
+</p>
+<pre class="code">slappasswd
+New password: 
+Re-enter new password: 
+{SSHA} ............</pre>
+
+<p>
+- créer le répertoire temporaire :
+</p>
+<pre class="code">mkdir /tmp/ldif_output</pre>
+
+<p>
+- On crèe un fichier de conversion schema_convert.conf avec les lignes :
+</p>
+<pre class="code">include /etc/ldap/schema/core.schema
+include /etc/ldap/schema/cosine.schema
+include /etc/ldap/schema/inetorgperson.schema
+include /etc/ldap/schema/nis.schema
+include /etc/ldap/schema/samba.schema</pre>
+
+<p>
+- On utilise la commande slaptest pour créer les fichiers LDIF :
+slaptest -f schema_convert.conf -F /tmp/ldif_output
+- On édit le fichier /tmp/ldif_output/cn\=config/cn\=schema/cn\=\{4\}samba.ldif et on modifie les lignes comme suit :
+</p>
+<pre class="code">dn: cn={4}samba</pre>
+
+<p>
+devient :
+</p>
+<pre class="code">dn: cn=samba,cn=schema,cn=config</pre>
+
+<p>
+Et :
+</p>
+<pre class="code">cn: {4}samba</pre>
+
+<p>
+devient : 
+</p>
+<pre class="code">cn: samba</pre>
+
+<p>
+- On supprime toute les dernières lignes à partir de et inclus structuralObjectClass
+</p>
+<pre class="code">structuralObjectClass: olcSchemaConfig
+entryUUID: 69111144-6367-102e-950a-c54deb20c32c
+creatorsName: cn=config
+createTimestamp: 20091111234059Z
+entryCSN: 20091111234059.910631Z#000000#000#000000
+modifiersName: cn=config
+modifyTimestamp: 20091111234059Z</pre>
+
+<p>
+- On copie le nouveau LDIF dans /etc/ldap/schema pour pouvoir l&#039;avoir sous la main en cas de besoin
+</p>
+<pre class="code">cp /tmp/ldif_output/cn\=config/cn\=schema/cn\=\{4\}samba.ldif /etc/ldap/schema/samba.ldif</pre>
+
+<p>
+- On applique cette modification à la base <abbr title="Lightweight Directory Access Protocol">LDAP</abbr>
+</p>
+<pre class="code">ldapadd -x -D cn=admin,cn=config -W -f /etc/ldap/schema/samba.ldif</pre>
+
+<p>
+- On fait le nettoyage :
+</p>
+<pre class="code">rm -rf /tmp/ldif_output</pre>
+
+<p>
+- On Relance le serveur <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> par acquis de conscience (normalement c&#039;est dynamique) :
+</p>
+<pre class="code">invoke-rc.d slapd restart</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Création du serveur LDAP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="27186-31521" /><input type="submit" value="Modifier" class="button" title="Création du serveur LDAP" /></div></form></div>
+<h2 class="sectionedit28" id="creation_du_serveur_samba">Création du serveur SAMBA</h2>
+<div class="level2">
+
+<p>
+- Installation du serveur SAMBA
+</p>
+<pre class="code">aptitude install samba smbclient smbfs</pre>
+
+<p>
+- Éditez le fichier /etc/samba/smb.conf et supprimez l&#039;intégralitée du contenu du fichier
+</p>
+<pre class="code">#======================= Global Settings =======================
+
+[global]
+
+workgroup = &lt;Your DOMAIN name&gt;
+netbios name = primary
+server string = Samba-LDAP PDC Server
+domain master = Yes
+local master = Yes
+domain logons = Yes
+os level = 40
+#passwd program = /usr/sbin/smbldap-passwd ?u %u
+ldap passwd sync = Yes
+passdb backend = ldapsam:ldap://127.0.0.1/
+ldap admin dn = cn=admin,dc=yourdomain,dc=local
+ldap suffix = dc=yourdomain,dc=local
+ldap group suffix = ou=Groups
+ldap user suffix = ou=Users
+ldap machine suffix = ou=Machines
+add user script = /usr/sbin/smbldap-useradd -m &quot;%u&quot;
+ldap delete dn = Yes
+delete user script = /usr/sbin/smbldap-userdel &quot;%u&quot;
+add machine script = /usr/sbin/smbldap-useradd -w &quot;%u&quot;
+add group script = /usr/sbin/smbldap-groupadd -p &quot;%g&quot;
+#delete group script = /usr/sbin/smbldap-groupdel &quot;%g&quot;
+add user to group script = /usr/sbin/smbldap-groupmod -m &quot;%u&quot; &quot;%g&quot;
+delete user from group script = /usr/sbin/smbldap-groupmod -x &quot;%u&quot; &quot;%g&quot;
+set primary group script = /usr/sbin/smbldap-usermod -g &quot;%g&quot; &quot;%u&quot;
+logon path = \\%L\profile\%U
+logon drive = H:
+logon home = \\%L\%U
+socket options = TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192
+case sensitive = No
+default case = lower
+preserve case = yes
+short preserve case = Yes
+#character set = iso8859-1
+#domain admin group = @admin
+dns proxy = No
+wins support = Yes
+hosts allow = 192.168.2. 127.
+### A changer 192.168.2  
+winbind use default domain = Yes
+nt acl support = Yes
+msdfs root = Yes
+hide files = /desktop.ini/ntuser.ini/NTUSER.*/
+### FIN DE LA PARTIE GLOBALE #####
+
+#======================= Share Settings =======================
+[netlogon]
+path = /home/netlogon
+writable = No
+browseable = No
+write list = Administrateur
+
+[profile]
+path = /home/export/profile
+browseable = No
+writeable = Yes
+profile acls = yes
+create mask = 0700
+directory mask = 0700
+
+[homes]
+comment = Repertoire Personnel
+browseable = No
+writeable = Yes
+
+[partage]
+comment = Repertoire commun
+browseable = Yes
+writeable = Yes
+public = No
+path = /home/partage</pre>
+
+<p>
+<p><div class="noteclassic"> en Interpid Ibex (8.04) et supérieur, il faut rajouter la ligne ldap ssl = off dans la section global. C&#039;est moins sécurisé mais plus simple a mettre en œuvre. Si on veux plus de sécurité il faut mettre en place <abbr title="Transport Layer Security">TLS</abbr> avec le paramètre ldap ssl = tls, générer des certificats et modifier le ldap (cf <a href="https://help.ubuntu.com/8.10/serverguide/C/openldap-server.html" class="urlextern" title="https://help.ubuntu.com/8.10/serverguide/C/openldap-server.html"  rel="nofollow">https://help.ubuntu.com/8.10/serverguide/C/openldap-server.html</a>)
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Création du serveur SAMBA] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="31522-34272" /><input type="submit" value="Modifier" class="button" title="Création du serveur SAMBA" /></div></form></div>
+<h3 class="sectionedit29" id="creation_des_partages_samba">Création des partages SAMBA</h3>
+<div class="level3">
+
+<p>
+Le fichier smb.conf défini quelques share SAMBA
+</p>
+<pre class="code">/home/netlogon 
+Contient les éventuels scripts qui sont exécutés à chaque connexion d&#039;un utilisateur (.bat)</pre>
+<pre class="code">/home/export/profile 
+Contient les profils windows de chaque utilisateur, ils sont créés automatiquement pour les nouveaux</pre>
+<pre class="code">/home/partage 
+Partage commun à tous les utilisateurs du domaine</pre>
+<pre class="code">/home/lenomdelutilisateur 
+Les répertoires personnels linux sont aussi partagés</pre>
+
+<p>
+- Créez les répertoires
+</p>
+<pre class="code">mkdir -p /home/netlogon
+mkdir -p /home/export/profile
+mkdir -p /home/partage </pre>
+
+<p>
+- Installez les sécuritées
+</p>
+<pre class="code">chmod a+w /home/export
+chmod a+w /home/export/profile
+chmod a+w /home/partage</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Création des partages SAMBA] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="34273-34994" /><input type="submit" value="Modifier" class="button" title="Création des partages SAMBA" /></div></form></div>
+<h2 class="sectionedit30" id="liaison_samba_et_ldap">Liaison SAMBA et LDAP</h2>
+<div class="level2">
+
+<p>
+- Installez les smbldap-tools
+</p>
+<pre class="code">apt-get install smbldap-tools</pre>
+
+<p>
+- Créez le fichier /etc/smbldap-tools/smbldap_bind.conf et copiez / modifiez ces lignes
+</p>
+<pre class="code">slaveDN=&quot;cn=admin,dc=yourdomain,dc=local&quot;
+slavePw=[votre mot de passe en clair]
+masterDN=&quot;cn=admin,dc=yourdomain,dc=local&quot;
+masterPw=[votre mot de passe en clair]</pre>
+
+<p>
+- Votre mot de passe étant en clair dans le fichier, il faut modifier la sécurité
+</p>
+<pre class="code">chmod 600 /etc/smbldap-tools/smbldap_bind.conf</pre>
+
+<p>
+- Créez le fichier /etc/smbldap-tools/smbldap.conf et copiez / modifiez ces lignes
+</p>
+<pre class="code">slaveLDAP=&quot;127.0.0.1&quot;
+slavePort=&quot;389&quot;
+masterLDAP=&quot;127.0.0.1&quot;
+masterPort=&quot;389&quot;
+ldapTLS=&quot;0&quot;
+verify=&quot;require&quot;
+suffix=&quot;dc=youdomaine,dc=local&quot; 
+### A changer : yourdomain
+usersdn=&quot;ou=Users,${suffix}&quot;
+computersdn=&quot;ou=Machines,${suffix}&quot;
+groupsdn=&quot;ou=Groups,${suffix}&quot;
+idmapdn=&quot;ou=Idmap,${suffix}&quot;
+# sambaUnixIdPooldn=&quot;cn=NextFreeUnixId,${suffix}&quot;
+sambaUnixIdPooldn=&quot;sambaDomainName=YOUR_DOMAIN,${suffix}&quot; 
+### A changer : yourdomain
+scope=&quot;sub&quot;
+hash_encrypt=&quot;SSHA&quot;
+crypt_salt_format=&quot;%s&quot;
+
+userLoginShell=&quot;/bin/bash&quot;
+userHome=&quot;/home/%U&quot;
+userHomeDirectoryMode=&quot;700&quot;
+#Nom d&#039;affichage - utiliser smbldap-useradd -c
+userGecos=&quot;User&quot;
+defaultUserGid=&quot;513&quot;
+defaultComputerGid=&quot;515&quot;
+skeletonDir=&quot;/etc/skel&quot;
+#Les mots de passe expirent dans 10ans
+defaultMaxPasswordAge=&quot;3650&quot;
+
+with_smbpasswd=&quot;0&quot;
+smbpasswd=&quot;/usr/bin/smbpasswd&quot;
+
+with_slappasswd=&quot;0&quot;
+slappasswd=&quot;/usr/sbin/slappasswd&quot;</pre>
+
+<p>
+- Stopez le serveur SAMBA
+</p>
+<pre class="code">service samba stop</pre>
+
+<p>
+- Ajoutez dans SAMBA le mot de passe de l&#039;administrateur [root]
+</p>
+<pre class="code">smbpasswd -w votremotdepasseroot
+
+Setting stored password for &quot;cn=admin,dc=olituks,dc=local&quot; in secrets.tdb</pre>
+
+<p>
+- Redémarrez le serveur SAMBA
+</p>
+<pre class="code">service samba start</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_30'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Liaison SAMBA et LDAP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="34995-36787" /><input type="submit" value="Modifier" class="button" title="Liaison SAMBA et LDAP" /></div></form></div>
+<h3 class="sectionedit31" id="verifiez_l_installation">Vérifiez l&#039;installation</h3>
+<div class="level3">
+
+<p>
+- Avec la commade net getlocalsid vous allez obtenir le SID du PDC SAMBA
+</p>
+<pre class="code">net getlocalsid
+SID for domain PRIMARY is: S-1-5-21-.......</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_31'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Vérifiez l'installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="36788-36960" /><input type="submit" value="Modifier" class="button" title="Vérifiez l'installation" /></div></form></div>
+<h3 class="sectionedit32" id="peuplez_le_directory_ldap">Peuplez le directory LDAP</h3>
+<div class="level3">
+<pre class="code">smbldap-populate</pre>
+<pre class="code">smbldap-populate
+Populating LDAP directory for domain olituks (S-1-5-21-1103990800-3677365298-610989769)
+(using builtin directory structure)
+
+entry dc=olituks,dc=local already exist. 
+adding new entry: ou=Users,dc=yourdomain,dc=local
+adding new entry: ou=Groups,dc=yourdomain,dc=local
+adding new entry: ou=Machines,dc=yourdomain,dc=local
+adding new entry: ou=Idmap,dc=yourdomain,dc=local
+adding new entry: uid=root,ou=Users,dc=yourdomain,dc=local
+adding new entry: uid=nobody,ou=Users,dc=yourdomain,dc=local
+adding new entry: cn=Domain Admins,ou=Groups,dc=yourdomain,dc=local
+adding new entry: cn=Domain Users,ou=Groups,dc=yourdomain,dc=local
+adding new entry: cn=Domain Guests,ou=Groups,dc=yourdomain,dc=local
+adding new entry: cn=Domain Computers,ou=Groups,dc=yourdomain,dc=local
+adding new entry: cn=Administrators,ou=Groups,dc=yourdomain,dc=local
+adding new entry: cn=Account Operators,ou=Groups,dc=yourdomain,dc=local
+adding new entry: cn=Print Operators,ou=Groups,dc=yourdomain,dc=local
+adding new entry: cn=Backup Operators,ou=Groups,dc=yourdomain,dc=local
+adding new entry: cn=Replicators,ou=Groups,dc=yourdomain,dc=local
+adding new entry: cn=NextFreeUnixId,dc=yourdomain,dc=local
+
+Please provide a password for the domain root: 
+Changing UNIX and samba passwords for root
+New password: 
+Retype new password: </pre>
+
+<p>
+Cette commande crée:
+ Les différentes OU (Organisation Unit) qui contiendront vos Machines, Users et Groups
+ Deux UID : root et nobody qui seront dans OU = Users
+ Plusieurs CN (Common Name): Les groupes qui seront dans OU = Groups
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_32'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Peuplez le directory LDAP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="36961-38629" /><input type="submit" value="Modifier" class="button" title="Peuplez le directory LDAP" /></div></form></div>
+<h3 class="sectionedit33" id="test_de_ldap">Test de LDAP</h3>
+<div class="level3">
+
+<p>
+- Création du premier utilisateur test de <abbr title="Lightweight Directory Access Protocol">LDAP</abbr>
+</p>
+<pre class="code">smbldap-useradd -a -c &quot;Test Test&quot; -m -P test
+Changing UNIX and samba passwords for test
+New password: 
+Retype new password:</pre>
+<ul>
+<li class="level1"><div class="li">  -a : désigne un utilisateur</div>
+</li>
+<li class="level1"><div class="li"> -c : Information Gecos : Le nom entier</div>
+</li>
+<li class="level1"><div class="li"> -m : Créé le répertoire personnel</div>
+</li>
+<li class="level1"><div class="li"> -P : création du mot de passe</div>
+</li>
+</ul>
+
+<p>
+  Pour plus d&#039;aide smbldap-useradd -?
+</p>
+
+<p>
+- Vérifiez que les utilisateurs test et root sont bien dans <abbr title="Lightweight Directory Access Protocol">LDAP</abbr>
+</p>
+<pre class="code">smbldap-usershow test
+
+dn: uid=test,ou=Users,dc=yourdomain,dc=local
+objectClass: top,person,organizationalPerson,inetOrgPerson,posixAccount,shadowAccount,sambaSamAccount
+cn: test
+sn: test
+givenName: test
+uid: test
+uidNumber: 1000
+gidNumber: 513
+homeDirectory: /home/test
+loginShell: /bin/bash
+gecos: Test Test
+sambaLogonTime: 0
+sambaLogoffTime: 2147483647
+sambaKickoffTime: 2147483647
+sambaPwdCanChange: 0
+displayName: Test Test
+sambaSID: S-1-5-21-573247406-3271121105-2462534053-3000
+sambaPrimaryGroupSID: S-1-5-21-573247406-3271121105-2462534053-513
+sambaLMPassword: 01FC5A6BE7BC6929AAD3B435B51404EE
+sambaAcctFlags: [U]
+sambaNTPassword: 0CB6948805F797BF2A82807973B89537
+sambaPwdLastSet: 1203761173
+sambaPwdMustChange: 1519121173
+userPassword: {SSHA}4AxHgHKTY3axTAMx02Zu22k4jeJVbGN3</pre>
+<pre class="code">smbldap-usershow root
+
+dn: uid=root,ou=Users,dc=olituks,dc=local
+cn: root
+sn: root
+objectClass: top,person,organizationalPerson,inetOrgPerson,sambaSamAccount,posixAccount,shadowAccount
+gidNumber: 0
+uid: root
+uidNumber: 0
+homeDirectory: /home/root
+sambaLogonTime: 0
+sambaLogoffTime: 2147483647
+sambaKickoffTime: 2147483647
+sambaPwdCanChange: 0
+sambaPrimaryGroupSID: S-1-5-21-1103990800-3677365298-610989769-512
+sambaSID: S-1-5-21-1103990800-3677365298-610989769-500
+loginShell: /bin/false
+gecos: Netbios Domain Administrator
+sambaLMPassword: 69C840086777BE8372D82CC5E4DD778E
+sambaAcctFlags: [U]
+sambaNTPassword: 98748519A0FAAEC727B0A34CA66C3358
+sambaPwdLastSet: 1202326380
+sambaPwdMustChange: 1517686380
+userPassword: {SSHA}..................</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_33'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Test de LDAP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="38630-40732" /><input type="submit" value="Modifier" class="button" title="Test de LDAP" /></div></form></div>
+<h3 class="sectionedit34" id="modification_du_systeme_d_authentification_sur_primary">Modification du système d&#039;authentification sur primary</h3>
+<div class="level3">
+
+<p>
+- Installation des paquets nécessaires
+</p>
+<pre class="code">apt-get install auth-client-config libpam-ldap libnss-ldap libpam-mount smbfs</pre>
+
+<p>
+- Répondez aux questions qui vous sont posées comme suit.
+</p>
+<pre class="code">Should debconf manage LDAP configuration?: Yes
+LDAP server Uniform Resource Identifier: ldapi://192.168.2.1/
+Distinguished name of the search base: dc=yourdomain,dc=local
+LDAP version to use: 3
+Make local root Database admin: Yes
+Does the LDAP database require login? No
+LDAP account for root: cn=admin,dc=yourdomain,dc=local
+LDAP root account password: [root password]</pre>
+
+<p>
+<p><div class="notetip">Étant donné qu&#039;il n&#039;y a pas de mots de passe dans ce fichier nous   pouvons nous permettre de ne pas limiter l&#039;accès uniquement à root et permettre ainsi à tous le monde de pouvoir voir l&#039;annuaire
+</div></p>
+</p>
+
+<p>
+- Editez le fichier /etc/ldap.conf et modifiez le
+</p>
+<pre class="code">base dc=yourdomain,dc=local
+uri ldap://192.168.2.1/
+rootbinddn cn=admin,dc=yourdomain,dc=local
+bind_policy soft
+pam_password md5</pre>
+
+<p>
+- Copiez ensuite le fichier /etc/ldap.conf dans /etc/ldap/ldap.conf
+</p>
+<pre class="code">cp /etc/ldap.conf /etc/ldap/ldap.conf</pre>
+
+<p>
+- Éditez le fichier /etc/nsswitch.conf et modifiez le comme suit.
+</p>
+<pre class="code">passwd:         compat ldap
+group:          compat ldap
+shadow:         compat ldap</pre>
+
+<p>
+<p><div class="notewarning">Il est préférable de garder une console en réserve avec un compte root activé car si ici il y a un problème, vous ne pourrez plus vous authentifier !!!!
+</div></p>
+</p>
+
+<p>
+- Éditez le fichier /etc/pam.d/common-pammount
+</p>
+<pre class="code">auth 		optional pam_mount.so use_first_pass
+session 	optional pam_mount.so use_first_pass</pre>
+
+<p>
+- Créez un nouveau fichier /etc/auth-client-config/profile.d/open_ldap et copiez / collez la suite.
+</p>
+<pre class="code">[open_ldap]
+nss_passwd=passwd: compat ldap
+nss_group=group: compat ldap
+nss_shadow=shadow: compat ldap
+nss_netgroup=netgroup: compat ldap
+pam_auth=auth sufficient pam_unix.so
+ auth required pam_group.so use_first_pass
+ auth required pam_mount.so use_first_pass
+ auth required pam_ldap.so use_first_pass
+pam_account=account sufficient pam_unix.so
+ account required pam_ldap.so use_first_pass
+ account required pam_mount.so use_first_pass
+pam_password=password sufficient pam_unix.so nullok obscure min=4 max=8 md5
+ password required pam_mount.so use_first_pass
+ password required pam_ldap.so use_first_pass
+pam_session=session sufficient pam_unix.so
+ session optional pam_mkhomedir.so skel=/etc/skel/
+ session optional pam_mount.so use_first_pass</pre>
+
+<p>
+<p><div class="notewarning">Il est important pour ce fichier de garder la même ventilation que celle introduite. Si tel n&#039;est pas le cas, vous pourriez avoir des problèmes avec la commande qui activera l&#039;authentification <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> pour le client.
+</div></p>
+</p>
+
+<p>
+- Créez un backup du fichier nsswitch.conf
+</p>
+<pre class="code">cp /etc/nsswitch.conf /etc/nsswitch.conf.bak</pre>
+
+<p>
+- Créez un backup des fichiers de configuration de pam
+</p>
+<pre class="code">cd /etc/pam.d/
+mkdir pam.d.bak
+cp * pam.d.bak/</pre>
+
+<p>
+- Activez l&#039;authentification <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> pour votre client
+</p>
+<pre class="code">auth-client-config -a -p open_ldap</pre>
+
+<p>
+Si tout se passe bien avec cette commande, vous devriez pouvoir au prochain reboot vous connecter avec un login <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> et ou local.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_34'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Modification du système d'authentification sur primary] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="40733-43916" /><input type="submit" value="Modifier" class="button" title="Modification du système d'authentification sur primary" /></div></form></div>
+<h3 class="sectionedit35" id="ajout_du_client_windows">Ajout du client Windows</h3>
+<div class="level3">
+
+<p>
+- Démarrez votre client Windows 2000
+</p>
+<pre class="code">Ouvrez une session en local admin
+Clickez droit sur My Computer -&gt; Properties
+Cochez la case DOMAIN NAME et insérer YOURDOMAIN
+Introduisez le password pour root.
+Attendez d&#039;avoir le message de bien venue.
+Redémarez.</pre>
+
+<p>
+<p><div class="noteimportant">Il est possible que juste après le premier démarrage de votre Windows2000 il ne vous permettent pas de vous connecter au DOMAIN. Il faut dans ce cas attendre une ou deux minutes le temps que le client retrouve ses jeunes avec le domain controleur SAMBA. Le message qui vous est indiqué, est qu&#039;il ne trouve pas l&#039;utilisateur ROOT.
+</div></p>
+</p>
+
+<p>
+- Connectez vous au logon avec le compte test que vous aviez créé lors de la configuration validation de <abbr title="Lightweight Directory Access Protocol">LDAP</abbr>. Cet utilisateur n&#039;est pas connu de linux. Il se trouve configuré uniquement dans l&#039;annulaire <abbr title="Lightweight Directory Access Protocol">LDAP</abbr>. Si la connexion fonctionne, c&#039;est la preuve par 9 que tout est fonctionnel.
+</p>
+
+<p>
+- Vérifiez les mapping automatique dans votre client Windows.
+</p>
+<pre class="code">Vous devriez avoir un drive P:\</pre>
+
+<p>
+- Faite un logoff du client windows et passez sur le serveur primary
+</p>
+
+<p>
+- Ouvrez la directory /home/export/profile/test vous devriez avoir des fichiers windows dans ce folder qui sont en réalité les fichiers du profil utilisateur test.
+</p>
+
+<p>
+- Vous trouverez également une directory test dans la root de home qui est en réalité le mapping sur la directory P:\ du windows client. Mais également la directory home d&#039;un logon sur linux. De cette manière, vous pouvez partager vos fichiers privés (réservé à l&#039;utilisateur test par exemple)
+</p>
+
+</div>
+
+<h4 id="configuration_du_client_linux">Configuration du client linux</h4>
+<div class="level4">
+
+<p>
+<p><div class="notetip">Le client linux à ce stade doit être capable de se connecter à la session et d&#039;avoir une configuration réseau fournie par le <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> / <abbr title="Domain Name System">DNS</abbr>. Il doit être à jour et avoir un accès au monde extérieur. Si ce n&#039;est pas le cas, allez voir plus haut ce qu&#039;il faut faire pour que cela fonctionne.
+</div></p>
+</p>
+
+<p>
+<strong>Exécutez les même modifications du système d&#039;authentification que celles exécutées sur le serveur PRIMARY avant d&#039;ajouter celle-ci !</strong>
+</p>
+
+<p>
+ - Éditez le fichier /etc/pam.d/gdm et remplacez son contenu
+</p>
+<pre class="code">#%PAM-1.0
+
+auth required	pam_mount.so
+auth required	pam_group.so use_first_pass
+auth sufficient	pam_ldap.so use_first_pass
+auth required	pam_unix.so use_first_pass
+auth required	pam_env.so
+
+account sufficient pam_ldap.so
+account sufficient pam_unix.so
+
+password required pam_unix.so nullok obscure min=4 max=8 md5
+
+session required pam_unix.so
+session optional pam_mkhomedir.so skel=/etc/skel/
+session optional pam_mount.so</pre>
+
+<p>
+- Éditez le fichier /etc/pam.d/gdm-autologin et remplacez son contenu (le contenu est le même que pour le fichier précédent)
+</p>
+<pre class="code">#%PAM-1.0
+
+auth required	pam_mount.so
+auth required	pam_group.so use_first_pass
+auth sufficient	pam_ldap.so use_first_pass
+auth required	pam_unix.so use_first_pass
+auth required	pam_env.so
+
+account sufficient pam_ldap.so
+account sufficient pam_unix.so
+
+password required pam_unix.so nullok obscure min=4 max=8 md5
+
+session required pam_unix.so
+session optional pam_mkhomedir.so skel=/etc/skel/
+session optional pam_mount.so  </pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_35'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Ajout du client Windows] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="43917-47119" /><input type="submit" value="Modifier" class="button" title="Ajout du client Windows" /></div></form></div>
+<h2 class="sectionedit36" id="automount_des_repertoires_partages_sur_le_client_linux">Automount des répertoires partagés sur le client linux</h2>
+<div class="level2">
+
+<p>
+- Editez le fichier /etc/security/pam_mount.conf et à la ligne 173 ajoutez ces lignes.
+</p>
+<pre class="code">volume * smbfs 192.168.2.1 &amp; /media/&amp;&#039; sur primary&#039; uid=&amp;,gid=&amp;,dmask=777,fmask=777 - -
+volume * smbfs IP_MonServeur profscommun /media/profscommun&#039; sur MonServeur&#039; uid=&amp;,gid=&amp;,dmask=777,fmask=777 - -
+volume * smbfs IP_MonServeur classes /media/classes&#039; sur MonServeur&#039; uid=&amp;,gid=&amp;,dmask=777,fmask=777 - -
+volume * smbfs IP_MonServeur public /media/public&#039; sur sur MonServeur&#039; uid=&amp;,gid=&amp;,dmask=777,fmask=777 - -
+volume * smbfs IP_MonServeur install /media/install&#039; sur sur MonServeur&#039; uid=&amp;,gid=&amp;,dmask=777,fmask=777 - -</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_36'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Automount des répertoires partagés sur le client linux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="47120-47810" /><input type="submit" value="Modifier" class="button" title="Automount des répertoires partagés sur le client linux" /></div></form></div>
+<h2 class="sectionedit37" id="utilisation_de_la_carte_son_usb_lecteur_amovible">Utilisation de la carte son, USB, lecteur amovible, ...</h2>
+<div class="level2">
+
+<p>
+- Editez le fichier /etc/security/group.conf et ajoutez ces lignes
+</p>
+<pre class="code">**;*;*;Al00002400;floppy,audio,cdrom,video,plugdev,scanner</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_37'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Utilisation de la carte son, USB, lecteur amovible, ...] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="47811-48018" /><input type="submit" value="Modifier" class="button" title="Utilisation de la carte son, USB, lecteur amovible, ..." /></div></form></div>
+<h3 class="sectionedit38" id="les_test_avant_le_grand_saut">Les test avant le grand saut</h3>
+<div class="level3">
+
+<p>
+- Utilisez la commande suivante pour lister le contenu de l&#039;annuaire <abbr title="Lightweight Directory Access Protocol">LDAP</abbr>
+</p>
+<pre class="code">getent passwd</pre>
+
+<p>
+Si vous voyez l&#039;utilisateur test créé précédemment et connu uniquement de <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> c&#039;est gagné. Vous devriez être en mesure de vous authentifier. Si non, il y a un problème. Le mieux comme toujours est de regarder les logs et de vérifier les fichier de customisation.
+- redémarrez la machine et connectez vous avec l&#039;utilisateur test de l&#039;annuaire <abbr title="Lightweight Directory Access Protocol">LDAP</abbr>.
+</p>
+
+<p>
+Cela devrait vous montrer dans GDM un petit panneau indiquant la création de la directory home pour votre nouvel utilisateur et vous donnez accès après quelques échanges réseau avec le serveur au bureau linux en tant que simple utilisateur.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_38'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Les test avant le grand saut] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="48019-48759" /><input type="submit" value="Modifier" class="button" title="Les test avant le grand saut" /></div></form></div>
+<h2 class="sectionedit39" id="problemes_rencontres_pendant_la_configuration_du_server_et_des_clients">Problèmes rencontrés pendant la configuration du server et des clients</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteimportant">Lors de mes tests en VMWARE Serveur j&#039;ai constaté deux phénomènes très étranges.
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> Le premier étant sur le serveur primary, un blocage régulier au démarrage de bind oblige de redémarrer le serveur une ou deux fois avant de pouvoir l&#039;utiliser.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Le second c&#039;est avec le client linux. (l&#039;étape ou vous devriez être arrivé maintenant). UDEV m&#039;a créé une mauvaise règle dans /etc/udev/rules.d/70-persistent-net.rules. La règle n&#039;était pas bonne car l&#039;adresse <abbr title="Medium Access Control">MAC</abbr> de la carte réseau virtuel avait changé, sans doute, suite à l&#039;installation des vmware tools. Donc, au démarrage de la machine client linux, le nom de l&#039;interface était passé à eth2 plus tôt que eth0. J&#039;ai modifié le fichier 70-persistent-net.rules en indiquant à eth0 que l&#039;adresse mac avait changé et tout est rentré dans l&#039;ordre. Ce problème-ci était important, car il m&#039;empêchait de me connecter à <abbr title="Lightweight Directory Access Protocol">LDAP</abbr> serveur, de joindre les adresses extérieures tout en me permettant de me connecter dans mon subnet et donc de voir le client windows et primary via uniquement leur adresse IP ! de quoi y perdre son latin quoi …</div>
+</li>
+</ul>
+
+<p>
+Là aussi, si vous avez des idées, je suis preneur.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_39'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Problèmes rencontrés pendant la configuration du server et des clients] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="48760-50046" /><input type="submit" value="Modifier" class="button" title="Problèmes rencontrés pendant la configuration du server et des clients" /></div></form></div>
+<h2 class="sectionedit40" id="installation_de_webmin_sur_primary">Installation de Webmin sur primary</h2>
+<div class="level2">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/tutoriel/comment_modifier_sources_maj" class="wikilink1" title="tutoriel:comment_modifier_sources_maj">Ajoutez le dépôt</a> suivant à vos sources de mises à jour puis <a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong>webmin</strong>.
+</p>
+<pre class="file">deb http://download.webmin.com/download/repository sarge contrib
+Récuperer les cles 
+sudo wget http://www.webmin.com/jcameron-key.asc
+sudo apt-key add jcameron-key.asc
+
+faire un sudo update 
+aptitude install webmin</pre>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../utilisateurs/olituks" class="wikilink1" title="utilisateurs:olituks">olituks</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_40'><form class="button btn_secedit" method="post" action="network_tpme"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1345544516" /><input type="hidden" name="summary" value="[Installation de Webmin sur primary] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="50047-" /><input type="submit" value="Modifier" class="button" title="Installation de Webmin sur primary" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/1/129947f63353e646731e76c9dc519011.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/network_tpme?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="network_tpme?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="network_tpme?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="network_tpme?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="network_tpme?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

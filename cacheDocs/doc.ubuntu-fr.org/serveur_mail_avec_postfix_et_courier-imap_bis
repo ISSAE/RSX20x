@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>serveur_mail_avec_postfix_et_courier-imap_bis - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-10-23T20:22:49+0200"/>
+<meta name="keywords" content="dapper,serveur,reseau,courriel,postfix,courrier"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/serveur_mail_avec_postfix_et_courier-imap_bis?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/serveur_mail_avec_postfix_et_courier-imap_bis?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/serveur_mail_avec_postfix_et_courier-imap_bis"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/serveur_mail_avec_postfix_et_courier-imap_bis"/>
+<link rel="canonical" href="serveur_mail_avec_postfix_et_courier-imap_bis"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"serveur_mail_avec_postfix_et_courier-imap_bis","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="serveur_mail_avec_postfix_et_courier-imap_bis#main" tabindex="1">Contenu</a> | <a href="serveur_mail_avec_postfix_et_courier-imap_bis#qsearch__in" tabindex="2">Rechercher</a> | <a href="serveur_mail_avec_postfix_et_courier-imap_bis#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="serveur_mail_avec_postfix_et_courier-imap_bis" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="serveur_mail_avec_postfix_et_courier-imap_bis" >serveur_mail_avec_postfix_et_courier-imap_bis</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, celle-ci est ancienne et ne contient plus d'informations sur une des  <a href="versions">versions supportées d'Ubuntu</a>.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="serveur_mail_avec_postfix_et_courier-imap_bis#principe_de_fonctionnement">Principe de fonctionnement</a></div></li>
+<li class="level1"><div class="li"><a href="serveur_mail_avec_postfix_et_courier-imap_bis#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="serveur_mail_avec_postfix_et_courier-imap_bis#programmes_principaux">Programmes principaux</a></div></li>
+<li class="level2"><div class="li"><a href="serveur_mail_avec_postfix_et_courier-imap_bis#programmes_secondaires">Programmes secondaires</a></div></li>
+<li class="level2"><div class="li"><a href="serveur_mail_avec_postfix_et_courier-imap_bis#ajouter_un_utilisateur_sous_linux">Ajouter un utilisateur sous Linux</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="serveur_mail_avec_postfix_et_courier-imap_bis#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="serveur_mail_avec_postfix_et_courier-imap_bis#courier-imap">courier-imap</a></div></li>
+<li class="level2"><div class="li"><a href="serveur_mail_avec_postfix_et_courier-imap_bis#postfix">Postfix</a></div></li>
+<li class="level2"><div class="li"><a href="serveur_mail_avec_postfix_et_courier-imap_bis#procmail">Procmail</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="serveur_mail_avec_postfix_et_courier-imap_bis#lancement_du_serveur_de_courrier">Lancement du serveur de courrier</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="dapper" class="wikilink1" title="dapper" rel="tag">Dapper</a>,
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="courriel" class="wikilink1" title="courriel" rel="tag">courriel</a>,
+	<a href="postfix" class="wikilink1" title="postfix" rel="tag">postfix</a>,
+	<a href="http://doc.ubuntu-fr.org/courrier" class="wikilink1" title="courrier" rel="tag">courrier</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="installer_un_serveur_imap">Installer un serveur IMAP</h1>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Logiciels principaux : <a href="postfix" class="wikilink1" title="postfix">Postfix</a> - <a href="http://doc.ubuntu-fr.org/procmail" class="wikilink2" title="procmail" rel="nofollow">Procmail</a> - <a href="http://doc.ubuntu-fr.org/courier-imap" class="wikilink2" title="courier-imap" rel="nofollow">Courier-IMAP</a></div>
+</li>
+<li class="level1"><div class="li"> Logiciels secondaires : <a href="clamav" class="wikilink1" title="clamav">ClamAV</a> (antivirus) - <a href="http://doc.ubuntu-fr.org/spamassassin" class="wikilink2" title="spamassassin" rel="nofollow">SpamAssassin</a> (anti-spam) - <a href="http://doc.ubuntu-fr.org/trashscan" class="wikilink2" title="trashscan" rel="nofollow">TrashScan</a> (scanner de pourriel).</div>
+</li>
+</ul>
+
+<p>
+Cette procédure a été réalisée à partir d&#039;informations récupérées sur Internet et a été déployée sur une architecture réelle basée sur une <a href="dapper" class="wikilink1" title="dapper">Ubuntu 6.06 LTS</a>. Ce serveur permet d&#039;envoyer et de recevoir du courrier sur son propre serveur, à sa propre adresse du type <em>monNom@monDomaine.com</em>. Pour le protocole choisi, ça sera IMAP, plus recommandé que POP3 pour la réception, et SMTP pour l&#039;envoi et le transfert.
+</p>
+
+<p>
+Durant tout le tutoriel, nous supposerons que votre nom sera <strong>monNom</strong>, votre serveur <strong>monServeur</strong>, votre domaine <strong>monDomaine</strong>, votre fournisseur d&#039;accès <strong>monFAI</strong>, et votre adresse <strong>monNom@monDomaine.com</strong>. On suppose que votre adresse IP est <strong>monIP</strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="serveur_mail_avec_postfix_et_courier-imap_bis"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1382552569" /><input type="hidden" name="summary" value="[Installer un serveur IMAP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="65-1009" /><input type="submit" value="Modifier" class="button" title="Installer un serveur IMAP" /></div></form></div>
+<h2 class="sectionedit2" id="principe_de_fonctionnement">Principe de fonctionnement</h2>
+<div class="level2">
+
+<p>
+<em>courier-imap</em> fournit le protocole IMAP et sera utilisé pour la réception du courrier. Les messages reçus par courier-imap seront déposés tel quel sur le serveur.
+</p>
+
+<p>
+Postfix va regarder ces messages et va les transférer dans le répertoire de courrier IMAP de l&#039;utilisateur.
+Il va aussi faire appel à Procmail pour vérifier le message avant de le distribuer.
+</p>
+
+<p>
+Procmail va scanner le message pour voir s&#039;il n&#039;y a pas de virus ou s&#039;il ne s&#039;agit pas de messages SPAM.
+Si le message est correct, il sera acheminé par Postfix dans le répertoire local de l&#039;utilisateur ; sinon il sera acheminé vers un autre répertoire, suivant le type de message.
+</p>
+
+<p>
+Le programme Mail vérifie les messages et alerte l&#039;utilisateur lors d&#039;un nouveau message.
+</p>
+
+<p>
+Un logiciel comme <a href="thunderbird" class="wikilink1" title="thunderbird">Thunderbird</a> ou <a href="evolution" class="wikilink1" title="evolution">Evolution</a> permet de les lire et de les écrire.
+Postfix assure aussi l&#039;envoi des messages, à travers le service SMTP du fournisseur d&#039;accès internet.
+Il n&#039;est pas nécessaire de configurer <a href="http://doc.ubuntu-fr.org/fetchmail" class="wikilink2" title="fetchmail" rel="nofollow">fetchmail</a> pour la distribution du courrier, celle-ci étant assurée par Postfix.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="serveur_mail_avec_postfix_et_courier-imap_bis"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1382552569" /><input type="hidden" name="summary" value="[Principe de fonctionnement] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1010-2116" /><input type="submit" value="Modifier" class="button" title="Principe de fonctionnement" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="serveur_mail_avec_postfix_et_courier-imap_bis"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1382552569" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2117-2143" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit4" id="programmes_principaux">Programmes principaux</h3>
+<div class="level3">
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong>courier-imap postfix procmail clamav spamassassin</strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="serveur_mail_avec_postfix_et_courier-imap_bis"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1382552569" /><input type="hidden" name="summary" value="[Programmes principaux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2144-2297" /><input type="submit" value="Modifier" class="button" title="Programmes principaux" /></div></form></div>
+<h3 class="sectionedit5" id="programmes_secondaires">Programmes secondaires</h3>
+<div class="level3">
+
+<p>
+On télécharge le programme TrashScan depuis cette adresse : <a href="http://schlayer.org/trashscan-0.12.tar.gz" class="urlextern" title="http://schlayer.org/trashscan-0.12.tar.gz"  rel="nofollow">http://schlayer.org/trashscan-0.12.tar.gz</a>
+</p>
+
+<p>
+TrashScan est un petit script bien utile qui va permet de scanner les fichiers mail à l&#039;aide de l&#039;antivirus clamav et d&#039;autres utilitaires. Une fois le fichier téléchargé, on le décompresse 
+</p>
+<pre class="code">tar -zxvf trashscan-&lt;version&gt;.tar.gz</pre>
+
+<p>
+Ensuite, dans le répertoires <em>trashscan-&lt;version&gt;</em>, on modifie l&#039;entête du fichier trashscan selon ses préférences, puis on copie le fichier dans le répertoire <strong>/usr/local/bin/</strong>. 
+</p>
+
+<p>
+Pour plus de renseignements, lisez le fichier README présent dans le répertoire de TrashScan.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="serveur_mail_avec_postfix_et_courier-imap_bis"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1382552569" /><input type="hidden" name="summary" value="[Programmes secondaires] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2298-2961" /><input type="submit" value="Modifier" class="button" title="Programmes secondaires" /></div></form></div>
+<h3 class="sectionedit6" id="ajouter_un_utilisateur_sous_linux">Ajouter un utilisateur sous Linux</h3>
+<div class="level3">
+
+<p>
+Pour avoir une adresse mail, il faut créer une adresse du style MonNom@MonDomaine.com.
+Pour créer cet utilisateur, on exécute la commande suivante :
+</p>
+<pre class="code">useradd -g 100 -d /home/MonNom MonNom
+passwd MonNom
+mkdir /home/MonNom</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="serveur_mail_avec_postfix_et_courier-imap_bis"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1382552569" /><input type="hidden" name="summary" value="[Ajouter un utilisateur sous Linux] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2962-3237" /><input type="submit" value="Modifier" class="button" title="Ajouter un utilisateur sous Linux" /></div></form></div>
+<h2 class="sectionedit7" id="configuration">Configuration</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="serveur_mail_avec_postfix_et_courier-imap_bis"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1382552569" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3238-3264" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h3 class="sectionedit8" id="courier-imap">courier-imap</h3>
+<div class="level3">
+
+<p>
+Il n&#039;y a rien à configurer pour courier-imap. Il faut juste s&#039;assurer qu&#039;il est lancé, par la commande :
+</p>
+<pre class="code">sudo /etc/init.d/courier-imap start</pre>
+
+<p>
+Par contre, il faut créer les dossiers de courrier IMAP de l&#039;utilisateur.
+Pour se faire, dans le répertoire de celui-ci on exécute les commandes :
+</p>
+<pre class="code">maildirmake Maildir
+maildirmake -f Sent Maildir
+maildirmake -f Queue Maildir
+maildirmake -f junkmail Maildir
+maildirmake -f virus Maildir
+maildirmake -f Drafts Maildir
+maildirmake -f Trash Maildir</pre>
+
+<p>
+<p><div class="notewarning">Si l&#039;on utilise &quot;sudo maildirmake …&quot;, les répertoires sont propriété de root et l&#039;on ne peut pas y accéder en IMAP (problème de droits d&#039;accès).
+</div></p>
+</p>
+
+<p>
+Cette opération créera un répertoire spécial de courrier nommé Maildir, dans lequel doit se trouver les répertoires cachés <em>.Sent .Queue .junkmail .virus .Drafts et .Trash</em>.
+</p>
+
+<p>
+<p><div class="notetip">Seul le dossier principal est nécessaire pour démarrer, car les autres seront créés, si besoin, par le client de messagerie tel que <a href="thunderbird" class="wikilink1" title="thunderbird">ThunderBird</a>
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="serveur_mail_avec_postfix_et_courier-imap_bis"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1382552569" /><input type="hidden" name="summary" value="[courier-imap] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3265-4327" /><input type="submit" value="Modifier" class="button" title="courier-imap" /></div></form></div>
+<h3 class="sectionedit9" id="postfix">Postfix</h3>
+<div class="level3">
+
+<p>
+<p><div class="notetip">Voir aussi la page <a href="postfix" class="wikilink1" title="postfix">Postfix</a>.
+</div></p>
+<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Ouvrez le fichier</a> <strong>/etc/postfix/main.cf</strong>.
+</p>
+
+<p>
+Tous les paramètres ne sont pas obligatoires, la liste des paramètres possibles étant assez longue, et Postfix disposant par défaut d&#039;une bonne configuration.
+En revanche, on doit le configurer un minimum. Le fichier devra ressembler à ceci.
+</p>
+<pre class="file">append_dot_mydomain = no
+biff = no
+command_directory = /usr/sbin
+daemon_directory = /usr/lib/postfix
+program_directory = /usr/lib/postfix
+queue_directory = /var/spool/postfix
+
+myhostname = monServeur.monDomaine.com
+mydomain = monDomaine.com
+masquerade_domains = monDomaine.com
+mydestination = $myhostname, $mydomain, localhost.$mydomain, localhost
+inet_interfaces = all
+mynetworks = monIpReseau/24, 127.0.0.0/8
+myorigin = /etc/mailname
+relayhost = smtp.monFAI.fr
+home_mailbox = Maildir/
+mailbox_command = /usr/bin/procmail -Y -a $DOMAIN
+
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+setgid_group = postdrop
+mail_owner = postfix
+mailbox_size_limit = 0
+mail_spool_directory = /var/spool/mail
+smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
+delay_warning_time = 4h
+recipient_delimiter = +</pre>
+
+<p>
+Où :
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>myhostname</em> est le nom d&#039;hôte du serveur, il doit être complet, avec le nom de domaine.</div>
+</li>
+<li class="level1"><div class="li"> <em>mydomain</em> est le nom de domaine, qui doit correspondre au nom complet du serveur défini.</div>
+</li>
+<li class="level1"><div class="li"> <em>mydestination</em> correspond aux adresses qui seront gérées par postfix. Pour éviter les boucles (adresses renvoyées à elles-même sans arrêts), on doit ajouter les paramètres indiqués.</div>
+</li>
+<li class="level1"><div class="li"> <em>mynetworks</em> est la plage d&#039;adresse du réseau, ou plus exactement, l&#039;adresse du réseau. Celle-ci n&#039;est pas l&#039;adresse IP du serveur, mais l&#039;adresse IP du réseau. Par exemple, si l&#039;adresse IP du serveur est de 192.168.0.100, et que son masque est de 255.255.255.0 (24 bits), son adresse réseau (monIpReseau) est 192.168.0.0.</div>
+</li>
+<li class="level1"><div class="li"> <em>myorigine</em> renseigne sur le nom de domaine d&#039;origine. Dans le fichier /etc/mailname doit se trouver votre nom de domaine.</div>
+</li>
+<li class="level1"><div class="li"> <em>relayhost</em> est la passerelle qui va relayer les messages sortant, les courriers envoyés. Si vous avez un fournisseur internet, celle-ci peut-être smtp.&lt;domaine du fournisseur&gt;</div>
+</li>
+<li class="level1"><div class="li"> <em>home_mailbox</em> est le répertoire de courrier de l&#039;utilisateur. Comme on utilise courier-imap, celui-ci doit être Maildir suivi de /</div>
+</li>
+<li class="level1"><div class="li"> <em>mailbox_command</em> est la commande que postfix doit effectuer pour l&#039;acheminement des messages. Ici on fait appel à procmail, qui va scanner les messages avant de les délivrer.</div>
+</li>
+</ul>
+
+<p>
+On sauvegarde et l&#039;on recharge postfix avec la nouvelle configuration par la commande : 
+</p>
+<pre class="code">sudo /etc/init.d/postfix restart</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="serveur_mail_avec_postfix_et_courier-imap_bis"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1382552569" /><input type="hidden" name="summary" value="[Postfix] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4328-7058" /><input type="submit" value="Modifier" class="button" title="Postfix" /></div></form></div>
+<h3 class="sectionedit10" id="procmail">Procmail</h3>
+<div class="level3">
+
+<p>
+Procmail va être lancé par postfix à chaque nouveau message. Son fichier de configuration doit se trouver dans le répertoire de l&#039;utilisateur et est nommé « .procmailrc ».
+</p>
+
+<p>
+<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Ouvrez le fichier</a> <strong>/home/monNom/.procmailrc</strong>.
+</p>
+<pre class="file"># Preliminaires
+SHELL=/bin/bash
+MAILDIR=$HOME/Maildir/
+DEFAULT=$MAILDIR
+ORGMAIL=$MAILDIR
+LOCKFILE=$HOME/lockfile.lock
+ASSASSINLOCK=$HOME/assassin.lock
+DEFAULT=$HOME/Maildir/
+JUNKMAIL=$HOME/Maildir/.junkmail/
+TRASH=$HOME/Maildir/.Trash
+NEWBIE=$HOME/Maildir/.LinuxNewbie/
+EXPERT=$HOME/Maildir/.LinuxExpert/
+VIRUS=$HOME/Maildir/.virus/
+BITBUCKET=/dev/null
+LOGFILE=/var/log/procmailrc.log
+VERBOSE=yes
+LOGABSTRACT=all
+
+# Filtres de courrier :
+# on vérifie d&#039;abord si le message est du spam, avec spamassassin
+
+:0
+* ^To:.*spam@monDomaine.com
+* &lt; 256000
+
+{
+:0c: spamassassin.spamlock
+| sa-learn --spam
+
+:0
+$JUNKMAIL
+}
+
+#On revérifie au cas où spamassassin aurait fait une erreur
+
+:0
+* ^To:.*postmaster@monDomaine.com
+* &lt; 256000
+
+{
+:0c: spamassassin.hamlock
+| sa-learn --ham
+
+:0
+$TRASH
+}
+
+#On exécute TrashScan, qui va scanner le fichier à l&#039;aide de l&#039;anti-virus clamav
+
+:0
+* multipart
+* !^X-Virus-Scan:
+| /usr/local/bin/trashscan
+
+#Apposition du label suspect sur les mails scannés positifs aux virus
+
+:0
+* ^X-Virus-Scan: Suspicious
+$VIRUS
+
+#Filtres de news
+
+:0 :
+* ^Sender: newbie-owner
+$NEWBIE
+
+:0 :
+* ^Sender: expert-owner
+$EXPERT
+
+#Redirection de courriers indésirables
+
+:0
+* ^From: Sms Message
+$BITBUCKET
+
+#Exécution du démon SpamAssassin
+
+:0 fw : $ASSASSINLOCK
+| spamc
+
+:0
+* ^X-Spam-Flag: YES
+$JUNKMAIL</pre>
+
+<p>
+Une fois cela effectué, on n&#039;a pas besoin de redémarrer procmail, puisque celui-ci est lancé par postfix à chaque nouveau message.
+</p>
+
+<p>
+Attention : procmail peut se trouver ici : /etc/procmailrc !
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="serveur_mail_avec_postfix_et_courier-imap_bis"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1382552569" /><input type="hidden" name="summary" value="[Procmail] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7059-8876" /><input type="submit" value="Modifier" class="button" title="Procmail" /></div></form></div>
+<h2 class="sectionedit11" id="lancement_du_serveur_de_courrier">Lancement du serveur de courrier</h2>
+<div class="level2">
+
+<p>
+On est fin près pour lancer le serveur de courrier.
+</p>
+
+<p>
+Déjà, on peut vérifier si les messages fonctionnent en local :
+</p>
+<pre class="code">mail monNom -s test
+ceci est un test local
+. (le point indique la fin du message)
+cc: (pas de cc)</pre>
+
+<p>
+Dans le courrielleur (Thunderbird, Evolution), un simple rafraichissement des courriers devrait faire apparaitre le message test.
+</p>
+
+<p>
+Ensuite, on vérifie si l&#039;envoie et la réception se fait vers une adresse distante.
+</p>
+
+<p>
+En cas de problème, on peut examiner les logs suivants :
+</p>
+<ul>
+<li class="level1"><div class="li"> Log de Postfix : <strong>/var/log/mail.err</strong></div>
+</li>
+<li class="level1"><div class="li"> Log de Procmail : <strong>/var/log/procmailrc.log</strong></div>
+</li>
+</ul>
+
+<p>
+Si tout est correct, on peut modifier le fichier « .procmailrc » pour éviter la surcharge de log.
+<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Ouvrez le fichier</a> <strong>/home/monNom/.procmailrc</strong>.
+</p>
+<pre class="file">VERBOSE=no
+#LOGABSTRACT=all</pre>
+
+<p>
+Ne pas oublier lors de l&#039;ajout de nouveaux comptes de mettre les droits 771 pour le fichier procmail.rc et de reconstruire la table des alias.
+</p>
+<pre class="code">sudo chmod 771 /home/monNom/.procmailrc
+newaliases</pre>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="serveur_mail_avec_postfix_et_courier-imap_bis"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1382552569" /><input type="hidden" name="summary" value="[Lancement du serveur de courrier] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8877-" /><input type="submit" value="Modifier" class="button" title="Lancement du serveur de courrier" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/a/af655f7e16e0a7bf99a24ee55388771a.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/serveur_mail_avec_postfix_et_courier-imap_bis?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/serveur_mail_avec_postfix_et_courier-imap_bis?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/serveur_mail_avec_postfix_et_courier-imap_bis?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/serveur_mail_avec_postfix_et_courier-imap_bis?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/serveur_mail_avec_postfix_et_courier-imap_bis?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

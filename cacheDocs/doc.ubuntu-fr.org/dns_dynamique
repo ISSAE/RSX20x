@@ -1,0 +1,539 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>dns_dynamique - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-08-25T22:36:19+0200"/>
+<meta name="keywords" content="serveur,ftp,dns"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/dns_dynamique?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/dns_dynamique?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/dns_dynamique"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/dns_dynamique"/>
+<link rel="canonical" href="dns_dynamique"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"dns_dynamique","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="dns_dynamique#main" tabindex="1">Contenu</a> | <a href="dns_dynamique#qsearch__in" tabindex="2">Rechercher</a> | <a href="dns_dynamique#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="dns_dynamique" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="dns_dynamique" >dns_dynamique</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="dns_dynamique#presentation">Présentation</a></div></li>
+<li class="level1"><div class="li"><a href="dns_dynamique#exemple">Exemple</a></div></li>
+<li class="level1"><div class="li"><a href="dns_dynamique#no-ip">No-IP</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="dns_dynamique#installation_du_client_no-ip">Installation du client No-IP</a></div></li>
+<li class="level2"><div class="li"><a href="dns_dynamique#configuration">Configuration</a></div></li>
+<li class="level2"><div class="li"><a href="dns_dynamique#demarrer_le_client_no-ip">Démarrer le client No-IP</a></div></li>
+<li class="level2"><div class="li"><a href="dns_dynamique#lancement_au_demarrage">Lancement au démarrage</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="dns_dynamique#freedns">FreeDNS</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="dns_dynamique#domaine_dynamique">Domaine dynamique</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="dns_dynamique#dyndns">DynDNS</a></div></li>
+<li class="level1"><div class="li"><a href="dns_dynamique#installation_de_ddclient">Installation de ddclient</a></div></li>
+<li class="level1"><div class="li"><a href="dns_dynamique#redirection_propre_d_un_nom_de_domaine">Redirection « propre » d&#039;un nom de domaine</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="dns_dynamique#resume_des_etapes">Résumé des étapes</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="dns_dynamique#acces_en_local_a_votre_site_internet_derriere_un_routeur_ou_une_box">Accès en local à votre site internet derrière un routeur ou une box</a></div></li>
+<li class="level1"><div class="li"><a href="dns_dynamique#redirection_des_ports_port_forwarding_ou_nat">Redirection des ports (Port Forwarding ou NAT)</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="ftp" class="wikilink1" title="ftp" rel="tag">ftp</a>,
+	<a href="dns" class="wikilink1" title="dns" rel="tag">dns</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="les_dns_dynamiques_ddns">Les DNS Dynamiques (DDNS)</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Les DNS Dynamiques (DDNS)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="32-72" /><input type="submit" value="Modifier" class="button" title="Les DNS Dynamiques (DDNS)" /></div></form></div>
+<h2 class="sectionedit2" id="presentation">Présentation</h2>
+<div class="level2">
+
+<p>
+Un <abbr title="Domain Name System">DNS</abbr> <em>(Domain Name Server)</em> est le processus qui permet de lier un nom de domaine à une adresse IP (« www.ubuntu.com » à « 82.211.81.166 » par exemple).
+</p>
+
+<p>
+Les <abbr title="Domain Name System">DNS</abbr> Dynamiques sont des noms de domaine (du type « monserveur.com ») reliés à une adresse IP dynamique. Ce système est extrêmement pratique quand il s&#039;agit de créer un serveur web personnel, accessible rapidement via un nom de domaine, alors que votre adresse IP change généralement toutes les 24 heures (pour des raisons de sécurité).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Présentation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="73-619" /><input type="submit" value="Modifier" class="button" title="Présentation" /></div></form></div>
+<h2 class="sectionedit3" id="exemple">Exemple</h2>
+<div class="level2">
+
+<p>
+Je souhaite héberger un mini-site personnel sur mon ordinateur. Après <a href="lamp" class="wikilink1" title="lamp">installation du serveur Web</a>, je mets en place mes pages et rends accessible mon site. À l&#039;heure H, mon adresse IP est 122.122.122.122, et pour accéder à mon site personnel, un internaute doit entrer cette adresse dans un navigateur, ou entrer un nom de domaine (dans mon cas <a href="http://monserveur.com/" class="urlextern" title="http://monserveur.com/"  rel="nofollow">http://monserveur.com/</a>) redirigé vers cette adresse.
+</p>
+
+<p>
+Le problème est que mon fournisseur d&#039;accès change mon adresse IP toutes les 24 h, pour éviter les risques de piratage, et pour des raisons de coûts qui se révèlent élevés. Le nom de domaine, redirigé à l&#039;origine vers l&#039;adresse IP 122.122.122.122, doit maintenant être redirigé vers ma nouvelle adresse IP 123.123.123.123, attribuée par mon <abbr title="Fournisseur d&#039;Accès à Internet">FAI</abbr>.
+</p>
+
+<p>
+C&#039;est exactement ce genre de service que propose les sites de <abbr title="Domain Name System">DNS</abbr> dynamiques (citons No-IP et DynDNS). Je devrai donc installer une petite application qui enverra ma nouvelle adresse IP dès que cette dernière changera. Ainsi, la redirection sera modifiée automatiquement, et je n&#039;aurai plus à changer sans cesse les informations de mon nom de domaine.
+</p>
+
+<p>
+Liste complète de service de ce type <a href="http://dnslookup.me/dynamic-dns/" class="urlextern" title="http://dnslookup.me/dynamic-dns/"  rel="nofollow">ici</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Exemple] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="620-1853" /><input type="submit" value="Modifier" class="button" title="Exemple" /></div></form></div>
+<h2 class="sectionedit4" id="no-ip">No-IP</h2>
+<div class="level2">
+
+<p>
+Nous prendrons dans ce petit tutoriel le site No-IP comme fournisseur de <abbr title="Domain Name System">DNS</abbr> dynamiques.
+</p>
+
+<p>
+Deux solutions s&#039;offrent à vous :
+</p>
+<ul>
+<li class="level1"><div class="li"> Obtenir un nouveau nom de domaine du type <a href="http://monserveur.no-ip.org/" class="urlextern" title="http://monserveur.no-ip.org/"  rel="nofollow">http://monserveur.no-ip.org/</a></div>
+</li>
+<li class="level1"><div class="li"> Garder votre nom de domaine et rediriger celui-ci vers une nouvelle adresse <a href="http://monserveur.no-ip.org/" class="urlextern" title="http://monserveur.no-ip.org/"  rel="nofollow">http://monserveur.no-ip.org/</a></div>
+</li>
+</ul>
+
+<p>
+Dans tous les cas vous devrez créer un nouveau nom de domaine (dans notre cas un « sous-domaine », car ce dernier appartiendra à No-IP), donc inscrivez-vous sur <a href="http://www.no-ip.com/getting_started.php" class="urlextern" title="http://www.no-ip.com/getting_started.php"  rel="nofollow">cette page</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[No-IP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1854-2406" /><input type="submit" value="Modifier" class="button" title="No-IP" /></div></form></div>
+<h3 class="sectionedit5" id="installation_du_client_no-ip">Installation du client No-IP</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteimportant">noip2 n&#039;existe plus dans Ubuntu 12.04 LTS. Utilisez <a href="http://doc.ubuntu-fr.org/ddclient" class="wikilink1" title="ddclient">ddclient</a> à la place. 
+</div></p>
+</p>
+
+<p>
+Procédure officielle : <a href="http://support.no-ip.com/customer/portal/articles/363247-installing-the-linux-dynamic-update-client-on-ubuntu" class="urlextern" title="http://support.no-ip.com/customer/portal/articles/363247-installing-the-linux-dynamic-update-client-on-ubuntu"  rel="nofollow">http://support.no-ip.com/customer/portal/articles/363247-installing-the-linux-dynamic-update-client-on-ubuntu</a>
+</p>
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez le paquet</a> <strong><a href="apt://noip2" class="interwiki iw_apt" title="apt://noip2">noip2</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Installation du client No-IP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2407-2770" /><input type="submit" value="Modifier" class="button" title="Installation du client No-IP" /></div></form></div>
+<h3 class="sectionedit6" id="configuration">Configuration</h3>
+<div class="level3">
+
+<p>
+Lancez la configuration de No-IP avec la commande suivante:
+</p>
+<pre class="code">sudo noip2 -C</pre>
+
+<p>
+Et suivez les instructions suivantes :
+</p>
+<pre class="file">Please enter the login/email string for no-ip.com:
+## Entrez votre nom d&#039;utilisateur (créé lors de l&#039;inscription à No-IP)
+
+Please enter the password for user &#039;your_login&#039;:
+## Entrez votre mot de passe (créé lors de l&#039;inscription à No-IP)
+
+Please enter an update interval:[30]
+## Entrez la fréquence de rafraichissement de l&#039;adresse IP en minutes
+
+Do you wish to run something at successful update?[N]
+## Appuyez sur Entrée</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2771-3360" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h3 class="sectionedit7" id="demarrer_le_client_no-ip">Démarrer le client No-IP</h3>
+<div class="level3">
+
+<p>
+No-IP est maintenant configuré, vous pouvez lancer l&#039;application avec la commande suivante :
+</p>
+<pre class="code">sudo noip2</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Démarrer le client No-IP] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3361-3507" /><input type="submit" value="Modifier" class="button" title="Démarrer le client No-IP" /></div></form></div>
+<h3 class="sectionedit8" id="lancement_au_demarrage">Lancement au démarrage</h3>
+<div class="level3">
+
+<p>
+Pour activer No-IP au démarrage de votre ordinateur, vérifiez que le service no-ip est lancé au démarrage.
+Pour cela, vérifiez qu&#039;un lien existe dans <strong>/etc/rc2.d</strong>.
+</p>
+<pre class="code">cd /etc/rc2.d/</pre>
+
+<p>
+puis
+</p>
+<pre class="code">ls</pre>
+
+<p>
+Si noip2 (<em>S20noip2</em>) apparaît dans la liste, c&#039;est gagné, sinon il suffit de créer un lien du fichier « <code>/etc/init.d/noip2</code> » vers « <code>/etc/rc2.d/S20noip2</code> » en tapant la commande:
+</p>
+<pre class="code">sudo ln -s /etc/init.d/noip2 /etc/rc2.d/S20noip2</pre>
+
+<p>
+Note : L&#039;ancienne version du client s&#039;appelait <code>no-ip</code>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Lancement au démarrage] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3508-4054" /><input type="submit" value="Modifier" class="button" title="Lancement au démarrage" /></div></form></div>
+<h2 class="sectionedit9" id="freedns">FreeDNS</h2>
+<div class="level2">
+
+<p>
+Nous prendrons dans ce petit tutoriel le site <a href="https://freedns.afraid.org/" class="urlextern" title="https://freedns.afraid.org/"  rel="nofollow">https://freedns.afraid.org/</a> comme fournisseur de <abbr title="Domain Name System">DNS</abbr> dynamiques.
+</p>
+
+<p>
+Deux solutions s&#039;offrent à vous :
+</p>
+<ul>
+<li class="level1"><div class="li"> Obtenir un nouveau sous-domaine d&#039;un nom de domaine parmi une <a href="https://freedns.afraid.org/domain/registry/" class="urlextern" title="https://freedns.afraid.org/domain/registry/"  rel="nofollow">liste énorme de domaine</a> du type <a href="http://monserveur.undomain.org/" class="urlextern" title="http://monserveur.undomain.org/"  rel="nofollow">http://monserveur.undomain.org/</a></div>
+</li>
+<li class="level1"><div class="li"> « Offrir » votre nom de domaine et gérert les sous domaine avec FreeDNS, pour vous ou en le partageant avec les autres utilisateurs.</div>
+</li>
+</ul>
+
+<p>
+Dans tous les cas vous devrez créer un nouveau sous-domaine, donc inscrivez-vous sur <a href="https://freedns.afraid.org/menu/" class="urlextern" title="https://freedns.afraid.org/menu/"  rel="nofollow">cette page</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[FreeDNS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4055-4677" /><input type="submit" value="Modifier" class="button" title="FreeDNS" /></div></form></div>
+<h3 class="sectionedit10" id="domaine_dynamique">Domaine dynamique</h3>
+<div class="level3">
+
+<p>
+FreeDNS sait gérer la MAJ de l&#039;IP en analysant l&#039;adresse IP source d&#039;une requête HTTP. Il suffit de se rendre sur <a href="https://freedns.afraid.org/dynamic/" class="urlextern" title="https://freedns.afraid.org/dynamic/"  rel="nofollow">cette page</a> pour trouver en bas un lien <em>Direct <abbr title="Uniform Resource Locator">URL</abbr></em>. L&#039;<abbr title="Uniform Resource Locator">URL</abbr> peut alors être utilisée avec une commande wget qui sera placée dans une tâche planifiée cron.
+</p>
+<pre class="code">wget -q -O- --read-timeout=0.0 --waitretry=5 --tries=400 https://freedns.afraid.org/dynamic/update.php?WDJobXquelquechosequidependdevotreddns=</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Domaine dynamique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4678-5182" /><input type="submit" value="Modifier" class="button" title="Domaine dynamique" /></div></form></div>
+<h2 class="sectionedit11" id="dyndns">DynDNS</h2>
+<div class="level2">
+
+<p>
+<p><div class="notetip">La politique d&#039;utilisation de DynDNS a changé : <del>il est maintenant très contraignant d&#039;utiliser le service gratuitement (connexion à l&#039;interface Web manuellement tous les mois, tous les 15 jours maintenant), et il est préférable d&#039;utiliser un autre service</del> le service fourni est maintenant exclusivement payant. Il vous faudra donc choisir un autre fournisseur si vous souhaitez obtenir un service gratuit.
+</div></p>
+</p>
+
+<p>
+Nous prendrons dans cette partie le site <em>dyndns.org</em> comme fournisseur de <abbr title="Domain Name System">DNS</abbr> dynamiques.
+</p>
+
+<p>
+Deux solutions s&#039;offrent à vous:
+</p>
+<ul>
+<li class="level1"><div class="li"> Obtenir un nouveau nom de domaine du type <strong><a href="http://votredomaine.dyndns.org/" class="urlextern" title="http://votredomaine.dyndns.org/"  rel="nofollow">http://votredomaine.dyndns.org/</a></strong></div>
+</li>
+<li class="level1"><div class="li"> Garder votre nom de domaine et rediriger celui-ci vers une nouvelle adresse <strong><a href="http://votredomaine.dyndns.org/" class="urlextern" title="http://votredomaine.dyndns.org/"  rel="nofollow">http://votredomaine.dyndns.org/</a></strong></div>
+</li>
+<li class="level1"><div class="li"> Dans tous les cas vous devrez créer un nouveau nom de domaine (dans notre cas un « sous-domaine », car ce dernier appartiendra à DynDNS), donc inscrivez-vous sur <a href="http://www.dyndns.org" class="urlextern" title="http://www.dyndns.org"  rel="nofollow">cette page</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[DynDNS] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5183-6176" /><input type="submit" value="Modifier" class="button" title="DynDNS" /></div></form></div>
+<h2 class="sectionedit12" id="installation_de_ddclient">Installation de ddclient</h2>
+<div class="level2">
+
+<p>
+Voir la page spécifique <a href="http://doc.ubuntu-fr.org/ddclient" class="wikilink1" title="ddclient">ddclient</a>
+<p><div class="notetip">Pour d&#039;autre plate-forme: <a href="http://www.dyndns.com/support/clients/" class="urlextern" title="http://www.dyndns.com/support/clients/"  rel="nofollow">http://www.dyndns.com/support/clients/</a>
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Installation de ddclient] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6177-6335" /><input type="submit" value="Modifier" class="button" title="Installation de ddclient" /></div></form></div>
+<h2 class="sectionedit13" id="redirection_propre_d_un_nom_de_domaine">Redirection « propre » d&#039;un nom de domaine</h2>
+<div class="level2">
+
+<p>
+Vous possédez un nom de domaine tout beau tout neuf : <strong>votredomaine.fr</strong>, mais pas d&#039;IP fixe et vous voudriez héberger votre site directement sur votre ordinateur personnel. Tout celà pour des questions financières, ou de commodité : configuration du serveur aux petits oignons, espace Web et SQL limités uniquement par la taille de votre disque dur, fierté d&#039;avoir monté SON serveur personnel, ou tout simplement parce que vous venez de visionner la vidéo <a href="http://www.fdn.fr/Internet-libre-ou-Minitel-2.html" class="urlextern" title="http://www.fdn.fr/Internet-libre-ou-Minitel-2.html"  rel="nofollow">Internet libre ou Minitel 2.0 ?</a> de Benjamin Bayart lors des 8<sup>e</sup> Rencontres Mondiales du Logiciel Libre (RMLL) et que vous vous sentez l&#039;âme d&#039;un libriste convaincu qu&#039;internet doit rester libre.
+</p>
+
+<p>
+Quoi qu&#039;il en soit, lorsque vous tentez de rediriger votre <strong>votredomaine.fr</strong> vers votre site, votre <a href="http://fr.wikipedia.org/wiki/Registrar" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Registrar">registrar</a> ne vous propose que 3 ridicules choix :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>une redirection permanente</strong> : le client internet (ou le bot de référencement) reçoit la directive HTTP/1.1 301 MOVED PERMANENTLY.</div>
+<ul>
+<li class="level2"><div class="li"> Ce qui lui indique que l&#039;adresse demandée <strong>votredomaine.fr</strong> n&#039;existe plus et qu&#039;il faut se rediriger vers l&#039;adresse indiquée, souvent vous y aurez configuré l&#039;adresse d&#039;un sous-domaine du type <strong>votredomaine.dyndns.org</strong>. Ce qui a pour principale conséquence que votre <strong>votredomaine.fr</strong> disparaît de la barre d&#039;adresse du navigateur au profit de <strong>votredomaine.dyndns.org</strong> et ce sera donc ce dernier qui sera référencé par les moteurs de recherche. D&#039;où l&#039;utilité d&#039;avoir acheté un nom de domaine… <img src="http://doc.ubuntu-fr.org/lib/images/smileys/icon_doubt.gif" class="icon" alt=":-/" /></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>une redirection temporaire</strong> : le client internet (ou le bot de référencement) reçoit la directive HTTP/1.1 307 TEMPORARY REDIRECT.</div>
+<ul>
+<li class="level2"><div class="li"> Idem que précédemment, sauf que les moteurs de recherche reviendront de temps en temps vérifier <strong>votredomaine.fr</strong> au cas où ça aurait changé. Accessoirement, ils n&#039;effaceront pas les anciens référencements.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>une redirection par frame</strong> : ici votre site internet est affiché dans un <a href="http://fr.wikipedia.org/wiki/Hypertext_Markup_Language#.C3.89l.C3.A9ments_de_HTML" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Hypertext_Markup_Language#.C3.89l.C3.A9ments_de_HTML">cadre</a> qui prend toute la fenêtre.</div>
+<ul>
+<li class="level2"><div class="li"> Vous gardez <strong>votredomaine.fr</strong> dans la barre d&#039;adresse, mais les moteurs de recherche ne référenceront pas ou alors très mal votre site avec ce genre de bidouillage.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+La solution ici est de créer un CNAME (<em>Canonical NAME</em> ou sous-domaine) dans la gestion de vos <a href="http://fr.wikipedia.org/wiki/Domain_Name_System#Principaux_enregistrements_DNS" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Domain_Name_System#Principaux_enregistrements_DNS">zones DNS</a> qui fournira votre adresse IP dynamique par l&#039;intermédiaire d&#039;un service comme <em>dyndns.org</em>, et de faire une redirection permanente de <strong>votredomaine.fr</strong> vers le CNAME créé.
+</p>
+<pre class="code">www 12345 IN CNAME votredomaine.dyndns.org.</pre>
+
+<p>
+(Si votre registrar vous propose d&#039;éditer votre fichier de zone en mode texte, il ne faut pas oublier le point final !)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Redirection « propre » d'un nom de domaine] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6336-9212" /><input type="submit" value="Modifier" class="button" title="Redirection « propre » d'un nom de domaine" /></div></form></div>
+<h3 class="sectionedit14" id="resume_des_etapes">Résumé des étapes</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Créez une adresse du type <em>dyndns.org</em> que l&#039;on appellera <strong>votredomaine.dyndns.org</strong>.</div>
+</li>
+<li class="level1"><div class="li"> Configurez le démon <em>ddclient</em> pour qu&#039;il mette à jour votre adresse IP automatiquement.</div>
+</li>
+<li class="level1"><div class="li"> Faites une redirection permanente de <strong>votredomaine.fr</strong> vers <strong><a href="http://www.votredomaine.fr" class="urlextern" title="http://www.votredomaine.fr"  rel="nofollow">www.votredomaine.fr</a></strong>.</div>
+</li>
+<li class="level1"><div class="li"> Créez le CNAME <strong>www</strong>, et faites-le pointer vers <strong>votredomaine.dyndns.org</strong>.</div>
+</li>
+<li class="level1"><div class="li"> Patientez.</div>
+</li>
+</ol>
+
+<p>
+La dernière étape est en fait due au système de cache des serveurs <abbr title="Domain Name System">DNS</abbr>. En effet ceux-ci, pour des raisons d&#039;efficacité, gardent en mémoire l&#039;adresse des noms de domaine sur lesquels ils ont fait des recherches récemment. Ce temps de vie (TTL: Time To Live) est en général de 3 heures. C&#039;est donc la durée à attendre pour que tous les serveurs <abbr title="Domain Name System">DNS</abbr> de la planète prennent en compte votre nouveau CNAME dans leur mémoire.
+</p>
+
+<p>
+Inspiré de la page : <a href="http://sebsauvage.net/comprendre/dns/index.html" class="urlextern" title="http://sebsauvage.net/comprendre/dns/index.html"  rel="nofollow">http://sebsauvage.net/comprendre/dns/index.html</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Résumé des étapes] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9213-10130" /><input type="submit" value="Modifier" class="button" title="Résumé des étapes" /></div></form></div>
+<h2 class="sectionedit15" id="acces_en_local_a_votre_site_internet_derriere_un_routeur_ou_une_box">Accès en local à votre site internet derrière un routeur ou une box</h2>
+<div class="level2">
+
+<p>
+Si vous êtes derrière un routeur ou une box, et qu&#039;à partir du réseau local vous tentez d&#039;accéder à votre site en tapant son adresse internet, vous aurez sûrement la désagréable surprise de vous retrouver sur la page de configuration de votre routeur ou de votre box. Ce sont des choses qui arrivent et ce n&#039;est pas grave. C&#039;est juste que votre routeur/box ne vous autorise pas à sortir sur internet, pour revenir l&#039;instant d&#039;après sur votre réseau et accéder ensuite à votre site.
+</p>
+
+<p>
+Pour contrer ce désagrément, il vous suffit d&#039;<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">ouvrir le fichier</a> <strong>/etc/hosts</strong> sur la machine <strong>CLIENTE</strong> (celle qui tente d&#039;accéder au serveur) et d&#039;y ajouter la ligne suivante :
+</p>
+<pre class="code">127.0.0.1	localhost
+192.168.*.*	votredomaine.fr    &lt;---- Ligne à ajouter
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts</pre>
+
+<p>
+Les * sont à remplacer par l&#039;adresse exacte en local de votre serveur. Celui-ci commençant la plupart du temps par 192.168.
+Vous pouvez y ajouter autant de lignes que d&#039;adresses IP ou de noms de domaine dont vous avez besoin.
+Le fichier <a href="http://fr.wikipedia.org/wiki/Hosts" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Hosts">hosts</a> est en fait l&#039;ancêtre des serveurs <abbr title="Domain Name System">DNS</abbr>, lorsqu&#039;internet ne comptait que quelques machines reliées entre elles.
+</p>
+
+<p>
+Deuxième solution<sup><a href="dns_dynamique#fn__1" id="fnt__1" class="fn_top">1)</a></sup> : vous pourrez certainement ajouter une ligne de <abbr title="Domain Name System">DNS</abbr> dans la configuration de la box. Ainsi toutes les machines reliées à la box en réseau local auront accès au serveur. Pratique pour ne pas avoir à modifier tous les <em>hosts</em>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Accès en local à votre site internet derrière un routeur ou une box] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10131-11889" /><input type="submit" value="Modifier" class="button" title="Accès en local à votre site internet derrière un routeur ou une box" /></div></form></div>
+<h2 class="sectionedit16" id="redirection_des_ports_port_forwarding_ou_nat">Redirection des ports (Port Forwarding ou NAT)</h2>
+<div class="level2">
+
+<p>
+Si vous êtes derrière un routeur et que vous voulez utiliser la redirection no-ip ou dyndns, n&#039;oubliez pas de rediriger le port correspondant au service (par exemple le port 80 pour un serveur Web) vers la machine où tourne le serveur du service en question.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://fr.wikipedia.org/wiki/Network_address_translation" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Network_address_translation">En savoir plus sur la redirection de port (NAT)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://fr.wikipedia.org/wiki/Liste_des_ports_logiciels" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Liste_des_ports_logiciels">Liste des numéros de ports correspondants aux services</a></div>
+</li>
+</ul>
+
+<p>
+(au moins trois cents routeurs sont référencés et avec à chaque fois une explication détaillée pour beaucoup de logiciels différents)
+</p>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="https://wiki.ubuntu.com/DynamicDNS" class="urlextern" title="https://wiki.ubuntu.com/DynamicDNS"  rel="nofollow">Traduit</a> et amélioré par <a href="utilisateurs/kmeleon" class="wikilink2" title="utilisateurs:kmeleon" rel="nofollow">Kmeleon</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="dns_dynamique"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1408998979" /><input type="hidden" name="summary" value="[Redirection des ports (Port Forwarding ou NAT)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11890-" /><input type="submit" value="Modifier" class="button" title="Redirection des ports (Port Forwarding ou NAT)" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="dns_dynamique#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+testé sous la <em>neufbox</em></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/2/267f91047ceecb5364612035a1de74ee.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/dns_dynamique?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/dns_dynamique?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/dns_dynamique?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/dns_dynamique?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/dns_dynamique?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

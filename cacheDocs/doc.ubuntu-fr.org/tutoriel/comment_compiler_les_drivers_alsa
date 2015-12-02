@@ -1,0 +1,920 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:comment_compiler_les_drivers_alsa - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2012-04-09T20:35:34+0200"/>
+<meta name="keywords" content="brouillon,audio,materiel,compilation,kernel,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_les_drivers_alsa?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_les_drivers_alsa?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/comment_compiler_les_drivers_alsa"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/comment_compiler_les_drivers_alsa"/>
+<link rel="canonical" href="comment_compiler_les_drivers_alsa"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_compiler_les_drivers_alsa","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="comment_compiler_les_drivers_alsa#main" tabindex="1">Contenu</a> | <a href="comment_compiler_les_drivers_alsa#qsearch__in" tabindex="2">Rechercher</a> | <a href="comment_compiler_les_drivers_alsa#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="comment_compiler_les_drivers_alsa" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="comment_compiler_les_drivers_alsa" >tutoriel:comment_compiler_les_drivers_alsa</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Cette page est en cours de rédaction.<br />
+<a href="../wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_compiler_les_drivers_alsa#pre-requis">Pré-requis</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#recuperation_des_paquets_requis">Récupération des paquets requis</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#recuperation_de_alsa-driver_alsa-lib_et_alsa-utils">Récupération de alsa-driver, alsa-lib et alsa-utils</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_compiler_les_drivers_alsa#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#installation_des_alsa-driver">Installation des alsa-driver</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#installation_des_alsa-lib">Installation des alsa-lib</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#installation_des_alsa-utils">Installation des alsa-utils</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#creation_asoundrc">Création .asoundrc</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#configuration_alsamixer">Configuration alsamixer</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_compiler_les_drivers_alsa#les_programmes_fournis_par_alsa">Les programmes fournis par ALSA</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#pilote">Pilote</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#library">Library</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#utilities">Utilities</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#lib-plugins">Lib-plugins</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#tools">Tools</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#firmware">Firmware</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#pyalsa">PyALSA</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#oss_compat_library">OSS Compat. Library</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_compiler_les_drivers_alsa#astuces">Astuces</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#bug_programmes_oss">Bug programmes oss</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#j_ai_des_erreurs_a_la_compilation">J&#039;ai des erreurs à la compilation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_compiler_les_drivers_alsa#liens">Liens</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#liens_officiels">Liens officiels</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#autres_liens">Autres liens</a></div></li>
+<li class="level2"><div class="li"><a href="comment_compiler_les_drivers_alsa#exemples_de_compilation">Exemples de compilation</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../brouillon" class="wikilink1" title="brouillon" rel="tag">brouillon</a>,
+	<a href="http://doc.ubuntu-fr.org/audio" class="wikilink1" title="audio" rel="tag">audio</a>,
+	<a href="../materiel" class="wikilink1" title="materiel" rel="tag">matériel</a>,
+	<a href="../compilation" class="wikilink1" title="compilation" rel="tag">compilation</a>,
+	<a href="../kernel" class="wikilink1" title="kernel" rel="tag">kernel</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="compiler_les_pilotes_alsa_pas_a_pas">Compiler les pilotes ALSA pas à pas</h1>
+<div class="level1">
+
+<p>
+Le but de ce Wiki est de compiler les pilotes ALSA pour votre carte son de manière la plus simple possible, pour par exemple, pouvoir profiter des dernières mises à jour sans devoir attendre la prochaine version de Ubuntu <img src="../lib/images/smileys/icon_smile2.gif" class="icon" alt="=)" />
+</p>
+
+<p>
+Je me suis inspiré d&#039;<a href="http://www.alsa-project.org/alsa-doc/doc-php/template.php?company=Creative+Labs&amp;card=Sound+Blaster+Live+7.1.&amp;chip=SB0410%2C+P17&amp;module=ca0106" class="urlextern" title="http://www.alsa-project.org/alsa-doc/doc-php/template.php?company=Creative+Labs&amp;card=Sound+Blaster+Live+7.1.&amp;chip=SB0410%2C+P17&amp;module=ca0106"  rel="nofollow">un tutoriel sur le forum</a>. J&#039;ai (bien sûr) traduit et rajouté des sudo là où ça pouvait bugger. Inspirez vous des articles pour vos cartes son si vous avez un problème.
+</p>
+
+<p>
+<strong>Un point important, si vous compilez vous même ces pilotes puis que vous changez de version d&#039;Ubuntu (passage de Edgy Eft à Feisty Fawn par exemple), vous pouvez perdre le son, c&#039;est normal ! Il vous faudra donc recompiler les pilotes.</strong>
+</p>
+
+<p>
+<p><div class="noteimportant">Attention : cette méthode ne marche pas avec le chipset ICH8 de Intel. Le mieux est encore de garder sa version d&#039;ALSA, qui est stable sous Gutsy pour ce chipset.
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Compiler les pilotes ALSA pas à pas] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="73-1136" /><input type="submit" value="Modifier" class="button" title="Compiler les pilotes ALSA pas à pas" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+<strong>Tout lire jusqu&#039;à la fin avant de commencer quoi que ce soit, c&#039;est important.</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> Connaître son modèle de carte son:</div>
+</li>
+</ul>
+<pre class="code">lspci | grep [Aa]udio</pre>
+<ul>
+<li class="level1"><div class="li"> Regarder sur <a href="http://www.alsa-project.org/" class="urlextern" title="http://www.alsa-project.org/"  rel="nofollow">http://www.alsa-project.org/</a> les mises à jour dans le menu de droite,Latest News, pour voir si votre carte son est concernée par une mise à jour. Pour cela, cliquez sur la version du programme. Par exemple pour la dernière version en bêta, 1.0.14rc4, cliquez sur <a href="http://www.alsa-project.org/changes/v1-0-14rc3--v1-0-14rc4.txt" class="urlextern" title="http://www.alsa-project.org/changes/v1-0-14rc3--v1-0-14rc4.txt"  rel="nofollow">ALSA 1.0.14rc4 release</a> (c&#039;est un fichier txt) et faites la recherche de votre carte son ou du pilote.</div>
+</li>
+<li class="level1"><div class="li"> Il peut être aussi judicieux d&#039;aller faire un tour dans la section Bug reporting/feature requests dans le menu au milieu en haut, il faut créer un compte (Signup for a new account), mais après vous pourrez voir l&#039;évolution des pilotes. Cliquez sur View issues, et en bas de la page se trouve un Search pour filtrer les cartes son.</div>
+</li>
+<li class="level1"><div class="li"> Si vous voulez vérifier le développement des pilotes vous pouvez visiter le Official Alsa Wiki for Developers : AlsaWiki à cette adresse dans la section Driver Development :</div>
+</li>
+</ul>
+
+<p>
+<a href="https://bugtrack.alsa-project.org/wiki/wikka.php?wakka=AlsaWiki" class="urlextern" title="https://bugtrack.alsa-project.org/wiki/wikka.php?wakka=AlsaWiki"  rel="nofollow">https://bugtrack.alsa-project.org/wiki/wikka.php?wakka=AlsaWiki</a>
+Si vos pilotes portent la mention TO DO (en français : à faire), patientez, ça va arriver assez vite (mais bon, il faut un peu de temps quand même, je me suis un peu emporté sur le &quot;assez vite&quot; <img src="../lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />).
+</p>
+
+<p>
+<strong>Je vous rappelle que si votre carte son fonctionne bien, il n&#039;est pas obligatoire de mettre à jour (Le mieux est l&#039;ennemi du bien <img src="../lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" />).</strong>
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=2737a9&amp;media=http%3A%2F%2Fdoc.ubuntu-fr.org%2F_media%2Fapplications%2Fstop_hand.png" class="media" title="http://doc.ubuntu-fr.org/_media/applications/stop_hand.png"><img src="http://doc.ubuntu-fr.org/lib/exe/fetch.php?tok=2737a9&amp;media=http%3A%2F%2Fdoc.ubuntu-fr.org%2F_media%2Fapplications%2Fstop_hand.png" class="medialeft" alt="" /></a>
+</p>
+<blockquote><div class="no">
+<strong>Il est recommandé d&#039;installer les pilotes stables (Stable release), les versions bêta peuvent donner des choses étranges, donc à vos risques et périls.</strong></div></blockquote>
+
+<p>
+Se rendre sur  : <a href="http://www.alsa-project.org/" class="urlextern" title="http://www.alsa-project.org/"  rel="nofollow">http://www.alsa-project.org/</a>
+</p>
+
+<p>
+<p><div class="noteimportant">Le site semble avoir changé pour un wiki ?
+</div></p>
+</p>
+
+<p>
+Cliquez sur <em class="u"><em>SoundCards</em></em> dans le menu au milieu en haut et choisissez le <em class="u"><em>manufacturer</em></em> de votre carte son dans le menu déroulant puis cliquer sur <em class="u"><em>go</em></em>.
+Trouvez votre carte et cliquez sur le lien entre parenthèses après <em class="u"><em>Details</em></em> dans la colonne <em class="u"><em>Driver &amp; Docs</em></em>
+(c&#039;est le <em class="u"><strong>nom de ce lien</strong></em> qu&#039;il faudra mettre à la place de :
+sudo ./configure –with-cards=<em class="u"><strong>nom du lien</strong></em> –with-sequencer=yes )
+</p>
+
+<p>
+La page sur laquelle vous arrivez contient la commande du ./configure –with-cards=<em class="u"><strong>nom du lien</strong></em> –with-sequencer=yes pour votre pilote dans la section <strong>quick install</strong>. Reprenez y le nom du pilote sans prendre toute la ligne qui peut planter si vous n&#039;êtes pas en mode root et s&#039;il manque des librairies.
+</p>
+
+<p>
+D&#039;ailleurs le <em class="u"><strong>nom du lien EST le nom du pilote</strong></em>.
+</p>
+
+<p>
+Puis suivez ce qui est écrit… enfin presque <img src="http://doc.ubuntu-fr.org/lib/images/smileys/icon_surprised.gif" class="icon" alt=":-O" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1137-3930" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h3 class="sectionedit3" id="recuperation_des_paquets_requis">Récupération des paquets requis</h3>
+<div class="level3">
+
+<p>
+<a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez</a> les paquets : <a href="apt://libncurses5" class="urlextern" title="apt://libncurses5"  rel="nofollow">libncurses5</a> <a href="apt://libncurses5-dev" class="urlextern" title="apt://libncurses5-dev"  rel="nofollow">libncurses5-dev</a> <a href="apt://gettext" class="urlextern" title="apt://gettext"  rel="nofollow">gettext</a> <a href="apt://patch" class="urlextern" title="apt://patch"  rel="nofollow">patch</a> <a href="apt://xmlto" class="urlextern" title="apt://xmlto"  rel="nofollow">xmlto</a>
+</p>
+
+<p>
+<p><div class="noteimportant">AUCUN NE FONCTIONNE…..
+</div></p>
+</p>
+<pre class="code">sudo apt-get install libncurses5 libncurses5-dev gettext patch xmlto</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Récupération des paquets requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3931-4318" /><input type="submit" value="Modifier" class="button" title="Récupération des paquets requis" /></div></form></div>
+<h3 class="sectionedit4" id="recuperation_de_alsa-driver_alsa-lib_et_alsa-utils">Récupération de alsa-driver, alsa-lib et alsa-utils</h3>
+<div class="level3">
+
+<p>
+Allez sur <a href="http://www.alsa-project.org/main/index.php/Download" class="urlextern" title="http://www.alsa-project.org/main/index.php/Download"  rel="nofollow">la page de téléchargement du site ALSA</a> et choisissez un miroir de téléchargement.
+</p>
+
+<p>
+Prenez :
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>alsa-driver-</strong>* : dans le répertoire <em class="u">driver</em></div>
+</li>
+<li class="level1"><div class="li"> <strong>alsa-lib-</strong>* : dans le répertoire <em class="u">lib</em></div>
+</li>
+<li class="level1"><div class="li"> <strong>alsa-utils-</strong>* : dans le répertoire <em class="u">utils</em></div>
+</li>
+</ul>
+
+<p>
+<em>L&#039;astérisque est à remplacer par le numéro de version choisi. Les 3 fichiers doivent avoir le même numéro de version.</em>
+</p>
+
+<p>
+(On suppose que les fichiers ont été téléchargés sur votre bureau)
+</p>
+
+<p>
+Ensuite créez le répertoire /usr/src/alsa/
+</p>
+<pre class="code">sudo mkdir /usr/src/alsa</pre>
+
+<p>
+et placez-y alsa-driver, alsa-lib et alsa-utils
+</p>
+<pre class="code">sudo mv ~/Bureau/alsa-* /usr/src/alsa/</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Récupération de alsa-driver, alsa-lib et alsa-utils] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4319-5066" /><input type="submit" value="Modifier" class="button" title="Récupération de alsa-driver, alsa-lib et alsa-utils" /></div></form></div>
+<h2 class="sectionedit5" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5067-5092" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit6" id="installation_des_alsa-driver">Installation des alsa-driver</h3>
+<div class="level3">
+
+<p>
+<em class="u">Extraction de l&#039;archive :</em>
+</p>
+<pre class="code">cd /usr/src/alsa/
+sudo tar jxvf alsa-driver-*</pre>
+
+<p>
+<em class="u">Installation :</em>
+</p>
+<pre class="code">cd alsa-driver-*
+sudo ./configure --with-cards=[votre pilote] --with-sequencer=yes --with-card-options=all
+sudo make
+sudo make install</pre>
+
+<p>
+<strong>Remarque 1:</strong> remplacer [votre pilote] par le pilote donné sur la page du site ALSA consacrée à votre carte son ou par <strong>all</strong> pour compiler tous les pilotes.
+Vous pouvez vous aider de 
+</p>
+<pre class="code">cat /proc/asound/cards</pre>
+
+<p>
+et de
+</p>
+<pre class="code">./configure --help</pre>
+
+<p>
+Pour trouver le bon pilote de votre carte.<br/>
+
+</p>
+
+<p>
+<strong>Remarque 2:</strong> si vous employez plusieurs cartes son vous pouvez employer la commande sudo ./configure –with-cards=(votre pilote 1),(votre pilote 2) –with-sequencer=yes
+vous pouvez mettre autant de pilotes que de cartes désirées …
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Installation des alsa-driver] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5093-5904" /><input type="submit" value="Modifier" class="button" title="Installation des alsa-driver" /></div></form></div>
+<h3 class="sectionedit7" id="installation_des_alsa-lib">Installation des alsa-lib</h3>
+<div class="level3">
+
+<p>
+Ensuite, on installe les alsa-lib :
+</p>
+
+<p>
+<em class="u">Extraction :</em>
+</p>
+<pre class="code">cd ..
+sudo tar jxvf alsa-lib-*</pre>
+
+<p>
+<em class="u">Installation :</em>
+</p>
+<pre class="code">cd alsa-lib-*
+sudo ./configure
+sudo make
+sudo make install</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Installation des alsa-lib] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5905-6118" /><input type="submit" value="Modifier" class="button" title="Installation des alsa-lib" /></div></form></div>
+<h3 class="sectionedit8" id="installation_des_alsa-utils">Installation des alsa-utils</h3>
+<div class="level3">
+
+<p>
+Et enfin les alsa-utils :
+</p>
+
+<p>
+<em class="u">Extraction :</em>
+</p>
+<pre class="code">cd ..
+sudo tar jxvf alsa-utils-*</pre>
+
+<p>
+<em class="u">Installation :</em>
+</p>
+<pre class="code">cd alsa-utils-*
+sudo ln -s libpanelw.so.5 /usr/lib/libpanelw.so
+sudo ln -s libformw.so.5 /usr/lib/libformw.so
+sudo ln -s libmenuw.so.5 /usr/lib/libmenuw.so
+sudo ln -s libncursesw.so.5 /lib/libncursesw.so
+sudo ./configure
+sudo make
+sudo make install</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Installation des alsa-utils] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6119-6528" /><input type="submit" value="Modifier" class="button" title="Installation des alsa-utils" /></div></form></div>
+<h3 class="sectionedit9" id="creation_asoundrc">Création .asoundrc</h3>
+<div class="level3">
+
+<p>
+<a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> ~/.asoundrc pour installer le plugin par défaut :
+</p>
+
+<p>
+Et mettez-y
+</p>
+<pre class="file">pcm.!default {
+type hw
+card 0
+}
+
+ctl.!default {
+type hw           
+card 0
+}</pre>
+
+<p>
+Puis redémarrez le PC.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Création .asoundrc] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6529-6801" /><input type="submit" value="Modifier" class="button" title="Création .asoundrc" /></div></form></div>
+<h3 class="sectionedit10" id="configuration_alsamixer">Configuration alsamixer</h3>
+<div class="level3">
+
+<p>
+<strong><em class="u">Puis on configure le alsamixer</em></strong>
+</p>
+
+<p>
+Soit par la console :
+(Les flèches servent à changer le volume et la touche tabulation à passer de lecture à capture.)
+</p>
+<pre class="code">alsamixer</pre>
+
+<p>
+Soit par la version graphique de alsamixer qui se trouver en haut à droite du bureau, l&#039;icône du
+haut parleur, clique droit, préférences, choisissez votre carte son, puis fermez et double cliquez
+sur l&#039;icône du haut parleur.
+Ensuite  menu Edtion → Préférences, cochez les options qui vous intéressent et <em class="u"><strong>montez le son</strong></em>
+dans l&#039;onglet capture
+</p>
+
+<p>
+(<em class="u"><strong>!!! Par défaut, tous les volumes sont à 0 !!!</strong></em>)
+</p>
+
+<p>
+Si vous avez un micro, activez le dans l&#039;onglet capture, colonne microphone et veillez à ce que l&#039;icône
+en bas du volume soit activée.
+Attention tout de même à ne pas cocher la sortie analogique sous peine de ne plus avoir de son (bien sûr si vous n&#039;utilisez pas la sortie analogique !).
+</p>
+
+<p>
+<em class="u">Remarque de fin :</em> Pour ceux qui installent le 5.1 par exemple, ils ne seront pas modifiés sur une mise à jour de ALSA.
+</p>
+
+<p>
+Pour ceux qui veulent du 5.1, ça se passe ici : 
+</p>
+
+<p>
+<a href="http://forum.ubuntu-fr.org/viewtopic.php?id=97221" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=97221"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=97221</a>
+</p>
+
+<p>
+<strong>Au passage, si vous avez un fichier enregistré en 2.1, c&#039;est NORMAL que vous entendiez le son en 2.1 et non en 5.1, même si le 5.1 est activé. Pour entendre  en 5.1, on prend un fichier enregistré en 5.1.</strong>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Configuration alsamixer] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6802-8176" /><input type="submit" value="Modifier" class="button" title="Configuration alsamixer" /></div></form></div>
+<h2 class="sectionedit11" id="les_programmes_fournis_par_alsa">Les programmes fournis par ALSA</h2>
+<div class="level2">
+
+<p>
+Vous vous êtes sûrement rendu compte qu&#039;on pouvait télécharger d&#039;autres programmes que alsa-driver, alsa-lib et alsa-utils (Mais si, ces programmes étranges à droite dès qu&#039;on tombe sur le site principal de <a href="http://www.alsa-project.org/" class="urlextern" title="http://www.alsa-project.org/"  rel="nofollow">ALSA</a>, dans le menu de droite, intitulé <strong>Latest Software Releases</strong>). 
+</p>
+
+<p>
+Mais quels sont-ils et à quoi servent-ils ?
+</p>
+
+<p>
+Je rappelle qu&#039;il est préférable d&#039;utiliser les versions stables de ces fichiers (<strong>Stable release</strong>).
+</p>
+
+<p>
+Certains se trouvent dans Synaptic, mais vous y trouverez que les versions stables. 
+</p>
+
+<p>
+Pour pouvez retrouver ces informations dans les fichiers .tar.bz2 (soit dans les répertoires Doc, soit dans les fichiers readme (en français : lisez moi).
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Les programmes fournis par ALSA] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8177-8937" /><input type="submit" value="Modifier" class="button" title="Les programmes fournis par ALSA" /></div></form></div>
+<h3 class="sectionedit12" id="pilote">Pilote</h3>
+<div class="level3">
+
+<p>
+drivers Alsa recompilés, via un deb <a href="http://people.canonical.com/~diwic/temp/alsa-hda-realtek-ignore-sku-dkms_1.0.23.diwic_all.deb" class="urlextern" title="http://people.canonical.com/~diwic/temp/alsa-hda-realtek-ignore-sku-dkms_1.0.23.diwic_all.deb"  rel="nofollow">http://people.canonical.com/~diwic/temp/alsa-hda-realtek-ignore-sku-dkms_1.0.23.diwic_all.deb</a>
+</p>
+
+<p>
+Soit <a href="ftp://ftp.alsa-project.org/pub/driver/" class="urlextern" title="ftp://ftp.alsa-project.org/pub/driver/"  rel="nofollow">alsa-driver</a>
+</p>
+
+<p>
+Fichiers de base <strong>inévitables</strong> : ce sont les pilotes !!!
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Pilote] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8938-9212" /><input type="submit" value="Modifier" class="button" title="Pilote" /></div></form></div>
+<h3 class="sectionedit13" id="library">Library</h3>
+<div class="level3">
+
+<p>
+Soit <a href="ftp://ftp.alsa-project.org/pub/lib/" class="urlextern" title="ftp://ftp.alsa-project.org/pub/lib/"  rel="nofollow">alsa-lib</a>
+</p>
+
+<p>
+Autres fichiers de base, tout aussi <strong>inévitables</strong>, vous n&#039;y couperez pas ! <img src="../lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Library] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9213-9373" /><input type="submit" value="Modifier" class="button" title="Library" /></div></form></div>
+<h3 class="sectionedit14" id="utilities">Utilities</h3>
+<div class="level3">
+
+<p>
+Soit <a href="ftp://ftp.alsa-project.org/pub/utils/" class="urlextern" title="ftp://ftp.alsa-project.org/pub/utils/"  rel="nofollow">alsa-utils</a>
+</p>
+
+<p>
+Ce paquet contient les utilitaires pour ALSA. Il peut être compilé avec les pilotes ALSA et les librairies C ALSA. <strong>Indispensable</strong> pour contrôler le son !
+</p>
+
+<p>
+Vous y trouverez :
+</p>
+<ul>
+<li class="level1"><div class="li">alsaconf	        - Le script de configuration des pilotes ALSA</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">alsactl		- L&#039;utilitaire de configuration des cartes son</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">aplay/arecord	- L&#039;utilitaire pour jouer et enregistrer les fichiers .wav,.voc,.au files</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">amixer		- Le contrôleur de son en ligne de commandes par la console</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">alsamixer	        - Le contrôleur de son écrit avec les librairies ncurses</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">amidi		- L&#039;utilitaire pour envoyer et recevoir les sysex dumps ou d&#039;autres données <abbr title="Musical Instrument Digital Interface">MIDI</abbr></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">iecset		- L&#039;utilitaire pour voir le status de IEC958</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Utilities] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9374-10166" /><input type="submit" value="Modifier" class="button" title="Utilities" /></div></form></div>
+<h3 class="sectionedit15" id="lib-plugins">Lib-plugins</h3>
+<div class="level3">
+
+<p>
+Soit <a href="ftp://ftp.alsa-project.org/pub/plugins/" class="urlextern" title="ftp://ftp.alsa-project.org/pub/plugins/"  rel="nofollow">alsa-plugins</a>
+</p>
+
+<p>
+Ceci vous donne accès à :
+</p>
+<ul>
+<li class="level1"><div class="li"> A52 : Plugin de sortie A52, pour convertir le format linéaire S16 vers le format A52 et envoie le signal vers la sortie SPDIF. Il nécessite libavcodec pour encoder l&#039;audio.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Lavcrate : Plugin pour convertir le taux d&#039;échantillonnage, il utilise libavcodec. </div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Jack : Plugin JACK ←→ ALSA <abbr title="Pulse-Code Modulation">PCM</abbr>. Il convertit L&#039;<abbr title="Application Programming Interface">API</abbr> ALSA par dessus l&#039;<abbr title="Application Programming Interface">API</abbr> <a href="http://doc.ubuntu-fr.org/jackd" class="urlextern" title="http://doc.ubuntu-fr.org/jackd"  rel="nofollow">JACK</a>. Ce qui permet de faire fonctionner les application native ALSA avec jackd en lecture et enregistrement.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Maemo : Ce plugin convertit l&#039;<abbr title="Application Programming Interface">API</abbr> ALSA en protocole <abbr title="Pulse-Code Modulation">PCM</abbr>. Tout comme <a href="http://doc.ubuntu-fr.org/jackd" class="urlextern" title="http://doc.ubuntu-fr.org/jackd"  rel="nofollow">JACK</a>, il rend ALSA compatible avec le DSP <abbr title="Pulse-Code Modulation">PCM</abbr>.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Pcm-oss : Ce plugin rend compatible l&#039;<abbr title="Application Programming Interface">API</abbr> ALSA avec l&#039;<abbr title="Application Programming Interface">API</abbr> <abbr title="Open Source Software">OSS</abbr>. Ce qui permet de faire fonctionner les application native ALSA avec <abbr title="Open Source Software">OSS</abbr> en lecture.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Pulse : Ce plugin permet les programmes utilisant ALSA d&#039;accéder au démon PulseAudio en lecture et écriture.  Il contient un plugin pour <abbr title="Pulse-Code Modulation">PCM</abbr> et un plugin de contrôleur de son </div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Samplerate : Utilisé pour convertir le taux d&#039;échantillonnage avec Libsamplerate</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Speexrate : Utilisé pour convertir le taux d&#039;échantillonnage avec Speex Resampler</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Upmix : Plugin qui permet de mixer un son de quatre voies en son de 6 voies</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Vdownmix : Plugin qui permet de mixer un son de 4-6 voies vers un son de 2 voies en stéréo</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Lib-plugins] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10167-11635" /><input type="submit" value="Modifier" class="button" title="Lib-plugins" /></div></form></div>
+<h3 class="sectionedit16" id="tools">Tools</h3>
+<div class="level3">
+
+<p>
+Soit <a href="ftp://ftp.alsa-project.org/pub/tools/" class="urlextern" title="ftp://ftp.alsa-project.org/pub/tools/"  rel="nofollow">alsa-tools</a>
+</p>
+
+<p>
+Cette section semble réservée aux anciennes cartes sons, et toujours mises à jour.
+</p>
+
+<p>
+Ici vous trouverez :
+</p>
+<ul>
+<li class="level1"><div class="li"> Ac3dec : Un décodeur gratuit de flux AC-3</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> As10k1 : C&#039;est l&#039;assembleur pour les cartes à base de emu10k1 DSP présents dans les cartes son creative SB live, PCI 512, et emu APS</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Echomixer : Emixer est l&#039;équivalent Linux de Echoaudio, pour gérer les cartes son Echoaudio.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Envy24control : Outil de contrôle pour les cartes son à base de Envy24 (ice1712)</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Hdspmloader : Loader pour le firmeware pour les cartes sont à base de RME Hammerfall DSP</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Hdspmixer : HDSPMixer est l&#039;équivalent Linux des applications Totalmix de RME, pour gérer les cartes son RME Hammerfall DSP</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Ld10k1 : Difficile d&#039;utilisation, c&#039;est le chargeur de patchs EMU10K1 (EMU10K2) pour ALSA. Nécessite au moins la version 1.0.7rc1 des alsa-lib <strong>ET</strong> des pilotes compilés dans le kernel)</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Mixartloader : Firmeware pour les cartes son à base de Digigram miXart</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Pcxhrloader : Firmeware pour les cartes son à base de Digigram pcxhr</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Qlo10k1 : Toujours en développement, plusieurs types d&#039;interfaces graphiques pour ld10k1. Nécessite QT pour être compilé.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Rmedigicontrol : Outil de contrôle pour les cartes son Digi32 et RME Digi96</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Sb16_csp : Nécessite les alsa-driver. Programme de contrôle pour les SB16</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Seq : Ceci est sbiload, un vieux chargeur d&#039;instruments OPL2/3 FM. Nécessite le module snd-synth-opl3</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Sscape_tl : Un outil <abbr title="Musical Instrument Digital Interface">MIDI</abbr> ALSA sscape ctl</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Us428control : Outil de contrôle pour les Tascam 428</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Usx2yloader : Firmeware pour la carte son <abbr title="Universal Serial Bus">USB</abbr> Tascam USX2Y </div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Vxloader : Outil de contrôle pour les cartes son Digigram VX</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Tools] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11636-13426" /><input type="submit" value="Modifier" class="button" title="Tools" /></div></form></div>
+<h3 class="sectionedit17" id="firmware">Firmware</h3>
+<div class="level3">
+
+<p>
+Soit <a href="ftp://ftp.alsa-project.org/pub/firmware/" class="urlextern" title="ftp://ftp.alsa-project.org/pub/firmware/"  rel="nofollow">alsa-firmware</a>
+</p>
+
+<p>
+Le fichier de firmwares vous sont fournis… (en correspondance avec les pilotes fournis dans alsa-tools).
+</p>
+
+<p>
+Donc pas grand chose à dire à part que si vous installez ces fichiers, vous aurez besoins des alsa-tools.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Firmware] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13427-13729" /><input type="submit" value="Modifier" class="button" title="Firmware" /></div></form></div>
+<h3 class="sectionedit18" id="pyalsa">PyALSA</h3>
+<div class="level3">
+
+<p>
+Soit <a href="ftp://ftp.alsa-project.org/pub/pyalsa/" class="urlextern" title="ftp://ftp.alsa-project.org/pub/pyalsa/"  rel="nofollow">pyalsa</a>
+</p>
+
+<p>
+PyALSA (Py pour Python, donc programmé en Python) est un pack d&#039;interfaces graphiques tout nouveau pour les différents modules de ALSA. Encore en bêta, la première version finale n&#039;est pas loin.
+</p>
+
+<p>
+Etrangement (ou normalement vu qu&#039;il est toujours en bêta ?), très peu d&#039;informations dessus.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[PyALSA] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="13730-14101" /><input type="submit" value="Modifier" class="button" title="PyALSA" /></div></form></div>
+<h3 class="sectionedit19" id="oss_compat_library">OSS Compat. Library</h3>
+<div class="level3">
+
+<p>
+Soit <a href="ftp://ftp.alsa-project.org/pub/oss-lib/" class="urlextern" title="ftp://ftp.alsa-project.org/pub/oss-lib/"  rel="nofollow">alsa-oss</a>
+</p>
+
+<p>
+Ce sont les bons vieux alsa-oss ! (Open Sound System)
+Ils se trouvent dans synaptic. Ils servent à pouvoir lancer un programme qui utilise alsa avec un programme utilisant oss, et avoir du son dans les deux à la fois. 
+</p>
+
+<p>
+Si en théorie ça fonctionne, en pratique ce n&#039;est pas toujours le cas, mais c&#039;est le dernier recours pour ce problème de cohabitation alsa-oss.
+</p>
+
+<p>
+Voué à disparaître avec oss ! (dans longtemps quand même)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[OSS Compat. Library] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14102-14622" /><input type="submit" value="Modifier" class="button" title="OSS Compat. Library" /></div></form></div>
+<h2 class="sectionedit20" id="astuces">Astuces</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Astuces] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14623-14641" /><input type="submit" value="Modifier" class="button" title="Astuces" /></div></form></div>
+<h3 class="sectionedit21" id="bug_programmes_oss">Bug programmes oss</h3>
+<div class="level3">
+
+<p>
+Sur certains programmes on ne pourra tout de même pas entendre plusieurs sons quand ils sont lancés.
+Mais il existe une alternative, mais qui ne fonctionnera pas pour tous les programme dû à la vétusté du
+procédé.
+Il suffit d&#039;installer le paquet synaptic alsa-oss.
+Ensuite, il suffit de lancer en mode console (ou de faire un petit lien sur le bureau : clique droit sur le bureau, créer un lanceur… puis mettre un nom et la commande qui vous intéresse) :
+</p>
+<pre class="code">aoss nom-du-programme</pre>
+
+<p>
+J&#039;ai essayé la méthode avec Firefox, ça fonctionne, mais avec d&#039;autres programmes  ce n&#039;est pas dit. A vous d&#039;essayer !
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Bug programmes oss] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="14642-15302" /><input type="submit" value="Modifier" class="button" title="Bug programmes oss" /></div></form></div>
+<h3 class="sectionedit22" id="j_ai_des_erreurs_a_la_compilation">J&#039;ai des erreurs à la compilation</h3>
+<div class="level3">
+
+<p>
+Si jamais vous avez une erreur sur le <strong>./configure</strong>, vérifiez d&#039;avoir installé les librairies curses. Ensuite regardez les lignes comportant <strong>no</strong>, vous avez sûrement oublié quelque chose, et ça sera écrit dedans.
+</p>
+
+<p>
+Si l&#039;erreur se fait sur le <strong>make</strong> sans avoir d&#039;erreur sur le ./configure, c&#039;est plus problématique. Veuillez laisser un message sur le <a href="https://bugtrack.alsa-project.org/alsa-bug/my_view_page.php" class="urlextern" title="https://bugtrack.alsa-project.org/alsa-bug/my_view_page.php"  rel="nofollow">ALSA bugtracking system</a>, ça permettra à tout le monde de profiter et vous aurez une réponse rapide des gens les plus compétents pour les problèmes sur les pilotes ALSA.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/icons/structure-small.png?id=tutoriel%3Acomment_compiler_les_drivers_alsa" class="media" title="icons:structure-small.png"><img src="http://doc.ubuntu-fr.org/_media/icons/structure-small.png" class="medialeft" alt="" /></a>
+</p>
+<blockquote><div class="no">
+Une chose importante, si vous avez un problème sur une compilation, ça ne sert à rien de forcer, si le ./configure plante, le make et make install planteront forcément. Si le make plante, le make install plantera aussi.</div></blockquote>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[J'ai des erreurs à la compilation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="15303-16209" /><input type="submit" value="Modifier" class="button" title="J'ai des erreurs à la compilation" /></div></form></div>
+<h2 class="sectionedit23" id="liens">Liens</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="16210-16227" /><input type="submit" value="Modifier" class="button" title="Liens" /></div></form></div>
+<h3 class="sectionedit24" id="liens_officiels">Liens officiels</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://sourceforge.net/projects/alsa" class="urlextern" title="http://sourceforge.net/projects/alsa"  rel="nofollow">Le SourceForge.net ALSA</a> (en) : Encore un site pour vous aider.</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.alsa-project.org/" class="urlextern" title="http://www.alsa-project.org/"  rel="nofollow">Le site ALSA</a> (en) : Le site général.</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://bugtrack.alsa-project.org/alsa-bug/my_view_page.php" class="urlextern" title="https://bugtrack.alsa-project.org/alsa-bug/my_view_page.php"  rel="nofollow">Le ALSA bugtracking system</a> (en) : Pour demander de l&#039;aide.</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://bugtrack.alsa-project.org/wiki/wikka.php?wakka=AlsaWiki" class="urlextern" title="https://bugtrack.alsa-project.org/wiki/wikka.php?wakka=AlsaWiki"  rel="nofollow">Le wiki ALSA</a> (en) : contient beaucoup d&#039;informations détaillées sur l&#039;état d&#039;avancement des pilotes.</div>
+</li>
+</ul>
+
+<p>
+NE MARCHE PAS
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Liens officiels] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="16228-16754" /><input type="submit" value="Modifier" class="button" title="Liens officiels" /></div></form></div>
+<h3 class="sectionedit25" id="autres_liens">Autres liens</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"><a href="http://www.linuxmao.org/tikiwiki/tiki-index.php?page=ALSA" class="urlextern" title="http://www.linuxmao.org/tikiwiki/tiki-index.php?page=ALSA"  rel="nofollow">MAO for Linux : un peu plus d&#039;explications sur alsa</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Autres liens] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="16755-16895" /><input type="submit" value="Modifier" class="button" title="Autres liens" /></div></form></div>
+<h3 class="sectionedit26" id="exemples_de_compilation">Exemples de compilation</h3>
+<div class="level3">
+
+<p>
+Vous êtes libres de rajouter des exemples à mettre après le ./configure pour vos cartes son, si elles sont exotiques ou mal documentées.
+</p>
+
+<p>
+<a href="http://forum.ubuntu-fr.org/viewtopic.php?id=100285" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=100285"  rel="nofollow">Exemple pour la sound blaster live 24! (pilotes ca0106)</a>
+</p>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../utilisateurs/acp" class="wikilink1" title="utilisateurs:acp">Acp</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="comment_compiler_les_drivers_alsa"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1333996534" /><input type="hidden" name="summary" value="[Exemples de compilation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="16896-" /><input type="submit" value="Modifier" class="button" title="Exemples de compilation" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/0/0c4fcab2995b7cff9eeca71dd71554db.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_les_drivers_alsa?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_les_drivers_alsa?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_les_drivers_alsa?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_les_drivers_alsa?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_compiler_les_drivers_alsa?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

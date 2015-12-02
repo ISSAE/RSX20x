@@ -1,0 +1,742 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>pacemaker - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-10-15T13:08:28+0200"/>
+<meta name="keywords" content="lucid,reseau,haute disponibilite"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/pacemaker?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/pacemaker?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/pacemaker"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/pacemaker"/>
+<link rel="canonical" href="pacemaker"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"pacemaker","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="pacemaker#main" tabindex="1">Contenu</a> | <a href="pacemaker#qsearch__in" tabindex="2">Rechercher</a> | <a href="pacemaker#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="pacemaker" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="pacemaker" >pacemaker</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, les informations qu'elle contient  n'ont pas été vérifiées depuis <a href="lucid">Ubuntu 10.04 LTS.</a><br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="pacemaker#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="pacemaker#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="pacemaker#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="pacemaker#configuration_des_machines">Configuration des machines</a></div></li>
+<li class="level2"><div class="li"><a href="pacemaker#configuration_de_la_partie_executive_du_cluster">Configuration de la partie exécutive du cluster</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="pacemaker#commandes_de_gestion_du_cluster">Commandes de gestion du cluster</a></div></li>
+<li class="level1"><div class="li"><a href="pacemaker#configuration_de_clusters">Configuration de clusters</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="pacemaker#cluster_de_deux_machines">Cluster de deux machines</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="pacemaker#supervision_du_cluster">Supervision du cluster</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="pacemaker#trap_snmp">Trap snmp</a></div></li>
+<li class="level2"><div class="li"><a href="pacemaker#supervision_avec_l_agent_nrpe">Supervision avec l&#039;agent nrpe</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="pacemaker#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="pacemaker#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="haute_disponibilite" class="wikilink1" title="haute_disponibilite" rel="tag">haute disponibilité</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="pacemaker">Pacemaker</h1>
+<div class="level1">
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/pacemaker_lucid_00.png?id=pacemaker" class="media" title="pacemaker_lucid_00.png"><img src="http://doc.ubuntu-fr.org/_media/pacemaker_lucid_00.png?w=518&amp;h=127&amp;tok=efa5bd" class="media" alt="" width="518" height="127" /></a>
+</p>
+
+<p>
+Pacemaker est un gestionnaire de cluster haute disponibilité. Il est chargé de démarrer, arrêter et superviser les ressources du cluster. Ce projet est supporté par les entreprises Red Hat, Novel et Linbit. Un cluster est un groupe de deux ou plusieurs machines.
+</p>
+
+<p>
+Pour des services vraiment délicats comme un serveur web il peut être intéressant de configurer deux serveurs webs sur deux machines physiques. Si l&#039;un des deux serveurs tombe en panne pacemaker se chargera de remplacer le serveur défaillant par le deuxième. L&#039;utilisateur n&#039;y aura vu que du feu et ne se sera jamais rendu compte que l&#039;un des serveurs était tombé en panne.
+</p>
+
+<p>
+<a href="http://doc.ubuntu-fr.org/_detail/pacemaker_lucid_01.png?id=pacemaker" class="media" title="pacemaker_lucid_01.png"><img src="http://doc.ubuntu-fr.org/_media/pacemaker_lucid_01.png?w=400&amp;tok=0a67b9" class="media" alt="" width="400" /></a>
+</p>
+
+<p>
+Comme l&#039;on peut le voir sur le schéma, Pacemaker s&#039;appuie sur les logiciels <em><a href="http://doc.ubuntu-fr.org/heartbeat" class="wikilink1" title="heartbeat">heartbeat</a></em> ou <em><a href="http://doc.ubuntu-fr.org/corosync" class="wikilink2" title="corosync" rel="nofollow">corosync</a></em> pour contrôler les machines. Cependant pacemaker utilise <em>corosync</em> par défaut sous Ubuntu.
+</p>
+
+<p>
+<p><div class="noteclassic">
+Une interface java développée par la société <a href="http://www.linbit.com/en/" class="urlextern" title="http://www.linbit.com/en/"  rel="nofollow">Linbit</a> permet de configurer le cluster via une interface graphique.
+<br/>
+<br/>
+
+Cette interface permet à partir d&#039;un <a href="ssh" class="wikilink1" title="ssh">accès ssh</a> d&#039;installer et de configurer le logiciel pacemaker et les logiciels sur lesquels pacemaker se base sur les serveurs à distance.
+<br/>
+<br/>
+
+Cette interface est initialement prévue pour mettre en place la technologie de raid réseau <a href="http://doc.ubuntu-fr.org/drbd" class="wikilink1" title="drbd">drbd</a>. Bien entendu dans le cas présent, nous n&#039;utiliserons pas cette fonctionnalité.
+<br/>
+<br/>
+
+Il est tout de même conseillé de bien comprendre la configuration en ligne de commande avant d&#039;utiliser cet outil.
+<br/>
+<br/>
+
+Téléchargez l&#039;applet java <a href="http://oss.linbit.com/drbd-mc/" class="urlextern" title="http://oss.linbit.com/drbd-mc/"  rel="nofollow">ici</a>.
+
+</div></p>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Pacemaker] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="50-1761" /><input type="submit" value="Modifier" class="button" title="Pacemaker" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Avoir au minimum deux postes sous Ubuntu 10.04 LTS (sinon il n&#039;y a pas vraiment d&#039;intérêt à faire un cluster)</div>
+</li>
+<li class="level1"><div class="li"> Savoir ce qu&#039;est la notion de <a href="haute_disponibilite" class="wikilink1" title="haute_disponibilite">haute disponibilité</a></div>
+</li>
+<li class="level1"><div class="li"> Avoir des rudiments de connaissances concernant les réseaux</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1762-2028" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+Pour installer ce logiciel, il suffit d&#039;<a href="tutoriel/comment_installer_un_paquet#paquet_present_dans_les_depots" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://pacemaker" class="urlextern" title="apt://pacemaker"  rel="nofollow">pacemaker</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2029-2223" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Dans cet exemple nous mettrons en place un cluster de deux machines. Avant de passer à la configuration du cluster, il est nécessaire de faire quelques modifications pour que les deux machines puissent communiquer entre elles.
+</p>
+
+<p>
+Voici un tableau de la configuration qui sera utilisée par la suite :
+</p>
+<div class="table sectionedit5"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<td class="col0 leftalign">           </td><th class="col1"> Nom de poste </th><th class="col2 leftalign"> Adresse IP       </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<th class="col0 leftalign"> pc 1      </th><td class="col1 leftalign"> machine1     </td><td class="col2 leftalign"> 192.168.1.101    </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0 leftalign"> pc 2      </th><td class="col1 leftalign"> machine2     </td><td class="col2 leftalign"> 192.168.1.102    </td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Configuration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2224-2697" /><input type="submit" value="Modifier" class="button" title="Configuration" /></div></form></div>
+<h3 class="sectionedit6" id="configuration_des_machines">Configuration des machines</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="modification_du_nom_des_machines">Modification du nom des machines</h4>
+<div class="level4">
+
+<p>
+Donner des noms différents à chacune des machines permettra d&#039;avoir une configuration plus lisible dans le futur. (Ne pas utiliser de majuscules pour éviter un bug avec l&#039;interface java)
+</p>
+<pre class="code">sudo hostname &lt;nom de machine&gt;</pre>
+
+<p>
+<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Éditez le fichier</a> <strong><code>/etc/hostname</code></strong> et modifiez le nom de la machine.
+</p>
+
+<p>
+Fermez votre session et reconnectez vous
+</p>
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditez le fichier de configuration</a> <strong><code>/etc/hosts</code></strong>
+</p>
+
+<p>
+Vous devriez voir un contenu semblable à celui-ci (le nom de machine dépend bien sûr de votre configuration) :
+</p>
+<pre class="file">  127.0.0.1       localhost
+  127.0.1.1       ubuntu1</pre>
+
+<p>
+Rajoutez ceci:
+</p>
+<pre class="file">  127.0.0.1     &lt;nom du poste&gt;
+  192.168.1.101 machine1
+  192.168.1.102 machine2</pre>
+
+</div>
+
+<h4 id="configuration_des_adresses_ip_des_interfaces">Configuration des adresses IP des interfaces</h4>
+<div class="level4">
+
+<p>
+Fixez les adresses IP des machines en suivant cette <a href="tutoriel/comment_configurer_son_reseau_local#fixer_l_adresse_ip_de_nos_machines" class="wikilink1" title="tutoriel:comment_configurer_son_reseau_local">procédure</a>. 
+</p>
+
+<p>
+Pensez à configurer les serveurs <abbr title="Domain Name System">DNS</abbr>.
+</p>
+
+<p>
+<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Éditez le fichier</a> <code><strong>/etc/resolv.conf</strong></code> et ajouter ceci:
+</p>
+<pre class="file">  nameserver &lt;adresse ip serveur dns&gt;</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Configuration des machines] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2698-3960" /><input type="submit" value="Modifier" class="button" title="Configuration des machines" /></div></form></div>
+<h3 class="sectionedit7" id="configuration_de_la_partie_executive_du_cluster">Configuration de la partie exécutive du cluster</h3>
+<div class="level3">
+
+<p>
+Comme énoncé précédemment, pacemaker s&#039;appuie sur d&#039;autres logiciels pour agir et surveiller les postes (heartbeat ou corosync). Dans cette section, nous allons permettre aux deux postes de s&#039;envoyer des informations soit par corosync soit par heartbeat.
+</p>
+
+</div>
+
+<h4 id="configuration_de_corosync">Configuration de corosync</h4>
+<div class="level4">
+
+<p>
+Création d&#039;une clé d&#039;authentification, cette commande créera le fichier <strong><code>/etc/corosync/authkey</code></strong>.
+</p>
+<pre class="code">corosync-keygen</pre>
+
+<p>
+<p><div class="notetip">
+Si vous êtes connecté au poste à distance. Ouvrez une autre session et téléchargez un fichier pour créer des entrées/sorties au lieu de taper au clavier.
+
+</div></p>
+</p>
+
+<p>
+Envoi de ce fichier et modification des droits de ce fichier sur l&#039;autre poste :
+</p>
+<pre class="code">sudo scp /etc/corosync/authkey nom_utilisateur@machine2:</pre>
+
+<p>
+Sur la machine 2
+</p>
+<pre class="code">sudo mv ~/authkey /etc/corosync/authkey
+sudo chown root:root /etc/corosync/authkey
+sudo chmod 400 /etc/corosync/authkey</pre>
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Editez le fichier de configuration</a> <strong><code>/etc/corosync/corosync.conf</code></strong>.
+</p>
+
+<p>
+La partie du fichier à modifier est la partie concernant la configuration de l&#039;interface.
+</p>
+<pre class="file">  interface {
+                  # The following values need to be set based on your environment 
+                  ringnumber: 0
+                  bindnetaddr: 127.0.0.1
+                  mcastaddr: 226.94.1.1
+                  mcastport: 5405
+          }</pre>
+<div class="table sectionedit8"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Options     </th><th class="col1 leftalign"> Description                                                                            </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> ringnumber  </td><td class="col1 leftalign"> Numéro de l&#039;interface, laissez zéro si vous en déclarez une seule                      </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> bindnetaddr </td><td class="col1"> Correspond au réseau configuré sur la carte allant servir pour les tests entre membres </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> mcastaddr   </td><td class="col1 leftalign"> Adresse de multicast utilisée pour les tests                                           </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> mcast port  </td><td class="col1 leftalign"> Port multicast utilisé                                                                 </td>
+	</tr>
+</table></div>
+
+</div>
+
+<h4 id="activer_le_demon_corosync">Activer le démon corosync</h4>
+<div class="level4">
+
+<p>
+<a href="tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Editez le fichier de configuration</a> <strong><code>/etc/default/corosync</code></strong>
+</p>
+
+<p>
+Faites la modification suivante :
+</p>
+<pre class="file">  START=yes</pre>
+
+<p>
+Lancement des deux démons sur les deux membres : 
+</p>
+<pre class="code">/etc/init.d/corosync start</pre>
+
+<p>
+Affichage de l&#039;état du cluster :
+</p>
+<pre class="code">sudo crm_mon --one-shot</pre>
+
+<p>
+Le résultat de la commande devrait ressembler à cela :
+</p>
+<pre class="file">  Last updated: Mon May  3 10:08:55 2010
+  Stack: openais
+  Current DC: Ha-proxy-master - partition with quorum
+  Version: 1.0.8-2c98138c2f070fcb6ddeab1084154cffbf44ba75
+  2 Nodes configured, 2 expected votes
+  0 Resources configured.
+  ============
+  Online: [ machine1 machine2 ]</pre>
+
+</div>
+
+<h4 id="configuration_avancee_de_corosync">Configuration avancée de corosync</h4>
+<div class="level4">
+
+<p>
+Il peut être judicieux de configurer plusieurs interfaces redondantes pour le lien entre les deux postes. 
+</p>
+
+<p>
+Pour cela il suffit de déclarer une deuxième interface avec le paramètre <strong><em>ringnumber</em></strong> incrémenté. Pensez à changer l&#039;adresse de multicast et le port de destination<sup><a href="pacemaker#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.
+</p>
+<pre class="file">  interface {
+          ringnumber:  0
+		bindnetaddr: 192.168.0.0
+		mcastaddr:   226.94.1.0
+		mcastport:   5400
+	}
+	interface {
+		ringnumber:  1
+		bindnetaddr: 192.168.1.0
+		mcastaddr:   226.94.1.1
+		mcastport:   5401
+	}</pre>
+
+<p>
+Modifiez le paramètre <em><strong>rrd_mode</strong></em> :
+</p>
+<pre class="file">  rrd_mode: active</pre>
+<div class="table sectionedit9"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Options </th><th class="col1 leftalign"> Description                                                                      </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> active  </td><td class="col1 leftalign"> Les deux interfaces sont utilisées                                                </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> passive </td><td class="col1"> La deuxième est utilisée seulement dans le cas où la première ne fonctionne plus </td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Configuration de la partie exécutive du cluster] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3961-7632" /><input type="submit" value="Modifier" class="button" title="Configuration de la partie exécutive du cluster" /></div></form></div>
+<h2 class="sectionedit10" id="commandes_de_gestion_du_cluster">Commandes de gestion du cluster</h2>
+<div class="level2">
+
+</div>
+
+<h4 id="informations_sur_l_etat_du_cluster">Informations sur l&#039;état du cluster</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Affichez l&#039;état du cluster :<pre class="code">crm_mon</pre>
+</div>
+</li>
+</ul>
+<div class="table sectionedit11"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Options        </th><th class="col1 leftalign"> Explications                                                                   </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> -f             </td><td class="col1"> Permet d&#039;afficher les compteurs d&#039;erreurs durant les migrations des ressources </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> -1 –one-shot  </td><td class="col1 leftalign"> Affiche l&#039;état à un seul instant et quitte (utile dans les scripts)            </td>
+	</tr>
+</table></div>
+
+</div>
+
+<h4 id="action_sur_les_postes_et_les_ressources">Action sur les postes et les ressources</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Accéder à l&#039;interface de configuration du cluster :<pre class="code">sudo crm</pre>
+</div>
+</li>
+</ul>
+<div class="table sectionedit12"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Commandes     </th><th class="col1 leftalign"> Explications                    </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> help          </td><td class="col1"> Liste les commandes disponibles </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> status        </td><td class="col1 leftalign"> Affiche l&#039;état du cluster       </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> end,cd,up     </td><td class="col1 leftalign"> Revenir au niveau précédent     </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> quit,bye,exit </td><td class="col1 leftalign"> Quitter le crm                  </td>
+	</tr>
+</table></div>
+<ul>
+<li class="level1"><div class="li"> Mettre un poste en maintenance :<pre class="code">sudo crm node standby</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Sortir un poste de maintenance :<pre class="code">sudo crm node online</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Migrer une ressource vers un autre poste :<pre class="code">sudo crm resource migrate &lt;nom ressource&gt; &lt;nom du poste allant accueillir la ressource&gt;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Annuler la migration de la ressource :<pre class="code">sudo crm resource unmigrate &lt;nom ressource&gt;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Mettre à zéro les compteurs d&#039;échec pour un hôte et une ressource donnés :<pre class="code">sudo crm resource failcount &lt;nom de la ressource&gt; delete &lt;nom de l&#039;hôte&gt;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Mettre à zéro l&#039;état d&#039;une ressource :<pre class="code">sudo crm resource cleanup &lt;nom de la ressource&gt;</pre>
+</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="modification_de_la_configuration_du_cluster">Modification de la configuration du cluster</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Entrer dans la mode de configuration :<pre class="code">sudo crm configure</pre>
+</div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="modifier_la_configuration_d_un_cluster_en_activite">Modifier la configuration d&#039;un cluster en activité</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> Créer une copie de la configuration actuelle :<pre class="code">sudo crm
+crm(live)# cib new copy_config</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Utiliser la copie de la configuration :<pre class="code">crm(live)# cib use copy_config</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Entrer dans le mode de configuration :<pre class="code">crm(config)# configure</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Voir la configuration :<pre class="code">crm(config)configure# show</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Vérifier sa configuration :<pre class="code">crm(config)configure# verify</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Supprimer une ressource :<pre class="code">crm(config)configure# delete &lt;nom de la ressource&gt;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Appliquer la nouvelle configuration au cluster :<pre class="code">crm(config)# cib commit copy_config</pre>
+</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Commandes de gestion du cluster] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7633-9942" /><input type="submit" value="Modifier" class="button" title="Commandes de gestion du cluster" /></div></form></div>
+<h2 class="sectionedit13" id="configuration_de_clusters">Configuration de clusters</h2>
+<div class="level2">
+
+<p>
+Cette section regroupe tous les liens vers des tutoriels proposant des configurations de cluster. Si cette documentation vous a permis de comprendre et d&#039;utiliser pacemaker, il serait intéressant que vous laissiez une trace de la configuration que vous avez réalisée.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Configuration de clusters] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="9943-10252" /><input type="submit" value="Modifier" class="button" title="Configuration de clusters" /></div></form></div>
+<h3 class="sectionedit14" id="cluster_de_deux_machines">Cluster de deux machines</h3>
+<div class="level3">
+
+<p>
+Suivez le tutoriel <strong><a href="tutoriel/pacemaker_configuration_ip_virtuelle_plus_script_lsb" class="wikilink1" title="tutoriel:pacemaker_configuration_ip_virtuelle_plus_script_lsb"> Adresse IP virtuelle + supervision d&#039;un service (nginx)</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Cluster de deux machines] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10253-10436" /><input type="submit" value="Modifier" class="button" title="Cluster de deux machines" /></div></form></div>
+<h2 class="sectionedit15" id="supervision_du_cluster">Supervision du cluster</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Supervision du cluster] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10437-10472" /><input type="submit" value="Modifier" class="button" title="Supervision du cluster" /></div></form></div>
+<h3 class="sectionedit16" id="trap_snmp">Trap snmp</h3>
+<div class="level3">
+
+<p>
+Pacemaker gère l&#039;envoi de traps snmp. Si quelqu&#039;un a réussi à les utiliser, sa contribution est la bienvenue.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Trap snmp] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10473-10607" /><input type="submit" value="Modifier" class="button" title="Trap snmp" /></div></form></div>
+<h3 class="sectionedit17" id="supervision_avec_l_agent_nrpe">Supervision avec l&#039;agent nrpe</h3>
+<div class="level3">
+
+<p>
+Cette partie s&#039;adresse aux personnes connaissant <a href="http://doc.ubuntu-fr.org/nagios" class="wikilink1" title="nagios">nagios</a> et l&#039;agent <a href="http://doc.ubuntu-fr.org/nrpe" class="wikilink2" title="nrpe" rel="nofollow">nrpe</a>.
+</p>
+
+<p>
+Il est possible de créer un script permettant de savoir si les compteurs d&#039;échec ont été incrémentés.
+</p>
+
+<p>
+<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Créez le fichier du script</a> sous le nom <strong><code>/usr/lib/nagios/plugins/check_pacemaker</code></strong>
+</p>
+
+<p>
+Contenu de ce script :
+</p>
+<pre class="code">#!/bin/sh
+OK_STATE=0
+WARNING_STATE=1
+CRITICAL_STATE=2
+cnt=0
+
+cnt=`sudo crm_mon -1f | grep -q fail-count`
+
+if [ $? -eq 0 ]
+then
+        echo &quot;WARNING: some ressources have failed!&quot;
+        exit $WARNING_STATE
+else
+
+echo &quot;OK: all ressources are working properly&quot;
+exit $OK_STATE
+
+fi</pre>
+
+<p>
+Déclarer le script dans la configuration de l&#039;agent nrpe
+</p>
+
+<p>
+<a href="tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">Éditez le fichier</a> <strong><code>/etc/nagios/nrpe.cfg</code></strong> et rajouter dans la section <strong><em>commands</em></strong> cette ligne :
+</p>
+<pre class="file">  command[check_pacemaker]=/usr/lib/nagios/plugins/check_pacemaker</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Supervision avec l'agent nrpe] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="10608-11580" /><input type="submit" value="Modifier" class="button" title="Supervision avec l'agent nrpe" /></div></form></div>
+<h2 class="sectionedit18" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Pour supprimer cette application, il suffit de <a href="tutoriel/comment_supprimer_un_paquet" class="wikilink1" title="tutoriel:comment_supprimer_un_paquet">supprimer son paquet</a>. Selon la méthode choisie, la configuration globale de l&#039;application est conservée ou supprimée. Les journaux du système, et les fichiers de préférence des utilisateurs dans leurs dossiers personnels seront toujours conservés.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Désinstallation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11581-11955" /><input type="submit" value="Modifier" class="button" title="Désinstallation" /></div></form></div>
+<h2 class="sectionedit19" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://www.clusterlabs.org/" class="urlextern" title="http://www.clusterlabs.org/"  rel="nofollow">http://www.clusterlabs.org/</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://www.clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Pacemaker_Explained/index.html" class="urlextern" title="http://www.clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Pacemaker_Explained/index.html"  rel="nofollow">documentation officielle</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://www.clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Clusters_from_Scratch/index.html" class="urlextern" title="http://www.clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Clusters_from_Scratch/index.html"  rel="nofollow">tutoriel officiel</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="https://wiki.ubuntu.com/ClusterStack/LucidTesting" class="urlextern" title="https://wiki.ubuntu.com/ClusterStack/LucidTesting"  rel="nofollow"> wiki.ubuntu.com</a></div>
+</li>
+<li class="level1"><div class="li"> <em>Basé sur l&#039;article <a href="http://wiki.lustre.org/index.php/Using_Pacemaker_with_Lustre" class="urlextern" title="http://wiki.lustre.org/index.php/Using_Pacemaker_with_Lustre"  rel="nofollow">« Using Pacemaker with Lustre  »</a>.</em></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="http://doc.ubuntu-fr.org/utilisateurs/miam_miam" class="wikilink1" title="utilisateurs:miam_miam">Miam Miam</a>.</em>
+</p>
+
+<p>
+Mise en forme : <em><a href="http://doc.ubuntu-fr.org/utilisateurs/draco31.fr" class="wikilink1" title="utilisateurs:draco31.fr">draco31.fr</a>.</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="pacemaker"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1413371308" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="11956-" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="pacemaker#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+bien que je ne sois pas sûr que cela soit indispensable.</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/d3604d1135fefcdfd88be4c4870e2792.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/pacemaker?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pacemaker?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pacemaker?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pacemaker?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/pacemaker?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

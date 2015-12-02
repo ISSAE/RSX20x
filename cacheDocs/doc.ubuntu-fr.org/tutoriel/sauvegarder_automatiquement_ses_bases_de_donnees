@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:sauvegarder_automatiquement_ses_bases_de_donnees - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-11-27T12:30:51+0100"/>
+<meta name="keywords" content="tutoriel,sauvegarde,serveur,sgbd,mysql"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_automatiquement_ses_bases_de_donnees?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_automatiquement_ses_bases_de_donnees?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="../_export/xhtml/tutoriel/sauvegarder_automatiquement_ses_bases_de_donnees"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/sauvegarder_automatiquement_ses_bases_de_donnees"/>
+<link rel="canonical" href="sauvegarder_automatiquement_ses_bases_de_donnees"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:sauvegarder_automatiquement_ses_bases_de_donnees","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="sauvegarder_automatiquement_ses_bases_de_donnees#main" tabindex="1">Contenu</a> | <a href="sauvegarder_automatiquement_ses_bases_de_donnees#qsearch__in" tabindex="2">Rechercher</a> | <a href="sauvegarder_automatiquement_ses_bases_de_donnees#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="sauvegarder_automatiquement_ses_bases_de_donnees" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="sauvegarder_automatiquement_ses_bases_de_donnees" >tutoriel:sauvegarder_automatiquement_ses_bases_de_donnees</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="sauvegarder_automatiquement_ses_bases_de_donnees#creation_des_scripts">Création des scripts</a></div></li>
+<li class="level1"><div class="li"><a href="sauvegarder_automatiquement_ses_bases_de_donnees#modification_des_permissions">Modification des permissions</a></div></li>
+<li class="level1"><div class="li"><a href="sauvegarder_automatiquement_ses_bases_de_donnees#programmation_de_l_execution_des_scripts_avec_cron">Programmation de l&#039;exécution des scripts avec Cron</a></div></li>
+<li class="level1"><div class="li"><a href="sauvegarder_automatiquement_ses_bases_de_donnees#conclusion">Conclusion</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../sauvegarde" class="wikilink1" title="sauvegarde" rel="tag">sauvegarde</a>,
+	<a href="../serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="../sgbd" class="wikilink1" title="sgbd" rel="tag">sgbd</a>,
+	<a href="../mysql" class="wikilink1" title="mysql" rel="tag">mysql</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="sauvegarder_automatiquement_ses_bases_de_donnees_mysql">Sauvegarder automatiquement ses bases de données MySQL</h1>
+<div class="level1">
+
+<p>
+Ce mini tutoriel vous présente une méthode simple pour mettre en place une sauvegarde automatique des bases de données de votre serveur <a href="../mysql" class="wikilink1" title="mysql">MySQL</a>. Ce script doit être installé sur le serveur MySQL.
+</p>
+
+<p>
+<p><div class="notetip">Bien que le contenu de cette page reste valide, il est à noter que cette opération peut être réalisée directement avec un script fourni par votre distribution (depuis la version 9.10 inclue) : <a href="../automysqlbackup" class="wikilink1" title="automysqlbackup">automysqlbackup</a>. Cette méthode est généralement à préférer, car plus propre.
+</div></p>
+</p>
+
+<p>
+Pour ce faire, nous allons utiliser 2 scripts bash et les tâches cron.
+</p>
+
+<p>
+Nous allons utiliser le cas suivant :
+</p>
+<ul>
+<li class="level1"><div class="li"> Nous voulons sauvegarder nos 3 bases de données <strong>mon_site</strong>, <strong>mon_forum</strong>, et <strong>mon_blog</strong> automatiquement chaque nuit (nous le faisons la nuit car c&#039;est le moment où un site a le moins de visites et donc le plus de ressources inutilisées disponibles).</div>
+</li>
+<li class="level1"><div class="li"> Nous nous connectons au serveur de base de données avec le login <strong>root</strong> et le mot de passe <strong>monpass</strong>.</div>
+</li>
+</ul>
+
+<p>
+Attention : en aucun cas vous devez sauvegarder la base de données &quot;à l&#039;état brute&quot;, depuis le répertoire /var/mysq/*. En effet, ce n&#039;est pas très portable et d&#039;autre part, si le serveur n&#039;est pas arrêté, vous risquez d&#039;avoir des données non cohérentes. A la place, en utilisant mysqldump, vous avez une extraction <abbr title="American Standard Code for Information Interchange">ASCII</abbr> de vos données (que vous pouvez compresser), et surtout, un mécanisme de verrou sur les bases à chaque extraction (option -opt de mysqldump par défaut). Vous n&#039;avez en principe pas besoin d&#039;arrêter le serveur.
+</p>
+
+<p>
+Pour sauvegarder les fichiers de votre site accessibles en ftp uniquement, voir avec <a href="../lftp#sauvegarde_sur_votre_ordinateur_de_votre_site_internet" class="wikilink1" title="lftp">lftp</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="sauvegarder_automatiquement_ses_bases_de_donnees"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1385551851" /><input type="hidden" name="summary" value="[Sauvegarder automatiquement ses bases de données MySQL] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="56-1823" /><input type="submit" value="Modifier" class="button" title="Sauvegarder automatiquement ses bases de données MySQL" /></div></form></div>
+<h2 class="sectionedit2" id="creation_des_scripts">Création des scripts</h2>
+<div class="level2">
+
+<p>
+Nous allons créer nos scripts dans le répertoire <strong>/root/scripts/</strong>. Seul root y aura accès en lecture (et écriture).
+</p>
+
+<p>
+Si le sous répertoire script n&#039;existe pas déjà, le créer :
+</p>
+<pre class="code"> sudo mkdir /root/scripts</pre>
+
+<p>
+Nous créons un premier script que l&#039;on appellera backup_bdd.sh qui contient :
+</p>
+<pre class="code">#!/bin/bash
+#
+## on se place dans le repertoire ou l&#039;on veut sauvegarder les bases
+#
+cd /root/scripts/backups/
+
+for i in mon_site mon_forum mon_blog; do
+
+## Sauvegarde des bases de donnees en fichiers .sql
+mysqldump -uroot -pmonpass $i &gt; ${i}_`date +&quot;%Y-%m-%d&quot;`.sql
+
+## Compression des exports en tar.bz2 (le meilleur taux de compression)
+tar jcf ${i}_`date +&quot;%Y-%m-%d&quot;`.sql.tar.bz2 ${i}_`date +&quot;%Y-%m-%d&quot;`.sql
+
+## Suppression des exports non compresses
+rm ${i}_`date +&quot;%Y-%m-%d&quot;`.sql
+
+done</pre>
+
+<p>
+Mettez dans la ligne
+</p>
+<pre class="code">for i in mon_site mon_forum mon_blog; do</pre>
+
+<p>
+ou pour avoir toutes vos bases de données, remplacer cette ligne par 
+</p>
+<pre class="code"># Récupère toutes les bases de données
+databases=`mysql --user=root --password=monpass -e &quot;SHOW DATABASES;&quot; | grep -Ev &quot;(Database|information_schema)&quot;`
+
+# parcours les bases
+for i in $databases; do</pre>
+
+<p>
+la liste de toutes les bases de données que vous voulez sauvegarder.
+</p>
+
+<p>
+Par sécurité, on ne veut pas garder que la dernière sauvegarde faite (elle peut être corrompue). Nous insérons donc la date du jour dans le nom de fichier avec `date +&quot;%Y-%m-%d&quot;` qui générera une date au format AAAA-MM-JJ.
+</p>
+
+<p>
+Il faut créer un second script pour faire le ménage régulièrement dans le dossier de backup pour éviter son embonpoint inévitable.
+</p>
+
+<p>
+On nomme ce fichier clean_backups.sh et son contenu est :
+</p>
+<pre class="code">#!/bin/bash
+#
+## Supprime les sauvegardes vieilles de plus de 5 jours
+#
+find /root/scripts/backups/ -type f -mtime +4 -delete</pre>
+
+<p>
+Note : si votre mot de passe ou votre utilisateur contient les caractères : &quot;!@#$%^&quot; vous recevrez l&#039;erreur 1045 &quot;Access denied for user &#039;xxx&#039;@&#039;localhost &quot; 
+</p>
+
+<p>
+pour cela (à part changer de user/pass) il faut modifier la ligne :
+</p>
+<pre class="code">mysqldump -uroot -pmonpass $i &gt; ${i}_`date +&quot;%Y-%m-%d&quot;`.sql</pre>
+
+<p>
+par
+</p>
+<pre class="code">mysqldump --user=xxx --password=xxx $i &gt; ${i}_`date +&quot;%Y-%m-%d&quot;`.sql</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="sauvegarder_automatiquement_ses_bases_de_donnees"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1385551851" /><input type="hidden" name="summary" value="[Création des scripts] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1824-4070" /><input type="submit" value="Modifier" class="button" title="Création des scripts" /></div></form></div>
+<h2 class="sectionedit3" id="modification_des_permissions">Modification des permissions</h2>
+<div class="level2">
+
+<p>
+Nous allons faire en sorte que seul root puisse lire, exécuter, et modifier ces 2 scripts :
+</p>
+<pre class="code">cd /root/scripts &amp;&amp; sudo chmod 700 backup_bdd.sh clean_backups.sh</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="sauvegarder_automatiquement_ses_bases_de_donnees"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1385551851" /><input type="hidden" name="summary" value="[Modification des permissions] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4071-4275" /><input type="submit" value="Modifier" class="button" title="Modification des permissions" /></div></form></div>
+<h2 class="sectionedit4" id="programmation_de_l_execution_des_scripts_avec_cron">Programmation de l&#039;exécution des scripts avec Cron</h2>
+<div class="level2">
+
+<p>
+<p><div class="notetip">Si votre ordinateur n&#039;est pas allumé en permanence, il vaut mieux utiliser <a href="http://doc.ubuntu-fr.org/fcron" class="wikilink1" title="fcron">fcron</a>, car cron ne s&#039;exécute qu&#039;à une heure précise de la journée alors que fcron prend en compte le temps pendant lequel reste allumé la machine
+</div></p>
+</p>
+
+<p>
+Dans le répertoire <strong>/etc</strong>, vous pouvez voir qu&#039;il existe des répertoires cron.daily, cron.hourly, etc
+</p>
+
+<p>
+dans le fichier <strong>/etc/crontab</strong>, est notée la fréquence de lancement des tâches cron. Vous pouvez voir que le contenu du répertoire <strong>cron.daily</strong> est exécuté par défaut tous les jours à 6h25. vous pouvez modifier l&#039;horaire si vous le souhaitez. Par exemple en y mettant l&#039;heure où votre site est le moins fréquenté (en général vers 3h du matin). Pour plus d&#039;informations sur la programmation des tâches cron consultez la page sur <a href="../cron" class="wikilink1" title="cron">cron</a>.
+</p>
+
+<p>
+Donc comme nous l&#039;avons dit, les scripts contenus dans le répertoire cron.daily seront exécutés à l&#039;heure définie dans crontab. Nous allons donc y placer des liens vers nos 2 scripts en utilisant une notation à chiffres pour être sûr qu&#039;ils seront exécutés dans l&#039;ordre :
+</p>
+<pre class="code">cd /etc/cron.daily
+sudo ln -s /root/scripts/backup_bdd.sh 01-backup_bdd
+sudo ln -s /root/scripts/clean_backups.sh 02-clean_backups</pre>
+
+<p>
+<p><div class="noteclassic">Bien sûr, si vous avez déjà des scripts numérotés, incrémentez les numéros en fonction de ceux-ci…
+</div></p>
+</p>
+
+<p>
+<p><div class="noteimportant">
+Surtout ne faites pas de lien symbolique avec un point &quot;.&quot; dans le nom du lien, celui-ci ne serait pas exécuté et cron ne log pas cette non exécution.
+
+</div></p>
+</p>
+
+<p>
+C&#039;est fini :)
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="sauvegarder_automatiquement_ses_bases_de_donnees"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1385551851" /><input type="hidden" name="summary" value="[Programmation de l'exécution des scripts avec Cron] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4276-5898" /><input type="submit" value="Modifier" class="button" title="Programmation de l'exécution des scripts avec Cron" /></div></form></div>
+<h2 class="sectionedit5" id="conclusion">Conclusion</h2>
+<div class="level2">
+
+<p>
+Chaque nuit, à l&#039;heure définie pour cron.daily, votre serveur sauvegardera automatiquement vos bases de données et supprimera les sauvegardes trop anciennes.
+</p>
+
+<p>
+Si vous avez un problème sur une base de données, vous pourrez donc extraire l&#039;archive correspondant à l&#039;état de votre base de données à une date précise, vider la base de ses tables et ré-importer le fichier sql dans la base. Ce qui veut dire qu&#039;en cas de soucis vous pouvez remettre vos bases de données en état en moins de 15 secondes ;)
+</p>
+<hr />
+
+<p>
+ <em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/enchained" class="wikilink1" title="utilisateurs:enchained">_Enchained</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="sauvegarder_automatiquement_ses_bases_de_donnees"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1385551851" /><input type="hidden" name="summary" value="[Conclusion] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5899-" /><input type="submit" value="Modifier" class="button" title="Conclusion" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/0/036b5d5d43d6b1034fbd67fd526f2714.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_automatiquement_ses_bases_de_donnees?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_automatiquement_ses_bases_de_donnees?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="sauvegarder_automatiquement_ses_bases_de_donnees?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_automatiquement_ses_bases_de_donnees?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/sauvegarder_automatiquement_ses_bases_de_donnees?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

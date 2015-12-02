@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>tutoriel:comment_creer_une_webradio</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-01-26T17:42:43+0100"/>
+<meta name="keywords" content="tutoriel,radio,audio"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/comment_creer_une_webradio?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="comment_creer_une_webradio"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../raw/tutoriel/comment_creer_une_webradio"/>
+<link rel="canonical" href="../../../tutoriel/comment_creer_une_webradio"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_creer_une_webradio","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_creer_une_webradio#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="comment_creer_une_webradio#configuration_de_mpd">Configuration de MPD</a></div></li>
+<li class="level1"><div class="li"><a href="comment_creer_une_webradio#configuration_de_icecast2">Configuration de Icecast2</a></div></li>
+<li class="level1"><div class="li"><a href="comment_creer_une_webradio#client_de_mpd">Client de MPD</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_creer_une_webradio#phpmp2">PhpMp2</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_creer_une_webradio#ouvrir_le_port_dans_le_pare-feu">Ouvrir le port dans le pare-feu</a></div></li>
+<li class="level1"><div class="li"><a href="comment_creer_une_webradio#ressources_supplementaires">Ressources Supplémentaires</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_creer_une_webradio#sites_officiels">Sites officiels</a></div></li>
+<li class="level2"><div class="li"><a href="comment_creer_une_webradio#pour_aller_plus_loin">Pour aller plus loin</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../../../radio" class="wikilink1" title="radio" rel="tag">radio</a>,
+	<a href="http://doc.ubuntu-fr.org/audio" class="wikilink1" title="audio" rel="tag">audio</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_creer_sa_webradio">Comment créer sa webradio ?</h1>
+<div class="level1">
+
+<p>
+Ce tutoriel a pour but d&#039;expliquer le plus simplement possible l&#039;installation d&#039;une <strong><a href="../../../radio" class="wikilink1" title="radio">Webradio</a></strong> sous Ubuntu.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Comment créer sa webradio ?" [37-202] -->
+<h2 class="sectionedit2" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="../../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <strong><a href="apt://icecast2,mpd" class="interwiki iw_apt" title="apt://icecast2,mpd">icecast2 mpd</a></strong>. (Les <a href="../../../depots#universe_et_multiverse" class="wikilink1" title="depots">dépôts Universe/Multiverse</a> doivent être activés.)
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Installation" [203-426] -->
+<h2 class="sectionedit3" id="configuration_de_mpd">Configuration de MPD</h2>
+<div class="level2">
+
+<p>
+Créer un fichier de configuration par défaut :
+</p>
+<pre class="code">sudo dpkg-reconfigure mpd</pre>
+
+<p>
+La configuration de MPD se fait par un fichier texte. <a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditer le fichier</a> <strong>/etc/mpd.conf</strong>.
+Avant la première utilisation de <strong>mpd</strong> , il est nécessaire de charger des musique dans la collection, sinon mpd n&#039;aura aucune musique à lire. ( voir <a href="../../../mpd" class="wikilink1" title="mpd">Lien externe</a> )
+</p>
+
+<p>
+Voici un exemple du fichier /etc/mpd.conf (à modifier en fonction de votre configuration)
+</p>
+<pre class="file">######################## REQUIRED PATHS ########################
+# You can put symlinks in here, if you like. Make sure that
+# the user that mpd runs as (see the &#039;user&#039; config parameter)
+# can read the files in this directory.
+music_directory		&quot;/home/pseudo/Musiques&quot; #&lt;----- LE CHEMIN VERS VOS FICHIERS DE MUSIQUE
+playlist_directory	&quot;/var/lib/mpd/playlists&quot;
+db_file			&quot;/var/lib/mpd/tag_cache&quot;
+log_file		&quot;/var/log/mpd/mpd.log&quot;
+error_file		&quot;/var/log/mpd/errors.log&quot;
+pid_file		&quot;/var/run/mpd/pid&quot;
+################################################################
+
+
+########################## PERMISSIONS #########################
+#
+# MPD can require that users specify a password before using it.
+# You may specify one ore more here, along with what users who
+# log in with that password are allowed to do.
+#
+password                        &quot;VOTRE_MOT_DE_PASSE@read,add,control,admin&quot;  #&lt;----- REMPLACER &#039;VOTRE_MOT_DE_PASSE&#039;
+#
+# Specifies what permissions a user who has not logged in with a
+# password has.  By default, all users have full access to MPD
+# if no password is specified above, or no access if one or
+# more passwords are specified.
+#
+#default_permissions             &quot;read,add,control,admin&quot;
+#
+################################################################
+
+
+########################## AUDIO OUTPUT ########################
+audio_output {
+        type                    &quot;shout&quot;
+        name                    &quot;Mydoom666 Stream&quot; #&lt;----- NOM DE VOTRE WEBRADIO
+        host                    &quot;127.0.0.1&quot;
+        port                    &quot;8000&quot;
+
+        mount                   &quot;/mydoom666&quot; #&lt;----- NOM DE LA PLAYLIST SANS L&#039;EXTENSION
+        password                &quot;VOTRE_MOT_DE_PASSE&quot; #&lt;----- REMPLACER &#039;VOTRE_MOT_DE_PASSE&#039;
+        quality                 &quot;5.0&quot;
+#        bitrate                 &quot;128&quot;
+        format                  &quot;44100:16:1&quot;
+#        user                    &quot;source&quot;                # optional
+        description             &quot;Mydoom666&#039;s Zik&quot; #&lt;----- LA DESCRIPTION DE VOTRE WEBRADIO
+        genre                   &quot;MaZikaMoi&quot;
+#        public                  &quot;yes&quot;                    # optional
+}
+#
+# Force all decoded audio to be converted to this format before
+# being passed to the audio outputs.
+#
+#audio_output_format             &quot;44100:16:2&quot;
+#
+################################################################
+
+
+############################# LIMITS ###########################
+#
+# These are various limits to prevent MPD from using too many
+# resources.  You should only change them if they start
+# restricting your usage of MPD.
+#
+connection_timeout              &quot;60&quot; 
+max_connections                 &quot;5&quot; #&lt;----- NOMBRE DE CONNECTION MAXIMUM
+max_playlist_length             &quot;16384&quot;
+max_command_list_size           &quot;2048&quot;
+max_output_buffer_size          &quot;8192&quot;
+#
+################################################################</pre>
+
+</div>
+<!-- EDIT3 SECTION "Configuration de MPD" [427-3829] -->
+<h2 class="sectionedit4" id="configuration_de_icecast2">Configuration de Icecast2</h2>
+<div class="level2">
+
+<p>
+<a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/icecast2/icecast.xml</strong>, fichier de configuration de Icecast2.
+Il y a peu de choses à modifier, mis à part les mots de passe.
+</p>
+<pre class="code file XML">    <span class="sc3"><span class="re1">&lt;limits<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;clients<span class="re2">&gt;</span></span></span>5<span class="sc3"><span class="re1">&lt;/clients<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;sources<span class="re2">&gt;</span></span></span>5<span class="sc3"><span class="re1">&lt;/sources<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;threadpool<span class="re2">&gt;</span></span></span>5<span class="sc3"><span class="re1">&lt;/threadpool<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;queue-size<span class="re2">&gt;</span></span></span>524288<span class="sc3"><span class="re1">&lt;/queue-size<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;client-timeout<span class="re2">&gt;</span></span></span>30<span class="sc3"><span class="re1">&lt;/client-timeout<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;header-timeout<span class="re2">&gt;</span></span></span>15<span class="sc3"><span class="re1">&lt;/header-timeout<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;source-timeout<span class="re2">&gt;</span></span></span>10<span class="sc3"><span class="re1">&lt;/source-timeout<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;burst-on-connect<span class="re2">&gt;</span></span></span>1<span class="sc3"><span class="re1">&lt;/burst-on-connect<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;burst-size<span class="re2">&gt;</span></span></span>65535<span class="sc3"><span class="re1">&lt;/burst-size<span class="re2">&gt;</span></span></span>
+    <span class="sc3"><span class="re1">&lt;/limits<span class="re2">&gt;</span></span></span>
+&nbsp;
+    <span class="sc3"><span class="re1">&lt;authentication<span class="re2">&gt;</span></span></span>
+        <span class="sc-1">&lt;!-- Sources log in with username 'source' --&gt;</span>
+        <span class="sc3"><span class="re1">&lt;source-password<span class="re2">&gt;</span></span></span>VOTRE_MOT_DE_PASSE<span class="sc3"><span class="re1">&lt;/source-password<span class="re2">&gt;</span></span></span>
+        <span class="sc-1">&lt;!-- Relays log in username 'relay' --&gt;</span>
+        <span class="sc3"><span class="re1">&lt;relay-password<span class="re2">&gt;</span></span></span>VOTRE_MOT_DE_PASSE<span class="sc3"><span class="re1">&lt;/relay-password<span class="re2">&gt;</span></span></span>
+&nbsp;
+        <span class="sc-1">&lt;!-- Admin logs in with the username given below --&gt;</span>
+        <span class="sc3"><span class="re1">&lt;admin-user<span class="re2">&gt;</span></span></span>admin<span class="sc3"><span class="re1">&lt;/admin-user<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;admin-password<span class="re2">&gt;</span></span></span>VOTRE_MOT_DE_PASSE<span class="sc3"><span class="re1">&lt;/admin-password<span class="re2">&gt;</span></span></span>
+    <span class="sc3"><span class="re1">&lt;/authentication<span class="re2">&gt;</span></span></span>
+&nbsp;
+    <span class="sc3"><span class="re1">&lt;hostname<span class="re2">&gt;</span></span></span>127.0.0.1<span class="sc3"><span class="re1">&lt;/hostname<span class="re2">&gt;</span></span></span></pre>
+
+<p>
+Pour faire tourner Icecast2 en tache de fond, <a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditez le fichier</a> <strong>/etc/default/icecast2</strong> et modifiez à la fin du fichier pour obtenir :
+</p>
+<pre class="file">ENABLE=true</pre>
+
+<p>
+Relancer les services mpd et icecast2 :
+</p>
+<pre class="code">sudo /etc/init.d/mpd restart
+sudo /etc/init.d/icecast2 restart</pre>
+
+<p>
+<p><div class="noteclassic">
+Vous pouvez maintenant accéder au serveur icecast2 à l’adresse <a href="http://adresse.com:8000/" class="urlextern" title="http://adresse.com:8000/"  rel="nofollow">http://adresse.com:8000/</a> (<a href="http://127.0.0.1:8000/" class="urlextern" title="http://127.0.0.1:8000/"  rel="nofollow">http://127.0.0.1:8000/</a> si vous êtes en local).
+</p>
+
+<p>
+La playlist se trouve à l’adresse : <a href="http://adresse.com:8000/nom_de_la_playlist.m3u" class="urlextern" title="http://adresse.com:8000/nom_de_la_playlist.m3u"  rel="nofollow">http://adresse.com:8000/nom_de_la_playlist.m3u</a>.
+</p>
+
+<p>
+Vous avez choisi le nom de cette playlist lors de la configuration du fichier « mpd.conf ». (Que vous pouvez modifier a tout moment, il faudra juste penser a relancer les services pour que les modifications soient prises en compte.
+</p>
+
+<p>
+Bien entendu, il vous faut ensuite installer et démarrer un client MPD avant que icecast2 ne puisse jouer quoi que ce soit
+</div></p>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Configuration de Icecast2" [3830-5845] -->
+<h2 class="sectionedit5" id="client_de_mpd">Client de MPD</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT5 SECTION "Client de MPD" [5846-5872] -->
+<h3 class="sectionedit6" id="phpmp2">PhpMp2</h3>
+<div class="level3">
+
+<p>
+PhpMp2 est un client qui tourne sur un serveur web (avec php).
+Ainsi si vous avez un serveur web vous pouvez l&#039;installer et contrôler MPD de n&#039;importe quelle machine connectée sur le net ayant un navigateur.
+</p>
+
+<p>
+Vous pouvez le télécharger à <a href="http://www.musicpd.org/phpMp2.shtml" class="urlextern" title="http://www.musicpd.org/phpMp2.shtml"  rel="nofollow">http://www.musicpd.org/phpMp2.shtml</a>
+Il faut décompresser l&#039;archive dans un répertoire accessible sur votre serveur web.
+<a href="../../../_detail/tutoriel/phpmp2-mpd.jpg?id=tutoriel%253Acomment_creer_une_webradio" class="media" title="tutoriel:phpmp2-mpd.jpg"><img src="../../../_media/tutoriel/phpmp2-mpd.jpg" class="media" alt="" /></a>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "PhpMp2" [5873-6285] -->
+<h2 class="sectionedit7" id="ouvrir_le_port_dans_le_pare-feu">Ouvrir le port dans le pare-feu</h2>
+<div class="level2">
+
+<p>
+Dernière étape, ouvrir le port 8000 dans le <a href="../../../pare-feu" class="wikilink1" title="pare-feu">pare-feu</a>. Le port 8000 (par défaut) est celui utilisé par Icecast2 pour envoyer les flux aux clients. Pour cela, utilisez <a href="../../../gufw" class="wikilink1" title="gufw">Gufw</a>.<br/>
+
+Il est possible d’administrer votre serveur a distance en ouvrant le port 6600 (par défaut). Il suffira ensuite dans GMPC de bien spécifier l’adresse distante du serveur.
+</p>
+
+<p>
+<p><div class="noteimportant"><strong>ces ports doivent être ouverts</strong> dans votre routeur et redirigés vers l’adresse IP de la machine serveur.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Ouvrir le port dans le pare-feu" [6286-6832] -->
+<h2 class="sectionedit8" id="ressources_supplementaires">Ressources Supplémentaires</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT8 SECTION "Ressources Supplémentaires" [6833-6873] -->
+<h3 class="sectionedit9" id="sites_officiels">Sites officiels</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.icecast.org/" class="urlextern" title="http://www.icecast.org/"  rel="nofollow">http://www.icecast.org/</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.musicpd.org/" class="urlextern" title="http://www.musicpd.org/"  rel="nofollow">http://www.musicpd.org/</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://fr.wikipedia.org/wiki/Net_radio" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/Net_radio">Net_radio</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT9 SECTION "Sites officiels" [6874-6979] -->
+<h3 class="sectionedit10" id="pour_aller_plus_loin">Pour aller plus loin</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://benjamin.sansinteret.info/blog/post/2008/11/28/Tutorial-Creer-une-webradio-avec-MPD-et-Icecast-sous-Linux-Gentoo-ou-Debian" class="urlextern" title="http://benjamin.sansinteret.info/blog/post/2008/11/28/Tutorial-Creer-une-webradio-avec-MPD-et-Icecast-sous-Linux-Gentoo-ou-Debian"  rel="nofollow">http://benjamin.sansinteret.info/blog/post/2008/11/28/Tutorial-Creer-une-webradio-avec-MPD-et-Icecast-sous-Linux-Gentoo-ou-Debian</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.generation-linux.fr/index.php?post/2009/01/17/Mise-en-place-d-une-webradio-avec-Icecast-et-Liquidsoap" class="urlextern" title="http://www.generation-linux.fr/index.php?post/2009/01/17/Mise-en-place-d-une-webradio-avec-Icecast-et-Liquidsoap"  rel="nofollow"> Mise en place d&#039;une webradio avec Icecast et Liquidsoap </a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="../../../utilisateurs/mydoom666" class="wikilink1" title="utilisateurs:mydoom666">Mydoom666</a>, <a href="../../../utilisateurs/ner0lph" class="wikilink1" title="utilisateurs:ner0lph">Ner0lph</a>.</em>
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Pour aller plus loin" [6980-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/8/86fe5f75fdd102bb2dba25abd045fd2d.xhtml used -->
+</div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>tutoriel:comment_creer_un_live_usb_freedos</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-01-11T15:01:42+0100"/>
+<meta name="keywords" content="quantal,tutoriel,materiel,carte mere,bios,systeme"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="../../../tutoriel/comment_creer_un_live_usb_freedos?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="comment_creer_un_live_usb_freedos"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../raw/tutoriel/comment_creer_un_live_usb_freedos"/>
+<link rel="canonical" href="../../../tutoriel/comment_creer_un_live_usb_freedos"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_creer_un_live_usb_freedos","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_creer_un_live_usb_freedos#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="comment_creer_un_live_usb_freedos#creation_des_partitions">Création des partitions</a></div></li>
+<li class="level1"><div class="li"><a href="comment_creer_un_live_usb_freedos#installation_de_freedos">Installation de FreeDOS</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="comment_creer_un_live_usb_freedos#creez_un_secteur_de_d_amorcage">Créez un secteur de d&#039;amorçage</a></div></li>
+<li class="level2"><div class="li"><a href="comment_creer_un_live_usb_freedos#modifiez_le_fichier_fdconfigsys">Modifiez le fichier fdconfig.sys</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="comment_creer_un_live_usb_freedos#verification">Vérification</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../../quantal" class="wikilink1" title="quantal" rel="tag">Quantal</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../../../materiel" class="wikilink1" title="materiel" rel="tag">matériel</a>,
+	<a href="../../../carte_mere" class="wikilink1" title="carte_mere" rel="tag">carte mère</a>,
+	<a href="../../../bios?do=showtag&amp;tag=bios" class="wikilink1" title="bios" rel="tag">bios</a>,
+	<a href="../../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="comment_creer_un_live-usb_contenant_freedos">Comment créer un live-USB contenant FreeDOS</h1>
+<div class="level1">
+
+<p>
+FreeDOS est un système d&#039;exploitation complet, libre, et 100% compatible MS-DOS.
+</p>
+
+<p>
+Aujourd&#039;hui, FreeDOS est idéal pour tous ceux qui veulent fournir une version du DOS sans avoir à payer des royalties pour pouvoir l&#039;utiliser. FreeDOS fonctionnera aussi sur du vieux matériel, dans des émulateurs DOS et dans des systèmes embarqués.
+</p>
+
+<p>
+<strong>Le présent tutoriel permet d&#039;installer FreeDOS sur un support externe <abbr title="Universal Serial Bus">USB</abbr> sur lequel les fichiers stockés seront accessibles depuis FreeDOS sur le lecteur A:</strong><br/>
+
+Il existe une méthode d&#039;installation graphique utilisant <a href="../../../unetbootin" class="wikilink1" title="unetbootin">UNetbootin</a> mais cette méthode ne vous permettra pas d&#039;accéder aux fichiers que vous aurez placé sur votre clé en vue d&#039;une utilisation avec FreeDOS.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Comment créer un live-USB contenant FreeDOS" [69-850] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+Avant de suivre le tutoriel, vous devez :
+</p>
+<ul>
+<li class="level1"><div class="li"> Disposer des <a href="../../../sudo" class="wikilink1" title="sudo">droits d&#039;administration</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Savoir utiliser un <a href="../../../terminal" class="wikilink1" title="terminal">terminal de commande</a> ;</div>
+</li>
+<li class="level1"><div class="li"> Savoir manipuler des <a href="../../../partitions" class="wikilink1" title="partitions">partitions</a> et système de fichiers ;</div>
+</li>
+<li class="level1"><div class="li"> Savoir si vous utilisez une architecture 32bits ou 64bits ;</div>
+</li>
+<li class="level1"><div class="li"> Avoir <a href="../../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installé le paquet</a> <strong><a href="apt:////qemu" class="interwiki iw_apt" title="apt:////qemu">qemu</a></strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Avoir téléchargé <a href="http://www.freedos.org/download/" class="urlextern" title="http://www.freedos.org/download/"  rel="nofollow">FreeDOS</a>.</div>
+</li>
+</ul>
+
+<p>
+En fonction de l&#039;architecture de votre système, la commande à utiliser diffère :
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour un système 32bits, la commande à utiliser est <strong>qemu-system-i386</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Pour un système 64bits, la commande à utiliser est <strong>qemu-system-x86_64</strong>.</div>
+</li>
+</ul>
+
+<p>
+<strong>Le présent tutoriel utilise des commandes pour un système 32bits.</strong>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [851-1661] -->
+<h2 class="sectionedit3" id="creation_des_partitions">Création des partitions</h2>
+<div class="level2">
+
+<p>
+Tout d&#039;abord, il vous faudra créer une partition au format FAT.
+</p>
+
+<p>
+Le <strong>FAT16</strong> est recommandé car certaines anciennes carte-mères ne savent pas démarrer sur des partitions en <strong>FAT32</strong>. Si vous savez que votre carte mère arrivera à utiliser le format FAT32, vous êtes libre de choisir l&#039;un des deux formats.
+</p>
+
+<p>
+L&#039;exemple suivant utilise le format <strong>FAT16</strong> sur le support <strong>/dev/sdb</strong>. Votre périphérique doit être connecté mais les partitions ne doivent pas être montées. Si besoin, démontez-les en utilisant la commande 
+</p>
+<pre class="code">sudo umount /media/&lt;nom_du_périphérique&gt;</pre>
+<ol>
+<li class="level1"><div class="li"> Ouvrez fdisk : <pre class="code">sudo fdisk /dev/sdb</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Supprimez les partitions existantes (touche <strong>d</strong>) ;</div>
+</li>
+<li class="level1"><div class="li"> Ajouter une partition (touche <strong>n</strong>) et validez les choix par défaut ;</div>
+</li>
+<li class="level1"><div class="li"> Définissez le format de partition (touche <strong>t</strong>) avec le code Hexa <strong>6</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Activez l&#039;unique et nouvelle partition (touche <strong>a</strong>) sur l&#039;emplacement <strong>1</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Contrôler les modifications avant écriture (touche <strong>p</strong>) ;</div>
+</li>
+<li class="level1"><div class="li"> Si les modifications sont correctes, écrivez la nouvelle table de partitions (touche <strong>w</strong>) ;</div>
+</li>
+<li class="level1"><div class="li"> Formatez votre support pour appliquer les modifications <pre class="code">sudo mkdosfs -F 16 -n FreeDOS /dev/sdb1</pre>
+</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT3 SECTION "Création des partitions" [1662-2917] -->
+<h2 class="sectionedit4" id="installation_de_freedos">Installation de FreeDOS</h2>
+<div class="level2">
+
+<p>
+Identifiez l&#039;emplacement de votre support externe (ex : /dev/sdb) et de l&#039;image ISO de FreeDOS que vous avez téléchargé (ex : ~/Téléchargements/fdbasecd.iso). L&#039;installation de FreeDOS est à effectuer avec <strong>Qemu</strong>. Pour libérer la souris et la clavier, utilisez la combinaison de touche ctrl+alt. Les commandes suivantes sont à adapter à votre configuration :
+</p>
+<ol>
+<li class="level1"><div class="li"> Exécutez la commande <pre class="code">sudo qemu-system-i386 -hda /dev/sdb -cdrom ~/Téléchargements/fdbasecd.iso -boot d</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Choisissez la première entrée : <code>1) Continue to boot FreeDOS from CD-ROM</code> ;</div>
+</li>
+<li class="level1"><div class="li"> Choisissez la première entrée : <code>1. Install to harddisk using FreeDOS SETUP (default)</code> ;</div>
+</li>
+<li class="level1"><div class="li"> Choisissez votre langage et agencement de clavier ;</div>
+</li>
+<li class="level1"><div class="li"> Choisissez la première entrée : <code>1) Continue with FreeDOS installation</code> ;</div>
+</li>
+<li class="level1"><div class="li"> Choisissez la première entrée : <code>1) Start installation of FreeDOS 1.0 Final</code> ;</div>
+</li>
+<li class="level1"><div class="li"> Laissez vous guider en choisissant les choix par défaut ;</div>
+</li>
+<li class="level1"><div class="li"> <strong>NE REDÉMARREZ PAS</strong> (touche <strong>N</strong>) et suivez la suite du tutoriel.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT4 SECTION "Installation de FreeDOS" [2918-3992] -->
+<h3 class="sectionedit5" id="creez_un_secteur_de_d_amorcage">Créez un secteur de d&#039;amorçage</h3>
+<div class="level3">
+
+<p>
+Toujours dans Qemu que vous n&#039;avez pas fermé, créez un secteur de d&#039;amorçage : 
+</p>
+<pre class="code">fdisk /mbr 1</pre>
+
+</div>
+<!-- EDIT5 SECTION "Créez un secteur de d'amorçage" [3993-4145] -->
+<h3 class="sectionedit6" id="modifiez_le_fichier_fdconfigsys">Modifiez le fichier fdconfig.sys</h3>
+<div class="level3">
+
+<p>
+Toujours dans Qemu :
+</p>
+<ol>
+<li class="level1"><div class="li"> Retournez à la racine du lecteur <pre class="code">cd \</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Éditez le fichier fdconfig.sys <pre class="code">edit fdconfig.sys</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Ajouter <strong>1234?</strong> au début de la ligne n°22 commençant par <code>SHELLHIGH=C:\</code> pour obtenir un résultat similaire (peut varier selon les version de FreeDOS) <pre class="file">1234?SHELLHIGH=C:\FDOS\bin\command.com C:\FDOS\bin /E:1024 /P=C:\FDOS\fdauto.bat</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Sauvegardez le fichier avec la combinaison de touche <strong>Ctrl+S</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Quittez l&#039;édition avec la combinaison de touche <strong>Alt+X</strong> ;</div>
+</li>
+<li class="level1"><div class="li"> Quittez Qemu.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT6 SECTION "Modifiez le fichier fdconfig.sys" [4146-4744] -->
+<h2 class="sectionedit7" id="verification">Vérification</h2>
+<div class="level2">
+
+<p>
+Avant de démarrer, vous pouvez tester votre clé avec Qemu : 
+</p>
+<pre class="code">qemu-system-i386 -hda /dev/sdb -boot c</pre>
+
+<p>
+Les fichiers et dossiers que vous ajouterez sur votre clé seront accessibles dans le lecteur A: rendant possible, par exemple, la mise à jour d&#039;un <abbr title="Basic Input-Output System">BIOS</abbr>.
+</p>
+
+<p>
+<p><div class="notetip">
+Si lors du démarrage de FreeDOS en condition réelle (c-a-d pas avec Qemu mais sur le PC cible), vous avez une erreur du genre:
+</p>
+<pre class="file">Bad or missing Command Interpreter: C:\FDOS\bin\command.com C:\FDOS\bin /E:1024 /P=C:\autoexec.bat</pre>
+
+<p>
+Il se peut que la clé <abbr title="Universal Serial Bus">USB</abbr> soit montée lors du boot sur ce PC cible comme un lecteur A:\ alors que les commandes contenues dans FDCONFIG.SYS et AUTOEXEC.BAT pointent vers un lecteur C:\ inexistant. Pour corriger ce problème, il suffit de modifier ces 2 fichiers sur la clé <abbr title="Universal Serial Bus">USB</abbr> (à l&#039;aide de gedit par exemple) et de remplacer toutes les occurrences &quot;C:\&quot; par &quot;A:\&quot;.
+
+</div></p>
+</p>
+<hr />
+
+<p>
+<em>Basé sur <a href="http://manual.aptosid.com/fr/bios-freedos-fr.htm" class="urlextern" title="http://manual.aptosid.com/fr/bios-freedos-fr.htm"  rel="nofollow">Mettre à jour le bios avec FreeDOS</a></em>
+</p>
+<hr />
+
+<p>
+<em>Contributeurs principaux : <a href="../../../utilisateurs/percherie" class="wikilink1" title="utilisateurs:percherie">percherie</a>.</em>
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Vérification" [4745-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/d/ddd9ce839d2a33250fa0ab5522d4a0f7.xhtml used -->
+</div>
+</body>
+</html>

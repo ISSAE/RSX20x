@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>tutoriel:utiliser_un_scanner_en_reseau</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-01-26T17:56:29+0100"/>
+<meta name="keywords" content="quantal,precise,hardy,jaunty,tutoriel,reseau,materiel,scanner"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="../../../tutoriel/utiliser_un_scanner_en_reseau?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="utiliser_un_scanner_en_reseau"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../raw/tutoriel/utiliser_un_scanner_en_reseau"/>
+<link rel="canonical" href="../../../tutoriel/utiliser_un_scanner_en_reseau"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:utiliser_un_scanner_en_reseau","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="utiliser_un_scanner_en_reseau#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="utiliser_un_scanner_en_reseau#installation_du_serveur">Installation du serveur</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="utiliser_un_scanner_en_reseau#methode_1ubuntu_1204_et_versions_suivantes">METHODE 1 : Ubuntu 12.04 et versions suivantes</a></div></li>
+<li class="level2"><div class="li"><a href="utiliser_un_scanner_en_reseau#methode_2ubuntu_904_et_versions_suivantes">METHODE 2 : Ubuntu 9.04 et versions suivantes</a></div></li>
+<li class="level2"><div class="li"><a href="utiliser_un_scanner_en_reseau#methode_3toutes_versions">METHODE 3 : toutes versions</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="utiliser_un_scanner_en_reseau#sur_le_client">Sur le client</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="utiliser_un_scanner_en_reseau#sur_un_client_linux">Sur un client Linux</a></div></li>
+<li class="level2"><div class="li"><a href="utiliser_un_scanner_en_reseau#sur_un_client_windows">Sur un client Windows®</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="utiliser_un_scanner_en_reseau#resolutions_de_problemes">Résolutions de problèmes</a></div></li>
+<li class="level1"><div class="li"><a href="utiliser_un_scanner_en_reseau#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="utiliser_un_scanner_en_reseau#notes">Notes</a></div></li>
+<li class="level1"><div class="li"><a href="utiliser_un_scanner_en_reseau#scanner_avec_sortie_reseau">Scanner avec sortie réseau</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../../quantal" class="wikilink1" title="quantal" rel="tag">Quantal</a>,
+	<a href="../../../precise" class="wikilink1" title="precise" rel="tag">Precise</a>,
+	<a href="../../../hardy" class="wikilink1" title="hardy" rel="tag">Hardy</a>,
+	<a href="../../../jaunty" class="wikilink1" title="jaunty" rel="tag">Jaunty</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../../../reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>,
+	<a href="../../../materiel" class="wikilink1" title="materiel" rel="tag">matériel</a>,
+	<a href="../../../scanner" class="wikilink1" title="scanner" rel="tag">scanner</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="utiliser_un_scanner_en_reseau">Utiliser un Scanner en réseau</h1>
+<div class="level1">
+
+<p>
+Cette documentation détaille la méthode d&#039;installation d&#039;un scanner relié à un serveur en réseau. La dernière rubrique précise le cas d&#039;un scanner avec sortie réseau.
+</p>
+
+<p>
+On propose l&#039;utilisation du logiciel <a href="../../../xsane" class="wikilink1" title="xsane">xSane</a> qui est une interface graphique pour scanner.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Utiliser un Scanner en réseau" [81-397] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Votre <a href="../../../scanner" class="wikilink1" title="scanner">scanner</a> fonctionne sur la machine (sous ubuntu que nous appellerons <strong>serveur</strong>) sur laquelle il est connecté.</div>
+</li>
+<li class="level1"><div class="li"> Être un <a href="../../../sudo" class="wikilink1" title="sudo">administrateur système</a> (par défaut sur l&#039;utilisateur principal, sinon voir <a href="../../../sudo#ajout_des_privileges_super-utilisateur_a_un_utilisateur" class="wikilink1" title="sudo">cette page</a>).</div>
+</li>
+<li class="level1"><div class="li"> Avoir votre <a href="../../../pare-feu" class="wikilink1" title="pare-feu">pare-feu</a> désactivé ou bien correctement configuré. (normalement désactivé par défaut dans Ubuntu).</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [398-854] -->
+<h2 class="sectionedit3" id="installation_du_serveur">Installation du serveur</h2>
+<div class="level2">
+
+<p>
+<p><div class="notehelp">Le serveur est la machine sur laquelle le scanner est connecté.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Installation du serveur" [855-975] -->
+<h3 class="sectionedit4" id="methode_1ubuntu_1204_et_versions_suivantes">METHODE 1 : Ubuntu 12.04 et versions suivantes</h3>
+<div class="level3">
+
+<p>
+Dans cette configuration, l&#039;ordinateur est équipé d&#039;un scanner connecté par <abbr title="Universal Serial Bus">USB</abbr> ou port parallèle.
+</p>
+
+<p>
+<p><div class="noteclassic">Assurez-vous que votre scanner est installé et fonctionne correctement sur l&#039;ordinateur serveur (c&#039;est à dire l&#039;ordinateur auquel le scanner est physiquement attaché). Testez d&#039;abord sur cette machine avant de tenter de partager le scanner sur le réseau.
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> Installer sur l’ordinateur serveur le <a href="../../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">paquet</a> <strong><a href="apt://sane" class="interwiki iw_apt" title="apt://sane">sane</a></strong>.</div>
+</li>
+<li class="level1"><div class="li"> Régler <strong>sane</strong> pour qu&#039;il se lance automatiquement. Pour cela, <a href="../../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditer le fichier</a> <strong>/etc/default/saned</strong> comme il suit :</div>
+</li>
+</ul>
+<pre class="file"># Set to yes to start saned                                                     
+RUN=yes</pre>
+<ul>
+<li class="level1"><div class="li"> Régler le sous-réseau qui sera en mesure d&#039;identifier le scanner. Pour cela, <a href="../../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">éditer le fichier</a> <strong>/etc/sane.d/saned.conf</strong> pour partager l&#039;imprimante sur votre réseau :</div>
+</li>
+</ul>
+<pre class="file">192.168.1.0/24</pre>
+
+<p>
+Adapter l&#039;IP selon votre plage d&#039;adresses utilisées dans votre réseau. (<strong>/24</strong> signifie de partager avec tout le monde dans xxx.xxx.xxx.0 à 255).
+</p>
+<ul>
+<li class="level1"><div class="li"> Enregistrer et fermer les fichiers.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="configuration_de_l_utilisateur">Configuration de l&#039;utilisateur</h4>
+<div class="level4">
+
+<p>
+Dans certains cas, les autorisations doivent être réglées. Par exemple pour mon scanner HP, l&#039;utilisateur saned doit être inséré dans le groupe <strong>lp</strong>. Pour le faire ouvrez un <a href="../../../terminal" class="wikilink1" title="terminal">terminal</a> et entrer cette <a href="../../../tutoriel/console_ligne_de_commande" class="wikilink1" title="tutoriel:console_ligne_de_commande">commande</a> :
+</p>
+<pre class="code">sudo adduser saned lp</pre>
+
+<p>
+Pour vérifier que l&#039;utilisateur a les autorisations nécessaires pour accéder au périphérique scanner, exécutez les <a href="../../../tutoriel/console_ligne_de_commande" class="wikilink1" title="tutoriel:console_ligne_de_commande">commandes</a> suivantes :
+</p>
+<pre class="code">sudo -s
+su -s /bin/bash saned
+scanimage -L</pre>
+
+<p>
+Par conséquent, vous devriez voir un périphérique identifié, par exemple :
+</p>
+<pre class="code">device `hpaio:/usb/Officejet_6600?serial=CN1CF190F405RN&#039; is a Hewlett-Packard Officejet_6600 all-in-one</pre>
+
+<p>
+Vous pouvez maintenant passer à la <span class="curid"><a href="../../../tutoriel/utiliser_un_scanner_en_reseau#sur_le_client" class="wikilink1" title="tutoriel:utiliser_un_scanner_en_reseau">configuration du client</a></span>.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "METHODE 1 : Ubuntu 12.04 et versions suivantes" [976-3145] -->
+<h3 class="sectionedit5" id="methode_2ubuntu_904_et_versions_suivantes">METHODE 2 : Ubuntu 9.04 et versions suivantes</h3>
+<div class="level3">
+
+<p>
+<p><div class="notewarning">
+<img src="../../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Cette méthode ne fonctionne apparemment pas. Si elle fonctionne, ou si ce paragraphe est incomplet, merci de bien vouloir apporter les modifications nécessaires.
+En effet selon ce tuto <a href="https://help.ubuntu.com/community/ScanningHowTo" class="urlextern" title="https://help.ubuntu.com/community/ScanningHowTo"  rel="nofollow">https://help.ubuntu.com/community/ScanningHowTo</a>, il y d&#039;autres étapes de configuration qui font appel à inetd (qui a été remplacé par xinetd), et au compte root pour avoir accès au scanner ce qui est déconseillé …
+
+</div></p>
+</p>
+
+<p>
+Jaunty fournit désormais un démon complet pour saned. Il faut <a href="../../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://sane-utils" class="urlextern" title="apt://sane-utils"  rel="nofollow">sane-utils</a></strong>, <a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditer le fichier</a> <strong>/etc/default/saned</strong> en tant qu&#039;utilisateur root et mettre :
+</p>
+<pre class="file">RUN=yes
+
+RUN_AS_USER=saned</pre>
+
+<p>
+<p><div class="noteimportant"><img src="../../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Selon <a href="https://help.ubuntu.com/community/ScanningHowTo" class="urlextern" title="https://help.ubuntu.com/community/ScanningHowTo"  rel="nofollow">https://help.ubuntu.com/community/ScanningHowTo</a>, ce serait RUN_AS_USER=root
+</div></p>
+Le fichier est bien commenté. Bien entendu l&#039;utilisateur saned doit exister et avoir les droits sur le scanner (faire partie du groupe propriétaire du scanner ou faire partie du groupe lp).
+</p>
+
+<p>
+<p><div class="noteclassic">
+<img src="../../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> Il n&#039;existe plus de groupe scanner sous jaunty / Karmic koala. Le créer ne sert à rien. C&#039;est au parametrage de UDEV, qu&#039;en général on règle le groupe du scanner. Sur Karmic, c&#039;est &quot;saned&quot;
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "METHODE 2 : Ubuntu 9.04 et versions suivantes" [3146-4499] -->
+<h3 class="sectionedit6" id="methode_3toutes_versions">METHODE 3 : toutes versions</h3>
+<div class="level3">
+
+<p>
+<p><div class="noteimportant">Aussi valable pour ceux chez qui la méthode 1 ne fonctionne pas.
+</div></p>
+</p>
+
+</div>
+
+<h4 id="sur_le_serveur">Sur le SERVEUR</h4>
+<div class="level4">
+
+<p>
+Il faut <a href="../../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://sane-utils" class="interwiki iw_apt" title="apt://sane-utils">sane-utils</a></strong>, nécessaire au bon fonctionnement de la mise en réseau.
+</p>
+
+</div>
+
+<h5 id="etape_s1adresses_ip_autorisees_a_se_connecter">Étape S1 : Adresses IP autorisées à se connecter</h5>
+<div class="level5">
+<ol>
+<li class="level1"><div class="li"> <a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Editer le fichier</a> <strong>/etc/sane.d/saned.conf</strong>.</div>
+</li>
+<li class="level1"><div class="li"> Y ajouter la ou les adresses IP ou le nom des machines qui se serviront du scanner. Il est aussi possible d&#039;y indiquer un réseau complet en donnant son adresse suivi du nombre de bits de son masque de sous-réseau :</div>
+</li>
+</ol>
+<pre class="file">192.168.0.5 #ip_machine - On n&#039;autorise que la machine 192.168.0.5
+192.168.0.0/24 #adresse_reseau/bits_masque - On autorise tout le réseau 192.168.0.*</pre>
+
+</div>
+
+<h5 id="etape_s2module_du_scanner">Étape S2 : Module du scanner</h5>
+<div class="level5">
+
+<p>
+<a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Editer le fichier</a> <strong>/etc/sane.d/dll.conf</strong> et vérifier que le module du scanner est présent. Par exemple pour un scanner Canon de la série Pixma, la ligne <em>pixma</em> est bien présente par défaut.
+Note: l&#039;activation du module <em>net</em> n&#039;est pas utile sur le serveur, sauf si vous voulez permettre à <em>ce</em> noeud server de ré-exporter d&#039;autres scanners <em>sane</em> distants (dont les adresses IP sont déclarées dans <strong>/etc/sane.d/net.conf</strong>).
+</p>
+
+</div>
+
+<h5 id="etape_s3nom_du_port_utilise">Étape S3 : Nom du port utilisé</h5>
+<div class="level5">
+
+<p>
+Il est vital de déterminer quel est le nom du port logiciel qui va être utilisé. En effet, ce nom peut changer suivant les cas. Pour cela, dans un <a href="../../../terminal" class="wikilink1" title="terminal">terminal</a>, saisir la <a href="../../../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante ; 
+</p>
+<pre class="code">cat /etc/services|grep san</pre>
+
+<p>
+Cette <a href="../../../commande_shell" class="wikilink1" title="commande_shell">commande</a> vous renverra toutes les lignes du fichier de définition des services contenant &quot;san&quot;. Normalement la ligne de <em>saned</em> est dedans. Elle doit normalement correspondre au numero 6566. 
+</p>
+<pre class="code">sane-port     6566/tcp        sane saned      # SANE network scanner daemon</pre>
+
+<p>
+En particulier, vérifier qu&#039;elle commence bien par &quot;sane-port&quot;, et non pas par &quot;sane&quot;, ce qui peut être le cas si le système est le fruit de (très) vielles mises à jour.
+</p>
+
+</div>
+
+<h5 id="etape_s4_facultatifimposer_un_mot_de_passe_aux_utilisateurs_qui_se_connecteront">Étape S4 FACULTATIF : Imposer un mot de passe aux utilisateurs qui se connecteront</h5>
+<div class="level5">
+
+<p>
+<p><div class="noteimportant">Attention, le scanner doit être connecté et sous tension quand vous exécutez &quot;scanimage&quot;. De plus cette commande est fournie par le paquet &quot;sane-utils&quot;.
+
+</div></p>
+Déterminer le nom du scanner avec la <a href="../../../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :
+</p>
+<pre class="code">scanimage -L</pre>
+
+<p>
+Qui donne :
+</p>
+<pre class="code">  device `pixma:04A91709_B10A23&#039; is a CANON Canon PIXMA MP150 multi-function peripheral</pre>
+
+<p>
+Donc le nom est : pixma.
+</p>
+
+<p>
+A l&#039;aide d&#039;un <a href="http://doc.ubuntu-fr.org/editeur_de_texte" class="wikilink1" title="editeur_de_texte">éditeur de texte</a>, créer ensuite le fichier <strong>/etc/sane.d/saned.users</strong> pour ne lister que les utilisateurs autorisés à se connecter et leur affecter un mot de passe. Il faut donc créer pour chaque utilisateur une ligne du type :
+</p>
+<pre class="code file saned.users">NOMDUTILISATEUR:MOTDEPASSE:SCANNER</pre>
+
+<p>
+où SCANNER est le nom du scanner qui a été donné par la commande précédente.
+</p>
+
+</div>
+
+<h5 id="etape_s5configuration_et_lancement_du_service">Étape S5 : Configuration et lancement du service</h5>
+<div class="level5">
+
+<p>
+Nous devons ensuite régler le programme qui gérera le serveur de scanner.
+Sous Ubuntu, ce programme par défaut est maintenant xinetd, mais vous pouvez le remplacer par inetd.
+</p>
+
+<p>
+<strong>S5_1 : Avec xinetd</strong>
+</p>
+
+<p>
+<em>S5_1_a : En utilisant le compte root (plus facile mais moins sécurisé)</em>
+</p>
+<ul>
+<li class="level1"><div class="li"> Il faut <a href="../../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://xinetd" class="interwiki iw_apt" title="apt://xinetd">xinetd</a></strong>, nécessaire au bon fonctionnement de la mise en réseau.</div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Créer le fichier</a> <strong>/etc/xinetd.d/sane-port</strong> et y ajouter les lignes suivantes,</div>
+</li>
+</ul>
+<pre class="code file sane-port">service sane-port
+{
+        id              = saned-stream
+        socket_type     = stream
+        server          = /usr/sbin/saned
+        protocol        = tcp
+        user            = root
+        group           = root
+        wait            = no
+}</pre>
+
+<p>
+Encore une fois, la concordance avec le nom du port est très importante !<br/>
+
+Pour finir, redémarrez le  <a href="../../../services" class="wikilink1" title="services">service</a> xinetd en tapant dans <a href="../../../terminal" class="wikilink1" title="terminal">terminal</a> : 
+</p>
+<pre class="code">sudo /etc/init.d/xinetd restart</pre>
+
+<p>
+<em>S5_1_b : Sans utiliser le compte root</em>
+</p>
+
+<p>
+Pour avoir un autre utilisateur du scanneur que root, il faut modifier d&#039;une part les règles <strong>udev</strong> et d&#039;autre part le service réseau <strong>xinet.d</strong> :
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Créer le fichier</a> <strong>/etc/xinetd.d/sane-port</strong> et y ajouter les lignes suivantes :</div>
+</li>
+</ul>
+<pre class="code file sane-port">service sane-port
+{
+        id              = saned-stream
+        socket_type     = stream
+        server          = /usr/sbin/saned
+        protocol        = tcp
+        user            = saned
+        group           = saned
+        wait            = no
+}</pre>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Créer le fichier</a> relatif au scanner USB <strong>/etc/udev/rules.d/40-scanner-permissions.rules</strong>. Dans ce fichier, Ajoutez les lignes suivantes :</div>
+</li>
+</ul>
+<pre class="file"># usb scanner
+SUBSYSTEM==&quot;usb&quot;, ENV{DEVTYPE}==&quot;usb_device&quot;, MODE:=&quot;0666&quot;, GROUP:=&quot;saned&quot;, OWNER:=&quot;saned&quot;
+SUBSYSTEM==&quot;usb_device&quot;,MODE:=&quot;0666&quot;</pre>
+
+<p>
+<p><div class="noteclassic">Il se peut que le fichier existe déjà ou qu&#039;un fichier de nom légèrement différent contenant <em>scanner</em> existe déjà (le nom n&#039;est pas important en réalité…). Dans les deux cas, il suffit de modifier ce fichier.
+</div></p>
+</p>
+
+<p>
+<p><div class="noteclassic">Le nom d&#039;utilisateur est bien <em>saned</em>, et pas celui l&#039;utilisateur de la machine.
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> Puis redémarrez le  <a href="../../../services" class="wikilink1" title="services">service</a> udev. Dans un <a href="../../../terminal" class="wikilink1" title="terminal">terminal</a>, saisir la <a href="../../../commande_shell" class="wikilink1" title="commande_shell">commande</a> suivante :<pre class="code /">sudo /etc/init.d/udev restart</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Pour finir, redémarrez le  <a href="../../../services" class="wikilink1" title="services">service</a> <strong>xinetd</strong> en tapant dans un <a href="../../../terminal" class="wikilink1" title="terminal">terminal</a> la <a href="../../../commande_shell" class="wikilink1" title="commande_shell">commande</a>: </div>
+</li>
+</ul>
+<pre class="code">sudo /etc/init.d/xinetd restart</pre>
+
+<p>
+<strong><em>S5_2 : Avec inetd</em></strong>
+</p>
+
+<p>
+<p><div class="noteimportant">Obsolète : utiliser xinetd
+</div></p>
+</p>
+<ul>
+<li class="level1"><div class="li"> Il faut <a href="../../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer le paquet</a> <strong><a href="apt://inetutils-inetd" class="interwiki iw_apt" title="apt://inetutils-inetd">inetutils-inetd</a></strong>, nécessaire au bon fonctionnement de la mise en réseau. Puis;</div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/inetd.conf</strong> et y ajouter la ligne suivante,</div>
+</li>
+</ul>
+<pre class="file">saned stream tcp nowait saned /usr/sbin/saned saned</pre>
+
+<p>
+Le premier terme de la ligne précédente renvoie au nom du port, que nous avons déterminé au dessus. La concordance est très importante.
+</p>
+<ul>
+<li class="level1"><div class="li"> Pour finir, redémarrez-les  <a href="../../../services" class="wikilink1" title="services">services</a> en tapant dans un <a href="../../../terminal" class="wikilink1" title="terminal">terminal</a> : <pre class="code">sudo /etc/init.d/inetutils-inetd restart</pre>
+</div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="etape_s6">Étape S6</h5>
+<div class="level5">
+
+<p>
+<p><div class="noteclassic">Si vous utilisez <a href="http://doc.ubuntu-fr.org/ufw" class="wikilink1" title="ufw">ufw</a> qui ne ferme pas les ports en entrée par défaut, cette étape est inutile. 
+</div></p>
+</p>
+
+<p>
+Si avez par défaut <strong>fermé les ports en entrée</strong> au niveau du <a href="../../../pare-feu" class="wikilink1" title="pare-feu">pare-feu</a> sur le PC serveur, il faut veiller à ouvrir les ports 6566, 45745 et 47342 en entrée.
+</p>
+
+<p>
+<p><div class="notehelp">l&#039;ouverture du port 6566 semble indispensable puisque le serveur l&#039;emploi par defaut mais rien ne justifie l&#039;ouverture des ports 45745 et 47342. Il serait bien que l&#039;auteur justifie ce point
+</div></p>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "METHODE 3 : toutes versions" [4500-11531] -->
+<h2 class="sectionedit7" id="sur_le_client">Sur le client</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT7 SECTION "Sur le client" [11532-11557] -->
+<h3 class="sectionedit8" id="sur_un_client_linux">Sur un client Linux</h3>
+<div class="level3">
+
+<p>
+<p><div class="notehelp">Le client est la machine qui se connectera sur le scanner distant.
+</div></p>
+</p>
+
+<p>
+Commencer par <a href="../../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong>xsane</strong>. <a href="../../../xsane" class="wikilink1" title="xsane">xSane</a> (commande <code>xsane</code>), est le logiciel qui vous permettra d&#039;accéder au scanner distant. Vous pouvez également installer un autre logiciel de scanner (voir la page <a href="../../../scanner" class="wikilink1" title="scanner">scanner</a>).
+</p>
+
+<p>
+<p><div class="noteimportant">Le logiciel skanlite ne fonctionne pas en tant que client saned pour l&#039;instant. L&#039;auteur de l&#039;article a écrit au développeur du logiciel, mais celui-ci ne sait que faire. L&#039;auteur suppose que la librairie libksan n&#039;est pas prévue pour cela.
+</div></p>
+</p>
+
+</div>
+
+<h5 id="etape_c1adresse_ip_du_poste_auquel_le_scanner_est_connecte">Étape C1 : Adresse IP du poste auquel le scanner est connecté</h5>
+<div class="level5">
+
+<p>
+<a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/sane.d/net.conf</strong> et y ajouter l&#039;adresse IP ou le nom du serveur, par exemple :
+</p>
+<pre class="file">192.168.0.111</pre>
+
+<p>
+On peut aussi préciser un temps maximal de tentative de connection en décommentant la ligne :
+</p>
+<pre class="file">connect_timeout = 60</pre>
+
+</div>
+
+<h5 id="etape_c2activer_le_module_reseau_pour_pouvoir_acceder_a_un_scanner_distant">Étape C2 : Activer le module réseau pour pouvoir accéder à un scanner distant</h5>
+<div class="level5">
+
+<p>
+Vérifier dans /etc/sane.d/dll.conf que le module <em>net</em> est présent (et non commenté).
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Sur un client Linux" [11558-12784] -->
+<h3 class="sectionedit9" id="sur_un_client_windows">Sur un client Windows®</h3>
+<div class="level3">
+
+<p>
+Il existe une version de Sane pour Windows. Vous pouvez l&#039;utiliser en lieu et place des pilotes classiques de votre scanner. Vous pouvez donc l&#039;utiliser, que votre scanner soit en réseau soit en local ; et vous pouvez même monter le serveur de scanner sur Windows, ce qui est quand même un comble !
+</p>
+
+<p>
+Vous pouvez soit utiliser Sane pour Windows, soit Sanetwain (l&#039;une ou l&#039;autre méthode au choix).
+</p>
+
+<p>
+L&#039;archive zip de Sane se trouve sur un de ces miroirs : <a href="http://www.xsane.org/xsane-download.html" class="urlextern" title="http://www.xsane.org/xsane-download.html"  rel="nofollow">http://www.xsane.org/xsane-download.html</a>. Le logiciel s&#039;installe en copiant le dossier Sane à la racine de « C:\ ».
+</p>
+
+<p>
+Ici, on veut installer un client Sane. Donc, il faut <a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditer le fichier</a> <strong>C:\sane\etc\sane.d\net.conf</strong>, et ajouter l&#039;adresse IP du serveur. Il faut également <a href="../../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditer le fichier</a> <strong>C:\sane\etc\sane.d\dll.conf</strong> et mettre une ligne &quot;net&quot;.
+Vous remarquerez que c&#039;est à peu près la même démarche que sous Linux. L&#039;avantage de cette méthode, c&#039;est que vous pouvez configurer un client, puis copier le dossier « C:\Sane » sur les autres postes Windows et cela fonctionnera !
+</p>
+
+<p>
+<strong>SaneTwain</strong> s&#039;installe avec un installeur standard.
+</p>
+
+<p>
+<a href="http://sanetwain.ozuzo.net/downloads/sanetwain129.zip" class="urlextern" title="http://sanetwain.ozuzo.net/downloads/sanetwain129.zip"  rel="nofollow">http://sanetwain.ozuzo.net/downloads/sanetwain129.zip</a>
+</p>
+
+<p>
+Il va créer un dossier de programme classique. Installez-le.
+Dans la boite de dialogue qui va s&#039;ouvrir, mettez l&#039;adresse IP du serveur dans « hostname ».
+</p>
+
+<p>
+<p><div class="noteclassic">Vous pouvez aussi mettre le nom du serveur, mais il faut pour cela que windows connaisse cet alias. Il y a un fichier « hosts » pour cela, comme sous Linux. Cherchez-le avec la commande « Chercher un fichier »<sup><a href="utiliser_un_scanner_en_reseau#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.
+</div></p>
+</p>
+
+<p>
+<p><div class="noteimportant">Dans les deux cas (Sane et Sanetwain), il faut s&#039;assurer que le serveur ait bien dans son fichier « /etc/sane.d/saned.conf » l&#039;adresse IP du client Windows ou son alias clairement identifié ! L&#039;auteur n&#039;est pas parvenu à le configurer avec le nom du PC. Il faut donc soit connaitre l&#039;adresse IP de Windows, soit se débrouiller pour que Linux la connaisse (avec une astuce sur votre <abbr title="Domain Name System">DNS</abbr> perso peut-être ou un alias dans le fichier « /etc/hosts »).
+</div></p>
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Sur un client Windows®" [12785-15011] -->
+<h2 class="sectionedit10" id="resolutions_de_problemes">Résolutions de problèmes</h2>
+<div class="level2">
+
+<p>
+P1)  On peut commencer par tester si le scanner peut être déja utilisé depuis le serveur.
+</p>
+
+<p>
+Le serveur jouera donc aussi le rôle de client.
+</p>
+
+<p>
+Pour cela, sur le serveur, éditer /etc/sane.d/net.conf et :
+</p>
+<ul>
+<li class="level1"><div class="li"> Décommenter la ligne <em>connect_timeout </em> ce qui donne <pre class="file">connect_timeout = 60</pre>
+</div>
+</li>
+<li class="level2"><div class="li"> ajouter à la fin <pre class="file">localhost</pre>
+</div>
+</li>
+</ul>
+
+<p>
+Essayer de scanner en choisissant le scanner désigné par <em>net</em>.
+Si ça fonctionne, la configuration du serveur est sans doute bonne … c&#039;est que l&#039;ordinateur client n&#039;arrive pas à se connecter : voir notamment P4
+</p>
+
+<p>
+P2)  Essayer d&#039;imposer un nom d&#039;utilisateur et un mot de passe conformément au point S4.
+</p>
+
+<p>
+P3)  Sur le serveur, vérifier que l&#039;utilisateur courant du serveur appartient au groupe saned.
+</p>
+
+<p>
+P4) Désactiver temporairement le pare feu <strong>en entrée</strong> si vous avez <strong>vous même</strong> fermé des ports (ce n&#039;est pas le cas par défaut)
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Résolutions de problèmes" [15012-15958] -->
+<h2 class="sectionedit11" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+Vous pouvez annuler les modifications faites aux lignes ci-dessus.
+</p>
+
+<p>
+Toutefois, même si vous n&#039;utilisez plus de scanner en réseau, toutes les modifications que vous avez pu apporter ne compromettent en rien le système. Elles seront annulées à la prochaine installation complète d&#039;une nouvelle version d&#039;Ubuntu.
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Désinstallation" [15959-16305] -->
+<h2 class="sectionedit12" id="notes">Notes</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> N&#039;oubliez pas d&#039;ouvrir le port 6566 en <abbr title="Transmission Control Protocol">TCP</abbr> sur le serveur, si vous y avez activé le <a href="../../../pare-feu" class="wikilink1" title="pare-feu">pare-feu</a>.</div>
+</li>
+<li class="level1"><div class="li"> Vérifier que le paquet <strong>sane-utils</strong> est bien <a href="../../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installé</a> sur le serveur.</div>
+</li>
+<li class="level1"><div class="li"> Chez moi, l&#039;utilisateur saned avait « /bin/false » comme shell (donc pas de shell). J&#039;ai remplacé par « /bin/sh » dans « /etc/passwd », et depuis plus de problèmes avec <em>xinet.d</em>.</div>
+</li>
+<li class="level1"><div class="li"> Pour ma part j&#039;ai du mettre root root à la place de sane saned dans /etc/services</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT12 SECTION "Notes" [16306-16830] -->
+<h2 class="sectionedit13" id="scanner_avec_sortie_reseau">Scanner avec sortie réseau</h2>
+<div class="level2">
+
+<p>
+Le plus simple est de configurer son imprimante avec une adresse IP statique, notée 192.168.X.Y dans la suite.
+</p>
+
+<p>
+<img src="../../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> : Il faut avoir le driver du scanner, qui est peut être le même que celui de l&#039;imprimante ?
+</p>
+
+<p>
+Ensuite if faut rajouter dans le fichier /etc/sane.d/xerox_mfp.conf la ligne:
+</p>
+<pre class="file"> tcp 192.168.X.Y</pre>
+
+<p>
+<p><div class="noteclassic">
+Il est possible d&#039;ajouter l&#039;adresse IP statique de l&#039;imprimante dans le fichier /etc/hosts. Exemple :
+</p>
+<pre class="file"> 192.168.X.Y    nom_de_l_imprimante </pre>
+
+<p>
+Cette manipulation évite de mémoriser l&#039;adresse IP, et est vraie pour n&#039;importe quelle machine IP.
+
+</div></p>
+</p>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/yeffries" class="wikilink1" title="utilisateurs:yeffries">yeffries</a>,<a href="http://doc.ubuntu-fr.org/utilisateurs/tshirtman" class="wikilink1" title="utilisateurs:tshirtman">tshirtman</a>, <a href="../../../utilisateurs/fabien26" class="wikilink1" title="utilisateurs:fabien26">Fabien26</a>, <a href="../../../utilisateurs/ner0lph" class="wikilink1" title="utilisateurs:ner0lph">Ner0lph</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/stephaneguedon" class="wikilink1" title="utilisateurs:stephaneguedon">stephaneguedon</a>, <a href="../../../utilisateurs/claudiux" class="wikilink1" title="utilisateurs:claudiux">claudiux</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/andso" class="wikilink1" title="utilisateurs:andso">andso</a>, <a href="../../../utilisateurs/olivier_v" class="wikilink1" title="utilisateurs:olivier_v">Olivier V</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/mario_26" class="wikilink1" title="utilisateurs:mario_26">mario_26</a>,  <a href="http://doc.ubuntu-fr.org/utilisateurs/lousticator" class="wikilink1" title="utilisateurs:lousticator">lousticator</a></em>
+</p>
+
+</div>
+<!-- EDIT13 SECTION "Scanner avec sortie réseau" [16831-] --><div class="footnotes">
+<div class="fn"><sup><a href="utiliser_un_scanner_en_reseau#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Sous Windows XP, il est situé dans « C:\WINDOWS\system32\drivers\etc\ ».</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/7/775a2c6cf494a5bb66aa53194dc96fed.xhtml used -->
+</div>
+</body>
+</html>

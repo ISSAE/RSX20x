@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>ext4</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-02-28T03:13:45+0100"/>
+<meta name="keywords" content="systeme,partitions"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../ext4?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="ext4"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/ext4"/>
+<link rel="canonical" href="../../ext4"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"ext4","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="ext4#nouveautes">Nouveautés</a></div></li>
+<li class="level1"><div class="li"><a href="ext4#prerequis_pour_migrer_vers_l_ext4">Prérequis pour migrer vers l&#039;ext4</a></div></li>
+<li class="level1"><div class="li"><a href="ext4#convertir_une_partition_ext3_en_ext4">Convertir une partition ext3 en ext4</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="ext4#grub_error_13grub_error_24">Grub Error 13 / Grub Error 24</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="ext4#accessibilite_depuis_windows">Accessibilité depuis Windows</a></div></li>
+<li class="level1"><div class="li"><a href="ext4#desactiver_la_journalisation">Désactiver la journalisation</a></div></li>
+<li class="level1"><div class="li"><a href="ext4#liens">Liens</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../partitions" class="wikilink1" title="partitions" rel="tag">partitions</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="le_systeme_de_fichiers_ext4">Le système de fichiers ext4</h1>
+<div class="level1">
+
+<p>
+Ext4 est une évolution du système de fichier ext3, qui est actuellement le système de fichier le plus utilisé sous Linux. Il présente de nombreux avantages et optimisations par rapport à l&#039;ancienne version, tout en assurant une rétro-compatibilité. Ext4 est stable et est le système de fichier par défaut sous 9.10.
+</p>
+
+<p>
+Cette page vous permettra de passer vos systèmes de fichiers ext2 ou ext3 en ext4 sans avoir à réinstaller ni copier vos fichier autre part.
+</p>
+
+<p>
+Voir <a href="../../benchmark#systeme_de_fichier_ext_contre_les_autres" class="wikilink1" title="benchmark">le benchmark des systèmes de fichier ext</a>.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Le système de fichiers ext4" [34-653] -->
+<h2 class="sectionedit2" id="nouveautes">Nouveautés</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Ext4 a une option : <strong>extents</strong> qui permet de limiter grandement et automatiquement la fragmentation du système de fichiers.</div>
+</li>
+<li class="level1"><div class="li"> Ext4 est nativement présent depuis la distribution Fedora 9 et son utilisation est considérée comme stable depuis la version 2.6.28 du noyau Linux.</div>
+</li>
+<li class="level1"><div class="li"> Ext4 présente des performances en hausse par rapport à Ext3, ReiserFS 3 et XFS comme en témoigne ce bench de Phoronix <a href="http://www.phoronix.com/scan.php?page=article&amp;item=ext4_benchmarks&amp;num=1" class="urlextern" title="http://www.phoronix.com/scan.php?page=article&amp;item=ext4_benchmarks&amp;num=1"  rel="nofollow">http://www.phoronix.com/scan.php?page=article&amp;item=ext4_benchmarks&amp;num=1</a></div>
+</li>
+<li class="level1"><div class="li"> Ext4 peut se transformer en système de fichier non journalisé comme Ext2.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Nouveautés" [654-1247] -->
+<h2 class="sectionedit3" id="prerequis_pour_migrer_vers_l_ext4">Prérequis pour migrer vers l&#039;ext4</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Utiliser Ubuntu 9.10 ou suivant (mettre à niveau vers fonctionne aussi).</div>
+</li>
+<li class="level1"><div class="li"> <strong>Avoir fait une sauvegarde!</strong> (C&#039;est préférable)</div>
+</li>
+<li class="level1"><div class="li"> Avoir déjà une partition ext3 avec une taille d&#039;inodes de 256 octets (pour vérifier utilisez la commande <strong>sudo tune2fs -l /dev/sda1|grep &quot;Inode size&quot;</strong> ) (pensez à remplacer sda1 par la partition ext3 correspondante le cas échéant, dans la commande précédente)</div>
+</li>
+</ul>
+<blockquote><div class="no">
+ <em>Dans mon cas, mon disque de données (/mount/disk/) avait des inodes de 128 octets, la conversion en ext4 avec la commande ci-dessous n&#039;a pas posé de problème.</em><br/>
+ <em>Mais d&#039;après <a href="https://ext4.wiki.kernel.org/articles/c/o/n/Considerations_when_creating_ext3_filesystems.html" class="urlextern" title="https://ext4.wiki.kernel.org/articles/c/o/n/Considerations_when_creating_ext3_filesystems.html"  rel="nofollow">le wiki ext4</a> [en], il faut une taille d&#039;inode de 256 octets minimum pour stocker les attributs liés certaines fonctionnalités avancées de l&#039;ext4.</em></div></blockquote>
+
+</div>
+<!-- EDIT3 SECTION "Prérequis pour migrer vers l'ext4" [1248-2142] -->
+<h2 class="sectionedit4" id="convertir_une_partition_ext3_en_ext4">Convertir une partition ext3 en ext4</h2>
+<div class="level2">
+
+<p>
+Si vous avez tout ceci de prêt, vous devez commencer par <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">modifiez le fichier</a> <strong>/etc/fstab</strong>
+</p>
+
+<p>
+remplacez dans ce fichier <strong>ext2</strong> et <strong>ext3</strong> par <strong>ext4</strong> à chaque fois que vous le voyez.
+</p>
+
+<p>
+<p><div class="noteimportant">Il est nécessaire d&#039;ajouter un journal à vos partitions ext2 (i.e. migration ext3) avant de pouvoir les convertir en ext4 :
+</p>
+<pre class="code">sudo tune2fs -j &quot;Partition à convertir&quot;</pre>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+redémarrez ensuite votre système et ouvrez un <a href="../../terminal" class="wikilink1" title="terminal">terminal</a> et tapez ce qui suit ( il faut mettre &quot;sudo&quot; en tête, sinon le résultat de la commande sous Ubuntu 12.04 retourne &quot;tune2fs: Permission non accordée lors de la tentative d&#039;ouverture de &quot;Partition à convertir&quot;. Impossible de trouver un superbloc de système de fichiers valide.&quot;) : 
+</p>
+<pre class="code">sudo tune2fs -O extents,uninit_bg,dir_index &quot;Partition à convertir&quot;</pre>
+
+<p>
+<strong>&quot;Partition à convertir&quot;</strong> étant le nom de la partition dans <strong>/etc/fstab</strong> que vous voulez convertir. (par exemple /dev/sda1 ou /dev/sdb2)
+</p>
+
+<p>
+Puis redémarrez à nouveau ou lancez manuellement une vérification de la partition :
+</p>
+<pre class="code">sudo fsck.ext4 -fDC0 &quot;Partition à convertir&quot;</pre>
+
+<p>
+Si vous convertissez la partition root &quot;/&quot; il faudra ensuite <strong>réinstaller grub</strong>. <br/>
+
+Vérifiez d&#039;abord si le paquet <strong>grub2</strong> est bien <a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installé</a>. <br/>
+
+Puis ouvrez un <a href="../../terminal" class="wikilink1" title="terminal">terminal</a> et tapez:
+</p>
+<pre class="code">grub-install /dev/sda</pre>
+<pre class="code">sudo update-grub</pre>
+
+<p>
+<p><div class="notewarning">Pour les <strong>ordinateurs tatoués</strong> et/ou qui s&#039;<a href="../../tutoriel/comment_amorcer_ubuntu_avec_ntldr" class="wikilink1" title="tutoriel:comment_amorcer_ubuntu_avec_ntldr">amorcent en utilisant le ntldr</a> :
+</p>
+
+<p>
+Réinstaller le grub sur la partition où a été installé Ubuntu (par exemple, /dev/sda2), sinon, vous risquez de perdre le mbr.
+</p>
+
+<p>
+Ne pas oublier de <strong>recopier</strong> le fichier d&#039;amorce dans la partition windows avant de faire le reboot :
+</p>
+<pre class="code">sudo dd if=/dev/sdxY of=~/grub.bs bs=512 count=1</pre>
+
+<p>
+où sdxY est la partition sur laquelle est installé Ubuntu.
+</p>
+<pre class="code">mkdir /media/windows
+mount -t ntfs-3g /dev/sdwZ /media/windows</pre>
+
+<p>
+où sdwZ est la partition sur laquelle est installée Windows.
+</p>
+<pre class="code">cp /media/windows/grub.bs /media/windows/grub.bs.bak
+cp ~/grub.bs /media/windows/grub.bs
+umount /dev/sdwZ</pre>
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Convertir une partition ext3 en ext4" [2143-4402] -->
+<h3 class="sectionedit5" id="grub_error_13grub_error_24">Grub Error 13 / Grub Error 24</h3>
+<div class="level3">
+
+<p>
+Si lors d&#039;un futur redémarrage une de ces erreurs apparaît :
+</p>
+<pre class="code">Error 13: Invalid or unsupported executable format</pre>
+
+<p>
+ou
+</p>
+<pre class="code">Error 24: Cannot boot without kernel loaded</pre>
+
+<p>
+Cela signifie que vous n&#039;avez pas réinstallé grub après une conversion. Grub ne reconnaît pas votre partition ext4. Redémarrez avec un Live CD de Jaunty et entrez ces commandes :
+</p>
+<pre class="code">mkdir /media/ubuntu
+mount -t ext4 /dev/sda1 /media/ubuntu
+mount -t proc proc /media/ubuntu/proc
+mount -t sysfs sys /media/ubuntu/sys
+mount -o bind /dev /media/ubuntu/dev
+chroot /media/ubuntu
+grub-install /dev/sda</pre>
+
+<p>
+<p><div class="notetip">À faire aussi si vous avez des messages d&#039;erreur lors de l&#039;installation du grub.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Grub Error 13 / Grub Error 24" [4403-5150] -->
+<h2 class="sectionedit6" id="accessibilite_depuis_windows">Accessibilité depuis Windows</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteimportant">
+</p>
+<ul>
+<li class="level1"><div class="li"> MÀJ février 2014 : Il existe un autre logiciel permettant de faire apparaitre les partitions linux dans l&#039;explorateur de fichier : <a href="http://www.paragon-software.com/home/extfs-windows/" class="urlextern" title="http://www.paragon-software.com/home/extfs-windows/"  rel="nofollow">Ext for Windows by paragon</a>. Celui-ci fonctionne en lecture/écriture et fonctionne sous Windows 8 et Windows 8.1.</div>
+</li>
+<li class="level2"><div class="li"> MÀJ janvier 2012  : Il existe une alternative fonctionnant très bien en lecture / écriture : <a href="http://archive.siejak.pl/fsprox/" class="urlextern" title="http://archive.siejak.pl/fsprox/"  rel="nofollow">FSProxy</a>. Ce dernier mappe un lecteur réseau qui permet d&#039;accéder aux partitions désirées. Pour y accéder tapez simplement dans la barre d&#039;adresse de l&#039;explorateur Windows &quot;\\fsproxy&quot;.</div>
+</li>
+<li class="level2"><div class="li"> novembre 2011 : Le logiciel <a href="http://www.ext2fsd.com/" class="urlextern" title="http://www.ext2fsd.com/"  rel="nofollow">ext2fsd</a> dispose d&#039;un support partiel ext4 (lecture/écriture sur ext4 &quot;standard&quot;, lecture uniquement en ext4 &quot;extent&quot;), et se présente sous la forme d&#039;un driver, donc utilisable directement depuis l&#039;explorateur et autres applications.</div>
+</li>
+<li class="level2"><div class="li"> mai 2010 : Le logiciel <a href="http://ext2read.blogspot.com/" class="urlextern" title="http://ext2read.blogspot.com/"  rel="nofollow">ext2read</a> permet maintenant de lire des fichiers de partitions ext4, mais comme il ne s’agit pas d’un driver il n’est pas intégré à l’explorateur et peut être un peu fastidieux à utiliser pour l’instant.</div>
+</li>
+</ul>
+
+<p>
+(<a href="../../tutoriel/comment_acceder_a_ses_partitions_d_ubuntu_sous_windows" class="wikilink1" title="tutoriel:comment_acceder_a_ses_partitions_d_ubuntu_sous_windows">Comment accéder à ses partitions d&#039;Ubuntu sous Windows</a>)
+</div></p>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Accessibilité depuis Windows" [5151-6557] -->
+<h2 class="sectionedit7" id="desactiver_la_journalisation">Désactiver la journalisation</h2>
+<div class="level2">
+
+<p>
+Ext4 peut devenir un système de fichiers non journalisé comme Ext2 depuis <a href="http://doc.ubuntu-fr.org/karmic#noyau_2631" class="wikilink1" title="karmic">Ubuntu 9.10</a>.
+Pour désactiver le journal d&#039;Ext4 vous devez installer Ubuntu sur une partition Ext4 journalisée normal, puis une fois l&#039;installation terminée redémarrez sur le LiveCD pour ouvrir un terminal et tapez :
+</p>
+<pre class="code">sudo tune2fs -O^has_journal /dev/sda1
+sudo e2fsck -f -v -C0 /dev/sda1</pre>
+
+<p>
+en remplaçant sda1 par votre partition. 
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Désactiver la journalisation" [6558-7044] -->
+<h2 class="sectionedit8" id="liens">Liens</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> La page officielle du projet ext4: <a href="http://ext4.wiki.kernel.org/index.php/Main_Page" class="urlextern" title="http://ext4.wiki.kernel.org/index.php/Main_Page"  rel="nofollow">http://ext4.wiki.kernel.org/index.php/Main_Page</a></div>
+</li>
+<li class="level1"><div class="li"> Page wikipedia: <a href="http://fr.wikipedia.org/wiki/ext4" class="interwiki iw_wpfr" title="http://fr.wikipedia.org/wiki/ext4">ext4</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ext4.wiki.kernel.org/index.php/Main_Page" class="urlextern" title="https://ext4.wiki.kernel.org/index.php/Main_Page"  rel="nofollow">https://ext4.wiki.kernel.org/index.php/Main_Page</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs: <a href="../../utilisateurs/fabien26" class="wikilink1" title="utilisateurs:fabien26">Fabien26</a> <a href="../../utilisateurs/nicolarius" class="wikilink2" title="utilisateurs:nicolarius" rel="nofollow">Nicolarius</a> <a href="../../utilisateurs/vincent85" class="wikilink2" title="utilisateurs:vincent85" rel="nofollow">Vincent85</a>.</em>
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Liens" [7045-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/0/03729da4c7ecad3579afd749ca966025.xhtml used -->
+</div>
+</body>
+</html>

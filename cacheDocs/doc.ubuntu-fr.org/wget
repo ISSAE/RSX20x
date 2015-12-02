@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>wget - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-02-07T22:06:16+0100"/>
+<meta name="keywords" content="reseau"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/wget?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/wget?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/wget"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/wget"/>
+<link rel="canonical" href="wget"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"wget","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="wget#main" tabindex="1">Contenu</a> | <a href="wget#qsearch__in" tabindex="2">Rechercher</a> | <a href="wget#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="wget" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="wget" >wget</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="wget#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="wget#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="wget#utilisation">Utilisation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="wget#descriptions_des_options_principales">Descriptions des options principales</a></div></li>
+<li class="level2"><div class="li"><a href="wget#exemples_d_utilisation_courante">Exemples d&#039;utilisation courante</a></div></li>
+<li class="level2"><div class="li"><a href="wget#exemples_d_utilisation_avancee">Exemples d&#039;utilisation avancée</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="wget#interface_graphique">Interface Graphique</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="wget#par_le_script_wgetgui">Par le script wgetgui</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="wget#voir_aussi">Voir aussi</a></div></li>
+<li class="level1"><div class="li"><a href="wget#references">Références</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="reseau" class="wikilink1" title="reseau" rel="tag">réseau</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="wget">WGET</h1>
+<div class="level1">
+
+<p>
+Wget est un programme en ligne de commande non interactif de téléchargement de fichiers depuis le Web. Il supporte les protocoles HTTP, <abbr title="Hypertext Transfert Protocol Secured">HTTPS</abbr> et <abbr title="File Transfer Protocol">FTP</abbr> ainsi que le téléchargement au travers des proxies HTTP.
+</p>
+
+<p>
+Wget peut travailler en arrière-plan et ainsi vous permettre de lancer un téléchargement et de vous déconnecter du système ! Utile car il ne requiert d&#039;action de l&#039;utilisateur et vous permet d&#039;effectuer ses tâches en arrière plan, ce qui peut être très utile pour les téléchargements de données nombreuses et lourdes. Vous pouvez ainsi changer de session et laisser Wget finir le travail !
+</p>
+
+<p>
+Ce logiciel libre permet le simple téléchargement d&#039;un fichier mais aussi la recopie en local de tout ou partie d&#039;un site qui sera par la suite consultable hors-ligne. Point fort appréciable, Wget vous permet de reprendre un téléchargement échoué suite à divers problèmes (connexions instables ou très lentes etc…). Les nombreuses options de Wget en font un outil de téléchargement très puissant !
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="wget"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1423343176" /><input type="hidden" name="summary" value="[WGET] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="25-1072" /><input type="submit" value="Modifier" class="button" title="WGET" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Disposer d&#039;une connexion à Internet configurée et activée </div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="wget"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1423343176" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1073-1171" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<strong>Wget</strong> est installé par défaut dans les dernières versions d&#039;Ubuntu. Cependant, si ce n&#039;est pas le cas, l&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installation du paquet</a> « wget » suffit (il est situé dans le dépot &quot;main&quot;, ce qui ne nécessite pas de toucher au fichier sources.list)
+</p>
+
+<p>
+Il est possible de définir certaines des options ci-dessous dans le fichier personnel « .wgetrc ».
+</p>
+
+<p>
+On peut noter qu&#039;il existe une interface graphique <strong><a href="apt://gwget" class="urlextern" title="apt://gwget"  rel="nofollow">Gwget</a></strong>. <sup><a href="wget#fn__1" id="fnt__1" class="fn_top">1)</a></sup>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="wget"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1423343176" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1172-1749" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h2 class="sectionedit4" id="utilisation">Utilisation</h2>
+<div class="level2">
+<pre class="code">wget [options] [url]</pre>
+
+<p>
+Par défaut, le fichier sera enregistré dans le dossier courant, ordinairement votre dossier personnel /home/vous.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="wget"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1423343176" /><input type="hidden" name="summary" value="[Utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1750-1926" /><input type="submit" value="Modifier" class="button" title="Utilisation" /></div></form></div>
+<h3 class="sectionedit5" id="descriptions_des_options_principales">Descriptions des options principales</h3>
+<div class="level3">
+
+<p>
+<strong><code>-V</code></strong> –&gt; Renseigne sur la version de Wget.
+</p>
+
+<p>
+<strong><code>-h</code></strong> –&gt; Affiche toutes les options disponibles.
+</p>
+
+<p>
+<strong><code>-i</code></strong> –&gt; Lit les adresses depuis un fichier .txt.
+</p>
+
+<p>
+<strong><code>-N</code></strong> –&gt; ( –timestamping ) Active l&#039;horodatage (time-stamping). Permet d&#039;écraser les fichiers sur la destination s&#039;ils existent
+</p>
+
+<p>
+<strong><code>-t</code></strong> –&gt; Définit le nombre de tentatives, 0 ou inf pour un nombre illimité de tentatives. Par défaut 20 tentatives sont effectuées, à moins qu&#039;une erreur fatale apparaisse.
+</p>
+
+<p>
+<strong><code>-c</code></strong> –&gt; Reprend un téléchargement interrompu.
+</p>
+
+<p>
+<strong><code>-S</code></strong> –&gt; Affiche les messages envoyés par les serveurs <abbr title="File Transfer Protocol">FTP</abbr> ou HTTP.
+</p>
+
+<p>
+<strong><code>-Y</code></strong> –&gt; on/off active ou désactive le support proxy.
+</p>
+
+<p>
+<strong><code>-nd</code></strong> –&gt; Si cette option est utilisée les fichiers sauvegardés le seront dans un seul et même répertoire.
+</p>
+
+<p>
+<strong><code>-r</code></strong> –&gt; Active le téléchargement récursif.
+</p>
+
+<p>
+<code><strong>-l</strong></code> –&gt; Indique la profondeur à utiliser lors d&#039;un téléchargement récursif.
+</p>
+
+<p>
+<code><strong>-k</strong></code> –&gt; Convertit les liens pour être disponible en consultation locale.
+</p>
+
+<p>
+<code><strong>-p</strong></code> –&gt; Oblige Wget à télécharger tous les fichiers requis pour une consultation convenable d&#039;une page <abbr title="HyperText Markup Language">HTML</abbr>.
+</p>
+
+<p>
+<code><strong>-m</strong></code> –&gt; Active toutes les options convenables pour faire un miroir.
+</p>
+
+<p>
+<strong><code>–follow-ftp</code></strong> –&gt; Sans cette option tous les liens <abbr title="File Transfer Protocol">FTP</abbr> donnés depuis un document <abbr title="HyperText Markup Language">HTML</abbr> seront ignorés.
+</p>
+
+<p>
+<strong><code>-H</code></strong> –&gt; Autorise lors d&#039;un téléchargement récursif le changement d&#039;hôtes.
+</p>
+
+<p>
+<strong><code>-np</code></strong> –&gt; Ne remonte pas les répertoires parents.
+</p>
+
+<p>
+<strong><code>-A</code></strong> –&gt; Permet de ne télécharger que le type de fichier choisi.
+</p>
+
+<p>
+<strong><code>-o</code></strong> –&gt; Permet d&#039; enregistrer tous les messages de Wget dans un fichier.
+</p>
+
+<p>
+<strong><code>-a</code></strong> –&gt; Idem que -o sauf que les messages sont ajoutés à la suite du fichier empêchant ainsi d&#039;écraser l&#039;ancien fichier.
+</p>
+
+<p>
+<strong><code>–user-agent=paul</code></strong> –&gt;S&#039;identifier sous le nom paul pour le serveur HTTP. Permet de falsifier la valeur de user-agent envoyé par Wget, ceci n&#039;est pas recommandé à moins de vraiment savoir ce que vous faites
+</p>
+
+<p>
+<strong><code>–limit-rate=30K</code></strong> –&gt; Permet de limiter le débit, ici à 30 ko/s.
+</p>
+
+<p>
+<strong><code>-q</code></strong> –&gt; Évite l&#039;affichage des messages du wget.
+</p>
+
+<p>
+<em>D&#039;autres options sont bien sûr disponibles, elles sont disponibles sur le Manpage en francais. ( Voir dans la section Références )</em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="wget"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1423343176" /><input type="hidden" name="summary" value="[Descriptions des options principales] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="1927-4229" /><input type="submit" value="Modifier" class="button" title="Descriptions des options principales" /></div></form></div>
+<h3 class="sectionedit6" id="exemples_d_utilisation_courante">Exemples d&#039;utilisation courante</h3>
+<div class="level3">
+
+<p>
+Télécharger simplement un fichier :
+</p>
+<pre class="code">wget http://www.site.org/rep/01/fichier.txt</pre>
+
+<p>
+Reprendre un téléchargement si celui-ci est incomplet ( option inutile s&#039;il s&#039;agit de retenter un téléchargement échoué ) FYB !
+</p>
+<pre class="code">wget -c ftp://serveur.org/rep/01/fichier.txt</pre>
+
+<p>
+Dans ce cas seul le répertoire /01/ sera copié ( -np ), les répertoires parent étant ignorés :
+</p>
+<pre class="code">wget -r -np http://www.site.org/rep/01/</pre>
+
+<p>
+Ici aucun répertoire ne sera créé ( -nd ) :
+</p>
+<pre class="code">wget -r -nd http://www.site.org/rep/01/</pre>
+
+<p>
+Télécharger sur un <abbr title="File Transfer Protocol">FTP</abbr> avec authentification (ici le nom d&#039;utilisateur est <em>paul</em> et son mot de passe <em>123</em>) :
+</p>
+<pre class="code">wget -r l4 ftp://paul:123@serveur.org/</pre>
+
+<p>
+Spécifier un dossier de destination.
+</p>
+<pre class="code">wget -P $HOME/dossier/de/destination http://www.site.org/rep/01/fichier.txt</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="wget"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1423343176" /><input type="hidden" name="summary" value="[Exemples d'utilisation courante] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4230-5120" /><input type="submit" value="Modifier" class="button" title="Exemples d'utilisation courante" /></div></form></div>
+<h3 class="sectionedit7" id="exemples_d_utilisation_avancee">Exemples d&#039;utilisation avancée</h3>
+<div class="level3">
+
+<p>
+Télécharger les <abbr title="Uniform Resource Locator">URL</abbr> contenues dans un fichier :
+</p>
+<pre class="code">wget -i fichier</pre>
+
+<p>
+Télécharge récursivement le site ( -r ) et enregistre les messages dans le fichier wgetlog ( -o ) en limitant le débit du téléchargement à 30 Ko/s ( –limite-rate=30k ) :
+</p>
+<pre class="code">wget -r --limit-rate=30k http//www.site.org/ -o wgetlog</pre>
+
+<p>
+Téléchargement avec une profondeur de 4 ( -l4 ) et en enregistrant les messages à la suite du fichier wgetlog déjà créé ( -awgetlog ) :
+</p>
+<pre class="code">wget -r -l4 http://www.site.org/ -awgetlog</pre>
+
+<p>
+Dans ce cas seul les fichiers de type .txt seront téléchargés ( -A.txt ) :
+</p>
+<pre class="code">wget -r -l3 -A.txt ftp://serveur.org/</pre>
+
+<p>
+Ici seul les fichiers .jpg seront téléchargés ( -A.jpeg ), les messages seront inscrit à la suite du fichier wgetlog ( -awgetlog ) et Wget téléchargera à partir des adresses indiqués dans le fichier maliste.txt ( -imaliste) :
+</p>
+<pre class="code">wget -r -A.jpg -awgetlog -imaliste.txt</pre>
+
+<p>
+Télécharger le site récursivement avec une profondeur infinie ( -linf ), convertit les liens pour une consultation en local ( -k ), rapatrie tous les fichiers nécessaires à l&#039;affichage convenable d&#039;une page <abbr title="HyperText Markup Language">HTML</abbr> ( -p ) et renomme toutes les pages <abbr title="HyperText Markup Language">HTML</abbr> avec l&#039;extension .html ( -E ) :
+</p>
+<pre class="code">wget -r -linf -k -p -E http://www.site.org/</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="wget"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1423343176" /><input type="hidden" name="summary" value="[Exemples d'utilisation avancée] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="5121-6458" /><input type="submit" value="Modifier" class="button" title="Exemples d'utilisation avancée" /></div></form></div>
+<h2 class="sectionedit8" id="interface_graphique">Interface Graphique</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="wget"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1423343176" /><input type="hidden" name="summary" value="[Interface Graphique] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6459-6491" /><input type="submit" value="Modifier" class="button" title="Interface Graphique" /></div></form></div>
+<h3 class="sectionedit9" id="par_le_script_wgetgui">Par le script wgetgui</h3>
+<div class="level3">
+
+<p>
+Voici un petit script qui permet d&#039;utiliser wget avec les mêmes options à la ligne de commande tout en voyant la progression, le taux de transfert et le temps restant dans une interface conviviale.
+</p>
+
+<p>
+Créer un fichier avec le code suivant et enregistrer le de préférence comme wgetgui dans le dossier ~/bin/
+</p>
+<pre class="code">#!/bin/bash
+wget $@ 2&gt;&amp;1 | tee /dev/stderr | sed -u &quot;s/^ *[0-9]*K[ .]*\([0-9]*%\) *\([0-9,]*[A-Z]\) *\([0-9a-z]*\).*/\1\n#Téléchargement ... \3 restant à \2\/s/&quot; | zenity --title=&quot;Wget Gui&quot; --text=&quot;Connexion...&quot; --progress --auto-close --auto-kill 2&gt; /dev/null
+echo</pre>
+
+<p>
+<p><div class="noteimportant">
+Afin de beneficier confortablement de ce script. il est préférable de rajouter ceci a la fin de votre fichier ~/.bashrc
+</p>
+<pre class="code">export PATH=$PATH:$HOME/bin</pre>
+
+<p>
+Si vous ne le faite pas vous devrez executer le script de cette maniere :
+</p>
+<pre class="code">./dossier/vers/votre/script/wgetgui http://foo.bar.com/file.txt</pre>
+
+<p>
+
+</div></p>
+</p>
+
+<p>
+Vous pouvez des a présent utiliser le script en faisant :
+</p>
+<pre class="code">wgetgui http://foo.bar.com/file.txt</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="wget"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1423343176" /><input type="hidden" name="summary" value="[Par le script wgetgui] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6492-7567" /><input type="submit" value="Modifier" class="button" title="Par le script wgetgui" /></div></form></div>
+<h2 class="sectionedit10" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+
+<p>
+* Aspirateur de site <a href="http://doc.ubuntu-fr.org/httrack" class="wikilink1" title="httrack">httrack</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="wget"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1423343176" /><input type="hidden" name="summary" value="[Voir aussi] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7568-7626" /><input type="submit" value="Modifier" class="button" title="Voir aussi" /></div></form></div>
+<h2 class="sectionedit11" id="references">Références</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.gnu.org/software/wget/" class="urlextern" title="http://www.gnu.org/software/wget/"  rel="nofollow">Site officiel de Wget</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.delafond.org/traducmanfr/man/man1/wget.1.html" class="urlextern" title="http://www.delafond.org/traducmanfr/man/man1/wget.1.html"  rel="nofollow">Manpage en français</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://ubunblox.servhome.org/wget-et-ses-options.html" class="urlextern" title="http://ubunblox.servhome.org/wget-et-ses-options.html"  rel="nofollow">Wiki sur ubunblox</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="utilisateurs/ste" class="wikilink1" title="utilisateurs:ste">ste</a>, <a href="utilisateurs/zoph" class="wikilink1" title="utilisateurs:zoph">zoph</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/sidney_v" class="wikilink2" title="utilisateurs:sidney_v" rel="nofollow">sidney_v</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/weedfast" class="wikilink2" title="utilisateurs:weedfast" rel="nofollow">weedfast</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="wget"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1423343176" /><input type="hidden" name="summary" value="[Références] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="7627-" /><input type="submit" value="Modifier" class="button" title="Références" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="wget#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Le paquet n&#039;est plus dans les dépôts depuis <a href="oneiric" class="wikilink1" title="oneiric">Ubuntu 11.10</a></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/a/a13cee8fb2257ae0879839a05d28dbda.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/wget?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/wget?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/wget?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/wget?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/wget?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>tutoriel:comment_resoudre_les_problemes_invalid_encoding</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-02-17T09:44:25+0100"/>
+<meta name="keywords" content="hoary,breezy,dapper,edgy,systeme,windows,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../../index.html"/>
+<link rel="contents" href="../../../tutoriel/comment_resoudre_les_problemes_invalid_encoding?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="comment_resoudre_les_problemes_invalid_encoding"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../../raw/tutoriel/comment_resoudre_les_problemes_invalid_encoding"/>
+<link rel="canonical" href="../../../tutoriel/comment_resoudre_les_problemes_invalid_encoding"/>
+<link rel="stylesheet" type="text/css" href="../../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_resoudre_les_problemes_invalid_encoding","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_resoudre_les_problemes_invalid_encoding#partition_windows">Partition windows</a></div></li>
+<li class="level1"><div class="li"><a href="comment_resoudre_les_problemes_invalid_encoding#partition_linux">Partition Linux</a></div></li>
+<li class="level1"><div class="li"><a href="comment_resoudre_les_problemes_invalid_encoding#lecteur_de_cdroms">Lecteur de cdroms</a></div></li>
+<li class="level1"><div class="li"><a href="comment_resoudre_les_problemes_invalid_encoding#montage_d_images_iso">Montage d&#039;images ISO</a></div></li>
+<li class="level1"><div class="li"><a href="comment_resoudre_les_problemes_invalid_encoding#echange_de_fichiers">Échange de fichiers</a></div></li>
+<li class="level1"><div class="li"><a href="comment_resoudre_les_problemes_invalid_encoding#resultat_d_un_travail_avec_scalpel">Résultat d&#039;un travail avec Scalpel</a></div></li>
+<li class="level1"><div class="li"><a href="comment_resoudre_les_problemes_invalid_encoding#en_anglais">En anglais</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../../hoary" class="wikilink1" title="hoary" rel="tag">hoary</a>,
+	<a href="../../../breezy" class="wikilink1" title="breezy" rel="tag">breezy</a>,
+	<a href="../../../dapper" class="wikilink1" title="dapper" rel="tag">dapper</a>,
+	<a href="http://doc.ubuntu-fr.org/edgy" class="wikilink1" title="edgy" rel="tag">edgy</a>,
+	<a href="../../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="http://doc.ubuntu-fr.org/windows" class="wikilink1" title="windows" rel="tag">windows</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+
+<h1 class="sectionedit1" id="comment_resoudre_les_problemes_du_type_invalid_encoding_codage_non_valide">Comment résoudre les problèmes du type &quot;Invalid Encoding&quot; (codage non valide) ?</h1>
+<div class="level1">
+
+<p>
+Le problème d&#039;<em>invalid encoding</em> ou <strong>(codage non valide)</strong> dans Ubuntu est dû à l&#039;utilisation par défaut de UTF-8 pour le codage des partitions. Malheureusement, ce format est encore peu utilisé et la plupart des anciennes partitions (windows ou Linux) sont mal gérées par défaut.
+</p>
+
+<p>
+Beaucoup d&#039;info sur ce problème existent, mais il faut les trouver ! La situation peut donc s&#039;améliorer en suivant les conseils pointés par cette page.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Comment résoudre les problèmes du type Invalid Encoding (codage non valide) ?" [61-606] -->
+<h2 class="sectionedit2" id="partition_windows">Partition windows</h2>
+<div class="level2">
+
+<p>
+Comme expliqué sur la page d&#039;installation des <a href="../../../tutoriel/comment_acceder_a_ses_partitions_windows" class="wikilink1" title="tutoriel:comment_acceder_a_ses_partitions_windows">partitions windows</a>, il faut ajouter <code>,iocharset=utf8,codepage=850</code> aux paramètres des partitions FAT32.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Partition windows" [607-850] -->
+<h2 class="sectionedit3" id="partition_linux">Partition Linux</h2>
+<div class="level2">
+
+<p>
+Si vous avez une ancienne partition Linux qui n&#039;utilisait pas UTF-8, utilisez l&#039;outil <strong><code>convmv</code></strong> pour transformer les accents <em>invalides</em> en UTF-8.
+</p>
+
+<p>
+Vous trouverez également sur cette page une note vous expliquant comment utiliser <strong><code>convmv</code></strong> pour corriger des noms de fichiers écrits par Windows sur une partitions ext2 ou ext3 avec le pilote Ext2IFS ou Ext2fsd.
+</p>
+
+<p>
+Éventuellement <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=19806" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=19806"  rel="nofollow">cette discussion</a> du forum ubuntu-FR parle des problèmes de nom lors de téléchargement de fichiers.
+</p>
+
+<p>
+Astuce pour trouver les fichiers à problème :
+</p>
+<ol>
+<li class="level1"><div class="li"> Listez tous les fichiers et gardez le résultat dans un fichier texte avec la commande <pre class="code">ls -R &lt;chemin&gt; &gt; &lt;fichier_texte&gt;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Ouvrez le fichier texte avec un éditeur : ce dernier lira alors le fichier avec l&#039;ancien encodage. Cherchez y alors les é,è,à,… : ça vous aidera à trouver les fichiers à convertir.</div>
+</li>
+</ol>
+
+<p>
+Ensuite utilisez l&#039;outil convmv avec les options désirées. Habituellement : 
+</p>
+<pre class="code"> convmv -f iso-8859-15 -t utf8 -r --nosmart &lt;fichier_a_convertir&gt;</pre>
+
+<p>
+ puis avec l&#039;option supplémentaire 
+</p>
+<pre class="code">--notest</pre>
+
+<p>
+ si vous voulez faire la conversion.
+</p>
+
+<p>
+Exemples:
+</p>
+<ol>
+<li class="level1"><div class="li"> Fichier transféré d&#039;une partition Windows sur une partition UTF-8 ext3: <pre class="code">convmv -f cp1252 -t utf-8 -r --notest &lt;fichier_a_convertir&gt;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Fichier extrait d&#039;une archive: <pre class="code">convmv -f iso-8859-1 -t utf-8 -r --notest &lt;fichier_a_convertir&gt;</pre>
+</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT3 SECTION "Partition Linux" [851-2333] -->
+<h2 class="sectionedit4" id="lecteur_de_cdroms">Lecteur de cdroms</h2>
+<div class="level2">
+
+<p>
+Si vos fichiers affichés sur des crdoms apparaissent avec un problème de type <em>invalid encoding</em>, alors il faudra modifier les paramètres du fichier <a href="../../../mount_fstab#le_fichier_fstab" class="wikilink1" title="mount_fstab">/etc/fstab</a> et ajouter <em>UTF8</em> en option de lecture des lecteurs, ce qui peut donner par exemple:
+</p>
+<pre class="code">/dev/hdc        /media/cdrom0   udf,iso9660 unhide,ro,user,noauto,utf8     0       0
+/dev/hdd        /media/cdrom1   udf,iso9660 unhide,ro,user,noauto,utf8     0       0</pre>
+
+<p>
+Normalement, après redémarrage de l&#039;ordinateur, il ne devrait plus y avoir de problèmes de type <em>invalid_encoding</em> avec les cdroms.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Lecteur de cdroms" [2334-2973] -->
+<h2 class="sectionedit5" id="montage_d_images_iso">Montage d&#039;images ISO</h2>
+<div class="level2">
+
+<p>
+Pour ceux qui montent des images ISO avec la commande mount, voici la commande qui a fonctionné pour moi:
+</p>
+<pre class="code">sudo mount -o loop,iocharset=utf8 -t iso9660 imagesource.iso /destination</pre>
+
+</div>
+<!-- EDIT5 SECTION "Montage d'images ISO" [2974-3202] -->
+<h2 class="sectionedit6" id="echange_de_fichiers">Échange de fichiers</h2>
+<div class="level2">
+
+<p>
+Ceux qui sont amenés à échanger quelques fichiers de manière épisodique ont peut-être été confronté au fait d&#039;avoir simultanément sur une même clé usb des fichiers en utf8 et d&#039;autres en iso. Le problème peut-être partiellement résolu en sélectionnant les fichiers incriminés et en utilisant un script pour nautilus:
+</p>
+<pre class="code">#!/bin/sh
+#pour convertir le nom du fichier de iso-8859-1 à utf8
+
+for filename
+do
+   newfilename=`echo $filename | iconv -f iso-8859-1 -t utf-8`;
+    mv &quot;$filename&quot; &quot;$newfilename&quot;;
+done</pre>
+
+<p>
+Il faut créer ce fichier avec le nom qui vous plaira et le placez dans le répertoire .gnome2/nautilus-scripts/
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Échange de fichiers" [3203-3884] -->
+<h2 class="sectionedit7" id="resultat_d_un_travail_avec_scalpel">Résultat d&#039;un travail avec Scalpel</h2>
+<div class="level2">
+
+<p>
+Le logiciel de récupération de fichiers <a href="../../../scalpel" class="wikilink2" title="scalpel" rel="nofollow">Scalpel</a> peut parfois donner un résultat sous la forme de &quot;fichiers&quot; dont le titre ressemble à peu près à ça : 
+</p>
+<pre class="code">?-0-0 (codage non valide)</pre>
+
+<p>
+Il s&#039;agit en réalité de dossiers qui ne sont utilisables en tant que tel que par le super-utilisateur. Il vous faut donc démarrer votre explorateur de fichier en mode super-utilisateur. Par exemple, dans le cas de <a href="../../../nautilus" class="wikilink1" title="nautilus">Nautilus</a> :
+</p>
+<pre class="code">sudo nautilus</pre>
+
+</div>
+<!-- EDIT7 SECTION "Résultat d'un travail avec Scalpel" [3885-4394] -->
+<h2 class="sectionedit8" id="en_anglais">En anglais</h2>
+<div class="level2">
+
+<p>
+<a href="https://wiki.ubuntu.com/UTFEightMigrationTool" class="urlextern" title="https://wiki.ubuntu.com/UTFEightMigrationTool"  rel="nofollow">https://wiki.ubuntu.com/UTFEightMigrationTool</a>
+</p>
+
+</div>
+<!-- EDIT8 SECTION "En anglais" [4395-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/8/85a6b8f6c0ab69786ef4867c8f24717a.xhtml used -->
+</div>
+</body>
+</html>

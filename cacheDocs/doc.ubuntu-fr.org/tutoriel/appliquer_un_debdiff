@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:appliquer_un_debdiff - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2013-11-21T19:04:33+0100"/>
+<meta name="keywords" content="tutoriel,paquet"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/appliquer_un_debdiff?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/appliquer_un_debdiff?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/appliquer_un_debdiff"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/appliquer_un_debdiff"/>
+<link rel="canonical" href="appliquer_un_debdiff"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:appliquer_un_debdiff","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="appliquer_un_debdiff#main" tabindex="1">Contenu</a> | <a href="appliquer_un_debdiff#qsearch__in" tabindex="2">Rechercher</a> | <a href="appliquer_un_debdiff#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="appliquer_un_debdiff" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="appliquer_un_debdiff" >tutoriel:appliquer_un_debdiff</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>,
+	<a href="../paquet" class="wikilink1" title="paquet" rel="tag">paquet</a>
+</span></div>
+
+<h1 class="sectionedit1" id="comment_appliquer_un_debdiff_a_un_paquet">Comment appliquer un *.debdiff à un paquet</h1>
+<div class="level1">
+
+<p>
+Il arrive que sur <a href="http://launchpad.net" class="urlextern" title="http://launchpad.net"  rel="nofollow">Launchpad</a>, certains développeurs postent des fichiers *.debdiff pour résoudre le bug. Ces fichiers contiennent en fait une liste des changements du paquet par rapport à l&#039;ancien, dans notre cas, ce sont les modifications qui ont été appliquées au paquet deb pour résoudre le bug. On va donc apprendre à appliquer ce debdiff pour avoir un nouveau paquet fonctionnel.
+</p>
+
+<p>
+La marche à suivre est simple: récupération de la source du paquet, création du paquet original, récupération du debdiff, recompilation du paquet suivant le debdiff, installation du paquet, bonheur. Rassurez vous, c&#039;est très simple.
+</p>
+
+<p>
+<p><div class="noteclassic">Dans la suite du tutoriel, nous appellerons le paquet à traiter PAQUET. Pensez donc à bien remplacer PAQUET par le paquet que vous souhaitez traitez.
+</div></p>
+<em>Exemple : Je veux appliquer mon debdiff à <strong>Rhythmbox</strong> : mon deb s&#039;appelle sûrement rhythmbox0.11.5-ubuntuxxx, mais le nom du paquet reste rhythmbox. Je remplace donc PAQUET par <strong>rhythmbox</strong> tout le temps.</em>
+</p>
+
+</div>
+
+<h5 id="outils_de_constructions">Outils de constructions</h5>
+<div class="level5">
+
+<p>
+Tout ce qui va nous servir à compiler notre paquet.
+</p>
+<pre class="code">sudo apt-get install build-essential fakeroot devscripts</pre>
+
+</div>
+
+<h5 id="creer_le_repertoire_de_travail_optionnel">Créer le répertoire de travail (optionnel)</h5>
+<div class="level5">
+
+<p>
+Je vous conseille de le faire, ça rendra votre travail plus clair.
+</p>
+<pre class="code">mkdir PAQUET &amp;&amp; cd PAQUET</pre>
+
+</div>
+
+<h5 id="recuperer_le_debdiff">Récupérer le *.debdiff</h5>
+<div class="level5">
+
+<p>
+Si ce n&#039;est déjà fait :
+</p>
+<pre class="code">wget http://URL... </pre>
+
+</div>
+
+<h5 id="recuperer_la_source_du_paquet">Récupérer la source du paquet</h5>
+<div class="level5">
+
+<p>
+Notez qu&#039;il n&#039;est pas nécessaire de le faire en sudo, puisqu&#039;on n&#039;installe rien.
+</p>
+<pre class="code">apt-get source PAQUET</pre>
+
+</div>
+
+<h5 id="recuperer_les_dependances_du_paquet">Récupérer les dépendances du paquet</h5>
+<div class="level5">
+
+<p>
+Toutes les librairies nécessaires à la compilation du paquet.
+</p>
+<pre class="code">sudo apt-get build-dep PAQUET</pre>
+
+</div>
+
+<h5 id="appliquer_le_debdiff">Appliquer le debdiff</h5>
+<div class="level5">
+
+<p>
+Ici, on applique le debdiff dans le répertoire source de notre paquet. Pensez à remplacer DEBDIFF par le nom de votre fichier debdiff.
+</p>
+<pre class="code">cd PAQUET-* &amp;&amp; patch -p1 &lt; ../DEBDIFF</pre>
+
+</div>
+
+<h5 id="compiler_le_nouveau_paquet">Compiler le nouveau paquet</h5>
+<div class="level5">
+
+<p>
+Régénération du paquet avec les nouvelles modifications.
+</p>
+<pre class="code">debuild -uc -us</pre>
+
+</div>
+
+<h5 id="installer_le_nouveau_paquet">Installer le nouveau paquet</h5>
+<div class="level5">
+
+<p>
+Et enfin…
+</p>
+<pre class="code">sudo dpkg -i ../PAQUET*.deb</pre>
+
+<p>
+Et voilà, si tout s&#039;est bien passé vous disposez à présent de la version mise à jour du paquet. Notez que certaines étapes (la récupération des sources, la compilation) peuvent prendre pas mal de temps.
+</p>
+
+</div>
+
+<h5 id="exemple">Exemple</h5>
+<div class="level5">
+<pre class="code">sudo apt-get install build-essential fakeroot devscripts
+cd /tmp
+wget http://librarian.launchpad.net/4941195/vino_2.16.0-0ubuntu2.1.dsc.debdiff
+apt-get source vino
+sudo apt-get build-dep vino
+cd vino-*
+patch -p1 &lt; ../vino_2.16.0-0ubuntu2.1.dsc.debdiff
+debuild -uc -us
+sudo dpkg -i ../vino*.deb</pre>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/orkerone" class="wikilink1" title="utilisateurs:orkerone">Steph/orkerone</a></em>, d&#039;après <a href="https://wiki.ubuntu.com/UbuntuPackagingGuide/BuildFromDebdiff" class="urlextern" title="https://wiki.ubuntu.com/UbuntuPackagingGuide/BuildFromDebdiff"  rel="nofollow">la documentation originale</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="appliquer_un_debdiff"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1385057073" /><input type="hidden" name="summary" value="[Comment appliquer un *.debdiff à un paquet] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="26-" /><input type="submit" value="Modifier" class="button" title="Comment appliquer un *.debdiff à un paquet" /></div></form></div>
+<!-- no cachefile used, but created /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/6/6cd0a53925c6136c8f615729e867b0ab.xhtml -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/appliquer_un_debdiff?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/appliquer_un_debdiff?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/appliquer_un_debdiff?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/appliquer_un_debdiff?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/appliquer_un_debdiff?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

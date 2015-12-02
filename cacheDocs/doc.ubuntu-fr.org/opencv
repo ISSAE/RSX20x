@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>opencv - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-01-12T23:43:47+0100"/>
+<meta name="keywords" content="karmic,lucid,programmation,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/opencv?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/opencv?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/opencv"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/opencv"/>
+<link rel="canonical" href="opencv"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"opencv","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="opencv#main" tabindex="1">Contenu</a> | <a href="opencv#qsearch__in" tabindex="2">Rechercher</a> | <a href="opencv#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="opencv" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="opencv" >opencv</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <div class="notetag">Selon les <a href="tags">tags</a> présents sur cette page, les informations qu'elle contient  n'ont pas été vérifiées depuis <a href="lucid">Ubuntu 10.04 LTS.</a><br />
+Cette page est en cours de rédaction.<br />
+<a href="wiki/participer_wiki">Apportez votre aide…</a>
+</div>
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="opencv#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="opencv#installation">Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="opencv#via_les_depots_officiels">via les dépôts officiels</a></div></li>
+<li class="level2"><div class="li"><a href="opencv#par_compilation">Par compilation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="opencv#compatibilite_webcams">Compatibilité Webcams</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="opencv#webcams_testees_et_compatibles">Webcams testées et compatibles</a></div></li>
+<li class="level2"><div class="li"><a href="opencv#webcams_testees_et_non_compatibles">Webcams testées et non compatibles</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="opencv#autres_cameras">Autres caméras</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="opencv#cameras_a_la_norme_pal">Caméras à la norme PAL</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="opencv#exemple_d_utilisation">Exemple d&#039;utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="opencv#liens_utiles">Liens utiles</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="http://doc.ubuntu-fr.org/karmic" class="wikilink1" title="karmic" rel="tag">Karmic</a>,
+	<a href="lucid" class="wikilink1" title="lucid" rel="tag">Lucid</a>,
+	<a href="programmation" class="wikilink1" title="programmation" rel="tag">programmation</a>,
+	<a href="brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="opencv">OpenCV</h1>
+<div class="level1">
+
+<p>
+OpenCV<sup><a href="opencv#fn__1" id="fnt__1" class="fn_top">1)</a></sup> est une bibliothèque libre d&#039;analyse d&#039;images et de vision par ordinateur sous licence <abbr title="Berkeley Software Distribution">BSD</abbr> en langage C/C++. Elle a été développée à l&#039;origine par Intel.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="opencv"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421102627" /><input type="hidden" name="summary" value="[OpenCV] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="52-271" /><input type="submit" value="Modifier" class="button" title="OpenCV" /></div></form></div>
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Avoir les <a href="sudo" class="wikilink1" title="sudo">droits d&#039;administration</a></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="opencv"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421102627" /><input type="hidden" name="summary" value="[Pré-requis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="272-347" /><input type="submit" value="Modifier" class="button" title="Pré-requis" /></div></form></div>
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="opencv"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421102627" /><input type="hidden" name="summary" value="[Installation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="348-374" /><input type="submit" value="Modifier" class="button" title="Installation" /></div></form></div>
+<h3 class="sectionedit4" id="via_les_depots_officiels">via les dépôts officiels</h3>
+<div class="level3">
+
+<p>
+Il suffit d&#039;<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installer les paquets</a>: <a href="apt://libopencv-dev" class="urlextern" title="apt://libopencv-dev"  rel="nofollow">libopencv-dev</a> et <a href="apt://libcv-dev" class="urlextern" title="apt://libcv-dev"  rel="nofollow">libcv-dev</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="opencv"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421102627" /><input type="hidden" name="summary" value="[via les dépôts officiels] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="375-560" /><input type="submit" value="Modifier" class="button" title="via les dépôts officiels" /></div></form></div>
+<h3 class="sectionedit5" id="par_compilation">Par compilation</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="dependances">Dépendances</h4>
+<div class="level4">
+
+<p>
+<img src="lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> valable sur Intrepid, à mettre a jour pour que ce soit indépendant des versions
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="apt://cmake" class="urlextern" title="apt://cmake"  rel="nofollow">CMake</a> 2.6 ou supérieur </div>
+</li>
+<li class="level1"><div class="li"> <a href="apt://subversion" class="urlextern" title="apt://subversion"  rel="nofollow">Subversion</a> (SVN) client</div>
+</li>
+<li class="level1"><div class="li"> GTK+ 2.x or higher, including headers (e.g. <a href="apt://libgtk2.0-dev" class="urlextern" title="apt://libgtk2.0-dev"  rel="nofollow">libgtk2.0-dev</a>)</div>
+</li>
+<li class="level1"><div class="li"> <a href="apt://pkg-config" class="urlextern" title="apt://pkg-config"  rel="nofollow">pkg-config</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="apt://libpng12-dev" class="urlextern" title="apt://libpng12-dev"  rel="nofollow">libpng</a>, <a href="apt://zlib1g-dev" class="urlextern" title="apt://zlib1g-dev"  rel="nofollow">zlib</a>, <a href="apt://libjpeg62-dev" class="urlextern" title="apt://libjpeg62-dev"  rel="nofollow">libjpeg</a>, <a href="apt://libtiff4-dev" class="urlextern" title="apt://libtiff4-dev"  rel="nofollow">libtiff</a> et <a href="apt://libjasper-dev" class="urlextern" title="apt://libjasper-dev"  rel="nofollow">libjasper</a> with development files.</div>
+</li>
+<li class="level1"><div class="li"> <a href="apt://python-dev" class="urlextern" title="apt://python-dev"  rel="nofollow">Python</a> 2.3 or later with developer packages (e.g. python-dev)</div>
+</li>
+<li class="level1"><div class="li"> <a href="apt://swig1.3" class="urlextern" title="apt://swig1.3"  rel="nofollow">SWIG</a> 1.3.30 or later</div>
+</li>
+<li class="level1"><div class="li"> <a href="apt://libavcodec-dev" class="urlextern" title="apt://libavcodec-dev"  rel="nofollow">libavcodec</a> etc. from <a href="apt://ffmpeg" class="urlextern" title="apt://ffmpeg"  rel="nofollow">ffmpeg</a> 0.4.9-pre1 or later + headers.</div>
+</li>
+</ul>
+
+<p>
+<a href="tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez</a> les bibliothèques nécessaires à la compilation :
+<strong><a href="apt://build-essential,gcc,cmake,subversion,libgtk2.0-0-dev,pkg-config,libpng-dev,libjpeg-dev,libtiff-dev,libjasper-dev,python-dev,swig1.3,libavformat-dev,libdc1394-22-dev,libgtk2.0-dev" class="urlextern" title="apt://build-essential,gcc,cmake,subversion,libgtk2.0-0-dev,pkg-config,libpng-dev,libjpeg-dev,libtiff-dev,libjasper-dev,python-dev,swig1.3,libavformat-dev,libdc1394-22-dev,libgtk2.0-dev"  rel="nofollow">build-essential gcc cmake subversion libgtk2.0-0-dev pkg-config  libpng-dev libjpeg-dev libtiff-dev libjasper-dev python-dev swig1.3 libavformat-dev libdc1394-22-dev libgtk2.0-dev libcv-dev libcvaux-dev</a></strong>
+</p>
+
+</div>
+
+<h4 id="compiler_les_sources_pour_karmic">Compiler les sources pour Karmic</h4>
+<div class="level4">
+
+<p>
+Ouvrez un <a href="terminal" class="wikilink1" title="terminal">terminal</a> et tapez:
+</p>
+<pre class="code"># On se place dans le dossier personnel (par exemple)
+cd
+
+# On télécharge les sources de OpenCV sur sourceforge
+wget http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.0/OpenCV-2.0.0.tar.bz2/download
+
+# On désarchive le dossier
+tar -xjf OpenCV-2.0.0.tar.bz2
+
+# On efface l&#039;archive, on crée un dossier build et on va dedans
+rm -r OpenCV-2.0.0.tar.bz2
+mkdir opencv.build
+cd opencv.build
+
+# Et on installe
+cmake ../OpenCV-2.0.0
+make -j 2
+sudo make install
+sudo ldconfig</pre>
+
+</div>
+
+<h4 id="methode_manuelle_vetuste">Méthode manuelle (vétuste?)</h4>
+<div class="level4">
+
+<p>
+Télécharger directement l&#039;archive depuis le site <a href="http://sourceforge.net/project/showfiles.php?group_id=22870&amp;package_id=16948" class="urlextern" title="http://sourceforge.net/project/showfiles.php?group_id=22870&amp;package_id=16948"  rel="nofollow">sourceforge d&#039;OpenCV</a>.
+</p>
+
+<p>
+Décompressez l&#039;archive d&#039;OpenCV que vous avez téléchargé dans un répertoire de travail.
+Puis faites :
+</p>
+<pre class="code">./configure
+make
+#Optionnel make check
+make install</pre>
+
+<p>
+Si vous avez des erreurs lors du make install, vérifiez si vous avez les droits d&#039;administrateur pour écrire dans les répertoires d&#039;installation. Si vous ne les avez pas, faîtes simplement un sudo make install.
+</p>
+
+<p>
+Il est possible que vous rencontriez cette erreur plus tard :
+</p>
+<pre class="code">OpenCV ERROR: Unspecified error (The function is not implemented. Rebuild the library with Windows, GTK+ 2.x or Carbon support)
+         in function cvNamedWindow</pre>
+
+<p>
+Dans ce cas, désinstallez OpenCV.
+Placez vous dans le répertoire où vous avez fait vos commandes d&#039;installation
+</p>
+<pre class="code">make uninstall</pre>
+
+<p>
+Ensuite :
+</p>
+<pre class="code">sudo apt-get install libgtk2.0-dev</pre>
+
+<p>
+et suivez la procédure d&#039;installation habituelle.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="opencv"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421102627" /><input type="hidden" name="summary" value="[Par compilation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="561-3493" /><input type="submit" value="Modifier" class="button" title="Par compilation" /></div></form></div>
+<h2 class="sectionedit6" id="compatibilite_webcams">Compatibilité Webcams</h2>
+<div class="level2">
+
+<p>
+Il existe un certain nombre de webcam non compatibles avec Opencv. Voici une technique permettant de rendre compatible sous Intrepid (Non testé avec les versions supérieures) votre webcam à partir du moment où elle fonctionne sous Ubuntu (avec un programme tel que <a href="http://doc.ubuntu-fr.org/cheese" class="wikilink1" title="cheese">Cheese</a>).
+Commencez par télécharger une version spéciale d&#039;Opencv (malheureusement il s&#039;agit de la version 1.0, la version 1.1pre n&#039;est pas disponible) <a href="http://github.com/nzjrs/opencv/tree/master" class="urlextern" title="http://github.com/nzjrs/opencv/tree/master"  rel="nofollow">sur ce site</a>
+</p>
+
+<p>
+Décompressez l&#039;archive d&#039;OpenCV que vous avez téléchargé dans un répertoire de travail.
+Puis faîtes :
+</p>
+<pre class="code">./configure
+make
+make install</pre>
+
+<p>
+Vous pouvez compiler votre programme comme d&#039;habitude.
+Pour exécuter le programme, faites:
+</p>
+<pre class="code"> LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so ./example</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="opencv"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421102627" /><input type="hidden" name="summary" value="[Compatibilité Webcams] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3494-4336" /><input type="submit" value="Modifier" class="button" title="Compatibilité Webcams" /></div></form></div>
+<h3 class="sectionedit7" id="webcams_testees_et_compatibles">Webcams testées et compatibles</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Logitech QuickCam pro 4000</div>
+</li>
+<li class="level1"><div class="li"> Logitech QuickCam pro 9000</div>
+</li>
+<li class="level1"><div class="li"> Hercules Webcam Dualpix HD (600*480 : ne fonctionne pas en mode HD dans openCV)</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="opencv"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421102627" /><input type="hidden" name="summary" value="[Webcams testées et compatibles] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4337-4526" /><input type="submit" value="Modifier" class="button" title="Webcams testées et compatibles" /></div></form></div>
+<h3 class="sectionedit8" id="webcams_testees_et_non_compatibles">Webcams testées et non compatibles</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Aucune (pour le moment)</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="opencv"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421102627" /><input type="hidden" name="summary" value="[Webcams testées et non compatibles] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4527-4603" /><input type="submit" value="Modifier" class="button" title="Webcams testées et non compatibles" /></div></form></div>
+<h2 class="sectionedit9" id="autres_cameras">Autres caméras</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="opencv"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421102627" /><input type="hidden" name="summary" value="[Autres caméras] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4604-4631" /><input type="submit" value="Modifier" class="button" title="Autres caméras" /></div></form></div>
+<h3 class="sectionedit10" id="cameras_a_la_norme_pal">Caméras à la norme PAL</h3>
+<div class="level3">
+
+<p>
+Les caméras de ce type sont analogiques. Le signal de sortie est à la norme CCIR et elles s&#039;interfaçent avec une carte PCI – ou autre – que l&#039;on peut trouver sur internet pour quelques euros (vous aurez plus cher de frais de transport que de carte…). Malheureusement, elle ne fonctionnent pas directement sous OpenCV. Vous pouvez vous en rendre compte en créant un programme minimum d&#039;acquisition. Si cette dernière est très (très) lente et que l&#039;image créée est déformée, il y a de fortes chances que votre caméra ne soit pas à la norme par défaut (NTSC, je crois). Vous pouvez aussi vérifier la norme utilisée avec <a href="http://doc.ubuntu-fr.org/tvtime" class="urlextern" title="http://doc.ubuntu-fr.org/tvtime"  rel="nofollow">tvtime</a>. Ce logiciel permet de configurer facilement la norme du codage (NTSC, PAL, SECAM, etc.).
+</p>
+
+<p>
+Pour avoir la norme PAL, il faut recompiler OpenCV. Voici comment procéder :
+</p>
+<ul>
+<li class="level1"><div class="li"> Suivez la précédure décrite au paragraphe <span class="curid"><a href="opencv#par_compilation" class="wikilink1" title="opencv">Par compilation</a></span></div>
+</li>
+<li class="level1"><div class="li"> Modifiez les lignes 231/232 du fichier <code>&#039;cvcap_v4l.cpp</code> qui se trouve dans <code>OpenCV-2.0.0/src/highgui</code> :</div>
+</li>
+</ul>
+<pre class="code">#define DEFAULT_V4L_WIDTH  704
+#define DEFAULT_V4L_HEIGHT 576</pre>
+<ul>
+<li class="level1"><div class="li"> Décommentez la ligne 1041 et modifiez la ainsi :</div>
+</li>
+</ul>
+<pre class="code">           selectedChannel.norm = VIDEO_MODE_PAL;</pre>
+
+<p>
+Voilà, recompilez ensuite OpenCV. Positionnez vous dans le répertoire opencv.build puis :
+</p>
+<pre class="code">make -j 2
+sudo make install
+sudo ldconfig</pre>
+
+<p>
+À noter :
+</p>
+<ol>
+<li class="level1"><div class="li"> Je n&#039;ai pas réussi à compiler OpenCV 2.1 sous Ubuntu Lucid.</div>
+</li>
+<li class="level1"><div class="li"> Je ne crois pas que l&#039;on puisse utiliser 2 caméras de normes différentes (à confirmer)</div>
+</li>
+<li class="level1"><div class="li"> Je n&#039;ai pas de caméra SECAM sous la main, mais je pense que la procédure est la même…</div>
+</li>
+</ol>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="opencv"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421102627" /><input type="hidden" name="summary" value="[Caméras à la norme PAL] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4632-6337" /><input type="submit" value="Modifier" class="button" title="Caméras à la norme PAL" /></div></form></div>
+<h2 class="sectionedit11" id="exemple_d_utilisation">Exemple d&#039;utilisation</h2>
+<div class="level2">
+
+<p>
+Ecrivez le code <code>ex_opencv.cpp</code> suivant :
+</p>
+<pre class="code">#include &lt;stdio.h&gt; // Pour le printf()...
+
+/* Les deux bibliothèques nécessaires d&#039;opencv :
+	- cv.h contient les structures et fonctions de manipulation d&#039;images
+	- highgui.h contient les fonctions d&#039;affichage des images
+*/
+#include &lt;cv.h&gt;
+#include &lt;highgui.h&gt;
+
+int main(int argc, char *argv[])
+{
+  /* On initialise la &#039;capture&#039; depuis la WebCam, une adresse,
+     représentative de la ressource est retournée
+   */
+  CvCapture* capture = cvCaptureFromCAM(-1);
+  if(capture) // Si la caméra est reconnu
+  {
+	if(!cvGrabFrame(capture)) // On prend une image et une seule !
+	{
+  		printf(&quot;Could not grab a frame\n\7&quot;); // Si la prise d&#039;image n&#039;est pas possible, on sort !
+  		exit(0);
+	}
+  }
+  else // Si la caméra n&#039;est pas reconnu ou si elle n&#039;existe pas, on sort...
+  {
+  	printf(&quot;Could not open video device\n&quot;);
+  	exit(0);
+  }
+	IplImage *img=cvRetrieveFrame(capture); // On rapatrie l&#039;image que l&#039;on &#039;stocke&#039; dans img avec ses propriétés.
+
+  printf(&quot;L&#039;image fait %dx%d pixels et possède %d canaux (couleurs)\n&quot;,img-&gt;width,img-&gt;height,img-&gt;nChannels); 
+
+  // On crée une fenètre dans laquelle on affichera l&#039;image
+  cvNamedWindow(&quot;Fenetre_test&quot;, CV_WINDOW_AUTOSIZE); 
+
+  // C&#039;est ce que l&#039;on fait ici :
+  cvShowImage(&quot;Fenetre_test&quot;, img );
+
+  // Appuyez sur une touche pour sortir
+  cvWaitKey(0);
+
+  // On libère ensuite, la mémoire de l&#039;image et de la ressource
+  cvReleaseImage(&amp;img );
+  cvReleaseCapture(&amp;capture);
+  return 0;
+}</pre>
+
+<p>
+Créez aussi le fichier <code>Makefile</code> suivant :
+</p>
+<pre class="code">all:
+	g++ -O2 -Wall -o exemple ex_opencv.cpp `pkg-config --cflags --libs opencv`
+clean:
+	rm -rf exemple</pre>
+
+<p>
+Pour compiler :
+</p>
+<pre class="code">make</pre>
+
+<p>
+Pour exécuter :
+</p>
+<pre class="code">./exemple</pre>
+
+<p>
+Voilà, c&#039;est tout…
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="opencv"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421102627" /><input type="hidden" name="summary" value="[Exemple d'utilisation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="6338-8149" /><input type="submit" value="Modifier" class="button" title="Exemple d'utilisation" /></div></form></div>
+<h2 class="sectionedit12" id="liens_utiles">Liens utiles</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://sourceforge.net/projects/opencvlibrary/" class="urlextern" title="http://sourceforge.net/projects/opencvlibrary/"  rel="nofollow">OpenCV @ Sourceforge</a></div>
+</li>
+<li class="level1"><div class="li"> <strong>(en)</strong> <a href="http://opencv.willowgarage.com/wiki/" class="urlextern" title="http://opencv.willowgarage.com/wiki/"  rel="nofollow">OpenCV @ WillowGarage (wiki)</a> </div>
+</li>
+</ul>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/myrkvid" class="wikilink2" title="utilisateurs:myrkvid" rel="nofollow">Myrkvid</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/damien200" class="wikilink1" title="utilisateurs:damien200">damien200</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/volfoni54" class="wikilink1" title="utilisateurs:volfoni54">volfoni54</a></em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="opencv"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1421102627" /><input type="hidden" name="summary" value="[Liens utiles] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="8150-" /><input type="submit" value="Modifier" class="button" title="Liens utiles" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="opencv#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+ Pour Open Computer Vision</div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/1/19918faa55a54d91307f5129aca79e08.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/opencv?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/opencv?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/opencv?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/opencv?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/opencv?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

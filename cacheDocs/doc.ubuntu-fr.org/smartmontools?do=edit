@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>smartmontools - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="smartmontools?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/smartmontools"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/smartmontools"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"smartmontools","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="smartmontools?do=edit#main" tabindex="1">Contenu</a> | <a href="smartmontools?do=edit#qsearch__in" tabindex="2">Rechercher</a> | <a href="smartmontools?do=edit#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="smartmontools?do=edit" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="smartmontools" >smartmontools</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<p>
+<strong>Quelques recommandations avant de créer ou de modifier cette page :</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Lisez le <a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">guide du contributeur</a> et la <a href="wiki/ligne_editoriale" class="wikilink1" title="wiki:ligne_editoriale">ligne éditoriale</a>.</div>
+</li>
+<li class="level1"><div class="li"> Découvrez la <a href="http://doc.ubuntu-fr.org/wiki/syntaxe" class="wikilink1" title="wiki:syntaxe">syntaxe</a> et entraînez-vous dans le <a href="playground/playground" class="wikilink1" title="playground:playground">bac à sable</a>.</div>
+</li>
+<li class="level1"><div class="li"> Utilisez les modèles (<a href="wiki/modeles/application" class="wikilink1" title="wiki:modeles:application">application</a>, <a href="wiki/modeles/materiel" class="wikilink1" title="wiki:modeles:materiel">matériel</a>, <a href="wiki/modeles/portable" class="wikilink1" title="wiki:modeles:portable">ordinateur portable</a>, <a href="wiki/modeles/tutoriel" class="wikilink1" title="wiki:modeles:tutoriel">tutoriel</a>, <a href="wiki/modeles/utilisateur" class="wikilink1" title="wiki:modeles:utilisateur">utilisateur</a>, <a href="wiki/modeles/portail" class="wikilink1" title="wiki:modeles:portail">portail</a>) et les <a href="wiki/mini-tutoriels" class="wikilink1" title="wiki:mini-tutoriels">mini-tutoriels</a>.</div>
+</li>
+<li class="level1"><div class="li"> Rapportez toutes créations ou modifications importantes sur <a href="wiki/liste_discussion#coordination_de_la_documentation" class="wikilink1" title="wiki:liste_discussion">la liste de discussion</a>.</div>
+</li>
+</ol>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fcdb5fe1d67011f56447459483d05597.xhtml used -->
+<script type="text/javascript">/*<![CDATA[*/
+textChanged = false/*!]]>*/</script>
+    <div class="editBox" role="application">
+
+    <div class="toolbar group">
+        <div id="draft__status"></div>
+        <div id="tool__bar"><a href="http://doc.ubuntu-fr.org/lib/exe/mediamanager.php?ns="
+            target="_blank">Sélection de fichiers</a></div>
+    </div>
+    <form id="dw__editform" method="post" action="smartmontools?do=edit" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><input type="hidden" name="id" value="smartmontools" /><input type="hidden" name="rev" value="0" /><input type="hidden" name="date" value="1430681828" /><input type="hidden" name="prefix" value="." /><input type="hidden" name="suffix" value="" /><input type="hidden" name="changecheck" value="c392e98f2d7920c8f3f1c36b4b6c7647" /><input type="hidden" name="target" value="section" /><textarea name="wikitext" id="wiki__text" dir="auto" class="edit" cols="80" rows="10" tabindex="1">
+{{tag&gt;disque_dur  }}
+
+====== SMARTMONTOOLS ======
+
+===== Préambule =====
+
+Smartmontools est un paquet regroupant un ensemble d'outils basés sur la &quot;technologie&quot; __SMART__. Cette technologie est un protocole qui permet de suivre et contrôler l'état des disques durs et de différents composants de votre ordinateur.
+
+le protocole SMART est reconnu et implémenté sur la plupart des disques durs depuis la fin des années 1990.
+
+&lt;note tip&gt;L'intérêt principal de ces outils et de la technologie SMART est de ** déceler des signes précurseurs de vieillissement et de pannes **  des disques durs avant qu'ils ne soient définitivement en panne.
+
+En configurant correctement le daemon **smartd** (fichier __/etc/smartd.conf__, il est possible d'être prévenu automatiquement si des problèmes sont détectés).
+
+// De façon incompréhensible, le paquet __smartmontools__ n'est pas installé par défaut et fait l'objet de relativement peu de publicité//
+&lt;/note&gt; 
+
+===== Installation =====
+
+Commencez par [[:tutoriel:comment_installer_un_paquet|installer le paquet]]
+**[[apt&gt;smartmontools|smartmontools]]**.
+
+===== Utilisation=====
+
+Dans les exemples suivants, on va considérer le disque dur nommé // /dev/sdX //, qu'il faudra remplacer par le nom du disque que vous voulez tester, par exemple ///dev/hda//, ///dev/sdc// (( la liste des noms de disques durs de votre système peut s'obtenir par : 
+  sudo fdisk -l 
+)) ou ///dev/sg1// ((les périphériques du type ///dev/sg#// permettent d'atteindre les disques qui composent un volume géré par un contrôleur RAID hardware. Dans un tel cas, les périphériques du type ///dev/sdX// ne sont pas utilisables car à ce niveau l'OS ne voit que le volume géré par le contrôleur RAID (un disque logique sans information SMART) et non des disques qui le composent (disques physiques avec information SMART). Par exemple, pour obtenir les informations SMART sur un disque SATA faisant partie d'un volume RAID 5 géré par un contrôleur Adaptec :
+  sudo smartctl -a -d sat /dev/sg1
+Référence: [[http://www.cyberciti.biz/faq/linux-checking-sas-sata-disks-behind-adaptec-raid-controllers/]]
+))
+
+  * Pour activer SMART sur un disque, taper la commande suivante (nécessaire une seule fois seulement pour chaque disque, mais peut être répétée sans danger) :
+
+   sudo smartctl --smart=on --offlineauto=on --saveauto=on /dev/sdX
+
+
+  * Pour obtenir quelques infos disponibles par SMART sur le disque
+
+   sudo smartctl -H -i /dev/sdX
+
+Pour obtenir toutes les infos disponibles par SMART sur le disque
+
+   sudo smartctl -a /dev/sdX
+
+
+  * Pour faire des tests
+Au moins deux types de tests sont possibles, les courts (~1 min) et les longs (~10 min à 90 min).
+
+Pour lancer l'exécution des tests
+  sudo smartctl -t short /dev/sdX
+  sudo smartctl -t long  /dev/sdX
+
+
+  * Ensuite pour accéder au résultats/statistiques de ces tests :
+
+  sudo smartctl -l selftest /dev/sdX
+
+ou en plus bref (retourne un message seulement si le disque retourne un indicateur SMART &quot;failing&quot; ou si des autotests ont enregistré des erreurs) 
+  sudo smartctl -q errorsonly -H -l selftest /dev/sdX
+
+
+===== Notification automatique d'un problème =====
+
+Grâce au service (daemon) **smartd** il est possible de faire une analyse régulière et ainsi suivre sur le long terme l'état des disques durs et de votre matériel. 
+
+Il est aussi possible de paramétrer des alertes automatiques (envoi de mail, messages utilisateur par wall, syslog, ... ) en cas de détections d'erreurs ou de signes de vieillissement.
+
+**smartd** est inclus dans le paquet //smartmontools//
+
+Le fichier de configuration est __/etc/smartd.conf__  Par défaut, il est configuré pour scanner tous les disques.
+
+
+==== activer le daemon smartd====
+&lt;note important&gt;** Par défaut, le demon smart n'est pas activé. Il est indispensable de le faire manuellement.**
+
+[[tutoriel:comment_modifier_un_fichier|Éditez le fichier]] __/etc/default/smartmontools__ et décommenter __start_smartd=yes__ puis démarrer le service en tapant dans un [[terminal]]:&lt;/note&gt;
+
+  sudo /etc/init.d/smartmontools start 
+
+
+A signaler aussi le paquet [[apt://smart-notifier|smart-notifier]] qui vous préviendra de tout problème imminent. 
+L'action de ce programme est de se mettre à l'écoute des messages de tests et  d'ouvrir une fenêtre d'avertissement s'il détecte un problème.
+
+&lt;note tip&gt;Pour que **smart-notifier** lance ces messages d'alertes, il faut que smartd soit actif et que la session en cours ait été redémarrée
+&lt;/note&gt;
+
+ 
+Si vous voyez une alerte SMART, il y a de fortes chances pour que votre disque soit en train de flancher. Dans votre intérêt, faites immédiatement une copie de vos fichiers ailleurs (clé USB, disque dur externe, gravure sur CD/DVD...).
+
+Pour tester que smart-notifier fonctionne :
+
+  sudo sh -c 'echo test de message | smart-notifier --notify'
+
+Ce qui affichera :
+
+{{:smart-notifier.png|}}
+
+
+===== Traduire l'alerte =====
+Lorsque vous équipez un autre pc que le votre de la notification il serait dommage qu'elle soit ignorée pour une bête impossibilité de compréhension du message...
+
+Sauvegarder l'original en cas de boulette en tapant dans [[terminal]]: 
+          
+   sudo cp /usr/share/smart-notifier/smart_notifier/smart-notifier.glade /usr/share/smart-notifier/smart_notifier/smart-notifier.glade.old
+
+puis [[tutoriel:comment_modifier_un_fichier|éditez le fichier]]  __/usr/share/smart-notifier/smart_notifier/smart-notifier.glade__
+et modifiez les lignes indiquées ci-dessous.
+
+=== Titre de la Fenêtre, ligne 31 ===
+&lt;property name=&quot;title&quot; context=&quot;True&quot; translatable=&quot;True&quot;&gt;Alerte Disque-dur !&lt;/property&gt;
+
+=== Titre du Message, ligne 56 ===
+''&lt;property name=&quot;label&quot; context=&quot;True&quot; translatable=&quot;True&quot;&gt;&amp;lt;big&amp;gt;&amp;lt;b&amp;gt;Alerte ! Disque-dur en Danger !&amp;lt;/b&amp;gt;&amp;lt;/big&amp;gt;&lt;/property&gt;''
+
+=== Corps du Message, ligne 69 ===
+''&lt;property name=&quot;label&quot; context=&quot;True&quot; translatable=&quot;True&quot;&gt;S.m.a.r.t. surveille en permanence les disques-durs et donne l'alerte en cas de variation importante dans les normales relevées. 60% des pannes de disques-durs sont mécaniques, s.m.a.r.t. peut en détecter 30%. Cette alerte n'est pas à prendre à la légère et peut annoncer une panne imminente. Planifier rapidement vos sauvegardes et le remplacement de vos disques-durs.&lt;/property&gt;''
+
+=== Message de smartd, ligne 92 ===
+''&lt;property name=&quot;label&quot; context=&quot;True&quot; translatable=&quot;True&quot;&gt;Message original de smartd :&lt;/property&gt;''
+
+===== Interface Graphique pour smartmontools  =====
+gsmartcontrol est une interface graphique (en anglais) de smartmontools. 
+
+Le site officiel est ici : [[http://gsmartcontrol.sourceforge.net/home/index.php|GSmartControl]].
+On trouvera des copies d'écran ici : [[http://gsmartcontrol.sourceforge.net/home/index.php/Screenshots|Copies d'écran]].
+
+
+==== Installation ====
+
+[[:tutoriel:comment_installer_un_paquet|Installez le paquet]] **[[apt&gt;gsmartcontrol|gsmartcontrol]]**.
+
+=====Voir aussi =====
+
+  * [[http://smartmontools.sourceforge.net|Site officiel Smartmontools]]
+  * [[http://smartlinux.sourceforge.net/smart/attributes.php|Index des SMART Attributes]]
+  * [[http://www.lea-linux.org/documentations/index.php/Hardware-hard_plus-smart|tuto sur le système smart]] : tutoriel de Lea-linux
+  * [[http://fr.wikipedia.org/wiki/Self-Monitoring%2C_Analysis_and_Reporting_Technology|Wikipédia : SMART]]
+  *  [[http://valaurea.free.fr/documents/sig11_smart.html|Tout savoir de ses disques durs avec smartmontools (sig-11.org)]]
+  *  [[http://smartmontools.sourceforge.net/badblockhowto.html|Bad block HOWTO for smartmontools]] : Pour aller un plus loin lorsqu'une erreur est détectée.
+
+----
+
+//Contributeurs : [[utilisateurs:didrocks ]], [[utilisateurs:fnx]], [[utilisateurs:.amalric.]] pour la traduction, [[utilisateurs:furious-therapy]] : DEB pour Jaunty.//</textarea>
+<div id="wiki__editbar" class="editBar">
+<div id="size__ctl">
+</div>
+<div class="editButtons">
+<div id="plugin__captcha_wrapper"><input type="hidden" name="a662367eda3809da35d7caaa8fb77010" value="+29pKHNgwBaVnqvqr48gWmjI2MEfPpNlNW/nyacFeOg=" /><label for="plugin__captcha">Merci de recopier le code ci-contre pour prouver que vous êtes humain :</label> <span id="plugin__captcha_code">X U
+V᠎
+V᠎
+I</span> <input type="text" size="5" name="8de012c9c062542fb712393b414dd0e5" class="edit" /> <label class="no">Merci de laisser ce champ vide : <input type="text" name="decb8c35ae5ea51b025741cfdc0ad47b" /></label></div><input name="do[save]" type="submit" value="Enregistrer" class="button" id="edbtn__save" accesskey="s" tabindex="4" title="Enregistrer [S]" />
+<input name="do[preview]" type="submit" value="Aperçu" class="button" id="edbtn__preview" accesskey="p" tabindex="5" title="Aperçu [P]" />
+<input name="do[draftdel]" type="submit" value="Annuler" class="button" tabindex="6" />
+</div>
+<div class="summary">
+<label class="nowrap" for="edit__summary"><span>Résumé</span> <input type="text" id="edit__summary" name="summary" class="edit" size="50" tabindex="2" /></label>
+</div>
+</div>
+<div class="license">
+Note : En modifiant cette page, vous acceptez que le contenu soit placé sous les termes de la licence suivante : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" class="urlextern">CC Paternité-Partage des Conditions Initiales à l'Identique 3.0 Unported</a></div>
+</div></form>
+</div>
+<script type="text/javascript">
+   var saveBtn = document.getElementById('edbtn__save');
+   saveBtn.disabled = true;
+   saveBtn.style.color = 'gray';
+   saveBtn.style.backgroundColor = '#EEEEEE';
+   saveBtn.value = 'Enregistrer (Click \'Aperçu\' first)';
+</script>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="smartmontools?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/smartmontools?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="smartmontools?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="smartmontools?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="smartmontools?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

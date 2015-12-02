@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>amanda</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-11-06T18:03:55+0100"/>
+<meta name="keywords" content="sauvegarde,administration,securite,brouillon"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../amanda?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="amanda"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/amanda"/>
+<link rel="canonical" href="../../amanda"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"amanda","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="amanda#pre-requis">Pré-requis</a></div></li>
+<li class="level1"><div class="li"><a href="amanda#installation">Installation</a></div></li>
+<li class="level1"><div class="li"><a href="amanda#configuration">Configuration</a></div></li>
+<li class="level1"><div class="li"><a href="amanda#utilisation">Utilisation</a></div></li>
+<li class="level1"><div class="li"><a href="amanda#desinstallation">Désinstallation</a></div></li>
+<li class="level1"><div class="li"><a href="amanda#voir_aussi">Voir aussi</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../sauvegarde" class="wikilink1" title="sauvegarde" rel="tag">sauvegarde</a>,
+	<a href="../../administration" class="wikilink1" title="administration" rel="tag">administration</a>,
+	<a href="http://doc.ubuntu-fr.org/securite" class="wikilink1" title="securite" rel="tag">sécurité</a>,
+	<a href="../../brouillon" class="wikilink1" title="brouillon" rel="tag">BROUILLON</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="amanda">Amanda</h1>
+<div class="level1">
+
+<p>
+<strong>Amanda</strong> est un logiciel permettant de faire des sauvegardes de vos PC. Sauvegarde incrémentielle, différentiels.
+Amanda est conçu pour effectuer les sauvegardes de multiples ordinateurs en réseaux sur bandes dans une logique maître/esclaves (<abbr title="Digital Audio Tape">DAT</abbr> …).
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Amanda" [63-346] -->
+<h2 class="sectionedit2" id="pre-requis">Pré-requis</h2>
+<div class="level2">
+
+<p>
+Amanda effectue des sauvegardes sur un support séquentiel, soit un dérouleur de bande (DDS, DAT…), soit un disque utilisé de manière séquentielle.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Pré-requis" [347-526] -->
+<h2 class="sectionedit3" id="installation">Installation</h2>
+<div class="level2">
+
+<p>
+<a href="../../tutoriel/comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">Installez les paquets</a> <a href="apt://amanda-server,amanda-client" class="urlextern" title="apt://amanda-server,amanda-client"  rel="nofollow">amanda-server amanda-client</a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Installation" [527-684] -->
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+On ajoute un fichier de configuration à partir de celui fourni en exemple
+</p>
+<pre class="code">sudo -u backup -s
+cd /etc/amanda/
+cp /usr/share/doc/amanda-server/examples/amanda.conf.in.gz .
+gunzip -d amanda.conf.in.gz
+cp -a amanda.conf.in amanda.conf</pre>
+
+<p>
+On va préparer le système pour avoir une sauvegarde journalière (daily), une archive, et une de test
+</p>
+<pre class="code">sudo -u backup -s
+mkdir -m 770 -p /etc/amanda/{daily,archive,test1}</pre>
+
+<p>
+On en profite pour créer le fichier de la liste des bandes utilisées
+</p>
+<pre class="code">touch /etc/amanda/{daily,archive,test1}/tapelist</pre>
+
+</div>
+<!-- EDIT4 SECTION "Configuration" [685-1278] -->
+<h2 class="sectionedit5" id="utilisation">Utilisation</h2>
+<div class="level2">
+
+<p>
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Utilisation" [1279-1310] -->
+<h2 class="sectionedit6" id="desinstallation">Désinstallation</h2>
+<div class="level2">
+
+<p>
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Désinstallation" [1311-1348] -->
+<h2 class="sectionedit7" id="voir_aussi">Voir aussi</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.amanda.org" class="urlextern" title="http://www.amanda.org"  rel="nofollow">(en) Site officiel d&#039;AMANDA .</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.linux-france.org/article/sys/amanda/" class="urlextern" title="http://www.linux-france.org/article/sys/amanda/"  rel="nofollow">(fr) Documentation d&#039;AMANDA.</a></div>
+</li>
+</ul>
+
+<p>
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />
+</p>
+<hr />
+
+<p>
+<em>Contributeurs : <img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />.</em>
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Voir aussi" [1349-] -->
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/6/651235cddb697ddb6796eeb746ca9320.xhtml used -->
+</div>
+</body>
+</html>

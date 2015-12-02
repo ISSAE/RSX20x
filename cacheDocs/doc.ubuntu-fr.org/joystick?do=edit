@@ -1,0 +1,792 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>joystick - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/joystick?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/joystick"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/joystick"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"joystick","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="joystick?do=edit#main" tabindex="1">Contenu</a> | <a href="joystick?do=edit#qsearch__in" tabindex="2">Rechercher</a> | <a href="joystick?do=edit#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="joystick?do=edit" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="joystick" >joystick</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<p>
+<strong>Quelques recommandations avant de créer ou de modifier cette page :</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Lisez le <a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">guide du contributeur</a> et la <a href="wiki/ligne_editoriale" class="wikilink1" title="wiki:ligne_editoriale">ligne éditoriale</a>.</div>
+</li>
+<li class="level1"><div class="li"> Découvrez la <a href="http://doc.ubuntu-fr.org/wiki/syntaxe" class="wikilink1" title="wiki:syntaxe">syntaxe</a> et entraînez-vous dans le <a href="playground/playground" class="wikilink1" title="playground:playground">bac à sable</a>.</div>
+</li>
+<li class="level1"><div class="li"> Utilisez les modèles (<a href="wiki/modeles/application" class="wikilink1" title="wiki:modeles:application">application</a>, <a href="wiki/modeles/materiel" class="wikilink1" title="wiki:modeles:materiel">matériel</a>, <a href="wiki/modeles/portable" class="wikilink1" title="wiki:modeles:portable">ordinateur portable</a>, <a href="wiki/modeles/tutoriel" class="wikilink1" title="wiki:modeles:tutoriel">tutoriel</a>, <a href="wiki/modeles/utilisateur" class="wikilink1" title="wiki:modeles:utilisateur">utilisateur</a>, <a href="wiki/modeles/portail" class="wikilink1" title="wiki:modeles:portail">portail</a>) et les <a href="wiki/mini-tutoriels" class="wikilink1" title="wiki:mini-tutoriels">mini-tutoriels</a>.</div>
+</li>
+<li class="level1"><div class="li"> Rapportez toutes créations ou modifications importantes sur <a href="wiki/liste_discussion#coordination_de_la_documentation" class="wikilink1" title="wiki:liste_discussion">la liste de discussion</a>.</div>
+</li>
+</ol>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fcdb5fe1d67011f56447459483d05597.xhtml used -->
+<script type="text/javascript">/*<![CDATA[*/
+textChanged = false/*!]]>*/</script>
+    <div class="editBox" role="application">
+
+    <div class="toolbar group">
+        <div id="draft__status"></div>
+        <div id="tool__bar"><a href="http://doc.ubuntu-fr.org/lib/exe/mediamanager.php?ns="
+            target="_blank">Sélection de fichiers</a></div>
+    </div>
+    <form id="dw__editform" method="post" action="joystick?do=edit" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><input type="hidden" name="id" value="joystick" /><input type="hidden" name="rev" value="0" /><input type="hidden" name="date" value="1418773099" /><input type="hidden" name="prefix" value="." /><input type="hidden" name="suffix" value="" /><input type="hidden" name="changecheck" value="08af91d53b1d463289dfa132726b776a" /><input type="hidden" name="target" value="section" /><textarea name="wikitext" id="wiki__text" dir="auto" class="edit" cols="80" rows="10" tabindex="1">
+{{tag&gt;matériel jeu}}
+
+----
+
+====== Manette de jeu : généralités ======
+
+===== Pré-requis =====
+
+  * Vous devez avoir activé les [[dépôts]] « Universe ».
+  * Une manette de jeu pour port jeu ou USB.
+  * Une carte son SoundBlaster ou compatible (port jeu uniquement).
+  * Savoir démarrer et utiliser un [[terminal]] (une console).
+
+===== Préambule =====
+
+Cette page vous permet de faire fonctionner une manette de jeu sous Ubuntu ou Kubuntu 6.06 et 6.10 ou suivant. 
+
+Pour commencer, branchez votre manette. **Dans 50 % des cas, la manette est auto-détectée, surtout si elle est en USB** (si c'est une manette à port jeu, un redémarrage de l'ordinateur avec la manette branchée sera nécessaire pour le savoir). Vous allez donc déjà tester cela. Si cela ne marche pas, reportez-vous à la suite.
+
+Sachez aussi que **la plupart des applications utilisent leur propre algorithme pour la détection des manettes** (même s'il y a tout de même 2 API dominantes : **Linux** et **SDL**). Ce n'est pas tout à fait comme MS Windows où il y a un seul outil centralisé qui gère la manette et ses propriétés (et où les jeux utilisent ces données-là). 
+
+===== Retour de Force (ou Force Feedback) =====
+
+Depuis Ubuntu 9.04 (noyau 2.6.28), le retour de force est supporté en standard. Cela concerne un nombre limité de joysticks et volants. La liste est la suivante (d'après le source Linux/drivers/HID/KConfig 2.6.30 ainsi que [[http://sourceforge.net/apps/mediawiki/libff/index.php?title=SupportedDevices]]) :
+
+  * DRAGONRISE
+  * GREENASIA/PANTHERLORD
+  * LOGITECH (protocole HID non standard)
+  * LOGITECH
+    * Wingman Cordless RumblePad
+    * Wingman Cordless RumblePad 2
+    * Wingman Force 3D
+    * Wingman Force EX
+    * Formula Force EX wheel
+    * G25 Racing Wheel
+    * MOMO force wheel
+    * RumblePad 2
+  * MICROSOFT (protocole HID non standard)
+    * Sidewinder Force Feeback 2
+    * Sidewinder Force Feedback Wheel
+  * THRUSTMASTER 
+    * FireStorm Dual Power 2
+    * Ferrari GT 2-in-1 Force Feedback wheel
+    * Ferrari GT 2-in-1 Rumble Force wheel
+  * ZEROPLUS
+  * Périphériques utilisants le pilote I-Force (iforce.ko)
+    * ACT Labs Force RS
+    * AVB Mag Turbo Force
+    * AVB Top Shot Pegasus
+    * AVB Top Shot FFB Racing Wheel
+    * Guillemot Force Feedback Racing Wheel
+    * Guillemot Jet Leader 3d
+    * Guillemot Race Leader Force Feedback
+    * Logitech Wingman Force
+    * Logitech Wingman Formula Force
+    * Thrustmaster Motor Sport GT
+
+Pour tester le retour de force sur un joystick, il faut utiliser les outils [[http://sourceforge.net/apps/mediawiki/libff/index.php?title=CheckForceFeedback|ff-utils]] (nécessite le paquet **[[apt&gt;libsdl1.2-dev]]**).
+
+===== Calibration, test ====
+
+Nous allons vous présenter ici les différentes méthodes pour calibrer (mais surtout tester) votre manette de jeu.
+
+=== Avec jstest-gtk ===
+[[:tutoriel:comment_installer_un_paquet|Installez le paquet]] **[[apt://jstest-gtk|jstest-gtk]]** puis calibrez la manette de jeu avec la commande :
+
+  jstest-gtk
+
+=== Avec JSCalibrator ===
+
+&lt;note warning&gt;[[JSCalibrator]] peut poser (beaucoup) de problèmes (voir section « [[#Problèmes]] »), ainsi donc, je vous le déconseille fortement !&lt;/note&gt;
+
+[[:tutoriel:comment_installer_un_paquet|Installez le paquet]] **[[apt://jscalibrator|jscalibrator]]** puis calibrez la manette de jeu avec la commande :
+
+  jscalibrator
+
+Cliquez sur le bouton « Calibrate ».
+
+Utilisez tous les axes et boutons de votre manette de jeu pour que le logiciel enregistre les valeurs minimales et maximales de votre manette.
+
+Re-cliquez sur le bouton « Calibrate » pour que ces paramètres soient enregistrés.
+
+**Important :** Une fois sauvées, les informations de calibrations sont stockées dans le fichier « .joystick » dans votre /home/user.
+
+=== Par le centre de configuration de KDE ===
+
+{{  materiel:joystick:manettedejeu5.png?250}}
+
+**Conseillé :** [[:tutoriel:comment_installer_un_paquet|installez le paquet]] **[[apt://kcontrol|kcontrol]]** si vous n'utilisez pas KDE.
+
+Allez dans le menu// KDE → Centre de configuration de KDE →// section //Périphériques → Manette de jeu//.
+
+Cela vous donnera une fenêtre qui ressemble à la capture ci-contre.
+
+Cliquez sur le bouton « Calibrer », puis procédez au calibrage de la manette avec les instructions qui vous seront demandées.
+
+Soyez attentif aux demandes (Minimum, Centre et Maximum). Si vous vous trompez dans l'ordre, n'hésitez pas à annuler et reprendre la calibration.
+
+== Kubuntu 7.04 ==
+
+Pour Kubuntu Feisty, le Paneau de configuration de KDE a été légèrement modifié, vous trouverez donc votre configurateur de Manette dans //Menu KDE → Configuration → Clavier et Souris//.
+
+
+=== Par le mode console ===
+
+Pour tester votre manette tapez :
+
+  sudo cat /dev/input/js0
+
+Si vous voyez des signes bizarre qui bougent selon les boutons appuyé, c'est que ça doit marcher !
+
+Vous pouvez également calibrer et tester votre manette grâce aux programmes jscal/jstest. Joystick est un programme pour calibrer la manette en mode console.
+
+∴ [[jscal-jstest|Plus d'informations sur jsCal et jsTest…]] ∴
+
+
+
+===== Méthode manuelle =====
+
+La manette n'est pas détectée ? Vous venez de brancher votre manette et ne voulez pas redémarer votre ordinateur ? OK !
+
+==== Créer les port jeux dans Linux ====
+
+&lt;note&gt;Cela semble être facultatif.&lt;/note&gt;
+
+Dans un terminal (une console) : 
+
+  * il faut se placer dans le bon répertoire avec la commande : &lt;code&gt;cd /dev/input&lt;/code&gt;
+  * Créez le port jeux avec la commande :&lt;code&gt;sudo MAKEDEV js&lt;/code&gt;
+  * Fermer le terminal.
+
+==== Chargement des modules ====
+
+Les manettes demandent un certains nombre de &quot;Pilotes&quot;. Sous Ubuntu, ce sont des modules qui doivent être chargé avec le noyau linux.
+
+Dans un premier temps, nous allons le faire manuellement. Si tout marche, on va modifier certains fichiers afin que tout soit fait au démarrage de l'ordinateur.
+
+
+=== Tester la solution avant de modifier les fichiers ====
+
+Dans un terminal (une console) charger en mémoire les pilotes requis selon votre manette.
+
+Par exemple, pour une SideWinder GamePad (**/!\** cf plus bas pour connaitre les bons modules !! **/!\**) :
+
+&lt;code&gt;
+sudo modprobe joydev ## Pilote pour les manettes de jeu
+sudo modprobe 'module correspondant à votre port jeu'          ## voir en bas pour connaitre le bon module (pour les carte son non lister il est possible que ce soit ns558
+sudo modprobe 'le module de votre manette' ## voir en bas pour connaitre le bon module
+&lt;/code&gt;
+
+À tout moment vous pouvez voir les modules chargé avec la commande :
+
+&lt;code&gt;
+lsmod
+lsmod | grep gameport ## pour n'afficher que les lignes contenant &quot;gameport&quot;
+&lt;/code&gt;
+
+Pour tester si le tout fonctionne essayez donc de calibrer votre manette :
+
+[[#Calibration_-_test|Calibration]] (Ancre)
+
+**Si vous avez réussi** la calibration de la manette c'est que vous avez chargé les bons pilotes. Passez à la section suivante.
+
+**Si vous avez eu un message d'erreur** et n'avez pas réussi la calibration de la manette  vous devez regarder le reste du présent document pour y trouver les bons pilotes.
+
+**Rappel :** Pour décharger un module, il faut utiliser la commande modprobe -r (remove) :
+
+&lt;code&gt;
+sudo modprobe -r 'le module de votre manette'
+&lt;/code&gt;
+
+=== Charger les modules automatiquement au démarrage ===
+
+Pour cela, il faut  [[:tutoriel:comment_modifier_un_fichier|éditer le fichier de configuration]] &quot;/etc/modules&quot;. Ce fichier « modules » regroupe une partie des pilotes à charger avec votre noyau Linux.
+
+Ajoutez à la fin du fichier, le texte suivant :
+
+&lt;code&gt;
+## Pilotes de manette de jeu (joystick)
+joydev         ## Pilote pour les manettes de jeu
+'module correspondant à votre port jeu'          ## voir en bas pour connaitre le bon module (pour les carte son non lister il est possible que ce soit ns558
+'le module de votre manette' ## voir en bas pour connaître le bon module
+&lt;/code&gt;
+
+Cela donne un fichier ''/etc/modules'' qui devrait ressembler à ceci :
+
+&lt;code&gt;
+# /etc/modules: kernel modules to load at boot time.
+#
+# This file contains the names of kernel modules that should be loaded
+# at boot time, one per line. Lines beginning with &quot;#&quot; are ignored.
+
+lp
+
+## Pilotes de souris
+psmouse
+mousedev
+
+## Pilotes de carte de son ALSA Ensoniq ES1371 AudioPCI-97
+alias snd-card-0 snd-ens1371
+below snd-es1371
+snd-seq-device ## Optionnel, pour les séquenceur MIDI
+snd-seq-midi   ## Optionnel, pour les séquenceur MIDI
+
+## Pilotes de manette de jeu (joystick)
+joydev         ## Pilote pour les manettes de jeu
+ns558          ## Pilote pour le port jeu
+sidewinder     ## Pilote spécifique pour les manette MS-SideWinder
+&lt;/code&gt;
+
+En plus de cela, vous devez [[:tutoriel:comment_modifier_un_fichier|créer ou modifier le fichier]] /etc/modules.conf, pour y ajouter les lignes suivante :
+
+&lt;code&gt;
+alias js0 input
+above input joydev 'module correspondant à votre port jeu' 'le module de votre manette'
+&lt;/code&gt;
+
+Enregistrez les modifications puis redémarrez votre ordinateur.
+
+===== Liste des modules =====
+
+&lt;note&gt;
+Il semblerait qu'il faille en fait nommer le fichier &quot;options&quot; en &quot;options.conf&quot;. Ce sera obligatoire pour la prochaine version a priori (10.10).
+Voilà le warning console au chargement du module &quot;joydev&quot; :
+WARNING: All config files need .conf: /etc/modprobe.d/options, it will be ignored in a future release.
+&lt;/note&gt;
+
+==== Port jeu (port MIDI) ====
+
+=== Cas particuliers ===
+
+== Pour une carte son à base de ens1371 ==
+
+Si vous avez une carte son à base de chipset ens1371 (Ex. : Sounblaster 64 et 128), une petite manipulation préliminaire s'impose.
+
+Tout d'abord, vérifier le modèle de votre carte son : dans une console tapez
+
+&lt;code&gt;
+lsmod | grep snd_ens1371
+&lt;/code&gt;
+
+Si vous avez quelque chose, c'est bon, continuez, sinon, vous avez une autre carte son. (Mais vous pouvez tout de même tenter de continuer en remplaçant dans ce qui suit « joystick_port=1 » par « joystick=1 » ou « joystick » et en adaptant le nom du pilote de votre carte son.)
+
+[[:tutoriel:comment_editer_un_fichier|Éditez le fichier]] **/etc/modprobe.d/options** et rajoutez-y la ligne :
+
+&lt;code&gt;
+options snd_ens1371 joystick_port=1
+&lt;/code&gt;
+
+
+Redémarrez, et refaites le tuto depuis le début.
+
+(Merci [[http://forum.ubuntu-fr.org/viewtopic.php?id=45966|PierreR]])
+
+== Pour une carte son intégrée de marque via ==
+
+Si vous avez une carte son intégrée à un chipset Via (ex. : Via-PT800 ou n'importe quel autre chipset de cette marque ), et que vous n'avez pas réussit à faire marché votre joystick, une petite manipulation préliminaire s'impose.
+
+Tout d'abord, vérifier le modèle de votre carte son : dans une console tapez
+
+&lt;code&gt;
+lsmod | grep snd_via82xx
+&lt;/code&gt;
+
+Si vous obtenez quelque chose en retour, c'est bon continuez, vous avez bien une carte son Via.
+
+[[:tutoriel:comment_editer_un_fichier|Éditez le fichier]] **/etc/modprobe.d/options** et rajoutez-y la ligne :
+
+&lt;file&gt;
+options snd_via82xx joystick=1
+&lt;/file&gt;
+
+
+Redémarrez, et refaites le tuto depuis le début.
+
+== Pour une carte son Aztech ==
+
+(récupéré de l'ancienne page)
+
+Apparemment, là aussi il faut activer le port son.
+
+Donc, dans **/etc/modules.conf** [[:tutoriel:comment_editer_un_fichier|ajoutez]] :
+
+&lt;file&gt;
+above snd-trident snd-pcm-oss
+alias sound-slot-0 trident
+alias js0 input
+above input joydev pcigame analog adi
+&lt;/file&gt;
+
+=== Cas généraux ===
+
+== Classic ISA/PnP gameports ==
+
+&lt;code&gt;
+sudo modprobe ns558
+&lt;/code&gt;
+
+== Crystal SoundFusion gameports ==
+
+&lt;code&gt;
+sudo modprobe cs461x
+&lt;/code&gt;
+
+== Aureal Vortex and Trident 4DWave gameports ==
+
+&lt;code&gt;
+sudo modprobe pcigame
+&lt;/code&gt;
+
+== SoundBlaster Live! gameports ==
+
+&lt;code&gt;
+sudo modprobe emu10k1-gp
+&lt;/code&gt;
+
+== Autres ==
+
+&lt;code&gt;
+sudo modprobe gameport
+&lt;/code&gt;
+
+==== Manettes/Joysticks ====
+
+== Pour une manette analogique ==
+
+Ce pilote marche bien avec les manettes bas de gammes :
+
+&lt;code&gt;
+sudo modprobe analog
+&lt;/code&gt;
+
+== Pour une manette de jeu Microsoft SideWinder ==
+
+&lt;code&gt;
+sudo modprobe sidewinder
+sudo modprobe analog ## A réserver a la gamme joystick
+&lt;/code&gt;
+
+== Pour une manette MS SideWinder ForceFeedBack Pro ==
+
+&lt;code&gt;
+sudo modprobe analog 
+sudo modprobe sidewinder
+sudo modprobe iforce ## Pilote pour le retour de force
+sudo modprobe evdev ## Pilote pour &quot;Input driver event char devices&quot;
+&lt;/code&gt;
+
+== Pour une manette de jeu Logitech WingMan ADI digital ==
+
+&lt;code&gt;
+sudo modprobe adi
+&lt;/code&gt;
+
+== Pour &quot;Assassin 3D and MadCatz Panther&quot; ==
+
+&lt;code&gt;
+sudo modprobe a3d
+&lt;/code&gt;
+
+== Pour &quot;Genius Flight2000 Digital joysticks and gamepads&quot; ==
+
+&lt;code&gt;
+sudo modprobe gf2k
+&lt;/code&gt;
+
+== Pour &quot;Gravis GrIP joysticks and gamepads&quot; ==
+
+&lt;code&gt;
+sudo modprobe grip
+&lt;/code&gt;
+
+== Pour &quot;InterAct digital joysticks and gamepads&quot; ==
+
+&lt;code&gt;
+sudo modprobe interact
+&lt;/code&gt;
+
+== Pour &quot;ThrustMaster DirectConnect joysticks and gamepads&quot; ==
+
+&lt;code&gt;
+sudo modprobe tmdc
+&lt;/code&gt;
+
+== Pour une manette Guillemot dual analog gamepad (port jeu) ==
+
+&lt;code&gt;
+sudo modprobe guillemot
+sudo modprobe analog ## A verifier
+sudo modprobe iforce ## A verifier
+&lt;/code&gt;
+
+Pensez aussi au bouton qui active/désactive les mini-sticks de cette manette.
+
+== Pour une manette Microsoft Xbox 360 ==
+
+À partir de Ubuntu 8.04 &quot;Hardy Heron&quot;, la manette fonctionne nativement et directement dès qu'on la branche (la led supérieure gauche devrait clignoter), complètement plug &amp; play =)
+
+Pour les distributions antérieures, voir [[:paddle_x360_for_windows_sur_ubuntu|la documentation pour installer la manette]]
+
+== Pour une manette de jeux pour port USB ==
+
+
+(Inspiré par [[http://www.linux-usb.org/USB-guide/x194.html|cet article]])
+
+Si l'auto détection ne fonctionne pas (//cas très rare !//)...
+
+&lt;code&gt;
+sudo modprobe usbhid
+sudo modprobe joydev
+&lt;/code&gt;
+
+Maintenant, si vous branchez votre manette (au cas ou vous ne l'aurez pas déjà fait) et testez-la.
+
+Il ne vous restera plus qu'à mettre ''usbhid'' et ''joydev'' dans /etc/modules comme indiqué plus haut.
+
+
+== Autres manettes ==
+
+Pour obtenir une liste complète des modules, vous pouvez taper ''modprobe -l''
+
+Vous pouvez aussi [[:tutoriel:comment_installer_un_paquet|installer le paquet]] **modconf**.
+
+Lancez ensuite modconf en sudo (en ayant préalablement agrandi la fenêtre) :
+
+&lt;code&gt;
+sudo modconf
+&lt;/code&gt;
+
+Vous atterrirez sur une liste COMPLÈTE de tous les modules disponibles. Rendez-vous dans le dossier joystick, et vous verrez tous les modules joystick possible et inimaginable ! :-)
+
+
+===== Problèmes =====
+
+==== Je n'arrive pas à calibrer ma seconde manette ====
+
+C'est apparemment un bug qui est présent dans ''jscalibrator''. Mais cela n'est pas important dans la mesure ou chaque logiciel a son propre algorithme de détection de manette.
+
+
+==== On me détecte un bouton qui n'existe pas ====
+
+Que ce soit avec jscalibrator, kcontrol ou jscal, on vous détecte un bouton qui n'existe pas et qui est enfoncé par défaut ? Suivez ceci:
+
+**[[jscal-jstest#le_programme_detecte_un_bouton_qui_n_existe_pas_et_qui_est_presse_par_defaut|Voir aussi cette page pour des informations à jour]].**
+
+  - D'abord, il faut avoir le paquet build-essential installé pour pouvoir compiler.
+  - Téléchargez une version patché du programme jscal qui permet de calibrer un manette en ligne de commande (la manip expliqué ici ne peut donc être réalisée avec jscalibrator). Voici le prog http://www.mediafire.com/?msitbdej0ad
+  - extraire le contenu.
+  - ouvrir un terminal dans le dossier.
+  - Tapez  'make clean' et puis 'make' (le prog est déjà compilé pour du amd64, donc à ne faire que si votre architecture est du i386)
+  - Téléchargez ce fichier [[http://bugs.debian.org/cgi-bin/bugreport.cgi?msg=5;filename=joystick.diff;att=1;bug=444142]] et placez-le dans le dossier. Il rajoute les commande qu'on a besoin au programme.
+  - Lancez le programme jscal du dossier en tappant le chemin complet vers le prog dans un terminal ('~/jscal-patched-amd4-ubuntu7.10/jscal' /dev/input/js0)
+  - Tapez '~/jscal-patched-amd4-ubuntu7.10/jscal' /dev/input/js0 -c pour calibrer le volant.
+  - Et enfin '~/jscal-patched-amd4-ubuntu7.10/jscal' /dev/input/js0 -u 3,0,1,5,9,288,289,290,291,292,293,294,295,511
+pour désactiver le 9ème bouton par exemple.
+
+La dernière commande donne la valeur maximum 511 au bouton 9 pour le désactiver (256 étant le minimum).
+
+Concernant la signification des nombres, le 3 correspond aux nombres d'axes, donc 3 pour accélération, frein et gauche/droite. Le 9 correspond au nombre de boutons et les nombres qui suivent à leurs valeurs par défaut.
+
+
+==== Le module analog se charge automatiquement ====
+
+Il peut arriver qu'un module non-désiré se charge automatiquement au démarrage de l'ordinateur. L'exemple le plus fréquent est le module ''&quot;analog&quot;'', qui n'est pas nécessaire pour toutes les manettes. Il faut donc le &quot;black-lister&quot; :
+
+Pour les versions avant Lucid: [[:tutoriel:comment_modifier_un_fichier|modifiez le fichier]] /etc/modprobe.d/blacklist
+Depuis Ubuntu Lucid: [[:tutoriel:comment_modifier_un_fichier|modifiez le fichier]] /etc/modprobe.d/blacklist.conf
+
+Et ajouter une ligne :
+
+&lt;code&gt;
+# analog module
+blacklist analog
+&lt;/code&gt;
+
+Enregistrez et quittez.
+
+==== Mes directions ne fonctionnent pas ====
+
+Vous devez surement être sur Ubuntu ou Xubuntu :)
+
+Le fait est que la plupart des développeurs se basent sur des Axes de -32000 +32000, et ce, quel que soit votre manette.
+
+Malheureusement, jscalibrator indique au noyau les valeur &quot;réels&quot; de vos Axes, tandis que le centre de contrôle de KDE indique les valeurs &quot;émulée&quot;, quel que soit votre manette (genre il va mettre 32000 pour ma Sidewinder à axe simple).
+
+== Que faire ? ==
+
+Il n'y a alors pas d'autres choix que d'installer le centre de contrôle KDE :
+
+&lt;code&gt;
+sudo apt-get install kcontrol
+&lt;/code&gt;
+
+Rendez-vous dans la catégorie joystick et calibrer tout cela !!
+
+== Autre méthode ==
+
+Ca marche aussi avec **joystick** via [[jscal-jstest|jscal et jstest]] (si vous savez utiliser le mode console) :
+
+&lt;code&gt;
+jscal -c /dev/input/js0
+&lt;/code&gt;
+
+
+=== Autres solutions ===
+Pour les jeux et également les émulateurs type GFCE, il existe une solution permettant de programmer votre manette de jeux en lui assignant certaines touches du clavier, voir les logiciels ci-dessous.
+
+===== Configuration des touches =====
+==== qJoypad ==== 
+[[qjoypad|QJoyPad]] permet d'assigner des touches du clavier a votre manette. 
+
+&lt;note warning&gt;
+QJoyPad n'est plus maintenu depuis février 2010, nous vous conseillons désormais l'utilisation de AntiMicro.
+&lt;/note&gt;
+
+==== AntiMicro ====
+[[antimicro|AntiMicro]] Un peu plus évolué que Qjoypad car il permet les combinaisons de touches complexes et n'a pas le soucis de la limite des identifiants des touches.
+
+==== Rejoystick ====
+&lt;note warning&gt;
+Jojsticken n'est plus maintenu depuis septembre 2008, nous vous conseillons désormais l'utilisation de AntiMicro.
+&lt;/note&gt;
+
+Pour cela téléchargez le paquet rejoystick (une recherche google vous permettra de le trouver sans problème)ou télécharger le paquet à cette adresse : 
+http://sourceforge.net/projects/rejoystick/
+Le paquet ne nécessite aucune dépendance, mais n'est pas présent dans les dépôts d'Ubuntu. 
+
+Une fois installé, utilisez votre console :
+
+&lt;code&gt;
+rejoystick
+&lt;/code&gt;
+
+le programme est en anglais et s'utilise en mode ligne de commande. Pour débuter choisissez une touche du clavier qui une fois pressée indiquera au programme que l'assignation des touches est terminée (ex : echap). Ensuite, le programme vous demande de choisir une touche du clavier. Pressez une touche au choix. Ensuite, le programme vous demande de choisir une touche de la mannette de jeu. Par exemple : la touche du clavier A correspond au bouton 1 de ma manette de jeu. Répetez l'opération pour toutes les touches de la manette et les directions. Puis quitter le programme (echap dans l'exemple).
+
+Dans la console, tapez ensuite rejoystick -d. Le programme se lance, fermez la console, démarrez votre jeu, et configurer l'interface de jeu avec le choix de touches du clavier auparavant effectué...et...une fois dans le jeu, votre joystick fonctionne.
+
+Attention : ce programme ne fonctionne que si votre manette est reconnue initialement par le système. Avantage, le programme rejoystick permet de savoir si le système reconnaît votre manette !
+
+Pour  éventuellement reprogrammer la manette utiliser la commande :
+
+&lt;code&gt;
+rejoystick -readkeys
+&lt;/code&gt;
+
+la commande :
+
+&lt;code&gt;
+rejoystick --help
+&lt;/code&gt;
+ vous donnera toutes les indications pour créer et sauvegarder des profils de programmation pour vos jeux favoris !
+
+==== Jojsticken ====
+Jojsticken est le successeur  de rejoystick puisqu'il est développé par le même auteur de ce dernier.
+
+Site officiel : http://jojsticken.sourceforge.net/
+
+L'application est en java et est par conséquent multi-plateforme.
+===== Reconnaissance du matériel  =====
+
+^ Modèle         ^ Fonctionne ou pas           ^ Version ubuntu                    ^ Info/Liens        ^
+| Logitech Gamepad F310   | Fonctionne, juste un axe et une gâchette à inverser avec jstest-gtk    | Ubuntu 12.10                      | http://forum.ubuntu-fr.org/viewtopic.php?pid=4655791 |
+| Logitech Precision   | Out-of-the-box!  | Ubuntu 12.04 | 8 boutons réglables + 1 axe avec jstest-gtk |
+| Speedlink Strike (SL-6535-SSV-01)   | Out-of-the-box!  | Ubuntu 11.04 | http://www.speedlink.com/?p=2&amp;cat=4132&amp;pid=23398&amp;paus=1 |
+
+
+
+===== Liens =====
+
+  * Voir dans la documentation du noyau ici : [[http://www.freelink.cx/joystick.html]].
+  * Un HOWTO sympatique : http://ubuntuforums.org/showthread.php?t=330607
+  * Concernant les volants : http://www.wingmanteam.com/linux.htm
+  * Piloter Xorg avec une manette : http://forum.ubuntu-fr.org/viewtopic.php?pid=947925
+  * http://www.trustonme.net/didactels/160.html#joyson
+  * **English version** : http://ubuntuforums.org/showthread.php?p=2685180
+
+===== Autres pages en lien avec les sujets =====
+
+{{backlinks&gt;.}}
+{{topic&gt;Manette joystick}}
+
+----
+
+//Contributeurs : [[utilisateurs:YoBoY]], [[utilisateurs:Ner0lph]], [[utilisateurs:smon]], [[utilisateurs:lami|L'ami René]] (Mise en page)+(Autres pages en lien avec les sujets), [[utilisateurs:Antonin_Morel]], [[utilisateurs:sacrediou]], [[utilisateurs:jeanf]], [[utilisateurs:adam0509]], [[utilisateurs:Fabien26]], [[utilisateurs:d10g3n]],  [[utilisateurs:alexisj]] //</textarea>
+<div id="wiki__editbar" class="editBar">
+<div id="size__ctl">
+</div>
+<div class="editButtons">
+<div id="plugin__captcha_wrapper"><input type="hidden" name="5243f9d2ea0e57400dc4f11a931ea6fe" value="mP7wp9EB6x00rt6QbGo5G/F41j4csjYtMQtDeXPv6ms=" /><label for="plugin__captcha">Merci de recopier le code ci-contre pour prouver que vous êtes humain :</label> <span id="plugin__captcha_code">O﻿
+J​
+L
+Z
+X</span> <input type="text" size="5" name="dc021060b4cbbe9809816e8e9a9e9db4" class="edit" /> <label class="no">Merci de laisser ce champ vide : <input type="text" name="2874687e1a3bab457ade1e8c4ad7dd76" /></label></div><input name="do[save]" type="submit" value="Enregistrer" class="button" id="edbtn__save" accesskey="s" tabindex="4" title="Enregistrer [S]" />
+<input name="do[preview]" type="submit" value="Aperçu" class="button" id="edbtn__preview" accesskey="p" tabindex="5" title="Aperçu [P]" />
+<input name="do[draftdel]" type="submit" value="Annuler" class="button" tabindex="6" />
+</div>
+<div class="summary">
+<label class="nowrap" for="edit__summary"><span>Résumé</span> <input type="text" id="edit__summary" name="summary" class="edit" size="50" tabindex="2" /></label>
+</div>
+</div>
+<div class="license">
+Note : En modifiant cette page, vous acceptez que le contenu soit placé sous les termes de la licence suivante : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" class="urlextern">CC Paternité-Partage des Conditions Initiales à l'Identique 3.0 Unported</a></div>
+</div></form>
+</div>
+<script type="text/javascript">
+   var saveBtn = document.getElementById('edbtn__save');
+   saveBtn.disabled = true;
+   saveBtn.style.color = 'gray';
+   saveBtn.style.backgroundColor = '#EEEEEE';
+   saveBtn.value = 'Enregistrer (Click \'Aperçu\' first)';
+</script>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/joystick?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/joystick?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="joystick?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="joystick?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="joystick?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

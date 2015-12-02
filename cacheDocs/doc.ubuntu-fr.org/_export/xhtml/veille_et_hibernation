@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>veille_et_hibernation</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2015-03-23T13:17:34+0100"/>
+<meta name="keywords" content="materiel,systeme,energie"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../../index.html"/>
+<link rel="contents" href="../../veille_et_hibernation?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../../feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="veille_et_hibernation"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="../raw/veille_et_hibernation"/>
+<link rel="canonical" href="../../veille_et_hibernation"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"veille_et_hibernation","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="veille_et_hibernation#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="veille_et_hibernation#supprimer_le_mot_de_passe_lors_de_la_sortie_du_mode_veillehibernation">Supprimer le mot de passe lors de la sortie du mode veille/hibernation</a></div></li>
+<li class="level1"><div class="li"><a href="veille_et_hibernation#hiberner_au_bout_de_x_secondes_apres_une_mise_en_veille">Hiberner au bout de x secondes après une mise en veille</a></div></li>
+<li class="level1"><div class="li"><a href="veille_et_hibernation#problemes_connus">Problèmes connus</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="veille_et_hibernation#clavier_ps2_ne_fonctionne_plus_normalement_au_reveil">Clavier PS2 ne fonctionne plus normalement au réveil.</a></div></li>
+<li class="level2"><div class="li"><a href="veille_et_hibernation#mise_en_veille">Mise en veille</a></div></li>
+<li class="level2"><div class="li"><a href="veille_et_hibernation#hibernation">Hibernation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="veille_et_hibernation#empecher_l_hibernation">Empêcher l&#039;hibernation</a></div></li>
+<li class="level1"><div class="li"><a href="veille_et_hibernation#materiel_teste">Matériel testé</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="veille_et_hibernation#carte_mereportable">Carte mère / Portable</a></div></li>
+<li class="level2"><div class="li"><a href="veille_et_hibernation#carte_graphique">Carte graphique</a></div></li>
+<li class="level2"><div class="li"><a href="veille_et_hibernation#carte_reseau">Carte réseau</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../../materiel" class="wikilink1" title="materiel" rel="tag">matériel</a>,
+	<a href="../../systeme" class="wikilink1" title="systeme" rel="tag">système</a>,
+	<a href="../../energie" class="wikilink1" title="energie" rel="tag">énergie</a>
+</span></div>
+<hr />
+
+<h1 class="sectionedit1" id="mise_en_veillehibernation">Mise en veille / Hibernation</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Mise en veille / Hibernation" [44-90] -->
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+La mise en veille et l&#039;hibernation sont deux alternatives à l&#039;arrêt de l&#039;ordinateur.
+</p>
+<ul>
+<li class="level1"><div class="li"> La mise en veille permet d&#039;économiser de l&#039;énergie tout en gardant les applications ouvertes. Le réveil est très rapide. Il s&#039;agit de ce que l&#039;on appelle « suspend to ram » : toutes les informations de travail restent dans la mémoire vive et votre système d&#039;exploitation se met en mode d&#039;économie d&#039;énergie<sup><a href="veille_et_hibernation#fn__1" id="fnt__1" class="fn_top">1)</a></sup>. Par conséquent, une partie infime de la charge batterie est utilisée.</div>
+</li>
+<li class="level1"><div class="li"> L&#039;hibernation permet de sauvegarder l&#039;état des applications sur le disque dur et ne consomme ensuite plus d&#039;énergie. Le terme associé est « suspend to disk » et correspond à écrire toutes les données présentes dans la mémoire vive sur le disque dur avant d&#039;arrêter complètement l&#039;ordinateur. Au redémarrage, l&#039;opération inverse est effectuée : on lit depuis le disque dur pour repeupler cette dernière. Cependant, cette opération est bien plus longue du fait de la lecture/écriture depuis le disque dur. Son avantage est qu&#039;il n&#039;y a absolument aucune consommation d&#039;énergie en mode hibernation, une fois l&#039;opération effectuée. Ce processus est connu sous Windows sous le nom de « veille prolongée »</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Introduction" [91-1500] -->
+<h2 class="sectionedit3" id="supprimer_le_mot_de_passe_lors_de_la_sortie_du_mode_veillehibernation">Supprimer le mot de passe lors de la sortie du mode veille/hibernation</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Ouvrir un terminal et taper</div>
+</li>
+</ul>
+<pre class="code">gconf-editor</pre>
+<ul>
+<li class="level1"><div class="li"> Se rendre dans la branche apps &gt; gnome-power-manager &gt; lock</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Décocher la case hibernate pour désactiver le mot de passe lors de la sortie du mode hibernation.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Décocher la case suspend pour désactiver le mot de passe lors de la sortie du mode veille.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Décocher la case gnome_keyring_hibernate pour ne pas bloquer le mot de passe du trousseau lors de la sortie du mode veille (par exemple quand on est connecté au wifi).</div>
+</li>
+</ul>
+
+<p>
+Contexte lié au précédent et pourtant avec un réglage indépendant : <strong>supprimer le mot de passe à la sortie de l&#039;économiseur d&#039;écran</strong>.
+</p>
+<ul>
+<li class="level1"><div class="li"> Se rendre dans le menu  Système &gt; Préférences &gt; Économiseur d&#039;écran</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Décocher &quot;Verrouiller l&#039;écran quand l&#039;économiseur d&#039;écran est actif&quot;</div>
+</li>
+</ul>
+
+<p>
+<strong>Cas de ubuntu 11.10</strong>
+La branche apps &gt; gnome-power-manager &gt; lock n&#039;existe pas, il faut alors ouvrir un terminal et taper
+</p>
+<pre class="code">gsettings set org.gnome.desktop.lockdown disable-lock-screen &#039;true&#039;</pre>
+
+<p>
+Ou en mode graphique, ouvrir les &quot;Paramètres Système&quot;, cliquer sur l&#039;icône &quot;Ecran&quot; et cocher/décocher la partie intitulée &quot;Verrouiller&quot;.
+</p>
+
+<p>
+<strong>Ubuntu 12.04 et suivants : </strong> En mode graphique, ouvrir les &quot;Paramètres Système&quot; puis cliquer sur l&#039;icône &quot;Luminosité et verrouillage&quot;. Mettre &quot;Verrouiller&quot; sur &quot;0&quot; et décocher la partie intitulée &quot;Demander mon mot de passe lors de la sortie de veille&quot;.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Supprimer le mot de passe lors de la sortie du mode veille/hibernation" [1501-3005] -->
+<h2 class="sectionedit4" id="hiberner_au_bout_de_x_secondes_apres_une_mise_en_veille">Hiberner au bout de x secondes après une mise en veille</h2>
+<div class="level2">
+
+<p>
+ - La solution la plus simple est d&#039;utiliser la commande pm-suspend-hybrid du <a href="../../paquet" class="wikilink1" title="paquet">paquet</a> pm-utils. Cependant, les outils de gestions de batterie tel gnome-power-manager ne gèrent pas cette commande nativement et le fonctionnement est aléatoire suivant le portable. L&#039;avantage de cette solution est que les données sont sauvegardées si vous êtes à cours de batterie pendant la phase de veille,  contrairement au script ci-dessous.
+</p>
+
+<p>
+- Une autre façon est d&#039;utiliser votre outil de <a href="../../energie" class="wikilink1" title="energie">gestion d’énergie</a> pour mettre en veille et d&#039;utiliser le <a href="../../tutoriel/script_shell" class="wikilink1" title="tutoriel:script_shell">script_shell</a> ci dessous en parallèle. Ce script utilise la fonction rtcwake ( qui permet de réveiller l&#039;ordinateur au bout de x secondes ) et les outils fournis dans le <a href="../../paquet" class="wikilink1" title="paquet">paquet</a> pm-utils.  
+</p>
+
+<p>
+Ajouter le fichier  /etc/pm/sleepd/0000rtchibernate, ce fichier va être lu par la commande pm-suspend appelé par les outils de gestion de batterie pour la mise en veille et le réveil. 
+</p>
+<pre class="code">gksudo gedit /etc/pm/sleep.d/0000rtchibernate</pre>
+
+<p>
+Puis copier le script ci-dessous ( modifier la variable autohibernate suivant vos besoin ):
+</p>
+<pre class="code bash"><span class="co0">#!/bin/bash</span>
+<span class="re2">curtime</span>=$<span class="br0">&#40;</span><span class="kw2">date</span> +<span class="sy0">%</span>s<span class="br0">&#41;</span>
+&nbsp;
+<span class="co0"># Éditer la variable autohibernate ci-dessous pour indiquer le nombre de seconde avant hibernation</span>
+<span class="re2">autohibernate</span>=<span class="nu0">900</span>  <span class="co0"># ici 900 secondes avant hibernation </span>
+&nbsp;
+<span class="kw3">echo</span> <span class="st0">&quot;<span class="es2">$curtime</span> $1&quot;</span> <span class="sy0">&gt;&gt;/</span>tmp<span class="sy0">/</span>autohibernate.log
+&nbsp;
+<span class="co0"># Mise en veille</span>
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="st0">&quot;$1&quot;</span> = <span class="st0">&quot;suspend&quot;</span> <span class="br0">&#93;</span> 
+<span class="kw1">then</span>
+    <span class="co0">#enregistrement de l'heure actuelle et ajout d'un compte à rebours avant hibernation</span>
+    <span class="kw3">echo</span> <span class="st0">&quot;<span class="es2">$curtime</span>&quot;</span> <span class="sy0">&gt;/</span>var<span class="sy0">/</span>run<span class="sy0">/</span>pm-utils<span class="sy0">/</span>locks<span class="sy0">/</span>rtchibernate.lock
+    rtcwake <span class="re5">-m</span> no <span class="re5">-s</span> <span class="re1">$autohibernate</span>
+<span class="kw1">fi</span>
+<span class="co0"># Sortie de veille</span>
+<span class="kw1">if</span> <span class="br0">&#91;</span> <span class="st0">&quot;$1&quot;</span> = <span class="st0">&quot;resume&quot;</span> <span class="br0">&#93;</span>
+<span class="kw1">then</span>
+    <span class="re2">sustime</span>=$<span class="br0">&#40;</span><span class="kw2">cat</span> <span class="sy0">/</span>var<span class="sy0">/</span>run<span class="sy0">/</span>pm-utils<span class="sy0">/</span>locks<span class="sy0">/</span>rtchibernate.lock<span class="br0">&#41;</span>
+    <span class="kw2">rm</span> <span class="sy0">/</span>var<span class="sy0">/</span>run<span class="sy0">/</span>pm-utils<span class="sy0">/</span>locks<span class="sy0">/</span>rtchibernate.lock
+&nbsp;
+    <span class="co0"># Sortie de veille grace au compte à rebours?</span>
+    <span class="kw1">if</span> <span class="br0">&#91;</span> $<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="re1">$curtime</span> - <span class="re1">$sustime</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="re5">-ge</span> <span class="re1">$autohibernate</span> <span class="br0">&#93;</span>
+    <span class="kw1">then</span>
+        <span class="co0"># Alors hiberner</span>
+        <span class="kw2">rm</span> <span class="sy0">/</span>var<span class="sy0">/</span>run<span class="sy0">/</span>pm-utils<span class="sy0">/</span>locks<span class="sy0">/</span>pm-suspend.lock
+        <span class="sy0">/</span>usr<span class="sy0">/</span>sbin<span class="sy0">/</span>pm-hibernate
+    <span class="kw1">else</span>
+        <span class="co0"># Sinon effacer le compte à rebours</span>
+        rtcwake <span class="re5">-m</span> no <span class="re5">-s</span> <span class="nu0">1</span>
+    <span class="kw1">fi</span>
+<span class="kw1">fi</span></pre>
+
+<p>
+puis le rendre <a href="../../permissions" class="wikilink1" title="permissions">exécutable</a>
+</p>
+<pre class="code">sudo chmod +x /etc/pm/sleep.d/0000rtchibernate</pre>
+
+<p>
+À chaque fois qu&#039;une mise en veille est effectuée ( manuellement ou à l&#039;aide de logiciel ), l’ordinateur va se réveiller automatiquement au bout de 15 minutes ( en fonction de la variable autohibernate ) et, s&#039;il n&#039;y a eu aucune activité utilisateur, hiberner.
+</p>
+
+<p>
+<p><div class="notewarning">
+Si le niveau de la  batterie devient critique pendant la veille, vous allez perdre les données non sauvegardées.
+
+</div></p>
+</p>
+
+<p>
+<a href="http://askubuntu.com/questions/12383/how-to-go-automatically-from-suspend-into-hibernate" class="urlextern" title="http://askubuntu.com/questions/12383/how-to-go-automatically-from-suspend-into-hibernate"  rel="nofollow">Source du script</a>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Hiberner au bout de x secondes après une mise en veille" [3006-5784] -->
+<h2 class="sectionedit5" id="problemes_connus">Problèmes connus</h2>
+<div class="level2">
+
+<p>
+<p><div class="noteimportant">Afin de compléter cette section avec des informations utiles et précises, merci de renseigner votre matériel et votre pseudo (forum et/ou wiki) afin qu&#039;on puisse vous contacter en cas de problème similaire, ou d&#039;ambiguïté dans les informations.
+</div></p>
+<p><div class="noteimportant">Avant toute chose, au moins pour l&#039;hibernation, si vous rencontrez un problème réessayez après avoir débranché tous les périphériques extérieurs de votre ordinateur (souris <abbr title="Universal Serial Bus">USB</abbr>, jack, clé <abbr title="Universal Serial Bus">USB</abbr>, imprimante, modem (<a href="http://doc.ubuntu-fr.org/modem_sagem_fast_800" class="wikilink1" title="modem_sagem_fast_800">Sagem Fast 800</a> non compatible)…).
+Ça ne règle pas les problèmes mais permet de savoir si ça en crée !
+</div></p>
+<p><div class="noteimportant">Sous <a href="../../precise" class="wikilink1" title="precise">Ubuntu 12.04 LTS (« The Precise Pangolin »)</a> et versions ultérieures, l&#039;option d&#039;hibernation est désactivée par défaut pour des raisons de compatibilité avec la diversité de matériel. Launchpad explique ici <a href="https://help.ubuntu.com/12.04/ubuntu-help/power-hibernate.html" class="urlextern" title="https://help.ubuntu.com/12.04/ubuntu-help/power-hibernate.html"  rel="nofollow">https://help.ubuntu.com/12.04/ubuntu-help/power-hibernate.html</a> la procédure pour tester l&#039;hibernation sur votre matériel et comment réactiver le bouton/option d&#039;hibernation dans le menu d&#039;extinction, si votre matériel semble le supporter.
+</div></p>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Problèmes connus" [5785-6970] -->
+<h3 class="sectionedit6" id="clavier_ps2_ne_fonctionne_plus_normalement_au_reveil">Clavier PS2 ne fonctionne plus normalement au réveil.</h3>
+<div class="level3">
+
+<p>
+Ce problème à été constaté sur toutes les versions d&#039;Ubuntu entre 10.04 et 14.04, avec carte mère K8N-E Deluxe Asus, ainsi que plusieurs autres cartes mère Asus, mais peut-être sur d&#039;autres marques aussi.
+Quand le PC se réveille d&#039;une mise en veille, le clavier fonctionne très partiellement, le pavé numérique, les touches de fonction, les touches spéciales, les flèches ne fonctionnent plus ou ont d&#039;autres effets.
+</p>
+
+<p>
+Pour résoudre ce problème il faut forcer GRUB le chargeur de démarrage à réinitialiser le clavier à la sortie de veille comme ceci :
+</p>
+<ul>
+<li class="level1"><div class="li"> Ouvrir un terminal et taper : <pre class="code">gksu gedit /etc/default/grub</pre>
+
+<p>
+ Remplacer gedit par votre éditeur de texte favoris.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Trouver cette ligne dans le fichier <pre class="code">GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot; </pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Modifier la comme ceci : <pre class="code">GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash atkbd.reset&quot; </pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Sauver les changements et redémarrer le PC comme normal, et la prochaine mise en veille devrait se passer normalement.</div>
+</li>
+</ul>
+
+<p>
+Problème rencontré par Yoritomo
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Clavier PS2 ne fonctionne plus normalement au réveil." [6971-8093] -->
+<h3 class="sectionedit7" id="mise_en_veille">Mise en veille</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="mise_en_veille_qui_ne_met_pas_en_veille">Mise en veille qui ne met pas en veille</h4>
+<div class="level4">
+
+<p>
+Il a été reporté un bogue de mise en veille qui ne met pas en veille: lors du lancement de la mise en veille, le son et le wifi s&#039;éteignent, l&#039;écran devient noir, mais les ventilateurs ne s&#039;arrêtent pas, et le pc, au final, ne se met pas effectivement en veille. La seule solution est un redémarrage après arrêt complet (<a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=3527684" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=3527684"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?pid=3527684</a>|<a href="http://forum.ubuntu-fr.org/viewtopic.php?id=403764" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=403764"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?id=403764</a>. 
+</p>
+
+<p>
+La solution pour remédier à ce problème est la désactivation du kernel mode setting (KMS): pour cela, il faut mettre l&#039;option <code>nomodeset</code> au démarrage. 
+</p>
+
+<p>
+Pour les ordinateurs équipés de Grub 1 : éditer 
+<code>/boot/grub/menu.lst</code>
+et ajouter nomodeset à la ligne commençant avec # kopt=, puis
+<code> sudo update-grub</code>
+</p>
+
+<p>
+Pour les ordinateurs équipés de Grub 2: éditer
+<code>/etc/default/grub</code>
+et ajouter nomodeset à la ligne GRUB_CMDLINE_LINUX, puis
+<code> sudo update-grub</code>
+</p>
+
+<p>
+Note: pour savoir si Grub 1 ou Grub 2 est installé: 
+Grub1 si la commande <code>dpkg-query -s grub</code> répond; 
+Grub2 si la commande <code>dpkg-query -s grub-pc</code> répond
+</p>
+
+<p>
+Note 2 : Si après modification ça ne redémarre plus et plus d’invite de session (gnome) alors  au (multiboot) Grub, placez-vous sur la ligne de l&#039;Ubuntu qui plante et tapez la touche &quot;e&quot; (mode édition du grub). 
+Retirez le nomodeset puis ctrl+x (pour sauver).
+Démarrez, si ça démarre ouvrez une console et éditez le fichier grub pour remettre la ligne comme avant:&quot; GRUB_CMDLINE_LINUX=&quot;&quot;   &quot; et faites un &quot;sudo update-grub&quot; pour enregistrer la modification.
+</p>
+
+</div>
+
+<h4 id="mise_en_veille_qui_ne_met_pas_en_veille_2">Mise en veille qui ne met pas en veille (2)</h4>
+<div class="level4">
+
+<p>
+La solution précédente ne fonctionne pas systématiquement… Ça peut venir des ports <abbr title="Universal Serial Bus">USB</abbr> qui bloquent la mise en veille ou l’interrompent immédiatement. Il faut dans ce cas désactiver les ports fautifs. Voici <a href="http://thecodecentral.com/2011/01/18/fix-ubuntu-10-10-suspendhibernate-not-working-bug/comment-page-10#header-0" class="urlextern" title="http://thecodecentral.com/2011/01/18/fix-ubuntu-10-10-suspendhibernate-not-working-bug/comment-page-10#header-0"  rel="nofollow">un article</a> (en anglais) qui propose une solution qui semble marcher pour beaucoup de configuration (c&#039;est très simple, un script à copier dans un nouveau fichier dont le chemin est indiqué, une ligne de commande, un redémarrage et c&#039;est tout).
+</p>
+
+</div>
+
+<h4 id="mise_en_veille_qui_ne_met_pas_en_veille_3">Mise en veille qui ne met pas en veille (3)</h4>
+<div class="level4">
+
+<p>
+Virtualbox 4.1 peut aussi poser des problèmes de mise en veille. Détails ici : <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=6022561" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=6022561"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?pid=6022561</a>
+</p>
+
+</div>
+
+<h4 id="mise_en_veille_qui_ne_met_pas_en_veille_4">Mise en veille qui ne met pas en veille (4)</h4>
+<div class="level4">
+
+<p>
+Dans le carte graphique de cartes graphiques nvidia optimus, pensez à installer <a href="../../bumblebee" class="wikilink1" title="bumblebee">bumblebee</a>
+</p>
+
+</div>
+
+<h4 id="impossible_de_sortir_d_une_mise_en_veille_sur_ram">Impossible de sortir d&#039;une mise en veille sur RAM</h4>
+<div class="level4">
+
+<p>
+Voici différentes causes possibles du non retour :
+</p>
+<ul>
+<li class="level1"><div class="li"> (<a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a>) Votre <abbr title="Basic Input-Output System">BIOS</abbr> n&#039;est pas réglé sur le bon mode : il faut utiliser le mode <a href="http://fr.wikipedia.org/wiki/ACPI#Global_states.C2.A0.2F.C2.A0Sleep_states_.28.C3.A9tats_du_syst.C3.A8me_et_sommeil.29" class="urlextern" title="http://fr.wikipedia.org/wiki/ACPI#Global_states.C2.A0.2F.C2.A0Sleep_states_.28.C3.A9tats_du_syst.C3.A8me_et_sommeil.29"  rel="nofollow">ACPI</a> S3 pour la mise en veille. Certains <abbr title="Basic Input-Output System">BIOS</abbr> utilisent S1 comme réglage par défaut. Plus de détails <a href="http://blogs.msdn.com/omars/archive/2004/05/11/129553.aspx" class="urlextern" title="http://blogs.msdn.com/omars/archive/2004/05/11/129553.aspx"  rel="nofollow">ici</a> (en anglais).</div>
+</li>
+<li class="level1"><div class="li"> </div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="l_ecran_reste_noir_carte_graphique_agp_nvidia">L&#039;écran reste noir (carte graphique AGP nvidia)</h4>
+<div class="level4">
+
+<p>
+Dans la Section &quot;Device&quot; du fichier /etc/X11/xorg.conf <em class="u">il est impératif de rajouter ces lignes</em> en mode administrateur:
+</p>
+<pre class="file">Option      &quot;NvAGP&quot; &quot;1&quot;
+Option	    &quot;NoLogo&quot; &quot;true&quot;</pre>
+
+</div>
+
+<h4 id="l_ordinateur_s_allume_mais_l_ecran_reste_eteint">L&#039;ordinateur s&#039;allume mais l&#039;écran reste éteint</h4>
+<div class="level4">
+
+<p>
+En attendant une éventuelle correction, utilisez <code>pm-suspend</code> du paquet <a href="apt://pm-utils" class="urlextern" title="apt://pm-utils"  rel="nofollow">apt://pm-utils</a>. Selon votre matériel, il est parfois nécessaire d&#039;utiliser une des options listées dans les manpages pour que tout fonctionne correctement.
+</p>
+
+</div>
+
+<h4 id="l_ordinateur_s_allume_mais_l_ecran_affiche_des_lignes_et_couleurs_aleatoires_comme_si_la_resolution_n_etait_pas_supportee">L&#039;ordinateur s&#039;allume mais l&#039;écran affiche des lignes et couleurs aléatoires, comme si la résolution n&#039;était pas supportée</h4>
+<div class="level4">
+
+<p>
+Sans connaître d&#039;explication logique, ceci peut être résolu en allant dans &quot;Système&gt;Préférences&gt;Apparence&gt;Effets visuels&quot; et en choisissant Aucun.
+</p>
+
+</div>
+
+<h4 id="l_ordinateur_s_allume_et_semble_travailler_mais_l_ecran_affiche_une_suite_de_couleurs_unies_et_il_est_impossible_de_reprendre_la_main">L&#039;ordinateur s&#039;allume et semble travailler mais l&#039;écran affiche une suite de couleurs unies et il est impossible de reprendre la main</h4>
+<div class="level4">
+
+<p>
+Dans ce cas-là, seul une réinitialisation complète permet de reprendre la main. 
+Il semble que ce problème apparaisse sur les premières générations de processeurs Intel Pentium disposant de l&#039;HyperThreading. Essayez de désactiver cette fonction dans le bios. 
+</p>
+
+</div>
+
+<h4 id="l_ordinateur_s_allume_mais_freeze_carte_graphique_nvidia">L&#039;ordinateur s&#039;allume mais freeze (carte graphique Nvidia)</h4>
+<div class="level4">
+
+<p>
+Chez moi le problème est résolu en utilisant le pilote propriétaire Nvidia plutôt que le pilote libre Nouveau (dommage…).
+</p>
+
+</div>
+
+<h4 id="l_ordinateur_s_allume_mais_freeze_carte_graphique_amd">L&#039;ordinateur s&#039;allume mais freeze (carte graphique AMD)</h4>
+<div class="level4">
+
+<p>
+Il existe une incompatibilité entre le pilote de carte graphique propriétaires fglrx et compiz.
+</p>
+
+<p>
+Si vous utilisez le pilote fglrx, la solution proposé <a href="https://github.com/dabrahams/fglrx-support" class="urlextern" title="https://github.com/dabrahams/fglrx-support"  rel="nofollow">ici</a> peux vous aidez:
+Il s&#039;agit de fglrx-support proposé par Dave Abrahams.
+</p>
+
+<p>
+Soit, télécharger l&#039;<a href="https://codeload.github.com/dabrahams/fglrx-support/zip/master" class="urlextern" title="https://codeload.github.com/dabrahams/fglrx-support/zip/master"  rel="nofollow">archive</a> et l&#039;extraire (avec les privilèges administrateur) à la racine de votre partition système.
+</p>
+
+<p>
+Ou, créer manuellement les fichiers suivants (avec les privilèges administrateur):
+</p>
+
+<p>
+Créer le fichier /etc/pm/config.d/50compiz-fglrx-noclear:
+</p>
+<pre class="code"># This file is /etc/pm/config.d/50compiz-fglrx-noclear
+
+# Disable the builtin 00clear because we need to kill off all compiz
+# instances before it does a chvt
+HOOK_BLACKLIST=00clear</pre>
+
+<p>
+Créer le fichier /etc/pm/sleep.d/00compiz-fglrx:
+</p>
+<pre class="code python"><span class="co1">#!/usr/bin/python</span>
+&nbsp;
+<span class="co1"># This file is /etc/pm/sleep.d/00compiz-fglrx</span>
+&nbsp;
+<span class="kw1">import</span> <span class="kw3">os</span>
+<span class="kw1">import</span> <span class="kw3">sys</span>
+<span class="kw1">import</span> <span class="kw3">time</span>
+<span class="kw1">import</span> <span class="kw3">cPickle</span> <span class="kw1">as</span> <span class="kw3">pickle</span>
+<span class="kw1">import</span> <span class="kw3">tempfile</span>
+<span class="kw1">import</span> <span class="kw3">re</span>
+<span class="kw1">from</span> <span class="kw3">math</span> <span class="kw1">import</span> ceil
+<span class="kw1">from</span> <span class="kw3">subprocess</span> <span class="kw1">import</span> Popen<span class="sy0">,</span> PIPE<span class="sy0">,</span> check_call<span class="sy0">,</span> CalledProcessError
+&nbsp;
+<span class="co1"># get the stdout from executing the command made up of elements of cmd_args</span>
+<span class="kw1">def</span> backquote<span class="br0">&#40;</span>cmd_args<span class="br0">&#41;</span>:
+    <span class="kw1">if</span> <span class="kw2">type</span><span class="br0">&#40;</span>cmd_args<span class="br0">&#41;</span> <span class="kw1">is</span> <span class="kw2">str</span>:
+        cmd_args <span class="sy0">=</span> cmd_args.<span class="me1">split</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+    process <span class="sy0">=</span> Popen<span class="br0">&#40;</span>cmd_args<span class="sy0">,</span> stdout<span class="sy0">=</span>PIPE<span class="br0">&#41;</span>
+    out <span class="sy0">=</span> process.<span class="me1">communicate</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>.<span class="me1">rstrip</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+    <span class="kw1">if</span> process.<span class="me1">returncode</span> <span class="sy0">!=</span> <span class="nu0">0</span>:
+        <span class="kw1">raise</span> CalledProcessError<span class="br0">&#40;</span>process.<span class="me1">returncode</span><span class="sy0">,</span> cmd_args<span class="br0">&#41;</span>
+    <span class="kw1">return</span> out
+&nbsp;
+<span class="kw1">def</span> psinfo<span class="br0">&#40;</span>pid<span class="sy0">,</span> field<span class="br0">&#41;</span>:
+    <span class="kw1">return</span> backquote<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="st0">'ps --no-headers -ww -o %s %s'</span> % <span class="br0">&#40;</span>field<span class="sy0">,</span> pid<span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">split</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw1">def</span> proc<span class="br0">&#40;</span>pid<span class="sy0">,</span> part<span class="br0">&#41;</span>:
+    <span class="kw1">return</span> <span class="kw2">open</span><span class="br0">&#40;</span><span class="st0">'/proc/%s/%s'</span> % <span class="br0">&#40;</span>pid<span class="sy0">,</span>part<span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">read</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">rstrip</span><span class="br0">&#40;</span><span class="st0">'<span class="es0">\0</span>'</span><span class="br0">&#41;</span>.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">'<span class="es0">\0</span>'</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw1">def</span> psenviron<span class="br0">&#40;</span>pid<span class="br0">&#41;</span>:
+    <span class="kw1">return</span> <span class="kw2">dict</span><span class="br0">&#40;</span>
+        x.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">'='</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span>
+        <span class="kw1">for</span> x <span class="kw1">in</span> proc<span class="br0">&#40;</span>pid<span class="sy0">,</span><span class="st0">'environ'</span><span class="br0">&#41;</span>
+        <span class="kw1">if</span> <span class="st0">'='</span> <span class="kw1">in</span> x<span class="br0">&#41;</span>
+&nbsp;
+<span class="co1"># Change the following to something like</span>
+<span class="co1">#</span>
+<span class="co1">#   LOG_FILE_NAME='/home/dave/suspend.log'</span>
+<span class="co1">#</span>
+<span class="co1"># in order to see some debug output</span>
+LOG_FILE_NAME<span class="sy0">=</span><span class="kw2">None</span>
+&nbsp;
+logfile<span class="sy0">=</span><span class="kw2">None</span>
+<span class="kw1">def</span> log<span class="br0">&#40;</span>*args<span class="br0">&#41;</span>:
+    <span class="kw1">if</span> <span class="kw1">not</span> LOG_FILE_NAME: 
+        <span class="kw1">return</span>
+    <span class="kw1">global</span> logfile
+    <span class="kw1">if</span> <span class="kw1">not</span> logfile:
+        logfile <span class="sy0">=</span> <span class="kw2">open</span><span class="br0">&#40;</span>LOG_FILE_NAME<span class="sy0">,</span><span class="st0">'a'</span><span class="br0">&#41;</span>
+    logfile.<span class="me1">write</span><span class="br0">&#40;</span><span class="st0">' '</span>.<span class="me1">join</span><span class="br0">&#40;</span><span class="br0">&#91;</span><span class="kw2">str</span><span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="kw1">for</span> a <span class="kw1">in</span> args<span class="br0">&#93;</span><span class="br0">&#41;</span> + <span class="st0">'<span class="es0">\n</span>'</span><span class="br0">&#41;</span>
+    logfile.<span class="me1">flush</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw1">class</span> TimeOutError<span class="br0">&#40;</span><span class="kw2">Exception</span><span class="br0">&#41;</span>: <span class="kw1">pass</span>
+&nbsp;
+<span class="kw1">def</span> try_kill<span class="br0">&#40;</span>pid<span class="sy0">,</span> <span class="kw3">signal</span><span class="sy0">,</span> timeout <span class="sy0">=</span> <span class="nu0">1.0</span><span class="sy0">,</span> step <span class="sy0">=</span> <span class="nu0">.01</span><span class="br0">&#41;</span>:
+    <span class="kw3">os</span>.<span class="me1">kill</span><span class="br0">&#40;</span>pid<span class="sy0">,</span> <span class="kw3">signal</span><span class="br0">&#41;</span>
+    <span class="kw1">for</span> x <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">&#40;</span><span class="kw2">int</span><span class="br0">&#40;</span>ceil<span class="br0">&#40;</span>timeout/step<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>:
+        <span class="kw1">if</span> <span class="kw1">not</span> <span class="kw3">os</span>.<span class="me1">path</span>.<span class="me1">exists</span><span class="br0">&#40;</span><span class="st0">'/proc/%d'</span> % pid<span class="br0">&#41;</span>:
+            <span class="kw1">return</span>
+        <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">&#40;</span>step<span class="br0">&#41;</span>
+    <span class="kw1">raise</span> TimeOutError<span class="sy0">,</span> <span class="st0">'failed to kill process: %d in %d second(s)'</span> % <span class="br0">&#40;</span>pid<span class="sy0">,</span>timeout<span class="br0">&#41;</span>
+&nbsp;
+number <span class="sy0">=</span> <span class="kw3">re</span>.<span class="kw2">compile</span><span class="br0">&#40;</span>r<span class="st0">'<span class="es0">\d</span>*$'</span><span class="br0">&#41;</span>
+stat_fields <span class="sy0">=</span> <span class="kw3">re</span>.<span class="kw2">compile</span><span class="br0">&#40;</span>
+    r<span class="st0">'<span class="es0">\s</span>+'</span>.<span class="me1">join</span><span class="br0">&#40;</span><span class="br0">&#91;</span>
+            r<span class="st0">'(?P&lt;pid&gt;<span class="es0">\d</span>+)'</span><span class="sy0">,</span> 
+            r<span class="st0">'<span class="es0">\(</span>(?P&lt;comm&gt;.+)<span class="es0">\)</span>'</span><span class="sy0">,</span>
+            r<span class="st0">'(?P&lt;state&gt;[RSDZTW])'</span><span class="sy0">,</span>
+            r<span class="st0">'(?P&lt;ppid&gt;<span class="es0">\d</span>+)'</span>
+            <span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw1">class</span> NotCompiz<span class="br0">&#40;</span><span class="kw2">Exception</span><span class="br0">&#41;</span>: <span class="kw1">pass</span>
+&nbsp;
+<span class="kw1">def</span> compiz_real_info<span class="br0">&#40;</span>pid<span class="br0">&#41;</span>:
+    <span class="kw3">stat</span> <span class="sy0">=</span> stat_fields.<span class="me1">match</span><span class="br0">&#40;</span><span class="kw2">open</span><span class="br0">&#40;</span><span class="st0">'/proc/%d/stat'</span> % pid<span class="br0">&#41;</span>.<span class="me1">read</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+    <span class="kw1">if</span> <span class="kw3">stat</span>.<span class="me1">group</span><span class="br0">&#40;</span><span class="st0">'comm'</span><span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="st0">'compiz.real'</span>:
+        <span class="kw1">raise</span> NotCompiz<span class="sy0">,</span> <span class="st0">'continue'</span> <span class="co1"># we'll just move on to the next process</span>
+    ppid <span class="sy0">=</span> <span class="kw2">int</span><span class="br0">&#40;</span><span class="kw3">stat</span>.<span class="me1">group</span><span class="br0">&#40;</span><span class="st0">'ppid'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+    <span class="kw1">return</span> ppid<span class="sy0">,</span> <span class="br0">&#40;</span>psenviron<span class="br0">&#40;</span>ppid<span class="br0">&#41;</span><span class="sy0">,</span> proc<span class="br0">&#40;</span>ppid<span class="sy0">,</span> <span class="st0">'cmdline'</span><span class="br0">&#41;</span><span class="sy0">,</span> psinfo<span class="br0">&#40;</span>ppid<span class="sy0">,</span><span class="st0">'user'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="co1"># Given recorded information about the parent processes of killed</span>
+<span class="co1"># compiz.real processes, &quot;un-kill&quot; them</span>
+<span class="kw1">def</span> restart_compiz<span class="br0">&#40;</span>compiz_info<span class="br0">&#41;</span>:
+    <span class="kw1">if</span> compiz_info:
+        log<span class="br0">&#40;</span><span class="st0">'restarting compiz'</span><span class="br0">&#41;</span>
+    <span class="kw1">for</span> pid<span class="sy0">,</span> <span class="br0">&#40;</span>env<span class="sy0">,</span><span class="kw3">cmd</span><span class="sy0">,</span><span class="kw3">user</span><span class="br0">&#41;</span> <span class="kw1">in</span> compiz_info.<span class="me1">items</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+&nbsp;
+        log<span class="br0">&#40;</span><span class="st0">'user:'</span><span class="sy0">,</span> <span class="kw3">user</span><span class="sy0">,</span> <span class="st0">'command:'</span><span class="sy0">,</span> <span class="kw3">cmd</span><span class="br0">&#41;</span>
+&nbsp;
+        <span class="co1"># Ensure we have the necessary environment to re-launch the parent process</span>
+        <span class="kw1">if</span> <span class="st0">'DISPLAY'</span> <span class="kw1">in</span> env <span class="kw1">and</span> <span class="st0">'XAUTHORITY'</span> <span class="kw1">in</span> env <span class="kw1">and</span> <span class="kw3">os</span>.<span class="me1">path</span>.<span class="me1">isfile</span><span class="br0">&#40;</span>env<span class="br0">&#91;</span><span class="st0">'XAUTHORITY'</span><span class="br0">&#93;</span><span class="br0">&#41;</span>:
+&nbsp;
+            <span class="co1"># If the parent didn't die when compiz.real was killed, kill the parent now</span>
+            <span class="kw1">try</span>: try_kill<span class="br0">&#40;</span>pid<span class="sy0">,</span><span class="nu0">15</span><span class="br0">&#41;</span>
+            <span class="kw1">except</span>: <span class="kw1">pass</span> 
+&nbsp;
+            <span class="kw1">try</span>:
+                check_call<span class="br0">&#40;</span><span class="br0">&#91;</span><span class="st0">'sudo'</span><span class="sy0">,</span> <span class="st0">'-E'</span><span class="sy0">,</span> <span class="st0">'-b'</span><span class="sy0">,</span> <span class="st0">'-u'</span><span class="sy0">,</span> <span class="kw3">user</span><span class="br0">&#93;</span> + <span class="kw3">cmd</span><span class="sy0">,</span> env<span class="sy0">=</span>env<span class="br0">&#41;</span>
+&nbsp;
+            <span class="kw1">except</span> <span class="kw2">Exception</span><span class="sy0">,</span> e:
+                log<span class="br0">&#40;</span><span class="st0">'failed to relaunch'</span><span class="br0">&#41;</span>
+                log<span class="br0">&#40;</span><span class="kw3">traceback</span>.<span class="me1">format_exc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+                <span class="kw1">print</span> <span class="sy0">&gt;&gt;</span><span class="kw3">sys</span>.<span class="me1">stderr</span><span class="sy0">,</span> <span class="kw3">traceback</span>.<span class="me1">format_exc</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+        <span class="kw1">else</span>:
+            log<span class="br0">&#40;</span><span class="st0">'required environment missing'</span><span class="sy0">,</span> env<span class="br0">&#41;</span>
+&nbsp;
+<span class="kw1">def</span> suspend<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+    <span class="co1"># locate all parent processes of compiz.real commands</span>
+    all_pids <span class="sy0">=</span> <span class="br0">&#91;</span><span class="kw2">int</span><span class="br0">&#40;</span>f<span class="br0">&#41;</span> <span class="kw1">for</span> f <span class="kw1">in</span> <span class="kw3">os</span>.<span class="me1">listdir</span><span class="br0">&#40;</span><span class="st0">'/proc'</span><span class="br0">&#41;</span> <span class="kw1">if</span> number.<span class="me1">match</span><span class="br0">&#40;</span>f<span class="br0">&#41;</span><span class="br0">&#93;</span>
+    compiz_info <span class="sy0">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
+&nbsp;
+    <span class="kw1">try</span>:
+        <span class="co1"># Gather up all the info about the processes that launch compiz.real</span>
+        <span class="kw1">for</span> pid <span class="kw1">in</span> all_pids:        
+            <span class="kw1">try</span>: ppid<span class="sy0">,</span> info <span class="sy0">=</span> compiz_real_info<span class="br0">&#40;</span>pid<span class="br0">&#41;</span>
+            <span class="kw1">except</span>: <span class="kw1">continue</span>            <span class="co1"># Skip if not compiz.real or if already dead</span>
+            try_kill<span class="br0">&#40;</span>pid<span class="sy0">,</span> <span class="nu0">15</span><span class="br0">&#41;</span>           <span class="co1"># Kill off the compiz.real process</span>
+            compiz_info<span class="br0">&#91;</span>ppid<span class="br0">&#93;</span> <span class="sy0">=</span> info    <span class="co1"># Remember how to restart its parent</span>
+&nbsp;
+        <span class="co1"># write out everything we need to restart the compiz</span>
+        <span class="co1"># processes and restore the current virtual terminal</span>
+        fd<span class="sy0">,</span> pickle_file_name <span class="sy0">=</span> <span class="kw3">tempfile</span>.<span class="me1">mkstemp</span><span class="br0">&#40;</span><span class="st0">'.pck'</span><span class="sy0">,</span> <span class="st0">'compiz-fglrx'</span><span class="sy0">,</span> <span class="st0">'/var/run'</span><span class="br0">&#41;</span>
+        <span class="kw3">pickle</span>.<span class="me1">dump</span><span class="br0">&#40;</span><span class="br0">&#40;</span>backquote<span class="br0">&#40;</span><span class="st0">'fgconsole'</span><span class="br0">&#41;</span><span class="sy0">,</span> compiz_info<span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw2">open</span><span class="br0">&#40;</span>pickle_file_name<span class="sy0">,</span> <span class="st0">'w'</span><span class="br0">&#41;</span><span class="sy0">,</span><span class="nu0">2</span><span class="br0">&#41;</span>
+        log<span class="br0">&#40;</span><span class="st0">'pickle saved in'</span><span class="sy0">,</span> pickle_file_name<span class="br0">&#41;</span>
+&nbsp;
+        <span class="co1"># Keep a record of the name of the pickle file using</span>
+        <span class="co1"># facilities from pm-utils.  Using repr below ensures that</span>
+        <span class="co1"># the filename is quoted in a way that should be</span>
+        <span class="co1"># appropriate for the shell</span>
+        check_call<span class="br0">&#40;</span><span class="br0">&#91;</span>
+            <span class="st0">'sh'</span><span class="sy0">,</span> <span class="st0">'-c'</span><span class="sy0">,</span> 
+            <span class="st0">'. ${PM_FUNCTIONS} &amp;&amp; savestate compiz-fglrx '</span> 
+            + <span class="kw3">repr</span><span class="br0">&#40;</span>pickle_file_name<span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+    <span class="kw1">except</span>:
+        log<span class="br0">&#40;</span><span class="st0">'failure to suspend!'</span><span class="br0">&#41;</span>
+        restart_compiz<span class="br0">&#40;</span>compiz_info<span class="br0">&#41;</span>
+        <span class="kw1">raise</span>
+&nbsp;
+    <span class="co1"># Now switch the virtual terminal as would have been done by the</span>
+    <span class="co1"># 00clear hook.  If done with compiz running, this kills resume</span>
+    log<span class="br0">&#40;</span><span class="st0">'switching to vt 63'</span><span class="br0">&#41;</span>
+    check_call<span class="br0">&#40;</span><span class="br0">&#91;</span><span class="st0">'chvt'</span><span class="sy0">,</span> <span class="st0">'63'</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw1">def</span> resume<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+    <span class="co1"># Get all the information we need to re-start</span>
+    pickle_file_name <span class="sy0">=</span> backquote<span class="br0">&#40;</span><span class="br0">&#91;</span>
+            <span class="st0">'sh'</span><span class="sy0">,</span> <span class="st0">'-c'</span><span class="sy0">,</span> 
+            <span class="st0">'. ${PM_FUNCTIONS} &amp;&amp; restorestate compiz-fglrx'</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+&nbsp;
+    saved_console<span class="sy0">,</span>compiz_info <span class="sy0">=</span> <span class="kw3">pickle</span>.<span class="me1">load</span><span class="br0">&#40;</span><span class="kw2">open</span><span class="br0">&#40;</span>pickle_file_name<span class="br0">&#41;</span><span class="br0">&#41;</span>
+    restart_compiz<span class="br0">&#40;</span>compiz_info<span class="br0">&#41;</span>
+&nbsp;
+    <span class="co1"># This is the functionality from the 00clear hook</span>
+    log<span class="br0">&#40;</span><span class="st0">'switching back to vt'</span><span class="sy0">,</span> saved_console<span class="br0">&#41;</span>
+    check_call<span class="br0">&#40;</span><span class="br0">&#91;</span><span class="st0">'chvt'</span><span class="sy0">,</span> <span class="kw2">str</span><span class="br0">&#40;</span>saved_console<span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+    check_call<span class="br0">&#40;</span><span class="br0">&#91;</span><span class="st0">'deallocvt'</span><span class="sy0">,</span> <span class="st0">'63'</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+&nbsp;
+    <span class="co1"># Try to make sure the screen wakes up and actually shows us the</span>
+    <span class="co1"># password dialog.  Without this we might need to move the mouse</span>
+    <span class="co1"># to see it.  Doesn't work, though; probably I need more</span>
+    <span class="co1"># environment setup in order to be able to do this.</span>
+    <span class="co1"># check_call(['xset','dpms','force','on'])</span>
+&nbsp;
+    <span class="co1"># if we can't get rid of this file for any reason, it's not a</span>
+    <span class="co1"># serious problem, so do it last.</span>
+    <span class="kw3">os</span>.<span class="me1">unlink</span><span class="br0">&#40;</span>pickle_file_name<span class="br0">&#41;</span>
+&nbsp;
+&nbsp;
+<span class="co1"># The check for an argument in the next line is a convenience for</span>
+<span class="co1"># development, so we can import this file and not have it try to do</span>
+<span class="co1"># anything.</span>
+<span class="kw1">if</span> __name__ <span class="sy0">==</span> <span class="st0">'__main__'</span> <span class="kw1">and</span> <span class="kw2">len</span><span class="br0">&#40;</span><span class="kw3">sys</span>.<span class="me1">argv</span><span class="br0">&#41;</span> <span class="sy0">&gt;</span> <span class="nu0">1</span>: 
+&nbsp;
+    log<span class="br0">&#40;</span><span class="st0">'====================='</span><span class="sy0">,</span> backquote<span class="br0">&#40;</span><span class="st0">'date'</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="st0">'=================='</span><span class="br0">&#41;</span>
+    log<span class="br0">&#40;</span><span class="st0">'in '</span><span class="sy0">,</span> <span class="st0">' '</span>.<span class="me1">join</span><span class="br0">&#40;</span><span class="kw3">sys</span>.<span class="me1">argv</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+&nbsp;
+    <span class="kw1">try</span>:
+        <span class="kw1">if</span> <span class="kw3">sys</span>.<span class="me1">argv</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="kw1">in</span> <span class="br0">&#40;</span><span class="st0">'suspend'</span><span class="sy0">,</span><span class="st0">'hibernate'</span><span class="br0">&#41;</span>:
+            suspend<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+        <span class="kw1">elif</span> <span class="kw3">sys</span>.<span class="me1">argv</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="kw1">in</span> <span class="br0">&#40;</span><span class="st0">'resume'</span><span class="sy0">,</span><span class="st0">'thaw'</span><span class="br0">&#41;</span>:
+            resume<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+        <span class="kw1">elif</span> <span class="kw3">sys</span>.<span class="me1">argv</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">==</span> <span class="st0">'help'</span>:
+            <span class="co1"># Nothing to say</span>
+            <span class="kw1">pass</span>
+&nbsp;
+        <span class="kw1">else</span>:
+            <span class="kw1">raise</span> <span class="kw2">AssertionError</span><span class="sy0">,</span> <span class="st0">'unknown argument %s'</span> % <span class="kw3">sys</span>.<span class="me1">argv</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>
+&nbsp;
+    <span class="kw1">except</span> <span class="kw2">Exception</span><span class="sy0">,</span> e:
+        <span class="kw1">import</span> <span class="kw3">traceback</span>
+        log<span class="br0">&#40;</span><span class="kw3">sys</span>.<span class="me1">argv</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>+<span class="st0">':'</span><span class="sy0">,</span> <span class="kw3">traceback</span>.<span class="me1">format_exc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+&nbsp;
+        <span class="co1"># if anything failed, try to inhibit suspension.</span>
+        <span class="kw1">if</span> <span class="kw3">sys</span>.<span class="me1">argv</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="kw1">in</span> <span class="br0">&#40;</span><span class="st0">'suspend'</span><span class="sy0">,</span><span class="st0">'hibernate'</span><span class="br0">&#41;</span>:
+            inhibit_file <span class="sy0">=</span> <span class="kw3">os</span>.<span class="me1">environ</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'INHIBIT'</span><span class="br0">&#41;</span>
+            <span class="kw1">if</span> inhibit_file:
+                log<span class="br0">&#40;</span><span class="st0">'inhibiting with'</span><span class="sy0">,</span> inhibit_file<span class="br0">&#41;</span>
+                <span class="kw2">open</span><span class="br0">&#40;</span>inhibit_file<span class="sy0">,</span><span class="st0">'a'</span><span class="br0">&#41;</span>
+        <span class="kw1">raise</span></pre>
+
+<p>
+Rendez-le exécutable:
+</p>
+<pre class="code">sudo chmod +x /etc/pm/sleep.d/00compiz-fglrx</pre>
+
+<p>
+Enfin, redémarrer votre système et testez de nouveau la mise en veille.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Mise en veille" [8094-20508] -->
+<h3 class="sectionedit8" id="hibernation">Hibernation</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="impossible_de_commencer_l_hibernation">Impossible de commencer l&#039;hibernation</h4>
+<div class="level4">
+
+<p>
+(<a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a>) <strong>L&#039;hibernation n&#039;a pas commencé</strong> : Vérifiez que les processus ont bien voulu s&#039;arrêter. Vous ne devez pas avoir de tâches qui refusent de geler (<em>tasks refusing to freeze</em> en angais) après la commande suivante :
+</p>
+<pre class="code">dmesg | grep &quot;Stopping user space processes timed out after 20 seconds&quot;</pre>
+
+</div>
+
+<h4 id="ecran_noir_au_demarrage_apres_une_hibernation">Écran noir au démarrage après une hibernation</h4>
+<div class="level4">
+
+<p>
+Lors d&#039;un écran noir au démarrage après une hibernation vous pouvez avoir envie d&#039;arrêter l&#039;hibernation.
+Il est possible d&#039;arrêter simplement l&#039;hibernation en formatant la partition SWAP (qui est peut être endommagée).
+Il suffit de démarrer en <strong>Live CD</strong> et de <strong>formater la partition SWAP</strong> de linux avec GParted et de <strong>redémarrer</strong>.
+</p>
+
+</div>
+
+<h4 id="il_n_y_a_plus_de_son_au_reveil">Il n&#039;y a plus de son au réveil :</h4>
+<div class="level4">
+
+<p>
+En <a href="../../sudo" class="wikilink1" title="sudo">mode administrateur</a>, éditez le fichier <strong>/etc/default/acpi-support</strong> et remplacez
+</p>
+<pre class="file">HIBERNATE_MODE=shutdown</pre>
+
+<p>
+ par 
+</p>
+<pre class="file">HIBERNATE_MODE=platform</pre>
+
+</div>
+
+<h4 id="openvpn_ne_redemarre_pas">OpenVPN ne redémarre pas :</h4>
+<div class="level4">
+
+<p>
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> &#039;L&#039;UTILITÉ DE CE QUI SUIT EST À CONFIRMER&#039;
+</p>
+
+<p>
+En <a href="../../sudo" class="wikilink1" title="sudo">mode administrateur</a>, éditez le fichier <strong>/etc/default/acpi-support</strong> et ajoutant à la liste STOP_SERVICES le service openvpn.
+</p>
+<pre class="file">STOP_SERVICES=&quot;openvpn &quot;</pre>
+
+</div>
+
+<h4 id="l_ecran_reste_noir_carte_graphique_agp_nvidia1">L&#039;écran reste noir (carte graphique AGP nvidia)</h4>
+<div class="level4">
+
+<p>
+Dans la Section &quot;Device&quot; du fichier /etc/X11/xorg.conf <em class="u">il est impératif de rajouter ces lignes</em> :
+</p>
+<pre class="file">Option      &quot;NvAGP&quot; &quot;1&quot;
+Option	    &quot;NoLogo&quot; &quot;true&quot;</pre>
+
+<p>
+<img src="../../lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> &#039;L&#039;UTILITÉ DE CE QUI SUIT EST À CONFIRMER&#039;
+</p>
+
+<p>
+Commencez par <strong>vérifier que les pilotes de la carte vidéo sont bien installés</strong> (tentez le pilote propriétaire non libre). Si ça ne marche toujours pas :
+</p>
+
+<p>
+Il faut supprimer le chargement du pilote via agp (dans ce cas):
+</p>
+<pre class="code"> lsmod | grep agp</pre>
+
+<p>
+retourne un truc du style  :
+</p>
+
+<p>
+via_agp               9628  1
+</p>
+
+<p>
+agpgart                34888  2 nvidia,via_agp
+</p>
+
+<p>
+<a href="../../tutoriel/comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Éditez le fichier</a> <strong>/etc/modprobe.d/blacklist</strong> et rajouter a la fin :
+</p>
+<pre class="file">blacklist via_agp</pre>
+
+</div>
+
+<h4 id="ubuntu_demarre_sans_restaurer_l_environnement_ou_l_ordinateur_reste_allume_alors_qu_il_devrait_hiberner_extinction_brutale_de_l_ordi_obligatoire">Ubuntu démarre sans restaurer l&#039;environnement, ou l&#039;ordinateur reste allumé alors qu&#039;il devrait hiberner (extinction brutale de l&#039;ordi obligatoire)</h4>
+<div class="level4">
+
+<p>
+<strong>Vérifiez que votre partition de swap est correctement détectée :</strong> allez voir <a href="../../uuid_et_label#uuid_swap_et_hibernation" class="wikilink1" title="uuid_et_label">uuid_swap_et_hibernation</a> pour régler ce problème.
+</p>
+
+<p>
+<strong>Vérifiez que la taille de votre partition swap est suffisante : </strong> la même taille que la RAM est a priori suffisante pour l&#039;hibernation, même si certains préconisent par prudence 2 fois plus de swap que de RAM (ex : pour 1Go de RAM, partition swap d&#039;au moins 2 Go ; pour 4Go de RAM, 8Go de swap est inutile et 4 Go suffisent)
+</p>
+
+</div>
+
+<h4 id="utiliser_une_methode_alternative">Utiliser une méthode alternative</h4>
+<div class="level4">
+
+<p>
+Si l&#039;hibernation ne fonctionne toujours pas, vous pouvez essayer <a href="../../uswsusp" class="wikilink1" title="uswsusp">uswsusp</a> ou <a href="../../tuxonice" class="wikilink1" title="tuxonice">tuxonice</a>.
+</p>
+
+</div>
+
+<h4 id="mettre_a_jour_le_bios_de_la_carte_mere">Mettre à jour le BIOS de la carte mère</h4>
+<div class="level4">
+
+<p>
+Parfois, cela peut résoudre le problème.
+Cf <a href="../../flasher_le_bios" class="wikilink1" title="flasher_le_bios">doc ici</a>
+</p>
+
+</div>
+
+<h4 id="en_dernier_recours_compiler_le_dernier_noyau_pour_un_utilisateur_averti">En dernier recours, compiler le dernier noyau (pour un utilisateur averti)</h4>
+<div class="level4">
+
+<p>
+<a href="../../compiler_le_noyau" class="wikilink2" title="compiler_le_noyau" rel="nofollow">compiler_le_noyau</a>
+</p>
+
+</div>
+
+<h4 id="la_connexion_reseau_ne_se_reactive_pas_en_sortie_de_veille_ou_d_hibernation">La connexion réseau ne se réactive pas en sortie de veille ou d&#039;hibernation</h4>
+<div class="level4">
+
+<p>
+Sous environnement Gnome : passer dans gconf-editor la clef /apps/gnome-power-manager/general/network-sleep à true (merci Fabux) et redémarrer l&#039;ordinateur.
+(clef absente sous Precise 12.04)
+<p><div class="notetip"><strong>Autre possibilité</strong> <p><div class="notehelp"><strong>Merci de vérifier le bon fonctionnement de l&#039;astuce suivante
+et de signaler vos réussites et échecs à <a href="http://forum.ubuntu-fr.org/profile.php?id=198416" class="urlextern" title="http://forum.ubuntu-fr.org/profile.php?id=198416"  rel="nofollow">f.x0</a></strong>
+</div></p>
+</p>
+
+<p>
+Une autre solution est de lister en terminal le module utilisé par le wifi :
+ 
+</p>
+<pre class="code">lshw -class network</pre>
+
+<p>
+<strong>1)</strong> - noter le nom du <strong>driver</strong> wifi utilisé spécifié par la commande lshw -class network.
+</p>
+
+<p>
+<strong>2)</strong> - vérifier que la commande
+ 
+</p>
+<pre class="code">lsmod</pre>
+
+<p>
+affiche le même nom du driver.
+</p>
+
+<p>
+par exemple :
+</p>
+<pre class="code">lshw -class network
+ATTENTION: ce programme devrait être lancé en tant que super-utilisateur
+*-network
+       description: Interface réseau sans fil
+       driver=r8712u</pre>
+<pre class="code">lsmod
+r8712u                142855  0</pre>
+
+<p>
+En tout état de cause c&#039;est bien le nom du module listé par la commande lsmod
+qu&#039;il faudra insérer dans le fichier /etc/pm/config.d/load
+</p>
+
+<p>
+<strong>3)</strong> - Taper cette commande pour créer (ou modifier) le fichier /etc/pm/config.d/load
+ 
+</p>
+<pre class="code">echo &quot;SUSPEND_MODULES=r8712u&quot; | sudo tee -a /etc/pm/config.d/load</pre>
+
+<p>
+<strong>4)</strong> - Rendre le fichier exécutable:
+ 
+</p>
+<pre class="code">sudo chmod +x /etc/pm/config.d/load</pre>
+<hr />
+
+<p>
+<strong>Cela fonctionne également sur Ubuntu 14.04 sans rendre le fichier exécutable (sans l&#039;étape 4) )</strong>
+</p>
+<hr />
+
+<p>
+
+</div></p>
+</p>
+
+</div>
+
+<h4 id="hibernation_apres_xxx_secondes_d_inactivite_sous_lucid_1004">Hibernation après xxx secondes d&#039;inactivité sous Lucid 10.04</h4>
+<div class="level4">
+
+<p>
+Tout d&#039;abord installer <strong>sleepd</strong> et <strong>hibernate</strong>.
+</p>
+<pre class="code">sudo apt-get install sleepd</pre>
+<pre class="code">sudo apt-get install hibernate</pre>
+
+<p>
+Ensuite il faut <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">modifier le fichier de configuration</a> <strong>/etc/default/sleepd</strong> :
+</p>
+
+<p>
+<p><div class="notetip">Le temps d&#039;inactivité est de 600 secondes dans l&#039;exemple ci-dessous.
+</div></p>
+</p>
+<pre class="file"># This is a configuration file for /etc/init.d/sleepd.
+PARAMS=&quot; -u 600 --sleep-command /etc/acpi/hibernate2.sh &quot;</pre>
+
+<p>
+Puis il faut <a href="../../tutoriel/comment_modifier_un_fichier" class="wikilink1" title="tutoriel:comment_modifier_un_fichier">créer un script</a> <strong>hibernate2.sh:</strong>
+</p>
+<pre class="file">#!/bin/bash
+sudo hibernate</pre>
+
+<p>
+<p><div class="notewarning">J&#039;utilisais également cette méthode sous karmic avec le script suivant:
+</div></p>
+</p>
+<pre class="file">#!/bin/bash
+sudo pm hibernate</pre>
+
+<p>
+Changeons les droits d&#039;accès à ce script:
+</p>
+<pre class="code">sudo chmod 755 hibernate2.sh</pre>
+
+<p>
+Enfin il faut recharger le deamon sleepd:
+</p>
+<pre class="code">sudo /etc/init.d/sleepd restart</pre>
+
+</div>
+<!-- EDIT8 SECTION "Hibernation" [20509-26523] -->
+<h2 class="sectionedit9" id="empecher_l_hibernation">Empêcher l&#039;hibernation</h2>
+<div class="level2">
+
+<p>
+Sur certains ordinateurs, l&#039;hibernation peut poser problème : plantage à la mise en hibernation, au redémarrage … C&#039;est notamment le cas sur les machines qui n&#039;ont que très peu ou pas de <a href="http://doc.ubuntu-fr.org/swap" class="wikilink1" title="swap">swap</a> .
+</p>
+
+<p>
+Pour remédier à cela, il est possible d&#039;empêcher l&#039;hibernation.
+</p>
+
+<p>
+Pour ce faire, ouvrir un <a href="../../terminal" class="wikilink1" title="terminal">terminal</a> et saisir la commandes suivantes :
+</p>
+<pre class="code">sudo nano /etc/pm/sleep.d/000_no-hibernation</pre>
+
+<p>
+Dans le nouveau fichier ainsi créer, saisir le code suivant :
+</p>
+<pre class="code">#!/bin/sh
+# Empêcher l&#039;hibernation
+. &quot;$PM_FUNCTIONS&quot;
+[ &quot;$1&quot; = &quot;hibernate&quot; ] &amp;&amp; inhibit || true</pre>
+
+<p>
+Enregistrer par Ctrl X puis O.
+</p>
+
+<p>
+Pour empêcher la mise en veille <em>et</em> l&#039;hibernation, utiliser <a href="https://launchpadlibrarian.net/58100042/00_avoid_suspend" class="urlextern" title="https://launchpadlibrarian.net/58100042/00_avoid_suspend"  rel="nofollow">ce code</a> dans le fichier.<sup><a href="veille_et_hibernation#fn__2" id="fnt__2" class="fn_top">2)</a></sup>
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Empêcher l'hibernation" [26524-27439] -->
+<h2 class="sectionedit10" id="materiel_teste">Matériel testé</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT10 SECTION "Matériel testé" [27440-27480] -->
+<h3 class="sectionedit11" id="carte_mereportable">Carte mère / Portable</h3>
+<div class="level3">
+
+<p>
+<p><div class="notehelp">À classer par jeux de puces en essayant de regrouper les modèles utilisant le même jeux de puce.
+</div></p>
+(CM= carte mère, P=Portable)
+</p>
+<div class="table sectionedit12"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<td class="col0"> Marque </td><td class="col1"> Modèle </td><th class="col2"> CM ou P </th><th class="col3"> Jeux de puces </th><th class="col4"> Veille </th><th class="col5"> Hibernation </th><th class="col6"> Utilisateur(s) </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<th class="col0"> Acer </th><th class="col1"> Veriton 2800 </th><td class="col2"> CM </td><td class="col3"> Intel 945G + ICH7</td><td class="col4"> Oui (Attention: le bios doit être flashé en version R01-E0: <a href="http://global-download.acer.com/GDFiles/BIOS/BIOS/BIOS_Acer_R01.E0_A_A.zip?acerid=634024128214301666&amp;Step1=Desktop&amp;Step2=Veriton&amp;Step3=Veriton%202800&amp;OS=X01&amp;LC=en&amp;BC=Acer&amp;SC=EMEA_27" class="urlextern" title="http://global-download.acer.com/GDFiles/BIOS/BIOS/BIOS_Acer_R01.E0_A_A.zip?acerid=634024128214301666&amp;Step1=Desktop&amp;Step2=Veriton&amp;Step3=Veriton%202800&amp;OS=X01&amp;LC=en&amp;BC=Acer&amp;SC=EMEA_27"  rel="nofollow">lien</a>) </td><td class="col5"> Non testé </td><td class="col6"> <a href="../../utilisateurs/ttipi" class="wikilink2" title="utilisateurs:ttipi" rel="nofollow">Ttipi</a> </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0"> Acer </th><th class="col1"> TravelMate 5742Z </th><td class="col2"> P </td><td class="col3"> Intel Pentium P6200 </td><td class="col4 leftalign"> Oui  </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/koko2" class="wikilink2" title="utilisateurs:koko2" rel="nofollow">koko2</a> </td>
+	</tr>
+	<tr class="row3">
+		<th class="col0"> Gigabyte </th><th class="col1"> GA-MA790XT-UD4P </th><td class="col2"> CM </td><td class="col3"> AMD 790X </td><td class="col4"> Oui </td><td class="col5"> Oui (des avertissements, mais le réveil semble Ok) </td><td class="col6"> <a href="../../utilisateurs/okonkole" class="wikilink2" title="utilisateurs:okonkole" rel="nofollow">okonkole</a> </td>
+	</tr>
+	<tr class="row4">
+		<th class="col0"> Lenovo </th><th class="col1"> Edge 525 </th><td class="col2"> P </td><td class="col3"> AMD A8-3500M APU with Radeon™ HD Graphics </td><td class="col4"> Non </td><td class="col5"> Non Testé </td><td class="col6"> <a href="../../utilisateurs/cyrilco" class="wikilink2" title="utilisateurs:cyrilco" rel="nofollow">Cyrilco</a> </td>
+	</tr>
+	<tr class="row5">
+		<th class="col0"> MSI </th><th class="col1"> MS-7357 </th><td class="col2"> CM </td><td class="col3"> Intel G31 </td><td class="col4"> Oui (Choisir S3 dans le <abbr title="Basic Input-Output System">BIOS</abbr>) </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a> </td>
+	</tr>
+	<tr class="row6">
+		<th class="col0"> MSI </th><th class="col1"> K8N Neo4-f </th><td class="col2"> CM </td><td class="col3"> nForce4 </td><td class="col4 leftalign"> Oui  </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/jewome_62" class="wikilink1" title="utilisateurs:jewome_62">jewome_62</a> </td>
+	</tr>
+	<tr class="row7">
+		<th class="col0"> Toshiba </th><th class="col1"> Satellite (U200) </th><td class="col2"> P </td><td class="col3"> Intel G945 </td><td class="col4"> Oui (mais <a href="https://bugs.launchpad.net/bugs/137477" class="urlextern" title="https://bugs.launchpad.net/bugs/137477"  rel="nofollow">bogue</a>) </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a> </td>
+	</tr>
+	<tr class="row8">
+		<th class="col0"> Lenovo</th><th class="col1"> 3000 Y310 </th><td class="col2"> P </td><td class="col3"> Intel GMA X3100 </td><td class="col4"> Oui (mais TouchPad HS au retour)</td><td class="col5"> Oui </td><td class="col6"> </td>
+	</tr>
+	<tr class="row9">
+		<th class="col0"> HP </th><th class="col1"> Pavilion dv5053ea </th><td class="col2"> P </td><td class="col3"> ATI Radeon Xpress 200M </td><td class="col4"> Oui </td><td class="col5"> Oui (voir la conf <a href="http://ubuntuforums.org/showthread.php?p=2016799" class="urlextern" title="http://ubuntuforums.org/showthread.php?p=2016799"  rel="nofollow">là, pas de scripts</a>) </td><td class="col6"> <a href="../../utilisateurs/juju_theseaman" class="wikilink1" title="utilisateurs:juju_theseaman">juju_theseaman</a> </td>
+	</tr>
+	<tr class="row10">
+		<th class="col0"> Dell </th><th class="col1"> XPS M1710 </th><td class="col2"> P </td><td class="col3 leftalign"> Intel core2 T7400  </td><td class="col4"> Oui </td><td class="col5"> Oui (mais ne s’éteint pas seul) </td><td class="col6"> <a href="../../utilisateurs/jef" class="wikilink2" title="utilisateurs:jef" rel="nofollow">jef</a> </td>
+	</tr>
+	<tr class="row11">
+		<th class="col0"> Sony </th><th class="col1"> VAIO PCG-7G1M (ou VGN-FS415M) </th><td class="col2"> P </td><td class="col3"> Intel i915PM/GM + ICH6-M </td><td class="col4"> Oui </td><td class="col5"> Oui (Unity 13.10) en réactivant le script d&#039;hibernation</td><td class="col6"> <a href="../../utilisateurs/89paladins" class="wikilink1" title="utilisateurs:89paladins">89paladins</a> </td>
+	</tr>
+	<tr class="row12">
+		<th class="col0"> Sony </th><th class="col1"> VAIO FZ11E </th><td class="col2"> P </td><td class="col3 leftalign"> Intel 965 PM  </td><td class="col4"> Oui (Nécessite l&#039;option NvAGP et de taper son mot de passe sur un écran blanc…) </td><td class="col5"> Pas encore testé </td><td class="col6"> <a href="../../utilisateurs/bistory" class="wikilink2" title="utilisateurs:bistory" rel="nofollow">bistory</a> </td>
+	</tr>
+	<tr class="row13">
+		<th class="col0"> Sony </th><th class="col1"> VAIO VPC EA1S1E </th><td class="col2"> P </td><td class="col3 centeralign">  Intel Core i3 (M 330) +  M92 (Mobility Radeon HD 4500 Series)  </td><td class="col4 leftalign"> Oui  </td><td class="col5"> Pas testé (ubuntu 10.04 lucid) </td><td class="col6"> <a href="../../utilisateurs/fnx" class="wikilink1" title="utilisateurs:fnx">fnx</a> </td>
+	</tr>
+	<tr class="row14">
+		<th class="col0"> Lenovo </th><th class="col1"> Yoga 2 Pro </th><td class="col2"> P </td><td class="col3 leftalign"> Intel Core i7-4510U  </td><td class="col4 leftalign"> Oui  </td><td class="col5"> Oui (avec <a href="../../tuxonice" class="wikilink1" title="tuxonice">tuxonice</a> installé) </td><td class="col6"> <a href="../../utilisateurs/john-paul" class="wikilink2" title="utilisateurs:john-paul" rel="nofollow">john-paul</a> </td>
+	</tr>
+	<tr class="row15">
+		<th class="col0"> Lenovo </th><th class="col1"> 3000C200 8922AZG </th><td class="col2"> P </td><td class="col3 leftalign"> Intel 945GM  </td><td class="col4"> Non </td><td class="col5"> Non (ou avec gros pb au réveil) </td><td class="col6"> <a href="../../utilisateurs/chourave" class="wikilink2" title="utilisateurs:chourave" rel="nofollow">chourave</a> </td>
+	</tr>
+	<tr class="row16">
+		<th class="col0"> Lenovo </th><th class="col1"> R61 (8933-AL2) </th><td class="col2"> P </td><td class="col3 leftalign"> Intel 965  </td><td class="col4"> Oui (Pb NetworkManager aléatoire : plus de réseau, redémarrage obligatoire dans ce cas) </td><td class="col5 leftalign"> Oui (Avec paramétrage uuid swap, swap=ram)  </td><td class="col6"> <a href="../../utilisateurs/endymion" class="wikilink2" title="utilisateurs:endymion" rel="nofollow">Endymion</a> </td>
+	</tr>
+	<tr class="row17">
+		<th class="col0"> Lenovo </th><th class="col1"> 3000 N100(0768-FKG) </th><td class="col2"> P </td><td class="col3 leftalign"> Intel 945GM  </td><td class="col4"> Oui </td><td class="col5 leftalign"> Oui  </td><td class="col6"> <a href="../../utilisateurs/justin-brandon" class="wikilink2" title="utilisateurs:justin-brandon" rel="nofollow">justin-brandon</a> </td>
+	</tr>
+	<tr class="row18">
+		<th class="col0"> MSI </th><th class="col1"> Wind U100-015 </th><td class="col2"> ? </td><td class="col3"> Intel GMA 945 </td><td class="col4"> Oui </td><td class="col5"> Oui </td><td class="col6"> anonymux </td>
+	</tr>
+	<tr class="row19">
+		<th class="col0"> MSI </th><th class="col1"> MS-6178 </th><td class="col2"> CM </td><td class="col3"> Intel i810 </td><td class="col4"> Oui </td><td class="col5"> Oui </td><td class="col6"> Johan </td>
+	</tr>
+	<tr class="row20">
+		<th class="col0"> MSI </th><th class="col1"> MS-6120 </th><td class="col2"> CM </td><td class="col3"> Intel i440BX </td><td class="col4"> Non </td><td class="col5"> Oui (nécessite la dernière version du bios disponible - la 2.0 - et de passer au noyau l&#039;option acpi=force ; idem pour activer l&#039;extinction du PC) </td><td class="col6"> Johan </td>
+	</tr>
+	<tr class="row21">
+		<th class="col0"> Asus </th><th class="col1"> X5DIJ </th><td class="col2"> CM </td><td class="col3 leftalign"> Mobile Intel® 45 Express Chipset  </td><td class="col4"> Oui </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/aurel88" class="wikilink1" title="utilisateurs:aurel88">aurel88</a> </td>
+	</tr>
+	<tr class="row22">
+		<th class="col0"> Asus </th><th class="col1"> P2L97-DS </th><td class="col2"> CM </td><td class="col3"> Intel i440LX </td><td class="col4"> Non </td><td class="col5"> Oui (nécessite la dernière version du bios disponible - la beta 1010.004 fonctionne bien - et de passer au noyau l&#039;option acpi=force ; idem pour activer l&#039;extinction du PC) </td><td class="col6"> Johan </td>
+	</tr>
+	<tr class="row23">
+		<th class="col0"> Asus </th><th class="col1"> P5N-E SLI </th><td class="col2"> CM </td><td class="col3"> NVIDIA nForce 650i SLI</td><td class="col4"> Non </td><td class="col5"> Non </td><td class="col6"> <a href="../../utilisateurs/t0m-s" class="wikilink2" title="utilisateurs:t0m-s" rel="nofollow">t0m-s</a> </td>
+	</tr>
+	<tr class="row24">
+		<th class="col0"> Asus </th><th class="col1"> T-Série </th><td class="col2"> CM </td><td class="col3"> Nvidia GeForce 8200</td><td class="col4"> Oui, mais pas deux fois de suite ! </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/jeanmarc05" class="wikilink2" title="utilisateurs:jeanmarc05" rel="nofollow">Jeanmarc05</a> </td>
+	</tr>
+	<tr class="row25">
+		<th class="col0"> Asus </th><th class="col1"> U53J Série (ASUS U53JC-XX181X ) </th><td class="col2"> P </td><td class="col3"> NVIDIA GeForce 310M (Mobile Intel HM55 Express) (Intel Core i5-480M) </td><td class="col4"> Oui * </td><td class="col5"> Oui (*) voir <a href="http://thecodecentral.com/2011/01/18/fix-ubuntu-10-10-suspendhibernate-not-working-bug" class="urlextern" title="http://thecodecentral.com/2011/01/18/fix-ubuntu-10-10-suspendhibernate-not-working-bug"  rel="nofollow">http://thecodecentral.com/2011/01/18/fix-ubuntu-10-10-suspendhibernate-not-working-bug</a> </td><td class="col6"> mobuxon </td>
+	</tr>
+	<tr class="row26">
+		<th class="col0"> Asus </th><th class="col1"> X53U Series </th><td class="col2"> P </td><td class="col3"> AMD E-350 APU with Radeon™ HD Graphics (dual-core) </td><td class="col4"> Oui </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/minecraftbreizh" class="wikilink2" title="utilisateurs:minecraftbreizh" rel="nofollow">MinecraftBreizh</a> </td>
+	</tr>
+	<tr class="row27">
+		<th class="col0"> Abit </th><th class="col1"> KT7A </th><td class="col2"> CM </td><td class="col3"> VIA KT133A </td><td class="col4"> Oui </td><td class="col5"> Oui </td><td class="col6"> Johan </td>
+	</tr>
+	<tr class="row28">
+		<th class="col0"> Hp </th><th class="col1"> a247 </th><td class="col2"> CM </td><td class="col3"> Nforce4 </td><td class="col4"> Oui </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/aj94tj" class="wikilink2" title="utilisateurs:aj94tj" rel="nofollow">aj94tj</a> </td>
+	</tr>
+	<tr class="row29">
+		<th class="col0"> Foxconn </th><th class="col1"> /865G7MF-SH </th><td class="col2"> CM </td><td class="col3 leftalign"> Intel pentium 4 LGA775  </td><td class="col4"> Oui *</td><td class="col5"> Oui voir <a href="http://forum.ubuntu-fr.org/viewtopic.php?pid=3561362#p3561362" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?pid=3561362#p3561362"  rel="nofollow">http://forum.ubuntu-fr.org/viewtopic.php?pid=3561362#p3561362</a> </td><td class="col6"> <a href="../../utilisateurs/mferrato" class="wikilink1" title="utilisateurs:mferrato">mferrato</a> </td>
+	</tr>
+	<tr class="row30">
+		<th class="col0"> Dell </th><th class="col1"> Vostro 1320 </th><td class="col2"> P </td><td class="col3"> Mobile Intel® 45 Express Chipset </td><td class="col4"> Non </td><td class="col5"> Non </td><td class="col6"> <a href="../../utilisateurs/ateni" class="wikilink2" title="utilisateurs:ateni" rel="nofollow">ateni</a> </td>
+	</tr>
+	<tr class="row31">
+		<th class="col0"> Fujitsu/Siemens </th><th class="col1"> Amilo M7405 </th><td class="col2"> P </td><td class="col3"> Pentium M - video i855GM </td><td class="col4"> Oui (avant Karmic ou à partir du noyau 3.3 </td><td class="col5"> Oui mais ne marche plus depuis Precise </td><td class="col6"> <a href="../../utilisateurs/bybeu" class="wikilink2" title="utilisateurs:bybeu" rel="nofollow">Bybeu</a> </td>
+	</tr>
+</table></div>
+<!-- EDIT12 TABLE [27663-31992] -->
+</div>
+<!-- EDIT11 SECTION "Carte mère / Portable" [27481-31994] -->
+<h3 class="sectionedit13" id="carte_graphique">Carte graphique</h3>
+<div class="level3">
+
+<p>
+<p><div class="notehelp">À classer par marque et jeux de puces en essayant de regrouper les modèles utilisant le même jeux de puces.
+</div></p>
+</p>
+<div class="table sectionedit14"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<td class="col0"> Marque </td><td class="col1"> Jeux de puces (Modèle) </td><th class="col2"> Mobile </th><th class="col3"> module </th><th class="col4"> Veille </th><th class="col5"> Hibernation </th><th class="col6"> Utilisateur(s) </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<th class="col0"> ATI </th><th class="col1"> R420 (Radeon X800 VE) </th><td class="col2"> non </td><td class="col3"> <a href="../../catalyst" class="wikilink1" title="catalyst">fglrx</a> </td><td class="col4"> Oui </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a> </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0"> ATI </th><th class="col1"> RC410 [Radeon Xpress 200] </th><td class="col2"> non </td><td class="col3"> <a href="../../catalyst" class="wikilink1" title="catalyst">fglrx</a> </td><td class="col4"> - </td><td class="col5"> <a href="http://forum.ubuntu-fr.org/viewtopic.php?id=158884" class="urlextern" title="http://forum.ubuntu-fr.org/viewtopic.php?id=158884"  rel="nofollow">non</a> (gutsy)</td><td class="col6"> <a href="../../utilisateurs/marc31" class="wikilink1" title="utilisateurs:marc31">marc31</a> </td>
+	</tr>
+	<tr class="row3">
+		<th class="col0"> ATI </th><th class="col1"> M92 (Mobility Radeon HD 4500 Series) </th><td class="col2"> oui </td><td class="col3"> <a href="../../catalyst" class="wikilink1" title="catalyst">fglrx</a> </td><td class="col4"> Oui </td><td class="col5"> non installation par défaut (lucid)</td><td class="col6"> <a href="../../utilisateurs/fnx" class="wikilink1" title="utilisateurs:fnx">fnx</a> </td>
+	</tr>
+	<tr class="row4">
+		<th class="col0"> Intel </th><th class="col1"> G31 (X3100) </th><td class="col2"> non </td><td class="col3"> intel </td><td class="col4"> Oui </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a> </td>
+	</tr>
+	<tr class="row5">
+		<th class="col0"> Intel </th><th class="col1"> G945 </th><td class="col2"> oui </td><td class="col3"> intel </td><td class="col4"> Oui </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a> </td>
+	</tr>
+	<tr class="row6">
+		<th class="col0"> Intel </th><th class="col1"> GMA500 </th><td class="col2"> oui </td><td class="col3"> <a href="../../poulsbo" class="wikilink1" title="poulsbo">psb</a> </td><td class="col4"> <a href="http://doc2.ubuntu-fr.org/acer_aspire_one_751#probleme_de_veillehibernation" class="urlextern" title="http://doc2.ubuntu-fr.org/acer_aspire_one_751#probleme_de_veillehibernation"  rel="nofollow">non</a> (jaunty) </td><td class="col5"> <a href="http://doc2.ubuntu-fr.org/acer_aspire_one_751#probleme_de_veillehibernation" class="urlextern" title="http://doc2.ubuntu-fr.org/acer_aspire_one_751#probleme_de_veillehibernation"  rel="nofollow">non</a> (jaunty) </td><td class="col6"> <a href="../../utilisateurs/esce" class="wikilink1" title="utilisateurs:esce">Escé</a> </td>
+	</tr>
+	<tr class="row7">
+		<th class="col0"> Nvidia </th><th class="col1"> NV43 (GeForce 6400) </th><td class="col2"> oui </td><td class="col3"> <a href="../../nvidia-304" class="wikilink2" title="nvidia-304" rel="nofollow">nvidia-304</a> </td><td class="col4"> Oui </td><td class="col5"> Oui (Unity 13.10) </td><td class="col6"> <a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a> </td>
+	</tr>
+	<tr class="row8">
+		<th class="col0"> Nvidia </th><th class="col1"> NV43 (GeForce 6600 GT) </th><td class="col2"> non </td><td class="col3"> <a href="../../nvidia" class="wikilink1" title="nvidia">nvidia-glx</a> </td><td class="col4"> Oui </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a> </td>
+	</tr>
+	<tr class="row9">
+		<th class="col0"> Nvidia </th><th class="col1"> G72 (GeForce 7300 SE) </th><td class="col2"> non </td><td class="col3"> <a href="../../nvidia" class="wikilink1" title="nvidia">nvidia-glx</a> </td><td class="col4"> - </td><td class="col5"> Oui </td><td class="col6"> <a href="../../utilisateurs/marc31" class="wikilink1" title="utilisateurs:marc31">marc31</a> </td>
+	</tr>
+	<tr class="row10">
+		<th class="col0"> Intel </th><th class="col1"> GMA945 </th><td class="col2"> oui </td><td class="col3"> Intel </td><td class="col4"> oui </td><td class="col5"> oui </td><td class="col6"> anonymux </td>
+	</tr>
+	<tr class="row11">
+		<th class="col0"> Intel </th><th class="col1"> GMA X4500MHD </th><td class="col2"> oui </td><td class="col3"> Intel </td><td class="col4"> non </td><td class="col5"> non </td><td class="col6"> <a href="../../utilisateurs/ateni" class="wikilink2" title="utilisateurs:ateni" rel="nofollow">ateni</a> </td>
+	</tr>
+</table></div>
+<!-- EDIT14 TABLE [32152-33496] -->
+</div>
+<!-- EDIT13 SECTION "Carte graphique" [31995-33498] -->
+<h3 class="sectionedit15" id="carte_reseau">Carte réseau</h3>
+<div class="level3">
+
+<p>
+<p><div class="notehelp">À classer par module.
+</div></p>
+</p>
+<div class="table sectionedit16"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<td class="col0"> Marque </td><td class="col1"> Jeux de puces (Modèle) </td><th class="col2"> module </th><th class="col3"> Veille </th><th class="col4"> Hibernation </th><th class="col5"> Utilisateur(s) </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<th class="col0"> Intel </th><th class="col1"> ipw2200 </th><td class="col2"> ipw2200 </td><td class="col3"> Oui </td><td class="col4"> Oui (Unity 13.10) en désactivant le module wifi suivant la méthode &quot;La connexion réseau ne se réactive pas en sortie de veille ou d&#039;hibernation–&gt; Autre possibilité&quot; </td><td class="col5"> <a href="../../utilisateurs/89paladins" class="wikilink1" title="utilisateurs:89paladins">89paladins</a> </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0"> Intel </th><th class="col1"> ipw3945 abg </th><td class="col2"> ipw3945 </td><td class="col3"> Oui </td><td class="col4"> Oui </td><td class="col5"> <a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a> </td>
+	</tr>
+	<tr class="row3">
+		<th class="col0"> Marvell </th><th class="col1"> 88E8056 PCI-E Gigabit </th><td class="col2"> sky2 </td><td class="col3"> Oui </td><td class="col4"> Oui </td><td class="col5"> <a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a> </td>
+	</tr>
+</table></div>
+<!-- EDIT16 TABLE [33566-34043] --><hr />
+
+<p>
+<em>Contributeurs : <a href="../../utilisateurs/id2ndr" class="wikilink1" title="utilisateurs:id2ndr">Id2ndR</a></em> <a href="../../utilisateurs/didrocks" class="wikilink1" title="utilisateurs:didrocks">didrocks</a><em> <a href="../../utilisateurs/sfley" class="wikilink1" title="utilisateurs:sfley">sfley</a>
+</p>
+
+</div>
+<!-- EDIT15 SECTION "Carte réseau" [33499-] --><div class="footnotes">
+<div class="fn"><sup><a href="veille_et_hibernation#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Mode dans lequel les composants électroniques se mettent dans un état de consommation minimum pour préserver les données, sans être en attente d&#039;écriture/lecture</div>
+<div class="fn"><sup><a href="veille_et_hibernation#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+Source de toute cette partie : <a href="http://askubuntu.com/questions/28328/how-can-i-disable-hibernate-completely-in-kubuntu" class="urlextern" title="http://askubuntu.com/questions/28328/how-can-i-disable-hibernate-completely-in-kubuntu"  rel="nofollow">http://askubuntu.com/questions/28328/how-can-i-disable-hibernate-completely-in-kubuntu</a></div>
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/e/ecc3ffbc01763cd3c855e6c78fffcb50.xhtml used -->
+</div>
+</body>
+</html>

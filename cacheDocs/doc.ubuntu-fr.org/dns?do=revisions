@@ -1,0 +1,798 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>dns - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/dns?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/dns"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/dns"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"dns","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="dns?do=revisions#main" tabindex="1">Contenu</a> | <a href="dns?do=revisions#qsearch__in" tabindex="2">Rechercher</a> | <a href="dns?do=revisions#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="dns?do=revisions" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="dns" >dns</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<h1 class="sectionedit1" id="anciennes_revisions">Anciennes révisions</h1>
+<div class="level1">
+
+<p>
+Voici les anciennes révisions de la page en cours. Pour revenir à une ancienne révision, sélectionnez-la ci-dessous, cliquez sur le bouton « Modifier cette page » et enregistrez-la.
+</p>
+
+</div>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/c/c094095a2fd85a3488cba30c5d00321e.xhtml used -->
+<form id="page__revisions" class="changes" method="post" action="dns?do=revisions" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><ul >
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="current"/>
+<span class="date">
+Le 10/04/2015, 18:59</span>
+<img src="http://doc.ubuntu-fr.org/lib/images/blank.gif" width="15" height="11" alt="" /><a class="wikilink1" href="dns">
+dns</a>
+<span class="sum">
+ – orthographe (corrections)</span>
+<span class="user">
+salocin</span>
+(Version actuelle)</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1426240293"/>
+<span class="date">
+Le 13/03/2015, 10:51</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1426240293&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1426240293" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[DNS - Système de noms de domaine] </bdi></span>
+<span class="user">
+<bdo dir="ltr">89.225.220.113</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1426240139"/>
+<span class="date">
+Le 13/03/2015, 10:48</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1426240139&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1426240139" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[DNS - Système de noms de domaine] </bdi></span>
+<span class="user">
+<bdo dir="ltr">89.225.220.113</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1417028537"/>
+<span class="date">
+Le 26/11/2014, 20:02</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1417028537&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1417028537" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Choix d'un serveur DNS alternatif] </bdi></span>
+<span class="user">
+<bdo dir="ltr">86.212.52.20</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1410784442"/>
+<span class="date">
+Le 15/09/2014, 14:34</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1410784442&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1410784442" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Choix d'un serveur DNS alternatif] </bdi></span>
+<span class="user">
+<bdo dir="ltr">212.117.116.190</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1410784380"/>
+<span class="date">
+Le 15/09/2014, 14:33</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1410784380&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1410784380" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Choix d'un serveur DNS alternatif] </bdi></span>
+<span class="user">
+<bdo dir="ltr">212.117.116.190</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1404400438"/>
+<span class="date">
+Le 03/07/2014, 17:13</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1404400438&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1404400438" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Utilisation d'un serveur DNS local] </bdi></span>
+<span class="user">
+<bdo dir="ltr">193.55.29.169</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1403325793"/>
+<span class="date">
+Le 21/06/2014, 06:43</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1403325793&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1403325793" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Choix d'un serveur DNS alternatif] liens morts</bdi></span>
+<span class="user">
+<bdo dir="ltr">85.170.201.5</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1400336291"/>
+<span class="date">
+Le 17/05/2014, 16:18</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1400336291&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1400336291" class="wikilink1">
+dns</a>
+<span class="user">
+<bdi>mydjey</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1400336181"/>
+<span class="date">
+Le 17/05/2014, 16:16</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1400336181&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1400336181" class="wikilink1">
+dns</a>
+<span class="user">
+<bdi>mydjey</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1400319751"/>
+<span class="date">
+Le 17/05/2014, 11:42</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1400319751&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1400319751" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>maj interface graphique</bdi></span>
+<span class="user">
+<bdi>mydjey</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1397032124"/>
+<span class="date">
+Le 09/04/2014, 10:28</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1397032124&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1397032124" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Configuration d'un DNS alternatif] </bdi></span>
+<span class="user">
+<bdo dir="ltr">82.229.179.123</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1391432338"/>
+<span class="date">
+Le 03/02/2014, 13:58</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1391432338&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1391432338" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Configuration d'un DNS alternatif] </bdi></span>
+<span class="user">
+<bdi>natchack</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1390748314"/>
+<span class="date">
+Le 26/01/2014, 15:58</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1390748314&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1390748314" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>ancienne révision restaurée</bdi></span>
+<span class="user">
+<bdi>mydjey</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1390719452"/>
+<span class="date">
+Le 26/01/2014, 07:57</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1390719452&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1390719452" class="wikilink1">
+dns</a>
+<span class="user">
+<bdo dir="ltr">197.28.106.65</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1385227618"/>
+<span class="date">
+Le 23/11/2013, 18:26</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1385227618&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1385227618" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Gérer son propre serveur DNS] </bdi></span>
+<span class="user">
+<bdi>mydjey</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1381246215"/>
+<span class="date">
+Le 08/10/2013, 17:30</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1381246215&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1381246215" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Configuration d'un DNS alternatif] </bdi></span>
+<span class="user">
+<bdo dir="ltr">88.164.121.227</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1371282614"/>
+<span class="date">
+Le 15/06/2013, 09:50</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1371282614&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1371282614" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Configuration d'un DNS alternatif] </bdi></span>
+<span class="user">
+<bdo dir="ltr">5.50.170.126</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1371241799"/>
+<span class="date">
+Le 14/06/2013, 22:29</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1371241799&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1371241799" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Voir aussi] </bdi></span>
+<span class="user">
+<bdi>amj</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1369045837"/>
+<span class="date">
+Le 20/05/2013, 12:30</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1369045837&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1369045837" class="wikilink1">
+dns</a>
+<span class="user">
+<bdi>K4z</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1359386571"/>
+<span class="date">
+Le 28/01/2013, 16:22</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1359386571&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1359386571" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Choix d'un serveur DNS alternatif] </bdi></span>
+<span class="user">
+<bdo dir="ltr">195.220.250.130</bdo></span>
+</div>
+</li>
+<li class="minor">
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1359359506"/>
+<span class="date">
+Le 28/01/2013, 08:51</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1359359506&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1359359506" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>dévérouiller &gt; déverrouiller</bdi></span>
+<span class="user">
+<bdi>Canigou 66</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1357559375"/>
+<span class="date">
+Le 07/01/2013, 12:49</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1357559375&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1357559375" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Configuration d'un DNS alternatif] </bdi></span>
+<span class="user">
+<bdi>Cyrille&#039;s</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1352538064"/>
+<span class="date">
+Le 10/11/2012, 10:01</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1352538064&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1352538064" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>configuration</bdi></span>
+<span class="user">
+<bdi>mydjey</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1339082808"/>
+<span class="date">
+Le 07/06/2012, 17:26</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1339082808&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1339082808" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Utiliser un serveur DNS] </bdi></span>
+<span class="user">
+<bdo dir="ltr">94.23.168.142</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1331413649"/>
+<span class="date">
+Le 10/03/2012, 22:07</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1331413649&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1331413649" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Utiliser un serveur DNS] </bdi></span>
+<span class="user">
+<bdo dir="ltr">86.212.58.222</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1330305567"/>
+<span class="date">
+Le 27/02/2012, 02:19</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1330305567&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1330305567" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Utiliser un serveur DNS] </bdi></span>
+<span class="user">
+<bdo dir="ltr">90.24.250.186</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1328187951"/>
+<span class="date">
+Le 02/02/2012, 14:05</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1328187951&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1328187951" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[Utiliser un serveur DNS] </bdi></span>
+<span class="user">
+<bdo dir="ltr">82.240.238.161</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1323958633"/>
+<span class="date">
+Le 15/12/2011, 15:17</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1323958633&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1323958633" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>modification externe</bdi></span>
+<span class="user">
+<bdo dir="ltr">127.0.0.1</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1322674170"/>
+<span class="date">
+Le 30/11/2011, 18:29</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1322674170&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1322674170" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>[DNS - Système de noms de domaine] </bdi></span>
+<span class="user">
+<bdo dir="ltr">79.10.226.16</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1311244404"/>
+<span class="date">
+Le 21/07/2011, 12:33</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1311244404&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1311244404" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>suppr lien vers un méta moteur de recherche</bdi></span>
+<span class="user">
+<bdi>0ol</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1311241665"/>
+<span class="date">
+Le 21/07/2011, 11:47</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1311241665&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1311241665" class="wikilink1">
+dns</a>
+<span class="sum">
+ – <bdi>NdD abandonné</bdi></span>
+<span class="user">
+<bdo dir="ltr">78.227.192.67</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1293543810"/>
+<span class="date">
+Le 28/12/2010, 14:43</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1293543810&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1293543810" class="wikilink1">
+dns</a>
+<span class="user">
+<bdi>psychederic</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1291915462"/>
+<span class="date">
+Le 09/12/2010, 18:24</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1291915462&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1291915462" class="wikilink1">
+dns</a>
+<span class="user">
+<bdi>psychederic</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1291743965"/>
+<span class="date">
+Le 07/12/2010, 18:46</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1291743965&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1291743965" class="wikilink1">
+dns</a>
+<span class="user">
+<bdi>psychederic</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1291638450"/>
+<span class="date">
+Le 06/12/2010, 13:27</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1291638450&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1291638450" class="wikilink1">
+dns</a>
+<span class="user">
+<bdi>psychederic</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1291404260"/>
+<span class="date">
+Le 03/12/2010, 20:24</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1291404260&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1291404260" class="wikilink1">
+dns</a>
+<span class="user">
+<bdi>psychederic</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1291113019"/>
+<span class="date">
+Le 30/11/2010, 11:30</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1291113019&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1291113019" class="wikilink1">
+dns</a>
+<span class="user">
+<bdi>psychederic</bdi></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1289177766"/>
+<span class="date">
+Le 08/11/2010, 01:56</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1289177766&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1289177766" class="wikilink1">
+dns</a>
+<span class="user">
+<bdo dir="ltr">74.57.114.198</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1289078633"/>
+<span class="date">
+Le 06/11/2010, 22:23</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1289078633&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1289078633" class="wikilink1">
+dns</a>
+<span class="user">
+<bdo dir="ltr">90.58.213.253</bdo></span>
+</div>
+</li>
+<li >
+<div class="li">
+<input type="checkbox" name="rev2[]" value="1287570835"/>
+<span class="date">
+Le 20/10/2010, 12:33</span>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1287570835&amp;do=diff" class="diff_link">
+<img src="http://doc.ubuntu-fr.org/lib/images/diff.png" width="15" height="11" title="Différences avec la version actuelle" alt="Différences avec la version actuelle"/>
+</a>
+<a href="http://doc.ubuntu-fr.org/dns?rev=1287570835" class="wikilink1">
+dns</a>
+<span class="user">
+<bdi>psychederic</bdi></span>
+</div>
+</li>
+</ul>
+<input name="do[diff]" type="submit" value="Différences entre les versions sélectionnées" class="button" />
+</div></form>
+<div class="pagenav"><div class="pagenav-next"><form class="button btn_older" method="get" action="dns"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="hidden" name="first" value="40" /><input type="submit" value="Moins récent &gt;&gt;" class="button" accesskey="n" title="Moins récent &gt;&gt; [N]" /></div></form></div></div>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/dns?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/dns?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="dns?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="dns?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="dns?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

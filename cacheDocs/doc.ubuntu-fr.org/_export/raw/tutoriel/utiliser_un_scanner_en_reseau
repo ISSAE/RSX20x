@@ -1,0 +1,317 @@
+{{tag>Quantal Precise Hardy Jaunty tutoriel réseau matériel scanner }}
+
+----
+
+====== Utiliser un Scanner en réseau ======
+
+Cette documentation détaille la méthode d'installation d'un scanner relié à un serveur en réseau. La dernière rubrique précise le cas d'un scanner avec sortie réseau.
+
+On propose l'utilisation du logiciel [[:xSane]] qui est une interface graphique pour scanner.
+
+===== Pré-requis =====
+  * Votre [[:scanner]] fonctionne sur la machine (sous ubuntu que nous appellerons **serveur**) sur laquelle il est connecté.
+  * Être un [[:sudo|administrateur système]] (par défaut sur l'utilisateur principal, sinon voir [[:sudo#ajout_des_privileges_super-utilisateur_a_un_utilisateur|cette page]]).
+  * Avoir votre [[:pare-feu]] désactivé ou bien correctement configuré. (normalement désactivé par défaut dans Ubuntu).
+
+===== Installation du serveur =====
+
+<note help>Le serveur est la machine sur laquelle le scanner est connecté.</note>
+
+==== METHODE 1 : Ubuntu 12.04 et versions suivantes ====
+
+Dans cette configuration, l'ordinateur est équipé d'un scanner connecté par USB ou port parallèle.
+
+<note>Assurez-vous que votre scanner est installé et fonctionne correctement sur l'ordinateur serveur (c'est à dire l'ordinateur auquel le scanner est physiquement attaché). Testez d'abord sur cette machine avant de tenter de partager le scanner sur le réseau.</note>
+  * Installer sur l’ordinateur serveur le [[::tutoriel:comment_installer_un_paquet|paquet]] **[[apt>sane]]**.
+  * Régler **sane** pour qu'il se lance automatiquement. Pour cela, [[:tutoriel/comment_modifier_un_fichier|éditer le fichier]] **/etc/default/saned** comme il suit :
+<file>
+# Set to yes to start saned                                                     
+RUN=yes
+</file>
+  * Régler le sous-réseau qui sera en mesure d'identifier le scanner. Pour cela, [[:tutoriel/comment_modifier_un_fichier|éditer le fichier]] **/etc/sane.d/saned.conf** pour partager l'imprimante sur votre réseau :
+<file>192.168.1.0/24</file>
+Adapter l'IP selon votre plage d'adresses utilisées dans votre réseau. (**/24** signifie de partager avec tout le monde dans xxx.xxx.xxx.0 à 255).
+  * Enregistrer et fermer les fichiers.
+
+
+
+
+=== Configuration de l'utilisateur ===
+
+Dans certains cas, les autorisations doivent être réglées. Par exemple pour mon scanner HP, l'utilisateur saned doit être inséré dans le groupe **lp**. Pour le faire ouvrez un [[:terminal|terminal]] et entrer cette [[:tutoriel/console_ligne_de_commande|commande]] :
+
+<code>sudo adduser saned lp</code>
+
+Pour vérifier que l'utilisateur a les autorisations nécessaires pour accéder au périphérique scanner, exécutez les [[:tutoriel/console_ligne_de_commande|commandes]] suivantes :
+
+<code>
+sudo -s
+su -s /bin/bash saned
+scanimage -L
+</code>
+
+Par conséquent, vous devriez voir un périphérique identifié, par exemple :
+
+<code>device `hpaio:/usb/Officejet_6600?serial=CN1CF190F405RN' is a Hewlett-Packard Officejet_6600 all-in-one
+</code>
+
+Vous pouvez maintenant passer à la [[:tutoriel/utiliser_un_scanner_en_reseau#sur_le_client|configuration du client]].
+
+==== METHODE 2 : Ubuntu 9.04 et versions suivantes ====
+
+<note warning>
+FIXME Cette méthode ne fonctionne apparemment pas. Si elle fonctionne, ou si ce paragraphe est incomplet, merci de bien vouloir apporter les modifications nécessaires.
+En effet selon ce tuto [[https://help.ubuntu.com/community/ScanningHowTo]], il y d'autres étapes de configuration qui font appel à inetd (qui a été remplacé par xinetd), et au compte root pour avoir accès au scanner ce qui est déconseillé ...
+</note>
+
+Jaunty fournit désormais un démon complet pour saned. Il faut [[:tutoriel:comment_installer_un_paquet|installer le paquet]] **[[apt://sane-utils|sane-utils]]**, [[:tutoriel:comment_editer_un_fichier|éditer le fichier]] **/etc/default/saned** en tant qu'utilisateur root et mettre :
+<file>
+RUN=yes
+
+RUN_AS_USER=saned
+</file>
+<note important>FIXME Selon [[https://help.ubuntu.com/community/ScanningHowTo]], ce serait RUN_AS_USER=root</note>
+Le fichier est bien commenté. Bien entendu l'utilisateur saned doit exister et avoir les droits sur le scanner (faire partie du groupe propriétaire du scanner ou faire partie du groupe lp).
+
+<note>
+FIXME Il n'existe plus de groupe scanner sous jaunty / Karmic koala. Le créer ne sert à rien. C'est au parametrage de UDEV, qu'en général on règle le groupe du scanner. Sur Karmic, c'est "saned"
+</note>
+
+
+==== METHODE 3 : toutes versions ====
+
+<note important>Aussi valable pour ceux chez qui la méthode 1 ne fonctionne pas.</note>
+
+=== Sur le SERVEUR ===
+
+Il faut [[:tutoriel:comment_installer_un_paquet|installer le paquet]] **[[apt>sane-utils]]**, nécessaire au bon fonctionnement de la mise en réseau.
+
+== Étape S1 : Adresses IP autorisées à se connecter ==
+
+  - [[:tutoriel:comment_editer_un_fichier|Editer le fichier]] **/etc/sane.d/saned.conf**.
+  - Y ajouter la ou les adresses IP ou le nom des machines qui se serviront du scanner. Il est aussi possible d'y indiquer un réseau complet en donnant son adresse suivi du nombre de bits de son masque de sous-réseau :
+<file>
+192.168.0.5 #ip_machine - On n'autorise que la machine 192.168.0.5
+192.168.0.0/24 #adresse_reseau/bits_masque - On autorise tout le réseau 192.168.0.*
+</file>
+
+== Étape S2 : Module du scanner ==
+[[:tutoriel:comment_editer_un_fichier|Editer le fichier]] **/etc/sane.d/dll.conf** et vérifier que le module du scanner est présent. Par exemple pour un scanner Canon de la série Pixma, la ligne //pixma// est bien présente par défaut.
+Note: l'activation du module //net// n'est pas utile sur le serveur, sauf si vous voulez permettre à //ce// noeud server de ré-exporter d'autres scanners //sane// distants (dont les adresses IP sont déclarées dans **/etc/sane.d/net.conf**).
+
+== Étape S3 : Nom du port utilisé ==
+Il est vital de déterminer quel est le nom du port logiciel qui va être utilisé. En effet, ce nom peut changer suivant les cas. Pour cela, dans un [[:terminal]], saisir la [[:commande_shell|commande]] suivante ; <code>cat /etc/services|grep san</code>
+Cette [[:commande_shell|commande]] vous renverra toutes les lignes du fichier de définition des services contenant "san". Normalement la ligne de //saned// est dedans. Elle doit normalement correspondre au numero 6566. <code>sane-port     6566/tcp        sane saned      # SANE network scanner daemon</code>
+
+En particulier, vérifier qu'elle commence bien par "sane-port", et non pas par "sane", ce qui peut être le cas si le système est le fruit de (très) vielles mises à jour.
+
+== Étape S4 FACULTATIF : Imposer un mot de passe aux utilisateurs qui se connecteront ==
+
+<note important>Attention, le scanner doit être connecté et sous tension quand vous exécutez "scanimage". De plus cette commande est fournie par le paquet "sane-utils".
+</note>
+Déterminer le nom du scanner avec la [[:commande_shell|commande]] suivante :
+<code>
+scanimage -L
+</code>
+Qui donne :
+<code>
+  device `pixma:04A91709_B10A23' is a CANON Canon PIXMA MP150 multi-function peripheral
+</code>
+Donc le nom est : pixma.
+
+A l'aide d'un [[:éditeur de texte]], créer ensuite le fichier **/etc/sane.d/saned.users** pour ne lister que les utilisateurs autorisés à se connecter et leur affecter un mot de passe. Il faut donc créer pour chaque utilisateur une ligne du type :
+<file saned.users>NOMDUTILISATEUR:MOTDEPASSE:SCANNER</file>
+où SCANNER est le nom du scanner qui a été donné par la commande précédente.
+
+
+== Étape S5 : Configuration et lancement du service == 
+Nous devons ensuite régler le programme qui gérera le serveur de scanner.
+Sous Ubuntu, ce programme par défaut est maintenant xinetd, mais vous pouvez le remplacer par inetd.
+
+**S5_1 : Avec xinetd**
+
+//S5_1_a : En utilisant le compte root (plus facile mais moins sécurisé)//
+
+  * Il faut [[:tutoriel:comment_installer_un_paquet|installer le paquet]] **[[apt>xinetd|xinetd]]**, nécessaire au bon fonctionnement de la mise en réseau.
+  * [[:tutoriel:comment_editer_un_fichier|Créer le fichier]] **/etc/xinetd.d/sane-port** et y ajouter les lignes suivantes,
+<file sane-port>
+service sane-port
+{
+        id              = saned-stream
+        socket_type     = stream
+        server          = /usr/sbin/saned
+        protocol        = tcp
+        user            = root
+        group           = root
+        wait            = no
+}
+</file>
+
+Encore une fois, la concordance avec le nom du port est très importante !\\
+Pour finir, redémarrez le  [[:services|service]] xinetd en tapant dans [[:terminal]] : 
+<code>sudo /etc/init.d/xinetd restart</code>
+
+//S5_1_b : Sans utiliser le compte root//
+
+Pour avoir un autre utilisateur du scanneur que root, il faut modifier d'une part les règles **udev** et d'autre part le service réseau **xinet.d** :
+  * [[:tutoriel:comment_editer_un_fichier|Créer le fichier]] **/etc/xinetd.d/sane-port** et y ajouter les lignes suivantes :
+<file sane-port>
+service sane-port
+{
+        id              = saned-stream
+        socket_type     = stream
+        server          = /usr/sbin/saned
+        protocol        = tcp
+        user            = saned
+        group           = saned
+        wait            = no
+}
+</file>
+
+  * [[:tutoriel:comment_editer_un_fichier|Créer le fichier]] relatif au scanner %%USB%% **/etc/udev/rules.d/40-scanner-permissions.rules**. Dans ce fichier, Ajoutez les lignes suivantes :
+<file>
+# usb scanner
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", MODE:="0666", GROUP:="saned", OWNER:="saned"
+SUBSYSTEM=="usb_device",MODE:="0666"
+</file>
+
+<note>Il se peut que le fichier existe déjà ou qu'un fichier de nom légèrement différent contenant //scanner// existe déjà (le nom n'est pas important en réalité...). Dans les deux cas, il suffit de modifier ce fichier.</note>
+
+<note>Le nom d'utilisateur est bien //saned//, et pas celui l'utilisateur de la machine.</note>
+
+  * Puis redémarrez le  [[:services|service]] udev. Dans un [[:terminal]], saisir la [[:commande_shell|commande]] suivante :<code/>sudo /etc/init.d/udev restart</code>
+  * Pour finir, redémarrez le  [[:services|service]] **xinetd** en tapant dans un [[:terminal]] la [[:commande_shell|commande]]: 
+<code>sudo /etc/init.d/xinetd restart</code>
+
+
+**//S5_2 : Avec inetd//**
+
+<note important>Obsolète : utiliser xinetd</note>
+
+  * Il faut [[:tutoriel:comment_installer_un_paquet|installer le paquet]] **[[apt>inetutils-inetd]]**, nécessaire au bon fonctionnement de la mise en réseau. Puis;
+  * [[:tutoriel:comment_editer_un_fichier|Éditez le fichier]] **/etc/inetd.conf** et y ajouter la ligne suivante,
+<file>
+saned stream tcp nowait saned /usr/sbin/saned saned
+</file>
+Le premier terme de la ligne précédente renvoie au nom du port, que nous avons déterminé au dessus. La concordance est très importante.
+  * Pour finir, redémarrez-les  [[:services]] en tapant dans un [[:terminal]] : <code>sudo /etc/init.d/inetutils-inetd restart</code>
+
+
+== Étape S6 == 
+
+<note>Si vous utilisez [[:ufw]] qui ne ferme pas les ports en entrée par défaut, cette étape est inutile. </note>
+
+Si avez par défaut **fermé les ports en entrée** au niveau du [[:pare-feu]] sur le PC serveur, il faut veiller à ouvrir les ports 6566, 45745 et 47342 en entrée.
+
+<note help>l'ouverture du port 6566 semble indispensable puisque le serveur l'emploi par defaut mais rien ne justifie l'ouverture des ports 45745 et 47342. Il serait bien que l'auteur justifie ce point</note>
+
+===== Sur le client =====
+==== Sur un client Linux ====
+<note help>Le client est la machine qui se connectera sur le scanner distant.</note>
+
+Commencer par [[:tutoriel:comment_installer_un_paquet|installez le paquet]] **xsane**. [[:xSane]] (commande ''xsane''), est le logiciel qui vous permettra d'accéder au scanner distant. Vous pouvez également installer un autre logiciel de scanner (voir la page [[:scanner]]).
+
+<note important>Le logiciel skanlite ne fonctionne pas en tant que client saned pour l'instant. L'auteur de l'article a écrit au développeur du logiciel, mais celui-ci ne sait que faire. L'auteur suppose que la librairie libksan n'est pas prévue pour cela.</note>
+
+== Étape C1 : Adresse IP du poste auquel le scanner est connecté ==
+
+[[:tutoriel:comment_editer_un_fichier|Éditez le fichier]] **/etc/sane.d/net.conf** et y ajouter l'adresse IP ou le nom du serveur, par exemple :
+
+<file>
+192.168.0.111
+</file>
+
+On peut aussi préciser un temps maximal de tentative de connection en décommentant la ligne :
+
+<file>
+connect_timeout = 60
+</file>
+
+== Étape C2 : Activer le module réseau pour pouvoir accéder à un scanner distant ==
+
+Vérifier dans /etc/sane.d/dll.conf que le module //net// est présent (et non commenté).
+
+
+
+==== Sur un client Windows® ====
+
+Il existe une version de Sane pour Windows. Vous pouvez l'utiliser en lieu et place des pilotes classiques de votre scanner. Vous pouvez donc l'utiliser, que votre scanner soit en réseau soit en local ; et vous pouvez même monter le serveur de scanner sur Windows, ce qui est quand même un comble !
+
+Vous pouvez soit utiliser Sane pour Windows, soit Sanetwain (l'une ou l'autre méthode au choix).
+
+L'archive zip de Sane se trouve sur un de ces miroirs : http://www.xsane.org/xsane-download.html. Le logiciel s'installe en copiant le dossier Sane à la racine de « C:\ ».
+
+Ici, on veut installer un client Sane. Donc, il faut [[:tutoriel:comment_editer_un_fichier|éditer le fichier]] **C:\sane\etc\sane.d\net.conf**, et ajouter l'adresse IP du serveur. Il faut également [[:tutoriel:comment_editer_un_fichier|éditer le fichier]] **C:\sane\etc\sane.d\dll.conf** et mettre une ligne "net".
+Vous remarquerez que c'est à peu près la même démarche que sous Linux. L'avantage de cette méthode, c'est que vous pouvez configurer un client, puis copier le dossier « C:\Sane » sur les autres postes Windows et cela fonctionnera !
+
+**SaneTwain** s'installe avec un installeur standard.
+
+http://sanetwain.ozuzo.net/downloads/sanetwain129.zip
+
+Il va créer un dossier de programme classique. Installez-le.
+Dans la boite de dialogue qui va s'ouvrir, mettez l'adresse IP du serveur dans « hostname ».
+
+<note>Vous pouvez aussi mettre le nom du serveur, mais il faut pour cela que windows connaisse cet alias. Il y a un fichier « hosts » pour cela, comme sous Linux. Cherchez-le avec la commande « Chercher un fichier »((Sous Windows XP, il est situé dans « C:\WINDOWS\system32\drivers\etc\ ».)).</note>
+
+<note important>Dans les deux cas (Sane et Sanetwain), il faut s'assurer que le serveur ait bien dans son fichier « /etc/sane.d/saned.conf » l'adresse IP du client Windows ou son alias clairement identifié ! L'auteur n'est pas parvenu à le configurer avec le nom du PC. Il faut donc soit connaitre l'adresse IP de Windows, soit se débrouiller pour que Linux la connaisse (avec une astuce sur votre DNS perso peut-être ou un alias dans le fichier « /etc/hosts »).</note>
+
+
+===== Résolutions de problèmes =====
+
+P1)  On peut commencer par tester si le scanner peut être déja utilisé depuis le serveur.
+
+Le serveur jouera donc aussi le rôle de client.
+
+Pour cela, sur le serveur, éditer /etc/sane.d/net.conf et :
+     * Décommenter la ligne //connect_timeout // ce qui donne <file>connect_timeout = 60</file>
+     * ajouter à la fin <file>localhost</file>
+
+Essayer de scanner en choisissant le scanner désigné par //net//.
+Si ça fonctionne, la configuration du serveur est sans doute bonne ... c'est que l'ordinateur client n'arrive pas à se connecter : voir notamment P4
+
+P2)  Essayer d'imposer un nom d'utilisateur et un mot de passe conformément au point S4.
+
+P3)  Sur le serveur, vérifier que l'utilisateur courant du serveur appartient au groupe saned.
+
+P4) Désactiver temporairement le pare feu **en entrée** si vous avez **vous même** fermé des ports (ce n'est pas le cas par défaut)
+
+
+
+
+
+
+
+
+
+
+
+===== Désinstallation =====
+
+Vous pouvez annuler les modifications faites aux lignes ci-dessus.
+
+Toutefois, même si vous n'utilisez plus de scanner en réseau, toutes les modifications que vous avez pu apporter ne compromettent en rien le système. Elles seront annulées à la prochaine installation complète d'une nouvelle version d'Ubuntu.
+
+===== Notes =====
+
+  * N'oubliez pas d'ouvrir le port 6566 en TCP sur le serveur, si vous y avez activé le [[:pare-feu]].
+  * Vérifier que le paquet **sane-utils** est bien [[:tutoriel:comment_installer_un_paquet|installé]] sur le serveur.
+  * Chez moi, l'utilisateur saned avait « /bin/false » comme shell (donc pas de shell). J'ai remplacé par « /bin/sh » dans « /etc/passwd », et depuis plus de problèmes avec //xinet.d//.
+  * Pour ma part j'ai du mettre root root à la place de sane saned dans /etc/services
+
+===== Scanner avec sortie réseau =====
+Le plus simple est de configurer son imprimante avec une adresse IP statique, notée 192.168.X.Y dans la suite.
+
+FIXME : Il faut avoir le driver du scanner, qui est peut être le même que celui de l'imprimante ?
+
+Ensuite if faut rajouter dans le fichier /etc/sane.d/xerox_mfp.conf la ligne:
+<file> tcp 192.168.X.Y</file>
+
+<note>
+Il est possible d'ajouter l'adresse IP statique de l'imprimante dans le fichier /etc/hosts. Exemple :
+<file> 192.168.X.Y    nom_de_l_imprimante </file>
+Cette manipulation évite de mémoriser l'adresse IP, et est vraie pour n'importe quelle machine IP.
+</note>
+
+----
+
+//Contributeurs : [[utilisateurs:yeffries]],[[utilisateurs:tshirtman]], [[:utilisateurs:Fabien26]], [[:utilisateurs:Ner0lph]], [[:utilisateurs:stephaneguedon]], [[:utilisateurs:claudiux]], [[:utilisateurs:andso]], [[:utilisateurs:Olivier V]], [[:utilisateurs:mario_26]],  [[:utilisateurs:lousticator]]//

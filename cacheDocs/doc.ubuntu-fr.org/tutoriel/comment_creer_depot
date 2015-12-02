@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>tutoriel:comment_creer_depot - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="date" content="2014-10-06T22:11:55+0200"/>
+<meta name="keywords" content="installation,apt,depots,paquet,gestionnaire de paquets,serveur,partage,tutoriel"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="../index.html"/>
+<link rel="contents" href="http://doc.ubuntu-fr.org/tutoriel/comment_creer_depot?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="../feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="../feed.php?mode=list&amp;ns=tutoriel"/>
+<link rel="edit" title="Modifier cette page" href="http://doc.ubuntu-fr.org/tutoriel/comment_creer_depot?do=edit"/>
+<link rel="alternate" type="text/html" title="HTML brut" href="http://doc.ubuntu-fr.org/_export/xhtml/tutoriel/comment_creer_depot"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="http://doc.ubuntu-fr.org/_export/raw/tutoriel/comment_creer_depot"/>
+<link rel="canonical" href="comment_creer_depot"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='tutoriel';var JSINFO = {"id":"tutoriel:comment_creer_depot","namespace":"tutoriel"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="comment_creer_depot#main" tabindex="1">Contenu</a> | <a href="comment_creer_depot#qsearch__in" tabindex="2">Rechercher</a> | <a href="comment_creer_depot#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="../index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="comment_creer_depot" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="comment_creer_depot" >tutoriel:comment_creer_depot</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table des matières</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="comment_creer_depot#prerequis">Prérequis</a></div></li>
+<li class="level1"><div class="li"><a href="comment_creer_depot#creation_d_un_depot">Création d&#039;un dépôt</a></div></li>
+<li class="level1"><div class="li"><a href="comment_creer_depot#utilisation_de_votre_depot">Utilisation de votre dépôt</a></div></li>
+<li class="level1"><div class="li"><a href="comment_creer_depot#signer_votre_depot">Signer votre dépôt</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="tags"><span>
+	<a href="../installation.1" class="wikilink1" title="installation" rel="tag">installation</a>,
+	<a href="../apt" class="wikilink1" title="apt" rel="tag">apt</a>,
+	<a href="../depots" class="wikilink1" title="depots" rel="tag">dépôts</a>,
+	<a href="../paquet" class="wikilink1" title="paquet" rel="tag">paquet</a>,
+	<a href="../gestionnaire_de_paquets" class="wikilink1" title="gestionnaire_de_paquets" rel="tag">gestionnaire de paquets</a>,
+	<a href="../serveur" class="wikilink1" title="serveur" rel="tag">serveur</a>,
+	<a href="../partage" class="wikilink1" title="partage" rel="tag">partage</a>,
+	<a href="http://doc.ubuntu-fr.org/tutoriel" class="wikilink1" title="tutoriel" rel="tag">tutoriel</a>
+</span></div>
+
+<h1 class="sectionedit1" id="comment_creer_un_depot_de_paquets">Comment créer un dépôt de paquets</h1>
+<div class="level1">
+
+<p>
+Ce petit tutoriel va vous apprendre une façon simple de créer votre propre serveur de paquets. Vous pouvez aussi utiliser un serveur avec <a href="http://doc.ubuntu-fr.org/apache" class="wikilink1" title="apache">apache</a> et <strong>debarchiver</strong>, reportez-vous à cette <a href="http://doc.ubuntu-fr.org/creer_un_depot_ubuntu" class="wikilink1" title="creer_un_depot_ubuntu">page</a>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="comment_creer_depot"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412626315" /><input type="hidden" name="summary" value="[Comment créer un dépôt de paquets] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="92-372" /><input type="submit" value="Modifier" class="button" title="Comment créer un dépôt de paquets" /></div></form></div>
+<h2 class="sectionedit2" id="prerequis">Prérequis</h2>
+<div class="level2">
+
+<p>
+Ce tutoriel utilise le logiciel <strong>reprepro</strong>, disponible dans le dépôt universe. Donc avant tout :
+<a href="comment_installer_un_paquet" class="wikilink1" title="tutoriel:comment_installer_un_paquet">installez le paquet</a> <strong><a href="apt://reprepro" class="interwiki iw_apt" title="apt://reprepro">reprepro</a></strong>.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="comment_creer_depot"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412626315" /><input type="hidden" name="summary" value="[Prérequis] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="373-581" /><input type="submit" value="Modifier" class="button" title="Prérequis" /></div></form></div>
+<h2 class="sectionedit3" id="creation_d_un_depot">Création d&#039;un dépôt</h2>
+<div class="level2">
+
+<p>
+La création d&#039;un dépôt est relativement simple. Commencez par créer un dossier qui contiendra votre futur dépôt : 
+</p>
+<pre class="code">user@ubuntu:~$ mkdir apt</pre>
+
+<p>
+Ensuite, on crée l&#039;architecture de base du serveur apt:
+</p>
+<pre class="code">user@ubuntu:~$ mkdir -p ./apt/conf
+user@ubuntu:~$ mkdir -p ./apt/incoming</pre>
+
+<p>
+Le répertoire <strong>conf</strong> contiendra les fichiers de configuration, le répertoire <strong>incoming</strong> pourra permettre l&#039;upload de paquets.
+</p>
+
+<p>
+Nous allons maintenant créer le fichier de configuration, ce fichier contiendra plusieurs informations, comme la version de la distribution correspondant aux paquets. <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">Créez le fichier</a> ./apt/conf/distributions. Pour Trusty remplissez-le comme ceci:
+</p>
+<pre class="file">Origin: Votre Nom
+Label: Label de votre société (ou autre)
+Suite: stable
+Codename: trusty
+Version: 14.04
+Architectures: i386, amd 64 source #(en fonction de vos besoin)
+Components: main restricted universe multiverse #(en fonction de vos besoin)
+Description: Votre Description</pre>
+
+</div>
+
+<h4 id="ajouter_mon_premier_paquet">Ajouter mon premier paquet</h4>
+<div class="level4">
+
+<p>
+Vous voila prêt à ajouter des paquets à votre dépôt. Pour cela vous devez:
+</p>
+<ul>
+<li class="level1"><div class="li"> Mettre vos <strong>.deb</strong> dans le dossier <em>incoming</em>.</div>
+</li>
+<li class="level1"><div class="li"> Vous déplacez dans le bon dossier, en entrant la commande suivante dans un <a href="../terminal" class="wikilink1" title="terminal">terminal</a>:<pre class="code">cd apt</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Puis en lançant reprepro comme ceci: <pre class="code">reprepro -Vb . includedeb (distribution) incoming/(nom_du_paquet)</pre>
+</div>
+</li>
+</ul>
+
+<p>
+Vous pouvez enlever l&#039;option V pour qu&#039;il y ait moins d&#039;informations affichées. 
+Le &quot;.&quot; correspond à la racine de votre serveur (nous sommes dans le répertoire <strong>apt</strong>).
+La distribution doit correspondre à celle du paramètre <em>Codename</em> du fichier de configuration précédemment créé. 
+</p>
+
+<p>
+<p><div class="noteimportant">Attention: ceci fonctionne pour ajouter des paquets .deb uniquement pour ajouter les sources la reportez vous au manuel de reprepro.
+</div></p>
+</p>
+
+</div>
+
+<h4 id="ajouter_plusieurs_paquets_en_une_fois">Ajouter plusieurs paquets en une fois</h4>
+<div class="level4">
+
+<p>
+Voici un petit script permettant d&#039;ajouter tous les paquets présents dans un dossier en une seule commande :)
+</p>
+<pre class="file">#!/bin/bash
+for paquet in $1/*.deb; do
+reprepro -b . includedeb trusty $paquet;
+done</pre>
+
+<p>
+Copiez ce code dans le fichier AjoutPaquets.sh dans le dossier <em>apt</em>, puis: 
+</p>
+<pre class="code">chmod u+x ./AjoutPaquets.sh
+./AjoutPaquets.sh /var/cache/apt/archives</pre>
+
+<p>
+La dernière commande aura pour effet d&#039;ajouter à votre dépôt tous les paquets présents dans /var/cache/apt/archives, c&#039;est à dire tous les paquets téléchargés récemment.
+Pour inclure un autre répertoire, il suffit de le passer en argument au script.
+</p>
+
+<p>
+Ou tout simplement: 
+</p>
+<pre class="code">reprepro -Vb . includedeb (distribution) incoming/*.deb</pre>
+
+<p>
+ Ici ce sont les <strong>.deb</strong> du dossier <strong>incoming</strong> qui seront intégrés au dépôt.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="comment_creer_depot"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412626315" /><input type="hidden" name="summary" value="[Création d'un dépôt] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="582-3351" /><input type="submit" value="Modifier" class="button" title="Création d'un dépôt" /></div></form></div>
+<h2 class="sectionedit4" id="utilisation_de_votre_depot">Utilisation de votre dépôt</h2>
+<div class="level2">
+
+<p>
+Vous avez un dépôt fraîchement créé, mais vous voudriez bien l&#039;utiliser : suivez le guide …
+</p>
+
+<p>
+Soit vous l&#039;utilisez en local, dans ce cas il vous suffit d&#039;ajouter à votre <em>/etc/apt/sources.list</em> la ligne :
+</p>
+<pre class="file">deb file:/home/user/apt stable main contrib non-free</pre>
+
+<p>
+Bien sûr il faudra changer le <em>stable</em> en <em>unstable</em> pour la version instable.
+</p>
+
+<p>
+Si vous voulez l&#039;utiliser en réseau, il vous faudra un serveur web sur votre pc, vous trouverez cette procédure <a href="http://doc.ubuntu-fr.org/tutoriel/creer_un_miroir_de_depot" class="wikilink1" title="tutoriel:creer_un_miroir_de_depot">ici</a>. Ajoutez un alias dans votre httpd.conf pointant vers le répertoire <strong>apt</strong> fraîchement créé.
+Une fois ceci fait et votre serveur lancé, le répertoire apt devrait être accessible avec une adresse du type <em><a href="http://votre_ip/apt" class="urlextern" title="http://votre_ip/apt"  rel="nofollow">http://votre_ip/apt</a> </em> .
+Il vous suffira alors d&#039;ajouter à tous les pc devant se servir de ce serveur la ligne :
+</p>
+<pre class="file">deb http://ip_du_serveur/apt stable main contrib non-free</pre>
+
+<p>
+dans le fichier sources.list .
+</p>
+
+<p>
+Ensuite un petit: 
+</p>
+<pre class="code">sudo apt-get update</pre>
+
+<p>
+et les paquets ajoutés à votre serveur personnel devraient être disponibles.
+</p>
+
+<p>
+Vous pouvez aussi ajouter vos fichiers sur un site web (le site disponible pour vous chez votre fournisseur d&#039;accès ou autre…). Il vous suffira de donner la bonne <abbr title="Uniform Resource Locator">URL</abbr> dans une ligne semblable à ci-dessus. Tout le monde pourrait alors avoir accès à vos chers debs.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="comment_creer_depot"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412626315" /><input type="hidden" name="summary" value="[Utilisation de votre dépôt] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3352-4752" /><input type="submit" value="Modifier" class="button" title="Utilisation de votre dépôt" /></div></form></div>
+<h2 class="sectionedit5" id="signer_votre_depot">Signer votre dépôt</h2>
+<div class="level2">
+
+<p>
+Pour ce faire, rien de plus simple, vous devez bien évidemment, <a href="http://doc.ubuntu-fr.org/gnupg#utilisation_et_configuration" class="wikilink1" title="gnupg">disposer avant tout d&#039;une clé GPG</a>.
+Ensuite, <a href="comment_editer_un_fichier" class="wikilink1" title="tutoriel:comment_editer_un_fichier">éditez le fichier</a> <strong>./conf/distribution</strong>, et rajoutez y ceci : 
+</p>
+<pre class="file">SignWith: XXXXXXXX</pre>
+
+<p>
+<strong>XXXXXXXX</strong> devant être remplacé par la valeur de votre clé GPG
+</p>
+
+<p>
+ensuite, lancez le <a href="../terminal" class="wikilink1" title="terminal">terminal</a>, et utilisez cette commande:
+</p>
+<pre class="code">reprepro --ask-passphrase export</pre>
+
+<p>
+Votre passphrase vous sera demandée, puis votre dépôt sera signé.
+Il ne vous restera plus qu&#039;à uploader tous les dossiers composants votre dépôt. <img src="../lib/images/smileys/icon_smile2.gif" class="icon" alt="=)" />
+</p>
+<hr />
+
+<p>
+<em>Contributeurs : <a href="http://doc.ubuntu-fr.org/utilisateurs/sp4rky" class="wikilink1" title="utilisateurs:sp4rky">Sp4rKy</a> (base), <a href="http://doc.ubuntu-fr.org/utilisateurs/johndescs" class="wikilink1" title="utilisateurs:johndescs">Johndescs</a>, <a href="http://doc.ubuntu-fr.org/utilisateurs/billou" class="wikilink1" title="utilisateurs:billou">Billou</a>, MAJ de la page <a href="../utilisateurs/l_africain" class="wikilink1" title="utilisateurs:l_africain">L&#039;Africain</a> </em>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="comment_creer_depot"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1412626315" /><input type="hidden" name="summary" value="[Signer votre dépôt] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4753-" /><input type="submit" value="Modifier" class="button" title="Signer votre dépôt" /></div></form></div>
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/5/5f747866d1cc1a855eb0d8d25e171085.xhtml used -->
+
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="../index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_creer_depot?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_creer_depot?do=edit&amp;rev=0"  class="action edit" accesskey="e" rel="nofollow" title="Modifier cette page [E]">Modifier cette page</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_creer_depot?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_creer_depot?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/tutoriel/comment_creer_depot?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="../wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="../documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>

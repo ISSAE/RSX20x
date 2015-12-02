@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>system-config-samba - Documentation Ubuntu Francophone</title>
+    <meta name="Description" content="Documentation francophone pour la distribution Ubuntu" lang="fr" />
+    <meta name="language" content="fr-FR" />
+
+    <!--[if IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <![endif]-->
+        <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Documentation Ubuntu Francophone"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="system-config-samba?do=index" title="Plan du site"/>
+<link rel="alternate" type="application/rss+xml" title="Derniers changements" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Namespace actuel" href="feed.php?mode=list&amp;ns="/>
+<link rel="alternate" type="text/html" title="HTML brut" href="_export/xhtml/system-config-samba"/>
+<link rel="alternate" type="text/plain" title="Wiki balise" href="_export/raw/system-config-samba"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/css.php?t=ubuntu-2010&amp;tseed=4af22dedc19f28c99fa67afabbb173df"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='';var JSINFO = {"id":"system-config-samba","namespace":""};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php?tseed=4af22dedc19f28c99fa67afabbb173df"></script>
+    <link rel="shortcut icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/touch-ico.png" />
+
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-ubuntu.css" />
+    <link rel="stylesheet" media="print" type="text/css" title="Design Ubuntu-fr" href="http://www-static.ubuntu-fr.org/theme2010/css/doc-print.css" />
+
+    <script type="text/javascript">
+      var menu_hidden;
+      var static_url = "UFR_STATIC";
+    </script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/menu.js" type="text/javascript"></script>
+    <script src="http://www-static.ubuntu-fr.org/theme2010/js/common.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="accessibar">
+      <a href="system-config-samba?do=edit&amp;rev=0#main" tabindex="1">Contenu</a> | <a href="system-config-samba?do=edit&amp;rev=0#qsearch__in" tabindex="2">Rechercher</a> | <a href="system-config-samba?do=edit&amp;rev=0#navigation" tabindex="3">Menus</a>
+    </div>
+
+    <div id="page">
+
+      <div id="header">
+
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="index.html" title="Accueil de la documentation">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="http://ubuntu-fr.org/recherche" accept-charset="utf-8" id="search" onsubmit="if (document.getElementById('qsearch__in').value == 'Recherche rapide....') {document.getElementById('qsearch__in').value = '';}">
+          <fieldset>
+            <label for="qsearch__in">Recherche : </label><input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="sk_q" alt="[F]" size="34" tabindex="4" />
+            <label for="tsearch_field">Chercher dans : </label><select name="sk_engine" tabindex="5" id="tsearch_field" title="Chercher dans">
+              <option value="all">Site</option>
+              <option selected="selected" value="doc">Documentation</option>
+              <option value="forum">Forum</option>
+              <option value="planet">Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" alt="Lancer la recherche" tabindex="5" />
+          </fieldset>
+        </form>
+        <!--[if lte IE 7]><div class="clear"></div><![endif]-->
+
+        <form action="system-config-samba?do=edit&amp;rev=0" accept-charset="utf-8" id="login_top" method="post">
+          <fieldset>
+            <label for="u_field">Identifiant : </label><input type="text" value="Identifiant" name="u" id="u_field" size="9" /><label for="p_field">Mot de passe : </label><input type="password" value="Mot de passe" name="p" id="p_field" size="9" alt="Mot de passe" /><input type="submit" value="connexion" id="connect" /> / <a href="http://forum.ubuntu-fr.org/register.php">inscription</a>
+          </fieldset>
+        </form>
+ 
+
+      </div>
+
+      <div id="navbar">
+          <h2 id="pagetitle"><a href="system-config-samba" >system-config-samba</a></h2>
+      </div>
+
+      
+      <div id="main" class="dokuwiki">
+
+        <div id="hidemenu" title="Masquer le menu"></div>
+
+        <div id="pagerror"></div>
+                
+<p>
+<strong>Quelques recommandations avant de créer ou de modifier cette page :</strong>
+</p>
+<ol>
+<li class="level1"><div class="li"> Lisez le <a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">guide du contributeur</a> et la <a href="wiki/ligne_editoriale" class="wikilink1" title="wiki:ligne_editoriale">ligne éditoriale</a>.</div>
+</li>
+<li class="level1"><div class="li"> Découvrez la <a href="http://doc.ubuntu-fr.org/wiki/syntaxe" class="wikilink1" title="wiki:syntaxe">syntaxe</a> et entraînez-vous dans le <a href="playground/playground" class="wikilink1" title="playground:playground">bac à sable</a>.</div>
+</li>
+<li class="level1"><div class="li"> Utilisez les modèles (<a href="wiki/modeles/application" class="wikilink1" title="wiki:modeles:application">application</a>, <a href="wiki/modeles/materiel" class="wikilink1" title="wiki:modeles:materiel">matériel</a>, <a href="wiki/modeles/portable" class="wikilink1" title="wiki:modeles:portable">ordinateur portable</a>, <a href="wiki/modeles/tutoriel" class="wikilink1" title="wiki:modeles:tutoriel">tutoriel</a>, <a href="wiki/modeles/utilisateur" class="wikilink1" title="wiki:modeles:utilisateur">utilisateur</a>, <a href="wiki/modeles/portail" class="wikilink1" title="wiki:modeles:portail">portail</a>) et les <a href="wiki/mini-tutoriels" class="wikilink1" title="wiki:mini-tutoriels">mini-tutoriels</a>.</div>
+</li>
+<li class="level1"><div class="li"> Rapportez toutes créations ou modifications importantes sur <a href="wiki/liste_discussion#coordination_de_la_documentation" class="wikilink1" title="wiki:liste_discussion">la liste de discussion</a>.</div>
+</li>
+</ol>
+
+<!-- cachefile /srv/www/doc.ubuntu-fr.org/htdocs/data/cache/f/fcdb5fe1d67011f56447459483d05597.xhtml used -->
+<script type="text/javascript">/*<![CDATA[*/
+textChanged = false/*!]]>*/</script>
+    <div class="editBox" role="application">
+
+    <div class="toolbar group">
+        <div id="draft__status"></div>
+        <div id="tool__bar"><a href="http://doc.ubuntu-fr.org/lib/exe/mediamanager.php?ns="
+            target="_blank">Sélection de fichiers</a></div>
+    </div>
+    <form id="dw__editform" method="post" action="system-config-samba?do=edit&amp;rev=0" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="3bbdeeb4168d06af7a8bbdbdb8925be6" /><input type="hidden" name="id" value="system-config-samba" /><input type="hidden" name="rev" value="0" /><input type="hidden" name="date" value="1414015103" /><input type="hidden" name="prefix" value="." /><input type="hidden" name="suffix" value="" /><input type="hidden" name="changecheck" value="a522e8b5518a507236a10ac143da9fdd" /><input type="hidden" name="target" value="section" /><textarea name="wikitext" id="wiki__text" dir="auto" class="edit" cols="80" rows="10" tabindex="1">
+{{tag&gt;samba partage administration réseau}}
+----
+
+====== Outil de configuration du serveur Samba (system-config-samba) ======
+L'**outil de configuration du serveur Samba**, ou //system-config-samba//, est un utilitaire graphique utilisé pour configurer les paramètres du serveur de partage de fichiers et d'imprimantes [[Samba]].
+
+===== Installation et exécution =====
+{{  :system-config-samba-menu.png|Une fois installé, repérez l'entrée de menu &quot;Samba&quot;, dans le menu &quot;Système -&gt; Administration&quot;}}
+
+À l'aide de votre [[gestionnaire de paquets]] préféré, téléchargez et installez le paquet **[[apt&gt;system-config-samba|system-config-samba]]**.
+Une fois installé, //system-config-samba// est accessible à l'aide de l'entrée de menu //**Samba**//, dans le menu //Système -&gt; Administration//. Toutes les tâches de gestion du serveur Samba ne sont exécutables que par [[:sudo|un administrateur du système]]. Ce programme ne peut qu'être exécuté par des administrateurs.
+
+===== Liste des partages =====
+{{  :system-config-samba-ecranprincipal.png?300|Liste des dossiers partagés de Samba}}
+
+La fenêtre principale de //system-config-samba// est constituée de la liste des dossiers partagés par Samba. La liste des dossiers partagés est constituée :
+  * Du chemin vers **répertoire**, dans l'arborescence du système Ubuntu, qui doit être accessible dans le réseau local pour les autres ordinateurs ;
+  * Du **nom de partage** de chacun des répertoires partagés dans le réseau local. C'est sous ce nom-là qu'un dossier est vu et accessible par les autres ordinateurs du réseau local ;
+  * Des **permissions** accordées sur chacun des dossiers partagés du réseau local. Ceci indique si un dossier partagé est disponible en //lecture seule// ou s'il est accessible en //lecture et écriture// ;
+  * De la **visibilité** du dossier partagé aux autres ordinateurs du réseau local. Un dossier //visible// apparaît dans la liste des dossiers partagés d'un serveur de fichiers, lorsqu'un client demande la liste des dossiers partagés. Un dossier //caché// ne sera pas affiché dans cette liste ; pour accéder à ce dossier, le client devra entrer le chemin complet de partage du dossier partagé (ex : ''[[smb://MACHINE/Partage]]'' ou ''[[\\MACHINE\Partage]]'') ;
+  * De la **description** du dossier partagé. Ce champ optionnel donne de l'information sur le contenu du dossier partagé dans le réseau local.
+
+&lt;note help&gt;**Certains dossiers partagés n'apparaissent pas dans cette liste ! Comment cela se fait-il ?** \\ L'outil //system-config-samba// ne liste que les partages administratifs (//shares//), c'est-à-dire les dossiers partagés qui sont inscrits dans le fichier de configuration ///etc/samba/**smb.conf**//. Ici ne sont pas listés les partages utilisateurs (//usershares//), ceux que peuvent créer chaque utilisateur lui-même.
+  * //Plus d'informations à propos des **[[:samba#partager_un_dossier_personnel_usershares|partages utilisateurs]]** et des **[[:samba#partager_un_dossier_du_systeme_de_fichiers_shares|partages administratifs]]**//
+&lt;/note&gt;
+
+==== Ajouter ou modifier un partage ====
+  * Pour ajouter un dossier partagé dans le serveur Samba, rendez-vous dans le menu //Fichier// et sélectionnez l'entrée de menu **Ajouter un partage** ;
+  * Pour modifier les propriétés d'un dossier partagé, sélectionnez le dossier partagé à modifier dans la liste, puis rendez-vous dans le menu //Fichier// et sélectionnez **Propriétés**.
+
+{{  :system-config-samba-ajouterpartage.png?300|Inscrivez les informations requises pour paramétrer le partage}}
+  - Dans la fenêtre &quot;Créer un partage Samba&quot; proposée, dans l'onglet //Basique// :
+    * inscrivez le chemin complet vers le dossier à partager dans le champ **Répertoire**. Utilisez le bouton //Naviguer...// pour explorer de manière graphique l'arborescence du système de fichiers d'Ubuntu pour sélectionner le bon dossier à partager ;
+    * inscrivez le **nom du partage** à la ligne correspondante. C'est sous ce nom que sera accessible le dossier partagé dans votre réseau local ;
+    * //(optionnel)// inscrivez une **description** du contenu du dossier partagé dans le champ correspondant ;
+    * **Inscriptible :** cochez cette case si vous désirez que le dossier partagé soir accessible en lecture et écriture. Laissez la case décochée pour ne rendre accessible le dossier partagé qu'en lecture seule ;
+    * **Visible :** cochez cette case si vous désirez que le dossier partagé soit visible dans la liste des dossiers partagés par votre serveur Samba. Laissez cette case décochée pour qu'il soit caché, qu'il ne puisse être accessible qu'en saisissant manuellement l'adresse complète vers le dossier partagé dans un navigateur de fichiers ;
+  - {{  :system-config-samba-ajouterpartage2.png?300|Sélectionnez les utilisateurs pouvant accéder au dossier partagé.}}Dans l'onglet //Accès//, sélectionnez un ou des comptes d'utilisateurs Samba qui peuvent accéder au dossier partagé :
+    * cochez la case **Autoriser l'accès seulement à des utilisateurs spécifiques** pour n'autoriser l'accès qu'à certains utilisateurs. Une authentification des utilisateurs est alors nécessaire pour qu'ils accèdent au contenu du dossier partagé. Cochez le ou les comptes d'utilisateurs qui doivent avoir accès au dossier partagé dans la liste proposée. Vous n'oublierez pas de ressaisir ultérieurement tous les mots de passe comme indiqué au paragraphe 4 ci-dessous sinon ça ne fonctionnera pour personne (accès impossible)  ;
+    * cochez la case **Autoriser l'accès à tous les utilisateurs** pour permettre à tous les utilisateurs d'accéder au contenu du dossier partagé. Aucune authentification des utilisateurs n'est alors requise sur ce partage-ci.
+  - Appuyez sur le bouton **Valider** pour prendre en compte le nouveau partage administratif. Patientez quelques secondes, le temps que les modifications soient enregistrées dans le fichier de configuration de Samba et que le service Samba soit redémarré. Le nouveau dossier partagé apparaît désormais dans la liste des partages.
+
+
+
+==== Supprimer un partage ====
+Pour arrêter le partage d'un dossier, sélectionnez le dossier actuellement partagé dans la liste des partages administratifs, puis rendez-vous dans le menu //Fichier// et sélectionnez **Supprimer**. L'arrêt du partage du dossier se produit immédiatement, sans aucune confirmation supplémentaire. Patientez quelques secondes pendant que les changements sont appliqués dans le fichier de configuration de Samba et que le service Samba est redémarré.
+
+Notez que la suppression d'un dossier partagé ne fait qu'arrêter le partage du dossier avec les autres ordinateurs du réseau local. Dans l'ordinateur serveur, le dossier reste inchangé. Si vous désirez aussi supprimer complètement le dossier du serveur Samba, vous devrez procéder manuellement à sa suppression à l'aide de votre navigateur de fichiers.
+
+===== Paramètres du serveur =====
+{{  :system-config-samba-parametresserveur.png?300|Certains paramètres basiques du serveur Samba sont modifiables.}}
+
+Certains paramètres basiques du service Samba peuvent être modifiés à l'aide de //system-config-samba//. Pour ce faire, rendez-vous dans le menu //Préférences// et sélectionnez l'entrée de menu **Paramètres du serveur...**.
+
+Dans l'onglet //Basique// :
+  * **Groupe de travail :** inscrivez le groupe de travail dans lequel doit s'insérer ce serveur Samba. Par défaut, le groupe de travail est ''workgroup'', qui correspond au groupe de travail par défaut des ordinateurs sous Microsoft(r) Windows(r). Modifiez ce groupe de travail si vous l'avez modifié dans vos autres ordinateurs du réseau local ;
+  * **Description :** inscrivez la description de ce serveur Samba. Certaines variables de Samba sont utilisables dans ce champ. Rapportez-vous [[http://samba.org/samba/docs/using_samba/ch06.html#samba2-CHP-6-TABLE-2|à l'aide en ligne de Samba]] pour en connaître la liste.
+
+Dans l'onglet //Sécurité// :
+{{  :system-config-samba-parametresserveur2.png?300|Configurez la méthode d'authentiication du serveur Samba}}
+  * **Mode d'authentification :** sélectionnez le mode d'authentification utilisé par le serveur Samba pour autoriser ou non les connexions entrantes au serveur. Rapportez-vous [[http://samba.org/samba/docs/using_samba/ch09.html#INDEX-49|à l'aide en ligne de Samba]] pour plus d'informations sur les différents modes. Dans Ubuntu, le mode d'authentification est paramétré par défaut sur //Utilisateur//, ce qui signifie que toute connexion au serveur Samba nécessite une authentification pour accéder à la liste des dossiers partagés ;
+  * **Serveur d'authentification :** pour les modes d'authentification //Serveur//, //Domaine// et //ADS//, précisez le serveur à partir duquel l'authentification des clients doit s'effectuer ;
+  * **Domaine Kerberos :** pour le mode //ADS//, précisez le domaine Kerberos auquel fait partie le serveur Samba ;
+  * **Crypter les mots de passe :** pour les modes //Utilisateur//, //Partage//, //Serveur// et //ADS//, indiquez s'il faut accepter les mots de passe cryptés ;
+  * **Compte invité :** indiquez le compte d'utilisateur Samba à utiliser en tant que compte d'invité. Les utilisateurs non authentifiés utilisent ce compte par défault.
+
+Appuyez sur le bouton **Valider** pour prendre en compte les changements apportés à la configuration du serveur Samba. Patientez quelques secondes pendant que les changements sont inscrits dans le fichier de configuration de Samba et que le service Samba redémarre.
+
+===== Liste des utilisateurs du serveur Samba =====
+{{  :system-config-samba-utilisateurssamba.png?300|Configurez les utilisateurs de la base de données de Samba}}
+
+Samba n'utilise pas la même liste de comptes d'utilisateurs et de mots de passe que le système Ubuntu. L'outil de configuration du serveur Samba ( system-config-samba) fonctionne mal pour la récupération des mots de passe des utilisateurs de Ubuntu, aussi il est indispensable de ressaisir les mots de passe de tous les utilisateurs, y compris l'administrateur, dans les préférences de system-config-samba. Pour administrer les utilisateurs de la base de données de Samba, rendez-vous dans le menu //Préférences// et sélectionnez l'entrée de menu **Utilisateurs Samba...**. À travers cette interface, vous pouvez ajouter des comptes d'utilisateurs ou en retirer dans la base de données de Samba.
+
+&lt;note tip&gt;Dans Ubuntu 14.04, il semble que chaque compte ajouté dans la liste des comptes d'utilisateurs de la fenêtre ci-contre doive appartenir au groupe //plugdev// sous peine que ces comptes ne puissent se connecter au partage.
+
+Pour ce faire, taper dans un terminal :
+&lt;code&gt;sudo adduser nom_du_compte_a_ajouter_au_groupe plugdev&lt;/code&gt;
+ou alors utiliser une interface graphique : [[http://doc.ubuntu-fr.org/users-admin#modifier_les_proprietes_d_un_groupe_et_ajouter_ou_retirer_des_comptes_d_utilisateurs_d_un_groupe_administrateurs_seulement|ajouter des comptes à un groupe]]
+&lt;/note&gt;</textarea>
+<div id="wiki__editbar" class="editBar">
+<div id="size__ctl">
+</div>
+<div class="editButtons">
+<div id="plugin__captcha_wrapper"><input type="hidden" name="2dbbbc5421bcae5473d8d85ea73a14da" value="86iCFTwaF5F4kWUcqGT7NKZz3n5dd6Quollfqszfgcs=" /><label for="plugin__captcha">Merci de recopier le code ci-contre pour prouver que vous êtes humain :</label> <span id="plugin__captcha_code">Y I I B﻿
+A</span> <input type="text" size="5" name="32a054e11816fece5f98e2759702ed1d" class="edit" /> <label class="no">Merci de laisser ce champ vide : <input type="text" name="0c43ced3180d089e136184aba8bcc323" /></label></div><input name="do[save]" type="submit" value="Enregistrer" class="button" id="edbtn__save" accesskey="s" tabindex="4" title="Enregistrer [S]" />
+<input name="do[preview]" type="submit" value="Aperçu" class="button" id="edbtn__preview" accesskey="p" tabindex="5" title="Aperçu [P]" />
+<input name="do[draftdel]" type="submit" value="Annuler" class="button" tabindex="6" />
+</div>
+<div class="summary">
+<label class="nowrap" for="edit__summary"><span>Résumé</span> <input type="text" id="edit__summary" name="summary" class="edit" size="50" tabindex="2" /></label>
+</div>
+</div>
+<div class="license">
+Note : En modifiant cette page, vous acceptez que le contenu soit placé sous les termes de la licence suivante : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" class="urlextern">CC Paternité-Partage des Conditions Initiales à l'Identique 3.0 Unported</a></div>
+</div></form>
+</div>
+<script type="text/javascript">
+   var saveBtn = document.getElementById('edbtn__save');
+   saveBtn.disabled = true;
+   saveBtn.style.color = 'gray';
+   saveBtn.style.backgroundColor = '#EEEEEE';
+   saveBtn.value = 'Enregistrer (Click \'Aperçu\' first)';
+</script>
+        <br style="clear:both;" />
+        <div id="pageinfo">
+            <!--  |  | -->
+            <!-- ?tpl_pageinfo()? -->
+            <br />
+            Le contenu de ce wiki est sous licence : <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" rel="license" target="_blank">CC BY-SA v3.0</a>
+        </div> 
+      </div>
+
+      
+      <div id="navigation">
+
+        <ul>
+          <li class="menu"><a href="http://www.ubuntu-fr.org" class="title" id="menu-accueil"><span>Accueil</span></a></li>
+          <li class="menu" id="active">
+            <a href="index.html"  class="title" id="menu-doc"><span>Documentation</span></a>
+            <ul>
+              <li id="navWiki" class="cat">
+                <h2>Actions</h2>
+                <ul>
+                  <li><a href="system-config-samba?do=index"  class="action index" accesskey="x" rel="nofollow" title="Plan du site [X]">Plan du site</a></li>
+                  <li><a href="http://doc.ubuntu-fr.org/system-config-samba?do="  class="action show" accesskey="v" rel="nofollow" title="Afficher la page [V]">Afficher la page</a></li>
+                  <li><a href="system-config-samba?do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Anciennes révisions [O]">Anciennes révisions</a></li>
+                  <li></li>
+                  <li><a href="system-config-samba?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Derniers changements [R]">Derniers changements</a></li>
+                  <li><a href="system-config-samba?do=backlink"  class="action backlink" rel="nofollow" title="Liens vers cette page">Liens vers cette page</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </li>
+              <li id="navDivers" class="cat">
+                <h2>Divers</h2>
+                <ul>
+                  <li><bdi><a href="wiki/participer_wiki" class="wikilink1" title="wiki:participer_wiki">Participer à la documentation</a></bdi></li>
+                  <li><bdi><a href="documentation_hors_ligne" class="wikilink1" title="documentation_hors_ligne">Documentation hors ligne</a></bdi></li>
+                  <li><a href="http://www.ubuntu-fr.org/telechargement" title="T&eacute;l&eacute;charger Ubuntu">T&eacute;l&eacute;charger Ubuntu</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu"><a href="http://forum.ubuntu-fr.org"  class="title" id="menu-forum"><span>Forum</span></a></li>
+          <li class="menu"><a href="http://planet.ubuntu-fr.org"  class="title" id="menu-planet"><span>Planet</span></a></li>
+        </ul>
+
+      </div>
+      <div id="references-ufr">
+        <ul id="legal-ufr">
+          <li><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+        </ul>
+
+        <ul id="sponsors-ufr">
+          <li><a href="http://www.dokuwiki.org/dokuwiki" id="dokuwiki">Propulsé par Dokuwiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- $Id$ -->
+
+    <!-- Piwik Image Tracker -->
+    <!-- img src="http://piwik.infra.ubuntu-fr.org/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" /-->
+    <!-- End Piwik -->
+
+  </body>
+</html>
