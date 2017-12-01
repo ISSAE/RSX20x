@@ -6,9 +6,9 @@
 i=0
 grep $1 $2 > /tmp/res
 lines="abc"
-while [ -z lines ]
+while  [ -n $lines ]
 do
-    read lines
+    read lines < /tmp/res
     echo $i\: $lines
     let i=$i+1
 done
