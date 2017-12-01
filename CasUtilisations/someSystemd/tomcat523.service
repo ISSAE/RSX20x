@@ -1,0 +1,23 @@
+[Unit]
+Description=SI ISSAE 2017
+After=network.target
+
+[Service]
+Type=forking
+
+Environment=JAVA_HOME=/opt/jdk1.8.0_144/jre
+Environment=CATALINA_PID=/opt/t523/temp/tomcat.pid
+Environment=CATALINA_HOME=/opt/t523
+Environment=CATALINA_BASE=/opt/t523
+Environment='CATALINA_OPTS=-Xms1024M -Xmx2048M -server -XX:+UseParallelGC'
+Environment='JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom'
+
+ExecStart=/opt/t523/bin/startup.sh
+ExecStop=/opt/t523/bin/shutdown.sh
+
+UMask=0007
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

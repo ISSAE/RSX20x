@@ -1,0 +1,4 @@
+x=$(/root/bin/_Ban)
+for ip in $x; do 
+    whois $ip | grep inetnum | cut -d' ' -f9,11 ; 
+done

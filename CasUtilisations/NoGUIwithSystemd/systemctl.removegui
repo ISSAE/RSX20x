@@ -1,0 +1,6 @@
+#Look at current values
+sudo systemctl get-default
+# must be if you installed desktop (level 5) : graphical.target
+#multi-user : is level 3
+sudo systemctl enable multi-user.target --force
+sudo systemctl set-default multi-user.target
