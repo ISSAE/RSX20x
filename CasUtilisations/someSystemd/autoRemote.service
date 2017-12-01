@@ -1,0 +1,10 @@
+[Unit]
+Description=AutoSSH tunnel service everythingcli MySQL on local port 5000
+After=network.target
+
+[Service]
+Environment="AUTOSSH_GATETIME=0"
+ExecStart=/usr/bin/autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -NR 1999:localhost:2223 tryit@185.38.106.161 -p 2323
+
+[Install]
+WantedBy=multi-user.target
